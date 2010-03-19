@@ -1,0 +1,96 @@
+Care2X HIS - Readme
+------------------------------------------------------------------------------
+
+Copyright (C) 2002-2005 Elpdio Latorilla, www.care2x.org
+
+Contents: 
+  1. Introduction
+  2. What's new
+  3. Installation instructions
+  4. Credits
+  5. Support
+  6. Links
+
+
+
+1. Introduction
+------------------
+
+Care2x HIS is a smart software for hospitals and health care organizations. 
+It is designed to integrate the different information systems existing in 
+these organizations into one single efficient system.
+
+Care2x HIS solves the problems inherent in a network of multiple programs 
+that are noncompatible with each other. It can integrate almost any type of 
+services, systems, departments, clinic, processes, data, communication, etc. 
+that exist in a hospital. Its design can even handle non-medical services or 
+functions like security, maintenance, etc. It is modular and highly scalable.
+
+Care2x HIS uses a standard SQL database format for storing and retrieving 
+data. The use of a single data format solves the problem of data redundancy. 
+When configured accordingly, it can support multiple database configuration 
+to enhance data security and integrity.
+
+It is a web based software and all its functions can be accessed with a 
+common web browser thus there is no need for a special user interface 
+software. All program modules are processed on the server side. Module 
+updates and extensions do not require changes on the browsers thus there are 
+no network interruptions and downtimes. Its design supports multiple server 
+configuration to distribute traffic and improve speed and efficiency.
+
+Care2x HIS is an open source development (OSD) project and distributed with a 
+"GNU General Public License". Its source code is freely-distributed and 
+available to the general public. Please have a look to the LICENSE file for 
+details. 
+
+
+2. What's new
+----------------
+
+Please have a look to the NEWS file. 
+
+
+3. Installation instructions
+-------------------------------
+
+Please have a look to the INSTALL file. 
+
+
+4. Credits
+-------------
+
+Please have a look to the CREDITS file. 
+
+
+5. Support
+-------------
+
+Support is available via the developer's mailing list: 
+  * care2002-developers_at_lists.sourceforge.net
+
+or the bug tracking system on SourceForge: 
+  * http://sourceforge.net/tracker/?group_id=53886
+
+
+6. Links
+-----------
+
+The official site of Care2X HIS is: 
+  * http://care2x.org/
+
+Project's wiki system: 
+  * http://care2x.org/wiki/
+
+An online demonstration is available here: 
+  * http://www.care2x.com/foundry/
+
+The project's development is hosted on SourceForge at: 
+  * http://sourceforge.net/projects/care2002
+
+Feedback can be sent to the developer's mailing list: 
+  * care2002-developers_at_lists.sourceforge.net
+
+
+
+	Enjoy!
+	The Care2X team

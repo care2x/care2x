@@ -1,0 +1,28 @@
+CARE2X (formerly CARE 2002) Integrated Information System for Hospitals and Health Care Organizations and Services
+Copyright (C) 2002 - 2007  Elpidio Latorilla
+								
+Deployment 2.4 RC2 - 2007-08-31
+								
+This script(s) is(are) free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public
+License as published by the Free Software Foundation; either
+version 2.1 of the License, or (at your option) any later version.
+																  
+This software is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+General Public License for more details.
+											   
+You should have received a copy of the GNU General Public
+License along with this script; if not, write to the Free Software
+Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+																		 
+Copy of GNU General Public License at: http://www.gnu.org/
+
+Copy of GNU General Public License as file named gnu_gpl.htm under the top level directory.		
+											 
+Source code home page: http://www.care2x.org
+Contact author at: elpidio@care2x.org
+
+This notice also applies to other scripts which are integral to the functioning of CARE2X  within this directory and its top level directory
+A copy of this notice is also available as file named copy_notice.txt under the top level directory.

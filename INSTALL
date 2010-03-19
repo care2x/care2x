@@ -1,0 +1,292 @@
+Care2X - Installation 
+------------------------------------------------------------------------------
+
+This guide explains how to install Care2x using the new automatic installer.
+
+Contents: 
+  1. Prerequisites
+  2. Download Care2x Package
+  3. Automatic Installer
+    3.1. Introduction
+    3.2. Collect Information
+      3.2.1. Database Information
+      3.2.2. System Administrator User
+      3.2.3. Network Protocol and Domain
+      3.2.4. Encryption Keys
+    3.3. System Checks
+    3.4. License Agreement
+    3.5. System Installation
+    3.6. Optional Components
+    3.7. Finish Installation
+  4. Post installation
+
+
+
+1. Prerequisites
+-------------------
+
+Care2x is a PHP web application. It requires several program components to be 
+installed on the system before the installation. This includes:
+    * the PHP (http://www.php.net) scripting language;
+    * a web server;
+    * a database server. 
+
+Check the System Requirements page 
+(http://care2x.org/wiki/index.php/System_Requirements) for detailed information 
+about the supported component types and versions.
+
+
+2. Download Care2x Package
+-----------------------------
+
+Download the latest Care2x release package from the project's download section 
+(http://sourceforge.net/project/showfiles.php?group_id=53886&package_id=48463). 
+Typically, you should download the .zip package for Windows installation and 
+the .tar.gz package for Linux/Unix installation.
+
+Extract the downloaded package into the document directory of your web server.
+
+You may extract the package right in the document root directory of your web 
+server. In this case Care2x will be accessible with URL http://your_host/, 
+where your_host is the host of your server computer.
+
+Or, you may extract the package in a subdirectory of the document root 
+directory of your web server. In this case Care2x will be accessible with URL 
+http://your_host/sub_dir/, where your_host is the host of your server computer 
+and sub_dir is the subdirectory where you have extracted the package.
+
+You may need to restart your web browser to make the Care2x application 
+available.
+
+
+3. Automatic Installer
+-------------------------
+
+Open your web browser and access the Care2x automatic installer.
+
+If you have extracted the Care2x package in the web server's document root 
+directory then you have to access URL http://your_host/installer/.
+
+Or, if you have extracted the Care2x package in the web server's document root 
+subdirectory then you have to access URL http://your_host/sub_dir/installer/.
+
+The welcome page of the Care2x automatic installer will be displayed in your 
+web browser.
+
+3.1. Introduction
+--------------------
+
+NOTE: During the installation process do not use the navigation buttons (Back, 
+Forward, etc.) of your web browser. Instead, use the navigation buttons inside 
+the web pages of the automatic installer as described in this guide.
+
+Click on the Continue... hyperlink that will bring you to the Collect 
+Information step of the installation process.
+
+
+3.2. Collect Information
+---------------------------
+
+You are asked to give important information that will be used for the 
+installation of Care2x.
+
+The information is divided in several categories.
+
+
+3.2.1. Database Information
+------------------------------
+
+Fill the fields with information about your database server that will contain 
+the working data of the Care2x system:
+    * Server Type. Choose the type of your database server, all available 
+database types can be chosen from the drop-down list.
+    * User Name. Give the user name of the account to access the database.
+    * Password. Give the password of the database user.
+    * Server Address. Give the network host/address where the database server 
+can be accessed. If you want to specify port of the database server, use the form host:port.
+    * Database Name. Give the name of the database instance where Care2x will 
+be installed to. If you give the name of an existing database, it will be 
+reused, otherwise a database with this name will be created. 
+
+The installation will create more than hundred tables in the database. All 
+table names starts with prefix care_. Currently, this prefix cannot be 
+configured to another value.
+
+If you want to reuse a database that already contains other tables, make sure 
+that there is no table with name starting with prefix care_. Otherwise the 
+installation may fail.
+
+
+3.2.2. System Administrator User
+-----------------------------------
+
+The System Administrator is the most powerful (in terms of rights) user of the 
+Care2x system. This will be the only user that is available on a freshly 
+installed system. It is used for the initial configuration of the system and to 
+create other users that will be used in the normal work with the Care2x system.
+
+The System Administrator user is critical for the system. It is very important 
+to choose appropriate user name and password and to keep this information 
+secure.
+
+The information that you will provide in this section is the login credentials 
+of the System Administrator user:
+    * User Name. Give login name for the System Administrator user. The default 
+is admin. It is highly recommended to choose other name.
+    * Password. Give login password for the System Administrator user. The 
+default is empty password. It is highly recommended to choose good password 
+(http://www.mit.edu/afs/sipb/project/doc/passwords/passwords.html) instead.
+    * Confirm Password. Give the same password as in the previous field. This 
+is to check that you have entered your password correctly. 
+
+
+3.2.3. Network Protocol and Domain
+-------------------------------------
+
+You have to give some information about your web server configuration.
+    * Transfer Protocol. Choose the prefered transfer protocol to access 
+Care2x. The default is http. If you have SSL 
+(http://www.webopedia.com/TERM/S/SSL.html) module installed with your web 
+server and want more secure access to Care2x then choose https.
+    * Care2x Host. Enter the host name where Care2x is installed without the 
+http:// or https:// part and without a trailing slash. If you leave this blank 
+or enter wrong information, you will get problems in storing and displaying 
+uploaded images later on. The value should look like care2x_host if Care2x 
+resides in the document root directory of your web server, or like 
+care2x_host/sub_dir if Care2x resides in a subdirectory of the document root. 
+care2x_host should be a host that is accessible from all possible locations 
+that will work with the system. 
+
+
+3.2.4. Encryption Keys
+-------------------------
+
+Encryption keys are used to encrypt security sensitive data in the workflow of 
+Care2x.
+
+These keys are generated randomly on each installation. It is OK to leave them 
+as is, but if you have any meaningful reason you have to possibility to change 
+their values.
+    * 1st key. Used for simple chaining protection of scripts.
+    * 2nd key. Used for accessing modules.
+    * 3rd key. Used for encrypting cookie information. 
+
+
+When you are ready with entering the data, click on the Save button. This will 
+bring you to the System Checks step of the installation process.
+
+
+3.3. System Checks
+---------------------
+
+At this point of the installation process the installer runs a set of tests to 
+check:
+    * if the data you entered in the previous step is correct;
+    * if the system meets the requirements to have Care2x installed. 
+
+If all tests are OK (green check mark) then you can continue to the next step 
+by clicking on the Continue... hyperlink.
+
+If there is failed test (red check mark) then you cannot continue with the 
+installation process. You have to try to fix the problem that causes the test 
+to fail. If you succeed then click on the Restart Installation hyperlink to 
+start the installation process from the beginning.
+
+If there is test with warning result (yellow check mark) then you can continue 
+with the installation process, but there are possibility that you may run into 
+problem when using Care2x. If you want to continue with the installation 
+process then click on the Continue... hyperlink. If you want first to fix the 
+problem causing the warning then click on the Restart Installation hyperlink 
+after you fix it. This will start the installation process from the beginning.
+
+
+3.4. License Agreement
+-------------------------
+
+Care2x is distributed under the GNU General Public License 
+(http://www.gnu.org/licenses/gpl.html) (GNU GPL).
+
+Read the license displayed on this page of the installer and decide either to 
+agree with the license, or disagree. You have to agree with the license in 
+order to proceed with the installation of Care2x.
+
+If you agree with the license then click on the I Agree button. This will start 
+the installation of the Care2x system.
+
+If you disagree with the license then click on the I Do NOT Agree button. In 
+this case the installer will refuse to proceed with the installation.
+
+More information about the licensing of Care2x you can read on the legal page 
+(http://care2x.org/home_legal.php).
+
+
+3.5. System Installation
+---------------------------
+
+Accepting the license triggers the start of the actual installation process. 
+As the progress bar moves onwards the installer executes the most important 
+installation actions:
+    * installs the database schema;
+    * fills the database with general configuration data;
+    * creates the System Administrator user;
+    * saves the system configuration data. 
+
+The above actions should be executed without problem and you will get 
+automatically to the next installation step. If for some reason any of the 
+above actions fail then the whole installation progress will fail too. The 
+error that causes the problem will be displayed. If this happens you can get 
+support in the Care2x mailing list 
+(http://sourceforge.net/mailarchive/forum.php?forum_id=11772).
+
+NOTE: On some browser (MS Internet Explorer) the progress bar may freeze after 
+few seconds. This does not mean that the installer is not taking action. It is 
+just the browser that freezes the page rendering because of page refresh 
+action. In this case just wait for the browser to refresh the page.
+
+
+3.6. Optional Components
+---------------------------
+
+At this stage of the installation process your system is already operational. 
+Here you may install some optional components (ICD10 and OPS301 codes). These 
+components are typically large in size and take some time to install, so choose 
+only the ones you need.
+
+If you want to install an optional component then choose and click on the 
+Install button.
+
+The progress bar indicates the advance of the action. Please, be patient! 
+Optional components may be large and they may need some time to install.
+
+After the optional component installs successfully, you may choose to install 
+another one.
+
+If you don't want to install more components then click on the Done button to 
+finish the installation.
+
+
+3.7. Finish Installation
+---------------------------
+
+The last step of the installation process is to rename critical installation 
+files. This is made for security reasons. However, it is highly recommended to 
+erase the whole /installer directory.
+
+You can now click on the Start using Care2x hyperlink that will bring you to 
+the main page of your freshly installed Care2x system.
+
+
+4. Post installation
+-----------------------
+
+Congratulations! You have completed the installation process of Care2x.
+
+The Care2x system is now installed and you can start working on it.
+
+However, there are some more things to be done. You have to configure Care2x to 
+fit the needs of your medical institution. This includes definition of 
+departments, wards, doctors, medical products, etc.
+
+Follow the Initial Configuration 
+(http://care2x.org/manuals/en_configure_2_1.htm) guide to complete these steps.
+ 

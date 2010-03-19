@@ -1,0 +1,312 @@
+Care2X - News
+------------------------------------------------------------------------------
+
+
+
+2nd Generation beta 2.2.2 version
+------------------------------------
+
+A. Fixes and improvements
+
+  * Fixed broken link to Care2x Wiki in the help index.
+  * Fix in laboratory module (UNIX-related): rename confirmlabtests.php to the 
+correct case-sensitive file name. 
+  * Delete create_admin.php. This file is obsolete, because of the new 
+installer.
+  * Small fix in the 'RenameFile' action of the installer: the order of the 
+files to be renamed is changed.
+  * Fix in smarty_care.class.php that causes blank page result in some setups. 
+  * Delete phpinfo.php - security issue. 
+  * Fixed the problem of coming to patient.php page in English (not the 
+selected language) after closing the aufnahme_list.php page. 
+  * Fixed broken link for the Cancel button in the aufnahme_list.php page. 
+  * Fixed broken links for city and insurance company selection in the 
+personell register page. 
+  * Fixes language problems in nursing module. It involves usage of the 
+Start & End image links. 
+
+B. Translations
+
+  * Major improvements in the Turkish translation: language and help files. 
+  * Spanish translation is converted to UTF-8 encoding. This includes language
+files, help files, ICD10 and OPS301 code tables. 
+  * Updates Turkish, Italian and Spanish translation with some new strings in 
+the radiology and drg modules. 
+  * Add missing Argentinian (es-ar) language files. 
+      
+Credits
+
+  * Dr. Bülent Potur (TR)
+  * Claudio Giulio Torbinio (IT)
+  * Daniel Hinostroza C. Dr. med. (EC)
+  * Kaloyan Raev (BG) 
+
+    Kaloyan Raev (2006-09-25)
+
+
+2nd Generation beta 2.2.1 version
+------------------------------------
+
+A. Improvements
+
+  * Update Nagoya's dicom viewer from version 0.5.4 to version 1.0.0.
+  * Radiology case studies list now shows the dicom images included in the 
+study. 
+  * Download button available for the dicom images in case the user chooses to 
+use an external dicom viewer. 
+      
+Credits
+
+  * Kaloyan Raev (BG) 
+
+    Kaloyan Raev (2006-09-03)
+
+
+Patch D-2.2.0.1 for Care2x Deployment version 2.2 
+----------------------------------------------------
+
+A. Fixes
+
+  * Fix corrupted chars in the footer. Affects several languages with non-latin 
+chars:
+  
+      * ar - Arabic
+      * bg - Bulgarian
+      * es - Spanish
+      * fr - French
+      * gr - Greek
+      * no - Norwegian
+      * pl - Polish
+      * pt - Portuguese
+      * pt-br - Brazil-Pt.
+      * sr - Serbian
+      * tr - Turkish
+      * zh - Chinese-Simplified
+      
+Credits
+
+  * Kaloyan Raev (BG) 
+
+    Kaloyan Raev (2006-09-01)
+
+
+2nd Generation Deployment 2.2 version
+----------------------------------------
+
+A. Improvements and Fixes
+
+  * Better Turkish language support of ttf fonts and phppdf.
+  * Incompatibilies with MySQL 5.0 fixed in the sql queries. 
+  * Fix the type of the modify_id field in the care_menu_main DB table.
+  * Fixes in the text layout of the Arabian languages.
+  * Fix sql incompatibility with postgre in several classes.
+  * Fix sql incompatibility with postgre in the Turkish ICD10 script.
+  * Add missing files of the nocc module. 
+  * Implement check in the index.php if Care2x needs to be installed. If Care2x 
+is not yet installed, the user is redirected automatically to the installer 
+page. 
+  * Delete obsolete warning templates that are shown in /index.php. 
+Corresponding language variables also deleted from lang_xx_create_admin.php 
+files. 
+  * Add all empty write-access directories under version control. 
+  * Main menu visibility according to the user's permissions. 
+
+B. Coding System
+
+  * Turkish ICD10
+
+      * Updated version with more records. 
+      * Duplicated key removed in the installation sql script, which prevented 
+the proper installation of the Turkish ICD10 table.
+      * Some improvements in the translation.
+      
+C. Language and Help files
+
+  * Improved Arabian translation
+  * Updated Italian translation
+  
+D. New graphical installer.
+
+  * The new installer can be accessed under alias /installer. The old one under 
+/install is removed.
+  * Works with both MySQL 4+ and PostgreSQL 7.4+.
+  * The installer is cloned and extended with new features from the installer 
+of the MirrorMed project.
+  * Main features:
+  
+        * Based on Object Oriented Framework that allows the installer to be 
+easily extended.
+        * Logical flow of the installation process made in steps: Collect Data, 
+Tests, Accept License, Actions.
+        * Check the system if meets the requirement to run Care2x. This reduces 
+the number of erroneous installations.
+        * Full abstraction of the database operation using ADODB.
+        * Better visual design.
+
+Credits
+
+  * Dr. Bülent Potur (TR)
+  * Claudio Giulio Torbinio (IT)
+  * Daniele Palmas (IT)
+  * Kaloyan Raev (BG)
+  * Tarek Alwerfally (LY)
+
+    Kaloyan Raev (2006-07-26)
+    
+
+Patch D-2.1.0.2 for Care2x Deployment version 2.1 
+----------------------------------------------------
+
+A. Language and Help files
+
+  * Bulgarian - improved translation, buttons for the default templated 
+translated
+  * All language packs released after the last patch are integrated in this 
+patch. This affects the following languages:
+
+        * Turkish
+        * Italian
+        * Espaniol-Argentina
+        * Hungarian (Magyar)
+        * Swahili
+        * Romanian
+
+  * The release package now contains the standard distribution files like 
+README, INSTALL, LICENSE, etc.
+  * Installation HOWTO docs are updated.
+
+B. Coding System
+
+  * Bulgarian ICD10
+  * Turkish ICD10
+
+C. Improvements and Fixes
+
+  * The installer now has checkboxes for automatic installation of the 
+Bulgarian and Turkish ICD10 codes
+  * Solved problem in the installer that prevented creating database with dash 
+char in its name
+  * The installer is fixed not to use the deprecated mysql_create_db() function.
+
+Credits
+
+  * Charles Palapala (SW)
+  * Danial Soro (AR)
+  * Dr. Alberto Menini (AR)
+  * Dr. Bülent Potur (TR)
+  * Dr. Fazekas Levente (HU)
+  * Dr. Jorge Rodriguez (AR)
+  * Dr. Petre Diculescu (RO)
+  * Giuseppe Scarpi (IT)
+  * István Német (HU)
+  * Juan Rossano (AR)
+  * Kaloyan Raev (BG)
+
+    Kaloyan Raev (2005-10-20)
+
+
+Patch D-2.1.0.1 for Care2x Deployment version 2.1
+----------------------------------------------------
+
+A. Additional Language and Help files
+
+  * Turkish
+
+Credits
+
+  * Bülent Aydin (TR)
+  * Dr. Bülent Potur (TR)
+  * Francesco Imme (IT)
+  * Marco (IT)
+
+    Elpidio Latorilla (2004-12-06)
+
+
+2nd Generation Deployment 2.1 version
+----------------------------------------
+
+A. "Deployment" status
+
+  * Care2x uses the term "deployment" instead of "stable".
+  * Why "deployment" ?
+
+        Care2x is actually quite stable that it does deserve to be labeled as 
+stable, but some language versions are not 100% complete. However, these 
+incomplete language versions DO NOT hinder the reliability of the application. 
+
+NOTE: This release is not officially recommended to update the existing 
+Deployment 1.1 !
+
+B. PostgreSQL support
+
+  * PostgreSQL database is now supported in addition to the mySQL.
+  * Test runs were done with PostgreSQL 7.2
+  * The auto-installer can install either in mySQL or PostgreSQL 
+
+C. New Features and Improvements
+
+  * Smarty Template System with 2 built-in themes (initial framework added by 
+T. Wiedmann)
+  * Plugin system and Plugin manager
+  * Plugins available online from here
+  * CSS based GUI with 7 built-in themes (user selectable)
+  * User selectable main menu GUI with 3 built-in designs
+  * ImageJ applet for manipulating and editing encounter images
+  * Arabic PDF document generation (added by Walid Fathalla)
+  * Improved configurator for departments (added by Kurt Brauchli)
+  * Improved immunization module and automatic zip code input (Jean-Philippe 
+LIOT)
+  * Added button on the admission data page to go directly to registration data 
+page
+  * Plugin system for additional inline help documents
+  * Built-in PhpPgAdmin for managing the PostgreSQL database (accessible via 
+admin)
+
+D. CDS - Central Data Server and HXP Server
+
+    This version has an experimental support for Central Data Server using the 
+HXP exchange protocol. For details please go here. 
+
+E. Additional Language and Help files
+
+  * Bosnian
+  * Serbian
+  * Farsi
+  * Greek 
+
+F. Coding System
+
+  * Spanish ICD10 and OPS301 (Dr. Montemayor) 
+
+Credits for this deployment release
+
+  * Ali Kanarya (TK) = Initial postgreSQL database schema dump
+  * Daniel Zilli (BR) = Brazilian translations
+  * Dr. J. Manuel Montemayor (MX) = Spanish ICD10 and OPS code dumps
+  * Dr. Jean-Philippe LIOT (FR) = Improvement of Immunization module and 
+automatic zip code input
+  * Emir Prcic (BS) = Bosnian translation
+  * Fco. Villanueva = Bug report, patch
+  * Joachim Mollin (HCCGmbH company) = Javascript based drop-tree main menu 
+design
+  * John Lu (CA) = Chinese-simplified help files
+  * Kurt Brauchli (CH) = Improvement of departments configurator
+  * Marco and Francisco Imme (IT) = bug reporting
+  * Mark Painter Dr.med. (ZA) = feedbacks, reports
+  * Mauri Nieme (TZ) = bug reports
+  * Muhammad Panji (ID) = Indonesian translations
+  * Nino Novak (DE) = German version translations
+  * Petar Savic (SR) = Serbian translation
+  * Thomas Wiedmann (DE) = Smarty template system, testing , bug reporting, SQL 
+consultations
+  * Vinay Boocha (IN) = Suggestion of ImageJ
+  * Walid Murad Fathalla (LY) = Arabic translations, PDF generator and layout 
+adaptation
+  * Wei Ning Chen (CN, P.R. of China) = Chinese translations 
+(Chinese-Simplified)
+
+    Note: If I have forgotten to list somebody here please let me know. 
+Thanks :-)
+
+    Elpidio Latorilla (2004-10-02) 
+
