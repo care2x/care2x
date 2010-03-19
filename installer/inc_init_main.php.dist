@@ -1,0 +1,34 @@
+<?php
+# This is the database name
+$dbname='INSTALL_DB_DATABASE';
+
+# Database user name, default is root or httpd for mysql, or postgres for postgresql
+$dbusername='INSTALL_DB_USERNAME';
+
+# Database user password, default is empty char
+$dbpassword='INSTALL_DB_PASSWORD';
+
+# Database host name, default = localhost
+$dbhost='INSTALL_DB_SERVER';
+
+# First key used for simple chaining protection of scripts
+$key='INSTALL_KEY_1';
+
+# Second key used for accessing modules
+$key_2level='INSTALL_KEY_2';
+
+# 3rd key for encrypting cookie information
+$key_login='INSTALL_KEY_3';
+
+# Main host address or domain
+$main_domain='INSTALL_ADDRESS';
+
+# Host address for images
+$fotoserver_ip='INSTALL_ADDRESS';
+
+# Transfer protocol. Use https if this runs on SSL server
+$httprotocol='INSTALL_PROTOCOL';
+
+# Set this to your database type. For details refer to ADODB manual or goto http://php.weblogs.com/ADODB/
+$dbtype='INSTALL_DB_TYPE';
+?>
