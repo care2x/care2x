@@ -1,0 +1,128 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><TITLE>How to translate Care2x</TITLE>
+<META http-equiv=content-type content="text/html; charset=ISO-8859-1">
+</HEAD>
+<BODY  text=#000000 vLink=#800080 aLink=#ff0000 link=#0000cc onLoad="if(window.focus) window.focus()" 
+bgColor=#ffffff topMargin=2>
+<TABLE cellSpacing=0 cellPadding=5 width="95%" border=0>
+  <TBODY>
+  <TR vAlign=top>
+    <TD ><font face="verdana,arial" size=2><A href="../../index.php?lang=de">
+	<img src="img/care_logo.gif" border=0></A> </TD>
+    <TD bgColor=#eeeeee><b>
+      <font face="verdana,arial" size=5>How to translate Care2x</font><p>
+	</TD></TR>
+	
+  <TR vAlign=top>
+    <TD><!-- <font face="verdana,arial" size=2><SMALL>
+      <P><A href="../../index.php?lang=de">Home</A> 
+     </SMALL> --></TD>
+    <TD><font face="verdana,arial" size=2>
+		<p>
+		The iso code for simplified chinese = "zh" will be used for the examples below. You can also use the chinese traditional "zh-tw" if necessary.
+		<p>
+		Other language codes are listed at the bottom of this page.<p>
+<b>Where to start?</b>
+<p>
+You can start by translating the following files:
+<blockquote>
+/language/en/lang_en_indexframe.php<br>
+/language/en/lang_en_startframe.php<br>
+/language/en/en_copyrite.php<br>
+/language/en/lang_en_stdpass.php<br>
+/language/en/lang_en_invalid-access-warning.php<br>
+/language/en/en_credits.php<br>
+</blockquote>
+<b>Step 1.</b> Create a new directory "zh" inside the /language/ directory. 
+<p>
+<b>Step 2.</b> Copy the above listed files from /language/en/ to /language/<font color=#ff0000>zh</font>/
+<p>
+<b>Step 3.</b> Rename the files by replacing the "en_" part with "<font color=#ff0000>zh_</font>" .
+<b><p>
+Step 4.</b> Copy the following files 
+<blockquote>
+/language/en/tags.php<br>
+/language/en/roots.php
+</blockquote>
+<b>Step 5.</b> Open the "tags.php" file and change the following:<p>
+Set formal name of your language. Use the original form, not the "english" form. E.g "Cesky" for Czech language,not "Czech".<p>
+<blockquote>$lang_name='English';  =>  $lang_name='Chinese-simplified';  
+</blockquote>
+Set the code used for tagging the language files:<p>
+<blockquote>$lang_iso_code='en';  =>  $lang_iso_code='<font color=#ff0000>zh</font>';</blockquote>
+Set the character set:
+<blockquote>$lang_charset='iso-8859-1' => $lang_charset='gb2312';</blockquote>
+
+<b>Step 6.</b> Open the "roots.php" file and change the ff:
+<blockquote>$top_dir='language/en/'  => $top_dir='language/<font color=#ff0000>zh</font>/';</blockquote>
+
+If you did all correctly, you will notice that after refreshing your browser, 
+the Chinese language item is now in the language selector on the left main menu.
+<p>
+<b>Step 7.</b> Translate the files. Translate only the words inside the quotation marks on the right side of the equal sign.
+<blockquote>
+Sample #1:<p>
+<nobr>$LDSample = 'I am written in english';&nbsp;&nbsp;<font color=#ff0000>=></font>&nbsp;&nbsp;$LDSample = 'Ich bin auf Englisch geschrieben';</nobr><p>
+Sample #2:<p>
+<nobr>$LDHumanBeing = "I am a human being';&nbsp;&nbsp;<font color=#ff0000>=></font>&nbsp;&nbsp;$LDHumanBeing = "Hier bin ich Mensch";</nobr>
+</blockquote>
+<p>
+<b>What to do next?</b><p>
+You can send a file to <a href="mailto:admin@care2x.com">admin(at)care2x.com</a> everytime you finished it or you can upload it to the project's CVS 
+and notify <a href="mailto:admin@care2x.com">admin(at)care2x.com</a>.
+<p>
+<b>Which files to translate next?</b><p>
+<blockquote>
+lang_en_aufnahme.php<br>
+lang_en_departments.php<br>
+lang_en_nursing.php<br>
+lang_en_doctors.php<br>
+lang_en_obstetrics.php<br>
+lang_en_editor.php<br>
+lang_en_prompt.php<br>
+</blockquote>
+<b>OK, then what next?</b><p>
+You decide which files you translate next.<p>
+<b>OK, I've finished all files. What to do next?</b><p>
+Send a colored photo of yours with a short info about yourself (in your language and in english) to <a href="mailto:admin@care2x.com">admin(at)care2x.com</a>. We will add you to the credits page.
+<p>
+<b>OK, everything sent. What to do next?</b><p>
+You can start creating the control buttons for your language. <a href="en_howto_translate_control_buttons.htm">Please click here for detailed instructions</a>. Use and enjoy your new Care2x.<p>
+<hr>
+<b>Other country/language codes</b><p>
+<blockquote>
+ar = Arabian<br>
+bg = Bulgarian<br>
+ca = Catalan<br>
+cs-iso = Czech (iso)<br>
+cs-win1250 = Czech (win1250)<br>
+da  = Danish<br>
+de  = German<br>
+en  = English<br>
+es  = Spanish<br>
+fr   = French<br>
+gr = Greek<br>
+id  = Indonesian<br>
+it = Italian<br>
+ja = Japanese<br>
+ko = Korean<br>
+nl  = Dutch<br>
+no = Norwegian<br>
+pl = Polish<br>
+pt-br = Brazilian-portuguese<br>
+pt = Portuguese<br>
+ru-koi8r = Russian (koi8)<br>
+ru-win1251 = Russian (win1251)<br>
+se = Swedish<br>
+th = Thai<br>
+zh-tw = Chinese traditional, Chinese (big5)<br>
+zh  = Chinese simplified, Chinese (gb)
+</blockquote>
+		</TD></TR>
+  <TR>
+    <TD vAlign=top noWrap ></TD>
+    <TD vAlign=bottom><font face="verdana,arial" size=1>
+      <HR noShade SIZE=1>
+      <DIV align=center><SMALL>©2002,2003, 2004, 2005 Elpidio Latorilla, CARE2X, CARE 2002, www.intellin.org, <a href="http://www.care2x.org" target="_blank">www.care2x.org</a>,<a href="http://www.care2x.net" target="_blank">www.care2x.net</a>,<a href="http://www.care2x.com" target="_blank">www.care2x.com</a> - <!-- <A 
+      href="../../index.php?lang=de">Home</A>  -->
+      </SMALL></DIV></TD></TR></TBODY></TABLE></BODY></HTML>

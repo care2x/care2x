@@ -1,0 +1,31 @@
+/** 
+* CARE 2xxx Integrated Hospital Information System
+* This is the chaining and language detection routine. It should be included at the beginning of each script that
+* must be protected from a direct execution triggered from outside. It also loads the appropriate language table.
+*
+* ::::::: USAGE ::::::::
+* At every start of a script that must be protected, write the following lines of code:
+*
+*    define('LANG_FILE','name_of_language_table.php');
+*    define('NO_2LEVEL_CHK',1);
+*    require($root_path.'include/inc_front_chain_lang.php');
+*
+* If the script is protected w/ the second level security chaining, write instead the following code:
+*
+*    define('LANG_FILE','name_of_language_table.php');
+*    $local_user='edp_access_user';
+*    require($root_path.'include/inc_front_chain_lang.php');
+*
+*    Where "edp_access_user" is the name of the cookie set at a successful password check
+*
+* If the script is not protected w/ security chaining but requires language detection write instead:
+*
+*    define('LANG_FILE','name_of_language_table.php');
+*    define('NO_CHAIN',1);
+*    require($root_path.'include/inc_front_chain_lang.php');
+*
+* If the script does not require a language table, define the LANG_FILE to "" (empty string).
+*    define('LANG_FILE','');
+*    define('NO_2LEVEL_CHK',1);
+*    require($root_path.'include/inc_front_chain_lang.php');
+*/

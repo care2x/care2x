@@ -1,0 +1,187 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Care 2X - Experimental support for CDS and HXP server?</title>
+</head>
+<body onLoad="if (window.focus) window.focus()">
+<font face="verdana,arial" size=3> <b>Experimental support for CDS (Central Data Server) and HXP server </b> </font>
+<hr>
+<b>NOTE:</b>
+<ul>
+  <P> The 2nd Generation beta 2.0.0  support for CDS and HXP server is experimental only and is intended to let developers test it, debug, improve it and develop
+    prototype applications that communicate with the CDS via the HXP protocol. <br>
+</ul>
+<p> <b>A. CDS Access</b>
+<blockquote>
+  <li>Access to CDS is only via the HXP server using remote procedure calls based on PCD (Procedure Call Dictionary). 
+</blockquote>
+<p> <b>B. Access point of HXP server</b>
+<blockquote>
+  <li>http://your_domain/modules/hxp/server.php
+    <p> All accesses to the CDS must be pointed to this URL. 
+</blockquote>
+<p> <b> C. Creating a user permission for HXP server access</b>
+<blockquote>
+  <li> Create a Care2x user using the <a href="http://care2x.org/wiki/index.php/Users_and_user_permissions" target="_blank">usual methods</a> of creating user permission
+  <li> However, this user must be given the "<b>HXP Server Access</b>" permission level  found at the bottom of the permission tree page. 
+</blockquote>
+<p> <b> D. Remote access to CDS via  the HXP server</b>
+<blockquote>
+  <li> The application accessing the CDS via the HXP server must supply the username/password pair that was created  for him as described
+    above at point C. The correct use of this is explained in the HXP development website. 
+    Read the chapter on <a href="http://hxp.sourceforge.net/hxp_client.html" target="_blank">"Header arguments and authentication data"</a>.
+  <li> The complete information about HXP is at <a href="http://hxp.sf.net" target="_blank">http://hxp.sf.net</a> 
+</blockquote>
+<p> <b>E. Procedure calls possible at 2nd Generation beta 2.0.0</b>
+<blockquote>
+  <li>The following is the list of procedures currently supported.
+  <li>The detailed specifications can be read as <a href="http://hxp.sourceforge.net/files/hxp-pcd_draft_01.html" target="_blank">html</a>, <a href="http://hxp.sourceforge.net/files/hxp-pcd_draft_01.pdf" target="_blank">pdf</a> or <a href="http://hxp.sourceforge.net/files/hxp-pcd_draft_01.sxw" target="_blank">OpenOffice document</a>.
+  <li> You can also click on the procedure name below if active.
+    <p>
+    <TABLE BORDER=0 class="pcd" width=80%>
+      <TR>
+        <TD valign="top"><A HREF="files/hxp-pcd_draft_01.html#Person" TARGET="_blank">Person</A><BR>
+          <A HREF="files/hxp-pcd_draft_01.html#Person.Basic" TARGET="_blank">Person.Basic</A><BR>
+          Person.Infostring<BR>
+          Person.Exists<BR>
+          <A HREF="files/hxp-pcd_draft_01.html#Person.Encounter" TARGET="_blank">Person.Save</A><BR>
+          <A HREF="files/hxp-pcd_draft_01.html#Person.Encounter.List" TARGET="_blank">Person.Update</A><BR>
+          <A HREF="files/hxp-pcd_draft_01.html#Person.Encounter.Current.ENR" TARGET="_blank">Person.Encounter.Current.ENR</A><BR>
+          Person.Encounter.List<br>
+          <!-- 	<A HREF="files/hxp-pcd_draft_01.html#Person.Encounter.Search" TARGET="_blank">Person.Encounter.Search</A><BR> -->
+          <A HREF="files/hxp-pcd_draft_01.html#Person.Search" TARGET="_blank">Person.Search</A><BR>
+          Person.Search.Select<br>
+          <A HREF="files/hxp-pcd_draft_01.html#Person.Name.First" TARGET="_blank">Person.Name.First</A><BR>
+          <A HREF="files/hxp-pcd_draft_01.html#Person.Name.Family" TARGET="_blank">Person.Name.Family</A><BR>
+          <A HREF="files/hxp-pcd_draft_01.html#Person.Name.Middle" TARGET="_blank">Person.Name.Middle</A><BR>
+          <A HREF="files/hxp-pcd_draft_01.html#Person.Name.Maiden" TARGET="_blank">Person.Name.Maiden</A><BR>
+          <A HREF="files/hxp-pcd_draft_01.html#Person.Name.Second" TARGET="_blank">Person.Name.Second</A><BR>
+          <A HREF="files/hxp-pcd_draft_01.html#Person.Name.Third" TARGET="_blank">Person.Name.Third</A><BR>
+          <A HREF="files/hxp-pcd_draft_01.html#Person.Name.Others" TARGET="_blank">Person.Name.Others</A><BR>
+          <A HREF="files/hxp-pcd_draft_01.html#Person.Birth.Date" TARGET="_blank">Person.Birth.Date</A><BR>
+          <A HREF="files/hxp-pcd_draft_01.html#Person.Sex" TARGET="_blank">Person.Sex</A><BR>
+          <!-- <A HREF="files/hxp-pcd_draft_01.html#Person.Birth.Details" TARGET="_blank">Person.Birth.Details</A><BR> -->
+          <A HREF="files/hxp-pcd_draft_01.html#Person.Died.Date" TARGET="_blank">Person.Died.Date</A><BR>
+          <A HREF="files/hxp-pcd_draft_01.html#Person.Died.Cause" TARGET="_blank">Person.Died.Cause</A><BR>
+          <A HREF="files/hxp-pcd_draft_01.html#Person.Died.Cause.Code" TARGET="_blank">Person.Died.Cause.Code</A><BR>
+          <A HREF="files/hxp-pcd_draft_01.html#Person.Died.Encounter.ENR" TARGET="_blank">Person.Died.Encounter.ENR</A><BR>
+          <A HREF="files/hxp-pcd_draft_01.html#Person.Registry.Date" TARGET="_blank">Person.Registry.Date</A><BR>
+          <A HREF="files/hxp-pcd_draft_01.html#Person.Appointment.List" TARGET="_blank">Person.Appointment.List</A><BR>
+          <!-- <A HREF="files/hxp-pcd_draft_01.html#Person.Appointment" TARGET="_blank">Person.Appointment</A><BR> -->
+          <!-- <A HREF="files/hxp-pcd_draft_01.html#Person.Appointment.Add" TARGET="_blank">Person.Appointment.Add</A><BR> -->
+          <A HREF="files/hxp-pcd_draft_01.html#Person.Address" TARGET="_blank">Person.Address</A><BR>
+          <A HREF="files/hxp-pcd_draft_01.html#Person.Address.FullText" TARGET="_blank">Person.Address.FullText</A><BR>
+          <A HREF="files/hxp-pcd_draft_01.html#Person.Address.Street" TARGET="_blank">Person.Address.Street</A><BR>
+          <A HREF="files/hxp-pcd_draft_01.html#Person.Address.Street.Nr" TARGET="_blank">Person.Address.Street.Nr</A><BR>
+          <A HREF="files/hxp-pcd_draft_01.html#Person.Address.CityTown" TARGET="_blank">Person.Address.CityTown</A> </TD>
+        <TD valign="top"><A HREF="files/hxp-pcd_draft_01.html#Person.Address.Zip" TARGET="_blank">Person.Address.Zip</A><BR>
+          <A HREF="files/hxp-pcd_draft_01.html#Person.Address.Email" TARGET="_blank">Person.Address.Email</A><BR>
+          <A HREF="files/hxp-pcd_draft_01.html#Person.Phone.1" TARGET="_blank">Person.Phone.1</A><BR>
+          <A HREF="files/hxp-pcd_draft_01.html#Person.Phone.1.Area.Code" TARGET="_blank">Person.Phone.1.Area.Code</A><BR>
+          <A HREF="files/hxp-pcd_draft_01.html#Person.Phone.2" TARGET="_blank">Person.Phone.2</A><BR>
+          <A HREF="files/hxp-pcd_draft_01.html#Person.Phone.2.Area.Code" TARGET="_blank">Person.Phone.2.Area.Code</A><BR>
+          <A HREF="files/hxp-pcd_draft_01.html#Person.Phone.Cell.1" TARGET="_blank">Person.Phone.Cell.1</A><BR>
+          <A HREF="files/hxp-pcd_draft_01.html#Person.Phone.Cell.2" TARGET="_blank">Person.Phone.Cell.2</A><BR>
+          <A HREF="files/hxp-pcd_draft_01.html#Person.Fax.Nr" TARGET="_blank">Person.Fax.Nr</A><BR>
+          <A HREF="files/hxp-pcd_draft_01.html#Person.Blood.Group" TARGET="_blank">Person.Blood.Group</A><BR>
+          <A HREF="files/hxp-pcd_draft_01.html#Person.Mother.PID" TARGET="_blank">Person.Mother.PID</A><BR>
+          <A HREF="files/hxp-pcd_draft_01.html#Person.Father.PID" TARGET="_blank">Person.Father.PID</A><BR>
+          <A HREF="files/hxp-pcd_draft_01.html#Person.Insurance.1.Nr" TARGET="_blank">Person.Insurance.1.Nr</A><BR>
+          <A HREF="files/hxp-pcd_draft_01.html#Person.Insurance.1.Co.ID" TARGET="_blank">Person.Insurance.1.Co.ID</A><BR>
+          <A HREF="files/hxp-pcd_draft_01.html#Person.Insurance.2.Nr" TARGET="_blank">Person.Insurance.2.Nr</A><BR>
+          <A HREF="files/hxp-pcd_draft_01.html#Person.Insurance.2.Co.ID" TARGET="_blank">Person.Insurance.2.Co.ID</A><BR>
+          <A HREF="files/hxp-pcd_draft_01.html#Person.Contact" TARGET="_blank">Person.Contact</A><BR>
+          <A HREF="files/hxp-pcd_draft_01.html#Person.Contact.PID" TARGET="_blank">Person.Contact.PID</A><BR>
+          <A HREF="files/hxp-pcd_draft_01.html#Person.Contact.Relatio" TARGET="_blank">Person.Contact.Relation</A><BR>
+          <!--  	<A HREF="files/hxp-pcd_draft_01.html#Person.Add" TARGET="_blank">Person.Add</A><BR> -->
+          <A HREF="files/hxp-pcd_draft_01.html#Person.Update" TARGET="_blank">Person.Update</A><BR>
+          <A HREF="files/hxp-pcd_draft_01.html#Person.Record.Hide" TARGET="_blank">Person.Record.Hide</A><BR>
+          <A HREF="files/hxp-pcd_draft_01.html#Person.Record.Lock" TARGET="_blank">Person.Record.Lock</A><BR>
+          <A HREF="files/hxp-pcd_draft_01.html#Person.Record.Delete" TARGET="_blank">Person.Record.Delete</A><BR>
+          <!--     	<A HREF="files/hxp-pcd_draft_01.html#Person.Record.Delete" TARGET="_blank">Person.PhotoID</A><BR>
+    	<A HREF="files/hxp-pcd_draft_01.html#Person.Record.Delete" TARGET="_blank">Person.PhotoID.URL</A><BR>
+    	<A HREF="files/hxp-pcd_draft_01.html#Person.Record.Delete" TARGET="_blank">Person.PhotoID.Save</A> -->
+          Person.Image.Add<br>
+          Person.List </TD>
+      </TR>
+    </TABLE>
+    <P STYLE="margin-bottom: 0cm" class="title"><b>Encounter calls</b></P>
+    <p>
+    <TABLE BORDER=0 class="pcd" width=80%>
+      <TR>
+        <TD valign="top"> Encounter<br>
+          Encounter.Infostring<br>
+          Encounter.List<BR>
+          <!-- Encounter.Person<BR> -->
+          Encounter.Outpatient.List<BR>
+          Encounter.Inpatient.List<BR>
+          Encounter.Exists<BR>
+          Encounter.Search<BR>
+          Encounter.Status<BR>
+          Encounter.PID<BR>
+          Encounter.Admission.Date<BR>
+          Encounter.Admission.Type<BR>
+          <!-- Encounter.Discharge.Time<BR> -->
+          <!-- Encounter.Discharge.Is<BR> -->
+          <!-- Encounter.Discharge.Type<BR> -->
+          Encounter.Payment.Type<BR>
+          Encounter.Dept.Current.Nr<BR>
+          Encounter.Firm.Current.Nr<BR>
+          Encounter.Doctor.Attending<BR>
+          Encounter.Doctor.Consulting<BR>
+          Encounter.Referrer<BR>
+          Encounter.Referrer.Diagnosis<BR>
+          Encounter.Referrer.Therapy.Recommended<BR>
+          Encounter.Referrer.Notes<BR>
+          Encounter.Referrer.Dept <BR>
+          Encounter.Referrer.Institution <BR>
+        </TD>
+        <TD valign="top"> Encounter.Dept.Is.In<BR>
+          Encounter.Ward.Current.Nr<BR>
+          Encounter.Ward.Is.In<BR>
+          Encounter.Followup.Date<BR>
+          Encounter.Followup.Responsible<BR>
+          Encounter.Post.Notes<BR>
+          <!-- Encounter.Service.Extra<BR> -->
+          Encounter.Record.Status<BR>
+          Encounter.Record.History<BR>
+          Encounter.Record.Hide<BR>
+          Encounter.Record.Lock<BR>
+          Encounter.Record.Delete<BR>
+          Encounter.Record.Normal<BR>
+          Encounter.Pregnancy </TD>
+      </TR>
+    </TABLE>
+    <P STYLE="margin-bottom: 0cm" class="title"><b>Electronic Medical Record (EMR) calls</b></P>
+    <p>
+    <TABLE BORDER=0 class="pcd" width=80%>
+      <TR>
+        <TD valign="top"> EMR.Image.Add<BR>
+          EMR.Image.URL.List </TD>
+      </TR>
+    </TABLE>
+    <p>
+    <TABLE BORDER=0 class="pcd" width=80%>
+      <TR>
+        <TD valign="top"><b>System calls</b>
+          <p>
+            <!--    system.Error.Keys.error_msg<BR>
+	system.Error.Keys.error_nr<BR>
+	system.Error.Keys.List<BR> -->
+            system.Header.Keys.lang<BR>
+            system.Header.Keys.sid<BR>
+            system.Header.Keys.version <BR>
+            system.Server.Advanced.Exists
+            <!-- system.Header.Keys.List<BR> -->
+            <!-- system.HXP.PCD.Version<BR>
+	system.HXP.PCD.Version.List<BR>
+	system.HXP.PCD.Anonymized<BR>
+	system.HXP.Type.List<BR>
+	system.HXP.Type.Set<BR> -->
+        </TD>
+        <TD valign="top"></TD>
+      </TR>
+    </TABLE>
+</blockquote>
+</body>
+</html>

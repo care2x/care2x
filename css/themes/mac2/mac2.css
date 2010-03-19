@@ -1,0 +1,276 @@
+/* main document body, main font style, background image,scrollbars, etc. */
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	
+	scroll: auto;
+
+	font-family: tahoma;
+	font-size: 12px;
+	font-weight: normal;
+	color: #000088;
+	background-image: url(mac_bg2.gif);
+}
+/* default table design */
+table {
+	font-family: tahoma;
+	font-size: 12px;
+	font-weight: normal;
+	color: #000000;
+}
+/* main table used by the main frame template */
+.main {
+	border: none;
+	border-width: 0;
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	background-image: url(mac_bg2.gif);
+}
+/* table used as frames for other tables */
+table.frame {
+	background-color: #999999;
+}
+/* general title row or bar, used for the main page header block or tool bar 
+*  where the 3 buttons "return","help","close" are located 
+*/
+.titlebar {
+	width: 100%;
+	font-size: 22px;
+	font-weight: bold;
+	color: #546D8F;
+	height: 20px;
+	border-bottom: 2px dotted gray;
+	background-image: url(mac_bg2.gif);
+}
+/* Highlights an item or block */
+.hilite {
+	background-color: yellow;
+}
+/* submenus item link */
+.submenu_item{
+	font-weight: bold;
+}
+/* submenu's usual tbody */
+.submenu{
+	background-color: #eeeeee;
+}
+/* submenu's usual frame table */
+.submenu_frame {
+	background-color: #999999;
+}
+/* submenu's title usually used in "OR", "Ambulatory", submenus */
+.submenu_title {
+	background-color: #dddddd;
+	font-size: 14px;
+	font-weight: bold;
+	color: maroon;
+}
+.submenu2_titlebar {
+	background-color: #999999;
+	font-size: 12px;
+	font-weight: bold;
+	color: white;
+}
+.submenu2_list {
+	background-color: #dddddd;
+	font-size: 10px;
+}
+.submenu2_body {
+	background-color: #dddddd;
+	font-size: 12px;
+}
+.submenu2_body2 {
+	background-color: #ffffcc;
+	font-size: 10px;
+}
+.submenu3_titlebar {
+	background-image: url(../../../gui/img/skin/default/backbrushed.gif);
+	font-size: 12px;
+	font-weight: bold;
+	color: #363636;
+	border-top: 2px groove #dddddd;
+	border-left: 2px groove #dddddd;
+	border-right: 2px groove #dddddd;
+	border-bottom: 2px groove #dddddd;
+}
+.submenu3_body {
+	background-image: url(../../../gui/img/skin/default/backbrushed.gif);
+	font-size: 10px;
+	color: #666666;
+}
+td.vspace {
+	background-color: #dddddd;
+	/*background-image: url(/gui/img/skin/default/gray2.jpg);*/
+}
+ul {
+	margin-left: 20px;
+}
+.passborder{
+	background-color: silver;
+}
+.passbody{
+	background-image: url(../../../gui/img/skin/default/backbrushed.gif);
+	border-left: 1px solid white;
+	border-top: 1px solid white;
+	border-right: 1px solid gray;
+	border-bottom: 1px solid gray;
+}
+.passmask{
+	background-color: #eeeeee;
+	border-left: 1px solid gray;
+	border-top: 1px solid gray;
+	border-right: 2px solid white;
+	border-bottom: 2px solid white;
+	margin: 0px;
+}
+.passmaskframe{
+	background-color: #969696;
+	margin: 0px;
+}
+.prompt{
+	color: maroon;
+	font-size: 16px;
+	font-weight: bold;
+}
+.warnprompt{
+	color: red;
+	font-size: 18px;
+	font-weight: bold;
+}
+.copyright {
+	font-size: 9px;
+}
+.wardname{
+	font-weight: bold;
+	color: green;
+}
+.wardlistrow1{
+	background-color: #efefef;
+}
+.wardlistrow2{
+	background-color: #dcdcdc;
+}
+.thinrow_vspacer{
+	height: 1px;
+	background-color: #666666;
+}
+.wardlisttitlerow{
+	background-color: #dddddd;
+	background-image: url(../../../gui/img/skin/default/backbrushed.gif);
+	font-weight: bold;
+}
+.photo_id{
+	background-color: #DDE1EC;
+	background-image: url(../../../gui/img/skin/default/backbrushed.gif);
+	border: 1px solid #999999;
+}
+.reg_div{
+	background-color: #66ee66;
+	background-image: url(../../../gui/img/skin/default/backbrushed.gif);
+	height: 5px;
+	border-bottom: 1px solid #333333;
+}
+.reg_item{
+	/* background-image: url(../../../gui/img/skin/default/tableheader_gr.gif);*/
+	background-color: #eeeeee;
+	padding: 2px 6px 2px 6px;
+	border-bottom: 1px solid green;
+}
+.reg_input{
+	background-color: #fefefe;
+	border-bottom: 1px solid #dddddd;
+	padding-left: 6px;
+}
+.reg_list_titlebar{
+	background-color: #eeeeee;
+	background-image: url(../../../gui/img/skin/default/backbrushed.gif);
+	color: #000066;
+}
+.adm_item{
+	background-image: url(../../../gui/img/skin/default/backbrushed.gif);
+	background-color: #dddddd;
+	padding: 2px 6px 2px 6px;
+}
+.adm_input{
+	background-color: #eeeeee;
+	padding-left: 6px;
+}
+.adm_div{
+	background-color: #00009c;
+	background-image: url(../../../gui/img/skin/default/backbrushed.gif);
+	height: 5px;
+	font-size: 16px;
+	font-weight: bold;
+	color: white;
+	border-bottom: 1px solid #333333;
+}
+.adm_list_titlebar{
+	background-image: url(../../../gui/img/skin/default/backbrushed.gif);
+	font-weight: bold;
+}
+/* for very important data to hilight e.g. first name, last name, bday */
+.vi_data{
+	font-weight: bold;
+	color: maroon;
+	padding: 2px 6px 2px 6px;
+}
+/* -- horizontal line -- */
+hr {
+	line-height: 1px;
+	color: teal;
+}
+/* elements, areas of saturday */
+.saturday{
+	background-color: #ffffcc;
+	padding-left: 6px;
+	padding-right:6px;
+}
+/* elements, areas of sunday */
+.sunday{
+	background-color: #ffff00;
+	color: red;
+	padding-left: 6px;
+	padding-right:6px;
+}
+/* elements, areas of a weekday */
+.weekday{
+	background-color: white;
+	padding-left: 6px;
+	padding-right:6px;
+}
+/* ---------- Form elements ---------------*/
+.form_element{
+	background: white;
+	border: 1px solid silver;
+	padding: 2px;
+	color: black;
+	margin-left: 5 px;
+}
+/*----- Registration search mask */
+.reg_searchmask{
+	background-color: #f3f3f3;
+}
+/*----- Registration search bordering block */
+.reg_searchmask_border{
+	background-image: url(../../../gui/img/skin/default/backbrushed.gif);
+}
+/*----- Admission search mask */
+.admit_searchmask{
+	background-color: #f3f3f3;
+}
+/*----- Admission search bordering block */
+.admit_searchmask_border{
+	background-color: #dfdfdf;
+}
+/* ---------- Links. Note: link colors are overridden by the user configuration ----*/
+a:link {text-decoration:none}
+a:visited {text-decoration:none}
+a:hover {text-decoration: underline;}
+a:active {text-decoration: none;}
+a:visited:active {text-decoration: none;}
+a:visited:hover {text-decoration: underline;}
+
