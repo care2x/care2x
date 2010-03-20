@@ -1,0 +1,13 @@
+/* Basic (NS4 friendly) styles are defined here */
+body {
+  background-color: #fff;
+  color: #000;
+  font-family: Verdana, Helvetica, Arial, sans-serif;
+  font-size: small;
+}
+.newhighlight {
+	color: #ff0000;
+	border: 1px dashed #000000;
+	background-color: #eeeeee;
+	padding: 2px;
+}
