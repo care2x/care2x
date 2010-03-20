@@ -1,0 +1,14 @@
+<?php
+
+require($root_path.'include/inc_credits_openwin.php');
+?>
+<FONT    SIZE=1  FACE="Arial" color=gray>
+ Cette application est actionn&eacute;e par <a href="http://www.care2x.com" target=_new>CARE 2002 version b&ecirc;ta 1.0.05</a>. Logiciel libre
+  &eacute;crit et distribu&eacute; gratuitement sous conditions de la GNU General Public License. Pour plus de d&eacute;tail sur cette licence, lisez la
+<a href="<?php echo $root_path ?>legal_gnu_gpl.htm" target=_new>copie de la licence</a> (en anglais).
+ Pour plus d'investigation veuillez contacter <a href=mailto:info@care2x.com>info@care2x.com</a>.
+ <p>
+<font size=1 face="arial">
+.:: <a href="<?php echo $root_path ?>language/fr/fr_privacy.html" target="pp"> Notre politique de discr&eacute;tion </a> ::
+ <a href="javascript:openCreditsWindow()"> Cr&eacute;dits </a> ::.<br></font>
+</FONT>

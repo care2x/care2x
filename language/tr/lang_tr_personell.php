@@ -1,0 +1,42 @@
+<?php
+$LDPlsFindPersonFirst='Lütfen önce kiþiyi bulunuz';
+$LDSearchPersonell='Bir çalýþaný ara';
+$LDPersonRegister='Kiþi kaydý';
+$LDShortID='Kýsa kimlik';
+$LDJobNr='Ýþ No';
+$LDJobFunction='Ýþ fonksiyonu';
+$LDDateJoin='Katýldýðý tarih';
+$LDDateExit='Ayrýldýðý tarih';
+$LDContractClass='Sözleþme tipi';
+$LDContractStart='Sözleþme baþlangýcý';
+$LDContractEnd='Sözleþme sonu';
+$LDPayClass='Ödeme kategorisi';
+$LDPaySubClass='Ödeme alt kategorisi';
+$LDLocalPremiumID='Yerel Bonus kategorisi';
+$LDTaxAccountNr='Vergi Hesap No:';
+$LDInternalRevenueCode='Ýç gelir kodu';
+$LDNrWorkDay='Çalýþma gün sayýsý';
+$LDNrWeekHour='Haftadaki saat sayýsý';
+$LDNrVacationDay='Tatil günü sayýsý';
+$LDMultipleEmployer='Birden fazla iþi var mý?';
+$LDPersonellNr='Sicil No.';
+$LDPersonCurrentlyEmployed='Kiþi halen çalýþmaktadýr';
+$LDRecordedBy='Kaydeden';
+$LDNrDependent='Bakmakla yükümlü olduðu kiþi sayýsý';
+$LDPersonellData='Çalýþanýn bilgileri';
+$LDEnterNewEmployment='Yeni bir çalýþan bilgisi gir';
+$LDRegNewPerson='Yeni kiþinin temel bilgilerini kaydet';
+$LDFindPersonell='Bir çalýþan bul';
+$LDPersonalID='Kimlik No';
+$LDAssignDoctorDept='Bir bölüme doktor olarak kaydet';
+$LDAssignNurseDept='Bir bölüme hemþire olarak kaydet';
+$LDAddPhoneInfo='Telefon/çaðrý bilgisi ekle';
+$LDOptions4Employee='Bu çalýþan için opsiyonlar';
+$LDPayrollOptions='Bordro opsiyonlarý';
+$LDLegalDocuments='Yasal belgeler';
+$LDShowPersonalData='Kiþisel verileri göster';
+/* 2003-05-17 EL */
+$LDEnterEmployeeSearchKey='Aranacak anahtar sözcüðü giriniz: örneðin Sicil no, ad veya soyad.';
+$LDPersonnelManagement='Personel Yönetimi';
+$LDNewEmployee='Yeni çalýþan';
+?>

@@ -1,0 +1,42 @@
+<?php
+$LDPlsFindPersonFirst='Cercare prima la persona';
+$LDSearchPersonell='Ricerca di un dipendente';
+$LDPersonRegister='Registrazione personale';
+$LDShortID='Identificativo corto';
+$LDJobNr='Matricola';
+$LDJobFunction='Funzione';
+$LDDateJoin='Data di assunzione';
+$LDDateExit='Data di cessazione';
+$LDContractClass='Tipo di contratto';
+$LDContractStart='Inizio contratto';
+$LDContractEnd='Fine contratto';
+$LDPayClass='Qualifica';
+$LDPaySubClass='Sottoqualifica';
+$LDLocalPremiumID='Local Bonus Category';
+$LDTaxAccountNr='Codice Fiscale';
+$LDInternalRevenueCode='Codice interno paghe';
+$LDNrWorkDay='N. di giorni lavorativi';
+$LDNrWeekHour='N. di ore per settimana';
+$LDNrVacationDay='N. di giornate di ferie';
+$LDMultipleEmployer='Svolge più di una funzione?';
+$LDPersonellNr='Matricola';
+$LDPersonCurrentlyEmployed='E\' un dipendente';
+$LDRecordedBy='Inserito da';
+$LDNrDependent='N. di dipendenti';
+$LDPersonellData='Dati dipendente';
+$LDEnterNewEmployment='Inserire nuovi dati dipendente';
+$LDRegNewPerson='Inserire nuovi dati personali';
+$LDFindPersonell='Ricerca per dipendente';
+$LDPersonalID='Matricola';
+$LDAssignDoctorDept='Assegna un MEDICO al reparto';
+$LDAssignNurseDept='Assegna un INFERMIERE/OSS al reparto';
+$LDAddPhoneInfo='Aggiungi numero telefono/cercapersone';
+$LDOptions4Employee='Opzioni per il dipendente';
+$LDPayrollOptions='Opzioni busta paga';
+$LDLegalDocuments='Documenti legali';
+$LDShowPersonalData='Mostra dati personali';
+/* 2003-05-17 EL */
+$LDEnterEmployeeSearchKey='Inserire i termini di ricerca: es. matricola, nome o cognome.';
+$LDPersonnelManagement='Gestione del personale';
+$LDNewEmployee='Nuovo dipendente';
+?>

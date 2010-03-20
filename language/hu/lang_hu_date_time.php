@@ -1,0 +1,29 @@
+<?php
+/* 2003-04-05 EL*/
+$LDMonthFullName=array('','Január','Február','Március','Április','Május','Június','Július','Augusztus','Szeptember','Október','November','December');
+$LDMonthShortName=array('','Jan','Febr','Márc','Ápr','Máj','Júni','Júli','Aug','Szept','Okt','Nov','Dec');
+$LDDayFullName=array('Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday');
+$LDDayShortName=array('H','K','Sze','Cs','P','Szo','V');
+$LDDate='Dátum';
+$LDTime='Idõ';
+$LDHour='Óra';
+$LDHours='Órák';
+$LDMinute='Perc';
+$LDMinutes='Percek';
+$LDSecond='Másodperc';
+$LDSeconds='Másodpercek';
+$LDmillisecond='milliszekundum';
+$LDmilliseconds='milliseconds';
+$LDmicrosecond='microsecond';
+$LDmicroseconds='microseconds';
+$LDDay='Nap';
+$LDWeek='Hét';
+$LDNoon='Dél';
+$LDEvening='Este';
+$LDNight='Éjszaka';
+#2003-11-11 EL
+$LD_ddpMMpyyyy='dd.mm.yyyy';
+$LD_yyyyhMMhdd='éééé-hh-nn';
+$LD_MMsddsyyyy='mm/dd/yyyy';
+$LD_ddsMMsyyyy='dd/mm/yyyy';
+?>

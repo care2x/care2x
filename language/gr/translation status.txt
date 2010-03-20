@@ -1,0 +1,59 @@
+Greek Translation Status    7.5%
+                          
+                                   | None | Incomplete | Perfect |
+/language/gr------------------------------------------------------
+gr_legal.htm                       |  X   |            |         |
+gr_privacy.htm                     |  X   |            |         |     
+gr_copyrite.php                    |      |            |    X    |
+gr_credits.php                     |      |            |    X    |
+lang_gr_abteilung.php              |  X   |            |         |
+lang_gr_actions.php                |  X   |            |         |
+lang_gr_ambulatory.php             |  X   |            |         |
+lang_gr_aufnahme.php               |  X   |            |         |
+lang_gr_billing.php                |  X   |            |         |
+lang_gr_checkdate.php              |  X   |            |         |
+lang_gr_chemlab_groups.php         |  X   |            |         |
+lang_gr_chemlab_params.php         |  X   |            |         |
+lang_gr_create_admin.php           |  X   |            |         |
+lang_gr_date_time.php              |  X   |            |         |
+lang_gr_db_msg.php                 |  X   |            |         |
+lang_gr_departments.php            |  X   |            |         |
+lang_gr_doctors.php                |  X   |            |         |
+lang_gr_drg.php                    |  X   |            |         |
+lang_gr_editor.php                 |  X   |            |         |
+lang_gr_edp.php                    |  X   |            |         |
+lang_gr_edp.php                    |  X   |            |         |
+lang_gr_finance.php                |  X   |            |         |
+lang_gr_help.php                   |  X   |            |         |
+lang_gr_images.php                 |  X   |            |         |
+lang_gr_indexframe.php             |  X   |            |         |
+lang_gr_intramail.php              |      |            |    X    |
+lang_gr_invalid-access-warning.php |      |     X      |         |
+lang_gr_konsil.php                 |  X   |            |         |
+lang_gr_konsil_baclabor.php        |  X   |            |         |
+lang_gr_konsil_chemlabor.php       |  X   |            |         |
+lang_gr_lab.php                    |  X   |            |         |
+lang_gr_legal.php                  |  X   |            |         |
+lang_gr_myintranet.php             |  X   |            |         |
+lang_gr_newscolumns.php            |  X   |            |         |
+lang_gr_newsdummy.php              |  X   |            |         |
+lang_gr_nursing.php                |  X   |            |         |
+lang_gr_obstetrics.php             |  X   |            |         |
+lang_gr_or.php                     |  X   |            |         |
+lang_gr_person.php                 |  X   |            |         |
+lang_gr_personell.php              |  X   |            |         |
+lang_gr_phone.php                  |  X   |            |         |
+lang_gr_place.php                  |  X   |            |         |
+lang_gr_products.php               |  X   |            |         |
+lang_gr_prompt.php                 |  X   |            |         |
+lang_gr_radio.php                  |  X   |            |         |
+lang_gr_search.php                 |  X   |            |         |
+lang_gr_specials.php               |  X   |            |         |
+lang_gr_startframe.php             |  X   |     X      |         |
+lang_gr_stdpass.php                |  X   |     X      |         |
+lang_gr_tech.php                   |  X   |            |         |
+roots.php                          |  X   |            |    X    |
+tags.php                           |  X   |            |    X    |
+gr_copyrite.php2                   |  X   |            |         |
+------------------------------------------------------------------
+TOTAL :                   53 files | 45   |     3      |    5    |         

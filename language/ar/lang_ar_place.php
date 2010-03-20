@@ -1,0 +1,47 @@
+<?php
+$LDPlace='ÇáãäØÞÉ';
+$LDAddress='ÇáÚäæÇä';
+$LDStreet='ÇáÔÇÑÚ';
+$LDStreetNr='ÑÞã ÇáÔÇÑÚ';
+$LDZipCode='ÑãÒ ÇáãäØÞÉ';
+$LDProvince='ÇáãÍáÉ';
+$LDCity='ÇáãÏíäÉ';
+$LDTown='ÇáÔÚÈíÉ';
+$LDCityTown='ÇáãÏíäÉ/ÇáÔÚÈíÉ';
+$LDRegion='ÇáãäØÞÉ';
+$LDCountry='ÇáÏæáÉ';
+$LDData='ÇáÊÇÑíÎ';
+$LDNewData='ÊÇÑíÎ ÌÏíÏ';
+$LDNewDataTxt='ÈíÇäÇÊ ÚäæÇä ÌÏíÏ';
+$LDUpdateData='ÊÍÏíË ÇáÊÇÑíÎ';
+$LDListAll='ÞÇÆãÉ Çáßá';
+$LDManager='ÇáãÏíÑ';
+$LDNeedEmptyFormPls='ÃÍÊÇÌ áäãæÏÌ ÝÇÑÛ';
+$LDEnterAllFields='íÌÈ ãáÆ ßá ÇáÍÞæá ÇáãÚáãÉ ÈÇáÚáÇãÉ <font color="red"><b>*</b></font>';
+$LDPlsCheckData='ÊÇßÏ ãä ÇáÊÇÑíÎ.';
+$LDPlsEnterInfo='íÑÌì ßÊÇÈÉ ÇáãÚáæãÇÊ';
+$LDListAllTxt='ÚÑÖ ÞÇÆãÉ Èßá ÈíÇäÇÊ ÇáÚäæÇä ÇáãÊæÝÑÉ';
+$LDSearch='ÈÍË';
+$LDSearchTxt='ÈÍË Úä ÈíÇäÇÊ ÚäæÇä';
+$LDNewCityTown='ãÏíäÉ/ÔÚÈíÉ ÌÏíÏÉ';
+$LDPlsEnterInfo='íÑÌì ßÊÇÈÉ ÇáãÚáæãÇÊ';
+$LDAlertNoCityTownName='ÅÓã ÇáãÏíäÉ/ÇáÔÚÈíÉ ãÝÞæÏ!';
+$LDCityTownName='ÃÓã ÇáãÏíäÉ/ÇáÔÚÈíÉ';
+$LDISOCountryCode='ÑãÒ ÇáÏæáÉ ÇáÚÇáãí ISO';
+$LDUNECELocalCode='ÑãÒ ÇáãæÞÚ ÇáÞíÇÓí UNECE';
+$LDUNECELocalCodeType='äæÚ ÑãÒ ÇáãæÞÚ ÇáÞíÇÓí UNECE';
+$LDUNECEModifier='ãÞíÇÓ UNECE';
+$LDUNECECoordinates='ÅÍÏËíÇÊ ÇáãÞíÇÓUNECE';
+$LDWebsiteURL='ãÚáæãÇÊ ÇáãæÞÚ ÇáÅáßÊÑæäí URL';
+$LDCityTownExists='ÅÓã ÇáãÏíäÉ ÇáãÏÎá ÓÈÞ æÌæÏå!';
+$LDDataNoSave='áã íÊã ÍÝÙ ÇáÈíÇäÇÊ ÇáãÏÎáÉ';
+$LDPlsChangeName='ÇáÑÌÇÁ ßÊÇÈÉ ÅÓã ãÎÊáÝ';
+$LDAddressNameExists='ÇáÚäæÇä ãæÌæÏãÓÈÞÇð';
+$LDAddressInfoSaved='Êã ÍÝÙ ÈíÇäÇÊ ÇáÚäæÇä ÈäÌÇÍ.';
+$LDSearchPrompt='ÇáÑÌÇÁ ßÊÇÈÉ ÇáÚäæÇä Ãæ ÑãÒ ÇáãäØÞÉ';
+#2004-09-02
+$LDWrongUneceLocCode = 'ÑãÒ ÇáãæÞÚ ÇáÞíÇÓí UNECE íÞÈá ÇáÃÑÞÇã ãä 0 Åá 99';
+$LDEnterZero = 'ÅÐÇ ßäÊ áÇ ÊÚÑÝ ÇáÞíãÉ ÃßÊÈ 0';
+$LDEnterISOCountryCode = 'íÑÌì ßÊÇÈÉ ÑãÒ ÇáÏæáÉ ÇáÚÇáãí ISO';
+$LDEnterQMark ='ÅÐÇ ßäÊ áÇ ÊÚáã ÑãÒ ÇáÏæáÉ ÇáÚÇáãí ÃßÊÈ ÇáÑãÒ (¿)';
+?>

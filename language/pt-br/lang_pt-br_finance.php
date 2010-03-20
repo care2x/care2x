@@ -1,0 +1,41 @@
+<?php
+/* 2003-04-27 EL */
+$LDInsuranceCo='Seguradora';
+$LDInsuranceCoName='Nome da Seguradora';
+$LDInsuranceCoID='ID da Seguradora';
+$LDMainPhoneNr='Telefone'; 
+$LDMainFaxNr='Fax';
+$LDAuxPhoneNr='Telefone (aux)'; 
+$LDAuxFaxNr='Fax (aux)';
+$LDAddress='Endereço Principal';
+$LDEmailAddress='Endereço de Email';
+$LDMailingAddress='Endereço Postal';
+$LDBillingAddress='Endereço Cobrança';
+$LDContactPerson='Pessoa para Contato';
+$LDContactPersonPhoneNr='Telefone do Contato';
+$LDContactPersonFaxNr='Fax do Contato';
+$LDContactPersonEmailAddr='Email do Contato';
+$LDPlsEnterInfo='Por favor, digite a informação';
+$LDAlertFirmID='A ID da seguradora não foi informada!';
+$LDAlertFirmName='O nome da seguradora não foi informado!';
+$LDAlertBillingAddress='O endereço de cobrança não foi informado!';
+$LDAlertMailingAddress='O endereço postal não foi informado!';
+$LDEnterAllFields='Por favor, preencha todos os campos marcados com <font color="red"><b>*</b></font>';
+$LDFirmID='ID Empresa';
+$LDNeedEmptyFormPls='Por favor, preciso de um formulário vazio.';
+$LDData='Informações';
+$LDNewData='Novas informações';
+$LDUpdateData='Atualizar informações';
+$LDListAll='Listar todos';
+$LDFirmExists='A ID da empresa seguradora já existe no banco de dados.';
+$LDDataNoSave='Os dados digitados não podem ser gravados.';
+$LDPlsChangeFirmID='Por favor, digite uma ID diferente';
+$LDFirmInfoSaved='As informações foram gravadas com sucesso.';
+$LDPlsCheckData='Por favor, cheque as informações.';
+$LDManager='Gerente';
+$LDNewDataTxt='Digite os novos dados da empresa de seguro';
+$LDListAllTxt='Liste todas as empresas de seguro disponíveis';
+$LDSearch='Busca';
+$LDSearchTxt='Busca por uma empresa de seguro';
+$LDSearchPrompt='Por favor digite a ID, email ou endereço da empresa';
+?>

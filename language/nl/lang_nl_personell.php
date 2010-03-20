@@ -1,0 +1,43 @@
+<?php
+$LDPlsFindPersonFirst='Zoek a.u.b. eerst de persoon';
+$LDSearchPersonell='Zoek een medewerker';
+$LDPersonRegister='Persoonsregistratie';
+$LDShortID='Korte persoonscode';
+$LDJobNr='Vacature nummer';
+$LDJobFunction='Functie';
+$LDDateJoin='Datum indiensttreding';
+$LDDateExit='Datum uitdiensttreding';
+$LDContractClass='Type aanstelling';
+$LDContractStart='Start aanstelling';
+$LDContractEnd='Einde aanstelling';
+$LDPayClass='Inschaling in schaal';
+$LDPaySubClass='Binnen schaal in periodiek';
+$LDLocalPremiumID='Bonus Categorie';
+$LDTaxAccountNr='SOFI nummer';
+$LDInternalRevenueCode='Interne doorbelasting code';
+$LDNrWorkDay='Werkdagen per week';
+$LDNrWeekHour='Uren per week';
+$LDNrVacationDay='Aantal vakantiedagen';
+$LDMultipleEmployer='Meerdere aanstellingen?';
+$LDPersonellNr='Personeels Nr.';
+$LDPersonCurrentlyEmployed='Persoon heeft op dit moment aanstelling';
+$LDRecordedBy='Vastgelegd door';
+$LDNrDependent='Aantal ondergeschikten';
+$LDPersonellData='Persoonlijke gegevens';
+$LDEnterNewEmployment='Voer gegevens nieuwe medewerker in';
+$LDRegNewPerson='Registreer van nieuwe persoon de basis gegevens';
+$LDFindPersonell='Vind medewerker';
+$LDPersonalID='Personeels code';
+$LDAssignDoctorDept='Wijs dokter toe aan afdeling ';
+$LDAssignNurseDept='Wijs verple(ger)(ester) toe aan afdeling';
+$LDAssignNurseDept='Aan afdeling toegewezen als verple(ger)(ster)';
+$LDAddPhoneInfo='Voeg telefoon/beeper info toe';
+$LDOptions4Employee='Opties voor deze medewerker';
+$LDPayrollOptions='Loonlijst opties';
+$LDLegalDocuments='Juridische  documenten';
+$LDShowPersonalData='Show personal data';
+/* 2003-05-17 EL */
+$LDEnterEmployeeSearchKey='Enter search keyword: e.g. Employment-Nr., first name, or family name.';
+$LDPersonnelManagement='Personnel Management';
+$LDNewEmployee='New employee';
+?>

@@ -1,0 +1,47 @@
+<?php
+$LDPlace='Local';
+$LDAddress='Endereço';
+$LDStreet='Rua';
+$LDStreetNr='Número';
+$LDZipCode='CEP';
+$LDProvince='Estado';
+$LDCity='Cidade';
+$LDTown='Bairro';
+$LDCityTown='Cidade';
+$LDRegion='Região';
+$LDCountry='País';
+$LDData='Dados';
+$LDNewData='Novos dados';
+$LDNewDataTxt='Entre o novo endereço';
+$LDUpdateData='Atualizar dados';
+$LDListAll='Listar todos';
+$LDManager='Gerente';
+$LDNeedEmptyFormPls='Por favor, preciso um formulário em branco.';
+$LDEnterAllFields='Por favor, preencha todos os campos marcados de <font color="red"><b>*</b></font>';
+$LDPlsCheckData='Por favor, cheque os dados.';
+$LDPlsEnterInfo='Por favor, digite as informações';
+$LDListAllTxt='Liste todos os endereço existentes';
+$LDSearch='Busca';
+$LDSearchTxt='Busca por um endereço';
+$LDNewCityTown='Nova Cidade';
+$LDPlsEnterInfo='Por favor, entre a informação';
+$LDAlertNoCityTownName='O nome da cidade não foi informado.';
+$LDCityTownName='Nome da Cidade';
+$LDISOCountryCode='Código ISO do País';
+$LDUNECELocalCode='Código UNECE de Localidade';
+$LDUNECELocalCodeType='Tipo de Código UNECE de Localidade';
+$LDUNECEModifier='Modificador UNECE';
+$LDUNECECoordinates='Coordenadas UNECE';
+$LDWebsiteURL='Website URL';
+$LDCityTownExists='O nome da cidade informado já é existente.';
+$LDDataNoSave='A informação digitada não pode ser gravada.';
+$LDPlsChangeName='Por favor, digite um nome diferente';
+$LDAddressNameExists='Este endereço já existe.';
+$LDAddressInfoSaved='O endereço foi gravado com sucesso.';
+$LDSearchPrompt='Por favor entre um endereço ou código de localidade';
+#2004-09-02
+$LDWrongUneceLocCode = 'UNECE location code type accepts only numbers between 0 and 99.';
+$LDEnterZero = 'If you do not know the value please enter 0';
+$LDEnterISOCountryCode = 'Please enter the ISO country code.';
+$LDEnterQMark ='If you do not know the code please enter a question mark (?)';
+?>

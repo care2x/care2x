@@ -1,0 +1,41 @@
+<?php
+/* 2003-04-27 EL */
+$LDInsuranceCo='Companie d\'assurance';
+$LDInsuranceCoName='Nom de la compagnie d\'assurance';
+$LDInsuranceCoID='Numéro d\'assuranceInsurance company ID';
+$LDMainPhoneNr='Nr. de téléphone'; 
+$LDMainFaxNr='Nr. de fax';
+$LDAuxPhoneNr='Numéro de téléphone (aux)'; 
+$LDAuxFaxNr='Numéro de Fax (aux)';
+$LDAddress='Adresse principale';
+$LDEmailAddress='Adresse E-mail';
+$LDMailingAddress='Adresse de Mailing';
+$LDBillingAddress='Adresse de facturation';
+$LDContactPerson='Personne à contacter';
+$LDContactPersonPhoneNr='Numéro de téléphone de la personne à contacter';
+$LDContactPersonFaxNr='Numéro de Fax de la personne à contacter';
+$LDContactPersonEmailAddr='Adresse E-mail de la personne à contacter';
+$LDPlsEnterInfo='Svp, entrez les informations';
+$LDAlertFirmID='Le n uméro de la compagnie d\'assurance est absent!';
+$LDAlertFirmName='La nom de la compagnie d\assurance est absent!';
+$LDAlertBillingAddress='L\'adresse de facturation est absente!';
+$LDAlertMailingAddress='L\'adresse de Mailing est absente!';
+$LDEnterAllFields='Svp, remplissez tous les champs marqués par <font color="red"><b>*</b></font>';
+$LDFirmID='ID de la compagnie';
+$LDNeedEmptyFormPls='J`ai beson d\'un formulaire vierge';
+$LDData='Donnée';
+$LDNewData='Nouvelle donnée';
+$LDUpdateData='Mettre à jour les données';
+$LDListAll='Tous afficher';
+$LDFirmExists='Ce numéro de compagnie d\assurance existe dèjà dans la base de donnée.';
+$LDDataNoSave='Les sonnées entrées ne peuvent pas être sauvegardées.';
+$LDPlsChangeFirmID='Svp, entrez un numéro de compagnie différent';
+$LDFirmInfoSaved='Les données de la compagnie ont été  mise à jour avec sucès.';
+$LDPlsCheckData='Svp, vérifier les données.';
+$LDManager='Gèrer';
+$LDNewDataTxt='Entrez de nouvelles données pour la compagnie d\'assurance';
+$LDListAllTxt='Afficher toutes les compagnies d\'assurance disponibles';
+$LDSearch='Rechercher';
+$LDSearchTxt='Rechercher une compagnie d\'assurance';
+$LDSearchPrompt='Svp, entrez un nom de compagnie d\'assurance, un ID ou une adresse E-mail.';
+?>

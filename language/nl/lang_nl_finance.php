@@ -1,0 +1,41 @@
+<?php
+/* 2003-04-27 EL */
+$LDInsuranceCo='Verzekeringsmaatschappij';
+$LDInsuranceCoName='Naam verzekeringsmaatschappij';
+$LDInsuranceCoID='ID verzekeringsmaatschappij';
+$LDMainPhoneNr='Tel. Nr.'; 
+$LDMainFaxNr='Fax Nr.';
+$LDAuxPhoneNr='Tel. Nr. (aux)'; 
+$LDAuxFaxNr='Fax Nr. (aux)';
+$LDAddress='Hoofd adres';
+$LDEmailAddress='Email Adres';
+$LDMailingAddress='Mailing Adres';
+$LDBillingAddress='Factuur Adres';
+$LDContactPerson='Contact persoon';
+$LDContactPersonPhoneNr='Tel. contactpersoon';
+$LDContactPersonFaxNr='Fax contactpersoon';
+$LDContactPersonEmailAddr=' Email Adres contactpersoon.';
+$LDPlsEnterInfo='Vul aub de informatie in';
+$LDAlertFirmID='Het ID van de verzekeringsmaatschappij is niet aanwezig!';
+$LDAlertFirmName='De naam van de verzekeringsmaatschappij is niet aanwezig!';
+$LDAlertBillingAddress='Het factuur adres is niet aanwezig!';
+$LDAlertMailingAddress='Het mailing adres is niet aanwezig!';
+$LDEnterAllFields='Vul aub alle velden in gemarkeerd met <font color="red"><b>*</b></font>';
+$LDFirmID='Firma ID';
+$LDNeedEmptyFormPls='Nieuwe invoeren.';
+$LDData='Gegevens';
+$LDNewData='Nieuwe gegevens';
+$LDUpdateData='Update gegevens';
+$LDListAll='Alle weergeven';
+$LDFirmExists='Het ID van verzekeringsmaatschappij bestaat al.';
+$LDDataNoSave='De ingevoerde gegevens kunnen niet worden opgeslagen.';
+$LDPlsChangeFirmID='Vul aub een andere firma ID in';
+$LDFirmInfoSaved='De firma gegevens zijn opgeslagen.';
+$LDPlsCheckData='Controleer aub de gegevens.';
+$LDManager='Manager';
+$LDNewDataTxt='Voer nieuwe gegevens in verzekering maatschappij';
+$LDListAllTxt='Geef alle verzekeringsmaatschappijen weer';
+$LDSearch='Zoeken';
+$LDSearchTxt='Zoeken naar een verzekeringsmaatschappij';
+$LDSearchPrompt='Vul aub naam, ID of email adres van firma in';
+?>

@@ -1,0 +1,13 @@
+<?php
+
+require($root_path.'include/inc_credits_openwin.php');
+?>
+<FONT    SIZE=1  FACE="Arial" color=gray>
+ Bu uygulama <a href="http://www.care2x.com" target=_new>CARE 2002 beta sürüm 1.0.05</a>. Bir açýk kaynak yazýlýmý olup  GNU General Public License ile serbest olarak yazýlýp daðýtýlmaktadýr. Lisans detaylarý 
+ <a href="<?php echo $root_path ?>legal_gnu_gpl.htm" target=_new>lisans dosyasýndadýr</a>. 
+ Daha fazla bilgi için lütfen <a href=mailto:info@care2x.com>info@care2x.com</a> adresine yazýnýz.
+ <p>
+<font size=1 face="arial">
+.:: <a href="<?php echo $root_path ?>language/tr/trn_privacy.htm" target="pp"> Gizlilik politikamýz </a> :: 
+ <a href="javascript:openCreditsWindow()"> Yazarlar </a> ::.<br></font>
+</FONT>

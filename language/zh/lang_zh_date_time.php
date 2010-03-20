@@ -1,0 +1,29 @@
+<?php
+/* 2003-04-05 EL*/
+$LDMonthFullName=array('','一月','二月','三月','四月','五月','六月','七月','八月','九月','十月','十一月','十二月');
+$LDMonthShortName=array('','一月','二月','三月','四月','五月','六月','七月','八月','九月','十月','十一月','十二月');
+$LDDayFullName=array('星期一','星期二','星期三','星期四','星期五','星期六','星期日');
+$LDDayShortName=array('一','二','三','四','五','六','日');
+$LDDate='日期';
+$LDTime='时间';
+$LDHour='时';
+$LDHours='时';
+$LDMinute='分';
+$LDMinutes='分';
+$LDSecond='秒';
+$LDSeconds='秒';
+$LDmillisecond='毫秒';
+$LDmilliseconds='毫秒';
+$LDmicrosecond='微秒';
+$LDmicroseconds='微秒';
+$LDDay='日';
+$LDWeek='周';
+$LDNoon='中午';
+$LDEvening='晚上';
+$LDNight='夜间';
+#2003-11-11 EL
+$LD_ddpMMpyyyy='日.月.年';
+$LD_yyyyhMMhdd='年-月-日';
+$LD_MMsddsyyyy='月/日/年';
+$LD_ddsMMsyyyy='日/月/年';
+?>

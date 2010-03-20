@@ -1,0 +1,41 @@
+<?php
+/* 2003-04-27 EL */
+$LDInsuranceCo='Versicherer';
+$LDInsuranceCoName='Firmenname';
+$LDInsuranceCoID='Firmenkennung';
+$LDMainPhoneNr='Telefon-Nr.'; 
+$LDMainFaxNr='Fax-Nr.';
+$LDAuxPhoneNr='Telefon-Nr. 2'; 
+$LDAuxFaxNr='Fax-Nr. 2';
+$LDAddress='Firmenadresse';
+$LDEmailAddress='Email-Adresse';
+$LDMailingAddress='Postadresse';
+$LDBillingAddress='Abrechungsadresse';
+$LDContactPerson='Kontaktperson';
+$LDContactPersonPhoneNr='Telefon-Nr. d. Kontaktperson';
+$LDContactPersonFaxNr='Fax-Nr. d. Kontaktperson';
+$LDContactPersonEmailAddr='Email-Adresse d. Kontaktperson';
+$LDPlsEnterInfo='Bitte geben Sie die Information ein.';
+$LDAlertFirmID='Die Firmenkennung fehlt!';
+$LDAlertFirmName='Der Firmenname fehlt!';
+$LDAlertBillingAddress='Die Abrechnungsadresse fehlt!';
+$LDAlertMailingAddress='Die Postadresse fehlt!';
+$LDEnterAllFields='Bitte füllen Sie alle mit <font color="red"><b>*</b></font> gekenzeichneten Feldern aus';
+$LDFirmID='Firmenkennung';
+$LDNeedEmptyFormPls='Ich brauche bitte ein neues Formular.';
+$LDData='Daten';
+$LDNewData='Neue Daten';
+$LDUpdateData='Daten aktualisieren';
+$LDListAll='Alle auflisten';
+$LDFirmExists='Die Firmenkennung existiert bereits.';
+$LDDataNoSave='Die Eingaben können nicht gespeichert werden.';
+$LDPlsChangeFirmID='Bitte geben Sie eine andere Firmenkennung ein';
+$LDFirmInfoSaved='Die Firmendaten wurden erfolgreich gespeichert.';
+$LDPlsCheckData='Bitte überprüfen Sie noch mal die Daten.';
+$LDManager='Verwalter';
+$LDNewDataTxt='Eingabe von neuen Versichererdaten';
+$LDListAllTxt='Alle vorhanden Versicherungsfirmen auflisten';
+$LDSearch='Suchen';
+$LDSearchTxt='Nach einer Versicherungsfirma suchen';
+$LDSearchPrompt='Bitte geben Sie einen Firmennamen oder Firmenkennung ein';
+?>

@@ -1,0 +1,11 @@
+<?php
+require($root_path.'include/inc_credits_openwin.php');
+?>
+<FONT    SIZE=1  FACE="Arial" color=gray>
+ 本应用程序为 <a href="http://www.care2x.com" target=_new>CARE 2002 beta version 1.0.08</a>。本程序的编制和分发遵循GNU(General Public License)协议。关于此开发源代码协议的详细信息参见 <a href="<?php echo $root_path ?>legal_gnu_gpl.htm" target=_new>此协议的副本</a>。
+ 如有其它要求，请联络 <a href=mailto:info@care2x.com>info@care2x.com</a>。
+ <p>
+<font size=1 face="arial">.::
+<a href="<?php echo $root_path ?>language/zh/zh_privacy.htm" target="pp"> 隐私声明 </a>::
+<a href="javascript:openCreditsWindow()"> 鸣谢 </a>::.
+<br></font></FONT>

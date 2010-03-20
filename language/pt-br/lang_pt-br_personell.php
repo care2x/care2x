@@ -1,0 +1,42 @@
+<?php
+$LDPlsFindPersonFirst='Favor procurar a pessoa primeiro';
+$LDSearchPersonell='Procurar por um funcionário';
+$LDPersonRegister='Registro pessoal';
+$LDShortID='ID';
+$LDJobNr='Nr da função';
+$LDJobFunction='Funçõa';
+$LDDateJoin='Data de entrada';
+$LDDateExit='Data de saída';
+$LDContractClass='Tipo de contrado';
+$LDContractStart='Início do contrato';
+$LDContractEnd='Final do contrato';
+$LDPayClass='Categoria de pagamento';
+$LDPaySubClass='Sub-categoria de pagamento';
+$LDLocalPremiumID='Categoria de bonus local';
+$LDTaxAccountNr='Nr da conta de impostos';
+$LDInternalRevenueCode='Códigoi interno da receita';
+$LDNrWorkDay='Nr. de horas';
+$LDNrWeekHour='Nr. de horas semanais';
+$LDNrVacationDay='Nr. de dias em férias';
+$LDMultipleEmployer='Multiplas funções?';
+$LDPersonellNr='Fucionário Nr.';
+$LDPersonCurrentlyEmployed='Está pessoa é um atual funcionário';
+$LDRecordedBy='Registrado por';
+$LDNrDependent='Nr. de dependentes';
+$LDPersonellData='Dados do funcionário';
+$LDEnterNewEmployment='Digitar novo dado do funcionário';
+$LDRegNewPerson='Registrar nova pessoa com informações básicas';
+$LDFindPersonell='Procurar um funcionário';
+$LDPersonalID='ID pessoal';
+$LDAssignDoctorDept='Designar como MÉDICO para um departameto';
+$LDAssignNurseDept='Designar como ENFERMEIRA para um departameto';
+$LDAddPhoneInfo='Adicionar Fone/beeper';
+$LDOptions4Employee='Opções para este funcionário';
+$LDPayrollOptions='Opções da folha de pagamento';
+$LDLegalDocuments='Documentos legais';
+$LDShowPersonalData='Exibir dados pessoais';
+/* 2003-05-17 EL */
+$LDEnterEmployeeSearchKey='Digite uma palavra-chave: ex. Funcionário-Nr., nome ou sobrenome.';
+$LDPersonnelManagement='Gerenciamento pessoal';
+$LDNewEmployee='Novo funcionário';
+?>

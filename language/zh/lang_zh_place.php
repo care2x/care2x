@@ -1,0 +1,47 @@
+<?php
+$LDPlace='地点';
+$LDAddress='地址';
+$LDStreet='街道';
+$LDStreetNr='街道号';
+$LDZipCode='邮政编码';
+$LDProvince='省';
+$LDCity='市';
+$LDTown='县';
+$LDCityTown='市/县';
+$LDRegion='区';
+$LDCountry='国家';
+$LDData='数据';
+$LDNewData='新数据';
+$LDNewDataTxt='输入新的地址';
+$LDUpdateData='更新数据';
+$LDListAll='全部显示';
+$LDManager='Manager';
+$LDNeedEmptyFormPls='请提供一张空表格。';
+$LDEnterAllFields='请全部填写注有 <font color="red"><b>*</b></font> 标志的字段。';
+$LDPlsCheckData='请检查数据。';
+$LDPlsEnterInfo='请输入资料';
+$LDListAllTxt='显示所有有效的地址资料';
+$LDSearch='搜索';
+$LDSearchTxt='搜索地址资料';
+$LDNewCityTown='新的市/县';
+$LDPlsEnterInfo='请输入资料';
+$LDAlertNoCityTownName='市/县名称未填写。';
+$LDCityTownName='市/县名称';
+$LDISOCountryCode='ISO国家编码';
+$LDUNECELocalCode='UNECE 位置编码';
+$LDUNECELocalCodeType='UNECE 位置编码类型';
+$LDUNECEModifier='UNECE Modifier';
+$LDUNECECoordinates='UNECE 坐标';
+$LDWebsiteURL='Info Website URL';
+$LDCityTownExists='输入的市/县名称已存在。';
+$LDDataNoSave='输入的数据不能保存。';
+$LDPlsChangeName='请输入一个不同的名称';
+$LDAddressNameExists='此地址已存在。';
+$LDAddressInfoSaved='此地址数据已成功保存。';
+$LDSearchPrompt='请输入地址或位置编码';
+#2004-09-02
+$LDWrongUneceLocCode = 'UNECE location code type accepts only numbers between 0 and 99.';
+$LDEnterZero = 'If you do not know the value please enter 0';
+$LDEnterISOCountryCode = 'Please enter the ISO country code.';
+$LDEnterQMark ='If you do not know the code please enter a question mark (?)';
+?>
