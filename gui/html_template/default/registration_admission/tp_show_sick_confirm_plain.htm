@@ -1,0 +1,105 @@
+<!--  This form design is heavily based on the standard german form "Arbeitsunfähigkeitsbescheinigung"  -->
+<table border=0 cellpadding=0 cellspacing=0 bgcolor="#ffffff" width=450>
+	<tr>
+	<td>
+	<table border=0 cellspacing=1 cellpadding=0 width=100%>
+  		<tr >
+    	<td bgcolor="#ffffff">
+			<table border=0 cellspacing=1 width=100% cellpadding=0>
+    			<tr bgcolor="#ffffff">
+      		 		<td>&nbsp;</td>
+      		 		<td><FONT    SIZE=2  FACE="Arial" color="#ffffff">&nbsp;$TP_insco_2</td>
+      		 		<td><FONT    SIZE=2  FACE="Arial" color="#ffffff">&nbsp;$TP_insco_3</td>
+      		 		<td><FONT    SIZE=2  FACE="Arial" color="#ffffff">&nbsp;$TP_insco_4</td>
+      		 		<td><FONT    SIZE=2  FACE="Arial" color="#ffffff">&nbsp;$TP_insco_5</td>
+      		 		<td><FONT    SIZE=2  FACE="Arial" color="#ffffff">&nbsp;$TP_insco_6</td>
+    			</tr>
+    			<tr bgcolor="#ffffff">
+      		 		<td colspan=6><FONT    SIZE=2  FACE="Arial">&nbsp;
+			 		$TP_enc_insurance_nr
+			 		</td>
+    			</tr>
+    			<tr bgcolor="#ffffff">
+      		 		<td colspan=6><FONT    SIZE=2  FACE="Arial">&nbsp;
+			 		$TP_enc_insurance_name
+			 		</td>
+    			</tr>
+    			<tr bgcolor="#ffffff">
+      		 		<td colspan=6><FONT    SIZE=2  FACE="Arial">&nbsp;
+			 		$TP_enc_insurance_subarea
+			 		</td>
+    			</tr>
+    			<tr bgcolor="#ffffff">
+      				<td colspan=6><FONT    SIZE=2  FACE="Arial">&nbsp;<br>&nbsp;
+					$title<br>&nbsp;
+					$name_last, $name_first<br>&nbsp;
+					$TP_date_birth
+					<p>
+					</td>
+    			</tr>
+  			</table>
+  		
+		</td>
+    	<td bgcolor="#ffffff" valign="top"><FONT    SIZE=3  FACE="Arial" color="#ff9966">
+			<center>
+			&nbsp;</font><br><FONT    SIZE=2  FACE="Arial">
+			<img $TP_care_logo>
+			<nobr>$TP_main_address</nobr>
+			</font>
+			</font>
+			</center>
+			<p>
+			<FONT    SIZE=1  FACE="Arial" color="#ff9966">
+			&nbsp;
+			</font>
+		</td>
+  		</tr>
+  		<tr bgcolor="#ffffff">
+	    <td colspan=1><FONT    SIZE=2  FACE="Arial" color="#ff9966">&nbsp;
+			&nbsp;<br>&nbsp;
+			<font color="#000000">
+			$TP_date_end
+			</font>
+			<br>&nbsp;
+  			&nbsp;
+			<br>&nbsp;
+			<font color="#000000">
+			$TP_date_start
+			</font>
+			<br>&nbsp;
+			&nbsp;
+			<br>&nbsp;
+			<font color="#000000">
+			$TP_date_confirm
+			</font>
+			</font>
+  			<br>&nbsp;
+		</td>
+    	<td bgcolor="#ffffff" valign="bottom" align="center">
+			<img src="$TP_dept_logo" $TP_width $TP_heigth><br>
+			<FONT    SIZE=1  FACE="Arial">
+			$TP_dept_sigstamp
+			</font>
+		</td>
+		</tr>
+		
+    	<tr bgcolor="#ffffff">
+      	<td colspan=2 valign="top"><FONT    SIZE=1  FACE="Arial" color="#ff9966">&nbsp;
+			&nbsp;
+			</font>
+			<br>&nbsp;
+			<FONT    SIZE=2  FACE="Arial" color="#ff9966">
+			&nbsp;
+			<br>&nbsp;
+			<font color="#000000">
+			$TP_diagnosis
+			</font>
+			</font>
+			&nbsp;
+			<p>
+		</td>
+    	</tr>
+		</table>	
+	</td>
+	</tr>
+</table>
