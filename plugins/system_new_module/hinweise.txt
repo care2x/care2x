@@ -1,0 +1,16 @@
+<title>hello</title>
+Ihr neues Modul ist beinahe fertig.
+<h3>Dieser Hinweis ist momentan nur in deutsch verfügbar.</h3>
+<h3>This hint is avaiable in german only at the moment</h3>
+Damit die Rechte für die Benutzer dieses Moduls gesetzt werden können, sind folgende
+Anpassungen notwendig:
+
+- Öffnen sie die Datei areas_allow.php im Ordner /global_conf.
+   Hier muss am Ende ein Eintrag erfolgen.
+- Ensprechend in den Unterordnern con /global_conf/de z.B. die 
+  Sprachdatei accessplan_areas.php, muss ebenfalls nen Eintrag erhalten damit man
+  im anderen Menü unter EDV die Rechte für dieses Modul "test" setzten kann.
+
+Somit ist das neue Modul auch zugriffsgesichert, und relativ einfach erweiterbar, was 
+Untermenüs betrifft.
+	
