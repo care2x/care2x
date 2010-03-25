@@ -24,7 +24,8 @@ class smarty_care extends Smarty {
 	var $default_template='default';
 
 	var $sDocRoot;
-
+	var $templateCache;
+	
 	var $root_path;
 	var $LDCloseAlt;
 	var $cfg;
@@ -52,6 +53,8 @@ class smarty_care extends Smarty {
 		
 		# Path to the smarty care templates and classes
 		$this->sDocRoot = $root_path.'gui/smarty_template';
+		# Path to the template cache
+		$this->templateCache = $root_path.'cache/templates_c';
 
 		# Set the template
 		# First check if the user config template is available
@@ -78,9 +81,6 @@ class smarty_care extends Smarty {
 			}
 		}
 
-		# Last check if the template directory does not exist, use default template (last resort)
-		//if(!file_exists("$this->sDocRoot/tempates/$this->templatedir/.")) $this->templatedir=$this->default_template;
-
 		# Set the flags
 		$this->bInitGUI = $bInit;
 		$this->bShowCopyright = $bShowCopy;
@@ -96,30 +96,26 @@ class smarty_care extends Smarty {
 
 		if(file_exists($this->sDocRoot."/templates/$this->templatedir/$dirname/.")){
 			$this->template_dir = $this->sDocRoot."/templates/$this->templatedir";
-			//$this->compile_dir = $this->sDocRoot."/templates_c/$this->templatedir/$dirname";
-			$this->compile_dir = $this->sDocRoot."/templates_c/$this->templatedir";
+			$this->compile_dir = $this->templateCache."/$this->templatedir";
 		}else{
 			$this->template_dir = $this->sDocRoot."/templates/$this->default_template";
-			//$this->compile_dir = $this->sDocRoot."/templates_c/$this->default_template/$dirname";
-			$this->compile_dir = $this->sDocRoot."/templates_c/$this->default_template";
+			$this->compile_dir = $this->templateCache."/$this->default_template";
 		}
 
 		$this->config_dir = $this->sDocRoot.'/configs';
-		$this->cache_dir = $this->sDocRoot.'/cache';
+		$this->cache_dir = $this->templateCache.'/cache';
 
 		# For temporary debugging
-		 if(0){
+/*		 if(0){
 			echo  $this->template_dir."<p>";
 			echo  $this->compile_dir."<p>";
 			echo  $this->config_dir."<p>";
 			echo  $this->cache_dir."<p>";
 		 }
-		/**
-		* global configs
+		/***/
+		/* global configs
 		*/
-		$Logo = $this->root_path.'classes/Smarty-2.6.19/misc/smarty_icon.gif';
 
-		//$this->assign("SmartyLogo","<a href='http://smarty.php.net/'><img src='$Logo' border='00' height='31' width='88' /></a>");
 		$this->debug = true;
 		// $this->caching = true;
 
@@ -150,8 +146,8 @@ class smarty_care extends Smarty {
 		
 		if($this->bLoadJS){
 			ob_start();
-				include($this->root_path.'include/inc_js_gethelp.php');
-				include($this->root_path.'include/inc_css_a_hilitebu.php');
+				include($this->root_path.'include/core/inc_js_gethelp.php');
+				include($this->root_path.'include/core/inc_css_a_hilitebu.php');
 				$sTemp = ob_get_contents();
 			ob_end_clean();
 		}
@@ -189,7 +185,7 @@ class smarty_care extends Smarty {
 		//$this->assign('sToolbarTitle','');
 
 		# By default the window title is Care2x
-		 $this->assign('title','Care2x');
+		 $this->assign('title','SIIS');
 
 		# For the dhtml effects
 
@@ -198,7 +194,7 @@ class smarty_care extends Smarty {
 			# Overload css  document body attributes
 			
 			$this->assign('bgcolor','bgcolor='.$this->cfg['body_bgcolor']);
-			$this->assign('dhtml','style="filter:alpha(opacity=70)" onMouseover="hilite(this,1)" onMouseOut="hilite(this,0)"');
+			$this->assign('dhtml','class="fadedOut"');
 			$this->assign('sLinkColors','link='.$this->cfg['idx_txtcolor'].' alink='.$this->cfg['body_alink'].' vlink='.$this->cfg['idx_txtcolor']);
 		}
 
@@ -219,7 +215,7 @@ class smarty_care extends Smarty {
 		ob_start();
 			$sTempFile=$this->root_path.'language/'.$this->lang.'/'.$this->lang.'_copyrite.php';
 			if(file_exists($sTempFile)) include($sTempFile);
-			else include($this->root_path.'language/en/en_copyrite.php');
+			else include($this->root_path.'language/sq/sq_copyrite.php');
 			$sTemp = ob_get_contents();
 		ob_end_clean();
 		return "<div class=\"copyright\">$sTemp</div>";

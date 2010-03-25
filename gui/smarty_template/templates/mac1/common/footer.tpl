@@ -1,3 +1,0 @@
-<!--  {{$SmartyLogo}} -->
-</BODY>
-</HTML>
