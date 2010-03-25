@@ -1,0 +1,20 @@
+To proceed you have to
+enter some hospital services like Rooms, Nursing, Oxygen or whatever.
+Similarly enter Lab services like Blood test, Urine test etc with their
+codes and unit costs and discounts. Then from the menu search for a patient
+and select hospital or lab services used by that patient. The data you
+entered will be shown in the appropriate tables.
+
+After a patient uses a service it will be reflected in his bill under view
+bill section. All the items that are shown in the bill will remain as
+unbilled until the user saves or prints the bill. Similarly the user can
+accept payments from patients at any time. A bill shows the total amount for
+the items, and outstanding amount and amount due (bill+outstanding). The
+outstanding amount is calculated as total billed (saved bill) amount till
+the last bill minus total payments recieved. So if one has paid advance then
+the outstanding is shown as zero an total due comes as negative.
+
+The final bill can be generated only after all services that the patient
+used has been billed.
+----------------------------------------
+eComBill by www.ecomscience.com (April 2003)
