@@ -1,0 +1,170 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>XML-RPC Library - a Beginners Guide</title>
+
+<link rel="stylesheet" href="beginners.php_files/basic.css" type="text/css">
+<style type="text/css" media="screen">
+@import "http://www.incutio.com/css/layout.css";
+.leftmenu ul {
+    margin: 0px;
+    padding: 0px 0px 10px 15px;
+    list-style-type: square;
+}
+h3 {
+    margin-bottom: 1em;
+}
+dl {
+    width: 80%;
+    margin-left: 10px;
+}
+dt {
+    font-weight: bold;
+    line-height: 1.4em;
+}
+pre {
+    margin: 15px;
+    padding: 10px;
+    border: 1px dashed #ccc;
+    color: #006;
+}
+</style></head>
+
+<body>
+<div id="Header"><img id="IncutioLogo" src="beginners.php_files/incutiologo.gif" alt="Logo: Incutio Limited, Be Inspired"><img id="ScriptsLogo" src="beginners.php_files/scriptslogo.gif" alt="scripts.incutio.com"><div style="clear: both;"></div></div>
+<div id="TopNavBar">
+<a href="http://www.incutio.com/">INCUTIO HOME</a><span> | </span>
+<a href="http://scripts.incutio.com/">SCRIPTS</a><span> | </span>
+<a href="http://www.incutio.com/contact/">CONTACT</a>
+</div>
+<div id="MainContentCell">
+	<div id="MainBodyContent">
+
+<p><a href="http://scripts.incutio.com/xmlrpc/manual.php">Manual Index</a></p>
+
+<h2>XML-RPC with the Incutio PHP Library: A Beginner's Guide</h2>
+
+<p>XMP-RPC stands for XML Remote Procedure Calling. It is a protocol for making and receiving procedure calls over the internet.</p>
+
+<p>What this means is that different computers can use XML-RPC to "ask
+each other questions". Using XML-RPC is just like making a function
+call in PHP, only the computer that executes the function could be
+thousands of miles away.</p>
+
+<p>With the Incutio XML-RPC Library, making and receiving XML-RPC
+requests is almost as simple as calling native PHP functions. Here's
+some sample code, which calls a function entitled "test.getTime" on our
+simple demonstration server:</p>
+
+<pre>$client = new IXR_Client('http://scripts.incutio.com/xmlrpc/simpleserver.php');
+$client-&gt;query('test.getTime');
+print $client-&gt;getResponse();
+// Prints the current time, according to our web server
+</pre>
+
+<p>With error checking, the above code looks like this:</p>
+
+<pre>$client = new IXR_Client('http://scripts.incutio.com/xmlrpc/simpleserver.php');
+if (!$client-&gt;query('test.getTime')) {
+   die('An error occurred - '.$client-&gt;getErrorCode().":".$client-&gt;getErrorMessage());
+}
+print $client-&gt;getResponse();
+</pre>
+
+<p>You can also send arguments along with your queries:</p>
+
+<pre>$client = new IXR_Client('http://scripts.incutio.com/xmlrpc/server.php');
+if (!$client-&gt;query('test.add', 4, 5)) {
+   die('An error occurred - '.$client-&gt;getErrorCode().":".$client-&gt;getErrorMessage());
+}
+print $client-&gt;getResponse();
+// Prints '9'
+</pre>
+
+<p>Arguments are not limited to simple values. You can send strings and arrays as well:</p>
+
+<pre>$client = new IXR_Client('http://scripts.incutio.com/xmlrpc/server.php');
+if (!$client-&gt;query('test.addArray', array(3, 5, 7))) {
+   die('An error occurred - '.$client-&gt;getErrorCode().":".$client-&gt;getErrorMessage());
+}
+print $client-&gt;getResponse();
+// Prints '3 + 5 + 7 = 15'
+</pre>
+
+<p>Writing an XML-RPC server is simple as well. Here's the full code for <code>simpleserver.php</code>:</p>
+
+<pre>&lt;?php
+
+include('IXR_Library.inc.php');
+
+/* Functions defining the behaviour of the server */
+
+function getTime($args) {
+    return date('H:i:s');
+}
+
+function add($args) {
+    return $args[0] + $args[1];
+}
+
+function addArray($array) {
+    $total = 0;
+    foreach ($array as $number) {
+        $total += $number;
+    }
+    return implode(' + ', $array).' = '.$total;
+}
+
+/* Create the server and map the XML-RPC method names to the relevant functions */
+
+$server = new IXR_Server(array(
+    'test.getTime' =&gt; 'getTime',
+    'test.add' =&gt; 'add',
+    'test.addArray' =&gt; 'addArray'
+));
+
+?&gt;
+</pre>
+
+<p>Pretty simple huh?</p>
+
+<p>The Incutio XML-RPC Library can do a lot more than is demonstrated above. Be sure to read the manual for more information.</p>
+
+	<div id="LeftMenu">
+		<div class="fieldsetPartners">
+				<span class="legendPartners">Scripts</span>
+<div class="leftmenu">
+<ul>
+<li><a href="http://scripts.incutio.com/">Scripts Home</a></li>
+</ul>
+<ul>
+<li><a href="http://scripts.incutio.com/xmlrpc/">PHP XML-RPC Library</a></li>
+<li><a href="http://scripts.incutio.com/amazon/">PHP Amazon Search</a></li>
+<li><a href="http://scripts.incutio.com/google/">PHP Google Web API</a></li>
+</ul>
+<ul>
+<li><a href="http://scripts.incutio.com/incDirectory/">incDirectory</a></li>
+<li><a href="http://scripts.incutio.com/sslinks/">ssLinks</a></li>
+
+</ul>
+
+<!-- BEGIN LivePerson Button Code --><table border="0" cellspacing="0" cellpadding="0"><tbody><tr><td align="center"><a href="http://server.iad.liveperson.net/hc/52472728/?cmd=file&amp;file=visitorWantsToChat&amp;site=52472728&amp;byhref=1" target="chat52472728" onclick="javascript:window.open('http://server.iad.liveperson.net/hc/52472728/?cmd=file&file=visitorWantsToChat&site=52472728&referrer='+document.location,'chat52472728','width=472,height=320');return false;"><img src="beginners.php_files/a_002.gif" name="hcIcon" width="110" border="0"></a></td></tr></tbody></table><!-- END LivePerson Button code -->
+
+</div>
+		</div>
+	</div>
+	
+		<div id="RightGutter">
+			<div style="text-align: center;"><img src="beginners.php_files/light.gif" alt="scripts.incutio.com light logo" style="width: 81px; margin-top: 10px;"></div>
+		</div>
+	</div>
+	
+</div>
+<div id="Footer">
+	Design, Content, Images © 2002 Incutio Limited | <a href="http://validator.w3.org/check/referer">W3C XHTML 1.0</a>
+</div>
+<!-- BEGIN HumanTag Monitor. DO NOT MOVE! MUST BE PLACED JUST BEFORE THE /BODY TAG --><script language="javascript" src="beginners.php_files/x.js"> </script><img style="visibility: hidden;" src="beginners.php_files/a.gif"><div id="mylayer" style="z-index: 90; position: absolute; visibility: hidden;">
+<table border="0" cellspacing="0" cellpadding="0">
+<tbody><tr><td><a name="needRef" href="#" onclick="return hcAcceptCall()" target="_self" onmouseover='hcSetImageGo("need_help","need_help_on.gif",false)' onmouseout='hcSetImageGo("need_help","need_help_off.gif",true)'><img name="need_help" onload="hcFloatIconLoaded()" border="0"></a></td></tr>
+<tr><td><a href="#" onclick="return hcRejectCall()" target="_self" onmouseover='hcSetImageGo("need_close","close_on.gif",false)' onmouseout='hcSetImageGo("need_close","close_off.gif",true)'><img name="need_close" border="0"></a></td></tr>
+</tbody></table></div>
+<!-- END HumanTag Monitor. DO NOT MOVE! MUST BE PLACED JUST BEFORE THE /BODY TAG -->
+</body></html>

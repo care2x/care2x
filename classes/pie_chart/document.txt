@@ -1,0 +1,22 @@
+This package contains two classes. The main properties of a chart are defined in the main class.
+The name of the main class is 'chart.class.php'. 
+This class has enough comments for the necessary parts so everyone can understand the different parts. 
+This class also has a calculate() method that calculates data fractions. 
+The properties for this class are as follows:
+1-elements: The type of this property is 'array' and contains input values.
+2-elementnames: The type of this property is also 'array' and contains input value names.
+3-colors: The type of this property is also 'array' and contains the data for colors that are going to be used in drawing the chart. 
+These color names are stored in an array named 'colornames'. This array can be updated very easily. 
+All you need to do is adding new color names and their "RGB" values.
+The second class inherits its characteristics from the main class and is its child.  
+Its name is 'piechart.class.php'. This class has a constructor that initializes the class with the input values.  
+The class has three methods: createimage(),draw() and out($filename,$quality). 
+1-createimage(): This method is used to create an image and is used as an internal method in the other two methods.
+2-draw(): This method draws the chart and sends the result to the browser.
+3-out($filename,$quality): This method generates a "JPG" picture and writes it to the disk. 
+It needs the folder to have write permission for everyone. This method needs two parameters. 
+The first parameter is the name of the file you want the picture to be saved as and the next parameter is the picture quality. 
+A number between 0 and 100. 0 is the poorest and 100 is the best quality.
+
+I should apologize for my bad English and I hope you forgive me for that because I am not a native speaker.
+
