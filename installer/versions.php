@@ -1,6 +1,9 @@
 <?php
 
 require(INSTALLER_PATH.'/config.php');
+include(INSTALLER_PATH.'/helpers/TimeZoneHelper.php');
+
+$timezoneList = TimeZoneHelper();
 
 # seed the random generator
 srand ((double) microtime() * 1000000);
@@ -23,6 +26,8 @@ $version->collectPassword('admin_confirm', 'Password Confirm', '');
 $version->addSeparator('Network Protocol and Domain');
 $version->collectOption('transfer_protocol', 'Transfer Protocol', array('http', 'https'), array('http', 'https'), 'http');
 $version->collectText('care2x_address', 'Care2x Host', 'localhost');
+$version->addSeparator('TimeZone Information');
+$version->collectOption('timezone', 'TimeZone', $timezoneList, $timezoneList, '');
 $version->addSeparator('Encryption Keys');
 $version->collectText('1st_key', '1st Key', (rand(1,$rmax).rand(1,$rmax))*rand(1,$rmax));
 $version->collectText('2nd_key', '2nd Key', (rand(1,$rmax).rand(1,$rmax))*rand(1,$rmax));
@@ -31,9 +36,8 @@ $version->addSeparator('');
 
 $version->addTest('PHPVersionOver', array('5.0.0'));
 $version->addTest('PHPVersionUnder', array('6.0.0'));
-//$version->addTest('PHPMemory', array('8M'));
+$version->addTest('PHPMemory', array('8M'));
 $version->addTest('PHPMagicQuotes', array('Off'));
-//$version->addTest('PHPRegisterGlobals', array('Off'));
 $version->addTest('PHPDBExtension', array('type_field' => 'db_type'));
 $version->addTest('PHPExtension', array('calendar', 'gd'));
 $version->addTest('DBVersionOver', array(
@@ -79,12 +83,13 @@ $version->addAction('ReplaceString', 'Save System Configuration', array(
 		'INSTALL_DB_PASSWORD' => 'db_password', 
 		'INSTALL_DB_DATABASE' => 'db_database', 
 		'INSTALL_DB_SERVER' => 'db_server',
-        'INSTALL_DB_TYPE' => 'db_type',
-        'INSTALL_ADDRESS' => 'care2x_address',
-        'INSTALL_PROTOCOL' => 'transfer_protocol',
-        'INSTALL_KEY_1' => '1st_key',
-        'INSTALL_KEY_2' => '2nd_key',
-        'INSTALL_KEY_3' => '3rd_key')
+                'INSTALL_DB_TYPE' => 'db_type',
+                'INSTALL_ADDRESS' => 'care2x_address',
+                'INSTALL_PROTOCOL' => 'transfer_protocol',
+                'INSTALL_KEY_1' => '1st_key',
+                'INSTALL_KEY_2' => '2nd_key',
+                'INSTALL_KEY_3' => '3rd_key',
+                'TIMEZONE' => 'timezone')
 	));
 
 
