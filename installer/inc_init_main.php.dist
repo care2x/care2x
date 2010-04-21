@@ -31,4 +31,6 @@ $httprotocol='INSTALL_PROTOCOL';
 
 # Set this to your database type. For details refer to ADODB manual or goto http://php.weblogs.com/ADODB/
 $dbtype='INSTALL_DB_TYPE';
+
+date_default_timezone_set("Europe/Rome");
 ?>

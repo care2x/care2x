@@ -41,7 +41,7 @@ $version->addTest('DBVersionOver', array(
     'password_field' => 'db_password',
     'server_field' => 'db_server',
     'type_field' => 'db_type',
-    'version' => array('mysql' => '3.23.0', 'postgres7' => '7.4.0')));
+    'version' => array('mysql' => '4.0.0')));
 $version->addTest('AdminPasswordConfirmed', array(
     'password_field' => 'admin_password',
     'confirm_field' => 'admin_confirm'));
@@ -73,7 +73,7 @@ $version->addAction('CreateAdmin', 'Create Administrator User', array(
 $version->addAction('ReplaceString', 'Save System Configuration', array(
 	'message' => "Configuration information saved",
 	'files' => array(
-		dirname(__FILE__).'/inc_init_main.php.dist' => APP_PATH.'/include/inc_init_main.php'),
+		dirname(__FILE__).'/inc_init_main.php.dist' => APP_PATH.'/include/core/inc_init_main.php'),
 	'fields' => array(
 		'INSTALL_DB_USERNAME' => 'db_user',
 		'INSTALL_DB_PASSWORD' => 'db_password', 
