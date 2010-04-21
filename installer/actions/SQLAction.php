@@ -23,6 +23,11 @@ class SQLAction extends BaseAction {
     
     var $db_name;
 
+    function SQLAction($title, $params) {
+        $this->title = $title;
+        $this->params = $params;
+    }
+
     function prepareDBParameters() {
         $engine =& $GLOBALS['INSTALLER']['ENGINE'];
 
@@ -52,7 +57,7 @@ class SQLAction extends BaseAction {
         } else if (isset($this->params['password'])) {
             $this->password = $this->params['password'];
         } else {
-            $this->result_message = "Could not determine datbase password, please provide a password_field or password parameter!";
+            $this->result_message = "Could not determine database password, please provide a password_field or password parameter!";
             return FALSE;
         }
         

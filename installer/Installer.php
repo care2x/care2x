@@ -88,7 +88,7 @@ class Installer{
 
 // Bootstrapping tests
 // Setup PHP Version numbers
-$version_components = split('\.', phpversion());
+$version_components = explode('\.', phpversion());
 $GLOBALS['INSTALLER']['PHP_VERSION_MAJOR'] = $version_components[0];
 $GLOBALS['INSTALLER']['PHP_VERSION_MINOR'] = $version_components[1];
 $GLOBALS['INSTALLER']['PHP_VERSION_REMAINING'] = implode('.', array_splice($version_components, 2));

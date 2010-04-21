@@ -11,7 +11,7 @@ $versions = new VersionSet();
 $version = new Version($short_version, $long_version);
 
 $version->addSeparator('Database Information');
-$version->collectOption('db_type', 'Server Type', array('MySQL',  'PostgreSQL'), array('mysql', 'postgres7'), 'mysql');
+$version->collectOption('db_type', 'Server Type', array('MySQL'), array('mysql'), 'mysql');
 $version->collectText('db_user', 'User Name', 'root');
 $version->collectPassword('db_password', 'Password', '');
 $version->collectText('db_server', 'Server Address', 'localhost');
@@ -30,7 +30,7 @@ $version->collectText('3rd_key', '3rd Key', (rand(1,$rmax).rand(1,$rmax))*rand(1
 $version->addSeparator('');
 
 $version->addTest('PHPVersionOver', array('5.0.0'));
-$version->addTest('PHPVersionUnder', array('5.3.0'));
+$version->addTest('PHPVersionUnder', array('6.0.0'));
 //$version->addTest('PHPMemory', array('8M'));
 $version->addTest('PHPMagicQuotes', array('Off'));
 //$version->addTest('PHPRegisterGlobals', array('Off'));
@@ -46,26 +46,9 @@ $version->addTest('AdminPasswordConfirmed', array(
     'password_field' => 'admin_password',
     'confirm_field' => 'admin_confirm'));
 $version->addTest('WritableLocation', array(APP_PATH.'/cache'));
-$version->addTest('WritableLocation', array(APP_PATH.'/cache/barcodes'));
-$version->addTest('WritableLocation', array(APP_PATH.'/counter'));
-$version->addTest('WritableLocation', array(APP_PATH.'/counter/hitcount.txt'));
-$version->addTest('WritableLocation', array(APP_PATH.'/fotos'));
-$version->addTest('WritableLocation', array(APP_PATH.'/fotos/encounter'));
-$version->addTest('WritableLocation', array(APP_PATH.'/fotos/registration'));
-$version->addTest('WritableLocation', array(APP_PATH.'/fotos/news'));
-$version->addTest('WritableLocation', array(APP_PATH.'/pharma'));
-$version->addTest('WritableLocation', array(APP_PATH.'/pharma/img'));
-$version->addTest('WritableLocation', array(APP_PATH.'/med_depot'));
-$version->addTest('WritableLocation', array(APP_PATH.'/med_depot/img'));
-$version->addTest('WritableLocation', array(APP_PATH.'/radiology'));
-$version->addTest('WritableLocation', array(APP_PATH.'/radiology/dicom_img'));
-$version->addTest('WritableLocation', array(APP_PATH.'/gui'));
-$version->addTest('WritableLocation', array(APP_PATH.'/gui/img'));
-$version->addTest('WritableLocation', array(APP_PATH.'/gui/img/logos_dept'));
-$version->addTest('WritableLocation', array(APP_PATH.'/gui/smarty_template/templates_c'));
+$version->addTest('WritableLocation', array(APP_PATH.'/uploads'));
 $version->addTest('WritableLocation', array(APP_PATH.'/include'));
-$version->addTest('WritableLocation', array(APP_PATH.'/include/inc_init_main.php'));
-$version->addTest('WritableLocation', array(APP_PATH.'/installer'));
+$version->addTest('WritableLocation', array(APP_PATH.'/include/core/inc_init_main.php'));
 $version->addTest('WritableLocation', array(APP_PATH.'/installer/install.php'));
 
 $version->addAction('AcceptText', 'License Agreement', array(dirname(__FILE__).'/LICENSE'));

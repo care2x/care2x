@@ -81,7 +81,7 @@ class ReplaceString extends BaseAction {
 			if(is_array($this->params['fields']) && count($this->params['fields']) > 0){
 				foreach($this->params['fields'] as $marker => $field){
 					if(!empty($marker)){
-						$this->replacements[] =& new ReplaceString_Replacement($marker, $field);
+						$this->replacements[] = new ReplaceString_Replacement($marker, $field);
 					}
 				}	
 			}
@@ -91,7 +91,7 @@ class ReplaceString extends BaseAction {
 			if(is_array($this->params['strings']) && count($this->params['strings']) > 0){
 				foreach($this->params['strings'] as $marker => $string){
 					if(!empty($marker)){
-						$this->replacements[] =& new ReplaceString_Replacement($marker, '',$string);
+						$this->replacements[] = new ReplaceString_Replacement($marker, '',$string);
 					}
 				}	
 			}
