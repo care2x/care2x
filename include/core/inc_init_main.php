@@ -1,6 +1,6 @@
 <?php
 # This is the database name
-$dbname='siis';
+$dbname='kaka';
 
 # Database user name, default is root or httpd for mysql, or postgres for postgresql
 $dbusername='root';
@@ -12,13 +12,13 @@ $dbpassword='root';
 $dbhost='localhost';
 
 # First key used for simple chaining protection of scripts
-$key='5.38621570795E+013';
+$key='65219795765918';
 
 # Second key used for accessing modules
-$key_2level='5.49291213674E+012';
+$key_2level='22541756208198';
 
 # 3rd key for encrypting cookie information
-$key_login='4.12565406494E+012';
+$key_login='1632575601540';
 
 # Main host address or domain
 $main_domain='localhost';
