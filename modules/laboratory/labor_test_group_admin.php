@@ -13,7 +13,6 @@ require($root_path.'include/core/inc_environment_global.php');
 *
 * See the file "copy_notice.txt" for the licence notice
 */
-$lang_tables=array('chemlab_groups.php','chemlab_params.php');
 define('LANG_FILE','lab.php');
 $local_user='ck_lab_user';
 require_once($root_path.'include/core/inc_front_chain_lang.php');

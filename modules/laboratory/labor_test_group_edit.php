@@ -1,5 +1,6 @@
 <?php
-define ( 'ROW_MAX', 15 ) ; # define here the maximum number of rows for displaying the parameters
+define ( 'ROW_MAX', 15 ) ; # define here the maximum number of rows for displaying the parameters
+
 
 error_reporting ( E_COMPILE_ERROR | E_ERROR | E_CORE_ERROR ) ;
 require ('./roots.php') ;
@@ -12,29 +13,35 @@ require ($root_path . 'include/core/inc_environment_global.php') ;
  *
  * See the file "copy_notice.txt" for the licence notice
  */
-$lang_tables = array ( 'chemlab_groups.php' , 'chemlab_params.php' ) ;
 define ( 'LANG_FILE', 'lab.php' ) ;
 $local_user = 'ck_lab_user' ;
 require_once ($root_path . 'include/core/inc_front_chain_lang.php') ;
 
 $thisfile = basename ( __FILE__ ) ;
 
-///$db->debug=true;
+///$db->debug=true;
 
-# Create lab objectrequire_once ($root_path . 'include/care_api_classes/class_lab.php') ;
+
+# Create lab object
+require_once ($root_path . 'include/care_api_classes/class_lab.php') ;
 $lab_obj = new Lab ( ) ;
 
-# Load the date formatter */include_once ($root_path . 'include/core/inc_date_format_functions.php') ;
+# Load the date formatter */
+include_once ($root_path . 'include/core/inc_date_format_functions.php') ;
 
 if (isset ( $mode ) && ! empty ( $mode )) {
 	if ($mode == 'save') {
-		# Save the nr			if (empty ( $_POST [ 'status' ] ))
+		# Save the nr	
+		if (empty ( $_POST [ 'status' ] ))
 			$_POST [ 'status' ] = ' ' ;
 		$_POST [ 'modify_id' ] = $_SESSION [ 'sess_user_name' ] ;
 		$_POST [ 'id' ] = strtolower ( $_POST [ 'id' ] ) ;
 		$_POST [ 'history' ] = $lab_obj->ConcatHistory ( "Update " . date ( 'Y-m-d H:i:s' ) . " " . $_SESSION [ 'sess_user_name' ] . "\n" ) ;
-		# Set to use the test params		$lab_obj->useTestParams () ;
-		# Point to the data array		//print_r($_POST);		$lab_obj->setDataArray ( $_POST ) ;
+		# Set to use the test params
+		$lab_obj->useTestParams () ;
+		# Point to the data array
+		//print_r($_POST);
+		$lab_obj->setDataArray ( $_POST ) ;
 		
 		if ($lab_obj->updateDataFromInternalArray ( $_POST [ 'nr' ] )) {
 			?>
@@ -50,17 +57,22 @@ if (isset ( $mode ) && ! empty ( $mode )) {
 			exit () ;
 		} else
 			echo $lab_obj->getLastQuery () ;
-		# end of if(mode==save)	}
-	# begin mode new 		if ($mode == 'savenew') {
-		# Save the nr			if (empty ( $_POST [ 'status' ] ))
+		# end of if(mode==save)
+	}
+	# begin mode new 	
+	if ($mode == 'savenew') {
+		# Save the nr	
+		if (empty ( $_POST [ 'status' ] ))
 			$_POST [ 'status' ] = ' ' ;
 		$_POST [ 'modify_id' ] = $_SESSION [ 'sess_user_name' ] ;
 		$_POST [ 'group_id' ] = '-1' ;
 		$_POST [ 'sort_nr' ] = rand ( 1, 99 ) ;
 		$_POST [ 'id' ] = str_replace ( " ", "_", strtolower ( $_POST [ 'name' ] ) ) ;
 		$_POST [ 'history' ] = $lab_obj->ConcatHistory ( "Created " . date ( 'Y-m-d H:i:s' ) . " " . $_SESSION [ 'sess_user_name' ] . "\n" ) ;
-		# Set to use the test params		$lab_obj->useTestParams () ;
-		# Point to the data array		$lab_obj->setDataArray ( $_POST ) ;
+		# Set to use the test params
+		$lab_obj->useTestParams () ;
+		# Point to the data array
+		$lab_obj->setDataArray ( $_POST ) ;
 		if ($lab_obj->insertDataFromInternalArray ()) {
 			
 			?>
@@ -76,9 +88,11 @@ if (isset ( $mode ) && ! empty ( $mode )) {
 			exit () ;
 		} else
 			echo $lab_obj->getLastQuery () ;
-		# end of if(mode==new)			}
+		# end of if(mode==new)		
+	}
 }
-//gjergji : i get the groups here...if ($mode != 'new')
+//gjergji : i get the groups here...
+if ($mode != 'new')
 	if ($tgroups = &$lab_obj->TestGroups ( $nr ))
 		$tg = $tgroups->FetchRow () ;
 ?>
