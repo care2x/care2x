@@ -107,9 +107,6 @@ $version->addFinalAction('RenameFile', 'Rename Critical Installation Files', arr
     'message' => "Critical installation files renamed",
     'files' => array(
         APP_PATH.'/installer/install.php' => APP_PATH.'/installer/install_'.rand(1,$rmax).'.php'),
-        APP_PATH.'/install/install.php' => APP_PATH.'/install/install_'.rand(1,$rmax).'.php',
-        APP_PATH.'/install/encode_pw_md5.php' => APP_PATH.'/install/encode_pw_md5_'.rand(1,$rmax).'.php',
-        APP_PATH.'/install/initialize.php' => APP_PATH.'/install/initialize_'.rand(1,$rmax).'.php',
         APP_PATH.'/create_admin.php' => APP_PATH.'/create_admin_'.rand(1,$rmax).'.php',
     ));
 
