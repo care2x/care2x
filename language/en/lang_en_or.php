@@ -1,4 +1,4 @@
-<?php
+ï»¿<?php
 $LDOr='OP Room';
 $LDLOGBOOK='JOURNAL';
 $LDOrDocument='OP Room Documentation';
@@ -134,7 +134,7 @@ $LDOpMainElements=array(
 										patient=>'Patient',
 										diagnosis=>'Diagnosis',
 										operator=>'Surgeon/Assistant',
-										ana=>'Anästhesie',
+										ana=>'Anesthesie',
 										cutclose=>'Cut/Suture',
 										therapy=>'Therapy',
 										result=>'Result',

@@ -1,4 +1,4 @@
-<?php
+ï»¿<?php
 $LDWhereTo='Where do you want to post the article?';
 $LDPlsSelect='Please select the number based on the sample graphic, then press \'Continue...\'.';
 $LDContinueBut='Continue...';
@@ -85,7 +85,7 @@ $LDBack2CafeNews='Back to cafeteria news';
 
 $LDProdName='Productname';
 $LDPriceDM='Price DM';
-$LDPriceEuro='Price €';
+$LDPriceEuro='Price Eur';
 $LDPrice='Price';
 $LDNoPrice='The price list is not available at the moment.';
 $LDSorry='We are sorry. Please try again later.';
