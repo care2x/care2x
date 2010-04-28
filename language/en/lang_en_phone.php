@@ -1,15 +1,13 @@
 <?php
-$fieldname=array(
-							"Family name",
-							"Name",
-							"Phone 1",
-							"Phone 2",
-							"Phone 3",
-							"Beeper 1",
-							"Beeper 2",
-							"Private 1",
-							"Private 2"
-							);
+$fieldname[0]="Familyname";
+$fieldname[1]="Name";
+$fieldname[2]="Phone1";
+$fieldname[3]="Phone2";
+$fieldname[4]="Phone3";
+$fieldname[5]="Beeper1";
+$fieldname[6]="Beeper2";
+$fieldname[7]="Private1";
+$fieldname[8]="Private2";
 							
 $LDPhoneDir="Phone directory";
 $LDSearch="Search";
@@ -24,44 +22,42 @@ $LDKeywordPrompt="Enter search keyword. For example: a name, or a department, or
 $LDShowDir="Show the complete directory";
 $LDNewEntry="Enter new phone or beeper data";
 
-$LDExtFields=array(
-								"Nr.",
-								"Title",
-								"Family name",
-								"Name",
-								"Profession",
-								"Dept.1",
-								"Dept.2",
-				 				"Tel.1",
-								"Tel.2",
-								"Tel.3",
-								"Private 1",
-								"Private 2",
-								"Beeper 1",
-								"Beeper 2",
-								"Room Nr.",
-								"Date",
-								"Time",
-								"Encoder");
-$LDEditFields=array(
-								"Nr.",
-								"Title",
-								"Family name",
-								"Name",
-								"Profession",
-								"Department 1",
-								"Department 2",
-				 				"Telephone (internal) 1",
-								"Telephone (internal) 2",
-								"Telephone (internal) 3",
-								"Private (external) 1",
-								"Private (external) 2",
-								"Beeper 1",
-								"Beeper 2",
-								"Room Nr.",
-								"Date",
-								"Time",
-								"Encoder");
+$LDExtFields[0]="Nr.";
+$LDExtFields[1]="Title";
+$LDExtFields[2]="Familyname";
+$LDExtFields[3]="Name";
+$LDExtFields[4]="Profession";
+$LDExtFields[5]="Dept.1";
+$LDExtFields[6]="Dept.2";
+$LDExtFields[7]="Tel.1";
+$LDExtFields[8]="Tel.2";
+$LDExtFields[9]="Tel.3";
+$LDExtFields[10]="Private1";
+$LDExtFields[11]="Private2";
+$LDExtFields[12]="Beeper1";
+$LDExtFields[13]="Beeper2";
+$LDExtFields[14]="RoomNr.";
+$LDExtFields[15]="Date";
+$LDExtFields[16]="Time";
+$LDExtFields[17]="Encoder";
+$LDEditFields[0]="Nr.";
+$LDEditFields[1]="Title";
+$LDEditFields[2]="Familyname";
+$LDEditFields[3]="Name";
+$LDEditFields[4]="Profession";
+$LDEditFields[5]="Department1";
+$LDEditFields[6]="Department2";
+$LDEditFields[7]="Telephone(internal)1";
+$LDEditFields[8]="Telephone(internal)2";
+$LDEditFields[9]="Telephone(internal)3";
+$LDEditFields[10]="Private(external)1";
+$LDEditFields[11]="Private(external)2";
+$LDEditFields[12]="Beeper1";
+$LDEditFields[13]="Beeper2";
+$LDEditFields[14]="RoomNr.";
+$LDEditFields[15]="Date";
+$LDEditFields[16]="Time";
+$LDEditFields[17]="Encoder";
 $LDOK=" OK ";
 $LDCancel="Cancel";
 $LDSave="Save";

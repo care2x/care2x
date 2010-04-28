@@ -64,7 +64,12 @@ $LDMore='more to article';
 
 $LDCafeNews='Cafeteria News';
 $LDConfirmEdit='Do you want to edit the data in the cafeteria news?';
-$LDNewsDummy=array(1=>'first',2=>'second',3=>'third',4=>'fourth');
+
+$LDNewsDummy[1]='first';
+$LDNewsDummy[2]='second';
+$LDNewsDummy[3]='third';
+$LDNewsDummy[4]='fourth';
+
 $LDMenuToday='Today\'s menu';
 $LDMenuAll='Menu for <br> &nbsp;other days';
 $LDPrices='Prices';
@@ -75,7 +80,14 @@ $LDMenuEdit='Edit menu';
 $LDPriceEdit='Edit prices';
 $LDNewsEdit='Edit news or information article';
 
-$dayname=array('Mo','Tu','We','Th','Fr','Sa','Su');
+$dayname[0]='Mo';
+$dayname[1]='Tu';
+$dayname[2]='We';
+$dayname[3]='Th';
+$dayname[4]='Fr';
+$dayname[5]='Sa';
+$dayname[6]='Su';
+
 $LDCafeMenu='Cafeteria Menu';
 $LDMenu='Menu';
 $LDThisWeek='This week';

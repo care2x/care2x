@@ -114,13 +114,40 @@ $LDBundyMachine='Bundy machine';
 $LDDutyPlanner='Duty planner';
 $LDPrevMonth='Previous month';
 $LDNextMonth='Next month';
-$monat=array('','January','February','March','April','May','June','July','August','September','October','November','December');
+
+$monat[0]='';
+$monat[1]='January';
+$monat[2]='February';
+$monat[3]='March';
+$monat[4]='April';
+$monat[5]='May';
+$monat[6]='June';
+$monat[7]='July';
+$monat[8]='August';
+$monat[9]='September';
+$monat[10]='October';
+$monat[11]='November';
+$monat[12]='December';
+
 $LDEntry='Entry';
 $LDExit='Exit';
 $LDRemarks='Remarks';
 
-$tage=array('<font color=\'#ff0000\'>S</font>','M','T','W','T','F','S');
-$tagename=array('Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday');
+$tage[0]='S';
+$tage[1]='M';
+$tage[2]='T';
+$tage[3]='W';
+$tage[4]='T';
+$tage[5]='F';
+$tage[6]='S';
+
+$tagename[0]='Monday';
+$tagename[1]='Tuesday';
+$tagename[2]='Wednesday';
+$tagename[3]='Thursday';
+$tagename[4]='Friday';
+$tagename[5]='Saturday';
+$tagename[6]='Sunday';
 
 $LDTotal='Total';
 $LDClk4Options='Click for options';

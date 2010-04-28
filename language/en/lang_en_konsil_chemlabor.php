@@ -1,5 +1,4 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 $LDDiagnosticTest='Diagnostic Test Order';
 $LDHospitalName='Central Hospital';
 $LDCentralLab='Central Laboratory';
@@ -28,21 +27,29 @@ $LDLifeRisk='Risk to life';
 $LDRarity='Rarity';
 $LDSpecTest='special Tests';
 $LDClinicalInfo='clinical info';
-$LDShortMonth=array('',
-                                   'Jan',
-								   'Feb',
-								   'Mar',
-								   'Apr',
-								   'May',
-								   'Jun',
-								   'Jul',
-								   'Aug',
-								   'Sep',
-								   'Oct',
-								   'Nov',
-								   'Dec');
+
+$LDShortMonth[0]='';
+$LDShortMonth[1]='Jan';
+$LDShortMonth[2]='Feb';
+$LDShortMonth[3]='Mar';
+$LDShortMonth[4]='Apr';
+$LDShortMonth[5]='May';
+$LDShortMonth[6]='Jun';
+$LDShortMonth[7]='Jul';
+$LDShortMonth[8]='Aug';
+$LDShortMonth[9]='Sep';
+$LDShortMonth[10]='Oct';
+$LDShortMonth[11]='Nov';
+$LDShortMonth[12]='Dec';
 								   
-$LDShortDay=array('So','Mo','Tu','We','Th','Fr','Sa','So');
+$LDShortDay[0]='So';
+$LDShortDay[1]='Mo';
+$LDShortDay[2]='Tu';
+$LDShortDay[3]='We';
+$LDShortDay[4]='Th';
+$LDShortDay[5]='Fr';
+$LDShortDay[6]='Sa';
+$LDShortDay[7]='So';
 				
 $LDBatchNumber='Batch nr.';
 $LDMaterial='Material:';

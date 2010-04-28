@@ -92,54 +92,50 @@ $LDUpdateData='Update data';
 $LDStartNewDocu='Create a new document';
 $LDSearchKeyword='Search keyword: eg. given name or family name';
 
-$LDSrcListElements=array(
-'',
-'Family name',
-'Given name',
-'Birthdate',
-'Patient nr.',
-'OP Date',
-'OR Department',
-'OP Nr.'
-);
+$LDSrcListElements[0]='';
+$LDSrcListElements[1]='Family name';
+$LDSrcListElements[2]='Given name';
+$LDSrcListElements[3]='Birthdate';
+$LDSrcListElements[4]='Patient nr.';
+$LDSrcListElements[5]='OP Date';
+$LDSrcListElements[6]='OR Department';
+$LDSrcListElements[7]='OP Nr.';
+
 $LDClk2Show='Click to show';
 $LDSrcCondition='Search keyword and/or condition';
 $LDNewArchiveSearch='New archive research';
-$tage=array(
-				'Sunday',
-				'Monday',
-				'Tuesday',
-				'Wednesday',
-				'Thursday',
-				'Friday',
-				'Saturday');
-$monat=array('',
-				'January',
-				'February',
-				'March',
-				'April',
-				'May',
-				'June',
-				'July',
-				'august',
-				'September',
-				'October',
-				'November',
-				'December');
+$tage[0]='Sunday';
+$tage[1]='Monday';
+$tage[2]='Tuesday';
+$tage[3]='Wednesday';
+$tage[4]='Thursday';
+$tage[5]='Friday';
+$tage[6]='Saturday';
+$monat[0]='';
+$monat[1]='January';
+$monat[2]='February';
+$monat[3]='March';
+$monat[4]='April';
+$monat[5]='May';
+$monat[6]='June';
+$monat[7]='July';
+$monat[8]='august';
+$monat[9]='September';
+$monat[10]='October';
+$monat[11]='November';
+$monat[12]='December';
 $LDPrevDay='Previous day';
 $LDNextDay='Next day';
 $LDChange='Change';
-$LDOpMainElements=array(
-										nr_date=>'Nr/Date',
-										patient=>'Patient',
-										diagnosis=>'Diagnosis',
-										operator=>'Surgeon/Assistant',
-										ana=>'Anesthesie',
-										cutclose=>'Cut/Suture',
-										therapy=>'Therapy',
-										result=>'Result',
-										inout=>'Entry/Exit'
-										);
+$LDOpMainElements[nr_date]='Nr/Date';
+$LDOpMainElements[patient]='Patient';
+$LDOpMainElements[diagnosis]='Diagnosis';
+$LDOpMainElements[operator]='Surgeon/Assistant';
+$LDOpMainElements[ana]='Anesthesie';
+$LDOpMainElements[cutclose]='Cut/Suture';
+$LDOpMainElements[therapy]='Therapy';
+$LDOpMainElements[result]='Result';
+$LDOpMainElements[inout]='Entry/Exit';
 $LDOpCut='Cut';
 $LDOpClose='Suture';
 $LDOpIn='Entry';
@@ -156,13 +152,11 @@ $cbuf=array('Surgeon','Assistant','Scrub nurse','Rotating nurse');
 *  A tiny dictionary:
 *  rotating nurse =  the nurse in non-sterile clothing assisting the scrub nurse, in charge of the non-sterile instruments and surgical materials
 */
-$LDOpPersonElements=array(
-											operator=>'Surgeon',
-											assist=>'Assistant',
-											scrub=>'Scrub nurse',
-											rotating=>'Rotating nurse',
-											ana=>'Anesthesiologist'
-											);
+$LDOpPersonElements[operator]='Surgeon';
+$LDOpPersonElements[assist]='Assistant';
+$LDOpPersonElements[scrub]='Scrubnurse';
+$LDOpPersonElements[rotating]='Rotatingnurse';
+$LDOpPersonElements[ana]='Anesthesiologist';
 
 $LDPatientNotFound='Patient not found!';
 $LDPlsEnoughData='Please enter enough information.';
@@ -188,16 +182,14 @@ $LDShowLogbook='Show journal';
 *  Plexus = Anesthesia on the Plexus nerve 
 */
 
-$LDAnaTypes=array(
-					'ITN'=>'ITA',
-					'ITN-Jet'=>'ITA-Jet',
-					'ITN-Mask'=>'ITA-Mask',
-					'LA'=>'LA',
-					'DS'=>'DS',
-					'AS'=>'AS',
-					'Plexus'=>'Plexus',
-					'Standby'=>'Standy'
-					);
+$LDAnaTypes['ITN']='ITA';
+$LDAnaTypes['ITN-Jet']='ITA-Jet';
+$LDAnaTypes['ITN-Mask']='ITA-Mask';
+$LDAnaTypes['LA']='LA';
+$LDAnaTypes['DS']='DS';
+$LDAnaTypes['AS']='AS';
+$LDAnaTypes['Plexus']='Plexus';
+$LDAnaTypes['Standby']='Standy';
 
 $LDAnaDoc='Anesthesiologist';
 $LDAnaPrefix='AN';
@@ -214,10 +206,8 @@ $LDSearchPerson='Search ~tagword~';
 $LDJobId='Profession';
 $LDSearchResult='Search results';
 $LDUseData='Enter this person as ~tagword~';
-$LDJobIdTag=array(
-						nurse=>'Nurse',
-						doctor=>'Physician/Surgeon'
-						);
+$LDJobIdTag['nurse']='Nurse';
+$LDJobIdTag['doctor']='Physician/Surgeon';
 $LDQuickSelectList='Quick select list';
 $LDTimes='Time';
 $LDPlasterCast='Plaster cast';
@@ -229,40 +219,35 @@ $LDWaitTime='Idle time';
 $LDStart='Start';
 $LDEnd='End';
 $LDPatNoExist='The patient is not yet entered in the journal. Please close this window and start the journal from the very	beginning. If this problem persists, please notify the EDP department.';
-$opts=array('-',
-					'Patient arrived late in OP Room',
-       				'Anesthesiologists arrived late in OP Room',
-       				'OP Room nurses arrived late in OP Room', 
-					'Cleaning team finished late',
-       				'Special reason');
+
+$opts[0]='-';
+$opts[1]='Patient arrived late in OP Room';
+$opts[2]='Anesthesiologists arrived late in OP Room';
+$opts[3]='OP Room nurses arrived late in OP Room';
+$opts[4]='Cleaning team finished late';
+$opts[5]='Special reason';
 $LDReason='Reason';
-$LDMaterialElements=array(
-									'Best.nr.',
-    								'Art.name',
-    								'&nbsp;',
-    								'Generic',
-    								'License.Nr.',
-    								'No.Pcs.',
-    								'&nbsp;'
-									);
-$LDSearchElements=array(
-									'&nbsp;',
-									'Art.nr.',
-    								'Art.name',
-    								'Description',
- 									'&nbsp;',
-   									'Generic',
-    								'License.Nr.'
-									);
-$LDContainerElements=array(
-									'Container nr.',
-    								'Name/Description',
-									'&nbsp;',
-    								'Industry nr.',
-    								'Order nr.',
-    								'No.pcs.',
-    								'&nbsp;'
-									);
+$LDMaterialElements[0]='Best.nr.';
+$LDMaterialElements[1]='Art.name';
+$LDMaterialElements[2]=' ';
+$LDMaterialElements[3]='Generic';
+$LDMaterialElements[4]='License.Nr.';
+$LDMaterialElements[5]='No.Pcs.';
+$LDMaterialElements[6]=' ';
+$LDSearchElements[0]=' ';
+$LDSearchElements[1]='Art.nr.';
+$LDSearchElements[2]='Art.name';
+$LDSearchElements[3]='Description';
+$LDSearchElements[4]=' ';
+$LDSearchElements[5]='Generic';
+$LDSearchElements[6]='License.Nr.';
+$LDContainerElements[0]='Containernr.';
+$LDContainerElements[1]='Name/Description';
+$LDContainerElements[2]=' ';
+$LDContainerElements[3]='Industrynr.';
+$LDContainerElements[4]='Ordernr.';
+$LDContainerElements[5]='No.pcs.';
+$LDContainerElements[6]=' ';
 $LDArticleNr='Article nr.';			
 $LDContainerNr='Container nr.';							
 $LDArticleNotFound='Article not found!';
@@ -294,13 +279,12 @@ $LDVorYesterday='2 days ago';
 $LDDays='days ago';
 $LDChangeDept='Change the department or OP room';
 
-$LDTabElements=array('OR Department',
-								 'Standby',
-								 'Beeper/Phone',
-								 'On Call',
-								 'Beeper/Phone',
-								 'Duty plan'
-								 );
+$LDTabElements[0]='OR Department';
+$LDTabElements[1]='Standby';
+$LDTabElements[2]='Beeper/Phone';
+$LDTabElements[3]='On Call';
+$LDTabElements[4]='Beeper/Phone';
+$LDTabElements[5]='Duty plan';
 $LDStandbyPerson='Standby';
 $LDOnCallPerson='On call';
 $LDMonth='Month';

@@ -76,11 +76,41 @@ $LDLikeSearchMany=' that correspond to the search keywords.';
 
 $LDTelephoneNr='Phone nr.';
 
-$bcatindex=array('&nbsp;','&nbsp;',$LDTechnician,$LDDept,'Received on',$LDAt,'&nbsp;');
-$blistindex=array("Report $LDFrom",$LDOn,$LDAt,$LDDept,$LDJobIdNr);
-$reportindex=array('&nbsp;','&nbsp;',"$LDRequest $LDFrom:",'Received am:',$LDAt,'&nbsp;');
-$requestindex=array("$LDRequest $LDFrom:",$LDAt,$LDOn,$LDDept,$LDTelephoneNr,$LDJobIdNr);
-$queryindex=array('&nbsp;','&nbsp;',"$LDInquiry $LDFrom:",$LDDept,'Received $LDOn:',$LDAt,'&nbsp;');
+$bcatindex[0]=' ';
+$bcatindex[1]=' ';
+$bcatindex[2]='Technician';
+$bcatindex[3]='Department';
+$bcatindex[4]='Receivedon';
+$bcatindex[5]='at';
+$bcatindex[6]=' ';
+
+$blistindex[0]='Report from';
+$blistindex[1]='on';
+$blistindex[2]='at';
+$blistindex[3]='Department';
+$blistindex[4]='Job ID nr.';
+
+$reportindex[0]=' ';
+$reportindex[1]=' ';
+$reportindex[2]='request from:';
+$reportindex[3]='Received at:';
+$reportindex[4]='at';
+$reportindex[5]=' ';
+
+$requestindex[0]='request from:';
+$requestindex[1]='at';
+$requestindex[2]='on';
+$requestindex[3]='Department';
+$requestindex[4]='Phonenr.';
+$requestindex[5]='Job ID nr.';
+
+$queryindex[0]=' ';
+$queryindex[1]=' ';
+$queryindex[2]='Inquiry from :';
+$queryindex[3]='Department';
+$queryindex[4]='Received on:';
+$queryindex[5]='at';
+$queryindex[6]=' ';
 
 $LDMarkRead='Mark as \'Read\'.';
 $LDPrint='Print';
@@ -108,20 +138,21 @@ $LDShow='Show';
 $LDShowInquiry='Show inquiry';
 $LDInquiryArrived='A new inquiry has arrived!';
 $LDSearchWordPrompt='Enter a search keyword';
-$LDInfoCat=array(
-						'Requesting for a repair',
-						'Reporting a damage',
-						'Heating',
-						'Disposal',
-						'EDP',
-						'Computer IP addresses',
-						'Printing, Printer',
-						'Environment management, Maintenance',
-						'Cleaning',
-						'Electricity',
-						'Telephone system',
-						'Water, Supply'
-						);
+$LDInfoCat[0]='Requesting for a repair';
+$LDInfoCat[1]='Reporting a damage';
+$LDInfoCat[2]='Heating';
+$LDInfoCat[3]='Disposal';
+$LDInfoCat[4]='EDP';
+$LDInfoCat[5]='Computer IP addresses';
+$LDInfoCat[6]='Printing;
+$LDInfoCat[7]=Printer';
+$LDInfoCat[8]='Environment management;
+$LDInfoCat[9]=Maintenance';
+$LDInfoCat[10]='Cleaning';
+$LDInfoCat[11]='Electricity';
+$LDInfoCat[12]='Telephone system';
+$LDInfoCat[13]='Water;
+$LDInfoCat[14]=Supply';
 $LDNoFound='I found nothing that corresponds to the search keyword. <br>Please try it again and enter some more information.';
 /* 2003-02-11*/
 $LDCancel='Cancel';

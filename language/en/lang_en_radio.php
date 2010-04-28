@@ -77,7 +77,7 @@ $LDSelectViewer='Select viewer';
 $LDSelectViewerTxt='Select DICOM viewer program';
 $LDCurrentViewer='Current viewer';
 $LDNagoyaTechInst='Nagoya Tech. Institute';
-$LDRAIMJAVA='RAIMJAVA�';
+$LDRAIMJAVA='RAIMJAVA';
 $LDNoImageSaved='No image was saved!';
 $LDImageNotes='Image notes';
 

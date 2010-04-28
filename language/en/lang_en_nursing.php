@@ -49,28 +49,26 @@ $LDClockTime='Time';
 
 $LDClkDate='Click the desired date.';
 
-$monat=array('January',
-					'February',
-					'March',
-					'April',
-					'May',
-					'June',
-					'July',
-					'August',
-					'September',
-					'October',
-					'November',
-					'December'
-					);
-$tage=array(
-					'Su',
-					'Mo',
-					'Tu',
-					'We',
-					'Th',
-					'Fr',
-					'Sa'
-					);
+$monat[0]='January';
+$monat[1]='February';
+$monat[2]='March';
+$monat[3]='April';
+$monat[4]='May';
+$monat[5]='June';
+$monat[6]='July';
+$monat[7]='August';
+$monat[8]='September';
+$monat[9]='October';
+$monat[10]='November';
+$monat[11]='December';
+
+$tage[0]='Su';
+$tage[1]='Mo';
+$tage[2]='Tu';
+$tage[3]='We';
+$tage[4]='Th';
+$tage[5]='Fr';
+$tage[6]='Sa';
 					
 $LDDay='Day';					
 $LDMonth='Month';
@@ -155,27 +153,22 @@ $LDShowPatData='Open patient\'s charts folder';
 $LDReleasePatient='Discharge patient';
 $LDNoticeRW='Read or write notice';
 $LDInfoUnlock='Read info or unlock';
-$LDPatListElements=array(
-										'Room',
-										'Bed',
-										'Family name, Name',
-										'Birthdate',
-										'Patient nr.',
-										'Insurance',
-										'Options'
-										);
+
+$LDPatListElements[0]='Room';
+$LDPatListElements[1]='Bed';
+$LDPatListElements[2]='Familyname Name';
+$LDPatListElements[4]='Birthdate';
+$LDPatListElements[5]='Patientnr.';
+$LDPatListElements[6]='Insurance';
+$LDPatListElements[7]='Options';
+
 /********** NOTE: !! do not change the \'+b+\' and \'+r+\'  !! **************************/
 $LDConfirmUnlock='Do you really want to unlock the \'+b+\' bed in room \'+r+\' ?';							
 /********** NOTE: !! do not change the \'+t+\' \'+n+\' and \'+r+b+\'  **************************/
 $LDConfirmDelete='Do you really want to delete \'+t+\' \'+n+\' from room \'+r+b+\'?';
 $LDConfirmLock='Do you really want to lock this bed?';
 $LDClk2Occupy='Click to occupy this bed';
-/*$LDInsurance=array(
-								'x'=>'Self pay',
-								'privat'=>'Private',
-								'kasse'=>'General'
-								);
-*/
+
 $LDSave='Save';
 $LDNurse='Nurse';
 $LDYesSure='Yes, I\'m sure. Discharge the patient.';
@@ -231,23 +224,21 @@ $LDClk2EnterDaily='Click to enter ~tagword~ for this day';
 $LDSpecialsExtra='Notes, extra diagnoses';
 $LDClk2PlanDaily='Click to plan ~tagword~ for this day';
 $LDInputWin='Input window';
-$LDFullDayName=array(
-									'Sunday',
-									'Monday',
-									'Tuesday',
-									'Wednesday',
-									'Thursday',
-									'Friday',
-									'Saturday',
-									'Sunday',
-									'Monday',
-									'Tuesday',
-									'Wednesday',
-									'Thursday',
-									'Friday',
-									'Saturday',
-									'Sunday'
-									);
+$LDFullDayName[0]='Sunday';
+$LDFullDayName[1]='Monday';
+$LDFullDayName[2]='Tuesday';
+$LDFullDayName[3]='Wednesday';
+$LDFullDayName[4]='Thursday';
+$LDFullDayName[5]='Friday';
+$LDFullDayName[6]='Saturday';
+$LDFullDayName[7]='Sunday';
+$LDFullDayName[8]='Monday';
+$LDFullDayName[9]='Tuesday';
+$LDFullDayName[10]='Wednesday';
+$LDFullDayName[11]='Thursday';
+$LDFullDayName[12]='Friday';
+$LDFullDayName[13]='Saturday';
+$LDFullDayName[14]='Sunday';
 $LDCurrentEntry='Current entries';
 $LDEntryPrompt='Please enter the new information here';
 $LDConfirmSetDate='Do you want to set the "+dayID+" ?';

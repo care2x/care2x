@@ -33,7 +33,11 @@ $LDHelp='Help';
 $LDMore='more to article';
 
 $LDEditTitle='Headline';
-$LDNewsDummy=array(1=>'first',2=>'second',3=>'third',4=>'fourth');
+
+$LDNewsDummy[1]='first';
+$LDNewsDummy[2]='second';
+$LDNewsDummy[3]='third';
+$LDNewsDummy[4]='fourth';
 
 $LDNoFrame='This website uses frames for optimal functioning. Please install a proper browser.  Please activate the Javascript (JScript) and 
 						turn on the automatic cookie reception';

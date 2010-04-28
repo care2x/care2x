@@ -74,14 +74,13 @@ $LDFoundData='I found ~nr~ relevant data!<br>Please click the right one.';
 
 $LDClk2Show='Click to show the data';
 
-$LDElements=array(
-								'',
-								'Lastname',
-								'Firstname',
-								'Date of birth',
-								'Patient nr.',
-								'Admission date'
-								);
+$LDElements[0]='';
+$LDElements[1]='Lastname';
+$LDElements[2]='Firstname';
+$LDElements[3]='Dateofbirth';
+$LDElements[4]='Patientnr.';
+$LDElements[5]='Admissiondate';
+
 $LDSearchKeyword='Search keyword or condition';
 $LDMEDOCS='Medical Documentation System (Medocs)';
 $LDMedocsSearchTitle='Medocs - Document search';
@@ -100,17 +99,17 @@ $LDKeyNr='Key number';
 $LDDocSearch='Search a medocs document';
 
 $LDMedDocOf='Medocs document of';
-$LDMedocsElements=array(
-								'',
-								'Lastname',
-								'Firstname',
-								'Date of birth',
-								'Patient Nr.',
-								'Document Nr.',
-								'Department',
-								'Date',
-								'Time'
-								);
+
+$LDMedocsElements[0]='';
+$LDMedocsElements[1]='Lastname';
+$LDMedocsElements[2]='Firstname';
+$LDMedocsElements[3]='Dateofbirth';
+$LDMedocsElements[4]='PatientNr.';
+$LDMedocsElements[5]='DocumentNr.';
+$LDMedocsElements[6]='Department';
+$LDMedocsElements[7]='Date';
+$LDMedocsElements[8]='Time';
+
 $LDStartNewDoc='Start a new medocs document';
 $LDNoMedocsFound='No medocs document of the patient found!';
 $LDAt='at';		

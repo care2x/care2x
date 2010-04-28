@@ -1,19 +1,19 @@
 <?php
-$LDTitles=array(_=>"-",
-						Ms_f=>"Ms.",
-						Mrs_f=>"Mrs.",
-						Mr_=>"Mr.",
-						Dr_f=>"Dr. (female)",
-						Dr_=>"Dr.",
-						Prof_f=>"Prof. (female)",
-						Prof__Dr_f=>"Prof. Dr. (female)",
-						Prof__Dr__Dr_f=>"Prof. Dr. Dr.(female)",
-						Prof_=>"Prof.",
-						Prof__Dr_=>"Prof. Dr.",
-						Prof__Dr__Dr_=>"Prof. Dr. Dr.",
-						Sr_f=>"Sr.",					
-						Madam_f=>"Madam",
-						Sir=>"Sir",
-						Lord=>"Lord");
+$LDTitles["_"]="-";
+$LDTitles["Ms_f"]="Ms.";
+$LDTitles["Mrs_f"]="Mrs.";
+$LDTitles["Mr_"]="Mr.";
+$LDTitles["Dr_f"]="Dr.(female)";
+$LDTitles["Dr_"]="Dr.";
+$LDTitles["Prof_f"]="Prof.(female)";
+$LDTitles["Prof__Dr_f"]="Prof.Dr.(female)";
+$LDTitles["Prof__Dr__Dr_f"]="Prof.Dr.Dr.(female)";
+$LDTitles["Prof_"]="Prof.";
+$LDTitles["Prof__Dr_"]="Prof.Dr.";
+$LDTitles["Prof__Dr__Dr_"]="Prof.Dr.Dr.";
+$LDTitles["Sr_f"]="Sr.";
+$LDTitles["Madam_f"]="Madam";
+$LDTitles["Sir"]="Sir";
+$LDTitles["Lord"]="Lord";
 						
 ?>

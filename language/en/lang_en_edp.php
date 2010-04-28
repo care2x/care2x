@@ -103,16 +103,15 @@ $LDActualAccess='Actual access permissions';
 $LDAccessDeleted='The access permission was deleted successfully.';
 $LDFfActualAccess='Following are the actual access permissions.';
 
-$LDAccessIndex=array(
-				'Name',
-			 	'Login ',    
-			 	'Password', 
-				'',
-			 	'Allowed areas', 
-			 	'Date/Time', 
-			 	'Encoder', 
-			 	'Option'
-			 	);
+$LDAccessIndex[0]='Name';
+$LDAccessIndex[1]='Login';
+$LDAccessIndex[2]='Password';
+$LDAccessIndex[3]='';
+$LDAccessIndex[4]='Allowedareas';
+$LDAccessIndex[5]='Date/Time';
+$LDAccessIndex[6]='Encoder';
+$LDAccessIndex[7]='Option';
+
 $LDChange='Change';
 $LDInitChange='C';
 $LDLock='Lock';
@@ -142,13 +141,19 @@ $LDSelectDateFormat='Please select the needed date format:';
 # Add additional date formats as array element.
 # Do not forget to add the correspondign sample text in the $LDDateFormatsTxt array.
 # Do not translate $LDDateFormats 
-$LDDateFormats=array('dd.MM.yyyy','yyyy-MM-dd','MM/dd/yyyy','dd/MM/yyyy');
+$LDDateFormats[0]='dd.MM.yyyy';
+$LDDateFormats[1]='yyyy-MM-dd';
+$LDDateFormats[2]='MM/dd/yyyy';
+$LDDateFormats[3]='dd/MM/yyyy';
 
-$LDDateFormatsTxt= array('For example: 01.10.2002 (01 October 2002)',
-                                         'For example: 2002-10-01 (2002 October 01)',
-										 'For example: 10/01/2002 (October 01, 2002)',
-										 'For example: 01/10/2002 (01 October , 2002)'
-										 );					 
+
+$LDDateFormatsTxt[0]='For example: 01.10.2010 (01 October 2010)';
+$LDDateFormatsTxt[1]='For example: 2010-10-01 (2010 October 01)';
+$LDDateFormatsTxt[2]='For example: 10/01/2010 (October 01, 2010)';
+$LDDateFormatsTxt[3]='For example: 01/10/2010 (01 October , 2010)';
+
+
+
 /**
 * The following lines must be modified according to the examples:
 * english:

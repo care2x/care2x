@@ -95,16 +95,18 @@ $LDORNOCScheduler='ORNOC Scheduler';
 $LDFotolab='Photolab';
 /* 2002-09-08 EL */
 $LDTestRequest='Diagnostic Test Request';
-$LDTestType=array('patho'=>'Pathology', 
-                             'chemlabor'=>'Medical Laboratory', 
-							 'baclabor'=>'Bacteriological Laboratory',
-							 'blood'=>'Blood Bank',
-							 'radio'=>'Radiology',
-							 'sono'=>'Sonography',
-							 'allamb'=>'General Ambulatory',
-							 'unfamb'=>'Emergency Ambulatory',
-							 'nuklear'=>'Nuclear Diagnostics',
-							 'inmed'=>'Internal Medicine');
+
+$LDTestType['patho']='Pathology';
+$LDTestType['chemlabor']='Medical Laboratory';
+$LDTestType['baclabor']='Bacteriological Laboratory';
+$LDTestType['blood']='Blood Bank';
+$LDTestType['radio']='Radiology';
+$LDTestType['sono']='Sonography';
+$LDTestType['allamb']='General Ambulatory';
+$LDTestType['unfamb']='Emergency Ambulatory';
+$LDTestType['nuklear']='Nuclear Diagnostics';
+$LDTestType['inmed']='Internal Medicine';
+
 $LDBloodOrder='Request for blood products';
 /* 2002-09-22 EL */
 $LDPendingRequest='Pending request';

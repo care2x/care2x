@@ -1,62 +1,63 @@
 <?php
-$Jan='January';
-$Feb='February';
-$Mae='March';
-$Apr='April';
-$Mai='May';
-$Jun='June';
-$Jul='July';
-$Aug='August';
-$Sep='September';
-$Okt='October';
-$Nov='November';
-$Dez='December';
 
 /**
 * Note: the first element of $monat is set to empty string
 */
-$monat=array('',$Jan,$Feb,$Mae,$Apr,$Mai,$Jun,$Jul,$Aug,$Sep,$Okt,$Nov,$Dez);
+$monat[0]='';
+$monat[1]='January';
+$monat[2]='February';
+$monat[3]='March';
+$monat[4]='April';
+$monat[5]='May';
+$monat[6]='June';
+$monat[7]='July';
+$monat[8]='August';
+$monat[9]='September';
+$monat[10]='October';
+$monat[11]='November';
+$monat[12]='December';
 
 $LDDoctors='Doctors';
 $LDQView='DOC Quickview';  // DOC = doctor on call
 $LDQViewTxt='Quickview of today\'s DOC (doctor-on-call) schedule';
 $LDDutyPlan='Duty plan';
 $LDDutyPlanTxt='Duty plan, view, update, delete, manage, etc.';
-$LDDocsList='Doctors\' list';
-$LDDocsListTxt='Create or update doctors\' list, enter data, etc..';
+$LDDocsList='Doctor\'s list';
+$LDDocsListTxt='Create or update doctor\'s list, enter data, etc..';
 $LDDocsForum='Forum';
 $LDDocsForumTxt='Discussions forum for doctors';
 $LDNews='News';
 $LDNewsTxt='Compose, read, edit news';
 $LDMemo='Memo';
 $LDMemoTxt='Compose, read, edit memo';
-$LDCloseAlt='Close physicians/surgeons\' window';
+$LDCloseAlt='Close physicians/surgeon\'s window';
 $LDDocsOnDuty='Doctors on Call';
 
-$LDTabElements=array('Department',
-								 'DOC 1',
-								 'Beeper/Phone',
-								 'DOC 2',
-								 'Beeper/Phone',
-								 'Duty plan'
-								 );
+$LDTabElements[0]='Department';
+$LDTabElements[1]='DOC1';
+$LDTabElements[2]='Beeper/Phone';
+$LDTabElements[3]='DOC2';
+$LDTabElements[4]='Beeper/Phone';
+$LDTabElements[5]='Dutyplan';
+
 $LDShowActualPlan='Show actual duty plan';
-$LDShortDay=array('Su',
-								'Mo',
-								'Tu',
-								'We',
-								'Th',
-								'Fr',
-								'Sa'
-								);
-$LDFullDay=array('Sunday',
-								'Monday',
-								'Tuesday',
-								'Wednesday',
-								'Thursday',
-								'Friday',
-								'Saturday'
-								);
+
+$LDShortDay[0]='Su';
+$LDShortDay[1]='Mo';
+$LDShortDay[2]='Tu';
+$LDShortDay[3]='We';
+$LDShortDay[4]='Th';
+$LDShortDay[5]='Fr';
+$LDShortDay[6]='Sa';
+
+$LDFullDay[0]='Sunday';
+$LDFullDay[1]='Monday';
+$LDFullDay[2]='Tuesday';
+$LDFullDay[3]='Wednesday';
+$LDFullDay[4]='Thursday';
+$LDFullDay[5]='Friday';
+$LDFullDay[6]='Saturday';
+
 $LDDoc1='Doctor-On-Call 1';
 $LDDoc2='Doctor-On-Call 2';
 $LDClosePlan='Close this plan';
@@ -75,14 +76,14 @@ $LDOn='on';
 $LDCloseWindow='Close window';
 $LDMonth='Month';
 $LDYear='Year';
-$LDPerElements=array('Family name',
-									'Given name',
-									'Date of birth',
-									'Beeper',
-									'Phone',
-									'Beeper',
-									'Phone'
-									);
+$LDPerElements[0]='Familyname';
+$LDPerElements[1]='Givenname';
+$LDPerElements[2]='Dateofbirth';
+$LDPerElements[3]='Beeper';
+$LDPerElements[4]='Phone';
+$LDPerElements[5]='Beeper';
+$LDPerElements[6]='Phone';
+
 $LDChgDept='Change department: ';
 $LDChange='Change';
 $LDCreatePersonList='Create a list for personnel';

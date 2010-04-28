@@ -58,13 +58,58 @@ $LDOrderBotActivate='OrderBot';
 $LDOrderBotActivateTxt='Activate automatic reception of order lists.';
 
 $LDNotSent='Not yet sent!';
-$LDcatindex=array('','Article','Pcs.','','Order nr.','','');
-$LDFinindex=array('','Article','Pcs.','','Order nr.');
-$LDListindex=array('','','Created on','Time','Created  by','');
-$LDGenindex=array('','','','Article','Generic','Description','Order nr.');
-$LDCindex=array('&nbsp;','&nbsp;','Article','Pcs.','&nbsp;','Order nr.','&nbsp;','&nbsp;');
-$LDMCindex=array('','Article','Pcs. pro order','Order nr.','');
-$LDMSRCindex=array('','Order nr','Article nr.','License nr.','Article','Generic','Description','');
+$LDcatindex[0]='';
+$LDcatindex[1]='Article';
+$LDcatindex[2]='Pcs.';
+$LDcatindex[3]='';
+$LDcatindex[4]='Order nr.';
+$LDcatindex[5]='';
+$LDcatindex[6]='';
+
+$LDFinindex[0]='';
+$LDFinindex[1]='Article';
+$LDFinindex[2]='Pcs.';
+$LDFinindex[3]='';
+$LDFinindex[4]='Order nr.';
+
+$LDListindex[0]='';
+$LDListindex[1]='';
+$LDListindex[2]='Created on';
+$LDListindex[3]='Time';
+$LDListindex[4]='Created by';
+$LDListindex[5]='';
+
+$LDGenindex[0]='';
+$LDGenindex[1]='';
+$LDGenindex[2]='';
+$LDGenindex[3]='Article';
+$LDGenindex[4]='Generic';
+$LDGenindex[5]='Description';
+$LDGenindex[6]='Ordernr.';
+
+$LDCindex[0]=' ';
+$LDCindex[1]=' ';
+$LDCindex[2]='Article';
+$LDCindex[3]='Pcs.';
+$LDCindex[4]=' ';
+$LDCindex[5]='Order nr.';
+$LDCindex[6]=' ';
+$LDCindex[7]=' ';
+
+$LDMCindex[0]='';
+$LDMCindex[1]='Article';
+$LDMCindex[2]='Pcs.proorder';
+$LDMCindex[3]='Order nr.';
+$LDMCindex[4]='';
+
+$LDMSRCindex[0]='';
+$LDMSRCindex[1]='Order nr';
+$LDMSRCindex[2]='Article nr.';
+$LDMSRCindex[3]='License nr.';
+$LDMSRCindex[4]='Article';
+$LDMSRCindex[5]='Generic';
+$LDMSRCindex[6]='Description';
+$LDMSRCindex[7]='';
 
 $LDBasketEmpty='The basket is empty at the moment.';
 $LDWasSent='Somebody has either already sent the order to the pharmacy or erased it! Please create a new order list. Thank you.';
@@ -111,9 +156,30 @@ $LDDept='Department';
 $LDPrio='Priority';
 $LDSearchIn='Search after';
 
-$LDArchindex=array('&nbsp;','&nbsp;','Order list from:','Received on:','at:','&nbsp;','Processed on: at:','by:');
-$LDArchValindex=array('Order from','on','at','Sent by','Validated by','Sent on',' at','');
-$LDOrderIndex=array('&nbsp;','&nbsp;','Order from','Arrived on','at','Status');
+$LDArchindex[0]=' ';
+$LDArchindex[1]=' ';
+$LDArchindex[2]='Order list from:';
+$LDArchindex[3]='Received on:';
+$LDArchindex[4]='at:';
+$LDArchindex[5]=' ';
+$LDArchindex[6]='Processed on:at:';
+$LDArchindex[7]='by:';
+
+$LDArchValindex[0]='Order from';
+$LDArchValindex[1]='on';
+$LDArchValindex[2]='at';
+$LDArchValindex[3]='Sent by';
+$LDArchValindex[4]='Validated by';
+$LDArchValindex[5]='Sent on';
+$LDArchValindex[6]='at';
+$LDArchValindex[7]='';
+
+$LDOrderIndex[0]=' ';
+$LDOrderIndex[1]=' ';
+$LDOrderIndex[2]='Order from';
+$LDOrderIndex[3]='Arrived on';
+$LDOrderIndex[4]='at';
+$LDOrderIndex[5]='Status';
 
 $LDPlsEnterMore='Please enter some more information and try it again.';
 $LDNoSingleChar='A single character will be ignored.';
