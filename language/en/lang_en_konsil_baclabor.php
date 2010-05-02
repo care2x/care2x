@@ -25,8 +25,10 @@ $LDBlockerPos='Blocker positive';
 $LDBacNr_GT='Bac.ct.>10^5';
 $LDBacNr_LT='Bac.ct.<10^5';
 $LDBacNrNeg='Bac.ct.neg';
-$LDSMR=array('S','M','R');
 
+$LDSMR[0]='S';
+$LDSMR[0]='M';
+$LDSMR[0]='R';
 /* 2002-09-19 EL */
 $LDBAC[0]='Patho.I';
 $LDBAC[1]='Patho.II';

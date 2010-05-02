@@ -47,7 +47,12 @@ $LDCloseWin='Close admission window';
 $LDError='Information is missing in the input field marked <font color=red>red</font>!';
 $LDErrorS='Some information are missing in the input fields marked with <font color=red>red</font>!';
 
-$fieldname=array('Patient nr.','Lastname','Firstname','Date of birth','Options');
+$fieldname[0] = 'Patient nr.';
+$fieldname[1] = 'Lastname';
+$fieldname[2] = 'Firstname';
+$fieldname[3] = 'Date of birth';
+$fieldname[4] = 'Options';
+
 $LDEntryPrompt='Enter the search keyword. For example: lastname, or firstname, or date of birth, etc.';
 $LDSEARCH='SEARCH';
 $LDAdmWantEntry='I need to admit a patient';

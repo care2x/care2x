@@ -16,7 +16,12 @@ $LDOtherOptions='Other options';
 $LDOptions='Options';
 $LDMemo='Read or compose a memo';
 $LDTitleMemo='Memo';
-$LDfieldname=array('Patient nr.','Family name','Name','Birthdate');
+
+$LDfieldname[0]='Patient nr.';
+$LDfieldname[1]='Family name';
+$LDfieldname[2]='Name';
+$LDfieldname[3]='Birthdate';
+
 $LDSearchWordPrompt='Enter a search keyword, for example: a family name, a name, a birthdate, etc.';
 $LDEnterData='Click to enter data';
 $LDClk2See='Click to see data';

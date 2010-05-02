@@ -145,8 +145,16 @@ $LDOpOutFull='Exit';
 $LDEditPatientData='Edit the journal data of ~tagword~';
 $LDOpenPatientFolder='Open the nursing folder of ~tagword~';
 
-$tbuf=array('O','A','S','R');
-$cbuf=array('Surgeon','Assistant','Scrub nurse','Rotating nurse');
+$tbuf[0]='O';
+$tbuf[1]='A';
+$tbuf[2]='S';
+$tbuf[3]='R';
+
+$cbuf[0]='Surgeon';
+$cbuf[1]='Assistant';
+$cbuf[2]='Scrub nurse';
+$cbuf[3]='Rotating nurse';
+
 
 /**
 *  A tiny dictionary:
@@ -289,7 +297,16 @@ $LDStandbyPerson='Standby';
 $LDOnCallPerson='On call';
 $LDMonth='Month';
 $LDYear='Year';
-$LDDutyElements = array('Date','&nbsp;','Family name, Given name','from','to','OP Room','Diagnosis & therapy');
+
+$LDDutyElements[0]='Date';
+$LDDutyElements[1]=' ';
+$LDDutyElements[2]='Family name,Given name';
+$LDDutyElements[4]='from';
+$LDDutyElements[5]='to';
+$LDDutyElements[6]='OP Room';
+$LDDutyElements[7]='Diagnosis and therapy';
+
+
 $LDPrint='Print';
 $LDAlertNoPrinter='You must print manually. Right click on the window,  then select Print.';
 $LDAlertNotSavedYet='The latest entry is not saved yet. Do you want to save first?';
