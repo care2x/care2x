@@ -193,8 +193,23 @@ if(!$GLOBALCONFIG['language_single']) {
 		    $savelang=1;
 	}else{
 		//echo $lang=$USERCONFIG['lang'];
-        if(empty($USERCONFIG['lang']) || !isset($USERCONFIG['lang'])) $lang=$USERCONFIG['lang'];
-			    else  include('chklang.php');
+		/* if($USERCONFIG['lang']) $lang=$USERCONFIG['lang'];
+		 *   else  include('chklang.php');
+		 * */
+		
+		 
+		 if(empty($USERCONFIG['lang']) || !isset($USERCONFIG['lang'])) {
+		 	// USERCONFIG contain a value
+		 	if (empty($lang) || !isset ($lang)){
+		 		// langugae selection is not given, set the default language:
+		 		$lang=$USERCONFIG['lang'];
+		 	} else {
+		 		// no language selection given, so try to find out what language is used on this server
+		 		include('chklang.php');
+		 	}
+		 	
+		 }
+			  
 	 } 
 }else{
 
