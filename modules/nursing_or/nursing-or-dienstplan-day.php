@@ -28,7 +28,7 @@ $offset_day=$pday-1;
 switch($retpath)
 {
 	case "menu": $rettarget=$root_path.'modules/main/op-doku.php'.URL_APPEND; break;
-	case "qview": $rettarget=$root_path.'modules/nursing_or/nursing-or-dienst-schnellsicht.php'.URL_APPEND; break;
+	case "qview": $rettarget=$root_path.'modules/nursing_or/nursing-or-shift-fastview.php'.URL_APPEND; break;
 	case "calendar_opt": $rettarget=$root_path."modules/calendar/calendar-options.php".URL_APPEND."&dept_nr=$dept_nr&forcestation=1&day=$pday&month=$pmonth&year=$pyear";break;
 	default: $rettarget="javascript:window.history.back()";
 }

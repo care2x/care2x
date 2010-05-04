@@ -26,7 +26,7 @@ $allowedarea=&$allow_area['wards'];
 $fileforward="nursing-station.php".URL_REDIRECT_APPEND."&fwd_nr=$fwd_nr&edit=$edit&retpath=$retpath&station=$station&ward_nr=$ward_nr&dept_nr=$dept_nr&pday=$pday&pmonth=$pmonth&pyear=$pyear";
 //$fileforward="nursing-station.php?sid=$sid&edit=$edit&retpath=$retpath&station=$station";
 $thisfile="nursing-station-pass.php";
-if($retpath=="quick") $breakfile="nursing-schnellsicht.php".URL_APPEND;
+if($retpath=="quick") $breakfile="nursing-fastview.php".URL_APPEND;
  else $breakfile="nursing.php".URL_APPEND;
 
 $lognote="$LDNursingStation $station ok";

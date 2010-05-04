@@ -38,7 +38,7 @@ $maxdays=date("t",mktime(0,0,0,$pmonth,1,$pyear));
 switch($retpath)
 {
 	case "menu": $rettarget='doctors.php'.URL_APPEND; break;
-	case "qview": $rettarget='doctors-dienst-schnellsicht.php'.URL_APPEND.'&hilitedept='.$dept_nr; break;
+	case "qview": $rettarget='doctors-shift-fastview.php'.URL_APPEND.'&hilitedept='.$dept_nr; break;
 	default: $rettarget="javascript:window.history.back()";
 }
 

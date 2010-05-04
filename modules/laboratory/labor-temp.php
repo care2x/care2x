@@ -80,7 +80,7 @@ require($root_path.'include/core/inc_css_a_hilitebu.php');
                 <TD vAlign=top width=180><FONT 
                   face="Verdana,Helvetica,Arial" size=2><B> 
    				<img <?php echo createComIcon($root_path,'blaupfeil.gif','0','middle') ?>>  
-				<a href="doctors-dienst-schnellsicht.php?sid=<?php echo "$sid&lang=$lang" ?>&retpath=op"><?php echo "$LDDutyPlan $LDQuickview" ?></a></B></FONT></TD>
+				<a href="doctors-shift-fastview.php?sid=<?php echo "$sid&lang=$lang" ?>&retpath=op"><?php echo "$LDDutyPlan $LDQuickview" ?></a></B></FONT></TD>
                 <TD><FONT face="Verdana,Helvetica,Arial" 
                   size=2><nobr><?php echo $LDQviewTxtDocs ?></nobr></FONT></TD></TR>
               

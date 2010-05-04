@@ -178,7 +178,7 @@ for($x=0;$x<6;$x++)
 			if($pyear.$mn.$dn>date(Ymd))  echo 'color="#dfdfdf"'; else echo 'color="#000088"';
 			echo '><b>&nbsp;';
 			if($pyear.$mn.$dn<=date(Ymd))  echo '
-			  <a href="nursing-schnellsicht.php'.URL_APPEND.'&from=arch&dept='.$dept.'&edit=0&pday='.$dn.'&pmonth='.$mn.'&pyear='.$pyear.'">';
+			  <a href="nursing-fastview.php'.URL_APPEND.'&from=arch&dept='.$dept.'&edit=0&pday='.$dn.'&pmonth='.$mn.'&pyear='.$pyear.'">';
 			echo $daynumber[$j];
 			if($pyear.$mn.$dn<=date(Ymd))  echo '</a>';
 			echo '</b></td>'; $j++;
@@ -190,7 +190,7 @@ for($x=0;$x<6;$x++)
 	  <FONT  face="times new roman"   SIZE=5 ';
 	if($pyear.$mn.$dn>date(Ymd))  echo 'color="#dfdfdf"'; else echo 'color="#ff0000"';
 	echo '><b>&nbsp;';
-	if($pyear.$mn.$dn<=date(Ymd))  echo '<a href="nursing-schnellsicht.php'.URL_APPEND.'&from=arch&dept='.$dept.'&edit=0&pday='.$dn.'&pmonth='.$mn.'&pyear='.$pyear.'">';
+	if($pyear.$mn.$dn<=date(Ymd))  echo '<a href="nursing-fastview.php'.URL_APPEND.'&from=arch&dept='.$dept.'&edit=0&pday='.$dn.'&pmonth='.$mn.'&pyear='.$pyear.'">';
 	echo $daynumber[$j];
 	if($pyear.$mn.$dn<=date(Ymd))  echo '</a>';
 	echo '</b></td>'; 	$j++;

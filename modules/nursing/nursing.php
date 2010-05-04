@@ -72,7 +72,7 @@
 # Prepare the submenu links indexed with their template tags
 
 $aSubMenuItem = array('LDNursingStations' => $LDNursingStations." <img ".createComIcon($root_path,'dwn-arrow-grn.gif','0','absmiddle').">",
-										'LDQuickView'  => "<a href=\"".$root_path."modules/nursing/nursing-schnellsicht.php".URL_APPEND."\">$LDQuickView</a>",
+										'LDQuickView'  => "<a href=\"".$root_path."modules/nursing/nursing-fastview.php".URL_APPEND."\">$LDQuickView</a>",
 										'LDSearchPatient'  => "<a href=\"".$root_path."modules/nursing/nursing-patient-such-start.php".URL_APPEND."\">$LDSearchPatient</a>",
 										'LDArchive'  => "<a href=\"".$root_path."modules/nursing/nursing-station-archiv.php".URL_APPEND."\">$LDArchive</a>",
 										'LDNursesList'  => "<a href=\"".$root_path."modules/nursing_or/nursing-or-main-pass.php".URL_APPEND."&target=setpersonal&retpath=menu\">$LDNursesList</a>",

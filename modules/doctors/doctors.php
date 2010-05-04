@@ -68,7 +68,7 @@ $aSubMenuText=array($LDQViewTxt,
 
 # Prepare the submenu item links indexed by their template tags
 
-$aSubMenuItem=array('LDQViewTxt' => '<a href="doctors-dienst-schnellsicht.php'.URL_APPEND.'&retpath=docs">'.$LDQView.'</a>',
+$aSubMenuItem=array('LDQViewTxt' => '<a href="doctors-shift-fastview.php'.URL_APPEND.'&retpath=docs">'.$LDQView.'</a>',
 										'LDDutyPlanTxt' => '<a href="doctors-main-pass.php'.URL_APPEND.'&target=dutyplan&retpath=menu">'.$LDDOCS.'</a>',
 										'LDDocsForumTxt' => '<a href="doctors-main-pass.php'.URL_APPEND.'&target=setpersonal&retpath=menu">'.$LDDocsList.'</a>',
 										'LDNewsTxt' => '<a href="'.$root_path.'modules/news/newscolumns.php'.URL_APPEND.'&dept_nr=37&user_origin=dept">'.$LDNews.'</a>',

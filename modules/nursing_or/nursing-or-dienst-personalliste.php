@@ -82,7 +82,7 @@ if(!isset($mode)) $mode='';
 if(!empty($ipath)){
 	switch($ipath){
 		case 'menu': $breakfile=$root_path.'main/op-doku.php'.URL_APPEND; break;
-		case 'qview': $breakfile="nursing-or-dienst-schnellsicht.php".URL_APPEND."&hilitedept=$dept_nr"; break;
+		case 'qview': $breakfile="nursing-or-shift-fastview.php".URL_APPEND."&hilitedept=$dept_nr"; break;
 		case 'plan': $breakfile="nursing-or-dienstplan-planen.php".URL_APPEND."&dept_nr=$dept_nr&pmonth=$pmonth&pyear=$pyear&retpath=$retpath"; break;
 		default: $breakfile="javascript:window.history.back()";
 	}
@@ -90,7 +90,7 @@ if(!empty($ipath)){
 
 $append='&retpath='.$retpath.'&ipath='.$ipath;		
 
-# Initialize page´s control variables
+# Initialize pageï¿½s control variables
 if($mode=='paginate'){
 	$searchkey=$_SESSION['sess_searchkey'];
 	//$searchkey='USE_SESSION_SEARCHKEY';

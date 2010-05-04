@@ -77,15 +77,15 @@ $smarty->assign('LDOrDocumentMenu',
 			<TR>
 				<TD bgColor=#ffffff>
 				<font face=arial,verdana size=2>
-				» <A href="' . $root_path . 'modules/op_document/op-doku-pass.php' . URL_REDIRECT_APPEND . '&target=entry">' . $LDNewDocu . '</A>
-				» <A href="' . $root_path . 'modules/op_document/op-doku-pass.php' . URL_REDIRECT_APPEND . '&target=search">' . $LDSearch . '</A>
-				» <A href="' . $root_path . 'modules/op_document/op-doku-pass.php' . URL_REDIRECT_APPEND . '&target=archiv">' . $LDArchive . '</A>
+				 <A href="' . $root_path . 'modules/op_document/op-doku-pass.php' . URL_REDIRECT_APPEND . '&target=entry">' . $LDNewDocu . '</A>
+				 <A href="' . $root_path . 'modules/op_document/op-doku-pass.php' . URL_REDIRECT_APPEND . '&target=search">' . $LDSearch . '</A>
+				 <A href="' . $root_path . 'modules/op_document/op-doku-pass.php' . URL_REDIRECT_APPEND . '&target=archiv">' . $LDArchive . '</A>
 				</font>
 				</TD>
 			</TR>
 	</TABLE>');
 
-$smarty->assign('LDQviewDocs',"<a href=\"".$root_path."modules/doctors/doctors-dienst-schnellsicht.php".URL_APPEND."&retpath=op\">$LDDOC $LDQuickView</a>");
+$smarty->assign('LDQviewDocs',"<a href=\"".$root_path."modules/doctors/doctors-shift-fastview.php".URL_APPEND."&retpath=op\">$LDDOC $LDQuickView</a>");
 $smarty->assign('LDQviewTxtDocs',$LDQviewTxtDocs);
 
 # OR Nursing submenu block
@@ -98,13 +98,13 @@ $smarty->assign('LDOrLogBookMenu',
   		'<TABLE cellSpacing=1 cellPadding=5 width="100%" bgColor=#dddddd border=0>
 			<TR>
 				<TD bgColor=#ffffff><font face=arial,verdana size=2><nobr> 
-				» <A href="' . $root_path . 'modules/or_logbook/op-pflege-logbuch-pass.php' . URL_REDIRECT_APPEND.'&target=entry";>'.  $LDNewDocu .'</A>
-				» <A href="'. $root_path .'modules/or_logbook/op-pflege-logbuch-pass.php' .  URL_REDIRECT_APPEND . '&target=search";">' .  $LDSearch . '</A> 
-				» <A href="'.  $root_path . 'modules/or_logbook/op-pflege-logbuch-pass.php' .  URL_REDIRECT_APPEND . '&target=archiv";">' .  $LDArchive . '</A>
+				 <A href="' . $root_path . 'modules/or_logbook/op-pflege-logbuch-pass.php' . URL_REDIRECT_APPEND.'&target=entry";>'.  $LDNewDocu .'</A>
+				 <A href="'. $root_path .'modules/or_logbook/op-pflege-logbuch-pass.php' .  URL_REDIRECT_APPEND . '&target=search";">' .  $LDSearch . '</A> 
+				 <A href="'.  $root_path . 'modules/or_logbook/op-pflege-logbuch-pass.php' .  URL_REDIRECT_APPEND . '&target=archiv";">' .  $LDArchive . '</A>
 				</font></TD>
 			</TR>
 		</TABLE>');
-$smarty->assign('LDORNOCQuickView',"<a href=\"".$root_path."modules/nursing_or/nursing-or-dienst-schnellsicht.php".URL_APPEND."\">$LDORNOC $LDQuickView</a>");
+$smarty->assign('LDORNOCQuickView',"<a href=\"".$root_path."modules/nursing_or/nursing-or-shift-fastview.php".URL_APPEND."\">$LDORNOC $LDQuickView</a>");
 $smarty->assign('LDQviewTxtNurse',$LDQviewTxtNurse);
 //PDienstplan
 $smarty->assign('LDORNOCScheduler',"<a href=\"".$root_path."modules/nursing_or/nursing-or-main-pass.php".URL_APPEND."&retpath=menu&target=dutyplan\">$LDORNOC $LDScheduler </a>");
@@ -113,9 +113,9 @@ $smarty->assign('LDDutyPlanMenu',
   		  		'<TABLE cellSpacing=1 cellPadding=5 width="100%" bgColor=#dddddd border=0>
 				<TR>
 					<TD bgColor=#ffffff><font face=arial,verdana size=2> 
-					» <A href="'.$root_path.'modules/nursing_or/nursing-or-dienstplan.php'. URL_REDIRECT_APPEND.'&retpath=menu">'. $LDSee .'</A> 
-					» <A href="'.$root_path.'modules/nursing_or/nursing-or-main-pass.php'.URL_REDIRECT_APPEND.'&retpath=menu&target=dutyplan">'.$LDCreate . '/' . $LDUpdate .'</A> 
-					» <A href="'.$root_path.'modules/nursing_or/nursing-or-main-pass.php'. URL_REDIRECT_APPEND.'&target=setpersonal&retpath=menu">' . $LDCreatePersonList .'</A>
+					 <A href="'.$root_path.'modules/nursing_or/nursing-or-dienstplan.php'. URL_REDIRECT_APPEND.'&retpath=menu">'. $LDSee .'</A> 
+					 <A href="'.$root_path.'modules/nursing_or/nursing-or-main-pass.php'.URL_REDIRECT_APPEND.'&retpath=menu&target=dutyplan">'.$LDCreate . '/' . $LDUpdate .'</A> 
+					 <A href="'.$root_path.'modules/nursing_or/nursing-or-main-pass.php'. URL_REDIRECT_APPEND.'&target=setpersonal&retpath=menu">' . $LDCreatePersonList .'</A>
 					</font></TD>
 				</TR>
 		</TABLE>');
@@ -127,7 +127,7 @@ $smarty->assign('LDOnCallDutyTxt',$LDOnCallDutyTxt);
 
 $smarty->assign('LDORAnesthesia',"<img ".createLDImgSrc($root_path,'anaes.gif','0','absmiddle')."  alt=\"$LDAna\">");
 
-$smarty->assign('LDORAnaQuickView',"<a href=\"".$root_path."modules/nursing_or/nursing-or-dienst-schnellsicht.php".URL_APPEND."&retpath=menu&hilitedept=39\">$LDQuickView</a>");
+$smarty->assign('LDORAnaQuickView',"<a href=\"".$root_path."modules/nursing_or/nursing-or-shift-fastview.php".URL_APPEND."&retpath=menu&hilitedept=39\">$LDQuickView</a>");
 $smarty->assign('LDQviewTxtAna',$LDQviewTxtAna);
 //AnaDienstplan
 $smarty->assign('LDORAnaNOCScheduler',"<a href=\"".$root_path."modules/nursing_or/nursing-or-dienstplan.php".URL_APPEND."&dept_nr=39&retpath=menu\" >$LDORNOC $LDScheduler</a>");
@@ -135,8 +135,8 @@ $smarty->assign('LDORAnaNOCSchedulerMenu',
   		  		'<TABLE cellSpacing=1 cellPadding=5 width="100%" bgColor=#dddddd border=0>
 			<TR>
 				<TD bgColor=#ffffff><font face=arial,verdana size=2>
-				» <A href="' . $root_path . 'modules/nursing_or/nursing-or-dienstplan.php'.URL_REDIRECT_APPEND.'">'. $LDSee .'</A>
-				» <A href="' . $root_path . 'modules/nursing_or/nursing-or-main-pass.php'.URL_REDIRECT_APPEND.'">'. $LDCreate . '/' . $LDUpdate  .'</A>
+				 <A href="' . $root_path . 'modules/nursing_or/nursing-or-dienstplan.php'.URL_REDIRECT_APPEND.'">'. $LDSee .'</A>
+				 <A href="' . $root_path . 'modules/nursing_or/nursing-or-main-pass.php'.URL_REDIRECT_APPEND.'">'. $LDCreate . '/' . $LDUpdate  .'</A>
 				</font></TD>
 			</TR>
 		</TABLE>');
