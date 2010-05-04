@@ -186,13 +186,14 @@ $savelang=0;
 while (list($x,$v)=each($GLOBALCONFIG)) echo $x.'==>'.$v.'<br>';
 */
 # Start checking language properties 
+
 if(!$GLOBALCONFIG['language_single']) {
     # We get the language code
     if($_chg_lang_&&!empty($lang)) {
 		    $savelang=1;
 	}else{
 		//echo $lang=$USERCONFIG['lang'];
-        if($USERCONFIG['lang']) $lang=$USERCONFIG['lang'];
+        if(empty($USERCONFIG['lang']) || !isset($USERCONFIG['lang'])) $lang=$USERCONFIG['lang'];
 			    else  include('chklang.php');
 	 } 
 }else{
