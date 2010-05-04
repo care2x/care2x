@@ -18,7 +18,7 @@ require_once($root_path.'include/core/inc_db_makelink.php');
 
 # The function getLang gets the language code and stores it to the lang variable
 # The ck_language variable is a cookie which holds the language code stored at the beginning of
-# browser´s session. After acquiring the language code, the existence of the language table is
+# browserï¿½s session. After acquiring the language code, the existence of the language table is
 # checked. If language table does not exist, function returns 0.
 #
 # param chk_file =  filename of the language table
@@ -41,7 +41,7 @@ function getLang($chk_file) {
 require_once($root_path.'include/core/inc_charset_fx.php'); // charset functions
 
 # The following lines of code is the script chaining detector. It compares the sid values propagated via
-# the relative url with the ck_sid+sid (decrypted) cookie values. If the two don´t match, a warning message will apear and
+# the relative url with the ck_sid+sid (decrypted) cookie values. If the two donï¿½t match, a warning message will apear and
 # the script exits stopping the execution. If the caller script does not require chaining, it must set the
 # constant NO_CHAIN to 1 before including this script.
 
