@@ -165,7 +165,6 @@ class ADODB_Active_Record {
 		}
 	}
 	
-	// CFR Lamest singular inflector ever - @todo Make it real!
 	// Note: There is an assumption here...and it is that the argument's length >= 4
 	function _singularize($tables)
 	{

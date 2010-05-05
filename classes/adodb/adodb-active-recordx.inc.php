@@ -244,7 +244,7 @@ class ADODB_Active_Record {
 		}
 	}
 	
-	// CFR Lamest singular inflector ever - @todo Make it real!
+	// CFR Lamest singular inflector ever - @to do Make it real!
 	// Note: There is an assumption here...and it is that the argument's length >= 4
 	function _singularize($table)
 	{
@@ -301,7 +301,7 @@ class ADODB_Active_Record {
 			$table->_hasMany[$foreignRef] = $ar;
 			$table->updateColsCount();
 		}
-# @todo Can I make this guy be lazy?
+
 		$this->$foreignRef = $table->_hasMany[$foreignRef]; // WATCHME Removed assignment by ref. to please __get()
 	}
 
@@ -806,8 +806,7 @@ class ADODB_Active_Record {
 		else
 			$myId   = 'id';
 		$index = 0; $found = false;
-		/** @todo Improve by storing once and for all in table metadata */
-		/** @todo Also re-use info for hasManyId */
+
 		foreach($this->TableInfo()->flds as $fld)
 		{
 			if($fld->name == $myId)
@@ -833,7 +832,7 @@ class ADODB_Active_Record {
 				}
 				$obj = new $class($table,false,$db);
 				$obj->Set($row);
-				// TODO Copy/paste code below: bad!
+				// TO DO Copy/paste code below: bad!
 				if(count($table->_hasMany) > 0)
 				{
 					foreach($table->_hasMany as $foreignTable)
@@ -1122,8 +1121,8 @@ function adodb_GetActiveRecordsClass(&$db, $class, $tableObj,$whereOrderBy,$bind
 		else
 			$myId   = 'id';
 		$index = 0; $found = false;
-		/** @todo Improve by storing once and for all in table metadata */
-		/** @todo Also re-use info for hasManyId */
+
+		
 		foreach($tableInfo->flds as $fld)
 		{
 			if($fld->name == $myId)
@@ -1225,16 +1224,7 @@ function adodb_GetActiveRecordsClass(&$db, $class, $tableObj,$whereOrderBy,$bind
 				return $false;
 			}
 			$obj->Set($row);
-			// CFR: FIXME: Insane assumption here:
-			// If the first column returned is an integer, then it's a 'id' field
-			// And to make things a bit worse, I use intval() rather than is_int() because, in fact,
-			// $row[0] is not an integer.
-			//
-			// So, what does this whole block do?
-			// When relationships are found, we perform JOINs. This is fast. But not accurate:
-			// instead of returning n objects with their n' associated cousins,
-			// we get n*n' objects. This code fixes this.
-			// Note: to-many relationships mess around with the 'limit' parameter
+
 			$rowId = intval($row[$index]);
 
 			if(ADODB_WORK_AR == $extra['loading'])
@@ -1272,7 +1262,7 @@ function adodb_GetActiveRecordsClass(&$db, $class, $tableObj,$whereOrderBy,$bind
 					if($isNewObj)
 						$uniqArr['_'.$row[0]] = $obj;
 
-					// TODO Copy/paste code below: bad!
+					// TO DO Copy/paste code below: bad!
 					if(!empty($relations['hasMany']))
 					{
 						foreach($relations['hasMany'] as $foreignTable)
@@ -1285,7 +1275,7 @@ function adodb_GetActiveRecordsClass(&$db, $class, $tableObj,$whereOrderBy,$bind
 								if(!is_array($masterObj->$foreignName))
 								{
 									// Pluck!
-									$foreignObj = $masterObj->$foreignName;
+									@todo Make it real!$foreignObj = $masterObj->$foreignName;
 									$masterObj->$foreignName = array(clone($foreignObj));
 								}
 								else
