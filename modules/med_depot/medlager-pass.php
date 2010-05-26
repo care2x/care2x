@@ -6,7 +6,7 @@ require($root_path.'include/core/inc_environment_global.php');
 * CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
 * GNU General Public License
 * Copyright 2002,2003,2004,2005 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -57,13 +57,7 @@ switch($mode) {
 						$src="catalogpass";
 						$userck="ck_supply_db_user";
 						$fileforward=$root_path."modules/supplier/supply.php".$append.$userck;
-						break;	
-	case "reports"	: $title="Reports";
-						$allowedarea[] = '_a_3_meddepotorder';
-						$src="orderpass";
-						$userck="ck_prod_order_user";
-					    $fileforward=$root_path."modules/med_depot/reports/index.php".$append.$userck;;
-					    break;
+						break;
 	default: 	$title=$LDPharmaOrder;
 						$allowedarea[] = '_a_3_meddepotorder';
 						$src="orderpass";
@@ -82,7 +76,7 @@ setcookie($userck.$sid,'');
 require($root_path.'include/core/inc_2level_reset.php'); setcookie('ck_2level_sid'.$sid,'',0,'/');
 
 require($root_path.'include/core/inc_passcheck_internchk.php');
-if ($pass=='check') 	
+if ($pass=='check')
 	include($root_path.'include/core/inc_passcheck.php');
 
 $errbuf="$LDMedDepot $title";
@@ -97,9 +91,9 @@ require($root_path.'include/core/inc_passcheck_head.php');
 <img src="../../gui/img/common/default/soft.png" border=0 width=64 height=64 align="middle">
 <FONT  COLOR="<?php echo $cfg[top_txtcolor] ?>"  SIZE=5  FACE="verdana"> <b><?php echo "$LDMedDepot :: $title" ?></b></font>
 <p>
-<table width=100% border=0 cellpadding="0" cellspacing="0"> 
+<table width=100% border=0 cellpadding="0" cellspacing="0">
 
-<?php require($root_path.'include/core/inc_passcheck_mask.php') ?>  
+<?php require($root_path.'include/core/inc_passcheck_mask.php') ?>
 
 <p>
 <img <?php echo createComIcon($root_path,'varrow.gif','0') ?>> <a href="<?php echo $root_path; ?>main/ucons.php<?php echo URL_APPEND; ?>"><?php echo "$LDIntro2 $LDMedDepot $title " ?></a><br>

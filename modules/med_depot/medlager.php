@@ -6,7 +6,7 @@ require($root_path.'include/core/inc_environment_global.php');
 * CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
 * GNU General Public License
 * Copyright 2002,2003,2004,2005 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -23,7 +23,7 @@ $access = new Access($_SESSION['sess_login_userid'],$_SESSION['sess_login_pw']);
 $hideOrder = 0;
 if(ereg("_a_1_meddepotdbadmin",$access->PermissionAreas()))
 	$hideOrder = 1;
-	
+
 # Start Smarty templating here
  /**
  * LOAD Smarty
@@ -49,7 +49,7 @@ if(ereg("_a_1_meddepotdbadmin",$access->PermissionAreas()))
 
  # Window bar title
  $smarty->assign('title',$LDMedDepot);
- 
+
  # Add the bot onLoad code
 
  if(isset($stb) && $stb) $smarty->assign('sOnLoadJs','onLoad="startbot()"');
@@ -59,7 +59,7 @@ if(ereg("_a_1_meddepotdbadmin",$access->PermissionAreas()))
 
 <script language="javascript">
 <!--
-<?php 
+<?php
 
 if($stb)
 echo '
@@ -86,8 +86,7 @@ $smarty->append('JavaScript',$sTemp);
 					createComIcon($root_path,'storage.gif','0'),
 					createComIcon($root_path,'sitemap_animator.gif','0'),
 					createComIcon($root_path,'storage.gif','0'),
-					createComIcon($root_path,'storage.gif','0'),
-					createComIcon($root_path,'redlist.gif','0')										
+					createComIcon($root_path,'storage.gif','0')
 					);
 
 # Prepare the submenu item descriptions
@@ -99,8 +98,7 @@ $aSubMenuText=array($LDPharmaOrderTxt,
 					$LDPharmaDbTxt,
 					$LDOrderBotActivateTxt,
 					$LDSupplierTxt,
-					$LDSupplyTxt,
-					$LDRaporteDepoTxt
+					$LDSupplyTxt
 					);
 
 # Prepare the submenu item links indexed by their template tags
@@ -112,8 +110,7 @@ $aSubMenuItem=array('LDPharmaOrder' => "<a href=\"medlager-pass.php".URL_APPEND.
 					'LDPharmaDb' => "<a href=\"medlager-pass.php".URL_APPEND."&mode=dbank\">$LDPharmaDb</a>",
 					'LDOrderBotActivate' => "<a href=\"medlager-bestellbot-pass.php".URL_APPEND."\" >$LDMediBotActivate</a>",
 					'LDSupplier' => "<a href=\"medlager-pass.php".URL_APPEND."&mode=supplier\">$LDSupplier</a>",
-					'LDSupply' => "<a href=\"medlager-pass.php".URL_APPEND."&mode=supply\">$LDSupply</a>",
-					'LDRaporteDepo' => "<a href=\"medlager-pass.php".URL_APPEND."&mode=reports\">$LDRaporteDepo</a>"
+					'LDSupply' => "<a href=\"medlager-pass.php".URL_APPEND."&mode=supply\">$LDSupply</a>"
 										);
 
 # Create the submenu rows

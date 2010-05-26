@@ -285,4 +285,17 @@ $LDYellowList='Yellow List';
 $LDYellowListTxt='German pharmaceutical index (needs internet line)';
 $LDClickSelectDept='Please click this to select a department.';
 $LDNoDepartmentAssociation='You are not associated with any department / pharmacy. Please ask your system administrator for help';
+
+$LDSupplier='Supplier';
+$LDSupplierTxt='Create Modify Supplier';
+
+$LDAdresa='Address';
+$LDTelefoni='Tel';
+$LDFax='Fax';
+$LDKodiPostar='ZIP Code';
+
+$LDSupplyTxt='Suppliers list';
+$LDSupply='Supplier';
+$LDClickSelectSupplier='Select Supplier';
+$LDSelectSupplier='Select Supplier';
 ?>
