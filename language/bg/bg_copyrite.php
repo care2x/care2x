@@ -1,5 +1,5 @@
 <?php
-require($root_path.'include/inc_credits_openwin.php');
+
 ?>
 <FONT SIZE=1 FACE="Arial" color=gray>
  <a href="http://www.care2x.org" target=_new>CARE2X версия 2nd Generation Deployment 2.2</a> :: 

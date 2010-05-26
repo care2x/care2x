@@ -1,6 +1,6 @@
 <?php
 
-require($root_path.'include/inc_credits_openwin.php');
+
 ?>
 <FONT    SIZE=1  FACE="Arial" color=gray>
  Cette application est actionn&eacute;e par <a href="http://www.care2x.com" target=_new>CARE 2002 version b&ecirc;ta 1.0.05</a>. Logiciel libre

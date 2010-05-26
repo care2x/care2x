@@ -1,5 +1,5 @@
 <?php
-require($root_path.'include/inc_credits_openwin.php');
+
 ?>
 <FONT    SIZE=1  FACE="Arial" color=gray>
 This Czech version is currently being developed by Petr Roupec. 

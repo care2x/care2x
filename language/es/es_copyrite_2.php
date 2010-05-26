@@ -1,6 +1,6 @@
 <?php
 if($root_path=='') $root_path='../';
-require($root_path.'include/inc_credits_openwin.php');
+
 ?>
 <FONT    SIZE=1  FACE="Arial" color=gray> El proveedor de esta aplicación 
 es<a href="http://www.care2x.com" target=_new> CARE 2X beta version 1.0.09</a>. Un software de código abierto disponible 

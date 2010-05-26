@@ -1,6 +1,6 @@
 <?php
 if(!isset($root_path)||$root_path=="") $root_path="../";
-	require($root_path.'include/inc_credits_openwin.php');
+	
 ?>
 <FONT    SIZE=1  FACE="Arial" color=gray>
 This norwegian version is being developed by Are Kristensen of www.amenta.com.
@@ -9,13 +9,13 @@ This norwegian version is being developed by Are Kristensen of www.amenta.com.
 
  <a href="<?php echo $root_path ?>legal_gnu_gpl.htm" target=_new>kopi av lisensen</a>. 
 
- For mer informasjon ta kontakt med Elpidio Latorilla på <a href=mailto:elpidio@latorilla.com>elpidio@latorilla.com</a>.
+ For mer informasjon ta kontakt med Elpidio Latorilla pï¿½ <a href=mailto:elpidio@latorilla.com>elpidio@latorilla.com</a>.
 
  <p>
 
 <font size=1 face="arial">
 
-[ <a href="<?php echo $root_path ?>language/no/no_privacy.htm" target="pp"> Vår garanti </a> ] 
+[ <a href="<?php echo $root_path ?>language/no/no_privacy.htm" target="pp"> Vï¿½r garanti </a> ] 
 
 [ <a href="javascript:openCreditsWindow()"> Vi takker </a> ]<br></font>
 

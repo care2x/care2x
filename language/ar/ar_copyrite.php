@@ -1,9 +1,9 @@
 <?php
-require($root_path.'include/inc_credits_openwin.php');
+
 ?>
 <p align=right><FONT    SIZE=1  FACE="Tahoma" color=gray>
- <a href="http://www.care2x.org" target=_new>ян— 2X «б≈’ѕ«— 2.2</a> - <a href="<?php echo $root_path ?>legal_gnu_gpl.htm" target=_new>«б —ќн’</a> -
- <a href=mailto:info@care2x.org>≈ ’б »д«</a> <font size=1 face="Tahoma"> - <a href="<?php echo $root_path ?>language/en/en_privacy.htm" target="pp">«бќ’ж’н…</a> - 
- <a href="<?php echo $root_path ?>docs/show_legal.php?lang=<?php echo $lang ?>" target="lgl">«бЌёжё</a> - </font>
- <a href="javascript:openCreditsWindow()">√’Ќ«» «бЁ÷б</a>  <br></font>
+ <a href="http://www.care2x.org" target=_new>пњљпњљпњљ 2X пњљпњљпњљпњљпњљпњљпњљ 2.2</a> - <a href="<?php echo $root_path ?>legal_gnu_gpl.htm" target=_new>пњљпњљпњљпњљпњљпњљпњљ</a> -
+ <a href=mailto:info@care2x.org>пњљпњљпњљпњљ пњљпњљпњљ</a> <font size=1 face="Tahoma"> - <a href="<?php echo $root_path ?>language/en/en_privacy.htm" target="pp">пњљпњљпњљпњљпњљпњљпњљпњљ</a> - 
+ <a href="<?php echo $root_path ?>docs/show_legal.php?lang=<?php echo $lang ?>" target="lgl">пњљпњљпњљпњљпњљпњљ</a> - </font>
+ <a href="javascript:openCreditsWindow()">пњљпњљпњљпњљпњљ пњљпњљпњљпњљпњљ</a>  <br></font>
 </FONT></P>

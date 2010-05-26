@@ -1,5 +1,5 @@
 <?php
-require($root_path.'include/inc_credits_openwin.php');
+
 ?>
 <FONT    SIZE=1  FACE="Arial" color=gray>
  Deze toepassng wordt ondersteund  op <a href="http://www.care2x.com" target=_new>CARE 2X beta version 1.0.09</a>. Een Open Source software pakket beschikbaar onder de GPL licentie.

@@ -1,13 +1,13 @@
 <?php
 
-require($root_path.'include/inc_credits_openwin.php');
+
 ?>
 <FONT    SIZE=1  FACE="Arial" color=gray>
- Bu uygulama <a href="http://www.care2x.com" target=_new>CARE 2002 beta sürüm 1.0.05</a>. Bir açýk kaynak yazýlýmý olup  GNU General Public License ile serbest olarak yazýlýp daðýtýlmaktadýr. Lisans detaylarý 
- <a href="<?php echo $root_path ?>legal_gnu_gpl.htm" target=_new>lisans dosyasýndadýr</a>. 
- Daha fazla bilgi için lütfen <a href=mailto:info@care2x.com>info@care2x.com</a> adresine yazýnýz.
+ Bu uygulama <a href="http://www.care2x.com" target=_new>CARE 2002 beta sï¿½rï¿½m 1.0.05</a>. Bir aï¿½ï¿½k kaynak yazï¿½lï¿½mï¿½ olup  GNU General Public License ile serbest olarak yazï¿½lï¿½p daï¿½ï¿½tï¿½lmaktadï¿½r. Lisans detaylarï¿½ 
+ <a href="<?php echo $root_path ?>legal_gnu_gpl.htm" target=_new>lisans dosyasï¿½ndadï¿½r</a>. 
+ Daha fazla bilgi iï¿½in lï¿½tfen <a href=mailto:info@care2x.com>info@care2x.com</a> adresine yazï¿½nï¿½z.
  <p>
 <font size=1 face="arial">
-.:: <a href="<?php echo $root_path ?>language/tr/tr_privacy.htm" target="pp"> Gizlilik politikamýz </a> :: 
- <a href="javascript:openCreditsWindow()"> Emeði geçenler </a> ::.<br></font>
+.:: <a href="<?php echo $root_path ?>language/tr/tr_privacy.htm" target="pp"> Gizlilik politikamï¿½z </a> :: 
+ <a href="javascript:openCreditsWindow()"> Emeï¿½i geï¿½enler </a> ::.<br></font>
 </FONT>

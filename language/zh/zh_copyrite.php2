@@ -1,11 +1,11 @@
 <?php
-require($root_path.'include/inc_credits_openwin.php');
+
 ?>
 <FONT    SIZE=1  FACE="Arial" color=gray>
- ±¾Ó¦ÓÃ³ÌÐòÎª <a href="http://www.care2x.com" target=_new>CARE 2002 beta version 1.0.08</a>¡£±¾³ÌÐòµÄ±àÖÆºÍ·Ö·¢×ñÑ­GNU(General Public License)Ð­Òé¡£¹ØÓÚ´Ë¿ª·¢Ô´´úÂëÐ­ÒéµÄÏêÏ¸ÐÅÏ¢²Î¼û <a href="<?php echo $root_path ?>legal_gnu_gpl.htm" target=_new>´ËÐ­ÒéµÄ¸±±¾</a>¡£
- ÈçÓÐÆäËüÒªÇó£¬ÇëÁªÂç <a href=mailto:info@care2x.com>info@care2x.com</a>¡£
+ ï¿½ï¿½Ó¦ï¿½Ã³ï¿½ï¿½ï¿½Îª <a href="http://www.care2x.com" target=_new>CARE 2002 beta version 1.0.08</a>ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä±ï¿½ï¿½ÆºÍ·Ö·ï¿½ï¿½ï¿½Ñ­GNU(General Public License)Ð­ï¿½é¡£ï¿½ï¿½ï¿½Ú´Ë¿ï¿½ï¿½ï¿½Ô´ï¿½ï¿½ï¿½ï¿½Ð­ï¿½ï¿½ï¿½ï¿½ï¿½Ï¸ï¿½ï¿½Ï¢ï¿½Î¼ï¿½ <a href="<?php echo $root_path ?>legal_gnu_gpl.htm" target=_new>ï¿½ï¿½Ð­ï¿½ï¿½Ä¸ï¿½ï¿½ï¿½</a>ï¿½ï¿½
+ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ <a href=mailto:info@care2x.com>info@care2x.com</a>ï¿½ï¿½
  <p>
 <font size=1 face="arial">.::
-<a href="<?php echo $root_path ?>language/zh/zh_privacy.htm" target="pp"> ÒþË½ÉùÃ÷ </a>::
-<a href="javascript:openCreditsWindow()"> ÃùÐ» </a>::.
+<a href="<?php echo $root_path ?>language/zh/zh_privacy.htm" target="pp"> ï¿½ï¿½Ë½ï¿½ï¿½ï¿½ï¿½ </a>::
+<a href="javascript:openCreditsWindow()"> ï¿½ï¿½Ð» </a>::.
 <br></font></FONT>
