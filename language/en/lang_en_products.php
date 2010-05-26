@@ -284,4 +284,5 @@ $LDAlertNoNegativeOrder='Negative value is currently not allowed';
 $LDYellowList='Yellow List';
 $LDYellowListTxt='German pharmaceutical index (needs internet line)';
 $LDClickSelectDept='Please click this to select a department.';
+$LDNoDepartmentAssociation='You are not associated with any department / pharmacy. Please ask your system administrator for help';
 ?>

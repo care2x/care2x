@@ -6,7 +6,7 @@ require ($root_path . 'include/core/inc_environment_global.php');
  * CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
  * GNU General Public License
  * Copyright 2002,2003,2004,2005 Elpidio Latorilla
- * elpidio@care2x.org, 
+ * elpidio@care2x.org,
  *
  * See the file "copy_notice.txt" for the licence notice
  */
@@ -19,13 +19,7 @@ if (isset ( $_SESSION ['department_nr'] ) && $_SESSION ['department_nr'] != '') 
 	$dept_nr = $_SESSION ['department_nr'] [0];
 
 }else{
-	// Bug patch for Mozilla, I know its not automatic but Mozilla seems to have problems with two consecutive header redirects
-	if ($cat == 'pharma')
-	    $missing = "Repart / Pavjon"; 
-	else
-	    $missing = "Farmaci";
-   
-    echo '<FONT SIZE="+4" color="navy">Ju nuk jeni te asociuar me asnje '.$missing.'</font>';
+    echo '<FONT SIZE="+4" color="navy">' . $LDNoDepartmentAssociation . '</font>';
     exit ();
 }
 
