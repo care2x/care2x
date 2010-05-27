@@ -109,6 +109,8 @@ $LDWebCam='Video Security';
 $LDWebCamTxt='Intranet webcamera security surveillance';
 $LDPhotoLab='Photolab';
 $LDPhotoLabTxt='Save, document, index photos of patients';
+$LDImmunizationMngr='Immunization';
+$LDImmunizationMngrTxt='Immunization';
 
 $LDBundyMachine='Bundy machine';
 $LDDutyPlanner='Duty planner';
