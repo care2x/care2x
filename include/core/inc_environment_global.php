@@ -33,7 +33,7 @@ define('NODATE_ORACLE','0001-01-01');
 define('NODATE_DEFAULT','0000-00-00');
 
 #
-# Admission module´s extended tabs. Care2x >= 2.0.2
+# Admission moduleï¿½s extended tabs. Care2x >= 2.0.2
 # Define to TRUE for extended tabs mode
 #
 define('ADMISSION_EXT_TABS',TRUE);
@@ -73,10 +73,10 @@ if (!ini_get('register_globals')) {
 #
 # Set global defines
 #
-if(!defined('LANG_DEFAULT')) define ('LANG_DEFAULT','sq');
+if(!defined('LANG_DEFAULT')) define ('LANG_DEFAULT','en');
 
 #
-# Establish db connection 
+# Establish db connection
 #
 require_once($root_path.'include/core/inc_db_makelink.php');
 
