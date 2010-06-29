@@ -1,17 +1,16 @@
 <?php
-/* Günni <guenni1981 at lycos dot de> */
-// Erstellen der neuen Klasse
+/* Gï¿½nni <guenni1981 at lycos dot de> */
+// Create of the new class
 class ladezeit {
-	// Festlegen der von der Klasse intern genutzten Variablen
+	// definition of the local variables
 	var $starttime;
 	var $endtime;
 
-	// Erstellen der Funktion start()
 	function start() {
-		// Microsekunden und sekundenn in Variablen speichern
+		// Microseconds and store it to a local vairable
 		list($usec, $sec) = explode(" ",microtime());
 
-		// Speichern des Ergebnisses in der internen Variable $starttime
+		// Save the result to the internal $starttime
 		$this->starttime = ((float)$usec + (float)$sec);
 	}
 	 
@@ -21,10 +20,10 @@ class ladezeit {
 	}
 	 
 	function ausgabe() {
-		// Endzeit - Startzeit = gebrauchte ladezeit
+		// Endtime - Starttime = relative time what we want to know
 		$time = $this->endtime - $this->starttime;
 
-		// Ausgabe des Ergebnisses
+		// Show it
 		echo 'Page generation time: '.$time;
 	}
 }
