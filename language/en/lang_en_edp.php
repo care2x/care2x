@@ -7,12 +7,12 @@ $LDReset='Reset';
 
 $LDEnterData='Click to enter data';
 $LDClk2See='Click to see data';
-$LDFoundPatient='The search found <b>~nr~</b> patients';
+$LDFoundPatient='The search found ~nr~ patients';
 $LDWildCards='What are wildcards and how to use them';
 $LDNewSearch='New search';
 $LDSearch='Search';
 
-$LDOClock='o\'clock';
+$LDOClock='o clock';
 $LDContinue='Continue';
 $LDBack='Go back';
 
@@ -24,7 +24,7 @@ $LDNew='New';
 $LDEdit='Edit';
 $LDCreate='Create';
 $LDValue='Value';
-$LDProfile='List & configure';
+$LDProfile='List and configure';
 
 $LDNews='News';
 $LDNewsTxt='Read or write news articles pertaining to sytem administration department';
@@ -41,10 +41,10 @@ $LDOrderArchive='Archive';
 
 
 
-$LDNoDataFound='The search found <font color=red><b>no</b></font> data.';
+$LDNoDataFound='The search found no data.';
 $LDClk2SeeInfo='Please click the right one to see the complete information';
 /********************** Do not erase or replace the ~nr~ *****************************/
-$LDFoundNrData='The search found <font color=red><b>~nr~</b></font> data that corresponded to the search keyword.';
+$LDFoundNrData='The search found ~nr~ data that corresponded to the search keyword.';
 $LDOpenInfo='Show complete information about ';
 
 $LDGoodMorning='Good morning';
@@ -67,10 +67,10 @@ $LDReportsTxt='Create, search, read reports, etc.';
 $LDInfo='Information';
 $LDInfoTxt='Search and read information pertaining to system admin';
 $LDManage='Management';
-$LDUpdateOk='Update was <b>successful</b>!';
+$LDUpdateOk='Update was successful!';
 $LDDataSaved='The following data was successully saved:';
-$LDDataNoUpdate='Update  <b>failed</b>. Please check the entries.';
-$LDDataNoSaved='Save <b>failed</b>. Please check the entries.';
+$LDDataNoUpdate='Update  failed. Please check the entries.';
+$LDDataNoSaved='Save failed. Please check the entries.';
 $LDBack2Menu='Go back to databank menu';
 $LDPageTop='Back to top.';
 $LDPreview='Preview';
@@ -78,17 +78,17 @@ $LDUpdateData='Update or edit';
 $LDRemoveFromDb='Remove from the databank';
 $LDDataRemoved='The product was removed from the databank!';
 
-$LDConfirmDelete='Do you really want to <b>erase</b> or <b>remove</b> the following data from the databank ?';
-$LDAlertDelete='<b>ATTENTION!</b> Delete <b>CANNOT</b> be undone!';
-$LDNoDelete='Deletion of the data failed!<br>Please notify the system admin department.';
+$LDConfirmDelete='Do you really want to erase or remove the following data from the database ?';
+$LDAlertDelete='ATTENTION! Delete CANNOT be undone!';
+$LDNoDelete='Deletion of the data failed!Please notify the system admin department.';
 $LDYesDelete='Yes, I am dead sure. Delete access right.';
 $LDNoBack='No. Go back.';
-$LDClk2Ack='Click the arrow button to acknowledge and/or print the order list.';
+$LDClk2Ack='Click the arrow button to acknowledge and\or print the order list.';
 $LDOK='OK';
 $LDManageAccess='Access Permissions';
 $LDManageAccessTxt='Manage, create, lock, remove, update, or change, etc.';
 $LDSqlDb='SQL Databank';
-$LDSqlDbTxt='Direct SQL access. <b>ATTENTION</b> only for experts';
+$LDSqlDbTxt='Direct SQL access. ATTENTION only for experts';
 $LDSysOpLogin='System Admin';
 $LDSysOpLoginTxt='Login as system administrator';
 $LDEDP='System admin';
@@ -108,7 +108,7 @@ $LDAccessIndex[1]='Login';
 $LDAccessIndex[2]='Password';
 $LDAccessIndex[3]='';
 $LDAccessIndex[4]='Allowedareas';
-$LDAccessIndex[5]='Date/Time';
+$LDAccessIndex[5]='Date\Time';
 $LDAccessIndex[6]='Encoder';
 $LDAccessIndex[7]='Option';
 
@@ -126,13 +126,13 @@ $LDAccessRight='Access right';
 $LDSureLock='Are you sure you want to LOCK this access right?';
 $LDSureUnlock='Are you sure you want to UNLOCK this access right?';
 $LDSureDelete='Are you sure you want to DELETE this access right?';
-$LDYesSure='Yes, I\'m sure.';
+$LDYesSure='Yes, Im sure.';
 $LDKeywordPrompt='Enter a search keyword';
 $LDSystemAdmin='System Administrator';
 $LDMySQLManage='Manage SQL databank with PHP MySQLAdmin';
 $LDSpexFunctions='More configuration options';
 $LDWelcome='Welcome';
-$LDForeWord='You now have the highest access privileges.<br>The following functions are available without restrictions. <br><b>Please be very careful with what you do.</b>';
+$LDForeWord='You now have the highest access privileges.The following functions are available without restrictions. Please be very careful with what you do.';
 
 $LDSetDateFormat='Set date format';
 $LDSelectDateFormat='Please select the needed date format:';
@@ -140,7 +140,7 @@ $LDSelectDateFormat='Please select the needed date format:';
 # Date formats
 # Add additional date formats as array element.
 # Do not forget to add the correspondign sample text in the $LDDateFormatsTxt array.
-# Do not translate $LDDateFormats 
+# Do not translate $LDDateFormats
 $LDDateFormats[0]='dd.MM.yyyy';
 $LDDateFormats[1]='yyyy-MM-dd';
 $LDDateFormats[2]='MM/dd/yyyy';
@@ -167,31 +167,31 @@ $LDDateFormatsTxt[3]='For example: 01/10/2010 (01 October , 2010)';
 * indonesian:
 * day = h, month = b, year = t
 * result => hh.bb.tttt
-* 
+*
 * BEGIN */
 $LD_ddpMMpyyyy='dd.mm.yyyy';
 $LD_yyyyhMMhdd='yyyy-mm-dd';
-$LD_MMsddsyyyy='mm/dd/yyyy';
-$LD_ddsMMsyyyy='dd/mm/yyyy';
+$LD_MMsddsyyyy='mm\dd\yyyy';
+$LD_ddsMMsyyyy='dd\mm\yyyy';
 /* END */
 
 $LDNewDateFormatSaved='The new date format is now in effect.';
-									
+
 $LDSetCurrency='Set currency';
 $LDNewCurrencySet='The new currency is now active.';
 $LDPlsSelectCurrency='Please select currency.';
 $LDAddCurrency='Add new type of currency';
-$LDPlsAddCurrency='Please enter the information about the currency. Then click "Save".';
+$LDPlsAddCurrency='Please enter the information about the currency. Then click Save.';
 $LDAddedNewCurrency='The information about the new currency was saved.';
 $LDmain='main';
 $LDClk2AddCurrency='To enter new currency type, please click here.';
-$LDCurrencyShortName='Currency\'s symbolic or short :';
-$LDCurrencyLongName='Currency\'s descriptive :';
+$LDCurrencyShortName='Currencys symbolic or short :';
+$LDCurrencyLongName='Currencys descriptive :';
 $LDCurrencyInfo='Additional information:';
 $LDClk2SetCurrency='To set the main currency, please click here.';
 $LDCurrencyUpdated='The currency information is updated.';
 $LDUpdateCurrencyInfo='Edit Currency Information';
-$LDPlsEnterUpdate='Please edit the currency information. Then press "Update".';
+$LDPlsEnterUpdate='Please edit the currency information. Then press Update.';
 
 $LDEditInfo='Edit';
 $LDCurrencyAdmin='Currency';
@@ -255,13 +255,13 @@ $LDWorkHrs='Working hours';
 $LDConsultationHrs='Consultation Hours';
 $LDSigLine='Signature Line';
 $LDSigStampTxt='Signature Stamp Text';
-$LDDeptLogo='Department\'s Logo';
+$LDDeptLogo='Departments Logo';
 $LDHidden='Hidden';
 $LDNormal='Normal';
 $LDInactive='Inactive';
 $LDActive='Active';
-$LDDeptStatus='Department\'s status';
-$LDRecordStatus='Record\'s status';
+$LDDeptStatus='Departments status';
+$LDRecordStatus='Records status';
 /* 2003-03-30 EL*/
 $LDConfigOptions='Configuration Options';
 $LDDoesSurgeryOp='Does operative surgery?';
@@ -271,7 +271,7 @@ $LDUpdate='Update';
 $LDFindEmployee='Find an employee';
 #2003-10-27 EL
 $LDMainMenu='Main menu';
-$LDHideShow='Hide/show';
+$LDHideShow='Hide-show';
 $LDSortOrder='sort order';
 $LDAdminIndex='Admin index';
 $LDUsers='Users';
@@ -280,7 +280,7 @@ $LDDatabase='Database';
 $LDPhpMyAdmin='PhpMyAdmin';
 $LDGeneral='General';
 $LDQuickInformer='Quick informer';
-$LDEnterInfo='Please edit or enter the information. Then click "Save".';
+$LDEnterInfo='Please edit or enter the information. Then click Save.';
 $LDPaginatorMaxRows='Paginator max rows';
 
 #2003-10-28 EL
@@ -292,16 +292,16 @@ $LDInsuranceList='Insurance companies list';
 $LDInsuranceListTxt='When the insurance companies list is displayed in the insurance company module.';
 $LDInsuranceSearch='Insurance search';
 $LDInsuranceSearchTxt='When the search for insurance company returns a list.';
-$LDPersonnelSearch='Employee search';
-$LDPersonnelSearchTxt='When the search for an employee returns a list.';
-$LDPersonnelList='Employee list';
-$LDPersonnelListTxt='When the employees list is displayed in the personnel manager module.';
+$LDstaffSearch='Employee search';
+$LDstaffSearchTxt='When the search for an employee returns a list.';
+$LDstaffList='Employee list';
+$LDstaffListTxt='When the employees list is displayed in the staff manager module.';
 $LDPersonSearch='Person search';
 $LDPersonSearchTxt='When the search for a person returns a list.';
 $LDPatientSearch='Patient search';
 $LDPatientSearchTxt='When the search for a patient returns a list.';
 $LDORPatientSearch='Patient for operation search';
-$LDORPatientSearchTxt='When the search for patient for operation returns a list. 
+$LDORPatientSearchTxt='When the search for patient for operation returns a list.
 This value is usually less than 10 due to a narrow display space in the OR logbook module';
 $LDEnterMaxRows='Please enter the maximum number rows displayed  per page after a successful search.';
 #2003-11-01 EL
@@ -309,7 +309,7 @@ $LDTimeOut='Time out';
 $LDTimeOutActive='Time out active';
 $LDTimeOutTxt='Should the password protected modules time out (lock itselt) after a set time of inactivity?';
 $LDTimeOutTime='Elapsed time';
-$LDTimeOutTimeTxt='Elapsed idle time (inactivity) that triggers the time out and locks the module. Note: 
+$LDTimeOutTimeTxt='Elapsed idle time (inactivity) that triggers the time out and locks the module. Note:
 If your entry is invalid, the system will use the default maximum values.';
 #2003-11-09 EL
 $LDGUI='GUI';
@@ -333,7 +333,7 @@ $LDUseDefault='Use default values';
 $LDClkPickColor='Click here to pick up the color';
 #2003-11-11 EL
 $LDORAdmin='OR administration';
-$LDListConfig='List & configure';
+$LDListConfig='List and configure';
 $LDOR='OR';
 $LDORNr='OR number';
 $LDTempClosed='Is temporary closed?';
@@ -357,4 +357,10 @@ $LDFindRole='Search Role';
 $LDCreateEditRoles='Create Role';
 $LDWelcome='Wellcome';
 $LDNursingManage='Wards administration';
+$LDRole = 'Role';
+$LDNewRole='New Role';
+
+$LDClose = 'Close';
+$LDBack = 'Back';
+$LDHelp = 'Help';
 ?>

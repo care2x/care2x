@@ -8,7 +8,7 @@ $LDHealthTips='Health tips';
 $LDAdmission='Admission';
 $LDNursing='Nursing';
 /* 2003-04-27 EL */
-$LDMedical='MEdical';
+$LDMedical='Medical';
 $LDSupport='Support';
 $LDNews='News';
 $LDDepartment='Department';
@@ -24,4 +24,11 @@ $LDClinic='Clinic';
 $LDPlsNameFormal='Please write the Formal Name';
 $LDPlsDeptID='Please write the Department ID';
 $LDPlsSelectType='Please select the type';
+
+$LDIsPharmacy='Is Pharmacy ?';
+$LDPharmacy='Select the Pharmacy this department will use.';
+
+$LDClose = 'Close';
+$LDBack = 'Back';
+$LDHelp = 'Help';
 ?>
