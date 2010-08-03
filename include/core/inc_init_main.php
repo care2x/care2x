@@ -1,24 +1,24 @@
 <?php
 # This is the database name
-$dbname='kaka';
+$dbname='';
 
 # Database user name, default is root or httpd for mysql, or postgres for postgresql
-$dbusername='root';
+$dbusername='';
 
 # Database user password, default is empty char
-$dbpassword='root';
+$dbpassword='';
 
 # Database host name, default = localhost
 $dbhost='localhost';
 
 # First key used for simple chaining protection of scripts
-$key='65219795765918';
+$key='1.0728840012115E+28';
 
 # Second key used for accessing modules
-$key_2level='22541756208198';
+$key_2level='3.6785501427953E+27';
 
 # 3rd key for encrypting cookie information
-$key_login='1632575601540';
+$key_login='5.3183191207469E+26';
 
 # Main host address or domain
 $main_domain='localhost';
@@ -32,5 +32,7 @@ $httprotocol='http';
 # Set this to your database type. For details refer to ADODB manual or goto http://php.weblogs.com/ADODB/
 $dbtype='mysql';
 
-date_default_timezone_set("Europe/Rome");
+# Set this to your timezone.
+$timezone = 'Africa/Abidjan';
+date_default_timezone_set($timezone);
 ?>
