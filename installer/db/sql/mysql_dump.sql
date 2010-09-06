@@ -5669,5 +5669,5 @@ INSERT INTO care_unit_measurement VALUES (18, 1, 'µl', 'microliter', 'LDMicrolit
 --
 
 
-INSERT INTO `care_version` (`name`, `type`, `number`, `build`, `date`, `time`, `releaser`) VALUES ('CARE2X', 'beta', '2.5.0', '6189', '2008-10-21', '00:00:00', 'Gjergj Sheldija');
+INSERT INTO `care_version` (`name`, `type`, `number`, `build`, `date`, `time`, `releaser`) VALUES ('CARE2X', 'beta', '2.6.1', '6670', '2009-08-01', '00:00:00', 'Gjergj Sheldija/Robert Meggle');
 
