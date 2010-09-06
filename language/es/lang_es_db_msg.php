@@ -3,7 +3,7 @@
 /*
  * Nombre: lang_es_db_msg.php
  * Revisado por: Daniel Hinostroza <care2x@cerebroperiferico.com> y Dr. Manuel Montemayor
- * Versión: CARE2X 2nd Generation Deployment 2.2
+ * Versión: CARE2X 2nd Generation Deployment 2.6
  * Fecha: 07.09.2006
  */
 

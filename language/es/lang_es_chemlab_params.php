@@ -3,7 +3,7 @@
 /*
  * Nombre: lang_es_chemlab_params.php
  * Revisado por: Daniel Hinostroza <care2x@cerebroperiferico.com>
- * Versión: CARE2X 2nd Generation Deployment 2.2
+ * Versión: CARE2X 2nd Generation Deployment 2.6
  * Fecha: 07.09.2006
  */
 
@@ -44,7 +44,7 @@ $klinichemie_list0=array(
 	'0gldh'=>'GLDH',
 	'0got'=>'SGOT',
 	'0gpt'=>'SGPT',
-	'0ucid'=>'�cido úrico',
+	'0ucid'=>'�cido úrico',
 	'0urea'=>'Urea',
 	'0hbdh'=>'HBDH',
 	'0hdlc'=>'HDL Colesterol',
@@ -230,7 +230,7 @@ $punktate_list13=array(
 	'13cho'=>'Colest.en biopsia',
 	'13cea'=>'CEA en biopsia',
 	'13afp'=>'Alfafetoprot. en biopsia',
-	'13ure'=>'�cido úrico en biopsia',
+	'13ure'=>'�cido úrico en biopsia',
 	'13rhe'=>'Factor reumat. en biopsia',
 	'13d1'=>'D1',
 	'13d2'=>'D2');
@@ -299,10 +299,10 @@ $medikamente_list15=array(
 	'15phe'=>'Fenobarbital',
 	'15pny'=>'Fenitoína',
 	'15pri'=>'Primidona',
-	'15sal'=>'�cido salicílico',
+	'15sal'=>'�cido salicílico',
 	'15the'=>'Teofilina',
 	'15tob'=>'Tobramicina',
-	'15val'=>'�cido valproico',
+	'15val'=>'�cido valproico',
 	'15van'=>'Vancomicina',
 	'15amp'=>'Anfetaminas en orina',
 	'15ant'=>'Antidepresivos en orina',
@@ -361,7 +361,7 @@ $sammelurin_list20=array(
 	'20k'=>'Potasio en orina',
 	'20ca'=>'Calcio en orina',
 	'20pho'=>'Fósforo en orina',
-	'20ura'=>'�cido úrico en orina',
+	'20ura'=>'�cido úrico en orina',
 	'20cre'=>'Creatinina en orina',
 	'20por'=>'Porfirina en orina',
 	'20cor'=>'Cortisol en orina',
@@ -375,7 +375,7 @@ $sonstiges_list21=array(
 	'21bal'=>'Alcohol en sangre',
 	'21cdt'=>'CDT',
 	'21vb12'=>'Vitamina B12',
-	'21fol'=>'�cido fólico',
+	'21fol'=>'�cido fólico',
 	'21inab'=>'Ac. insulina',
 	'21iab'=>'Ac. intrínsecos',
 	'21sto'=>'Análisis de cálculos',

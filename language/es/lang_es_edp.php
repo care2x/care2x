@@ -3,7 +3,7 @@
 /*
  * Nombre: lang_es_edp.php
  * Revisado por: Daniel Hinostroza <care2x@cerebroperiferico.com> y Dr. Manuel Montemayor
- * Versión: CARE2X 2nd Generation Deployment 2.2
+ * Versión: CARE2X 2nd Generation Deployment 2.6
  * Fecha: 08.09.2006
 */
 
@@ -104,7 +104,7 @@ $LDListActual='Mostrar la lista actual de quienes tienen derecho de acceso';
 $LDName='Nombre';
 $LDPassword='Contraseña';
 $LDUserId='Nombre de usuario (login)';
-$LDArea='�rea';
+$LDArea='�rea';
 $LDAllowedArea='Las áreas permitidas son:';
 $LDActualAccess='Derechos de acceso actualizados';
 $LDAccessDeleted='El derecho de acceso fue eliminado exitosamente.';
@@ -115,7 +115,7 @@ $LDAccessIndex=array(
 			 	'Nombre de usuario (login)',    
 			 	'Contraseña', 
 				'',
-			 	'�reas permitidas', 
+			 	'�reas permitidas', 
 			 	'Fecha/hora', 
 			 	'Registrado por:', 
 			 	'Opción'

@@ -8,6 +8,7 @@ $LDTipsLink='Tips:';
 $LDTipsAskMe='Try synonyms, for example type "station" in place of "ward".';
 $LDTipsImgAlt='Click here for tips on how to get the best results.';
 $LDSubmitBut='Send query';
+$LDPageTitle='care2x';
 
 $LDQuickInfo='Quick Informer';
 $LDPhonePolice='Police';

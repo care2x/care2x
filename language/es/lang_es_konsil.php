@@ -3,7 +3,7 @@
 /*
  * Nombre: lang_es_konsil.php
  * Revisado por: Daniel Hinostroza <care2x@cerebroperiferico.com>
- * Versión: CARE2X 2nd Generation Deployment 2.2
+ * Versión: CARE2X 2nd Generation Deployment 2.6
  * Fecha: 08.09.2006
  */
 
@@ -55,7 +55,7 @@ $LDRequestingDoc='Médico solicitante';
 $LDReportingDoc='Médico que reporta';
 //$LDXrayNumber='No. de Rayos X:';
 $LDXrayNumber='No. de Rayos X:';
-$LD_r_cm2='r cm� :';
+$LD_r_cm2='r cm� :';
 //$LDXrayTechnician='Técnico Rayos X';
 $LDXrayTechnician='Técnico';
 $LDYes='Sí';

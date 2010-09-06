@@ -3,7 +3,7 @@
 /*
  * Nombre: lang_es_products.php
  * Revisado por: Daniel Hinostroza <care2x@cerebroperiferico.com>
- * Versión: CARE2X 2nd Generation Deployment 2.2
+ * Versión: CARE2X 2nd Generation Deployment 2.6
  * Fecha: 08.09.2006
  */
 
@@ -331,7 +331,7 @@ $LDAlertNoDescription='¡No se halló la descripción!';
 
 $LDConfirmDelete='Realmente quiere <b>eliminar</b> o <b>remover</b> los siguientes datos ¿del banco de datos?';
 
-$LDAlertDelete='<b>¡ATENCI�N!</b> Borre o elimine ¡<b>NO SE PUEDE</b> deshacer después!';
+$LDAlertDelete='<b>¡ATENCI�N!</b> Borre o elimine ¡<b>NO SE PUEDE</b> deshacer después!';
 
 $LDNoDelete='¡No fue posible eliminar los datos!<br>Por favor notifique al departamento de EDP.';
 

@@ -9,7 +9,7 @@ $LDDayTxt='Día';
 /*
  * Nombre: lang_es_abteilung.php
  * Revisado por: Daniel Hinostroza <care2x@cerebroperiferico.com>
- * Versión: CARE2X 2nd Generation Deployment 2.2
+ * Versión: CARE2X 2nd Generation Deployment 2.6
  * Fecha: 07.09.2006
  */
 

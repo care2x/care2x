@@ -3,7 +3,7 @@
 /*
  * Nombre: lang_es_aufnahme.php
  * Revisado por: Daniel Hinostroza <care2x@cerebroperiferico.com> y Dr. Manuel Montemayor
- * Versi贸n: CARE2X 2nd Generation Deployment 2.2
+ * Versi贸n: CARE2X 2nd Generation Deployment 2.6
  * Fecha: 07.09.2006
  */
 
@@ -146,7 +146,7 @@ $LDSeeDiagnosisNote='Apuntes y publicaciones relacionadas con el diagn贸stico:';
 $LDSeeTherapyNote='Apuntes y publicaciones relacionados con la terapia:';
 $LDMakeBarcodeLabels='Crear los c贸digos de barras';
 
-$LDPlsEnterDept='<b>Por favor, ingrese su Departamento, Cl铆nica, o 羠ea de trabajo.</b><br>(por ej., PLOP, Med interna 2, o M4A, etc.)';
+$LDPlsEnterDept='<b>Por favor, ingrese su Departamento, Cl铆nica, o 锟絩ea de trabajo.</b><br>(por ej., PLOP, Med interna 2, o M4A, etc.)';
 $LDOkSaveNow='OK guarde ahora';
 
 $LD_ddpMMpyyyy='dd.mm.aaaa';

@@ -8,6 +8,7 @@ $LDTipsLink='Tips:';
 $LDTipsAskMe='Probieren Sie Synonyme z.B. statt "Schwester" schreiben Sie "Sr".';
 $LDTipsImgAlt='Klick hier wie man die besten Ergebnisse findet.';
 $LDSubmitBut='Abschicken';
+$LDPageTitle='care2x';
 
 $LDQuickInfo='Auf einen Blick';
 $LDPhonePolice='Polizei';
@@ -18,7 +19,7 @@ $LDFax='Fax';
 $LDAddress='Anschrift';
 $LDEmail='Email';
 
-$LDOpenTimes ='Öffnungszeiten';
+$LDOpenTimes ='ï¿½ffnungszeiten';
 $LDManagement ='Verwaltung';
 $LDDept ='Abteilungen';
 $LDCafenews ='Cafeteria News';
@@ -36,28 +37,28 @@ $LDEditTitle='Schlagzeile';
 
 $LDNewsDummy=array(1=>'erster',2=>'zweiter',3=>'dritter',4=>'vierter');
 
-$LDNoFrame='Diese Seite verwendet Frames für optimales funktionieren. Bitte installieren Sie ein geeignetes Browser Programm.
+$LDNoFrame='Diese Seite verwendet Frames fï¿½r optimales funktionieren. Bitte installieren Sie ein geeignetes Browser Programm.
 						Bitte aktivieren Sie die Javascript (Jscript) und	stellen Sie die Akzeptanz auf Cookies auf "automatisch" ein'; 
 $LDClk2Write='Klick hier zum schreiben';
 
-$LDAlertOldBrowser='Ihr Browser ist älter als version 5.0<br> Wir empfehlen die version ab 5.0. <br> Sie können zwar eine ältere version benutzen, aber das
-								Program würde nicht einwandfrei funktionieren.';
-$LDAlertNoCookie='Sie oder Ihr Browser hätte(n) möglicherweise die Cookies abgelehnt.<br>Dieses Program ist auf Cookies angewiesen
-								sonst würde es nicht einwandfrei laufen.<br>Bitte stellen Sie den Browser auf automatische Annahme von
+$LDAlertOldBrowser='Ihr Browser ist ï¿½lter als version 5.0<br> Wir empfehlen die version ab 5.0. <br> Sie kï¿½nnen zwar eine ï¿½ltere version benutzen, aber das
+								Program wï¿½rde nicht einwandfrei funktionieren.';
+$LDAlertNoCookie='Sie oder Ihr Browser hï¿½tte(n) mï¿½glicherweise die Cookies abgelehnt.<br>Dieses Program ist auf Cookies angewiesen
+								sonst wï¿½rde es nicht einwandfrei laufen.<br>Bitte stellen Sie den Browser auf automatische Annahme von
 								Cookies ein.<br>';
 $LDClkAfter='Danach klicken Sie hier an.';
 $LDGoAheadEgal='Klick hier an um das Program zu starten.';
 $LDGoAheadEgalCookie='Ich will KEINE Cookies annehmen. Starte das Program trotzdem weiter.';
-$LDCookieRef='Wenn Sie mehr über Cookies wissen wollen lesen Sie dieses Dokument:<br>
-						<a href=\'http://iug.uni-paderborn.de/info/datenschutz.html\' target=\'pp\'>Cookies und Datenschutz (Entgegen landläufiger Meinung)</a><br>';
-$LDPrivPolicy='Unsere Datenschutzbestimmungen können Sie  <a href=\'language/de/de_privacy.htm\' target=\'pp\'>hier lesen:</a>';
+$LDCookieRef='Wenn Sie mehr ï¿½ber Cookies wissen wollen lesen Sie dieses Dokument:<br>
+						<a href=\'http://iug.uni-paderborn.de/info/datenschutz.html\' target=\'pp\'>Cookies und Datenschutz (Entgegen landlï¿½ufiger Meinung)</a><br>';
+$LDPrivPolicy='Unsere Datenschutzbestimmungen kï¿½nnen Sie  <a href=\'language/de/de_privacy.htm\' target=\'pp\'>hier lesen:</a>';
 $LDOurPrivPolicy='Unsere Datenschutzbestimmungen';
 $LDSubmitNews='Online Redaktion';
 $LDEditNews='Nachrichten mit Online Redaktion schreiben';
 /* 2002-10-17 EL */
 $LDCredits='Credits';
 /* 2003-05-24 EL */
-$LDPublicItems='Allgemein zugänglich';
+$LDPublicItems='Allgemein zugï¿½nglich';
 # 2003-08-28 EL
 $LDHeadline='Nachrichten';
 ?>

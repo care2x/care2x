@@ -5,7 +5,7 @@
 /*
  * Nombre: lang_es_obstetrics.php
  * Revisado por: Daniel Hinostroza <care2x@cerebroperiferico.com> y Dr. Manuel Montemayor
- * VersiÃ³n: CARE2X 2nd Generation Deployment 2.2
+ * VersiÃ³n: CARE2X 2nd Generation Deployment 2.6
  * Fecha: 07.09.2006
  */
 
@@ -149,11 +149,11 @@ $LDDeathUncertainTiming='Muerte de hora imprecisa';
 
 $LDIntact='Intactas';
 
-$LDFirstDegreeTear='Desgarro 1°';
+$LDFirstDegreeTear='Desgarro 1ï¿½';
 
-$LDSecondDegreeTear='Desgarro 2°';
+$LDSecondDegreeTear='Desgarro 2ï¿½';
 
-$LDThirdDegreeTear='Desgarro 3°';
+$LDThirdDegreeTear='Desgarro 3ï¿½';
 
 $LDBreast='Mama';
 

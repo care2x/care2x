@@ -3,7 +3,7 @@
 /*
  * Nombre: lang_es_phone.php
  * Revisado por: Daniel Hinostroza <care2x@cerebroperiferico.com>
- * Versión: CARE2X 2nd Generation Deployment 2.2
+ * Versión: CARE2X 2nd Generation Deployment 2.6
  * Fecha: 07.09.2006
  */
 
@@ -66,7 +66,7 @@ $LDEditFields=array(
 								"Privado (externo) 2",
 								"Búsca 1",
 								"Búsca 2",
-								"Despacho N�.",
+								"Despacho N�.",
 								"Fecha",
 								"Hora",
 								"Registró");

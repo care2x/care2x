@@ -3,7 +3,7 @@
 /*
  * Nombre: lang_es_konsil_chemlabor.php
  * Revisado por: Daniel Hinostroza <care2x@cerebroperiferico.com>
- * Versión: CARE2X 2nd Generation Deployment 2.2
+ * Versión: CARE2X 2nd Generation Deployment 2.6
  * Fecha: 07.09.2006
  */
 
@@ -176,7 +176,7 @@ $LD_Elements = array('tx_1'=>'Química clínica',
 								  '_afp_gravida_'=>'Alfafetoprot. grávida',
 								  '_ana_'=>'ANA',
 								  '_coxsacky_antibody_'=>'Anticuerpos Coxsack.',
-								  '_salicylic_acid_'=>'�cido salicílico',
+								  '_salicylic_acid_'=>'�cido salicílico',
 								  'tx_10'=>'Colecc. orina',
 								  
 								  'emx_cpk_'=>'CPK',
@@ -200,7 +200,7 @@ $LD_Elements = array('tx_1'=>'Química clínica',
 								  'tx_11'=>'Glándula tiroides',
 								  '_asma_'=>'ASMA',
 								  '_ebv_antibody__x__ebv_antibody_2_'=>'EBV-AB',
-								  '_valproin_acid_'=>'�cido valproico',
+								  '_valproin_acid_'=>'�cido valproico',
 								  '_addis_count_'=>'Contaje Addis.',
 								  
 								  '_emx_troponin_t_'=>'Troponina-T',
@@ -241,7 +241,7 @@ $LD_Elements = array('tx_1'=>'Química clínica',
 								  '_lat_rf_'=>'FR Lat.',
 								  '_herpes_simplex_2_antibody_'=>'Herpes sim.2-AB',
 								  '_antidepressant_in_urine_'=>'Antidepresivos en orina',
-								  '_uric_acid_in_urine_'=>'�cido úrico en orina',
+								  '_uric_acid_in_urine_'=>'�cido úrico en orina',
 								  
 								  '_hdl_chol_'=>'HDL-Colest',
 								  '_malaria_'=>'Malaria',
@@ -291,7 +291,7 @@ $LD_Elements = array('tx_1'=>'Química clínica',
 								 '_opiates_in_urine_'=>'Opiáceos en orina',
 								 '_hydroxyprolin_in_urine_'=>'Hidroxiprolina en orina',
 								 
-								 '_uric_acid_'=>'�cido úrico',
+								 '_uric_acid_'=>'�cido úrico',
 								 '_emx_bloodsugar_sober_'=>'Glucemia sobrio(a)',
 								 '_aldosteron_'=>'Aldosterona',
 								 '_anti_hbs_titer_'=>'Titulación Anti-HBs',
@@ -353,7 +353,7 @@ $LD_Elements = array('tx_1'=>'Química clínica',
 								 '_anti_hev_'=>'Anti-HEV',
 								 '_parainfluenza_3_antibody_'=>'Anticuerpos Parainfluenz.3',
 								 '_hbs_ag_'=>'HBs-Ag',
-								 '_folic_acid_'=>'�cido fólico',
+								 '_folic_acid_'=>'�cido fólico',
 								 
 								 '_iron_'=>'Hierro',
 								 '_hba_1c_'=>'HBA 1c',

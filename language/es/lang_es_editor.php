@@ -3,7 +3,7 @@
 /*
  * Nombre: lang_es_editor.php
  * Revisado por: Daniel Hinostroza <care2x@cerebroperiferico.com>
- * Versión: CARE2X 2nd Generation Deployment 2.2
+ * Versión: CARE2X 2nd Generation Deployment 2.6
  * Fecha: 07.09.2006
  */
 
@@ -93,7 +93,7 @@ $LDBack2CafeNews='Volver a las noticias de la cafetería';
 
 $LDProdName='Nombre del producto';
 $LDPriceDM='Precio DM';
-$LDPriceEuro='Precio �';
+$LDPriceEuro='Precio �';
 $LDPrice='Precio';
 $LDNoPrice='La lista de precios no está disponible en este momento.';
 $LDSorry='Lo sentimos. Por favor intente más tarde.';

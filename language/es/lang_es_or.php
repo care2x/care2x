@@ -3,12 +3,12 @@
 /*
  * Nombre: lang_es_or.php
  * Revisado por: Daniel Hinostroza <care2x@cerebroperiferico.com>
- * Versi贸n: CARE2X 2nd Generation Deployment 2.2
+ * Versi贸n: CARE2X 2nd Generation Deployment 2.6
  * Fecha: 07.09.2006
  */
 
 $LDOr='Quir贸fanos';
-$LDLOGBOOK='BIT罜ORA';
+$LDLOGBOOK='BIT锟紺ORA';
 $LDOrDocument='Documentaci贸n quir贸fanos';
 $LDOrDocumentTxt='Documentando los servicios quir煤rgicos';
 
