@@ -8,7 +8,7 @@
 */
 $DefaultMenuTreeDir = 'default';
 
-//$cfg['mainmenu_tree'] = 'dtree';
+$cfg['mainmenu_tree'] = 'dtree';
 
 #
 # Load the menu tree. Make intelligent checks. Defaults to "default" directory if nothing works.

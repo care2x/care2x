@@ -282,7 +282,7 @@ class GuiInputPerson {
 					}
   				} else {
 					$from='entry';
-					$_POST['date_birth']=@formatDate2Std($date_birth,$date_format);
+					$_POST['date_birth']=@formatDate2STD($date_birth,$date_format);
 					$_POST['date_reg']=date('Y-m-d H:i:s');
 					$_POST['blood_group']=trim($_POST['blood_group']);
 					$_POST['status']='normal';

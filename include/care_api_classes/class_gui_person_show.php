@@ -28,6 +28,9 @@ class GuiPersonShow {
 	var $default_photo_path='uploads/photos/registration';
 	var $photo_filename='nopic';
 	
+	# Filename of file running this gui
+	var $thisfile = '';
+
 	# The PID
 	var $pid=0;
 	
@@ -65,8 +68,8 @@ class GuiPersonShow {
 		global $thisfile, $root_path;
 		if(empty($filename)) $this->thisfile = $thisfile;
 			else $this->thisfile = $filename;
-		if(!empty($fallbackfile)) $this->$fallbackfile = $fallbackfile;
-		if(!empty($this->default_photo_path)) $this->default_photo_path = $root_path.$this->default_photo_path;
+		if(!empty($fallbackfile)) $this->fallbackfile = $fallbackfile;
+//		if(!empty($this->default_photo_path)) $this->default_photo_path = $root_path.$this->default_photo_path;
 
 		include_once($root_path.'include/care_api_classes/class_person.php');
 		$this->person_obj=& new Person($pid);
