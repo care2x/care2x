@@ -54,7 +54,7 @@ $LDEntryPrompt='Stichwort eingeben. z.B. Fallnummer, Name, Vorname, Geburtsdatum
 $LDSEARCH='SUCHEN';
 $LDAdmWantEntry='Ich möchte einen Patient aufnehmen';
 $LDAdmWantSearch='Ich suche einen Patient';
-$LDAdmWantArchive='Ich m�chte zum Archiv';
+$LDAdmWantArchive='Ich möchte zum Archiv';
 
 /**************** note the ' ~nr~ ' must not be erased it will be replaced by the script with the number of search results ******/
 $LDSearchFound='Insgesamt <font color=red><b>~nr~</b></font> Treffer gefunden.';
