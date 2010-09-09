@@ -23,7 +23,7 @@ $_SESSION['sess_file_break']=$top_dir.$thisfile;
 $_SESSION['sess_file_return']=$top_dir.$thisfile;
 $_SESSION['sess_file_editor']='headline-edit-select-art.php';
 $_SESSION['sess_file_reader']='headline-read.php';
-$_SESSION['sess_title']=$LDEditTitle.'::'.$LDSubmitNews;
+//$_SESSION['sess_title']=$LDEditTitle.'::'.$LDSubmitNews;
 //$_SESSION['sess_user_origin']='main_start';
 $_SESSION['sess_path_referer']=$top_dir.$thisfile;
 $_SESSION['sess_dept_nr']=0; // reset the department number used in the session
@@ -118,7 +118,9 @@ $iRunner = 0;
 while(list($x,$v)=each($aSubMenuItem)){
 	$sTemp='';
 	ob_start();
-		if($cfg['icons'] != 'no_icon') $smarty2->assign('sIconImg','<img '.$aSubMenuIcon[$iRunner].'>');
+		if (isset($cfg['icons'])) {
+			if($cfg['icons'] != 'no_icon') $smarty2->assign('sIconImg','<img '.$aSubMenuIcon[$iRunner].'>');
+		}
 		$smarty2->assign('sSubMenuItem',$v);
 		$smarty2->assign('sSubMenuText',$aSubMenuText[$iRunner]);
 		$smarty2->display('common/submenu_row.tpl');
