@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 $LDWhereTo='Where do you want to post the article?';
 $LDPlsSelect='Please select the number based on the sample graphic, then press \'Continue...\'.';
 $LDContinueBut='Continue...';

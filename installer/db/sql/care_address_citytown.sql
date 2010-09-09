@@ -39,7 +39,7 @@ CREATE TABLE IF NOT EXISTS `care_address_citytown` (
   `create_time` timestamp NOT NULL default '0000-00-00 00:00:00',
   PRIMARY KEY  (`nr`),
   KEY `name` (`name`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8186 ;
+) ENGINE=MyISAM ;
 
 -- 
 -- Dump dei dati per la tabella `care_address_citytown`
@@ -8251,4 +8251,9 @@ INSERT INTO `care_address_citytown` (`nr`, `unece_modifier`, `unece_locode`, `na
 (8182, NULL, NULL, 'ZUMPANO', '87040', '', NULL, NULL, NULL, 0, NULL, '', '', '2007-10-25 21:15:07', '', '0000-00-00 00:00:00'),
 (8183, NULL, NULL, 'ZUNGOLI', '83030', '', NULL, NULL, NULL, 0, NULL, '', '', '2007-10-25 21:15:07', '', '0000-00-00 00:00:00'),
 (8184, NULL, NULL, 'ZUNGRI', '89867', '', NULL, NULL, NULL, 0, NULL, '', '', '2007-10-25 21:15:07', '', '0000-00-00 00:00:00'),
-(8185, NULL, NULL, 'ZURICH', '', '', NULL, NULL, NULL, 0, NULL, '', '', '2007-10-25 21:15:07', '', '0000-00-00 00:00:00');
+(8185, NULL, NULL, 'ZURICH', '', '', NULL, NULL, NULL, 0, NULL, '', '', '2007-10-25 21:15:07', '', '0000-00-00 00:00:00'),
+(8186, NULL, NULL, 'CHENNAI', '', '', NULL, NULL, NULL, 0, NULL, '', '', '2010-09-09 17:30:00', '', '0000-00-00 00:00:00'),
+(8187, NULL, NULL, 'DELHI', '', '', NULL, NULL, NULL, 0, NULL, '', '', '2010-09-09 17:30:00', '', '0000-00-00 00:00:00'),
+(8188, NULL, NULL, 'KOLKATA', '', '', NULL, NULL, NULL, 0, NULL, '', '', '2010-09-09 17:30:00', '', '0000-00-00 00:00:00'),
+(8189, NULL, NULL, 'MUMBAI', '', '', NULL, NULL, NULL, 0, NULL, '', '', '2010-09-09 17:30:00', '', '0000-00-00 00:00:00'),
+(8190, NULL, NULL, 'NEW YORK', '', '', NULL, NULL, NULL, 0, NULL, '', '', '2010-09-09 17:30:00', '', '0000-00-00 00:00:00');

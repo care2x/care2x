@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 $LDOr='OP Room';
 $LDLOGBOOK='JOURNAL';
 $LDOrDocument='OP Room Documentation';

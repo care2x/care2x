@@ -1,4 +1,4 @@
-﻿<?PHP
+<?PHP
 
 //Variablen allgemein
 $LDja="    Yes    ";
