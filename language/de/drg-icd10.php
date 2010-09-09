@@ -51,7 +51,7 @@ $dbtable="icd10";
 <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 3.0//EN" "html.dtd">
 <HTML>
 <HEAD>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf8">
  <TITLE></TITLE>
  
   <script language="javascript">

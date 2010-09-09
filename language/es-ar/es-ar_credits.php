@@ -5,25 +5,25 @@ require_once($root_path.'include/inc_environment_global.php');
 ?>
 <?php html_rtl($lang); ?>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-<title>Créditos</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf8">
+<title>Crï¿½ditos</title>
 </head>
 <body onLoad="if(window.focus) window.focus()">
-<font face="verdana,arial" size=6 color="#0000ff">Créditos</fonts>
+<font face="verdana,arial" size=6 color="#0000ff">Crï¿½ditos</fonts>
 <hr>
 <TABLE cellSpacing=0 cellPadding=0 border=0 width=100%>
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
 			<P><img src="../../fotos/credits/foto-JR.jpg"  border=0  width=135 align=right vspace=10>
-          <b>Dr. Jorge Rodriguez (AR)<br> La traducción Española Argentina de CARE 2X.</b>
+          <b>Dr. Jorge Rodriguez (AR)<br> La traducciï¿½n Espaï¿½ola Argentina de CARE 2X.</b>
         <p>
-<li>Autor y coautor de numerosos programas médicos (www.x-doc.com.ar).<br>
+<li>Autor y coautor de numerosos programas mï¿½dicos (www.x-doc.com.ar).<br>
 <li>Fundador del Grupo BioLinux (www.biolinux.org.ar).<br>
 <li>Colaborador de Medal (www.medalreg.com/www/spanish/index.html).<br>
 <li>Creador del sitio web del Hospital Argerich (www.argerich.org.ar).<br>
 
-        <P><a href="mailto:jrbiolinux@yahoo.com.ar"><u>Puede Ponerse en contacto con Dr. Jorge Rodriguez aquí</u></a>
+        <P><a href="mailto:jrbiolinux@yahoo.com.ar"><u>Puede Ponerse en contacto con Dr. Jorge Rodriguez aquï¿½</u></a>
 </TD></TR></TBODY></TABLE>
 <hr>
 <table cellSpacing=0 cellPadding=0 border=0 width=100%>
@@ -34,14 +34,14 @@ require_once($root_path.'include/inc_environment_global.php');
 
 			<p><img src="../../fotos/credits/jrossano.jpg"  border=0  align=right vspace=10>
           <b>Juan Rossano (AR)</b> <p>
-		  Desarrollador de software (13 años en el area medica).
+		  Desarrollador de software (13 aï¿½os en el area medica).
 			<br>
 			Lider del proyecto Argentino del Care.
 			<br>
 			Miembro de Mensa Argentina.
 			<br>
 
-        <p><a href="mailto:jrossano@care2x.org.ar"><u>Puede Ponerse en contacto con Juan Rosscano aquí</u></a>
+        <p><a href="mailto:jrossano@care2x.org.ar"><u>Puede Ponerse en contacto con Juan Rosscano aquï¿½</u></a>
 </td></tr>
 </tbody></table>
 
@@ -50,17 +50,17 @@ require_once($root_path.'include/inc_environment_global.php');
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-          <b>Patxi Gomaríz (ES)<br> La traducción Española de CARE 2X.</b> 
+          <b>Patxi Gomarï¿½z (ES)<br> La traducciï¿½n Espaï¿½ola de CARE 2X.</b> 
         <p>
-			Patxi Gomaríz nació en la primavera del año 1966 en Murcia (España).
-        <p> Su vida laboral gira entorno a la fotografía, es especialista en fotografía 
-          de Oftalmología (fundus camera). Apasionado por Internet, también construye 
+			Patxi Gomarï¿½z naciï¿½ en la primavera del aï¿½o 1966 en Murcia (Espaï¿½a).
+        <p> Su vida laboral gira entorno a la fotografï¿½a, es especialista en fotografï¿½a 
+          de Oftalmologï¿½a (fundus camera). Apasionado por Internet, tambiï¿½n construye 
           sitios web. 
-        <p> "<i>Pienso que el código abierto es una manera eficaz de luchar contra 
-          la localización económica, especialmente en asuntos tan fundamentales 
-          como la salud, por eso me siento orgulloso de mi pequeña aportación 
+        <p> "<i>Pienso que el cï¿½digo abierto es una manera eficaz de luchar contra 
+          la localizaciï¿½n econï¿½mica, especialmente en asuntos tan fundamentales 
+          como la salud, por eso me siento orgulloso de mi pequeï¿½a aportaciï¿½n 
           a este gran proyecto</i>". 
-        <P><a href="mailto:pgomariz@ono.com"><u>Puede Ponerse en contacto con Patxi Gomaríz aquí</u></a>
+        <P><a href="mailto:pgomariz@ono.com"><u>Puede Ponerse en contacto con Patxi Gomarï¿½z aquï¿½</u></a>
 </TD></TR></TBODY></TABLE>
 <hr>
 
@@ -69,7 +69,7 @@ require_once($root_path.'include/inc_environment_global.php');
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
 			<P><img src="../../fotos/credits/javier.jpg"  border=0  width=135 align=right vspace=10>
-          <b>Javier Alberto Arias (AR)<br> La traducción Española de CARE 2X.</b>
+          <b>Javier Alberto Arias (AR)<br> La traducciï¿½n Espaï¿½ola de CARE 2X.</b>
         <p>
 
         <P><a href="mailto:javisxx@hotmail.com"><u>Puede Ponerse en contacto con Javier Alberto Arias</u></a>
@@ -80,7 +80,7 @@ require_once($root_path.'include/inc_environment_global.php');
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
 			<P><img src="../../fotos/credits/gonzalo.jpg"  border=0  width=135 align=right vspace=10> 
-          <b>Gonzalo Gomez Sotelo (AR)<br> La traducción Española de CARE 2X.</b> 
+          <b>Gonzalo Gomez Sotelo (AR)<br> La traducciï¿½n Espaï¿½ola de CARE 2X.</b> 
         <p>
 
         <P><a href="mailto:gonzalo@smandes.com.ar"><u>Puede Ponerse en contacto con Gonzalo Gomez Sotelo</u></a>
@@ -95,20 +95,20 @@ require_once($root_path.'include/inc_environment_global.php');
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
 			<P><img src="../../fotos/credits/giuseppe_scarpi.jpg"  border=0  width=135 height=170 align=right vspace=10> 
-          <b>La traducción Italiana de CARE 2X fue hecha por Giuseppe Scarpi:</b> 
-        <p> Giuseppe Scarpi nació en Roma, Italia, hace 35 años. 
-        <p>Graduado en ingeniería electrónica ha trabajado para 
-          varias compañías en el sector biomédico, donde 
-          él desarrolló un trabajo sobre las relaciones entre el 
-          mundo de la medicina y la informática. <br>
-          Él utiliza y aprecia Linux y Windows, <em>&quot;pues ambos son 
+          <b>La traducciï¿½n Italiana de CARE 2X fue hecha por Giuseppe Scarpi:</b> 
+        <p> Giuseppe Scarpi naciï¿½ en Roma, Italia, hace 35 aï¿½os. 
+        <p>Graduado en ingenierï¿½a electrï¿½nica ha trabajado para 
+          varias compaï¿½ï¿½as en el sector biomï¿½dico, donde 
+          ï¿½l desarrollï¿½ un trabajo sobre las relaciones entre el 
+          mundo de la medicina y la informï¿½tica. <br>
+          ï¿½l utiliza y aprecia Linux y Windows, <em>&quot;pues ambos son 
           el resultado de un gran trabajo humano que se debe respetar&quot;. </em> 
-        <p> Él decidió ensamblar activamente código abierto 
+        <p> ï¿½l decidiï¿½ ensamblar activamente cï¿½digo abierto 
           porque:<br>
-          <em>&quot;un mundo tan ideal puede sobrevivir solamente si está 
-          equilibrado perfectamente. Si usted toma algo, usted debe también 
-          dar algo en proporción.&quot; </em>
-        <P><a href="mailto:kalbun@inwind.it"><u>Puede Ponerse en contacto con Giuseppe Scarpi aquí</u></a>
+          <em>&quot;un mundo tan ideal puede sobrevivir solamente si estï¿½ 
+          equilibrado perfectamente. Si usted toma algo, usted debe tambiï¿½n 
+          dar algo en proporciï¿½n.&quot; </em>
+        <P><a href="mailto:kalbun@inwind.it"><u>Puede Ponerse en contacto con Giuseppe Scarpi aquï¿½</u></a>
 </TD></TR></TBODY></TABLE>
 
 <hr>
@@ -121,8 +121,8 @@ require_once($root_path.'include/inc_environment_global.php');
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
             <P><img src="../../fotos/credits/gabriele_cicala.jpg"  border=0  align=right vspace=10> 
-          <b>La traducción Italiana de www.care2x.com fue hecha por Gabriele Cicala.</b> 
-        <P><a href="mailto:gabcicala@tiscali.it"><u>Puede Ponerse en contacto con Gabriele Cicala aquí</u></a>
+          <b>La traducciï¿½n Italiana de www.care2x.com fue hecha por Gabriele Cicala.</b> 
+        <P><a href="mailto:gabcicala@tiscali.it"><u>Puede Ponerse en contacto con Gabriele Cicala aquï¿½</u></a>
 </TD></TR></TBODY></TABLE>
 
 <hr>
@@ -135,55 +135,55 @@ require_once($root_path.'include/inc_environment_global.php');
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
             <P><img src="../../fotos/credits/daniel_zilli.jpg"  border=0  align=right vspace=10> 
-          <b>La traducción brasileña-Portuguesa de CARE 2X y www.care2x.com 
+          <b>La traducciï¿½n brasileï¿½a-Portuguesa de CARE 2X y www.care2x.com 
           fue hecha por Daniel Zilli.</b> 
-        <P><a href="mailto:danielz@cco.matrix.com.br"><u>Puede Ponerse en contacto con Daniel Zilli aquí.</u></a>
+        <P><a href="mailto:danielz@cco.matrix.com.br"><u>Puede Ponerse en contacto con Daniel Zilli aquï¿½.</u></a>
 </TD></TR></TBODY></TABLE>
 
 <hr>
-<font face="verdana,arial" size=3 color="#0000ff">Más créditos</font>
-<font face="verdana,arial" size=1 > (por orden alfabético)</font>
+<font face="verdana,arial" size=3 color="#0000ff">Mï¿½s crï¿½ditos</font>
+<font face="verdana,arial" size=1 > (por orden alfabï¿½tico)</font>
 
 <table border=0 cellspacing=1 cellpadding=1>
   <tr>
     <td bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> Agus M. Ramdan (ID)</font></nobr>&nbsp;</td>
-    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;Revisiones de código, care2x.com CMS</font></td>
+    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;Revisiones de cï¿½digo, care2x.com CMS</font></td>
   </tr>
   <tr>
     <td bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> Daniele Frijia (DE)</font></nobr>&nbsp;</td>
-    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;Comprobaciónes de seguridad, php consultor</font></td>
+    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;Comprobaciï¿½nes de seguridad, php consultor</font></td>
   </tr>
   <tr>
     <td bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> Luki Rustianto (ID)</font></nobr>&nbsp;</td>
     <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;Realces de seguridad</font></td>
   </tr>
   <tr>
-    <td bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> Matêj Hausenblas (FR)</font></nobr>&nbsp;</td>
-    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;Traducción 
+    <td bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> Matï¿½j Hausenblas (FR)</font></nobr>&nbsp;</td>
+    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;Traducciï¿½n 
       Francesa</font></td>
   </tr>
   <tr>
     <td bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> Muhammad Panji (ID)</font></nobr>&nbsp;</td>
-    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;Traducción 
+    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;Traducciï¿½n 
       a lengua Indonesia</font></td>
   </tr>
   <tr>
     <td bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> Nino Novak (DE)</font></nobr>&nbsp;</td>
-    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;Edición alemana de www.care2x.com</font></td>
+    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;Ediciï¿½n alemana de www.care2x.com</font></td>
   </tr>
   <tr>
-    <td bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> Patxi Gomaríz (ES)</font></nobr>&nbsp;</td>
-    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;Traducción 
-      Española</font></td>
+    <td bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> Patxi Gomarï¿½z (ES)</font></nobr>&nbsp;</td>
+    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;Traducciï¿½n 
+      Espaï¿½ola</font></td>
   </tr>
   <tr>
     <td bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> Pawel Cyrta (PL)</font></nobr>&nbsp;</td>
-    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;Traducción 
+    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;Traducciï¿½n 
       Polaca</font></td>
   </tr>
   <tr>
     <td bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> Prantar Deka (IN)</font></nobr>&nbsp;</td>
-    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;Módulo de facturación genérico</font></td>
+    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;Mï¿½dulo de facturaciï¿½n genï¿½rico</font></td>
   </tr>
   <tr>
     <td bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> Roberto Nanucci (IT)</font></nobr>&nbsp;</td>
@@ -191,12 +191,12 @@ require_once($root_path.'include/inc_environment_global.php');
   </tr>
   <tr>
     <td bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> Simone Aveotti (IT)</font></nobr>&nbsp;</td>
-    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;Traducciónes 
+    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;Traducciï¿½nes 
       Italianas</font></td>
   </tr>
   <tr>
     <td bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> Thomas Wiedmann (DE)</font></nobr>&nbsp;</td>
-    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;Pruebas, eliminación de fallos, escrituras de validación</font></td>
+    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;Pruebas, eliminaciï¿½n de fallos, escrituras de validaciï¿½n</font></td>
   </tr>
 </table>
 

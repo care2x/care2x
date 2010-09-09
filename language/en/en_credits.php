@@ -1,7 +1,7 @@
 <HTML>
 <HEAD>
 <TITLE></TITLE>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf8">
 <title>Credits</title>
 </HEAD>
 <BODY  leftmargin=15 topmargin=15 marginwidth=15 marginheight=15>

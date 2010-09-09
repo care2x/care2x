@@ -7,7 +7,7 @@ require_once($root_path.'include/inc_img_fx.php');
 <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 3.0//EN" "html.dtd">
 <?php html_rtl($lang); ?>
 <HEAD>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf8">
  <TITLE>Attenzione: accesso non valido</TITLE>
 </HEAD>
 <BODY BACKGROUND="leinwand.gif">
@@ -34,17 +34,17 @@ Alcune cause possono essere:
 </FONT><p>
 <font size=2 face="verdana,arial">
 <img <?php echo createComIcon('../../','achtung.gif') ?>>
-si è fatto uso dei tasti "Avanti" e "Indietro" del browser: bisognerebbe evitare di usarli.<br>
+si ï¿½ fatto uso dei tasti "Avanti" e "Indietro" del browser: bisognerebbe evitare di usarli.<br>
 <img <?php echo createComIcon('../../','achtung.gif') ?>>
-il browser ha rifiutato un cookie. Configurare il browser in modo da accettarli, perché l'applicativo
+il browser ha rifiutato un cookie. Configurare il browser in modo da accettarli, perchï¿½ l'applicativo
 nel fa uso.
 <br>
 <img <?php echo createComIcon('../../','achtung.gif') ?>>
 il browser potrebbe non essere in grado di eseguire javascript, oppure i javascript potrebbero essere
-disattivati. Dato che l'applicativo li usa, è necessario attivarli.
+disattivati. Dato che l'applicativo li usa, ï¿½ necessario attivarli.
 <br>
 <img <?php echo createComIcon('../../','achtung.gif') ?>>
-In alcuni rari casi, possono esserci stati degli errori di trasferimento dati: in questo caso è 
+In alcuni rari casi, possono esserci stati degli errori di trasferimento dati: in questo caso ï¿½ 
 sufficiente premere il bottone "Ricarica" del browser.
 <p>
 </FONT>

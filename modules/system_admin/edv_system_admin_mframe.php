@@ -17,7 +17,7 @@ if(isset($ck_edv_admin_user)) setcookie('ck_edvzugang_user',$ck_edv_admin_user);
 ?>
 <?php html_rtl($lang); ?>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf8">
 <title></title>
 </head>
 <?php

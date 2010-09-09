@@ -5,7 +5,7 @@ require_once($root_path.'include/inc_environment_global.php');
 ?>
 <?php html_rtl($lang); ?>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf8">
 <title>Vi takker</title>
 
 </head>
@@ -41,7 +41,7 @@ require_once($root_path.'include/inc_environment_global.php');
 
 			<P><img src="../../fotos/credits/elpidio_latorilla_3.jpg" border=0  align=right vspace=10>
 
-			<b>Den første beta versjon av CARE 2X var lagd av Elpidio Latorilla:</b>
+			<b>Den fï¿½rste beta versjon av CARE 2X var lagd av Elpidio Latorilla:</b>
 
 			<p>
 
@@ -49,7 +49,7 @@ require_once($root_path.'include/inc_environment_global.php');
 
 			<p>
 
-			Interesseområder: <br>C, C++, PHP, Javascript, SQL, TCL/TK, HTML, Perl, ASP, Java
+			Interesseomrï¿½der: <br>C, C++, PHP, Javascript, SQL, TCL/TK, HTML, Perl, ASP, Java
 
 			<P><a href="mailto:elpidio@latorilla.com"><u>Elpidio Latorilla kan kontaktes her.</u></a>
 
@@ -79,13 +79,13 @@ require_once($root_path.'include/inc_environment_global.php');
 
 			<p>
 
-			Giuseppe Scarpi er født i Roma, Italia, for 35 år siden. 
+			Giuseppe Scarpi er fï¿½dt i Roma, Italia, for 35 ï¿½r siden. 
 
-			<p>Han har en ingeniørgrad innenfor elektronikk og har jobbet for flere firmaer innenfor området biomedisin, hvor han har opparbeidet seg en forståelse om forholdene mellom medisin og IT.<br>
+			<p>Han har en ingeniï¿½rgrad innenfor elektronikk og har jobbet for flere firmaer innenfor omrï¿½det biomedisin, hvor han har opparbeidet seg en forstï¿½else om forholdene mellom medisin og IT.<br>
 
-Han bruker og liker både Linux og Windows, "<i>hvor begge er et resultat av godt arbeide som må respekteres.</i>".<p>
+Han bruker og liker bï¿½de Linux og Windows, "<i>hvor begge er et resultat av godt arbeide som mï¿½ respekteres.</i>".<p>
 
-Grunnen til at han ble med på 'Åpen kildekode' er: <br><i>"En ideel verdan kan bare overleve hvis den er perfekt balansert. Hvis du tar i bruk noe, bør du også gi noe tilbake."</i>
+Grunnen til at han ble med pï¿½ 'ï¿½pen kildekode' er: <br><i>"En ideel verdan kan bare overleve hvis den er perfekt balansert. Hvis du tar i bruk noe, bï¿½r du ogsï¿½ gi noe tilbake."</i>
 
 
 
@@ -209,7 +209,7 @@ Grunnen til at han ble med på 'Åpen kildekode' er: <br><i>"En ideel verdan kan b
 
 			Komplett testing<br>
 
-			Feilsøking<br>
+			Feilsï¿½king<br>
 
 			DB 'optimistic locking' konsept<br>
 
@@ -219,7 +219,7 @@ Grunnen til at han ble med på 'Åpen kildekode' er: <br><i>"En ideel verdan kan b
 
 			</font>
 
-			Thomas Wiedmann har utviklet programmvare i lengre tid og arbeider i Stuttgart, Tyskland. Han har arbeidet med Gupta Team Developer og IBM DB2 i 7 år og er en IBM sertifisert UDB DB2 Administrator. Les mer om DB2 i hans bok	"DB2" ISBN 3-932311-80-9. Han er forfatter for TOOLBOX (www.toolbox-mag.de),
+			Thomas Wiedmann har utviklet programmvare i lengre tid og arbeider i Stuttgart, Tyskland. Han har arbeidet med Gupta Team Developer og IBM DB2 i 7 ï¿½r og er en IBM sertifisert UDB DB2 Administrator. Les mer om DB2 i hans bok	"DB2" ISBN 3-932311-80-9. Han er forfatter for TOOLBOX (www.toolbox-mag.de),
 
 			a German developer magazine.
 
@@ -257,7 +257,7 @@ Grunnen til at han ble med på 'Åpen kildekode' er: <br><i>"En ideel verdan kan b
 
 			<p>
 
-			Nino Novak er en ensom cowboy. Han skyter raskere enn han tenker. Liker "real gurus" og sofistikerte diskusjoner med de. Han vil hjepe til for å gjøre verden bedre. Noe vitenskaplig og medisinsk bakgrunn.
+			Nino Novak er en ensom cowboy. Han skyter raskere enn han tenker. Liker "real gurus" og sofistikerte diskusjoner med de. Han vil hjepe til for ï¿½ gjï¿½re verden bedre. Noe vitenskaplig og medisinsk bakgrunn.
 
 		
 
@@ -287,17 +287,17 @@ Grunnen til at han ble med på 'Åpen kildekode' er: <br><i>"En ideel verdan kan b
 
 			<P><img src="../../gui/img/common/default/pixel.gif"  border=0  width=135 align=right vspace=10>
 
-			<b>Patxi Gomaríz (ES) oversatte Care2x til spansk.</b>
+			<b>Patxi Gomarï¿½z (ES) oversatte Care2x til spansk.</b>
 
 			<p>
 
-			Patxi Gomaríz er født på våren 1966 i Murcia, Spania. Hans liv og arbeide har for det meste vært med fotografi, og er en spesialist som fotograf for Ophtalmology (fundus camera). Han er en internetfantast og lager også websider.<p>
+			Patxi Gomarï¿½z er fï¿½dt pï¿½ vï¿½ren 1966 i Murcia, Spania. Hans liv og arbeide har for det meste vï¿½rt med fotografi, og er en spesialist som fotograf for Ophtalmology (fundus camera). Han er en internetfantast og lager ogsï¿½ websider.<p>
 
-			"<i>Jeg tror åpen kildekode er et effektivt våpen mot de negative konsekvenser om økonomisk globalisering, spesiellt innenfor områder som er viktig, som for eksempel helse. På grunn av det er jeg stolt over min lille deltakelse i dette store prosjektet.</i>"
+			"<i>Jeg tror ï¿½pen kildekode er et effektivt vï¿½pen mot de negative konsekvenser om ï¿½konomisk globalisering, spesiellt innenfor omrï¿½der som er viktig, som for eksempel helse. Pï¿½ grunn av det er jeg stolt over min lille deltakelse i dette store prosjektet.</i>"
 
 
 
-			<P><a href="mailto:pgomariz@ono.com"><u>Patxi Gomaríz kan kontaktes her.</u></a>
+			<P><a href="mailto:pgomariz@ono.com"><u>Patxi Gomarï¿½z kan kontaktes her.</u></a>
 
 </TD></TR></TBODY></TABLE>
 
@@ -321,7 +321,7 @@ Grunnen til at han ble med på 'Åpen kildekode' er: <br><i>"En ideel verdan kan b
 
 			<P><img src="../../gui/img/common/default/pixel.gif"  border=0  width=135 align=right vspace=10>
 
-			<b>Daniele Frijia (DE) sjekket sikkerheten på CARE 2X.</b>
+			<b>Daniele Frijia (DE) sjekket sikkerheten pï¿½ CARE 2X.</b>
 
 			<br>
 
@@ -329,7 +329,7 @@ Grunnen til at han ble med på 'Åpen kildekode' er: <br><i>"En ideel verdan kan b
 
 			<font size=1>
 
-			Råd om sikkerhet<br>
+			Rï¿½d om sikkerhet<br>
 
 			Konsultasjoner om php<br>
 
@@ -339,7 +339,7 @@ Grunnen til at han ble med på 'Åpen kildekode' er: <br><i>"En ideel verdan kan b
 
 		    <p>
 
-			Daniele Frijia (født 81), arbeider for tiden hos ISP i Nuremberg, Tyskland, gir sine kunnskaper om php for å gjøre Care2x mer sikkert. Intensjonen er å lage et nytt medisinsk "marked" for åpen kildekode.
+			Daniele Frijia (fï¿½dt 81), arbeider for tiden hos ISP i Nuremberg, Tyskland, gir sine kunnskaper om php for ï¿½ gjï¿½re Care2x mer sikkert. Intensjonen er ï¿½ lage et nytt medisinsk "marked" for ï¿½pen kildekode.
 
 
 
@@ -391,7 +391,7 @@ Grunnen til at han ble med på 'Åpen kildekode' er: <br><i>"En ideel verdan kan b
 
   <tr>
 
-    <td bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> Matêj Hausenblas (FR)</font></nobr>&nbsp;</td>
+    <td bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> Matï¿½j Hausenblas (FR)</font></nobr>&nbsp;</td>
 
     <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;Fransk oversetting</font></td>
 
@@ -401,7 +401,7 @@ Grunnen til at han ble med på 'Åpen kildekode' er: <br><i>"En ideel verdan kan b
 
     <td bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> Muhammad Panji (ID)</font></nobr>&nbsp;</td>
 
-    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;Bistått til indonesisk oversettelse</font></td>
+    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;Bistï¿½tt til indonesisk oversettelse</font></td>
 
   </tr>
 
@@ -415,7 +415,7 @@ Grunnen til at han ble med på 'Åpen kildekode' er: <br><i>"En ideel verdan kan b
 
   <tr>
 
-    <td bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> Patxi Gomaríz (ES)</font></nobr>&nbsp;</td>
+    <td bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> Patxi Gomarï¿½z (ES)</font></nobr>&nbsp;</td>
 
     <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;Spansk oversettelse</font></td>
 

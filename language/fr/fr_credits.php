@@ -5,21 +5,21 @@ require_once($root_path.'include/inc_environment_global.php');
 ?>
 <?php html_rtl($lang); ?>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-<title>Crédits</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf8">
+<title>Crï¿½dits</title>
 </head>
 <body onLoad="if(window.focus) window.focus()">
-<font face="verdana,arial" size=6 color="#0000ff">Crédits</fonts>
+<font face="verdana,arial" size=6 color="#0000ff">Crï¿½dits</fonts>
 <hr>
 <TABLE cellSpacing=0 cellPadding=0 border=0 width=100%>
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-			<b>Jean-Philippe LIOT (FR)</b><br>La traduction française de CARE 2X était réalisée.
+			<b>Jean-Philippe LIOT (FR)</b><br>La traduction franï¿½aise de CARE 2X ï¿½tait rï¿½alisï¿½e.
 			<p>
 			Jean-Philippe is a doctor of veterinary medicine. In addition to translating Care2x to french he is also working on its
 			development for veterinary practice management.
-			<P><a href="mailto:jp.liot@libertysurf.fr"><u>Jean-Philippe peut être contacté ici..</u></a>
+			<P><a href="mailto:jp.liot@libertysurf.fr"><u>Jean-Philippe peut ï¿½tre contactï¿½ ici..</u></a>
 </TD></TR></TBODY></TABLE>
 
 <hr>
@@ -27,16 +27,16 @@ require_once($root_path.'include/inc_environment_global.php');
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-			<b>Matej Hausenblas (FR)</b><br>La traduction française de CARE 2X était réalisée.
+			<b>Matej Hausenblas (FR)</b><br>La traduction franï¿½aise de CARE 2X ï¿½tait rï¿½alisï¿½e.
 			<p>
-			Matej Hausenblas est né à Prague, République Tchéque, en 1981.<p>
-Il est étudiant à l'université de maths-informatique-physique. Après quelques 
-années d'utilisation de Windows il a décidé jeter un coup d'oeil sur Linux, 
-comme un challenge considérable et après quelques temps il a décidé 
-participer à des projets d'Open Source afin d'améliorer ses savoir-faire et 
-également pour retourner quelque chose et enfin pour voir comment les choses 
-marchent dans une telle société.
-			<P><a href="mailto:matejh@users.sourceforge.net"><u>Matej Hausenblas peut être contacté ici..</u></a>
+			Matej Hausenblas est nï¿½ ï¿½ Prague, Rï¿½publique Tchï¿½que, en 1981.<p>
+Il est ï¿½tudiant ï¿½ l'universitï¿½ de maths-informatique-physique. Aprï¿½s quelques 
+annï¿½es d'utilisation de Windows il a dï¿½cidï¿½ jeter un coup d'oeil sur Linux, 
+comme un challenge considï¿½rable et aprï¿½s quelques temps il a dï¿½cidï¿½ 
+participer ï¿½ des projets d'Open Source afin d'amï¿½liorer ses savoir-faire et 
+ï¿½galement pour retourner quelque chose et enfin pour voir comment les choses 
+marchent dans une telle sociï¿½tï¿½.
+			<P><a href="mailto:matejh@users.sourceforge.net"><u>Matej Hausenblas peut ï¿½tre contactï¿½ ici..</u></a>
 </TD></TR></TBODY></TABLE>
 
 <hr>
@@ -49,16 +49,16 @@ marchent dans une telle société.
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
 			<P><img src="../../fotos/credits/giuseppe_scarpi.jpg"  border=0  width=135 align=right vspace=10>
-			<b>La traduction italienne de CARE 2X était réalisée par Giuseppe Scarpi (IT):</b>
+			<b>La traduction italienne de CARE 2X ï¿½tait rï¿½alisï¿½e par Giuseppe Scarpi (IT):</b>
 			<p>
-			Giuseppe Scarpi est né à Rome, Italie, il y a 35 ans.
-			<p>Il a un diplôme d'Ingénieur en Électronique et il a travaillé pour plusieures companies dans le secteur biomédical,
-			où il a développé une compréhension de la relation entre le monde de l'informatique et médecine.<br>
-Il utilise et apprécie les deux, Linux et Windows, "<i>en tant que résultat d'un grand travail humain qui doit être respecté</i>".<p>
-Il a décidé de joindre activement la source libre car:<br><i>"Un tel monde idéal peut survivre uniquement s'il est parfaitement équilibré. Si vous prenez quelque chose,
+			Giuseppe Scarpi est nï¿½ ï¿½ Rome, Italie, il y a 35 ans.
+			<p>Il a un diplï¿½me d'Ingï¿½nieur en ï¿½lectronique et il a travaillï¿½ pour plusieures companies dans le secteur biomï¿½dical,
+			oï¿½ il a dï¿½veloppï¿½ une comprï¿½hension de la relation entre le monde de l'informatique et mï¿½decine.<br>
+Il utilise et apprï¿½cie les deux, Linux et Windows, "<i>en tant que rï¿½sultat d'un grand travail humain qui doit ï¿½tre respectï¿½</i>".<p>
+Il a dï¿½cidï¿½ de joindre activement la source libre car:<br><i>"Un tel monde idï¿½al peut survivre uniquement s'il est parfaitement ï¿½quilibrï¿½. Si vous prenez quelque chose,
  vous devriez rendre quelque chose en proportion."</i>
 
-			<P><a href="mailto:kalbun@inwind.it"><u>Giuseppe Scarpi peut être contacté ici..</u></a>
+			<P><a href="mailto:kalbun@inwind.it"><u>Giuseppe Scarpi peut ï¿½tre contactï¿½ ici..</u></a>
 </TD></TR></TBODY></TABLE>
 
 <hr>
@@ -71,9 +71,9 @@ Il a décidé de joindre activement la source libre car:<br><i>"Un tel monde idéal
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
             <P><img src="../../fotos/credits/gabriele_cicala.jpg"  border=0  align=right vspace=10>
-			<b>La traduction italienne de CARE 2X et www.care2x.com était réalisée par Gabriele Cicala (IT).</b>
+			<b>La traduction italienne de CARE 2X et www.care2x.com ï¿½tait rï¿½alisï¿½e par Gabriele Cicala (IT).</b>
 			
-			<P><a href="mailto:gabcicala@tiscali.it"><u>Gabriele Cicala peut être contacté ici..</u></a>
+			<P><a href="mailto:gabcicala@tiscali.it"><u>Gabriele Cicala peut ï¿½tre contactï¿½ ici..</u></a>
 </TD></TR></TBODY></TABLE>
 
 <hr>
@@ -86,13 +86,13 @@ Il a décidé de joindre activement la source libre car:<br><i>"Un tel monde idéal
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
             <P><img src="../../fotos/credits/daniel_zilli.jpg"  border=0  align=right vspace=10>
-			<b>La traduction brésilien-portugaise de CARE 2X et www.care2x.com était réalisée par Daniel Zilli (BR).</b>
+			<b>La traduction brï¿½silien-portugaise de CARE 2X et www.care2x.com ï¿½tait rï¿½alisï¿½e par Daniel Zilli (BR).</b>
 			<p>
-			Daniel est un type agréable qui adore vivre une vie heureuse. Il aime les ordinateurs, football, et bonne musique.
-Il a 10 ans de l`expérience avec les ordinateurs et il adore ce qu`il fait.
-Daniel est propriétaire d'une entreprise qui produit des produits
-pour l`éducation de la science d`ordinateurs, les logiciels libres et distribution locale de linux.
-			<P><a href="mailto:danielz@cco.matrix.com.br"><u>Daniel Zilli peut être contacté ici..</u></a>
+			Daniel est un type agrï¿½able qui adore vivre une vie heureuse. Il aime les ordinateurs, football, et bonne musique.
+Il a 10 ans de l`expï¿½rience avec les ordinateurs et il adore ce qu`il fait.
+Daniel est propriï¿½taire d'une entreprise qui produit des produits
+pour l`ï¿½ducation de la science d`ordinateurs, les logiciels libres et distribution locale de linux.
+			<P><a href="mailto:danielz@cco.matrix.com.br"><u>Daniel Zilli peut ï¿½tre contactï¿½ ici..</u></a>
 </TD></TR></TBODY></TABLE>
 <hr>
 <table cellSpacing=0 cellPadding=0 border=0 width=100%>
@@ -101,24 +101,24 @@ pour l`éducation de la science d`ordinateurs, les logiciels libres et distributi
           <td vAlign=top><font face="verdana,arial" size=2>
 			<p><img src="../../fotos/credits/lopo_l_almeida.jpg"  
                                 width=135 height=170 border=0  align=right vspace=10>
-			<b>Lopo Lencastre de Almeida (PT)</b> est un des développeurs les plus actifs.
+			<b>Lopo Lencastre de Almeida (PT)</b> est un des dï¿½veloppeurs les plus actifs.
 			Quelques de ses contributions au projet sont:
                         <p><font size=1>
-			Marketing, Publicité et relations publiques<br>
+			Marketing, Publicitï¿½ et relations publiques<br>
 			Design du web et des logos<br>
-			Implémentation &amp; maintenance de plusieurs outils web (Bugtracker, Forum, FAQ, etc.)<br>
-			Implémentation &amp; maintenance du nouveau site (quasiment terminé)<br>
-			Modération du forum et administration<br>
+			Implï¿½mentation &amp; maintenance de plusieurs outils web (Bugtracker, Forum, FAQ, etc.)<br>
+			Implï¿½mentation &amp; maintenance du nouveau site (quasiment terminï¿½)<br>
+			Modï¿½ration du forum et administration<br>
 			Code finder/digger<br>
 			Consultations en PHP<br>
-			Conseils en matière de sécurité<br>
+			Conseils en matiï¿½re de sï¿½curitï¿½<br>
 			Consiller des couches abstraites (DB, patron, etc.)<br>
-			Déverminage<br>
-			Idées, discussions, conseils, tips, etc.
+			Dï¿½verminage<br>
+			Idï¿½es, discussions, conseils, tips, etc.
 			</font><p>
-			Lopo L. de Almeida est né en Angola en 1966. Il travaille dans le secteur d'informatique - allant de l'automatisation commerciale à l'automatisation industrielle - en tant que développeur de logiciels et dessinateur d'interface pour plus de 16 ans maintenant. Pendant les dernières 5 années il a travaillé dans le développement web et gestion d'entreprise. Il est le CEO/CTO de HumanEasy - un partenaire du projet Care2002 qui est en charge de ses <b>relations publiques et de gestion du marketing</b>.<br>
-			Il est également actif dans de nombreux projets GNU/GPL; certains parmi eux sont en utilisation sur le site de Care2x.<br>
-			<p><a href="http://www.humaneasy.com" target="_blank"><u>Lopo L. de Almeida peut-être contacté ici.</u></a>
+			Lopo L. de Almeida est nï¿½ en Angola en 1966. Il travaille dans le secteur d'informatique - allant de l'automatisation commerciale ï¿½ l'automatisation industrielle - en tant que dï¿½veloppeur de logiciels et dessinateur d'interface pour plus de 16 ans maintenant. Pendant les derniï¿½res 5 annï¿½es il a travaillï¿½ dans le dï¿½veloppement web et gestion d'entreprise. Il est le CEO/CTO de HumanEasy - un partenaire du projet Care2002 qui est en charge de ses <b>relations publiques et de gestion du marketing</b>.<br>
+			Il est ï¿½galement actif dans de nombreux projets GNU/GPL; certains parmi eux sont en utilisation sur le site de Care2x.<br>
+			<p><a href="http://www.humaneasy.com" target="_blank"><u>Lopo L. de Almeida peut-ï¿½tre contactï¿½ ici.</u></a>
 </td></tr></tbody></table>
 <hr>
 <TABLE cellSpacing=0 cellPadding=0 border=0 width=100%>
@@ -130,9 +130,9 @@ pour l`éducation de la science d`ordinateurs, les logiciels libres et distributi
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
             <P><img src="../../fotos/credits/agus_mr.jpg"  border=0  align=right vspace=10>
-			<b>La traduction indonésienne de CARE 2X et www.care2x.com était réalisée par Agus Muhammad Ramdan (ID).</b>
+			<b>La traduction indonï¿½sienne de CARE 2X et www.care2x.com ï¿½tait rï¿½alisï¿½e par Agus Muhammad Ramdan (ID).</b>
 			
-			<P><a href="mailto:agusmr@mweb.co.id"><u>Agus M. Ramdan  peut être  contacté ici..</u></a>
+			<P><a href="mailto:agusmr@mweb.co.id"><u>Agus M. Ramdan  peut ï¿½tre  contactï¿½ ici..</u></a>
 </TD></TR></TBODY></TABLE>
 
 <hr>
@@ -145,22 +145,22 @@ pour l`éducation de la science d`ordinateurs, les logiciels libres et distributi
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
 			<P><img src="../../fotos/credits/thomas_wiedmann.jpg"  border=0  align=right vspace=10>
-			<b>Thomas Wiedmann (DE) a contribué aux fonctions suivantes:</b>
+			<b>Thomas Wiedmann (DE) a contribuï¿½ aux fonctions suivantes:</b>
 			<p><font size=1>
 			Les tests complets <br>
-			Déboggage <br>
+			Dï¿½boggage <br>
 			DB 'le concept de serrure optimistique'<br>
 			DB optimalisations <br>
-			Scripts de validation pour les dates et numéros<p>
+			Scripts de validation pour les dates et numï¿½ros<p>
 			</font>
-			Thomas Wiedmann est un dévelopeur de logiciels depuis longtemps et travaille à  Stuttgart, Allemagne. Il a
-			travaillé avec Gupta Team Developer et IBM DB2 depuis 7 ans et est aussi un
-			administrateur certifié IBM de UDB DB2. Lisez plus sur DB2 dans son livre
+			Thomas Wiedmann est un dï¿½velopeur de logiciels depuis longtemps et travaille ï¿½  Stuttgart, Allemagne. Il a
+			travaillï¿½ avec Gupta Team Developer et IBM DB2 depuis 7 ans et est aussi un
+			administrateur certifiï¿½ IBM de UDB DB2. Lisez plus sur DB2 dans son livre
 			"DB2" ISBN 3-932311-80-9. Il est un auteur de TOOLBOX (www.toolbox-mag.de),
-			un magazine allemand de dévelopeurs.
+			un magazine allemand de dï¿½velopeurs.
 
 
-			<P><a href="mailto:tho123@users.sourceforge.net"><u>Thomas Wiedmann peut être contacté ici...</u></a>
+			<P><a href="mailto:tho123@users.sourceforge.net"><u>Thomas Wiedmann peut ï¿½tre contactï¿½ ici...</u></a>
 </TD></TR></TBODY></TABLE>
 
 <hr>
@@ -173,14 +173,14 @@ pour l`éducation de la science d`ordinateurs, les logiciels libres et distributi
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
 			<P><img src="../../gui/img/common/default/pixel.gif"  border=0  width=135 align=right vspace=10>
-			<b>Nino Novak (DE) a édité la version allemande de www.care2x.com.</b>
+			<b>Nino Novak (DE) a ï¿½ditï¿½ la version allemande de www.care2x.com.</b>
 			<p>
 			Nino Novak est un cowboy pauvre et solitaire. Il tire plus vite qu'il pense. Parfois un peu difficile.
-			Il aime les "vrai gourou" et des discussions sophistiquées avec eux. Il veut aider créer un meilleur monde.
-			Il a un peu d'expérience dans le milieu médical et scientifique (ainsi il a joint le projet care2x).
+			Il aime les "vrai gourou" et des discussions sophistiquï¿½es avec eux. Il veut aider crï¿½er un meilleur monde.
+			Il a un peu d'expï¿½rience dans le milieu mï¿½dical et scientifique (ainsi il a joint le projet care2x).
 
 
-			<P><a href="mailto:nino@kflog.org"><u>Nino Novak peut  être contacté ici...</u></a>
+			<P><a href="mailto:nino@kflog.org"><u>Nino Novak peut  ï¿½tre contactï¿½ ici...</u></a>
 </TD></TR></TBODY></TABLE>
 <hr>
 <TABLE cellSpacing=0 cellPadding=0 border=0 width=100%>
@@ -192,16 +192,16 @@ pour l`éducation de la science d`ordinateurs, les logiciels libres et distributi
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
 			<P><img src="../../gui/img/common/default/pixel.gif"  border=0  width=135 align=right vspace=10>
-			<b>Patxi Gomaríz (ES) a fait la traduction espagnole.</b>
+			<b>Patxi Gomarï¿½z (ES) a fait la traduction espagnole.</b>
 			<p>
-			Patxi Gomaríz est né au printemps 1966 à Murcia, Espagne. Sa vie et son travail tourne surtout autor de la photographie.
-			Il est un spécialiste en photographie pour l'ophtalmologie (fundus camera). Il est un passionné d'internet et fait également
+			Patxi Gomarï¿½z est nï¿½ au printemps 1966 ï¿½ Murcia, Espagne. Sa vie et son travail tourne surtout autor de la photographie.
+			Il est un spï¿½cialiste en photographie pour l'ophtalmologie (fundus camera). Il est un passionnï¿½ d'internet et fait ï¿½galement
 			le design des sites web.<p>
-			"<i>Je pense que le code à source ouverte est une arme effective contre les effets négatifs de la globalisation économique avant tout
-			dans les secteurs fundamentaux qui sont importants pour l'humanité tels que la santé. Pour cette raison je me sens fier de ma petite
-			contribution à ce grand projet.</i>"
+			"<i>Je pense que le code ï¿½ source ouverte est une arme effective contre les effets nï¿½gatifs de la globalisation ï¿½conomique avant tout
+			dans les secteurs fundamentaux qui sont importants pour l'humanitï¿½ tels que la santï¿½. Pour cette raison je me sens fier de ma petite
+			contribution ï¿½ ce grand projet.</i>"
 
-			<P><a href="mailto:pgomariz@ono.com"><u>Patxi Gomaríz peut être contacté ici...</u></a>
+			<P><a href="mailto:pgomariz@ono.com"><u>Patxi Gomarï¿½z peut ï¿½tre contactï¿½ ici...</u></a>
 </TD></TR></TBODY></TABLE>
 <hr>
 <TABLE cellSpacing=0 cellPadding=0 border=0 width=100%>
@@ -213,38 +213,38 @@ pour l`éducation de la science d`ordinateurs, les logiciels libres et distributi
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
 			<P><img src="../../gui/img/common/default/pixel.gif"  border=0  width=135 align=right vspace=10>
-			<b>Daniele Frijia (DE) a contrôlé les aspects de sécurité de CARE 2X.</b>
+			<b>Daniele Frijia (DE) a contrï¿½lï¿½ les aspects de sï¿½curitï¿½ de CARE 2X.</b>
 			<br>
 			Quelques de ses multiples contributions:<p>
 			<font size=1>
-			Conseils sur la sécurité<br>
-			Consultations en matière de php<br>
+			Conseils sur la sï¿½curitï¿½<br>
+			Consultations en matiï¿½re de php<br>
 			Il est le "sentinel" du projet
 		</font>
 		    <p>
-			Daniele Frijia (né en 81), travaille actuellement pour un ISP à Nuremberg, Allemagne, dédie sa connaissance de php
-			afin d'améliorer la sécurité de Care2x. L'intention est d'ouvrir un nouveau "marché" (médical)
-			pour la communauté du logiciel libre.
+			Daniele Frijia (nï¿½ en 81), travaille actuellement pour un ISP ï¿½ Nuremberg, Allemagne, dï¿½die sa connaissance de php
+			afin d'amï¿½liorer la sï¿½curitï¿½ de Care2x. L'intention est d'ouvrir un nouveau "marchï¿½" (mï¿½dical)
+			pour la communautï¿½ du logiciel libre.
 
-			<P><a href="mailto:daniele@infra.de"><u>Daniele Frijia peut être contacté ici...</u></a>
+			<P><a href="mailto:daniele@infra.de"><u>Daniele Frijia peut ï¿½tre contactï¿½ ici...</u></a>
 </TD></TR></TBODY></TABLE>
 
 
 <hr>
-<font face="verdana,arial" size=3 color="#0000ff">Autres crédits</font>
-<font face="verdana,arial" size=1 > (dans l'ordre alphabétique)</font>
+<font face="verdana,arial" size=3 color="#0000ff">Autres crï¿½dits</font>
+<font face="verdana,arial" size=1 > (dans l'ordre alphabï¿½tique)</font>
 
 <table border=0 cellspacing=1 cellpadding=1>
   <tr>
     <td bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> Luki Rustianto (ID)</font></nobr>&nbsp;</td>
-    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;Extensions de sécurité</font></td>
+    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;Extensions de sï¿½curitï¿½</font></td>
   </tr>
   <tr>
     <td bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> Muhammad Panji (ID)</font></nobr>&nbsp;</td>
-    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;La traduction indonésienne</font></td>
+    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;La traduction indonï¿½sienne</font></td>
   </tr>
   <tr>
-    <td bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> Patxi Gomaríz (ES)</font></nobr>&nbsp;</td>
+    <td bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> Patxi Gomarï¿½z (ES)</font></nobr>&nbsp;</td>
     <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;La traduction espagnole</font></td>
   </tr>
   <tr>
@@ -253,7 +253,7 @@ pour l`éducation de la science d`ordinateurs, les logiciels libres et distributi
   </tr>
   <tr>
     <td bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> Prantar Deka (IN)</font></nobr>&nbsp;</td>
-    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;Le module de générique bilingue</font></td>
+    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;Le module de gï¿½nï¿½rique bilingue</font></td>
   </tr>
   <tr>
     <td bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> Roberto Nanucci (IT)</font></nobr>&nbsp;</td>
@@ -316,13 +316,13 @@ pour l`éducation de la science d`ordinateurs, les logiciels libres et distributi
     <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;Ataraxia (WAP) module</font></td>
   </tr>
   <tr>
-    <td bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> Wilfried Gödert Dr. med (DE)</font></nobr>&nbsp;</td>
+    <td bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> Wilfried Gï¿½dert Dr. med (DE)</font></nobr>&nbsp;</td>
     <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;Press relation, Server hosting, Newsserver, OTRS, Consultation</font></td>
   </tr>
 
 </table>
 
-<font face="verdana,arial" size=1>NB: Ceci n'est qu'une liste partielle. Les crédits additionnels vont arriver.</font>
+<font face="verdana,arial" size=1>NB: Ceci n'est qu'une liste partielle. Les crï¿½dits additionnels vont arriver.</font>
 
 </body>
 </html>

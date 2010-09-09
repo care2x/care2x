@@ -5,7 +5,7 @@ require_once($root_path.'include/inc_environment_global.php');
 ?>
 <?php html_rtl($lang); ?>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf8">
 <title>Credits</title>
 </head>
 <body onLoad="if(window.focus) window.focus()">
@@ -160,10 +160,10 @@ science education products, open source software and local  linux distro.
 			Spanish translations
 			<p><font size=1>
 			Author and coauthor of numerous medical textbooks<br>
-5 years as Director of the Grünenthal Medical Informatics Center, Quito
+5 years as Director of the Grï¿½nenthal Medical Informatics Center, Quito
 - Ecuador <br>
 Initial studies in Medical Informatics at Stanford University<br>
-2 years as Multimedia Project Leader of Grünenthal GmbH, Aachen, Germany</font><p>
+2 years as Multimedia Project Leader of Grï¿½nenthal GmbH, Aachen, Germany</font><p>
 Official translator for phpMyAdmin (Spanish)<br>
 Webmaster of the largest Ecuadorian medical website initiative
 (www.cmpichincha.med.ec) and the Ecuadorian Society of Dermatology
@@ -190,7 +190,7 @@ Website: www.cerebroperiferico.com
 <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
 		  <P><img src="../../fotos/credits/wilfried_goedert.jpg" border=0  align=right vspace=10 >
-			<P><b>Dr. med Wilfried Gödert (DE)</b><br>
+			<P><b>Dr. med Wilfried Gï¿½dert (DE)</b><br>
 			contributes the following:
 			<p><font size=1>
 		     Hosting and admin of:<br>
@@ -200,7 +200,7 @@ Website: www.cerebroperiferico.com
 			<p>
 			</font>
 			Profession: Physician, with additional Medical Informatics degree
-			<p><a href="mailto:goedert@users.sourceforge.net"><u>Dr. Wilfried Gödert can be contacted here</u></a>
+			<p><a href="mailto:goedert@users.sourceforge.net"><u>Dr. Wilfried Gï¿½dert can be contacted here</u></a>
 </TD></TR>	
 </TBODY></TABLE>
 
@@ -237,16 +237,16 @@ work in this kind of community.
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-			<b>Patxi Gomaríz (ES) did the spanish translations.</b>
+			<b>Patxi Gomarï¿½z (ES) did the spanish translations.</b>
 			<p>
-			Patxi Gomaríz was born in the spring of 1966 in Murcia, Spain. His life and work revolve mostly around photography
+			Patxi Gomarï¿½z was born in the spring of 1966 in Murcia, Spain. His life and work revolve mostly around photography
 			being a specialist in photography for Ophtalmology (fundus camera). He is an internet enthusiast and also designs 
 			websites.<p>
 			"<i>I think the open source code is an effective weapon against the negative effects of economic globalization specially in 
 			fundamental areas which are important to humanity like health. For that reason, I feel proud of my small
 			contribution to this great project.</i>"
 
-			<P><a href="mailto:pgomariz@ono.com"><u>Patxi Gomaríz can be contacted here.</u></a>
+			<P><a href="mailto:pgomariz@ono.com"><u>Patxi Gomarï¿½z can be contacted here.</u></a>
 </TD></TR></TBODY></TABLE>
 <hr>
 <TABLE cellSpacing=0 cellPadding=0 border=0 width=100%>
@@ -326,7 +326,7 @@ work in this kind of community.
     <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;Data structure design, Obstetrics, Bug reporting, GUI design</font></td>
   </tr>
   <tr>
-    <td bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> Matêj Hausenblas (FR)</font></nobr>&nbsp;</td>
+    <td bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> Matï¿½j Hausenblas (FR)</font></nobr>&nbsp;</td>
     <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;French translation</font></td>
   </tr>
   <tr>
@@ -338,7 +338,7 @@ work in this kind of community.
     <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;German edition of www.care2x.com</font></td>
   </tr>
   <tr>
-    <td bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> Patxi Gomaríz (ES)</font></nobr>&nbsp;</td>
+    <td bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> Patxi Gomarï¿½z (ES)</font></nobr>&nbsp;</td>
     <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;Spanish translation</font></td>
   </tr>
   <tr>
@@ -374,7 +374,7 @@ work in this kind of community.
     <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;Ataraxia (WAP) module</font></td>
   </tr>
   <tr>
-    <td bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> Wilfried Gödert Dr. med (DE)</font></nobr>&nbsp;</td>
+    <td bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> Wilfried Gï¿½dert Dr. med (DE)</font></nobr>&nbsp;</td>
     <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;Press relation, Server hosting, Newsserver, OTRS, Consultation</font></td>
   </tr>
 </table>

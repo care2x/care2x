@@ -9,7 +9,7 @@ require_once($root_path.'include/inc_img_fx.php');
 <?php
 /* Translation by Emir Prcic <e.prcic@gmx.net> */ html_rtl($lang); ?>
 <HEAD>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf8">
  <TITLE>Invalid Access Warning</TITLE>
 </HEAD>
 
@@ -42,23 +42,23 @@ Najvjerovatniji razlog ovog problema:
 <font size=2 face="verdana,arial">
 <img <?php
 /* Translation by Emir Prcic <e.prcic@gmx.net> */ echo createComIcon('../../','achtung.gif') ?>>
-Mo¾da ste koristili standardne "Back" or "Forward" funkcije va¹eg browsera. Izbjegavajte koristiti te standardne funkcije.<br>
+Moï¿½da ste koristili standardne "Back" or "Forward" funkcije vaï¿½eg browsera. Izbjegavajte koristiti te standardne funkcije.<br>
 <img <?php
 /* Translation by Emir Prcic <e.prcic@gmx.net> */ echo createComIcon('../../','achtung.gif') ?>>
-Mo¾da ste odbili primiti cookie. Ovaj program ovidi o cookies. Molimo vas da prihvatite cookies
+Moï¿½da ste odbili primiti cookie. Ovaj program ovidi o cookies. Molimo vas da prihvatite cookies
 <br>
 <img <?php
 /* Translation by Emir Prcic <e.prcic@gmx.net> */ echo createComIcon('../../','achtung.gif') ?>>
-Va¹ browser ne mo¾e primiti. Molimo vas da korektno podesite browser.
+Vaï¿½ browser ne moï¿½e primiti. Molimo vas da korektno podesite browser.
 <br>
 <img <?php
 /* Translation by Emir Prcic <e.prcic@gmx.net> */ echo createComIcon('../../','achtung.gif') ?>>
-Nemate podr¹ku za Javascript. Molimo da ukljucite JavaScript u va¹em browseru.
+Nemate podrï¿½ku za Javascript. Molimo da ukljucite JavaScript u vaï¿½em browseru.
 <br>
 <img <?php
 /* Translation by Emir Prcic <e.prcic@gmx.net> */ echo createComIcon('../../','achtung.gif') ?>>
-U rijetkim sluèajevima mo¾e se dogoditi da je do¹lo do gre¹ke u komunikaciji. Da bi ispravili ovu gre¹ku samo kliknite na
-"reload" dugme u va¹em browseru.
+U rijetkim sluï¿½ajevima moï¿½e se dogoditi da je doï¿½lo do greï¿½ke u komunikaciji. Da bi ispravili ovu greï¿½ku samo kliknite na
+"reload" dugme u vaï¿½em browseru.
 <p>
 </FONT>
 <p>

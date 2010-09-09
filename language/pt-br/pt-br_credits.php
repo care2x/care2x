@@ -6,11 +6,11 @@ require_once($root_path.'include/inc_vars_resolve.php');
 ?>
 <?php html_rtl($lang); ?>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-<title>Créditos</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf8">
+<title>Crï¿½ditos</title>
 </head>
 <body onLoad="if(window.focus) window.focus()">
-<font face="verdana,arial" size=6 color="#0000ff">Créditos</font><BR>
+<font face="verdana,arial" size=6 color="#0000ff">Crï¿½ditos</font><BR>
 <FONT FACE="Verdana" SIZE=2>Sorted alphabetically by first name</FONT>
 <hr>
 
@@ -20,11 +20,11 @@ require_once($root_path.'include/inc_vars_resolve.php');
           <TD vAlign=top><font face="verdana,arial" size=2>
             <P><img src="../../fotos/credits/daniel_zilli.jpg"  border=0  align=right vspace=10>
 			<b>
-			O tradução brasileira do CARE 2X e www.care2x.com foi feito por Daniel Zilli.
+			O traduï¿½ï¿½o brasileira do CARE 2X e www.care2x.com foi feito por Daniel Zilli.
 			</b><p>
-			 Daniel Zilli é natural de Passo Fundo estado do Rio Grande do Sul - Brasil. Possui formação técnica em Engenharia de Software e está concluindo sua graduação em Sistemas de Informação. Com experiência há mais de 10 anos em informática, desenvolveu uma metodologia para trabalhar não só o lado tecnológico, mas também o lado humano das organizações.
+			 Daniel Zilli ï¿½ natural de Passo Fundo estado do Rio Grande do Sul - Brasil. Possui formaï¿½ï¿½o tï¿½cnica em Engenharia de Software e estï¿½ concluindo sua graduaï¿½ï¿½o em Sistemas de Informaï¿½ï¿½o. Com experiï¿½ncia hï¿½ mais de 10 anos em informï¿½tica, desenvolveu uma metodologia para trabalhar nï¿½o sï¿½ o lado tecnolï¿½gico, mas tambï¿½m o lado humano das organizaï¿½ï¿½es.
 <p>
-Daniel é sócio-diretor da Lec Tecnologia, empresa especializada em consultoria de software livre, produtos para ensino Linux e segurança de informação. 
+Daniel ï¿½ sï¿½cio-diretor da Lec Tecnologia, empresa especializada em consultoria de software livre, produtos para ensino Linux e seguranï¿½a de informaï¿½ï¿½o. 
 			
 			<P><a href="mailto:danielz@cco.matrix.com.br"><u>Daniel Zilli pode ser contatado aqui. </u></a>
 </TD></TR></TBODY></TABLE>
@@ -82,7 +82,7 @@ Daniel é sócio-diretor da Lec Tecnologia, empresa especializada em consultoria d
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
 			<b>Rodrigo F. Ferreira (BR)</b><p>
-			A tradução brasileira do CARE 2X
+			A traduï¿½ï¿½o brasileira do CARE 2X
 			<P><a href="mailto:rodrigo@otorrinosclinica.com.br"><u>Rodrigo F. Ferreira pode ser contatado aqui.</u></a>
 </TD></TR></TBODY></TABLE>
 
@@ -107,16 +107,16 @@ Daniel é sócio-diretor da Lec Tecnologia, empresa especializada em consultoria d
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
 			<P><img src="../../fotos/credits/giuseppe_scarpi.jpg"  width=135 height=170 border=0  align=right vspace=10>
-			<b>A tradução italiana do CARE 2X foi feito por Giuseppe Scarpi:</b>
+			<b>A traduï¿½ï¿½o italiana do CARE 2X foi feito por Giuseppe Scarpi:</b>
 			<p>
-			Giuseppe Scarpi nasceu em Roma, Itália e tem 35 anos. 
+			Giuseppe Scarpi nasceu em Roma, Itï¿½lia e tem 35 anos. 
 <p>
-Ele tem uma graduação em Engenharia Eletrônica e trabalhou para várias companhias no setor biomédico onde ele 
-desenvolveu uma compreensão sobre as relações entre os mundos médicos e de informática. Ele usa e aprecia Linux e Windows, 
-"<i>ambos são o resultado de um grande trabalho humano que deve ser respeitado</i>."   
+Ele tem uma graduaï¿½ï¿½o em Engenharia Eletrï¿½nica e trabalhou para vï¿½rias companhias no setor biomï¿½dico onde ele 
+desenvolveu uma compreensï¿½o sobre as relaï¿½ï¿½es entre os mundos mï¿½dicos e de informï¿½tica. Ele usa e aprecia Linux e Windows, 
+"<i>ambos sï¿½o o resultado de um grande trabalho humano que deve ser respeitado</i>."   
   <p>
-Ele decidiu unir-se ativamente ao código aberto porque:   
-"<i>Tal ideal mundial só pode sobreviver se perfeitamente equilibrado. Se você levar algo, você também deveria devolver em proporção</i>."   
+Ele decidiu unir-se ativamente ao cï¿½digo aberto porque:   
+"<i>Tal ideal mundial sï¿½ pode sobreviver se perfeitamente equilibrado. Se vocï¿½ levar algo, vocï¿½ tambï¿½m deveria devolver em proporï¿½ï¿½o</i>."   
 
 
 			<P><a href="mailto:kalbun@inwind.it"><u>Giuseppe Scarpi pode ser contatado aqui.</u></a>
@@ -132,7 +132,7 @@ Ele decidiu unir-se ativamente ao código aberto porque:
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
             <P><img src="../../fotos/credits/gabriele_cicala.jpg"  border=0  align=right vspace=10>
-			<b>A tradução italiana do www.care2x.com foi feito por Gabriele Cicala.</b>
+			<b>A traduï¿½ï¿½o italiana do www.care2x.com foi feito por Gabriele Cicala.</b>
 			
 			<P><a href="mailto:gabcicala@tiscali.it"><u>Gabriele Cicala pode ser contatado aqui.</u></a>
 </TD></TR></TBODY></TABLE>
@@ -148,7 +148,7 @@ Ele decidiu unir-se ativamente ao código aberto porque:
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
             <P><img src="../../fotos/credits/agus_mr.jpg"  border=0  align=right vspace=10>
-			<b>A tradução indonesia do CARE 2X e www.care2x.com foi feito por Agus Muhammad Ramdan.</b>
+			<b>A traduï¿½ï¿½o indonesia do CARE 2X e www.care2x.com foi feito por Agus Muhammad Ramdan.</b>
 			
 			<P><a href="mailto:agusmr@mweb.co.id"><u>Agus M. Ramdan pode ser contatado aqui.</u></a>
 </TD></TR></TBODY></TABLE>
@@ -158,11 +158,11 @@ Ele decidiu unir-se ativamente ao código aberto porque:
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-			<b>Nino Novak (DE) editou a versão germânica do www.care2x.com. </b>
+			<b>Nino Novak (DE) editou a versï¿½o germï¿½nica do www.care2x.com. </b>
 <p>
-Nino Novak é um pobre cowboy solitário. Ele atira mais rápido do que pensa. As vezes é um pouco inquieto. 
-Ama "real gurus" e sofisticadas discussões com eles. Quer ajudar na criação de um mundo melhor. 
-Alguns conhecimentos científicos e médicos (desta forma juntou-se ao projeto care2x). 
+Nino Novak ï¿½ um pobre cowboy solitï¿½rio. Ele atira mais rï¿½pido do que pensa. As vezes ï¿½ um pouco inquieto. 
+Ama "real gurus" e sofisticadas discussï¿½es com eles. Quer ajudar na criaï¿½ï¿½o de um mundo melhor. 
+Alguns conhecimentos cientï¿½ficos e mï¿½dicos (desta forma juntou-se ao projeto care2x). 
 
 
 			<P><a href="mailto:nino@kflog.org"><u>Nino Novak pode ser contatado aqui.</u></a>
@@ -173,60 +173,60 @@ Alguns conhecimentos científicos e médicos (desta forma juntou-se ao projeto car
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-<b>Patxi Gomaríz (ES) fez a tradução para o espanhol do CARE 2X.</b>
+<b>Patxi Gomarï¿½z (ES) fez a traduï¿½ï¿½o para o espanhol do CARE 2X.</b>
 <p>
-Patxi Gomaríz nasceu na primavera de 1966 em Murcia, Espanha.
+Patxi Gomarï¿½z nasceu na primavera de 1966 em Murcia, Espanha.
 Sua vida e trabalho gira em torno principalmente da fotografia, sendo um especialista em fotografia para 
-Oftalmologia (fundus camera). Ele é um entusiasta da internet e também faz designs de websites.
+Oftalmologia (fundus camera). Ele ï¿½ um entusiasta da internet e tambï¿½m faz designs de websites.
 <p>
-"<i>Eu acho que o código de fonte aberto é uma eficiente arma contra os efeitos negativos da economia globalizada 
-especialmente em áreas fundamentais nas quais são importantes para a humanidade como a saúde. 
-Por essa razão, e sinto orgulho da minha pequena contribuição para este grande projeto.</i>"
+"<i>Eu acho que o cï¿½digo de fonte aberto ï¿½ uma eficiente arma contra os efeitos negativos da economia globalizada 
+especialmente em ï¿½reas fundamentais nas quais sï¿½o importantes para a humanidade como a saï¿½de. 
+Por essa razï¿½o, e sinto orgulho da minha pequena contribuiï¿½ï¿½o para este grande projeto.</i>"
 
-			<P><a href="mailto:pgomariz@ono.com"><u>Patxi Gomaríz pode ser contatado aqui.</u></a>
+			<P><a href="mailto:pgomariz@ono.com"><u>Patxi Gomarï¿½z pode ser contatado aqui.</u></a>
 </TD></TR></TBODY></TABLE>
 
 
 <hr>
-<font face="verdana,arial" size=3 color="#0000ff">Mais créditos</font>
-<font face="verdana,arial" size=1 > (em ordem alfabética)</font>
+<font face="verdana,arial" size=3 color="#0000ff">Mais crï¿½ditos</font>
+<font face="verdana,arial" size=1 > (em ordem alfabï¿½tica)</font>
 
 <table border=0 cellspacing=1 cellpadding=1>
   <tr>
     <td bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> Agus M. Ramdan (ID)</font></nobr>&nbsp;</td>
-    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;Revisão de código, care2x.com CMS</font></td>
+    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;Revisï¿½o de cï¿½digo, care2x.com CMS</font></td>
   </tr>
   <tr>
     <td bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> Daniele Frijia (DE)</font></nobr>&nbsp;</td>
-    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;Exames de segurança, consultor de php</font></td>
+    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;Exames de seguranï¿½a, consultor de php</font></td>
   </tr>
   <tr>
     <td bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> Luki Rustianto (ID)</font></nobr>&nbsp;</td>
-    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;Aprimoramento da segurança</font></td>
+    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;Aprimoramento da seguranï¿½a</font></td>
   </tr>
   <tr>
-    <td bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> Matêj Hausenblas (FR)</font></nobr>&nbsp;</td>
-    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;Tradução para o francês</font></td>
+    <td bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> Matï¿½j Hausenblas (FR)</font></nobr>&nbsp;</td>
+    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;Traduï¿½ï¿½o para o francï¿½s</font></td>
   </tr>
   <tr>
     <td bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> Muhammad Panji (ID)</font></nobr>&nbsp;</td>
-    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;Tradução para a indonésia</font></td>
+    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;Traduï¿½ï¿½o para a indonï¿½sia</font></td>
   </tr>
   <tr>
     <td bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> Nino Novak (DE)</font></nobr>&nbsp;</td>
-    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;Edição Alemã do www.care2x.com</font></td>
+    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;Ediï¿½ï¿½o Alemï¿½ do www.care2x.com</font></td>
   </tr>
   <tr>
-    <td bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> Patxi Gomaríz (ES)</font></nobr>&nbsp;</td>
-    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;Tradução para o espanhol</font></td>
+    <td bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> Patxi Gomarï¿½z (ES)</font></nobr>&nbsp;</td>
+    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;Traduï¿½ï¿½o para o espanhol</font></td>
   </tr>
   <tr>
     <td bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> Pawel Cyrta (PL)</font></nobr>&nbsp;</td>
-    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;Tradução para o polonês</font></td>
+    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;Traduï¿½ï¿½o para o polonï¿½s</font></td>
   </tr>
   <tr>
     <td bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> Prantar Deka (IN)</font></nobr>&nbsp;</td>
-    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;Módulo de faturamento genérico</font></td>
+    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;Mï¿½dulo de faturamento genï¿½rico</font></td>
   </tr>
   <tr>
     <td bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> Roberto Nanucci (IT)</font></nobr>&nbsp;</td>
@@ -234,14 +234,14 @@ Por essa razão, e sinto orgulho da minha pequena contribuição para este grande p
   </tr>
   <tr>
     <td bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> Simone Aveotti (IT)</font></nobr>&nbsp;</td>
-    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;Tradução para o italiano</font></td>
+    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;Traduï¿½ï¿½o para o italiano</font></td>
   </tr>
   <tr>
     <td bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> Thomas Wiedmann (DE)</font></nobr>&nbsp;</td>
-    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;Testando, debugging, validação do scripts</font></td>
+    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;Testando, debugging, validaï¿½ï¿½o do scripts</font></td>
   </tr>
 </table>
 
-<font face="verdana,arial" size=1>Nota: Esta é uma lista parcial. Os créditos adicionais estão vindo.</font>
+<font face="verdana,arial" size=1>Nota: Esta ï¿½ uma lista parcial. Os crï¿½ditos adicionais estï¿½o vindo.</font>
 </body>
 </html>

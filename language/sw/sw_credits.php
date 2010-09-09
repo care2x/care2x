@@ -6,7 +6,7 @@
 <?php //html_rtl($lang); ?>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf8">
 <title>Credits</title>
 </head>
 <body onLoad="if(window.focus) window.focus()">
@@ -61,10 +61,10 @@
 			Spanish translations
 			<p><font size=1>
 			Author and coauthor of numerous medical textbooks<br>
-5 years as Director of the Grünenthal Medical Informatics Center, Quito
+5 years as Director of the Grï¿½nenthal Medical Informatics Center, Quito
 - Ecuador <br>
 Initial studies in Medical Informatics at Stanford University<br>
-2 years as Multimedia Project Leader of Grünenthal GmbH, Aachen, Germany</font><p>
+2 years as Multimedia Project Leader of Grï¿½nenthal GmbH, Aachen, Germany</font><p>
 Official translator for phpMyAdmin (Spanish)<br>
 Webmaster of the largest Ecuadorian medical website initiative
 (www.cmpichincha.med.ec) and the Ecuadorian Society of Dermatology
@@ -136,7 +136,7 @@ open-source environment, he is very interested in every kind of project
 of this movement. Despite the
 fact that he is neither working in medical nor in health sector, he decided
 to join the Care project because
-he believes in the same things that the Care´s creator and contributors
+he believes in the same things that the Careï¿½s creator and contributors
 believe.
 			
 			<P><a href="mailto:gabcicala@tiscali.it"><u>Gabriele Cicala can be contacted here.</u></a>
@@ -238,7 +238,7 @@ believe.
 			to industrial automation - as a software developer and interface designer for more than 16 years now . During the last 5 years he 
 			worked mostly  in web development and company management. He is the CEO/CTO of HumanEasy - a 
 			partner of Care2002 project in charge of its <b>Public Relations and Marketing Management</b>.<br>
-			He is also involved in many other GNU/GPL projects; some of them are in use at Care2x´s site.<br>
+			He is also involved in many other GNU/GPL projects; some of them are in use at Care2xï¿½s site.<br>
 			<p><a href="http://www.humaneasy.com" target="_blank"><u>Lopo L. de Almeida can be contacted here.</u></a>
 </td>
 </tr>
@@ -322,16 +322,16 @@ work in this kind of community.
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-			<b>Patxi Gomaríz (ES) did the spanish translations.</b>
+			<b>Patxi Gomarï¿½z (ES) did the spanish translations.</b>
 			<p>
-			Patxi Gomaríz was born in the spring of 1966 in Murcia, Spain. His life and work revolve mostly around photography
+			Patxi Gomarï¿½z was born in the spring of 1966 in Murcia, Spain. His life and work revolve mostly around photography
 			being a specialist in photography for Ophtalmology (fundus camera). He is an internet enthusiast and also designs 
 			websites.<p>
 			"<i>I think the open source code is an effective weapon against the negative effects of economic globalization specially in 
 			fundamental areas which are important to humanity like health. For that reason, I feel proud of my small
 			contribution to this great project.</i>"
 
-			<P><a href="mailto:pgomariz@ono.com"><u>Patxi Gomaríz can be contacted here.</u></a>
+			<P><a href="mailto:pgomariz@ono.com"><u>Patxi Gomarï¿½z can be contacted here.</u></a>
 </TD></TR></TBODY></TABLE>
 
 <hr>

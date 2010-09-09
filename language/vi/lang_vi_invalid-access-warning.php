@@ -9,7 +9,7 @@ require_once($root_path.'include/inc_img_fx.php');
 <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 3.0//EN" "html.dtd">
 <HTML>
 <HEAD>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf8">
  <TITLE>C&#7843;nh b&#225;o truy nh&#7853;p kh&#244;ng h&#7907;p l&#7879;</TITLE>
 </HEAD>
 

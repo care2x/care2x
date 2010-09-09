@@ -14,7 +14,7 @@ require_once('../../include/inc_img_fx.php');
 
 <HEAD>
 
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf8">
 
  <TITLE>Advarsel om ulovlig tilgang</TITLE>
 
@@ -50,7 +50,7 @@ require_once('../../include/inc_img_fx.php');
 
 <FONT    SIZE=3 color=red  FACE="Arial">
 
-<b>Du har ikke rettigheter til å åpne dette dokumentet!</b></font><p>
+<b>Du har ikke rettigheter til ï¿½ ï¿½pne dette dokumentet!</b></font><p>
 
 <FORM >
 
@@ -68,7 +68,7 @@ require_once('../../include/inc_img_fx.php');
 
 <font size=3 face="verdana,arial">
 
-Sannsynlig årsak til dette problemet:
+Sannsynlig ï¿½rsak til dette problemet:
 
 </FONT><p>
 
@@ -76,11 +76,11 @@ Sannsynlig årsak til dette problemet:
 
 <img <?php echo createComIcon('../../','achtung.gif') ?>>
 
-Du kan ha brukt "Back" or "Forward" funksjonen på nettleseren. Unngå å bruk disse knappene.<br>
+Du kan ha brukt "Back" or "Forward" funksjonen pï¿½ nettleseren. Unngï¿½ ï¿½ bruk disse knappene.<br>
 
 <img <?php echo createComIcon('../../','achtung.gif') ?>>
 
-Du kan ha avslått en "cookie". Dette programmet er avhengig av cookies for å fungere skikkelig. Aksepter cookies.
+Du kan ha avslï¿½tt en "cookie". Dette programmet er avhengig av cookies for ï¿½ fungere skikkelig. Aksepter cookies.
 
 <br>
 
@@ -92,13 +92,13 @@ Det kan hende din nettleser ikke aksepterer cookies. Konfigurer nettleseren slik
 
 <img <?php echo createComIcon('../../','achtung.gif') ?>>
 
-Det kan hende din nettleser ikke kan kjøre javascript eller javascript kan være slått av. Gjør slik at javascript kan bli kjørt i din nettleser.
+Det kan hende din nettleser ikke kan kjï¿½re javascript eller javascript kan vï¿½re slï¿½tt av. Gjï¿½r slik at javascript kan bli kjï¿½rt i din nettleser.
 
 <br>
 
 <img <?php echo createComIcon('../../','achtung.gif') ?>>
 
-I noen sjeldne tilfeller kan det hende at det har skjedd en feil i overføringen av data. For å løse denne situasjonen klikk på knappen "reload" i din nettleser.
+I noen sjeldne tilfeller kan det hende at det har skjedd en feil i overfï¿½ringen av data. For ï¿½ lï¿½se denne situasjonen klikk pï¿½ knappen "reload" i din nettleser.
 
 <p>
 

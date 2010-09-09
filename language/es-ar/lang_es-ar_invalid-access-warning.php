@@ -12,7 +12,7 @@ require_once($root_path.'include/inc_img_fx.php');
 <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 3.0//EN" "html.dtd">
 <?php html_rtl($lang); ?>
 <HEAD>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf8">
  <TITLE>Advertencia de acceso no autorizado</TITLE>
 </HEAD>
 
@@ -21,7 +21,7 @@ require_once($root_path.'include/inc_img_fx.php');
 <table width=100% border=1>
 <tr>
 <td bgcolor="navy">
-<FONT  COLOR="white"  SIZE=+3  FACE="Arial"><STRONG>&nbsp;No está autorizado para acceder a esta página</STRONG></FONT>
+<FONT  COLOR="white"  SIZE=+3  FACE="Arial"><STRONG>&nbsp;No estï¿½ autorizado para acceder a esta pï¿½gina</STRONG></FONT>
 </td>
 </tr>
 <tr>
@@ -30,7 +30,7 @@ require_once($root_path.'include/inc_img_fx.php');
 
 <center>
 <FONT    SIZE=3 color=red  FACE="Arial">
-<b>No tiene permisos de acceso a esta página!</b></font><p>
+<b>No tiene permisos de acceso a esta pï¿½gina!</b></font><p>
 <FORM >
 <INPUT type="button"  value=" OK "  onClick="<?php if ($mode=="close") print 'window.close()'; else print 'history.back()'; ?>"></FORM>
 <p>
@@ -43,18 +43,18 @@ Probables causas del problema:
 </FONT><p>
 <font size=2 face="verdana,arial">
 <img <?php echo createComIcon('../../','achtung.gif') ?>>
-Puede ser que haya utilizado la función atrás o adelante  de su navegador.  Evite usar estos botones.<br>
+Puede ser que haya utilizado la funciï¿½n atrï¿½s o adelante  de su navegador.  Evite usar estos botones.<br>
 <img <?php echo createComIcon('../../','achtung.gif') ?>>
 Puede que haya rechazado una cookie.  El programa depende de cookies para funcionar correctamente.  Acepte las cookies.
 <br>
 <img <?php echo createComIcon('../../','achtung.gif') ?>>
-Su navegador no pudo aceptar las cookies.  Por favor configure su navegador para que acepte las cookies automáticamente.
+Su navegador no pudo aceptar las cookies.  Por favor configure su navegador para que acepte las cookies automï¿½ticamente.
 <br>
 <img <?php echo createComIcon('../../','achtung.gif') ?>>
 Su navegador no pudo hacer funcionar Javascript o el Javascript no pudo ser interpretado. Habilite Javascript en las opciones de su navegador.  
 <br>
 <img <?php echo createComIcon('../../','achtung.gif') ?>>
-En raras ocasiones puede haber un error en la transferencia de datos.  Para corregirlo pulse el botón de "recarga" de su navegador.
+En raras ocasiones puede haber un error en la transferencia de datos.  Para corregirlo pulse el botï¿½n de "recarga" de su navegador.
 <p>
 </FONT>
 <p>
