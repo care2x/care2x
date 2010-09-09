@@ -19,7 +19,6 @@ require_once($root_path.'include/core/inc_front_chain_lang.php');
 		<p>
 		<br>
 		<FONT  SIZE=5 color=navy>
-		<?php echo $nm.'<br>'; ?>
 		</FONT>
 		<form name="okbut" action="logout.php">
 			<input type="hidden"  name="sid" value="<?php echo $sid ?>" >
