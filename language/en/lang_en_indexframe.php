@@ -2,6 +2,9 @@
 $LDHome='Home';
 $LDPatient='Patient';
 $LDAdmission='Admission';
+$LDSearch='Search';
+$LDArchive='Archive';
+$LDRegistration='Registration';
 $LDAmbulatory='Ambulatory';
 $LDMedocs='Medocs';
 $LDDoctors='Doctors';

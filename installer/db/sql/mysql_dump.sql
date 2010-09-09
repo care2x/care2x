@@ -29,7 +29,7 @@ CREATE TABLE IF NOT EXISTS `care_accesslog` (
   `userid` varchar(255) NOT NULL,
   `username` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
-  `thisfile` text NOT NULL,
+  `thisfile` text NOT NULL,`care_menu_sub`
   `fileforward` text NOT NULL,
   `login_success` int(1) NOT NULL default '1',
   PRIMARY KEY  (`id`)
@@ -4917,7 +4917,7 @@ INSERT INTO care_menu_sub  VALUES ('70', '0', '7', '0', '', '', '', '', '../gui/
 INSERT INTO care_menu_sub  VALUES ('20', '0', '1', '0', '', '', '', '', '../gui/img/common/default/articles.gif', '../gui/img/common/default/home.gif', '', '', '', '', '0001-01-01 00:00:00');
 INSERT INTO care_menu_sub  VALUES ('30', '0', '20', '0', '', '', '', '', '../gui/img/common/default/calendar.gif', '', '', '', '', '', '0001-01-01 00:00:00');
 INSERT INTO care_menu_sub  VALUES ('5', '2', '2', '1', 'Admission', 'LDAdmission', '../modules/registration_admission/aufnahme_pass.php', '', '../gui/img/common/default/bn.gif', '../gui/img/common/default/bn.gif', '1', '', '', '', '0001-01-01 00:00:00');
-INSERT INTO care_menu_sub  VALUES ('1', '1', '2', '1', 'Registration', '', '../modules/registration_admission/patient_register_pass.php', '&target=entry', '../gui/img/common/default/post_discussion.gif', '', '1', '', '', '', '0001-01-01 00:00:00');
+INSERT INTO care_menu_sub  VALUES ('1', '1', '2', '1', 'Registration', 'LDRegistration', '../modules/registration_admission/patient_register_pass.php', '&target=entry', '../gui/img/common/default/post_discussion.gif', '', '1', '', '', '', '0001-01-01 00:00:00');
 INSERT INTO care_menu_sub  VALUES ('130', '1', '2', '1', 'Search', 'LDSearch', '../modules/registration_admission/patient_register_pass.php', '&target=search', '../gui/img/common/default/findnew.gif', '../gui/img/common/default/findnew.gif', '1', '', '', '', '0001-01-01 00:00:00');
 INSERT INTO care_menu_sub  VALUES ('135', '1', '2', '1', 'Archive', 'LDArchive', '../modules/registration_admission/patient_register_pass.php', '&target=archiv', '', '', '1', '', '', '', '0001-01-01 00:00:00');
 INSERT INTO care_menu_sub  VALUES ('140', '5', '2', '2', 'Search', 'LDSearch', '../modules/registration_admission/aufnahme_pass.php', '&target=search', '../gui/img/common/default/findnew.gif', '../gui/img/common/default/findnew.gif', '1', '', '', '', '0001-01-01 00:00:00');
@@ -4941,7 +4941,6 @@ INSERT INTO care_menu_sub  VALUES ('220', '0', '12', '0', '', '', '', '', '../gu
 INSERT INTO care_menu_sub  VALUES ('225', '0', '8', '0', '', '', '', '', '../gui/img/common/default/people_search_online.gif', '', '', '', '', '', '0001-01-01 00:00:00');
 INSERT INTO care_menu_sub  VALUES ('230', '0', '9', '0', '', '', '', '', '../gui/img/common/default/chart.gif', '', '', '', '', '', '0001-01-01 00:00:00');
 INSERT INTO care_menu_sub  VALUES ('235', '0', '14', '0', '', '', '', '', '../gui/img/common/default/settings_tree.gif', '', '', '', '', '', '0001-01-01 00:00:00');
-
 
 --
 -- Dumping data for table care_method_induction
