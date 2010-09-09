@@ -1,91 +1,91 @@
 <?php
-$LDPlsEnterEndDate='Lütfen bitiþ tarihini giriniz';
-$LDPlsEnterStartDate='Lütfen baþlangýç tarihini giriniz';
-$LDPlsEnterConfirmDate='Lütfen onay tarihini giriniz';
-$LDPlsEnterDiagnosis='Lütfen tanýyý giriniz';
-$LDPlsSelectStyle='Lütfen bir stil seçiniz';
-$LDCheckParamFirst='Lütfen önce göstermek istediðiniz parametreyi seçiniz';
+$LDPlsEnterEndDate='Lï¿½tfen bitiï¿½ tarihini giriniz';
+$LDPlsEnterStartDate='Lï¿½tfen baï¿½langï¿½ï¿½ tarihini giriniz';
+$LDPlsEnterConfirmDate='Lï¿½tfen onay tarihini giriniz';
+$LDPlsEnterDiagnosis='Lï¿½tfen tanï¿½yï¿½ giriniz';
+$LDPlsSelectStyle='Lï¿½tfen bir stil seï¿½iniz';
+$LDCheckParamFirst='Lï¿½tfen ï¿½nce gï¿½stermek istediï¿½iniz parametreyi seï¿½iniz';
 # Do not edit ~ward_id~
-$LDChkWardConflict='Bu hasta daha önce baþka bir servise yatýrýlmýþ görünüyor: (<b>~ward_id~</b>). Lütfen servisinize kabul etmeye devam etmeden önce bu konuyu hasta kabul ile görüþerek açýklýða kavuþturunuz. Teþekkürler.';
-$LDSelectRoomBed='Lütfen bu hastaya verilecek oda ve yataðý aþaðýdan seçiniz. Teþekkürler.';
-$LDSureAssignRoomBed='Hastaya bu odayý ve yataðý vereceðinizden gerçekten emin misiniz ?';
+$LDChkWardConflict='Bu hasta daha ï¿½nce baï¿½ka bir servise yatï¿½rï¿½lmï¿½ï¿½ gï¿½rï¿½nï¿½yor: (<b>~ward_id~</b>). Lï¿½tfen servisinize kabul etmeye devam etmeden ï¿½nce bu konuyu hasta kabul ile gï¿½rï¿½ï¿½erek aï¿½ï¿½klï¿½ï¿½a kavuï¿½turunuz. Teï¿½ekkï¿½rler.';
+$LDSelectRoomBed='Lï¿½tfen bu hastaya verilecek oda ve yataï¿½ï¿½ aï¿½aï¿½ï¿½dan seï¿½iniz. Teï¿½ekkï¿½rler.';
+$LDSureAssignRoomBed='Hastaya bu odayï¿½ ve yataï¿½ï¿½ vereceï¿½inizden gerï¿½ekten emin misiniz ?';
 $LDWhereToTransfer='Hasta nereye nakledilecek?';
-$LDErrorOccured='Bir hata oluþtu.';
-$LDTryOrNotifyEDP='Lütfen yeniden deneyiniz. Eðer problem devam ederse bilgi iþlem bölümünüze haber veriniz. Teþekkürler.';
+$LDErrorOccured='Bir hata oluï¿½tu.';
+$LDTryOrNotifyEDP='Lï¿½tfen yeniden deneyiniz. Eï¿½er problem devam ederse bilgi iï¿½lem bï¿½lï¿½mï¿½nï¿½ze haber veriniz. Teï¿½ekkï¿½rler.';
 # 2003-07-30 EL
-$LDPlsEnterDate='Lütfen bir tarih giriniz';
-$LDPlsEnterDoctor='Lütfen bir hekim ya da cerrah ismi giriniz';
-$LDPlsEnterPurpose='Lütfen amacý giriniz';
-$LDAppointNotToday='Bu randevu bugüne ayarlanmamýþ!';
-$LDSureAdmitAppoint='Bu randevuyu bugüne kabul edeceðinizden emin misiniz?';
-$LDPatientIsDischarged='Bu hasta þimdiden çýkmýþ';
-$LDPersonIsAdmitted='Bu kiþi halen kabul edilmiþ durumda';
-$LDEncounterClosed='Bu vizit þimdi kapalý';
+$LDPlsEnterDate='Lï¿½tfen bir tarih giriniz';
+$LDPlsEnterDoctor='Lï¿½tfen bir hekim ya da cerrah ismi giriniz';
+$LDPlsEnterPurpose='Lï¿½tfen amacï¿½ giriniz';
+$LDAppointNotToday='Bu randevu bugï¿½ne ayarlanmamï¿½ï¿½!';
+$LDSureAdmitAppoint='Bu randevuyu bugï¿½ne kabul edeceï¿½inizden emin misiniz?';
+$LDPatientIsDischarged='Bu hasta ï¿½imdiden ï¿½ï¿½kmï¿½ï¿½';
+$LDPersonIsAdmitted='Bu kiï¿½i halen kabul edilmiï¿½ durumda';
+$LDEncounterClosed='Bu vizit ï¿½imdi kapalï¿½';
 # 2003-08-02 EL
-$LDNoOutpatients='Henüz poliklinik hastasý yok.';
-$LDGoToAppointments='Bekleyen randevularý kontrol etmek için lütfen buraya týklayýnýz.';
-$LDSureTransferPatient='Gerçekten emin misiniz, bu hastayý nakletmek mi istiyorsunuz?';
-$LDClkTransfer='Hastayý nakletmek için týklayýnýz';
-$LDSureTakeOverPatient='Bu hastayý almak istiyorsunuz, emin misiniz?';
-$LDChkClinicConflict='Bu hasta daha önceden bir baþka servise yatýrýlmýþ gözüküyor (<b>~dept_id~</b>). 
-Bu hastayý kendi kliniðinize almadan önce hasta kabul veya diðer klinik ile görüþüp durumu aydýnlatýnýz. Teþekkürler.';
+$LDNoOutpatients='Henï¿½z poliklinik hastasï¿½ yok.';
+$LDGoToAppointments='Bekleyen randevularï¿½ kontrol etmek iï¿½in lï¿½tfen buraya tï¿½klayï¿½nï¿½z.';
+$LDSureTransferPatient='Gerï¿½ekten emin misiniz, bu hastayï¿½ nakletmek mi istiyorsunuz?';
+$LDClkTransfer='Hastayï¿½ nakletmek iï¿½in tï¿½klayï¿½nï¿½z';
+$LDSureTakeOverPatient='Bu hastayï¿½ almak istiyorsunuz, emin misiniz?';
+$LDChkClinicConflict='Bu hasta daha ï¿½nceden bir baï¿½ka servise yatï¿½rï¿½lmï¿½ï¿½ gï¿½zï¿½kï¿½yor (<b>~dept_id~</b>). 
+Bu hastayï¿½ kendi kliniï¿½inize almadan ï¿½nce hasta kabul veya diï¿½er klinik ile gï¿½rï¿½ï¿½ï¿½p durumu aydï¿½nlatï¿½nï¿½z. Teï¿½ekkï¿½rler.';
 $LDSureToCancel='Emin misiniz? Bunu iptal etmek mi istiyorsunuz?';
-$LDPlsEnterFullName='Lütfen tam isminizi giriniz';
+$LDPlsEnterFullName='Lï¿½tfen tam isminizi giriniz';
 $LDOk='Tamam';
-$LDAdmissionCancelled='Kabul iþlemi baþarý ile iptal edildi.';
-$LDCancelError='Bir hata oldu! Ýptal baþarýsýz oldu.';
-$LDTellEdpIfPersist='Sorun devam ederse bilgi iþlem bölümünüze haber veriniz. Teþekkürler.';
-$LDPlsFindPersonFirst='Lütfen önce kiþiyi bulunuz.';
+$LDAdmissionCancelled='Kabul iï¿½lemi baï¿½arï¿½ ile iptal edildi.';
+$LDCancelError='Bir hata oldu! ï¿½ptal baï¿½arï¿½sï¿½z oldu.';
+$LDTellEdpIfPersist='Sorun devam ederse bilgi iï¿½lem bï¿½lï¿½mï¿½nï¿½ze haber veriniz. Teï¿½ekkï¿½rler.';
+$LDPlsFindPersonFirst='Lï¿½tfen ï¿½nce kiï¿½iyi bulunuz.';
 $LDEnterRelatedInfo='Varsa ilgili bilgileri buraya giriniz';
-$LDRelatedEncNr='Ýlgili vizit numaralarý.';
-$LDRelatedDocsIds='Ýlgili belgelerin tarih ve no larý';
-$LDSeparateComma='Virgüllerle ayýrýnýz';
-$LDPlsReadThis='Lütfen bunu okuyunuz';
+$LDRelatedEncNr='ï¿½lgili vizit numaralarï¿½.';
+$LDRelatedDocsIds='ï¿½lgili belgelerin tarih ve no larï¿½';
+$LDSeparateComma='Virgï¿½llerle ayï¿½rï¿½nï¿½z';
+$LDPlsReadThis='Lï¿½tfen bunu okuyunuz';
 # 2003-08-11 EL
-$LDPersonIsEmployed='Bu kiþi halen bu hastanede çalýþýyor!';
+$LDPersonIsEmployed='Bu kiï¿½i halen bu hastanede ï¿½alï¿½ï¿½ï¿½yor!';
 # 2003-08-24 EL
 $LDCachedInfo='Bu gizli bir bilgi!';
-$LDClkNoCache='Gizli olmayan eriþmek için  >>bu<< nu týklayýnýz.';
+$LDClkNoCache='Gizli olmayan eriï¿½mek iï¿½in  >>bu<< nu tï¿½klayï¿½nï¿½z.';
 
 # 2003-08-25 EL
-$LDPlsEnterReport='Lütfen raporunuzu veya notlarýnýzý giriniz';
-$LDPlsEnterDosage='Lütfen dozu giriniz';
-$LDPlsEnterMedicine='Lütfen ilacýn ismini giriniz';
-$LDPlsEnterMedType='Lütfen ilacýn tipini giriniz';
-$LDPlsSelectAppType='Lütfen uygulama tipini seçiniz';
-$LDPlsSelectPrescType='Lütfen reçete tipini seçiniz';
-$LDPlsEnterValue='Lütfen bir deðer giriniz';
-$LDPlsSelectUnitMsr='Lütfen ünite veya ölçüyü seçiniz';
+$LDPlsEnterReport='Lï¿½tfen raporunuzu veya notlarï¿½nï¿½zï¿½ giriniz';
+$LDPlsEnterDosage='Lï¿½tfen dozu giriniz';
+$LDPlsEnterMedicine='Lï¿½tfen ilacï¿½n ismini giriniz';
+$LDPlsEnterMedType='Lï¿½tfen ilacï¿½n tipini giriniz';
+$LDPlsSelectAppType='Lï¿½tfen uygulama tipini seï¿½iniz';
+$LDPlsSelectPrescType='Lï¿½tfen reï¿½ete tipini seï¿½iniz';
+$LDPlsEnterValue='Lï¿½tfen bir deï¿½er giriniz';
+$LDPlsSelectUnitMsr='Lï¿½tfen ï¿½nite veya ï¿½lï¿½ï¿½yï¿½ seï¿½iniz';
 
 # 2003-08-26 EL
-$LDEntryInvalidChar='Girilen deðer geçersiz!';
-$LDNotNegValue='Negatif deðer girilmez!';
-$LDOptional='Seçime baðlý';
+$LDEntryInvalidChar='Girilen deï¿½er geï¿½ersiz!';
+$LDNotNegValue='Negatif deï¿½er girilmez!';
+$LDOptional='Seï¿½ime baï¿½lï¿½';
 $LDSaveAnyway='Veriyi yine de kaydetmek istiyor musunuz';
 #2003-08-27 EL
-$LDDeathDateIs='Girilen ölüm tarihi:';
-$LDIsCorrect='Bu doðru mu?';
-$LDProceedSave='Kaydetme iþlemine devam etmek istiyor musunuz?';
+$LDDeathDateIs='Girilen ï¿½lï¿½m tarihi:';
+$LDIsCorrect='Bu doï¿½ru mu?';
+$LDProceedSave='Kaydetme iï¿½lemine devam etmek istiyor musunuz?';
 #2003-08-28 EL
-$LDPlsSelectWard='Lütfen bir servis seçiniz';
+$LDPlsSelectWard='Lï¿½tfen bir servis seï¿½iniz';
 # 2003-09-20 EL
-$LDPlsEnterTherapy='Lütfen tedaviyi giriniz.';
-$LDPlsMedicalAdvice='Lütfen hastaya týbbi önerilerde bulunulup bulunulmadýðýný belirtiniz.';
+$LDPlsEnterTherapy='Lï¿½tfen tedaviyi giriniz.';
+$LDPlsMedicalAdvice='Lï¿½tfen hastaya tï¿½bbi ï¿½nerilerde bulunulup bulunulmadï¿½ï¿½ï¿½nï¿½ belirtiniz.';
 # 2003-09-23 EL
-$LDPlsEnterJobFunction='Lütfen mesleði ve iþini giriniz.';
+$LDPlsEnterJobFunction='Lï¿½tfen mesleï¿½i ve iï¿½ini giriniz.';
 #2003-04-10 EL
-$LDPlsFillInfo='Lütfen kýrmýzý iþaretli alanlarý doldurunuz';
-$LDPlsEnterLocalization='Lütfen yeri giriniz';
-$LDPlsEnterNotes='Lütfen notlarý giriniz';
-$LDPlsEnterClassification='Lütfen sýnýflandýrmalarý giriniz';
-$LDPlsEnterStartTime='Lütfen baþlangýç saatini giriniz';
-$LDPlsEnterEndTime='Lütfen bitiþ saatini giriniz';
-$LDPlsEnterScrubNurse='Lütfen yardýmcý hemþire bilgisini giriniz';
-$LDPlsEnterORNr='Lütfen ameliyathanenin kimlik veya numarasýný giriniz';
-$LDWrongLoginPW='Kullanýcý giriþ adýnýz veya þifreniz yanlýþ';
-$LDPlsORNr='Lütfen ameliyathane numarasýný giriniz';
+$LDPlsFillInfo='Lï¿½tfen kï¿½rmï¿½zï¿½ iï¿½aretli alanlarï¿½ doldurunuz';
+$LDPlsEnterLocalization='Lï¿½tfen yeri giriniz';
+$LDPlsEnterNotes='Lï¿½tfen notlarï¿½ giriniz';
+$LDPlsEnterClassification='Lï¿½tfen sï¿½nï¿½flandï¿½rmalarï¿½ giriniz';
+$LDPlsEnterStartTime='Lï¿½tfen baï¿½langï¿½ï¿½ saatini giriniz';
+$LDPlsEnterEndTime='Lï¿½tfen bitiï¿½ saatini giriniz';
+$LDPlsEnterScrubNurse='Lï¿½tfen yardï¿½mcï¿½ hemï¿½ire bilgisini giriniz';
+$LDPlsEnterORNr='Lï¿½tfen ameliyathanenin kimlik veya numarasï¿½nï¿½ giriniz';
+$LDWrongLoginPW='Kullanï¿½cï¿½ giriï¿½ adï¿½nï¿½z veya ï¿½ifreniz yanlï¿½ï¿½';
+$LDPlsORNr='Lï¿½tfen ameliyathane numarasï¿½nï¿½ giriniz';
 #2004-08-06 EL
-$LDInvalidDate ='Girilen tarih geçersiz.';
-$LDNoPastDate = 'Geçmiþ tarihler kabul edilmez.';
-#Çeviren Op. Dr. Bülent Potur bpotur@yahoo.com
-?>
+$LDInvalidDate ='Girilen tarih geï¿½ersiz.';
+$LDNoPastDate = 'Geï¿½miï¿½ tarihler kabul edilmez.';
+#ï¿½eviren Op. Dr. Bï¿½lent Potur bpotur@yahoo.com
+[?][>]

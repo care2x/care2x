@@ -1,135 +1,135 @@
 <?php
-$LDUserPrompt='Kullanýcý adý';
-$LDPwPrompt='Þifre';
+$LDUserPrompt='Kullanï¿½cï¿½ adï¿½';
+$LDPwPrompt='ï¿½ifre';
 $LDSubmitBut='Devam...';
-$LDPwNeeded='Þifre gerekli';
-$LDIntroTo='Haber makaleleri yazmaya giriþ';
-$LDWhatTo='Haber makalelerini nasýl yazabilirim';
+$LDPwNeeded='ï¿½ifre gerekli';
+$LDIntroTo='Haber makaleleri yazmaya giriï¿½';
+$LDWhatTo='Haber makalelerini nasï¿½l yazabilirim';
 
-$LDWrongEntry='Yanlýþ giriþ!';
-$LDNoAuth='Eriþim izniniz yok!';
-$LDAuthLocked='Eriþim izniniz kilitlenmiþ!';
+$LDWrongEntry='Yanlï¿½ï¿½ giriï¿½!';
+$LDNoAuth='Eriï¿½im izniniz yok!';
+$LDAuthLocked='Eriï¿½im izniniz kilitlenmiï¿½!';
 
 $LDNewData='Yeni Veri';
-$LDEdit='Düzenle';
+$LDEdit='Dï¿½zenle';
 $LDAdmit='Kabul et';
 $LDSearch='Ara';
-$LDArchive='Arþiv';
+$LDArchive='Arï¿½iv';
 $LDAdmission='Hasta Kabul';
 $LDAdmTargetEntry='Kabul';
-$LDAdmTargetSearch='Kabul edilmiþ hastalarda ara';
-$LDAdmTargetArchive='Arþivde ara';
-$LDAdmWantEntry='Bir hastayý kabul etmem gerekiyor';
-$LDAdmWantSearch='Bir hastayý arýyorum';
-$LDAdmWantArchive='Arþivde araþtýrmam gerekiyor';
-$LDAdmHow2Enter='Bir hasta nasýl kabul edilir';
-$LDAdmHow2Edit='Bir hastanýn bilgileri nasýl düzenlenir';
-$LDAdmHow2Search='Belirli bir hastanýn bilgileri nasýl bulunur';
-$LDAdmHow2Archive='Arþivler nasýl araþtýrýlýr';
+$LDAdmTargetSearch='Kabul edilmiï¿½ hastalarda ara';
+$LDAdmTargetArchive='Arï¿½ivde ara';
+$LDAdmWantEntry='Bir hastayï¿½ kabul etmem gerekiyor';
+$LDAdmWantSearch='Bir hastayï¿½ arï¿½yorum';
+$LDAdmWantArchive='Arï¿½ivde araï¿½tï¿½rmam gerekiyor';
+$LDAdmHow2Enter='Bir hasta nasï¿½l kabul edilir';
+$LDAdmHow2Edit='Bir hastanï¿½n bilgileri nasï¿½l dï¿½zenlenir';
+$LDAdmHow2Search='Belirli bir hastanï¿½n bilgileri nasï¿½l bulunur';
+$LDAdmHow2Archive='Arï¿½ivler nasï¿½l araï¿½tï¿½rï¿½lï¿½r';
 
-$LDMedocs='Týbbi belgeler';
-$LDMedocsHow2Enter='Yeni bir týbbi belgeye nasýl baþlanýr';
-$LDMedocsHow2Edit='Týbbi belge nasýl düzenlenir';
-$LDMedocsHow2Search='Belirli bir týbbi belge nasýl bulunur';
-$LDMedocsHow2Archive='Týbbi belge arþivleri nasýl araþtýrýlýr';
+$LDMedocs='Tï¿½bbi belgeler';
+$LDMedocsHow2Enter='Yeni bir tï¿½bbi belgeye nasï¿½l baï¿½lanï¿½r';
+$LDMedocsHow2Edit='Tï¿½bbi belge nasï¿½l dï¿½zenlenir';
+$LDMedocsHow2Search='Belirli bir tï¿½bbi belge nasï¿½l bulunur';
+$LDMedocsHow2Archive='Tï¿½bbi belge arï¿½ivleri nasï¿½l araï¿½tï¿½rï¿½lï¿½r';
 
-$LDIntro2='ye Giriþ';
-$LDWhat2Do='Nasýl yapmalýr ne içinde';
-$LDHowManage='Rehber nasýl yönetilir';
-$LDHowEnter='Yeni bir telefon bilgisini nasýl girilir';
+$LDIntro2='ye Giriï¿½';
+$LDWhat2Do='Nasï¿½l yapmalï¿½r ne iï¿½inde';
+$LDHowManage='Rehber nasï¿½l yï¿½netilir';
+$LDHowEnter='Yeni bir telefon bilgisini nasï¿½l girilir';
 
 $LDPhoneDir='Telefon rehberi';
-$LDMakeDutyPlan='Nöbet listesi oluþtur';
-$LDDocsList='Doktorlarýn listesi';
-$LDNursingManage='Servis yönetimi';
+$LDMakeDutyPlan='Nï¿½bet listesi oluï¿½tur';
+$LDDocsList='Doktorlarï¿½n listesi';
+$LDNursingManage='Servis yï¿½netimi';
 
 $LDNursingStation='Servis';
-$LDOrDocu='Ameliyathane Kayýtlarý';
-$LDOrLogBook='Ameliyathane servis kayýtlarý';
+$LDOrDocu='Ameliyathane Kayï¿½tlarï¿½';
+$LDOrLogBook='Ameliyathane servis kayï¿½tlarï¿½';
 $LDOrNursing='Ameliyathane servisi';
-$LDCreate='Oluþtur';
+$LDCreate='Oluï¿½tur';
 $LDPersonList='Personel listesi';
-$LDRepabotActivate='Onarým robotunu etkinleþtir';
-$LDQBotActivate='Sorgu robotunu etkinleþtir';
+$LDRepabotActivate='Onarï¿½m robotunu etkinleï¿½tir';
+$LDQBotActivate='Sorgu robotunu etkinleï¿½tir';
 
-$LDMedLab='Biyokimya laboratuarý';
-$LDCancel='Ýptal'; 
+$LDMedLab='Biyokimya laboratuarï¿½';
+$LDCancel='ï¿½ptal'; 
 
 $LDPharmacy='Eczane';
-$LDOrderArchive='Arþiv';
-$LDPharmaOrder='Ýstem';
-$LDOrderCat='Ürünü katalogum';
-$LDPharmaDb='Veritabaný';
-$LDPharmaOrderBot='Ýstem robotunu etkinleþtir';
+$LDOrderArchive='Arï¿½iv';
+$LDPharmaOrder='ï¿½stem';
+$LDOrderCat='ï¿½rï¿½nï¿½ katalogum';
+$LDPharmaDb='Veritabanï¿½';
+$LDPharmaOrderBot='ï¿½stem robotunu etkinleï¿½tir';
 
-$LDMedDepot='Týbbi Ambar';
-$LDMediBotActivate='Ambar istem robotunu etkinleþtir';
-$LDSqlDb='SQL Veritabaný';
-$LDManageAccess='Eriþim Haklarý Yönetimi';
+$LDMedDepot='Tï¿½bbi Ambar';
+$LDMediBotActivate='Ambar istem robotunu etkinleï¿½tir';
+$LDSqlDb='SQL Veritabanï¿½';
+$LDManageAccess='Eriï¿½im Haklarï¿½ Yï¿½netimi';
 $LDListAll='Hepsini Listele';
-$LDSystemLogin='Sistem Yöneticisi Giriþi';
-$LDSeeData='Bilgileri göster';
-$LDNewData='Yeni bilgi giriþi';
+$LDSystemLogin='Sistem Yï¿½neticisi Giriï¿½i';
+$LDSeeData='Bilgileri gï¿½ster';
+$LDNewData='Yeni bilgi giriï¿½i';
 
-$LDWelcome='Hoþgeldiniz';
-$LDLogin='Giriþ';
-$LDChangeSaved='Deðiþiklikler kaydedildi.';
-$LDPcID='Bu bilgisayarýn güncel kimliði';
-$LDDept='Bölüm';
+$LDWelcome='Hoï¿½geldiniz';
+$LDLogin='Giriï¿½';
+$LDChangeSaved='Deï¿½iï¿½iklikler kaydedildi.';
+$LDPcID='Bu bilgisayarï¿½n gï¿½ncel kimliï¿½i';
+$LDDept='Bï¿½lï¿½m';
 $LDWard='Servis';
-$LDWardOR='Servis odasý veya ameliyathane no';
-$LDPhoneNr='Odanýn telefon numarasý';
-$LDIntercomNr='Odanýn interkom numarasý';
-$LDPcIP='Bu bilgisayarýn IP adresi';
-$LDSave='Deðiþiklikleri kaydet';
-$LDNoChange='Þu andaki ayarlarý deðiþtirme';
+$LDWardOR='Servis odasï¿½ veya ameliyathane no';
+$LDPhoneNr='Odanï¿½n telefon numarasï¿½';
+$LDIntercomNr='Odanï¿½n interkom numarasï¿½';
+$LDPcIP='Bu bilgisayarï¿½n IP adresi';
+$LDSave='Deï¿½iï¿½iklikleri kaydet';
+$LDNoChange='ï¿½u andaki ayarlarï¿½ deï¿½iï¿½tirme';
 $LDClose='Kapat';
-$LDLogout='Çýkýþ';
-$LDNewLogin='Yeni giriþ';
-$LDLogoutConfirm='Gerçekten çýkmak istiyor musunuz?';
+$LDLogout='ï¿½ï¿½kï¿½ï¿½';
+$LDNewLogin='Yeni giriï¿½';
+$LDLogoutConfirm='Gerï¿½ekten ï¿½ï¿½kmak istiyor musunuz?';
 $LDOK='Tamam';
 $LDYes='Evet';
-$LDNotReally='Hayýr, gerçekten deðil.';
-$LDDOCScheduler='Doktor Nöbetleri Planlayýcý';
-$LDORNOCScheduler='Ameliyathane Nöbetleri Planlayýcý';
+$LDNotReally='Hayï¿½r, gerï¿½ekten deï¿½il.';
+$LDDOCScheduler='Doktor Nï¿½betleri Planlayï¿½cï¿½';
+$LDORNOCScheduler='Ameliyathane Nï¿½betleri Planlayï¿½cï¿½';
 $LDFotolab='Fotolab';
 /* 2002-09-08 EL */
-$LDTestRequest='Tanýsal Tetkik Ýstemi';
+$LDTestRequest='Tanï¿½sal Tetkik ï¿½stemi';
 $LDTestType=array('patho'=>'Patoloji', 
-                             'chemlabor'=>'Biyokimya Laboratuarý', 
-							 'baclabor'=>'Bakteriyoloji Laboratuarý',
-							 'blood'=>'Kan Bankasý',
+                             'chemlabor'=>'Biyokimya Laboratuarï¿½', 
+							 'baclabor'=>'Bakteriyoloji Laboratuarï¿½',
+							 'blood'=>'Kan Bankasï¿½',
 							 'radio'=>'Radyoloji',
 							 'sono'=>'Ultrasonografi',
 							 'allamb'=>'Genel Poliklinik',
 							 'unfamb'=>'Acil Poliklinik',
-							 'nuklear'=>'Nükleer Týp',
+							 'nuklear'=>'Nï¿½kleer Tï¿½p',
 							 'inmed'=>'Dahiliye');
-$LDBloodOrder='Kan ürünleri istemi';
+$LDBloodOrder='Kan ï¿½rï¿½nleri istemi';
 /* 2002-09-22 EL */
 $LDPendingRequest='Bekleyen istem';
 /* 2002-10-06 EL*/
-$LDLoggedOut='Çýktý';
+$LDLoggedOut='ï¿½ï¿½ktï¿½';
 /* 2003-03-18 EL */
-$LDNursesList='Hemþireler Listesi';
+$LDNursesList='Hemï¿½ireler Listesi';
 $LDAppointments='Randevular';
 /* 2003-04-27 */
-$LDInsuranceCoManager='Sigorta Þirketi Yöneticisi';
-$LDAddressMngr='Adres Yöneticisi';
+$LDInsuranceCoManager='Sigorta ï¿½irketi Yï¿½neticisi';
+$LDAddressMngr='Adres Yï¿½neticisi';
 /* 2003-04-30 EL*/
 $LDBilling='eFatura';
 /* 2003-05-18 EL */
-$LDPlsContactEDP='Lütfen EDP bölümü ile temas kurunuz.';
-$LDPlsTryAgain='Lütfen tekrar deneyiniz';
+$LDPlsContactEDP='Lï¿½tfen EDP bï¿½lï¿½mï¿½ ile temas kurunuz.';
+$LDPlsTryAgain='Lï¿½tfen tekrar deneyiniz';
 /* 2003-07-11 EL */
-$LDAdministration='Yönetim';
+$LDAdministration='Yï¿½netim';
 $LDOutpatientClinic='Poliklinik';
-$LDUploadDicom='DICOM resimleri yükleme';
-$LDViewDicom='DICOM resimleri görme';
+$LDUploadDicom='DICOM resimleri yï¿½kleme';
+$LDViewDicom='DICOM resimleri gï¿½rme';
 # 2003-08-22 EL
-$LDYellowList='Sarý Liste';
-$LDRedList='Kýrmýzý Liste';
+$LDYellowList='Sarï¿½ Liste';
+$LDRedList='Kï¿½rmï¿½zï¿½ Liste';
 #2003-11-22 EL
-$LDAdvancedSearch='Ýleri arama';
-$LDNewPerson='Yeni kiþi kaydý';
-?>
+$LDAdvancedSearch='ï¿½leri arama';
+$LDNewPerson='Yeni kiï¿½i kaydï¿½';
+[?][>]

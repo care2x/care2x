@@ -2,55 +2,55 @@
 
 // custom text file for new pages
 
-$IO_title='Aldýðý Çýkardýðý Ýzlemi';
-$DDC_title='Diabet Ýlacý Ýzlemi';
-$NOC_title='Nörolojik Durum Ýzlemi';
-$TC_title='Döndürme izlemi';
+$IO_title='Aldï¿½ï¿½ï¿½ ï¿½ï¿½kardï¿½ï¿½ï¿½ ï¿½zlemi';
+$DDC_title='Diabet ï¿½lacï¿½ ï¿½zlemi';
+$NOC_title='Nï¿½rolojik Durum ï¿½zlemi';
+$TC_title='Dï¿½ndï¿½rme izlemi';
 /* general */ 
-$LDEDIT='DÜZENLE';
-$LDCLEAR='SÝL';
+$LDEDIT='Dï¿½ZENLE';
+$LDCLEAR='Sï¿½L';
 $LDDate='Tarih';
 $LDTime='Zaman';
 $LDTotal='Toplam';
 /* custom-dcc */
-$LDUrineSugar='Ýdrarda Þeker';
+$LDUrineSugar='ï¿½drarda ï¿½eker';
 $LDAcetone='Aseton';
-$LDBloodSugar='Kan Þekeri';
+$LDBloodSugar='Kan ï¿½ekeri';
 $LDTablets='Tablet';
-$LDInsulin='Ýnsulin';
+$LDInsulin='ï¿½nsulin';
 /* custom-inout */
-$LDIntake='Aldýðý';
-$LDOutput='Çýkardýðý';
-$LDUrine='Ýdrar';
+$LDIntake='Aldï¿½ï¿½ï¿½';
+$LDOutput='ï¿½ï¿½kardï¿½ï¿½ï¿½';
+$LDUrine='ï¿½drar';
 $LDNoofPint='No of Pint';
-$LDSolution='Solüsyon';
+$LDSolution='Solï¿½syon';
 $LDAmount='Miktar';
-$LDInitial='Baþlangýçtaki';
-$LDOralFluid='Oral Sývý';
+$LDInitial='Baï¿½langï¿½ï¿½taki';
+$LDOralFluid='Oral Sï¿½vï¿½';
 $LDRTA='RTA';
 $LDDrain='Dren';
 /* custom-noc */
 $LDTimeScore='Zaman ve Skor';
-$LDVerbalResponse='Sözel Yanýt';
+$LDVerbalResponse='Sï¿½zel Yanï¿½t';
 $LDOriented='Oriyante';
-$LDConfused='Konfüzyonda';
-$LDappropriatewords='Uygun sözcüklerde';
-$LDcomprehensivesound='Anlaþýlabilir seslerde';
-$LDNone='Hiç';
-$LDMotonResponse='Motor Yanýt';
-$LDObeycommand='Kendisine söyleneni yapýyor';
-$LDLocalaisePain='(Aðrýnýn) yerini bulabiliyor';
-$LDWithdrawlPain='Aðrýdan çekme yanýtý var';
-$LDFlexionPain='Aðrýya fleksiyon yanýtý var';
-$LDExtensionPain='Aðrýya ekstansiyon yanýtý var';
-$LDEyesopening='Gözler açýlýyor';
+$LDConfused='Konfï¿½zyonda';
+$LDappropriatewords='Uygun sï¿½zcï¿½klerde';
+$LDcomprehensivesound='Anlaï¿½ï¿½labilir seslerde';
+$LDNone='Hiï¿½';
+$LDMotonResponse='Motor Yanï¿½t';
+$LDObeycommand='Kendisine sï¿½yleneni yapï¿½yor';
+$LDLocalaisePain='(Aï¿½rï¿½nï¿½n) yerini bulabiliyor';
+$LDWithdrawlPain='Aï¿½rï¿½dan ï¿½ekme yanï¿½tï¿½ var';
+$LDFlexionPain='Aï¿½rï¿½ya fleksiyon yanï¿½tï¿½ var';
+$LDExtensionPain='Aï¿½rï¿½ya ekstansiyon yanï¿½tï¿½ var';
+$LDEyesopening='Gï¿½zler aï¿½ï¿½lï¿½yor';
 $LDTospontaneous='Spontan olarak';
-$LDTovoice='Sese karþý';
-$LDTopain='Aðrýya karþý';
+$LDTovoice='Sese karï¿½ï¿½';
+$LDTopain='Aï¿½rï¿½ya karï¿½ï¿½';
 $LDScoreTotal='Toplam Skor';
 /* custom-tc */
 $LDPosition='Pozisyon';
 $LDSUPINE='SUPINE';
 $LDLEFTLATERAL='SOL LATERAL';
-$LDRIGHTLATERAL='SAÐ LATERAL';
-?>
+$LDRIGHTLATERAL='SAï¿½ LATERAL';
+[?][>]

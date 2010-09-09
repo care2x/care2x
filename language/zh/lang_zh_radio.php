@@ -1,84 +1,84 @@
 <?php
-$LDClose='¹Ø±Õ';
-$LDCancel='È¡Ïû';
-$LDResetEntry='É¾³ýÊäÈëÄÚÈÝ';
-$LDSave='±£´æ';
+$LDClose='ï¿½Ø±ï¿½';
+$LDCancel='È¡ï¿½ï¿½';
+$LDResetEntry='É¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½';
+$LDSave='ï¿½ï¿½ï¿½ï¿½';
 
-$LDSearchWordPrompt='ÊäÈëËÑË÷¹Ø¼ü×Ö£¬ÀýÈç£ºÐÕÃû£¬³öÉúÈÕÆÚµÈ';
-$LDEnterData='µã»÷ºóÊäÈëÊý¾Ý';
-$LDClk2See='µã»÷ºó²é¿´Êý¾Ý';
-$LDFoundPatient='¹²ËÑË÷µ½ <b>~nr~</b> Ãû²¡ÈË';
-$LDWildCards='ÄÄÐ©ÊÇÍ¨Åä·ûÒÔ¼°ÈçºÎÊ¹ÓÃ';
-$LDNewSearch='ÖØÐÂËÑË÷';
+$LDSearchWordPrompt='ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ø¼ï¿½ï¿½Ö£ï¿½ï¿½ï¿½ï¿½ç£ºï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿½';
+$LDEnterData='ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½';
+$LDClk2See='ï¿½ï¿½ï¿½ï¿½ï¿½é¿´ï¿½ï¿½ï¿½';
+$LDFoundPatient='ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ <b>~nr~</b> ï¿½ï¿½ï¿½ï¿½';
+$LDWildCards='ï¿½ï¿½Ð©ï¿½ï¿½Í¨ï¿½ï¿½ï¿½ï¿½Ô¼ï¿½ï¿½ï¿½ï¿½Ê¹ï¿½ï¿½';
+$LDNewSearch='ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½';
 
 $LDCaseNr='Encounter nr.';
-$LDLastName='ÐÕ';
-$LDName='Ãû';
-$LDBday='³öÉúÈÕÆÚ';
-$LDOClock='µã';
-$LDBack='·µ»Ø';
+$LDLastName='ï¿½ï¿½';
+$LDName='ï¿½ï¿½';
+$LDBday='ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½';
+$LDOClock='ï¿½ï¿½';
+$LDBack='ï¿½ï¿½ï¿½ï¿½';
 
 $LDOn='On';
 $LDAt='At';
-$LDClk2Edit='µã»÷ºó±à¼­´Ë±¨¸æ';
+$LDClk2Edit='ï¿½ï¿½ï¿½ï¿½ï¿½à¼­ï¿½Ë±ï¿½ï¿½ï¿½';
 
-$LDNew='ÐÂ½¨';
-$LDEdit='±à¼­';
-$LDCreate='´´½¨';
+$LDNew='ï¿½Â½ï¿½';
+$LDEdit='ï¿½à¼­';
+$LDCreate='ï¿½ï¿½ï¿½ï¿½';
 $LDValue='Value';
 
-$LDRadio='·ÅÉä¿Æ';
-$LDXrayFilms='X¹â½ºÆ¬';
-$LDXrayFilmsTxt='ÏÔÊ¾X¹â½ºÆ¬£¬ÔÄ¶Á»ò±àÐ´Õï¶Ï±¨¸æµÈ';
-$LDNews='ÐÂÎÅ';
-$LDNewsTxt='ÔÄ¶Á»ò±àÐ´·ÅÉä¿ÆÐÂÎÅ';
-$LDMemo='±¸ÍüÂ¼';
-$LDMemoTxt='ÔÄ¶Á»ò±àÐ´±¸ÍüÂ¼';
-$LDSearchPat='ËÑË÷²¡ÈË';
-$LDCategory='Àà±ð';
-$LDPast3Days='¹ýÈ¥ÈýÌì';
-$LDPast3Months='¹ýÈ¥Èý¸öÔÂ';
-$LDPastAll='È«²¿';
-$LDSelect='Ñ¡Ôñ';
-$LDShootDate='ÅÄÉãÈÕÆÚ';
-$LDFullScreen='È«ÆÁÏÔÊ¾';
-$LDEditXrayDiag='±à¼­Õï¶Ï±¨¸æ';
-$LDReadDiag='ÔÄ¶ÁÕï¶Ï±¨¸æ';
-$LDWriteDiag='±àÐ´Õï¶Ï±¨¸æ';
-$LDPreviewReport='Ô¤ÀÀ/Õï¶Ï';
+$LDRadio='ï¿½ï¿½ï¿½ï¿½ï¿½';
+$LDXrayFilms='Xï¿½â½ºÆ¬';
+$LDXrayFilmsTxt='ï¿½ï¿½Ê¾Xï¿½â½ºÆ¬ï¿½ï¿½ï¿½Ä¶ï¿½ï¿½ï¿½ï¿½Ð´ï¿½ï¿½Ï±ï¿½ï¿½ï¿½ï¿½';
+$LDNews='ï¿½ï¿½ï¿½ï¿½';
+$LDNewsTxt='ï¿½Ä¶ï¿½ï¿½ï¿½ï¿½Ð´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½';
+$LDMemo='ï¿½ï¿½ï¿½ï¿½Â¼';
+$LDMemoTxt='ï¿½Ä¶ï¿½ï¿½ï¿½ï¿½Ð´ï¿½ï¿½ï¿½ï¿½Â¼';
+$LDSearchPat='ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½';
+$LDCategory='ï¿½ï¿½ï¿½';
+$LDPast3Days='ï¿½ï¿½È¥ï¿½ï¿½ï¿½ï¿½';
+$LDPast3Months='ï¿½ï¿½È¥ï¿½ï¿½ï¿½ï¿½ï¿½';
+$LDPastAll='È«ï¿½ï¿½';
+$LDSelect='Ñ¡ï¿½ï¿½';
+$LDShootDate='ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½';
+$LDFullScreen='È«ï¿½ï¿½ï¿½ï¿½Ê¾';
+$LDEditXrayDiag='ï¿½à¼­ï¿½ï¿½Ï±ï¿½ï¿½ï¿½';
+$LDReadDiag='ï¿½Ä¶ï¿½ï¿½ï¿½Ï±ï¿½ï¿½ï¿½';
+$LDWriteDiag='ï¿½ï¿½Ð´ï¿½ï¿½Ï±ï¿½ï¿½ï¿½';
+$LDPreviewReport='Ô¤ï¿½ï¿½/ï¿½ï¿½ï¿½';
 /* 2002-09-08 EL*/
-$LDTestRequestRadio='²âÊÔÇëÇó';
-$LDTestRequestRadioTxt='ÇëÇó·ÅÉä²âÊÔ';
+$LDTestRequestRadio='ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½';
+$LDTestRequestRadioTxt='ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½';
 /* 2002-09-10 EL */
-$LDTestReception='´ý´¦ÀíÇëÇó';
-$LDTestReceptionTxt='½ÓÊÕÓë´¦Àí²âÊÔÇëÇó£¬±àÐ´²âÊÔ½á¹û/Õï¶Ï±¨¸æ';
+$LDTestReception='ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½';
+$LDTestReceptionTxt='ï¿½ï¿½ï¿½ï¿½ï¿½ë´¦ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ó£¬±ï¿½Ð´ï¿½ï¿½ï¿½Ô½ï¿½ï¿½/ï¿½ï¿½Ï±ï¿½ï¿½ï¿½';
 # 2003-08-08 EL
 $LDDicomImages='DICOM Í¼Æ¬';
-$LDDicomImagesTxt='ÓÃDICOM¸ñÊ½²é¿´Õï¶ÏÍ¼Æ¬';
-$LDUploadDate='ÉÏ´«ÈÕÆÚ';
-$LDViewImage='ÔÚ´Ë²é¿´';
-$LDViewInWindow='ÔÚ´°¿ÚÖÐ²é¿´';
-$LDNrImages='Æ¬ºÅ';
-$LDDicomViewer='Dicom ²é¿´Æ÷';
-$LDViewInFrame='ÔÚµ±Ç°Ö¡ÄÚ²é¿´';
-$LDUploadDicom='ÉÏ´« DICOM';
-$LDUploadDicomTxt='ÒÔDICOM¸ñÊ½ÉÏ´«Õï¶ÏÍ¼Æ¬';
+$LDDicomImagesTxt='ï¿½ï¿½DICOMï¿½ï¿½Ê½ï¿½é¿´ï¿½ï¿½ï¿½Í¼Æ¬';
+$LDUploadDate='ï¿½Ï´ï¿½ï¿½ï¿½ï¿½ï¿½';
+$LDViewImage='ï¿½Ú´Ë²é¿´';
+$LDViewInWindow='ï¿½Ú´ï¿½ï¿½ï¿½ï¿½Ð²é¿´';
+$LDNrImages='Æ¬ï¿½ï¿½';
+$LDDicomViewer='Dicom ï¿½é¿´ï¿½ï¿½';
+$LDViewInFrame='ï¿½Úµï¿½Ç°Ö¡ï¿½Ú²é¿´';
+$LDUploadDicom='ï¿½Ï´ï¿½ DICOM';
+$LDUploadDicomTxt='ï¿½ï¿½DICOMï¿½ï¿½Ê½ï¿½Ï´ï¿½ï¿½ï¿½ï¿½Í¼Æ¬';
 $LDPID='PID';
-$LDImgNumber='Í¼Æ¬±àºÅ';
-$LDSingleImage='µ¥ÕÅÍ¼Æ¬';
-$LDImageGroupNr='Í¼Æ¬·Ö×é±àºÅ';
-$LDNewFileName='ÐÂÎÄ¼þÃû';
-$LDUploadNew='ÎÒÐèÒªÉÏ´«';
-$LDNewImageFiles='ÐÂµÄÍ¼Æ¬ÎÄ¼þ';
+$LDImgNumber='Í¼Æ¬ï¿½ï¿½ï¿½';
+$LDSingleImage='ï¿½ï¿½ï¿½ï¿½Í¼Æ¬';
+$LDImageGroupNr='Í¼Æ¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½';
+$LDNewFileName='ï¿½ï¿½ï¿½Ä¼ï¿½ï¿½ï¿½';
+$LDUploadNew='ï¿½ï¿½ï¿½ï¿½Òªï¿½Ï´ï¿½';
+$LDNewImageFiles='ï¿½Âµï¿½Í¼Æ¬ï¿½Ä¼ï¿½';
 # 2003-08-09 EL
-$LDSelectViewer='Ñ¡Ôñ²é¿´Æ÷';
-$LDSelectViewerTxt='Ñ¡Ôñ DICOM ²é¿´Æ÷³ÌÐò';
-$LDCurrentViewer='µ±Ç°²é¿´Æ÷';
+$LDSelectViewer='Ñ¡ï¿½ï¿½é¿´ï¿½ï¿½';
+$LDSelectViewerTxt='Ñ¡ï¿½ï¿½ DICOM ï¿½é¿´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½';
+$LDCurrentViewer='ï¿½ï¿½Ç°ï¿½é¿´ï¿½ï¿½';
 $LDNagoyaTechInst='Nagoya Tech. Institute';
-$LDRAIMJAVA='RAIMJAVA©';
-$LDNoImageSaved='Ã»ÓÐÍ¼Æ¬±»±£´æ£¡';
-$LDImageNotes='Í¼Æ¬ËµÃ÷';
+$LDRAIMJAVA='RAIMJAVAï¿½';
+$LDNoImageSaved='Ã»ï¿½ï¿½Í¼Æ¬ï¿½ï¿½ï¿½ï¿½ï¿½æ£¡';
+$LDImageNotes='Í¼Æ¬Ëµï¿½ï¿½';
 
 #2004-08-05 EL
 $LDMissingImageFile = 'Missing image file(s)!';
-?>
+[?][>]

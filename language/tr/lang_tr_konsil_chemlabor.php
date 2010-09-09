@@ -1,71 +1,71 @@
 <?php
-$LDDiagnosticTest='Tetkik Ýstemi';
+$LDDiagnosticTest='Tetkik ï¿½stemi';
 $LDHospitalName='Care2x Hastanesi';
-$LDCentralLab='Merkez Laboratuvarý';
+$LDCentralLab='Merkez Laboratuvarï¿½';
 $LDLabel='Etiket';
 $LDRoomNr='Oda no.';
-$LDSamplingTime='Örnek alma zamaný';
-$LDDay='Gün';
+$LDSamplingTime='ï¿½rnek alma zamanï¿½';
+$LDDay='Gï¿½n';
 $LDMinutes='Dakika';
 $LDHours='Saat';
-$LDBatchNr='Küme No.';
-$LDCaseNr='Olgu numarasý';
+$LDBatchNr='Kï¿½me No.';
+$LDCaseNr='Olgu numarasï¿½';
 $LDHouse='Ev';
 $LDHematology='Hematoloji';
-$LDCoagulation='Pýhtýlaþma';
-$LDUrine='Ýdrar';
+$LDCoagulation='Pï¿½htï¿½laï¿½ma';
+$LDUrine='ï¿½drar';
 $LDSerum='Serum';
 $LDGlucose='Glukoz';
 $LD9Hour='9.00';
 $LD15Hour='15.00';
-$LDSober='ayýk';
-$LDBloodSugar='Kan Þekeri';
-$LDBLoodSugar1='KÞ1';
+$LDSober='ayï¿½k';
+$LDBloodSugar='Kan ï¿½ekeri';
+$LDBLoodSugar1='Kï¿½1';
 $LDBloodPlasma='Plazma';
-$LDDoctorSignature='Doktorun imzasý';
-$LDLifeRisk='Yaþam riski';
+$LDDoctorSignature='Doktorun imzasï¿½';
+$LDLifeRisk='Yaï¿½am riski';
 $LDRarity='yetersiz';
-$LDSpecTest='özel tetkikler';
+$LDSpecTest='ï¿½zel tetkikler';
 $LDClinicalInfo='klinik bilgi';
 $LDShortMonth=array('',
                                    'Oca',
-								   'Þub',
+								   'ï¿½ub',
 								   'Mar',
 								   'Nis',
 								   'May',
 								   'Haz',
 								   'Tem',
-								   'Aðu',
+								   'Aï¿½u',
 								   'Eyl',
 								   'Eki',
 								   'Kas',
 								   'Ara');
 
-$LDShortDay=array('Pz','Pt','Sa','Ça','Pe','Cu','Ct','Pz');
+$LDShortDay=array('Pz','Pt','Sa','ï¿½a','Pe','Cu','Ct','Pz');
 
-$LDBatchNumber='Küme no.';
+$LDBatchNumber='Kï¿½me no.';
 $LDMaterial='Materyel:';
-$LDEmergencyProgram='Mor gölgeli alanlar acil programýna aittir';
+$LDEmergencyProgram='Mor gï¿½lgeli alanlar acil programï¿½na aittir';
 $LDPhoneOrder=' = telefonla teyid edilmelidir';
 /* 2002-09-03 EL */							  
 $LDSearchPatient='Hasta arama';
-$LDPlsSelectPatientFirst='Lütfen önce hastayý arayýnýz.';
+$LDPlsSelectPatientFirst='Lï¿½tfen ï¿½nce hastayï¿½ arayï¿½nï¿½z.';
 /* 2002-09-11 EL */
 $LDPendingTestRequest='Bekleyen tetkik istemi';
 /* 2002-10-14 EL */
-$LDDone='Bitti! Formu arþive taþý';
+$LDDone='Bitti! Formu arï¿½ive taï¿½ï¿½';
 
 /* Note: the following array uses strict medical terminology.
 *  If you are not sure about their translation, please leave the 
 *  english word untranslated
 */
 $LD_Elements = array('tx_1'=>'Biyokimya',
-                                  'tx_2'=> 'Pýhtýlaþma',
+                                  'tx_2'=> 'Pï¿½htï¿½laï¿½ma',
 								  'tx_3'=> 'Proteinler',
-								  'tx_4'=>'Tumor markerý',
-								  'tx_5'=>'Ýntaniye.seroloji',
+								  'tx_4'=>'Tumor markerï¿½',
+								  'tx_5'=>'ï¿½ntaniye.seroloji',
 								  'tx_6'=>'Dahiliye',
-								  'tx_7'=>'Ýdrar/Tam idrar.',
+								  'tx_7'=>'ï¿½drar/Tam idrar.',
 
                                   '_iof__x__iof_2_' => 'IOF',
                                   '_marcumar_tedavisi_' => 'Coumadin-Ted.',
@@ -73,7 +73,7 @@ $LD_Elements = array('tx_1'=>'Biyokimya',
 								  '_afp_' => 'AFP',
 								  'tx_8' => 'Serum - BOS',
 								  '_amiodaron_' => 'Amiodaron',
-								  '_emx_urin_status_' => 'Ýdrar görünümü',
+								  '_emx_urin_status_' => 'ï¿½drar gï¿½rï¿½nï¿½mï¿½',
 
 								  '_aof_'=>'AOF',
 								  '_heparin_tedavisi_'=>'Heparin ted.',
@@ -81,7 +81,7 @@ $LD_Elements = array('tx_1'=>'Biyokimya',
 								  '_ca_15_3_'=>'CA 15-3',
 								  '_antisstaf_titre_'=>'Antistaf.Titre',
 								  '_barbiturates_i_s_'=>'Barbituratlar i.S.',
-								  '_emx_urin_amilase_'=>'Ýdrar amilazý',
+								  '_emx_urin_amilase_'=>'ï¿½drar amilazï¿½',
 
 								  '_preop_'=>'preop',
 								  '_fibrinoliz_'=>'Fibrinoliz',
@@ -89,7 +89,7 @@ $LD_Elements = array('tx_1'=>'Biyokimya',
 								  '_ca_19_9_'=>'CA 19-9',
 								  '_adenovirus_antibody_'=>'Adenovirus-Antikoru',
 								  '_benzodiazepam_i_s_'=>'Benzodiazep.i.S.',
-								  '_urin_sugar_'=>'Ýdrarda Þeker',
+								  '_urin_sugar_'=>'ï¿½drarda ï¿½eker',
 
 								  '_postop_'=>'postop',
 								  '_emx_quick_'=>'Acil',
@@ -97,15 +97,15 @@ $LD_Elements = array('tx_1'=>'Biyokimya',
 								  '_ca_125_'=>'CA 125',
 								  '_borrelias_antibody__x__borrelias_antibody_2_'=>'Borrelia-Antikoru',
 								  '_carbmazepin_'=>'Carbamazepin',
-								  '_proten_in_urine_'=>'Ýdrarda Protein',
+								  '_proten_in_urine_'=>'ï¿½drarda Protein',
 
 								  '_emx_serum_sugar_'=>'Serumda Glukoz',
 								  '_emx_ptt_'=>'PTT',
-								  '_beta2_microglobulin_i_s_'=>'Serumda ß2-µGlobulin',
+								  '_beta2_microglobulin_i_s_'=>'Serumda ï¿½2-ï¿½Globulin',
 								  '_cea_'=>'CEA',
 								  '_borrelias_immunoblot__x__borrelias_immunoblot_2_'=>'Borr.Immunoblot',
 								  '_clonazepam_'=>'Clonazepam',
-								  '_albumin_in_urine_'=>'Ýdrarda Albumin',
+								  '_albumin_in_urine_'=>'ï¿½drarda Albumin',
 
 								  '_emx_bilirubin_total_'=>'Bilirubin, total',
 								  '_emx_ptz_'=>'PTZ',
@@ -113,7 +113,7 @@ $LD_Elements = array('tx_1'=>'Biyokimya',
 								  '_cyfra_21_1_'=>'Cyfra 21-1',
 								  '_brucellia_antibody_'=>'Brucella-Antikoru',
 								  '_emx_digitoxin_'=>'Digitoxin',
-								  '_emx_osmol_in_urine_'=>'Osmol Ýdrarda',
+								  '_emx_osmol_in_urine_'=>'Osmol ï¿½drarda',
 
 								  '_bilirubin_direct_'=>'Bilirubin, direct',
 								  '_emx_fibrinogen_'=>'Fibrinojen',
@@ -129,7 +129,7 @@ $LD_Elements = array('tx_1'=>'Biyokimya',
 								  '_nse_'=>'NSE',
 								  '_candida_antibody_'=>'Candida-Antikoru',
 								  '_gentamycin_'=>'Gentamisin',
-								  '_cytomegaly_in_urine_'=>'Sitomeg. Ýdrarda',
+								  '_cytomegaly_in_urine_'=>'Sitomeg. ï¿½drarda',
 
 								  '_emx_gpt_'=>'GPT',
 								  '_emx_fsp_dimer_'=>'FSP-dimer',
@@ -137,10 +137,10 @@ $LD_Elements = array('tx_1'=>'Biyokimya',
 								  '_psa_'=>'PSA',
 								  '_cardiotr_virus_'=>'Cardiotr.Virus',
 								  '_lithium_'=>'Lithium',
-								  '_urine_cytology_'=>'Ýdrar sitolojisi',
+								  '_urine_cytology_'=>'ï¿½drar sitolojisi',
 
 								  '_gamma_gt_'=>'gamma GT',
-								  '_emx_thrombos_coagulation_'=>'Pýhtýlaþma',
+								  '_emx_thrombos_coagulation_'=>'Pï¿½htï¿½laï¿½ma',
 								  '_ferritin_'=>'Ferritin',
 								  '_scc_'=>'SCC',
 								  '_chamydia_smear_'=>'Klamidya-Yayma',
@@ -153,7 +153,7 @@ $LD_Elements = array('tx_1'=>'Biyokimya',
 								  '_tpa_'=>'TPA',
 								  '_chlamydia_antibody_'=>'Klamidya-Antikoru',
 								  '_phenytoin_'=>'Fenitoin',
-								  '_urine_elpho_'=>'Ýdrar elektroforezi',
+								  '_urine_elpho_'=>'ï¿½drar elektroforezi',
 
 								  '_ldh_'=>'LDH',
 								  '_factor_8_'=>'Faktor VIII',
@@ -161,7 +161,7 @@ $LD_Elements = array('tx_1'=>'Biyokimya',
 								  'tx_9'=>'Doku antikoru',
 								  '_c_psitacci_antibody_'=>'C.psitacci-Antikoru',
 								  '_primidon_'=>'Primidon',
-								  '_beta_2_microglobulin_in_urine_'=>'Ýdrarda ß2 Mikroglob.',
+								  '_beta_2_microglobulin_in_urine_'=>'ï¿½drarda ï¿½2 Mikroglob.',
 
 								  '_hbdh_'=>'HBDH',
 								  '_apc_resistance_telx_'=>'APC-Rezistan.',
@@ -169,31 +169,31 @@ $LD_Elements = array('tx_1'=>'Biyokimya',
 								  '_ana_'=>'ANA',
 								  '_coxsacky_antibody_'=>'Koksaki-Antikoru',
 								  '_salicylic_acid_'=>'Salisilik asit',
-								  'tx_10'=>'Toplanmýþ idrar',
+								  'tx_10'=>'Toplanmï¿½ï¿½ idrar',
 
 								  'emx_cpk_'=>'CPK',
 								  '_protein_c_telx_'=>'Protein C',
 								  '_ssw_'=>'Gebelik',
 								  '_ama_'=>'AMA',
-								  '_q_fever_antibody_'=>'Q-Ateþi-Antikoru',
+								  '_q_fever_antibody_'=>'Q-Ateï¿½i-Antikoru',
 								  '_theophyllin_'=>'Teofilin',
-								  '_urine_collected_'=>'Toplanmýþ-',
+								  '_urine_collected_'=>'Toplanmï¿½ï¿½-',
 
 								  '_emx_ckmb_'=>'CKMB',
 								  '_protein_s_telx_'=>'Protein S',
-								  '_alpha_1_microglobulin_'=>'alfa-1 µglobulin',
+								  '_alpha_1_microglobulin_'=>'alfa-1 ï¿½globulin',
 								  '_dns_antibody_'=>'DNS-Antikoru',
 								  '_cytomegaly_antibody_'=>'Cytomegalo-Antikoru',
 								  '_tobramycin_'=>'Tobramisin',
 								  '_urine_volume_'=>'hacmi:ml.',
 
 								  '_emx_myoglobin_'=>'Myoglobin',
-								  '_bleeding_time_telx_'=>'Kanama zamaný',
+								  '_bleeding_time_telx_'=>'Kanama zamanï¿½',
 								  'tx_11'=>'Tiroid bezi',
 								  '_asma_'=>'ASMA',
 								  '_ebv_antibody__x__ebv_antibody_2_'=>'EBV-Antikoru',
 								  '_valproin_acid_'=>'Valproik asit',
-								  '_addis_count_'=>'Addis-Sayýmý',
+								  '_addis_count_'=>'Addis-Sayï¿½mï¿½',
 
 								  '_emx_troponin_t_'=>'Troponin-T',
 								  'tx_12'=>'Hematoloji',
@@ -201,7 +201,7 @@ $LD_Elements = array('tx_1'=>'Biyokimya',
 								  '_ena_'=>'ENA',
 								  '_echinococcus_antibody_'=>'Ekinokok-Antikoru',
 								  '_vancomycin_'=>'Vankomisin',
-								  '_sodium_in_urine_'=>'Sodyum Ýdrarda',
+								  '_sodium_in_urine_'=>'Sodyum ï¿½drarda',
 
 								  '_emx_cholinesterase_'=>'Kolinesteraz',
 								  '_emx_minor_blood_test_'=>'Kell. kanda',
@@ -212,35 +212,35 @@ $LD_Elements = array('tx_1'=>'Biyokimya',
 								  '_kalium_in_urine_'=>'potasyum idrarda ',
 
 								  '_gldh_'=>'GLDH',
-								  '_diff_minor_blood_test_'=>'Tam kan.+ minör.Kan Testi',
+								  '_diff_minor_blood_test_'=>'Tam kan.+ minï¿½r.Kan Testi',
 								  '_tsh_basal_'=>'TSH-basal',
-								  'tx_13'=>'Romatizma faktörleri',
+								  'tx_13'=>'Romatizma faktï¿½rleri',
 								  '_fsme_antibody__x__fsme_antibody_2_'=>'FSME-Antikoru',
-								  '_emx_drugscreen_in_urine_'=>'Ýdrarda ilaç tarama',
-								  '_calcium_in_urine_'=>'Kalsiyum Ýdrarda',
+								  '_emx_drugscreen_in_urine_'=>'ï¿½drarda ilaï¿½ tarama',
+								  '_calcium_in_urine_'=>'Kalsiyum ï¿½drarda',
 
 								  '_chol_'=>'Kolestrol',
-								  '_reticulocytes_'=>'Retikülosit',
-								  '_tsh_stimulation_'=>'TSH-stimülasyon.',
+								  '_reticulocytes_'=>'Retikï¿½losit',
+								  '_tsh_stimulation_'=>'TSH-stimï¿½lasyon.',
 								  '_anti_strepto_titer_'=>'Anti-Strepto-Titresi',
 								  '_herpes_simplex_1_antibody_'=>'Herpes sim.1-Antikor',
-								  '_amphetamine_in_urine_'=>'Amfetamin Ýdrarda',
-								  '_phospor_in_urine_'=>'Fosfor Ýdrarda',
+								  '_amphetamine_in_urine_'=>'Amfetamin ï¿½drarda',
+								  '_phospor_in_urine_'=>'Fosfor ï¿½drarda',
 
 								  '_tri_'=>'Tri',
-								  '_kemik _iliði_diff_telx_'=>'K.iliði+Ayrýntýlý.',
+								  '_kemik _iliï¿½i_diff_telx_'=>'K.iliï¿½i+Ayrï¿½ntï¿½lï¿½.',
 								  '_tak_'=>'TAK',
 								  '_lat_rf_'=>'Lat.RF',
 								  '_herpes_simplex_2_antibody_'=>'Herpes sim.2-Antikor',
-								  '_antidepressant_in_urine_'=>'Antidepresan Ýdrarda',
-								  '_uric_acid_in_urine_'=>'ürik asit idrarda ',
+								  '_antidepressant_in_urine_'=>'Antidepresan ï¿½drarda',
+								  '_uric_acid_in_urine_'=>'ï¿½rik asit idrarda ',
 
 								  '_hdl_chol_'=>'HDL-Chol',
-								  '_malaria_'=>'Sýtma',
+								  '_malaria_'=>'Sï¿½tma',
 								  '_mak_'=>'MAK',
 								  '_streptocyme_'=>'Streptozim',
 								  '_hiv1_hiv2_antibody_'=>'HIV1/HIV2-Antikoru',
-								  '_barbiturates_in_urine_'=>' Barbitürat.',
+								  '_barbiturates_in_urine_'=>' Barbitï¿½rat.',
 								  '_creatinin_in_urine_'=>'Kreatinin idrarda',
 
 								  '_ldl_chol_'=>'LDL-Kolest.',
@@ -248,48 +248,48 @@ $LD_Elements = array('tx_1'=>'Biyokimya',
 								  '_trak_'=>'TRAK',
 								  '_waaler_rose_'=>'Waaler Rose',
 								  '_influenza_a_antibody_'=>'Influenza A-AB',
-								  '_benzodiazepam_in_urine_'=>'Benzodiazep.Ýdrarda',
-								  '_porphyrine_in_urine_'=>'Porfirin Ýdrarda',
+								  '_benzodiazepam_in_urine_'=>'Benzodiazep.ï¿½drarda',
+								  '_porphyrine_in_urine_'=>'Porfirin ï¿½drarda',
 
 								  '_lipid_elpho_'=>'Lipid-Elektroforez',
 								  '_hla_b_27_telx_'=>'HLA-B 27',
 								  '_thyreoglobulin_'=>'Tireoglobulin',
 								  'tx_14'=>'Hepatit',
 								  '_influenza_b_antibody_'=>'Influenza B-Antikor',
-								  '_cannabinol_in_urine_'=>'Kannabinol Ýdrarda',
-								  '_cortisol_in_urine_'=>'Kortizol Ýdrarda',
+								  '_cannabinol_in_urine_'=>'Kannabinol ï¿½drarda',
+								  '_cortisol_in_urine_'=>'Kortizol ï¿½drarda',
 
 								  '_lipase_'=>'Lipaz',
 								  '_thrombo_antibody_telx_'=>'Trombo-Antikor',
-								  '_thyroxinbinding_globulin_'=>'Tiroksin baðlayýcý Glob.',
+								  '_thyroxinbinding_globulin_'=>'Tiroksin baï¿½layï¿½cï¿½ Glob.',
 								  '_anti_hav_'=>'Anti-HAV',
 								  '_lcm_antibody_'=>'LCM-Antikor',
-								  '_cocain_in_urine_'=>'Kokain Ýdrarda',
-								  '_vms_in_urine_'=>'VMS Ýdrarda',
+								  '_cocain_in_urine_'=>'Kokain ï¿½drarda',
+								  '_vms_in_urine_'=>'VMS ï¿½drarda',
 
 								  '_emx_amylase_'=>'Amilaz',
 								  '_leukocytes_phosphate_telx_'=>'WBC-Phosp.',
 								 'tx_15'=>'Hormonlar',
 								 '_anti_hav_igm_'=>'Anti-HAV-IgM',
 								 '_leg_pneum_antibody_'=>'Leg.pneum.-Antikor',
-								 '_methadon_in_urine_'=>'Methadon Ýdrarda',
-								 '_5_hies_in_urine_'=>'5.-Uyuþturucu Ýdrarda',
+								 '_methadon_in_urine_'=>'Methadon ï¿½drarda',
+								 '_5_hies_in_urine_'=>'5.-Uyuï¿½turucu ï¿½drarda',
 
 								 '_uric_material_'=>'BUN',
-								 'tx_16'=>'Kan þekeri',
+								 'tx_16'=>'Kan ï¿½ekeri',
 								 '_acth_telx_'=>'ACTH',
 								 '_hbs_antigen_'=>'HBs-Antijeni',
 								 '_leptospiria_antibody_'=>'Leptospira-Antikor',
-								 '_opiates_in_urine_'=>'Opiyatlar Ýdrarda',
-								 '_hydroxyprolin_in_urine_'=>'Hidroksiprolin Ýdrarda',
+								 '_opiates_in_urine_'=>'Opiyatlar ï¿½drarda',
+								 '_hydroxyprolin_in_urine_'=>'Hidroksiprolin ï¿½drarda',
 
-								 '_uric_acid_'=>'Ürik asit',
-								 '_emx_bloodsugar_sober_'=>'Açlýk kan þekeri',
+								 '_uric_acid_'=>'ï¿½rik asit',
+								 '_emx_bloodsugar_sober_'=>'Aï¿½lï¿½k kan ï¿½ekeri',
 								 '_aldosteron_'=>'Aldosteron',
 								 '_anti_hbs_titer_'=>'Anti-HBs-Titre',
 								 '_listeria_antibody_'=>'Listeria-Antikor',
 								 'tx_17'=>'Prenatal',
-								 '_cathecholamines_in_urine_'=>'Katekolamin Ýdrarda',
+								 '_cathecholamines_in_urine_'=>'Katekolamin ï¿½drarda',
 
 								 '_emx_krea_'=>'Krea',
 								 '_emx_bloodsugar_9_00_'=>'Glukoz 9.00',
@@ -303,20 +303,20 @@ $LD_Elements = array('tx_1'=>'Biyokimya',
 								 '_emx_bloodsugar_pp_'=>'Glukoz tokluk',
 								 '_cortisol_'=>'Kortizol',
 								 '_anti_hbe_'=>'Anti-HBe',
-								 '_mononucleosis_'=>'Mononükleoz',
+								 '_mononucleosis_'=>'Mononï¿½kleoz',
 								 '_first_serology_'=>'1.nci seroloji',
-								 '_aminolevulin_in_urine_'=>'Aminolövulin Ýdrarda',
+								 '_aminolevulin_in_urine_'=>'Aminolï¿½vulin ï¿½drarda',
 
 								 '_emx_kalium_'=>'Potassium',
 								 '_emx_bloodsugar_15_00_'=>'Glukoz 15.00',
-								 '_cortisol_day_program_'=>'Kortizol günprog.',
+								 '_cortisol_day_program_'=>'Kortizol gï¿½nprog.',
 								 '_anti_hbc_'=>'Anti_HBc',
 								 '_mumps_antibody_'=>'Kabakulak-Antikor',
 								 '_pregnancy_'=>'SSW:',
-								 'tx_18'=>'Diðerleri',
+								 'tx_18'=>'Diï¿½erleri',
 
 								 '_emx_calcium_'=>'Kalsiyum',
-								 '_emx_bloodsugar_notime_'=>'Glukoz.zamansýz',
+								 '_emx_bloodsugar_notime_'=>'Glukoz.zamansï¿½z',
 								 '_fsh_'=>'FSH',
 								 '_anti_hbc_igm_'=>'Anti-HBc IgM',
 								 '_mycoplas_pneum_'=>'Mycopl.pneu.Antikor',
@@ -324,7 +324,7 @@ $LD_Elements = array('tx_1'=>'Biyokimya',
 								 '_emx_blood_alcohol_'=>'Alkol kanda',
 
 								 '_chloride_'=>'Klor',
-								 '_emx_bloodsugar_notime_2_'=>'Glukoze.zamansýz',
+								 '_emx_bloodsugar_notime_2_'=>'Glukoze.zamansï¿½z',
 								 '_gastrin_'=>'Gastrin',
 								 '_anti_hcv_'=>'Anti_HCV',
 								 '_neurotrope_virus__x__neurotrope_virus_2_'=>'Neurotrop-V',
@@ -339,9 +339,9 @@ $LD_Elements = array('tx_1'=>'Biyokimya',
 								 '_tpha_'=>'TPHA',
 								 '_vitamin_b12_'=>'Vitamin B12',
 
-								 '_magnesium_'=>'Maðnezyum',
+								 '_magnesium_'=>'Maï¿½nezyum',
 								 '_lactose_proof_'=>'Laktozsuz',
-								 '_insulin_'=>'Ýnsülin',
+								 '_insulin_'=>'ï¿½nsï¿½lin',
 								 '_anti_hev_'=>'Anti-HEV',
 								 '_parainfluenza_3_antibody_'=>'Par.influenz.3-Antikor',
 								 '_hbs_ag_'=>'HBs-Ag',
@@ -355,7 +355,7 @@ $LD_Elements = array('tx_1'=>'Biyokimya',
 								 '_pregnancy_hiv1_hiv2_antibody_'=>'HIV1/HIV2-Antikor',
 								 '_insulin_antibody_'=>'Insulin-Antikor',
 
-								 '_copper_'=>'Bakýr',
+								 '_copper_'=>'Bakï¿½r',
 								 '_fructosamine_'=>'Fructozamin',
 								 '_lh_'=>'LH',
 								 '_punctat_cytology_'=>'Biopsi sitoloji.',
@@ -365,17 +365,17 @@ $LD_Elements = array('tx_1'=>'Biyokimya',
 
 								 '_emx_osmolal_'=>'Osmolal.',
 								 '_capillary_blood_sample_'=>'Kapiller Kan',
-								 '_oestradiol_'=>'Östradiol',
+								 '_oestradiol_'=>'ï¿½stradiol',
 								 '_protein_in_punctat_'=>'Protein Biopside',
-								 '_reoteln_antibody_'=>'Röteln-Antikor',
+								 '_reoteln_antibody_'=>'Rï¿½teln-Antikor',
 								 '_chymotrypsin_'=>'Kimotripsin',
-								 '_stone_analysis_'=>'Taþ analizi',
+								 '_stone_analysis_'=>'Taï¿½ analizi',
 
 								 '_emx_lactat_in_p_'=>'Laktat, plazmada',
 								 '_capillary_blood_sample_2_'=>'Kapiller kan',
-								 '_oestriol_'=>'Östriol',
+								 '_oestriol_'=>'ï¿½striol',
 								 '_ldh_in_punctat_'=>'LDH Biopside',
-								 '_roeteln_immune_status_'=>'Röt-Immun durum.',
+								 '_roeteln_immune_status_'=>'Rï¿½t-Immun durum.',
 								 '_blood_in_stool_'=>'Gaitada kan',
 								 '_ace_'=>'ACE',
 
@@ -388,7 +388,7 @@ $LD_Elements = array('tx_1'=>'Biyokimya',
 								 '_g1_'=>'G1',
 
 								 '_emx_free_hb_'=>'serbest Hb',
-								 '_emx_infant_bilirubin_'=>'Bebek bilirübini',
+								 '_emx_infant_bilirubin_'=>'Bebek bilirï¿½bini',
 								 '_parathormone_'=>'Parathormon',
 								 '_cea_in_punctat_'=>'CEA Biopside',
 								 '_shigella_salmonella_antibody_'=>'Shigell/Salm-Antikor',
@@ -404,14 +404,14 @@ $LD_Elements = array('tx_1'=>'Biyokimya',
 								 '_g3_'=>'G3',
 
 								 'tx_23'=>'BOS',
-								 '_emx_infant_bilirubin_direct_'=>'Bilirübin direk',
+								 '_emx_infant_bilirubin_direct_'=>'Bilirï¿½bin direk',
 								 '_prolactin_1_'=>'Prolaktin 1',
-								 '_uric_material_in_punctat_'=>'Ürik bade biopside',
+								 '_uric_material_in_punctat_'=>'ï¿½rik bade biopside',
 								 '_infection_tpha__x__infection_tpha_2_'=>'TPHA',
 								 '_rarity_h_'=>'yetersiz H',
 								 '_g4_'=>'G4',
 
-								 '_emx_liquor_status_'=>'Bos görünümü',
+								 '_emx_liquor_status_'=>'Bos gï¿½rï¿½nï¿½mï¿½',
 								 '_emx_infant_sugar_'=>'glukoz bebekte',
 								 '_prolactin_2_'=>'Prolaktin 2',
 								 '_rheumafactor_in_punctat_'=>'Romatizma.fak.Biopside',
@@ -432,19 +432,19 @@ $LD_Elements = array('tx_1'=>'Biyokimya',
 								 '_serotonin_telx_'=>'Serotonin',
 								 'blankline'=>'',
 								 '_e1_'=>'E1',
-								 '_urine_rarity_'=>'Ýdrar yetersiz',
+								 '_urine_rarity_'=>'ï¿½drar yetersiz',
 								 '_g7_'=>'G7',
 
 								 '_oligoklonal_igg_'=>'Oligoklona.IgG',
-								 '_infant_diff_minor_blood_test_'=>'Ayrýnt.+min.KT',
+								 '_infant_diff_minor_blood_test_'=>'Ayrï¿½nt.+min.KT',
 								 '_somatomedin_c_'=>'Somatomedin C',
 								 'blankline2'=>'',
 								 '_e2_'=>'E2',
 								 '_f1_'=>'F1',
 								 '_g8_'=>'G8',
 
-								 '_reiber_schema_'=>'Reiber-Þemasý',
-								 '_infant_reticulocytes_'=>'Retikülositler',
+								 '_reiber_schema_'=>'Reiber-ï¿½emasï¿½',
+								 '_infant_reticulocytes_'=>'Retikï¿½lositler',
 								 '_testosteron_'=>'Testosteron',
 								 '_d1_'=>'D1',
 								 '_e3_'=>'E3',
@@ -459,16 +459,15 @@ $LD_Elements = array('tx_1'=>'Biyokimya',
 								 '_f3_'=>'F3',
 								 '_g10_'=>'G10',
 
-								 'tx_24'=>'Doktorun imzasý',
-								 'tx_25'=>'Yüksek risk >>',
-								 '_highrisk_'=>'<< Yüksek  risk',
+								 'tx_24'=>'Doktorun imzasï¿½',
+								 'tx_25'=>'Yï¿½ksek risk >>',
+								 '_highrisk_'=>'<< Yï¿½ksek  risk',
 								 'tx_26'=>'yetersizlik:',
-								 'tx_27'=>'özel Test',
+								 'tx_27'=>'ï¿½zel Test',
 								 'tx_28'=>'',
 								 'tx_29'=>'klinik bilgi',
 								  );
 /* 2002-09-03 EL */							  
 
 
-?>
-
+[?][>]

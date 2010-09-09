@@ -1,68 +1,68 @@
 <?php
 $LDTitleTag=array
-					(headline=>'Baþlýk',
+					(headline=>'Baï¿½lï¿½k',
 					cafenews=>'Kafeterya haberleri',
-					management=>'Yönetim',
-					healthtips=>'Saðlýk Bilgileri',
-					adv_studies=>'Araþtýrmalar',
-					prof_training=>'Eðitim',
+					management=>'Yï¿½netim',
+					healthtips=>'Saï¿½lï¿½k Bilgileri',
+					adv_studies=>'Araï¿½tï¿½rmalar',
+					prof_training=>'Eï¿½itim',
 					physiotherapy=>'Fizik Tedavi',
 					events=>'Sergiler',
 					dept_generalsurgery=>'Genel Cerrahi',
 					dept_emergency=>'Acil',
 					dept_plasticsurgery=>'Plastik Cerrahi',
 					dept_ent=>'KBB',
-					dept_eyesurgery=>'Göz',
+					dept_eyesurgery=>'Gï¿½z',
 					dept_pathology=>'Patoloji',
 					dept_gynecology=>'Nisaiye',
 					dept_internalmed=>'Dahiliye',
 					dept_oncology=>'Onkoloji',
-					dept_techservice=>'Teknik bakým',
-					dept_IMCU=>'Ara bakým',
-					dept_ICU=>'Yoðun Bakým Birimi',
-					dept_lab=>'Biyokimya laboratuarý',
-					patient_admission=>'Müracaat',
+					dept_techservice=>'Teknik bakï¿½m',
+					dept_IMCU=>'Ara bakï¿½m',
+					dept_ICU=>'Yoï¿½un Bakï¿½m Birimi',
+					dept_lab=>'Biyokimya laboratuarï¿½',
+					patient_admission=>'Mï¿½racaat',
 					allamb=>'Genel Poliklinik',
 					unfamb=>'Acil Poliklinik',
 					sono=>'Ultrason',
-					nuklear=>'Nukleer Týp',
+					nuklear=>'Nukleer Tï¿½p',
 					inmed=>'Dahiliye Poliklinik');
 
 $LDSubTitle=array
-					(headline=>'Baþlýk',
+					(headline=>'Baï¿½lï¿½k',
 					cafenews=>'Kafeterya haberleri',
-					management=>'Yönetim',
-					healthtips=>'Saðlýk Bilgileri',
-					adv_studies=>'Araþtýrmalar',
-					prof_training=>'Eðitim ile ilgili Bilgiler',
+					management=>'Yï¿½netim',
+					healthtips=>'Saï¿½lï¿½k Bilgileri',
+					adv_studies=>'Araï¿½tï¿½rmalar',
+					prof_training=>'Eï¿½itim ile ilgili Bilgiler',
 					physiotherapy=>'Fizik Tedavi',
 					events=>'Etkinlikler',
 					dept_generalsurgery=>'Genel Cerrahi',
 					dept_emergency=>'Acil servis',
 					dept_plasticsurgery=>'Plastik Cerrahi',
 					dept_ent=>'KBB',
-					dept_eyesurgery=>'Göz Hastalýklarý',
+					dept_eyesurgery=>'Gï¿½z Hastalï¿½klarï¿½',
 					dept_pathology=>'Patoloji',
-					dept_gynecology=>'Kadýn Doðum',
+					dept_gynecology=>'Kadï¿½n Doï¿½um',
 					dept_internalmed=>'Dahiliye',
 					dept_oncology=>'Onkoloji',
 					dept_techservice=>'Teknik Servis',
 					dept_IMCU=>'',
-					dept_ICU=>'Yoðun Bakým',
+					dept_ICU=>'Yoï¿½un Bakï¿½m',
 					dept_lab=>'Laboratuvar',
-					patient_admission=>'Hasta kabul bölümü hakkýnda daha fazla bilgi',
+					patient_admission=>'Hasta kabul bï¿½lï¿½mï¿½ hakkï¿½nda daha fazla bilgi',
 					SBDefault=>'Daha fazla bilgi');
 
 
-$LDMore='makalenin devamý';
+$LDMore='makalenin devamï¿½';
 $LDBackTxt='Geri';
-$LDClk2Read='Okumak için týklayýnýz';
+$LDClk2Read='Okumak iï¿½in tï¿½klayï¿½nï¿½z';
 
 $LDArticle='Makale';
 $LDWrittenOn='tarih';
 $LDWrittenBy='Yazar';
 
-$LDNewsDummy=array(1=>'birinci',2=>'ikinci',3=>'üçüncü',4=>'dördüncü');
-$LDClk2Compose='Haber yazmak için burayý týklayýnýz';
-$LDClk2Write='Editörü baþlatmak için burayý týklayýnýz';
-?>
+$LDNewsDummy=array(1=>'birinci',2=>'ikinci',3=>'ï¿½ï¿½ï¿½ncï¿½',4=>'dï¿½rdï¿½ncï¿½');
+$LDClk2Compose='Haber yazmak iï¿½in burayï¿½ tï¿½klayï¿½nï¿½z';
+$LDClk2Write='Editï¿½rï¿½ baï¿½latmak iï¿½in burayï¿½ tï¿½klayï¿½nï¿½z';
+[?][>]

@@ -1,7 +1,7 @@
 <?php
 $LDOr='Ameliyathane';
-$LDLOGBOOK='GÜNLÜK';
-$LDOrDocument='Ameliyathane Kayýtlarý';
+$LDLOGBOOK='Gï¿½NLï¿½K';
+$LDOrDocument='Ameliyathane Kayï¿½tlarï¿½';
 $LDOrDocumentTxt='Ameliyat hizmetlerinin belgelendirilmesi';
 
 /**
@@ -10,147 +10,147 @@ $LDOrDocumentTxt='Ameliyat hizmetlerinin belgelendirilmesi';
 *  ORNOC = Operating room nurse on call duty
 *  OP Room = operating room (surgery room)
 */
-$LDDOC='Nöbetçi doktor';
-$LDORNOC='Nöbetçi hemþire';
-$LDScheduler='Nöbet planlama';
+$LDDOC='Nï¿½betï¿½i doktor';
+$LDORNOC='Nï¿½betï¿½i hemï¿½ire';
+$LDScheduler='Nï¿½bet planlama';
 
-$LDQuickView='Hýzlý bakýþ';
-$LDQviewTxtDocs='Bugünkü nöbetçi doktor listesine hýzlý bakýþ';
-$LDOrLogBook='Ameliyathane hemþire günlüðü';
-$LDOrLogBookTxt='Ameliyathane hemþirelik hizmetlerinin belgelendirilmesi, arþiv dosyalarý';
-$LDOrProgram='Ameliyathane programý';
-$LDOrProgramTxt='Bir ameliyathane programýný görüntüleme, düzeltme, oluþturma, vs.';
-$LDQviewTxtNurse='Bugünkü hemþirelerin icap nöbetine hýzlý bakýþ';
-$LDDutyPlanTxt='Ameliyathane nöbetçi hemþire görüntüleme, düzeltme, oluþturma';
-$LDOnCallDuty='Ýcap nöbeti';
-$LDOnCallDutyTxt='Nöbetteki iþi belgelendirme';
-$LDAnaLogBook='Anestezi günlüðü';
-$LDAnaLogBookTxt='Anestezi hizmetlerini belgelendirme, arþiv dosyalarý';
-$LDQviewTxtAna='Bugünkü anestezi teknisyen nöbetçilerine hýzlý bakýþ';
+$LDQuickView='Hï¿½zlï¿½ bakï¿½ï¿½';
+$LDQviewTxtDocs='Bugï¿½nkï¿½ nï¿½betï¿½i doktor listesine hï¿½zlï¿½ bakï¿½ï¿½';
+$LDOrLogBook='Ameliyathane hemï¿½ire gï¿½nlï¿½ï¿½ï¿½';
+$LDOrLogBookTxt='Ameliyathane hemï¿½irelik hizmetlerinin belgelendirilmesi, arï¿½iv dosyalarï¿½';
+$LDOrProgram='Ameliyathane programï¿½';
+$LDOrProgramTxt='Bir ameliyathane programï¿½nï¿½ gï¿½rï¿½ntï¿½leme, dï¿½zeltme, oluï¿½turma, vs.';
+$LDQviewTxtNurse='Bugï¿½nkï¿½ hemï¿½irelerin icap nï¿½betine hï¿½zlï¿½ bakï¿½ï¿½';
+$LDDutyPlanTxt='Ameliyathane nï¿½betï¿½i hemï¿½ire gï¿½rï¿½ntï¿½leme, dï¿½zeltme, oluï¿½turma';
+$LDOnCallDuty='ï¿½cap nï¿½beti';
+$LDOnCallDutyTxt='Nï¿½betteki iï¿½i belgelendirme';
+$LDAnaLogBook='Anestezi gï¿½nlï¿½ï¿½ï¿½';
+$LDAnaLogBookTxt='Anestezi hizmetlerini belgelendirme, arï¿½iv dosyalarï¿½';
+$LDQviewTxtAna='Bugï¿½nkï¿½ anestezi teknisyen nï¿½betï¿½ilerine hï¿½zlï¿½ bakï¿½ï¿½';
 $LDNewDocu='Yeni belge';
 $LDSearch='Ara';
-$LDArchive='Arþiv';
+$LDArchive='Arï¿½iv';
 $LDSee='Bak';
-$LDUpdate='Güncelle';
-$LDCreate='Oluþtur';
-$LDCreatePersonList='Ameliyathane hemþire listesi oluþtur';
+$LDUpdate='Gï¿½ncelle';
+$LDCreate='Oluï¿½tur';
+$LDCreatePersonList='Ameliyathane hemï¿½ire listesi oluï¿½tur';
 $LDDoctor='Hekim/Cerrah';
-$LDNursing='Hemþirelik';
+$LDNursing='Hemï¿½irelik';
 $LDAna='Anestezi';
 
 $LDClose='Kapat';
 $LDSave='Kaydet';
-$LDCancel='Ýptal';
-$LDReset='Baþa al';
+$LDCancel='ï¿½ptal';
+$LDReset='Baï¿½a al';
 $LDContinue='Devam...';
 
 $LDHideCat='cati gizle';
-$LDPatientsFound='Birkaç hasta bulundu!';
-$LDPlsClk1='Lütfen doðru olaný týklayýnýz.';
-$LDShowCat='Cati görmek istiyorum lütfen!';
-$LDResearchArchive='Arþivlerde arama';
+$LDPatientsFound='Birkaï¿½ hasta bulundu!';
+$LDPlsClk1='Lï¿½tfen doï¿½ru olanï¿½ tï¿½klayï¿½nï¿½z.';
+$LDShowCat='Cati gï¿½rmek istiyorum lï¿½tfen!';
+$LDResearchArchive='Arï¿½ivlerde arama';
 $LDSearchDocu='Bir belgeyi arama';
 
-$LDMinor='Küçük';
+$LDMinor='Kï¿½ï¿½ï¿½k';
 $LDMiddle='Orta';
-$LDMajor='Büyük';
+$LDMajor='Bï¿½yï¿½k';
 $LDOperation='Ameliyat';
 
 $LDLastName='Soyad';
 $LDName='Ad';
-$LDBday='Doðum tarihi';
+$LDBday='Doï¿½um tarihi';
 $LDPatientNr='Hasta no.';
-$LDMatchCode='Kod adý';
+$LDMatchCode='Kod adï¿½';
 $LDOpDate='Ameliyat tarihi';
 $LDOperator='Cerrah';
 $LDStationary='Yatan hasta';
 $LDAmbulant='Ayaktan hasta';
 $LDInsurance='Sigorta';
-$LDPrivate='Özel sigorta';
-$LDSelfPay='Ücretli';
+$LDPrivate='ï¿½zel sigorta';
+$LDSelfPay='ï¿½cretli';
 
-$LDDiagnosis='Taný/ICD-10';
+$LDDiagnosis='Tanï¿½/ICD-10';
 $LDLocalization='Yeri';
 $LDTherapy='Tedavi';
-$LDSpecials='Özel not';
-$LDClassification='Sýnýflandýrma';
+$LDSpecials='ï¿½zel not';
+$LDClassification='Sï¿½nï¿½flandï¿½rma';
 
 /**
 *  A tiny dictionary:
 *  OP = operation (surgical operation)
 */
-$LDOpStart='Ameliyata Baþlama';
-$LDOpEnd='Ameliyat Bitiþi';
+$LDOpStart='Ameliyata Baï¿½lama';
+$LDOpEnd='Ameliyat Bitiï¿½i';
 /**
 *  A tiny dictionary:
 *  Scrub nurse =  the nurse in sterile clothing assisting the surgeon, in charge of the sterile instruments and surgical materials
 */
-$LDScrubNurse='Ameliyat hemþiresi';
+$LDScrubNurse='Ameliyat hemï¿½iresi';
 $LDOpRoom='Ameliyathane';
-$LDResetAll='Tüm girilenleri sil';
-$LDUpdateData='Verileri güncelle';
-$LDStartNewDocu='Yeni bir belge oluþtur';
-$LDSearchKeyword='Anahtar sözcük ara: örneðin ad veya soyad';
+$LDResetAll='Tï¿½m girilenleri sil';
+$LDUpdateData='Verileri gï¿½ncelle';
+$LDStartNewDocu='Yeni bir belge oluï¿½tur';
+$LDSearchKeyword='Anahtar sï¿½zcï¿½k ara: ï¿½rneï¿½in ad veya soyad';
 
 $LDSrcListElements=array(
 '',
 'Soyad',
 'Ad',
-'Doðum tarihi',
+'Doï¿½um tarihi',
 'Hasta no.',
 'Ameliyat tarihi',
-'Ameliyat bölümü',
+'Ameliyat bï¿½lï¿½mï¿½',
 'Amel. No.'
 );
-$LDClk2Show='Göstermek için týklayýnýz';
-$LDSrcCondition='Anhtar sözcük ve/veya koþul ara';
-$LDNewArchiveSearch='Yeni arþiv arama';
+$LDClk2Show='Gï¿½stermek iï¿½in tï¿½klayï¿½nï¿½z';
+$LDSrcCondition='Anhtar sï¿½zcï¿½k ve/veya koï¿½ul ara';
+$LDNewArchiveSearch='Yeni arï¿½iv arama';
 $tage=array(
 				'Pazar',
 				'Pazartesi',
-				'Salý',
-				'Çarþamba',
-				'Perþembe',
+				'Salï¿½',
+				'ï¿½arï¿½amba',
+				'Perï¿½embe',
 				'Cuma',
 				'Cumartesi');
 $monat=array('',
 				'Ocak',
-				'Þubat',
+				'ï¿½ubat',
 				'Mart',
 				'Nisan',
-				'Mayýs',
+				'Mayï¿½s',
 				'Haziran',
 				'Temmuz',
-				'Aðustos',
-				'Eylül',
+				'Aï¿½ustos',
+				'Eylï¿½l',
 				'Ekim',
-				'Kasým',
-				'Aralýk');
-$LDPrevDay='Önceki gün';
-$LDNextDay='Sonraki gün';
-$LDChange='Deðiþtir';
+				'Kasï¿½m',
+				'Aralï¿½k');
+$LDPrevDay='ï¿½nceki gï¿½n';
+$LDNextDay='Sonraki gï¿½n';
+$LDChange='Deï¿½iï¿½tir';
 $LDOpMainElements=array(
 										nr_date=>'No/Tarih',
 										patient=>'Hasta',
-										diagnosis=>'Taný',
+										diagnosis=>'Tanï¿½',
 										operator=>'Cerrah/Asistan',
 										ana=>'Anestezi',
-										cutclose=>'Kesi/Sütür',
+										cutclose=>'Kesi/Sï¿½tï¿½r',
 										therapy=>'Tedavi',
-										result=>'Sonuç',
-										inout=>'Giriþ/Çýkýþ'
+										result=>'Sonuï¿½',
+										inout=>'Giriï¿½/ï¿½ï¿½kï¿½ï¿½'
 										);
 $LDOpCut='Kesi';
-$LDOpClose='Sütür';
-$LDOpIn='Giriþ';
-$LDOpOut='Çýkýþ';
-$LDOpInFull='Giriþ';
-$LDOpOutFull='Çýkýþ';
-$LDEditPatientData='~tagword~  günlük verisini düzenleme';
-$LDOpenPatientFolder='~tagword~ hasta dosyasýný açma';
+$LDOpClose='Sï¿½tï¿½r';
+$LDOpIn='Giriï¿½';
+$LDOpOut='ï¿½ï¿½kï¿½ï¿½';
+$LDOpInFull='Giriï¿½';
+$LDOpOutFull='ï¿½ï¿½kï¿½ï¿½';
+$LDEditPatientData='~tagword~  gï¿½nlï¿½k verisini dï¿½zenleme';
+$LDOpenPatientFolder='~tagword~ hasta dosyasï¿½nï¿½ aï¿½ma';
 
 $tbuf=array('O','A','H','P');
-$cbuf=array('Operatör','Asistan','Hemþire','Personel');
+$cbuf=array('Operatï¿½r','Asistan','Hemï¿½ire','Personel');
 
 /**
 *  A tiny dictionary:
@@ -159,24 +159,24 @@ $cbuf=array('Operatör','Asistan','Hemþire','Personel');
 $LDOpPersonElements=array(
 											operator=>'Cerrah',
 											assist=>'Asistan',
-											scrub=>'Hemþire',
+											scrub=>'Hemï¿½ire',
 											rotating=>'Personel',
 											ana=>'Anestezist'
 											);
 
-$LDPatientNotFound='Hasta bulunamadý!';
-$LDPlsEnoughData='Lütfen yeterli bilgi giriniz.';
+$LDPatientNotFound='Hasta bulunamadï¿½!';
+$LDPlsEnoughData='Lï¿½tfen yeterli bilgi giriniz.';
 $LDOpNr='Amel. no.';
 $LDDate='Tarih';
-$LDClk2DropMenu='Menüyü açmak için týklayýnýz';
+$LDClk2DropMenu='Menï¿½yï¿½ aï¿½mak iï¿½in tï¿½klayï¿½nï¿½z';
 $LDSaveLatest='Son girilenleri kaydet';
-$LDHelp='Yardým penceresini aç';
+$LDHelp='Yardï¿½m penceresini aï¿½';
 
 $LDSearchPatient='Hasta arama';
-$LDUsedMaterial='Kullanýlan ameliyat malzemeleri';
-$LDContainer='Kullanýlmýþ kaplar/aletler';
+$LDUsedMaterial='Kullanï¿½lan ameliyat malzemeleri';
+$LDContainer='Kullanï¿½lmï¿½ï¿½ kaplar/aletler';
 $LDDRG='DRG';
-$LDShowLogbook='Günlüðü göster';
+$LDShowLogbook='Gï¿½nlï¿½ï¿½ï¿½ gï¿½ster';
 
 /**
 *  A tiny dictionary:
@@ -196,7 +196,7 @@ $LDAnaTypes=array(
 					'DS'=>'DS',
 					'AS'=>'AS',
 					'Plexus'=>'Plexus',
-					'Standby'=>'Ýcap'
+					'Standby'=>'ï¿½cap'
 					);
 
 $LDAnaDoc='Anestezist';
@@ -205,36 +205,36 @@ $LDEnterPerson='Yeni bir ~tagword~ giriniz';
 $LDExtraInfo='Ek bilgi';
 $LDFrom='den';
 $LDTo='ye';
-$LDFunction='Ýþlev';
-$LDCurrentEntries='Þu an girilmiþ olanlar';
+$LDFunction='ï¿½ï¿½lev';
+$LDCurrentEntries='ï¿½u an girilmiï¿½ olanlar';
 $LDDeleteEntry='Girileni sil';
 $LDSearchNewPerson='Yeni bir ~tagword~ ara';
-$LDSorryNotFound='Üzgünüm. hiçbir þey bulamadým. Lütfen farklý bir anahtar sözcük deneyiniz.';
+$LDSorryNotFound='ï¿½zgï¿½nï¿½m. hiï¿½bir ï¿½ey bulamadï¿½m. Lï¿½tfen farklï¿½ bir anahtar sï¿½zcï¿½k deneyiniz.';
 $LDSearchPerson=' ~tagword~ ara';
 $LDJobId='Meslek';
-$LDSearchResult='Arama sonuçlarý';
-$LDUseData='Bu kiþiyi  ~tagword~ olarak giriniz';
+$LDSearchResult='Arama sonuï¿½larï¿½';
+$LDUseData='Bu kiï¿½iyi  ~tagword~ olarak giriniz';
 $LDJobIdTag=array(
-						nurse=>'Hemþire',
+						nurse=>'Hemï¿½ire',
 						doctor=>'Hekim/Cerrah'
 						);
-$LDQuickSelectList='Hýzlý seçme listesi';
+$LDQuickSelectList='Hï¿½zlï¿½ seï¿½me listesi';
 $LDTimes='Zaman';
-$LDPlasterCast='Alçý';
+$LDPlasterCast='Alï¿½ï¿½';
 /**
 *  Reposition = repositioning of bone dislocation or fracture
 */
 $LDReposition='Repozisyon';
-$LDWaitTime='Boþ zaman';
-$LDStart='Baþlangýç';
-$LDEnd='Bitiþ';
-$LDPatNoExist='Hasta heniz günlüðe girmedi. Lütfen bu pencereyi kapatýnýz ve en baþtan baþlayýnýz. Sorun sürer ise bilgi iþlem bölümüne haber veriniz.';
+$LDWaitTime='Boï¿½ zaman';
+$LDStart='Baï¿½langï¿½ï¿½';
+$LDEnd='Bitiï¿½';
+$LDPatNoExist='Hasta heniz gï¿½nlï¿½ï¿½e girmedi. Lï¿½tfen bu pencereyi kapatï¿½nï¿½z ve en baï¿½tan baï¿½layï¿½nï¿½z. Sorun sï¿½rer ise bilgi iï¿½lem bï¿½lï¿½mï¿½ne haber veriniz.';
 $opts=array('-',
-					'Hasta ameliyathaneye geç geldi',
-       				'Anestezistler ameliyathaneye geç geldi',
-       				'Ameliyat hemþireleri ameliyathaneye geç geldi', 
-					'Temizlik ekibi geç bitirdi',
-       				'Özel sebep');
+					'Hasta ameliyathaneye geï¿½ geldi',
+       				'Anestezistler ameliyathaneye geï¿½ geldi',
+       				'Ameliyat hemï¿½ireleri ameliyathaneye geï¿½ geldi', 
+					'Temizlik ekibi geï¿½ bitirdi',
+       				'ï¿½zel sebep');
 $LDReason='Sebep';
 $LDMaterialElements=array(
 									'Eniyi.no.',
@@ -249,93 +249,93 @@ $LDSearchElements=array(
 									'&nbsp;',
 									'Malz.no.',
     								'Malz.ismi',
-    								'Tanýmý',
+    								'Tanï¿½mï¿½',
  									'&nbsp;',
    									'Jenerik',
     								'Lisans.No.'
 									);
 $LDContainerElements=array(
 									'Ambalaj no.',
-    								'Ýsmi/Tanýmý',
+    								'ï¿½smi/Tanï¿½mï¿½',
 									'&nbsp;',
-    								'Endüstri no.',
-    								'Sipariþ no.',
+    								'Endï¿½stri no.',
+    								'Sipariï¿½ no.',
     								'No.pcs.',
     								'&nbsp;'
 									);
 $LDArticleNr='Malzeme no.';			
 $LDContainerNr='Ambalaj no.';							
-$LDArticleNotFound='Malzeme bulunamadý!';
-$LDNoArticleTxt='Malzeme ya veritabanýnda yok ya da numarasýný yanlýþ yazdýnýz.';
-$LDClk2ManualEntry='Malzemeyi el ile girmek için lütfen , <b>burayý týklayýnýz.</b>';
-$LDPlsClkArticle='Lütfen istenilen malzemeyi týklayýnýz!';
-$LDSelectArticle='Bu malzemeyi seçmek için týklayýnýz';
-$LDDbInfo='Veritabanýndan bilgiler';
-$LDRemoveArticle='Malzemeyi bu listeden çýkar';
-$LDArticleNoList='Malzeme veritabanýnda yer almýyor';
-$LDPromptSearch='Lütfen aranacak bir anahtar sözcük giriniz.<br>Ad, soyad, doðum tarihi, vs, gibi	("Yardým"a da bakýnýz)';
-$LDKeyword='Anahtar sözcük';
-$LDOtherFunctions='Diðer iþlevler';
-$LDInfoNotFound='Ýstenilen bilgi bulunamadý!';
+$LDArticleNotFound='Malzeme bulunamadï¿½!';
+$LDNoArticleTxt='Malzeme ya veritabanï¿½nda yok ya da numarasï¿½nï¿½ yanlï¿½ï¿½ yazdï¿½nï¿½z.';
+$LDClk2ManualEntry='Malzemeyi el ile girmek iï¿½in lï¿½tfen , <b>burayï¿½ tï¿½klayï¿½nï¿½z.</b>';
+$LDPlsClkArticle='Lï¿½tfen istenilen malzemeyi tï¿½klayï¿½nï¿½z!';
+$LDSelectArticle='Bu malzemeyi seï¿½mek iï¿½in tï¿½klayï¿½nï¿½z';
+$LDDbInfo='Veritabanï¿½ndan bilgiler';
+$LDRemoveArticle='Malzemeyi bu listeden ï¿½ï¿½kar';
+$LDArticleNoList='Malzeme veritabanï¿½nda yer almï¿½yor';
+$LDPromptSearch='Lï¿½tfen aranacak bir anahtar sï¿½zcï¿½k giriniz.<br>Ad, soyad, doï¿½um tarihi, vs, gibi	("Yardï¿½m"a da bakï¿½nï¿½z)';
+$LDKeyword='Anahtar sï¿½zcï¿½k';
+$LDOtherFunctions='Diï¿½er iï¿½levler';
+$LDInfoNotFound='ï¿½stenilen bilgi bulunamadï¿½!';
 $LDButFf='Fakat izleyen ';
 $LDSimilar=' veri';
 $LDSimilarMany=' veriler';
-$LDNeededInfo=' Aranan anahtar sözcüðe benzer.';
-$LDPatLogbook='Hasta izleyen günlükte belgelendirilmiþ.';
-$LDPatLogbookMany='Hasta izleyen kayýt kütüklerinde belgelendirilmiþ.';
-$LDDepartment='Bölüm';
+$LDNeededInfo=' Aranan anahtar sï¿½zcï¿½ï¿½e benzer.';
+$LDPatLogbook='Hasta izleyen gï¿½nlï¿½kte belgelendirilmiï¿½.';
+$LDPatLogbookMany='Hasta izleyen kayï¿½t kï¿½tï¿½klerinde belgelendirilmiï¿½.';
+$LDDepartment='Bï¿½lï¿½m';
 $LDRoom='Oda';
-$LDLastEntry='Ýzleyen kayýt günlüðün son kaydýdýr';
-$LDLastEntryMany='Ýzleyen kayýtlar günlükteki son kayýtlardýr';
+$LDLastEntry='ï¿½zleyen kayï¿½t gï¿½nlï¿½ï¿½ï¿½n son kaydï¿½dï¿½r';
+$LDLastEntryMany='ï¿½zleyen kayï¿½tlar gï¿½nlï¿½kteki son kayï¿½tlardï¿½r';
 $LDFrom='den';
 $LDFromMany='den';
-$LDYesterday='dün';
-$LDVorYesterday='2 gün önce';
-$LDDays='gün önce';
-$LDChangeDept='Bölüm veya ameliyathaneyi deðiþtir';
+$LDYesterday='dï¿½n';
+$LDVorYesterday='2 gï¿½n ï¿½nce';
+$LDDays='gï¿½n ï¿½nce';
+$LDChangeDept='Bï¿½lï¿½m veya ameliyathaneyi deï¿½iï¿½tir';
 
-$LDTabElements=array('Ameliyathane bölümü',
-								 'Ýcapçý',
-								 'Çaðrý/Telefon',
-								 'Nöbetçi',
-								 'Çaðrý/telefon',
-								 'Nöbet planý'
+$LDTabElements=array('Ameliyathane bï¿½lï¿½mï¿½',
+								 'ï¿½capï¿½ï¿½',
+								 'ï¿½aï¿½rï¿½/Telefon',
+								 'Nï¿½betï¿½i',
+								 'ï¿½aï¿½rï¿½/telefon',
+								 'Nï¿½bet planï¿½'
 								 );
-$LDStandbyPerson='Ýcapçý';
-$LDOnCallPerson='Nöbetçi';
+$LDStandbyPerson='ï¿½capï¿½ï¿½';
+$LDOnCallPerson='Nï¿½betï¿½i';
 $LDMonth='Ay';
-$LDYear='Yýl';
-$LDDutyElements = array('Tarih','&nbsp;','Soyad', 'Ad','den','ya','Ameliyathane','Taný ve tedavi');
-$LDPrint='Yazdýr';
-$LDAlertNoPrinter='El ile yazdýrmalýsýnýz. Pencereyi sað tuþla týklayýn, sonra yazdýr ý seçiniz.';
-$LDAlertNotSavedYet='Son yazdýklarýnýz henüz kaydedilmedi. Önce kaydetmek ister misiniz?';
+$LDYear='Yï¿½l';
+$LDDutyElements = array('Tarih','&nbsp;','Soyad', 'Ad','den','ya','Ameliyathane','Tanï¿½ ve tedavi');
+$LDPrint='Yazdï¿½r';
+$LDAlertNoPrinter='El ile yazdï¿½rmalï¿½sï¿½nï¿½z. Pencereyi saï¿½ tuï¿½la tï¿½klayï¿½n, sonra yazdï¿½r ï¿½ seï¿½iniz.';
+$LDAlertNotSavedYet='Son yazdï¿½klarï¿½nï¿½z henï¿½z kaydedilmedi. ï¿½nce kaydetmek ister misiniz?';
 $LDPhone='Telefon';
-$LDBeeper='Çaðrý';
-$LDOn='üzerinde';
-$LDNoPersonList='Personel listesi henüz oluþturulmadý Lütfen önce liste oluþturunuz.';
-$LDNoEntryFound='Planda hiçbir kayýt bulunmadý!';
-$LDShow='Göster';
-$LDShowPrevLog='Önceki kütük kayýtlarýný göster';
-$LDShowNextLog='Sonraki kütük kayýtlarýný göster';
-$LDShowGuideCal='Rehber takvimi göster';
+$LDBeeper='ï¿½aï¿½rï¿½';
+$LDOn='ï¿½zerinde';
+$LDNoPersonList='Personel listesi henï¿½z oluï¿½turulmadï¿½ Lï¿½tfen ï¿½nce liste oluï¿½turunuz.';
+$LDNoEntryFound='Planda hiï¿½bir kayï¿½t bulunmadï¿½!';
+$LDShow='Gï¿½ster';
+$LDShowPrevLog='ï¿½nceki kï¿½tï¿½k kayï¿½tlarï¿½nï¿½ gï¿½ster';
+$LDShowNextLog='Sonraki kï¿½tï¿½k kayï¿½tlarï¿½nï¿½ gï¿½ster';
+$LDShowGuideCal='Rehber takvimi gï¿½ster';
 
 $LDPerformance='Performans';
 /* 2002-10-13 EL */
-$LDPlsSelectPatientFirst='Lütfen önce hastayý bulunuz.';
+$LDPlsSelectPatientFirst='Lï¿½tfen ï¿½nce hastayï¿½ bulunuz.';
 $LD_ddpMMpyyyy='gg.aa.yyyy';
 $LD_yyyyhMMhdd='yyyy-aa-gg';
 $LD_MMsddsyyyy='aa/gg/yyyy';
 /* 2002-10-15 EL */
-$LDStandbyInit='Ý'; /* S = Ýcapçý */
-$LDOncallInit='N'; /* N = Nöbetçi */
-$LDDutyPlan='Nöbet planý';
+$LDStandbyInit='ï¿½'; /* S = ï¿½capï¿½ï¿½ */
+$LDOncallInit='N'; /* N = Nï¿½betï¿½i */
+$LDDutyPlan='Nï¿½bet planï¿½';
 /* 2003-03-18 EL */
-$LDSearchInAllDepts='Tüm bölümlerde arama';
-$LDAddNurseToList='Listeye yeni bir hemþire ekleme';
-$LDNursesList='Hemþire listesi';
+$LDSearchInAllDepts='Tï¿½m bï¿½lï¿½mlerde arama';
+$LDAddNurseToList='Listeye yeni bir hemï¿½ire ekleme';
+$LDNursesList='Hemï¿½ire listesi';
 /* 2003-03-19 EL */
-$LDPlsSelectDept='Lütfen bir bölüm seçiniz.';
+$LDPlsSelectDept='Lï¿½tfen bir bï¿½lï¿½m seï¿½iniz.';
 $LDSelectORoomNr='...ve bir de ameliyathane.';
 $LDAlertNoDeptSelected=$LDPlsSelectDept;
-$LDAlertNoORSelected='Lütfen bir ameliyathane seçiniz!';
-?>
+$LDAlertNoORSelected='Lï¿½tfen bir ameliyathane seï¿½iniz!';
+[?][>]
