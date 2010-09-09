@@ -1,14 +1,10 @@
 -- phpMyAdmin SQL Dump
 -- version 2.11.4
 -- http://www.phpmyadmin.net
--- Ap.Muthu: care_appointment table renamed to care_encounter_appointment
 -- Host: localhost
 -- Generation Time: Oct 20, 2008 at 06:51 PM
 -- Server version: 5.0.51
 -- PHP Version: 5.2.5
-drop database care2x_26_utf8;
-create database care2x_26_utf8;
-USE care2x_26_utf8;
 ALTER DATABASE DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
