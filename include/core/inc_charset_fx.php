@@ -27,7 +27,7 @@ function setCharSet($param_lang=''){
 			case 'cs-iso': $lang_charset='iso-8859-2'; break;
 			case 'fr': $lang_charset='iso-8859-1'; break;
 		     case 'pl': $lang_charset='iso-8859-2'; break;
-			default : $lang_charset='iso-8859-1';
+			default : $lang_charset='utf8';
 		}
    }
    # return the meta code
