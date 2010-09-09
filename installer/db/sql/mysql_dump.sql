@@ -29,7 +29,7 @@ CREATE TABLE IF NOT EXISTS `care_accesslog` (
   `userid` varchar(255) NOT NULL,
   `username` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
-  `thisfile` text NOT NULL,`care_menu_sub`
+  `thisfile` text NOT NULL,
   `fileforward` text NOT NULL,
   `login_success` int(1) NOT NULL default '1',
   PRIMARY KEY  (`id`)
