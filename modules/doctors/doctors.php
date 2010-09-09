@@ -81,7 +81,9 @@ $iRunner = 0;
 while(list($x,$v)=each($aSubMenuItem)){
 	$sTemp='';
 	ob_start();
-		if($cfg['icons'] != 'no_icon') $smarty2->assign('sIconImg','<img '.$aSubMenuIcon[$iRunner].'>');
+		if (isset($cfg['icons'])) {
+			if($cfg['icons'] != 'no_icon') $smarty2->assign('sIconImg','<img '.$aSubMenuIcon[$iRunner].'>');
+		}
 		$smarty2->assign('sSubMenuItem',$v);
 		$smarty2->assign('sSubMenuText',$aSubMenuText[$iRunner]);
 		$smarty2->display('common/submenu_row.tpl');
