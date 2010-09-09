@@ -1,9 +1,9 @@
 <?php
 $LDPageTitle='Abteilungen';
 $LDDeptTxt='Abteilung';
-$LDOpenHrsTxt='Öffnungszeiten';
+$LDOpenHrsTxt='Ã–ffnungszeiten';
 $LDChkHrsTxt='Sprechzeiten';
-$LDClk4Info='Click für mehr Information über die Abteilung';
+$LDClk4Info='Click fÃ¼r mehr Information Ã¼ber die Abteilung';
 $LDDayTxt='Tag';
 
 $dept=array('Allgemeine Chirurgie',
@@ -12,7 +12,7 @@ $dept=array('Allgemeine Chirurgie',
 					'HNO',
 					'Augenklinik',
 					'Pathologie',
-					'Gynäkologie',
+					'GynÃ¤kologie',
 					'Physio-therapie',
 					'Innere Medizin',
 					'Onkologie',
@@ -28,7 +28,7 @@ $dept=array('Allgemeine Chirurgie',
 					
 
 /** 
-* Die variabel $target bitte NICHT übersetzen !!
+* Die variabel $target bitte NICHT Ã¼bersetzen !!
 */
 $target=array('dept_generalsurgery',
 					'dept_emergency',
@@ -50,7 +50,7 @@ $target=array('dept_generalsurgery',
 					'nuklear',
 					'inmed');
 					
-$LDBackTxt='Zurück';
+$LDBackTxt='ZurÃ¼ck';
 
 $LDOpenDays=array('Montag',
 					'Dienstag',

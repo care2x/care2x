@@ -1,7 +1,7 @@
 <?php
-$LDSickConfirm='Der angegebene Krankenkasse wird unverzüglich eine Bescheinigung über die Arbeitsunfähigkeit mit Angaben über die
-Diagnose sowie die voraussichtliche Dauer der Arbeitsunfähigkeit übersandt';
+$LDSickConfirm='Der angegebene Krankenkasse wird unverzÃ¼glich eine Bescheinigung Ã¼ber die ArbeitsunfÃ¼higkeit mit Angaben Ã¼ber die
+Diagnose sowie die voraussichtliche Dauer der ArbeitsunfÃ¼higkeit Ã¼bersandt';
 
 $LDPharmaPrompt='Ein Pharmaindex  wie z.B. Rote Liste kann hier eingebunden werden.';
-//<p>Aufgrund des deutschen Heilmittelwerbegesetzes dürfen allerdings Pharmaindizien nicht in Demoversionen verwendet werden.';
+//<p>Aufgrund des deutschen Heilmittelwerbegesetzes dÃ¼rfen allerdings Pharmaindizien nicht in Demoversionen verwendet werden.';
 ?>

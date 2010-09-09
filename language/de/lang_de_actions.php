@@ -5,8 +5,8 @@ $LDPrint='Drucken';
 $LDStop='Anhalten';
 $LDContinue='Weiter';
 $LDSearch='Suchen';
-$LDBack='Zurück';
-$LDOpen='Öffnen';
+$LDBack='ZurÃ¼ck';
+$LDOpen='Ã–ffnen';
 $LDClose='Schliessen';
 
 $LDRegister='Anmelden';
@@ -28,6 +28,6 @@ $LDCloseHelpWin="Hilfefenster schliessen";
 
 $LDRefreshWindow = 'Erneut anzeigen';
 
-$LDNext = 'Nächste';
+$LDNext = 'NÃ¤chste';
 $LDPrevious = 'Vorher';
 ?>

@@ -1,9 +1,9 @@
 <?php
 $LDErrorDate="Das Datum hat einen Fehler.\\nDas richtige Format ist: ";
-$LDErrorDateLen="Das Datum hat eine falsche Länge.";
+$LDErrorDateLen="Das Datum hat eine falsche LÃ¤nge.";
 $LDErrorDateFormat="Das Datumformat ist falsch.";
 $LDErrorNotNumeric="Das Datum darf keine alphanumerische Zeichen enthalten.";
-$LDErrorYear="Das Jahr ist ungültig";
-$LDErrorMonth="Der Monat ist ungültig";
-$LDErrorDay="Der Tag ist ungültig";
+$LDErrorYear="Das Jahr ist ungÃ¼ltig";
+$LDErrorMonth="Der Monat ist ungÃ¼ltig";
+$LDErrorDay="Der Tag ist ungÃ¼ltig";
 ?>

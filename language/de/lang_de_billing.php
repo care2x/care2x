@@ -2,8 +2,8 @@
 /* 2003-06-21 El */
 $TXT['CreateHospitalServiceItem']='Krankenhausleistung erstellen';
 $TXT['CreateLabTestItem']='Laboruntersuchung erstellen';
-$TXT['EditHospitalServiceItems']='Krankenhausleistung ändern';
-$TXT['EditLabTestItems']='Laboruntersuchung ändern';
+$TXT['EditHospitalServiceItems']='Krankenhausleistung Ã¤ndern';
+$TXT['EditLabTestItems']='Laboruntersuchung Ã¤ndern';
 $TXT['SearchPatient']='Suche nach Patienten';
 $TXT['Billing']='eComBill';
 
@@ -11,8 +11,8 @@ $TXT['EnterNameHS']='Leistungsname eigeben';
 $TXT['EnterServiceCode']='Leistungskennummer eingeben';
 $TXT['EnterPriceUnit']='Preis pro Einheit eingeben';
 $TXT['EnterDiscount']='Rabatt eingeben';
-$TXT['EnterValuePrice']='Zahlenwert für den Preis eingeben';
-$TXT['EnterValueDiscount']='Zahlenwert für Rabatt eingeben';
+$TXT['EnterValuePrice']='Zahlenwert fÃ¼r den Preis eingeben';
+$TXT['EnterValueDiscount']='Zahlenwert fÃ¼r Rabatt eingeben';
 $TXT['HospitalServiceItem']='Krankenhausleistung';
 $TXT['PlsEnterFF']='Bitte folgende Information eingeben';
 $TXT['NameHS']='Name der Krankenhausleistung';
@@ -32,7 +32,7 @@ $TXT['LabTestItems']='Laboruntersuchungen';
 $TXT['alertNameHospitalService']='Name der Krankenhausleistung eingeben';
 $TXT['alertEnterServiceCodeNo']='Kennummer eingeben';
 $TXT['alertEnterPriceperUnit']='Preis pro Einheit eingeben';
-$TXT['alertEnterDiscountallowed']='Rabatt für diese Einheit eingeben (in %)';
+$TXT['alertEnterDiscountallowed']='Rabatt fÃ¼r diese Einheit eingeben (in %)';
 $TXT['alertEnterNumericValueforPrice']='Zahlenwert des Preises eingeben';
 $TXT['alertEnterNumericValueforDiscount']='Zahlenwert des Rabatts eingeben';
 
@@ -40,34 +40,34 @@ $TXT['alertEnterNumericValueforDiscount']='Zahlenwert des Rabatts eingeben';
 $TXT['PatientName']='Patientename';
 $TXT['eComBill']='eComBill';
 $TXT['PatientNumber']='Aufnahmenummer';
-$TXT['SelectHospitalServices']='Krankenhausleistungen wählen';
-$TXT['SelectLaboratoryTests']='Laboruntersuchungen wählen';
+$TXT['SelectHospitalServices']='Krankenhausleistungen wÃ¤hlen';
+$TXT['SelectLaboratoryTests']='Laboruntersuchungen wÃ¤hlen';
 $TXT['ViewBill']='Rechnung anzeigen';
 $TXT['ViewPayment']='Zahlung anzeigen';
 $TXT['MakeNewPayment']='Neue Anzahlung eingeben';
-$TXT['GenerateFinalBill']='Endgültige Rechnung erstellen';
+$TXT['GenerateFinalBill']='EndgÃ¼ltige Rechnung erstellen';
 $TXT['Patienthasclearedallthebills']='Der Patient hat alle Rechnungen beglichen';
 
 /* 2003-10-19 DHC Echoes from select_services.php  */
-$TXT['SelectLaboratoryTests']='Laboruntersuchungen wählen';
-$TXT['SelectHospitalServices']='Krankenhausleistungen wählen';
-$TXT['PleaseSelectLaboratoryTestsforthePatient']='Bitte die Laboruntersuchung für den Patient wählen:';
-$TXT['PleaseSelectHospitalServicesforthePatient']='Bitte die Krankenhausleistung für den Patient wählen:';
+$TXT['SelectLaboratoryTests']='Laboruntersuchungen wÃ¤hlen';
+$TXT['SelectHospitalServices']='Krankenhausleistungen wÃ¤hlen';
+$TXT['PleaseSelectLaboratoryTestsforthePatient']='Bitte die Laboruntersuchung fÃ¼r den Patient wÃ¤hlen:';
+$TXT['PleaseSelectHospitalServicesforthePatient']='Bitte die Krankenhausleistung fÃ¼r den Patient wÃ¤hlen:';
 $TXT['TestName']='Name der Untersuchung';
 $TXT['TestCode']='Kennummer der Untesuchung';
 $TXT['Costperunit']='Preis pro Einheit';
 $TXT['NumberofUnits']='Zahl der Einheiten';
-$TXT['AddtoPatientBill']='Zur Rechnung einfügen';
+$TXT['AddtoPatientBill']='Zur Rechnung einfÃ¼gen';
 
 /* 2003-10-19 DHC Echoes from confirmLabtests.php  */
-$TXT['ConfirmLaboratoryTests']='Laboruntesuchungen bestätigen';
-$TXT['ConfirmHospitalServices']='Krankenhausleistungen bestätigen';
+$TXT['ConfirmLaboratoryTests']='Laboruntesuchungen bestÃ¤tigen';
+$TXT['ConfirmHospitalServices']='Krankenhausleistungen bestÃ¤tigen';
 $TXT['LaboratoryTests']='Laboruntersuchungen';
 
 /* 2003-10-19 DHC Echoes from patient_bill_links.php  */
 $TXT['BillNo']='Rechungs-nr.';
 $TXT['BillDate']='Rechnungsdatum';
-$TXT['FinalBill']='Engültige Rechnung';
+$TXT['FinalBill']='EngÃ¼ltige Rechnung';
 $TXT['CurrentBill']='Jetzige Rechnung';
 $TXT['Bill']='Rechnung';
 $TXT['GeneralInfo']='Allgemeine Daten';
@@ -103,15 +103,15 @@ $TXT['MakeaNewPayment']='Neue Anzahlung';
 
 /* 2003-10-25 DHC Echoes from patient_payment.php */
 $TXT['BillPayment']='Anzahlung';
-$TXT['alertEnterNumericValueforCashAmount']='Zahlenwert für Barzahlung eingeben';
-$TXT['alertEnterNumericValueforCreditCardNo']='Zahlenwert für Kreditkartennummer eingeben';
+$TXT['alertEnterNumericValueforCashAmount']='Zahlenwert fÃ¼r Barzahlung eingeben';
+$TXT['alertEnterNumericValueforCreditCardNo']='Zahlenwert fÃ¼r Kreditkartennummer eingeben';
 $TXT['alertEnterNumericValueforCreditCardAmount']='Zahlenwert Kreditkartenzahlung eingeben ';
 $TXT['alertEnterNumericValueforChequeNo']='Zahlenwert for Schecknummer eingeben';
 $TXT['alertEnterNumericValueforChequeAmount']='Zahlenwert for Scheckzahlung eingeben';
-$TXT['alertPleaseSelectatleastOneModeofPayment']='Bitte wählen mindestens eine Zahlungsart aus';
+$TXT['alertPleaseSelectatleastOneModeofPayment']='Bitte wÃ¤hlen mindestens eine Zahlungsart aus';
 $TXT['PaymentReceipt']='Anzahlungsbeleg';
 $TXT['PaymentInformation']='Zahlungsdaten';
-$TXT['SelecttheModeofCurrentPayment']='Zahlungsart wählen';
+$TXT['SelecttheModeofCurrentPayment']='Zahlungsart wÃ¤hlen';
 $TXT['Cash']='Bar';
 $TXT['Amount']='Wert';
 $TXT['Check']='Scheck';
@@ -125,9 +125,9 @@ $TXT['ModeofPayment']='Zahlungsart';
 $TXT['PaymentDate']='Zahlungsdatum';
 
 /* 2003-11-30 DHC Echoes from edit_hospital_services.php */
-$TXT['EditLaboratoryTests']='Laboruntersuchungen ändern';
-$TXT['EditHospitalServices']='Krankenhausleistungen ändern';
-$TXT['EditLaboratoryTestItems']='Laboruntersuchungen ändern';
+$TXT['EditLaboratoryTests']='Laboruntersuchungen Ã¤ndern';
+$TXT['EditHospitalServices']='Krankenhausleistungen Ã¤ndern';
+$TXT['EditLaboratoryTestItems']='Laboruntersuchungen Ã¤ndern';
 //$TXT['EditHospitalServiceItems']='Edit hospital service items';
 
 # 2003-10-14 NDHC eComBill Search.php

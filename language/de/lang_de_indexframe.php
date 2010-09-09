@@ -7,7 +7,7 @@ $LDArchive='Archiv';
 $LDRegistration='Registration';
 $LDAmbulatory='Ambulanz';
 $LDMedocs='Medocs';
-$LDDoctors='�rzte';
+$LDDoctors='Ärzte';
 $LDNursing='Pflege';
 $LDOR='OP';
 $LDLabs='Labor';
@@ -26,14 +26,14 @@ $LDAppointments='Termine';
 				
 $LDLanguage='Sprache';
 $VersionChgTarget='_top';
-$LDPlsWaitInit='Einen Moment bitte. Initialization l�uft gerade....';
+$LDPlsWaitInit='Einen Moment bitte. Initialization läuft gerade....';
 
 $LDChange='Wechseln';
 /* 2003-04-27 EL */
 $LDBrazilian='Brazilianisch';
 $LDCzech='Tchechisch';
 $LDEnglish='Englisch';
-$LDFrench='Franz�sisch';
+$LDFrench='Französisch';
 $LDGerman='Deutsch';
 $LDIndonesian='Indonesisch';
 $LDItalian='Italianisch';
@@ -42,7 +42,7 @@ $LDPolish='Polnisch';
 $LDPortuguese='Portugiesisch';
 $LDSpanish='Spanisch';
 /* 2003-04-28 El */
-$LDDutch='Holl�ndisch';
+$LDDutch='Holländisch';
 # 2003-08-04 EL
 $LDPerson='Person';
 # 2003-09-05 EL

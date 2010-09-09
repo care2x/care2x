@@ -11,7 +11,7 @@ $LDHours='Stunden';
 $LDBatchNr='Auftrags-Nr.';
 $LDCaseNr='Aufnahme-Nr.';
 $LDHouse='Haus';
-$LDHematology='Hämatologie';
+$LDHematology='HÃ¤matologie';
 $LDCoagulation='Gerinnung';
 $LDUrine='Urin';
 $LDSerum='Serum';
@@ -24,7 +24,7 @@ $LDBLoodSugar1='BLZ1';
 $LDBloodPlasma='BLP';
 $LDDoctorSignature='Arzt-Unterschrift';
 $LDLifeRisk='Lebensgefahr';
-$LDRarity='Ratitäten';
+$LDRarity='RatitÃ¤ten';
 $LDSpecTest='sonstige Untersuchungen';
 $LDClinicalInfo='Angaben';
 
@@ -34,8 +34,8 @@ $LDShortDay=array('So','Mo','Di','Mi','Do','Fr','Sa','So');
 				
 $LDBatchNumber='Auftragsnummer';
 $LDMaterial='Material';
-$LDEmergencyProgram='Die violett unterlegten Felder gehören zum Notfallprogramm';
-$LDPhoneOrder=' = nur nach telefonischer Rücksprache';
+$LDEmergencyProgram='Die violett unterlegten Felder gehÃ¶ren zum Notfallprogramm';
+$LDPhoneOrder=' = nur nach telefonischer RÃ¼cksprache';
 
 $LD_Elements = array('tx_1'=>'Klinische Chemie',
                                   'tx_2'=> 'Gerinnung',
@@ -61,7 +61,7 @@ $LD_Elements = array('tx_1'=>'Klinische Chemie',
 								  '_barbiturates_i_s_'=>'Barbiturate i.S.',
 								  '_emx_urin_amilase_'=>'Urinamylase',
 								  
-								  '_preop_'=>'präop',
+								  '_preop_'=>'prï¿½op',
 								  '_fibrinolysis_'=>'Fibrinolyse',
 								  '_elpho_'=>'Elpho',
 								  '_ca_19_9_'=>'CA 19-9',
@@ -79,7 +79,7 @@ $LD_Elements = array('tx_1'=>'Klinische Chemie',
 								  
 								  '_emx_serum_sugar_'=>'Serumzucker',
 								  '_emx_ptt_'=>'PTT',
-								  '_beta2_microglobulin_i_s_'=>'ß2-Mikroglob.i.S.',
+								  '_beta2_microglobulin_i_s_'=>'ï¿½2-Mikroglob.i.S.',
 								  '_cea_'=>'CEA',
 								  '_borrelias_immunoblot__x__borrelias_immunoblot_2_'=>'Borr.Immunoblot',
 								  '_clonazepam_'=>'Clonazepam',
@@ -102,7 +102,7 @@ $LD_Elements = array('tx_1'=>'Klinische Chemie',
 								  '_emx_pregnancy_'=>'Schwangerschaft',
 								  
 								  '_emx_got_'=>'GOT',
-								  '_emx_soluble_fibrinogen_mon_'=>'Lösl.Fibr.mon',
+								  '_emx_soluble_fibrinogen_mon_'=>'Lï¿½sl.Fibr.mon',
 								  '_haptoglobin_'=>'Haptoglobin',
 								  '_nse_'=>'NSE',
 								  '_candida_antibody_'=>'Candida-AK',
@@ -139,14 +139,14 @@ $LD_Elements = array('tx_1'=>'Klinische Chemie',
 								  'tx_9'=>'Gewebe-AK',
 								  '_c_psitacci_antibody_'=>'C.psitacci-AK',
 								  '_primidon_'=>'Primidon',
-								  '_beta_2_microglobulin_in_urine_'=>'ß2 Mikroglob.i.U.',
+								  '_beta_2_microglobulin_in_urine_'=>'ï¿½2 Mikroglob.i.U.',
 								  
 								  '_hbdh_'=>'HBDH',
 								  '_apc_resistance_telx_'=>'APC-Resisten.',
 								  '_afp_gravida_'=>'AFP Grav.',
 								  '_ana_'=>'ANA',
 								  '_coxsacky_antibody_'=>'Coxsack.-AK',
-								  '_salicylic_acid_'=>'Salizylsäure',
+								  '_salicylic_acid_'=>'Salizylsï¿½ure',
 								  'tx_10'=>'Sammelurin',
 								  
 								  '_emx_cpk_'=>'CPK',
@@ -167,14 +167,14 @@ $LD_Elements = array('tx_1'=>'Klinische Chemie',
 								  
 								  '_emx_myoglobin_'=>'Myoglobin',
 								  '_bleeding_time_telx_'=>'Blutungszeit',
-								  'tx_11'=>'Schilddrüse',
+								  'tx_11'=>'Schilddrï¿½se',
 								  '_asma_'=>'ASMA',
 								  '_ebv_antibody__x__ebv_antibody_2_'=>'EBV-AK',
-								  '_valproin_acid_'=>'Valproinsäure',
+								  '_valproin_acid_'=>'Valproinsï¿½ure',
 								  '_addis_count_'=>'Addis-Count',
 								  
 								  '_emx_troponin_t_'=>'Troponin-T',
-								  'tx_12'=>'Hämatologie',
+								  'tx_12'=>'Hï¿½matologie',
 								  '_t3_'=>'T3',
 								  '_ena_'=>'ENA',
 								  '_echinococcus_antibody_'=>'Echinococcus-AK',
@@ -211,7 +211,7 @@ $LD_Elements = array('tx_1'=>'Klinische Chemie',
 								  '_lat_rf_'=>'Lat.RF',
 								  '_herpes_simplex_2_antibody_'=>'Herpes sim.2-AK',
 								  '_antidepressant_in_urine_'=>'Antidepresiva i.U.',
-								  '_uric_acid_in_urine_'=>'Harnsäure i.U.',
+								  '_uric_acid_in_urine_'=>'Harnsï¿½ure i.U.',
 								  
 								  '_hdl_chol_'=>'HDL-Chol',
 								  '_malaria_'=>'Malaria',
@@ -261,8 +261,8 @@ $LD_Elements = array('tx_1'=>'Klinische Chemie',
 								 '_opiates_in_urine_'=>'Opiate i.U.',
 								 '_hydroxyprolin_in_urine_'=>'Hydroxyprolin i.U.',
 								 
-								 '_uric_acid_'=>'Harnsäure',
-								 '_emx_bloodsugar_sober_'=>'Blutz. nü.',
+								 '_uric_acid_'=>'Harnsï¿½ure',
+								 '_emx_bloodsugar_sober_'=>'Blutz. nï¿½.',
 								 '_aldosteron_'=>'Aldosteron',
 								 '_anti_hbs_titer_'=>'Anti-HBs-Titer',
 								 '_listeria_antibody_'=>'Listerien-AK',
@@ -283,7 +283,7 @@ $LD_Elements = array('tx_1'=>'Klinische Chemie',
 								 '_anti_hbe_'=>'Anti-HBe',
 								 '_mononucleosis_'=>'Mononucleose',
 								 '_first_serology_'=>'Erstserologie',
-								 '_aminolevulin_in_urine_'=>'Aminolövulin i.U.',
+								 '_aminolevulin_in_urine_'=>'Aminolï¿½vulin i.U.',
 								 
 								 '_emx_kalium_'=>'Kalium',
 								 '_emx_bloodsugar_15_00_'=>'Blutz. 15.00',
@@ -323,7 +323,7 @@ $LD_Elements = array('tx_1'=>'Klinische Chemie',
 								 '_anti_hev_'=>'Anti-HEV',
 								 '_parainfluenza_3_antibody_'=>'Par.influenz.3-AK',
 								 '_hbs_ag_'=>'HBs-Ag',
-								 '_folic_acid_'=>'Folsäure',
+								 '_folic_acid_'=>'Folsï¿½ure',
 								 
 								 '_iron_'=>'Eisen',
 								 '_hba_1c_'=>'HBA 1c',
@@ -345,7 +345,7 @@ $LD_Elements = array('tx_1'=>'Klinische Chemie',
 								 '_capillary_blood_sample_'=>'Kapill.Blutentn.',
 								 '_oestradiol_'=>'Oestradiol',
 								 '_protein_in_punctat_'=>'Eiweis i.Punkt.',
-								 '_reoteln_antibody_'=>'Röteln-AK',
+								 '_reoteln_antibody_'=>'Rï¿½teln-AK',
 								 '_chymotrypsin_'=>'Chymotrypsin',
 								 '_stone_analysis_'=>'Steinanalyse',
 								 
@@ -353,12 +353,12 @@ $LD_Elements = array('tx_1'=>'Klinische Chemie',
 								 '_capillary_blood_sample_2_'=>'Kapill.Blutentn.',
 								 '_oestriol_'=>'Oestriol',
 								 '_ldh_in_punctat_'=>'LDH i.Punktat',
-								 '_roeteln_immune_status_'=>'Röt-Immunstat.',
+								 '_roeteln_immune_status_'=>'Rï¿½t-Immunstat.',
 								 '_blood_in_stool_'=>'Stuhl auf Blut',
 								 '_ace_'=>'ACE',
 								 
 								 '_ammoniac_'=>'Ammoniak',
-								 'tx_21'=>'Säugling',
+								 'tx_21'=>'Sï¿½ugling',
 								 '_pregnancy_ssw_'=>'SSW:',
 								 '_chol_in_punctat_'=>'Chol. i. Punkt.',
 								 '_rs_virus_antibody_'=>'RS virus-AK',
@@ -366,7 +366,7 @@ $LD_Elements = array('tx_1'=>'Klinische Chemie',
 								 '_g1_'=>'G1',
 								 
 								 '_emx_free_hb_'=>'freies Hb',
-								 '_emx_infant_bilirubin_'=>'Säugl.bilirubin',
+								 '_emx_infant_bilirubin_'=>'Sï¿½ugl.bilirubin',
 								 '_parathormone_'=>'Parathormon',
 								 '_cea_in_punctat_'=>'CEA i.Punktat',
 								 '_shigella_salmonella_antibody_'=>'Shigell/Salm-AK',
@@ -378,7 +378,7 @@ $LD_Elements = array('tx_1'=>'Klinische Chemie',
 								 '_progesteron_'=>'Progesteron',
 								 '_afp_in_punctat_'=>'AFP i.Punktat',
 								 '_toxoplasma_antibody__x__toxoplasma_antibody_2_'=>'Toxoplasma-AK',
-								 'tx_22'=>'Raritäten',
+								 'tx_22'=>'Raritï¿½ten',
 								 '_g3_'=>'G3',
 								 
 								 'tx_23'=>'Liquor',
@@ -386,23 +386,23 @@ $LD_Elements = array('tx_1'=>'Klinische Chemie',
 								 '_prolactin_1_'=>'Prolactin 1',
 								 '_uric_material_in_punctat_'=>'Harns.i.Punkt.',
 								 '_infection_tpha__x__infection_tpha_2_'=>'TPHA',
-								 '_rarity_h_'=>'Rarität H',
+								 '_rarity_h_'=>'Raritï¿½t H',
 								 '_g4_'=>'G4',
 								 
 								 '_emx_liquor_status_'=>'Liquorstatus',
-								 '_emx_infant_sugar_'=>'Säuglingszucker',
+								 '_emx_infant_sugar_'=>'Sï¿½uglingszucker',
 								 '_prolactin_2_'=>'Prolactin 2',
 								 '_rheumafactor_in_punctat_'=>'Rheumaf.i.Punkt.',
 								 '_varicella_antibody_'=>'Varicella-AK',
-								 '_rarity_e_'=>'Rarität E',
+								 '_rarity_e_'=>'Raritï¿½t E',
 								 '_g5_'=>'G5',
 								 
 								 '_liquor_elpho_'=>'Liquorelpho',
-								 '_emx_infant_sugar_2_'=>'Säuglingszucker',
+								 '_emx_infant_sugar_2_'=>'Sï¿½uglingszucker',
 								 '_renin_'=>'Renin',
 								 '_material_'=>'Material:',
 								 '_yersinia_antibody_'=>'Yersinien-AK',
-								 '_rarity_s_'=>'Ratität S',
+								 '_rarity_s_'=>'Ratitï¿½t S',
 								 '_g6_'=>'G6',
 								 
 								 '_liquor_cytology_'=>'Liquorcytologie',
@@ -410,7 +410,7 @@ $LD_Elements = array('tx_1'=>'Klinische Chemie',
 								 '_serotonin_telx_'=>'Serotonin',
 								 'blankline'=>'',
 								 '_e1_'=>'E1',
-								 '_urine_rarity_'=>'Urinrarität',
+								 '_urine_rarity_'=>'Urinraritï¿½t',
 								 '_g7_'=>'G7',
 								 
 								 '_oligoklonal_igg_'=>'Oligoklona.IgG',
@@ -440,7 +440,7 @@ $LD_Elements = array('tx_1'=>'Klinische Chemie',
 								 'tx_24'=>'Arzt',
 								 'tx_25'=>'Lebensgefahr>>',
 								 'highrisk'=>'<< Lebensgefahr',
-								 'tx_26'=>'Raritäten:',
+								 'tx_26'=>'Raritï¿½ten:',
 								 'tx_27'=>'sonstige',
 								 'tx_28'=>'Untersuchungen',
 								 'tx_29'=>'klin. Angaben',

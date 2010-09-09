@@ -7,10 +7,10 @@ $LDMyDiary="meinTagebuch";
 $LDMyCalendar="meinKalender";
 $LDMyMemo="meinNotizbuch";
 
-$LDMyPersonalPlannerTxt="Termine, Tätigkeiten, usw, planen";
-$LDMyOrganizerTxt="Organisator für die nicht zu kleine Dinge im Leben";
+$LDMyPersonalPlannerTxt="Termine, TÃ¤tigkeiten, usw, planen";
+$LDMyOrganizerTxt="Organisator fÃ¼r die nicht zu kleine Dinge im Leben";
 $LDMyOffRequesterTxt="Frei bzw. Urlaub Beantragen";
-$LDMyDiaryTxt="Persönliches Tagebuch";
-$LDMyCalendarTxt="Persönlicher Kalender";
-$LDMyMemoTxt="Persönliches Notizbuch";
+$LDMyDiaryTxt="PersÃ¶nliches Tagebuch";
+$LDMyCalendarTxt="PersÃ¶nlicher Kalender";
+$LDMyMemoTxt="PersÃ¶nliches Notizbuch";
 ?>

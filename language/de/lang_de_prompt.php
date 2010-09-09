@@ -7,9 +7,9 @@ $LDPlsSelectStyle='Bitte einen Druckmuster anklicken';
 $LDCheckParamFirst='Bitte markieren Sie zuerst den Testparameter zum Zeichnen';
 # Do not edit ~ward_id~
 $LDChkWardConflict='Dieser Patient ist zur Aufnahme auf eine andere Station (<b>~ward_id~</b>) vorgesehen. 
-Bitte klären Sie diesen Konflikt mit der Aufnahmeabteilung ab bevor sie den Patient aufnehmen. Danke.';
-$LDSelectRoomBed='Bitte wählen sie das Zimmer bzw. Bett für diesen Patient. Danke.';
-$LDSureAssignRoomBed='Sind Sie sicher, Sie möchten diesen Patient auf Ihre Station aufnehmen ?';
+Bitte klÃ¤ren Sie diesen Konflikt mit der Aufnahmeabteilung ab bevor sie den Patient aufnehmen. Danke.';
+$LDSelectRoomBed='Bitte wÃ¤hlen sie das Zimmer bzw. Bett fÃ¼r diesen Patient. Danke.';
+$LDSureAssignRoomBed='Sind Sie sicher, Sie mÃ¶chten diesen Patient auf Ihre Station aufnehmen ?';
 $LDWhereToTransfer='Wohin zieht der Patient um?';
 $LDErrorOccured='Interner Fehler.';
 $LDTryOrNotifyEDP='Bitte versuchen Sie es noch einmal bzw. benachrichtigen Sie die EDV Abteilung falls das Problem weiterhin besteht.';
@@ -17,20 +17,20 @@ $LDTryOrNotifyEDP='Bitte versuchen Sie es noch einmal bzw. benachrichtigen Sie d
 $LDPlsEnterDate='Bitte das Datum eingeben';
 $LDPlsEnterDoctor='Bitte einen Arzt eingeben';
 $LDPlsEnterPurpose='Bitte das Zweck des Termins eingeben';
-$LDAppointNotToday='Dieses Arzttermin ist NICHT für heute ausgemacht!';
-$LDSureAdmitAppoint='Möchten Sie trotzdem den Patient aufnehmen?';
+$LDAppointNotToday='Dieses Arzttermin ist NICHT fÃ¼r heute ausgemacht!';
+$LDSureAdmitAppoint='MÃ¶chten Sie trotzdem den Patient aufnehmen?';
 $LDPatientIsDischarged='Dieser Patient ist bereits entlassen';
 $LDPersonIsAdmitted='Diese Person ist bereits aufgenommen';
 $LDEncounterClosed='Dieser Fall ist bereits abgeschlossen';
 # 2003-08-02 EL
 $LDNoOutpatients='Es gibt noch  keine ambulante Patienten in der Ambulanz.';
 $LDGoToAppointments='Um Termine zu sehen, bitte hier anclicken.';
-$LDSureTransferPatient='Sind Sie sicher? Sie möchten diesen Patient überweisen?';
-$LDClkTransfer='Click zum Überweisen';
-$LDSureTakeOverPatient='Sind Sie sicher? Sie möchten den Patient übernehmen?';
-$LDChkClinicConflict='Dieser Patient ist für eine andere Ambulanz bzw. Abteilung  (<b>~dept_id~</b>) vorgesehen. 
-Bitte klären Sie diesen Konflikt mit der Aufnahme bzw. anderen Abteilung ab bevor sie den Patient übernehmen. Danke.';
-$LDSureToCancel='Sind Sie sicher? Sie möchten es stornieren?';
+$LDSureTransferPatient='Sind Sie sicher? Sie mÃ¶chten diesen Patient Ã¼berweisen?';
+$LDClkTransfer='Click zum Ã¼berweisen';
+$LDSureTakeOverPatient='Sind Sie sicher? Sie mÃ¶chten den Patient Ã¼bernehmen?';
+$LDChkClinicConflict='Dieser Patient ist fÃ¼r eine andere Ambulanz bzw. Abteilung  (<b>~dept_id~</b>) vorgesehen. 
+Bitte klÃ¤ren Sie diesen Konflikt mit der Aufnahme bzw. anderen Abteilung ab bevor sie den Patient Ã¼bernehmen. Danke.';
+$LDSureToCancel='Sind Sie sicher? Sie mÃ¶chten es stornieren?';
 $LDPlsEnterFullName='Bitte geben Sie Ihren Namen ein.';
 $LDOk='Ok';
 $LDAdmissionCancelled='Die Aufnahme wurde storniert.';
@@ -46,32 +46,32 @@ $LDPlsReadThis='Bitte lesen Sie hier';
 $LDPersonIsEmployed='Diese Person ist gerade Angestellter dieser Einrichtung!';
 # 2003-08-24 EL
 $LDCachedInfo='Diese Information kommt aus der Cache!';
-$LDClkNoCache='Hier >>klicken<< für aktuelle Daten.';
+$LDClkNoCache='Hier >>klicken<< fÃ¼r aktuelle Daten.';
 
 # 2003-08-25 EL
 $LDPlsEnterReport='Bitte geben Sie Ihren Bericht bzw. Notizen ein.';
 $LDPlsEnterDosage='Bitte geben Sie die Dosierung ein';
 $LDPlsEnterMedicine='Bitte geben Sie den Medikamentennamen ein.';
 $LDPlsEnterMedType='Bitte geben Sie die Medikamentenart ein.';
-$LDPlsSelectAppType='Bitte wählen Sie die Verabreichungsart aus.';
-$LDPlsSelectPrescType='Bitte wählen Sie eine Rezeptsart aus.';
+$LDPlsSelectAppType='Bitte wÃ¤hlen Sie die Verabreichungsart aus.';
+$LDPlsSelectPrescType='Bitte wÃ¤hlen Sie eine Rezeptsart aus.';
 $LDPlsEnterValue='Bitte geben Sie einen Wert ein.';
-$LDPlsSelectUnitMsr='Bitte wählen Sie eine Maßeinheit aus.';
+$LDPlsSelectUnitMsr='Bitte wÃ¤hlen Sie eine MaÃŸeinheit aus.';
 
 # 2003-08-26 EL
-$LDEntryInvalidChar='Die Eingabe hat unzullässige Zeichen.';
+$LDEntryInvalidChar='Die Eingabe hat unzullÃ¤ssige Zeichen.';
 $LDNotNegValue='Negative Werte sind nicht erlaubt!';
 $LDOptional='Optional';
 $LDSaveAnyway='Wollen Sie trotzdem speichern?';
 #2003-08-27 EL
 $LDDeathDateIs='Das engegeben Todesdatum ist';
 $LDIsCorrect='Ist das richtig?';
-$LDProceedSave='Möchten Sie mit Speichern weitermachen?';
+$LDProceedSave='MÃ¶chten Sie mit Speichern weitermachen?';
 #2003-08-28 EL
-$LDPlsSelectWard='Bitte wählen Sie eine Station aus.';
+$LDPlsSelectWard='Bitte wÃ¤hlen Sie eine Station aus.';
 # 2003-09-20 EL
 $LDPlsEnterTherapy='Bitte geben Sie die Therapie ein.';
-$LDPlsMedicalAdvice='Bitte bestätigen Sie ob der Patient aufgeklärt ist.';
+$LDPlsMedicalAdvice='Bitte bestÃ¤tigen Sie ob der Patient aufgeklÃ¤rt ist.';
 # 2003-09-23 EL
 $LDPlsEnterJobFunction='Bitte geben Sie die Jobbezeichnung ein.';
 #2003-04-10 EL
@@ -87,6 +87,6 @@ $LDWrongLoginPW='Entweder Ihr Benutzername oder Passwort ist falsch.';
 $LDPlsORNr='Geben Sie bitte die Saalnummer ein.';
 
 #2004-08-06 EL
-$LDInvalidDate ='Das Datum war ungültig.';
+$LDInvalidDate ='Das Datum war ungÃ¼ltig.';
 $LDNoPastDate = 'Datum in Vergangenheit wird nicht akzeptiert!';
 ?>

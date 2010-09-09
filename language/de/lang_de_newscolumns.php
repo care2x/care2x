@@ -14,7 +14,7 @@ $LDTitleTag=array
 					dept_ent=>'HNO',
 					dept_eyesurgery=>'Augenklinik',
 					dept_pathology=>'Pathologie',
-					dept_gynecology=>'Gynäkologie',
+					dept_gynecology=>'GynÃ¤kologie',
 					dept_internalmed=>'Innere Medizin',
 					dept_oncology=>'Onkologie',
 					dept_techservice=>'Technik',
@@ -34,8 +34,8 @@ $LDSubTitle=array
 					cafenews=>'',
 					management=>'',
 					healthtips=>'Andere Gesundheitstips',
-					adv_studies=>'Relevante Artikel über Fortbildung',
-					prof_training=>'Relevante Artikel über Ausbildung',
+					adv_studies=>'Relevante Artikel Ã¼ber Fortbildung',
+					prof_training=>'Relevante Artikel Ã¼ber Ausbildung',
 					physiotherapy=>'',
 					events=>'',
 					dept_generalsurgery=>'',
@@ -51,12 +51,12 @@ $LDSubTitle=array
 					dept_IMCU=>'',
 					dept_ICU=>'',
 					dept_lab=>'',
-					patient_admission=>'Weitere Information über die Aufnahme von Patienten',
+					patient_admission=>'Weitere Information Ã¼ber die Aufnahme von Patienten',
 					SBDefault=>'Weitere Information');
 
 
 $LDMore='mehr dazu';
-$LDBackTxt='Zurück';
+$LDBackTxt='ZurÃ¼ck';
 $LDClk2Read='Click zum Lesen';
 
 $LDArticle='Artikel';

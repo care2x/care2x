@@ -3,7 +3,7 @@ $LDUserPrompt='Benutzername eingeben';
 $LDPwPrompt='Passwort eingeben';
 $LDSubmitBut='Weiter...';
 $LDPwNeeded='Passwort erforderlich';
-$LDIntroTo='Einführung in die';
+$LDIntroTo='EinfÃ¼hrung in die';
 $LDWhatTo='Wie mache ich was mit';
 
 $LDWrongEntry='Falsche Eingabe!';
@@ -21,9 +21,9 @@ $LDAdmission='Aufnahme';
 $LDAdmTargetEntry='Aufnahme';
 $LDAdmTargetSearch='Aufnahmedaten Suchen';
 $LDAdmTargetArchive='Recherche im Archiv';
-$LDAdmWantEntry='Ich möchte einen Patient aufnehmen';
+$LDAdmWantEntry='Ich mÃ¶chte einen Patient aufnehmen';
 $LDAdmWantSearch='Ich suche einen Patient';
-$LDAdmWantArchive='Ich möchte zum Archiv';
+$LDAdmWantArchive='Ich mÃ¶chte zum Archiv';
 $LDAdmHow2Enter='Wie nehme ich einen Patient auf?';
 $LDAdmHow2Edit='Wie aktualisiere ich Patientendaten?';
 $LDAdmHow2Search='Wie finde ich bestimmte Patientdaten?';
@@ -35,14 +35,14 @@ $LDMedocsHow2Edit='Wie aktualisiere ich ein Medocs Dokument?';
 $LDMedocsHow2Search='Wie finde ich ein bestimmtes Medocs Dokument?';
 $LDMedocsHow2Archive='Wie kann ich im Medocs Archiv recherchieren?';
 
-$LDIntro2='Einführung in';
+$LDIntro2='EinfÃ¼hrung in';
 $LDWhat2Do='Wie mache ich was in';
 
 $LDHowManage='Wie verwalte ich das Telefonverzeichnis?';
 $LDHowEnter='Wie gebe ich neue Telefondaten ein?';
 $LDPhoneDir='Telefonbuch';
 $LDMakeDutyPlan='Dienstplan erstellen';
-$LDDocsList='Ärzteliste erstellen';
+$LDDocsList='Ã„rzteliste erstellen';
 $LDNursingManage='Stationsverwaltung';
 
 $LDNursingStation='Pflegestation';
@@ -74,16 +74,16 @@ $LDNewData='Neue Eingabe';
 
 $LDWelcome='Wilkommen';
 $LDLogin='Login';
-$LDChangeSaved='Die Änderungen wurde gespeichert.';
-$LDPcID='Aktuelle Identität dieses Rechners';
+$LDChangeSaved='Die Ã„nderungen wurde gespeichert.';
+$LDPcID='Aktuelle IdentitÃ¤t dieses Rechners';
 $LDDept='Abteilung';
 $LDWard='Station';
 $LDWardOR='Zimmer oder OP Saal nummer';
 $LDPhoneNr='Telefonnummer dieses Zimmers';
 $LDIntercomNr='Sprechanlagenummer dieses Zimmers';
 $LDPcIP='IP adresse dieses Rechners';
-$LDSave='Änderung speichern';
-$LDNoChange='Aktuelle Einstellungen nicht ändern';
+$LDSave='Ã„nderung speichern';
+$LDNoChange='Aktuelle Einstellungen nicht Ã¤ndern';
 $LDClose='Schliessen';
 $LDLogout='Log out';
 $LDNewLogin='Neu einloggen';
@@ -113,7 +113,7 @@ $LDPendingRequest='Anstehende Anforderung';
 /* 2002-10-06 EL*/
 $LDLoggedOut='Logged out';
 /* 2003-03-18 EL */
-$LDNursesList='Pflegekräfte';
+$LDNursesList='PflegekrÃ¤fte';
 $LDAppointments='Termine';
 /* 2003-04-27 */
 $LDInsuranceCoManager='Versicherer-Verwaltung';

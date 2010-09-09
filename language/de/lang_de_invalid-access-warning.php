@@ -26,7 +26,7 @@ $lang='de';
 
 <center>
 <FONT    SIZE=3 color=red  FACE="Arial">
-<b>Sie sind nicht berechtigt dieses Dokument zu öffnen!</b></font><p>
+<b>Sie sind nicht berechtigt dieses Dokument zu Ã¶ffnen!</b></font><p>
 <FORM >
 <INPUT type="button"  value=" OK "  onClick="<?php if ($mode=="close") print 'window.close()'; else print 'history.back()'; ?>"></FORM>
 <p>
@@ -36,23 +36,23 @@ $lang='de';
 <p>
 <ul>
 <font size=3 face="verdana,arial">
-Mögliche Ursachen des Problems:
+MÃ¶gliche Ursachen des Problems:
 </FONT><p>
 <font size=2 face="verdana,arial">
 <img <?php echo createComIcon('../../','achtung.gif') ?>>
-Sie hätten die "Zurück" oder "Vorwärts" Funktion des Browsers benutzt. Vermeiden Sie bitte diese Funktionen bzw. Knöpfe zu benutzen.<br>
+Sie hÃ¤tten die "ZurÃ¼ck" oder "VorwÃ¤rts" Funktion des Browsers benutzt. Vermeiden Sie bitte diese Funktionen bzw. KnÃ¶pfe zu benutzen.<br>
 <img <?php echo createComIcon('../../','achtung.gif') ?>>
-Sie hätten eine Cookie abgelehnt. Dieses Program ist von Cookies abhängig um einwandfrei zu laufen. Nehmen Sie bitte
+Sie hÃ¤tten eine Cookie abgelehnt. Dieses Program ist von Cookies abhÃ¤ngig um einwandfrei zu laufen. Nehmen Sie bitte
 die Cookies an.
 <br>
 <img <?php echo createComIcon('../../','achtung.gif') ?>>
 Ihr Browser nehme keine Cookies an. Stellen Sie bitte Ihren Browser zur automatischen Annahme von Cookies ein.
 <br>
 <img <?php echo createComIcon('../../','achtung.gif') ?>>
-Ihr Browser würde Javascript nicht unterstützen oder das Javascript könnte ausgeschaltet sein. Schalten Sie bitte das
+Ihr Browser wÃ¼rde Javascript nicht unterstÃ¼tzen oder das Javascript kÃ¶nnte ausgeschaltet sein. Schalten Sie bitte das
 Javascript ein.<br>
 <img <?php echo createComIcon('../../','achtung.gif') ?>>
-In seltenen Fällen könnte die Datenübertragung gestört gewesen sein. Klicken Sie den "Aktualisieren" in Ihrem Browser an.
+In seltenen FÃ¼llen kÃ¶nnte die DatenÃ¼bertragung gestÃ¶rt gewesen sein. Klicken Sie den "Aktualisieren" in Ihrem Browser an.
 <p>
 
 </FONT>

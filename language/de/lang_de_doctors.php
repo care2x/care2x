@@ -1,7 +1,7 @@
 <?php
 $Jan='Januar';
 $Feb='Februar';
-$Mae='März';
+$Mae='MÃ¤rz';
 $Apr='April';
 $Mai='Mai';
 $Jun='Juni';
@@ -14,20 +14,20 @@ $Dez='Dezember';
 
 $monat=array('',$Jan,$Feb,$Mae,$Apr,$Mai,$Jun,$Jul,$Aug,$Sep,$Okt,$Nov,$Dez);
 
-$LDDoctors='Ärzte';
+$LDDoctors='Ã„rzte';
 $LDQView='Schnellsicht';
-$LDQViewTxt='Schnellübersicht über die gegenwärtige diensthabende Ärzte';
-$LDDocsList='Ärzteliste erstellen';
+$LDQViewTxt='SchnellÃ¼bersicht Ã¼ber die gegenwÃ¤rtige diensthabende Ã„rzte';
+$LDDocsList='Ã„rzteliste erstellen';
 $LDDocsListTxt='Eingabe von Personaldaten, Funk & Telefonnummer, usw.';
-$LDDocsForum='Ärzte Forum';
-$LDDocsForumTxt='Diskussionsforum für Ärzte';
+$LDDocsForum='Ã„rzte Forum';
+$LDDocsForumTxt='Diskussionsforum fÃ¼r Ã„rzte';
 $LDNews='Nachrichten';
 $LDNewsTxt='Nachrichten lesen bzw. schreiben';
 $LDMemo='Rundbrief';
 $LDMemoTxt='Rundbrief(e) lesen bzw. versenden';
-$LDCloseAlt='Ärzte Fenster schliessen';
+$LDCloseAlt='Ã„rzte Fenster schliessen';
 
-$LDDocsOnDuty='Diensthabende Ärzte';
+$LDDocsOnDuty='Diensthabende Ã„rzte';
 
 $LDTabElements=array('Abteilung',
 								 'Bereitschaft',
@@ -57,11 +57,11 @@ $LDDoc1='Bereitschaft';
 $LDDoc2='Hintergrund';
 $LDClosePlan='Diesen Plan schliessen';
 $LDNewPlan='Einen neuen Plan erstellen';
-$LDBack='Zurück';
+$LDBack='ZurÃ¼ck';
 $LDHelp='Hilfe';
 $LDMakeDutyPlan='Dienstplan erstellen';
-$LDClk2Plan='Klick um die Personalliste zu öffnen';
-$LDInfo4Duty='Information über Diensthabende';
+$LDClk2Plan='Klick um die Personalliste zu Ã¶ffnen';
+$LDInfo4Duty='Information Ã¼ber Diensthabende';
 $LDStayIn='Anwesenheitsdienst';
 $LDOnCall='Rufdienst';
 $LDPhone='Telefon';
@@ -82,14 +82,14 @@ $LDPerElements=array('Name',
 
 $LDChgDept='Abteilung wechseln: ';
 $LDChange='Wechseln';
-$LDCreatePersonList='Personalliste erstellen bzw. ändern';
+$LDCreatePersonList='Personalliste erstellen bzw. Ã¤ndern';
 $LDNoPersonList='Die Personalliste ist noch nicht vorhanden. Bitte erstellen Sie zuerst die Liste.';
 $LDShow='Zeigen';
 
 $LDDOCS='Dienstplaner';
 $LDDOCSTxt='Dienstplan sehen, erstellen, verarbeiten, u.s.w.';
-$LDDOCSR='Dienstwünsche';
-$LDDOCSRTxt='Dientswünsche planen bzw. eintragen';
+$LDDOCSR='DienstwÃ¼nsche';
+$LDDOCSRTxt='DientswÃ¼nsche planen bzw. eintragen';
 
 /* 2002-09-15 EL */
 $LDTestRequest='Anforderung';
@@ -97,8 +97,8 @@ $LDTestRequest='Anforderung';
 $LDContactInfo='Kontakt Info';
 $LDPersonalContactInfo='Personal Kontakt Info';
 $LDOnCallContactInfo='Bereitschaftsdienst Kontakt Info';
-$LDPlsSelectDept='Bitte wählen Sie eine Abteilung aus';
-$LDCreateDoctorsList='Liste von Ärzten erstellen';
+$LDPlsSelectDept='Bitte wÃ¤hlen Sie eine Abteilung aus';
+$LDCreateDoctorsList='Liste von Ã„rzten erstellen';
 $LDPlsCreateList='Bitte erstellen Sie zuerst eine Liste.';
 $LDPlsClickButton='Bitte den folgenden Knopf anklicken.';
 $LDFamilyName='Name';
@@ -109,11 +109,11 @@ $LDPersonellNr='PersonalNr.';
 $LDFunction='Funktion';
 $LDOptions='Optionen';
 $LDSearchFound='Die Suche hat ~nr~ relevante daten gefunden.';
-$LDAddDoctorToList='Einen Arzt in die Liste einfügen.';
-$LDAdd='Einfügen';
-$LDDelete='Löschen';
-$LDSureToDeleteEntry='Sind sie sicher dass Sie den Eintrag löschen?';
+$LDAddDoctorToList='Einen Arzt in die Liste einfÃ¼gen.';
+$LDAdd='EinfÃ¼gen';
+$LDDelete='LÃ¶schen';
+$LDSureToDeleteEntry='Sind sie sicher dass Sie den Eintrag lÃ¶schen?';
 /* 2003-03-18 EL */
-$LDChangeOnlyDept='Eine Abteilung auswählen';
-$LDCreateNursesList='Anzeigen von Pflegekräften';
+$LDChangeOnlyDept='Eine Abteilung auswÃ¤hlen';
+$LDCreateNursesList='Anzeigen von PflegekrÃ¤ften';
 ?>

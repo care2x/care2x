@@ -3,7 +3,7 @@ $LDClose="Schliessen";
 $LDTech="Technik";
 $LDTechRepair="Technische Reparatur";
 $LDTechMaint="Technische Wartung";
-$LDTechSupport="Technische Unterstützung";
+$LDTechSupport="Technische UnterstÃ¼tzung";
 $LDTechInfo="Technische Information";
 
 $LDReRepair="Reparatur anfordern";
@@ -23,11 +23,11 @@ $LDInfoTxt="Technische Information suchen bzw. lesen";
 
 $LDSendRequest="Anforderung senden";
 $LDSendReport="Meldung senden";
-$LDReset="Eingabe löschen";
+$LDReset="Eingabe lÃ¶schen";
 $LDRepairArea="Wo ist der Schaden aufgetreten?";
 $LDReporter="Angefordert von";
 $LDPersonnelNr="Personal Nr.";
-$LDPhoneNr="Telefon Nr.  <font size=1>(für eventuelle Rückfragen)</font>";
+$LDPhoneNr="Telefon Nr.  <font size=1>(fÃ¼r eventuelle RÃ¼ckfragen)</font>";
 $LDPlsDescribe="Bitte beschreiben Sie hier die Art und Umfang des Schadens.";
 
 $LDAlertName="Bitte geben Sie Ihren Namen ein!";
@@ -35,7 +35,7 @@ $LDAlertDept="Bitte geben Sie Ihre Abteilung ein!";
 $LDAlertDeptOnly="Bitte geben Sie Ihre Abteilung ein.";
 $LDAlertPNr="Bitte geben Sie Ihre Personalnummer ein!";
 $LDAlertDescribe="Bitte beschreiben Sie die Schaden bzw. Art der Reparaturarbeit!";
-$LDAck="Empfangsbestätigung";
+$LDAck="EmpfangsbestÃ¤tigung";
 $LDYour="Ihre";
 $LDReceived="wurde am";
 $LDAt="um";
@@ -51,7 +51,7 @@ $LDName="Name";
 $LDDept="Abteilung";
 $LDEnterQuestion="Bitte geben Sie Ihre Frage hier ein";
 $LDLogIn="Anmelden";
-$LDPlsNoRequest="(Bitte hier keine Anforderungen für Reparatur eingeben. Wenn Sie Schaden melden oder etwas reparieren lassen möchten klicken Sie hier an.";
+$LDPlsNoRequest="(Bitte hier keine Anforderungen fÃ¼r Reparatur eingeben. Wenn Sie Schaden melden oder etwas reparieren lassen mÃ¶chten klicken Sie hier an.";
 $LDLastQuestions="Letzte ~tagword~ Fragen bzw. Anworten";
 $LDFrom="von";
 $LDTo="bis";
@@ -64,10 +64,10 @@ $LDSearch="Suchen";
 $LDSearchReport="Suchen nach Berichten";
 $LDDate="Datum";
 $LDReportListMany="Folgende sind die Reparaturberichte,";
-$LDNotReadMany=" die noch nicht gesehen bzw. ausgedrückt sind."; 
+$LDNotReadMany=" die noch nicht gesehen bzw. ausgedrÃ¼ckt sind."; 
 $LDReportList="Folgendes ist der Reparaturbericht,"; 
 $LDNotRead=" der noch nicht gesehen bzw. ausgedruckt ist.";
-$LDClk2Read="Clicken Sie den weiss-grünen Pfeil an, um den Inhalt zu sehen.";
+$LDClk2Read="Clicken Sie den weiss-grÃ¼nen Pfeil an, um den Inhalt zu sehen.";
 $LDLikeSearch=" der den Suchbedingungen entspricht.";
 $LDLikeSearchMany=" die den Suchbedingungen entsprechen.";
 
@@ -81,25 +81,25 @@ $queryindex=array("&nbsp;","&nbsp;","$LDInquiry $LDFrom:",$LDDept,"Eingegangen $
 
 $LDMarkRead="Als [gesehen] markieren.";
 $LDPrint="Ausdrucken";
-$LDGoBack="Zurück";
+$LDGoBack="ZurÃ¼ck";
 $LDImRepabot="Ich bin der Repabot";
 $LDImQBot="Ich bin der Fragebot";
 $LDNewReport="Folgendes ist die neu eingegangene Anforderung.";
 $LDNewReportMany="Folgende sind die neu eingegangene Anforderungen.";
-$LDReportArrived="Eine Anforderung für Reparaturarbeit ist angetroffen !";
+$LDReportArrived="Eine Anforderung fÃ¼r Reparaturarbeit ist angetroffen !";
 $LDShowRequest="Anforderung zeigen";
 $LDNoDataFound="Die Daten konnten nicht gefunden werden! Ein Fehler ist irgendwo aufgetreten. Bitte clicken Sie den \"Schliessen\" an
 und versuchen Sie erneut die Anforderungsliste aufzurufen. Falls dieses Problem weiterhin besteht trotz mehrmaligem Versuch,
-verständigen Sie bitte die Apotheke und evtl. die EDV Abteilung. Vielen Dank!";
-$LDAckPrint="Anforderung bestätigen and ausdrucken";
+verstÃ¤ndigen Sie bitte die Apotheke und evtl. die EDV Abteilung. Vielen Dank!";
+$LDAckPrint="Anforderung bestÃ¤tigen and ausdrucken";
 $LDPrintRequest="Anforderung ausdrucken";
 $LDArchiveRequest="Anforderung ins archive verlagern.";
-$LDAckBy="Bestätigt von";
-$LDAlertEnterName="Tragen Sie ihren Namen bzw. Kennwort in das Feld \"Bestätigt von:\" ein.";
+$LDAckBy="BestÃ¤tigt von";
+$LDAlertEnterName="Tragen Sie ihren Namen bzw. Kennwort in das Feld \"BestÃ¤tigt von:\" ein.";
 $LDYourReply="Ihre Antwort";
 $LDNewInquiry="Folgendes ist die neu eingetroffen Anfrage.";
 $LDNewInquiryMany="Folgende sind die neu eingegangene Anfragen.";
-$LDClk2Reply="Klicken Sie den weiss-grünen Pfeil an um den Inhalt zu lesen bzw. zu beantworten.";
+$LDClk2Reply="Klicken Sie den weiss-grÃ¼nen Pfeil an um den Inhalt zu lesen bzw. zu beantworten.";
 $LDSendReply="Antwort senden";
 $LDMove2Archive="Ins Archiv verlagern";
 $LDShow="Zeigen";
@@ -107,7 +107,7 @@ $LDShowInquiry="Anfrage zeigen";
 $LDInquiryArrived="Eine neu Anfrage ist eingegangen!";
 $LDSearchWordPrompt="Geben Sie ein Stichwort ein.";
 $LDInfoCat=array(
-						"Anforderung für Reparatur",
+						"Anforderung fÃ¼r Reparatur",
 						"Anmeldung eines Schaden",
 						"Heizung",
 						"Entsorgung",
@@ -116,10 +116,10 @@ $LDInfoCat=array(
 						"Drucker",
 						"Klimaanlage",
 						"Reinigung",
-						"Strom, Elektrizität",
+						"Strom, ElektrizitÃ¤t",
 						"Telefon",
 						"Wasser, Versorgung"
 						);
-$LDNoFound="Die Suche hat leider nichts gefunden, was dem Suchbegriff entspricht. <br>Bitte versuches Sie es noch mal und geben sie etwas ausführlicheres ein. Danke.";
+$LDNoFound="Die Suche hat leider nichts gefunden, was dem Suchbegriff entspricht. <br>Bitte versuches Sie es noch mal und geben sie etwas ausfÃ¼hrlicheres ein. Danke.";
 $LDSendInquiry="Frage senden";
 ?>

@@ -9,7 +9,7 @@ $LDExhibitions='Veranstaltung';
 $LDHeadline='Nachricht';
 $LDAdmission='Aufnahme';
 /* 2003-08-20 DH */
-$LDAnesthesiology='Anästhesie';
+$LDAnesthesiology='AnÃ¤sthesie';
 $LDCafeteria='Cafeteria';
 $LDGeneralSurgery='Allgemeine Chirurgie';
 $LDEmergencySurgery='Unfall Chirurgie';
@@ -17,7 +17,7 @@ $LDPlasticSurgery='Plastische Chirurgie';
 $LDEarNoseThroath='HNO';
 $LDOpthalmology='Augenklinik';
 $LDPathology='Pathologie';
-$LDObGynecology='Gynäkologie';
+$LDObGynecology='GynÃ¤kologie';
 $LDPhysicalTherapy='Krankengymnastik';
 $LDInternalMedicine='Innere Medizin';
 $LDIntermediateCareUnit='Intermediate Care Unit';
@@ -45,9 +45,9 @@ $LDNews='Nachrichten (Presse)';
 $LDDepartment='Abteilung';
 $LDPressRelations='Presse';
 /* 2003-05-19 EL */
-$LDSelectDept='Abteilung auswählen';
+$LDSelectDept='Abteilung auswÃ¤hlen';
 /*2003-06-15 EL*/
-$LDPlsSelectDept='Bitte wählen Sie eine Abteilung aus';
+$LDPlsSelectDept='Bitte wÃ¤hlen Sie eine Abteilung aus';
 $LD_AllMedicalDept='__Alle medizinische Abteilungen__';
 $LDClinic='Ambulanz';
 ?>

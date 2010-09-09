@@ -6,10 +6,10 @@ print '
 		<BR>
 		<font size=-1 color="#000000" face="arial">
 		<b>Der '.$LDNewsDummy[$i].' Beitrag wird hier gezeigt.</b><p>
-			Sie können hier Ihre Nachricht, Mitteilung, Information, u.s.w. veröffentlichen.
-			Mit der benutzerfreundlichen Editor können Sie einen Beitrag ganz einfach und
-			schnell verfassen. Der Editor zeigt Ihnen während der Arbeit wie es geht.
+			Sie kÃ¶nnen hier Ihre Nachricht, Mitteilung, Information, u.s.w. verÃ¶ffentlichen.
+			Mit der benutzerfreundlichen Editor kÃ¶nnen Sie einen Beitrag ganz einfach und
+			schnell verfassen. Der Editor zeigt Ihnen wÃ¤hrend der Arbeit wie es geht.
 
-			Sie können auch ein Bild anhängen.<p>
+			Sie kÃ¶nnen auch ein Bild anhÃ¤ngen.<p>
 			Jetzt, schreiben Sie...</font><br>';
 ?>

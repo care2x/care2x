@@ -37,7 +37,7 @@ $klinichemie_list0=array(
 	'0gldh'=>'GLDH',
 	'0got'=>'GOT',
 	'0gpt'=>'GPT',
-	'0ucid'=>'Harnsäure',
+	'0ucid'=>'HarnsÃ¤ure',
 	'0urea'=>'Harnstoff',
 	'0hbdh'=>'HBDH',
 	'0hdlc'=>'HDL Chol',
@@ -73,7 +73,7 @@ $gerinnung_list2=array(
 	'2ptt'=>'PTT',
 	'2ptz'=>'PTZ',
 	'2fibg'=>'Fibrinogen',
-	'2fibs'=>'Lösl.Fibr.mon.',
+	'2fibs'=>'LÃ¶sl.Fibr.mon.',
 	'2fsp'=>'FSP dimer',
 	'2coag'=>'Thr.Coag.',
 	'2at3'=>'AT III',
@@ -83,7 +83,7 @@ $gerinnung_list2=array(
 	'2prs'=>'Protein S',
 	'2bt'=>'Blutungszeit');
 
-//Hämatologie parameter
+//Hï¿½matologie parameter
 $haematologie_list3=array(
 	'3ret'=>'Retikulozyten',
 	'3mal'=>'Malaria',
@@ -94,7 +94,7 @@ $haematologie_list3=array(
 
 // Blutzucker parameter
 $blutzucker_list4=array(
-	'4bsf'=>'Blutzucker_nü_',
+	'4bsf'=>'Blutzucker_nï¿½_',
 	'4bs9'=>'Blutzucker_9_00',
 	'4bsp'=>'Blutzucker_p_p_',
 	'4bs15'=>'Blutzucker_15_00',
@@ -105,13 +105,13 @@ $blutzucker_list4=array(
 	'4hba'=>'HBA 1c',
 	'4fru'=>'Fructosamine');
 
-// Säugling parameter
+// Sï¿½ugling parameter
 $saeugling_list5=array(
-	'5bil'=>'Säugling Bilirubin',
+	'5bil'=>'SÃ¤ugling Bilirubin',
 	'5bilc'=>'Nabelbilirubin',
 	'5bild'=>'Bilirubin direkt',
-	'5glo1'=>'Säuglingszucker 1',
-	'5glo2'=>'Säuglingszucker 2',
+	'5glo1'=>'SÃ¤uglingszucker 1',
+	'5glo2'=>'SÃ¤uglingszucker 2',
 	'5ret'=>'Retikulozyten',
 	'5b1'=>'B1');
 
@@ -133,7 +133,7 @@ $proteine_list6=array(
 	'6ssw'=>'SSW:',
 	'6mic'=>'Alpha 1 Mikroglobulin');
 
-// Schilddrüse parameter
+// Schilddrï¿½se parameter
 $schilddruse_list7=array(
 	'7t3'=>'T3',
 	'7t4'=>'Thyroxin/T4',
@@ -265,8 +265,8 @@ $infektion_list14=array(
 	'14pi3'=>'Parainfluenza III AK',
 	'14pic'=>'Picorna Virus AK',
 	'14ric'=>'Rickettsien AK',
-	'14rot'=>'Röteln AK',
-	'14roi'=>'Röteln Immunstatus',
+	'14rot'=>'Rï¿½teln AK',
+	'14roi'=>'Rï¿½teln Immunstatus',
 	'14rsv'=>'RS Virus AK',
 	'14shi'=>'Shigellen/Salm AK',
 	'14tox'=>'Toxoplasma AK',
@@ -292,10 +292,10 @@ $medikamente_list15=array(
 	'15phe'=>'Phenobarbital',
 	'15pny'=>'Phenytoin',
 	'15pri'=>'Primidon',
-	'15sal'=>'Salizylsäure',
+	'15sal'=>'Salizylsï¿½ure',
 	'15the'=>'Theophyllin',
 	'15tob'=>'Tobramycin',
-	'15val'=>'Valproinsäure',
+	'15val'=>'Valproinsï¿½ure',
 	'15van'=>'Vancomycin',
 	'15amp'=>'Amphetamine.i.U.',
 	'15ant'=>'Antidepressiva.i.U.',
@@ -323,12 +323,12 @@ $stuhl_list17=array(
 	'17ob2'=>'Stuhl auf Blut 2',
 	'17ob3'=>'Stuhl auf Blut 3');
 
-// Raritäten
+// Raritï¿½ten
 $raritaeten_list18=array(
-	'18rh'=>'Rarität H.',
-	'18re'=>'Rarität E.',
-	'18rs'=>'Rarität S.',
-	'18uri'=>'Urinrarität',
+	'18rh'=>'Raritï¿½t H.',
+	'18re'=>'Raritï¿½t E.',
+	'18rs'=>'Raritï¿½t S.',
+	'18uri'=>'Urinraritï¿½t',
 	'18f1'=>'F1',
 	'18f2'=>'F2',
 	'18f3'=>'F3');
@@ -353,21 +353,21 @@ $sammelurin_list20=array(
 	'20na'=>'Na i.U.','K i.U.',
 	'20ca'=>'Ca i.U.',
 	'20pho'=>'Phospor i.U.',
-	'20ura'=>'Harnsäure i.U.',
+	'20ura'=>'Harnsï¿½ure i.U.',
 	'20cre'=>'Kreatinin i.U.',
 	'20por'=>'Porphyrine i.U.',
 	'20cor'=>'Cortisol i.U.',
 	'20hyd'=>'Hydroxyprolin i.U.',
 	'20cat'=>'Katecholamine i.U.',
 	'20pan'=>'Pankreol.',
-	'20gam'=>'Gamma Aminoläbulinsre.i.U.');
+	'20gam'=>'Gamma Aminolï¿½bulinsre.i.U.');
 
 // Sonstiges
 $sonstiges_list21=array(
 	'21bal'=>'Blutalkohol',
 	'21cdt'=>'CDT',
 	'21vb12'=>'Vitamin B12',
-	'21fol'=>'Folsäure',
+	'21fol'=>'Folsï¿½ure',
 	'21inab'=>'Insulin AK',
 	'21iab'=>'Intrinsic AK',
 	'21sto'=>'Steinanalyse',

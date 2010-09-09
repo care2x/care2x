@@ -10,18 +10,18 @@ $LDMemo='Rundbrief';
 $LDNursingForum='Pflegeforum';
 $LDNursingStations='Pflegestationen';
 
-$LDQuickViewTxt='Übersicht der heutigen Stationsbelegung.';
+$LDQuickViewTxt='Ãœbersicht der heutigen Stationsbelegung.';
 $LDSearchPatientTxt='Suchen nach einem aufgenommenem Patient.';
 $LDArchiveTxt='Alte Stationsbelegungsliste ansehen.';
 $LDStationManTxt='Bettenzahl feststellen, Betten sperren, u.v.m.';
 $LDNewsTxt='Nachrichten lesen bzw. versenden.';
 $LDMemoTxt='Lesen bzw. versenden.';
-$LDNursingForumTxt='Diskussionsforum über Pflege.';
+$LDNursingForumTxt='Diskussionsforum Ã¼ber Pflege.';
 $LDNursingStationsTxt='Bettenbelegung, Patientenkurven, Konsilscheine, u.v.m.';
 
-$LDCloseBack2Main='Schliessen und zurück zur Startseite';
+$LDCloseBack2Main='Schliessen und zurÃ¼ck zur Startseite';
 $LDOld='Alte';
-$LDTodays='Gegenwärtige';
+$LDTodays='GegenwÃ¤rtige';
 $LDOccupancy='Stationsbelegung';
 $LDBedNr='Bettbelegung';
 $LDOptions='Optionen';
@@ -45,10 +45,10 @@ $LDClk2Show='Klick zum zeigen';
 
 $LDDate='Datum';
 $LDClockTime='Uhrzeit';
-$LDClkDate='Klicken Sie das gewünschte Datum an.';
+$LDClkDate='Klicken Sie das gewÃ¼nschte Datum an.';
 $monat=array('Januar',
 					'Februar',
-					'März',
+					'MÃ¤rz',
 					'April',
 					'Mai',
 					'Juni',
@@ -78,11 +78,11 @@ $LDPlusYear='Jahr um 1 rauf';
 $LDMinusYear='Jahr um 1 runter';
 $LDGo='Zeigen';
 $LDLastMonth='Vorigen Monat';
-$LDNextMonth='Nächsten Monat';
+$LDNextMonth='NÃ¤chsten Monat';
 $LDNursingManage='Stationsverwaltung';
-$LDShowStationDataTxt='&nbsp;Beschreibung, Betten, <br>	&nbsp;usw. zeigen bzw. ändern';
+$LDShowStationDataTxt='&nbsp;Beschreibung, Betten, <br>	&nbsp;usw. zeigen bzw. Ã¤ndern';
 $LDLockBedTxt='&nbsp;bzw. freigeben';
-$LDAccessRightsTxt='&nbsp;Anlegen, sperren, <br>&nbsp;freigeben, löschen, usw.';
+$LDAccessRightsTxt='&nbsp;Anlegen, sperren, <br>&nbsp;freigeben, lÃ¶schen, usw.';
 $LDShowStationData='Stationsprofil';
 $LDLockBed='Bett sperren';
 $LDAccessRights='Zugangsberechtigungen';
@@ -102,29 +102,29 @@ $LDHeadNurse='Stationsleiter(in)';
 $LDHeadNurse2='Stellvertreter(in)';
 $LDNurses='Krankenschwester/Pfleger';
 $LDCreateStation='Station anlegen';
-$LDEnterAllFields ='Die mit <font color=#ff0000><b>*</b></font> markierten Felder müssen unbedingt ausgefüllt werden.';
-$LDPlsSelect='Bitte eine Abteilung auswählen';
+$LDEnterAllFields ='Die mit <font color=#ff0000><b>*</b></font> markierten Felder mÃ¼ssen unbedingt ausgefÃ¼llt werden.';
+$LDPlsSelect='Bitte eine Abteilung auswÃ¤hlen';
 $LDStationExists='Die Station ~station~ ist bereits vorhanden! Bitte benutzen einen anderen Stationsnamen.';
 $LDAlertIncomplete='Wichtige Informationen fehlen! Bitte geben Sie die erforderliche Information ein.';
-$LDAlertRoomNr='Die nummer des letzten Zimmers muss unbedingt höher als die des ersten Zimmers sein!';
-$LDExistStations='Vorhandene Stationen. Bitte die gewünschte Station anklicken.';
+$LDAlertRoomNr='Die nummer des letzten Zimmers muss unbedingt hÃ¶her als die des ersten Zimmers sein!';
+$LDExistStations='Vorhandene Stationen. Bitte die gewÃ¼nschte Station anklicken.';
 $LDOtherStations='Andere Stationen';
-$LDEditProfile='Profil aktualisieren bzw. ändern';
+$LDEditProfile='Profil aktualisieren bzw. Ã¤ndern';
 $LDCreatedOn='Angelegt bzw. aktualisiert am:';
 $LDCreatedBy='Angelegt von:';
 
-$LDTemplateMissing='Die Schablone für station ~station~ nicht vorhanden!';
-$LDNoOrigData='Die ursprüngliche Daten sind nicht !';
+$LDTemplateMissing='Die Schablone fÃ¼r station ~station~ nicht vorhanden!';
+$LDNoOrigData='Die ursprÃ¼ngliche Daten sind nicht !';
 
 $LDShowLastList='Die letzte Belegungsliste zeigen.';
-$LDNoListYet='Die Belegung für heute ist noch nicht erstellt!';
+$LDNoListYet='Die Belegung fÃ¼r heute ist noch nicht erstellt!';
 $LDLastList='Letzte Belegungsliste.';
 $LDNotToday='(Nicht von heute!!)';
 $LDFromYesterday='(Von Gestern!!)';
-$LDListFrom='Die Liste liegt allerdings ~nr~ Tage zurück.';
-$LDCopyAnyway='Trotzdem, Belegungsliste auf heute übernehmen.';
-$LDTakeoverList='Diese Belegungsliste auf heute übernehmen.';
-$LDDoNotCopy='Nicht übernehmen! Eine neue Belegungsliste anlegen.';
+$LDListFrom='Die Liste liegt allerdings ~nr~ Tage zurÃ¼ck.';
+$LDCopyAnyway='Trotzdem, Belegungsliste auf heute Ã¼bernehmen.';
+$LDTakeoverList='Diese Belegungsliste auf heute Ã¼bernehmen.';
+$LDDoNotCopy='Nicht Ã¼bernehmen! Eine neue Belegungsliste anlegen.';
 $LDOldList='Dies ist eine ALTE Belegungsliste!';
 $LDQuickInformer='Auf einen Blick';
 $LDAttention='Achtung!';
@@ -136,20 +136,20 @@ $LDShortMale='M';
 $LDShortFemale='W';
 $LDLegend='Legende';
 
-$LDOpenFile='Mappe öffnen';
+$LDOpenFile='Mappe Ã¶ffnen';
 $LDNotesEmpty='Vermerk leer';
 $LDNotes='Vermerk';
 $LDRelease='Entlassen';
 $LDFreeOccupy='Frei/Belegen';
-$LDMale='Männlich';
+$LDMale='MÃ¤nnlich';
 $LDFemale='Weiblich';
 
 $LDNoInit='Die Station ~station~ ist noch nicht initialisiert!';
-$LDIfInit='Falls Sie die Station initialisieren möchten, klicken Sie hier an.';
-$LDShowPatData='Patientenmappe öffnen';
+$LDIfInit='Falls Sie die Station initialisieren mÃ¶chten, klicken Sie hier an.';
+$LDShowPatData='Patientenmappe Ã¶ffnen';
 $LDReleasePatient='Patient entlassen';
 $LDNoticeRW='Vermerk eintragen bzw. lesen';
-$LDInfoUnlock='Click für Info bzw. zum Aufheben der Sperre.';
+$LDInfoUnlock='Click fÃ¼r Info bzw. zum Aufheben der Sperre.';
 
 $LDPatListElements=array(
 										'Zimmer',
@@ -172,17 +172,17 @@ $LDClk2Occupy='Klick hier zum belegen';
 */
 $LDSave='Speichern';
 $LDNurse='Schwester/Pfleger';
-$LDYesSure='Ja, Ich bin sicher. Ich möchte den Patient entlassen.';
-$LDFtpAttempted='Vervindungsversuch zum FTP server gescheitert.<br>Der Server könnte offline sein oder ist gerade überlastet. Falls dieses Problem für längere Zeit besteht, benachrichtigen Sie bitte die EDV';
+$LDYesSure='Ja, Ich bin sicher. Ich mÃ¶chte den Patient entlassen.';
+$LDFtpAttempted='Vervindungsversuch zum FTP server gescheitert.<br>Der Server kÃ¶nnte offline sein oder ist gerade Ã¼berlastet. Falls dieses Problem fÃ¼r lÃ¤ngere Zeit besteht, benachrichtigen Sie bitte die EDV';
 $LDFtpNoLink='FTP login gescheitert';
 $LDJustReleased='Der Patient wurde soeben entlassen. Klick \'Schliessen\' an zum beenden.';
 $LDReleaseType='Entlassungsart';
-$LDRegularRelease='Regulär entlassen';
+$LDRegularRelease='RegulÃ¤r entlassen';
 $LDSelfRelease='Patient auf Eigenverantwortung das KH verlassen';
 $LDEmRelease='Notentlassung';
 $LDAlertNoName='Bitte geben Sie Ihren Namen ein.';
-$LDAlertNoDate='Sie müssen das Entlassungsdatum in diesem Format TT.MM.JJ eingeben.';
-$LDAlertNoTime='Sie müssen die Uhrzeit in diesem Format SS.MM eingeben.';
+$LDAlertNoDate='Sie mÃ¼ssen das Entlassungsdatum in diesem Format TT.MM.JJ eingeben.';
+$LDAlertNoTime='Sie mÃ¼ssen die Uhrzeit in diesem Format SS.MM eingeben.';
 $LDPatDataFolder='Patientenmappe';
 
 $LDClose='Schliessen';
@@ -199,11 +199,11 @@ $LDReports='Befund';
 $LDLabReports='Laborwerte';
 $LDPhotos='Fotos';
 $LDChkUpRequests='Konsilschein';
-$LDPleaseSelect='bitte auswählen';
-$LDSetColorRider='Klick um Reiter zu setzen bzw. rücksetzen';
+$LDPleaseSelect='bitte auswÃ¤hlen';
+$LDSetColorRider='Klick um Reiter zu setzen bzw. rÃ¼cksetzen';
 $LDDiet='Kost';
-$LDBackDay='Ein Tag zurück. (rechts klicken um Datum einzugeben)';
-$LDFwdDay='Ein Tag vorwärts. (rechts klicken um Datum einzugeben)';
+$LDBackDay='Ein Tag zurÃ¼ck. (rechts klicken um Datum einzugeben)';
+$LDFwdDay='Ein Tag vorwÃ¤rts. (rechts klicken um Datum einzugeben)';
 $LDClk2PlanDiet='Klick um den Kost einzugeben';
 
 $LDAllergy='Allergie(n)';
@@ -221,7 +221,7 @@ $LDBp='Blutdruck';
 $LDTemp='Temperatur';
 
 $LDClk2Enter='Klick um ~tagword~ einzugeben';
-$LDClk2EnterDaily='Klick um ~tagword~ für diesen Tag einzugeben';
+$LDClk2EnterDaily='Klick um ~tagword~ fÃ¼r diesen Tag einzugeben';
 $LDSpecialsExtra='Besonderheiten,Nebendiagnose';
 $LDInputWin='Eingabefenster';
 $LDFullDayName=array(
@@ -243,37 +243,37 @@ $LDFullDayName=array(
 									);
 $LDCurrentEntry='Aktuelle Eintragung(en)';
 $LDEntryPrompt='Ihre neue Eintragung bitte hier unten eingeben';
-$LDConfirmSetDate='Wollen Sie ein beliebiges \'+dayID+\' wählen?';
+$LDConfirmSetDate='Wollen Sie ein beliebiges \'+dayID+\' wÃ¤hlen?';
 $LDStartDate='Startdatum';
 $LDEndDate='Enddatum';
 
 $LDShowCurveDate='Zeige die Kurve mit fogendem';
 $LDDailyDiagTher='Therapie, Bericht, Pflegeplan, u.s.w.';
-$LDAntiCoagTxt='Anticoagulant(ien) - tägliche Dokumentation';
-$LDSFormatPrompt='Bitte hier Eintragen bzw. die aktuelle Information verändern:<br><font size=1 >Sie können maximal 16 Zeichen eingeben.</font>';
+$LDAntiCoagTxt='Anticoagulant(ien) - tÃ¤gliche Dokumentation';
+$LDSFormatPrompt='Bitte hier Eintragen bzw. die aktuelle Information verÃ¤ndern:<br><font size=1 >Sie kÃ¶nnen maximal 16 Zeichen eingeben.</font>';
 $LDDosage='Dosierung';
 $LDColorMark='Farbmarkieren mit';
 $LDNormal='Normal';
 $LDAntibiotic='Antibiotika';
-$LDDialytic='Entwässerung';
-$LDHemolytic='Hämolytikum';
-$LDIntravenous='Intravenös';
+$LDDialytic='EntwÃ¤sserung';
+$LDHemolytic='HÃ¶molytikum';
+$LDIntravenous='IntravenÃ¶s';
 $LDTodaysReport='heutige Angaben';
 $LDNoMedicineYet='Es gibt noch keine Medikamente!';
-$LDEffectReport='Bericht über die Effektivität der Pflegeplanung';
+$LDEffectReport='Bericht Ã¼ber die EffektivitÃ¤t der Pflegeplanung';
 $LDFrom='Von';
 $LDTo='bis';
 $LDPage='Blatt';
 $LDSignature='Hz';
 $LDInsertSymbol='Dieses Symbol vor dem Bericht einfugen.';
-$LDInsertDate='Das heutige Datum einfügen';
-$LDInsertTimeNow='Die jetzige Uhrzeit einfügen';
+$LDInsertDate='Das heutige Datum einfÃ¼gen';
+$LDInsertTimeNow='Die jetzige Uhrzeit einfÃ¼gen';
 $LDSpecialNotice='Besonderheiten';
 $LDAddendum='Weitere Angaben';
 $LDDiagnosticReport='Diagnose bzw. Befund';
 $LDDoctor='Arzt';
 $LDPassword='Passwort';
-$LDCallBackPhone='Rückfragen an Tel. bzw. Funk';
+$LDCallBackPhone='RÃ¼ckfragen an Tel. bzw. Funk';
 
 $LDPicShots='Aufnahme(n)';
 $LDClk2Preview='Click zur Vorchau';
@@ -290,8 +290,8 @@ $LDAssignOcc='Bett belegen';
 $LDSearchFound='Es wurden(n) <font color=red><b>~nr~</b></font> Patient(en) gefunden. ';
 $LDAssign2Bed='Das Bett mit diesem Patient belegen';
 $LDSend='Abschicken';
-$LDSendLater='Später abschicken';
-$LDReqTest='Gewünschte Untersuchung';
+$LDSendLater='SpÃ¤ter abschicken';
+$LDReqTest='GewÃ¼nschte Untersuchung';
 $LDClk4Phone='Click um Tel/Funknummer zu zeigen';
 $LDHour='Uhr';
 $LDClkHere='Bitte hier anklicken';
@@ -333,13 +333,13 @@ $LDAnticoagProgram='Antikoagulantien';
 $LDSpecialCare='Besondere Pflege';
 $LDTestConsultRequested='Konsil erstellt';
 $LDNurseReport='Neuer Pflegebericht';
-$LDDaily='Täglich';
-$LDSaveChanges='Änderungen speichern';
+$LDDaily='TÃ¤glich';
+$LDSaveChanges='Ã„nderungen speichern';
 /* 2002-12-07*/
 $LDNoDiagReport='Kein Befund vorhanden.';
 /* 2003-03-23 EL */
-$LDNursesList='Pflegekräfte';
-$LDNursesListTxt='Anzeigen, sehen, und bearbeiten  von Pflegekräfte';
+$LDNursesList='PflegekrÃ¤fte';
+$LDNursesListTxt='Anzeigen, sehen, und bearbeiten  von PflegekrÃ¤fte';
 /* 2003-04-18 */
 $LDInsurance='Allgemein';
 $LDPrivate='Privat';
@@ -353,18 +353,18 @@ $LDInWard='In Ward';
 $LDWard_ID='Stationskennung';
 $LDNoSpecChars='Sonderzeichen nicht erlaubt';
 /* 2003-04-24 EL*/
-$LDTemporaryCloseWard='Station vorübergehend schliessen';
+$LDTemporaryCloseWard='Station vorÃ¼bergehend schliessen';
 $LDIrreversiblyCloseWard='Station unwiderruflich schliessen';
-$LDSureTemporaryClose='Sind Sie sicher, Sie möchten diese Station vorübergehend schliessen?';
-$LDSureIrreversibleClose='Sind Sie sicher, Sie möchten diese Station UNWIDERRUFLICH	schliessen ?';
+$LDSureTemporaryClose='Sind Sie sicher, Sie mÃ¶chten diese Station vorÃ¼bergehend schliessen?';
+$LDSureIrreversibleClose='Sind Sie sicher, Sie mÃ¶chten diese Station UNWIDERRUFLICH	schliessen ?';
 /* Do not translate the ~str~ , it will be replaced with the ward's name by the program */
 $LDWardNoClose='Die Station ~str~ kann nicht geschlossen werden da es sich noch Patienten darin befindent.<br>
 Bitte entlassen Sie vor der Schliessung alle Patienten aus der Station.';
 $LDBackToWardProfile='Um das Stationsprofil wieder anzuzeigen.';
 $LDShowWardOccupancy='Um die Stationsbelegungsliste anzuzeigen.';
-$LDTemporaryClosed='Vorübergehend geschlossen';
-$LDReopenWard='Station wieder öffnen';
-$LDSureReopenWard='Sind Sie sicher, Sie möchten diese Station wieder öffnen?';
+$LDTemporaryClosed='VorÃ¼bergehend geschlossen';
+$LDReopenWard='Station wieder Ã¶ffnen';
+$LDSureReopenWard='Sind Sie sicher, Sie mÃ¶chten diese Station wieder Ã¶ffnen?';
 $LDShortDescription='Kurzbeschreibung';
 $LDRoomShortDescription='Kurzbeschreibung von der Station';
 $LDRoomNotCreated='Zimmer noch nicht vorhanden';
@@ -372,7 +372,7 @@ $LDRoomNotCreated='Zimmer noch nicht vorhanden';
 $LDChangeRoom='Zimmerwechsel';
 /*2003-06-14 EL*/
 $LDNrOfBedsRoom='Die Bettenanzahl im Zimmer';
-$LDIsNotANumber='ist keine gültige Zahl';
+$LDIsNotANumber='ist keine gÃ¼ltige Zahl';
 $LDWaitingList='Warteliste';
 $LDShowAll='Alle zeigen';
 $LDShowWardOnly='Nur diese Station';
@@ -384,7 +384,7 @@ $LDDRG='DRG';
 $LDFinanceType='Abrechnungsart';
 #2003-08-02 EL
 $LDOutToInpatient='Aufnahmestatus wechseln.';
-$LDTransferClinic='Einer Ambulanz bzw. Abteilung überweisen.';
+$LDTransferClinic='Einer Ambulanz bzw. Abteilung Ã¼berweisen.';
 $LDClinic='Ambulanz';
 $LDOwnPatient='Eigener Patient';
 $LDNonOwnPatient='Fremder Patient';
@@ -393,5 +393,5 @@ $LDShowClinicOnly='Nur diese Ambulanz';
 # 2003-09-16 EL
 $LDAdmissionData='Aufnahmedaten';
 $LDShowPhoto='Bild zeigen';
-$LDOpenWardManagement='Diese Station zum Verwalten öffnen';
+$LDOpenWardManagement='Diese Station zum Verwalten Ã¶ffnen';
 ?>

@@ -3,13 +3,13 @@ $LDLab='Labor';
 $LDMedLab='Medizinisches Labor';
 $LDPathLab='Pathologisches Labor';
 $LDBacLab='Bakteriologisches Labor';
-$LDClose='Schlieﬂen';
+$LDClose='Schlie√üen';
 $LDSeeLabData='Suchen und Anzeigen von Laborwerten bzw. Laborbefunde';
 $LDSeeData='Laborwerte';
 $LDEnterLabData='Eingabe von Laborwerten bzw. Laborbefunden';
 $LDNewData='Neue Eingabe';
-$LDEnterPrioParams='Priorit‰tsparameter einstellen';
-$LDPrioParams='Priorit‰tsparameter';
+$LDEnterPrioParams='Priorit√§tsparameter einstellen';
+$LDPrioParams='Priorit√§tsparameter';
 $LDEnterNorms='Normbereiche einstellen';
 $LDNorms='Normbereich';
 $LDOtherOptions='Andere Optionen';
@@ -18,7 +18,7 @@ $LDMemo='Lesen oder Schreiben von Rundbriefen';
 $LDTitleMemo='Rundbrief';
 
 $LDfieldname=array('Fallnummer','Name','Vorname','Geburtsdatum');
-$LDSearchWordPrompt='Stichwort eingeben. z.B. Fallnummer, Name, Vorname, Geburtsdatum, Abk¸rzung u.s.w.';
+$LDSearchWordPrompt='Stichwort eingeben. z.B. Fallnummer, Name, Vorname, Geburtsdatum, Abk√ºrzung u.s.w.';
 $LDEnterData='Klick um Daten einzugeben';
 $LDClk2See='Klick zum zeigen';
 $LDFoundPatient='Die Suche hat <b>~nr~</b> Patient(en) gefunden.';
@@ -31,19 +31,19 @@ $LDLastName='Name';
 $LDName='Vorname';
 $LDBday='Geburtsdatum';
 
-$LDNoLabReport='Kein Laborbefund gefunden f¸r';
+$LDNoLabReport='Kein Laborbefund gefunden f√ºr';
 $LDParameter='Parameter';
 $LDNormalValue='Normbereich';
 $LDOClock='Uhr';
-$LDClk2Graph='Klick f¸r grafische Kurve';
-$LDClk2SelectAll='Klick um alles zu w‰hlen';
+$LDClk2Graph='Klick f√ºr grafische Kurve';
+$LDClk2SelectAll='Klick um alles zu w√§hlen';
 $LDGraph='Grafische darstellung';
-$LDBack='Zur¸ck';
+$LDBack='Zur√ºck';
 
 $LDReportFound='Folgendes is ein Laborbefund von Patient Nr. ';
 $LDReportFoundMany='Folgende sind Laborbefunde von Patient Nr. ';
-$LDIfWantEdit='Falls Sie den Befund bearbeiten mˆchten, klicken Sie den weiﬂ-gr¸nen Pfeil an.';
-$LDIfWantEditMany='Falls Sie einen Befund bearbeiten mˆchten, klicken Sie den entsprechenden weiﬂ-gr¸nen Pfeil an.';
+$LDIfWantEdit='Falls Sie den Befund bearbeiten m√∂chten, klicken Sie den wei√ü-gr√ºnen Pfeil an.';
+$LDIfWantEditMany='Falls Sie einen Befund bearbeiten m√∂chten, klicken Sie den entsprechenden wei√ü-gr√ºnen Pfeil an.';
 
 $LDJobIdNr='Auftragsnummer';
 $LDExamDate='Untersuchungsdatum';
@@ -56,7 +56,7 @@ $LDNew='Neue';
 $LDEdit='Aktualisieren';
 $LDCreate='Anlegen';
 $LDParamGroup='Testgruppe';
-$LDSelectParamGroup='Testgruppe ausw‰hlen';
+$LDSelectParamGroup='Testgruppe ausw√§hlen';
 $LDValue='Wert';
 
 $LDParamNoSee='Der Parameter, den ich brauche, ist nicht angezeigt!';
@@ -76,24 +76,24 @@ $LDTestRequestBacterioTxt=$LDFillUpSend.' einer bakteriologischen Untersuchung';
 $LDTestRequestChemLabTxt=$LDFillUpSend.'von Bluttests bzw.  chemischen Untersuchung';
 $LDBloodBank='Blutzentrale';
 $LDBloodRequest='Blutkonserven';
-$LDBloodRequestTxt=$LDFillUpSend.'Blutkonserven bzw. -pr‰paraten';
+$LDBloodRequestTxt=$LDFillUpSend.'Blutkonserven bzw. -pr√§paraten';
 
 $LDRequestSent= array('insert'=>'Die Anforderung wurde gesendet.',
                                     'update'=>'Die aktualisierte Anforderung wurde gesendet.');
 $LDFormSaved=array('insert'=>'Die Anforderung wurde gespeichert (nicht gesendet).',
                                  'update'=>'Die aktualisierte Anforderung wurde gespeichert (nicht gesendet).');
-$LDWhatToDo=' Was mˆchten Sie jetzt tun?';
+$LDWhatToDo=' Was m√∂chten Sie jetzt tun?';
 
-$LDNewFormSamePatient='Eine neue Anforderung f¸r <b>denselben</b> Patient erstellen';
+$LDNewFormSamePatient='Eine neue Anforderung f√ºr <b>denselben</b> Patient erstellen';
 $LDEditForm='Dieselbe Anforderung nachbearbeiten';
 $LDEndTestRequest='Anforderung beenden';
-$LDNewFormOtherPatient='Ein neues Formular f¸r einen anderen Patient bereitstellen';
+$LDNewFormOtherPatient='Ein neues Formular f√ºr einen anderen Patient bereitstellen';
 
 /* 2002-09-03 EL */							  
 $LDSearchPatient='Patient suchen';
 $LDSearchFound='Die Suche hat ~nr~ Patienten gefunden.';
 /* 2002-09-04 EL */		
-$LDTestRequestFor='Anforderung f¸r ';
+$LDTestRequestFor='Anforderung f√ºr ';
 $LDTestType=array('chemlabor'=>'Laboruntersuchung',
                                      'patho'=>'Pathologie',
 								 'baclabor'=>'bakteriologische Untersuchung',
@@ -110,13 +110,13 @@ $LDInitFindings='Vorbefund';
 $LDCurrentFindings='Zwischenbefund';
 $LDFinalFindings='Endbefund';
 
-$LDFillLabOnly='Nur vom Labor auszuf¸llen!';
+$LDFillLabOnly='Nur vom Labor auszuf√ºllen!';
 $LDLEN='LDN';  /* Lab entry number */
 /*2003-07-11 EL*/
 $LDAdministration='Verwaltung';
 $LDTestParameters='Test parameter';
-$LDTestParametersTxt='Eingeben bzw. bearbeiten von Meﬂeinheit, Bereiche, Grenzen, usw.';
-$LDMsrUnit='Meﬂeinheit';
+$LDTestParametersTxt='Eingeben bzw. bearbeiten von Me√üeinheit, Bereiche, Grenzen, usw.';
+$LDMsrUnit='Me√üeinheit';
 $LDMedian='Mittelwert';
 $LDUpperBound='Obere Grenze (OG)';
 $LDLowerBound='Untere Grenze (UG)';

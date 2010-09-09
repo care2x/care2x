@@ -11,9 +11,9 @@ $LDO='O';
 $LDPlsEnterLastName='Bitte geben Sie den Namen ein.';
 $LDPlsEnterFirstName='Bitte geben Sie den Vornamen ein.';
 $LDPlsEnterDateBirth='Bitte geben Sie das Geburtsdatum ein.';
-$LDPlsSelectSex='Bitte w‰hlen Sie das Geschlecht aus.';
+$LDPlsSelectSex='Bitte w√§hlen Sie das Geschlecht aus.';
 $LDPlsEnterStreetName='Bitte geben Sie den Strassennamen ein.';
-$LDPlsEnterBldgNr='Bitte geben Sie die Haus- bzw. Geb‰udenummer ein.';
+$LDPlsEnterBldgNr='Bitte geben Sie die Haus- bzw. Geb√§udenummer ein.';
 #2003-10-03 EL
 $LDPlsEnterZip='Bitte geben Sie die Postleitzahl ein.';
 $LDPlsEnterFullName='Bitte geben Sie Ihren Namen ein.';

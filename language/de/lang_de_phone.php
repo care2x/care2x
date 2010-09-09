@@ -21,8 +21,8 @@ $LDSEARCH='SUCHEN';
 /**************** note the ' ~nr~ ' must not be erased it will be replaced by the script with the number of search results ******/
 $LDPhoneFound='Die Suche hat <font color=red><b> ~nr~ </b></font> Telefonnummer gefunden.';
 
-$LDKeywordPrompt='Suchbegriff eingeben. z.B. Name, Vorname, Abteilung, oder Abkürzung u.s.w.';
-$LDShowDir='Aktuelle Einträge im Telefonverzeichnis zeigen';
+$LDKeywordPrompt='Suchbegriff eingeben. z.B. Name, Vorname, Abteilung, oder AbkÃ¼rzung u.s.w.';
+$LDShowDir='Aktuelle EintrÃ¤ge im Telefonverzeichnis zeigen';
 $LDNewEntry='Neue Telefoninformation eintragen';
 
 $LDExtFields=array(
@@ -50,8 +50,8 @@ $LDEditFields=array(
 								'Name',
 								'Vorname',
 								'Beruf',
-								'Tätigkeitsbereich 1',
-								'Tätigkeitsbereich 2',
+								'TÃ¤tigkeitsbereich 1',
+								'TÃ¤tigkeitsbereich 2',
 				 				'Telefon (intern) 1',
 								'Telefon (intern) 2',
 								'Telefon (intern) 3',
@@ -67,36 +67,36 @@ $LDEditFields=array(
 $LDOK=' OK ';
 $LDCancel='Abbrechen';
 $LDSave='Speichern';
-$LDEdit='Ändern';
-$LDDelete='Löschen';
+$LDEdit='Ã„ndern';
+$LDDelete='LÃ¶schen';
 $LDReset='Reset';
 $LDNewPhoneEntry='Neue Telefondaten eintragen';
 
 $LDShow='Zeigen';
-$LDActualDir='Aktuelle Einträge im Verzeichnis';
-$LDMoreInfo='Weitere Einträge';
-$LDMaxItem='Gesamtzahl der Einträge';
-$LDUpdateOk='Die Daten wurde erfolgreich geändert bzw. aktualisiert.';
+$LDActualDir='Aktuelle EintrÃ¤ge im Verzeichnis';
+$LDMoreInfo='Weitere EintrÃ¤ge';
+$LDMaxItem='Gesamtzahl der EintrÃ¤ge';
+$LDUpdateOk='Die Daten wurde erfolgreich geÃ¤ndert bzw. aktualisiert.';
 $LDRows='Zeile';
 
 $LDGoodMorning='Guten Morgen!';
 $LDGoodDay='Guten Tag!';
 $LDGoodEvening='Guten Abend!';
 
-$LDShowActualDir='Die aktuelle Einträge zeigen';
-$LDYesDelete='Ja, löschen';
+$LDShowActualDir='Die aktuelle EintrÃ¤ge zeigen';
+$LDYesDelete='Ja, lÃ¶schen';
 $LDNoCancel='NEIN! Abbrechen!';
-$LDDeleteEntry='Eintrag löschen';
+$LDDeleteEntry='Eintrag lÃ¶schen';
 $LDNoData='Sie haben keine Daten eingegeben. Bitte geben Sie sie in die richtigen Felder ein.';
-$LDReallyDelete='Wollen Sie den folgenden Telefonbuch-Eintrag wirklich löschen?';
+$LDReallyDelete='Wollen Sie den folgenden Telefonbuch-Eintrag wirklich lÃ¶schen?';
 
 $LDHowManage='Wie verwalte ich das Telefonverzeichnis?';
-$LDHow2OpenDir='Wie öffne ich das Telefonverzeichnis?';
+$LDHow2OpenDir='Wie Ã¶ffne ich das Telefonverzeichnis?';
 $LDHowEnter='Wie gebe ich neue Telefondaten ein?';
 $LDHow2SearchPhone='Wie finde ich eine Telefonnummer?';
-$LDUpdate='Aktualisieren bzw. ändern';
+$LDUpdate='Aktualisieren bzw. Ã¤ndern';
 
-$LDDirData='Verzeichniseintrag nr. <font color=\'red\'>~nr~</font> aktualisieren bzw. ändern.';
+$LDDirData='Verzeichniseintrag nr. <font color=\'red\'>~nr~</font> aktualisieren bzw. Ã¤ndern.';
 
 $LDTelephone='Telefon';
 $LDBeeper='Funk';

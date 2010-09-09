@@ -1,28 +1,28 @@
 <?php
 $LDAdmitHistoPhysical='Aufnahmegeschichte';
-$LDDoctorDailyNotes='Täglicher Ärztbericht';
+$LDDoctorDailyNotes='TÃ¤glicher Ã„rztbericht';
 $LDDischargeSummary='Entlassungsbericht';
 $LDConsultNotes='Besprechungsbericht';
 $LDOpNotes='OP Bericht';
-$LDDailyNurseNotes='Tägliche Pflegeberichte';
+$LDDailyNurseNotes='TÃ¤gliche Pflegeberichte';
 $LDOther='Andere';
 $LDChartNotes='Aktenmeldungen';
 $LDPTATGetc='PT, ATG, etc.';
-$LDIVDailyNotes='Berichte über Infusionen';
-$LDAnticoagDailyNotes='Berichte über Antikoagulantien';
+$LDIVDailyNotes='Berichte Ã¼ber Infusionen';
+$LDAnticoagDailyNotes='Berichte Ã¼ber Antikoagulantien';
 $LDMaterialLOTChargeNr='Material LOT, Charge NR.';
 $LDDiagnosis='Diagnosen';
 $LDTherapy='Therapien';
 $LDExtraNotes='Zusatzmeldungen';
 $LDNursingReport='Pflegeberichte';
 $LDNursingProblemReport='Pflegeprobleme';
-$LDNursingEffectivityReport='Berichte über die Effectivität';
+$LDNursingEffectivityReport='Berichte Ã¼ber die EffectivitÃ¤t';
 $LDInquiryToDoctor='Fragen an den Arzt';
 $LDDoctorDirective='Arztanordnungen';
 $LDProblem='Probleme';
 $LDDevelopment='Entwicklung';
 /* 2003-05-17 EL */
-$LDDietPlan='Diät Plan';
+$LDDietPlan='DiÃ¤t Plan';
 $LDAllergy='Allergien';
 $LDPrintPDFDocAllReport='PDF Dokumente aller Berichte';
 ?>

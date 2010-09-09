@@ -1,15 +1,15 @@
 <?php
 # This are the chemical lab test groups. If you are not sure of their exact translation please leave it in the original form
 $parametergruppe=array(
-	'priority'=>'Priorität',
+	'priority'=>'PrioritÃ¤t',
 	'clinical_chem'=>'Klinische Chemie',
 	'liquor'=>'Liquor',
 	'coagulation'=>'Gerinnung',
-	'hematology'=>'Hämatologie',
+	'hematology'=>'HÃ¶matologie',
 	'blood_sugar'=>'Blutzucker',
-	'neonate'=>'Säugling',
+	'neonate'=>'SÃ¤ugling',
 	'proteins'=>'Eiweiss',
-	'thyroid'=>'Schilddrüse',
+	'thyroid'=>'SchilddrÃ¼se',
 	'hormones'=>'Hormone',
 	'tumor_marker'=>'Tumormarker',
 	'tissue_antibody'=>'Gewebe AK',
@@ -20,7 +20,7 @@ $parametergruppe=array(
 	'medicines'=>'Medikamente',
 	'prenatal'=>'Mutterschutzt Vorsorge',
 	'stool'=>'Stuhl',
-	'rare'=>'Raritäten',
+	'rare'=>'RaritÃ¤ten',
 	'urine'=>'Urin/Spontanurin',
 	'total_urine'=>'Sammelurin',
 	'special_params'=>'Sonstiges');

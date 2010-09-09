@@ -1,12 +1,12 @@
 <?php
 $LDClose="Schliessen";
 $LDCancel="Abbrechen";
-$LDResetEntry="Eingabe löschen";
+$LDResetEntry="Eingabe lÃ¶schen";
 $LDSave="Speichern";
 
 $LDPharmacy="Apotheke";
 
-$LDSearchWordPrompt="Stichwort eingeben. z.B. Fallnummer, Name, Vorname, Geburtsdatum, oder Abkürzung u.s.w.";
+$LDSearchWordPrompt="Stichwort eingeben. z.B. Fallnummer, Name, Vorname, Geburtsdatum, oder AbkÃ¼rzung u.s.w.";
 $LDEnterData="Klick um Daten einzugeben";
 $LDClk2See="Klick zum zeigen";
 $LDFoundPatient="The search found <b>~nr~</b> patients.";
@@ -19,7 +19,7 @@ $LDName="Vorname";
 $LDBday="Geburtsdatum";
 
 $LDOClock="Uhr";
-$LDBack="Zurück";
+$LDBack="ZurÃ¼ck";
 
 $LDOn="am";
 $LDAt="um";
@@ -38,7 +38,7 @@ $LDCategory="Kategorie";
 $LDPast3Days="Letzte 3 Tage";
 $LDPast3Months="Letzte 3 Monate";
 $LDPastAll="Alle";
-$LDSelect="Auswählen";
+$LDSelect="AuswÃ¤hlen";
 
 $LDOrderArchive="Bestellungsarchive";
 $LDOrderArchiveTxt="Alte Bestellungen ansehen, organisieren, u.s.w.";
@@ -47,11 +47,11 @@ $LDPharmaOrderTxt="Bestellliste erstellen und verschicken";
 $LDHow2Order="Bestellung? Wie geht das?";
 $LDHow2OrderTxt="Wie, wann, bestelle ich was an die Apotheke?";
 $LDOrderCat="Eigener Bestellkatalog";
-$LDOrderCatTxt="Erstellen, aktualisieren, ändern, löschen, etc.";
+$LDOrderCatTxt="Erstellen, aktualisieren, Ã¤ndern, lÃ¶schen, etc.";
 $LDPharmaDb="Datenbank";
 $LDPharmaDbTxt="Produkt-info, Lagerverwaltung, u.s.w.";
 $LDRedList="Rote Liste";
-$LDRedListTxt="Information über Arzneimittel";
+$LDRedListTxt="Information Ã¼ber Arzneimittel";
 $LDOrderBotActivate="Bestellbot aktivieren";
 $LDOrderBotActivateTxt="Automatischer Empfang von Bestellungen aktivieren";
 ?>

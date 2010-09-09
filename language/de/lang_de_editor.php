@@ -1,9 +1,9 @@
 <?php
 $LDWhereTo="Wo soll die Nachricht erscheinen?";
-$LDPlsSelect="Bitte wählen Sie die Artikelnummer anhand des Bildes. Anschiessend klicken Sie \"Weiter...\" an.";
+$LDPlsSelect="Bitte wÃ¤hlen Sie die Artikelnummer anhand des Bildes. Anschiessend klicken Sie \"Weiter...\" an.";
 $LDContinueBut="Weiter...";
 $LDCancelBut="Abbrechen";
-$LDBackBut="Zurück";
+$LDBackBut="ZurÃ¼ck";
 $LDSaveBut="Speichern";
 $LDFinishBut="Beenden";
 $LDArticle1="Erste (1) Artikel";
@@ -20,9 +20,9 @@ $LDTitleMaxNote="Maximal 50 Zeichen";
 $LDHeader="Vorspann";
 $LDHeaderMaxNote="Maximal 50 Zeichen";
 $LDNews="Nachricht";
-$LDPicFile="Bild <font size=1>(maximale Dateigröße ist 1MB)</font>";
+$LDPicFile="Bild <font size=1>(maximale DateigrÃ¶ÃŸe ist 1MB)</font>";
 $LDAuthor="Autor/Verfasser";
-$LDPublishDate="Datum der ersten Erscheinung. <font size=1>(\"H\" für heute)</font>";
+$LDPublishDate="Datum der ersten Erscheinung. <font size=1>(\"H\" fÃ¼r heute)</font>";
 
 $LDAlertTitle="Bitte geben Sie einen Titel ein";
 $LDAlertNews="Bitte tippen Sie die Nachricht ein";
@@ -33,7 +33,7 @@ $LDWrittenOn="Verfasst am:";
 $LDWrittenFrom="Von:";
 
 $LDArticleSaved="Das Artikel wurde gespeichert. Sie sehen jetzt eine Vorschau.";
-$LDBackTxt="Zurück";
+$LDBackTxt="ZurÃ¼ck";
 
 $LDQuickInfo="Auf einen Blick";
 $LDPhonePolice="Polizei";
@@ -44,7 +44,7 @@ $LDFax="Fax";
 $LDAddress="Anschift";
 $LDEmail="Email";
 
-$LDOpenTimes ="Öffnungszeiten";
+$LDOpenTimes ="Ã–ffnungszeiten";
 $LDManagement ="Verwaltung";
 $LDDept ="Abteilungen";
 $LDCafenews ="Cafeteria News";
@@ -62,11 +62,11 @@ $LDConfirmEdit="Wollen Sie die Daten in Cafeteria news bearbeiten?";
 $LDNewsDummy=array(1=>"erster",2=>"zweiter",3=>"dritter",4=>"vierter");
 
 $LDMenuToday="Speiseplan heute";
-$LDMenuAll="Speiseplan für <br> &nbsp;andere Tagen";
+$LDMenuAll="Speiseplan fÃ¼r <br> &nbsp;andere Tagen";
 $LDPrices="Preise";
 $LDNoMenu="Speiseplan <br> nicht vorhanden.";
 
-$LDWhatToDo="Was möchten Sie tun?";
+$LDWhatToDo="Was mÃ¶chten Sie tun?";
 $LDPlsMarkSelection="Bitte markieren Sie eine Option in der Auswahlliste. Anschliessend klicken Sie \"Weiter...\" an";
 $LDMenuEdit="Speiseplan bearbeiten";
 $LDPriceEdit="Preise der Produkte bearbeiten";
@@ -76,20 +76,20 @@ $dayname=array("Mo","Di","Mi","Do","Fr","Sa","So");
 $LDCafeMenu="Speiseplan";
 $LDMenu="Speiseplan";
 $LDThisWeek="Diese Woche";
-$LDNextWeek="Nächste Woche";
-$LD3rdWeek="Übernächste Woche";
-$LDBack2CafeNews="Zurück zu Cafeteria News";
+$LDNextWeek="NÃ¤chste Woche";
+$LD3rdWeek="Ã¼bernÃ¤chste Woche";
+$LDBack2CafeNews="ZurÃ¼ck zu Cafeteria News";
 
 $LDProdName="Produktname";
 $LDPriceDM="Preis DM";
-$LDPriceEuro="Preis €";
+$LDPriceEuro="Preis $";
 $LDPrice="Preis";
 $LDNoPrice="Die Preise sind momentan nicht vorhanden.";
-$LDSorry="Wir bitten um Entschuldigung. Versuchen Sie es im späteren Zeitpunkt.";
+$LDSorry="Wir bitten um Entschuldigung. Versuchen Sie es im spÃ¤teren Zeitpunkt.";
 $LDCafePrices="cafeteria preisliste";
 
 $LDCreateGroup="Eine neue Produktgruppe erstellen";
-$LDCreateGroupPrompt="Sie müssen eine Produktgruppe erstellen da es in der Datenbank noch keine gibt. Bitte \"Weiter...\" anklicken.";
+$LDCreateGroupPrompt="Sie mÃ¼ssen eine Produktgruppe erstellen da es in der Datenbank noch keine gibt. Bitte \"Weiter...\" anklicken.";
 $LDMarkGroup="Jetzt, markieren Sie bitte eine Produktgruppe. <br>Anschliessend klicken Sie \"<font color=\"#000000\">Weiter...</font>\" an.";
 $LDEnterGroup="Bitte geben Sie die Produktgruppe ein. <br>Anschliessend klicken Sie \"<font color=\"#000000\">Weiter...</font>\" an.";
 $LDProdGroup="Produktgruppe";
@@ -106,11 +106,11 @@ $LDHealthTips="Gesundheitstips";
 $LDClk2Write="Zum Schreiben, bitte hier anklicken";
 
 $LDOr="Oder";
-$LDSetCurrency="Währung einstellen";
-$LDNewCurrencySet="Die Währung ist jetzt übernommen worden.";
-$LDPlsSelectCurrency="Bitte wählen Sie die gewünschte Währung aus. Danach klicken Sie \"Übernehmen\" an.";
-$LDmain="Hauptwährung";
-$LDClk2AddCurrency="Zur Eingabe neuer Währung, bitte hier anklicken. (Achtung: Sie würden Cafenews verlassen!)";
+$LDSetCurrency="WÃ¤hrung einstellen";
+$LDNewCurrencySet="Die WÃ¤hrung ist jetzt Ã¼bernommen worden.";
+$LDPlsSelectCurrency="Bitte wÃ¤hlen Sie die gewÃ¼nschte WÃ¤hrung aus. Danach klicken Sie \"Ã¼bernehmen\" an.";
+$LDmain="HauptwÃ¤hrung";
+$LDClk2AddCurrency="Zur Eingabe neuer WÃ¤hrung, bitte hier anklicken. (Achtung: Sie wÃ¼rden Cafenews verlassen!)";
 $LDMenuSaved="Der menu is gespeichert.";
 /* 2002-10-13 EL */
 $LD_ddpMMpyyyy='TT.MM.JJJJ';
@@ -118,8 +118,8 @@ $LD_yyyyhMMhdd='JJJJ-MM-TT';
 $LD_MMsddsyyyy='MM/TT/JJJJ';
 /* 2003-02-11 EL*/
 $LDSubmitNews='Nachricht Schreiben';
-$LDDelete='Löschen';
-$LDDeleteCurrency='Wollen Sie diese Währungsinformation wirklich löschen?';
-$LDNoMainDelete='Die Hauptwährung darf nicht gelöscht werden!. \nBitte stellen Sie zuerst eine andere Hauptwährung ein.';
-$LDCurrencyExisting='Diese Währungsinformation ist bereits vorhanden!';
+$LDDelete='LÃ¶schen';
+$LDDeleteCurrency='Wollen Sie diese WÃ¤hrungsinformation wirklich lÃ¶schen?';
+$LDNoMainDelete='Die HauptwÃ¤hrung darf nicht gelÃ¶scht werden!. \nBitte stellen Sie zuerst eine andere HauptwÃ¤hrung ein.';
+$LDCurrencyExisting='Diese WÃ¤hrungsinformation ist bereits vorhanden!';
 ?>

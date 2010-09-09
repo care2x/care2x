@@ -6,14 +6,14 @@ $LDMemoTxt="Lesen oder schreiben von Rundbrief";
 
 $LDClose="Schliessen";
 $LDCancel="Abbrechen";
-$LDResetEntry="Eingabe löschen";
+$LDResetEntry="Eingabe lÃ¶schen";
 $LDSave="Speichern";
-$LDReset="Löschen";
+$LDReset="LÃ¶schen";
 
 $LDNewSearch="Neue Suche";
 $LDSearch="Suchen";
 $LDContinue="Weiter";
-$LDBack="Zurück";
+$LDBack="ZurÃ¼ck";
 $LDNew="Neue";
 $LDEdit="Aktualisieren";
 $LDCreate="Erstellen";
@@ -21,25 +21,25 @@ $LDCreate="Erstellen";
 $LDGoodMorning="Guten Morgen";
 $LDGoodDay="Guten Tag";
 $LDGoodEvening="Guten Abend";
-$LDUpdateData="Ändern bzw. Aktualisieren";
-$LDNoBack="Nein, Zurück";
-$LDPageTop="Zurück nach ganz oben.";
+$LDUpdateData="Ã„ndern bzw. Aktualisieren";
+$LDNoBack="Nein, ZurÃ¼ck";
+$LDPageTop="ZurÃ¼ck nach ganz oben.";
 $LDPreview="Vorschau";
 
 $LDOn="am";
 $LDAt="um";
 
 $LDPastAll="Alle";
-$LDSelect="Auswählen";
+$LDSelect="AuswÃ¤hlen";
 
 $LDOK="OK";
 $LDName="Name";
 $LDPassword="Passwort";
 $LDUserId="Benutzerkennung";
-$LDChange="Ändern";
+$LDChange="Ã„ndern";
 $LDLock="Sperren";
 $LDUnlock="Freigeben";
-$LDDelete="Löschen";
+$LDDelete="LÃ¶schen";
 $LDYesSure="Ja, ich bin sicher.";
 $LDKeywordPrompt="Geben Sie ein Stichwort zum Suchen ein.";
 $LDWelcome="Willkommen";
@@ -55,11 +55,11 @@ $LDTime="Zeit";
 $LDFrom="Von";
 $LDTo="An";
 $LDRead="Lesen";
-$LDBack2="Zurück zu";
+$LDBack2="ZurÃ¼ck zu";
 $LDPrint="Ausdrucken";
 $LDMoreInfo="Mehr Info";
-$LDTakeOver="Übertragen";
-$LDJustReset="Zurücksetzen";
+$LDTakeOver="Ãœbertragen";
+$LDJustReset="ZurÃ¼cksetzen";
 $LDMaximum="Maximal";
 
 $LDSpexFunctions="Spezielle Dienste";
@@ -68,7 +68,7 @@ $LDDutyPlanOrgTxt="Dienstzeiterfassung & Dienstplanner PLUS";
 $LDStandbyDuty="Bereitschaftsdienst";
 $LDStandbyDutyTxt="Zeiterfassung der Arbeitsleistung";
 $LDHandStat="Hand Statistik";
-$LDHandStatTxt="Erfassung der Handchirurgische Notfälle";
+$LDHandStatTxt="Erfassung der Handchirurgische NotfÃ¤lle";
 $LDCalendar="Kalender";
 $LDCalendarTxt="Ein multifunktioneller Kalender";
 $LDBlackBoard="Schwarzes Brett";
@@ -86,17 +86,17 @@ $LDColorOptExtTxt="Farben von Texten und Hyperlinks einstellen";
 $LDMyIntranet="myIntranet";
 $LDMyIntranetTxt="Mein Terminkalender, Personalplaner, Tagebuch, Kalender, etc.";
 $LDAccessPw="Zugangspasswort";
-$LDAccessPwTxt="Passwort ändern bzw. aktualisieren";
-$LDWebCam="Video Überwachung";
-$LDWebCamTxt="Video Sicherheitsüberwachung über Intranet Webcameras";
+$LDAccessPwTxt="Passwort Ã¤ndern bzw. aktualisieren";
+$LDWebCam="Video Ã¼berwachung";
+$LDWebCamTxt="Video SicherheitsÃ¼berwachung Ã¼ber Intranet Webcameras";
 $LDPhotoLab="Fotolabor";
 $LDPhotoLabTxt="Fotos von Patienten speichern, verwalten, usw.";
 
 $LDBundyMachine="Dienstzeiterfassung";
 $LDDutyPlanner="Dienstplanner";
 $LDPrevMonth="Vormonat";
-$LDNextMonth="Nächsten Monat";
-$monat=array("","Januar","Februar","März","April","Mai","Juni","Juli","August","September","Oktober","November","Dezember");
+$LDNextMonth="NÃ¤chsten Monat";
+$monat=array("","Januar","Februar","MÃ¤rz","April","Mai","Juni","Juli","August","September","Oktober","November","Dezember");
 $LDEntry="Eingang";
 $LDExit="Ausgang";
 $LDRemarks="Anmerkung";
@@ -105,47 +105,47 @@ $tage=array("<font color='#ff0000'>S</font>","M","D","M","D","F","S");
 $tagename=array("Montag","Dienstag","Mittwoch","Donnerstag","Freitag","Samstag","Sonntag");
 
 $LDTotal="Gesamt";
-$LDClk4Options="Klick für Optionen";
+$LDClk4Options="Klick fÃ¼r Optionen";
 $LDMonth="Monat";
 $LDYear="Jahr";
 $LDGO="GO";
 $LDPlus1Year="Jahr um 1 rauf";
 $LDMinus1Year="Jahr um 1 runter";
 $LDDirectDial="Direktwahl";
-$LDFor="für";
+$LDFor="fÃ¼r";
 
 $LDShowMyCalendar="Zeige meine Dienste im Kalender";
 $LDShowMySched="Zeige meine Termine";
-$LDShowMyOvertime="Zeige die Tage wo ich Überstunden machte";
+$LDShowMyOvertime="Zeige die Tage wo ich Ãœberstunden machte";
 $LDShowMyWorkTime="Zeige Details meiner Arbeitszeiten";
 $LDPlanSched="Termin planen an diesem Tag";
 $LDPlanDuty="Dienst planen an diesem Tag";
 $LDORProgram="OP Programm";
 $LDDutyPerson="Diensthabende Pflegepersonal";
-$LDDocsOnDuty="Diensthabende Ärzte";
+$LDDocsOnDuty="Diensthabende Ã„rzte";
 $LDORLogbook="OP Buch (Patientendaten Eingeben)";
 $LDORLogbookArch="OP Buch (Archiv)";
 $LDORLogbookSearch="OP Buch (Patientendaten Suchen)";
-$LDPresent="Gegenwärtige";
+$LDPresent="GegenwÃ¤rtige";
 
 $LDBgColor="Hintergrundfarbe";
 $LDTxtColor="Textfarbe";
-$LDClk4BgColor="Click hier um die Hintergrundfarbe zu wählen";
-$LDClk4TxtColor="Click hier um die Textfarbe zu wählen";
-$LDApply="Übernehmen";
+$LDClk4BgColor="Click hier um die Hintergrundfarbe zu wÃ¤hlen";
+$LDClk4TxtColor="Click hier um die Textfarbe zu wï¿½hlen";
+$LDApply="Ãœbernehmen";
 
-$LDColorMap="Farbe wählen";
-$LDPlsClkColor="Die Farbe anklicken um sie zu wählen";
+$LDColorMap="Farbe wÃ¤hlen";
+$LDPlsClkColor="Die Farbe anklicken um sie zu wÃ¤hlen";
 $LDMainFrame="Hauptfensterrahmen";
 $LDTopFrame="Oberer Fensterrahmen";
 $LDBottomFrame="Unterer Fensterrahmen";
 
-$LDPWChange="Passwort Ändern bzw. Aktualisieren ";
-$LDUserIdPWPrompt="Geben Sie Ihre Benutzerkennung <br>und aktuelles (gültiges) Passwort ein.";
+$LDPWChange="Passwort Ã¤ndern bzw. Aktualisieren ";
+$LDUserIdPWPrompt="Geben Sie Ihre Benutzerkennung <br>und aktuelles (gÃ¼ltiges) Passwort ein.";
 $LDNewPwPrompt="Und geben Sie das neue Passwort <br>Ihrer Wahl ein.";
 $LDNewPw="Neues Passwort";
 $LDNewPw2="Neues Passwort Wiederholung";
-$LDChangePw="Jetzt ändern";
+$LDChangePw="Jetzt Ã¤ndern";
 $LDOops="Hoopla! Eingabe verwerfen";
 
 $LDWrongEntry="Falsche Eingabe";
@@ -160,7 +160,7 @@ $LDShotDate="Aufnahmedatum";
 $LDPatientNr="Fallnummer";
 $LDSetShotDate="Dieses Datum fur alle Bilder setzen";
 $LDFotoLab="Fotolabor";
-$LDHowManyPics="Wieviele Bilder möchten Sie in die Datenbank speichern?";
+$LDHowManyPics="Wieviele Bilder mÃ¶chten Sie in die Datenbank speichern?";
 $LDNr="Nummer";
 $LDNewPics="Bilder von einem anderen Patient speichern";
 $LDMorePics="Bilder von demselben Patient speichern";
@@ -170,8 +170,8 @@ $LDPicsSaved="Folgende Bilder sind umbenannt und in die Datenbank gespeichert:";
 $LDEditTitle="Schlagzeile";
 
 $LDAlertPhotoInfo="Die Information im Eingabefeld nummer ";
-$LDAlertNoPhotoInfo=" ist unvollständig. Bitte geben Sie die komplette Information ein.";
-$LDAlertNoPatientData="Die Patientendaten ist unvollständig. Bitte geben Sie die komplette Patientendaten in die Eingabefelder unten rechts ein.";
+$LDAlertNoPhotoInfo=" ist unvollstÃ¤ndig. Bitte geben Sie die komplette Information ein.";
+$LDAlertNoPatientData="Die Patientendaten ist unvollstÃ¤ndig. Bitte geben Sie die komplette Patientendaten in die Eingabefelder unten rechts ein.";
 $LDAlertNumberOnly="Bitte geben Sie eine Zahl oder das Wort \"main\" ein.";
 
 $LDStatistics="Statistiken";
@@ -180,7 +180,7 @@ $LDDisplay1Txt="Anzeige mit dem Menu immer im linken Rahmen.";
 $LDDisplay2="Anzeigemodus 2";
 $LDDisplay2Txt="Anzeige mit dem Menu im schwebenden Fenster.";
 
-$LDNewPwDiffer="Die neue Passwörter sind nicht gleich. <br>Bitte geben Sie die neue Passwörter noch mal ein.";
+$LDNewPwDiffer="Die neue PasswÃ¶rter sind nicht gleich. <br>Bitte geben Sie die neue PasswÃ¶rter noch mal ein.";
 /* 2003-03-22 EL*/
 $LDPersonellMngmnt='Personalverwaltung';
 $LDPersonellMngmntTxt='Werkzeuge und Funktionen zur Personalverwaltung';
@@ -200,7 +200,7 @@ $LDMascot='Mascottchen';
 $LDSampleMascot='Vorschau';
 /* 2003-04-24 EL*/
 $LDGUITemplate='GUI Themen';
-$LDGUITemplateTxt='Eine GUI (graphic user interface) Theme auswählen ';
+$LDGUITemplateTxt='Eine GUI (graphic user interface) Theme auswÃ¤hlen ';
 $LDGUITheme='GUI Theme';
 $LDTheme='Theme';
 $LDTicketedSupport='Ticketed Support';
@@ -218,7 +218,7 @@ $LDPluginsTxt='Collection of plugin tools and modules';
 
 #2004-06-13 EL
 $LDCssThemes = 'CSS Themes - Design';
-$LDCssThemesTxt= 'Randfarbe, Randdekoration, Schrift & Schriftgröße, u.v.m.';
+$LDCssThemesTxt= 'Randfarbe, Randdekoration, Schrift & SchriftgrÃ¶ÃŸe, u.v.m.';
 $LDDescription = 'Beschreibung';
 $LDScreenshot = 'Screenshot';
 
@@ -227,17 +227,17 @@ $LDSmartyTemplate = 'Smarty Template - Design';
 $LDSmartyTemplateTxt = 'Select smarty based GUI template theme';
 
 #2004-07-08
-$LDControlButtons = 'Steuerknöpfe - Stil';
-$LDControlButtonsTxt = 'Stil der Steuerknöpfe auswählen';
+$LDControlButtons = 'SteuerknÃ¶pfe - Stil';
+$LDControlButtonsTxt = 'Stil der SteuerknÃ¶pfe auswÃ¤hlen';
 $LDComIcons = 'Icons - Stil';
-$LDComIconsTxt = 'Icons auswählen <br>(Merke: in Kombination mit manchen CSS Design werden die Icons übergangen)';
+$LDComIconsTxt = 'Icons auswÃ¤hlen <br>(Merke: in Kombination mit manchen CSS Design werden die Icons Ã¼bergangen)';
 $LDDevDesigner = 'Entwickler/Entwurf von';
 $LDNoIcon = 'Keine Icons';
-$LDNoIconTxt = 'Icons in Untermenüs werden nicht gezeigt.';
+$LDNoIconTxt = 'Icons in UntermenÃ¼s werden nicht gezeigt.';
 
 #2004-07-29
 $LDMainMenuTree = 'Hauptmenu - Anzeigestruktur';
-$LDMainMenuTreeTxt = 'Anzeigestruktur des Hauptmenus auswählen';
+$LDMainMenuTreeTxt = 'Anzeigestruktur des Hauptmenus auswÃ¤hlen';
 $LDStyle = 'Stil';
-$LDRefreshBrowser = 'Laden Sie den Browser erneut um die Änderung(en) zu sehen';
+$LDRefreshBrowser = 'Laden Sie den Browser erneut um die Ã„nderung(en) zu sehen';
 ?>

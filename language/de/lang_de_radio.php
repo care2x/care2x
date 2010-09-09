@@ -1,10 +1,10 @@
 <?php
 $LDClose='Schliessen';
 $LDCancel='Abbrechen';
-$LDResetEntry='Eingabe löschen';
+$LDResetEntry='Eingabe lÃ¶schen';
 $LDSave='Speichern';
 
-$LDSearchWordPrompt='Stichwort eingeben. z.B. Fallnummer, Name, Vorname, Geburtsdatum, oder Abkürzung u.s.w.';
+$LDSearchWordPrompt='Stichwort eingeben. z.B. Fallnummer, Name, Vorname, Geburtsdatum, oder AbkÃ¼rzung u.s.w.';
 $LDEnterData='Klick um Daten einzugeben';
 $LDClk2See='Klick zum zeigen';
 $LDFoundPatient='The search found <b>~nr~</b> patients.';
@@ -17,7 +17,7 @@ $LDName='Vorname';
 $LDBday='Geburtsdatum';
 
 $LDOClock='Uhr';
-$LDBack='Zurück';
+$LDBack='ZurÃ¼ck';
 
 $LDOn='am';
 $LDAt='um';
@@ -29,8 +29,8 @@ $LDCreate='Erstellen';
 $LDValue='Wert';
 
 $LDRadio='Radiologie';
-$LDXrayFilms='Röntgenbilder';
-$LDXrayFilmsTxt='Röntgenbilder anschauen, Befund erstellen, etc.';
+$LDXrayFilms='RÃ¶ntgenbilder';
+$LDXrayFilmsTxt='RÃ¶ntgenbilder anschauen, Befund erstellen, etc.';
 $LDNews='Nachrichten';
 $LDNewsTxt='Nachrichten versenden bzw. lesen';
 $LDMemo='Rundbrief';
@@ -40,7 +40,7 @@ $LDCategory='Kategorie';
 $LDPast3Days='Letzte 3 Tage';
 $LDPast3Months='Letzte 3 Monate';
 $LDPastAll='Alle';
-$LDSelect='Auswählen';
+$LDSelect='AuswÃ¤hlen';
 $LDShootDate='Aufnahmedatum';
 $LDFullScreen='Vollbild';
 $LDEditXrayDiag='Befund bearbeiten';
@@ -56,7 +56,7 @@ $LDTestReceptionTxt='Anforderung verarbeiten, Befunde eingeben';
 # 2003-08-08 EL
 $LDDicomImages='DICOM Bilder';
 $LDDicomImagesTxt='Bilder in DICOM Format betrachten';
-$LDUploadDate='Übertrag.Datum';
+$LDUploadDate='Ãœbertrag.Datum';
 $LDViewImage='Betrachten';
 $LDViewInWindow='In anderes Fenster';
 $LDNrImages='Anzahl d.Bilder';
@@ -69,14 +69,14 @@ $LDImgNumber='Bildnr.';
 $LDSingleImage='ein Bild';
 $LDImageGroupNr='Bildergruppe Nr.';
 $LDNewFileName='Neuer Dateiname';
-$LDUploadNew='Ich möchte';
+$LDUploadNew='Ich mÃ¶chte';
 $LDNewImageFiles='neue Bilddateien hinaufladen';
 # 2003-08-09 EL
-$LDSelectViewer='Betrachter wählen';
-$LDSelectViewerTxt='DICOM Betrachter auswählen';
+$LDSelectViewer='Betrachter wÃ¤hlen';
+$LDSelectViewerTxt='DICOM Betrachter auswÃ¤hlen';
 $LDCurrentViewer='Betrachter heute';
 $LDNagoyaTechInst='Nagoya Tech. Institute';
-$LDRAIMJAVA='RAIMJAVA©';
+$LDRAIMJAVA='RAIMJAVA';
 $LDNoImageSaved='Kein Bild is gespeichert!';
 $LDImageNotes='Information';
 
