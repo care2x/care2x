@@ -343,4 +343,4 @@ $LDToggle='De�i�tirme';
 $LDChange='De�i�tirme';
 $LDClkNextNr='Sonraki bo� numaray� kullanmak i�in t�klay�n�z';
 $LDOPTable='Ameliyat masas�';
-[?][>]
+?>

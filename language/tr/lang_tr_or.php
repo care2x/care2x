@@ -338,4 +338,4 @@ $LDPlsSelectDept='L�tfen bir b�l�m se�iniz.';
 $LDSelectORoomNr='...ve bir de ameliyathane.';
 $LDAlertNoDeptSelected=$LDPlsSelectDept;
 $LDAlertNoORSelected='L�tfen bir ameliyathane se�iniz!';
-[?][>]
+?>

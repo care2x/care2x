@@ -132,4 +132,4 @@ $LDRedList='K�rm�z� Liste';
 #2003-11-22 EL
 $LDAdvancedSearch='�leri arama';
 $LDNewPerson='Yeni ki�i kayd�';
-[?][>]
+?>

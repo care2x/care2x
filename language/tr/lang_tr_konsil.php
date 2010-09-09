@@ -268,4 +268,4 @@ $LDBacLabTestType=array(_tx_special_body_material_=>'�z.v�c.m.',
 										_tx_gram_dye_=>'Gram.boyama',
 										_tx_pharma_material_=>'Pharm.mat.',
 										_tx_go_dye_=>'GO-boyama');
-[?][>]
+?>

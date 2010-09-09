@@ -119,4 +119,4 @@ $LDSureToDeleteEntry='Bu kayd� silmek istedi�inizden emin misiniz?';
 /* �eviren Dr. B�lent Potur bpotur@yahoo.com */
 $LDChangeOnlyDept='B�l�m de�i�tir';
 $LDCreateNursesList='Hem�ire listesi yap';
-[?][>]
+?>

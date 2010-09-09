@@ -65,4 +65,4 @@ $LDWrittenBy='Yazar';
 $LDNewsDummy=array(1=>'birinci',2=>'ikinci',3=>'���nc�',4=>'d�rd�nc�');
 $LDClk2Compose='Haber yazmak i�in buray� t�klay�n�z';
 $LDClk2Write='Edit�r� ba�latmak i�in buray� t�klay�n�z';
-[?][>]
+?>

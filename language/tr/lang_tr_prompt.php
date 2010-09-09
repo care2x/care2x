@@ -88,4 +88,4 @@ $LDPlsORNr='L�tfen ameliyathane numaras�n� giriniz';
 $LDInvalidDate ='Girilen tarih ge�ersiz.';
 $LDNoPastDate = 'Ge�mi� tarihler kabul edilmez.';
 #�eviren Op. Dr. B�lent Potur bpotur@yahoo.com
-[?][>]
+?>

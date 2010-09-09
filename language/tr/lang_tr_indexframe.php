@@ -45,4 +45,4 @@ $LDDutch='Hollandaca';
 $LDPerson='Ki�i';
 # 2003-09-05 EL
 $LDUser='Kullan�c�';
-[?][>]
+?>

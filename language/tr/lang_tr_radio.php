@@ -81,4 +81,4 @@ $LDImageNotes='Resim notlar�';
 #2004-08-05 EL
 $LDMissingImageFile = 'Resim dosyalar� eksik!';
 #�eviren Op.Dr. B�lent Potur 4/12/2004
-[?][>]
+?>

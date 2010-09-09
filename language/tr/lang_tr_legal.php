@@ -3,4 +3,4 @@ $LDSickConfirm='Bu i�g�remezlik raporunun bir kopyas�, tan�lar ve tahmin
 
 $LDPharmaPrompt='"K�rm�z� liste" veya "vademacum" gibi bir ila� rehberi buraya entegre edilebilir.';
 //<p> Ancak halihaz�r Alman yasalar� bir demo uyarlamas�n�n entegrasyonunu yasaklamaktad�r.';
-[?][>]
+?>

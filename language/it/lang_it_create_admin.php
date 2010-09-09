@@ -14,4 +14,4 @@ You must delete the "install/install.php" script  NOW otherwise another person c
 $LDMD5Warning='You have not yet deleted the "install/encode_pw_md5.php" script!
 You must delete the "install/encode_pw_md5.php" script  NOW otherwise another person could make your users\'  access data useless by running this 
 script anew!';
-[?][>]
+?>

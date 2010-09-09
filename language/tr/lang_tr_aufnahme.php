@@ -411,4 +411,4 @@ $LDOtherHospitalNr='Di�er Hastane No.';
 $LDSelectOtherHospital = 'Numaray� de�i�tirmek i�in di�er hastaneyi se�iniz';
 $LDNoNrNoDelete = 'numara yok = sil';
 
-[?][>]
+?>

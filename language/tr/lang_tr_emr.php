@@ -24,4 +24,4 @@ $LDDevelopment='Geli�me';
 $LDAllergy='Allerji';
 $LDDietPlan='Diyet plan�';
 $LDPrintPDFDocAllReport='T�m raporlar�n PDF dok�man�';
-[?][>]
+?>

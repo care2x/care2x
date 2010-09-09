@@ -104,4 +104,4 @@ $_a_1_teldirwrite = 'Telefon ve �a�r� cihaz� bilgisi yaz';
 $title_hxpserver = 'HXP Sunucusu';
 $_a_1_hxpserver = 'HXP Sunucu eri�imi';
 
-[?][>]
+?>

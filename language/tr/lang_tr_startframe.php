@@ -59,4 +59,4 @@ $LDCredits='Programda eme�i ge�enler';
 $LDPublicItems='Genel konular';
 # 2003-08-28 EL
 $LDHeadline='Ba�l�k';
-[?][>]
+?>

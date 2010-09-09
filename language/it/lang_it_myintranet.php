@@ -13,4 +13,4 @@ $LDMyOffRequesterTxt="Requester for vacation and off days";
 $LDMyDiaryTxt="Personal diary";
 $LDMyCalendarTxt="Personal calendar";
 $LDMyMemoTxt="Memo or sketchpad";
-[?][>]
+?>

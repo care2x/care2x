@@ -470,4 +470,4 @@ $LD_Elements = array('tx_1'=>'Biyokimya',
 /* 2002-09-03 EL */							  
 
 
-[?][>]
+?>

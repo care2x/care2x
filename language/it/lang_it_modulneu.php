@@ -72,4 +72,4 @@ $err_fehlgeschlagen=" .<br/>";
 $ld_gratulation="Congratulation, the module <strong> $ModulNeuBez</strong>is finish.";
 
 
-[?][>]
+?>

@@ -53,4 +53,4 @@ $LDPosition='Pozisyon';
 $LDSUPINE='SUPINE';
 $LDLEFTLATERAL='SOL LATERAL';
 $LDRIGHTLATERAL='SA� LATERAL';
-[?][>]
+?>

@@ -92,4 +92,4 @@ $LDSupp_s='S'; //ek
 $LDCreateNew='Yeni olu�tur';
 /*2006-09-03 Potur*/
 $LDSuretocreatenewgr='Yeni bir grup kodu olu�turmak istedi�inizden emin misiniz?';
-[?][>]
+?>

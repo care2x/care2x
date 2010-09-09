@@ -404,4 +404,4 @@ $LDShowClinicOnly='Yaln�z bu klinik';
 $LDAdmissionData='Kabul bilgileri';
 $LDShowPhoto='Foto�raf g�ster';
 $LDOpenWardManagement='Servis kayd�n� y�netmek i�in a�';
-[?][>]
+?>

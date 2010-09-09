@@ -121,4 +121,4 @@ $LDUpperCritical='Kritik �st';
 $LDLowerCritical='Kritik alt';
 $LDUpperToxic='Toksik �st';
 $LDLowerToxic='Toksik alt';
-[?][>]
+?>

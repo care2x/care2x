@@ -218,4 +218,4 @@ $LDAlertNoNegativeOrder='Negatif de�erlere izin verilmiyor';
 $LDYellowList='Sar� Liste';
 $LDYellowListTxt='Alman farmas�tik indeksi (internet ba�lant�s� gerekir)';
 $LDClickSelectDept='Bir b�l�m se�mek i�in l�tfen bunu t�klay�n�z.';
-[?][>]
+?>
