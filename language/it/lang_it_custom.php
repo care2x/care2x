@@ -2,10 +2,10 @@
 
 // custom text file for new pages
 
-$IO_title='Bilancio Idrico';
-$DDC_title='Terapia diabetica';
-$NOC_title='Glasgow Coma Scale';
-$TC_title='Mobilizzazione';
+$IO_title='Aspirazione e Uscita Carta';
+$DDC_title='Diabetica Drug Grafico';
+$NOC_title='Neuro Osservazione Grafico';
+$TC_title='Passando Grafico';
 $DailyTherapy='Terapia';
 /* general */ 
 $LDEDIT='Modifica';
