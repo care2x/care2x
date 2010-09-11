@@ -21,7 +21,7 @@ $allowedarea=&$allow_area['admit'];
 $append=URL_REDIRECT_APPEND; 
 switch($target)
 {
-	case 'entry':$fileforward='patient_register_search.php'.$append.'&origin=pass&target=entry'; 
+	case 'entry':$fileforward='patient_register.php'.$append.'&origin=pass&target=entry'; 
 						$lognote='Patient register ok';
 						break;
 	case 'search':$fileforward='patient_register_search.php'.$append.'&origin=pass&target=search'; 
