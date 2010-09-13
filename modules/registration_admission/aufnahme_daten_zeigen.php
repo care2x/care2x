@@ -49,7 +49,7 @@ $glob_obj->getConfig('show_doctors_list');
 $updatefile='aufnahme_start.php';
 
 /* Default path for fotos. Make sure that this directory exists! */
-$default_photo_path=$root_path.'uploads/photos/registration';
+$default_photo_path='uploads/photos/registration';
 $photo_filename='nopic';
 
 $dbtable='care_encounter';

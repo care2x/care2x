@@ -40,7 +40,7 @@ else $breakfile = "aufnahme_pass.php".URL_APPEND."&target=entry";
 $newdata=1;
 
 /* Default path for fotos. Make sure that this directory exists! */
-$default_photo_path=$root_path.'uploads/photos/registration';
+$default_photo_path='uploads/photos/registration';
 $photo_filename='nopic';
 $error=0;
 
