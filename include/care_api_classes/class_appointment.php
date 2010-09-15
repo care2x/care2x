@@ -20,7 +20,7 @@ class Appointment extends Core {
 	* Database table for the appointment data.
 	* @var string
 	*/
-    var $tb_appt='care_appointment';
+    var $tb_appt='care_encounter_appointment';
 	/**
 	* Database table for the person data.
 	* @var string
