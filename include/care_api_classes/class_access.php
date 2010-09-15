@@ -7,7 +7,7 @@
 */
 require_once($root_path.'include/care_api_classes/class_core.php');
 /**
-* Class for access authentication routínes.
+* Class for access authentication routï¿½nes.
 * Extends the class "Core".
 * Note this class should be instantiated only after a "$db" adodb  connector object has been established by an adodb instance
 * @package care_api
@@ -92,7 +92,7 @@ class Access extends Core {
 	* @return boolean
 	*/
 	function Access($login='',$pw=''){
-		$this->coretable=$tb_user;
+		$this->coretable=$this->tb_user;
 		$this->login_id =$login;
 		if(!empty($login)&&!empty($pw)){
 			return $this->loadAccess($login,$pw);

@@ -6,6 +6,43 @@ die('<meta http-equiv="refresh" content="0; url=../">');
 
 $bShowThisPage = FALSE;
 
+/*
+ * $passtag is defined in login.php
+ * Values: 
+ * 	passtag == 1 -> either user is unknown or passoword was not correct
+ * passtag == 3 -> user is locked
+ */
+if (!isset($passtag)) {
+	// no passtag given, so it is ok (we set the flag here to FALSE, if it would 
+	// have an value, then there is a case of login failure given
+	$passtag=FALSE;
+}
+	
+// Form values, if it is not set, define it with empty value (because it is been used in this script)
+if (!isset($direction)) {
+	$direction='';
+}
+if (!isset($target)) {
+	$target='';
+}
+if (!isset($subtarget)) {
+	$subtarget='';
+}
+if (!isset($user_origin)) {
+	$user_origin='';
+}
+if (!isset($title)){
+	$title='';
+}
+if (!isset($fwd_nr)){
+	$fwd_nr = '';
+}
+if (!isset($mode)) {
+	$mode='';
+}
+	
+	
+
 #
 # Create a smarty object if it is not yet available, without initializing the gui
 #
