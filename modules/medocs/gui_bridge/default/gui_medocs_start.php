@@ -21,7 +21,7 @@
  # Window bar title
  $smarty->assign('title',$headframe_title);
 
- if(!$encounter_nr && !$pid){
+ if(!isset($encounter_nr) && !isset($pid)){
 	$onLoadJs='onLoad="if(document.searchform.searchkey.focus) document.searchform.searchkey.focus();"';
 }
 

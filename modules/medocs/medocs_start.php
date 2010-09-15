@@ -27,7 +27,8 @@ require($root_path.'include/core/inc_front_chain_lang.php');
 require_once($root_path.'include/core/inc_date_format_functions.php');
 
 $thisfile=basename(__FILE__);
-if($origin=='patreg_reg') $returnfile='patient_register_show.php'.URL_APPEND.'&pid='.$pid;
+
+if(isset($origin) && $origin=='patreg_reg') $returnfile='patient_register_show.php'.URL_APPEND.'&pid='.$pid;
 
 # Set break file
 require('include/inc_breakfile.php');
