@@ -2401,7 +2401,7 @@ CREATE TABLE IF NOT EXISTS `care_op_med_doc` (
 -- Table structure for table `care_person`
 --
 
-CREATE TABLE IF NOT EXISTS `care_person` (
+CREATE TABLE IF NOT EXISTS `care_person1` (
   `pid` int(11) unsigned NOT NULL auto_increment,
   `date_reg` datetime NOT NULL default '0000-00-00 00:00:00',
   `name_first` varchar(60) NOT NULL,
@@ -2460,8 +2460,7 @@ CREATE TABLE IF NOT EXISTS `care_person` (
   KEY `name_last` (`name_last`),
   KEY `name_first` (`name_first`),
   KEY `date_reg` (`date_reg`),
-  KEY `date_birth` (`date_birth`),
-  KEY `pid` (`pid`)
+  KEY `date_birth` (`date_birth`)
 ) ENGINE=InnoDB ;
 
 --
