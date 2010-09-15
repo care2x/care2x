@@ -2288,6 +2288,24 @@ CREATE TABLE IF NOT EXISTS `care_news_article` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `care_ops301_en`
+--
+
+CREATE TABLE IF NOT EXISTS `care_ops301_en` (
+  `code` varchar(12) NOT NULL,
+  `description` text NOT NULL,
+  `inclusive` text NOT NULL,
+  `exclusive` text NOT NULL,
+  `notes` text NOT NULL,
+  `std_code` char(1) NOT NULL,
+  `sub_level` tinyint(4) NOT NULL default '0',
+  `remarks` text NOT NULL,
+  KEY `code` (`code`)
+) ENGINE=MyISAM;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `care_ops301_it`
 --
 
