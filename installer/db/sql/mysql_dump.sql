@@ -894,7 +894,7 @@ CREATE TABLE IF NOT EXISTS `care_effective_day` (
 
 CREATE TABLE IF NOT EXISTS `care_encounter` (
   `encounter_nr` bigint(11) unsigned NOT NULL auto_increment,
-  `pid` int(11) NOT NULL default '0',
+  `pid` int(11) unsigned NOT NULL default '0',
   `encounter_date` datetime NOT NULL default '0000-00-00 00:00:00',
   `encounter_class_nr` smallint(5) unsigned NOT NULL default '0',
   `encounter_type` varchar(35) NOT NULL,
@@ -942,6 +942,9 @@ CREATE TABLE IF NOT EXISTS `care_encounter` (
   KEY `pid` (`pid`),
   KEY `encounter_date` (`encounter_date`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ;
+
+ALTER TABLE `care_encounter`
+  ADD CONSTRAINT `care_encounter_ibfk_2` FOREIGN KEY (`pid`) REFERENCES `care_person` (`pid`);
 
 --
 -- Dumping data for table `care_encounter`
