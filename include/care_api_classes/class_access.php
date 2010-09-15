@@ -7,7 +7,7 @@
 */
 require_once($root_path.'include/care_api_classes/class_core.php');
 /**
-* Class for access authentication rout�nes.
+* Class for access authentication routines.
 * Extends the class "Core".
 * Note this class should be instantiated only after a "$db" adodb  connector object has been established by an adodb instance
 * @package care_api

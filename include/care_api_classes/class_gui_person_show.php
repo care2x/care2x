@@ -174,7 +174,7 @@ class GuiPersonShow {
 		include_once($root_path.'include/care_api_classes/class_insurance.php');
 		$pinsure_obj=new PersonInsurance($this->pid);
 
-		# Get the global config for person�s registration form
+		# Get the global config for registration form of the person 
 		include_once($root_path.'include/care_api_classes/class_globalconfig.php');
 
 		$GLOBAL_CONFIG = array();
@@ -219,7 +219,7 @@ class GuiPersonShow {
 				# Check if person is currently admitted
 				$this->current_encounter=$this->person_obj->CurrentEncounter($this->pid);
 
-				# update the record�s history
+				# update history of the record
 				if(empty($newdata)) @$this->person_obj->setHistorySeen($_SESSION['sess_user_name']);
 			
 				# Check whether config foto path exists, else use default path
@@ -240,7 +240,7 @@ class GuiPersonShow {
 		# Start Smarty templating here
 		# Create smarty object without initiliazing the GUI (2nd param = FALSE)
 
-		include_once($root_path.'gui/smarty_template/smarty_care.class.php'); echo $root_path.'gui/smarty_template/templates/smarty_care.class.php';
+		include_once($root_path.'gui/smarty_template/smarty_care.class.php');
 		$this->smarty = new smarty_care('common',FALSE);
 		
 		# Set from width
@@ -444,7 +444,7 @@ class GuiPersonShow {
 		$this->smarty->assign('sRegByInput',$buffer);
 
 		}else{
-			$this->smarty->assign('pretext','Invalid PID number or the data is not available from the databank! Please report this to <a  href=\"mailto:info@care2x.org\">info@care2x.org</a>. Thank you.');
+			$this->smarty->assign('pretext','Invalid PID number or the data is not available from the databank! Please report this to <a  href=\'mailto:info@care2x.org\'>info@care2x.org</a>. Thank you.');
 		}
 		
 

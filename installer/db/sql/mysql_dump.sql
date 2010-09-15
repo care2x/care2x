@@ -33,7 +33,7 @@ CREATE TABLE IF NOT EXISTS `care_accesslog` (
   `fileforward` text NOT NULL,
   `login_success` int(1) NOT NULL default '1',
   PRIMARY KEY  (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ;
+) ENGINE=InnoDB ;
 
 
 -- --------------------------------------------------------
@@ -61,7 +61,7 @@ CREATE TABLE IF NOT EXISTS `care_address_citytown` (
   `create_time` timestamp NOT NULL default '0000-00-00 00:00:00',
   PRIMARY KEY  (`nr`),
   KEY `name` (`name`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ;
+) ENGINE=InnoDB ;
 
 --
 -- Dumping data for table `care_address_citytown`
@@ -103,7 +103,7 @@ CREATE TABLE IF NOT EXISTS `care_encounter_appointment` (
   `create_time` timestamp NOT NULL default '0000-00-00 00:00:00',
   PRIMARY KEY  (`nr`),
   KEY `pid` (`pid`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ;
+) ENGINE=InnoDB ;
 
 --
 -- Dumping data for table `care_encounter_appointment`
@@ -129,7 +129,7 @@ CREATE TABLE IF NOT EXISTS `care_billing_archive` (
   `creditcard_no` varchar(10) NOT NULL default '0',
   `paid_by` varchar(15) NOT NULL default '0',
   PRIMARY KEY  (`bill_no`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ;
+) ENGINE=InnoDB ;
 
 --
 -- Dumping data for table `care_billing_archive`
@@ -150,7 +150,7 @@ CREATE TABLE IF NOT EXISTS `care_billing_bill` (
   `bill_outstanding` float(10,2) default NULL,
   PRIMARY KEY  (`bill_bill_no`),
   KEY `index_bill_patnum` (`bill_encounter_nr`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ;
+) ENGINE=InnoDB ;
 
 --
 -- Dumping data for table `care_billing_bill`
@@ -176,7 +176,7 @@ CREATE TABLE IF NOT EXISTS `care_billing_bill_item` (
   PRIMARY KEY  (`bill_item_id`),
   KEY `index_bill_item_patnum` (`bill_item_encounter_nr`),
   KEY `index_bill_item_bill_no` (`bill_item_bill_no`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ;
+) ENGINE=InnoDB ;
 
 --
 -- Dumping data for table `care_billing_bill_item`
@@ -201,7 +201,7 @@ CREATE TABLE IF NOT EXISTS `care_billing_final` (
   `final_amount_recieved` float(10,2) default NULL,
   PRIMARY KEY  (`final_id`),
   KEY `index_final_patnum` (`final_encounter_nr`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ;
+) ENGINE=InnoDB ;
 
 --
 -- Dumping data for table `care_billing_final`
@@ -221,7 +221,7 @@ CREATE TABLE IF NOT EXISTS `care_billing_item` (
   `item_type` tinytext ,
   `item_discount_max_allowed` tinyint(4) unsigned default '0',
   PRIMARY KEY  (`item_code`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ;
+) ENGINE=InnoDB ;
 
 --
 -- Dumping data for table `care_billing_item`
@@ -248,7 +248,7 @@ CREATE TABLE IF NOT EXISTS `care_billing_payment` (
   PRIMARY KEY  (`payment_id`),
   KEY `index_payment_patnum` (`payment_encounter_nr`),
   KEY `index_payment_receipt_no` (`payment_receipt_no`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ;
+) ENGINE=InnoDB ;
 
 --
 -- Dumping data for table `care_billing_payment`
@@ -267,7 +267,7 @@ CREATE TABLE IF NOT EXISTS `care_cache` (
   `cbinary` blob,
   `tstamp` timestamp NOT NULL default CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP,
   PRIMARY KEY  (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ;
+) ENGINE=InnoDB ;
 
 --
 -- Dumping data for table `care_cache`
@@ -292,7 +292,7 @@ CREATE TABLE IF NOT EXISTS `care_cafe_menu` (
   UNIQUE KEY `item_2` (`item`),
   KEY `item` (`item`,`lang`),
   KEY `cdate` (`cdate`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ;
+) ENGINE=InnoDB ;
 
 --
 -- Dumping data for table `care_cafe_menu`
@@ -320,7 +320,7 @@ CREATE TABLE IF NOT EXISTS `care_cafe_prices` (
   `create_time` timestamp NOT NULL default '0000-00-00 00:00:00',
   KEY `item` (`item`),
   KEY `lang` (`lang`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ;
+) ENGINE=InnoDB ;
 
 --
 -- Dumping data for table `care_cafe_prices`
@@ -349,7 +349,7 @@ CREATE TABLE IF NOT EXISTS `care_category_diagnosis` (
   `create_id` varchar(35) NOT NULL,
   `create_time` timestamp NOT NULL default '0000-00-00 00:00:00',
   PRIMARY KEY  (`nr`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ;
+) ENGINE=InnoDB ;
 
 --
 -- Dumping data for table `care_category_diagnosis`
@@ -374,7 +374,7 @@ CREATE TABLE IF NOT EXISTS `care_category_disease` (
   `create_id` varchar(35) NOT NULL,
   `create_time` timestamp NOT NULL default '0000-00-00 00:00:00',
   PRIMARY KEY  (`nr`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ;
+) ENGINE=InnoDB ;
 
 --
 -- Dumping data for table `care_category_disease`
@@ -403,7 +403,7 @@ CREATE TABLE IF NOT EXISTS `care_category_procedure` (
   `create_id` varchar(35) NOT NULL,
   `create_time` timestamp NOT NULL default '0000-00-00 00:00:00',
   PRIMARY KEY  (`nr`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ;
+) ENGINE=InnoDB ;
 
 --
 -- Dumping data for table `care_category_procedure`
@@ -429,7 +429,7 @@ CREATE TABLE IF NOT EXISTS `care_classif_neonatal` (
   `create_time` timestamp NOT NULL default '0000-00-00 00:00:00',
   PRIMARY KEY  (`nr`),
   UNIQUE KEY `id` (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ;
+) ENGINE=InnoDB ;
 
 --
 -- Dumping data for table `care_classif_neonatal`
@@ -456,7 +456,7 @@ CREATE TABLE IF NOT EXISTS `care_class_encounter` (
   `create_id` varchar(35) NOT NULL,
   `create_time` timestamp NOT NULL default '0000-00-00 00:00:00',
   PRIMARY KEY  (`class_nr`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ;
+) ENGINE=InnoDB ;
 
 --
 -- Dumping data for table `care_class_encounter`
@@ -479,7 +479,7 @@ CREATE TABLE IF NOT EXISTS `care_class_ethnic_orig` (
   `create_id` varchar(35) NOT NULL,
   `create_time` timestamp NOT NULL default '0000-00-00 00:00:00',
   PRIMARY KEY  (`nr`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ;
+) ENGINE=InnoDB ;
 
 --
 -- Dumping data for table `care_class_ethnic_orig`
@@ -509,7 +509,7 @@ CREATE TABLE IF NOT EXISTS `care_class_financial` (
   `create_time` timestamp NOT NULL default '0000-00-00 00:00:00',
   PRIMARY KEY  (`class_nr`),
   KEY `class_2` (`class_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ;
+) ENGINE=InnoDB ;
 
 --
 -- Dumping data for table `care_class_financial`
@@ -535,7 +535,7 @@ CREATE TABLE IF NOT EXISTS `care_class_insurance` (
   `create_id` varchar(35) NOT NULL,
   `create_time` timestamp NOT NULL default '0000-00-00 00:00:00',
   PRIMARY KEY  (`class_nr`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ;
+) ENGINE=InnoDB ;
 
 -- --------------------------------------------------------
 
@@ -556,7 +556,7 @@ CREATE TABLE IF NOT EXISTS `care_class_therapy` (
   `create_id` varchar(35) NOT NULL,
   `create_time` timestamp NOT NULL default '0000-00-00 00:00:00',
   PRIMARY KEY  (`nr`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ;
+) ENGINE=InnoDB ;
 
 --
 -- Dumping data for table `care_class_therapy`
@@ -582,7 +582,7 @@ CREATE TABLE IF NOT EXISTS `care_complication` (
   `create_id` varchar(35) NOT NULL,
   `create_time` timestamp NOT NULL default '0000-00-00 00:00:00',
   PRIMARY KEY  (`nr`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ;
+) ENGINE=InnoDB ;
 
 --
 -- Dumping data for table `care_complication`
@@ -606,7 +606,7 @@ CREATE TABLE IF NOT EXISTS `care_config_global` (
   `create_id` varchar(35) NOT NULL,
   `create_time` timestamp NOT NULL default '0000-00-00 00:00:00',
   PRIMARY KEY  (`type`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ;
+) ENGINE=InnoDB ;
 
 --
 -- Dumping data for table `care_config_global`
@@ -630,7 +630,7 @@ CREATE TABLE IF NOT EXISTS `care_config_user` (
   `create_id` varchar(35) NOT NULL,
   `create_time` timestamp NOT NULL default '0000-00-00 00:00:00',
   PRIMARY KEY  (`user_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ;
+) ENGINE=InnoDB ;
 
 --
 -- Dumping data for table `care_config_user`
@@ -655,7 +655,7 @@ CREATE TABLE IF NOT EXISTS `care_currency` (
   `create_time` timestamp NOT NULL default '0000-00-00 00:00:00',
   KEY `item_no` (`item_no`),
   KEY `short_name` (`short_name`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ;
+) ENGINE=InnoDB ;
 
 --
 -- Dumping data for table `care_currency`
@@ -703,7 +703,7 @@ CREATE TABLE IF NOT EXISTS `care_department` (
   `pharma_dept_nr` tinyint(3) unsigned default '0' COMMENT 'the pharmacy to which the department is connected',
   PRIMARY KEY  (`nr`),
   UNIQUE KEY `id` (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ;
+) ENGINE=InnoDB ;
 
 --
 -- Dumping data for table `care_department`
@@ -739,7 +739,7 @@ CREATE TABLE IF NOT EXISTS `care_diagnosis_localcode` (
   `create_time` timestamp NOT NULL default '0000-00-00 00:00:00',
   PRIMARY KEY  (`localcode`),
   KEY `diagnosis_code` (`localcode`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ;
+) ENGINE=InnoDB ;
 
 --
 -- Dumping data for table `care_diagnosis_localcode`
@@ -770,7 +770,7 @@ CREATE TABLE IF NOT EXISTS `care_drg_intern` (
   PRIMARY KEY  (`nr`),
   KEY `nr` (`nr`),
   KEY `code` (`code`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ;
+) ENGINE=InnoDB ;
 
 --
 -- Dumping data for table `care_drg_intern`
@@ -797,7 +797,7 @@ CREATE TABLE IF NOT EXISTS `care_drg_quicklist` (
   `create_id` varchar(25) NOT NULL,
   `create_time` timestamp NOT NULL default '0000-00-00 00:00:00',
   PRIMARY KEY  (`nr`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ;
+) ENGINE=InnoDB ;
 
 --
 -- Dumping data for table `care_drg_quicklist`
@@ -824,7 +824,7 @@ CREATE TABLE IF NOT EXISTS `care_drg_related_codes` (
   `create_id` varchar(25) NOT NULL,
   `create_time` timestamp NOT NULL default '0000-00-00 00:00:00',
   PRIMARY KEY  (`nr`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ;
+) ENGINE=InnoDB ;
 
 --
 -- Dumping data for table `care_drg_related_codes`
@@ -855,7 +855,7 @@ CREATE TABLE IF NOT EXISTS `care_dutyplan_oncall` (
   `create_time` timestamp NOT NULL default '0000-00-00 00:00:00',
   PRIMARY KEY  (`nr`),
   KEY `dept_nr` (`dept_nr`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ;
+) ENGINE=InnoDB ;
 
 --
 -- Dumping data for table `care_dutyplan_oncall`
@@ -879,7 +879,7 @@ CREATE TABLE IF NOT EXISTS `care_effective_day` (
   `create_id` varchar(35) NOT NULL,
   `create_time` timestamp NOT NULL default '0000-00-00 00:00:00',
   PRIMARY KEY  (`eff_day_nr`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ;
+) ENGINE=InnoDB ;
 
 --
 -- Dumping data for table `care_effective_day`
@@ -941,10 +941,7 @@ CREATE TABLE IF NOT EXISTS `care_encounter` (
   PRIMARY KEY  (`encounter_nr`),
   KEY `pid` (`pid`),
   KEY `encounter_date` (`encounter_date`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ;
-
-ALTER TABLE `care_encounter`
-  ADD CONSTRAINT `care_encounter_ibfk_2` FOREIGN KEY (`pid`) REFERENCES `care_person` (`pid`);
+) ENGINE=InnoDB ;
 
 --
 -- Dumping data for table `care_encounter`
@@ -969,7 +966,7 @@ CREATE TABLE IF NOT EXISTS `care_encounter_custom_ddc` (
   `createid` varchar(64) NOT NULL,
   `createtime` timestamp NULL default CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP,
   PRIMARY KEY  (`nr`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ;
+) ENGINE=InnoDB ;
 
 --
 -- Dumping data for table `care_encounter_custom_ddc`
@@ -999,7 +996,7 @@ CREATE TABLE IF NOT EXISTS `care_encounter_custom_inout` (
   `createid` varchar(64) NOT NULL,
   `createtime` timestamp NULL default CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP,
   PRIMARY KEY  (`nr`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ;
+) ENGINE=InnoDB ;
 
 --
 -- Dumping data for table `care_encounter_custom_inout`
@@ -1022,7 +1019,7 @@ CREATE TABLE IF NOT EXISTS `care_encounter_custom_noc` (
   `createid` varchar(64) NOT NULL,
   `createtime` timestamp NULL default CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP,
   PRIMARY KEY  (`nr`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ;
+) ENGINE=InnoDB ;
 
 --
 -- Dumping data for table `care_encounter_custom_noc`
@@ -1044,7 +1041,7 @@ CREATE TABLE IF NOT EXISTS `care_encounter_custom_tc` (
   `time` time NOT NULL,
   `position` varchar(32) NOT NULL,
   PRIMARY KEY  (`nr`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ;
+) ENGINE=InnoDB ;
 
 --
 -- Dumping data for table `care_encounter_custom_tc`
@@ -1080,7 +1077,7 @@ CREATE TABLE IF NOT EXISTS `care_encounter_diagnosis` (
   `create_time` timestamp NOT NULL default '0000-00-00 00:00:00',
   PRIMARY KEY  (`diagnosis_nr`),
   KEY `encounter_nr` (`encounter_nr`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ;
+) ENGINE=InnoDB ;
 
 --
 -- Dumping data for table `care_encounter_diagnosis`
@@ -1110,7 +1107,7 @@ CREATE TABLE IF NOT EXISTS `care_encounter_diagnostics_report` (
   `create_time` timestamp NOT NULL default '0000-00-00 00:00:00',
   PRIMARY KEY  (`item_nr`,`report_nr`),
   KEY `report_nr` (`report_nr`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ;
+) ENGINE=InnoDB ;
 
 --
 -- Dumping data for table `care_encounter_diagnostics_report`
@@ -1138,7 +1135,7 @@ CREATE TABLE IF NOT EXISTS `care_encounter_drg_intern` (
   `create_time` timestamp NOT NULL default '0000-00-00 00:00:00',
   PRIMARY KEY  (`nr`),
   KEY `encounter_nr` (`encounter_nr`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ;
+) ENGINE=InnoDB ;
 
 --
 -- Dumping data for table `care_encounter_drg_intern`
@@ -1197,7 +1194,7 @@ CREATE TABLE IF NOT EXISTS `care_encounter_event_signaller` (
   `rose_23` tinyint(1) NOT NULL default '0',
   `rose_24` tinyint(1) NOT NULL default '0',
   PRIMARY KEY  (`encounter_nr`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ;
+) ENGINE=InnoDB ;
 
 --
 -- Dumping data for table `care_encounter_event_signaller`
@@ -1224,7 +1221,7 @@ CREATE TABLE IF NOT EXISTS `care_encounter_financial_class` (
   `create_id` varchar(35) NOT NULL,
   `create_time` timestamp NOT NULL default '0000-00-00 00:00:00',
   PRIMARY KEY  (`nr`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ;
+) ENGINE=InnoDB ;
 
 --
 -- Dumping data for table `care_encounter_financial_class`
@@ -1254,7 +1251,7 @@ CREATE TABLE IF NOT EXISTS `care_encounter_image` (
   `create_time` timestamp NOT NULL default '0000-00-00 00:00:00',
   PRIMARY KEY  (`nr`),
   KEY `encounter_nr` (`encounter_nr`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ;
+) ENGINE=InnoDB ;
 
 --
 -- Dumping data for table `care_encounter_image`
@@ -1286,7 +1283,7 @@ CREATE TABLE IF NOT EXISTS `care_encounter_immunization` (
   `create_id` varchar(35) NOT NULL,
   `create_time` timestamp NOT NULL default '0000-00-00 00:00:00',
   PRIMARY KEY  (`nr`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ;
+) ENGINE=InnoDB ;
 
 --
 -- Dumping data for table `care_encounter_immunization`
@@ -1321,7 +1318,7 @@ CREATE TABLE IF NOT EXISTS `care_encounter_location` (
   KEY `location_id` (`location_nr`),
   KEY `encounter_nr` (`encounter_nr`),
   KEY `location_nr` (`location_nr`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ;
+) ENGINE=InnoDB ;
 
 --
 -- Dumping data for table `care_encounter_location`
@@ -1354,7 +1351,7 @@ CREATE TABLE IF NOT EXISTS `care_encounter_measurement` (
   PRIMARY KEY  (`nr`),
   KEY `type` (`msr_type_nr`),
   KEY `encounter_nr` (`encounter_nr`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ;
+) ENGINE=InnoDB ;
 
 --
 -- Dumping data for table `care_encounter_measurement`
@@ -1401,7 +1398,7 @@ CREATE TABLE IF NOT EXISTS `care_encounter_notes` (
   PRIMARY KEY  (`nr`),
   KEY `encounter_nr` (`encounter_nr`),
   KEY `type_nr` (`type_nr`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ;
+) ENGINE=InnoDB ;
 
 --
 -- Dumping data for table `care_encounter_notes`
@@ -1431,7 +1428,7 @@ CREATE TABLE IF NOT EXISTS `care_encounter_obstetric` (
   `create_time` timestamp NOT NULL default '0000-00-00 00:00:00',
   PRIMARY KEY  (`encounter_nr`),
   KEY `encounter_nr` (`pregnancy_nr`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ;
+) ENGINE=InnoDB ;
 
 --
 -- Dumping data for table `care_encounter_obstetric`
@@ -1490,7 +1487,7 @@ CREATE TABLE IF NOT EXISTS `care_encounter_op` (
   KEY `dept` (`dept_nr`),
   KEY `op_room` (`op_room`),
   KEY `op_date` (`op_date`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ;
+) ENGINE=InnoDB ;
 
 --
 -- Dumping data for table `care_encounter_op`
@@ -1518,7 +1515,7 @@ CREATE TABLE IF NOT EXISTS `care_encounter_prescription` (
   `create_time` timestamp NOT NULL default '0000-00-00 00:00:00',
   PRIMARY KEY  (`nr`),
   KEY `encounter_nr` (`encounter_nr`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ;
+) ENGINE=InnoDB ;
 
 --
 -- Dumping data for table `care_encounter_prescription`
@@ -1544,7 +1541,7 @@ CREATE TABLE IF NOT EXISTS `care_encounter_prescription_notes` (
   `create_id` varchar(35) NOT NULL,
   `create_time` timestamp NOT NULL default '0000-00-00 00:00:00',
   PRIMARY KEY  (`nr`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ;
+) ENGINE=InnoDB ;
 
 --
 -- Dumping data for table `care_encounter_prescription_notes`
@@ -1578,7 +1575,7 @@ CREATE TABLE IF NOT EXISTS `care_encounter_prescription_sub` (
   `price` decimal(10,2) NOT NULL default '0.00',
   PRIMARY KEY  (`nr`),
   KEY `prescription_nr` (`prescription_nr`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ;
+) ENGINE=InnoDB ;
 
 --
 -- Dumping data for table `care_encounter_prescription_sub`
@@ -1613,7 +1610,7 @@ CREATE TABLE IF NOT EXISTS `care_encounter_procedure` (
   `create_time` timestamp NOT NULL default '0000-00-00 00:00:00',
   PRIMARY KEY  (`procedure_nr`),
   KEY `encounter_nr` (`encounter_nr`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ;
+) ENGINE=InnoDB ;
 
 --
 -- Dumping data for table `care_encounter_procedure`
@@ -1643,7 +1640,7 @@ CREATE TABLE IF NOT EXISTS `care_encounter_sickconfirm` (
   `create_time` timestamp NOT NULL default '0000-00-00 00:00:00',
   PRIMARY KEY  (`nr`),
   KEY `encounter_nr` (`encounter_nr`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ;
+) ENGINE=InnoDB ;
 
 --
 -- Dumping data for table `care_encounter_sickconfirm`
@@ -1668,7 +1665,7 @@ CREATE TABLE IF NOT EXISTS `care_group` (
   `create_id` varchar(35) NOT NULL,
   `create_time` timestamp NOT NULL default '0000-00-00 00:00:00',
   PRIMARY KEY  (`nr`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ;
+) ENGINE=InnoDB ;
 
 -- --------------------------------------------------------
 
@@ -1879,7 +1876,7 @@ CREATE TABLE IF NOT EXISTS `care_img_diagnostic` (
   `create_time` timestamp NOT NULL default '0000-00-00 00:00:00',
   PRIMARY KEY  (`nr`),
   KEY `encounter_nr` (`pid`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ;
+) ENGINE=InnoDB ;
 
 --
 -- Dumping data for table `care_img_diagnostic`
@@ -1919,7 +1916,7 @@ CREATE TABLE IF NOT EXISTS `care_insurance_firm` (
   `create_time` timestamp NOT NULL default '0000-00-00 00:00:00',
   PRIMARY KEY  (`firm_id`),
   KEY `name` (`name`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ;
+) ENGINE=InnoDB ;
 
 --
 -- Dumping data for table `care_insurance_firm`
@@ -1954,7 +1951,7 @@ CREATE TABLE IF NOT EXISTS `care_mail_private` (
   `send_stamp` timestamp NOT NULL default CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP,
   `uid` varchar(255) NOT NULL,
   KEY `recipient` (`recipient`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ;
+) ENGINE=InnoDB ;
 
 --
 -- Dumping data for table `care_mail_private`
@@ -1986,7 +1983,7 @@ CREATE TABLE IF NOT EXISTS `care_mail_private_users` (
   `sig` tinytext NOT NULL,
   `append_sig` tinyint(4) NOT NULL default '0',
   PRIMARY KEY  (`email`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ;
+) ENGINE=InnoDB ;
 
 --
 -- Dumping data for table `care_mail_private_users`
@@ -2012,7 +2009,7 @@ CREATE TABLE IF NOT EXISTS `care_med_ordercatalog` (
   `packing` tinytext ,
   PRIMARY KEY  (`item_no`),
   KEY `item_no` (`item_no`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ;
+) ENGINE=InnoDB ;
 
 --
 -- Dumping data for table `care_med_ordercatalog`
@@ -2047,7 +2044,7 @@ CREATE TABLE IF NOT EXISTS `care_med_orderlist` (
   PRIMARY KEY  (`order_nr`),
   KEY `item_nr` (`order_nr`),
   KEY `dept` (`dept_nr`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ;
+) ENGINE=InnoDB ;
 
 --
 -- Dumping data for table `care_med_orderlist`
@@ -2089,7 +2086,7 @@ CREATE TABLE IF NOT EXISTS `care_med_products_main` (
   `minpcs` int(99) unsigned NOT NULL default '0',
   PRIMARY KEY  (`bestellnum`),
   KEY `bestellnum` (`bestellnum`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB;
 
 --
 -- Dumping data for table `care_med_products_main`
@@ -2115,7 +2112,7 @@ CREATE TABLE IF NOT EXISTS `care_menu_main` (
   `modify_id` varchar(60)  default NULL,
   `modify_time` timestamp NOT NULL default CURRENT_TIMESTAMP,
   PRIMARY KEY  (`nr`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ;
+) ENGINE=InnoDB ;
 
 --
 -- Dumping data for table `care_menu_main`
@@ -2144,7 +2141,7 @@ CREATE TABLE IF NOT EXISTS `care_menu_sub` (
   `s_status` varchar(100) NOT NULL default '',
   `s_modify_id` varchar(100) NOT NULL default '',
   `s_modify_time` datetime NOT NULL default '0000-00-00 00:00:00'
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ;
+) ENGINE=InnoDB ;
 
 --
 -- Dumping data for table `care_menu_sub`
@@ -2170,7 +2167,7 @@ CREATE TABLE IF NOT EXISTS `care_method_induction` (
   `create_id` varchar(35) NOT NULL,
   `create_time` timestamp NOT NULL default '0000-00-00 00:00:00',
   PRIMARY KEY  (`nr`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ;
+) ENGINE=InnoDB ;
 
 --
 -- Dumping data for table `care_method_induction`
@@ -2196,7 +2193,7 @@ CREATE TABLE IF NOT EXISTS `care_mode_delivery` (
   `create_id` varchar(35) NOT NULL,
   `create_time` timestamp NOT NULL default '0000-00-00 00:00:00',
   PRIMARY KEY  (`nr`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ;
+) ENGINE=InnoDB ;
 
 --
 -- Dumping data for table `care_mode_delivery`
@@ -2247,7 +2244,7 @@ CREATE TABLE IF NOT EXISTS `care_neonatal` (
   KEY `pid` (`pid`),
   KEY `pregnancy_nr` (`parent_encounter_nr`),
   KEY `encounter_nr` (`encounter_nr`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ;
+) ENGINE=InnoDB ;
 
 --
 -- Dumping data for table `care_neonatal`
@@ -2285,7 +2282,7 @@ CREATE TABLE IF NOT EXISTS `care_news_article` (
   `create_time` timestamp NOT NULL default '0000-00-00 00:00:00',
   PRIMARY KEY  (`nr`),
   KEY `item_no` (`nr`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ;
+) ENGINE=InnoDB ;
 
 
 -- --------------------------------------------------------
@@ -2391,7 +2388,7 @@ CREATE TABLE IF NOT EXISTS `care_op_med_doc` (
   `create_time` timestamp NOT NULL default '0000-00-00 00:00:00',
   PRIMARY KEY  (`nr`),
   KEY `encounter_nr` (`encounter_nr`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ;
+) ENGINE=InnoDB ;
 
 --
 -- Dumping data for table `care_op_med_doc`
@@ -2404,7 +2401,7 @@ CREATE TABLE IF NOT EXISTS `care_op_med_doc` (
 -- Table structure for table `care_person`
 --
 
-CREATE TABLE IF NOT EXISTS `care_person1` (
+CREATE TABLE IF NOT EXISTS `care_person` (
   `pid` int(11) unsigned NOT NULL auto_increment,
   `date_reg` datetime NOT NULL default '0000-00-00 00:00:00',
   `name_first` varchar(60) NOT NULL,
@@ -2464,7 +2461,10 @@ CREATE TABLE IF NOT EXISTS `care_person1` (
   KEY `name_first` (`name_first`),
   KEY `date_reg` (`date_reg`),
   KEY `date_birth` (`date_birth`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ;
+) ENGINE=InnoDB ;
+
+ALTER TABLE `care_encounter`
+  ADD CONSTRAINT `care_encounter_ibfk_2` FOREIGN KEY (`pid`) REFERENCES `care_person` (`pid`);
 
 --
 -- Dumping data for table `care_person`
@@ -2507,7 +2507,7 @@ CREATE TABLE IF NOT EXISTS `care_personell` (
   `create_time` timestamp NOT NULL default '0000-00-00 00:00:00',
   PRIMARY KEY  (`nr`,`pid`,`job_type_nr`),
   KEY `pid` (`pid`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ;
+) ENGINE=InnoDB ;
 
 --
 -- Dumping data for table `care_personell`
@@ -2538,7 +2538,7 @@ CREATE TABLE IF NOT EXISTS `care_personell_assignment` (
   `create_time` timestamp NOT NULL default '0000-00-00 00:00:00',
   PRIMARY KEY  (`nr`,`personell_nr`,`role_nr`,`location_type_nr`,`location_nr`),
   KEY `personell_nr` (`personell_nr`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ;
+) ENGINE=InnoDB ;
 
 --
 -- Dumping data for table `care_personell_assignment`
@@ -2566,7 +2566,7 @@ CREATE TABLE IF NOT EXISTS `care_person_insurance` (
   `create_id` varchar(35) NOT NULL,
   `create_time` timestamp NOT NULL default '0000-00-00 00:00:00',
   PRIMARY KEY  (`item_nr`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ;
+) ENGINE=InnoDB ;
 
 --
 -- Dumping data for table `care_person_insurance`
@@ -2593,7 +2593,7 @@ CREATE TABLE IF NOT EXISTS `care_person_other_number` (
   PRIMARY KEY  (`nr`),
   KEY `pid` (`pid`),
   KEY `other_nr` (`other_nr`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ;
+) ENGINE=InnoDB ;
 
 --
 -- Dumping data for table `care_person_other_number`
@@ -2619,7 +2619,7 @@ CREATE TABLE IF NOT EXISTS `care_pharma_ordercatalog` (
   `packing` tinytext ,
   `quantity` double NOT NULL default '0',
   KEY `item_no` (`item_no`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ;
+) ENGINE=InnoDB ;
 
 --
 -- Dumping data for table `care_pharma_ordercatalog`
@@ -2654,7 +2654,7 @@ CREATE TABLE IF NOT EXISTS `care_pharma_orderlist` (
   PRIMARY KEY  (`order_nr`,`dept_nr`),
   KEY `dept` (`dept_nr`),
   KEY `order_nr` (`order_nr`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ;
+) ENGINE=InnoDB ;
 
 --
 -- Dumping data for table `care_pharma_orderlist`
@@ -2696,7 +2696,7 @@ CREATE TABLE IF NOT EXISTS `care_pharma_products_main` (
   `create_id` varchar(35) NOT NULL,
   `create_time` timestamp NOT NULL default '0000-00-00 00:00:00',
   PRIMARY KEY  (`bestellnum`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB;
 
 --
 -- Dumping data for table `care_pharma_products_main`
@@ -2739,7 +2739,7 @@ CREATE TABLE IF NOT EXISTS `care_phone` (
   PRIMARY KEY  (`item_nr`,`pid`,`personell_nr`,`dept_nr`),
   KEY `name` (`name`),
   KEY `vorname` (`vorname`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ;
+) ENGINE=InnoDB ;
 
 --
 -- Dumping data for table `care_phone`
@@ -2791,7 +2791,7 @@ CREATE TABLE IF NOT EXISTS `care_pregnancy` (
   `create_time` timestamp NOT NULL default '0000-00-00 00:00:00',
   PRIMARY KEY  (`nr`,`encounter_nr`),
   KEY `encounter_nr` (`encounter_nr`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ;
+) ENGINE=InnoDB ;
 
 --
 -- Dumping data for table `care_pregnancy`
@@ -2818,7 +2818,7 @@ CREATE TABLE IF NOT EXISTS `care_registry` (
   `create_id` varchar(35) NOT NULL,
   `create_time` timestamp NOT NULL default '0000-00-00 00:00:00',
   PRIMARY KEY  (`registry_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ;
+) ENGINE=InnoDB ;
 
 --
 -- Dumping data for table `care_registry`
@@ -2843,7 +2843,7 @@ CREATE TABLE IF NOT EXISTS `care_role_person` (
   `create_id` varchar(35) NOT NULL,
   `create_time` timestamp NOT NULL default '0000-00-00 00:00:00',
   PRIMARY KEY  (`nr`,`group_nr`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ;
+) ENGINE=InnoDB ;
 
 --
 -- Dumping data for table `care_role_person`
@@ -2878,7 +2878,7 @@ CREATE TABLE IF NOT EXISTS `care_room` (
   KEY `room_nr` (`room_nr`),
   KEY `ward_nr` (`ward_nr`),
   KEY `dept_nr` (`dept_nr`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ;
+) ENGINE=InnoDB ;
 
 --
 -- Dumping data for table `care_room`
@@ -2898,7 +2898,7 @@ CREATE TABLE IF NOT EXISTS `care_sessions` (
   `DATA` text NOT NULL,
   PRIMARY KEY  (`SESSKEY`),
   KEY `EXPIRY` (`EXPIRY`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ;
+) ENGINE=InnoDB ;
 
 --
 -- Dumping data for table `care_sessions`
@@ -2932,7 +2932,7 @@ CREATE TABLE IF NOT EXISTS `care_standby_duty_report` (
   `create_time` timestamp NOT NULL default '0000-00-00 00:00:00',
   PRIMARY KEY  (`report_nr`),
   KEY `report_nr` (`report_nr`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ;
+) ENGINE=InnoDB ;
 
 --
 -- Dumping data for table `care_standby_duty_report`
@@ -2962,7 +2962,7 @@ CREATE TABLE IF NOT EXISTS `care_steri_products_main` (
   `lock_flag` tinyint(1) NOT NULL default '0',
   `medgroup` text NOT NULL,
   `cave` tinytext NOT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ;
+) ENGINE=InnoDB ;
 
 --
 -- Dumping data for table `care_steri_products_main`
@@ -3062,7 +3062,7 @@ CREATE TABLE IF NOT EXISTS `care_target_test` (
   `reperti_addome` varchar(255)  default NULL,
   PRIMARY KEY  (`nr`),
   UNIQUE KEY `nr` (`nr`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ;
+) ENGINE=InnoDB ;
 
 --
 -- Dumping data for table `care_target_test`
@@ -3097,7 +3097,7 @@ CREATE TABLE IF NOT EXISTS `care_tech_questions` (
   `create_time` timestamp NOT NULL default '0000-00-00 00:00:00',
   PRIMARY KEY  (`batch_nr`),
   KEY `batch_nr` (`batch_nr`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ;
+) ENGINE=InnoDB ;
 
 --
 -- Dumping data for table `care_tech_questions`
@@ -3130,7 +3130,7 @@ CREATE TABLE IF NOT EXISTS `care_tech_repair_done` (
   `create_id` varchar(35) NOT NULL,
   `create_time` timestamp NOT NULL default '0000-00-00 00:00:00',
   PRIMARY KEY  (`batch_nr`,`dept_nr`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ;
+) ENGINE=InnoDB ;
 
 --
 -- Dumping data for table `care_tech_repair_done`
@@ -3169,7 +3169,7 @@ CREATE TABLE IF NOT EXISTS `care_tech_repair_job` (
   `create_time` timestamp NOT NULL default '0000-00-00 00:00:00',
   PRIMARY KEY  (`batch_nr`),
   KEY `batch_nr` (`batch_nr`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ;
+) ENGINE=InnoDB ;
 
 --
 -- Dumping data for table `care_tech_repair_job`
@@ -3209,7 +3209,7 @@ CREATE TABLE IF NOT EXISTS `care_test_findings_baclabor` (
   PRIMARY KEY  (`batch_nr`,`encounter_nr`,`room_nr`,`dept_nr`),
   KEY `findings_date` (`findings_date`),
   KEY `rec_date` (`rec_date`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ;
+) ENGINE=InnoDB ;
 
 --
 -- Dumping data for table `care_test_findings_baclabor`
@@ -3239,7 +3239,7 @@ CREATE TABLE IF NOT EXISTS `care_test_findings_baclabor_sub` (
   `create_id` varchar(35) CHARACTER SET utf8  default NULL,
   `create_time` timestamp NOT NULL default '0000-00-00 00:00:00',
   PRIMARY KEY  (`sub_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ;
+) ENGINE=InnoDB ;
 
 --
 -- Dumping data for table `care_test_findings_baclabor_sub`
@@ -3269,7 +3269,7 @@ CREATE TABLE IF NOT EXISTS `care_test_findings_chemlab` (
   `create_id` varchar(35) NOT NULL,
   `create_time` timestamp NOT NULL default '0000-00-00 00:00:00',
   PRIMARY KEY  (`batch_nr`,`encounter_nr`,`job_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ;
+) ENGINE=InnoDB ;
 
 --
 -- Dumping data for table `care_test_findings_chemlab`
@@ -3296,7 +3296,7 @@ CREATE TABLE IF NOT EXISTS `care_test_findings_chemlabor_sub` (
   `create_id` varchar(35) CHARACTER SET utf8  default NULL,
   `create_time` timestamp NOT NULL default '0000-00-00 00:00:00',
   PRIMARY KEY  (`sub_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ;
+) ENGINE=InnoDB ;
 
 --
 -- Dumping data for table `care_test_findings_chemlabor_sub`
@@ -3331,7 +3331,7 @@ CREATE TABLE IF NOT EXISTS `care_test_findings_patho` (
   PRIMARY KEY  (`batch_nr`,`encounter_nr`,`room_nr`,`dept_nr`),
   KEY `send_date` (`findings_date`),
   KEY `findings_date` (`findings_date`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ;
+) ENGINE=InnoDB ;
 
 --
 -- Dumping data for table `care_test_findings_patho`
@@ -3363,7 +3363,7 @@ CREATE TABLE IF NOT EXISTS `care_test_findings_radio` (
   PRIMARY KEY  (`batch_nr`,`encounter_nr`),
   KEY `send_date` (`findings_date`),
   KEY `findings_date` (`findings_date`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ;
+) ENGINE=InnoDB ;
 
 --
 -- Dumping data for table `care_test_findings_radio`
@@ -3426,7 +3426,7 @@ CREATE TABLE IF NOT EXISTS `care_test_param` (
   `create_id` varchar(35) NOT NULL,
   `create_time` timestamp NOT NULL default '0000-00-00 00:00:00',
   PRIMARY KEY  (`nr`,`group_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ;
+) ENGINE=InnoDB ;
 
 
 -- --------------------------------------------------------
@@ -3454,7 +3454,7 @@ CREATE TABLE IF NOT EXISTS `care_test_request_baclabor` (
   `create_time` timestamp NOT NULL default '0000-00-00 00:00:00',
   PRIMARY KEY  (`batch_nr`),
   KEY `send_date` (`send_date`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ;
+) ENGINE=InnoDB ;
 
 --
 -- Dumping data for table `care_test_request_baclabor`
@@ -3476,7 +3476,7 @@ CREATE TABLE IF NOT EXISTS `care_test_request_baclabor_sub` (
   `material` varchar(255) NOT NULL default '0' COMMENT 'Material notes and remarks',
   `material_value` varchar(255) NOT NULL default '0',
   PRIMARY KEY  (`sub_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ;
+) ENGINE=InnoDB ;
 
 --
 -- Dumping data for table `care_test_request_baclabor_sub`
@@ -3562,7 +3562,7 @@ CREATE TABLE IF NOT EXISTS `care_test_request_blood` (
   `create_time` timestamp NOT NULL default '0000-00-00 00:00:00',
   PRIMARY KEY  (`batch_nr`),
   KEY `send_date` (`send_date`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ;
+) ENGINE=InnoDB ;
 
 --
 -- Dumping data for table `care_test_request_blood`
@@ -3596,7 +3596,7 @@ CREATE TABLE IF NOT EXISTS `care_test_request_chemlabor` (
   `create_time` timestamp NULL default '0000-00-00 00:00:00',
   PRIMARY KEY  (`batch_nr`),
   KEY `encounter_nr` (`encounter_nr`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ;
+) ENGINE=InnoDB ;
 
 --
 -- Dumping data for table `care_test_request_chemlabor`
@@ -3616,7 +3616,7 @@ CREATE TABLE IF NOT EXISTS `care_test_request_chemlabor_sub` (
   `paramater_name` varchar(255) default '0',
   `parameter_value` varchar(255) default '0',
   PRIMARY KEY  (`sub_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ;
+) ENGINE=InnoDB ;
 
 --
 -- Dumping data for table `care_test_request_chemlabor_sub`
@@ -3650,7 +3650,7 @@ CREATE TABLE IF NOT EXISTS `care_test_request_generic` (
   PRIMARY KEY  (`batch_nr`),
   KEY `batch_nr` (`batch_nr`,`encounter_nr`),
   KEY `send_date` (`send_date`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ;
+) ENGINE=InnoDB ;
 
 --
 -- Dumping data for table `care_test_request_generic`
@@ -3707,7 +3707,7 @@ CREATE TABLE IF NOT EXISTS `care_test_request_patho` (
   PRIMARY KEY  (`batch_nr`),
   KEY `encounter_nr` (`encounter_nr`),
   KEY `send_date` (`send_date`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ;
+) ENGINE=InnoDB ;
 
 --
 -- Dumping data for table `care_test_request_patho`
@@ -3758,7 +3758,7 @@ CREATE TABLE IF NOT EXISTS `care_test_request_radio` (
   UNIQUE KEY `batch_nr_2` (`batch_nr`),
   KEY `batch_nr` (`batch_nr`,`encounter_nr`),
   KEY `send_date` (`xray_time`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ;
+) ENGINE=InnoDB ;
 
 --
 -- Dumping data for table `care_test_request_radio`
@@ -3784,7 +3784,7 @@ CREATE TABLE IF NOT EXISTS `care_type_anaesthesia` (
   `create_time` timestamp NOT NULL default '0000-00-00 00:00:00',
   PRIMARY KEY  (`nr`),
   UNIQUE KEY `id` (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ;
+) ENGINE=InnoDB ;
 
 --
 -- Dumping data for table `care_type_anaesthesia`
@@ -3810,7 +3810,7 @@ CREATE TABLE IF NOT EXISTS `care_type_application` (
   `create_id` varchar(35) NOT NULL,
   `create_time` timestamp NOT NULL default '0000-00-00 00:00:00',
   PRIMARY KEY  (`nr`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ;
+) ENGINE=InnoDB ;
 
 --
 -- Dumping data for table `care_type_application`
@@ -3835,7 +3835,7 @@ CREATE TABLE IF NOT EXISTS `care_type_assignment` (
   `create_id` varchar(35) NOT NULL,
   `create_time` timestamp NOT NULL default '0000-00-00 00:00:00',
   PRIMARY KEY  (`type`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ;
+) ENGINE=InnoDB ;
 
 --
 -- Dumping data for table `care_type_assignment`
@@ -3860,7 +3860,7 @@ CREATE TABLE IF NOT EXISTS `care_type_cause_opdelay` (
   `create_time` timestamp NOT NULL default '0000-00-00 00:00:00',
   PRIMARY KEY  (`type_nr`),
   KEY `type` (`type`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ;
+) ENGINE=InnoDB ;
 
 --
 -- Dumping data for table `care_type_cause_opdelay`
@@ -3881,7 +3881,7 @@ CREATE TABLE IF NOT EXISTS `care_type_color` (
   `modify_id` varchar(35) NOT NULL,
   `modify_time` timestamp NOT NULL default CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP,
   PRIMARY KEY  (`color_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ;
+) ENGINE=InnoDB ;
 
 --
 -- Dumping data for table `care_type_color`
@@ -3907,7 +3907,7 @@ CREATE TABLE IF NOT EXISTS `care_type_department` (
   `create_time` timestamp NOT NULL default '0000-00-00 00:00:00',
   PRIMARY KEY  (`nr`),
   KEY `type` (`type`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ;
+) ENGINE=InnoDB ;
 
 --
 -- Dumping data for table `care_type_department`
@@ -3931,7 +3931,7 @@ CREATE TABLE IF NOT EXISTS `care_type_discharge` (
   `create_id` varchar(35) NOT NULL,
   `create_time` timestamp NOT NULL default '0000-00-00 00:00:00',
   PRIMARY KEY  (`nr`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ;
+) ENGINE=InnoDB ;
 
 --
 -- Dumping data for table `care_type_discharge`
@@ -3957,7 +3957,7 @@ CREATE TABLE IF NOT EXISTS `care_type_duty` (
   `create_time` timestamp NOT NULL default '0000-00-00 00:00:00',
   PRIMARY KEY  (`type_nr`),
   KEY `type` (`type`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ;
+) ENGINE=InnoDB ;
 
 --
 -- Dumping data for table `care_type_duty`
@@ -3984,7 +3984,7 @@ CREATE TABLE IF NOT EXISTS `care_type_encounter` (
   `create_id` varchar(35) NOT NULL,
   `create_time` timestamp NOT NULL default '0000-00-00 00:00:00',
   PRIMARY KEY  (`type_nr`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ;
+) ENGINE=InnoDB ;
 
 --
 -- Dumping data for table `care_type_encounter`
@@ -4009,7 +4009,7 @@ CREATE TABLE IF NOT EXISTS `care_type_ethnic_orig` (
   `create_time` timestamp NOT NULL default '0000-00-00 00:00:00',
   PRIMARY KEY  (`nr`),
   KEY `type` (`class_nr`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ;
+) ENGINE=InnoDB ;
 
 --
 -- Dumping data for table `care_type_ethnic_orig`
@@ -4035,7 +4035,7 @@ CREATE TABLE IF NOT EXISTS `care_type_feeding` (
   `create_id` varchar(35) NOT NULL,
   `create_time` timestamp NOT NULL default '0000-00-00 00:00:00',
   PRIMARY KEY  (`nr`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ;
+) ENGINE=InnoDB ;
 
 --
 -- Dumping data for table `care_type_feeding`
@@ -4067,7 +4067,7 @@ CREATE TABLE IF NOT EXISTS `care_type_immunization` (
   `create_id` varchar(35) NOT NULL default '',
   `create_time` timestamp NOT NULL default '0000-00-00 00:00:00',
   PRIMARY KEY  (`nr`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ;
+) ENGINE=InnoDB ;
 
 --
 -- Dumping data for table `care_type_immunization`
@@ -4094,7 +4094,7 @@ CREATE TABLE IF NOT EXISTS `care_type_insurance` (
   `create_time` timestamp NOT NULL default '0000-00-00 00:00:00',
   PRIMARY KEY  (`type_nr`),
   KEY `type` (`type`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ;
+) ENGINE=InnoDB ;
 
 --
 -- Dumping data for table `care_type_insurance`
@@ -4123,7 +4123,7 @@ CREATE TABLE IF NOT EXISTS `care_type_localization` (
   `create_id` varchar(35) NOT NULL,
   `create_time` timestamp NOT NULL default '0000-00-00 00:00:00',
   PRIMARY KEY  (`nr`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ;
+) ENGINE=InnoDB ;
 
 --
 -- Dumping data for table `care_type_localization`
@@ -4148,7 +4148,7 @@ CREATE TABLE IF NOT EXISTS `care_type_location` (
   `create_id` varchar(35) NOT NULL,
   `create_time` timestamp NOT NULL default '0000-00-00 00:00:00',
   PRIMARY KEY  (`nr`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ;
+) ENGINE=InnoDB ;
 
 --
 -- Dumping data for table `care_type_location`
@@ -4172,7 +4172,7 @@ CREATE TABLE IF NOT EXISTS `care_type_measurement` (
   `create_id` varchar(35) NOT NULL,
   `create_time` timestamp NOT NULL default '0000-00-00 00:00:00',
   PRIMARY KEY  (`nr`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ;
+) ENGINE=InnoDB ;
 
 --
 -- Dumping data for table `care_type_measurement`
@@ -4198,7 +4198,7 @@ CREATE TABLE IF NOT EXISTS `care_type_notes` (
   `create_time` timestamp NOT NULL default '0000-00-00 00:00:00',
   PRIMARY KEY  (`nr`),
   UNIQUE KEY `type` (`type`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ;
+) ENGINE=InnoDB ;
 
 --
 -- Dumping data for table `care_type_notes`
@@ -4224,7 +4224,7 @@ CREATE TABLE IF NOT EXISTS `care_type_outcome` (
   `create_id` varchar(35) NOT NULL,
   `create_time` timestamp NOT NULL default '0000-00-00 00:00:00',
   PRIMARY KEY  (`nr`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ;
+) ENGINE=InnoDB ;
 
 --
 -- Dumping data for table `care_type_outcome`
@@ -4250,7 +4250,7 @@ CREATE TABLE IF NOT EXISTS `care_type_perineum` (
   `create_time` timestamp NOT NULL default '0000-00-00 00:00:00',
   PRIMARY KEY  (`nr`),
   UNIQUE KEY `id` (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ;
+) ENGINE=InnoDB ;
 
 --
 -- Dumping data for table `care_type_perineum`
@@ -4274,7 +4274,7 @@ CREATE TABLE IF NOT EXISTS `care_type_prescription` (
   `create_id` varchar(35) NOT NULL,
   `create_time` timestamp NOT NULL default '0000-00-00 00:00:00',
   PRIMARY KEY  (`nr`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ;
+) ENGINE=InnoDB ;
 
 --
 -- Dumping data for table `care_type_prescription`
@@ -4299,7 +4299,7 @@ CREATE TABLE IF NOT EXISTS `care_type_room` (
   `create_id` varchar(35) NOT NULL,
   `create_time` timestamp NOT NULL default '0000-00-00 00:00:00',
   PRIMARY KEY  (`nr`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ;
+) ENGINE=InnoDB ;
 
 --
 -- Dumping data for table `care_type_room`
@@ -4325,7 +4325,7 @@ CREATE TABLE IF NOT EXISTS `care_type_test` (
   `create_time` timestamp NOT NULL default '0000-00-00 00:00:00',
   PRIMARY KEY  (`type_nr`),
   KEY `type` (`type`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ;
+) ENGINE=InnoDB ;
 
 --
 -- Dumping data for table `care_type_test`
@@ -4351,7 +4351,7 @@ CREATE TABLE IF NOT EXISTS `care_type_time` (
   `create_time` timestamp NOT NULL default '0000-00-00 00:00:00',
   PRIMARY KEY  (`nr`),
   KEY `type` (`type`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ;
+) ENGINE=InnoDB ;
 
 --
 -- Dumping data for table `care_type_time`
@@ -4377,7 +4377,7 @@ CREATE TABLE IF NOT EXISTS `care_type_unit_measurement` (
   `create_time` timestamp NOT NULL default '0000-00-00 00:00:00',
   PRIMARY KEY  (`nr`),
   KEY `type` (`type`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ;
+) ENGINE=InnoDB ;
 
 --
 -- Dumping data for table `care_type_unit_measurement`
@@ -4405,7 +4405,7 @@ CREATE TABLE IF NOT EXISTS `care_unit_measurement` (
   `create_time` timestamp NOT NULL default '0000-00-00 00:00:00',
   PRIMARY KEY  (`nr`),
   UNIQUE KEY `id` (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ;
+) ENGINE=InnoDB ;
 
 --
 -- Dumping data for table `care_unit_measurement`
@@ -4441,7 +4441,7 @@ CREATE TABLE IF NOT EXISTS `care_users` (
   PRIMARY KEY  (`login_id`),
   KEY `login_id` (`login_id`),
   KEY `user_role` (`user_role`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB;
 
 --
 -- Dumping data for table `care_users`
@@ -4464,7 +4464,7 @@ CREATE TABLE IF NOT EXISTS `care_user_roles` (
   `create_id` varchar(35) NOT NULL,
   `create_time` timestamp NOT NULL default '0000-00-00 00:00:00',
   PRIMARY KEY  (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ;
+) ENGINE=InnoDB ;
 
 --
 -- Dumping data for table `care_user_roles`
@@ -4485,7 +4485,7 @@ CREATE TABLE IF NOT EXISTS `care_version` (
   `date` date NOT NULL default '0000-00-00',
   `time` time NOT NULL default '00:00:00',
   `releaser` varchar(30) NOT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ;
+) ENGINE=InnoDB ;
 
 --
 -- Dumping data for table `care_version`
@@ -4519,7 +4519,7 @@ CREATE TABLE IF NOT EXISTS `care_ward` (
   `create_time` timestamp NOT NULL default '0000-00-00 00:00:00',
   PRIMARY KEY  (`nr`),
   KEY `ward_id` (`ward_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ;
+) ENGINE=InnoDB ;
 
 --
 -- Dumping data for table `care_ward`
@@ -4585,7 +4585,7 @@ CREATE TABLE IF NOT EXISTS `care_yellow_paper` (
   `modify_time` timestamp NOT NULL default '0000-00-00 00:00:00',
   PRIMARY KEY  (`nr`),
   UNIQUE KEY `nr` (`nr`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 ;
+) ENGINE=InnoDB ;
 
 --
 -- Dumping data for table `care_yellow_paper`
