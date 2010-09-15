@@ -105,7 +105,11 @@ if(!empty($mode)){
 <!--
 function check(d)
 {
-	if(isNaN(d.unece_locode_type.value)){
+	if(d.iso_country_id.value==""){
+		alert("<?php echo $LDEnterISOCountryCode.'\n'.$LDEnterQMark; ?>");
+		d.iso_country_id.focus();
+		return false;
+	}else if(isNaN(d.unece_locode_type.value)){
 		alert("UNECE location code type accepts only numbers between 0 and 99.\nIf you do not know the value please enter 0.");
 		return false;
 	}else{
@@ -119,11 +123,16 @@ function check(d)
 <table border=0>
   <tr>
     <td align=right class="adm_item"><?php echo $LDCityTownName ?>: </td>
-    <td class="adm_input"><?php echo $name ?><br>
-</td>
+    <td class="adm_input"><?php echo $name ?><br></td>
   </tr> 
+  <!-- apmuthu added zip code -->
   <tr>
-    <td align=right class="adm_item"><?php echo $LDISOCountryCode ?>: </td>
+    <td align=right class="adm_item"><font color=#ff0000><b>*</b></font><?php echo $LDZipCode ?>: </td>
+    <td class="adm_input"><input type="text" name="zip_code" size=50 maxlength=15 value="<?php echo $zip_code ?>"><br></td>
+  </tr>  
+  <!-- end:apmuthu added zip code  -->   
+  <tr>
+    <td align=right class="adm_item"><font color=#ff0000><b>*</b></font><?php echo $LDISOCountryCode ?>: </td>
     <td class="adm_input"><input type="text" name="iso_country_id" size=50 maxlength=3 value="<?php echo $iso_country_id ?>"><br></td>
   </tr> 
   <tr>

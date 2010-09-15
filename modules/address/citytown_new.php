@@ -175,11 +175,11 @@ if(!empty($mode)){
   <!-- gjergji added zip code -->
   <tr>
     <td align=right class="adm_item"><font color=#ff0000><b>*</b></font><?php echo $LDZipCode ?>: </td>
-    <td class="adm_input"><input type="text" name="zip_code" size=50 maxlength=5 value="<?php echo $zip_code ?>"><br></td>
+    <td class="adm_input"><input type="text" name="zip_code" size=50 maxlength=15 value="<?php echo $zip_code ?>"><br></td>
   </tr>  
-  <!-- end:gjergji added zip code -->   
+  <!-- end:gjergji added zip code. apmuthu increased maxlength from 5 to 15 - db table field is VARCHAR(25).  -->   
   <tr>
-    <td align=right class="adm_item"><?php echo $LDISOCountryCode ?>: </td>
+    <td align=right class="adm_item"><font color=#ff0000><b>*</b></font><?php echo $LDISOCountryCode ?>: </td>
     <td class="adm_input"><input type="text" name="iso_country_id" size=50 maxlength=3 value="<?php echo $iso_country_id ?>"><br></td>
   </tr> 
   <tr>
