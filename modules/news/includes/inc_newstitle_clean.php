@@ -7,7 +7,7 @@ if (stristr('inc_newstitle_clean.php',$_SERVER['SCRIPT_NAME']))
 if(isset($newstitle)&&!empty($newstitle))
 {
     $titlebuf=str_replace(' ','',strtolower($newstitle));
-    $titlebuf=strtr($titlebuf,"/%&!?.*'#[]{}`Ž§()_-;:+²³@|<>^°ßµ,=äöüáéíóúàèìòùêôûîâçãõ³±¶Œæ¿¹","~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~aouaeiouaeioueouiacaolaszczs");
+    $titlebuf=strtr($titlebuf,"/%&!?.*'#[]{}`´§()_-;:+²³@|<>^°ßµ,=äöüáéíóúàèìòùêôûîâçãõ³±¶¼æ¿¹","~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~aouaeiouaeioueouiacaolaszczs");
     $titlebuf=str_replace('~','',$titlebuf);
     $titlebuf=str_replace("\"","",$titlebuf);
     $titlebuf=str_replace('\\','',$titlebuf);
