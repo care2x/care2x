@@ -1,5 +1,5 @@
 <?php
-if (stristr("inc_news_save.php",$PHP_SELF)) 
+if (stristr("inc_news_save.php",$_SERVER['SCRIPT_NAME'])) 
 	die('<meta http-equiv="refresh" content="0; url=../">');
 /*------end------*/
 

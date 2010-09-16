@@ -1,6 +1,6 @@
 <?php
 #------begin------ This protection code was suggested by Luki R. luki@karet.org
-if (stristr('inc_mozillapatch_redirect_supplier.php',$PHP_SELF)) 
+if (stristr('inc_mozillapatch_redirect_supplier.php',$_SERVER['SCRIPT_NAME'])) 
 	die('<meta http-equiv="refresh" content="0; url=../">');
 #------end-----
 ?>
