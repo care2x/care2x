@@ -36,7 +36,7 @@ $glob_obj->getConfig('person_foto_path');
 $updatefile='personell_register.php';
 
 /* Default path for fotos. Make sure that this directory exists! */
-$default_photo_path=$root_path.'uploads/photos/registration';
+$default_photo_path='uploads/photos/registration';
 $photo_filename='nopic';
 
 #Check whether the origin is phone directory and if session personnel nr. is ok

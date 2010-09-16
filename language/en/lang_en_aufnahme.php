@@ -415,4 +415,7 @@ $LDSelectOtherHospital = 'Select other hospital to change the number';
 $LDNoNrNoDelete = 'no number = delete';
 
 $LDNoAddress='No City defined yet. Please go to the main menu and<br>click Special Tools -> Address Manager -> New data and <br>enter City and ZIP data<br>.';
+
+# 2010-09-16
+$LDAdmitShowTypeInput ='Triage Code';
 ?>
