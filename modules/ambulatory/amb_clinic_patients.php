@@ -252,9 +252,9 @@ if($rows){
 	$smarty->assign('LDFamilyName',$LDLastName);
 	$smarty->assign('LDName',$LDName);
 	$smarty->assign('LDBirthDate',$LDBirthDate);
-	$smarty->assign('LDPatNr',$LDPatListElements[4]);
-	$smarty->assign('LDInsuranceType',$LDPatListElements[5]);
-	$smarty->assign('LDOptions',$LDPatListElements[6]);
+	$smarty->assign('LDPatNr',$LDPatListElements[5]);
+	$smarty->assign('LDInsuranceType',$LDPatListElements[6]);
+	$smarty->assign('LDOptions',$LDPatListElements[7]);
 
 	# Initialize help flags
 	$toggle=1;
