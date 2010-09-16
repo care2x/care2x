@@ -265,6 +265,7 @@ class GuiPersonShow {
 		
 		//gjergji
 		if ($photo_filename=='' || $photo_filename=='nopic' || !file_exists($root_path.$photo_path.'/'.$photo_filename)){
+			$pfile = (isset($pfile)) ? $pfile : '';
 			$this->smarty->assign('sFileBrowserInput','<input name="photo_filename" type="file" size="15"   onChange="showpic(this)" value="'.$pfile.'">');
 		}		
 		//end : gjergji
