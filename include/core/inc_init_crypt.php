@@ -1,6 +1,6 @@
 <?php
 /*------begin------ This protection code was suggested by Luki R. luki@karet.org ---- */
-if (stristr("inc_init_crypt.php",$PHP_SELF)) 
+if (stristr("inc_init_crypt.php",$_SERVER['SCRIPT_NAME'])) 
 	die('<meta http-equiv="refresh" content="0; url=../">');
 /*------end------*/
 

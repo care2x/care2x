@@ -2,7 +2,7 @@
 # To see how the script locking is implemented in this script see /development/dev_docs/script_locking.txt 
 
 #------begin------ This protection code was suggested by Luki R. luki@karet.org ----
-if (stristr('inc_front_chain_lang.php',$PHP_SELF)) 
+if (stristr('inc_front_chain_lang.php',$_SERVER['SCRIPT_NAME'])) 
 	die('<meta http-equiv="refresh" content="0; url=../">');
 #------end-----
 
@@ -65,7 +65,7 @@ if(!defined('NO_CHAIN')||NO_CHAIN!=1){
    if(!defined('NO_2LEVEL_CHK')||NO_2LEVEL_CHK!=1){
 		
 		# Let us check if the calling script is the time-out configuration script, if yes, then we skip the time out
-		if (!stristr('edv_system_timeout.php',$PHP_SELF)) {
+		if (!stristr('edv_system_timeout.php',$_SERVER['SCRIPT_NAME'])) {
 			# Load the global time out configs
 			include_once($root_path.'include/care_api_classes/class_globalconfig.php');
 			if(!isset($GLOBAL_CONFIG)) $GLOBAL_CONFIG=array();
