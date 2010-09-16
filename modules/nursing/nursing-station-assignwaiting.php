@@ -297,7 +297,8 @@ if($ward_ok){
 	$smarty->assign('LDName',$LDName);
 	$smarty->assign('LDBirthDate',$LDBirthDate);
 	$smarty->assign('LDPatNr',$LDPatListElements[5]);
-	$smarty->assign('$LDBillType',$LDBillType);
+	$smarty->assign('LDBillType',$LDBillType); // Already assigned in Line 233 - why here?
+	$smarty->assign('LDInsuranceType',$LDPatListElements[6]); // Needed for Transfer Bed List Row Tpl
 	$smarty->assign('LDOptions',$LDPatListElements[7]);
 
 	# Initialize help flags
