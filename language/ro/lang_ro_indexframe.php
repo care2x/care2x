@@ -44,4 +44,7 @@ $LDDutch='Olandeza';
 $LDPerson='Persoana';
 # 2003-09-05 EL
 $LDUser='Utilizator';
+// 2010-09-16 APM
+$LDQuickView='Quick View';
+$LDWards='Wards';
 ?>

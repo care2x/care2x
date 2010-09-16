@@ -46,4 +46,7 @@ $LDPerson='Mtu';
 $LDUser='Mtumiaji';
 #2005-07-05
 $LDSwahili='Swahili';
+// 2010-09-16 APM
+$LDQuickView='Quick View';
+$LDWards='Wards';
 ?>

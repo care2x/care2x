@@ -43,5 +43,7 @@ $LDAppointments='Pertemuan';
 $LDPerson='Orang';
 # 2003-09-05 EL
 $LDUser='User';
-
+// 2010-09-16 APM
+$LDQuickView='Quick View';
+$LDWards='Wards';
 ?>

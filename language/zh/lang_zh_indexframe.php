@@ -44,4 +44,7 @@ $LDDutch='荷兰语';
 $LDPerson='人员';
 # 2003-09-05 EL
 $LDUser='用户';
+// 2010-09-16 APM
+$LDQuickView='Quick View';
+$LDWards='Wards';
 ?>

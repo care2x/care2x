@@ -48,4 +48,7 @@ $LDVietnamese='Vietnamese';
 $LDPerson='Ng&#432;&#7901;i';//'Person';
 # 2003-09-05 EL
 $LDUser='Ng&#432;&#7901;i s&#7917; d&#7909;ng';//'User';
+// 2010-09-16 APM
+$LDQuickView='Quick View';
+$LDWards='Wards';
 ?>
