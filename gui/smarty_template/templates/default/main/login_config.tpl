@@ -34,31 +34,41 @@
 						<td>{{$sDeptSelect}}</td>
 						<td>{{$LDDept}}</td>
 					</tr>
-					{{include file="common/submenu_row_spacer.tpl"}}
+						<td>&nbsp;</td>
+						<TD colSpan=3 class="vspace"><IMG height=1 src="../gui/img/common/default/pixel.gif" width=5></TD>
+						<td>&nbsp;</td>
 					<tr>
 						<td>{{$sWardIcon}}</td>
 						<td>{{$sWardSelect}}</td>
 						<td>{{$LDWard}}</td>
 					</tr>
-					{{include file="common/submenu_row_spacer.tpl"}}
+						<td>&nbsp;</td>
+						<TD colSpan=3 class="vspace"><IMG height=1 src="../gui/img/common/default/pixel.gif" width=5></TD>
+						<td>&nbsp;</td>
 					<tr>
 						<td>{{$sWardORIcon}}</td>
 						<td><input type="text" name="thispc_room_nr" size=20 maxlength=25 value="{{$sWardORValue}}"></td>
 						<td>{{$LDWardOR}}</td>
 					</tr>
-					{{include file="common/submenu_row_spacer.tpl"}}
+						<td>&nbsp;</td>
+						<TD colSpan=3 class="vspace"><IMG height=1 src="../gui/img/common/default/pixel.gif" width=5></TD>
+						<td>&nbsp;</td>
 					<tr>
 						<td>{{$sPhoneNrIcon}}</td>
 						<td><input type="text" name="thispc_phone" size=20 maxlength=25 value="{{$sPhoneNrValue}}"></td>
 						<td>{{$LDPhoneNr}}</td>
 					</tr>
-					{{include file="common/submenu_row_spacer.tpl"}}
+						<td>&nbsp;</td>
+						<TD colSpan=3 class="vspace"><IMG height=1 src="../gui/img/common/default/pixel.gif" width=5></TD>
+						<td>&nbsp;</td>
 					<tr>
 						<td>{{$sIntercomNrIcon}}</td>
 						<td><input type="text" name="thispc_intercom" size=20 maxlength=25 value="{{$sIntercomNrValue}}"></td>
 						<td>{{$LDIntercomNr}}</td>
 					</tr>
-					{{include file="common/submenu_row_spacer.tpl"}}
+						<td>&nbsp;</td>
+						<TD colSpan=3 class="vspace"><IMG height=1 src="../gui/img/common/default/pixel.gif" width=5></TD>
+						<td>&nbsp;</td>
 					<tr>
 						<td>{{$sIPAddressIcon}}</td>
 						<td>{{$sIPAddress}}</td>
