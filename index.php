@@ -235,9 +235,9 @@ if($installerwarn){
 	# Load necessary language tables
 	#
 	$lang_tables[]='create_admin.php';
-	include_once('./include/inc_load_lang_tables.php');
-	include_once('include/inc_charset_fx.php');
-	include('./include/inc_installer_warning.php');
+	include_once('./include/core/inc_load_lang_tables.php');
+	include_once('./include/core/inc_charset_fx.php');
+	include_once('./include/core/inc_installer_warning.php');
 	#
 	# redirect to the installer page after timeout of 5 seconds 
 	#

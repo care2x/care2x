@@ -2,9 +2,9 @@
 
 error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 
-require_once('../../include/inc_vars_resolve.php');
+require_once('../../include/core/inc_vars_resolve.php');
 
-require_once('../../include/inc_img_fx.php');
+require_once('../../include/core/inc_img_fx.php');
 
 ?>
 

@@ -1,5 +1,5 @@
 <?php
-require_once('../include/inc_date_format_functions.php');
+require_once('../include/core/inc_date_format_functions.php');
  ?>
 <html>
 <head>
