@@ -2,13 +2,13 @@
 error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
-require_once($root_path.'include/inc_img_fx.php');
+require_once($root_path.'include/core/inc_img_fx.php');
 ?>
 <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 3.0//EN" "html.dtd">
 <?php html_rtl($lang); ?>
 <HEAD>
 <meta http-equiv="Content-Type" content="text/html; charset=gb2312">
- <TITLE>��Ч���ʵľ�ʾ</TITLE>
+ <TITLE>ÎÞÐ§·ÃÎÊµÄ¾¯Ê¾</TITLE>
 </HEAD>
 
 <BODY bgcolor="#ffffff">
@@ -16,7 +16,7 @@ require_once($root_path.'include/inc_img_fx.php');
 <table width=100% border=1>
 <tr>
 <td bgcolor="navy">
-<FONT  COLOR="white"  SIZE=+3  FACE="Arial"><STRONG>&nbsp;δ��Ȩҳ��ķ���</STRONG></FONT>
+<FONT  COLOR="white"  SIZE=+3  FACE="Arial"><STRONG>&nbsp;Î´ÊÚÈ¨Ò³ÃæµÄ·ÃÎÊ</STRONG></FONT>
 </td>
 </tr>
 <tr>
@@ -25,7 +25,7 @@ require_once($root_path.'include/inc_img_fx.php');
 
 <center>
 <FONT    SIZE=3 color=red  FACE="Arial">
-<b>��û��Ȩ�޴򿪴��ĵ���</b></font><p>
+<b>ÄúÃ»ÓÐÈ¨ÏÞ´ò¿ª´ËÎÄµµ£¡</b></font><p>
 <FORM >
 <INPUT type="button"  value=" OK "  onClick="<?php if ($mode=="close") print 'window.close()'; else print 'history.back()'; ?>"></FORM>
 <p>
@@ -34,19 +34,19 @@ require_once($root_path.'include/inc_img_fx.php');
 <p>
 <ul>
 <font size=3 face="verdana,arial">
-�������Ŀ���ԭ��
+Òý·¢´ËÎÊÌâµÄ¿ÉÄÜÔ­Òò£º
 </FONT><p>
 <font size=2 face="verdana,arial">
 <img <?php echo createComIcon('../../','achtung.gif') ?>>
-�����ʹ����������еġ����ˡ���ǰ���ܡ������ʹ����Щ��ť��<br>
+Äú¿ÉÄÜÊ¹ÓÃÁËä¯ÀÀÆ÷ÖÐµÄ¡°ºóÍË¡±»ò¡°Ç°½ø¡±¹¦ÄÜ¡£Çë±ÜÃâÊ¹ÓÃÕâÐ©°´Å¥¡£<br>
 <img <?php echo createComIcon('../../','achtung.gif') ?>>
-����ܾܾ����cookie�����������ȷ����������cookies�����趨������������cookies��<br>
+Äú¿ÉÄÜ¾Ü¾ø½ÓÊÜcookie¡£±¾³ÌÐòµÄÕýÈ·ÔËÐÐÒÀÀµÓÚcookies¡£ÇëÉè¶¨ÄúµÄä¯ÀÀÆ÷½ÓÊÜcookies¡£<br>
 <img <?php echo createComIcon('../../','achtung.gif') ?>>
-��������û�н���cookies�����趨���������Զ�����cookies��<br>
+ÄúµÄä¯ÀÀÆ÷Ã»ÓÐ½ÓÊÜcookies¡£ÇëÉè¶¨ÄúµÄä¯ÀÀÆ÷×Ô¶¯½ÓÊÜcookies¡£<br>
 <img <?php echo createComIcon('../../','achtung.gif') ?>>
-����������������JavaScript��JavaScript����ֹ�����趨����������������JavaScript��<br>
+ÄúµÄä¯ÀÀÆ÷²»ÄÜÔËÐÐJavaScript»òJavaScript±»½ûÖ¹¡£ÇëÉè¶¨ÄúµÄä¯ÀÀÆ÷ÔÊÐíÔËÐÐJavaScript¡£<br>
 <img <?php echo createComIcon('../../','achtung.gif') ?>>
-���������������ݴ������з����˴��󣬴�ʱ����������ڵ����ˢ�¡���ť��<p>
+¼«ÉÙÊýÇé¿öÏÂÔÚÊý¾Ý´«Êä¹ý³ÌÖÐ·¢ÉúÁË´íÎó£¬´ËÊ±ÇëÔÚä¯ÀÀÆ÷ÄÚµã»÷¡°Ë¢ÐÂ¡±°´Å¥¡£<p>
 </FONT>
 <p>
 </ul>

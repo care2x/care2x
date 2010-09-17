@@ -317,11 +317,11 @@ He decided to actively join open source because: <br><i>"Such an ideal world can
 
           <TD vAlign=top><font face="verdana,arial" size=2>
 
-			<b>Patxi Gomar�z (ES) did the spanish translations.</b>
+			<b>Patxi Gomaríz (ES) did the spanish translations.</b>
 
 			<p>
 
-			Patxi Gomar�z was born in the spring of 1966 in Murcia, Spain. His life and work revolve mostly around photography
+			Patxi Gomaríz was born in the spring of 1966 in Murcia, Spain. His life and work revolve mostly around photography
 
 			being a specialist in photography for Ophtalmology (fundus camera). He is an internet enthusiast and also designs 
 
@@ -335,7 +335,7 @@ He decided to actively join open source because: <br><i>"Such an ideal world can
 
 
 
-			<P><a href="mailto:pgomariz@ono.com"><u>Patxi Gomar�z can be contacted here.</u></a>
+			<P><a href="mailto:pgomariz@ono.com"><u>Patxi Gomaríz can be contacted here.</u></a>
 
 </TD></TR></TBODY></TABLE>
 
@@ -431,7 +431,7 @@ He decided to actively join open source because: <br><i>"Such an ideal world can
 
   <tr>
 
-    <td bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> Mat�j Hausenblas (FR)</font></nobr>&nbsp;</td>
+    <td bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> Matêj Hausenblas (FR)</font></nobr>&nbsp;</td>
 
     <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;French translation</font></td>
 
@@ -455,7 +455,7 @@ He decided to actively join open source because: <br><i>"Such an ideal world can
 
   <tr>
 
-    <td bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> Patxi Gomar�z (ES)</font></nobr>&nbsp;</td>
+    <td bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> Patxi Gomaríz (ES)</font></nobr>&nbsp;</td>
 
     <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;Spanish translation</font></td>
 

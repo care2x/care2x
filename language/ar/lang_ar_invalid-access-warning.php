@@ -2,7 +2,7 @@
 error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
-require_once($root_path.'include/inc_img_fx.php');
+require_once($root_path.'include/core/inc_img_fx.php');
 ?>
 <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 3.0//EN" "html.dtd">
 <HTML dir=rtl>
@@ -17,7 +17,7 @@ require_once($root_path.'include/inc_img_fx.php');
 
 <tr>
 <td bgcolor="navy" align=right >
-<FONT  COLOR="white"  SIZE=+3  FACE="arial"><STRONG>&nbsp;���� ��� ���� �������</STRONG></FONT>
+<FONT  COLOR="white"  SIZE=+3  FACE="arial"><STRONG>&nbsp;ÕÝÍÉ ÛíÑ ãÑÎÕ ÈÇáæÕæá</STRONG></FONT>
 </td>
 </tr>
 
@@ -26,10 +26,10 @@ require_once($root_path.'include/inc_img_fx.php');
 <p><br>
 <center>
 <FONT    SIZE=3 color=red  FACE="Tahoma">
-<b>��� ���� ���� ���� ��� �������</b></font>
+<b>áíÓ áÏíß ÇáÍÞ áÝÊÍ åÐÇ ÇáãÓÊäÏ</b></font>
 <p>
 <FORM >
-<INPUT type="button"  value=" ����� "  onClick="<?php if ($mode=="close") print 'window.close()'; else print 'history.back()'; ?>"></FORM>
+<INPUT type="button"  value=" ãæÇÝÞ "  onClick="<?php if ($mode=="close") print 'window.close()'; else print 'history.back()'; ?>"></FORM>
 <p>
 </font>
 </center>
@@ -37,21 +37,21 @@ require_once($root_path.'include/inc_img_fx.php');
 
 <ul>
 <font size=3 face="Tahoma">
-�������� ����� ���� ��� �������:
+ÅÍÊãÇáÇÊ ÃÓÈÇÈ ÍÏæË åÐå ÇáãÔßáÉ:
 </FONT>
 
 <p>
 <font size=2 face="Tahoma">
 <img <?php echo createComIcon('../../','achtung.gif') ?>>
-�� ������ ��� �� ������� ����� ������ � ������ �� ������� �����.<br>
+ãä Çáããßä Åäå Êã ÅÓÊÎÏÇã ÃÒÑÇÑ ÇáÊÞÏã æ ÇáÑÌæÚ Ýí ãÓÊÚÑÖß ÇáÎÇÕ.<br>
 <img <?php echo createComIcon('../../','achtung.gif') ?>>
-�� ������ ��� ���� ����� ������, ��� �������� ����� ��� ������ ����� ����, ��� ���� ����� ������ ��� ��� ��� �������� \�� ��� ����.<br>
+ãä Çáããßä Åäß ÑÝÖÊ ÎÇÕíÉ Çáßæßí, åÐÇ ÇáÈÑäÇãÌ íÚÊãÏ Úáì Çáßæßí áíÚãá ÈÏÞÉ, áÐì ÅÞÈá ÎÇÕíÉ Çáßæßí ÅÐÇ ØáÈ ãäß ÇáÈÑäÇãÌ \áß ãÑÉ ÃÎÑì.<br>
 <img <?php echo createComIcon('../../','achtung.gif') ?>>
-�� ������ �� ������� �� ���� ������, ��� �� ������ ������� ����� ������ �������.<br>
+ãä Çáããßä Ãä ãÓÊÚÑÖß áÇ íÞÈá Çáßæßí, áÐì Þã ÈÇÚÏÇÏ ãÓÊÚÑÖß áíÞÈá Çáßæßí ÊáÞÇÆíÇ.<br>
 <img <?php echo createComIcon('../../','achtung.gif') ?>>
-�� ������ �� ���� ������� ��� ���� ��� ����� �����������, �� �� ��������� �� �� �������, ��� �� ������ ���������.<br>
+ãä Çáããßä Ãä íßæä ãÓÊÚÑÖß ÛíÑ ÞÇÏÑ Úáì ÊÔÛíá ÇáÌÇÝÇÓßÑÈÊ, Ãæ Çä ÌÇÝÇÓßÑÈÊ ÞÏ Êã ÅÈØÇáåÇ, áÐì Þã ÈÊãßíä ÌÇÝÇÓßÑÈÊ.<br>
 <img <?php echo createComIcon('../../','achtung.gif') ?>>
-�� ����� ����� �� ������ �� ���� ���� ��� �� ����� ��� ��������, ������ ��� ����� �� ������ ��� �� ������� F5 �� �������.
+Ýí ÍÇáÇÊ äÇÏÑÉ ãä Çáããßä Ãä íßæä åäÇß ÎØÃ Ýí ÚãáíÉ äÞá ÇáÈíÇäÇÊ, áÊÕÍíÍ åÐÇ ÇáæÖÚ Þã ÈÇáÖÛØ Úáì ÒÑ ÇáÇäÚÇÔ F5 Ýí ãÓÊÚÑÖß.
 <p>
 </FONT>
 <p>

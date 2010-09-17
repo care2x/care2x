@@ -7,10 +7,10 @@ require_once($root_path.'include/core/inc_environment_global.php');
 <head>
 <!-- <meta http-equiv="Content-Type" content="text/html; charset=28596">
  --><meta http-equiv="Content-Type" content="text/html; charset=windows-1256">
-<title>����� �����</title>
+<title>ÃÕÍÇÈ ÇáÝÖá</title>
 </head>
 <body onLoad="if(window.focus) window.focus()"><font face="verdana,arial" size=6 color="#0000ff"> 
-<div align="right">����� �����</fonts> </div>
+<div align="right">ÃÕÍÇÈ ÇáÝÖá</fonts> </div>
 
 <hr>
 <TABLE cellSpacing=0 cellPadding=0 border=0 width=100%>
@@ -39,13 +39,13 @@ require_once($root_path.'include/core/inc_environment_global.php');
           <TD vAlign=top align=right><font face="verdana,arial" size=2>
 			<img src="../../fotos/credits/tarek_alwerfally_2003.jpg"  border=0  align=left  vspace=10>
 			
-			<b>���� �������</b>
-			<b>����� ����� �� ���� ���������</b>
-			<b>���������� �������</b>
+			<b>ØÇÑÞ ÇáæÑÝáí</b>
+			<b>ãÊÎÕÕ ãÚÊãÏ ãä ÔÑßÉ ãíßÑæÓæÝÊ</b>
+			<b>ÇáÌãÇåíÑíÉ ÇááíÈíÉ</b>
 			<p>
-			������ ������� ������� � �������<br>
-			����� ������� ��������<br>
-			����� ����� ��� ����� ���� ������� �������<br>
+			ãÑÇÌÚÉ ÇáÊÑÌãÉ ÇáÚÑÈíÉ æ ÊÕÍíÍåÇ<br>
+			ÊÑÌãÉ ÇáÍÇÓÈÉ ÇáÍíÇÊíÉ<br>
+			ÊÑÌãÉ ÍÇÓÈÉ ÚãÑ ÇáÍãá ãæÚÏ ÇáæáÇÏÉ ÇáãÊæÞÚ<br>
 			Education and qualification<br>
 			Bachelor of computer science - AL Fateh university - 1992<br>
 			Microsoft Certified Professional (Infrastrusture) - 2002 <br>
@@ -61,12 +61,12 @@ require_once($root_path.'include/core/inc_environment_global.php');
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
 			<P align="right"><img src="../../fotos/credits/elpidio_latorilla_3.jpg" border=0  align=left vspace=10> 
-          <b>��� ���� ������� �� ��� 2X ��� �������� ������� ��������</b> 
-        <p align="right">:������<br>
-          �����, ���� �����, ���� ���������� � ������� 
-        <p align="right"> :���� �������� <br>
+          <b>Ãæá äÓÎÉ ÊÌÑíÈíÉ ãä ßíÑ 2X ÞÇã ÈÊØæíÑåÇ ÅáÈíÏíæ áÇÊæÑíÇá</b> 
+        <p align="right">:ÇáãåäÉ<br>
+          ãÈÑãÌ, ããÑÖ ÌÑÇÍÉ, ÊÞäí ÇáßÊÑæäíÇÊ æ ÇÊÕÇáÇÊ 
+        <p align="right"> :ãÌÇá ÇáÇåÊãÇã <br>
           C, C++, PHP, Javascript, SQL, TCL/TK, HTML, Perl, ASP, Java 
-        <P align="right"><a href="mailto:elpidio@latorilla.com"><u>����� ������� �������� �������� �� ���</u></a> </TD></TR></TBODY></TABLE>
+        <P align="right"><a href="mailto:elpidio@latorilla.com"><u>íãßäß ÇáÇÊÕÇá ÈÅáÈíÏíæ áÇÊæÑíÇá ãä åäÇ</u></a> </TD></TR></TBODY></TABLE>
 <hr>
 <table cellSpacing=0 cellPadding=0 border=0 width=100%>
         <tbody>
@@ -205,10 +205,10 @@ require_once($root_path.'include/core/inc_environment_global.php');
           Spanish translations 
         <p align="right"><font size=1> Author and coauthor of numerous medical 
           textbooks<br>
-          5 years as Director of the Gr�nenthal Medical Informatics Center, Quito 
+          5 years as Director of the Grünenthal Medical Informatics Center, Quito 
           - Ecuador <br>
           Initial studies in Medical Informatics at Stanford University<br>
-          2 years as Multimedia Project Leader of Gr�nenthal GmbH, Aachen, Germany</font>
+          2 years as Multimedia Project Leader of Grünenthal GmbH, Aachen, Germany</font>
         <p align="right"> Official translator for phpMyAdmin (Spanish)<br>
           Webmaster of the largest Ecuadorian medical website initiative (www.cmpichincha.med.ec) 
           and the Ecuadorian Society of Dermatology (www.sociedadecuatorianadedermatologia.org.ec).<br>
@@ -236,7 +236,7 @@ require_once($root_path.'include/core/inc_environment_global.php');
           <TD vAlign=top><font face="verdana,arial" size=2>
 		  <P><img src="../../fotos/credits/wilfried_goedert.jpg" border=0  align=left vspace=10 >
 			
-        <P align="right"><b>Dr. med Wilfried G�dert (DE)</b><br>
+        <P align="right"><b>Dr. med Wilfried Gödert (DE)</b><br>
           contributes the following: 
         <p align="right"><font size=1> <div align="right">Hosting and admin of:<br>
           www.care2x.de<br>
@@ -246,7 +246,7 @@ require_once($root_path.'include/core/inc_environment_global.php');
         <p align="right"> </font> Profession: Physician, with additional Medical 
           Informatics degree 
         <p align="right"><a href="mailto:goedert@users.sourceforge.net"><u>Dr. 
-          Wilfried G�dert can be contacted here</u></a> </TD></TR>	
+          Wilfried Gödert can be contacted here</u></a> </TD></TR>	
 </TBODY></TABLE>
 
 
@@ -283,8 +283,8 @@ require_once($root_path.'include/core/inc_environment_global.php');
         <TR>
           
       <TD vAlign=top><font face="verdana,arial" size=2> <div align="right"><b>Patxi 
-          Gomar�z (ES) did the spanish translations.</b> </div>
-        <p align="right"> Patxi Gomar�z was born in the spring of 1966 in Murcia, 
+          Gomaríz (ES) did the spanish translations.</b> </div>
+        <p align="right"> Patxi Gomaríz was born in the spring of 1966 in Murcia, 
           Spain. His life and work revolve mostly around photography being a specialist 
           in photography for Ophtalmology (fundus camera). He is an internet enthusiast 
           and also designs websites.
@@ -292,7 +292,7 @@ require_once($root_path.'include/core/inc_environment_global.php');
           against the negative effects of economic globalization specially in 
           fundamental areas which are important to humanity like health. For that 
           reason, I feel proud of my small contribution to this great project.</i>" 
-        <P align="right"><a href="mailto:pgomariz@ono.com"><u>Patxi Gomar�z can 
+        <P align="right"><a href="mailto:pgomariz@ono.com"><u>Patxi Gomaríz can 
           be contacted here.</u></a> </TD></TR></TBODY></TABLE>
 <hr>
 <TABLE cellSpacing=0 cellPadding=0 border=0 width=100%>
@@ -398,7 +398,7 @@ require_once($root_path.'include/core/inc_environment_global.php');
     <td bgcolor="#f9f9f9"><div align="right"><font face="verdana,arial" size=2>&nbsp;&nbsp;French 
         translation</font></div></td>
     <td bgcolor="#f9f9f9"><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> 
-      Mat�j Hausenblas (FR)</font></td>
+      Matêj Hausenblas (FR)</font></td>
   </tr>
   <tr> 
     <td bgcolor="#f9f9f9"><div align="right"><font face="verdana,arial" size=2>&nbsp;&nbsp;Additional 
@@ -416,7 +416,7 @@ require_once($root_path.'include/core/inc_environment_global.php');
     <td bgcolor="#f9f9f9"><div align="right"><font face="verdana,arial" size=2>&nbsp;&nbsp;Spanish 
         translation</font></div></td>
     <td bgcolor="#f9f9f9"><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> 
-      Patxi Gomar�z (ES)</font></td>
+      Patxi Gomaríz (ES)</font></td>
   </tr>
   <tr> 
     <td bgcolor="#f9f9f9"><div align="right"><font face="verdana,arial" size=2>&nbsp;&nbsp;Polish 
@@ -470,7 +470,7 @@ require_once($root_path.'include/core/inc_environment_global.php');
     <td bgcolor="#f9f9f9"><div align="right"><font face="verdana,arial" size=2>&nbsp;&nbsp;Press 
         relation, Server hosting, Newsserver, OTRS, Consultation</font></div></td>
     <td bgcolor="#f9f9f9"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> 
-      Wilfried G�dert Dr. med (DE)</font></nobr>&nbsp;</td>
+      Wilfried Gödert Dr. med (DE)</font></nobr>&nbsp;</td>
   </tr>
 </table>
 
