@@ -48,7 +48,7 @@ if($news_nr = $newsobj->saveNews($dept_nr,$news)) {
         $globobj=new GlobalConfig($GLOBALCONFIG);
 		$globobj->getConfig('news_fotos_path');
 					
-	    if($GLOBALCONFIG['news_fotos_path']=='') $news_fotos_path=$root_path.'/uploads/photos/news/'; /* default path */
+	    if($GLOBALCONFIG['news_fotos_path']=='') $news_fotos_path=$root_path.'uploads/photos/news/'; /* default path */
 	        else $news_fotos_path = $root_path.$GLOBALCONFIG['news_fotos_path']; 
 				
 	    $picfilename="$news_nr.$picext";
