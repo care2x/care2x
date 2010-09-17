@@ -1,13 +1,13 @@
 <?php 
 error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require_once('./roots.php');
-require_once('include/inc_environment_global.php');
+require_once($root_path.'include/core/inc_environment_global.php');
 require("language/$lang/lang_".$lang."_startframe.php"); ?>
 <html>
 <head>
 <?php 
 
-include_once('include/inc_charset_fx.php');
+include_once('include/core/inc_charset_fx.php');
 
 echo setCharSet(); 
 
