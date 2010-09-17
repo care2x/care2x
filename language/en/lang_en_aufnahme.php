@@ -418,4 +418,11 @@ $LDNoAddress='No City defined yet. Please go to the main menu and<br>click Speci
 
 # 2010-09-16
 $LDAdmitShowTypeInput ='Triage Code';
+
+# 2010-09-18 GJ/APM
+$sAdmitTriageWhite = 'White';
+$sAdmitTriageGreen = 'Green';
+$sAdmitTriageYellow = 'Yellow';
+$sAdmitTriageRed = 'Red';
+$sAdmitTriageBlue = 'Blue'; // Hope to use later
 ?>
