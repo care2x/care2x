@@ -1,14 +1,14 @@
 <?php
 error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
-require($root_path.'include/inc_environment_global.php');
+require($root_path.'include/core/inc_environment_global.php');
 require_once($root_path.'include/inc_img_fx.php');
 ?>
 <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 3.0//EN" "html.dtd">
 <?php html_rtl($lang); ?>
 <HEAD>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-2">
- <TITLE>Varování neplatného přístupu</TITLE>
+ <TITLE>Varovďż˝nďż˝ neplatnďż˝ho pďż˝ďż˝stupu</TITLE>
 </HEAD>
 
 <BODY bgcolor="#ffffff">
@@ -16,7 +16,7 @@ require_once($root_path.'include/inc_img_fx.php');
 <table width=100% border=1>
 <tr>
 <td bgcolor="navy">
-<FONT  COLOR="white"  SIZE=+3  FACE="Arial"><STRONG>&nbsp;Neautorizovaný přístup ke stránce</STRONG></FONT>
+<FONT  COLOR="white"  SIZE=+3  FACE="Arial"><STRONG>&nbsp;Neautorizovanďż˝ pďż˝ďż˝stup ke strďż˝nce</STRONG></FONT>
 </td>
 </tr>
 <tr>
@@ -25,7 +25,7 @@ require_once($root_path.'include/inc_img_fx.php');
 
 <center>
 <FONT    SIZE=3 color=red  FACE="Arial">
-<b>Nemáte platná či dostatečná přístupová práva na otevření tohoto dokumentu!</b></font><p>
+<b>Nemďż˝te platnďż˝ ďż˝i dostateďż˝nďż˝ pďż˝ďż˝stupovďż˝ prďż˝va na otevďż˝enďż˝ tohoto dokumentu!</b></font><p>
 <FORM >
 <INPUT type="button"  value=" OK "  onClick="<?php if ($mode=="close") print 'window.close()'; else print 'history.back()'; ?>"></FORM>
 <p>
@@ -34,22 +34,22 @@ require_once($root_path.'include/inc_img_fx.php');
 <p>
 <ul>
 <font size=3 face="verdana,arial">
-Pravděpodobné příčiny tohoto problému:
+Pravdďż˝podobnďż˝ pďż˝ďż˝ďż˝iny tohoto problďż˝mu:
 </FONT><p>
 <font size=2 face="verdana,arial">
 <img <?php echo createComIcon('../../','achtung.gif') ?>>
-Pravděpodobě jste použil(a) tlačítka "Zpět / Back" nebo  "Vpřed / Forward"  Vašeho prohlížeče. Prosím vyvarujte se jejich používání.<br>
+Pravdďż˝podobďż˝ jste pouďż˝il(a) tlaďż˝ďż˝tka "Zpďż˝t / Back" nebo  "Vpďż˝ed / Forward"  Vaďż˝eho prohlďż˝eďż˝e. Prosďż˝m vyvarujte se jejich pouďż˝ďż˝vďż˝nďż˝.<br>
 <img <?php echo createComIcon('../../','achtung.gif') ?>>
-Váš prohlížeč neakceptuje "cookie", které jsou nezbytné pro správnou funkci programu. Prosím změňte nastavení Vašeho prohlížeče.
+Vďż˝ prohlďż˝eďż˝ neakceptuje "cookie", kterďż˝ jsou nezbytnďż˝ pro sprďż˝vnou funkci programu. Prosďż˝m zmďż˝ďż˝te nastavenďż˝ Vaďż˝eho prohlďż˝eďż˝e.
 <br>
 <img <?php echo createComIcon('../../','achtung.gif') ?>>
-Máte zakázán příjem "cookie". Prosím změňte nastavení Všeho prohlížeče.
+Mďż˝te zakďż˝zďż˝n pďż˝ďż˝jem "cookie". Prosďż˝m zmďż˝ďż˝te nastavenďż˝ Vďż˝eho prohlďż˝eďż˝e.
 <br>
 <img <?php echo createComIcon('../../','achtung.gif') ?>>
-Váš prohlížeč není schopen spouštět javascripty nebo je jejich spouštění zakázáno. Prosím povolte spouštění javascriptů.
+Vďż˝ prohlďż˝eďż˝ nenďż˝ schopen spouďż˝tďż˝t javascripty nebo je jejich spouďż˝tďż˝nďż˝ zakďż˝zďż˝no. Prosďż˝m povolte spouďż˝tďż˝nďż˝ javascriptďż˝.
 <br>
 <img <?php echo createComIcon('../../','achtung.gif') ?>>
-Občas se může jednat o chybu přenosu dat ze serveru. Jednoduše stiskněte tlačítko  "Obnovit / Reload".
+Obďż˝as se mďż˝e jednat o chybu pďż˝enosu dat ze serveru. Jednoduďż˝e stisknďż˝te tlaďż˝ďż˝tko  "Obnovit / Reload".
 <p>
 </FONT>
 <p>

@@ -1,14 +1,14 @@
 <?php
 error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
-require($root_path.'include/inc_environment_global.php');
+require($root_path.'include/core/inc_environment_global.php');
 require_once($root_path.'include/inc_img_fx.php');
 ?>
 <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 3.0//EN" "html.dtd">
 <?php html_rtl($lang); ?>
 <HEAD>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-9">
- <TITLE>Geçersiz Erişim Uyarısı </TITLE>
+ <TITLE>Geï¿½ersiz Eriï¿½im Uyarï¿½sï¿½ </TITLE>
 </HEAD>
 
 <BODY bgcolor="#ffffff">
@@ -16,7 +16,7 @@ require_once($root_path.'include/inc_img_fx.php');
 <table width=100% border=1>
 <tr>
 <td bgcolor="navy">
-<FONT  COLOR="white"  SIZE=+3  FACE="Arial"><STRONG>&nbsp;Yetkisiz Sayfa Erişimi </STRONG></FONT>
+<FONT  COLOR="white"  SIZE=+3  FACE="Arial"><STRONG>&nbsp;Yetkisiz Sayfa Eriï¿½imi </STRONG></FONT>
 </td>
 </tr>
 <tr>
@@ -25,7 +25,7 @@ require_once($root_path.'include/inc_img_fx.php');
 
 <center>
 <FONT    SIZE=3 color=red  FACE="Arial">
-<b>Bu belgeye erişim hakkınız bulunmamaktadır!</b></font><p>
+<b>Bu belgeye eriï¿½im hakkï¿½nï¿½z bulunmamaktadï¿½r!</b></font><p>
 <FORM >
 <INPUT type="button"  value=" Tamam "  onClick="<?php if ($mode=="close") print 'window.close()'; else print 'history.back()'; ?></FORM>
 <p>
@@ -38,18 +38,18 @@ Bu problemin muhtemel sebepleri:
 </FONT><p>
 <font size=2 face="verdana,arial">
 <img <?php echo createComIcon('../../','achtung.gif') ?>>
-Tarayıcınızın standart "geri" veya "ileri" düğmesini kullandınız. Bu düğmeleri kullanmaktan kaçınınız.<br>
+Tarayï¿½cï¿½nï¿½zï¿½n standart "geri" veya "ileri" dï¿½ï¿½mesini kullandï¿½nï¿½z. Bu dï¿½ï¿½meleri kullanmaktan kaï¿½ï¿½nï¿½nï¿½z.<br>
 <img <?php echo createComIcon('../../','achtung.gif') ?>>
-Bir çerezi reddetmiş olabilirsiniz. Bu programın düzgün olarak çalışması için çerezler gerekiyor. O bakımdan lütfen çerezleri kabul ediniz.
+Bir ï¿½erezi reddetmiï¿½ olabilirsiniz. Bu programï¿½n dï¿½zgï¿½n olarak ï¿½alï¿½ï¿½masï¿½ iï¿½in ï¿½erezler gerekiyor. O bakï¿½mdan lï¿½tfen ï¿½erezleri kabul ediniz.
 <br>
 <img <?php echo createComIcon('../../','achtung.gif') ?>>
-Tarayıcınız çerezleri kabul etmiyor olabilir. Çerezleri otomatik kabul edecek şekilde arayınız.
+Tarayï¿½cï¿½nï¿½z ï¿½erezleri kabul etmiyor olabilir. ï¿½erezleri otomatik kabul edecek ï¿½ekilde arayï¿½nï¿½z.
 <br>
 <img <?php echo createComIcon('../../','achtung.gif') ?>>
-Tarayıcınız javascript çalıştıramaya bilir ya da kapatılmış olabilir.Lütfen tarayıcınızda javascriptleri etkinleştiriniz.
+Tarayï¿½cï¿½nï¿½z javascript ï¿½alï¿½ï¿½tï¿½ramaya bilir ya da kapatï¿½lmï¿½ï¿½ olabilir.Lï¿½tfen tarayï¿½cï¿½nï¿½zda javascriptleri etkinleï¿½tiriniz.
 <br>
 <img <?php echo createComIcon('../../','achtung.gif') ?>>
-Nadir hallerde veri transferinde bir hata olabilir. Bu durumu düzeltmek için tarayıcınızın "yenile" düğmesini tıklayınız.
+Nadir hallerde veri transferinde bir hata olabilir. Bu durumu dï¿½zeltmek iï¿½in tarayï¿½cï¿½nï¿½zï¿½n "yenile" dï¿½ï¿½mesini tï¿½klayï¿½nï¿½z.
 <p>
 </FONT>
 <p>

@@ -86,6 +86,7 @@ if(isset($mode)&&($mode=='save')){
  #
  # Prepare the config form block
  #
+
  $smarty->assign('sFormParams','name="pcids"  method="post" action="login-pc-config.php"');
  $smarty->assign('LDPcID',$LDPcID);
 

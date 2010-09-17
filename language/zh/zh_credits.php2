@@ -1,24 +1,24 @@
 <?php
 error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require_once('./roots.php');
-require_once($root_path.'include/inc_environment_global.php');
+require_once($root_path.'include/core/inc_environment_global.php');
 ?>
 <html>
 <head>
-<title>ÃùÐ»</title>
+<title>ï¿½ï¿½Ð»</title>
 </head>
 <body onLoad="if(window.focus) window.focus()">
-<font face="verdana,arial" size=6 color="#0000ff">ÃùÐ»</fonts>
+<font face="verdana,arial" size=6 color="#0000ff">ï¿½ï¿½Ð»</fonts>
 <hr>
 <TABLE cellSpacing=0 cellPadding=0 border=0 width=100%>
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
 			<P><img src="../../fotos/credits/elpidio_latorilla_3.jpg" border=0  align=right vspace=10>
-			<b>CARE 2002µÄµÚÒ»²âÊÔ°æÓÉElpidio Latorilla´´½¨£º</b>
-			<p>Ö°Ô±£º<br>³ÌÐòÔ±£¬Íâ¿Æ»¤Ê¿£¬µç×ÓÓëÍ¨Ñ¶¼¼Ê¦
-			<p>¸öÈË°®ºÃ£º<br>C, C++, PHP, Javascript, SQL, TCL/TK, HTML, Perl, ASP, Java
-			<P><a href="mailto:elpidio@latorilla.com"><u>ÓëElpidio LatorillaÏÈÉúÁªÏµ</u></a>
+			<b>CARE 2002ï¿½Äµï¿½Ò»ï¿½ï¿½ï¿½Ô°ï¿½ï¿½ï¿½Elpidio Latorillaï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</b>
+			<p>Ö°Ô±ï¿½ï¿½<br>ï¿½ï¿½ï¿½ï¿½Ô±ï¿½ï¿½ï¿½ï¿½Æ»ï¿½Ê¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¨Ñ¶ï¿½ï¿½Ê¦
+			<p>ï¿½ï¿½ï¿½Ë°ï¿½ï¿½Ã£ï¿½<br>C, C++, PHP, Javascript, SQL, TCL/TK, HTML, Perl, ASP, Java
+			<P><a href="mailto:elpidio@latorilla.com"><u>ï¿½ï¿½Elpidio Latorillaï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ïµ</u></a>
 </TD></TR></TBODY></TABLE>
 <hr>
 <table cellSpacing=0 cellPadding=0 border=0 width=100%>
@@ -27,21 +27,21 @@ require_once($root_path.'include/inc_environment_global.php');
           <td vAlign=top><font face="verdana,arial" size=2>
 			<p><img src="../../fotos/credits/lopo_l_almeida.jpg"  
                                 width=135 height=170 border=0  align=right vspace=10>
-			<b>Lopo Lencastre de Almeida (PT)</b> ÊÇºÜ¶à¿ª·¢ÈËÔ±ÖÐµÄÒ»Ô±¡£¶ÔÓÚ´ËÏîÄ¿µÄÖ÷Òª¹±Ï×ÓÐ£º
+			<b>Lopo Lencastre de Almeida (PT)</b> ï¿½ÇºÜ¶à¿ªï¿½ï¿½ï¿½ï¿½Ô±ï¿½Ðµï¿½Ò»Ô±ï¿½ï¿½ï¿½ï¿½ï¿½Ú´ï¿½ï¿½ï¿½Ä¿ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½ï¿½Ð£ï¿½
                         <p><font size=1>
-			ÊÐ³¡µ÷ÑÐ£¬²úÆ·ÍÆ½øºÍ¹«¹²¹ØÏµ<br>
-			ÍøÕ¾Óë±êÖ¾Éè¼Æ<br>
-			Ö´ÐÐÓëÎ¬»¤²¿·ÖÍøÕ¾¹¤¾ß£¨È±ÏÝ¸ú×Ù£¬ÂÛÌ³£¬³£¼ûÎÊÌâÓë½â´ð£¬µÈ£©<br>
-			Ö´ÐÐÓëÎ¬»¤ÐÂÍøÕ¾£¨¼´½«Íê³É£©<br>
-			ÂÛÌ³ÉóºËºÍ¹ÜÀí<br>
-			´úÂë¼ì²é<br>
-			PHP×ÉÑ¯<br>
-			°²È«¹ËÎÊ<br>
-			³éÏó²ã¹ËÎÊ£¨Êý¾Ý¿â£¬Ä£°å£¬µÈ£©<br>
-			²âÊÔ<br>
-			´´Òâ£¬ÌÖÂÛ£¬ÌáÊ¾£¬Ð¡¼¼ÇÉ£¬µÈ
-			</font><p>Lopo L. de AlmeidaÏÈÉú1996Äê³öÉúÓÚAngola¡£ËûÒÑÔÚ¼ÆËã»úÁìÓò£¨´ÓÉÌÒµÓ¦ÓÃµ½¹¤Òµ×Ô¶¯»¯£©´ÓÊÂÈí¼þ¿ª·¢ºÍ½çÃæÉè¼Æ¹¤×÷16ÄêÖ®¾Ã¡£ÔÚ×î½üµÄ5ÄêÀï£¬ËûÖ÷Òª´ÓÊÂÍøÕ¾¿ª·¢ºÍ¹«Ë¾¹ÜÀí¹¤×÷¡£×÷ÎªCare2002ÏîÄ¿µÄÖ÷ÒªºÏ×÷»ï°é--HumanEasy¹«Ë¾µÄCEO/CTO--Lopo L. de AlmeidaÏÈÉúÖ÷Òª¸ºÔð´ËÏîÄ¿ÖÐµÄ<b>¹«¹²¹ØÏµºÍÊÐ³¡¹ÜÀí</b>²¿·Ö¡£<br>Óë´ËÍ¬Ê±£¬Lopo L. de AlmeidaÏÈÉú»¹²ÎÓëÁËÐí¶àÆäËüµÄGNU/GPLÏîÄ¿£¬ÆäÖÐÒ»Ð©ÒÑÊ¹ÓÃÔÚCare2xµÄÍøÕ¾ÖÐ¡£<br>
-			<p><a href="http://www.humaneasy.com" target="_blank"><u>ÓëLopo L. de AlmeidaÏÈÉúÁªÏµ</u></a>
+			ï¿½Ð³ï¿½ï¿½ï¿½ï¿½Ð£ï¿½ï¿½ï¿½Æ·ï¿½Æ½ï¿½Í¹ï¿½ï¿½ï¿½ï¿½ï¿½Ïµ<br>
+			ï¿½ï¿½Õ¾ï¿½ï¿½ï¿½Ö¾ï¿½ï¿½ï¿½<br>
+			Ö´ï¿½ï¿½ï¿½ï¿½Î¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Õ¾ï¿½ï¿½ï¿½ß£ï¿½È±ï¿½Ý¸ï¿½ï¿½Ù£ï¿½ï¿½ï¿½Ì³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ð£¬µÈ£ï¿½<br>
+			Ö´ï¿½ï¿½ï¿½ï¿½Î¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Õ¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É£ï¿½<br>
+			ï¿½ï¿½Ì³ï¿½ï¿½ËºÍ¹ï¿½ï¿½ï¿½<br>
+			ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½<br>
+			PHPï¿½ï¿½Ñ¯<br>
+			ï¿½ï¿½È«ï¿½ï¿½ï¿½ï¿½<br>
+			ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê£ï¿½ï¿½ï¿½Ý¿â£¬Ä£ï¿½å£¬ï¿½È£ï¿½<br>
+			ï¿½ï¿½ï¿½ï¿½<br>
+			ï¿½ï¿½ï¿½â£¬ï¿½ï¿½ï¿½Û£ï¿½ï¿½ï¿½Ê¾ï¿½ï¿½Ð¡ï¿½ï¿½ï¿½É£ï¿½ï¿½ï¿½
+			</font><p>Lopo L. de Almeidaï¿½ï¿½ï¿½ï¿½1996ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Angolaï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ò£¨´ï¿½ï¿½ï¿½ÒµÓ¦ï¿½Ãµï¿½ï¿½ï¿½Òµï¿½Ô¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í½ï¿½ï¿½ï¿½ï¿½ï¿½Æ¹ï¿½ï¿½ï¿½16ï¿½ï¿½Ö®ï¿½Ã¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½5ï¿½ï¿½ï¿½ï£¬ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Õ¾ï¿½ï¿½ï¿½ï¿½ï¿½Í¹ï¿½Ë¾ï¿½ï¿½ï¿½?ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÎªCare2002ï¿½ï¿½Ä¿ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½--HumanEasyï¿½ï¿½Ë¾ï¿½ï¿½CEO/CTO--Lopo L. de Almeidaï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ï¿½Ðµï¿½<b>ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ïµï¿½ï¿½ï¿½Ð³ï¿½ï¿½ï¿½ï¿½ï¿½</b>ï¿½ï¿½ï¿½Ö¡ï¿½<br>ï¿½ï¿½ï¿½Í¬Ê±ï¿½ï¿½Lopo L. de Almeidaï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½GNU/GPLï¿½ï¿½Ä¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»Ð©ï¿½ï¿½Ê¹ï¿½ï¿½ï¿½ï¿½Care2xï¿½ï¿½ï¿½ï¿½Õ¾ï¿½Ð¡ï¿½<br>
+			<p><a href="http://www.humaneasy.com" target="_blank"><u>ï¿½ï¿½Lopo L. de Almeidaï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ïµ</u></a>
 </td></tr></tbody></table>
 <hr>
 <TABLE cellSpacing=0 cellPadding=0 border=0 width=100%>
@@ -49,11 +49,11 @@ require_once($root_path.'include/inc_environment_global.php');
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
 			<P><img src="../../fotos/credits/giuseppe_scarpi.jpg"  border=0  width=135 height=170 align=right vspace=10>
-			<b>Giuseppe Scarpi (IT) ·­ÒëCare 2002ÖÁÒâ´óÀûÓï°æ±¾¡£</b>
-			<p>Giuseppe ScarpiÏÈÉú35ÄêÇ°³öÉúÓÚÒâ´óÀûÂÞÂí¡£ 
-			<p>ÔÚ»ñµÃÁËµç×Ó¹¤³ÌÑ§Ñ§Î»ºó£¬Giuseppe ScarpiÏÈÉúÔø·þÎñÓÚ¶à¼Ò¹«Ë¾µÄÉúÎïÒ½Ñ§²¿ÃÅ£¬´Ë¼äµÄ¾­ÀúÊ¹ËûÈÚ»á¹áÍ¨ÁËÒ½Ñ§ºÍÐÅÏ¢¼¼ÊõÖ®¼äµÄ¹ØÏµ¡£<br>Giuseppe ScarpiÏÈÉúÄ¿Ç°Ê¹ÓÃ²¢ÔÞÉÍLinuxºÍWindowsÏµÍ³£¬ËûÈÏÎª£º"<i>as both are the result of a great human work that must be respected</i>"¡£
-			<p>Giuseppe ScarpiÏÈÉú»ý¼«µØÍ¶Éí¿ª·¢Ô´´úÂë×éÖ¯ÊÇÒòÎª£º<br><i>¡°ÀíÏëÊÀ½çµÄ´æÔÚÈ¡¾öÓÚÍêÃÀµÄÆ½ºâ¡£Èç¹ûÄãÏëË÷È¡£¬ÄÇÄãÒ²Ó¦¸Ã¸¶³ö¡£¡±</i>
-			<P><a href="mailto:kalbun@inwind.it"><u>ÓëGiuseppe ScarpiÏÈÉúÁªÏµ</u></a>
+			<b>Giuseppe Scarpi (IT) ï¿½ï¿½ï¿½ï¿½Care 2002ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½æ±¾ï¿½ï¿½</b>
+			<p>Giuseppe Scarpiï¿½ï¿½ï¿½ï¿½35ï¿½ï¿½Ç°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½? 
+			<p>ï¿½Ú»ï¿½ï¿½ï¿½Ëµï¿½ï¿½Ó¹ï¿½ï¿½ï¿½Ñ§Ñ§Î»ï¿½ï¿½Giuseppe Scarpiï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú¶ï¿½Ò¹ï¿½Ë¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò½Ñ§ï¿½ï¿½ï¿½Å£ï¿½ï¿½Ë¼ï¿½Ä¾ï¿½ï¿½ï¿½Ê¹ï¿½ï¿½ï¿½Ú»ï¿½ï¿½Í¨ï¿½ï¿½Ò½Ñ§ï¿½ï¿½ï¿½ï¿½Ï¢ï¿½ï¿½ï¿½ï¿½Ö®ï¿½ï¿½Ä¹ï¿½Ïµï¿½ï¿½<br>Giuseppe Scarpiï¿½ï¿½ï¿½ï¿½Ä¿Ç°Ê¹ï¿½Ã²ï¿½ï¿½ï¿½ï¿½ï¿½Linuxï¿½ï¿½WindowsÏµÍ³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½"<i>as both are the result of a great human work that must be respected</i>"ï¿½ï¿½
+			<p>Giuseppe Scarpiï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í¶ï¿½?ï¿½ï¿½Ô´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¯ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½<br><i>ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä´ï¿½ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ½ï¿½â¡£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò²Ó¦ï¿½Ã¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</i>
+			<P><a href="mailto:kalbun@inwind.it"><u>ï¿½ï¿½Giuseppe Scarpiï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ïµ</u></a>
 </TD></TR></TBODY></TABLE>
 
 <hr>
@@ -62,10 +62,10 @@ require_once($root_path.'include/inc_environment_global.php');
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
             <P><img src="../../fotos/credits/gabriele_cicala.jpg"  border=0  align=right vspace=10>
-			<b>Gabriele Cicala (IT) ½«www.care2x.comÍøÕ¾µÄ´ó²¿·ÖÄÚÈÝ·­Òë³ÉÒâ´óÀûÓï¡£</b>
-			<p>Gabriele CicalaÏÈÉú1970Äê³öÉúÓÚRossano£¬Î»ÓÚÒâ´óÀûÄÏ²¿µÄCalabria¡£Ëû±ÏÒµÓÚPolitecnico di Torino²¢»ñµÃÍ¨Ñ¶¹¤³ÌÑ§Ñ§Î»¡£Ä¿Ç°£¬Gabriele CicalaÏÈÉúÈÎÖ°ÓÚÒ»¼ÒÐÅÏ¢¹«Ë¾ÈÎ¹ËÎÊ¡£
-			<p>³öÓÚ¶ÔLinuxºÍ¿ª·¢Ô´´úÂë»·¾³µÄÁË½â£¬Gabriele CicalaÏÈÉú¶Ô¸÷¿ª·ÅÔ´ÂëµÄÏîÄ¿ºÜÓÐÐËÈ¤¡£¾¡¹Ü¶ÔÒ½ÁÆ»ò½¡¿µ±£½¡²¿ÃÅ²»Ì«ÊìÏ¤£¬Gabriele CicalaÏÈÉúÈÔÈ»¾ö¶¨¼ÓÈëCare 2002ÏîÄ¿¡£ÒòÎªËûÏàÐÅ£¬CareÏîÄ¿µÄ´´Ê¼ÈËºÍÖ¾Ô¸Õß¶¼ÓÐ×ÅºÍËûÒ»ÑùµÄÐÅÄî¡£
-			<P><a href="mailto:gabcicala@tiscali.it"><u>ÓëGabriele CicalaÏÈÉúÁªÏµ</u></a>
+			<b>Gabriele Cicala (IT) ï¿½ï¿½www.care2x.comï¿½ï¿½Õ¾ï¿½Ä´ó²¿·ï¿½ï¿½ï¿½ï¿½Ý·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¡£</b>
+			<p>Gabriele Cicalaï¿½ï¿½ï¿½ï¿½1970ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Rossanoï¿½ï¿½Î»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï²ï¿½ï¿½ï¿½Calabriaï¿½ï¿½ï¿½ï¿½ï¿½Òµï¿½ï¿½Politecnico di Torinoï¿½ï¿½ï¿½ï¿½ï¿½Í¨Ñ¶ï¿½ï¿½ï¿½ï¿½Ñ§Ñ§Î»ï¿½ï¿½Ä¿Ç°ï¿½ï¿½Gabriele Cicalaï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö°ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½Ï¢ï¿½ï¿½Ë¾ï¿½Î¹ï¿½ï¿½Ê¡ï¿½
+			<p>ï¿½ï¿½ï¿½Ú¶ï¿½Linuxï¿½Í¿ï¿½ï¿½ï¿½Ô´ï¿½ï¿½ï¿½ë»·ï¿½ï¿½ï¿½ï¿½ï¿½Ë½â£¬Gabriele Cicalaï¿½ï¿½ï¿½ï¿½Ô¸ï¿½ï¿½ï¿½ï¿½ï¿½Ô´ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È¤ï¿½ï¿½ï¿½ï¿½ï¿½Ü¶ï¿½Ò½ï¿½Æ»ò½¡¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Å²ï¿½Ì«ï¿½ï¿½Ï¤ï¿½ï¿½Gabriele Cicalaï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Care 2002ï¿½ï¿½Ä¿ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½Å£ï¿½Careï¿½ï¿½Ä¿ï¿½Ä´ï¿½Ê¼ï¿½Ëºï¿½Ö¾Ô¸ï¿½ß¶ï¿½ï¿½ï¿½ï¿½Åºï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½î¡£
+			<P><a href="mailto:gabcicala@tiscali.it"><u>ï¿½ï¿½Gabriele Cicalaï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ïµ</u></a>
 </TD></TR></TBODY></TABLE>
 
 <hr>
@@ -74,9 +74,9 @@ require_once($root_path.'include/inc_environment_global.php');
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
             <P><img src="../../fotos/credits/daniel_zilli.jpg"  border=0  align=right vspace=10>
-			<b>Daniel Zilli (BR) ½«Care 2002ºÍwww.care2x.comÍøÕ¾·­Òë³É°ÍÎ÷£­ÆÏÌÑÑÀÓï¡£</b>
-			<p>DanielÊÇÒ»¸ö²»´íµÄÐ¡»ï£¬ËûÈÈ°®Éú»î£¬Ï²»¶¼ÆËã»ú£¬×ãÇòºÍÒôÀÖ¡£Ëû·Ç³£Ï²»¶¼ÆËã»ú²¢ÒÑÓÐÁË´óÔ¼10ÄêµÄ¾­Ñé¡£DanielÏÈÉú¿ª°ìÁËÒ»¼ÒµçÄÔ¹«Ë¾£¬Ö÷Òª´ÓÊÂ¼ÆËã»ú¿ÆÑ§½ÌÓý²úÆ·µÄÉú²ú£¬¿ª·¢Ô´´úÂëÈí¼þºÍµ±µØµÄLinux·Ö·¢¡£
-			<P><a href="mailto:danielz@cco.matrix.com.br"><u>ÓëDaniel ZilliÏÈÉúÁªÏµ</u></a>
+			<b>Daniel Zilli (BR) ï¿½ï¿½Care 2002ï¿½ï¿½www.care2x.comï¿½ï¿½Õ¾ï¿½ï¿½ï¿½ï¿½É°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¡£</b>
+			<p>Danielï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð¡ï¿½ï£¬ï¿½ï¿½ï¿½È°ï¿½ï¿½ï¿½î£¬Ï²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö¡ï¿½ï¿½ï¿½Ç³ï¿½Ï²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ë´ï¿½Ô¼10ï¿½ï¿½Ä¾ï¿½ï¿½é¡£Danielï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½Òµï¿½ï¿½Ô¹ï¿½Ë¾ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½Â¼ï¿½ï¿½ï¿½ï¿½ï¿½Ñ§ï¿½ï¿½ï¿½ï¿½ï¿½Æ·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Íµï¿½ï¿½Øµï¿½Linuxï¿½Ö·ï¿½ï¿½ï¿½
+			<P><a href="mailto:danielz@cco.matrix.com.br"><u>ï¿½ï¿½Daniel Zilliï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ïµ</u></a>
 </TD></TR></TBODY></TABLE>
 <hr>
 <TABLE cellSpacing=0 cellPadding=0 border=0 width=100%>
@@ -84,8 +84,8 @@ require_once($root_path.'include/inc_environment_global.php');
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
             <P><img src="../../fotos/credits/muhammad_panji.png"  border=0  align=right vspace=10>
-			<b>Muhammad Panji (ID) ÓëËûÈËºÏ×÷·­ÒëCare 2002ºÍwww.care2x.comÍøÕ¾ÎªÓ¡¶ÈÄáÎ÷ÑÇÓï¡£</b>
-			<P><a href="mailto:sumodirjo@users.sourceforge.net"><u>ÓëMuhammad PanjiÏÈÉúÁªÏµ</u></a>
+			<b>Muhammad Panji (ID) ï¿½ï¿½ï¿½ï¿½ï¿½Ëºï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Care 2002ï¿½ï¿½www.care2x.comï¿½ï¿½Õ¾ÎªÓ¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¡£</b>
+			<P><a href="mailto:sumodirjo@users.sourceforge.net"><u>ï¿½ï¿½Muhammad Panjiï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ïµ</u></a>
 </TD></TR></TBODY></TABLE>
 
 <hr>
@@ -94,9 +94,9 @@ require_once($root_path.'include/inc_environment_global.php');
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
             <P><img src="../../fotos/credits/agus_mr.jpg"  border=0  align=right vspace=10>
-			<b>Agus Muhammad Ramdan (ID) ½«Care 2002ºÍwww.care2x.comÍøÕ¾·­ÒëÎªÓ¡¶ÈÄáÎ÷ÑÇÓï¡£</b>
+			<b>Agus Muhammad Ramdan (ID) ï¿½ï¿½Care 2002ï¿½ï¿½www.care2x.comï¿½ï¿½Õ¾ï¿½ï¿½ï¿½ï¿½ÎªÓ¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¡£</b>
 			
-			<P><a href="mailto:agusmr@mweb.co.id"><u>ÓëAgus M. RamdanÏÈÉúÁªÏµ</u></a>
+			<P><a href="mailto:agusmr@mweb.co.id"><u>ï¿½ï¿½Agus M. Ramdanï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ïµ</u></a>
 </TD></TR></TBODY></TABLE>
 <hr>
 <TABLE cellSpacing=0 cellPadding=0 border=0 width=100%>
@@ -104,16 +104,16 @@ require_once($root_path.'include/inc_environment_global.php');
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
 			<P><img src="../../fotos/credits/thomas_wiedmann.jpg"  border=0  align=right vspace=10>
-			<b>Thomas Wiedmann (DE) ×î»ý¼«µÄ³ÌÐòµ÷ÊÔÈËÔ±</b>
+			<b>Thomas Wiedmann (DE) ï¿½ï¿½ï¿½Ä³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô±</b>
 			<p><font size=1>
-			ÍêÕû²âÊÔ<br>
-			µ÷ÊÔ<br>
-			Ìá³öÊý¾Ý¿âÀÖ¹ÛËø¶¨¸ÅÄî<br>
-			Êý¾Ý¿âÓÅ»¯<br>
-			ÈÕÆÚÓëÊý×ÖÈ·ÈÏ´úÂë<p>
+			ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½<br>
+			ï¿½ï¿½ï¿½ï¿½<br>
+			ï¿½ï¿½ï¿½ï¿½ï¿½Ý¿ï¿½ï¿½Ö¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½<br>
+			ï¿½ï¿½Ý¿ï¿½ï¿½Å»ï¿½<br>
+			ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È·ï¿½Ï´ï¿½ï¿½ï¿½<p>
 			</font>
-			Thomas WiedmannÏÈÉú×÷ÎªÈí¼þ¿ª·¢ÈËÔ±³¤ÆÚ¹¤×÷ÓÚµÂ¹úµÄStuttgart¡£ËûÔø²ÎÓëGuptaÐ¡×éµÄ¿ª·¢ºÍIBM DB2Ïà¹Ø¹¤×÷´ïÆßÄêÖ®¾Ã¡£Thomas WiedmannÏÈÉú³ÖÓÐIBM¹«Ë¾ÈÏÖ¤µÄUDBÊý¾Ý¿â¹ÜÀíÔ±Ö¤Êé¡£¹ØÓÚDB2·½ÃæµÄÐÅÏ¢¿ÉÒÔ²ÎÔÄËû±àÖøµÄ¡°DB2¡±£¨ISBN 3-932311-80-9£©Ò»Êé¡£Thomas WiedmannÏÈÉú»¹ÊÇÒ»¼ÒµÂ¹ú¿ª·¢ÈËÔ±ÔÓÖ¾TOOLBOX(www.toolbox-mag.de)µÄ×÷¼Ò¡£
-			<P><a href="mailto:tho123@users.sourceforge.net"><u>ÓëThomas WiedmannÏÈÉúÁªÏµ</u></a>
+			Thomas Wiedmannï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô±ï¿½ï¿½ï¿½Ú¹ï¿½ï¿½ï¿½ï¿½ÚµÂ¹ï¿½ï¿½Stuttgartï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½GuptaÐ¡ï¿½ï¿½Ä¿ï¿½ï¿½ï¿½ï¿½ï¿½IBM DB2ï¿½ï¿½Ø¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö®ï¿½Ã¡ï¿½Thomas Wiedmannï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½IBMï¿½ï¿½Ë¾ï¿½ï¿½Ö¤ï¿½ï¿½UDBï¿½ï¿½Ý¿ï¿½ï¿½ï¿½ï¿½Ô±Ö¤ï¿½é¡£ï¿½ï¿½ï¿½ï¿½DB2ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢ï¿½ï¿½ï¿½Ô²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¡ï¿½DB2ï¿½ï¿½ï¿½ï¿½ISBN 3-932311-80-9ï¿½ï¿½Ò»ï¿½é¡£Thomas Wiedmannï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ÒµÂ¹ï¿½ï¿½ï¿½Ô±ï¿½ï¿½Ö¾TOOLBOX(www.toolbox-mag.de)ï¿½ï¿½ï¿½ï¿½ï¿½Ò¡ï¿½
+			<P><a href="mailto:tho123@users.sourceforge.net"><u>ï¿½ï¿½Thomas Wiedmannï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ïµ</u></a>
 </TD></TR></TBODY></TABLE>
 <hr>
 <TABLE cellSpacing=0 cellPadding=0 border=0 width=100%>
@@ -122,16 +122,16 @@ require_once($root_path.'include/inc_environment_global.php');
           <TD vAlign=top><font face="verdana,arial" size=2>
 			<P><img src="../../fotos/credits/hinostroza.jpg"  border=0  width=135 align=right vspace=10>
 			<b>Dr. med Daniel Hinostroza C. (EC)</b><br>
-			Î÷°àÑÀÓï·­Òë
+			ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï·­ï¿½ï¿½
 			<p><font size=1>
-			¶à±¾Ò½Ñ§Öø×÷µÄ×÷Õß»òºÏÖøÕß<br>
-µ£ÈÎ¶ò¹Ï¶à¶ûQuitoµØÇøµÄGr¨¹nenthalÒ½ÁÆÐÅÏ¢ÖÐÐÄÖ÷¹ÜÖ°ÎñÎåÄê<br>
-±ÏÒµÓÚË¹Ì¹¸£´óÑ§Ò½ÁÆÐÅÏ¢¼¼Êõ×¨Òµ<br>
-ÔÚµÂ¹úAachenÊÐµ£ÈÎGr¨¹nenthal GmbH¶àÃ½ÌåÏîÄ¿Ö÷¹Ü¶þÄê</font><p>
-phpMyAdmin¹Ù·½Î÷°àÑÀÓï·­Òë<br>
-¶ò¹Ï¶à¶û×î´óµÄÒ½ÁÆ»¥¶¯ÍøÕ¾(www.cmpichincha.med.ec)ºÍ¶ò¹Ï¶à¶ûÆ¤·ô²¡Ð­»áÍøÕ¾(www.sociedadecuatorianadedermatologia.org.ec)µÄÍøÂç¹ÜÀíÔ±¡£<br>
-ÍøÕ¾£ºwww.cerebroperiferico.com<P>
-<a href="mailto:postmaster@cerebroperiferico.com"><u>ÓëDr. Daniel HinostrozaÏÈÉúÁªÏµ</u></a>
+			ï¿½à±¾Ò½Ñ§ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ß»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½<br>
+ï¿½ï¿½ï¿½Î¶ï¿½Ï¶ï¿½ï¿½Quitoï¿½ï¿½ï¿½ï¿½ï¿½Grï¿½ï¿½nenthalÒ½ï¿½ï¿½ï¿½ï¿½Ï¢ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½<br>
+ï¿½ï¿½Òµï¿½ï¿½Ë¹Ì¹ï¿½ï¿½ï¿½ï¿½Ñ§Ò½ï¿½ï¿½ï¿½ï¿½Ï¢ï¿½ï¿½ï¿½ï¿½×¨Òµ<br>
+ï¿½ÚµÂ¹ï¿½Aachenï¿½Ðµï¿½ï¿½ï¿½Grï¿½ï¿½nenthal GmbHï¿½ï¿½Ã½ï¿½ï¿½ï¿½ï¿½Ä¿ï¿½ï¿½ï¿½Ü¶ï¿½ï¿½ï¿½</font><p>
+phpMyAdminï¿½Ù·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï·­ï¿½ï¿½<br>
+ï¿½ï¿½Ï¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò½ï¿½Æ»ï¿½ï¿½ï¿½ï¿½ï¿½Õ¾(www.cmpichincha.med.ec)ï¿½Í¶ï¿½Ï¶ï¿½ï¿½Æ¤ï¿½ï¿½ï¿½ï¿½Ð­ï¿½ï¿½ï¿½ï¿½Õ¾(www.sociedadecuatorianadedermatologia.org.ec)ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô±ï¿½ï¿½<br>
+ï¿½ï¿½Õ¾ï¿½ï¿½www.cerebroperiferico.com<P>
+<a href="mailto:postmaster@cerebroperiferico.com"><u>ï¿½ï¿½Dr. Daniel Hinostrozaï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ïµ</u></a>
 </TD></TR></TBODY></TABLE>
 <hr>
 <TABLE cellSpacing=0 cellPadding=0 border=0 width=100%>
@@ -140,10 +140,10 @@ phpMyAdmin¹Ù·½Î÷°àÑÀÓï·­Òë<br>
           <TD vAlign=top><font face="verdana,arial" size=2>
 			<P><img src="../../fotos/credits/noel_villamor.jpg"  border=0  align=right vspace=10>
 			<b>Noel R. Villamor (PH)</b><br>
-			Ä£¿é±à³Ì
-			<p>Íê³ÉÊµÑéÊÒÄ£¿é²âÊÔ£¬»æÍ¼Ä£¿é²âÊÔ£¬½â¾öÁËÒ»Ð©·±ÔÓµÄÊýÑ§ÎÊÌâ¡£
-			<p>´¢±¸ÏîÄ¿¾­Àí
-			<P><a href="mailto:noelrv@nipahut.org"><u>ÓëNoel VillamorÏÈÉúÁªÏµ</u></a>
+			Ä£ï¿½ï¿½ï¿½ï¿½
+			<p>ï¿½ï¿½ï¿½Êµï¿½ï¿½ï¿½ï¿½Ä£ï¿½ï¿½ï¿½ï¿½Ô£ï¿½ï¿½ï¿½Í¼Ä£ï¿½ï¿½ï¿½ï¿½Ô£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»Ð©ï¿½ï¿½ï¿½Óµï¿½ï¿½ï¿½Ñ§ï¿½ï¿½ï¿½â¡£
+			<p>ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ï¿½ï¿½ï¿½ï¿½
+			<P><a href="mailto:noelrv@nipahut.org"><u>ï¿½ï¿½Noel Villamorï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ïµ</u></a>
 </TD></TR></TBODY></TABLE>
 
 <hr>
@@ -153,17 +153,17 @@ phpMyAdmin¹Ù·½Î÷°àÑÀÓï·­Òë<br>
           <TD vAlign=top><font face="verdana,arial" size=2>
 		  <P><img src="../../fotos/credits/wilfried_goedert.jpg" border=0  align=right vspace=10 >
 			<P><b>Dr. med Wilfried Godert (DE)</b><br>
-			ÓÐÒÔÏÂ¹±Ï×£º
+			ï¿½ï¿½ï¿½ï¿½ï¿½Â¹ï¿½ï¿½×£ï¿½
 			<p><font size=1>
-		         ½¨Á¢²¢¹ÜÀí£º<br>
+		         ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½?<br>
 			 www.care2x.de<br>
-			 ÐÂÎÅ·þÎñÆ÷£¬OTRSÖ§³ÖÏµÍ³<br>
-			 Ðû´«£¬³ö°æÏà¹ØÊÂÏî<br>
-			 ¹ËÎÊ
+			 ï¿½ï¿½ï¿½Å·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½OTRSÖ§ï¿½ï¿½ÏµÍ³<br>
+			 ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½<br>
+			 ï¿½ï¿½ï¿½ï¿½
 			<p>
 			</font>
-			×¨Òµ£ºÒ½Ê¦£¬³ÖÓÐÒ½ÁÆÐÅÏ¢Ñ§Ñ§Î»
-			<p><a href="mailto:goedert@users.sourceforge.net"><u>ÓëDr. Wilfried GodertÏÈÉúÁªÏµ</u></a>
+			×¨Òµï¿½ï¿½Ò½Ê¦ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò½ï¿½ï¿½ï¿½ï¿½Ï¢Ñ§Ñ§Î»
+			<p><a href="mailto:goedert@users.sourceforge.net"><u>ï¿½ï¿½Dr. Wilfried Godertï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ïµ</u></a>
 </TD></TR>	
 </TBODY></TABLE>
 
@@ -172,164 +172,164 @@ phpMyAdmin¹Ù·½Î÷°àÑÀÓï·­Òë<br>
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-			<b>Matej Hausenblas (FR) ½«Care 2002·­ÒëÎª·¨Óï</b>
-			<p>Matej HausenblasÏÈÉú1981Äê³öÉúÓÚ½Ý¿Ë¹²ºÍ¹úµÄPragueÊÐ¡£
-ËûÊÇÒ»ËùÊýÑ§£­ÐÅÏ¢£­ÎïÀíÑ§´óÑ§µÄÑ§Éú¡£ÔÚÊ¹ÓÃÁËWindows¼¸Äêºó£¬Matej HausenblasÏÈÉú×÷³öÁËÒ»¸ö¸»ÓÐÌôÕ½ÐÔµÄ¾ö¶¨£º³¢ÊÔÊ¹ÓÃLinux¡£
-ÔÚÒ»¶ÎÊ±¼äºó£¬Ëû¾ö¶¨²ÎÓë¿ª·¢Ô´´úÂëÏîÄ¿ÒÔ´Ù½ø¼¼Êõ²¢¿É´ÓÖÐÑ§Ï°µ½Ðí¶àÐÂ¶«Î÷£¬Í¬Ê±¿ÉÒÔ¼ÓÉî¶Ô¿ª·¢Ô´´úÂëÉçÇøÈÕ³£ÔË×÷µÄÁË½â¡£<P>
-<a href="mailto:matejh@users.sourceforge.net"><u>ÓëMatej HausenblasÏÈÉúÁªÏµ</u></a>
+			<b>Matej Hausenblas (FR) ï¿½ï¿½Care 2002ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½</b>
+			<p>Matej Hausenblasï¿½ï¿½ï¿½ï¿½1981ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú½Ý¿Ë¹ï¿½ï¿½Í¹ï¿½ï¿½Pragueï¿½Ð¡ï¿½
+ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½Ñ§ï¿½ï¿½ï¿½ï¿½Ï¢ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ§ï¿½ï¿½Ñ§ï¿½ï¿½Ñ§ï¿½ï¿½ï¿½ï¿½Ê¹ï¿½ï¿½ï¿½ï¿½Windowsï¿½ï¿½ï¿½ï¿½ï¿½Matej Hausenblasï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Õ½ï¿½ÔµÄ¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¹ï¿½ï¿½Linuxï¿½ï¿½
+ï¿½ï¿½Ò»ï¿½ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ë¿ªï¿½ï¿½Ô´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿ï¿½Ô´Ù½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É´ï¿½ï¿½ï¿½Ñ§Ï°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â¶ï¿½ï¿½ï¿½ï¿½ï¿½Í¬Ê±ï¿½ï¿½ï¿½Ô¼ï¿½ï¿½ï¿½Ô¿ï¿½ï¿½ï¿½Ô´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Õ³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ë½â¡£<P>
+<a href="mailto:matejh@users.sourceforge.net"><u>ï¿½ï¿½Matej Hausenblasï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ïµ</u></a>
 </TD></TR></TBODY></TABLE>
 <hr>
 <TABLE cellSpacing=0 cellPadding=0 border=0 width=100%>
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-			<b>Nino Novak (DE) ±à¼­ÐÞ¸ÄÁËµÂÓï°æwww.care2x.comÍøÕ¾</b>
+			<b>Nino Novak (DE) ï¿½à¼­ï¿½Þ¸ï¿½ï¿½Ëµï¿½ï¿½ï¿½ï¿½www.care2x.comï¿½ï¿½Õ¾</b>
 			<p>
-			Nino NovakÊÇÒ»¸ö¼ÅÄ¯µÄÅ£×Ð£¬Ëû×ÜÊÇÐÐ¶¯¿ìÓÚË¼¿¼¡£ÓÐµÄÊ±ºò£¬ËûÓÖÓÐÒ»µã·³Ôê¡£
-			Ï²»¶¡°real gurus¡±²¢³£³£ÓëËûÃÇ½øÐÐ¹î±ç¡£×ÜÊÇÏ£ÍûÄÜ¶Ô´´ÔìÒ»¸ö¸üÃÀºÃµÄÊÀ½çÓÐËù°ïÖú¡£¾ßÓÐ¿ÆÑ§ºÍÒ½Ñ§ÖªÊ¶±³¾°£¨ÕâÒ²ÊÇ²ÎÓëcare2xÏîÄ¿µÄÔ­Òò£©¡£<P>
-			<a href="mailto:nino@kflog.org"><u>ÓëNino NovakÏÈÉúÁªÏµ</u></a>
+			Nino Novakï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½Ä¯ï¿½ï¿½Å£ï¿½Ð£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð¶ï¿½ï¿½ï¿½ï¿½ï¿½Ë¼ï¿½ï¿½ï¿½ï¿½ï¿½Ðµï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ã·³ï¿½ê¡£
+			Ï²ï¿½ï¿½ï¿½ï¿½real gurusï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç½ï¿½ï¿½Ð¹ï¿½ç¡£ï¿½ï¿½ï¿½ï¿½Ï£ï¿½ï¿½ï¿½Ü¶Ô´ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ãµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð¿ï¿½Ñ§ï¿½ï¿½Ò½Ñ§ÖªÊ¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò²ï¿½Ç²ï¿½ï¿½ï¿½care2xï¿½ï¿½Ä¿ï¿½ï¿½Ô­ï¿½ò£©¡ï¿½<P>
+			<a href="mailto:nino@kflog.org"><u>ï¿½ï¿½Nino Novakï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ïµ</u></a>
 </TD></TR></TBODY></TABLE>
 <hr>
 <TABLE cellSpacing=0 cellPadding=0 border=0 width=100%>
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-			<b>Patxi Gomar¨ªz (ES) ×öÁËÎ÷°àÑÀÓï·­Òë¹¤×÷</b>
+			<b>Patxi Gomarï¿½ï¿½z (ES) ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï·­ï¿½ë¹¤ï¿½ï¿½</b>
 			<p>
-			Patxi Gomar¨ªzÏÈÉú1996´ºÌì³öÉúÓÚÎ÷°àÑÀMurciaÊÐ¡£ËûµÄÉú»îÓë¹¤×÷¾ùÎ§ÈÆ×ÅÍ¼ÐÎÍ¼Ïñ´¦Àí£¬×÷ÎªÒ»ÃûÍ¼Ïñ×¨¼Ò£¬Patxi Gomar¨ªzÏÈÉúÖ÷Òª´ÓÊÂÑÛµ×ÅÄÕÕ¹¤×÷¡£ËûÒ²ÊÇÒ»Ãû»¥ÁªÍøµÄ°®ºÃÕß²¢Éè¼ÆÍøÕ¾¡£<p>
+			Patxi Gomarï¿½ï¿½zï¿½ï¿½ï¿½ï¿½1996ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Murciaï¿½Ð¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ë¹¤ï¿½ï¿½ï¿½ï¿½Î§ï¿½ï¿½ï¿½ï¿½Í¼ï¿½ï¿½Í¼ï¿½ï¿½ï¿½?ï¿½ï¿½ÎªÒ»ï¿½ï¿½Í¼ï¿½ï¿½×¨ï¿½Ò£ï¿½Patxi Gomarï¿½ï¿½zï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½ï¿½Ûµï¿½ï¿½ï¿½ï¿½Õ¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò²ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä°ï¿½ï¿½ï¿½ï¿½ß²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Õ¾ï¿½ï¿½<p>
 			"<i>I think the open source code is an effective weapon against the negative effects of economic globalization specially in fundamental areas which are important to humanity like health. For that reason, I feel proud of my small contribution to this great project.</i>"
 
-			<P><a href="mailto:pgomariz@ono.com"><u>ÓëPatxi Gomar¨ªzÏÈÉúÁªÏµ</u></a>
+			<P><a href="mailto:pgomariz@ono.com"><u>ï¿½ï¿½Patxi Gomarï¿½ï¿½zï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ïµ</u></a>
 </TD></TR></TBODY></TABLE>
 <hr>
 <TABLE cellSpacing=0 cellPadding=0 border=0 width=100%>
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-			<b>Daniele Frijia (DE) ¼ì²éCare 2002°²È«·½ÃæµÄÎÊÌâ</b>
+			<b>Daniele Frijia (DE) ï¿½ï¿½ï¿½Care 2002ï¿½ï¿½È«ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</b>
 			<br>
-			Ö÷Òª¹±Ï×£º<p>
+			ï¿½ï¿½Òªï¿½ï¿½ï¿½×£ï¿½<p>
 			<font size=1>
-			°²È«·½ÃæµÄ½¨Òé<br>
-			PHP±à³Ì·½ÃæµÄ¹ËÎÊ<br>
-			´ËÏîÄ¿µÄ¡°ÉÚ±ø¡±
+			ï¿½ï¿½È«ï¿½ï¿½ï¿½ï¿½Ä½ï¿½ï¿½ï¿½<br>
+			PHPï¿½ï¿½Ì·ï¿½ï¿½ï¿½Ä¹ï¿½ï¿½ï¿½<br>
+			ï¿½ï¿½ï¿½ï¿½Ä¿ï¿½Ä¡ï¿½ï¿½Ú±ï¿½
 		</font>
 		    <p>
-			Daniele FrijiaÏÈÉú³öÉúÓÚ1981Äê£¬ÏÖ¹¤×÷ÓÚµÂ¹úNurembergµÄÒ»¼ÒISP¡£Ëû½«×Ô¼º·á¸»µÄPHPÓÃÀ´¸ÄÉÆCare2xµÄ°²È«¹¦ÄÜ¡£ Daniele FrijiaÏÈÉúÖÂÁ¦ÓÚÔÚ¿ª·ÅÔ´´úÂëµÄÊÀ½çÀï´ò¿ªÒ»¸öÈ«ÐÂµÄÒ½ÁÆ²úÆ·ÊÐ³¡¡£
-			<P><a href="mailto:daniele@infra.de"><u>ÓëDaniele FrijiaÏÈÉúÁªÏµ</u></a>
+			Daniele Frijiaï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½1981ï¿½ê£¬ï¿½Ö¹ï¿½ï¿½ï¿½ï¿½ÚµÂ¹ï¿½Nurembergï¿½ï¿½Ò»ï¿½ï¿½ISPï¿½ï¿½ï¿½ï¿½ï¿½Ô¼ï¿½ï¿½á¸»ï¿½ï¿½PHPï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Care2xï¿½Ä°ï¿½È«ï¿½ï¿½ï¿½Ü¡ï¿½ Daniele Frijiaï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú¿ï¿½ï¿½ï¿½Ô´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½È«ï¿½Âµï¿½Ò½ï¿½Æ²ï¿½Æ·ï¿½Ð³ï¿½ï¿½ï¿½
+			<P><a href="mailto:daniele@infra.de"><u>ï¿½ï¿½Daniele Frijiaï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ïµ</u></a>
 </TD></TR></TBODY></TABLE>
 <hr>
-<font face="verdana,arial" size=3 color="#0000ff">»¹Òª¸ÐÐ»£º</font>
-<font face="verdana,arial" size=1 >£¨°´×ÖÄ¸Ë³ÐòÅÅÁÐ£©</font>
+<font face="verdana,arial" size=3 color="#0000ff">ï¿½ï¿½Òªï¿½ï¿½Ð»ï¿½ï¿½</font>
+<font face="verdana,arial" size=1 >ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä¸Ë³ï¿½ï¿½ï¿½ï¿½ï¿½Ð£ï¿½</font>
 
 <table border=0 cellspacing=1 cellpadding=1>
   <tr>
     <td bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> Abrar H. Hazarika (ID)</font></nobr>&nbsp;</td>
-    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;eComBillµ¥Ö¤Ä£¿é</font></td>
+    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;eComBillï¿½ï¿½Ö¤Ä£ï¿½ï¿½</font></td>
   </tr>
   <tr>
     <td bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> Agus M. Ramdan (ID)</font></nobr>&nbsp;</td>
-    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;´úÂëÐÞ¶©£¬care2x.com CMS</font></td>
+    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;ï¿½ï¿½ï¿½ï¿½ï¿½Þ¶ï¿½ï¿½ï¿½care2x.com CMS</font></td>
   </tr>
   <tr>
     <td bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> Akhmad Daniel Sembiring (ID)</font></nobr>&nbsp;</td>
-    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;eCombillÄ£¿éµ÷ÊÔ</font></td>
+    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;eCombillÄ£ï¿½ï¿½ï¿½ï¿½ï¿½</font></td>
   </tr>
   <tr>
     <td bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> Alfredo Rodriguez (PT)</font></nobr>&nbsp;</td>
-    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;ÆÏÌÑÑÀÓï·­Òë</font></td>
+    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï·­ï¿½ï¿½</font></td>
   </tr>
   <tr>
     <td bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> Are Kristensen (NO)</font></nobr>&nbsp;</td>
-    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;Å²ÍþÓï·­Òë¼°ÔÚÏßÑÝÊ¾</font></td>
+    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;Å²ï¿½ï¿½ï¿½ï·­ï¿½ë¼°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¾</font></td>
   </tr>
   <tr>
     <td bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> Biju Gopinath (IN)</font></nobr>&nbsp;</td>
-    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;½»»¥Í¼ÐÎ½çÃæÉè¼Æ</font></td>
+    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;ï¿½ï¿½ï¿½ï¿½Í¼ï¿½Î½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</font></td>
   </tr>
   <tr>
     <td bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> Daniele Frijia (DE)</font></nobr>&nbsp;</td>
-    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;°²È«¼ì²é£¬PHP¹ËÎÊ</font></td>
+    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;ï¿½ï¿½È«ï¿½ï¿½é£¬PHPï¿½ï¿½ï¿½ï¿½</font></td>
   </tr>
   <tr>
     <td bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> Dilip Bharatee (IN)</font></nobr>&nbsp;</td>
-    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;ecomscience.com£¬È«Ö°³ÌÐòÔ±</font></td>
+    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;ecomscience.comï¿½ï¿½È«Ö°ï¿½ï¿½ï¿½ï¿½Ô±</font></td>
   </tr>
   <tr>
     <td bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> Erik de Wild (NL)</font></nobr>&nbsp;</td>
-    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;ºÉÀ¼Óï·­Òë£¬·þÎñÆ÷°üÖÆ×÷</font></td>
+    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;ï¿½ï¿½ï¿½ï¿½ï¿½ï·­ï¿½ë£¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</font></td>
   </tr>
   <tr>
     <td bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> Gonzalo Gomes Sotelo (AR)</font></nobr>&nbsp;</td>
-    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;Î÷°àÑÀÓï·­Òë</font></td>
+    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï·­ï¿½ï¿½</font></td>
   </tr>
   <tr>
     <td bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> Javier Alberto Arias (AR)</font></nobr>&nbsp;</td>
-    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;Î÷°àÑÀÓï·­Òë</font></td>
+    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï·­ï¿½ï¿½</font></td>
   </tr>
   <tr>
     <td bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> Luki Rustianto (ID)</font></nobr>&nbsp;</td>
-    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;°²È«¹¦ÄÜÔöÇ¿</font></td>
+    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;ï¿½ï¿½È«ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç¿</font></td>
   </tr>
   <tr>
     <td bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> Mark Painter Dr. med (ZA)</font></nobr>&nbsp;</td>
-    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;Êý¾Ý½á¹¹Éè¼Æ£¬¸¾²ú¿Æ£¬È±ÏÝ±¨¸æ£¬Í¼ÐÎ½çÃæÉè¼Æ</font></td>
+    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;ï¿½ï¿½Ý½á¹¹ï¿½ï¿½Æ£ï¿½ï¿½ï¿½ï¿½ï¿½Æ£ï¿½È±ï¿½Ý±ï¿½ï¿½æ£¬Í¼ï¿½Î½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</font></td>
   </tr>
   <tr>
     <td bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> Matej Hausenblas (FR)</font></nobr>&nbsp;</td>
-    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;·¨Óï·­Òë</font></td>
+    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;ï¿½ï¿½ï¿½ï·­ï¿½ï¿½</font></td>
   </tr>
   <tr>
     <td bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> Muhammad Panji (ID)</font></nobr>&nbsp;</td>
-    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;¸½¼ÓµÄÓ¡¶ÈÄáÎ÷ÑÇÓï·­Òë</font></td>
+    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;ï¿½ï¿½ï¿½Óµï¿½Ó¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï·­ï¿½ï¿½</font></td>
   </tr>
   <tr>
     <td bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> Nino Novak (DE)</font></nobr>&nbsp;</td>
-    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;µÂÓï°æwww.care2x.com</font></td>
+    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;ï¿½ï¿½ï¿½ï¿½ï¿½www.care2x.com</font></td>
   </tr>
   <tr>
-    <td bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> Patxi Gomar¨ªz (ES)</font></nobr>&nbsp;</td>
-    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;Î÷°àÑÀÓï·­Òë</font></td>
+    <td bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> Patxi Gomarï¿½ï¿½z (ES)</font></nobr>&nbsp;</td>
+    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï·­ï¿½ï¿½</font></td>
   </tr>
   <tr>
     <td bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> Pawel Cyrta (PL)</font></nobr>&nbsp;</td>
-    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;²¨À¼Óï·­Òë</font></td>
+    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;ï¿½ï¿½ï¿½ï¿½ï¿½ï·­ï¿½ï¿½</font></td>
   </tr>
   <tr>
     <td bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> Petr Roupec(CZ)</font></nobr>&nbsp;</td>
-    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;½Ý¿ËÓï·­Òë</font></td>
+    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;ï¿½Ý¿ï¿½ï¿½ï·­ï¿½ï¿½</font></td>
   </tr>
   <tr>
     <td bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> Prantar Deka (IN)</font></nobr>&nbsp;</td>
-    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;Ò»°ãµ¥Ö¤Ä£¿é</font></td>
+    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;Ò»ï¿½ãµ¥Ö¤Ä£ï¿½ï¿½</font></td>
   </tr>
   <tr>
     <td bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> Roberto Nanucci (IT)</font></nobr>&nbsp;</td>
-    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;care2x.it¾µÏñÕ¾µã</font></td>
+    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;care2x.itï¿½ï¿½ï¿½ï¿½Õ¾ï¿½ï¿½</font></td>
   </tr>
   <tr>
     <td bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> Sarat Nayak (IN)</font></nobr>&nbsp;</td>
-    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;Éè¼Æ¸ÄÉÆ£¬È±ÏÝ±¨¸æ</font></td>
+    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;ï¿½ï¿½Æ¸ï¿½ï¿½Æ£ï¿½È±ï¿½Ý±ï¿½ï¿½ï¿½</font></td>
   </tr>
   <tr>
     <td bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> Simone Aveotti (IT)</font></nobr>&nbsp;</td>
-    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;¸½¼ÓµÄÒâ´óÀûÓï·­Òë</font></td>
+    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;ï¿½ï¿½ï¿½Óµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï·­ï¿½ï¿½</font></td>
   </tr>
   <tr>
     <td bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> Thomas Wiedmann (DE)</font></nobr>&nbsp;</td>
-    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;²âÊÔ£¬µ÷ÊÔ£¬Ð£Ñé´úÂë</font></td>
+    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;ï¿½ï¿½ï¿½Ô£ï¿½ï¿½ï¿½ï¿½Ô£ï¿½Ð£ï¿½ï¿½ï¿½ï¿½ï¿½</font></td>
   </tr>
   <tr>
     <td bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> Victor Christianto</font></nobr>&nbsp;</td>
-    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;Ataraxia (WAP)Ä£¿é</font></td>
+    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;Ataraxia (WAP)Ä£ï¿½ï¿½</font></td>
   </tr>
   <tr>
     <td bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> Wilfried Gobert Dr. med (DE)</font></nobr>&nbsp;</td>
-    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;³ö°æÏà¹ØÊÂÏî£¬·þÎñÆ÷Ö÷»úÉè¶¨£¬ÐÂÎÅ·þÎñÆ÷£¬OTRS£¬¹ËÎÊ</font></td>
+    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½î£¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½è¶¨ï¿½ï¿½ï¿½ï¿½ï¿½Å·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½OTRSï¿½ï¿½ï¿½ï¿½ï¿½ï¿½</font></td>
   </tr>
 </table>
 
-<font face="verdana,arial" size=1>×¢£ºÒÔÉÏÊÇ²¿·ÖÃùÐ»Ãûµ¥£¬¸ü¶àµÄÃùÐ»ÈËÔ±ÕýÔÚÌí¼Ó¡£</font>
+<font face="verdana,arial" size=1>×¢ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ç²ï¿½ï¿½ï¿½ï¿½ï¿½Ð»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð»ï¿½ï¿½Ô±ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó¡ï¿½</font>
 
 </body>
 </html>

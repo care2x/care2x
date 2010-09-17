@@ -3,27 +3,27 @@
 # 2004-01-05
 error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require_once('./roots.php');
-require_once($root_path.'include/inc_environment_global.php');
+require_once($root_path.'include/core/inc_environment_global.php');
 ?>
 <html>
 <head>
 <title>Credits</title>
 </head>
 <body onLoad="if(window.focus) window.focus()">
-<font face="verdana,arial" size=6 color="#0000ff">Các ng&#432;&#7901;i tham gia</fonts><hr>
+<font face="verdana,arial" size=6 color="#0000ff">Cï¿½c ng&#432;&#7901;i tham gia</fonts><hr>
 <TABLE cellSpacing=0 cellPadding=0 border=0 width=100%>
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
 			<P><img src="../../fotos/credits/elpidio_latorilla_3.jpg" border=0  align=right vspace=10>
-			<b>Phiên b&#7843;n beta &#273;&#7847;u tiên c&#7911;a&nbsp; CARE 2002 &#273;&#432;&#7907;c xây d&#7921;ng b&#7903;i Elpidio Latorilla:</b>
+			<b>Phiï¿½n b&#7843;n beta &#273;&#7847;u tiï¿½n c&#7911;a&nbsp; CARE 2002 &#273;&#432;&#7907;c xï¿½y d&#7921;ng b&#7903;i Elpidio Latorilla:</b>
 			<p>
-			Chuyên môn:<br>L&#7853;p trình viên, Ytá ph&#7851;u thu&#7853;t, K&#7929; thu&#7853;t viên &#273;i&#7879;n t&#7917; 
-            và truy&#7873;n thông
+			Chuyï¿½n mï¿½n:<br>L&#7853;p trï¿½nh viï¿½n, Ytï¿½ ph&#7851;u thu&#7853;t, K&#7929; thu&#7853;t viï¿½n &#273;i&#7879;n t&#7917; 
+            vï¿½ truy&#7873;n thï¿½ng
 			<p>
-			L&#297;nh v&#7921;c quan tâm: <br>C, C++, PHP, Javascript, SQL, TCL/TK, HTML, Perl, ASP, Java
-			<P><a href="mailto:elpidio@latorilla.com"><u>Có th&#7875; liên l&#7841;c v&#7899;i Elpidio Latorilla 
-            &#7903; &#273;ây.</u></a>
+			L&#297;nh v&#7921;c quan tï¿½m: <br>C, C++, PHP, Javascript, SQL, TCL/TK, HTML, Perl, ASP, Java
+			<P><a href="mailto:elpidio@latorilla.com"><u>Cï¿½ th&#7875; liï¿½n l&#7841;c v&#7899;i Elpidio Latorilla 
+            &#7903; &#273;ï¿½y.</u></a>
 </TD></TR></TBODY></TABLE>
 <hr>
 <table cellSpacing=0 cellPadding=0 border=0 width=100%>
@@ -32,55 +32,55 @@ require_once($root_path.'include/inc_environment_global.php');
           <td vAlign=top><font face="verdana,arial" size=2>
 			<p><img src="../../fotos/credits/lopo_l_almeida.jpg"  
                                 width=135 height=170 border=0  align=right vspace=10>
-			<b>Lopo Lencastre de Almeida (PT)</b> là m&#7897;t trong nh&#7919;ng ng&#432;&#7901;i phát 
-            tri&#7875;n có hi&#7879;u qu&#7843; nh&#7845;t. Các &#273;óng góp cho d&#7921; án bao g&#7891;m:
+			<b>Lopo Lencastre de Almeida (PT)</b> lï¿½ m&#7897;t trong nh&#7919;ng ng&#432;&#7901;i phï¿½t 
+            tri&#7875;n cï¿½ hi&#7879;u qu&#7843; nh&#7845;t. Cï¿½c &#273;ï¿½ng gï¿½p cho d&#7921; ï¿½n bao g&#7891;m:
                         <p><font size=1>
-			            Ti&#7871;p th&#7883;, Thúc &#273;&#7849;y và Quan h&#7879; c&#7897;ng &#273;&#7891;ng<br>
+			            Ti&#7871;p th&#7883;, Thï¿½c &#273;&#7849;y vï¿½ Quan h&#7879; c&#7897;ng &#273;&#7891;ng<br>
 			            Thi&#7871;t k&#7871;
-			Web và Logo<br>
-			            Tri&#7875;n khai và b&#7843;o trì m&#7897;t vài công c&#7909; Web (Bugtracker, Forum, FAQ, 
+			Web vï¿½ Logo<br>
+			            Tri&#7875;n khai vï¿½ b&#7843;o trï¿½ m&#7897;t vï¿½i cï¿½ng c&#7909; Web (Bugtracker, Forum, FAQ, 
                         ...)<br>
-			            Tri&#7873;n khai và b&#7843;o trì trang Web m&#7899;i (s&#7855;p hoàn thành)<br>
-			            &#272;i&#7873;u hành và qu&#7843;n tr&#7883;
+			            Tri&#7873;n khai vï¿½ b&#7843;o trï¿½ trang Web m&#7899;i (s&#7855;p hoï¿½n thï¿½nh)<br>
+			            &#272;i&#7873;u hï¿½nh vï¿½ qu&#7843;n tr&#7883;
 			Forum<br>
-			            Tìm ki&#7871;m, &#273;ào b&#7899;i mã<br>
+			            Tï¿½m ki&#7871;m, &#273;ï¿½o b&#7899;i mï¿½<br>
 			            T&#432; v&#7845;n v&#7873; PHP<br>
 			            C&#7889; v&#7845;n v&#7873; b&#7843;o m&#7853;t<br>
-			            C&#7889; v&#7845;n v&#7873; các l&#7899;p tr&#7915;u t&#432;&#7907;ng (C&#417; s&#7903; d&#7919; li&#7879;u, Template, 
+			            C&#7889; v&#7845;n v&#7873; cï¿½c l&#7899;p tr&#7915;u t&#432;&#7907;ng (C&#417; s&#7903; d&#7919; li&#7879;u, Template, 
                         ...)<br>
 			            G&#7905; r&#7889;i<br>
-			            Ý ki&#7871;n, th&#7843;o lu&#7853;n, mách n&#432;&#7899;c, g&#7907;i ý, ....
+			            ï¿½ ki&#7871;n, th&#7843;o lu&#7853;n, mï¿½ch n&#432;&#7899;c, g&#7907;i ï¿½, ....
 			</font><p>
-			Lopo L. de Almeida &#273;&#432;&#7907;c sinh ra &#7903; Angola vào n&#259;m 1966. Ông làm vi&#7879;c 
-            &#7903; b&#7897; ph&#7853;n máy tính - trong các l&#297;nh v&#7921;c t&#7915; t&#7921; &#273;&#7897;ng hoá th&#432;&#417;ng m&#7841;i 
-            cho &#273;&#7871;n t&#7921; &#273;&#7897;ng hoá công nghi&#7879;p - v&#7899;i vai trò là m&#7897;t nhà phát tri&#7875;n 
-            ph&#7847;n m&#7873;m và thi&#7873;t k&#7871; giao di&#7879;n trong th&#7901;i gian h&#417;n 16 n&#259;m. Trong 5 
-            n&#259;m v&#7915;a r&#7891;i, ông làm vi&#7879;c ch&#7911; y&#7871;u v&#7873; phát tri&#7873;n m&#7841;ng và qu&#7843;n lý công 
-            ty. Ông là CEO/CTO c&#7911;a HumanEasy - m&#7897;t thành viên c&#7911;a d&#7921; án v&#7899;i 
-            nhi&#7879;m v&#7909; <b>Quan h&#7879; C&#7897;ng &#273;&#7891;ng và Qu&#7843;n lý Ti&#7871;p th&#7883;</b>.<br>
-			Ông c&#361;ng tham gia vào nhi&#7873;u d&#7921; án GNU/GPL khác trong &#273;ó vài d&#7921; án 
+			Lopo L. de Almeida &#273;&#432;&#7907;c sinh ra &#7903; Angola vï¿½o n&#259;m 1966. ï¿½ng lï¿½m vi&#7879;c 
+            &#7903; b&#7897; ph&#7853;n mï¿½y tï¿½nh - trong cï¿½c l&#297;nh v&#7921;c t&#7915; t&#7921; &#273;&#7897;ng hoï¿½ th&#432;&#417;ng m&#7841;i 
+            cho &#273;&#7871;n t&#7921; &#273;&#7897;ng hoï¿½ cï¿½ng nghi&#7879;p - v&#7899;i vai trï¿½ lï¿½ m&#7897;t nhï¿½ phï¿½t tri&#7875;n 
+            ph&#7847;n m&#7873;m vï¿½ thi&#7873;t k&#7871; giao di&#7879;n trong th&#7901;i gian h&#417;n 16 n&#259;m. Trong 5 
+            n&#259;m v&#7915;a r&#7891;i, ï¿½ng lï¿½m vi&#7879;c ch&#7911; y&#7871;u v&#7873; phï¿½t tri&#7873;n m&#7841;ng vï¿½ qu&#7843;n lï¿½ cï¿½ng 
+            ty. ï¿½ng lï¿½ CEO/CTO c&#7911;a HumanEasy - m&#7897;t thï¿½nh viï¿½n c&#7911;a d&#7921; ï¿½n v&#7899;i 
+            nhi&#7879;m v&#7909; <b>Quan h&#7879; C&#7897;ng &#273;&#7891;ng vï¿½ Qu&#7843;n lï¿½ Ti&#7871;p th&#7883;</b>.<br>
+			ï¿½ng c&#361;ng tham gia vï¿½o nhi&#7873;u d&#7921; ï¿½n GNU/GPL khï¿½c trong &#273;ï¿½ vï¿½i d&#7921; ï¿½n 
             &#273;ang &#273;&#432;&#7907;c s&#7917; d&#7909;ng &#7903; trang Web c&#7911;a Care2x.<br>
-			<p><a href="http://www.humaneasy.com" target="_blank"><u>Có th&#7875; liên 
-            l&#7841;c v&#7899;i Lopo L. de Almeida &#7903; &#273;ây.</u></a></td></tr></tbody></table>
+			<p><a href="http://www.humaneasy.com" target="_blank"><u>Cï¿½ th&#7875; liï¿½n 
+            l&#7841;c v&#7899;i Lopo L. de Almeida &#7903; &#273;ï¿½y.</u></a></td></tr></tbody></table>
 <hr>
 <TABLE cellSpacing=0 cellPadding=0 border=0 width=100%>
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
 			<P><img src="../../fotos/credits/giuseppe_scarpi.jpg"  border=0  width=135 height=170 align=right vspace=10>
-			<b>Giuseppe Scarpi (IT) &#273;ã d&#7883;ch Care 2002 sang ti&#7871;ng&nbsp; Italia.</b><p>
-			Giuseppe Scarpi sinh ra &#7903; Rome, Italy, cách &#273;ây 35 n&#259;m. 
-			<p>Ông la k&#7929; s&#432; &#273;i&#7879;n t&#7917; và &#273;ã làm vi&#7879;c cho m&#7897;t vài công ty trong b&#7897; 
-            ph&#7853;n y sinh h&#7885;c, n&#417;i ông &#273;ã phát tri&#7875;n nh&#7919;ng hi&#7875;u bi&#7871;t v&#7873; m&#7889;i liên 
-            h&#7879; gi&#7919;a y h&#7885;c và th&#7871; gi&#7899;i công ngh&#7879; thông tin.<br>
-            Ông s&#7917; d&#7909;ng và &#273;ánh giá cao c&#7843; Linux và Windows, "<i>vì c&#7843; hai &#273;&#7873;u 
-            là thành qu&#7843; tuy&#7879;t v&#7901;i c&#7911;a con ng&#432;&#7901;i mà r&#7845;t &#273;áng ph&#7843;i trân tr&#7885;ng</i>".<p>
-Ông quy&#7871;t &#273;&#7883;nh tham gia ngu&#7891;n m&#7903; b&#7903;i vì:<br><i>&quot;M&#7897;t th&#7871; gi&#7899;i lý t&#432;&#7903;ng ch&#7881; có th&#7875; 
-t&#7891;n t&#7841;i n&#7871;u nh&#432; &#273;&#432;&#7907;c cân b&#7857;ng m&#7897;t cách hoàn h&#7843;o. N&#7871;u b&#7841;n &#273;&#432;&#7907;c h&#432;&#7903;ng cái gì thì 
-b&#7841;n c&#361;ng nên tr&#7843; l&#7841;i cho h&#7907;p lý.&quot;</i>
+			<b>Giuseppe Scarpi (IT) &#273;ï¿½ d&#7883;ch Care 2002 sang ti&#7871;ng&nbsp; Italia.</b><p>
+			Giuseppe Scarpi sinh ra &#7903; Rome, Italy, cï¿½ch &#273;ï¿½y 35 n&#259;m. 
+			<p>ï¿½ng la k&#7929; s&#432; &#273;i&#7879;n t&#7917; vï¿½ &#273;ï¿½ lï¿½m vi&#7879;c cho m&#7897;t vï¿½i cï¿½ng ty trong b&#7897; 
+            ph&#7853;n y sinh h&#7885;c, n&#417;i ï¿½ng &#273;ï¿½ phï¿½t tri&#7875;n nh&#7919;ng hi&#7875;u bi&#7871;t v&#7873; m&#7889;i liï¿½n 
+            h&#7879; gi&#7919;a y h&#7885;c vï¿½ th&#7871; gi&#7899;i cï¿½ng ngh&#7879; thï¿½ng tin.<br>
+            ï¿½ng s&#7917; d&#7909;ng vï¿½ &#273;ï¿½nh giï¿½ cao c&#7843; Linux vï¿½ Windows, "<i>vï¿½ c&#7843; hai &#273;&#7873;u 
+            lï¿½ thï¿½nh qu&#7843; tuy&#7879;t v&#7901;i c&#7911;a con ng&#432;&#7901;i mï¿½ r&#7845;t &#273;ï¿½ng ph&#7843;i trï¿½n tr&#7885;ng</i>".<p>
+ï¿½ng quy&#7871;t &#273;&#7883;nh tham gia ngu&#7891;n m&#7903; b&#7903;i vï¿½:<br><i>&quot;M&#7897;t th&#7871; gi&#7899;i lï¿½ t&#432;&#7903;ng ch&#7881; cï¿½ th&#7875; 
+t&#7891;n t&#7841;i n&#7871;u nh&#432; &#273;&#432;&#7907;c cï¿½n b&#7857;ng m&#7897;t cï¿½ch hoï¿½n h&#7843;o. N&#7871;u b&#7841;n &#273;&#432;&#7907;c h&#432;&#7903;ng cï¿½i gï¿½ thï¿½ 
+b&#7841;n c&#361;ng nï¿½n tr&#7843; l&#7841;i cho h&#7907;p lï¿½.&quot;</i>
 
-			<P><a href="mailto:kalbun@inwind.it"><u>Có th&#7875; liên l&#7841;c v&#7899;i Giuseppe Scarpi 
-            &#7903; &#273;ây.</u></a></TD></TR></TBODY></TABLE>
+			<P><a href="mailto:kalbun@inwind.it"><u>Cï¿½ th&#7875; liï¿½n l&#7841;c v&#7899;i Giuseppe Scarpi 
+            &#7903; &#273;ï¿½y.</u></a></TD></TR></TBODY></TABLE>
 
 <hr>
 <TABLE cellSpacing=0 cellPadding=0 border=0 width=100%>
@@ -88,21 +88,21 @@ b&#7841;n c&#361;ng nên tr&#7843; l&#7841;i cho h&#7907;p lý.&quot;</i>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
             <P><img src="../../fotos/credits/gabriele_cicala.jpg"  border=0  align=right vspace=10>
-			<b>Gabriele Cicala (IT) &#273;ã d&#7883;ch h&#7847;u h&#7871;t trang web www.care2x.com 
+			<b>Gabriele Cicala (IT) &#273;ï¿½ d&#7883;ch h&#7847;u h&#7871;t trang web www.care2x.com 
             sang ti&#7871;ng Italia.</b>
 			<p>
-			Gabriele Cicala sinh ra &#7903; Rossano, vùng Calabria mi&#7873;n nam n&#432;&#7899;c Italia 
-            vào n&#259;m in 1970.
-            Ông &#273;ã giành &#273;&#432;&#7907;c b&#7857;ng &#272;&#7841;i h&#7885;c chuyên ngành K&#7929; s&#432; Truy&#7873;n thông c&#7911;a 
+			Gabriele Cicala sinh ra &#7903; Rossano, vï¿½ng Calabria mi&#7873;n nam n&#432;&#7899;c Italia 
+            vï¿½o n&#259;m in 1970.
+            ï¿½ng &#273;ï¿½ giï¿½nh &#273;&#432;&#7907;c b&#7857;ng &#272;&#7841;i h&#7885;c chuyï¿½n ngï¿½nh K&#7929; s&#432; Truy&#7873;n thï¿½ng c&#7911;a 
             tr&#432;&#7901;ng Politecnico
-di Torino. Hi&#7879;n nay, ông là t&#432; v&#7845;n cho m&#7897;t công ty tin h&#7885;c. <p>T&#7915; khi hi&#7875;u bi&#7871;t 
-          v&#7873; Linux và môi tr&#432;&#7901;ng ngu&#7891;n m&#7903;, ông r&#7845;t quan tâm &#273;&#7871;n m&#7885;i m&#7863;t c&#7911;a d&#7921; 
-          án theo h&#432;&#7899;ng này. M&#259;c dù ch&#432;a bao gi&#7901; làm vi&#7879;c trong ngành y t&#7871; nh&#432;ng 
-          ông v&#7851;n quy&#7871;t &#273;&#7883;nh tham gia d&#7921; án Care b&#7903;i vi ông c&#361;ng chung ni&#7873;m tin 
-          nh&#432; nh&#7919;ng ng&#432;&#7901;i thi&#7871;t l&#7853;p và các thành viên c&#7911;a d&#7921; án Care.
+di Torino. Hi&#7879;n nay, ï¿½ng lï¿½ t&#432; v&#7845;n cho m&#7897;t cï¿½ng ty tin h&#7885;c. <p>T&#7915; khi hi&#7875;u bi&#7871;t 
+          v&#7873; Linux vï¿½ mï¿½i tr&#432;&#7901;ng ngu&#7891;n m&#7903;, ï¿½ng r&#7845;t quan tï¿½m &#273;&#7871;n m&#7885;i m&#7863;t c&#7911;a d&#7921; 
+          ï¿½n theo h&#432;&#7899;ng nï¿½y. M&#259;c dï¿½ ch&#432;a bao gi&#7901; lï¿½m vi&#7879;c trong ngï¿½nh y t&#7871; nh&#432;ng 
+          ï¿½ng v&#7851;n quy&#7871;t &#273;&#7883;nh tham gia d&#7921; ï¿½n Care b&#7903;i vi ï¿½ng c&#361;ng chung ni&#7873;m tin 
+          nh&#432; nh&#7919;ng ng&#432;&#7901;i thi&#7871;t l&#7853;p vï¿½ cï¿½c thï¿½nh viï¿½n c&#7911;a d&#7921; ï¿½n Care.
 			
-			<P><a href="mailto:gabcicala@tiscali.it"><u>Có th&#7875; liên l&#7841;c v&#7899;i Gabriele Cicala 
-            &#7903; &#273;ây.</u></a></TD></TR></TBODY></TABLE>
+			<P><a href="mailto:gabcicala@tiscali.it"><u>Cï¿½ th&#7875; liï¿½n l&#7841;c v&#7899;i Gabriele Cicala 
+            &#7903; &#273;ï¿½y.</u></a></TD></TR></TBODY></TABLE>
 
 <hr>
 <TABLE cellSpacing=0 cellPadding=0 border=0 width=100%>
@@ -110,27 +110,27 @@ di Torino. Hi&#7879;n nay, ông là t&#432; v&#7845;n cho m&#7897;t công ty tin h&
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
             <P><img src="../../fotos/credits/daniel_zilli.jpg"  border=0  align=right vspace=10>
-			<b>Daniel Zilli (BR) &#273;ã d&#7883;ch Care 2002 và trang web www.care2x.com website 
-            sang ti&#7871;ng B&#7891; &#272;ào Nha- Brazil.</b>
+			<b>Daniel Zilli (BR) &#273;ï¿½ d&#7883;ch Care 2002 vï¿½ trang web www.care2x.com website 
+            sang ti&#7871;ng B&#7891; &#272;ï¿½o Nha- Brazil.</b>
 			<p>
-			Daniel là m&#7897;t ng&#432;&#7901;i &#273;àn ông d&#7877; m&#7871;n. Ông thích m&#7897;t cu&#7897;c s&#7889;ng h&#7841;nh 
-            phúc, thích máy tính, bóng &#273;á và âm nh&#7841;c. Anh say mê máy tính và &#273;ã 
-            có 15 n&#259;m kinh nghi&#7879;m v&#7873; nó. Daniel s&#7903; h&#7919;u m&#7897;t công ty chuyên s&#7843;n 
-            xu&#7845;t các s&#7843;n ph&#7849;m giáo d&#7909;c khoa h&#7885;c máy tính, ph&#7847;n m&#7873;m ngu&#7891;n m&#7903; và 
-            b&#7843;n &#273;&#7883;a hoá linux.<p>
-			<a href="mailto:danielz@cco.matrix.com.br"><u>Có th&#7875; liên l&#7841;c v&#7899;i Daniel Zilli 
-            &#7903; &#273;ây.</u></a></TD></TR></TBODY></TABLE>
+			Daniel lï¿½ m&#7897;t ng&#432;&#7901;i &#273;ï¿½n ï¿½ng d&#7877; m&#7871;n. ï¿½ng thï¿½ch m&#7897;t cu&#7897;c s&#7889;ng h&#7841;nh 
+            phï¿½c, thï¿½ch mï¿½y tï¿½nh, bï¿½ng &#273;ï¿½ vï¿½ ï¿½m nh&#7841;c. Anh say mï¿½ mï¿½y tï¿½nh vï¿½ &#273;ï¿½ 
+            cï¿½ 15 n&#259;m kinh nghi&#7879;m v&#7873; nï¿½. Daniel s&#7903; h&#7919;u m&#7897;t cï¿½ng ty chuyï¿½n s&#7843;n 
+            xu&#7845;t cï¿½c s&#7843;n ph&#7849;m giï¿½o d&#7909;c khoa h&#7885;c mï¿½y tï¿½nh, ph&#7847;n m&#7873;m ngu&#7891;n m&#7903; vï¿½ 
+            b&#7843;n &#273;&#7883;a hoï¿½ linux.<p>
+			<a href="mailto:danielz@cco.matrix.com.br"><u>Cï¿½ th&#7875; liï¿½n l&#7841;c v&#7899;i Daniel Zilli 
+            &#7903; &#273;ï¿½y.</u></a></TD></TR></TBODY></TABLE>
 <hr>
 <TABLE cellSpacing=0 cellPadding=0 border=0 width=100%>
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
             <P><img src="../../fotos/credits/muhammad_panji.png"  border=0  align=right vspace=10>
-			<b>Muhammad Panji (ID) &#273;ã &#273;&#7891;ng phiên d&#7883;ch Care 2002 và trang web 
+			<b>Muhammad Panji (ID) &#273;ï¿½ &#273;&#7891;ng phiï¿½n d&#7883;ch Care 2002 vï¿½ trang web 
             www.care2x.com sang ti&#7871;ng Indonesia.</b>
 			
-			<P><a href="mailto:sumodirjo@users.sourceforge.net"><u>Có th&#7875; liên 
-            l&#7841;c v&#7899;i Muhammad Panji &#7903; &#273;ây.</u></a></TD></TR></TBODY></TABLE>
+			<P><a href="mailto:sumodirjo@users.sourceforge.net"><u>Cï¿½ th&#7875; liï¿½n 
+            l&#7841;c v&#7899;i Muhammad Panji &#7903; &#273;ï¿½y.</u></a></TD></TR></TBODY></TABLE>
 
 <hr>
 <TABLE cellSpacing=0 cellPadding=0 border=0 width=100%>
@@ -138,35 +138,35 @@ di Torino. Hi&#7879;n nay, ông là t&#432; v&#7845;n cho m&#7897;t công ty tin h&
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
             <P><img src="../../fotos/credits/agus_mr.jpg"  border=0  align=right vspace=10>
-			<b>Agus Muhammad Ramdan (ID) &#273;ã d&#7883;ch Care 2002 và trang web www.care2x.com 
+			<b>Agus Muhammad Ramdan (ID) &#273;ï¿½ d&#7883;ch Care 2002 vï¿½ trang web www.care2x.com 
             sang ti&#7871;ng Indonesia.</b>
 			
-			<P><a href="mailto:agusmr@mweb.co.id"><u>Có th&#7875; liên l&#7841;c v&#7899;i Agus M. Ramdan 
-            &#7903; &#273;ây.</u></a></TD></TR></TBODY></TABLE>
+			<P><a href="mailto:agusmr@mweb.co.id"><u>Cï¿½ th&#7875; liï¿½n l&#7841;c v&#7899;i Agus M. Ramdan 
+            &#7903; &#273;ï¿½y.</u></a></TD></TR></TBODY></TABLE>
 <hr>
 <TABLE cellSpacing=0 cellPadding=0 border=0 width=100%>
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
 			<P><img src="../../fotos/credits/thomas_wiedmann.jpg"  border=0  align=right vspace=10>
-			<b>Thomas Wiedmann (DE) là m&#7897;t ng&#432;&#7901;i g&#7905; r&#7889;i tích c&#7921;c nh&#7845;t</b>
+			<b>Thomas Wiedmann (DE) lï¿½ m&#7897;t ng&#432;&#7901;i g&#7905; r&#7889;i tï¿½ch c&#7921;c nh&#7845;t</b>
 			<p><font size=1>
-			Ki&#7875;m tra hoàn thi&#7879;n <br>
+			Ki&#7875;m tra hoï¿½n thi&#7879;n <br>
 			G&#7905; r&#7889;i<br>
-			Khái ni&#7879;m 'khoá l&#7841;c quan' c&#417; s&#7903; d&#7919; li&#7879;u<br>
-			T&#7889;i &#432;u hoá c&#417; s&#7903; d&#7919; li&#7879;u<br>
-			Ki&#7875;m tra tính h&#7907;p l&#7879; c&#7911;a ngày tháng và con s&#7889;<p>
+			Khï¿½i ni&#7879;m 'khoï¿½ l&#7841;c quan' c&#417; s&#7903; d&#7919; li&#7879;u<br>
+			T&#7889;i &#432;u hoï¿½ c&#417; s&#7903; d&#7919; li&#7879;u<br>
+			Ki&#7875;m tra tï¿½nh h&#7907;p l&#7879; c&#7911;a ngï¿½y thï¿½ng vï¿½ con s&#7889;<p>
 			</font>
-			Thomas Wiedmann là m&#7897;t nhà phát tri&#7875;n ph&#7847;n m&#7873;m lâu n&#259;m và làm vi&#7879;c &#7903; Stuttgart, 
-            &#272;&#7913;c. Ông &#273;ã làm vi&#7879;c v&#7899;i Gupta Team Developer và IBM DB2 t&#7915; 7 n&#259;m 
-            nay và &#273;&#7891;ng th&#7901;i là m&#7897;t nhà qu&#7843;n tr&#7883; UDB DB2 &#273;ã &#273;&#432;&#7907;c c&#7845;p ch&#7913;ng ch&#7881; 
-            IBM. &#272;&#7885;c thêm v&#7873; DB2 trong cu&#7889;n sách c&#7911;a ông:
-			"DB2" ISBN 3-932311-80-9. Ông là tác gi&#7843; c&#7911;a cu&#7889;n TOOLBOX (www.toolbox-mag.de),
-			m&#7897;t t&#7841;p chí ng&#432;&#7901;i phát tri&#7875;n &#272;&#7913;c.
+			Thomas Wiedmann lï¿½ m&#7897;t nhï¿½ phï¿½t tri&#7875;n ph&#7847;n m&#7873;m lï¿½u n&#259;m vï¿½ lï¿½m vi&#7879;c &#7903; Stuttgart, 
+            &#272;&#7913;c. ï¿½ng &#273;ï¿½ lï¿½m vi&#7879;c v&#7899;i Gupta Team Developer vï¿½ IBM DB2 t&#7915; 7 n&#259;m 
+            nay vï¿½ &#273;&#7891;ng th&#7901;i lï¿½ m&#7897;t nhï¿½ qu&#7843;n tr&#7883; UDB DB2 &#273;ï¿½ &#273;&#432;&#7907;c c&#7845;p ch&#7913;ng ch&#7881; 
+            IBM. &#272;&#7885;c thï¿½m v&#7873; DB2 trong cu&#7889;n sï¿½ch c&#7911;a ï¿½ng:
+			"DB2" ISBN 3-932311-80-9. ï¿½ng lï¿½ tï¿½c gi&#7843; c&#7911;a cu&#7889;n TOOLBOX (www.toolbox-mag.de),
+			m&#7897;t t&#7841;p chï¿½ ng&#432;&#7901;i phï¿½t tri&#7875;n &#272;&#7913;c.
 		
 
-			<P><a href="mailto:tho123@users.sourceforge.net"><u>Có th&#7875; liên l&#7841;c 
-            v&#7899;i Thomas Wiedmann &#7903; &#273;ây.</u></a></TD></TR></TBODY></TABLE>
+			<P><a href="mailto:tho123@users.sourceforge.net"><u>Cï¿½ th&#7875; liï¿½n l&#7841;c 
+            v&#7899;i Thomas Wiedmann &#7903; &#273;ï¿½y.</u></a></TD></TR></TBODY></TABLE>
 <hr>
 <TABLE cellSpacing=0 cellPadding=0 border=0 width=100%>
         <TBODY>
@@ -174,22 +174,22 @@ di Torino. Hi&#7879;n nay, ông là t&#432; v&#7845;n cho m&#7897;t công ty tin h&
           <TD vAlign=top><font face="verdana,arial" size=2>
 			<P><img src="../../fotos/credits/hinostroza.jpg"  border=0  width=135 align=right vspace=10>
 			<b>Dr. med Daniel Hinostroza C. (EC)</b><br>
-			D&#7883;ch ti&#7871;ng Tây Ban Nha
+			D&#7883;ch ti&#7871;ng Tï¿½y Ban Nha
 			<p><font size=1>
-			Tác gi&#7843; và &#273;&#7891;ng tác gi&#7843; c&#7911;a nhi&#7873;u sách giáo khoa y h&#7885;c<br>
-5 n&#259;m làm giám &#273;&#7889;c c&#7911;a Trung tâm Tin h&#7885;c Y t&#7871; Grünenthal, Quito
+			Tï¿½c gi&#7843; vï¿½ &#273;&#7891;ng tï¿½c gi&#7843; c&#7911;a nhi&#7873;u sï¿½ch giï¿½o khoa y h&#7885;c<br>
+5 n&#259;m lï¿½m giï¿½m &#273;&#7889;c c&#7911;a Trung tï¿½m Tin h&#7885;c Y t&#7871; Grï¿½nenthal, Quito
 - Ecuador <br>
-            B&#7855;t nghiên c&#7913;u Tin h&#7885;c Y t&#7871; t&#7841;i &#272;&#7841;i h&#7885;c Stanford<br>
-2 n&#259;m làm Tr&#432;&#7903;ng d&#7921; án Multimedia c&#7911;a Công ty TNHH Grünenthal, Aachen, &#272;&#7913;c</font></font><font face="verdana,arial" size=2><p>
-Ng&#432;&#7901;i d&#7883;ch chính th&#7913;c cho phpMyAdmin (ti&#7871;ng Tây Ban Nha)<br>
-Nhà qu&#7843;n tr&#7883; trang WEB &#273;&#7847;u tiên c&#7911;a trang WEB y t&#7871; l&#7899;n nh&#7845;t Ecuador
-(www.cmpichincha.med.ec) và H&#7897;i da li&#7877;u Ecuador
+            B&#7855;t nghiï¿½n c&#7913;u Tin h&#7885;c Y t&#7871; t&#7841;i &#272;&#7841;i h&#7885;c Stanford<br>
+2 n&#259;m lï¿½m Tr&#432;&#7903;ng d&#7921; ï¿½n Multimedia c&#7911;a Cï¿½ng ty TNHH Grï¿½nenthal, Aachen, &#272;&#7913;c</font></font><font face="verdana,arial" size=2><p>
+Ng&#432;&#7901;i d&#7883;ch chï¿½nh th&#7913;c cho phpMyAdmin (ti&#7871;ng Tï¿½y Ban Nha)<br>
+Nhï¿½ qu&#7843;n tr&#7883; trang WEB &#273;&#7847;u tiï¿½n c&#7911;a trang WEB y t&#7871; l&#7899;n nh&#7845;t Ecuador
+(www.cmpichincha.med.ec) vï¿½ H&#7897;i da li&#7877;u Ecuador
 (www.sociedadecuatorianadedermatologia.org.ec).<br>
 Website: www.cerebroperiferico.com
 			<P><font face="verdana,arial" size=2 color="#0000ff">
-			<a href="mailto:tho123@users.sourceforge.net"><u>Có th&#7875; liên l&#7841;c v&#7899;i</u></a><u> 
+			<a href="mailto:tho123@users.sourceforge.net"><u>Cï¿½ th&#7875; liï¿½n l&#7841;c v&#7899;i</u></a><u> 
             D</u></font><a href="mailto:postmaster@cerebroperiferico.com"><u>r. Daniel Hinostroza 
-            &#7903; &#273;ây.</u></a></TD></TR></TBODY></TABLE>
+            &#7903; &#273;ï¿½y.</u></a></TD></TR></TBODY></TABLE>
 <hr>
 <TABLE cellSpacing=0 cellPadding=0 border=0 width=100%>
         <TBODY>
@@ -197,10 +197,10 @@ Website: www.cerebroperiferico.com
           <TD vAlign=top><font face="verdana,arial" size=2>
 			<P><img src="../../fotos/credits/noel_villamor.jpg"  border=0  align=right vspace=10>
 			<b>Noel R. Villamor (PH)</b><br>
-			L&#7853;p trình Module<p>Hoàn thi&#7879;n ki&#7875;m tra module &#273;&#7891; th&#7883; gi&#7843;i quy&#7871;t các 
-          bài toán ph&#7913;c t&#7841;p.&nbsp;
-			<p>Nhà qu&#7843;n lý d&#7921; án d&#7921; phòng.<P><a href="mailto:noelrv@nipahut.org"><u>
-          Có th&#7875; liên l&#7841;c v&#7899;i Noel Villamor &#7903; &#273;ây.</u></a></TD></TR></TBODY></TABLE>
+			L&#7853;p trï¿½nh Module<p>Hoï¿½n thi&#7879;n ki&#7875;m tra module &#273;&#7891; th&#7883; gi&#7843;i quy&#7871;t cï¿½c 
+          bï¿½i toï¿½n ph&#7913;c t&#7841;p.&nbsp;
+			<p>Nhï¿½ qu&#7843;n lï¿½ d&#7921; ï¿½n d&#7921; phï¿½ng.<P><a href="mailto:noelrv@nipahut.org"><u>
+          Cï¿½ th&#7875; liï¿½n l&#7841;c v&#7899;i Noel Villamor &#7903; &#273;ï¿½y.</u></a></TD></TR></TBODY></TABLE>
 
 <hr>
 <TABLE cellSpacing=0 cellPadding=0 border=0 width=100%>
@@ -208,18 +208,18 @@ Website: www.cerebroperiferico.com
 <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
 		  <P><img src="../../fotos/credits/wilfried_goedert.jpg" border=0  align=right vspace=10 >
-			<P><b>Dr. med Wilfried Gödert (DE)</b><br>
-			&#272;óng góp trong các ho&#7841;t &#273;&#7897;ng sau &#273;ây:
+			<P><b>Dr. med Wilfried Gï¿½dert (DE)</b><br>
+			&#272;ï¿½ng gï¿½p trong cï¿½c ho&#7841;t &#273;&#7897;ng sau &#273;ï¿½y:
 			<p><font size=1>
-		     Làm ch&#7911; và qu&#7843;n tr&#7883;:<br>
-			 www.care2x.de<br>Máy ch&#7911; tin t&#7913;c, h&#7879; th&#7889;ng h&#7895; tr&#7907; OTRS<br>
-			 Thúc &#273;&#7849;y, quan h&#7879; Báo chí <br>
+		     Lï¿½m ch&#7911; vï¿½ qu&#7843;n tr&#7883;:<br>
+			 www.care2x.de<br>Mï¿½y ch&#7911; tin t&#7913;c, h&#7879; th&#7889;ng h&#7895; tr&#7907; OTRS<br>
+			 Thï¿½c &#273;&#7849;y, quan h&#7879; Bï¿½o chï¿½ <br>
 			 T&#432; v&#7845;n
 			<p>
 			</font>
-			Chuyên môn: Bác s&#7929; v&#7853;t lý tr&#7883; li&#7879;u, B&#7857;ng &#272;&#7841;i h&#7885;c v&#7873; Tin h&#7885;c Y t&#7871;
-			<p><a href="mailto:goedert@users.sourceforge.net"><u>Có th&#7875; liên l&#7841;c 
-            v&#7899;i Dr. Wilfried Gödert &#7903; &#273;ây.</u></a></TD></TR>	
+			Chuyï¿½n mï¿½n: Bï¿½c s&#7929; v&#7853;t lï¿½ tr&#7883; li&#7879;u, B&#7857;ng &#272;&#7841;i h&#7885;c v&#7873; Tin h&#7885;c Y t&#7871;
+			<p><a href="mailto:goedert@users.sourceforge.net"><u>Cï¿½ th&#7875; liï¿½n l&#7841;c 
+            v&#7899;i Dr. Wilfried Gï¿½dert &#7903; &#273;ï¿½y.</u></a></TD></TR>	
 </TBODY></TABLE>
 
 
@@ -227,70 +227,70 @@ Website: www.cerebroperiferico.com
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-			<b>Matej Hausenblas (FR) d&#7883;ch Care 2002 sang ti&#7871;ng Pháp</b>
+			<b>Matej Hausenblas (FR) d&#7883;ch Care 2002 sang ti&#7871;ng Phï¿½p</b>
 			<p>
-Matej Hausenblas sinh ra &#7903; Prague, C&#7897;ng hoà Séc, n&#259;m 1981. Anh ta là m&#7897;t sinh 
-viên m&#7897;t tr&#432;&#7901;ng &#273;&#7841;i h&#7885;c toán-tin h&#7885;c-v&#7853;t lý. Sau vài n&#259;m s&#7917; d&#7909;ng Windows anh ta 
-quy&#7871;t &#273;&#7883;nh xem xét Linux, nh&#432; là m&#7897;t thách th&#7913;c thú v&#7883; và sau m&#7897;t th&#7901;i gian, anh 
-ta &#273;ã quy&#7871;t &#273;&#7883;nh tham gia vào các d&#7921; án mã ngu&#7891;n m&#7903; &#273;&#7875; nâng cao vài k&#7929; n&#259;ng và 
-c&#361;ng trao &#273;&#7893;i l&#7841;i vài th&#7913; và xem m&#7885;i th&#7913; làm vi&#7879;c th&#7871; nào trong c&#7897;ng &#273;&#7891;ng mã 
-ngu&#7891;n m&#7903; này.
-			<P><a href="mailto:matejh@users.sourceforge.net"><u>Có th&#7875; liên l&#7841;c 
-            v&#7899;i Matej Hausenblas &#7903; &#273;ây.</u></a></TD></TR></TBODY></TABLE>
+Matej Hausenblas sinh ra &#7903; Prague, C&#7897;ng hoï¿½ Sï¿½c, n&#259;m 1981. Anh ta lï¿½ m&#7897;t sinh 
+viï¿½n m&#7897;t tr&#432;&#7901;ng &#273;&#7841;i h&#7885;c toï¿½n-tin h&#7885;c-v&#7853;t lï¿½. Sau vï¿½i n&#259;m s&#7917; d&#7909;ng Windows anh ta 
+quy&#7871;t &#273;&#7883;nh xem xï¿½t Linux, nh&#432; lï¿½ m&#7897;t thï¿½ch th&#7913;c thï¿½ v&#7883; vï¿½ sau m&#7897;t th&#7901;i gian, anh 
+ta &#273;ï¿½ quy&#7871;t &#273;&#7883;nh tham gia vï¿½o cï¿½c d&#7921; ï¿½n mï¿½ ngu&#7891;n m&#7903; &#273;&#7875; nï¿½ng cao vï¿½i k&#7929; n&#259;ng vï¿½ 
+c&#361;ng trao &#273;&#7893;i l&#7841;i vï¿½i th&#7913; vï¿½ xem m&#7885;i th&#7913; lï¿½m vi&#7879;c th&#7871; nï¿½o trong c&#7897;ng &#273;&#7891;ng mï¿½ 
+ngu&#7891;n m&#7903; nï¿½y.
+			<P><a href="mailto:matejh@users.sourceforge.net"><u>Cï¿½ th&#7875; liï¿½n l&#7841;c 
+            v&#7899;i Matej Hausenblas &#7903; &#273;ï¿½y.</u></a></TD></TR></TBODY></TABLE>
 <hr>
 <TABLE cellSpacing=0 cellPadding=0 border=0 width=100%>
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-			<b>Nino Novak (DE) biên so&#7841;n phiên b&#7843;n ti&#7871;ng &#272;&#7913;c c&#7911;a www.care2x.com.</b>
+			<b>Nino Novak (DE) biï¿½n so&#7841;n phiï¿½n b&#7843;n ti&#7871;ng &#272;&#7913;c c&#7911;a www.care2x.com.</b>
 			<p>
-			Nino Novak là m&#7897;t cao b&#7891;i cô &#273;&#7897;c nghèo túng. Anh ta b&#7855;n nhanh h&#417;n 
-            anh ta suy ngh&#297;. &#272;ôi khi h&#417;i ki&#7875;u cách.
-			Yêu "các guru th&#7921;c th&#7909;" và các tranh lu&#7853;n tinh vi v&#7899;i h&#7885;. Mu&#7889;n giúp 
-            &#273;&#7905; &#273;&#7875; t&#7841;o nên th&#7871; gi&#7899;i t&#7889;t &#273;&#7865;p h&#417;n. Có vài n&#7873;n t&#7843;ng v&#7873; khoa h&#7885;c và y 
-            h&#7885;c (vì th&#7871; &#273;ã tham gia vào d&#7921; án care2x).
+			Nino Novak lï¿½ m&#7897;t cao b&#7891;i cï¿½ &#273;&#7897;c nghï¿½o tï¿½ng. Anh ta b&#7855;n nhanh h&#417;n 
+            anh ta suy ngh&#297;. &#272;ï¿½i khi h&#417;i ki&#7875;u cï¿½ch.
+			Yï¿½u "cï¿½c guru th&#7921;c th&#7909;" vï¿½ cï¿½c tranh lu&#7853;n tinh vi v&#7899;i h&#7885;. Mu&#7889;n giï¿½p 
+            &#273;&#7905; &#273;&#7875; t&#7841;o nï¿½n th&#7871; gi&#7899;i t&#7889;t &#273;&#7865;p h&#417;n. Cï¿½ vï¿½i n&#7873;n t&#7843;ng v&#7873; khoa h&#7885;c vï¿½ y 
+            h&#7885;c (vï¿½ th&#7871; &#273;ï¿½ tham gia vï¿½o d&#7921; ï¿½n care2x).
 		
 
-			<P><a href="mailto:nino@kflog.org"><u>Có th&#7875; liên l&#7841;c v&#7899;i Nino Novak 
-            &#7903; &#273;ây.</u></a></TD></TR></TBODY></TABLE>
+			<P><a href="mailto:nino@kflog.org"><u>Cï¿½ th&#7875; liï¿½n l&#7841;c v&#7899;i Nino Novak 
+            &#7903; &#273;ï¿½y.</u></a></TD></TR></TBODY></TABLE>
 <hr>
 <TABLE cellSpacing=0 cellPadding=0 border=0 width=100%>
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-			<b>Patxi Gomaríz (ES) d&#7883;ch sang ti&#7871;ng Tây ban nha.</b>
+			<b>Patxi Gomarï¿½z (ES) d&#7883;ch sang ti&#7871;ng Tï¿½y ban nha.</b>
 			<p>
-			Patxi Gomaríz sinh ra vào mùa xuân n&#259;m 1966 &#7903; Murcia, Tây ban nha. 
-            Cu&#7897;c s&#7889;ng và công vi&#7879;c c&#7911;a anh quay tròn quanh ngh&#7879; thu&#7853;t nhi&#7871;p &#7843;nh 
-            tr&#7903; thành chuyên gia v&#7873; nhi&#7871;p &#7843;nh cho nhãn khoa (&#273;áy camera). Anh là 
-            ng&#432;&#7901;i say mê Internet và c&#361;ng thi&#7871;t k&#7871; các trang web.<p>
-			"<i>Tôi ngh&#297; mã ngu&#7891;n m&#7903; là m&#7897;t v&#361; khí hi&#7879;u qu&#7843; ch&#7889;ng l&#7841;i các tác 
-            &#273;&#7897;ng tiêu c&#7921;c c&#7911;a n&#7873;n kinh t&#7871; toàn c&#7847;u &#273;&#7863;c bi&#7879;t trong các l&#297;nh v&#7921;c 
-            c&#417; b&#7843;n mà l&#7841;i quan tr&#7885;ng &#273;&#7889;i v&#7899;i con ng&#432;&#7901;i nh&#432; s&#7913;c kho&#7867;. Vì lý do &#273;ó, 
-            tôi c&#7843;m th&#7845;y t&#7921; hào v&#7873; s&#7921; &#273;óng góp nh&#7887; bé c&#7911;a mình cho d&#7921; án cao c&#7843; 
-            này.</i>"
+			Patxi Gomarï¿½z sinh ra vï¿½o mï¿½a xuï¿½n n&#259;m 1966 &#7903; Murcia, Tï¿½y ban nha. 
+            Cu&#7897;c s&#7889;ng vï¿½ cï¿½ng vi&#7879;c c&#7911;a anh quay trï¿½n quanh ngh&#7879; thu&#7853;t nhi&#7871;p &#7843;nh 
+            tr&#7903; thï¿½nh chuyï¿½n gia v&#7873; nhi&#7871;p &#7843;nh cho nhï¿½n khoa (&#273;ï¿½y camera). Anh lï¿½ 
+            ng&#432;&#7901;i say mï¿½ Internet vï¿½ c&#361;ng thi&#7871;t k&#7871; cï¿½c trang web.<p>
+			"<i>Tï¿½i ngh&#297; mï¿½ ngu&#7891;n m&#7903; lï¿½ m&#7897;t v&#361; khï¿½ hi&#7879;u qu&#7843; ch&#7889;ng l&#7841;i cï¿½c tï¿½c 
+            &#273;&#7897;ng tiï¿½u c&#7921;c c&#7911;a n&#7873;n kinh t&#7871; toï¿½n c&#7847;u &#273;&#7863;c bi&#7879;t trong cï¿½c l&#297;nh v&#7921;c 
+            c&#417; b&#7843;n mï¿½ l&#7841;i quan tr&#7885;ng &#273;&#7889;i v&#7899;i con ng&#432;&#7901;i nh&#432; s&#7913;c kho&#7867;. Vï¿½ lï¿½ do &#273;ï¿½, 
+            tï¿½i c&#7843;m th&#7845;y t&#7921; hï¿½o v&#7873; s&#7921; &#273;ï¿½ng gï¿½p nh&#7887; bï¿½ c&#7911;a mï¿½nh cho d&#7921; ï¿½n cao c&#7843; 
+            nï¿½y.</i>"
 
-			<P><a href="mailto:pgomariz@ono.com"><u>Có th&#7875; liên l&#7841;c v&#7899;i Patxi Gomaríz 
-            &#7903; &#273;ây.</u></a></TD></TR></TBODY></TABLE>
+			<P><a href="mailto:pgomariz@ono.com"><u>Cï¿½ th&#7875; liï¿½n l&#7841;c v&#7899;i Patxi Gomarï¿½z 
+            &#7903; &#273;ï¿½y.</u></a></TD></TR></TBODY></TABLE>
 <hr>
 <TABLE cellSpacing=0 cellPadding=0 border=0 width=100%>
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-			<b>Daniele Frijia (DE) ki&#7875;m tra khía c&#7841;nh b&#7843;o m&#7853;t c&#7911;a Care 2002.</b>
+			<b>Daniele Frijia (DE) ki&#7875;m tra khï¿½a c&#7841;nh b&#7843;o m&#7853;t c&#7911;a Care 2002.</b>
 			<br>
-			M&#7897;t vài trong nhi&#7873;u &#273;óng góp c&#7911;a anh là:</font><font face="verdana,arial" size=1><p>
-			L&#7901;i khuyên v&#7873; b&#7843;o m&#7853;t</font><font face="verdana,arial" size=2><font size=1><br>
-			T&#432; v&#7845;n v&#7873; các v&#7845;n &#273;&#7873; c&#7911;a php<br>
-			Anh là 'lính gác' c&#7911;a d&#7921; án</font><p>
-			Daniele Frijia (sinh n&#259;m 81), hi&#7879;n &#273;ang làm cho m&#7897;t ISP &#7903; Nuremberg, 
-            &#272;&#7913;c, c&#7889;ng hi&#7871;n các ki&#7871;n th&#7913;c c&#7911;a anh v&#7873; php &#273;&#7875; nâng cao b&#7843;o m&#7853;t c&#7911;a Care2x. 
-            M&#7909;c &#273;ích là &#273;&#7875; m&#7903; ra m&#7897;t 'th&#7883; tr&#432;&#7901;ng' m&#7899;i (y h&#7885;c) cho c&#7897;ng &#273;&#7891;ng mã 
-            ngu&#7891;n m&#7903;.<P><a href="mailto:daniele@infra.de"><u>Có th&#7875; liên l&#7841;c v&#7899;i 
-          Daniele Frijia &#7903; &#273;ây.</u></a></TD></TR></TBODY></TABLE>
+			M&#7897;t vï¿½i trong nhi&#7873;u &#273;ï¿½ng gï¿½p c&#7911;a anh lï¿½:</font><font face="verdana,arial" size=1><p>
+			L&#7901;i khuyï¿½n v&#7873; b&#7843;o m&#7853;t</font><font face="verdana,arial" size=2><font size=1><br>
+			T&#432; v&#7845;n v&#7873; cï¿½c v&#7845;n &#273;&#7873; c&#7911;a php<br>
+			Anh lï¿½ 'lï¿½nh gï¿½c' c&#7911;a d&#7921; ï¿½n</font><p>
+			Daniele Frijia (sinh n&#259;m 81), hi&#7879;n &#273;ang lï¿½m cho m&#7897;t ISP &#7903; Nuremberg, 
+            &#272;&#7913;c, c&#7889;ng hi&#7871;n cï¿½c ki&#7871;n th&#7913;c c&#7911;a anh v&#7873; php &#273;&#7875; nï¿½ng cao b&#7843;o m&#7853;t c&#7911;a Care2x. 
+            M&#7909;c &#273;ï¿½ch lï¿½ &#273;&#7875; m&#7903; ra m&#7897;t 'th&#7883; tr&#432;&#7901;ng' m&#7899;i (y h&#7885;c) cho c&#7897;ng &#273;&#7891;ng mï¿½ 
+            ngu&#7891;n m&#7903;.<P><a href="mailto:daniele@infra.de"><u>Cï¿½ th&#7875; liï¿½n l&#7841;c v&#7899;i 
+          Daniele Frijia &#7903; &#273;ï¿½y.</u></a></TD></TR></TBODY></TABLE>
 <hr>
-<font face="verdana,arial" size=3 color="#0000ff">Các ng&#432;&#7901;i tham gia khác </font>
-<font face="verdana,arial" size=1 > (theo th&#7913; t&#7921; alphabetical c&#7911;a tên)</font>
+<font face="verdana,arial" size=3 color="#0000ff">Cï¿½c ng&#432;&#7901;i tham gia khï¿½c </font>
+<font face="verdana,arial" size=1 > (theo th&#7913; t&#7921; alphabetical c&#7911;a tï¿½n)</font>
 
 <table border=0 cellspacing=1 cellpadding=1>
   <tr>
@@ -301,7 +301,7 @@ ngu&#7891;n m&#7903; này.
   <tr>
     <td bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> Agus M. Ramdan (ID)</font></nobr>&nbsp;</td>
     <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;S&#7917;a l&#7841;i 
-    mã, care2x.com CMS</font></td>
+    mï¿½, care2x.com CMS</font></td>
   </tr>
   <tr>
     <td bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> Akhmad Daniel Sembiring (ID)</font></nobr>&nbsp;</td>
@@ -310,12 +310,12 @@ ngu&#7891;n m&#7903; này.
   <tr>
     <td bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> Alfredo Rodriguez (PT)</font></nobr>&nbsp;</td>
     <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;D&#7883;ch 
-    sang ti&#7871;ng B&#7891; &#273;ào nha</font></td>
+    sang ti&#7871;ng B&#7891; &#273;ï¿½o nha</font></td>
   </tr>
   <tr>
     <td bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> Are Kristensen (NO)</font></nobr>&nbsp;</td>
     <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;D&#7883;ch 
-    sang ti&#7871;ng Na uy và & demo tr&#7921;c tuy&#7871;n</font></td>
+    sang ti&#7871;ng Na uy vï¿½ & demo tr&#7921;c tuy&#7871;n</font></td>
   </tr>
   <tr>
     <td bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> Biju Gopinath (IN)</font></nobr>&nbsp;</td>
@@ -330,36 +330,36 @@ ngu&#7891;n m&#7903; này.
   <tr>
     <td bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> Dilip Bharatee (IN)</font></nobr>&nbsp;</td>
     <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;ecomscience.com, 
-    ng&#432;&#7901;i l&#7853;p trình toàn b&#7897; th&#7901;i gian</font></td>
+    ng&#432;&#7901;i l&#7853;p trï¿½nh toï¿½n b&#7897; th&#7901;i gian</font></td>
   </tr>
   <tr>
     <td bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> Erik de Wild (NL)</font></nobr>&nbsp;</td>
     <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;D&#7883;ch 
-    sang ti&#7871;ng Hà Lan, &#273;óng gói máy ch&#7911;</font></td>
+    sang ti&#7871;ng Hï¿½ Lan, &#273;ï¿½ng gï¿½i mï¿½y ch&#7911;</font></td>
   </tr>
   <tr>
     <td bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> Gonzalo Gomes Sotelo (AR)</font></nobr>&nbsp;</td>
     <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;D&#7883;ch sang ti&#7871;ng 
-    Tây ban nha</font></td>
+    Tï¿½y ban nha</font></td>
   </tr>
   <tr>
     <td bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> Javier Alberto Arias (AR)</font></nobr>&nbsp;</td>
     <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;</font><font size="2"> 
-    D&#7883;ch sang ti&#7871;ng Tây ban nha</font></td>
+    D&#7883;ch sang ti&#7871;ng Tï¿½y ban nha</font></td>
   </tr>
   <tr>
     <td bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> Luki Rustianto (ID)</font></nobr>&nbsp;</td>
-    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;Nâng cao b&#7843;o m&#7853;t</font></td>
+    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;Nï¿½ng cao b&#7843;o m&#7853;t</font></td>
   </tr>
   <tr>
     <td bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> Mark Painter Dr. med (ZA)</font></nobr>&nbsp;</td>
     <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;Thi&#7871;t k&#7871; 
-    c&#7845;u trúc c&#417; s&#7903; d&#7919; li&#7879;u, khoa s&#7843;n, s&#7917;a báo cáo, thi&#7871;t k&#7871;&nbsp; GUI</font></td>
+    c&#7845;u trï¿½c c&#417; s&#7903; d&#7919; li&#7879;u, khoa s&#7843;n, s&#7917;a bï¿½o cï¿½o, thi&#7871;t k&#7871;&nbsp; GUI</font></td>
   </tr>
   <tr>
-    <td bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> Matêj Hausenblas (FR)</font></nobr>&nbsp;</td>
+    <td bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> Matï¿½j Hausenblas (FR)</font></nobr>&nbsp;</td>
     <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;</font><font size="2">D&#7883;ch 
-    sang ti&#7871;ng Pháp</font></td>
+    sang ti&#7871;ng Phï¿½p</font></td>
   </tr>
   <tr>
     <td bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> Muhammad Panji (ID)</font></nobr>&nbsp;</td>
@@ -368,13 +368,13 @@ ngu&#7891;n m&#7903; này.
   </tr>
   <tr>
     <td bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> Nino Novak (DE)</font></nobr>&nbsp;</td>
-    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;Phiên 
+    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;Phiï¿½n 
     b&#7843;n ti&#7871;ng &#272;&#7913;c c&#7911;a www.care2x.com</font></td>
   </tr>
   <tr>
-    <td bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> Patxi Gomaríz (ES)</font></nobr>&nbsp;</td>
+    <td bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> Patxi Gomarï¿½z (ES)</font></nobr>&nbsp;</td>
     <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;D&#7883;ch sang ti&#7871;ng 
-    Tây ban nha</font></td>
+    Tï¿½y ban nha</font></td>
   </tr>
   <tr>
     <td bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> Pawel Cyrta (PL)</font></nobr>&nbsp;</td>
@@ -384,7 +384,7 @@ ngu&#7891;n m&#7903; này.
   <tr>
     <td bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> Petr Roupec(CZ)</font></nobr>&nbsp;</td>
     <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;D&#7883;ch sang ti&#7871;ng 
-    Séc</font></td>
+    Sï¿½c</font></td>
   </tr>
   <tr>
     <td bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> Prantar Deka (IN)</font></nobr>&nbsp;</td>
@@ -397,7 +397,7 @@ ngu&#7891;n m&#7903; này.
   <tr>
     <td bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> Sarat Nayak (IN)</font></nobr>&nbsp;</td>
     <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;C&#7843;i ti&#7871;n 
-    thi&#7871;t k&#7871;, </font><font size="2">s&#7917;a báo cáo</font></td>
+    thi&#7871;t k&#7871;, </font><font size="2">s&#7917;a bï¿½o cï¿½o</font></td>
   </tr>
   <tr>
     <td bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> Simone Aveotti (IT)</font></nobr>&nbsp;</td>
@@ -407,23 +407,23 @@ ngu&#7891;n m&#7903; này.
   <tr>
     <td bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> Thomas Wiedmann (DE)</font></nobr>&nbsp;</td>
     <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;Ki&#7875;m tra, 
-    g&#7905; r&#7889;i, xác nh&#7853;n các k&#7883;ch b&#7843;n</font></td>
+    g&#7905; r&#7889;i, xï¿½c nh&#7853;n cï¿½c k&#7883;ch b&#7843;n</font></td>
   </tr>
   <tr>
     <td bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> Victor Christianto</font></nobr>&nbsp;</td>
     <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;Ataraxia (WAP) module</font></td>
   </tr>
   <tr>
-    <td bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> Wilfried Gödert Dr. med (DE)</font></nobr>&nbsp;</td>
+    <td bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> Wilfried Gï¿½dert Dr. med (DE)</font></nobr>&nbsp;</td>
     <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;Quan h&#7879; 
-    xu&#7845;t b&#7843;n, Server hosting, máy ch&#7911; tin t&#7913;c, OTRS, </font><font size="2">T&#432; 
+    xu&#7845;t b&#7843;n, Server hosting, mï¿½y ch&#7911; tin t&#7913;c, OTRS, </font><font size="2">T&#432; 
     v&#7845;n</font></td>
   </tr>
 </table>
 
 </font>
-<font face="verdana,arial" size=1 color="#0000ff">Ghi chú</font><font face="verdana,arial" size=6 color="#0000ff"><font face="verdana,arial" size=1>: 
-&#272;ây ch&#7881; là m&#7897;t ph&#7847;n c&#7911;a danh sách. Có thêm các ng&#432;&#7901;i tham gia s&#7855;p t&#7899;i.</font>
+<font face="verdana,arial" size=1 color="#0000ff">Ghi chï¿½</font><font face="verdana,arial" size=6 color="#0000ff"><font face="verdana,arial" size=1>: 
+&#272;ï¿½y ch&#7881; lï¿½ m&#7897;t ph&#7847;n c&#7911;a danh sï¿½ch. Cï¿½ thï¿½m cï¿½c ng&#432;&#7901;i tham gia s&#7855;p t&#7899;i.</font>
 
 </body>
 </html>

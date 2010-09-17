@@ -5,7 +5,7 @@
 */
 	error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 	require('./roots.php');
-	require($root_path.'include/inc_environment_global.php');
+	require($root_path.'include/core/inc_environment_global.php');
 	require_once($root_path.'include/inc_img_fx.php');
 ?>
 <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 3.0//EN" "html.dtd">
@@ -27,7 +27,7 @@
 					<br>
 					<center>
 						<font size=3 color=red  face="Arial">
-							<b>Ne posedujete korisnièko pravo za otvaranje ovog dokumenta!</b>
+							<b>Ne posedujete korisniï¿½ko pravo za otvaranje ovog dokumenta!</b>
 						</font>
 						<p>
 						<form>
@@ -43,21 +43,21 @@
 						<p>
 						<font size=2 face="verdana,arial">
 							<img <?php echo createComIcon('../../','achtung.gif') ?>>
-								Možda ste koristili standardnu "Nazad" ili "Napred" funkciju vašeg web èitaèa.
-								Izbegavajte korišæenje ovih dugmadi.<br>
+								Moï¿½da ste koristili standardnu "Nazad" ili "Napred" funkciju vaï¿½eg web ï¿½itaï¿½a.
+								Izbegavajte koriï¿½ï¿½enje ovih dugmadi.<br>
 								<img <?php echo createComIcon('../../','achtung.gif') ?>>
-								Možda ste odbili cookie. Program je ovisan o cookie-jima da bi ispravno radio. Zato vas molimo da 
-								omoguæite prijem cookie-ja .
+								Moï¿½da ste odbili cookie. Program je ovisan o cookie-jima da bi ispravno radio. Zato vas molimo da 
+								omoguï¿½ite prijem cookie-ja .
 								<br>
 								<img <?php echo createComIcon('../../','achtung.gif') ?>>
-								Vaš web èitaè možda ne prima cookie-je. Molimo vas da podesite vaš web èitaè nna automatsko primanje cookie-ja.
+								Vaï¿½ web ï¿½itaï¿½ moï¿½da ne prima cookie-je. Molimo vas da podesite vaï¿½ web ï¿½itaï¿½ nna automatsko primanje cookie-ja.
 								<br>
 								<img <?php echo createComIcon('../../','achtung.gif') ?>>
-								Vaš web èitaè možda nije u moguænosti interpretacije javascripta ili mu je izvršavanje javascripta onemoguæeno. Molimo vas da omoguæite izvršavanje javascripta u vašem web èitaèu.
+								Vaï¿½ web ï¿½itaï¿½ moï¿½da nije u moguï¿½nosti interpretacije javascripta ili mu je izvrï¿½avanje javascripta onemoguï¿½eno. Molimo vas da omoguï¿½ite izvrï¿½avanje javascripta u vaï¿½em web ï¿½itaï¿½u.
 								<br>
 								<img <?php echo createComIcon('../../','achtung.gif') ?>>
-								U retkim sluèajevima dolazi do greške u prenosu podataka. Za ispravku ove situacije samo pritisnite
-								"osveži" dugme vašeg web èitaèa.
+								U retkim sluï¿½ajevima dolazi do greï¿½ke u prenosu podataka. Za ispravku ove situacije samo pritisnite
+								"osveï¿½i" dugme vaï¿½eg web ï¿½itaï¿½a.
 								<p>
 						</font>
 						<p>

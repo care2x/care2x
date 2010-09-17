@@ -5,7 +5,7 @@
 */
 //error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 //require_once('./roots.php');
-//require_once($root_path.'include/inc_environment_global.php');
+//require_once($root_path.'include/core/inc_environment_global.php');
 ?>
 <?php //html_rtl($lang); ?>
 <html>
@@ -22,7 +22,7 @@
 			  <td valign=top> <font	face="verdana,arial" size=2>
 				<p>	<img src="../../fotos/credits/petar_savic.jpg"  border=0	 align=right vspace=10>	<b>Petar Savic (YU)</b>
 				<p>Serbian language translation.
-				<p>	<a href="mailto:petar.savic@bull.co.yu"><u>Petar Savic se može kontaktirati ovde.</u></a> </td>
+				<p>	<a href="mailto:petar.savic@bull.co.yu"><u>Petar Savic se moï¿½e kontaktirati ovde.</u></a> </td>
 			</tr>
 		  </tbody>
 		</table>
@@ -36,7 +36,7 @@
 				<p>	<img src="../../fotos/credits/a_djem.jpg"  border=0	 align=right vspace=10>	<b>A. Djem (ID)</b>
 				<p>	Dizajn desktop pozadine	za Care2x<br>
 				  Websajt dizajn
-				<p>	<a href="mailto:adjem@adams-media.com"><u>A. Djem se može kontaktirati ovde.</u></a> </td>
+				<p>	<a href="mailto:adjem@adams-media.com"><u>A. Djem se moï¿½e kontaktirati ovde.</u></a> </td>
 			</tr>
 		  </tbody>
 		</table>
@@ -46,10 +46,10 @@
 			<tr> 
 			  <td valign=top> <font	face="verdana,arial" size=2> 
 				<p>	<img src="../../fotos/credits/agus_mr.jpg"	border=0  align=right vspace=10> <b>Agus Muhammad Ramdan (ID)</b> 
-				<p>	Indonežanski prevod	Care 2X	i www.care2x.com web sajta<br> 
+				<p>	Indoneï¿½anski prevod	Care 2X	i www.care2x.com web sajta<br> 
 				  Javascript unapre?enja<br> 
 				  Dicom	preglednik debagovanje<br> 
-				<p>	<a href="mailto:agusmr@mweb.co.id"><u>Agus M. Ramdan se	može kontaktirati ovde.</u></a>	</td> 
+				<p>	<a href="mailto:agusmr@mweb.co.id"><u>Agus M. Ramdan se	moï¿½e kontaktirati ovde.</u></a>	</td> 
 			</tr> 
 		  </tbody> 
 		</table> 
@@ -59,9 +59,9 @@
 			<tr> 
 			  <td valign=top> <font	face="verdana,arial" size=2> 
 				<p>	<img src="../../fotos/credits/are_kristensen.jpg"  border=0	 width=135 align=right vspace=10> <b>Are Kristensen	(NO)</b> 
-				<p>	Norveški prevod<br>	
+				<p>	Norveï¿½ki prevod<br>	
 				  Onlajn demo<br> 
-				<p>	<a href="mailto:arek@mail.amenta.no"><u>Are	Kristensen se može kontaktirati	ovde.</u></a> </td>	
+				<p>	<a href="mailto:arek@mail.amenta.no"><u>Are	Kristensen se moï¿½e kontaktirati	ovde.</u></a> </td>	
 			</tr> 
 		  </tbody> 
 		</table> 
@@ -71,15 +71,15 @@
 			<tr> 
 			  <td valign=top> <font	face="verdana,arial" size=2> 
 				<p><img	src="../../fotos/credits/hinostroza.jpg"  border=0	width=135 align=right vspace=10> <b>Dr.	med	Daniel Hinostroza C. (EC)</b><br> 
-				  Španski prevodi
-				<p><font size=1> Autor i koautor velikog broja medicinskih udžbenika<br> 
-				  5	godina direktor "Grünenthal	Medical	Informatics	Center",	Kito -	Ekvador<br> 
+				  ï¿½panski prevodi
+				<p><font size=1> Autor i koautor velikog broja medicinskih udï¿½benika<br> 
+				  5	godina direktor "Grï¿½nenthal	Medical	Informatics	Center",	Kito -	Ekvador<br> 
 				  Osnovne studije iz Medicinske Informatike	na Stanford Univerzitetu<br>	
-				  2	voða multimedijalnog projekta u "Grünenthal GmbH", Ahen, Nemaèka</font> 
-				<p>	zvanièni prevodilac	phpMyAdmin (Španski)<br> 
-				  Webmaster	najveæe Ekvadorske medicinske websajt inicijative (www.cmpichincha.med.ec) i Ekvadorskog udruženja Dermatologije	(www.sociedadecuatorianadedermatologia.org.ec).<br>	
+				  2	voï¿½a multimedijalnog projekta u "Grï¿½nenthal GmbH", Ahen, Nemaï¿½ka</font> 
+				<p>	zvaniï¿½ni prevodilac	phpMyAdmin (ï¿½panski)<br> 
+				  Webmaster	najveï¿½e Ekvadorske medicinske websajt inicijative (www.cmpichincha.med.ec) i Ekvadorskog udruï¿½enja Dermatologije	(www.sociedadecuatorianadedermatologia.org.ec).<br>	
 				  Websajt: www.cerebroperiferico.com
-				<p><a href="mailto:postmaster@cerebroperiferico.com"><u>Dr.	Daniel Hinostroza se može kontaktirati ovde.</u></a> </td> 
+				<p><a href="mailto:postmaster@cerebroperiferico.com"><u>Dr.	Daniel Hinostroza se moï¿½e kontaktirati ovde.</u></a> </td> 
 			</tr> 
 		  </tbody> 
 		</table> 
@@ -90,8 +90,8 @@
 			  <td valign=top>
 			  	<font face="verdana,arial"	size=2>	
 					<p><img	src="../../fotos/credits/daniel_zilli.jpg"	border=0  align=right vspace=10><b>Daniel Zilli (BR) preveo je  CARE 2X i www.care2x.com	websajt	na brazilski-portugalski.</b> 
-					<p>	Daniel je dibar momak koji voli da živi sreænim životom. Voli raèunare, fudbal, i dobru muziku. Voli raèunare i poseduje 10 godina iskustva u IT podruèju. Daniel poseduje ralunarsku firmu	koja razvija proizvode za nauèno obrazovanje, open	source softver	i lokalnu linux distribuciju.
-				<p><a href="mailto:danielz@cco.matrix.com.br"><u>Daniel	Zilli se može kontaktirati ovde.</u></a> </td> 
+					<p>	Daniel je dibar momak koji voli da ï¿½ivi sreï¿½nim ï¿½ivotom. Voli raï¿½unare, fudbal, i dobru muziku. Voli raï¿½unare i poseduje 10 godina iskustva u IT podruï¿½ju. Daniel poseduje ralunarsku firmu	koja razvija proizvode za nauï¿½no obrazovanje, open	source softver	i lokalnu linux distribuciju.
+				<p><a href="mailto:danielz@cco.matrix.com.br"><u>Daniel	Zilli se moï¿½e kontaktirati ovde.</u></a> </td> 
 			</tr> 
 		  </tbody> 
 		</table> 
@@ -103,9 +103,9 @@
 				Neki od njegovih mnogobrojnih doprinosa: 
 				<p>	<font size=1> Saveti u vezi sigurnosti<br> 
 				  Konsultacije u vezane za php<br> 
-				  On je "stražar" projekta </font> 
-				<p>	Daniele	Frijia (roðen 81), trenutno radi za Internet provajdera u Nirnbergu, Nemaèka, posveæuje svoje php	znanje za poboljšanje sigurnosti Care2x. Namera je da otvori novo 	"tržište" (medicinsko) za  open	source zajednicu.
-				<p><a href="mailto:daniele@infra.de"><u>Daniele	Frijia se može kontaktirati	ovde.</u></a> </td>	
+				  On je "straï¿½ar" projekta </font> 
+				<p>	Daniele	Frijia (roï¿½en 81), trenutno radi za Internet provajdera u Nirnbergu, Nemaï¿½ka, posveï¿½uje svoje php	znanje za poboljï¿½anje sigurnosti Care2x. Namera je da otvori novo 	"trï¿½iï¿½te" (medicinsko) za  open	source zajednicu.
+				<p><a href="mailto:daniele@infra.de"><u>Daniele	Frijia se moï¿½e kontaktirati	ovde.</u></a> </td>	
 			</tr> 
 		  </tbody> 
 		</table> 
@@ -116,10 +116,10 @@
 			  <td valign=top><font face="verdana,arial"	size=2>	
 				<p><img	src="../../fotos/credits/elpidio_latorilla_3.jpg" border=0	align=right	vspace=10> <b>Prvu	beta verziju	CARE 2X	je kreirao Elpidio Latorilla (DE/PH):</b> 
 				<p>	Profesije: <br> 
-				  Programer, Asistent hirurga , Elektronièki & telekomunikacioni tehnièar
-				<p>	Podruèja interesovanja: <br>	
+				  Programer, Asistent hirurga , Elektroniï¿½ki & telekomunikacioni tehniï¿½ar
+				<p>	Podruï¿½ja interesovanja: <br>	
 				  C, C++, PHP, Javascript, SQL,	TCL/TK,	HTML, Perl,	ASP, Java
-				<p><a href="mailto:elpidio@latorilla.com"><u>Elpidio Latorilla se može kontaktirati	ovde.</u></a> </td>	
+				<p><a href="mailto:elpidio@latorilla.com"><u>Elpidio Latorilla se moï¿½e kontaktirati	ovde.</u></a> </td>	
 			</tr> 
 		  </tbody> 
 		</table> 
@@ -128,10 +128,10 @@
 		  <tbody> 
 			<tr> 
 			  <td valign=top><font face="verdana,arial"	size=2>	
-				<p><img	src="../../fotos/credits/gabriele_cicala.jpg"  border=0	 align=right vspace=10>	<b>Gabriele	Cicala (IT)	je preveo veæinu www.care2x.com websajta na  italijanski.</b> 
-				<p>	Gabriele Cicala	je roðen u Rosanu u	Kalabriji južna  Italija, 1970. Stekao je diplomu  Inžinjera Telekomunikacija na "Politecnico di Torino". Trenutno,	radi kao konsultant za informatièku firmu.
-				<p>Obzirom da poznaje Linux	i open-source	okruženje, veoma je zainteresovan za svaki projekat ovog pokreta. Uprkos da ne radi niti u zdravstvenom niti u medicinskom sektoru, odluèio je da se pridruži Care zato što veruje u iste stvari u koje veruju kreator Care-a i njegovi saradnici.
-				<p><a href="mailto:gabcicala@tiscali.it"><u>Gabriele Cicala	se može	kontaktirati ovde.</u></a> </td> 
+				<p><img	src="../../fotos/credits/gabriele_cicala.jpg"  border=0	 align=right vspace=10>	<b>Gabriele	Cicala (IT)	je preveo veï¿½inu www.care2x.com websajta na  italijanski.</b> 
+				<p>	Gabriele Cicala	je roï¿½en u Rosanu u	Kalabriji juï¿½na  Italija, 1970. Stekao je diplomu  Inï¿½injera Telekomunikacija na "Politecnico di Torino". Trenutno,	radi kao konsultant za informatiï¿½ku firmu.
+				<p>Obzirom da poznaje Linux	i open-source	okruï¿½enje, veoma je zainteresovan za svaki projekat ovog pokreta. Uprkos da ne radi niti u zdravstvenom niti u medicinskom sektoru, odluï¿½io je da se pridruï¿½i Care zato ï¿½to veruje u iste stvari u koje veruju kreator Care-a i njegovi saradnici.
+				<p><a href="mailto:gabcicala@tiscali.it"><u>Gabriele Cicala	se moï¿½e	kontaktirati ovde.</u></a> </td> 
 			</tr> 
 		  </tbody> 
 		</table> 
@@ -141,12 +141,12 @@
 			<tr> 
 			  <td valign=top><font face="verdana,arial"	size=2>	
 				<p><img	src="../../fotos/credits/giuseppe_scarpi.jpg"  border=0	 width=135 height=170 align=right vspace=10> <b>Giuseppe Scarpi	(IT) je preveo	CARE 2X	na italijanski.</b>	
-				<p>	Giuseppe Scarpi	je roðen u 	Rimu, Italija, pre 35	godina.
-				<p>Poseduje diplomu iz  Elektronskog Inženjeringa i radio je za nekoliko firmi u biomedicinskom sektoru,	gde je razvio razumevanje za 	odnose izmeðu sveta medicine i sveta informatike.<br>	
+				<p>	Giuseppe Scarpi	je roï¿½en u 	Rimu, Italija, pre 35	godina.
+				<p>Poseduje diplomu iz  Elektronskog Inï¿½enjeringa i radio je za nekoliko firmi u biomedicinskom sektoru,	gde je razvio razumevanje za 	odnose izmeï¿½u sveta medicine i sveta informatike.<br>	
 				  Koristi i ceni i  Linux i Windows, "<i>obzirom da su oba proizvod velikog ljudskog rada koji mora da se ceni</i>".	
-				<p>	Odluèio je da se aktivno ukljuèi u 	open source	zato što: <br> 
-				  <i>"Takav idealni svet može da preživi samo ako je savršeno uravnotežen. Ukoliko nešto uzmete, treba isto toliko proporcionalno da vratite."</i> 
-				<p><a href="mailto:kalbun@inwind.it"><u>Giuseppe Scarpi	se može	kontaktirati ovde.</u></a> </td> 
+				<p>	Odluï¿½io je da se aktivno ukljuï¿½i u 	open source	zato ï¿½to: <br> 
+				  <i>"Takav idealni svet moï¿½e da preï¿½ivi samo ako je savrï¿½eno uravnoteï¿½en. Ukoliko neï¿½to uzmete, treba isto toliko proporcionalno da vratite."</i> 
+				<p><a href="mailto:kalbun@inwind.it"><u>Giuseppe Scarpi	se moï¿½e	kontaktirati ovde.</u></a> </td> 
 			</tr> 
 		  </tbody> 
 		</table> 
@@ -157,20 +157,20 @@
 			  <td valign=top><font face="verdana,arial"	size=2>	
 				<p><img	src="../../fotos/credits/lopo_l_almeida.jpg"  width=135 height=170 border=0  align=right vspace=10> <b>Lopo Lencastre	de Almeida (PT)</b>	je jedan od najproduktivnijih saradnika. Neki od njegovih doprinosa projektu su:
 				<p><font size=1>
-				  Marketing, Promocija i Donosi sa javnošæu<br> 
+				  Marketing, Promocija i Donosi sa javnoï¿½ï¿½u<br> 
 				  Web i Logo dizajn<br> 
-				  Implementacija &amp; održavanje nekoliko web alata	(Bugtracker, Forum,	FAQ, itd.)<br> 
-				  Implementacija &amp; održavanje novog web sajta (skoro završen)<br> 
-				  Održavanje i administracija Forum-a<br> 
-				  Kod pronalaženje/kopanje<br> 
+				  Implementacija &amp; odrï¿½avanje nekoliko web alata	(Bugtracker, Forum,	FAQ, itd.)<br> 
+				  Implementacija &amp; odrï¿½avanje novog web sajta (skoro zavrï¿½en)<br> 
+				  Odrï¿½avanje i administracija Forum-a<br> 
+				  Kod pronalaï¿½enje/kopanje<br> 
 				  Konsultacije u vezi PHP-a<br> 
 				  Saveti o sigurnosti<br> 
-				  Savetnik u vezi sa Abstraktnim slojevima (DB, Šabloni,itd.)<br> 
+				  Savetnik u vezi sa Abstraktnim slojevima (DB, ï¿½abloni,itd.)<br> 
 				  Debagovanje<br>	
-				  Ideje, diskusije, nagoveštaji, saveti, itd.	</font>	
-				<p>	Lopo L.	de Almeida je roðen u Angoli 1966. Zaposlen je u raèunarskom sektoru- ranging from commercial automation to	industrial automation -	as a software developer	and	interface designer for more	than 16	years now .	During the last	5 years	he worked mostly in	web	development	and	company	management.	He is the CEO/CTO of HumanEasy - a partner of Care2002 project in charge of	its	<b>Public Relations	and	Marketing Management</b>.<br> 
+				  Ideje, diskusije, nagoveï¿½taji, saveti, itd.	</font>	
+				<p>	Lopo L.	de Almeida je roï¿½en u Angoli 1966. Zaposlen je u raï¿½unarskom sektoru- ranging from commercial automation to	industrial automation -	as a software developer	and	interface designer for more	than 16	years now .	During the last	5 years	he worked mostly in	web	development	and	company	management.	He is the CEO/CTO of HumanEasy - a partner of Care2002 project in charge of	its	<b>Public Relations	and	Marketing Management</b>.<br> 
 				  He is	also involved in many other	GNU/GPL	projects; some of them are in use at Care2x's site.<br>	
-				<p><a href="http://www.humaneasy.com" target="_blank"><u>Lopo L. de	Almeida	se može	kontaktirati ovde.</u></a> </td> 
+				<p><a href="http://www.humaneasy.com" target="_blank"><u>Lopo L. de	Almeida	se moï¿½e	kontaktirati ovde.</u></a> </td> 
 			</tr> 
 		  </tbody> 
 		</table> 
@@ -180,12 +180,12 @@
 			<tr> 
 			  <td valign=top><font face="verdana,arial"	size=2>	
 				<p><img	src="../../fotos/credits/luca_romoli.jpg"  border=0	 align=right vspace=10>	<b>Luca	Romoli (BR/IT) </b>	
-				<p>	PPT	Prezentacije i šabloni<br>	
+				<p>	PPT	Prezentacije i ï¿½abloni<br>	
 				  Alati za upravljanje projektom<br> 
 				  Alati za finansijsko upravljanje i marketing<br> 
-				  Marketinške kampanje u Brazil-u	
-				<p>	Luka je poslovni konsultant sa iskustvom èija su specijalnost web aplikacije. Njegovo cilj je da kreira prvu produktivnu instalaciju Care2x u Brazilskim bolnicama.
-				<p><a href="mailto:luca@camocim.com"><u>Luca Romoli se može kontaktirati	ovde.</u></a> </td>	
+				  Marketinï¿½ke kampanje u Brazil-u	
+				<p>	Luka je poslovni konsultant sa iskustvom ï¿½ija su specijalnost web aplikacije. Njegovo cilj je da kreira prvu produktivnu instalaciju Care2x u Brazilskim bolnicama.
+				<p><a href="mailto:luca@camocim.com"><u>Luca Romoli se moï¿½e kontaktirati	ovde.</u></a> </td>	
 			</tr> 
 		  </tbody> 
 		</table> 
@@ -194,10 +194,10 @@
 		  <tbody> 
 			<tr> 
 			  <td valign=top><font face="verdana,arial"	size=2>	<b>Matej Hausenblas	(FR) je uradio francuski prevod	CARE 2X</b>	
-				<p>	Matej Hausenblas je roðen u Pragu,Èeška Republika, 1981. On je student na matematièko-informatièko-fizièkom	univerzitetu.	
-				Posle nekoliko godina korišæenja Windows-a odluèio je da baci pogled na Linux, i kao znaèajan izazov,	odluèio je da uèestvuje u  
-				Open Source projektima da bi poboljšao svoje veštine i isto tako da nešto vrati i vidi kako rade neke stvari u ovoj zajednici.
-				<p><a href="mailto:matejh@users.sourceforge.net"><u>Matej Hausenblas se	može kontaktirati ovde.</u></a>	</td> 
+				<p>	Matej Hausenblas je roï¿½en u Pragu,ï¿½eï¿½ka Republika, 1981. On je student na matematiï¿½ko-informatiï¿½ko-fiziï¿½kom	univerzitetu.	
+				Posle nekoliko godina koriï¿½ï¿½enja Windows-a odluï¿½io je da baci pogled na Linux, i kao znaï¿½ajan izazov,	odluï¿½io je da uï¿½estvuje u  
+				Open Source projektima da bi poboljï¿½ao svoje veï¿½tine i isto tako da neï¿½to vrati i vidi kako rade neke stvari u ovoj zajednici.
+				<p><a href="mailto:matejh@users.sourceforge.net"><u>Matej Hausenblas se	moï¿½e kontaktirati ovde.</u></a>	</td> 
 			</tr> 
 		  </tbody> 
 		</table> 
@@ -207,9 +207,9 @@
 			<tr> 
 			  <td valign=top><font face="verdana,arial"	size=2>	
 				<p><img	src="../../fotos/credits/muhammad_panji.png"  border=0	align=right	vspace=10> <b>Muhammad Panji (ID) </b> 
-				<p>	Indonežanski prevod Care2X i www.care2x.com web sajta.<br> 
-				  Izveštavanje o bug-ovima
-				<p><a href="mailto:sumodirjo@users.sourceforge.net"><u>Muhammad	Panji se može kontaktirati ovde.</u></a> </td> 
+				<p>	Indoneï¿½anski prevod Care2X i www.care2x.com web sajta.<br> 
+				  Izveï¿½tavanje o bug-ovima
+				<p><a href="mailto:sumodirjo@users.sourceforge.net"><u>Muhammad	Panji se moï¿½e kontaktirati ovde.</u></a> </td> 
 			</tr> 
 		  </tbody> 
 		</table> 
@@ -217,11 +217,11 @@
 		<table cellspacing=0 cellpadding=0 border=0	width=100%>	
 		  <tbody> 
 			<tr> 
-			  <td valign=top><font face="verdana,arial"	size=2>	<b>Nino	Novak (DE) je ažurirao nemaèku stranu	www.care2x.com.</b>	
-				<p>	Nino Novak je siromašni usamljeni kauboj. Puca brže nego što misli. Ponekad malo užurbano. 
-				Obožava	"stvarne gurue" i prefinjene razgovore sa njima. Žei da pomogne u kreiranju boljeg sveta.	
-				Poseduje neko nauèno i medicinsko predznaje (zato se i pridružio care2x projektu).
-				<p><a href="mailto:nino@kflog.org"><u>Nino Novak se	može kontaktirati ovde.</u></a>	</td> 
+			  <td valign=top><font face="verdana,arial"	size=2>	<b>Nino	Novak (DE) je aï¿½urirao nemaï¿½ku stranu	www.care2x.com.</b>	
+				<p>	Nino Novak je siromaï¿½ni usamljeni kauboj. Puca brï¿½e nego ï¿½to misli. Ponekad malo uï¿½urbano. 
+				Oboï¿½ava	"stvarne gurue" i prefinjene razgovore sa njima. ï¿½ei da pomogne u kreiranju boljeg sveta.	
+				Poseduje neko nauï¿½no i medicinsko predznaje (zato se i pridruï¿½io care2x projektu).
+				<p><a href="mailto:nino@kflog.org"><u>Nino Novak se	moï¿½e kontaktirati ovde.</u></a>	</td> 
 			</tr> 
 		  </tbody> 
 		</table> 
@@ -232,9 +232,9 @@
 			  <td valign=top><font face="verdana,arial"	size=2>	
 				<p><img	src="../../fotos/credits/noel_villamor.jpg"	 border=0  align=right vspace=10> <b>Noel R. Villamor (PH)</b><br> 
 				  Programiranje modula
-				<p>Završio je modul za ispis rezultata laboratorije	izboreæi se pri tome sa teškim matematièkim problemima.
-				<p>Upravljanje projektom dežurstava
-				<p><a href="mailto:noelrv@nipahut.org"><u>Noel Villamor	se može	kontaktirati ovde.</u></a> </td> 
+				<p>Zavrï¿½io je modul za ispis rezultata laboratorije	izboreï¿½i se pri tome sa teï¿½kim matematiï¿½kim problemima.
+				<p>Upravljanje projektom deï¿½urstava
+				<p><a href="mailto:noelrv@nipahut.org"><u>Noel Villamor	se moï¿½e	kontaktirati ovde.</u></a> </td> 
 			</tr> 
 		  </tbody> 
 		</table> 
@@ -242,13 +242,13 @@
 		<table cellspacing=0 cellpadding=0 border=0	width=100%>	
 		  <tbody> 
 			<tr> 
-			  <td valign=top><font face="verdana,arial"	size=2>	<b>Patxi Gomaríz (ES) je uradio španske prevode.</b>	
-				<p>	Patxi Gomaríz je roðen u proleæe 1966 u Mursiji, Španija. Njegov rad i život su uglavnom okrenuti ka 
+			  <td valign=top><font face="verdana,arial"	size=2>	<b>Patxi Gomarï¿½z (ES) je uradio ï¿½panske prevode.</b>	
+				<p>	Patxi Gomarï¿½z je roï¿½en u proleï¿½e 1966 u Mursiji, ï¿½panija. Njegov rad i ï¿½ivot su uglavnom okrenuti ka 
 				fotografiji obzirom da je specijalista za fotografiju u Oftalmologiji (fundus kamera). On je internet entuzijasta	
 				koji isto tako dizajnita web sajtove. 
-				<p>	"<i>Mislim da je open source kod efikasno oružje protiv negativnih efekata ekonomske globalizacije posebno u osnovnim segmentima društva i života kao što je na primer zdravlje.
-				 Iz tog razloga, Ponosim se što sam dao mali doprinos ovom velikom projektu.</i>" 
-				<p><a href="mailto:pgomariz@ono.com"><u>Patxi Gomaríz se može kontaktirati ovde.</u></a> </td> 
+				<p>	"<i>Mislim da je open source kod efikasno oruï¿½je protiv negativnih efekata ekonomske globalizacije posebno u osnovnim segmentima druï¿½tva i ï¿½ivota kao ï¿½to je na primer zdravlje.
+				 Iz tog razloga, Ponosim se ï¿½to sam dao mali doprinos ovom velikom projektu.</i>" 
+				<p><a href="mailto:pgomariz@ono.com"><u>Patxi Gomarï¿½z se moï¿½e kontaktirati ovde.</u></a> </td> 
 			</tr> 
 		  </tbody> 
 		</table> 
@@ -261,12 +261,12 @@
 				<p>	
 				<font size=1> Kempletno testiranje<br>	
 				Debagovanje<br> 
-				DB koncept 'optimistiènog zakljuèavanja'<br>	
+				DB koncept 'optimistiï¿½nog zakljuï¿½avanja'<br>	
 				DB optimizacije<br> 
 				Skriptovi za provera datuma i brojeva	
-				<p>	</font>	Thomas Wiedmann	je softver developer dugo godina i radi u Študgartu, Nemaèka. Radio je sa 	Gupta Team Developer i IBM DB2 tokom  7  godina i on je  IBM Certified UDB DB2 Administrator, takoðe. 
-				Proèitajte više o DB2 u njegovoj knjizi "DB2" ISBN 3-932311-80-9. On je autor TOOLBOX (www.toolbox-mag.de), Nemaèkog èasopisa za programiranje i razvoj softvera.
-				<p><a href="mailto:tho123@users.sourceforge.net"><u>Thomas Wiedmann	se može	kontaktirati ovde.</u></a> </td> 
+				<p>	</font>	Thomas Wiedmann	je softver developer dugo godina i radi u ï¿½tudgartu, Nemaï¿½ka. Radio je sa 	Gupta Team Developer i IBM DB2 tokom  7  godina i on je  IBM Certified UDB DB2 Administrator, takoï¿½e. 
+				Proï¿½itajte viï¿½e o DB2 u njegovoj knjizi "DB2" ISBN 3-932311-80-9. On je autor TOOLBOX (www.toolbox-mag.de), Nemaï¿½kog ï¿½asopisa za programiranje i razvoj softvera.
+				<p><a href="mailto:tho123@users.sourceforge.net"><u>Thomas Wiedmann	se moï¿½e	kontaktirati ovde.</u></a> </td> 
 			</tr> 
 		  </tbody> 
 		</table> 
@@ -277,12 +277,12 @@
 			  <td valign=top><font face="verdana,arial"	size=2>	
 				<p><img	src="../../fotos/credits/walid_fathalla.jpg"  border=0	align=right	vspace=10> <b>Walid	Murad Fathalla (LY)</b>	
 				<p>	Arapski prevodi<br>	
-				  Redizajn šablona za arapski raspored
+				  Redizajn ï¿½ablona za arapski raspored
 				<p>	Obrazovanje i kvalifikacije<br>	
-				  Inženjer nauka -	Raèunarski inžinjering - 1999<br>	
-				  AL Fateh univerzitet -	Fakultet za inžinjering<br> 
+				  Inï¿½enjer nauka -	Raï¿½unarski inï¿½injering - 1999<br>	
+				  AL Fateh univerzitet -	Fakultet za inï¿½injering<br> 
 				  Tripoli, Libija
-				<p><a href="mailto:fathalla_w@hotmail.com"><u>Walid	Fathalla se	može kontaktirati ovde.</u></a>	</td> 
+				<p><a href="mailto:fathalla_w@hotmail.com"><u>Walid	Fathalla se	moï¿½e kontaktirati ovde.</u></a>	</td> 
 			</tr> 
 		  </tbody> 
 		</table> 
@@ -293,13 +293,13 @@
 			  <td valign=top><font face="verdana,arial"	size=2>	
 				<p><img	src="../../fotos/credits/weining_chen.jpg"	border=0  align=right vspace=10> <b>Wei	Ning Chen (CH)</b> 
 				<p>Prevodi na Kineski-Pojednostavljeni.
-				<p>	Wei	Ning Chen je roðen 1971 u Nanjingu, pored Jangce reke u istoènoj Kini.
-				<p>	Nakon što je stekao diplomu Inžinjeringa	od strane Institita Istoène Kine 1992 godine, Wei Ning je zatim usavršavao svoje programerske veštine.
-					Nakon nekoliko godina iskustva u programirunju u Windows okruženju	i velikog interesovanja za svaki oblik open-source projekta, 
-					odluèio je da uèestvuje u Open Source projektima da bi poboljšao neke veštine i isto tako da  vrati kao i da vidi kako rade neke stvari u ovoj zajednici.
-				<p>	Uprkos èinjenici da ne radi niti u zdravstvenom niti u medicinskom sektoru, odluèio je da se prikljuèi Care projektu zato što veruje u rezultat njegovog nastojanja	da	se Care
-				 projekat u buduænosti koristi u Kineskim bolnicama.
-				<p><a href="mailto:weining.chen@army.com"><u>Wei Ning Chen se može kontaktirati	ovde.</u></a> </td>	
+				<p>	Wei	Ning Chen je roï¿½en 1971 u Nanjingu, pored Jangce reke u istoï¿½noj Kini.
+				<p>	Nakon ï¿½to je stekao diplomu Inï¿½injeringa	od strane Institita Istoï¿½ne Kine 1992 godine, Wei Ning je zatim usavrï¿½avao svoje programerske veï¿½tine.
+					Nakon nekoliko godina iskustva u programirunju u Windows okruï¿½enju	i velikog interesovanja za svaki oblik open-source projekta, 
+					odluï¿½io je da uï¿½estvuje u Open Source projektima da bi poboljï¿½ao neke veï¿½tine i isto tako da  vrati kao i da vidi kako rade neke stvari u ovoj zajednici.
+				<p>	Uprkos ï¿½injenici da ne radi niti u zdravstvenom niti u medicinskom sektoru, odluï¿½io je da se prikljuï¿½i Care projektu zato ï¿½to veruje u rezultat njegovog nastojanja	da	se Care
+				 projekat u buduï¿½nosti koristi u Kineskim bolnicama.
+				<p><a href="mailto:weining.chen@army.com"><u>Wei Ning Chen se moï¿½e kontaktirati	ovde.</u></a> </td>	
 			</tr> 
 		  </tbody> 
 		</table> 
@@ -309,21 +309,21 @@
 			<tr> 
 			  <td valign=top><font face="verdana,arial"	size=2>	
 				<p><img	src="../../fotos/credits/wilfried_goedert.jpg" border=0	 align=right vspace=10 > 
-				<p><b>Dr. med Wilfried Gödert (DE)</b><br> 
-				  doprinosi sledeæem:
+				<p><b>Dr. med Wilfried Gï¿½dert (DE)</b><br> 
+				  doprinosi sledeï¿½em:
 				<p>	
 				<font size=1> Hosting i administracija:<br>	
 				www.care2x.de<br> 
-				Server Novosti , OTRS Sistem Podrške<br> 
-				Promocije, Odnosi sa javnošæu<br> 
+				Server Novosti , OTRS Sistem Podrï¿½ke<br> 
+				Promocije, Odnosi sa javnoï¿½ï¿½u<br> 
 				Konsultacije
 				<p>	</font>	Zanimanje:	Lekar, sa diplomom specijalizacije u  Medicinskoj Informatici
-				<p><a href="mailto:goedert@users.sourceforge.net"><u>Dr. Wilfried Gödert se	može kontaktirati ovde</u></a> </td> 
+				<p><a href="mailto:goedert@users.sourceforge.net"><u>Dr. Wilfried Gï¿½dert se	moï¿½e kontaktirati ovde</u></a> </td> 
 			</tr> 
 		  </tbody> 
 		</table> 
 		<hr> 
-		<font face="verdana,arial" size=3 color="#0000ff">Ostali zaslužni</font> <font	face="verdana,arial" size=1	> (u abecednom rasporedu po prvom imenu)</font> 
+		<font face="verdana,arial" size=3 color="#0000ff">Ostali zasluï¿½ni</font> <font	face="verdana,arial" size=1	> (u abecednom rasporedu po prvom imenu)</font> 
 		<table border=0	cellspacing=1 cellpadding=1> 
 		  <tr> 
 			<td	bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial"	size=2>	Abrar H. Hazarika (ID)</font></nobr>&nbsp;</td>	
@@ -331,7 +331,7 @@
 		  </tr>	
 		  <tr> 
 			<td	bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial"	size=2>	A. Djem	(ID)</font></nobr>&nbsp;</td> 
-			<td	bgcolor="#f9f9f9"><font	face="verdana,arial" size=2>&nbsp;&nbsp;Grafièki dizajn,	web dajt dizajn</font></td> 
+			<td	bgcolor="#f9f9f9"><font	face="verdana,arial" size=2>&nbsp;&nbsp;Grafiï¿½ki dizajn,	web dajt dizajn</font></td> 
 		  </tr>	
 		  <tr> 
 			<td	bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial"	size=2>	Ali	Kanarya	(TU)</font></nobr>&nbsp;</td> 
@@ -347,7 +347,7 @@
 		  </tr>	
 		  <tr> 
 			<td	bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial"	size=2>	Are	Kristensen (NO)</font></nobr>&nbsp;</td> 
-			<td	bgcolor="#f9f9f9"><font	face="verdana,arial" size=2>&nbsp;&nbsp;Norveški prevod & online	demo</font></td> 
+			<td	bgcolor="#f9f9f9"><font	face="verdana,arial" size=2>&nbsp;&nbsp;Norveï¿½ki prevod & online	demo</font></td> 
 		  </tr>	
 		  <tr> 
 			<td	bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial"	size=2>	Biju Gopinath (IN)</font></nobr>&nbsp;</td>	
@@ -363,19 +363,19 @@
 		  </tr>	
 		  <tr> 
 			<td	bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial"	size=2>	Gonzalo	Gomes Sotelo (AR)</font></nobr>&nbsp;</td> 
-			<td	bgcolor="#f9f9f9"><font	face="verdana,arial" size=2>&nbsp;&nbsp;Španski prevodi</font></td> 
+			<td	bgcolor="#f9f9f9"><font	face="verdana,arial" size=2>&nbsp;&nbsp;ï¿½panski prevodi</font></td> 
 		  </tr>	
 		  <tr> 
 			<td	bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial"	size=2>	Javier Alberto Arias (AR)</font></nobr>&nbsp;</td> 
-			<td	bgcolor="#f9f9f9"><font	face="verdana,arial" size=2>&nbsp;&nbsp;Španski	prevodi</font></td> 
+			<td	bgcolor="#f9f9f9"><font	face="verdana,arial" size=2>&nbsp;&nbsp;ï¿½panski	prevodi</font></td> 
 		  </tr>	
 		  <tr> 
 			<td	bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial"	size=2>	Luki Rustianto (ID)</font></nobr>&nbsp;</td> 
-			<td	bgcolor="#f9f9f9"><font	face="verdana,arial" size=2>&nbsp;&nbsp;Sigurnosna unapreðenja</font></td> 
+			<td	bgcolor="#f9f9f9"><font	face="verdana,arial" size=2>&nbsp;&nbsp;Sigurnosna unapreï¿½enja</font></td> 
 		  </tr>	
 		  <tr> 
 			<td	bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial"	size=2>	Mark Painter Dr. med (ZA)</font></nobr>&nbsp;</td> 
-			<td	bgcolor="#f9f9f9"><font	face="verdana,arial" size=2>&nbsp;&nbsp;DIzajn strukture podataka, Akušerstvo, Izveptavanje o greškama, GUI dizajn</font></td> 
+			<td	bgcolor="#f9f9f9"><font	face="verdana,arial" size=2>&nbsp;&nbsp;DIzajn strukture podataka, Akuï¿½erstvo, Izveptavanje o greï¿½kama, GUI dizajn</font></td> 
 		  </tr>	
 		  <tr> 
 			<td	bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial"	size=2>	Pawel Cyrta	(PL)</font></nobr>&nbsp;</td> 
@@ -383,11 +383,11 @@
 		  </tr>	
 		  <tr> 
 			<td	bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial"	size=2>	Petr Roupec(CZ)</font></nobr>&nbsp;</td> 
-			<td	bgcolor="#f9f9f9"><font	face="verdana,arial" size=2>&nbsp;&nbsp;Èeški prevod</font></td> 
+			<td	bgcolor="#f9f9f9"><font	face="verdana,arial" size=2>&nbsp;&nbsp;ï¿½eï¿½ki prevod</font></td> 
 		  </tr>	
 		  <tr> 
 			<td	bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial"	size=2>	Prantar	Deka (IN)</font></nobr>&nbsp;</td> 
-			<td	bgcolor="#f9f9f9"><font	face="verdana,arial" size=2>&nbsp;&nbsp;Opšti	modul	za naplatu</font></td> 
+			<td	bgcolor="#f9f9f9"><font	face="verdana,arial" size=2>&nbsp;&nbsp;Opï¿½ti	modul	za naplatu</font></td> 
 		  </tr>	
 		  <tr> 
 			<td	bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial"	size=2>	Roberto	Nanucci	(IT)</font></nobr>&nbsp;</td> 
@@ -395,7 +395,7 @@
 		  </tr>	
 		  <tr> 
 			<td	bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial"	size=2>	Sarat Nayak	(IN)</font></nobr>&nbsp;</td> 
-			<td	bgcolor="#f9f9f9"><font	face="verdana,arial" size=2>&nbsp;&nbsp;Unapreðenje dizajna, izveštavanje o greškama</font></td> 
+			<td	bgcolor="#f9f9f9"><font	face="verdana,arial" size=2>&nbsp;&nbsp;Unapreï¿½enje dizajna, izveï¿½tavanje o greï¿½kama</font></td> 
 		  </tr>	
 		  <tr> 
 			<td	bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial"	size=2>	Simone Aveotti (IT)</font></nobr>&nbsp;</td> 
@@ -410,6 +410,6 @@
 			<td	bgcolor="#f9f9f9"><font	face="verdana,arial" size=2>&nbsp;&nbsp;Ataraxia (WAP) modul</font></td> 
 		  </tr>	
 		</table> 
-		<font face="verdana,arial" size=1>Napomena:	Ovo je samo delimièni spisak. Dodatne zaslužni æe da slede.</font> 
+		<font face="verdana,arial" size=1>Napomena:	Ovo je samo delimiï¿½ni spisak. Dodatne zasluï¿½ni ï¿½e da slede.</font> 
 	</body>
 </html>

@@ -2,7 +2,7 @@
 error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
  // globalize POST, GET, & COOKIE  vars
 require('./roots.php');
-require_once($root_path.'include/inc_environment_global.php');
+require_once($root_path.'include/core/inc_environment_global.php');
 require_once($root_path.'include/inc_charset_fx.php') // load the charset functions
 ?>
 <?php html_rtl($lang); ?>
@@ -10,26 +10,26 @@ require_once($root_path.'include/inc_charset_fx.php') // load the charset functi
 <!-- Creation date: 25.12.2001 -->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-9">
-<title>Yardım</title>
+<title>Yardï¿½m</title>
 </head>
 <body alink="#0000ff" vlink="#0000ff" link="#0000ff">
-<font face="Arial" color="#cc0000" size=3><b>Yardım</b></font><p>
+<font face="Arial" color="#cc0000" size=3><b>Yardï¿½m</b></font><p>
 <font face="Verdana, Arial" size=2>
-<a href="../main/help-info.php?lang=tr" target="HELPINFOFRAME">İlk adımlar</a><br></b>
-<!--<a href="../help/tr/help_tr_contents.php" target="HELPINFOFRAME">İçindekiler</a><br>
+<a href="../main/help-info.php?lang=tr" target="HELPINFOFRAME">ï¿½lk adï¿½mlar</a><br></b>
+<!--<a href="../help/tr/help_tr_contents.php" target="HELPINFOFRAME">ï¿½ï¿½indekiler</a><br>
  <a href="#" target="HELPINFOFRAME">Fihrist</a><br>
 <a href="#" target="HELPINFOFRAME">Arama</a><br>
-<a href="#" target="HELPINFOFRAME">İpuçları</a><br>
-<a href="#" target="HELPINFOFRAME">Tanıtımlar</a></b>
+<a href="#" target="HELPINFOFRAME">ï¿½puï¿½larï¿½</a><br>
+<a href="#" target="HELPINFOFRAME">Tanï¿½tï¿½mlar</a></b>
  --><p>
  <p>
  <b>
-<font color=#ff0000><b>*</b></font><a href="http://207.44.195.231/~care2x/docswiki/index.php?UM - English" target="HELPINFOFRAME">Online El Kitabı</a>
+<font color=#ff0000><b>*</b></font><a href="http://207.44.195.231/~care2x/docswiki/index.php?UM - English" target="HELPINFOFRAME">Online El Kitabï¿½</a>
 <p>
-<font color=#ff0000><b>*</b></font><a href="http://207.44.195.231/~care2x/docswiki/index.php?Workflow%20Charts" target="HELPINFOFRAME">İş akış şemaları</a>
+<font color=#ff0000><b>*</b></font><a href="http://207.44.195.231/~care2x/docswiki/index.php?Workflow%20Charts" target="HELPINFOFRAME">ï¿½ï¿½ akï¿½ï¿½ ï¿½emalarï¿½</a>
 </b>
 <P>
- (<font size=1>internet bağlantısı gerektirir</font><font color=#ff0000><b>*</b></font>)
+ (<font size=1>internet baï¿½lantï¿½sï¿½ gerektirir</font><font color=#ff0000><b>*</b></font>)
 
 </font>
 

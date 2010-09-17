@@ -1,14 +1,14 @@
 <?php
 error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
-require($root_path.'include/inc_environment_global.php');
+require($root_path.'include/core/inc_environment_global.php');
 require_once($root_path.'include/inc_img_fx.php');
 ?>
 <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 3.0//EN" "html.dtd">
 <?php html_rtl($lang); ?>
 <HEAD>
 <meta http-equiv="Content-Type" content="text/html; charset=gb2312">
- <TITLE>无效访问的警示</TITLE>
+ <TITLE>锟斤拷效锟斤拷锟绞的撅拷示</TITLE>
 </HEAD>
 
 <BODY bgcolor="#ffffff">
@@ -16,7 +16,7 @@ require_once($root_path.'include/inc_img_fx.php');
 <table width=100% border=1>
 <tr>
 <td bgcolor="navy">
-<FONT  COLOR="white"  SIZE=+3  FACE="Arial"><STRONG>&nbsp;未授权页面的访问</STRONG></FONT>
+<FONT  COLOR="white"  SIZE=+3  FACE="Arial"><STRONG>&nbsp;未锟斤拷权页锟斤拷姆锟斤拷锟�</STRONG></FONT>
 </td>
 </tr>
 <tr>
@@ -25,7 +25,7 @@ require_once($root_path.'include/inc_img_fx.php');
 
 <center>
 <FONT    SIZE=3 color=red  FACE="Arial">
-<b>您没有权限打开此文档！</b></font><p>
+<b>锟斤拷没锟斤拷权锟睫打开达拷锟侥碉拷锟斤拷</b></font><p>
 <FORM >
 <INPUT type="button"  value=" OK "  onClick="<?php if ($mode=="close") print 'window.close()'; else print 'history.back()'; ?>"></FORM>
 <p>
@@ -34,19 +34,19 @@ require_once($root_path.'include/inc_img_fx.php');
 <p>
 <ul>
 <font size=3 face="verdana,arial">
-引发此问题的可能原因：
+锟斤拷锟斤拷锟斤拷锟侥匡拷锟斤拷原锟斤拷
 </FONT><p>
 <font size=2 face="verdana,arial">
 <img <?php echo createComIcon('../../','achtung.gif') ?>>
-您可能使用了浏览器中的“后退”或“前进”功能。请避免使用这些按钮。<br>
+锟斤拷锟斤拷锟绞癸拷锟斤拷锟斤拷锟斤拷锟斤拷锟叫的★拷锟斤拷锟剿★拷锟斤拷前锟斤拷锟杰★拷锟斤拷锟斤拷锟绞癸拷锟斤拷锟叫╋拷锟脚ワ拷锟�<br>
 <img <?php echo createComIcon('../../','achtung.gif') ?>>
-您可能拒绝接受cookie。本程序的正确运行依赖于cookies。请设定您的浏览器接受cookies。<br>
+锟斤拷锟斤拷芫芫锟斤拷锟斤拷cookie锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟饺凤拷锟斤拷锟斤拷锟斤拷锟斤拷锟絚ookies锟斤拷锟斤拷锟借定锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷cookies锟斤拷<br>
 <img <?php echo createComIcon('../../','achtung.gif') ?>>
-您的浏览器没有接受cookies。请设定您的浏览器自动接受cookies。<br>
+锟斤拷锟斤拷锟斤拷锟斤拷没锟叫斤拷锟斤拷cookies锟斤拷锟斤拷锟借定锟斤拷锟斤拷锟斤拷锟斤拷锟皆讹拷锟斤拷锟斤拷cookies锟斤拷<br>
 <img <?php echo createComIcon('../../','achtung.gif') ?>>
-您的浏览器不能运行JavaScript或JavaScript被禁止。请设定您的浏览器允许运行JavaScript。<br>
+锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷JavaScript锟斤拷JavaScript锟斤拷锟斤拷止锟斤拷锟斤拷锟借定锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷JavaScript锟斤拷<br>
 <img <?php echo createComIcon('../../','achtung.gif') ?>>
-极少数情况下在数据传输过程中发生了错误，此时请在浏览器内点击“刷新”按钮。<p>
+锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟捷达拷锟斤拷锟斤拷锟叫凤拷锟斤拷锟剿达拷锟襟，达拷时锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷诘锟斤拷锟斤拷刷锟铰★拷锟斤拷钮锟斤拷<p>
 </FONT>
 <p>
 </ul>

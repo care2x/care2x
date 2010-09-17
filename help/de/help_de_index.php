@@ -2,7 +2,7 @@
 error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
  // globalize POST, GET, & COOKIE  vars
 require('./roots.php');
-require_once($root_path.'include/inc_environment_global.php');
+require_once($root_path.'include/core/inc_environment_global.php');
 require_once($root_path.'include/inc_charset_fx.php') // load the charset functions
 ?>
 <?php html_rtl($lang); ?>
