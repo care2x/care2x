@@ -146,10 +146,10 @@ $dbtable='care_ward';
  /**
  * wards count
  */
+ $img_mangr=createComIcon($root_path,'man-gr.gif','0'); // needed in column title
  if($rows) {  
   
   /* Load the common icons */
-  $img_mangr=createComIcon($root_path,'man-gr.gif','0');
   $img_mans_gr=createComIcon($root_path,'mans-gr.gif','0','absmiddle');
   $img_mans_red=createComIcon($root_path,'mans-red.gif','0','absmiddle');
   $img_statbel=createComIcon($root_path,'statbel2.gif','0','absmiddle');

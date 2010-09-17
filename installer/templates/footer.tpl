@@ -25,7 +25,7 @@
 					<a href="http://sourceforge.net/mailarchive/forum.php?forum_id=11772">Mailing List</a> :: 
 					<a href="http://sourceforge.net/projects/care2002/">SF.net Project</a>&nbsp; 
                     //
-					Copyright 2002-2007 Elpidio Latorilla
+					Copyright 2002-2007 Elpidio Latorilla. GPL 2008-{php}echo date('Y');{/php} Mauri Niemi
 				</td>
 				<td align="right" valign="bottom">
 					&nbsp;</td>
