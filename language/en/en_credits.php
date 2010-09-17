@@ -15,7 +15,7 @@
 	<TABLE cellSpacing=0 cellPadding=0 border=0 width=100%>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-            <P><img src="../../fotos/credits/a_djem.jpg"  border=0  vspace=10 align=right>
+            <P><img src="../../uploads/photos/credits/a_djem.jpg"  border=0  vspace=10 align=right>
 			<b>A. Djem (ID)</b><P>
 			Desktop wallpaper designs for Care2x<br>
 			Designs for the new Care2x websites<br>
@@ -30,7 +30,7 @@
 <TR>
 	<TD vAlign=top><font face="verdana,arial" size=2>
 		  <hr>
-		<P><img src="../../fotos/credits/alberto_menini.JPG"  border=0  width=135  align=right vspace=10>
+		<P><img src="../../uploads/photos/credits/alberto_menini.jpg"  border=0  width=135  align=right vspace=10>
 		<b>Alberto Menini Dr. MD (AR)</b>
 		<p>
 		<font size=1>
@@ -50,7 +50,7 @@
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-            <P><img src="../../fotos/credits/agus_mr.jpg"  border=0  align=right vspace=10>
+            <P><img src="../../uploads/photos/credits/agus_mr.jpg"  border=0  align=right vspace=10>
 			<b>Agus Muhammad Ramdan (ID)</b> 
 			<p>
 			Indonesian translation of Care 2X and www.care2x.com website<br>
@@ -66,7 +66,7 @@
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-            <P><IMG SRC="../../fotos/credits/tille.jpg" BORDER=0 ALIGN="right" hspace=10 width=128>
+            <P><IMG SRC="../../uploads/photos/credits/tille.jpg" BORDER=0 ALIGN="right" hspace=10 width=128>
 			<b>Andreas Tille (DE)</b> 
 			<p>
 			Andreas did a presentation of Care2x at the LinuxTag exhibition in Chemnitz, Germany.
@@ -81,7 +81,7 @@
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-            <P><img src="../../fotos/credits/are_kristensen.jpg"  border=0  width=135 align=right vspace=10>
+            <P><img src="../../uploads/photos/credits/are_kristensen.jpg"  border=0  width=135 align=right vspace=10>
 			<b>Are Kristensen (NO)</b> 
 			<p>
 			Norwegian translation<br>
@@ -95,21 +95,21 @@
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-            <P><img src="../../fotos/credits/bulent_aydin.jpg"  border=0  align=right vspace=10>
-			<b>B�lent Aydin (TR/DE)</b>
+            <P><img src="../../uploads/photos/credits/bulent_aydin.jpg"  border=0  align=right vspace=10>
+			<b>Bulent Aydin (TR/DE)</b>
 			<p>
 			 Turkish translation of Care2X website. 
-			 <p>B�lent Aydin was born in Turkey and �graduated from Istanbul Technical University ,
-Turkey � with degrees in mathematics and engineering. He also got an MBA degree from Istanbul Yeditepe University , Turkey.
+			 <p>Bulent Aydin was born in Turkey and graduated from Istanbul Technical University ,
+Turkey with degrees in mathematics and engineering. He also got an MBA degree from Istanbul Yeditepe University , Turkey.
 Currently, he is  working in Germany as analyst programmer.
 <p></p>
-Skills : Database design and analysis, �IBM iSeries ( AS400 ) , DB2, ILERPG, JAVA
-, PHP, �MySQL, �VB 6. 0 and MSSQL.
+Skills : Database design and analysis, IBM iSeries ( AS400 ) , DB2, ILERPG, JAVA
+, PHP, MySQL, VB 6. 0 and MSSQL.
 <p>
-"Long �live OSS "
+"Long live OSS "
 </p>
 
-			<P><a href="mailto:bullaydin@gmx.de"><u>B�lent Aydin can be contacted here.</u></a>
+			<P><a href="mailto:bullaydin@gmx.de"><u>Bulent Aydin can be contacted here.</u></a>
 </TD></TR></TBODY></TABLE>
 
 <hr>
@@ -117,8 +117,8 @@ Skills : Database design and analysis, �IBM iSeries ( AS400 ) , DB2, ILERPG, J
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-            <P><img src="../../fotos/credits/bulent_potur.jpg"  border=0  align=right vspace=10>
-			<b>B�lent Potur Dr. Med. Obgyn (TR)</b>
+            <P><img src="../../uploads/photos/credits/bulent_potur.jpg"  border=0  align=right vspace=10>
+			<b>Bulent Potur Dr. Med. Obgyn (TR)</b>
 			<p>
 			 Turkish translation of Care 2X. He is an obstetrician &
 			 gynecologist. He is an amateur programmer in gwbasic, ms cobol and ms access and web site
@@ -128,7 +128,7 @@ Skills : Database design and analysis, �IBM iSeries ( AS400 ) , DB2, ILERPG, J
 			 obgyn_int@yahoogroups.com</a>. One of his personal web pages is at <a
 			 href="http://medpages.obgyn.net/bpotur" target="_blank"><u>http://medpages.obgyn.net/bpotur</u></a>  .  
 			
-			<P><a href="mailto:bpotur@yahoo.com"><u>B�lent Potur can be contacted here.</u></a>
+			<P><a href="mailto:bpotur@yahoo.com"><u>Bulent Potur can be contacted here.</u></a>
 </TD></TR></TBODY></TABLE>
 
 <hr>
@@ -136,7 +136,7 @@ Skills : Database design and analysis, �IBM iSeries ( AS400 ) , DB2, ILERPG, J
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-            <P><img src="../../fotos/credits/CharlesPalapala.jpg"  border=0  align=right vspace=10>
+            <P><img src="../../uploads/photos/credits/CharlesPalapala.jpg"  border=0  align=right vspace=10>
 			<b>Charles Palapala (TZ)</b> 
 			<p>
 			Translation of Care2x to Swahili<br>
@@ -153,7 +153,7 @@ involved which is not affordable by most of the hospitals in Africa."
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-            <P><img src="../../fotos/credits/claudio_torbinio.jpg"  border=0  align=right vspace=10>
+            <P><img src="../../uploads/photos/credits/claudio_torbinio.jpg"  border=0  align=right vspace=10>
 			<b>Claudio Giulio Torbinio (IT)</b> 
 			<p>
 			Translation of Care2x to Italian<br>
@@ -173,15 +173,15 @@ involved which is not affordable by most of the hospitals in Africa."
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-			<P><img src="../../fotos/credits/hinostroza.jpg"  border=0  width=135 align=right vspace=10>
+			<P><img src="../../uploads/photos/credits/hinostroza.jpg"  border=0  width=135 align=right vspace=10>
 			<b>Daniel Hinostroza C. Dr. med. (EC)</b><br>
 			Spanish translations
 			<p><font size=1>
 			Author and coauthor of numerous medical textbooks<br>
-5 years as Director of the Gr�nenthal Medical Informatics Center, Quito
+5 years as Director of the Grünenthal Medical Informatics Center, Quito
 - Ecuador <br>
 Initial studies in Medical Informatics at Stanford University<br>
-2 years as Multimedia Project Leader of Gr�nenthal GmbH, Aachen, Germany</font><p>
+2 years as Multimedia Project Leader of Grünenthal GmbH, Aachen, Germany</font><p>
 Official translator for phpMyAdmin (Spanish)<br>
 Webmaster of the largest Ecuadorian medical website initiative
 (www.cmpichincha.med.ec) and the Ecuadorian Society of Dermatology
@@ -192,7 +192,7 @@ Website: www.cerebroperiferico.com
 <TR>
 	<TD vAlign=top><font face="verdana,arial" size=2>
 		  <hr>
-		<P><img src="../../fotos/credits/daniel_soro.JPG"  border=0  width=135  align=right vspace=10>
+		<P><img src="../../uploads/photos/credits/daniel_soro.jpg"  border=0  width=135  align=right vspace=10>
 		<b>Daniel Soro TCO. (AR)</b>
 		<p>
 		<font size=1>
@@ -211,7 +211,7 @@ Website: www.cerebroperiferico.com
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-            <P><img src="../../fotos/credits/daniel_zilli.jpg"  border=0  align=right vspace=10>
+            <P><img src="../../uploads/photos/credits/daniel_zilli.jpg"  border=0  align=right vspace=10>
 			<b>Daniel Zilli (BR) translated CARE 2X and www.care2x.com website to  brazilian-portuguese.</b>
 			<p>
 Daniel Zilli was born in Passo Fundo, Rio Grande Do Sul' state, 
@@ -246,7 +246,7 @@ Linux systems with   more than 10 years of experience in computer science.
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-		  			<P><img src="../../fotos/credits/dilip_bharatee.jpg" border=0  align=right vspace=10>
+		  			<P><img src="../../uploads/photos/credits/dilip_bharatee.jpg" border=0  align=right vspace=10>
 			<b>Dilip Bharatee (IN)</b>
 			<p>
 			He is one of the pioneering members of the project. Shortly after Care2x was opened to the public in 2002, Dilip joined and offered 
@@ -261,7 +261,7 @@ Linux systems with   more than 10 years of experience in computer science.
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-			<P><img src="../../fotos/credits/elpidio_latorilla_3.jpg" border=0  align=right vspace=10>
+			<P><img src="../../uploads/photos/credits/elpidio_latorilla_3.jpg" border=0  align=right vspace=10>
 			<b>The first beta version of CARE 2X was created by Elpidio Latorilla (DE/PH):</b>
 			<p>
 			Professions: <br>Programmer, Surgery Nurse, Electronics & telecommunications technician
@@ -275,7 +275,7 @@ Linux systems with   more than 10 years of experience in computer science.
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-			<P><img src="../../fotos/credits/emir_prcic.jpg" border=0  align=right vspace=10>
+			<P><img src="../../uploads/photos/credits/emir_prcic.jpg" border=0  align=right vspace=10>
 			<b>Emir Prcic (BS):</b>
 			<p>
 			Bosnian language translations and creation of Bosnian/Latin ICD10 sql data. Testing and bug reporting.
@@ -292,7 +292,7 @@ Linux systems with   more than 10 years of experience in computer science.
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-            <P><img src="../../fotos/credits/gabriele_cicala.jpg"  border=0  align=right vspace=10>
+            <P><img src="../../uploads/photos/credits/gabriele_cicala.jpg"  border=0  align=right vspace=10>
 			<b>Gabriele Cicala (IT) translated most of the the www.care2x.com website to italian.</b>
 			<p>
 			Gabriele Cicala was born in Rossano, in Calabria southern Italy, in 1970.
@@ -313,7 +313,7 @@ believe.
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-			<P><img src="../../fotos/credits/giuseppe_scarpi.jpg"  border=0  width=135 height=170 align=right vspace=10>
+			<P><img src="../../uploads/photos/credits/giuseppe_scarpi.jpg"  border=0  width=135 height=170 align=right vspace=10>
 			<b>Giuseppe Scarpi (IT) translated CARE 2X to italian.</b>
 			<p>
 			Giuseppe Scarpi was born in Rome, Italy, 35 years ago. 
@@ -329,7 +329,7 @@ He decided to actively join open source because: <br><i>"Such an ideal world can
       <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
 		  <hr>
-			<P><img src="../../fotos/credits/gonzalo.jpg"  border=0  width=135 align=right vspace=10> 
+			<P><img src="../../uploads/photos/credits/gonzalo.jpg"  border=0  width=135 align=right vspace=10> 
           <b>Gonzalo Gomez Sotelo (AR)</b> <p> 
 		  Spanish translations
         <p>
@@ -341,7 +341,7 @@ He decided to actively join open source because: <br><i>"Such an ideal world can
       <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
 		  <hr>
-			<P><img src="../../fotos/credits/ingo_zugenmaier.jpg"  border=0  width=135 align=right vspace=10> 
+			<P><img src="../../uploads/photos/credits/ingo_zugenmaier.jpg"  border=0  width=135 align=right vspace=10> 
           <b>Ingo Zugenmaier(DE)</b> <p> 
 		  Enhanced integration of DRG coding system.
         <p>
@@ -356,7 +356,7 @@ He decided to actively join open source because: <br><i>"Such an ideal world can
        <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
 		  <hr>
-			<P><img src="../../fotos/credits/javier.jpg"  border=0  width=135 align=right vspace=10> 
+			<P><img src="../../uploads/photos/credits/javier.jpg"  border=0  width=135 align=right vspace=10> 
           <b>Javier Alberto Arias (AR)</b> <p> 
 		  Spanish translations
         <p>
@@ -368,7 +368,7 @@ He decided to actively join open source because: <br><i>"Such an ideal world can
 	<TR>
 	<TD vAlign=top><font face="verdana,arial" size=2>
 		  <hr>
-		<P><img src="../../fotos/credits/hcc24_135.gif"  border=0  width=135  align=right vspace=10>
+		<P><img src="../../uploads/photos/credits/hcc24_135.gif"  border=0  width=135  align=right vspace=10>
 		<b>Joachim Mollin & HCC GmbH (DE)</b>
 		<p>
 		<font size=1>
@@ -386,7 +386,7 @@ He decided to actively join open source because: <br><i>"Such an ideal world can
 	<TR>
 	<TD vAlign=top><font face="verdana,arial" size=2>
 		  <hr>
-		<P><img src="../../fotos/credits/foto-JR.jpg"  border=0  width=135  align=right vspace=10>
+		<P><img src="../../uploads/photos/credits/foto-JR.jpg"  border=0  width=135  align=right vspace=10>
 		<b>Jorge Rodriguez Dr. Med (AR)</b>
 		<p>
 		<font size=1>
@@ -402,7 +402,7 @@ He decided to actively join open source because: <br><i>"Such an ideal world can
        <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
 		  <hr>
-			<P><img src="../../fotos/credits/dr_juan_manuel_montemayor.jpg"  border=0  align=right vspace=10> 
+			<P><img src="../../uploads/photos/credits/dr_juan_manuel_montemayor.jpg"  border=0  align=right vspace=10> 
           <b>Juan Manuel Montemayor Dr. med.  (MX)</b> <p>
 		  Spanish ICD10 and OPS codes
 		  <br>
@@ -421,7 +421,7 @@ He decided to actively join open source because: <br><i>"Such an ideal world can
        <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
 		  <hr>
-			<P><img src="../../fotos/credits/JRossano.JPG"  border=0  align=right vspace=10 width=135> 
+			<P><img src="../../uploads/photos/credits/JRossano.jpg"  border=0  align=right vspace=10 width=135> 
           <b>Juan Rossano (AR)</b> <p>
 		  Translation and customization of Care2x for Argentinian setting.
 		  <br>
@@ -436,7 +436,7 @@ He decided to actively join open source because: <br><i>"Such an ideal world can
 <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
 		  <hr>
-			<P><img src="../../fotos/credits/kaloyan_raev.jpg"  border=0  align=right vspace=10> 
+			<P><img src="../../uploads/photos/credits/kaloyan_raev.jpg"  border=0  align=right vspace=10> 
           <b>Kaloyan Raev (BG)</b> <p>
 		  Development of bulgarian ICD10, code enhancements, file releases.
 		  <br>
@@ -461,7 +461,7 @@ the mountains and the good music."
         <tbody>
         <tr>
           <td vAlign=top><font face="verdana,arial" size=2>
-			<p><img src="../../fotos/credits/lopo_l_almeida.jpg"  
+			<p><img src="../../uploads/photos/credits/lopo_l_almeida.jpg"  
                                 width=135 height=170 border=0  align=right vspace=10>
 			<b>Lopo Lencastre de Almeida (PT)</b> is one of the most productive developers. 
 			Some of his contributions to the project are:
@@ -491,7 +491,7 @@ the mountains and the good music."
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-            <P><img src="../../fotos/credits/luca_romoli.jpg"  border=0  align=right vspace=10>
+            <P><img src="../../uploads/photos/credits/luca_romoli.jpg"  border=0  align=right vspace=10>
 			<b>Luca Romoli (BR/IT) </b><p>
 			PPT Presentations and templates<br>
 			Project management tools<br>
@@ -521,16 +521,16 @@ work in this kind of community.
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-		  <P><img src="../../fotos/credits/michael_pike.jpg"  border=0  align=right vspace=10>
+		  <P><img src="../../uploads/photos/credits/michael_pike.jpg"  border=0  align=right vspace=10>
 			<b>Michael Pike (US)</b>
 			<p>Mac OSX version<p></p>
 Mike was born in 1973 and began programming at the early age of five on the
-Apple II computer system. �Throughout the years he advanced rapidly in the
+Apple II computer system. Throughout the years he advanced rapidly in the
 information technology field where his work utilizing Linux has been
 profiled by national media outlets including CNN, Newsweek, ADT Magazine and
 others.
 <p></p>
-Mike has always had a passion for open source and healthcare. �He will open
+Mike has always had a passion for open source and healthcare. He will open
 the door for healthcare applications under the Mac OS X operating system, a
 task previously unrealized in the open source community.
 <o>
@@ -544,7 +544,7 @@ More information on Mike's work can be viewed at <a href="http://www.michaelpike
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-            <P><img src="../../fotos/credits/muhammad_panji.png"  border=0  align=right vspace=10>
+            <P><img src="../../uploads/photos/credits/muhammad_panji.png"  border=0  align=right vspace=10>
 			<b>Muhammad Panji (ID) </b><p>
 			Indonesian translations of Care 2X and www.care2x.com website.<br>
 			Bug reporting
@@ -573,7 +573,7 @@ More information on Mike's work can be viewed at <a href="http://www.michaelpike
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-			<P><img src="../../fotos/credits/nguyen_manh_phu.jpg"  border=0  align=right vspace=10>
+			<P><img src="../../uploads/photos/credits/nguyen_manh_phu.jpg"  border=0  align=right vspace=10>
 			<b>Nguyen Manh Phu (VN)</b><p>
 			Vietnamese version. Nguyen Manh made the initial translations.
 			
@@ -585,7 +585,7 @@ More information on Mike's work can be viewed at <a href="http://www.michaelpike
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-			<P><img src="../../fotos/credits/noel_villamor.jpg"  border=0  align=right vspace=10>
+			<P><img src="../../uploads/photos/credits/noel_villamor.jpg"  border=0  align=right vspace=10>
 			<b>Noel R. Villamor (PH)</b><br>
 			Module programming
 			<p>Finished the laboratory test plotting module tackling some tough mathematical problems.
@@ -597,7 +597,7 @@ More information on Mike's work can be viewed at <a href="http://www.michaelpike
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2><p>
-		  <img src="../../fotos/credits/petar_savic.jpg"  border=0  align=right vspace=10>
+		  <img src="../../uploads/photos/credits/petar_savic.jpg"  border=0  align=right vspace=10>
 			<b>Petar Savic (YU)</b>
 			<p>
 			Serbian language translation.
@@ -608,7 +608,7 @@ More information on Mike's work can be viewed at <a href="http://www.michaelpike
 <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
 		  <hr>
-		  <P><img src="../../fotos/credits/suman_bhat.jpg" border=0  align=right hspace=10 >
+		  <P><img src="../../uploads/photos/credits/suman_bhat.jpg" border=0  align=right hspace=10 >
 			<P><b>Suman Bhusan Bhattacharyya Dr. med. (IN)</b>
 			<p>
 			Development of several tools like  vital statistics, gestation age, expected delivery age calculators,
@@ -621,7 +621,7 @@ More information on Mike's work can be viewed at <a href="http://www.michaelpike
 <TR>
 	<TD vAlign=top><font face="verdana,arial" size=2>
 		  <hr>
-		<P><img src="../../fotos/credits/tarek_alwerfally_2003.jpg"  border=0  width=135  align=right vspace=10>
+		<P><img src="../../uploads/photos/credits/tarek_alwerfally_2003.jpg"  border=0  width=135  align=right vspace=10>
 		<b>Tarek Alwerfally (LY)</b>
 		<p>
 		<font size=1>
@@ -640,12 +640,12 @@ More information on Mike's work can be viewed at <a href="http://www.michaelpike
           <TD vAlign=top><font face="verdana,arial" size=2>
 		  <hr>
 		  <P><img src="developers/fotos/sven_koechel.jpg" border=0  align=right vspace=10 >
-			<P><b>Sven K�chel (AT)</b>
+			<P><b>Sven Koechel (AT)</b>
 			<p>
 			Installation and admin of <a href="http://www.care2x.at" target="_blank">"Team Austria"</a> website for Care2x.<br>
 			Development of CARE-CAM module for hospital's video monitoring system
 			<p>
-			<a href="mailto:sid61@users.sourceforge.net"><u>Sven K�chel can be contacted here.</u></a>
+			<a href="mailto:sid61@users.sourceforge.net"><u>Sven Koechel can be contacted here.</u></a>
 			</font>
 </TD></TR>	 -->
 
@@ -655,7 +655,7 @@ More information on Mike's work can be viewed at <a href="http://www.michaelpike
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-			<P><img src="../../fotos/credits/thomas_wiedmann.jpg"  border=0  align=right vspace=10>
+			<P><img src="../../uploads/photos/credits/thomas_wiedmann.jpg"  border=0  align=right vspace=10>
 			<b>Thomas Wiedmann (DE) is the most active debugger</b>
 			<p><font size=1>
 			Complete testing <br>
@@ -679,16 +679,16 @@ More information on Mike's work can be viewed at <a href="http://www.michaelpike
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-            <P><IMG SRC="../../fotos/credits/kesztyus2.jpg" BORDER=0 ALIGN="right" hspace=10 width=135>
-			<b>Tibor Keszty�s, Prof. Dr. (DE)</b> 
+            <P><IMG SRC="../../uploads/photos/credits/kesztyus2.jpg" BORDER=0 ALIGN="right" hspace=10 width=135>
+			<b>Tibor Kesztyus, Prof. Dr. (DE)</b> 
 			<p>
-			Prof. Keszty�s introduced the Care2x application as a material for masteral thesis of his students
+			Prof. Kesztyus introduced the Care2x application as a material for masteral thesis of his students
 			at the University of Applied Science in Ulm, Germany. His students are also actively developing
 			specialized modules for local medical applications. 
 			<p>
 			He is the vice-dean of the medical informatics division of the university.
 			
-			<P><a href="mailto:kesztyus@fh-ulm.de"><u>Prof. Keszty�s can be contacted here.</u></a>
+			<P><a href="mailto:kesztyus@fh-ulm.de"><u>Prof. Kesztyus can be contacted here.</u></a>
 </TD></TR></TBODY></TABLE>
 
 <hr>
@@ -696,7 +696,7 @@ More information on Mike's work can be viewed at <a href="http://www.michaelpike
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-			<P><img src="../../fotos/credits/walid_fathalla.jpg"  border=0  align=right vspace=10>
+			<P><img src="../../uploads/photos/credits/walid_fathalla.jpg"  border=0  align=right vspace=10>
 			<b>Walid Murad Fathalla (LY)</b>
 			<p>
 			Arabic translations<br>
@@ -717,14 +717,14 @@ More information on Mike's work can be viewed at <a href="http://www.michaelpike
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-			<P><img src="../../fotos/credits/walter_nunez.gif"  border=0  align=right vspace=10 hspace="10">
-			<b>Walter Nu�ez Dr. Med. (PE) </b>
+			<P><img src="../../uploads/photos/credits/walter_nunez.gif"  border=0  align=right vspace=10 hspace="10">
+			<b>Walter Nuñez Dr. Med. (PE) </b>
 
 <p>
-Dr. Walter Nu�ez did a presentation of
-Care2x  to the Argentinian professionals via a <a href="http://www.sis.org.ar/sis2004/videoconferencia/index.html"  target="_blank">video teleconference during the SIS conference</a>.
+Dr. Walter Nuñez did a presentation of
+Care2x  to the Argentinian professionals via a <a href="http://www.sis.org.ar/sis2004/videoconferencia/index.html"  target="_blank">(link dead) video teleconference during the SIS conference</a>.
 
-<P><a href="mailto:admin@ciberneticamedica.com"><u>Dr. Walter Nu�ez can be contacted here</u></a>
+<P><a href="mailto:admin@ciberneticamedica.com"><u>Dr. Walter Nuñez can be contacted here</u></a>
 </TD></TR></TBODY></TABLE>
 
 <hr>
@@ -732,7 +732,7 @@ Care2x  to the Argentinian professionals via a <a href="http://www.sis.org.ar/si
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-			<P><img src="../../fotos/credits/weining_chen.jpg"  border=0  align=right vspace=10>
+			<P><img src="../../uploads/photos/credits/weining_chen.jpg"  border=0  align=right vspace=10>
 			<b>Wei Ning Chen (CH)</b>
 			<p>Chinese-Simplified translations.
 <p>
@@ -750,8 +750,8 @@ Despite the fact that he is neither working in medical nor in health sector, he 
         <TBODY>
 <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-		  <P><img src="../../fotos/credits/wilfried_goedert.jpg" border=0  align=right vspace=10 >
-			<P><b>Wilfried G�dert (physician) (DE)</b><br>
+		  <P><img src="../../uploads/photos/credits/wilfried_goedert.jpg" border=0  align=right vspace=10 >
+			<P><b>Wilfried Goedert (physician) (DE)</b><br>
 			contributed the following:
 			<p><font size=1>
 
@@ -761,7 +761,7 @@ Despite the fact that he is neither working in medical nor in health sector, he 
 			<p>
 			</font>
 			Profession: Physician, with additional Medical Informatics degree
-			<p><a href="mailto:goedert@users.sourceforge.net"><u>Wilfried G�dert can be contacted here</u></a>
+			<p><a href="mailto:goedert@users.sourceforge.net"><u>Wilfried Goedert can be contacted here</u></a>
 </TD></TR>	
 </TBODY></TABLE>
 
