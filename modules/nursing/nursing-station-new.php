@@ -25,6 +25,7 @@ if (!isset($mode) || empty($mode)) {
 	$dept_nr='';
 	$dept_nr='';
 	$edit='';
+	$name='';
 }
 
 $lang_tables[]='departments.php';
