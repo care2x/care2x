@@ -12,6 +12,7 @@ require($root_path.'include/core/inc_environment_global.php');
 */
 define('LANG_FILE','nursing.php');
 $local_user='ck_edv_user';
+define('NO_2LEVEL_CHK',1);
 require_once($root_path.'include/core/inc_front_chain_lang.php');
 ///$db->debug = true;
 $thisfile=basename(__FILE__);
@@ -105,7 +106,7 @@ $rows=0;
 					$ward=$wards->FetchRow();
 					# globalize ward values
 					extract($ward);
-					# Get ward´s active rooms info
+					# Get wardï¿½s active rooms info
 					$rooms=&$ward_obj->getAllActiveRoomsInfo($ward['nr']);
 				}else{
 					$rooms=$ward_obj->countCreatedRooms();
