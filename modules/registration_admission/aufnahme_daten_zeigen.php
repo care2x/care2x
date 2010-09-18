@@ -92,7 +92,7 @@ $dbtable='care_encounter';
 		
 	$encounter_obj->loadEncounterData();
 	if($encounter_obj->is_loaded) {
-		$row=&$encounter_obj->encounter;
+		$row=$encounter_obj->encounter;
 		//load data
 		extract($row);
 		# Set edit mode
