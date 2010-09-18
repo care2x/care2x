@@ -40,18 +40,18 @@ if ((($mode == 'search') || $update) && ($keyword != '')) {
 					OR generic $sql_LIKE '$keyword'
 					OR description $sql_LIKE '$keyword' 
 					GROUP BY $dbtable.bestellnum";
-		$ergebnis = $db->Execute ( $sql );
 
-		if (!$linecount = $ergebnis->RecordCount ()) {
-			$sql = "SELECT * FROM $dbtable WHERE  bestellnum $sql_LIKE '$keyword%'
-					OR artikelnum $sql_LIKE '$keyword%'
-					OR industrynum $sql_LIKE '$keyword%'
-					OR artikelname $sql_LIKE '$keyword%'
-					OR generic $sql_LIKE '$keyword%'
-					OR description $sql_LIKE '$keyword%'";
-			$ergebnis = $db->Execute ( $sql );
-			$linecount = $ergebnis->RecordCount ();
-		}
+		if ($ergebnis = $db->Execute ( $sql ))
+			if (!$linecount = $ergebnis->RecordCount ()) {
+				$sql = "SELECT * FROM $dbtable WHERE  bestellnum $sql_LIKE '$keyword%'
+						OR artikelnum $sql_LIKE '$keyword%'
+						OR industrynum $sql_LIKE '$keyword%'
+						OR artikelname $sql_LIKE '$keyword%'
+						OR generic $sql_LIKE '$keyword%'
+						OR description $sql_LIKE '$keyword%'";
+				$ergebnis = $db->Execute ( $sql );
+				$linecount = $ergebnis->RecordCount ();
+			}
 	} //end of if $update else
 	//if parent is order catalog
 	if (($linecount == 1) && $bcat) {
