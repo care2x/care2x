@@ -23,7 +23,7 @@ require_once($root_path.'include/core/inc_environment_global.php');
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-			<P><img src="../../fotos/credits/hinostroza.jpg"  border=0  width=135 align=right vspace=10>
+			<P><img src="../../uploads/photos/credits/hinostroza.jpg"  border=0  width=135 align=right vspace=10>
           <b>Dr. med Daniel Hinostroza C. (EC)<br> Traducción de CARE 2X al castellano.</b>
         <p>
 <li>Autor y coautor de software y textos médicos.<br>
@@ -40,7 +40,7 @@ Website: www.cerebroperiferico.com
 
           <td vAlign=top><font face="verdana,arial" size=2>
 
-			<p><img src="../../fotos/credits/dr_juan_manuel_montemayor.jpg"  border=0  align=right vspace=10>
+			<p><img src="../../uploads/photos/credits/dr_juan_manuel_montemayor.jpg"  border=0  align=right vspace=10>
           <b>Dr. Juan Manuel Montemayor (MX)</b> <p>
 		  Creation of high resolution, high quality graphic slides for promotional presentations of Care2x.
 			<br>
@@ -80,7 +80,7 @@ Website: www.cerebroperiferico.com
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-			<P><img src="../../fotos/credits/javier.jpg"  border=0  width=135 align=right vspace=10>
+			<P><img src="../../uploads/photos/credits/javier.jpg"  border=0  width=135 align=right vspace=10>
           <b>Javier Alberto Arias (AR)<br> La traducción Española de CARE 2X.</b>
         <p>
 
@@ -91,7 +91,7 @@ Website: www.cerebroperiferico.com
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-			<P><img src="../../fotos/credits/gonzalo.jpg"  border=0  width=135 align=right vspace=10> 
+			<P><img src="../../uploads/photos/credits/gonzalo.jpg"  border=0  width=135 align=right vspace=10> 
           <b>Gonzalo Gomez Sotelo (AR)<br> La traducción española de CARE 2X.</b> 
         <p>
 
@@ -106,7 +106,7 @@ Website: www.cerebroperiferico.com
             width=5 border=0></TD></TR>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-			<P><img src="../../fotos/credits/giuseppe_scarpi.jpg"  border=0  width=135 height=170 align=right vspace=10> 
+			<P><img src="../../uploads/photos/credits/giuseppe_scarpi.jpg"  border=0  width=135 height=170 align=right vspace=10> 
           <b>La traducción Italiana de CARE 2X fue hecha por Giuseppe Scarpi:</b> 
         <p> Giuseppe Scarpi nació en Roma, Italia, hace 35 años. 
         <p>Graduado en ingeniería electrónica ha trabajado para 
@@ -132,7 +132,7 @@ Website: www.cerebroperiferico.com
             width=5 border=0></TD></TR>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-            <P><img src="../../fotos/credits/gabriele_cicala.jpg"  border=0  align=right vspace=10> 
+            <P><img src="../../uploads/photos/credits/gabriele_cicala.jpg"  border=0  align=right vspace=10> 
           <b>La traducción Italiana de www.care2x.com fue hecha por Gabriele Cicala.</b> 
         <P><a href="mailto:gabcicala@tiscali.it"><u>Puede Ponerse en contacto con Gabriele Cicala aquí</u></a>
 </TD></TR></TBODY></TABLE>
@@ -146,7 +146,7 @@ Website: www.cerebroperiferico.com
             width=5 border=0></TD></TR>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-            <P><img src="../../fotos/credits/daniel_zilli.jpg"  border=0  align=right vspace=10> 
+            <P><img src="../../uploads/photos/credits/daniel_zilli.jpg"  border=0  align=right vspace=10> 
           <b>La traducción brasileña-Portuguesa de CARE 2X y www.care2x.com 
           fue hecha por Daniel Zilli.</b> 
         <P><a href="mailto:danielz@cco.matrix.com.br"><u>Puede Ponerse en contacto con Daniel Zilli aquí.</u></a>

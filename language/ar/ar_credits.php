@@ -17,7 +17,7 @@ require_once($root_path.'include/core/inc_environment_global.php');
         <TBODY>
         <TR>
           <TD vAlign=top align=right><font face="verdana,arial" size=2>
-			<img src="../../fotos/credits/walid_fathalla.jpg"  border=0  align=left  vspace=10>
+			<img src="../../uploads/photos/credits/walid_fathalla.jpg"  border=0  align=left  vspace=10>
 			
 			<b>Walid Murad Fathalla (LY)</b>
 			<p>
@@ -37,7 +37,7 @@ require_once($root_path.'include/core/inc_environment_global.php');
         <TBODY>
         <TR>
           <TD vAlign=top align=right><font face="verdana,arial" size=2>
-			<img src="../../fotos/credits/tarek_alwerfally_2003.jpg"  border=0  align=left  vspace=10>
+			<img src="../../uploads/photos/credits/tarek_alwerfally_2003.jpg"  border=0  align=left  vspace=10>
 			
 			<b>ØÇÑÞ ÇáæÑÝáí</b>
 			<b>ãÊÎÕÕ ãÚÊãÏ ãä ÔÑßÉ ãíßÑæÓæÝÊ</b>
@@ -60,7 +60,7 @@ require_once($root_path.'include/core/inc_environment_global.php');
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-			<P align="right"><img src="../../fotos/credits/elpidio_latorilla_3.jpg" border=0  align=left vspace=10> 
+			<P align="right"><img src="../../uploads/photos/credits/elpidio_latorilla_3.jpg" border=0  align=left vspace=10> 
           <b>Ãæá äÓÎÉ ÊÌÑíÈíÉ ãä ßíÑ 2X ÞÇã ÈÊØæíÑåÇ ÅáÈíÏíæ áÇÊæÑíÇá</b> 
         <p align="right">:ÇáãåäÉ<br>
           ãÈÑãÌ, ããÑÖ ÌÑÇÍÉ, ÊÞäí ÇáßÊÑæäíÇÊ æ ÇÊÕÇáÇÊ 
@@ -72,7 +72,7 @@ require_once($root_path.'include/core/inc_environment_global.php');
         <tbody>
         <tr>
           <td vAlign=top><font face="verdana,arial" size=2>
-			<p align="right"><img src="../../fotos/credits/lopo_l_almeida.jpg"  
+			<p align="right"><img src="../../uploads/photos/credits/lopo_l_almeida.jpg"  
                                 width=135 height=170 border=0  align=left vspace=10> 
           <b>Lopo Lencastre de Almeida (PT)</b> is one of the most productive 
           developers. Some of his contributions to the project are: 
@@ -104,7 +104,7 @@ require_once($root_path.'include/core/inc_environment_global.php');
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-			<P align="right"><img src="../../fotos/credits/giuseppe_scarpi.jpg"  border=0  width=135 height=170 align=left vspace=10> 
+			<P align="right"><img src="../../uploads/photos/credits/giuseppe_scarpi.jpg"  border=0  width=135 height=170 align=left vspace=10> 
           <b>Giuseppe Scarpi (IT) translated CARE 2X to italian.</b> 
         <p align="right"> Giuseppe Scarpi was born in Rome, Italy, 35 years ago. 
         <p align="right">He has a degree in Electronic Engineering and has worked 
@@ -124,7 +124,7 @@ require_once($root_path.'include/core/inc_environment_global.php');
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-            <P align="right"><img src="../../fotos/credits/gabriele_cicala.jpg"  border=0  align=left vspace=10> 
+            <P align="right"><img src="../../uploads/photos/credits/gabriele_cicala.jpg"  border=0  align=left vspace=10> 
           <b>Gabriele Cicala (IT) translated most of the the www.care2x.com website 
           to italian.</b> 
         <p align="right"> Gabriele Cicala was born in Rossano, in Calabria southern 
@@ -144,7 +144,7 @@ require_once($root_path.'include/core/inc_environment_global.php');
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-            <P align="right"><img src="../../fotos/credits/daniel_zilli.jpg"  border=0  align=left vspace=10> 
+            <P align="right"><img src="../../uploads/photos/credits/daniel_zilli.jpg"  border=0  align=left vspace=10> 
           <b>Daniel Zilli (BR) translated CARE 2X and www.care2x.com website 
           to brazilian-portuguese.</b> 
         <p align="right"> Daniel is a nice guy who loves to live a happy life. 
@@ -159,7 +159,7 @@ require_once($root_path.'include/core/inc_environment_global.php');
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-            <P align="right"><img src="../../fotos/credits/muhammad_panji.png"  border=0  align=left vspace=10> 
+            <P align="right"><img src="../../uploads/photos/credits/muhammad_panji.png"  border=0  align=left vspace=10> 
           <b>Muhammad Panji (ID) cotranslated CARE 2X and www.care2x.com website 
           to indonesian.</b> 
         <P align="right"><a href="mailto:sumodirjo@users.sourceforge.net"><u>Muhammad 
@@ -170,7 +170,7 @@ require_once($root_path.'include/core/inc_environment_global.php');
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-            <P align="right"><img src="../../fotos/credits/agus_mr.jpg"  border=0  align=left vspace=10> 
+            <P align="right"><img src="../../uploads/photos/credits/agus_mr.jpg"  border=0  align=left vspace=10> 
           <b>Agus Muhammad Ramdan (ID) translated CARE 2X and www.care2x.com 
           website to indonesian.</b> 
         <P align="right"><a href="mailto:agusmr@mweb.co.id"><u>Agus M. Ramdan 
@@ -180,7 +180,7 @@ require_once($root_path.'include/core/inc_environment_global.php');
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-			<P align="right"><img src="../../fotos/credits/thomas_wiedmann.jpg"  border=0  align=left vspace=10> 
+			<P align="right"><img src="../../uploads/photos/credits/thomas_wiedmann.jpg"  border=0  align=left vspace=10> 
           <b>Thomas Wiedmann (DE) is the most active debugger</b> 
         <p align="right"><font size=1> <div align="right">Complete testing <br>
           Debugging<br>
@@ -200,7 +200,7 @@ require_once($root_path.'include/core/inc_environment_global.php');
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-			<P align="right"><img src="../../fotos/credits/hinostroza.jpg"  border=0  width=135 align=left vspace=10> 
+			<P align="right"><img src="../../uploads/photos/credits/hinostroza.jpg"  border=0  width=135 align=left vspace=10> 
           <b>Dr. med Daniel Hinostroza C. (EC)</b><br>
           Spanish translations 
         <p align="right"><font size=1> Author and coauthor of numerous medical 
@@ -220,7 +220,7 @@ require_once($root_path.'include/core/inc_environment_global.php');
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-			<P align="right"><img src="../../fotos/credits/noel_villamor.jpg"  border=0  align=left vspace=10> 
+			<P align="right"><img src="../../uploads/photos/credits/noel_villamor.jpg"  border=0  align=left vspace=10> 
           <b>Noel R. Villamor (PH)</b><br>
           Module programming 
         <p align="right">Finished the laboratory test plotting module tackling 
@@ -234,7 +234,7 @@ require_once($root_path.'include/core/inc_environment_global.php');
         <TBODY>
 <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-		  <P><img src="../../fotos/credits/wilfried_goedert.jpg" border=0  align=left vspace=10 >
+		  <P><img src="../../uploads/photos/credits/wilfried_goedert.jpg" border=0  align=left vspace=10 >
 			
         <P align="right"><b>Dr. med Wilfried Gödert (DE)</b><br>
           contributes the following: 

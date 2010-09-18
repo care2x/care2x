@@ -112,7 +112,7 @@ $LDInitLock='S';
 $LDUnlock='Freigeben';
 $LDInitUnlock='F';      // F = Freigeben bzw. Freigabe
 $LDDelete='Löschen';
-$LDInitDelete='L';      // L = l�schen
+$LDInitDelete='L';      // L = löschen
 $LDUpdateRight='Berechtigung ändern';
 $LDInputError='Ihre Eingabe ist entweder fehlerhaft oder Daten fehlen. <br>Rote Eingabefelder müssen ausgefüllt oder die Eingabe korrigiert werden.';
 $LDAccessRight='Zugangsberechtigung';
@@ -179,7 +179,7 @@ $LDUpdateCurrencyInfo='Währungsinformation bearbeiten bzw. Aktualisieren';
 $LDPlsEnterUpdate='Bitte geben Sie die aktuelle Information ein. Danach klicken sie \'Aktualisieren\' an.';
 
 $LDEditInfo='Bearbeiten';
-$LDCurrencyAdmin='Wührung Verwalten';
+$LDCurrencyAdmin='Währung Verwalten';
 
 $LD_ddpMMpyyyy='TT.MM.JJJJ';
 $LD_yyyyhMMhdd='JJJJ-MM-TT';

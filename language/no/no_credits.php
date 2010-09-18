@@ -21,7 +21,7 @@ require_once($root_path.'include/core/inc_environment_global.php');
 
           <TD vAlign=top><font face="verdana,arial" size=2>
 
-			<P><img src="../../fotos/credits/are_kristensen.jpg"  border=0  width=135 align=right vspace=10>
+			<P><img src="../../uploads/photos/credits/are_kristensen.jpg"  border=0  width=135 align=right vspace=10>
 
 			<b>Are Kristensen  oversatte CARE 2X til Norge.</b>
 
@@ -39,7 +39,7 @@ require_once($root_path.'include/core/inc_environment_global.php');
 
           <TD vAlign=top><font face="verdana,arial" size=2>
 
-			<P><img src="../../fotos/credits/elpidio_latorilla_3.jpg" border=0  align=right vspace=10>
+			<P><img src="../../uploads/photos/credits/elpidio_latorilla_3.jpg" border=0  align=right vspace=10>
 
 			<b>Den f�rste beta versjon av CARE 2X var lagd av Elpidio Latorilla:</b>
 
@@ -73,7 +73,7 @@ require_once($root_path.'include/core/inc_environment_global.php');
 
           <TD vAlign=top><font face="verdana,arial" size=2>
 
-			<P><img src="../../fotos/credits/giuseppe_scarpi.jpg"  border=0  width=135 height=170 align=right vspace=10>
+			<P><img src="../../uploads/photos/credits/giuseppe_scarpi.jpg"  border=0  width=135 height=170 align=right vspace=10>
 
 			<b>Giuseppe Scarpi (IT) oversatte CARE 2X til italiensk.</b>
 
@@ -113,7 +113,7 @@ Grunnen til at han ble med p� '�pen kildekode' er: <br><i>"En ideel verdan k
 
           <TD vAlign=top><font face="verdana,arial" size=2>
 
-            <P><img src="../../fotos/credits/gabriele_cicala.jpg"  border=0  align=right vspace=10>
+            <P><img src="../../uploads/photos/credits/gabriele_cicala.jpg"  border=0  align=right vspace=10>
 
 			<b>Gabriele Cicala (IT) oversatte det meste av www.care2x.com til italiensk.</b>
 
@@ -143,7 +143,7 @@ Grunnen til at han ble med p� '�pen kildekode' er: <br><i>"En ideel verdan k
 
           <TD vAlign=top><font face="verdana,arial" size=2>
 
-            <P><img src="../../fotos/credits/daniel_zilli.jpg"  border=0  align=right vspace=10>
+            <P><img src="../../uploads/photos/credits/daniel_zilli.jpg"  border=0  align=right vspace=10>
 
 			<b>Daniel Zilli (BR) oversatte CARE 2X og www.care2x.com til  brasiliansk-portogisisk.</b>
 
@@ -173,7 +173,7 @@ Grunnen til at han ble med p� '�pen kildekode' er: <br><i>"En ideel verdan k
 
           <TD vAlign=top><font face="verdana,arial" size=2>
 
-            <P><img src="../../fotos/credits/agus_mr.jpg"  border=0  align=right vspace=10>
+            <P><img src="../../uploads/photos/credits/agus_mr.jpg"  border=0  align=right vspace=10>
 
 			<b>Agus Muhammad Ramdan (ID) oversatte CARE 2X og www.care2x.com til indonesisk.</b>
 
@@ -201,7 +201,7 @@ Grunnen til at han ble med p� '�pen kildekode' er: <br><i>"En ideel verdan k
 
           <TD vAlign=top><font face="verdana,arial" size=2>
 
-			<P><img src="../../fotos/credits/thomas_wiedmann.jpg"  width=137 border=0  align=right vspace=10>
+			<P><img src="../../uploads/photos/credits/thomas_wiedmann.jpg"  width=137 border=0  align=right vspace=10>
 
 			<b>Thomas Wiedmann (DE) bistod med ff:</b>
 

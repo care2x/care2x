@@ -5,6 +5,7 @@ require_once($root_path.'include/core/inc_environment_global.php');
 ?>
 <html>
 <head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf8">
 <title>ÃùÐ»</title>
 </head>
 <body onLoad="if(window.focus) window.focus()">
@@ -14,7 +15,7 @@ require_once($root_path.'include/core/inc_environment_global.php');
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-			<P><img src="../../fotos/credits/elpidio_latorilla_3.jpg" border=0  align=right vspace=10>
+			<P><img src="../../uploads/photos/credits/elpidio_latorilla_3.jpg" border=0  align=right vspace=10>
 			<b>CARE 2002µÄµÚÒ»²âÊÔ°æÓÉElpidio Latorilla´´½¨£º</b>
 			<p>Ö°Ô±£º<br>³ÌÐòÔ±£¬Íâ¿Æ»¤Ê¿£¬µç×ÓÓëÍ¨Ñ¶¼¼Ê¦
 			<p>¸öÈË°®ºÃ£º<br>C, C++, PHP, Javascript, SQL, TCL/TK, HTML, Perl, ASP, Java
@@ -25,7 +26,7 @@ require_once($root_path.'include/core/inc_environment_global.php');
         <tbody>
         <tr>
           <td vAlign=top><font face="verdana,arial" size=2>
-			<p><img src="../../fotos/credits/lopo_l_almeida.jpg"  
+			<p><img src="../../uploads/photos/credits/lopo_l_almeida.jpg"  
                                 width=135 height=170 border=0  align=right vspace=10>
 			<b>Lopo Lencastre de Almeida (PT)</b> ÊÇºÜ¶à¿ª·¢ÈËÔ±ÖÐµÄÒ»Ô±¡£¶ÔÓÚ´ËÏîÄ¿µÄÖ÷Òª¹±Ï×ÓÐ£º
                         <p><font size=1>
@@ -48,7 +49,7 @@ require_once($root_path.'include/core/inc_environment_global.php');
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-			<P><img src="../../fotos/credits/giuseppe_scarpi.jpg"  border=0  width=135 height=170 align=right vspace=10>
+			<P><img src="../../uploads/photos/credits/giuseppe_scarpi.jpg"  border=0  width=135 height=170 align=right vspace=10>
 			<b>Giuseppe Scarpi (IT) ·­ÒëCare 2002ÖÁÒâ´óÀûÓï°æ±¾¡£</b>
 			<p>Giuseppe ScarpiÏÈÉú35ÄêÇ°³öÉúÓÚÒâ´óÀûÂÞÂí¡£ 
 			<p>ÔÚ»ñµÃÁËµç×Ó¹¤³ÌÑ§Ñ§Î»ºó£¬Giuseppe ScarpiÏÈÉúÔø·þÎñÓÚ¶à¼Ò¹«Ë¾µÄÉúÎïÒ½Ñ§²¿ÃÅ£¬´Ë¼äµÄ¾­ÀúÊ¹ËûÈÚ»á¹áÍ¨ÁËÒ½Ñ§ºÍÐÅÏ¢¼¼ÊõÖ®¼äµÄ¹ØÏµ¡£<br>Giuseppe ScarpiÏÈÉúÄ¿Ç°Ê¹ÓÃ²¢ÔÞÉÍLinuxºÍWindowsÏµÍ³£¬ËûÈÏÎª£º"<i>as both are the result of a great human work that must be respected</i>"¡£
@@ -61,7 +62,7 @@ require_once($root_path.'include/core/inc_environment_global.php');
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-            <P><img src="../../fotos/credits/gabriele_cicala.jpg"  border=0  align=right vspace=10>
+            <P><img src="../../uploads/photos/credits/gabriele_cicala.jpg"  border=0  align=right vspace=10>
 			<b>Gabriele Cicala (IT) ½«www.care2x.comÍøÕ¾µÄ´ó²¿·ÖÄÚÈÝ·­Òë³ÉÒâ´óÀûÓï¡£</b>
 			<p>Gabriele CicalaÏÈÉú1970Äê³öÉúÓÚRossano£¬Î»ÓÚÒâ´óÀûÄÏ²¿µÄCalabria¡£Ëû±ÏÒµÓÚPolitecnico di Torino²¢»ñµÃÍ¨Ñ¶¹¤³ÌÑ§Ñ§Î»¡£Ä¿Ç°£¬Gabriele CicalaÏÈÉúÈÎÖ°ÓÚÒ»¼ÒÐÅÏ¢¹«Ë¾ÈÎ¹ËÎÊ¡£
 			<p>³öÓÚ¶ÔLinuxºÍ¿ª·¢Ô´´úÂë»·¾³µÄÁË½â£¬Gabriele CicalaÏÈÉú¶Ô¸÷¿ª·ÅÔ´ÂëµÄÏîÄ¿ºÜÓÐÐËÈ¤¡£¾¡¹Ü¶ÔÒ½ÁÆ»ò½¡¿µ±£½¡²¿ÃÅ²»Ì«ÊìÏ¤£¬Gabriele CicalaÏÈÉúÈÔÈ»¾ö¶¨¼ÓÈëCare 2002ÏîÄ¿¡£ÒòÎªËûÏàÐÅ£¬CareÏîÄ¿µÄ´´Ê¼ÈËºÍÖ¾Ô¸Õß¶¼ÓÐ×ÅºÍËûÒ»ÑùµÄÐÅÄî¡£
@@ -73,7 +74,7 @@ require_once($root_path.'include/core/inc_environment_global.php');
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-            <P><img src="../../fotos/credits/daniel_zilli.jpg"  border=0  align=right vspace=10>
+            <P><img src="../../uploads/photos/credits/daniel_zilli.jpg"  border=0  align=right vspace=10>
 			<b>Daniel Zilli (BR) ½«Care 2002ºÍwww.care2x.comÍøÕ¾·­Òë³É°ÍÎ÷£­ÆÏÌÑÑÀÓï¡£</b>
 			<p>DanielÊÇÒ»¸ö²»´íµÄÐ¡»ï£¬ËûÈÈ°®Éú»î£¬Ï²»¶¼ÆËã»ú£¬×ãÇòºÍÒôÀÖ¡£Ëû·Ç³£Ï²»¶¼ÆËã»ú²¢ÒÑÓÐÁË´óÔ¼10ÄêµÄ¾­Ñé¡£DanielÏÈÉú¿ª°ìÁËÒ»¼ÒµçÄÔ¹«Ë¾£¬Ö÷Òª´ÓÊÂ¼ÆËã»ú¿ÆÑ§½ÌÓý²úÆ·µÄÉú²ú£¬¿ª·¢Ô´´úÂëÈí¼þºÍµ±µØµÄLinux·Ö·¢¡£
 			<P><a href="mailto:danielz@cco.matrix.com.br"><u>ÓëDaniel ZilliÏÈÉúÁªÏµ</u></a>
@@ -83,7 +84,7 @@ require_once($root_path.'include/core/inc_environment_global.php');
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-            <P><img src="../../fotos/credits/muhammad_panji.png"  border=0  align=right vspace=10>
+            <P><img src="../../uploads/photos/credits/muhammad_panji.png"  border=0  align=right vspace=10>
 			<b>Muhammad Panji (ID) ÓëËûÈËºÏ×÷·­ÒëCare 2002ºÍwww.care2x.comÍøÕ¾ÎªÓ¡¶ÈÄáÎ÷ÑÇÓï¡£</b>
 			<P><a href="mailto:sumodirjo@users.sourceforge.net"><u>ÓëMuhammad PanjiÏÈÉúÁªÏµ</u></a>
 </TD></TR></TBODY></TABLE>
@@ -93,7 +94,7 @@ require_once($root_path.'include/core/inc_environment_global.php');
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-            <P><img src="../../fotos/credits/agus_mr.jpg"  border=0  align=right vspace=10>
+            <P><img src="../../uploads/photos/credits/agus_mr.jpg"  border=0  align=right vspace=10>
 			<b>Agus Muhammad Ramdan (ID) ½«Care 2002ºÍwww.care2x.comÍøÕ¾·­ÒëÎªÓ¡¶ÈÄáÎ÷ÑÇÓï¡£</b>
 			
 			<P><a href="mailto:agusmr@mweb.co.id"><u>ÓëAgus M. RamdanÏÈÉúÁªÏµ</u></a>
@@ -103,7 +104,7 @@ require_once($root_path.'include/core/inc_environment_global.php');
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-			<P><img src="../../fotos/credits/thomas_wiedmann.jpg"  border=0  align=right vspace=10>
+			<P><img src="../../uploads/photos/credits/thomas_wiedmann.jpg"  border=0  align=right vspace=10>
 			<b>Thomas Wiedmann (DE) ×î»ý¼«µÄ³ÌÐòµ÷ÊÔÈËÔ±</b>
 			<p><font size=1>
 			ÍêÕû²âÊÔ<br>
@@ -120,7 +121,7 @@ require_once($root_path.'include/core/inc_environment_global.php');
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-			<P><img src="../../fotos/credits/hinostroza.jpg"  border=0  width=135 align=right vspace=10>
+			<P><img src="../../uploads/photos/credits/hinostroza.jpg"  border=0  width=135 align=right vspace=10>
 			<b>Dr. med Daniel Hinostroza C. (EC)</b><br>
 			Î÷°àÑÀÓï·­Òë
 			<p><font size=1>
@@ -138,7 +139,7 @@ phpMyAdmin¹Ù·½Î÷°àÑÀÓï·­Òë<br>
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-			<P><img src="../../fotos/credits/noel_villamor.jpg"  border=0  align=right vspace=10>
+			<P><img src="../../uploads/photos/credits/noel_villamor.jpg"  border=0  align=right vspace=10>
 			<b>Noel R. Villamor (PH)</b><br>
 			Ä£¿é±à³Ì
 			<p>Íê³ÉÊµÑéÊÒÄ£¿é²âÊÔ£¬»æÍ¼Ä£¿é²âÊÔ£¬½â¾öÁËÒ»Ð©·±ÔÓµÄÊýÑ§ÎÊÌâ¡£
@@ -151,7 +152,7 @@ phpMyAdmin¹Ù·½Î÷°àÑÀÓï·­Òë<br>
         <TBODY>
 <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-		  <P><img src="../../fotos/credits/wilfried_goedert.jpg" border=0  align=right vspace=10 >
+		  <P><img src="../../uploads/photos/credits/wilfried_goedert.jpg" border=0  align=right vspace=10 >
 			<P><b>Dr. med Wilfried Godert (DE)</b><br>
 			ÓÐÒÔÏÂ¹±Ï×£º
 			<p><font size=1>

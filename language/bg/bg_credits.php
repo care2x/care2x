@@ -1,3 +1,9 @@
+<?php
+error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
+require_once('./roots.php');
+require_once($root_path.'include/core/inc_environment_global.php');
+?>
+<?php html_rtl($lang); ?>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -24,7 +30,7 @@
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-			<P><img src="../../fotos/credits/elpidio_latorilla_3.jpg" border=0  align=right vspace=10>
+			<P><img src="../../uploads/photos/credits/elpidio_latorilla_3.jpg" border=0  align=right vspace=10>
 			<b>The first beta version of CARE 2X was created by Elpidio Latorilla:</b>
 			<p>
 			Professions: <br>Programmer, Surgery Nurse, Electronics & telecommunications technician
@@ -37,7 +43,7 @@
         <tbody>
         <tr>
           <td vAlign=top><font face="verdana,arial" size=2>
-			<p><img src="../../fotos/credits/lopo_l_almeida.jpg"  
+			<p><img src="../../uploads/photos/credits/lopo_l_almeida.jpg"  
                                 width=135 height=170 border=0  align=right vspace=10>
 			<b>Lopo Lencastre de Almeida (PT)</b> is one of the most productive developers. 
 			Some of his contributions to the project are:
@@ -66,7 +72,7 @@
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-			<P><img src="../../fotos/credits/giuseppe_scarpi.jpg"  border=0  width=135 height=170 align=right vspace=10>
+			<P><img src="../../uploads/photos/credits/giuseppe_scarpi.jpg"  border=0  width=135 height=170 align=right vspace=10>
 			<b>Giuseppe Scarpi (IT) translated CARE 2X to italian.</b>
 			<p>
 			Giuseppe Scarpi was born in Rome, Italy, 35 years ago. 
@@ -84,7 +90,7 @@ He decided to actively join open source because: <br><i>"Such an ideal world can
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-            <P><img src="../../fotos/credits/gabriele_cicala.jpg"  border=0  align=right vspace=10>
+            <P><img src="../../uploads/photos/credits/gabriele_cicala.jpg"  border=0  align=right vspace=10>
 			<b>Gabriele Cicala (IT) translated most of the the www.care2x.com website to italian.</b>
 			<p>
 			Gabriele Cicala was born in Rossano, in Calabria southern Italy, in 1970.
@@ -106,7 +112,7 @@ believe.
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-            <P><img src="../../fotos/credits/daniel_zilli.jpg"  border=0  align=right vspace=10>
+            <P><img src="../../uploads/photos/credits/daniel_zilli.jpg"  border=0  align=right vspace=10>
 			<b>Daniel Zilli (BR) translated CARE 2X and www.care2x.com website to  brazilian-portuguese.</b>
 			<p>
 			Daniel is a nice guy who loves to live a happy life. He likes computers, football, and good music.
@@ -120,7 +126,7 @@ science education products, open source software and local  linux distro.
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-            <P><img src="../../fotos/credits/muhammad_panji.png"  border=0  align=right vspace=10>
+            <P><img src="../../uploads/photos/credits/muhammad_panji.png"  border=0  align=right vspace=10>
 			<b>Muhammad Panji (ID) cotranslated CARE 2X and www.care2x.com website to indonesian.</b>
 			
 			<P><a href="mailto:sumodirjo@users.sourceforge.net"><u>Muhammad Panji can be contacted here.</u></a>
@@ -131,7 +137,7 @@ science education products, open source software and local  linux distro.
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-            <P><img src="../../fotos/credits/agus_mr.jpg"  border=0  align=right vspace=10>
+            <P><img src="../../uploads/photos/credits/agus_mr.jpg"  border=0  align=right vspace=10>
 			<b>Agus Muhammad Ramdan (ID) translated CARE 2X and www.care2x.com website to indonesian.</b>
 			
 			<P><a href="mailto:agusmr@mweb.co.id"><u>Agus M. Ramdan can be contacted here.</u></a>
@@ -141,7 +147,7 @@ science education products, open source software and local  linux distro.
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-			<P><img src="../../fotos/credits/thomas_wiedmann.jpg"  border=0  align=right vspace=10>
+			<P><img src="../../uploads/photos/credits/thomas_wiedmann.jpg"  border=0  align=right vspace=10>
 			<b>Thomas Wiedmann (DE) is the most active debugger</b>
 			<p><font size=1>
 			Complete testing <br>
@@ -164,7 +170,7 @@ science education products, open source software and local  linux distro.
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-			<P><img src="../../fotos/credits/hinostroza.jpg"  border=0  width=135 align=right vspace=10>
+			<P><img src="../../uploads/photos/credits/hinostroza.jpg"  border=0  width=135 align=right vspace=10>
 			<b>Dr. med Daniel Hinostroza C. (EC)</b><br>
 			Spanish translations
 			<p><font size=1>
@@ -185,7 +191,7 @@ Website: www.cerebroperiferico.com
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-			<P><img src="../../fotos/credits/noel_villamor.jpg"  border=0  align=right vspace=10>
+			<P><img src="../../uploads/photos/credits/noel_villamor.jpg"  border=0  align=right vspace=10>
 			<b>Noel R. Villamor (PH)</b><br>
 			Module programming
 			<p>Finished the laboratory test plotting module tackling some tough mathematical problems.
@@ -198,7 +204,7 @@ Website: www.cerebroperiferico.com
         <TBODY>
 <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-		  <P><img src="../../fotos/credits/wilfried_goedert.jpg" border=0  align=right vspace=10 >
+		  <P><img src="../../uploads/photos/credits/wilfried_goedert.jpg" border=0  align=right vspace=10 >
 			<P><b>Dr. med Wilfried Gцdert (DE)</b><br>
 			contributes the following:
 			<p><font size=1>

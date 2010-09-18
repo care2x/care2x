@@ -17,7 +17,7 @@
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-            <P><img src="../../fotos/credits/a_djem.jpg"  border=0  align=right vspace=10>
+            <P><img src="../../uploads/photos/credits/a_djem.jpg"  border=0  align=right vspace=10>
 			<b>A. Djem (ID)</b><P>
 			Care2x masaüstü duvar kaðýdý düzenlemeleri<br>
 			Web sitesi dizayný
@@ -29,7 +29,7 @@
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-            <P><img src="../../fotos/credits/agus_mr.jpg"  border=0  align=right vspace=10>
+            <P><img src="../../uploads/photos/credits/agus_mr.jpg"  border=0  align=right vspace=10>
 			<b>Agus Muhammad Ramdan (ID)</b> 
 			<p>
 			 Care 2X in Endonezya diline çevirisi ve  www.care2x.com websitesi<br>
@@ -43,7 +43,7 @@
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-            <P><img src="../../fotos/credits/are_kristensen.jpg"  border=0  width=135 align=right vspace=10>
+            <P><img src="../../uploads/photos/credits/are_kristensen.jpg"  border=0  width=135 align=right vspace=10>
 			<b>Are Kristensen (NO)</b> 
 			<p>
 			Norveççe çeviri<br>
@@ -56,7 +56,7 @@
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-            <P><img src="../../fotos/credits/bulent_potur.jpg"  border=0  align=right vspace=10>
+            <P><img src="../../uploads/photos/credits/bulent_potur.jpg"  border=0  align=right vspace=10>
 			<b>Jin. Op. Dr. Bülent Potur  (TR) </b> 
 			<p>
 			 Care 2X in Türkçe'ye çevirisi. Kadýn doðum uzmanýdýr. Gwbasic, ms cobol, ms access ve web dizayný ile
@@ -75,7 +75,7 @@
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-			<P><img src="../../fotos/credits/hinostroza.jpg"  border=0  width=135 align=right vspace=10>
+			<P><img src="../../uploads/photos/credits/hinostroza.jpg"  border=0  width=135 align=right vspace=10>
 			<b>Dr. med Daniel Hinostroza C. (EC)</b><br>
 			Ýspanyolca çeviriler
 			<p><font size=1>
@@ -95,7 +95,7 @@ Web sitesi: www.cerebroperiferico.com
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-            <P><img src="../../fotos/credits/daniel_zilli.jpg"  border=0  align=right vspace=10>
+            <P><img src="../../uploads/photos/credits/daniel_zilli.jpg"  border=0  align=right vspace=10>
 			<b>Daniel Zilli (BR) <BR>  CARE 2X ve www.care2x.com web sitesini   Brezilya-Portekizce'sine çevirmiþtir.</b>
 			<p>
 			Daniel mutlu bir yaþamý seven hoþ bir insandýr. Bilgisayarlarý,futbolu ve iyi müziði sever.
@@ -127,7 +127,7 @@ Daniel, bilgisayar eðitim ürünleri, açýk kaynak yazýlým ve yerel bir linu
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-			<P><img src="../../fotos/credits/elpidio_latorilla_3.jpg" border=0  align=right vspace=10>
+			<P><img src="../../uploads/photos/credits/elpidio_latorilla_3.jpg" border=0  align=right vspace=10>
 			<b> CARE 2X in ilk beta sürümü  Elpidio Latorilla tarafýndan yazýlmýþtýr (DE/PH):</b>
 			<p>
 			Meslekleri: <br>Programcý, Ameliyat Hemþiresi, Elektronik ve Telekomünikasyon Teknisyeni
@@ -140,7 +140,7 @@ Daniel, bilgisayar eðitim ürünleri, açýk kaynak yazýlým ve yerel bir linu
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-            <P><img src="../../fotos/credits/gabriele_cicala.jpg"  border=0  align=right vspace=10>
+            <P><img src="../../uploads/photos/credits/gabriele_cicala.jpg"  border=0  align=right vspace=10>
 			<b>Gabriele Cicala (IT)  www.care2x.com websitesinin çoðunu Ýtalyanca'ya çevirmiþtir.</b>
 			<p>
 			Gabriele Cicala güney Ýtalya'da Calabria'daki Rossano'da 1970 te doðmuþtur.
@@ -153,7 +153,7 @@ Daniel, bilgisayar eðitim ürünleri, açýk kaynak yazýlým ve yerel bir linu
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-			<P><img src="../../fotos/credits/giuseppe_scarpi.jpg"  border=0  width=135 height=170 align=right vspace=10>
+			<P><img src="../../uploads/photos/credits/giuseppe_scarpi.jpg"  border=0  width=135 height=170 align=right vspace=10>
 			<b>Giuseppe Scarpi (IT)  CARE 2X 'i Ýtalyanca'ya çevirmiþtir.</b>
 			<p>
 			Giuseppe Scarpi 35 yýl önce Ýtalya'da, Roma'da doðmuþtur. 
@@ -168,7 +168,7 @@ Açýk kaynaða aktif olarak katýlmaya karar vermiþtir çünkü: <br><i>"Böyl
         <tbody>
         <tr>
           <td vAlign=top><font face="verdana,arial" size=2>
-			<p><img src="../../fotos/credits/lopo_l_almeida.jpg"  
+			<p><img src="../../uploads/photos/credits/lopo_l_almeida.jpg"  
                                 width=135 height=170 border=0  align=right vspace=10>
 			<b>Lopo Lencastre de Almeida (PT)</b> en üretken geliþtiricilerden biridir. 
 			Projeye katkýlarýndan bazýlarý þunlardýr:
@@ -195,7 +195,7 @@ Açýk kaynaða aktif olarak katýlmaya karar vermiþtir çünkü: <br><i>"Böyl
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-            <P><img src="../../fotos/credits/luca_romoli.jpg"  border=0  align=right vspace=10>
+            <P><img src="../../uploads/photos/credits/luca_romoli.jpg"  border=0  align=right vspace=10>
 			<b>Luca Romoli (BR/IT) </b><p>
 			PPT Sunumlarý ve örnekleri<br>
 			Proje yönetim araçlarý<br>
@@ -220,7 +220,7 @@ Matej Hausenblas 1981 de Çek Cumhuriyeti'nde Prag'da doðmuþtur. Matematik-enf
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-            <P><img src="../../fotos/credits/muhammad_panji.png"  border=0  align=right vspace=10>
+            <P><img src="../../uploads/photos/credits/muhammad_panji.png"  border=0  align=right vspace=10>
 			<b>Muhammad Panji (ID) </b><p>
 			Care 2X ve www.care2x.com websitesinin Endonezya diline çevirileri.<br>
 			Hata raporlarý
@@ -247,7 +247,7 @@ Matej Hausenblas 1981 de Çek Cumhuriyeti'nde Prag'da doðmuþtur. Matematik-enf
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-			<P><img src="../../fotos/credits/noel_villamor.jpg"  border=0  align=right vspace=10>
+			<P><img src="../../uploads/photos/credits/noel_villamor.jpg"  border=0  align=right vspace=10>
 			<b>Noel R. Villamor (PH)</b><br>
 			Modüler programlama
 			<p>Bazý zor matematik problemleri hallederek laboratuvar tetkik grafiði çizme modülünü bitirmiþtir.
@@ -271,7 +271,7 @@ Matej Hausenblas 1981 de Çek Cumhuriyeti'nde Prag'da doðmuþtur. Matematik-enf
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-			<P><img src="../../fotos/credits/thomas_wiedmann.jpg"  border=0  align=right vspace=10>
+			<P><img src="../../uploads/photos/credits/thomas_wiedmann.jpg"  border=0  align=right vspace=10>
 			<b>Thomas Wiedmann (DE) en aktif hata bulucudur.</b>
 			<p><font size=1>
 			Tam test <br>
@@ -290,7 +290,7 @@ Matej Hausenblas 1981 de Çek Cumhuriyeti'nde Prag'da doðmuþtur. Matematik-enf
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-			<P><img src="../../fotos/credits/walid_fathalla.jpg"  border=0  align=right vspace=10>
+			<P><img src="../../uploads/photos/credits/walid_fathalla.jpg"  border=0  align=right vspace=10>
 			<b>Walid Murad Fathalla (LY)</b>
 			<p>
 			Arapça çeviriler<br>
@@ -308,7 +308,7 @@ Matej Hausenblas 1981 de Çek Cumhuriyeti'nde Prag'da doðmuþtur. Matematik-enf
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-			<P><img src="../../fotos/credits/weining_chen.jpg"  border=0  align=right vspace=10>
+			<P><img src="../../uploads/photos/credits/weining_chen.jpg"  border=0  align=right vspace=10>
 			<b>Wei Ning Chen (CH)</b>
 			<p>Basitleþtirilmiþ Çince çeviriler.
 <p>
@@ -326,7 +326,7 @@ Bir saðlýkçý olmamasýna ve de saðlýk sektöründe çalýþmamasýna karþ
         <TBODY>
 <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-		  <P><img src="../../fotos/credits/wilfried_goedert.jpg" border=0  align=right vspace=10 >
+		  <P><img src="../../uploads/photos/credits/wilfried_goedert.jpg" border=0  align=right vspace=10 >
 			<P><b>Dr. med Wilfried Gödert (DE)</b><br>
 			Þunlara katkýda bulunmuþtur:
 			<p><font size=1>
