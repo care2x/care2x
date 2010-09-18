@@ -15,7 +15,7 @@ if(file_exists('language/'.$lang.'/lang_'.$lang.'_indexframe.php')) include('lan
 <?php html_rtl($lang) ?>
 <?php 
 
-include_once('include/inc_charset_fx.php');
+include_once('include/core/inc_charset_fx.php');
 
 echo setCharSet(); 
 
