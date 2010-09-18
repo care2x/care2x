@@ -11,6 +11,29 @@ $product_obj=new Product;
 
 ///$db->debug=1;
 
+if (!isset($mode))
+	$mode='';
+if (empty($mode)) {
+	$artname='';
+	$generic='';
+	$besc='';
+	$pack='';
+	$dose='';
+	$caveflag='';
+	$medgroup='';
+	$minorder='';
+	$maxorder='';
+	$proorder='';
+	$artnum='';
+	$indusnum='';
+	$minpcs='';
+	$picfilename='';
+	$update='';
+	$saveok=FALSE;
+	$error=FALSE;
+	$bestellnum='';
+}
+
 switch($cat) {
 	case "pharma":	
 					$title=$LDPharmacy;
