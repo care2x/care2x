@@ -6,7 +6,7 @@
     </tr>
   {{/if}}
     <tr>
-      <td {{$sRegDividerClass}}><img src="p.gif" border=0 width=1 height=5>{{$sSubTitle}}{{$sWarnText}}</td>
+      <td {{$sRegDividerClass}}><img src="../../gui/img/common/default/p.gif" border=0 width=1 height=5>{{$sSubTitle}}{{$sWarnText}}</td>
     </tr>
   </tbody>
 </table>
