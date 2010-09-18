@@ -36,7 +36,7 @@ switch($user_origin){
 }
 
 require_once($root_path.'include/core/inc_front_chain_lang.php'); ///* invoke the script lock*/
-require_once('include/inc_diagnostics_report_fx.php');
+require_once('includes/inc_diagnostics_report_fx.php');
 
 $thisfile='labor_test_request_admin_generic.php';
 
