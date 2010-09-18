@@ -40,6 +40,7 @@ if(($mode=='')||($mode=='fresh')){
 		$GLOBAL_CONFIG=array();
 		$glob_obj=new GlobalConfig($GLOBAL_CONFIG);
 		$glob_obj->getConfig('person_foto_path');
+		$default_photo_path='uploads/photos/registration';
 		$photo_path = (is_dir($root_path.$GLOBAL_CONFIG['person_foto_path'])) ? $GLOBAL_CONFIG['person_foto_path'] : $default_photo_path;
 
 		@$enc_obj->loadEncounterData();

@@ -26,7 +26,7 @@ if((!isset($pid)||!$pid)&&$_SESSION['sess_pid']) $pid=$_SESSION['sess_pid'];
 //$HTPP_SESSION_VARS['sess_pid']=$pid;
 
 /* Default path for fotos. Make sure that this directory exists! */
-$default_photo_path=$root_path.'fotos/registration';
+$default_photo_path='uploads/photos/registration';
 $photo_filename='nopic';
 
 if(!isset($user_id) || !$user_id)

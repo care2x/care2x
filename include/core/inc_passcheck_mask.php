@@ -133,7 +133,7 @@ if(isset($c_flag)&&$c_flag) {
 
 $smarty->assign('sPassHiddenInputs',$sHiddenTemp);
 
-$smarty->assign('sPassSubmitButton','<INPUT type="image"  '.createLDImgSrc($root_path,'continue.gif','0').'>');
+$smarty->assign('sPassSubmitButton','<INPUT type="image"  '.createLDImgSrc($root_path,'login.gif','0').'>');
 $smarty->assign('sCancelButton','<a href="'.$breakfile.'"><img '.createLDImgSrc($root_path,'cancel.gif','0').'></a>');
 
 #
