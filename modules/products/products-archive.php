@@ -233,7 +233,7 @@ echo ' '.$_COOKIE[$local_user.$sid];
 </font>
 <p>
 
-<?php require('included/inc_products_archive_search_form.php'); ?>
+<?php require('included/core/inc_products_archive_search_form.php'); ?>
 
 <hr width=80%>
 <?php 
