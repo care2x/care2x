@@ -4,7 +4,7 @@
 <TITLE><?php echo $wintitle; ?></TITLE>
 <?php
 //set the css style for a links
-require($root_path.'include/inc_css_a_sublinker_d.php');
+require($root_path.'include/core/inc_css_a_sublinker_d.php');
 ?>
 
 <script language="javascript">

@@ -70,7 +70,7 @@ U rijetkim slu�ajevima mo�e se dogoditi da je do�lo do gre�ke u komunika
 
 <?php
 /* Translation by Emir Prcic <e.prcic@gmx.net> */
-require($root_path.'include/inc_load_copyrite.php'); 
+require($root_path.'include/core/inc_load_copyrite.php'); 
 ?>
 </FONT>
 

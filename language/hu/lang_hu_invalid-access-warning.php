@@ -61,7 +61,7 @@ Elï¿½rodulthat -ritka esetben-, hogy az adatï¿½tvitel nem sikerï¿½l. Ilyenkor kï
 <p>
 
 <?php
-require($root_path.'include/inc_load_copyrite.php'); 
+require($root_path.'include/core/inc_load_copyrite.php'); 
 ?>
 </FONT>
 

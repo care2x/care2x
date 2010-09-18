@@ -60,7 +60,7 @@ Er is een probleem met de datatransfer. Klik op vernieuwen om dit op te lossen
 <p>
 
 <?php
-require($root_path.'include/inc_load_copyrite.php'); 
+require($root_path.'include/core/inc_load_copyrite.php'); 
 ?>
 </FONT>
 

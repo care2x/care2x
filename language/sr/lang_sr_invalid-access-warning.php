@@ -67,7 +67,7 @@
 		</table>
 		<p>
 		<?php
-		require($root_path.'include/inc_load_copyrite.php'); 
+		require($root_path.'include/core/inc_load_copyrite.php'); 
 		?>
 	</body>
 </html>

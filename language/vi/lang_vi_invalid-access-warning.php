@@ -66,7 +66,7 @@ Trong c&#225;c tr&#432;&#7901;ng h&#7907;p hi&#7871;m v&#7851;n c&#243; th&#7875
 <p>
 
 <?php
-require($root_path.'include/inc_load_copyrite.php');
+require($root_path.'include/core/inc_load_copyrite.php');
 ?>
 </FONT>
 

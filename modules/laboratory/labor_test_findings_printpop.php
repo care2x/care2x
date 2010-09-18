@@ -276,7 +276,7 @@ if ($subtarget == 'baclabor') {
 }
 else
 {
-    include_once($root_path.'include/inc_test_findings_form_'.$subtarget.'.php');
+    include_once('includes/inc_test_findings_form_'.$subtarget.'.php');
 }
 ?>
 

@@ -68,7 +68,7 @@ En raras ocasiones puede haber un error en la transferencia de datos.  Para corr
 <p>
 
 <?php
-require($root_path.'include/inc_load_copyrite.php'); 
+require($root_path.'include/core/inc_load_copyrite.php'); 
 ?>
 </FONT>
 

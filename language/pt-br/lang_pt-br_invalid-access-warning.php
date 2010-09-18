@@ -61,7 +61,7 @@ em raros casos pode ter acontecido um erro na transfer�ncia de dados. Para cor
 <p>
 
 <?php
-require($root_path.'include/inc_load_copyrite.php'); 
+require($root_path.'include/core/inc_load_copyrite.php'); 
 ?>
 </FONT>
 

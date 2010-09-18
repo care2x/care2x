@@ -56,7 +56,7 @@ require_once($root_path.'include/core/inc_img_fx.php');
 <p>
 
 <?php
-require($root_path.'include/inc_load_copyrite.php'); 
+require($root_path.'include/core/inc_load_copyrite.php'); 
 ?>
 </FONT>
 

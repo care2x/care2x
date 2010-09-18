@@ -62,7 +62,7 @@ In rare cases there might have been an error in the data transfer. To correct th
 <p>
 
 <?php
-require($root_path.'include/inc_load_copyrite.php'); 
+require($root_path.'include/core/inc_load_copyrite.php'); 
 ?>
 </FONT>
 
