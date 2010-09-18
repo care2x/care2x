@@ -34,7 +34,7 @@ $LDGoodEvening='Buonasera';
 
 $LDDate='Data';
 $LDDept='Dipartimento';
-$LDPrio='Priorità';
+$LDPrio='Priorita\'';
 
 $LDPageTop='Torna all\'inizio.';
 $LDPreview='Anteprima';
@@ -49,7 +49,7 @@ $LDChange='Modifica';
 $LDLock='Blocca';
 $LDUnlock='Sblocca';
 $LDDelete='Elimina';
-$LDYesSure='Sì, procedi.';
+$LDYesSure='Si, procedi.';
 $LDKeywordPrompt='Inserire un nuovo termine di ricerca';
 $LDWelcome='Salve';
 
@@ -81,7 +81,7 @@ $LDMaximum='Massimo';
 $LDSpexFunctions='Funzioni speciali';
 $LDDutyPlanOrg='Agenda dei turni';
 $LDDutyPlanOrgTxt='Agenda e pianificatore turni, Bundy machine';
-$LDStandbyDuty='Reperibilità';
+$LDStandbyDuty='Reperibilita\'';
 $LDStandbyDutyTxt='Documentazione sui turni in reperibilità';
 $LDHandStat='Statistiche chirurgia della mano';
 $LDHandStatTxt='Documentazione operazioni di chirurgia della mano';
@@ -121,7 +121,7 @@ $LDExit='Dimissione';
 $LDRemarks='Note';
 
 $tage=array('<font color="#ff0000">D</font>','L','M','M','G','V','S');
-$tagename=array('Lunedì','Martedì','Mercoledì','Giovedì','Venerdì','Sabato','Domenica');
+$tagename=array('Lunedi','Martedi','Mercoledi','Giovedi','Venerdi','Sabato','Domenica');
 
 $LDTotal='Totale';
 $LDClk4Options='Selezionare per opzioni';

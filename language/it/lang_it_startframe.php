@@ -1,5 +1,5 @@
 <?php
-$LDMainTitle='Azienda Ospedaliera-Universitaria V.Emanuele Ferrarotto S.Bambino - Catania';
+$LDMainTitle='Care2x - Sistema integrato di gestione Ospedaliera';
 
 $LDInviteAskMe='Inserire la domanda, ad esempio: "Numero telefonico di M9d?"';
 $LDTipsLink='Suggerimenti:';
@@ -23,7 +23,7 @@ $LDCafenews ='News dalla mensa';
 $LDAdmission ='Accettazione';
 $LDExhibition ='Mostre';
 $LDEducation ='Formazione';
-$LDAdvStudies ='Studii';
+$LDAdvStudies ='Studi';
 $LDPhyTherapy ='Terapia fisica';
 $LDHealthTips ='Suggerimenti medici';
 $LDCalendar ='Calendario';
@@ -45,7 +45,7 @@ $LDClk2Write='Selezionare qui per modificare';
 
 $LDAlertOldBrowser='La versione del browser è precedente alla 5.0<br>Si raccomanda di utilizzare la versione 5.0 o superiori, perché una versione precedente potrebbe avere effetti imprevisti sull\'applicativo';
 $LDAlertNoCookie='Il browser non accetta i cookie<br>Questo applicativo dipende dai cookie per funzionare correttamente: è necessario abilitare il browser per accettarli automaticamente.<br>';
-$LDClkAfter='Successivamente, clickare qui.';
+$LDClkAfter='Successivamente, cliccare qui.';
 $LDGoAheadEgal='Continua lo stesso.';
 $LDGoAheadEgalCookie='Non voglio accettare i cookie: continua lo stesso.';
 $LDCookieRef='Se si desidera sapere di più sui cookie, si suggerisce la lettura di:<br>
