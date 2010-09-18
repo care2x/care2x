@@ -151,7 +151,7 @@ $sTemp = ob_get_contents();
 ob_end_clean();
 
 $smarty->assign('sOnHoverMenu',$sTemp);
-
+$smarty->assign('root_path',$root_path);
 # Assign the submenu to the mainframe center block
 
 $smarty->assign('sMainBlockIncludeFile','or/submenu_or.tpl');
