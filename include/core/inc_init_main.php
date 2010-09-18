@@ -1,24 +1,24 @@
 <?php
 # This is the database name
-$dbname='';
+$dbname='care2x_trunk';
 
 # Database user name, default is root or httpd for mysql, or postgres for postgresql
-$dbusername='';
+$dbusername='root';
 
 # Database user password, default is empty char
-$dbpassword='';
+$dbpassword='root';
 
 # Database host name, default = localhost
 $dbhost='localhost';
 
 # First key used for simple chaining protection of scripts
-$key='2087550157770';
+$key='13721709165944';
 
 # Second key used for accessing modules
-$key_2level='52868623995418';
+$key_2level='39509126206620';
 
 # 3rd key for encrypting cookie information
-$key_login='49384441600';
+$key_login='4673346159350';
 
 # Main host address or domain
 $main_domain='localhost';
@@ -34,5 +34,4 @@ $dbtype='mysql';
 
 # Set this to your timezone.
 $timezone = 'Europe/Rome';
-date_default_timezone_set($timezone);
 ?>
