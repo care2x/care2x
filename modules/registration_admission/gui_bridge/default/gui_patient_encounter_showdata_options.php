@@ -70,7 +70,7 @@ if(!is_object($TP_obj)){
 
 # Assign the icons
 
-if($cfg['icons'] != 'no_icon'){
+if(isset($cfg['icons']) && $cfg['icons'] != 'no_icon'){
 	$TP_iconPost = '<img '.createComIcon($root_path,'post_discussion.gif','0').'>';
 	$TP_iconFolder = '<img '.createComIcon($root_path,'open.gif','0').'>';
 	$TP_iconBubble = '<img '.createComIcon($root_path,'bubble.gif','0').'>';
