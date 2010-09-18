@@ -106,7 +106,7 @@ $rows=0;
 					$ward=$wards->FetchRow();
 					# globalize ward values
 					extract($ward);
-					# Get ward�s active rooms info
+					# Get info on active rooms in ward
 					$rooms=&$ward_obj->getAllActiveRoomsInfo($ward['nr']);
 				}else{
 					$rooms=$ward_obj->countCreatedRooms();
