@@ -9,7 +9,7 @@
 
 		</td>
 		<!--      Vertical spacer column      -->
-		<TD   width=1  background="../gui/img/common/biju/vert_reuna_20b.gif"></TD>
+		<TD   width=1  background="../../gui/img/common/biju/vert_reuna_20b.gif"></TD>
 
 		<TD VALIGN="top">
 
