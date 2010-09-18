@@ -76,8 +76,8 @@ $_a_1_techreception = 'Qbot & Repabot attivi, recevi, lettura e scrittura';
 $title_pdo = 'Turni personale';
 $_a_1_timestampallwrite = 'Turni personale, lettura e scrittura';
 $_a_2_timestampallread = 'Turni personale sola lettura';
-$_a_1_dutyplanallwrite = 'Turni personale/ferie plan (all areas) manage, lettura e scrittura';
-$_a_2_dutyplanallread = 'Turni personale/ferie plan sola lettura';
+$_a_1_dutyplanallwrite = 'Turni personale/ferie, lettura e scrittura';
+$_a_2_dutyplanallread = 'Turni personale/ferie sola lettura';
 
 // Group start
 $title_bill = 'Billing';
