@@ -30,7 +30,7 @@
 			</td>
 			<td class="fvag_ml10" align="right"></td>
 			<td>
-				<img src="../gui/img/common/default/pixel.gif" border=0 width=50 height=2>
+				<img src="../../gui/img/common/default/pixel.gif" border=0 width=50 height=2>
 			</td>
 			</tr>
 
