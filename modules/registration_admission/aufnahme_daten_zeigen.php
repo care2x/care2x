@@ -58,7 +58,7 @@ $dbtable='care_encounter';
 
 	if(!empty($GLOBAL_CONFIG['patient_financial_class_single_result'])) $encounter_obj->setSingleResult(true);
 	
-	if(!$GLOBAL_CONFIG['patient_service_care_hide']){
+	if(!isset($GLOBAL_CONFIG['patient_service_care_hide'])){
 	/* Get the care service classes*/
 		$care_service=$encounter_obj->AllCareServiceClassesObject();
 		
@@ -68,7 +68,7 @@ $dbtable='care_encounter';
 			reset($care_class);
 		}    			  
 	}
-	if(!$GLOBAL_CONFIG['patient_service_room_hide']){
+	if(!isset($GLOBAL_CONFIG['patient_service_room_hide'])){
 	/* Get the room service classes */
 		$room_service=$encounter_obj->AllRoomServiceClassesObject();
 		
@@ -78,7 +78,7 @@ $dbtable='care_encounter';
 			reset($room_class);
 		}    			  
 	}
-	if(!$GLOBAL_CONFIG['patient_service_att_dr_hide']){
+	if(!isset($GLOBAL_CONFIG['patient_service_att_dr_hide'])){
 		/* Get the attending doctor service classes */
 		$att_dr_service=$encounter_obj->AllAttDrServiceClassesObject();
 		
@@ -143,7 +143,7 @@ $dbtable='care_encounter';
 	include_once($root_path.'include/core/inc_date_format_functions.php');
         
 	/* Update History */
-	if(!$newdata) $encounter_obj->setHistorySeen($_SESSION['sess_user_name'],$encounter_nr);
+	if(!isset($newdata) || empty($newdata)) $encounter_obj->setHistorySeen($_SESSION['sess_user_name'],$encounter_nr);
 	/* Get insurance firm name*/
 	$insurance_firm_name=$insurance_obj->getFirmName($insurance_firm_id);
 	/* Check whether config path exists, else use default path */			
@@ -371,7 +371,7 @@ $smarty->assign('insurance_firm_name',$insurance_firm_name);
 $smarty->assign('LDFrom',$LDFrom);
 $smarty->assign('LDTo',$LDTo);
 
-if(!$GLOBAL_CONFIG['patient_service_care_hide'] && $sc_care_class_nr){
+if(!isset($GLOBAL_CONFIG['patient_service_care_hide']) && $sc_care_class_nr){
 	$smarty->assign('LDCareServiceClass',$LDCareServiceClass);
 
 	while($buffer=$care_service->FetchRow()){
@@ -389,7 +389,7 @@ if(!$GLOBAL_CONFIG['patient_service_care_hide'] && $sc_care_class_nr){
 }
 
 
-if(!$GLOBAL_CONFIG['patient_service_room_hide'] && $sc_room_class_nr){
+if(!isset($GLOBAL_CONFIG['patient_service_room_hide']) && $sc_room_class_nr){
 	$smarty->assign('LDRoomServiceClass',$LDRoomServiceClass);
 
 	while($buffer=$room_service->FetchRow()){
@@ -405,7 +405,7 @@ if(!$GLOBAL_CONFIG['patient_service_room_hide'] && $sc_room_class_nr){
 	}
 }
 
-if(!$GLOBAL_CONFIG['patient_service_att_dr_hide'] && $sc_att_dr_class_nr){
+if(!isset($GLOBAL_CONFIG['patient_service_att_dr_hide']) && $sc_att_dr_class_nr){
 	$smarty->assign('LDAttDrServiceClass',$LDAttDrServiceClass);
 
 	while($buffer=$att_dr_service->FetchRow()){
@@ -422,7 +422,7 @@ if(!$GLOBAL_CONFIG['patient_service_att_dr_hide'] && $sc_att_dr_class_nr){
 }
 
 //gjergji : billable items list
-if($GLOBAL_CONFIG['show_billable_items'] && $encounter_class_nr == 2){
+if(isset($GLOBAL_CONFIG['show_billable_items']) && $encounter_class_nr == 2){
 	$smarty->assign('LDAdmitBillItem',$LDAdmitBillItem);
 	if($att_bill_item = $eComBill_obj->checkBillExist($encounter_nr)) {
 		$bufferBill=$att_bill_item->FetchRow();
@@ -434,7 +434,7 @@ if($GLOBAL_CONFIG['show_billable_items'] && $encounter_class_nr == 2){
 }
 
 //gjergji : refered to doctor
-if($GLOBAL_CONFIG['show_doctors_list'] && $encounter_class_nr == 2){
+if(isset($GLOBAL_CONFIG['show_doctors_list']) && $encounter_class_nr == 2){
 	$smarty->assign('LDAdmitDoctorRefered',$LDAdmitDoctorRefered);
 
 	$bufferBill = $encounter_obj->ReferredDoctor($encounter_nr);
