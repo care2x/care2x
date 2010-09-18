@@ -161,4 +161,20 @@ $LDCreditCard='Credit card';
 $LDCheck='Cheque';
 $LDCheckNumber='Cheque number';
 $LDCardNumber='Card number';
+$LDFinalBillPreview='Preview the final bill';
+$LDBillInfo='Information about the bill';
+$LDBillPending='There are bills waiting';
+$LDSavePartial='Save this bill before generating a new one';
+
+$BillList='Bill list';
+
+$LDSelectHospitalServicesTxt='Select the hospital service';
+$LDSelectLaboratoryTestsTxt='Select the laboratory service';
+$LDViewBillTxt='Actual patients bill';
+$LDViewPaymentTxt='Payments made by this patient';
+$LDMakeNewPaymentTxt='New payment';
+$LDGenerateFinalBillTxt='Execute final bill and print it';
+
+$LDRefered='';
+$LDReferedNot='not refered';
 ?>
