@@ -4,7 +4,7 @@
       <td height=24>{{$pbNew}}{{$pbSearch}}</td>
     </tr>
     <tr>
-      <td class="adm_div"><img src="p.gif" border=0 width=1 height=5>{{$sSubTitle}}{{$sWarnText}}</td>
+      <td class="adm_div"><img src="../../gui/img/common/default/p.gif" border=0 width=1 height=5>{{$sSubTitle}}{{$sWarnText}}</td>
     </tr>
   </tbody>
 </table>
