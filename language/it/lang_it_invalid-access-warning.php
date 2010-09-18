@@ -34,17 +34,17 @@ Alcune cause possono essere:
 </FONT><p>
 <font size=2 face="verdana,arial">
 <img <?php echo createComIcon('../../','achtung.gif') ?>>
-si ï¿½ fatto uso dei tasti "Avanti" e "Indietro" del browser: bisognerebbe evitare di usarli.<br>
+si è fatto uso dei tasti "Avanti" e "Indietro" del browser: bisognerebbe evitare di usarli.<br>
 <img <?php echo createComIcon('../../','achtung.gif') ?>>
-il browser ha rifiutato un cookie. Configurare il browser in modo da accettarli, perchï¿½ l'applicativo
+il browser ha rifiutato un cookie. Configurare il browser in modo da accettarli, perché l'applicativo
 nel fa uso.
 <br>
 <img <?php echo createComIcon('../../','achtung.gif') ?>>
 il browser potrebbe non essere in grado di eseguire javascript, oppure i javascript potrebbero essere
-disattivati. Dato che l'applicativo li usa, ï¿½ necessario attivarli.
+disattivati. Dato che l'applicativo li usa, è necessario attivarli.
 <br>
 <img <?php echo createComIcon('../../','achtung.gif') ?>>
-In alcuni rari casi, possono esserci stati degli errori di trasferimento dati: in questo caso ï¿½ 
+In alcuni rari casi, possono esserci stati degli errori di trasferimento dati: in questo caso è 
 sufficiente premere il bottone "Ricarica" del browser.
 <p>
 </FONT>
@@ -55,8 +55,7 @@ sufficiente premere il bottone "Ricarica" del browser.
 </table>        
 <p>
 <?php
-$root_path='../../';
-require('it_copyrite.php'); 
+require($root_path.'include/core/inc_load_copyrite.php');
 ?>
 </FONT>
 </BODY>

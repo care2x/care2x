@@ -2,43 +2,43 @@
 error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require_once('./roots.php');
 require_once($root_path.'include/core/inc_environment_global.php');
-
 ?>
+<?php html_rtl($lang); ?>
 <html>
 <head>
-<title>脙霉脨禄</title>
+<title>鸣谢</title>
 <meta http-equiv="Content-Type" content="text/html; charset=gb2312">
 </head>
 <body onLoad="if(window.focus) window.focus()">
-<font face="verdana,arial" size=6 color="#0000ff">脙霉脨禄</fonts>
+<font face="verdana,arial" size=6 color="#0000ff">鸣谢</fonts>
 <hr>
 <TABLE cellSpacing=0 cellPadding=0 border=0 width=100%>
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-			<P><img src="../../fotos/credits/weining_chen.jpg" border=0  align=right vspace=10>
+			<P><img src="../../uploads/photos/credits/weining_chen.jpg" border=0  align=right vspace=10>
 			<b>Wei Ning Chen (CH)</b>
 			<p>
-			鲁脗脦掳脛镁脳枚脕脣录貌脤氓脰脨脦脛路颅脪毛鹿陇脳梅
+			陈伟宁做了简体中文翻译工作
 			<p>
-			鲁脗脦掳脛镁脧脠脡煤脪禄戮脜脝脽脪禄脛锚鲁枚脡煤脫脷脰脨鹿煤露芦虏驴脩茂脳脫陆颅脜脧碌脛脛脧戮漏脢脨隆拢
+			陈伟宁先生一九七一年出生于中国东部扬子江畔的南京市。
 			<p>
-			脭脷脪禄戮脜戮脜露镁脛锚卤脧脪碌脫脷禄陋露芦鹿陇脩搂脭潞虏垄禄帽碌脙鹿陇鲁脤脩搂脩搂脦禄潞贸拢卢鲁脗脦掳脛镁脧脠脡煤脪禄脰卤脭脷脜卢脕娄脩搂脧掳鲁脤脨貌驴陋路垄隆拢鲁枚脫脷露脭驴陋路垄脭麓麓煤脗毛脧卯脛驴碌脛脰搂鲁脰潞脥露脿脛锚脌麓露脭鲁脤脨貌驴陋路垄碌脛脜篓潞帽脨脣脠陇拢卢鲁脗脦掳脛镁脧脠脡煤戮枚露篓虏脦脫毛驴陋路垄脭麓麓煤脗毛脧卯脛驴脪脭麓脵陆酶录录脢玫虏垄脧拢脥没麓脫脰脨脩搂脧掳碌陆脨铆露脿脨脗露芦脦梅隆拢脥卢脢卤拢卢脪虏驴脡脪脭录脫脡卯露脭驴陋路垄脭麓麓煤脗毛脡莽脟酶脠脮鲁拢脭脣脳梅碌脛脕脣陆芒隆拢
+			在一九九二年毕业于华东工学院并获得工程学学位后，陈伟宁先生一直在努力学习程序开发。出于对开发源代码项目的支持和多年来对程序开发的浓厚兴趣，陈伟宁先生决定参与开发源代码项目以促进技术并希望从中学习到许多新东西。同时，也可以加深对开发源代码社区日常运作的了解。
 			<p>
-			戮隆鹿脺露脭脪陆脕脝禄貌陆隆驴碌卤拢陆隆虏驴脙脜虏禄脤芦脢矛脧陇拢卢鲁脗脦掳脛镁脧脠脡煤脠脭脠禄戮枚露篓录脫脠毛CARE 2X脧卯脛驴隆拢脪貌脦陋脣没脧拢脥没脥篓鹿媒脳脭脡铆碌脛脜卢脕娄拢卢Care脧卯脛驴驴脡脪脭鲁脡鹿娄碌脴脫娄脫脙脫脷脰脨鹿煤碌脛脪陆脕脝脧碌脥鲁脰脨隆拢
+			尽管对医疗或健康保健部门不太熟悉，陈伟宁先生仍然决定加入CARE 2X项目。因为他希望通过自身的努力，Care项目可以成功地应用于中国的医疗系统中。
 
-<P><a href="mailto:weining.chen@army.com"><u>脫毛鲁脗脦掳脛镁脧脠脡煤脕陋脧碌</u></a>
+<P><a href="mailto:weining.chen@army.com"><u>与陈伟宁先生联系</u></a>
 </TD></TR></TBODY></TABLE>
 <hr>
 <TABLE cellSpacing=0 cellPadding=0 border=0 width=100%>
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-			<P><img src="../../fotos/credits/elpidio_latorilla_3.jpg" border=0  align=right vspace=10>
-			<b>CARE 2X碌脛碌脷脪禄虏芒脢脭掳忙脫脡Elpidio Latorilla麓麓陆篓拢潞</b>
-			<p>脰掳脪碌拢潞<br>鲁脤脨貌脭卤拢卢脥芒驴脝禄陇脢驴拢卢碌莽脳脫脫毛脥篓脩露录录脢娄
-			<p>赂枚脠脣掳庐潞脙拢潞<br>C, C++, PHP, Javascript, SQL, TCL/TK, HTML, Perl, ASP, Java
-			<P><a href="mailto:elpidio@latorilla.com"><u>脫毛Elpidio Latorilla脧脠脡煤脕陋脧碌</u></a>
+			<P><img src="../../uploads/photos/credits/elpidio_latorilla_3.jpg" border=0  align=right vspace=10>
+			<b>CARE 2X的第一测试版由Elpidio Latorilla创建：</b>
+			<p>职业：<br>程序员，外科护士，电子与通讯技师
+			<p>个人爱好：<br>C, C++, PHP, Javascript, SQL, TCL/TK, HTML, Perl, ASP, Java
+			<P><a href="mailto:elpidio@latorilla.com"><u>与Elpidio Latorilla先生联系</u></a>
 </TD></TR></TBODY></TABLE>
 <hr>
 
@@ -46,35 +46,35 @@ require_once($root_path.'include/core/inc_environment_global.php');
         <tbody>
         <tr>
           <td vAlign=top><font face="verdana,arial" size=2>
-			<p><img src="../../fotos/credits/lopo_l_almeida.jpg"  
+			<p><img src="../../uploads/photos/credits/lopo_l_almeida.jpg"  
                                 width=135 height=170 border=0  align=right vspace=10>
-			<b>Lopo Lencastre de Almeida (PT)</b> 脢脟潞脺露脿驴陋路垄脠脣脭卤脰脨碌脛脪禄脭卤隆拢露脭脫脷麓脣脧卯脛驴碌脛脰梅脪陋鹿卤脧脳脫脨拢潞
+			<b>Lopo Lencastre de Almeida (PT)</b> 是很多开发人员中的一员。对于此项目的主要贡献有：
                         <p><font size=1>
-			脢脨鲁隆碌梅脩脨拢卢虏煤脝路脥脝陆酶潞脥鹿芦鹿虏鹿脴脧碌<br>
-			脥酶脮戮脫毛卤锚脰戮脡猫录脝<br>
-			脰麓脨脨脫毛脦卢禄陇虏驴路脰脥酶脮戮鹿陇戮脽拢篓脠卤脧脻赂煤脳脵拢卢脗脹脤鲁拢卢鲁拢录没脦脢脤芒脫毛陆芒麓冒拢卢碌脠拢漏<br>
-			脰麓脨脨脫毛脦卢禄陇脨脗脥酶脮戮拢篓录麓陆芦脥锚鲁脡拢漏<br>
-			脗脹脤鲁脡贸潞脣潞脥鹿脺脌铆<br>
-			麓煤脗毛录矛虏茅<br>
-			PHP脳脡脩炉<br>
-			掳虏脠芦鹿脣脦脢<br>
-			鲁茅脧贸虏茫鹿脣脦脢拢篓脢媒戮脻驴芒拢卢脛拢掳氓拢卢碌脠拢漏<br>
-			虏芒脢脭<br>
-			麓麓脪芒拢卢脤脰脗脹拢卢脤谩脢戮拢卢脨隆录录脟脡拢卢碌脠
-			</font><p>Lopo L. de Almeida脧脠脡煤1996脛锚鲁枚脡煤脫脷Angola隆拢脣没脪脩脭脷录脝脣茫禄煤脕矛脫貌拢篓麓脫脡脤脪碌脫娄脫脙碌陆鹿陇脪碌脳脭露炉禄炉拢漏麓脫脢脗脠铆录镁驴陋路垄潞脥陆莽脙忙脡猫录脝鹿陇脳梅16脛锚脰庐戮脙隆拢脭脷脳卯陆眉碌脛5脛锚脌茂拢卢脣没脰梅脪陋麓脫脢脗脥酶脮戮驴陋路垄潞脥鹿芦脣戮鹿脺脌铆鹿陇脳梅隆拢脳梅脦陋Care2002脧卯脛驴碌脛脰梅脪陋潞脧脳梅禄茂掳茅--HumanEasy鹿芦脣戮碌脛CEO/CTO--Lopo L. de Almeida脧脠脡煤脰梅脪陋赂潞脭冒麓脣脧卯脛驴脰脨碌脛<b>鹿芦鹿虏鹿脴脧碌潞脥脢脨鲁隆鹿脺脌铆</b>虏驴路脰隆拢<br>脫毛麓脣脥卢脢卤拢卢Lopo L. de Almeida脧脠脡煤禄鹿虏脦脫毛脕脣脨铆露脿脝盲脣眉碌脛GNU/GPL脧卯脛驴拢卢脝盲脰脨脪禄脨漏脪脩脢鹿脫脙脭脷Care2x碌脛脥酶脮戮脰脨隆拢<br>
-			<p><a href="http://www.humaneasy.com" target="_blank"><u>脫毛Lopo L. de Almeida脧脠脡煤脕陋脧碌</u></a>
+			市场调研，产品推进和公共关系<br>
+			网站与标志设计<br>
+			执行与维护部分网站工具（缺陷跟踪，论坛，常见问题与解答，等）<br>
+			执行与维护新网站（即将完成）<br>
+			论坛审核和管理<br>
+			代码检查<br>
+			PHP咨询<br>
+			安全顾问<br>
+			抽象层顾问（数据库，模板，等）<br>
+			测试<br>
+			创意，讨论，提示，小技巧，等
+			</font><p>Lopo L. de Almeida先生1996年出生于Angola。他已在计算机领域（从商业应用到工业自动化）从事软件开发和界面设计工作16年之久。在最近的5年里，他主要从事网站开发和公司管理工作。作为Care2002项目的主要合作伙伴--HumanEasy公司的CEO/CTO--Lopo L. de Almeida先生主要负责此项目中的<b>公共关系和市场管理</b>部分。<br>与此同时，Lopo L. de Almeida先生还参与了许多其它的GNU/GPL项目，其中一些已使用在Care2x的网站中。<br>
+			<p><a href="http://www.humaneasy.com" target="_blank"><u>与Lopo L. de Almeida先生联系</u></a>
 </td></tr></tbody></table>
 <hr>
 <TABLE cellSpacing=0 cellPadding=0 border=0 width=100%>
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-			<P><img src="../../fotos/credits/giuseppe_scarpi.jpg"  border=0  width=135 height=170 align=right vspace=10>
-			<b>Giuseppe Scarpi (IT) 路颅脪毛CARE 2X脰脕脪芒麓贸脌没脫茂掳忙卤戮隆拢</b>
-			<p>Giuseppe Scarpi脧脠脡煤35脛锚脟掳鲁枚脡煤脫脷脪芒麓贸脌没脗脼脗铆隆拢 
-			<p>脭脷禄帽碌脙脕脣碌莽脳脫鹿陇鲁脤脩搂脩搂脦禄潞贸拢卢Giuseppe Scarpi脧脠脡煤脭酶路镁脦帽脫脷露脿录脪鹿芦脣戮碌脛脡煤脦茂脪陆脩搂虏驴脙脜拢卢麓脣录盲碌脛戮颅脌煤脢鹿脣没脠脷禄谩鹿谩脥篓脕脣脪陆脩搂潞脥脨脜脧垄录录脢玫脰庐录盲碌脛鹿脴脧碌隆拢<br>Giuseppe Scarpi脧脠脡煤脛驴脟掳脢鹿脫脙虏垄脭脼脡脥Linux潞脥Windows脧碌脥鲁拢卢脣没脠脧脦陋拢潞"<i>as both are the result of a great human work that must be respected</i>"隆拢
-			<p>Giuseppe Scarpi脧脠脡煤禄媒录芦碌脴脥露脡铆驴陋路垄脭麓麓煤脗毛脳茅脰炉脢脟脪貌脦陋拢潞<br><i>隆掳脌铆脧毛脢脌陆莽碌脛麓忙脭脷脠隆戮枚脫脷脥锚脙脌碌脛脝陆潞芒隆拢脠莽鹿没脛茫脧毛脣梅脠隆拢卢脛脟脛茫脪虏脫娄赂脙赂露鲁枚隆拢隆卤</i>
-			<P><a href="mailto:kalbun@inwind.it"><u>脫毛Giuseppe Scarpi脧脠脡煤脕陋脧碌</u></a>
+			<P><img src="../../uploads/photos/credits/giuseppe_scarpi.jpg"  border=0  width=135 height=170 align=right vspace=10>
+			<b>Giuseppe Scarpi (IT) 翻译CARE 2X至意大利语版本。</b>
+			<p>Giuseppe Scarpi先生35年前出生于意大利罗马。 
+			<p>在获得了电子工程学学位后，Giuseppe Scarpi先生曾服务于多家公司的生物医学部门，此间的经历使他融会贯通了医学和信息技术之间的关系。<br>Giuseppe Scarpi先生目前使用并赞赏Linux和Windows系统，他认为："<i>as both are the result of a great human work that must be respected</i>"。
+			<p>Giuseppe Scarpi先生积极地投身开发源代码组织是因为：<br><i>“理想世界的存在取决于完美的平衡。如果你想索取，那你也应该付出。”</i>
+			<P><a href="mailto:kalbun@inwind.it"><u>与Giuseppe Scarpi先生联系</u></a>
 </TD></TR></TBODY></TABLE>
 
 <hr>
@@ -82,11 +82,11 @@ require_once($root_path.'include/core/inc_environment_global.php');
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-            <P><img src="../../fotos/credits/gabriele_cicala.jpg"  border=0  align=right vspace=10>
-			<b>Gabriele Cicala (IT) 陆芦www.care2x.com脥酶脮戮碌脛麓贸虏驴路脰脛脷脠脻路颅脪毛鲁脡脪芒麓贸脌没脫茂隆拢</b>
-			<p>Gabriele Cicala脧脠脡煤1970脛锚鲁枚脡煤脫脷Rossano拢卢脦禄脫脷脪芒麓贸脌没脛脧虏驴碌脛Calabria隆拢脣没卤脧脪碌脫脷Politecnico di Torino虏垄禄帽碌脙脥篓脩露鹿陇鲁脤脩搂脩搂脦禄隆拢脛驴脟掳拢卢Gabriele Cicala脧脠脡煤脠脦脰掳脫脷脪禄录脪脨脜脧垄鹿芦脣戮脠脦鹿脣脦脢隆拢
-			<p>鲁枚脫脷露脭Linux潞脥驴陋路垄脭麓麓煤脗毛禄路戮鲁碌脛脕脣陆芒拢卢Gabriele Cicala脧脠脡煤露脭赂梅驴陋路脜脭麓脗毛碌脛脧卯脛驴潞脺脫脨脨脣脠陇隆拢戮隆鹿脺露脭脪陆脕脝禄貌陆隆驴碌卤拢陆隆虏驴脙脜虏禄脤芦脢矛脧陇拢卢Gabriele Cicala脧脠脡煤脠脭脠禄戮枚露篓录脫脠毛CARE 2X脧卯脛驴隆拢脪貌脦陋脣没脧脿脨脜拢卢Care脧卯脛驴碌脛麓麓脢录脠脣潞脥脰戮脭赂脮脽露录脫脨脳脜潞脥脣没脪禄脩霉碌脛脨脜脛卯隆拢
-			<P><a href="mailto:gabcicala@tiscali.it"><u>脫毛Gabriele Cicala脧脠脡煤脕陋脧碌</u></a>
+            <P><img src="../../uploads/photos/credits/gabriele_cicala.jpg"  border=0  align=right vspace=10>
+			<b>Gabriele Cicala (IT) 将www.care2x.com网站的大部分内容翻译成意大利语。</b>
+			<p>Gabriele Cicala先生1970年出生于Rossano，位于意大利南部的Calabria。他毕业于Politecnico di Torino并获得通讯工程学学位。目前，Gabriele Cicala先生任职于一家信息公司任顾问。
+			<p>出于对Linux和开发源代码环境的了解，Gabriele Cicala先生对各开放源码的项目很有兴趣。尽管对医疗或健康保健部门不太熟悉，Gabriele Cicala先生仍然决定加入CARE 2X项目。因为他相信，Care项目的创始人和志愿者都有着和他一样的信念。
+			<P><a href="mailto:gabcicala@tiscali.it"><u>与Gabriele Cicala先生联系</u></a>
 </TD></TR></TBODY></TABLE>
 
 <hr>
@@ -94,19 +94,19 @@ require_once($root_path.'include/core/inc_environment_global.php');
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-            <P><img src="../../fotos/credits/daniel_zilli.jpg"  border=0  align=right vspace=10>
-			<b>Daniel Zilli (BR) 陆芦CARE 2X潞脥www.care2x.com脥酶脮戮路颅脪毛鲁脡掳脥脦梅拢颅脝脧脤脩脩脌脫茂隆拢</b>
-			<p>Daniel脢脟脪禄赂枚虏禄麓铆碌脛脨隆禄茂拢卢脣没脠脠掳庐脡煤禄卯拢卢脧虏禄露录脝脣茫禄煤拢卢脳茫脟貌潞脥脪么脌脰隆拢脣没路脟鲁拢脧虏禄露录脝脣茫禄煤虏垄脪脩脫脨脕脣麓贸脭录10脛锚碌脛戮颅脩茅隆拢Daniel脧脠脡煤驴陋掳矛脕脣脪禄录脪碌莽脛脭鹿芦脣戮拢卢脰梅脪陋麓脫脢脗录脝脣茫禄煤驴脝脩搂陆脤脫媒虏煤脝路碌脛脡煤虏煤拢卢驴陋路垄脭麓麓煤脗毛脠铆录镁潞脥碌卤碌脴碌脛Linux路脰路垄隆拢
-			<P><a href="mailto:danielz@cco.matrix.com.br"><u>脫毛Daniel Zilli脧脠脡煤脕陋脧碌</u></a>
+            <P><img src="../../uploads/photos/credits/daniel_zilli.jpg"  border=0  align=right vspace=10>
+			<b>Daniel Zilli (BR) 将CARE 2X和www.care2x.com网站翻译成巴西－葡萄牙语。</b>
+			<p>Daniel是一个不错的小伙，他热爱生活，喜欢计算机，足球和音乐。他非常喜欢计算机并已有了大约10年的经验。Daniel先生开办了一家电脑公司，主要从事计算机科学教育产品的生产，开发源代码软件和当地的Linux分发。
+			<P><a href="mailto:danielz@cco.matrix.com.br"><u>与Daniel Zilli先生联系</u></a>
 </TD></TR></TBODY></TABLE>
 <hr>
 <TABLE cellSpacing=0 cellPadding=0 border=0 width=100%>
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-            <P><img src="../../fotos/credits/muhammad_panji.png"  border=0  align=right vspace=10>
-			<b>Muhammad Panji (ID) 脫毛脣没脠脣潞脧脳梅路颅脪毛CARE 2X潞脥www.care2x.com脥酶脮戮脦陋脫隆露脠脛谩脦梅脩脟脫茂隆拢</b>
-			<P><a href="mailto:sumodirjo@users.sourceforge.net"><u>脫毛Muhammad Panji脧脠脡煤脕陋脧碌</u></a>
+            <P><img src="../../uploads/photos/credits/muhammad_panji.png"  border=0  align=right vspace=10>
+			<b>Muhammad Panji (ID) 与他人合作翻译CARE 2X和www.care2x.com网站为印度尼西亚语。</b>
+			<P><a href="mailto:sumodirjo@users.sourceforge.net"><u>与Muhammad Panji先生联系</u></a>
 </TD></TR></TBODY></TABLE>
 
 <hr>
@@ -114,57 +114,57 @@ require_once($root_path.'include/core/inc_environment_global.php');
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-            <P><img src="../../fotos/credits/agus_mr.jpg"  border=0  align=right vspace=10>
-			<b>Agus Muhammad Ramdan (ID) 陆芦CARE 2X潞脥www.care2x.com脥酶脮戮路颅脪毛脦陋脫隆露脠脛谩脦梅脩脟脫茂隆拢</b>
+            <P><img src="../../uploads/photos/credits/agus_mr.jpg"  border=0  align=right vspace=10>
+			<b>Agus Muhammad Ramdan (ID) 将CARE 2X和www.care2x.com网站翻译为印度尼西亚语。</b>
 			
-			<P><a href="mailto:agusmr@mweb.co.id"><u>脫毛Agus M. Ramdan脧脠脡煤脕陋脧碌</u></a>
+			<P><a href="mailto:agusmr@mweb.co.id"><u>与Agus M. Ramdan先生联系</u></a>
 </TD></TR></TBODY></TABLE>
 <hr>
 <TABLE cellSpacing=0 cellPadding=0 border=0 width=100%>
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-			<P><img src="../../fotos/credits/thomas_wiedmann.jpg"  border=0  align=right vspace=10>
-			<b>Thomas Wiedmann (DE) 脳卯禄媒录芦碌脛鲁脤脨貌碌梅脢脭脠脣脭卤</b>
+			<P><img src="../../uploads/photos/credits/thomas_wiedmann.jpg"  border=0  align=right vspace=10>
+			<b>Thomas Wiedmann (DE) 最积极的程序调试人员</b>
 			<p><font size=1>
-			脥锚脮没虏芒脢脭<br>
-			碌梅脢脭<br>
-			脤谩鲁枚脢媒戮脻驴芒脌脰鹿脹脣酶露篓赂脜脛卯<br>
-			脢媒戮脻驴芒脫脜禄炉<br>
-			脠脮脝脷脫毛脢媒脳脰脠路脠脧麓煤脗毛<p>
+			完整测试<br>
+			调试<br>
+			提出数据库乐观锁定概念<br>
+			数据库优化<br>
+			日期与数字确认代码<p>
 			</font>
-			Thomas Wiedmann脧脠脡煤脳梅脦陋脠铆录镁驴陋路垄脠脣脭卤鲁陇脝脷鹿陇脳梅脫脷碌脗鹿煤碌脛Stuttgart隆拢脣没脭酶虏脦脫毛Gupta脨隆脳茅碌脛驴陋路垄潞脥IBM DB2脧脿鹿脴鹿陇脳梅麓茂脝脽脛锚脰庐戮脙隆拢Thomas Wiedmann脧脠脡煤鲁脰脫脨IBM鹿芦脣戮脠脧脰陇碌脛UDB脢媒戮脻驴芒鹿脺脌铆脭卤脰陇脢茅隆拢鹿脴脫脷DB2路陆脙忙碌脛脨脜脧垄驴脡脪脭虏脦脭脛脣没卤脿脰酶碌脛隆掳DB2隆卤拢篓ISBN 3-932311-80-9拢漏脪禄脢茅隆拢Thomas Wiedmann脧脠脡煤禄鹿脢脟脪禄录脪碌脗鹿煤驴陋路垄脠脣脭卤脭脫脰戮TOOLBOX(www.toolbox-mag.de)碌脛脳梅录脪隆拢
-			<P><a href="mailto:tho123@users.sourceforge.net"><u>脫毛Thomas Wiedmann脧脠脡煤脕陋脧碌</u></a>
+			Thomas Wiedmann先生作为软件开发人员长期工作于德国的Stuttgart。他曾参与Gupta小组的开发和IBM DB2相关工作达七年之久。Thomas Wiedmann先生持有IBM公司认证的UDB数据库管理员证书。关于DB2方面的信息可以参阅他编著的“DB2”（ISBN 3-932311-80-9）一书。Thomas Wiedmann先生还是一家德国开发人员杂志TOOLBOX(www.toolbox-mag.de)的作家。
+			<P><a href="mailto:tho123@users.sourceforge.net"><u>与Thomas Wiedmann先生联系</u></a>
 </TD></TR></TBODY></TABLE>
 <hr>
 <TABLE cellSpacing=0 cellPadding=0 border=0 width=100%>
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-			<P><img src="../../fotos/credits/hinostroza.jpg"  border=0  width=135 align=right vspace=10>
+			<P><img src="../../uploads/photos/credits/hinostroza.jpg"  border=0  width=135 align=right vspace=10>
 			<b>Dr. med Daniel Hinostroza C. (EC)</b><br>
-			脦梅掳脿脩脌脫茂路颅脪毛
+			西班牙语翻译
 			<p><font size=1>
-			露脿卤戮脪陆脩搂脰酶脳梅碌脛脳梅脮脽禄貌潞脧脰酶脮脽<br>
-碌拢脠脦露貌鹿脧露脿露没Quito碌脴脟酶碌脛Gr篓鹿nenthal脪陆脕脝脨脜脧垄脰脨脨脛脰梅鹿脺脰掳脦帽脦氓脛锚<br>
-卤脧脪碌脫脷脣鹿脤鹿赂拢麓贸脩搂脪陆脕脝脨脜脧垄录录脢玫脳篓脪碌<br>
-脭脷碌脗鹿煤Aachen脢脨碌拢脠脦Gr篓鹿nenthal GmbH露脿脙陆脤氓脧卯脛驴脰梅鹿脺露镁脛锚</font><p>
-phpMyAdmin鹿脵路陆脦梅掳脿脩脌脫茂路颅脪毛<br>
-露貌鹿脧露脿露没脳卯麓贸碌脛脪陆脕脝禄楼露炉脥酶脮戮(www.cmpichincha.med.ec)潞脥露貌鹿脧露脿露没脝陇路么虏隆脨颅禄谩脥酶脮戮(www.sociedadecuatorianadedermatologia.org.ec)碌脛脥酶脗莽鹿脺脌铆脭卤隆拢<br>
-脥酶脮戮拢潞www.cerebroperiferico.com<P>
-<a href="mailto:postmaster@cerebroperiferico.com"><u>脫毛Dr. Daniel Hinostroza脧脠脡煤脕陋脧碌</u></a>
+			多本医学著作的作者或合著者<br>
+担任厄瓜多尔Quito地区的Grünenthal医疗信息中心主管职务五年<br>
+毕业于斯坦福大学医疗信息技术专业<br>
+在德国Aachen市担任Grünenthal GmbH多媒体项目主管二年</font><p>
+phpMyAdmin官方西班牙语翻译<br>
+厄瓜多尔最大的医疗互动网站(www.cmpichincha.med.ec)和厄瓜多尔皮肤病协会网站(www.sociedadecuatorianadedermatologia.org.ec)的网络管理员。<br>
+网站：www.cerebroperiferico.com<P>
+<a href="mailto:postmaster@cerebroperiferico.com"><u>与Dr. Daniel Hinostroza先生联系</u></a>
 </TD></TR></TBODY></TABLE>
 <hr>
 <TABLE cellSpacing=0 cellPadding=0 border=0 width=100%>
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-			<P><img src="../../fotos/credits/noel_villamor.jpg"  border=0  align=right vspace=10>
+			<P><img src="../../uploads/photos/credits/noel_villamor.jpg"  border=0  align=right vspace=10>
 			<b>Noel R. Villamor (PH)</b><br>
-			脛拢驴茅卤脿鲁脤
-			<p>脥锚鲁脡脢碌脩茅脢脪脛拢驴茅虏芒脢脭拢卢禄忙脥录脛拢驴茅虏芒脢脭拢卢陆芒戮枚脕脣脪禄脨漏路卤脭脫碌脛脢媒脩搂脦脢脤芒隆拢
-			<p>麓垄卤赂脧卯脛驴戮颅脌铆
-			<P><a href="mailto:noelrv@nipahut.org"><u>脫毛Noel Villamor脧脠脡煤脕陋脧碌</u></a>
+			模块编程
+			<p>完成实验室模块测试，绘图模块测试，解决了一些繁杂的数学问题。
+			<p>储备项目经理
+			<P><a href="mailto:noelrv@nipahut.org"><u>与Noel Villamor先生联系</u></a>
 </TD></TR></TBODY></TABLE>
 
 <hr>
@@ -172,19 +172,19 @@ phpMyAdmin鹿脵路陆脦梅掳脿脩脌脫茂路颅脪毛<br>
         <TBODY>
 <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-		  <P><img src="../../fotos/credits/wilfried_goedert.jpg" border=0  align=right vspace=10 >
+		  <P><img src="../../uploads/photos/credits/wilfried_goedert.jpg" border=0  align=right vspace=10 >
 			<P><b>Dr. med Wilfried Godert (DE)</b><br>
-			脫脨脪脭脧脗鹿卤脧脳拢潞
+			有以下贡献：
 			<p><font size=1>
-		         陆篓脕垄虏垄鹿脺脌铆拢潞<br>
+		         建立并管理：<br>
 			 www.care2x.de<br>
-			 脨脗脦脜路镁脦帽脝梅拢卢OTRS脰搂鲁脰脧碌脥鲁<br>
-			 脨没麓芦拢卢鲁枚掳忙脧脿鹿脴脢脗脧卯<br>
-			 鹿脣脦脢
+			 新闻服务器，OTRS支持系统<br>
+			 宣传，出版相关事项<br>
+			 顾问
 			<p>
 			</font>
-			脳篓脪碌拢潞脪陆脢娄拢卢鲁脰脫脨脪陆脕脝脨脜脧垄脩搂脩搂脦禄
-			<p><a href="mailto:goedert@users.sourceforge.net"><u>脫毛Dr. Wilfried Godert脧脠脡煤脕陋脧碌</u></a>
+			专业：医师，持有医疗信息学学位
+			<p><a href="mailto:goedert@users.sourceforge.net"><u>与Dr. Wilfried Godert先生联系</u></a>
 </TD></TR>	
 </TBODY></TABLE>
 
@@ -193,164 +193,164 @@ phpMyAdmin鹿脵路陆脦梅掳脿脩脌脫茂路颅脪毛<br>
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-			<b>Matej Hausenblas (FR) 陆芦CARE 2X路颅脪毛脦陋路篓脫茂</b>
-			<p>Matej Hausenblas脧脠脡煤1981脛锚鲁枚脡煤脫脷陆脻驴脣鹿虏潞脥鹿煤碌脛Prague脢脨隆拢
-脣没脢脟脪禄脣霉脢媒脩搂拢颅脨脜脧垄拢颅脦茂脌铆脩搂麓贸脩搂碌脛脩搂脡煤隆拢脭脷脢鹿脫脙脕脣Windows录赂脛锚潞贸拢卢Matej Hausenblas脧脠脡煤脳梅鲁枚脕脣脪禄赂枚赂禄脫脨脤么脮陆脨脭碌脛戮枚露篓拢潞鲁垄脢脭脢鹿脫脙Linux隆拢
-脭脷脪禄露脦脢卤录盲潞贸拢卢脣没戮枚露篓虏脦脫毛驴陋路垄脭麓麓煤脗毛脧卯脛驴脪脭麓脵陆酶录录脢玫虏垄驴脡麓脫脰脨脩搂脧掳碌陆脨铆露脿脨脗露芦脦梅拢卢脥卢脢卤驴脡脪脭录脫脡卯露脭驴陋路垄脭麓麓煤脗毛脡莽脟酶脠脮鲁拢脭脣脳梅碌脛脕脣陆芒隆拢<P>
-<a href="mailto:matejh@users.sourceforge.net"><u>脫毛Matej Hausenblas脧脠脡煤脕陋脧碌</u></a>
+			<b>Matej Hausenblas (FR) 将CARE 2X翻译为法语</b>
+			<p>Matej Hausenblas先生1981年出生于捷克共和国的Prague市。
+他是一所数学－信息－物理学大学的学生。在使用了Windows几年后，Matej Hausenblas先生作出了一个富有挑战性的决定：尝试使用Linux。
+在一段时间后，他决定参与开发源代码项目以促进技术并可从中学习到许多新东西，同时可以加深对开发源代码社区日常运作的了解。<P>
+<a href="mailto:matejh@users.sourceforge.net"><u>与Matej Hausenblas先生联系</u></a>
 </TD></TR></TBODY></TABLE>
 <hr>
 <TABLE cellSpacing=0 cellPadding=0 border=0 width=100%>
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-			<b>Nino Novak (DE) 卤脿录颅脨脼赂脛脕脣碌脗脫茂掳忙www.care2x.com脥酶脮戮</b>
+			<b>Nino Novak (DE) 编辑修改了德语版www.care2x.com网站</b>
 			<p>
-			Nino Novak脢脟脪禄赂枚录脜脛炉碌脛脜拢脳脨拢卢脣没脳脺脢脟脨脨露炉驴矛脫脷脣录驴录隆拢脫脨碌脛脢卤潞貌拢卢脣没脫脰脫脨脪禄碌茫路鲁脭锚隆拢
-			脧虏禄露隆掳real gurus隆卤虏垄鲁拢鲁拢脫毛脣没脙脟陆酶脨脨鹿卯卤莽隆拢脳脺脢脟脧拢脥没脛脺露脭麓麓脭矛脪禄赂枚赂眉脙脌潞脙碌脛脢脌陆莽脫脨脣霉掳茂脰煤隆拢戮脽脫脨驴脝脩搂潞脥脪陆脩搂脰陋脢露卤鲁戮掳拢篓脮芒脪虏脢脟虏脦脫毛care2x脧卯脛驴碌脛脭颅脪貌拢漏隆拢<P>
-			<a href="mailto:nino@kflog.org"><u>脫毛Nino Novak脧脠脡煤脕陋脧碌</u></a>
+			Nino Novak是一个寂寞的牛仔，他总是行动快于思考。有的时候，他又有一点烦躁。
+			喜欢“real gurus”并常常与他们进行诡辩。总是希望能对创造一个更美好的世界有所帮助。具有科学和医学知识背景（这也是参与care2x项目的原因）。<P>
+			<a href="mailto:nino@kflog.org"><u>与Nino Novak先生联系</u></a>
 </TD></TR></TBODY></TABLE>
 <hr>
 <TABLE cellSpacing=0 cellPadding=0 border=0 width=100%>
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-			<b>Patxi Gomar篓陋z (ES) 脳枚脕脣脦梅掳脿脩脌脫茂路颅脪毛鹿陇脳梅</b>
+			<b>Patxi Gomaríz (ES) 做了西班牙语翻译工作</b>
 			<p>
-			Patxi Gomar篓陋z脧脠脡煤1996麓潞脤矛鲁枚脡煤脫脷脦梅掳脿脩脌Murcia脢脨隆拢脣没碌脛脡煤禄卯脫毛鹿陇脳梅戮霉脦搂脠脝脳脜脥录脨脦脥录脧帽麓娄脌铆拢卢脳梅脦陋脪禄脙没脥录脧帽脳篓录脪拢卢Patxi Gomar篓陋z脧脠脡煤脰梅脪陋麓脫脢脗脩脹碌脳脜脛脮脮鹿陇脳梅隆拢脣没脪虏脢脟脪禄脙没禄楼脕陋脥酶碌脛掳庐潞脙脮脽虏垄脡猫录脝脥酶脮戮隆拢<p>
+			Patxi Gomaríz先生1996春天出生于西班牙Murcia市。他的生活与工作均围绕着图形图像处理，作为一名图像专家，Patxi Gomaríz先生主要从事眼底拍照工作。他也是一名互联网的爱好者并设计网站。<p>
 			"<i>I think the open source code is an effective weapon against the negative effects of economic globalization specially in fundamental areas which are important to humanity like health. For that reason, I feel proud of my small contribution to this great project.</i>"
 
-			<P><a href="mailto:pgomariz@ono.com"><u>脫毛Patxi Gomar篓陋z脧脠脡煤脕陋脧碌</u></a>
+			<P><a href="mailto:pgomariz@ono.com"><u>与Patxi Gomaríz先生联系</u></a>
 </TD></TR></TBODY></TABLE>
 <hr>
 <TABLE cellSpacing=0 cellPadding=0 border=0 width=100%>
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-			<b>Daniele Frijia (DE) 录矛虏茅CARE 2X掳虏脠芦路陆脙忙碌脛脦脢脤芒</b>
+			<b>Daniele Frijia (DE) 检查CARE 2X安全方面的问题</b>
 			<br>
-			脰梅脪陋鹿卤脧脳拢潞<p>
+			主要贡献：<p>
 			<font size=1>
-			掳虏脠芦路陆脙忙碌脛陆篓脪茅<br>
-			PHP卤脿鲁脤路陆脙忙碌脛鹿脣脦脢<br>
-			麓脣脧卯脛驴碌脛隆掳脡脷卤酶隆卤
+			安全方面的建议<br>
+			PHP编程方面的顾问<br>
+			此项目的“哨兵”
 		</font>
 		    <p>
-			Daniele Frijia脧脠脡煤鲁枚脡煤脫脷1981脛锚拢卢脧脰鹿陇脳梅脫脷碌脗鹿煤Nuremberg碌脛脪禄录脪ISP隆拢脣没陆芦脳脭录潞路谩赂禄碌脛PHP脫脙脌麓赂脛脡脝Care2x碌脛掳虏脠芦鹿娄脛脺隆拢 Daniele Frijia脧脠脡煤脰脗脕娄脫脷脭脷驴陋路脜脭麓麓煤脗毛碌脛脢脌陆莽脌茂麓貌驴陋脪禄赂枚脠芦脨脗碌脛脪陆脕脝虏煤脝路脢脨鲁隆隆拢
-			<P><a href="mailto:daniele@infra.de"><u>脫毛Daniele Frijia脧脠脡煤脕陋脧碌</u></a>
+			Daniele Frijia先生出生于1981年，现工作于德国Nuremberg的一家ISP。他将自己丰富的PHP用来改善Care2x的安全功能。 Daniele Frijia先生致力于在开放源代码的世界里打开一个全新的医疗产品市场。
+			<P><a href="mailto:daniele@infra.de"><u>与Daniele Frijia先生联系</u></a>
 </TD></TR></TBODY></TABLE>
 <hr>
-<font face="verdana,arial" size=3 color="#0000ff">禄鹿脪陋赂脨脨禄拢潞</font>
-<font face="verdana,arial" size=1 >拢篓掳麓脳脰脛赂脣鲁脨貌脜脜脕脨拢漏</font>
+<font face="verdana,arial" size=3 color="#0000ff">还要感谢：</font>
+<font face="verdana,arial" size=1 >（按字母顺序排列）</font>
 
 <table border=0 cellspacing=1 cellpadding=1>
   <tr>
     <td bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> Abrar H. Hazarika (ID)</font></nobr>&nbsp;</td>
-    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;eComBill碌楼脰陇脛拢驴茅</font></td>
+    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;eComBill单证模块</font></td>
   </tr>
   <tr>
     <td bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> Agus M. Ramdan (ID)</font></nobr>&nbsp;</td>
-    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;麓煤脗毛脨脼露漏拢卢care2x.com CMS</font></td>
+    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;代码修订，care2x.com CMS</font></td>
   </tr>
   <tr>
     <td bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> Akhmad Daniel Sembiring (ID)</font></nobr>&nbsp;</td>
-    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;eCombill脛拢驴茅碌梅脢脭</font></td>
+    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;eCombill模块调试</font></td>
   </tr>
   <tr>
     <td bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> Alfredo Rodriguez (PT)</font></nobr>&nbsp;</td>
-    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;脝脧脤脩脩脌脫茂路颅脪毛</font></td>
+    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;葡萄牙语翻译</font></td>
   </tr>
   <tr>
     <td bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> Are Kristensen (NO)</font></nobr>&nbsp;</td>
-    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;脜虏脥镁脫茂路颅脪毛录掳脭脷脧脽脩脻脢戮</font></td>
+    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;挪威语翻译及在线演示</font></td>
   </tr>
   <tr>
     <td bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> Biju Gopinath (IN)</font></nobr>&nbsp;</td>
-    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;陆禄禄楼脥录脨脦陆莽脙忙脡猫录脝</font></td>
+    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;交互图形界面设计</font></td>
   </tr>
   <tr>
     <td bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> Daniele Frijia (DE)</font></nobr>&nbsp;</td>
-    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;掳虏脠芦录矛虏茅拢卢PHP鹿脣脦脢</font></td>
+    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;安全检查，PHP顾问</font></td>
   </tr>
   <tr>
     <td bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> Dilip Bharatee (IN)</font></nobr>&nbsp;</td>
-    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;ecomscience.com拢卢脠芦脰掳鲁脤脨貌脭卤</font></td>
+    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;ecomscience.com，全职程序员</font></td>
   </tr>
   <tr>
     <td bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> Erik de Wild (NL)</font></nobr>&nbsp;</td>
-    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;潞脡脌录脫茂路颅脪毛拢卢路镁脦帽脝梅掳眉脰脝脳梅</font></td>
+    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;荷兰语翻译，服务器包制作</font></td>
   </tr>
   <tr>
     <td bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> Gonzalo Gomes Sotelo (AR)</font></nobr>&nbsp;</td>
-    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;脦梅掳脿脩脌脫茂路颅脪毛</font></td>
+    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;西班牙语翻译</font></td>
   </tr>
   <tr>
     <td bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> Javier Alberto Arias (AR)</font></nobr>&nbsp;</td>
-    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;脦梅掳脿脩脌脫茂路颅脪毛</font></td>
+    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;西班牙语翻译</font></td>
   </tr>
   <tr>
     <td bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> Luki Rustianto (ID)</font></nobr>&nbsp;</td>
-    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;掳虏脠芦鹿娄脛脺脭枚脟驴</font></td>
+    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;安全功能增强</font></td>
   </tr>
   <tr>
     <td bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> Mark Painter Dr. med (ZA)</font></nobr>&nbsp;</td>
-    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;脢媒戮脻陆谩鹿鹿脡猫录脝拢卢赂戮虏煤驴脝拢卢脠卤脧脻卤篓赂忙拢卢脥录脨脦陆莽脙忙脡猫录脝</font></td>
+    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;数据结构设计，妇产科，缺陷报告，图形界面设计</font></td>
   </tr>
   <tr>
     <td bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> Matej Hausenblas (FR)</font></nobr>&nbsp;</td>
-    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;路篓脫茂路颅脪毛</font></td>
+    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;法语翻译</font></td>
   </tr>
   <tr>
     <td bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> Muhammad Panji (ID)</font></nobr>&nbsp;</td>
-    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;赂陆录脫碌脛脫隆露脠脛谩脦梅脩脟脫茂路颅脪毛</font></td>
+    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;附加的印度尼西亚语翻译</font></td>
   </tr>
   <tr>
     <td bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> Nino Novak (DE)</font></nobr>&nbsp;</td>
-    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;碌脗脫茂掳忙www.care2x.com</font></td>
+    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;德语版www.care2x.com</font></td>
   </tr>
   <tr>
-    <td bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> Patxi Gomar篓陋z (ES)</font></nobr>&nbsp;</td>
-    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;脦梅掳脿脩脌脫茂路颅脪毛</font></td>
+    <td bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> Patxi Gomaríz (ES)</font></nobr>&nbsp;</td>
+    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;西班牙语翻译</font></td>
   </tr>
   <tr>
     <td bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> Pawel Cyrta (PL)</font></nobr>&nbsp;</td>
-    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;虏篓脌录脫茂路颅脪毛</font></td>
+    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;波兰语翻译</font></td>
   </tr>
   <tr>
     <td bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> Petr Roupec(CZ)</font></nobr>&nbsp;</td>
-    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;陆脻驴脣脫茂路颅脪毛</font></td>
+    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;捷克语翻译</font></td>
   </tr>
   <tr>
     <td bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> Prantar Deka (IN)</font></nobr>&nbsp;</td>
-    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;脪禄掳茫碌楼脰陇脛拢驴茅</font></td>
+    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;一般单证模块</font></td>
   </tr>
   <tr>
     <td bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> Roberto Nanucci (IT)</font></nobr>&nbsp;</td>
-    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;care2x.it戮碌脧帽脮戮碌茫</font></td>
+    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;care2x.it镜像站点</font></td>
   </tr>
   <tr>
     <td bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> Sarat Nayak (IN)</font></nobr>&nbsp;</td>
-    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;脡猫录脝赂脛脡脝拢卢脠卤脧脻卤篓赂忙</font></td>
+    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;设计改善，缺陷报告</font></td>
   </tr>
   <tr>
     <td bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> Simone Aveotti (IT)</font></nobr>&nbsp;</td>
-    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;赂陆录脫碌脛脪芒麓贸脌没脫茂路颅脪毛</font></td>
+    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;附加的意大利语翻译</font></td>
   </tr>
   <tr>
     <td bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> Thomas Wiedmann (DE)</font></nobr>&nbsp;</td>
-    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;虏芒脢脭拢卢碌梅脢脭拢卢脨拢脩茅麓煤脗毛</font></td>
+    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;测试，调试，校验代码</font></td>
   </tr>
   <tr>
     <td bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> Victor Christianto</font></nobr>&nbsp;</td>
-    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;Ataraxia (WAP)脛拢驴茅</font></td>
+    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;Ataraxia (WAP)模块</font></td>
   </tr>
   <tr>
     <td bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> Wilfried Gobert Dr. med (DE)</font></nobr>&nbsp;</td>
-    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;鲁枚掳忙脧脿鹿脴脢脗脧卯拢卢路镁脦帽脝梅脰梅禄煤脡猫露篓拢卢脨脗脦脜路镁脦帽脝梅拢卢OTRS拢卢鹿脣脦脢</font></td>
+    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;出版相关事项，服务器主机设定，新闻服务器，OTRS，顾问</font></td>
   </tr>
 </table>
 
-<font face="verdana,arial" size=1>脳垄拢潞脪脭脡脧脢脟虏驴路脰脙霉脨禄脙没碌楼拢卢赂眉露脿碌脛脙霉脨禄脠脣脭卤脮媒脭脷脤铆录脫隆拢</font>
+<font face="verdana,arial" size=1>注：以上是部分鸣谢名单，更多的鸣谢人员正在添加。</font>
 
 </body>
 </html>

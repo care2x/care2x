@@ -20,7 +20,7 @@ require_once($root_path.'include/core/inc_environment_global.php');
              width=5 border=0></TD></TR>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-			<P><img src="../../fotos/credits/claudio_torbinio.jpg" border=0  align=right vspace=10>
+			<P><img src="../../uploads/photos/credits/claudio_torbinio.jpg" border=0  align=right vspace=10>
 			<b>Claudio Giulio Torbinio (IT)</b>
 			<p>
 			Translation of Care2x to Italian<br>
@@ -41,7 +41,7 @@ require_once($root_path.'include/core/inc_environment_global.php');
             width=5 border=0></TD></TR>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-            <P><img src="../../fotos/credits/gabriele_cicala.jpg"  border=0  align=right vspace=10>
+            <P><img src="../../uploads/photos/credits/gabriele_cicala.jpg"  border=0  align=right vspace=10>
 			<b>La traduzione italiana di sito web (www.care2x.com) � sviluppata e gestita da Gabriele Cicala.</b>
 			<p>
 			Gabriele Cicala � nato a Rossano in provincia di Cosenza nel 1970.
@@ -61,7 +61,7 @@ suo ideatore e tutti i suoi collaboratori.
             width=5 border=0></TD></TR>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-			<P><img src="../../fotos/credits/giuseppe_scarpi.jpg"  width=135 height=170 border=0  align=right vspace=10>
+			<P><img src="../../uploads/photos/credits/giuseppe_scarpi.jpg"  width=135 height=170 border=0  align=right vspace=10>
 			<b>La versione italiana di CARE 2X � stata fatta da Giuseppe Scarpi:</b>
 			<p>
 			Giuseppe Scarpi � nato a Roma nel 1967.<p>
@@ -110,7 +110,7 @@ Ha deciso di unirsi attivamente alla causa dell'Open Source in quanto
             width=5 border=0></TD></TR>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-            <P><img src="../../fotos/credits/daniel_zilli.jpg"  border=0  align=right vspace=10>
+            <P><img src="../../uploads/photos/credits/daniel_zilli.jpg"  border=0  align=right vspace=10>
 			<b>
 			La traduzione braziliana-portugesa di CARE 2X e sito web (www.care2x.com) � stata fatta da Daniel Zilli.
 			</b>

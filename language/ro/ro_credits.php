@@ -15,7 +15,7 @@ require_once($root_path.'include/core/inc_environment_global.php');
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-			<P><img src="../../fotos/credits/elpidio_latorilla_3.jpg" border=0  align=right vspace=10>
+			<P><img src="../../uploads/photos/credits/elpidio_latorilla_3.jpg" border=0  align=right vspace=10>
 			<b>The first beta version of CARE 2X was created by Elpidio Latorilla:</b>
 			<p>
 			Professions: <br>Programmer, Surgery Nurse, Electronics & telecommunications technician
@@ -28,7 +28,7 @@ require_once($root_path.'include/core/inc_environment_global.php');
         <tbody>
         <tr>
           <td vAlign=top><font face="verdana,arial" size=2>
-			<p><img src="../../fotos/credits/lopo_l_almeida.jpg"  
+			<p><img src="../../uploads/photos/credits/lopo_l_almeida.jpg"  
                                 width=135 height=170 border=0  align=right vspace=10>
 			<b>Lopo Lencastre de Almeida (PT)</b> is one of the most productive developers. 
 			Some of his contributions to the project are:
@@ -57,7 +57,7 @@ require_once($root_path.'include/core/inc_environment_global.php');
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-			<P><img src="../../fotos/credits/giuseppe_scarpi.jpg"  border=0  width=135 height=170 align=right vspace=10>
+			<P><img src="../../uploads/photos/credits/giuseppe_scarpi.jpg"  border=0  width=135 height=170 align=right vspace=10>
 			<b>Giuseppe Scarpi (IT) translated CARE 2X to italian.</b>
 			<p>
 			Giuseppe Scarpi was born in Rome, Italy, 35 years ago. 
@@ -75,7 +75,7 @@ He decided to actively join open source because: <br><i>"Such an ideal world can
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-            <P><img src="../../fotos/credits/gabriele_cicala.jpg"  border=0  align=right vspace=10>
+            <P><img src="../../uploads/photos/credits/gabriele_cicala.jpg"  border=0  align=right vspace=10>
 			<b>Gabriele Cicala (IT) translated most of the the www.care2x.com website to italian.</b>
 			<p>
 			Gabriele Cicala was born in Rossano, in Calabria southern Italy, in 1970.
@@ -97,7 +97,7 @@ believe.
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-            <P><img src="../../fotos/credits/daniel_zilli.jpg"  border=0  align=right vspace=10>
+            <P><img src="../../uploads/photos/credits/daniel_zilli.jpg"  border=0  align=right vspace=10>
 			<b>Daniel Zilli (BR) translated CARE 2X and www.care2x.com website to  brazilian-portuguese.</b>
 			<p>
 			Daniel is a nice guy who loves to live a happy life. He likes computers, football, and good music.
@@ -111,7 +111,7 @@ science education products, open source software and local  linux distro.
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-            <P><img src="../../fotos/credits/muhammad_panji.png"  border=0  align=right vspace=10>
+            <P><img src="../../uploads/photos/credits/muhammad_panji.png"  border=0  align=right vspace=10>
 			<b>Muhammad Panji (ID) cotranslated CARE 2X and www.care2x.com website to indonesian.</b>
 			
 			<P><a href="mailto:sumodirjo@users.sourceforge.net"><u>Muhammad Panji can be contacted here.</u></a>
@@ -122,7 +122,7 @@ science education products, open source software and local  linux distro.
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-            <P><img src="../../fotos/credits/agus_mr.jpg"  border=0  align=right vspace=10>
+            <P><img src="../../uploads/photos/credits/agus_mr.jpg"  border=0  align=right vspace=10>
 			<b>Agus Muhammad Ramdan (ID) translated CARE 2X and www.care2x.com website to indonesian.</b>
 			
 			<P><a href="mailto:agusmr@mweb.co.id"><u>Agus M. Ramdan can be contacted here.</u></a>
@@ -132,7 +132,7 @@ science education products, open source software and local  linux distro.
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-			<P><img src="../../fotos/credits/thomas_wiedmann.jpg"  border=0  align=right vspace=10>
+			<P><img src="../../uploads/photos/credits/thomas_wiedmann.jpg"  border=0  align=right vspace=10>
 			<b>Thomas Wiedmann (DE) is the most active debugger</b>
 			<p><font size=1>
 			Complete testing <br>
@@ -155,15 +155,15 @@ science education products, open source software and local  linux distro.
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-			<P><img src="../../fotos/credits/hinostroza.jpg"  border=0  width=135 align=right vspace=10>
+			<P><img src="../../uploads/photos/credits/hinostroza.jpg"  border=0  width=135 align=right vspace=10>
 			<b>Dr. med Daniel Hinostroza C. (EC)</b><br>
 			Spanish translations
 			<p><font size=1>
 			Author and coauthor of numerous medical textbooks<br>
-5 years as Director of the Grï¿½nenthal Medical Informatics Center, Quito
+5 years as Director of the Grünenthal Medical Informatics Center, Quito
 - Ecuador <br>
 Initial studies in Medical Informatics at Stanford University<br>
-2 years as Multimedia Project Leader of Grï¿½nenthal GmbH, Aachen, Germany</font><p>
+2 years as Multimedia Project Leader of Grünenthal GmbH, Aachen, Germany</font><p>
 Official translator for phpMyAdmin (Spanish)<br>
 Webmaster of the largest Ecuadorian medical website initiative
 (www.cmpichincha.med.ec) and the Ecuadorian Society of Dermatology
@@ -176,7 +176,7 @@ Website: www.cerebroperiferico.com
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-			<P><img src="../../fotos/credits/noel_villamor.jpg"  border=0  align=right vspace=10>
+			<P><img src="../../uploads/photos/credits/noel_villamor.jpg"  border=0  align=right vspace=10>
 			<b>Noel R. Villamor (PH)</b><br>
 			Module programming
 			<p>Finished the laboratory test plotting module tackling some tough mathematical problems.
@@ -189,8 +189,8 @@ Website: www.cerebroperiferico.com
         <TBODY>
 <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-		  <P><img src="../../fotos/credits/wilfried_goedert.jpg" border=0  align=right vspace=10 >
-			<P><b>Dr. med Wilfried Gï¿½dert (DE)</b><br>
+		  <P><img src="../../uploads/photos/credits/wilfried_goedert.jpg" border=0  align=right vspace=10 >
+			<P><b>Dr. med Wilfried Gödert (DE)</b><br>
 			contributes the following:
 			<p><font size=1>
 		     Hosting and admin of:<br>
@@ -200,7 +200,7 @@ Website: www.cerebroperiferico.com
 			<p>
 			</font>
 			Profession: Physician, with additional Medical Informatics degree
-			<p><a href="mailto:goedert@users.sourceforge.net"><u>Dr. Wilfried Gï¿½dert can be contacted here</u></a>
+			<p><a href="mailto:goedert@users.sourceforge.net"><u>Dr. Wilfried Gödert can be contacted here</u></a>
 </TD></TR>	
 </TBODY></TABLE>
 
@@ -237,16 +237,16 @@ work in this kind of community.
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-			<b>Patxi Gomarï¿½z (ES) did the spanish translations.</b>
+			<b>Patxi Gomaríz (ES) did the spanish translations.</b>
 			<p>
-			Patxi Gomarï¿½z was born in the spring of 1966 in Murcia, Spain. His life and work revolve mostly around photography
+			Patxi Gomaríz was born in the spring of 1966 in Murcia, Spain. His life and work revolve mostly around photography
 			being a specialist in photography for Ophtalmology (fundus camera). He is an internet enthusiast and also designs 
 			websites.<p>
 			"<i>I think the open source code is an effective weapon against the negative effects of economic globalization specially in 
 			fundamental areas which are important to humanity like health. For that reason, I feel proud of my small
 			contribution to this great project.</i>"
 
-			<P><a href="mailto:pgomariz@ono.com"><u>Patxi Gomarï¿½z can be contacted here.</u></a>
+			<P><a href="mailto:pgomariz@ono.com"><u>Patxi Gomaríz can be contacted here.</u></a>
 </TD></TR></TBODY></TABLE>
 <hr>
 <TABLE cellSpacing=0 cellPadding=0 border=0 width=100%>
@@ -326,7 +326,7 @@ work in this kind of community.
     <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;Data structure design, Obstetrics, Bug reporting, GUI design</font></td>
   </tr>
   <tr>
-    <td bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> Matï¿½j Hausenblas (FR)</font></nobr>&nbsp;</td>
+    <td bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> Matêj Hausenblas (FR)</font></nobr>&nbsp;</td>
     <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;French translation</font></td>
   </tr>
   <tr>
@@ -338,7 +338,7 @@ work in this kind of community.
     <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;German edition of www.care2x.com</font></td>
   </tr>
   <tr>
-    <td bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> Patxi Gomarï¿½z (ES)</font></nobr>&nbsp;</td>
+    <td bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> Patxi Gomaríz (ES)</font></nobr>&nbsp;</td>
     <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;Spanish translation</font></td>
   </tr>
   <tr>
@@ -374,7 +374,7 @@ work in this kind of community.
     <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;Ataraxia (WAP) module</font></td>
   </tr>
   <tr>
-    <td bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> Wilfried Gï¿½dert Dr. med (DE)</font></nobr>&nbsp;</td>
+    <td bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> Wilfried Gödert Dr. med (DE)</font></nobr>&nbsp;</td>
     <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;Press relation, Server hosting, Newsserver, OTRS, Consultation</font></td>
   </tr>
 </table>

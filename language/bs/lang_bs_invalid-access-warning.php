@@ -42,23 +42,23 @@ Najvjerovatniji razlog ovog problema:
 <font size=2 face="verdana,arial">
 <img <?php
 /* Translation by Emir Prcic <e.prcic@gmx.net> */ echo createComIcon('../../','achtung.gif') ?>>
-Moï¿½da ste koristili standardne "Back" or "Forward" funkcije vaï¿½eg browsera. Izbjegavajte koristiti te standardne funkcije.<br>
+Mo¾da ste koristili standardne "Back" or "Forward" funkcije va¹eg browsera. Izbjegavajte koristiti te standardne funkcije.<br>
 <img <?php
 /* Translation by Emir Prcic <e.prcic@gmx.net> */ echo createComIcon('../../','achtung.gif') ?>>
-Moï¿½da ste odbili primiti cookie. Ovaj program ovidi o cookies. Molimo vas da prihvatite cookies
+Mo¾da ste odbili primiti cookie. Ovaj program ovidi o cookies. Molimo vas da prihvatite cookies
 <br>
 <img <?php
 /* Translation by Emir Prcic <e.prcic@gmx.net> */ echo createComIcon('../../','achtung.gif') ?>>
-Vaï¿½ browser ne moï¿½e primiti. Molimo vas da korektno podesite browser.
+Va¹ browser ne mo¾e primiti. Molimo vas da korektno podesite browser.
 <br>
 <img <?php
 /* Translation by Emir Prcic <e.prcic@gmx.net> */ echo createComIcon('../../','achtung.gif') ?>>
-Nemate podrï¿½ku za Javascript. Molimo da ukljucite JavaScript u vaï¿½em browseru.
+Nemate podr¹ku za Javascript. Molimo da ukljucite JavaScript u va¹em browseru.
 <br>
 <img <?php
 /* Translation by Emir Prcic <e.prcic@gmx.net> */ echo createComIcon('../../','achtung.gif') ?>>
-U rijetkim sluï¿½ajevima moï¿½e se dogoditi da je doï¿½lo do greï¿½ke u komunikaciji. Da bi ispravili ovu greï¿½ku samo kliknite na
-"reload" dugme u vaï¿½em browseru.
+U rijetkim sluèajevima mo¾e se dogoditi da je do¹lo do gre¹ke u komunikaciji. Da bi ispravili ovu gre¹ku samo kliknite na
+"reload" dugme u va¹em browseru.
 <p>
 </FONT>
 <p>

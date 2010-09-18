@@ -8,33 +8,33 @@ $LDORNOC='Dienst';
 $LDScheduler='Planer';
 $LDDutyPlan='Dienstplan';
 $LDQuickView='Schnellsicht';
-$LDQviewTxtDocs='Ãœbersicht Ã¼ber die gegenwÃ¤rtige diensthabenden Arzte';
+$LDQviewTxtDocs='Übersicht über die gegenwärtige diensthabenden Ärzte';
 $LDOrLogBook='OP Pflege Logbuch';
 $LDOrLogBookTxt='Dokumentation der Pflegeleistung in OP, Archiv';
 $LDOrProgram='OP Programm';
 $LDOrProgramTxt='OP Programm ansehen, erstellen, verarbeiten, u.s.w.';
-$LDQviewTxtNurse='Ãœbersicht Ã¼ber die gegenwÃ¤rtig diensthabenden OP Pfleger';
+$LDQviewTxtNurse='Übersicht über die gegenwärtig diensthabenden OP Pfleger';
 $LDDutyPlanTxt='Dienstplan erstellen, ansehen, verarbeiten, usw.';
 $LDOnCallDuty='Bereitschaftsdienst';
 $LDOnCallDutyTxt='Zeiterfassung der Arbeitsleistung in Bereitschaft';
-$LDAnaLogBook='AnÃ¤sthesie Logbuch';
-$LDAnaLogBookTxt='Dokumentation der Leistung in AnÃ¤sthese, Archiv';
-$LDQviewTxtAna='Ãœbersicht Ã¼ber die diensthabenden AnÃ¤sthesie-Pfleger';
+$LDAnaLogBook='Anästhesie Logbuch';
+$LDAnaLogBookTxt='Dokumentation der Leistung in Anästhese, Archiv';
+$LDQviewTxtAna='Übersicht über die diensthabenden Anästhesie-Pfleger';
 $LDNewDocu='Neue Eingabe';
 $LDSearch='Suchen';
 $LDArchive='Archiv';
 $LDSee='Sehen';
 $LDUpdate='Aktualisieren';
 $LDCreate='Erstellen';
-$LDCreatePersonList='Personalliste erstellen bzw. Ã¤ndern';
+$LDCreatePersonList='Personalliste erstellen bzw. ändern';
 $LDDoctor='Arzt';
 $LDNursing='Pflege';
 $LDAna='Narkose';
 
-$LDClose='SchlieÃŸen';
+$LDClose='Schließen';
 $LDSave='Speichern';
 $LDCancel='Abbrechen';
-$LDReset='ZurÃ¼cksetzen';
+$LDReset='Zurücksetzen';
 $LDContinue='Weiter...';
 
 $LDHideCat='Die Katze verstecken';
@@ -46,7 +46,7 @@ $LDSearchDocu='Dokument suchen';
 
 $LDMinor='kleine';
 $LDMiddle='mittlere';
-$LDMajor='groÃŸe';
+$LDMajor='große';
 $LDOperation='Eingriff';
 
 $LDLastName='Name';
@@ -56,7 +56,7 @@ $LDPatientNr='Fallnummer';
 $LDMatchCode='Matchcode Name';
 $LDOpDate='OP Datum';
 $LDOperator='Operateur';
-$LDStationary='StationÃ¤r';
+$LDStationary='Stationär';
 $LDAmbulant='Ambulant';
 $LDInsurance='Kasse';
 $LDPrivate='Privat';
@@ -72,8 +72,8 @@ $LDOpStart='OP Beginn';
 $LDOpEnd='OP Ende';
 $LDScrubNurse='OP Schwester/Pfleger';
 $LDOpRoom='OP Saal';
-$LDResetAll='Alle Eingaben verwerfen/lÃ¶schen.';
-$LDUpdateData='Aktualisieren bzw. Ã¤ndern';
+$LDResetAll='Alle Eingaben verwerfen/löschen.';
+$LDUpdateData='Aktualisieren bzw. ändern';
 $LDStartNewDocu='Neues OP Dokument anlegen';
 $LDSearchKeyword='Suchbegriff: z.B. Name oder Vorname';
 
@@ -102,7 +102,7 @@ $tage=array(
 $monat=array('',
 				'Januar',
 				'Februar',
-				'MÃ¤rz',
+				'März',
 				'April',
 				'Mai',
 				'Juni',
@@ -120,7 +120,7 @@ $LDOpMainElements=array(
 										patient=>'Patient',
 										diagnosis=>'Diagnose',
 										operator=>'Operateur Assistent',
-										ana=>'Narkose &nbsp;AnÃ¤sthesie',
+										ana=>'Narkose &nbsp;Anästhesie',
 										cutclose=>'Schnitt Nahtzeit',
 										therapy=>'Therapie',
 										result=>'Ausgang',
@@ -132,8 +132,8 @@ $LDOpIn='Ein';
 $LDOpOut='Aus';
 $LDOpInFull='Einschleusen';
 $LDOpOutFull='Ausschleusen';
-$LDEditPatientData='Logbuchdaten von ~tagword~ aktualisieren bzw. Ã¤ndern';
-$LDOpenPatientFolder='Patientenmappe von ~tagword~ Ã¶ffnen';
+$LDEditPatientData='Logbuchdaten von ~tagword~ aktualisieren bzw. ändern';
+$LDOpenPatientFolder='Patientenmappe von ~tagword~ öffnen';
 
 $tbuf=array('O','A','I','S');
 $cbuf=array('Operateur','Assistent','Instrumentierer','Springer');
@@ -150,9 +150,9 @@ $LDPatientNotFound='Der Patient wurde nicht gefunden!';
 $LDPlsEnoughData='Bitte geben Sie ausreichende Informationen ein.';
 $LDOpNr='OP Nummer';
 $LDDate='Datum';
-$LDClk2DropMenu='Klick um MenÃ¼ zu sehen';
+$LDClk2DropMenu='Klick um Menü zu sehen';
 $LDSaveLatest='Aktuellen Eintrag speichern';
-$LDHelp='Hilfe Ã¶ffnen';
+$LDHelp='Hilfe öffnen';
 
 $LDSearchPatient='Patient suchen';
 $LDUsedMaterial='Verbrauchte OP-Materialien';
@@ -162,7 +162,7 @@ $LDShowLogbook='Logbuch einblenden';
 /**
 *  ITN = Intratrachele Narkose
 *  LA = Lokale anesthesie
-*  DS = Dï¿½mmerschlaf = Analgosedierung
+*  DS = Dämmerschlaf = Analgosedierung
 *  AS = Analgosidierung
 */
 $LDAnaTypes=array(
@@ -184,7 +184,7 @@ $LDFrom='ab';
 $LDTo='bis';
 $LDFunction='Funktion';
 $LDCurrentEntries='Aktuelle Angaben';
-$LDDeleteEntry='Eintrag lÃ¶schen';
+$LDDeleteEntry='Eintrag löschen';
 $LDSearchNewPerson='Einen neuen ~tagword~ suchen';
 $LDSorryNotFound='Ich habe leider keine Information gefunden. <br>Bitte versuchen sie ein anderes Stichwort.';
 $LDSearchPerson='~tagword~ suchen';
@@ -202,12 +202,12 @@ $LDReposition='Reposition';
 $LDWaitTime='Wartezeit';
 $LDStart='Anfang';
 $LDEnd='Ende';
-$LDPatNoExist='Patient ist noch nicht im Log Buch eingetragen. Bitte schlieÃŸen Sie dieses Fenster
-										und Ã¶ffnen Sie das Logbuch nochmals. Falls dieses weiterhin besteht, benachrichtigen
+$LDPatNoExist='Patient ist noch nicht im Log Buch eingetragen. Bitte schließen Sie dieses Fenster
+										und öffnen Sie das Logbuch nochmals. Falls dieses weiterhin besteht, benachrichtigen
 										Sie bitte die EDV-Abteilung.';
 $opts=array('-',
 					'Patient nicht rechzeitig im OP',
-       				'AnÃ¤sthesie nicht rechtzeitig im OP',
+       				'Anästhesie nicht rechtzeitig im OP',
        				'OP Pflege nicht rechtzeitig im OP', 
 					'Reinigung nicht rechtzeitig fertig',
        				'Besonderer Grund');
@@ -258,14 +258,14 @@ $LDOtherFunctions='Weitere Funktionen';
 $LDInfoNotFound='Die gesuchte Information wurde nicht gefunden!';
 $LDButFf='Aber, folgende';
 $LDSimilar='Eintrag entspricht';
-$LDSimilarMany='EintrÃ¤ge entsprechen';
-$LDNeededInfo='dem gesuchten am nÃ¤chsten';
+$LDSimilarMany='Einträge entsprechen';
+$LDNeededInfo='dem gesuchten am nächsten';
 $LDPatLogbook='Patient ist im OP Logbuch wie folgt eingetragen.';
-$LDPatLogbookMany='Patient ist in OP LogbÃ¼chern wie folgt eingetragen';
+$LDPatLogbookMany='Patient ist in OP Logbüchern wie folgt eingetragen';
 $LDDepartment='Abteilung';
 $LDRoom='Saal';
 $LDLastEntry='Folgendes ist der letzte Eintrag im OP Logbuch';
-$LDLastEntryMany='Folgende sind die letzte EintrÃ¤ge im OP Logbuch';
+$LDLastEntryMany='Folgende sind die letzte Einträge im OP Logbuch';
 $LDFrom='von';
 $LDFromMany='von vor';
 $LDYesterday='Gestern';
@@ -286,14 +286,14 @@ $LDMonth='Monat';
 $LDYear='Jahr';
 $LDDutyElements = array('Datum','&nbsp;','Name, Vorname','Von','Bis','OP Saal','Diagnose & Therapie');
 $LDPrint='Drucken';
-$LDAlertNoPrinter='In Ihrem Browser mÃ¼ssen Sie den Ausdruck leider manuell starten. Gehen Sie dazu bitte mit der Maus auf das Dokument, drÃ¼ken Sie die rechte Maustaste und wï¿½hlen wï¿½heln Drucken!';
+$LDAlertNoPrinter='In Ihrem Browser müssen Sie den Ausdruck leider manuell starten. Gehen Sie dazu bitte mit der Maus auf das Dokument, drücken Sie die rechte Maustaste und wählen wäheln Drucken!';
 $LDAlertNotSavedYet='Die Daten sind noch nicht gespeichert! Wollen Sie sie speichern?';
 $LDPhone='Telefon';
 $LDBeeper='Funk';
 $LDOn='am';
 $LDNoPersonList='Die Personalliste ist noch nicht vorhanden. Bitte erstellen Sie zuerst die Liste.';
 $LDNoEntryFound='Keinen Eintrag im Plan gefunden!';
-$LDShowPrevLog='Den nÃ¤chsten Logbuch Eintrag zeigen';
+$LDShowPrevLog='Den nächsten Logbuch Eintrag zeigen';
 $LDShowNextLog='Den vorigen Logbuch Eintrag zeigen';
 $LDShowGuideCal='Den Leitkalender zeigen';
 
@@ -313,8 +313,8 @@ $LDSearchInAllDepts='Suchen in allen Abteilungen';
 $LDAddNurseToList='Pflegepersonal in die Liste eintragen';
 $LDNursesList='Pflegepersonal-Liste';
 /* 2003-03-19 EL */
-$LDPlsSelectDept='Bitte wÃ¤hlen Sie die  Abteilung aus.';
+$LDPlsSelectDept='Bitte wählen Sie die  Abteilung aus.';
 $LDSelectORoomNr='...und den OP Saal.';
-$LDAlertNoDeptSelected='Bitte wÃ¤hlen Sie eine Abteilung aus!';
-$LDAlertNoORSelected='Bitte wÃ¤hlen Sie einen OP Saal aus!';
+$LDAlertNoDeptSelected='Bitte wählen Sie eine Abteilung aus!';
+$LDAlertNoORSelected='Bitte wählen Sie einen OP Saal aus!';
 ?>

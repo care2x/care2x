@@ -1,12 +1,12 @@
 <?php
-//error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
-//require_once('./roots.php');
-//require_once($root_path.'include/core/inc_environment_global.php');
+error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
+require_once('./roots.php');
+require_once($root_path.'include/core/inc_environment_global.php');
 ?>
-<?php //html_rtl($lang); ?>
+<?php html_rtl($lang); ?>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf8">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 <title>Credits</title>
 </head>
 <body onLoad="if(window.focus) window.focus()">
@@ -17,7 +17,7 @@
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-            <P><img src="../../fotos/credits/a_djem.jpg"  border=0  align=right vspace=10>
+            <P><img src="../../uploads/photos/credits/a_djem.jpg"  border=0  align=right vspace=10>
 			<b>A. Djem (ID)</b><P>
 			Desktop wallpaper designs for Care2x<br>
 			Website design
@@ -29,7 +29,7 @@
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-            <P><img src="../../fotos/credits/agus_mr.jpg"  border=0  align=right vspace=10>
+            <P><img src="../../uploads/photos/credits/agus_mr.jpg"  border=0  align=right vspace=10>
 			<b>Agus Muhammad Ramdan (ID)</b> 
 			<p>
 			Indonesian translation of Care 2X and www.care2x.com website<br>
@@ -43,7 +43,7 @@
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-            <P><img src="../../fotos/credits/are_kristensen.jpg"  border=0  width=135 align=right vspace=10>
+            <P><img src="../../uploads/photos/credits/are_kristensen.jpg"  border=0  width=135 align=right vspace=10>
 			<b>Are Kristensen (NO)</b> 
 			<p>
 			Norwegian translation<br>
@@ -56,15 +56,15 @@
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-			<P><img src="../../fotos/credits/hinostroza.jpg"  border=0  width=135 align=right vspace=10>
+			<P><img src="../../uploads/photos/credits/hinostroza.jpg"  border=0  width=135 align=right vspace=10>
 			<b>Dr. med Daniel Hinostroza C. (EC)</b><br>
 			Spanish translations
 			<p><font size=1>
 			Author and coauthor of numerous medical textbooks<br>
-5 years as Director of the Grï¿½nenthal Medical Informatics Center, Quito
+5 years as Director of the Grünenthal Medical Informatics Center, Quito
 - Ecuador <br>
 Initial studies in Medical Informatics at Stanford University<br>
-2 years as Multimedia Project Leader of Grï¿½nenthal GmbH, Aachen, Germany</font><p>
+2 years as Multimedia Project Leader of Grünenthal GmbH, Aachen, Germany</font><p>
 Official translator for phpMyAdmin (Spanish)<br>
 Webmaster of the largest Ecuadorian medical website initiative
 (www.cmpichincha.med.ec) and the Ecuadorian Society of Dermatology
@@ -77,7 +77,7 @@ Website: www.cerebroperiferico.com
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-            <P><img src="../../fotos/credits/daniel_zilli.jpg"  border=0  align=right vspace=10>
+            <P><img src="../../uploads/photos/credits/daniel_zilli.jpg"  border=0  align=right vspace=10>
 			<b>Daniel Zilli (BR) translated CARE 2X and www.care2x.com website to  brazilian-portuguese.</b>
 			<p>
 			Daniel is a nice guy who loves to live a happy life. He likes computers, football, and good music.
@@ -112,7 +112,7 @@ science education products, open source software and local  linux distro.
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-			<P><img src="../../fotos/credits/elpidio_latorilla_3.jpg" border=0  align=right vspace=10>
+			<P><img src="../../uploads/photos/credits/elpidio_latorilla_3.jpg" border=0  align=right vspace=10>
 			<b>The first beta version of CARE 2X was created by Elpidio Latorilla (DE/PH):</b>
 			<p>
 			Professions: <br>Programmer, Surgery Nurse, Electronics & telecommunications technician
@@ -125,7 +125,7 @@ science education products, open source software and local  linux distro.
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-            <P><img src="../../fotos/credits/gabriele_cicala.jpg"  border=0  align=right vspace=10>
+            <P><img src="../../uploads/photos/credits/gabriele_cicala.jpg"  border=0  align=right vspace=10>
 			<b>Gabriele Cicala (IT) translated most of the the www.care2x.com website to italian.</b>
 			<p>
 			Gabriele Cicala was born in Rossano, in Calabria southern Italy, in 1970.
@@ -136,7 +136,7 @@ open-source environment, he is very interested in every kind of project
 of this movement. Despite the
 fact that he is neither working in medical nor in health sector, he decided
 to join the Care project because
-he believes in the same things that the Careï¿½s creator and contributors
+he believes in the same things that the Care´s creator and contributors
 believe.
 			
 			<P><a href="mailto:gabcicala@tiscali.it"><u>Gabriele Cicala can be contacted here.</u></a>
@@ -151,7 +151,7 @@ believe.
 	<TR>
 	<TD vAlign=top><font face="verdana,arial" size=2>
 
-		<P><img src="../../fotos/credits/giuseppe_scarpi.jpg"  border=0  width=135 height=170 align=right vspace=10>
+		<P><img src="../../uploads/photos/credits/giuseppe_scarpi.jpg"  border=0  width=135 height=170 align=right vspace=10>
 		<b>Giuseppe Scarpi (IT) translated CARE 2X to italian.</b>
 		<p>
 		Giuseppe Scarpi was born in Rome, Italy, 35 years ago.
@@ -173,7 +173,7 @@ believe.
 	<TR>
 	<TD vAlign=top><font face="verdana,arial" size=2>
 
-		<P><img src="../../fotos/credits/hcc24_135.gif"  border=0  width=135  align=right vspace=10>
+		<P><img src="../../uploads/photos/credits/hcc24_135.gif"  border=0  width=135  align=right vspace=10>
 		<b>Joachim Mollin & HCC GmbH (DE)</b>
 		<p>
 		<font size=1>
@@ -198,7 +198,7 @@ believe.
 
           <td vAlign=top><font face="verdana,arial" size=2>
 
-			<p><img src="../../fotos/credits/dr_juan_manuel_montemayor.jpg"  border=0  align=right vspace=10>
+			<p><img src="../../uploads/photos/credits/dr_juan_manuel_montemayor.jpg"  border=0  align=right vspace=10>
           <b>Dr. Juan Manuel Montemayor (MX)</b> <p>
 		  Creation of high resolution, high quality graphic slides for promotional presentations of Care2x.
 			<br>
@@ -217,7 +217,7 @@ believe.
         <tr>
           <td vAlign=top><font face="verdana,arial" size=2>
 		  <hr>
-			<p><img src="../../fotos/credits/lopo_l_almeida.jpg"  
+			<p><img src="../../uploads/photos/credits/lopo_l_almeida.jpg"  
                                 width=135 height=170 border=0  align=right vspace=10>
 			<b>Lopo Lencastre de Almeida (PT)</b> is one of the most productive developers. 
 			Some of his contributions to the project are:
@@ -238,7 +238,7 @@ believe.
 			to industrial automation - as a software developer and interface designer for more than 16 years now . During the last 5 years he 
 			worked mostly  in web development and company management. He is the CEO/CTO of HumanEasy - a 
 			partner of Care2002 project in charge of its <b>Public Relations and Marketing Management</b>.<br>
-			He is also involved in many other GNU/GPL projects; some of them are in use at Care2xï¿½s site.<br>
+			He is also involved in many other GNU/GPL projects; some of them are in use at Care2x´s site.<br>
 			<p><a href="http://www.humaneasy.com" target="_blank"><u>Lopo L. de Almeida can be contacted here.</u></a>
 </td>
 </tr>
@@ -250,7 +250,7 @@ believe.
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-            <P><img src="../../fotos/credits/luca_romoli.jpg"  border=0  align=right vspace=10>
+            <P><img src="../../uploads/photos/credits/luca_romoli.jpg"  border=0  align=right vspace=10>
 			<b>Luca Romoli (BR/IT) </b><p>
 			PPT Presentations and templates<br>
 			Project management tools<br>
@@ -281,7 +281,7 @@ work in this kind of community.
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-            <P><img src="../../fotos/credits/muhammad_panji.png"  border=0  align=right vspace=10>
+            <P><img src="../../uploads/photos/credits/muhammad_panji.png"  border=0  align=right vspace=10>
 			<b>Muhammad Panji (ID) </b><p>
 			Indonesian translations of Care 2X and www.care2x.com website.<br>
 			Bug reporting
@@ -310,7 +310,7 @@ work in this kind of community.
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-			<P><img src="../../fotos/credits/noel_villamor.jpg"  border=0  align=right vspace=10>
+			<P><img src="../../uploads/photos/credits/noel_villamor.jpg"  border=0  align=right vspace=10>
 			<b>Noel R. Villamor (PH)</b><br>
 			Module programming
 			<p>Finished the laboratory test plotting module tackling some tough mathematical problems.
@@ -322,16 +322,16 @@ work in this kind of community.
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-			<b>Patxi Gomarï¿½z (ES) did the spanish translations.</b>
+			<b>Patxi Gomaríz (ES) did the spanish translations.</b>
 			<p>
-			Patxi Gomarï¿½z was born in the spring of 1966 in Murcia, Spain. His life and work revolve mostly around photography
+			Patxi Gomaríz was born in the spring of 1966 in Murcia, Spain. His life and work revolve mostly around photography
 			being a specialist in photography for Ophtalmology (fundus camera). He is an internet enthusiast and also designs 
 			websites.<p>
 			"<i>I think the open source code is an effective weapon against the negative effects of economic globalization specially in 
 			fundamental areas which are important to humanity like health. For that reason, I feel proud of my small
 			contribution to this great project.</i>"
 
-			<P><a href="mailto:pgomariz@ono.com"><u>Patxi Gomarï¿½z can be contacted here.</u></a>
+			<P><a href="mailto:pgomariz@ono.com"><u>Patxi Gomaríz can be contacted here.</u></a>
 </TD></TR></TBODY></TABLE>
 
 <hr>
@@ -339,7 +339,7 @@ work in this kind of community.
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-			<P><img src="../../fotos/credits/suman_bhat.jpg"  border=0  align=right vspace=10>
+			<P><img src="../../uploads/photos/credits/suman_bhat.jpg"  border=0  align=right vspace=10>
 			<b>Dr. Suman Bhusan Bhattacharyya (IN)</b>
 			<p>
 			Development of several plugins like vital statistics, gestation age and expected delivery date calculators,
@@ -353,7 +353,7 @@ work in this kind of community.
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-			<P><img src="../../fotos/credits/thomas_wiedmann.jpg"  border=0  align=right vspace=10>
+			<P><img src="../../uploads/photos/credits/thomas_wiedmann.jpg"  border=0  align=right vspace=10>
 			<b>Thomas Wiedmann (DE) is the most active debugger</b>
 			<p><font size=1>
 			Complete testing <br>
@@ -376,7 +376,7 @@ work in this kind of community.
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-			<P><img src="../../fotos/credits/walid_fathalla.jpg"  border=0  align=right vspace=10>
+			<P><img src="../../uploads/photos/credits/walid_fathalla.jpg"  border=0  align=right vspace=10>
 			<b>Walid Murad Fathalla (LY)</b>
 			<p>
 			Arabic translations<br>
@@ -394,7 +394,7 @@ work in this kind of community.
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-			<P><img src="../../fotos/credits/weining_chen.jpg"  border=0  align=right vspace=10>
+			<P><img src="../../uploads/photos/credits/weining_chen.jpg"  border=0  align=right vspace=10>
 			<b>Wei Ning Chen (CH)</b>
 			<p>Chinese-Simplified translations.
 <p>

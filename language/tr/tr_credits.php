@@ -1,26 +1,26 @@
 <?php
-//error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
-//require_once('./roots.php');
-//require_once($root_path.'include/core/inc_environment_global.php');
+error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
+require_once('./roots.php');
+require_once($root_path.'include/core/inc_environment_global.php');
 ?>
-<?php //html_rtl($lang); ?>
+<?php html_rtl($lang); ?>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-9">
-<title>EmeÃ°i GeÃ§enler</title>
+<title>Emeği Geçenler</title>
 </head>
 <body onLoad="if(window.focus) window.focus()">
-<font face="verdana,arial" size=6 color="#0000ff">EmeÃ°i GeÃ§enler</fonts><br>
-<font face="verdana,arial" size=1 color="#000000">Ada gÃ¶re abc sÃ½rasÃ½ ile</fonts><br>
+<font face="verdana,arial" size=6 color="#0000ff">Emeği Geçenler</fonts><br>
+<font face="verdana,arial" size=1 color="#000000">Ada göre abc sırası ile</fonts><br>
 <hr>
 <TABLE cellSpacing=0 cellPadding=0 border=0 width=100%>
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-            <P><img src="../../fotos/credits/a_djem.jpg"  border=0  align=right vspace=10>
+            <P><img src="../../uploads/photos/credits/a_djem.jpg"  border=0  align=right vspace=10>
 			<b>A. Djem (ID)</b><P>
-			Care2x masaÃ¼stÃ¼ duvar kaÃ°Ã½dÃ½ dÃ¼zenlemeleri<br>
-			Web sitesi dizaynÃ½
+			Care2x masaüstü duvar kağıdı düzenlemeleri<br>
+			Web sitesi dizaynı
 			
 			<P><a href="mailto:adjem@adams-media.com"><u>A. Djem dapat di hubungi disini.</u></a>
 </TD></TR></TBODY></TABLE>
@@ -29,14 +29,14 @@
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-            <P><img src="../../fotos/credits/agus_mr.jpg"  border=0  align=right vspace=10>
+            <P><img src="../../uploads/photos/credits/agus_mr.jpg"  border=0  align=right vspace=10>
 			<b>Agus Muhammad Ramdan (ID)</b> 
 			<p>
-			 Care 2X in Endonezya diline Ã§evirisi ve  www.care2x.com websitesi<br>
-			Javascript iyileÃ¾tirmeleri<br>
+			 Care 2X in Endonezya diline çevirisi ve  www.care2x.com websitesi<br>
+			Javascript iyileştirmeleri<br>
 			Dicom viewer debugging<br>
 			
-			<P><a href="mailto:agusmr@mweb.co.id"><u>Agus M. Ramdan a buradan ulaÃ¾Ã½labilir.</u></a>
+			<P><a href="mailto:agusmr@mweb.co.id"><u>Agus M. Ramdan a buradan ulaşılabilir.</u></a>
 </TD></TR></TBODY></TABLE>
 <hr>
 <TABLE cellSpacing=0 cellPadding=0 border=0 width=100%>
@@ -46,61 +46,61 @@
             <P><IMG SRC="http://207.44.195.231/~care2x/flensburg/img/tille.jpg" BORDER=0 ALIGN="right" hspace=10 width=128>
 			<b>Andreas Tille (DE)</b> 
 			<p>
-			Andreas Chemnitz, Almanya'da LinuxTag sergisinde bir Care2x sunusu yapmÃ½Ã¾tÃ½r.
+			Andreas Chemnitz, Almanya'da LinuxTag sergisinde bir Care2x sunusu yapmıştır.
 			<p>
-			En Ã§ok Debian ve Debian-Med projelerinde Ã§alÃ½Ã¾maktadÃ½r.
+			En çok Debian ve Debian-Med projelerinde çalışmaktadır.
 			
-			<P><a href="mailto:tillea@rki.de"><u>Andreas'a buradan ulaÃ¾Ã½labilir.</u></a>
+			<P><a href="mailto:tillea@rki.de"><u>Andreas'a buradan ulaşılabilir.</u></a>
 </TD></TR></TBODY></TABLE>
 <hr>
 <TABLE cellSpacing=0 cellPadding=0 border=0 width=100%>
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-            <P><img src="../../fotos/credits/are_kristensen.jpg"  border=0  width=135 align=right vspace=10>
+            <P><img src="../../uploads/photos/credits/are_kristensen.jpg"  border=0  width=135 align=right vspace=10>
 			<b>Are Kristensen (NO)</b> 
 			<p>
-			NorveÃ§Ã§e Ã§eviri<br>
+			Norveççe çeviri<br>
 			Online demo<br>
 			
-			<P><a href="mailto:arek@mail.amenta.no"><u>Are Kristensen'e buradan ulaÃ¾Ã½labilir</u></a>
+			<P><a href="mailto:arek@mail.amenta.no"><u>Are Kristensen'e buradan ulaşılabilir</u></a>
 </TD></TR></TBODY></TABLE>
 <hr>
 <TABLE cellSpacing=0 cellPadding=0 border=0 width=100%>
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-            <P><img src="../../fotos/credits/bulent_aydin.jpg"  border=0  align=right vspace=10>
-			<b>BÃ¼lent AydÃ½n (TR/DE)</b>
+            <P><img src="../../uploads/photos/credits/bulent_aydin.jpg"  border=0  align=right vspace=10>
+			<b>Bülent Aydın (TR/DE)</b>
 			<p>
-			 Care2X web sitesinin TÃ¼rkÃ§e'ye Ã§evirisi. 
-			 <p>BÃ¼lent AydÃ½n TÃ¼rkiye'de doÃ°du ve Ãstanbul Teknik Ãœniversitesinden matematik ve mÃ¼hendislik eÃ°itimi ile mezun oldu. Ãstanbul Yeditepe Ãœniversitesinde Master yaptÃ½. Halen analizci bilgisayar programcÃ½sÃ½ olarak Almanya'da Ã§alÃ½Ã¾maktadÃ½r.
+			 Care2X web sitesinin Türkçe'ye çevirisi. 
+			 <p>Bülent Aydın Türkiye'de doğdu ve İstanbul Teknik Üniversitesinden matematik ve mühendislik eğitimi ile mezun oldu. İstanbul Yeditepe Üniversitesinde Master yaptı. Halen analizci bilgisayar programcısı olarak Almanya'da çalışmaktadır.
 <p></p>
-Beceriler : VeritabanÃ½ dizayn ve analizi,Â IBM iSerileri (AS400) , DB2, ILERPG, JAVA
-, PHP, Â MySQL, Â VB 6. 0 ve MSSQL.
+Beceriler : Veritabanı dizayn ve analizi, IBM iSerileri (AS400) , DB2, ILERPG, JAVA
+, PHP,  MySQL,  VB 6. 0 ve MSSQL.
 <p>
-"YaÃ¾asÃ½n AÃ§Ã½k Kaynak Ã‡Ã¶zÃ¼mleri! "
+"Yaşasın Açık Kaynak Çözümleri! "
 </p>
 
-			<P><a href="mailto:bullaydin@gmx.de"><u>BÃ¼lent AydÃ½n'a buradan ulaÃ¾Ã½labilir.</u></a>
+			<P><a href="mailto:bullaydin@gmx.de"><u>Bülent Aydın'a buradan ulaşılabilir.</u></a>
 </TD></TR></TBODY></TABLE>
 <hr>
 <TABLE cellSpacing=0 cellPadding=0 border=0 width=100%>
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-            <P><img src="../../fotos/credits/bulent_potur.jpg"  border=0  align=right vspace=10>
-			<b>Jin. Op. Dr. BÃ¼lent Potur  (TR) </b> 
+            <P><img src="../../uploads/photos/credits/bulent_potur.jpg"  border=0  align=right vspace=10>
+			<b>Jin. Op. Dr. Bülent Potur  (TR) </b> 
 			<p>
-			 Care 2X in, yardÃ½m dosyalarÃ½nÃ½n ve resimlerinin TÃ¼rkÃ§e'ye Ã§evirisi, TÃ¼rkÃ§e ICD-10 sql verilerinin oluÃ¾turulmasÃ½. KadÃ½n doÃ°um uzmanÃ½dÃ½r. Gwbasic, ms cobol, ms access ve web dizaynÃ½ ile
-			 amatÃ¶rce uÃ°raÃ¾maktadÃ½r. Linuxla Ã§ok ilgilidir. AÃ§Ã½k kaynak felsefesi ve Ã¶zgÃ¼r yazÃ½lÃ½m dÃ¼Ã¾Ã¼ncesine
-			 hayranlÃ½k duymaktadÃ½r. <a
+			 Care 2X in, yardım dosyalarının ve resimlerinin Türkçe'ye çevirisi, Türkçe ICD-10 sql verilerinin oluşturulması. Kadın doğum uzmanıdır. Gwbasic, ms cobol, ms access ve web dizaynı ile
+			 amatörce uğraşmaktadır. Linuxla çok ilgilidir. Açık kaynak felsefesi ve özgür yazılım düşüncesine
+			 hayranlık duymaktadır. <a
 			 href="http://groups.yahoo.com/group/hekim" target="_blank">hekim@yahoohroups.com </a>, ve  <a
-			 href="http://groups.yahoo.com/group/nisaiye" target="_blank">nisaiye@yahoogroups.com</a> tartÃ½Ã¾ma listelerinin
+			 href="http://groups.yahoo.com/group/nisaiye" target="_blank">nisaiye@yahoogroups.com</a> tartışma listelerinin
 			 kurucusudur.<br>   
 			
 			<a
-			href="http://web.ttnet.net.tr/bpotur" target="_blank"><u>Jin.Op.Dr.BÃ¼lent Potur'a buradan ulaÃ¾Ã½labilir.</u></a>
+			href="http://web.ttnet.net.tr/bpotur" target="_blank"><u>Jin.Op.Dr.Bülent Potur'a buradan ulaşılabilir.</u></a>
 </TD></TR></TBODY></TABLE>
 
 <hr>
@@ -108,51 +108,51 @@ Beceriler : VeritabanÃ½ dizayn ve analizi,Â IBM iSerileri (AS400) , DB2, ILERPG,
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-			<P><img src="../../fotos/credits/hinostroza.jpg"  border=0  width=135 align=right vspace=10>
+			<P><img src="../../uploads/photos/credits/hinostroza.jpg"  border=0  width=135 align=right vspace=10>
 			<b>Dr. med Daniel Hinostroza C. (EC)</b><br>
-			Ãspanyolca Ã§eviriler
+			İspanyolca çeviriler
 			<p><font size=1>
-			Ã‡eÃ¾itli tÃ½p kitaplarÃ½nda yazar yada bÃ¶lÃ¼m yazarÃ½<br>
-5 yÃ½lGrÃ¼nenthal Medical Informatics Center, Quito
-- Ecuador un mÃ¼dÃ¼rlÃ¼Ã°Ã¼ <br>
-Ãlk Medical Informatics Ã§alÃ½Ã¾malarÃ½ Stanford Universitesi'nde<br>
-2 yÃ½l Aachen, Almanya'da GrÃ¼nenthal GmbH'da Multimedia Projesi LiderliÃ°i </font><p>
-phpMyAdmin in Ãspanyolca'ya resmi Ã§evirmeni<br>
-Ekvador'un en bÃ¼yÃ¼k medikal web sitesi giriÃ¾iminin(www.cmpichincha.med.ec) ve Ekuador Dermatoloji DerneÃ°i'nin  (www.sociedadecuatorianadedermatologia.org.ec) webmasteri 
+			Çeşitli tıp kitaplarında yazar yada bölüm yazarı<br>
+5 yılGrünenthal Medical Informatics Center, Quito
+- Ecuador un müdürlüğü <br>
+İlk Medical Informatics çalışmaları Stanford Universitesi'nde<br>
+2 yıl Aachen, Almanya'da Grünenthal GmbH'da Multimedia Projesi Liderliği </font><p>
+phpMyAdmin in İspanyolca'ya resmi çevirmeni<br>
+Ekvador'un en büyük medikal web sitesi girişiminin(www.cmpichincha.med.ec) ve Ekuador Dermatoloji Derneği'nin  (www.sociedadecuatorianadedermatologia.org.ec) webmasteri 
 .<br>
 Web sitesi: www.cerebroperiferico.com
-			<P><a href="mailto:postmaster@cerebroperiferico.com"><u>Dr. Daniel Hinostroza'ya buradan ulaÃ¾Ã½labilir.</u></a>
+			<P><a href="mailto:postmaster@cerebroperiferico.com"><u>Dr. Daniel Hinostroza'ya buradan ulaşılabilir.</u></a>
 </TD></TR></TBODY></TABLE>
 <hr>
 <TABLE cellSpacing=0 cellPadding=0 border=0 width=100%>
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-            <P><img src="../../fotos/credits/daniel_zilli.jpg"  border=0  align=right vspace=10>
-			<b>Daniel Zilli (BR) <BR>  CARE 2X ve www.care2x.com web sitesini   Brezilya-Portekizce'sine Ã§evirmiÃ¾tir.</b>
+            <P><img src="../../uploads/photos/credits/daniel_zilli.jpg"  border=0  align=right vspace=10>
+			<b>Daniel Zilli (BR) <BR>  CARE 2X ve www.care2x.com web sitesini   Brezilya-Portekizce'sine çevirmiştir.</b>
 			<p>
-			Daniel mutlu bir yaÃ¾amÃ½ seven hoÃ¾ bir insandÃ½r. BilgisayarlarÃ½,futbolu ve iyi mÃ¼ziÃ°i sever.
-BilgisayarlarÃ½ sever ve enformasyon teknolojisi alanÃ½nda 10 yÃ½l tecrÃ¼besi vardÃ½r.
-Daniel, bilgisayar eÃ°itim Ã¼rÃ¼nleri, aÃ§Ã½k kaynak yazÃ½lÃ½m ve yerel bir linux daÃ°Ã½tÃ½mÃ½ Ã¼reten bir Ã¾irketin de sahibidir.
-			<P><a href="mailto:danielz@cco.matrix.com.br"><u>Daniel Zilli'ye buradan ulaÃ¾abilirsiniz.</u></a>
+			Daniel mutlu bir yaşamı seven hoş bir insandır. Bilgisayarları,futbolu ve iyi müziği sever.
+Bilgisayarları sever ve enformasyon teknolojisi alanında 10 yıl tecrübesi vardır.
+Daniel, bilgisayar eğitim ürünleri, açık kaynak yazılım ve yerel bir linux dağıtımı üreten bir şirketin de sahibidir.
+			<P><a href="mailto:danielz@cco.matrix.com.br"><u>Daniel Zilli'ye buradan ulaşabilirsiniz.</u></a>
 </TD></TR></TBODY></TABLE>
 <hr>
 <TABLE cellSpacing=0 cellPadding=0 border=0 width=100%>
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-			<b>Daniele Frijia (DE)<br> CARE 2X in gÃ¼venlik yÃ¶nlerini kontrol etmiÃ¾tir .</b>
+			<b>Daniele Frijia (DE)<br> CARE 2X in güvenlik yönlerini kontrol etmiştir .</b>
 			<br>
-			Pek Ã§ok katkÃ½larÃ½ndan bazÃ½larÃ½:<p>
+			Pek çok katkılarından bazıları:<p>
 			<font size=1>
-			GÃ¼venlik Ã¼zerine Ã¶Ã°Ã¼tler<br>
-			 php konularÃ½nda Ã¶neriler<br>
+			Güvenlik üzerine öğütler<br>
+			 php konularında öneriler<br>
 			Projenin bir "nefer"idir
 		</font>
 		    <p>
-			Daniele Frijia (doÃ°umu 81), halen Almanya Nuremberg'te bir servis saÃ°layÃ½cÃ½ Ã¾irkette Ã§alÃ½Ã¾Ã½yor. php bilgisini Care2x in gÃ¼venliÃ°ini artÃ½rmaya harcÃ½yor. AmacÃ½ aÃ§Ã½k kaynak topluluÃ°u iÃ§in yeni bir pazarÃ½ (medikal pazarÃ½) aÃ§mak. 
+			Daniele Frijia (doğumu 81), halen Almanya Nuremberg'te bir servis sağlayıcı şirkette çalışıyor. php bilgisini Care2x in güvenliğini artırmaya harcıyor. Amacı açık kaynak topluluğu için yeni bir pazarı (medikal pazarı) açmak. 
 
-			<P><a href="mailto:daniele@infra.de"><u>Daniele Frijia'ya buradan ulaÃ¾Ã½labilir.</u></a>
+			<P><a href="mailto:daniele@infra.de"><u>Daniele Frijia'ya buradan ulaşılabilir.</u></a>
 </TD></TR></TBODY></TABLE>
 
 <hr>
@@ -160,12 +160,12 @@ Daniel, bilgisayar eÃ°itim Ã¼rÃ¼nleri, aÃ§Ã½k kaynak yazÃ½lÃ½m ve yerel bir linu
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-		  			<P><img src="../../fotos/credits/dilip_bharatee.jpg" border=0  align=right vspace=10>
+		  			<P><img src="../../uploads/photos/credits/dilip_bharatee.jpg" border=0  align=right vspace=10>
 			<b>Dilip Bharatee (IN)</b>
 			<p>
-			Projenin Ã¶ncÃ¼ Ã¼yelerinden biridir. Care2x in ilk yayÃ½nlanmasÃ½ndan kÃ½sa sÃ¼re sonra Dilip katÃ½lmÃ½Ã¾ ve kendi yazÃ½lÃ½m geliÃ¾tirme Ã¾irketinin <a href="http://www.ecomscience.com">ecomscience.com</a> desteÃ°ini sunmuÃ¾tur. Ecombill adlÃ½ faturalama modÃ¼lÃ¼nÃ¼n care2x iÃ§in geliÃ¾tirilmesinde 3 adet maaÃ¾lÃ½ programcÃ½ desteÃ°i saÃ°lamÃ½Ã¾tÃ½r. 
+			Projenin öncü üyelerinden biridir. Care2x in ilk yayınlanmasından kısa süre sonra Dilip katılmış ve kendi yazılım geliştirme şirketinin <a href="http://www.ecomscience.com">ecomscience.com</a> desteğini sunmuştur. Ecombill adlı faturalama modülünün care2x için geliştirilmesinde 3 adet maaşlı programcı desteği sağlamıştır. 
 			    
-			<P><a href="mailto:dilip@ecomscience.com"><u>Dilip Bharatee'ye buradan ulaÃ¾Ã½labilir.</u></a>
+			<P><a href="mailto:dilip@ecomscience.com"><u>Dilip Bharatee'ye buradan ulaşılabilir.</u></a>
 </TD></TR></TBODY></TABLE>
 
 <hr>
@@ -174,29 +174,29 @@ Daniel, bilgisayar eÃ°itim Ã¼rÃ¼nleri, aÃ§Ã½k kaynak yazÃ½lÃ½m ve yerel bir linu
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-			<P><img src="../../fotos/credits/elpidio_latorilla_3.jpg" border=0  align=right vspace=10>
-			<b> CARE 2X in ilk beta sÃ¼rÃ¼mÃ¼  Elpidio Latorilla tarafÃ½ndan yazÃ½lmÃ½Ã¾tÃ½r (DE/PH):</b>
+			<P><img src="../../uploads/photos/credits/elpidio_latorilla_3.jpg" border=0  align=right vspace=10>
+			<b> CARE 2X in ilk beta sürümü  Elpidio Latorilla tarafından yazılmıştır (DE/PH):</b>
 			<p>
-			Meslekleri: <br>ProgramcÃ½, Ameliyat HemÃ¾iresi, Elektronik ve TelekomÃ¼nikasyon Teknisyeni
+			Meslekleri: <br>Programcı, Ameliyat Hemşiresi, Elektronik ve Telekomünikasyon Teknisyeni
 			<p>
-			Ãlgi alanlarÃ½: <br>C, C++, PHP, Javascript, SQL, TCL/TK, HTML, Perl, ASP, Java
-			<P><a href="mailto:elpidio@latorilla.com"><u>Elpidio Latorilla'ya buradan ulaÃ¾abilirsiniz.</u></a>
+			İlgi alanları: <br>C, C++, PHP, Javascript, SQL, TCL/TK, HTML, Perl, ASP, Java
+			<P><a href="mailto:elpidio@latorilla.com"><u>Elpidio Latorilla'ya buradan ulaşabilirsiniz.</u></a>
 </TD></TR></TBODY></TABLE>
 <hr>
 <TABLE cellSpacing=0 cellPadding=0 border=0 width=100%>
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-			<P><img src="../../fotos/credits/emir_prcic.jpg" border=0  align=right vspace=10>
+			<P><img src="../../uploads/photos/credits/emir_prcic.jpg" border=0  align=right vspace=10>
 			<b>Emir Prcic (BS):</b>
 			<p>
-			BoÃ¾nakÃ§a tercÃ¼meler ve BoÃ¾nakÃ§a/Latin ICD10 sql verilerinin oluÃ¾turulmasÃ½. Test ve hata raporlarÃ½.
+			Boşnakça tercümeler ve Boşnakça/Latin ICD10 sql verilerinin oluşturulması. Test ve hata raporları.
 			<p>
-			Bosna Hersek'te Tuzla'da doÃ°du. ABD NC'de Barton College den mezun oldu (BS in siyasal bilgiler, bigisayar bilimleri ve matematik te BS derecesi aldÃ½)<br>
-			Ãimdi enformasyon teknolojisi yÃ¶neticisi olarak Almanya'da yaÃ¾amakta ve Ã§alÃ½Ã¾maktadÃ½r.1992 den beri Enformasyon teknolojisi iÃ¾indedir. UzmanlÃ½k alanlarÃ½: aÃ°lar, yÃ¶netim, ASP, VB, VBScript, C#, Java,
+			Bosna Hersek'te Tuzla'da doğdu. ABD NC'de Barton College den mezun oldu (BS in siyasal bilgiler, bigisayar bilimleri ve matematik te BS derecesi aldı)<br>
+			Şimdi enformasyon teknolojisi yöneticisi olarak Almanya'da yaşamakta ve çalışmaktadır.1992 den beri Enformasyon teknolojisi işindedir. Uzmanlık alanları: ağlar, yönetim, ASP, VB, VBScript, C#, Java,
 			Javascript, PHP, SQL, vs.<p>
-			Dilekleri: "Care2x in DÃ¼nyadaki en iyi Hastane Bilgi Sistemi olmasÃ½nÃ½ dilerim."
-			<P><a href="mailto:e.prcic@gmx.de"><u>Emir Prcic'e buradan ulaÃ¾Ã½labilir.</u></a>
+			Dilekleri: "Care2x in Dünyadaki en iyi Hastane Bilgi Sistemi olmasını dilerim."
+			<P><a href="mailto:e.prcic@gmx.de"><u>Emir Prcic'e buradan ulaşılabilir.</u></a>
 </TD></TR></TBODY></TABLE>
 
 <hr>
@@ -204,103 +204,103 @@ Daniel, bilgisayar eÃ°itim Ã¼rÃ¼nleri, aÃ§Ã½k kaynak yazÃ½lÃ½m ve yerel bir linu
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-            <P><img src="../../fotos/credits/gabriele_cicala.jpg"  border=0  align=right vspace=10>
-			<b>Gabriele Cicala (IT)  www.care2x.com websitesinin Ã§oÃ°unu Ãtalyanca'ya Ã§evirmiÃ¾tir.</b>
+            <P><img src="../../uploads/photos/credits/gabriele_cicala.jpg"  border=0  align=right vspace=10>
+			<b>Gabriele Cicala (IT)  www.care2x.com websitesinin çoğunu İtalyanca'ya çevirmiştir.</b>
 			<p>
-			Gabriele Cicala gÃ¼ney Ãtalya'da Calabria'daki Rossano'da 1970 te doÃ°muÃ¾tur.
- Torino Politeknik Ãœniversitesi TelekomÃ¼nikasyon MÃ¼hendisliÃ°i bÃ¶lÃ¼mÃ¼ mezunudur. Halen bir enformatik Ã¾irketinde danÃ½Ã¾man olarak Ã§alÃ½Ã¾maktadÃ½r.  <p>Linuxla ve aÃ§Ã½k kaynak ortamÃ½ ile tanÃ½Ã¾tÃ½Ã°Ã½ndan beri bu hareketteki her proje ile Ã§ok ilgilenmektedir. Ne bir medikal mesleÃ°i olmamasÃ½ ne de medikal sektÃ¶rde Ã§alÃ½Ã¾mamasÃ½na raÃ°men Care projesine katÃ½lmaya karar vermiÃ¾tir. Ã‡Ã¼nkÃ¼ Care'in yaratÃ½cÃ½sÃ½ ve de katkÃ½da bulunanlarÃ½nÃ½n inandÃ½klarÃ½ aynÃ½ Ã¾eylere o da inanmaktadÃ½r.
+			Gabriele Cicala güney İtalya'da Calabria'daki Rossano'da 1970 te doğmuştur.
+ Torino Politeknik Üniversitesi Telekomünikasyon Mühendisliği bölümü mezunudur. Halen bir enformatik şirketinde danışman olarak çalışmaktadır.  <p>Linuxla ve açık kaynak ortamı ile tanıştığından beri bu hareketteki her proje ile çok ilgilenmektedir. Ne bir medikal mesleği olmaması ne de medikal sektörde çalışmamasına rağmen Care projesine katılmaya karar vermiştir. Çünkü Care'in yaratıcısı ve de katkıda bulunanlarının inandıkları aynı şeylere o da inanmaktadır.
 			
-			<P><a href="mailto:gabcicala@tiscali.it"><u>Gabriele Cicala'ya buradan ulaÃ¾Ã½labilir.</u></a>
+			<P><a href="mailto:gabcicala@tiscali.it"><u>Gabriele Cicala'ya buradan ulaşılabilir.</u></a>
 </TD></TR></TBODY></TABLE>
 <hr>
 <TABLE cellSpacing=0 cellPadding=0 border=0 width=100%>
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-			<P><img src="../../fotos/credits/giuseppe_scarpi.jpg"  border=0  width=135 height=170 align=right vspace=10>
-			<b>Giuseppe Scarpi (IT)  CARE 2X 'i Ãtalyanca'ya Ã§evirmiÃ¾tir.</b>
+			<P><img src="../../uploads/photos/credits/giuseppe_scarpi.jpg"  border=0  width=135 height=170 align=right vspace=10>
+			<b>Giuseppe Scarpi (IT)  CARE 2X 'i İtalyanca'ya çevirmiştir.</b>
 			<p>
-			Giuseppe Scarpi 35 yÃ½l Ã¶nce Ãtalya'da, Roma'da doÃ°muÃ¾tur. 
-			<p>Elektronik mÃ¼hendisidir. Biyomedikal sektÃ¶rde birkaÃ§ Ã¾irkette Ã§alÃ½Ã¾mÃ½Ã¾tÃ½r. Orada tÃ½p dÃ¼nyasÃ½ ile enformatik dÃ¼nyasÃ½ arasÃ½nda iliÃ¾kiler aÃ§Ã½sÃ½ndan bir anlayÃ½Ã¾ geliÃ¾tirmiÃ¾tir.<br>
-Hem  Linux ve hem de Windowsu kullanmakta ve takdir etmektedir, "<i>Ã‡Ã¼nkÃ¼ her ikisi de Ã§ok bÃ¼yÃ¼k insan emeÃ°inin Ã¼rÃ¼nÃ¼dÃ¼r ve saygÃ½ gÃ¶sterilmelidir.</i>".<p>
-AÃ§Ã½k kaynaÃ°a aktif olarak katÃ½lmaya karar vermiÃ¾tir Ã§Ã¼nkÃ¼: <br><i>"BÃ¶ylesi ideal bir dÃ¼nya ancak mÃ¼kemmelen dengelenir ise hayatta kalabilir. EÃ°er bir Ã¾ey alÃ½yor isen o oranda da geri vermelisin. "</i>
+			Giuseppe Scarpi 35 yıl önce İtalya'da, Roma'da doğmuştur. 
+			<p>Elektronik mühendisidir. Biyomedikal sektörde birkaç şirkette çalışmıştır. Orada tıp dünyası ile enformatik dünyası arasında ilişkiler açısından bir anlayış geliştirmiştir.<br>
+Hem  Linux ve hem de Windowsu kullanmakta ve takdir etmektedir, "<i>Çünkü her ikisi de çok büyük insan emeğinin ürünüdür ve saygı gösterilmelidir.</i>".<p>
+Açık kaynağa aktif olarak katılmaya karar vermiştir çünkü: <br><i>"Böylesi ideal bir dünya ancak mükemmelen dengelenir ise hayatta kalabilir. Eğer bir şey alıyor isen o oranda da geri vermelisin. "</i>
 
-			<P><a href="mailto:kalbun@inwind.it"><u>Giuseppe Scarpi'ye buradan ulaÃ¾abilirsiniz.</u></a>
+			<P><a href="mailto:kalbun@inwind.it"><u>Giuseppe Scarpi'ye buradan ulaşabilirsiniz.</u></a>
 </TD></TR></TBODY></TABLE>
 <hr>
 <TABLE cellSpacing=0 cellPadding=0 border=0 width=100%>
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-			<P><img src="../../fotos/credits/gonzalo.jpg"  border=0  width=135 align=right vspace=10> 
+			<P><img src="../../uploads/photos/credits/gonzalo.jpg"  border=0  width=135 align=right vspace=10> 
           <b>Gonzalo Gomez Sotelo (AR)</b> <p> 
-		  Ãspanyolca Ã§eviriler
+		  İspanyolca çeviriler
         <p>
 
-        <P><a href="mailto:gonzalo@smandes.com.ar"><u>Gonzalo Gomez Sotelo'ya buradan ulaÃ¾Ã½labilir.</u></a>
+        <P><a href="mailto:gonzalo@smandes.com.ar"><u>Gonzalo Gomez Sotelo'ya buradan ulaşılabilir.</u></a>
 </TD></TR></TBODY></TABLE>		  
 
 <hr><TABLE cellSpacing=0 cellPadding=0 border=0 width=100%>
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-			<P><img src="../../fotos/credits/ingo_zugenmaier.jpg"  border=0  width=135 align=right vspace=10> 
+			<P><img src="../../uploads/photos/credits/ingo_zugenmaier.jpg"  border=0  width=135 align=right vspace=10> 
           <b>Ingo Zugenmaier(DE)</b> <p> 
-		  TÃG kodlama sisteminin entegrasyonunun iyileÃ¾tirilmesi.
+		  TİG kodlama sisteminin entegrasyonunun iyileştirilmesi.
         <p>
-		Ingo, Care2x Ã§erÃ§evesinde TeÃ¾hisle ilgili gruplar kodlamasÃ½nÃ½n entegrasyonunun iyileÃ¾tirilmesini geliÃ¾tirmiÃ¾tir. Bu programlama Ã§alÃ½Ã¾masÃ½nÃ½ Almanya Ulm'deki UygulamalÃ½ Bilimler Ãœniversitesinde'ki tez Ã§alÃ½Ã¾masÃ½nÃ½n bir parÃ§asÃ½ olarak gerÃ§ekleÃ¾tirmiÃ¾tir. Ã‡alÃ½Ã¾masÃ½ Care2xin sonraki sÃ¼rÃ¼mlerine dahil edilmek Ã¼zere incelenmektedir. Care2x,  Care2x beta 2.0.0 sÃ¼rÃ¼mÃ¼nden baÃ¾layarak INGO_Z-01 etiketli Ã¶zel bir CVS dalÃ½nÃ½ da oluÃ¾turmuÃ¾tur
+		Ingo, Care2x çerçevesinde Teşhisle ilgili gruplar kodlamasının entegrasyonunun iyileştirilmesini geliştirmiştir. Bu programlama çalışmasını Almanya Ulm'deki Uygulamalı Bilimler Üniversitesinde'ki tez çalışmasının bir parçası olarak gerçekleştirmiştir. Çalışması Care2xin sonraki sürümlerine dahil edilmek üzere incelenmektedir. Care2x,  Care2x beta 2.0.0 sürümünden başlayarak INGO_Z-01 etiketli özel bir CVS dalını da oluşturmuştur
 
-        <P><a href="mailto:ingo.zugenmaier(at)web.de"><u>Ingo Zugenmaier'e buradan ulaÃ¾Ã½labilir</u></a> (lÃ¼tfen mail yazar iken   "(at)" yazÃ½sÃ½nÃ½ "@" ile deÃ°iÃ¾tiriniz ).
+        <P><a href="mailto:ingo.zugenmaier(at)web.de"><u>Ingo Zugenmaier'e buradan ulaşılabilir</u></a> (lütfen mail yazar iken   "(at)" yazısını "@" ile değiştiriniz ).
 </TD></TR></TBODY></TABLE>	
 <hr>	  
 <TABLE cellSpacing=0 cellPadding=0 border=0 width=100%>
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-			<P><img src="../../fotos/credits/javier.jpg"  border=0  width=135 align=right vspace=10> 
+			<P><img src="../../uploads/photos/credits/javier.jpg"  border=0  width=135 align=right vspace=10> 
           <b>Javier Alberto Arias (AR)</b> <p> 
-		  Ãspanyolca Ã§eviriler
+		  İspanyolca çeviriler
         <p>
 
-        <P><a href="mailto:javisxx@hotmail.com"><u>Javier Alberto Arias'a buradan ulaÃ¾Ã½labilir.</u></a>
+        <P><a href="mailto:javisxx@hotmail.com"><u>Javier Alberto Arias'a buradan ulaşılabilir.</u></a>
     </TD>
     </TR></TBODY></TABLE>
 <hr><TABLE cellSpacing=0 cellPadding=0 border=0 width=100%>
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-			<P><img src="../../fotos/credits/hcc24_135.gif"  border=0  width=135  align=right vspace=10>
+			<P><img src="../../uploads/photos/credits/hcc24_135.gif"  border=0  width=135  align=right vspace=10>
 		<b>Joachim Mollin & HCC GmbH (DE)</b>
 		<p>
 		<font size=1>
-		Care2x in Alman uyarlamasÃ½ <a href="http://www.mycare2x.de" target="_blank">mycare2x</a> de kullanÃ½lan yeni bir kullanÃ½cÃ½ ara birimi ve Ã¶zelleÃ¾tirilmiÃ¾ HL7 iÃ¾levlerinin geliÃ¾tirilmesi.
+		Care2x in Alman uyarlaması <a href="http://www.mycare2x.de" target="_blank">mycare2x</a> de kullanılan yeni bir kullanıcı ara birimi ve özelleştirilmiş HL7 işlevlerinin geliştirilmesi.
 		<p>
-		Care2x tabanlÃ½ Ã¼rÃ¼nlerin Alman saÃ°lÃ½k pazarÃ½nda geliÃ¾tirmesi ve uygulanmasÃ½nÃ½ amaÃ§layan  mycare2x Alman Ã¾irketler konsorsiyumunun Ã¶rgÃ¼tlenmesi ve Ã¶nderlik edilmesi.
+		Care2x tabanlı ürünlerin Alman sağlık pazarında geliştirmesi ve uygulanmasını amaçlayan  mycare2x Alman şirketler konsorsiyumunun örgütlenmesi ve önderlik edilmesi.
 
 		</font>
-		<p>Joachim Mollin Almanya'da saÃ°lÃ½k alanÃ½nda uzmanlaÃ¾mÃ½Ã¾ bir danÃ½Ã¾manlÃ½k firmasÃ½ olan  <a href="http://www.hccgmbh.com" target="_blank">HCC Gmbh</a> nÃ½n CEO sudur.
+		<p>Joachim Mollin Almanya'da sağlık alanında uzmanlaşmış bir danışmanlık firması olan  <a href="http://www.hccgmbh.com" target="_blank">HCC Gmbh</a> nın CEO sudur.
 
-		<P><a href="mailto:mollin@hccgmbh.com"><u>Joachim Mollin'e buradan ulaÃ¾Ã½labilir.</u></a>
+		<P><a href="mailto:mollin@hccgmbh.com"><u>Joachim Mollin'e buradan ulaşılabilir.</u></a>
 		</TD>
 	</TR></TBODY></TABLE>
 <hr><TABLE cellSpacing=0 cellPadding=0 border=0 width=100%>
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-			<P><img src="../../fotos/credits/dr_juan_manuel_montemayor.jpg"  border=0  align=right vspace=10> 
+			<P><img src="../../uploads/photos/credits/dr_juan_manuel_montemayor.jpg"  border=0  align=right vspace=10> 
           <b>Juan Manuel Montemayor Dr. med.  (MX)</b> <p>
-		  Ãspanyolca  ICD10 ve OPS kodlarÃ½
+		  İspanyolca  ICD10 ve OPS kodları
 		  <br>
-		  Care2x in tanÃ½tÃ½mÃ½ iÃ§in yÃ¼ksek Ã§Ã¶zÃ¼nÃ¼rlÃ¼kte, yÃ¼ksek nitelikli grafik sunularÃ½n hazÃ½rlanmasÃ½.
+		  Care2x in tanıtımı için yüksek çözünürlükte, yüksek nitelikli grafik sunuların hazırlanması.
 			<br>
-			Care2x in Meksika'da tanÃ½tÃ½lmasÃ½.
+			Care2x in Meksika'da tanıtılması.
 			<br>
-			YardÃ½m dosyalarÃ½ ve resimlerinin Ãspanyolca'ya Ã§evirisi.
+			Yardım dosyaları ve resimlerinin İspanyolca'ya çevirisi.
 			<br>
 			Care2x in online demo kurulumuu.
         <p>
 
-        <P><a href="mailto:manuel@esinergia.com"><u>Dr. J. M. Montemayor'a buradan ulaÃ¾Ã½labilir.</u></a>
+        <P><a href="mailto:manuel@esinergia.com"><u>Dr. J. M. Montemayor'a buradan ulaşılabilir.</u></a>
 </TD></TR>
 
 </TBODY></TABLE>
@@ -309,26 +309,26 @@ AÃ§Ã½k kaynaÃ°a aktif olarak katÃ½lmaya karar vermiÃ¾tir Ã§Ã¼nkÃ¼: <br><i>"BÃ¶yl
         <tbody>
         <tr>
           <td vAlign=top><font face="verdana,arial" size=2>
-			<p><img src="../../fotos/credits/lopo_l_almeida.jpg"  
+			<p><img src="../../uploads/photos/credits/lopo_l_almeida.jpg"  
                                 width=135 height=170 border=0  align=right vspace=10>
-			<b>Lopo Lencastre de Almeida (PT)</b> en Ã¼retken geliÃ¾tiricilerden biridir. 
-			Projeye katkÃ½larÃ½ndan bazÃ½larÃ½ Ã¾unlardÃ½r:
+			<b>Lopo Lencastre de Almeida (PT)</b> en üretken geliştiricilerden biridir. 
+			Projeye katkılarından bazıları şunlardır:
                         <p><font size=1>
-			Pazarlama, promosyon ve halkla iliÃ¾kiler<br>
-			web ve logo dizaynÃ½<br>
-			Ã‡eÃ¾itli web araÃ§larÃ½nÃ½n uygulanmasÃ½ ve bakÃ½mÃ½ (Bugtracker, Forum, FAQ, vs.)<br>
-			Yeni web sitesinin uygulanmasÃ½ ve bakÃ½mÃ½ (hemen hemen bitti)<br>
-			Forum moderasyon ve yÃ¶netimi<br>
-			Kod bulucu/arayÃ½cÃ½<br>
-			PHP  Ã¼zerine konsÃ¼ltasyonlar<br>
-			GÃ¼venlik Ã¶nerileri<br>
+			Pazarlama, promosyon ve halkla ilişkiler<br>
+			web ve logo dizaynı<br>
+			Çeşitli web araçlarının uygulanması ve bakımı (Bugtracker, Forum, FAQ, vs.)<br>
+			Yeni web sitesinin uygulanması ve bakımı (hemen hemen bitti)<br>
+			Forum moderasyon ve yönetimi<br>
+			Kod bulucu/arayıcı<br>
+			PHP  üzerine konsültasyonlar<br>
+			Güvenlik önerileri<br>
 			Abstraction Layers Advisor (DB, Template, vs.)<br>
 			Debugging<br>
-			Fikirler, tartÃ½Ã¾malar, ip uÃ§larÃ½ vs.
+			Fikirler, tartışmalar, ip uçları vs.
 			</font><p>
-			Lopo L. de Almeida 1966 da Angola'da doÃ°du. Bilgisayar sektÃ¶rÃ¼nde Ã§alÃ½Ã¾Ã½yor. 16 yÃ½ldan beri yazÃ½lÃ½m geliÃ¾tiricisi ve ara yÃ¼z dizayncÃ½sÃ½ olarak ticari otomasyondan endÃ¼striyel otomasyona kadar ilgileniyor. Son 5 yÃ½ldÃ½r Ã§oÃ°unlukla web geliÃ¾tirme ve Ã¾irket yÃ¶netiminde Ã§alÃ½Ã¾tÃ½. Care2002 projesinin halkla iliÃ¾kiler ve pazarlama yÃ¶netiminde partneri olan HumanEasy nin CEO/CTO sudur. </b>.<br>
-			AynÃ½ zamanda pekÃ§ok GNU/GPL projesinde katÃ½lÃ½mcÃ½dÃ½r. BunlarÃ½n bir kÃ½smÃ½ Care2x'in sitesinde de kullanÃ½lmaktadÃ½r.<br>
-			<p><a href="http://www.humaneasy.com" target="_blank"><u>Lopo L. de Almeida'ya buradan ulaÃ¾Ã½labilir.</u></a>
+			Lopo L. de Almeida 1966 da Angola'da doğdu. Bilgisayar sektöründe çalışıyor. 16 yıldan beri yazılım geliştiricisi ve ara yüz dizayncısı olarak ticari otomasyondan endüstriyel otomasyona kadar ilgileniyor. Son 5 yıldır çoğunlukla web geliştirme ve şirket yönetiminde çalıştı. Care2002 projesinin halkla ilişkiler ve pazarlama yönetiminde partneri olan HumanEasy nin CEO/CTO sudur. </b>.<br>
+			Aynı zamanda pekçok GNU/GPL projesinde katılımcıdır. Bunların bir kısmı Care2x'in sitesinde de kullanılmaktadır.<br>
+			<p><a href="http://www.humaneasy.com" target="_blank"><u>Lopo L. de Almeida'ya buradan ulaşılabilir.</u></a>
 </td></tr></tbody></table>
 
 <hr>
@@ -336,39 +336,39 @@ AÃ§Ã½k kaynaÃ°a aktif olarak katÃ½lmaya karar vermiÃ¾tir Ã§Ã¼nkÃ¼: <br><i>"BÃ¶yl
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-            <P><img src="../../fotos/credits/luca_romoli.jpg"  border=0  align=right vspace=10>
+            <P><img src="../../uploads/photos/credits/luca_romoli.jpg"  border=0  align=right vspace=10>
 			<b>Luca Romoli (BR/IT) </b><p>
-			PPT SunumlarÃ½ ve Ã¶rnekleri<br>
-			Proje yÃ¶netim araÃ§larÃ½<br>
-			Finansal yÃ¶netim ve pazarlama araÃ§larÃ½<br>
-			Brezilya'da pazarlama kampanyalarÃ½<p>
-			Luca web uygulamalarÃ½nda uzmanlaÃ¾mÃ½Ã¾ tecrÃ¼beli bir iÃ¾ danÃ½Ã¾manÃ½dÃ½r. AmacÃ½ Care2x in ilk Ã¼retken kurulumunu Brezilya hastanelerinde gerÃ§ekleÃ¾tirmektir.
-			<P><a href="mailto:luca@camocim.com"><u>Luca Romoli'ye buradan ulaÃ¾Ã½labilir.</u></a>
+			PPT Sunumları ve örnekleri<br>
+			Proje yönetim araçları<br>
+			Finansal yönetim ve pazarlama araçları<br>
+			Brezilya'da pazarlama kampanyaları<p>
+			Luca web uygulamalarında uzmanlaşmış tecrübeli bir iş danışmanıdır. Amacı Care2x in ilk üretken kurulumunu Brezilya hastanelerinde gerçekleştirmektir.
+			<P><a href="mailto:luca@camocim.com"><u>Luca Romoli'ye buradan ulaşılabilir.</u></a>
 </TD></TR></TBODY></TABLE>
 
 <hr><TABLE cellSpacing=0 cellPadding=0 border=0 width=100%>
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-			<b>Matej Hausenblas (FR) CARE2X'in FransÃ½zca Ã§evirilerini yapmÃ½Ã¾tÃ½r</b>
+			<b>Matej Hausenblas (FR) CARE2X'in Fransızca çevirilerini yapmıştır</b>
 			<p>
-Matej Hausenblas 1981 de Ã‡ek Cumhuriyeti'nde Prag'da doÃ°muÃ¾tur. Matematik-enformatik-fizik Ã¼zerine Ã¼niversite Ã¶Ã°rencisidir. BirkaÃ§ yÃ½l windows kullandÃ½ktan sonra Linux'a deÃ°erli bir seÃ§enek olarak bakmaya karar vermiÃ¾ ve bir sÃ¼re sonra bazÃ½ becerilerini geliÃ¾tirmek ve geriye birÃ¾eyler vermek ve aynÃ½ zamanda bu toplulukta iÃ¾lerin nasÃ½l yÃ¼rÃ¼dÃ¼Ã°Ã¼nÃ¼ gÃ¶rmek iÃ§in AÃ§Ã½k Kaynak Projelerinde gÃ¶rev almaya karar vermiÃ¾tir.
-			<P><a href="mailto:matejh@users.sourceforge.net"><u>Matej Hausenblas'a buradan ulaÃ¾Ã½labilir.</u></a>
+Matej Hausenblas 1981 de Çek Cumhuriyeti'nde Prag'da doğmuştur. Matematik-enformatik-fizik üzerine üniversite öğrencisidir. Birkaç yıl windows kullandıktan sonra Linux'a değerli bir seçenek olarak bakmaya karar vermiş ve bir süre sonra bazı becerilerini geliştirmek ve geriye birşeyler vermek ve aynı zamanda bu toplulukta işlerin nasıl yürüdüğünü görmek için Açık Kaynak Projelerinde görev almaya karar vermiştir.
+			<P><a href="mailto:matejh@users.sourceforge.net"><u>Matej Hausenblas'a buradan ulaşılabilir.</u></a>
 </TD></TR></TBODY></TABLE>
 <hr><TABLE cellSpacing=0 cellPadding=0 border=0 width=100%>
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-		  <P><img src="../../fotos/credits/michael_pike.jpg"  border=0  align=right vspace=10>
+		  <P><img src="../../uploads/photos/credits/michael_pike.jpg"  border=0  align=right vspace=10>
 			<b>Michael Pike (US)</b>
-			<p>Mac OSX sÃ¼rÃ¼mÃ¼<p></p>
-Mike 1973 te doÃ°du ve programcÃ½lÃ½Ã°a beÃ¾ gibi erken bir yaÃ¾ta Apple II bilgisayar sisteminde baÃ¾ladÃ½. Â YÃ½llar geÃ§tikÃ§e bilgi teknolojisinde hÃ½zla ilerledi Linux kullanarak yaptÃ½Ã°Ã½ Ã§alÃ½Ã¾malar CNN, Newsweek, ADT Magazine ve diÃ°er mediada yankÃ½landÃ½.
+			<p>Mac OSX sürümü<p></p>
+Mike 1973 te doğdu ve programcılığa beş gibi erken bir yaşta Apple II bilgisayar sisteminde başladı.  Yıllar geçtikçe bilgi teknolojisinde hızla ilerledi Linux kullanarak yaptığı çalışmalar CNN, Newsweek, ADT Magazine ve diğer mediada yankılandı.
 <p></p>
-Mike her zaman aÃ§Ã½k kaynak ve saÃ°lÃ½k konularÃ½na sevgi duymuÃ¾tur. Daha Ã¶nce aÃ§Ã½k kaynak toplumunda yapÃ½lmamÃ½Ã¾ olan bir iÃ¾i yaparak, Mac OS X iÃ¾letim sistemlerinde saÃ°lÃ½k uygulamalarÃ½ iÃ§in kapÃ½yÃ½ aÃ§acaktÃ½r. 
+Mike her zaman açık kaynak ve sağlık konularına sevgi duymuştur. Daha önce açık kaynak toplumunda yapılmamış olan bir işi yaparak, Mac OS X işletim sistemlerinde sağlık uygulamaları için kapıyı açacaktır. 
 <o>
-Mike'Ã½n Ã§alÃ½Ã¾malarÃ½ hakkÃ½nda daha fazla bilgi <a href="http://www.michaelpike.com" target="_blank">http://www.michaelpike.com</a> adresinden alÃ½nabilir.
+Mike'ın çalışmaları hakkında daha fazla bilgi <a href="http://www.michaelpike.com" target="_blank">http://www.michaelpike.com</a> adresinden alınabilir.
 
-			<P><a href="mailto:michael.pike@mac.com"><u>Michael Pike' a buradan ulaÃ¾Ã½labilir.</u></a>
+			<P><a href="mailto:michael.pike@mac.com"><u>Michael Pike' a buradan ulaşılabilir.</u></a>
 </TD></TR></TBODY></TABLE>
 
 
@@ -378,12 +378,12 @@ Mike'Ã½n Ã§alÃ½Ã¾malarÃ½ hakkÃ½nda daha fazla bilgi <a href="http://www.michaelp
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-            <P><img src="../../fotos/credits/muhammad_panji.png"  border=0  align=right vspace=10>
+            <P><img src="../../uploads/photos/credits/muhammad_panji.png"  border=0  align=right vspace=10>
 			<b>Muhammad Panji (ID) </b><p>
-			Care 2X ve www.care2x.com websitesinin Endonezya diline Ã§evirileri.<br>
-			Hata raporlarÃ½
+			Care 2X ve www.care2x.com websitesinin Endonezya diline çevirileri.<br>
+			Hata raporları
 			
-			<P><a href="mailto:sumodirjo@users.sourceforge.net"><u>Muhammad Panji'ye buradan ulaÃ¾Ã½labilir.</u></a>
+			<P><a href="mailto:sumodirjo@users.sourceforge.net"><u>Muhammad Panji'ye buradan ulaşılabilir.</u></a>
 </TD></TR></TBODY></TABLE>
 
 
@@ -392,12 +392,12 @@ Mike'Ã½n Ã§alÃ½Ã¾malarÃ½ hakkÃ½nda daha fazla bilgi <a href="http://www.michaelp
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-			<b>Nino Novak (DE)  www.care2x.com un Almanca versiyonunu dÃ¼zeltmiÃ¾tir.</b>
+			<b>Nino Novak (DE)  www.care2x.com un Almanca versiyonunu düzeltmiştir.</b>
 			<p>
-			Nino Novak zavallÃ½ yalnÃ½z bir kovboydur. SandÃ½Ã°Ã½ndan daha hÃ½zlÃ½ silah Ã§eker. Bazen biraz fazla titizdir. "GerÃ§ek usta"larÃ½ ve onlarla derin tartÃ½Ã¾malarÃ½ sever.Daha iyi bir dÃ¼nya iÃ§in Ã§alÃ½Ã¾anlara yardÃ½m etmek istemektedir. Bilimsel ve tÃ½p alanÃ½nda biraz eÃ°itimi vardÃ½r. (BÃ¶ylece care2x projesine katÃ½lmÃ½Ã¾tÃ½r.)
+			Nino Novak zavallı yalnız bir kovboydur. Sandığından daha hızlı silah çeker. Bazen biraz fazla titizdir. "Gerçek usta"ları ve onlarla derin tartışmaları sever.Daha iyi bir dünya için çalışanlara yardım etmek istemektedir. Bilimsel ve tıp alanında biraz eğitimi vardır. (Böylece care2x projesine katılmıştır.)
 		
 
-			<P><a href="mailto:nino@kflog.org"><u>Nino Novak'a buradan  ulaÃ¾Ã½labilir.</u></a>
+			<P><a href="mailto:nino@kflog.org"><u>Nino Novak'a buradan  ulaşılabilir.</u></a>
 </TD></TR></TBODY></TABLE>
 
 <hr>
@@ -405,11 +405,11 @@ Mike'Ã½n Ã§alÃ½Ã¾malarÃ½ hakkÃ½nda daha fazla bilgi <a href="http://www.michaelp
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-			<P><img src="../../fotos/credits/nguyen_manh_phu.jpg"  border=0  align=right vspace=10>
+			<P><img src="../../uploads/photos/credits/nguyen_manh_phu.jpg"  border=0  align=right vspace=10>
 			<b>Nguyen Manh Phu (VN)</b><p>
-			Vietnamca sÃ¼rÃ¼m. Nguyen Manh ilk Ã§evirileri yapmÃ½Ã¾tÃ½r.
+			Vietnamca sürüm. Nguyen Manh ilk çevirileri yapmıştır.
 			
-			<P><a href="mailto:nmphu_vn@yahoo.com"><u>Nguyen Mahn Phu'ya buradan ulaÃ¾Ã½labilir.</u></a>
+			<P><a href="mailto:nmphu_vn@yahoo.com"><u>Nguyen Mahn Phu'ya buradan ulaşılabilir.</u></a>
 </TD></TR></TBODY></TABLE>
 <hr>
 
@@ -417,32 +417,32 @@ Mike'Ã½n Ã§alÃ½Ã¾malarÃ½ hakkÃ½nda daha fazla bilgi <a href="http://www.michaelp
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-			<P><img src="../../fotos/credits/noel_villamor.jpg"  border=0  align=right vspace=10>
+			<P><img src="../../uploads/photos/credits/noel_villamor.jpg"  border=0  align=right vspace=10>
 			<b>Noel R. Villamor (PH)</b><br>
-			ModÃ¼ler programlama
-			<p>BazÃ½ zor matematik problemleri hallederek laboratuvar tetkik grafiÃ°i Ã§izme modÃ¼lÃ¼nÃ¼ bitirmiÃ¾tir.
-			<p>Beklemede proje yÃ¶neticisidir.
-			<P><a href="mailto:noelrv@nipahut.org"><u>Noel Villamor'a buradan ulaÃ¾Ã½labilir.</u></a>
+			Modüler programlama
+			<p>Bazı zor matematik problemleri hallederek laboratuvar tetkik grafiği çizme modülünü bitirmiştir.
+			<p>Beklemede proje yöneticisidir.
+			<P><a href="mailto:noelrv@nipahut.org"><u>Noel Villamor'a buradan ulaşılabilir.</u></a>
 </TD></TR></TBODY></TABLE>
 <hr>
 <TABLE cellSpacing=0 cellPadding=0 border=0 width=100%>
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-			<b>Patxi GomarÃ­z (ES) Ãspanyol'ca Ã§evirileri yapmÃ½Ã¾tÃ½r.</b>
+			<b>Patxi Gomaríz (ES) İspanyol'ca çevirileri yapmıştır.</b>
 			<p>
-			Patxi GomarÃ­z 1966 baharÃ½nda Ãspanya'da, Murcia'da  doÃ°muÃ¾tur. HayatÃ½ ve iÃ¾i Ã§oÃ°unlukla fotoÃ°rafÃ§Ã½lÃ½k Ã¼zerine dÃ¶ner. Oftalmolojik fotoÃ°rafÃ§Ã½lÃ½kta (fundus kamerasÃ½) uzmandÃ½r. Ãnternet hayranÃ½dÃ½r,  web siteleri dizaynÃ½ da yapmaktadÃ½r.<p>
-			"<i>Bilhassa insanlÃ½k iÃ§in Ã¶nemli olan saÃ°lÃ½k gibi temel alanlarda ekonomik kÃ¼reselleÃ¾menin olumsuz etkilerine karÃ¾Ã½ aÃ§Ã½k kaynak kodunun etkili bir silah olduÃ°unu dÃ¼Ã¾Ã¼nÃ¼yorum. Bu nedenle bu bÃ¼yÃ¼k projeye yaptÃ½Ã°Ã½m kÃ¼Ã§Ã¼k katkÃ½m ile gurur duyuyorum..</i>"
+			Patxi Gomaríz 1966 baharında İspanya'da, Murcia'da  doğmuştur. Hayatı ve işi çoğunlukla fotoğrafçılık üzerine döner. Oftalmolojik fotoğrafçılıkta (fundus kamerası) uzmandır. İnternet hayranıdır,  web siteleri dizaynı da yapmaktadır.<p>
+			"<i>Bilhassa insanlık için önemli olan sağlık gibi temel alanlarda ekonomik küreselleşmenin olumsuz etkilerine karşı açık kaynak kodunun etkili bir silah olduğunu düşünüyorum. Bu nedenle bu büyük projeye yaptığım küçük katkım ile gurur duyuyorum..</i>"
 
-			<P><a href="mailto:pgomariz@ono.com"><u>Patxi GomarÃ­z'e buradan ulaÃ¾Ã½labilir.</u></a>
+			<P><a href="mailto:pgomariz@ono.com"><u>Patxi Gomaríz'e buradan ulaşılabilir.</u></a>
 </TD></TR></TBODY></TABLE>
 <hr>
- <P><img src="../../fotos/credits/suman_bhat.jpg" border=0  align=right hspace=10 >
+ <P><img src="../../uploads/photos/credits/suman_bhat.jpg" border=0  align=right hspace=10 >
 			<P><b>Suman Bhusan Bhattacharyya Dr. med. (IN)</b>
 			<p>
-			YaÃ¾am istatistikleri, gebelik yaÃ¾Ã½, tahmini doÃ°um tarihi hesaplayÃ½cÃ½larÃ½, aÃ¾Ã½ takvimi, normal klinik deÃ°erler arayÃ½cÃ½ ve benzeri pek Ã§ok aracÃ½ geliÃ¾tirmiÃ¾tir.
+			Yaşam istatistikleri, gebelik yaşı, tahmini doğum tarihi hesaplayıcıları, aşı takvimi, normal klinik değerler arayıcı ve benzeri pek çok aracı geliştirmiştir.
 			<p>
-			<a href="mailto:sbbhattacharyya@yahoo.com"><u>Dr. Suman Bhattacharyya'ya buradan ulaÃ¾Ã½labilir.</u></a>
+			<a href="mailto:sbbhattacharyya@yahoo.com"><u>Dr. Suman Bhattacharyya'ya buradan ulaşılabilir.</u></a>
 			</font>
 </TD></TR>	
 <hr>
@@ -450,180 +450,180 @@ Mike'Ã½n Ã§alÃ½Ã¾malarÃ½ hakkÃ½nda daha fazla bilgi <a href="http://www.michaelp
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-			<P><img src="../../fotos/credits/thomas_wiedmann.jpg"  border=0  align=right vspace=10>
+			<P><img src="../../uploads/photos/credits/thomas_wiedmann.jpg"  border=0  align=right vspace=10>
 			<b>Thomas Wiedmann (DE) en aktif hata bulucudur.</b>
 			<p><font size=1>
 			Tam test <br>
 			Hata bulma<br>
-			DB optimist kilitleme kavramÃ½<br>
-			DB iyileÃ¾tirmeleri<br>
-			Tarih ve sayÃ½lar iÃ§in doÃ°rulama  scriptleri<p>
+			DB optimist kilitleme kavramı<br>
+			DB iyileştirmeleri<br>
+			Tarih ve sayılar için doğrulama  scriptleri<p>
 			</font>
-			Thomas Wiedmann uzun sÃ¼redir yazÃ½lÃ½m geliÃ¾tiricisidir. Almanya'da Stuttgart'ta Ã§alÃ½Ã¾maktadÃ½r. 7 yÃ½ldÃ½r Gupta Ekip geliÃ¾tiricisi ile  ve IBM DB2 ile Ã§alÃ½Ã¾maktadÃ½r ve aynÃ½ zamanda IBM sertifikalÃ½ bir UDB DB2 YÃ¶neticisidir. DB2 hakkÃ½nda daha fazla bilgiyi onun kitabÃ½ndan okuyabilirsiniz "DB2" ISBN 3-932311-80-9. Bir Alman programcÃ½lar dergisi TOOLBOX'Ã½n da yazarlarÃ½ndandÃ½r. (www.toolbox-mag.de)
+			Thomas Wiedmann uzun süredir yazılım geliştiricisidir. Almanya'da Stuttgart'ta çalışmaktadır. 7 yıldır Gupta Ekip geliştiricisi ile  ve IBM DB2 ile çalışmaktadır ve aynı zamanda IBM sertifikalı bir UDB DB2 Yöneticisidir. DB2 hakkında daha fazla bilgiyi onun kitabından okuyabilirsiniz "DB2" ISBN 3-932311-80-9. Bir Alman programcılar dergisi TOOLBOX'ın da yazarlarındandır. (www.toolbox-mag.de)
 		
 
-			<P><a href="mailto:tho123@users.sourceforge.net"><u>Thomas Wiedmann'a buradan ulaÃ¾abilirsiniz.</u></a>
+			<P><a href="mailto:tho123@users.sourceforge.net"><u>Thomas Wiedmann'a buradan ulaşabilirsiniz.</u></a>
 </TD></TR></TBODY></TABLE>
 <hr>
 <TABLE cellSpacing=0 cellPadding=0 border=0 width=100%>
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-            <P><IMG SRC="../../fotos/credits/kesztyus2.jpg" BORDER=0 ALIGN="right" hspace=10 width=135>
-			<b>Tibor KesztyÃ¼s, Prof. Dr. (DE)</b> 
+            <P><IMG SRC="../../uploads/photos/credits/kesztyus2.jpg" BORDER=0 ALIGN="right" hspace=10 width=135>
+			<b>Tibor Kesztyüs, Prof. Dr. (DE)</b> 
 			<p>
-			Prof. KesztyÃ¼s Almanya Ulm'da UygulamalÃ½ Bilimler Ãœniversitesinde Ã¶Ã°rencilerine Care2x uygulamasÃ½nÃ½ master tezi olarak vermiÃ¾tir. Ã–Ã°rencileri de yerel medikal uygulamalr iÃ§in Ã¶zel modÃ¼lleri etkin olarak geliÃ¾tirmektedirler. 
+			Prof. Kesztyüs Almanya Ulm'da Uygulamalı Bilimler Üniversitesinde öğrencilerine Care2x uygulamasını master tezi olarak vermiştir. Öğrencileri de yerel medikal uygulamalr için özel modülleri etkin olarak geliştirmektedirler. 
 			<p>
-			Ãœniversitenin medikal informatik bÃ¶lÃ¼mÃ¼nde de dekan yardÃ½mcÃ½sÃ½dÃ½r.
+			Üniversitenin medikal informatik bölümünde de dekan yardımcısıdır.
 			
-			<P><a href="mailto:kesztyus@fh-ulm.de"><u>Prof. KesztyÃ¼s'e buradan ulaÃ¾Ã½labilir.</u></a>
+			<P><a href="mailto:kesztyus@fh-ulm.de"><u>Prof. Kesztyüs'e buradan ulaşılabilir.</u></a>
 </TD></TR></TBODY></TABLE>
 <hr>
 <TABLE cellSpacing=0 cellPadding=0 border=0 width=100%>
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-			<P><img src="../../fotos/credits/walid_fathalla.jpg"  border=0  align=right vspace=10>
+			<P><img src="../../uploads/photos/credits/walid_fathalla.jpg"  border=0  align=right vspace=10>
 			<b>Walid Murad Fathalla (LY)</b>
 			<p>
-			ArapÃ§a Ã§eviriler<br>
-			ArapÃ§a gÃ¶rÃ¼nÃ¼m iÃ§in taslaÃ°Ã½n tekrar dizaynÃ½<p>
-			EÃ°itim ve nitelikler<br>
-			Bachelor of Science - Bilgisayar MÃ¼hendisliÃ°i - 1999<br>
-			AL Fateh Ãœniversitesi - MÃ¼hendislik FakÃ¼ltesi<br>
-			TrablusÃ¾am, Libya
+			Arapça çeviriler<br>
+			Arapça görünüm için taslağın tekrar dizaynı<p>
+			Eğitim ve nitelikler<br>
+			Bachelor of Science - Bilgisayar Mühendisliği - 1999<br>
+			AL Fateh Üniversitesi - Mühendislik Fakültesi<br>
+			Trablusşam, Libya
 		
 
-			<P><a href="mailto:fathalla_w@hotmail.com"><u>Walid Fathalla'ya buradan ulaÃ¾Ã½labilir.</u></a>
+			<P><a href="mailto:fathalla_w@hotmail.com"><u>Walid Fathalla'ya buradan ulaşılabilir.</u></a>
 </TD></TR></TBODY></TABLE>
 <hr>
 <TABLE cellSpacing=0 cellPadding=0 border=0 width=100%>
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-			<P><img src="../../fotos/credits/walter_nunez.gif"  border=0  align=right vspace=10 hspace="10">
-			<b>Walter NuÃ±ez Dr. Med. (PE) </b>
+			<P><img src="../../uploads/photos/credits/walter_nunez.gif"  border=0  align=right vspace=10 hspace="10">
+			<b>Walter Nuñez Dr. Med. (PE) </b>
 
 <p>
-Dr. Walter NuÃ±ez GÃ¼ney Amerika'da care2x in latin amerikan sÃ¼rÃ¼mÃ¼ Care2x-L nin geliÃ¾tirilmesi ve uygulanmasÃ½ iÃ§in kurulmuÃ¾ SaluX (<a href="http://www.salux.org" target="_blank">http://www.salux.org</a>) Ã¶rgÃ¼tÃ¼nÃ¼n kurucularÃ½ndandÃ½r.  Ã–zel projenin web sitesi <a href="http://www.care2x.org.ar" target="_blank">http://www.care2x.org.ar</a> dir. Care2x i Arjantinli profesyonellere  <a href="http://www.sis.org.ar/sis2004/videoconferencia/index.html"  target="_blank">video telekonferans</a> ile sunmuÃ¾tur.
+Dr. Walter Nuñez Güney Amerika'da care2x in latin amerikan sürümü Care2x-L nin geliştirilmesi ve uygulanması için kurulmuş SaluX (<a href="http://www.salux.org" target="_blank">http://www.salux.org</a>) örgütünün kurucularındandır.  Özel projenin web sitesi <a href="http://www.care2x.org.ar" target="_blank">http://www.care2x.org.ar</a> dir. Care2x i Arjantinli profesyonellere  <a href="http://www.sis.org.ar/sis2004/videoconferencia/index.html"  target="_blank">video telekonferans</a> ile sunmuştur.
 
-<P><a href="mailto:admin@ciberneticamedica.com"><u>Dr. Walter NuÃ±ez' e buradan ulaÃ¾Ã½labilir.</u></a>
+<P><a href="mailto:admin@ciberneticamedica.com"><u>Dr. Walter Nuñez' e buradan ulaşılabilir.</u></a>
 </TD></TR></TBODY></TABLE>
 <hr>
 <TABLE cellSpacing=0 cellPadding=0 border=0 width=100%>
         <TBODY>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-			<P><img src="../../fotos/credits/weining_chen.jpg"  border=0  align=right vspace=10>
+			<P><img src="../../uploads/photos/credits/weining_chen.jpg"  border=0  align=right vspace=10>
 			<b>Wei Ning Chen (CH)</b>
-			<p>BasitleÃ¾tirilmiÃ¾ Ã‡ince Ã§eviriler.
+			<p>Basitleştirilmiş Çince çeviriler.
 <p>
-Wei Ning Chen 1971 de DoÃ°u Ã‡in'de Yangzi IrmaÃ°Ã½'nÃ½n yanÃ½ndaki Nanjing'de doÃ°du.
+Wei Ning Chen 1971 de Doğu Çin'de Yangzi Irmağı'nın yanındaki Nanjing'de doğdu.
 <p>
-1992 de DoÃ°u Ã‡in EnstitÃ¼sÃ¼'nde mÃ¼hendislikte bir derece aldÃ½ktan sonra , Wei Ning Chen programlama becerilerini geliÃ¾tirmeye devam etmektedir.
-Windowsda birkaÃ§ yÃ½l programlama deneyiminden sonra ve her Ã§eÃ¾it aÃ§Ã½k kaynak projesine karÃ¾Ã½ kuvvetli bir ilgi ile bazÃ½ becerilerini geliÃ¾tirmek ve bu toplulukta iÃ¾lerin nasÃ½l yÃ¼rÃ¼dÃ¼Ã°Ã¼nÃ¼ gÃ¶rmek iÃ§in AÃ§Ã½k Kaynak projelerine katÃ½lmaya karar verdi.
+1992 de Doğu Çin Enstitüsü'nde mühendislikte bir derece aldıktan sonra , Wei Ning Chen programlama becerilerini geliştirmeye devam etmektedir.
+Windowsda birkaç yıl programlama deneyiminden sonra ve her çeşit açık kaynak projesine karşı kuvvetli bir ilgi ile bazı becerilerini geliştirmek ve bu toplulukta işlerin nasıl yürüdüğünü görmek için Açık Kaynak projelerine katılmaya karar verdi.
 <p>
-Bir saÃ°lÃ½kÃ§Ã½ olmamasÃ½na ve de saÃ°lÃ½k sektÃ¶rÃ¼nde Ã§alÃ½Ã¾mamasÃ½na karÃ¾Ã½n Care projesine katÃ½lmÃ½Ã¾tÃ½r. Ã‡Ã¼nkÃ¼ gelecekte Ã‡in hastanelerinde bu gayretleri sonucunda Care projesinin Ã§alÃ½Ã¾tÃ½rÃ½lacaÃ°Ã½na inanmaktadÃ½r.
+Bir sağlıkçı olmamasına ve de sağlık sektöründe çalışmamasına karşın Care projesine katılmıştır. Çünkü gelecekte Çin hastanelerinde bu gayretleri sonucunda Care projesinin çalıştırılacağına inanmaktadır.
 
-<P><a href="mailto:weining.chen@army.com"><u>Wei Ning Chen'e buradan ulaÃ¾Ã½labilir.</u></a>
+<P><a href="mailto:weining.chen@army.com"><u>Wei Ning Chen'e buradan ulaşılabilir.</u></a>
 </TD></TR></TBODY></TABLE>
 <hr>
 <TABLE cellSpacing=0 cellPadding=0 border=0 width=100%>
         <TBODY>
 <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
-		  <P><img src="../../fotos/credits/wilfried_goedert.jpg" border=0  align=right vspace=10 >
-			<P><b>Dr. med Wilfried GÃ¶dert (DE)</b><br>
-			Ãunlara katkÃ½da bulunmuÃ¾tur:
+		  <P><img src="../../uploads/photos/credits/wilfried_goedert.jpg" border=0  align=right vspace=10 >
+			<P><b>Dr. med Wilfried Gödert (DE)</b><br>
+			Şunlara katkıda bulunmuştur:
 			<p><font size=1>
-		     Hosting ve yÃ¶netim:<br>
+		     Hosting ve yönetim:<br>
 			 www.care2x.de<br>Haber Sunucusu, OTRS Destek Sistemi<br>
-			 Promosyon, BasÃ½nla iliÃ¾kiler<br>
-			 KonsÃ¼ltasyon
+			 Promosyon, Basınla ilişkiler<br>
+			 Konsültasyon
 			<p>
 			</font>
-			Meslek: Doktor, ayrÃ½ca Medikal Enformatik UzmanÃ½
-			<p><a href="mailto:goedert@users.sourceforge.net"><u>Dr. Wilfried GÃ¶dert'e buradan ulaÃ¾Ã½labilir.</u></a>
+			Meslek: Doktor, ayrıca Medikal Enformatik Uzmanı
+			<p><a href="mailto:goedert@users.sourceforge.net"><u>Dr. Wilfried Gödert'e buradan ulaşılabilir.</u></a>
 </TD></TR>	
 </TBODY></TABLE>
 
 
 <hr>
 <font face="verdana,arial" size=3 color="#0000ff">Daha fazla yazarlar</font>
-<font face="verdana,arial" size=1 > (ada gÃ¶re alfabetik sÃ½rada)</font>
+<font face="verdana,arial" size=1 > (ada göre alfabetik sırada)</font>
 
 <table border=0 cellspacing=1 cellpadding=1>
   <tr>
     <td bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> Abrar H. Hazarika (ID)</font></nobr>&nbsp;</td>
-    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;eComBill efatura modÃ¼lÃ¼</font></td>
+    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;eComBill efatura modülü</font></td>
   </tr>
   <tr>
     <td bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> Ali Kanarya (TR)</font></nobr>&nbsp;</td>
-    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;PostgreSQL ilk  script ve Ã§alÃ½Ã¾ma </font></td>
+    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;PostgreSQL ilk  script ve çalışma </font></td>
   </tr>
   <tr>
     <td bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> Akhmad Daniel Sembiring (ID)</font></nobr>&nbsp;</td>
-    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;eFatura hatalarÃ½</font></td>
+    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;eFatura hataları</font></td>
   </tr>
   <tr>
     <td bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> Alfredo Rodriguez (PT)</font></nobr>&nbsp;</td>
-    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;Portekizce Ã§eviri</font></td>
+    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;Portekizce çeviri</font></td>
   </tr>
   <tr>
     <td bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> Biju Gopinath (IN)</font></nobr>&nbsp;</td>
-    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;Alternatif GUI dizaynÃ½</font></td>
+    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;Alternatif GUI dizaynı</font></td>
   </tr>
   <tr>
     <td bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> Erik de Wild (NL)</font></nobr>&nbsp;</td>
-    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;Hollandaca Ã§eviri, sunucu paketi</font></td>
+    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;Hollandaca çeviri, sunucu paketi</font></td>
   </tr>
   <tr>
     <td bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> Javier Alberto Arias (AR)</font></nobr>&nbsp;</td>
-    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;Ãspanyolca Ã§eviriler</font></td>
+    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;İspanyolca çeviriler</font></td>
   </tr>
   <tr>
     <td bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> Luki Rustianto (ID)</font></nobr>&nbsp;</td>
-    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;GÃ¼venlik iyileÃ¾tirmeleri</font></td>
+    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;Güvenlik iyileştirmeleri</font></td>
   </tr>
   <tr>
     <td bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> Mark Painter Dr. med (ZA)</font></nobr>&nbsp;</td>
-    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;Data yapÃ½sÃ½ dizaynÃ½, KadÃ½ndoÃ°um,hata bildirme, GUI dizaynÃ½</font></td>
+    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;Data yapısı dizaynı, Kadındoğum,hata bildirme, GUI dizaynı</font></td>
   </tr>
   <tr>
     <td bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> Pawel Cyrta (PL)</font></nobr>&nbsp;</td>
-    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;Polonyaca Ã§eviri</font></td>
+    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;Polonyaca çeviri</font></td>
   </tr>
   <tr>
     <td bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> Petr Roupec(CZ)</font></nobr>&nbsp;</td>
-    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;Ã‡ekÃ§e Ã§eviri</font></td>
+    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;Çekçe çeviri</font></td>
   </tr>
   <tr>
     <td bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> Prantar Deka (IN)</font></nobr>&nbsp;</td>
-    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;Jenerik faturalama modulÃ¼</font></td>
+    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;Jenerik faturalama modulü</font></td>
   </tr>
   <tr>
     <td bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> Roberto Nanucci (IT)</font></nobr>&nbsp;</td>
-    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;care2x.Ãtalya yansÃ½sÃ½</font></td>
+    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;care2x.İtalya yansısı</font></td>
   </tr>
   <tr>
     <td bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> Sarat Nayak (IN)</font></nobr>&nbsp;</td>
-    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;Dizayn iyileÃ¾tirmeleri hata raporlarÃ½</font></td>
+    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;Dizayn iyileştirmeleri hata raporları</font></td>
   </tr>
   <tr>
     <td bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> Simone Aveotti (IT)</font></nobr>&nbsp;</td>
-    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;Ãlave Ãtalyanca Ã§eviriler</font></td>
+    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;İlave İtalyanca çeviriler</font></td>
   </tr>
   <tr>
     <td bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> Stephan Pfefferkorn (DE)</font></nobr>&nbsp;</td>
-    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;PPT sunumlarÃ½n dÃ¼zenlenmesi</font></td>
+    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;PPT sunumların düzenlenmesi</font></td>
   </tr>
   <tr>
     <td bgcolor="#efefef"><nobr><img src="../../gui/img/common/default/redpfeil.gif" border=0 width=4 height=7 align="absmiddle"><font face="verdana,arial" size=2> Victor Christianto</font></nobr>&nbsp;</td>
-    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;Ataraxia (WAP) modÃ¼lÃ¼</font></td>
+    <td bgcolor="#f9f9f9"><font face="verdana,arial" size=2>&nbsp;&nbsp;Ataraxia (WAP) modülü</font></td>
   </tr>
 </table>
 
-<font face="verdana,arial" size=1>Not: Bu kÃ½smi bir liste, ek yazarlar yakÃ½nda.</font>
+<font face="verdana,arial" size=1>Not: Bu kısmi bir liste, ek yazarlar yakında.</font>
 
 </body>
 </html>

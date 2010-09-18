@@ -8,7 +8,7 @@ require_once($root_path.'include/core/inc_img_fx.php');
 <?php html_rtl($lang); ?>
 <HEAD>
 <meta http-equiv="Content-Type" content="text/html; charset=utf8">
- <TITLE>Accï¿½s non authorisï¿½ de la page</TITLE>
+ <TITLE>Accès non authorisé de la page</TITLE>
 </HEAD>
 
 <BODY bgcolor="#ffffff">
@@ -16,7 +16,7 @@ require_once($root_path.'include/core/inc_img_fx.php');
 <table width=100% border=1>
 <tr>
 <td bgcolor="navy">
-<FONT  COLOR="white"  SIZE=+3  FACE="Arial"><STRONG>&nbsp;Accï¿½s non authorisï¿½ de la page</STRONG></FONT>
+<FONT  COLOR="white"  SIZE=+3  FACE="Arial"><STRONG>&nbsp;Accès non authorisé de la page</STRONG></FONT>
 </td>
 </tr>
 <tr>
@@ -25,7 +25,7 @@ require_once($root_path.'include/core/inc_img_fx.php');
 
 <center>
 <FONT    SIZE=3 color=red  FACE="Arial">
-<b>Vous n'avez pas les droits d'accï¿½s pour ouvrir ce document!</b></font><p>
+<b>Vous n'avez pas les droits d'accès pour ouvrir ce document!</b></font><p>
 <FORM >
 <INPUT type="button"  value=" OK "  onClick="<?php if ($mode=="close") print 'window.close()'; else print 'history.back()'; ?>"></FORM>
 <p>
@@ -34,22 +34,22 @@ require_once($root_path.'include/core/inc_img_fx.php');
 <p>
 <ul>
 <font size=3 face="verdana,arial">
-Les causes possibles de ce problï¿½me:
+Les causes possibles de ce problème:
 </FONT><p>
 <font size=2 face="verdana,arial">
 <img <?php echo createComIcon('../../','achtung.gif') ?>>
-Vous avez peut-ï¿½tre utilisï¿½ les touches standard "Rï¿½tour" ou "Avancer" de votre navigateur. Veuillez ï¿½vitez de les utiliser.<br>
+Vous avez peut-être utilisé les touches standard "Rétour" ou "Avancer" de votre navigateur. Veuillez évitez de les utiliser.<br>
 <img <?php echo createComIcon('../../','achtung.gif') ?>>
-Vous avez peut-ï¿½tre rejetï¿½ une cookie. Le programme dï¿½pend des cookies pour fonctionner correctement. Veuillez accepter les cookies.
+Vous avez peut-être rejeté une cookie. Le programme dépend des cookies pour fonctionner correctement. Veuillez accepter les cookies.
 <br>
 <img <?php echo createComIcon('../../','achtung.gif') ?>>
-Votre navigateur n'accepte peut-ï¿½tre pas les cookies. Veuillez configurer votre navigateur afin d'accepter les cookies automatiquement.
+Votre navigateur n'accepte peut-être pas les cookies. Veuillez configurer votre navigateur afin d'accepter les cookies automatiquement.
 <br>
 <img <?php echo createComIcon('../../','achtung.gif') ?>>
-Votre navigateur n'est peut-ï¿½tre pas capable d'exï¿½cuter javascript ou la fonction javasscript a ï¿½tï¿½ interdite. Veuillez activer javascript dans votre navigateur.
+Votre navigateur n'est peut-être pas capable d'exécuter javascript ou la fonction javasscript a été interdite. Veuillez activer javascript dans votre navigateur.
 <br>
 <img <?php echo createComIcon('../../','achtung.gif') ?>>
-Dans de rares cas il a pu y avoir une erreur dans le transfert des donnï¿½es. Afin de rï¿½soudre cette situation, veuillez cliquer sur le bouton "Recharger".
+Dans de rares cas il a pu y avoir une erreur dans le transfert des données. Afin de résoudre cette situation, veuillez cliquer sur le bouton "Recharger".
 <p>
 </FONT>
 <p>
