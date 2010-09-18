@@ -10,6 +10,23 @@ require($root_path.'include/core/inc_environment_global.php');
 *
 * See the file "copy_notice.txt" for the licence notice
 */
+
+if (!isset($mode) || empty($mode)) {
+	$mode='';
+	$pday='';
+	$pmonth='';
+	$pyear='';
+	$rows='';
+	$ward_id='';
+	$description='';
+	$room_nr_start='';
+	$room_nr_end='';
+	$roomprefix='';
+	$dept_nr='';
+	$dept_nr='';
+	$edit='';
+}
+
 $lang_tables[]='departments.php';
 define('LANG_FILE','nursing.php');
 $local_user='ck_edv_user';
