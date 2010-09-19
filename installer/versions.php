@@ -29,9 +29,9 @@ $version->collectText('care2x_address', 'Care2x Host', 'localhost');
 $version->addSeparator('TimeZone Information');
 $version->collectOption('timezone', 'TimeZone', $timezoneList, $timezoneList, '');
 $version->addSeparator('Encryption Keys');
-$version->collectText('1st_key', '1st Key', (rand(1,$rmax).rand(1,$rmax))*rand(1,$rmax));
-$version->collectText('2nd_key', '2nd Key', (rand(1,$rmax).rand(1,$rmax))*rand(1,$rmax));
-$version->collectText('3rd_key', '3rd Key', (rand(1,$rmax).rand(1,$rmax))*rand(1,$rmax));
+$version->collectText('1st_key', '1st Key', substr((rand(1,$rmax).rand(1,$rmax).rand(1,$rmax)), 0, 32));
+$version->collectText('2nd_key', '2nd Key', substr((rand(1,$rmax).rand(1,$rmax).rand(1,$rmax)), 0, 32));
+$version->collectText('3rd_key', '3rd Key', substr((rand(1,$rmax).rand(1,$rmax).rand(1,$rmax)), 0, 32));
 $version->addSeparator('');
 
 $version->addTest('PHPVersionOver', array('5.0.0'));
