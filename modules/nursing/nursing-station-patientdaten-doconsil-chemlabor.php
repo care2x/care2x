@@ -44,6 +44,7 @@ function prepareTestElements()
 	*  otherwise, the user sent a form without setting any test parameter.
 	*  In such a case, do not save data and show the form again.
 	*/
+
 	if($paramlist!=''){
 		/* Prepare the sampling minutes */
 		for($i=15;$i<46;$i=$i+15){
@@ -386,17 +387,17 @@ function selectAllParams(group_id) {
 }
 
 function setM(m){
-    eval("marker=document.images."+m);
-	eval("element=document."+form_name+"."+m);
+	marker = document.images[m];
+	element = document.forms[form_name][m];
+    //eval("marker=document.images."+m);
+	//eval("element=document."+form_name+"."+m);
 	
     if(marker.src!=mFilled.src)	{
 	   marker.src=mFilled.src;
 	   element.value='1';
-	   //alert(element.name+element.value);
 	}else{
 	    marker.src=mBlank.src;
 		element.value='0';
-	   //alert(element.name+element.value);
 	 }
 }
 
@@ -404,7 +405,7 @@ function setThis(prep,elem,begin,end,step){
   for(i=begin;i<end;i=i+step)  {
      x=prep + i;
      if(elem!=i)     {
-       eval("marker=document.images."+x);
+       marker = document.images[x];
 	   if(marker.src==mFilled.src)  setM(x);
      }
   }
