@@ -213,7 +213,7 @@ class Department extends Core {
 	* @return  mixed assoc array (sorted by param $sort) or boolean or adodb record object 
 	*/
 	function getAllPharmacy() {
-		return $this->_getalldata("type=1 AND is_inactive='0' AND is_pharmacy=1");
+		return $this->_getalldata("type=2 AND is_inactive='0' AND is_pharmacy=1");
 	}
 	/**
 	* Gets all information  of one pharmacy. The result is 2 dimensional associative array.

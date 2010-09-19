@@ -5,7 +5,6 @@ $LDHeadline='Headline';
 $LDHeadlines='Headlines';
 $LDManagement='Management';
 $LDHealthTips='Health tips';
-$LDAdmission='Admission';
 $LDNursing='Nursing';
 /* 2003-04-27 EL */
 $LDMedical='Medical';
@@ -26,7 +25,7 @@ $LDPlsDeptID='Please write the Department ID';
 $LDPlsSelectType='Please select the type';
 
 $LDIsPharmacy='Is Pharmacy ?';
-$LDPharmacy='Select the Pharmacy this department will use.';
+$LDPharmacy='Pharmacy';
 
 $LDClose = 'Close';
 $LDBack = 'Back';
