@@ -38,10 +38,6 @@ require ($root_path . 'include/core/inc_css_a_hilitebu.php');
 		echo 'link=' . $cfg ['body_txtcolor'] . ' alink=' . $cfg ['body_alink'] . ' vlink=' . $cfg ['body_txtcolor'];
 	}
 	?>>
-<?php
-echo $test?>
- //foreach($argv as $v) echo "$v "; <?php
-?>
 <table width=100% border=0 height=100% cellpadding="0" cellspacing="0">
 	<tr valign=top>
 		<td bgcolor="<?php
@@ -65,7 +61,7 @@ if ($cfg ['dhtml'])
 			<?php
 			if ($cfg ['dhtml'])
 				echo 'class="fadeOut" >';
-			?>/></a><a
+			?></a><a
 			href="<?php
 			echo $breakfile;
 			?>"><img
@@ -76,7 +72,7 @@ if ($cfg ['dhtml'])
 			<?php
 			if ($cfg ['dhtml'])
 				echo 'class="fadeOut" >';
-			?>/></a></td>
+			?></a></td>
 	</tr>
 	<tr valign=top>
 		<td bgcolor=<?php
