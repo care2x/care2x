@@ -425,4 +425,16 @@ $sAdmitTriageGreen = 'Green';
 $sAdmitTriageYellow = 'Yellow';
 $sAdmitTriageRed = 'Red';
 $sAdmitTriageBlue = 'Blue'; // Hope to use later
-?>
+
+$LDDoctor = 'Doctor';
+$LDPharmacist = 'Pharmacist';
+$LDBed = '$LDBed';
+$LDAllergy = 'Allergy';
+$LDHour = 'Hour';
+$LDQty = 'Qty';
+$LDSpeed = 'Speed';
+$LDDose = 'Dose';
+$LDApplicationType = 'Type';
+$LDDrug = 'Drug';
+$LDPrice = 'Price';
+$LDValue = 'Value';

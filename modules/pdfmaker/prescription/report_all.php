@@ -182,32 +182,32 @@ if(!stristr($filter,$nr)){
 	$pdf->ezTable($data,'','',array('xPos'=>'left','xOrientation'=>'right','showLines'=>0,'fontSize'=>$report_titlesize,'showHeadings'=>0,'shaded'=>2,'shadeCol2'=>array(0.9,0.9,0.9),'width'=>555));
 	$data[]=array(" $LDDate: ".formatDate2Local($report['date'],$date_format)."   $LDTime: ".$report['time']."   $LDBy: ".$report['personell_name']);
 	$dataInfo[] = array (
-		'Reparti :' => 'Reparti : ' . $deptName ,
-		'Pavijon :' => 'Pavijon : ' . $wardName['name'],
-		'Dhoma :'   => 'Dhoma : ' . $wardName['roomprefix'].$roomName,
-		'Shtrati :' => 'Shtrati : ' . $roomNumber
+		$LDDepartment . ' :' => $LDDepartment . ' : ' . $deptName ,
+		$LDWard . ' :' => $LDWard. ' : ' . $wardName['name'],
+		$LDRoomNr . ' :'   => $LDRoomNr . ' : ' . $wardName['roomprefix'].$roomName,
+		$LDBed . ' :' => $LDBed .' : ' . $roomNumber
 	);
 	$pdf->ezTable($dataInfo,'','',array('showHeadings'=>0,'shaded'=>0,'showLines'=>0,'xPos'=>'307','shaded'=>2,'shadeCol2'=>array(0.9,0.9,0.9),'width'=>555));
 	$y=$pdf->ezText("\n",6);
-	$pdf->ezText("Alergji : " .$patientAllergy . "                    Diagnoza : " .$patientDiagnosis ,13);
+	$pdf->ezText($LDAllergy . " : " .$patientAllergy . "                    " . $LDDiagnosis . " : " .$patientDiagnosis ,13);
 	$y=$pdf->ezText("\n",6);
 	$prescriptionData=array();
 	
-	$columnNames = array('Medikamenti','Dose','Ora','Menyra','Shpejtesia','Shenime');
+	$columnNames = array($LDDrug,$LDDose,$LDHour,$LDApplicationType,$LDSpeed,$LDNotes);
 	$tableoptions = array('cols' => array(
-		'Medikamenti'=>array('justification'=>'left','width'=>220),
-		'Sasi'=>array('justification'=>'right'),
-		'Ora'=>array('justification'=>'right'),
-		'Menyra'=>array('justification'=>'left'),
-		'Shpejtesia'=>array('justification'=>'right'),
-		'Shenime'=>array('justification'=>'left','width'=>100)
+		$LDDrug=>array('justification'=>'left','width'=>220),
+		$LDQty =>array('justification'=>'right'),
+		$LDHour=>array('justification'=>'right'),
+		$LDApplicationType=>array('justification'=>'left'),
+		$LDSpeed=>array('justification'=>'right'),
+		$LDNotes=>array('justification'=>'left','width'=>100)
 		),'width'=>555,'showLines'=> 2,'shaded'=> 0,'titleFontSize' => 14);
 		
 	$billTableOptions = array('cols' => array(
-		'Medikamenti'=>array('justification'=>'left','width'=>220),
-		'Sasi'=>array('justification'=>'right'),
-		'Cmimi'=>array('justification'=>'right'),
-		'Vlera'=>array('justification'=>'right')
+		$LDDrug=>array('justification'=>'left','width'=>220),
+		$LDQty =>array('justification'=>'right'),
+		$LDPrice=>array('justification'=>'right'),
+		$LDValue=>array('justification'=>'right')
 		),'width'=>555,'showLines'=> 2,'shaded'=> 0,'titleFontSize' => 14);
 		
 	$presPrescriber = '';
@@ -247,62 +247,62 @@ if ($countPrescriptionData > 1 ) {
 		if($prescriptionData[$i]['companion'] != '0') {
 			$companionNr = explode(",",$prescriptionData[0]['companion']);
 			for($j=$i;$j<count($companionNr)&&(in_array($prescriptionData[$j]['bestellnum'],$companionNr,true));$j++){
-				if($prescriptionTable[$i]['Medikamenti']) {
-					$prescriptionTable[$i]['Medikamenti'] = $prescriptionTable[$i]['Medikamenti'] . "\n" . $prescriptionData[$j]['article'];
-					$prescriptionTable[$i]['Sasi'] = $prescriptionTable[$i]['Sasi'] . "\n" . $prescriptionData[$j]['dosage'];
-					$prescriptionTable[$i]['Ora'] = $prescriptionTable[$i]['Ora'] ;
-					$prescriptionTable[$i]['Menyra'] = $prescriptionTable[$i]['Menyra'] ;
-					$prescriptionTable[$i]['Shpejtesia'] = $prescriptionTable[$i]['Shpejtesia'] . "\n" . $prescriptionData[$j]['sub_speed'];
-					$prescriptionTable[$i]['Shenime'] = $prescriptionTable[$i]['Shenime'] . "\n" . $prescriptionData[$j]['notes_sub'];
-					$billTable[$i]['Medikamenti'] = $prescriptionTable[$i]['Medikamenti'] . "\n" . $prescriptionData[$j]['article'];
-					$billTable[$i]['Sasi'] = $prescriptionTable[$i]['Sasi'] . "\n" . $prescriptionData[$j]['dosage'];
-					$billTable[$i]['Cmimi'] = '';
-					$billTable[$i]['Vlera'] = '';
+				if($prescriptionTable[$i][$LDDrug]) {
+					$prescriptionTable[$i][$LDDrug] = $prescriptionTable[$i][$LDDrug] . "\n" . $prescriptionData[$j]['article'];
+					$prescriptionTable[$i][$LDQty] = $prescriptionTable[$i][$LDQty] . "\n" . $prescriptionData[$j]['dosage'];
+					$prescriptionTable[$i][$LDHour] = $prescriptionTable[$i][$LDHour] ;
+					$prescriptionTable[$i][$LDApplicationType] = $prescriptionTable[$i][$LDApplicationType] ;
+					$prescriptionTable[$i][$LDSpeed] = $prescriptionTable[$i][$LDSpeed] . "\n" . $prescriptionData[$j]['sub_speed'];
+					$prescriptionTable[$i][$LDNotes] = $prescriptionTable[$i][$LDNotes] . "\n" . $prescriptionData[$j]['notes_sub'];
+					$billTable[$i][$LDDrug] = $prescriptionTable[$i][$LDDrug] . "\n" . $prescriptionData[$j]['article'];
+					$billTable[$i][$LDQty] = $prescriptionTable[$i][$LDQty] . "\n" . $prescriptionData[$j]['dosage'];
+					$billTable[$i][$LDPrice] = '';
+					$billTable[$i][$LDValue] = '';
 				} else {
-					$prescriptionTable[$i]['Medikamenti'] = $prescriptionData[$j]['article'];
-					$prescriptionTable[$i]['Sasi'] = $prescriptionData[$j]['dosage'];
-					$prescriptionTable[$i]['Ora'] = $prescriptionData[$j]['admin_time'];
-					$prescriptionTable[$i]['Menyra'] = $prescriptionData[$j]['application_type_nr'];
-					$prescriptionTable[$i]['Shpejtesia'] = $prescriptionData[$j]['sub_speed'];
-					$prescriptionTable[$i]['Shenime'] = $prescriptionData[$j]['notes_sub'];
-					$billTable[$i]['Medikamenti'] = $prescriptionData[$j]['article'];
-					$billTable[$i]['Sasi'] = $prescriptionData[$j]['dosage'];
-					$billTable[$i]['Cmimi'] = '';
-					$billTable[$i]['Vlera'] = '';
+					$prescriptionTable[$i][$LDDrug] = $prescriptionData[$j]['article'];
+					$prescriptionTable[$i][$LDQty] = $prescriptionData[$j]['dosage'];
+					$prescriptionTable[$i][$LDHour] = $prescriptionData[$j]['admin_time'];
+					$prescriptionTable[$i][$LDApplicationType] = $prescriptionData[$j]['application_type_nr'];
+					$prescriptionTable[$i][$LDSpeed] = $prescriptionData[$j]['sub_speed'];
+					$prescriptionTable[$i][$LDNotes] = $prescriptionData[$j]['notes_sub'];
+					$billTable[$i][$LDDrug] = $prescriptionData[$j]['article'];
+					$billTable[$i][$LDQty] = $prescriptionData[$j]['dosage'];
+					$billTable[$i][$LDPrice] = '';
+					$billTable[$i][$LDValue] = '';
 				}
 			}
 		}
 		if($j) $i=$j;
 		if ($prescriptionData[$i]['companion'] == '0'){
-			$prescriptionTable[$i]['Medikamenti'] = $prescriptionData[$i]['article'];
-			$prescriptionTable[$i]['Sasi'] = $prescriptionData[$i]['dosage'];
-			$prescriptionTable[$i]['Ora'] = $prescriptionData[$i]['admin_time'];
-			$prescriptionTable[$i]['Menyra'] = $prescriptionData[$i]['application_type_nr'];
-			$prescriptionTable[$i]['Shpejtesia'] = $prescriptionData[$i]['sub_speed'];
-			$prescriptionTable[$i]['Shenime'] = $prescriptionData[$i]['notes_sub'];
-			$billTable[$i]['Medikamenti'] = $prescriptionData[$i]['article'];
-			$billTable[$i]['Sasi'] = $prescriptionData[$i]['dosage'];
-			$billTable[$i]['Cmimi'] = '';
-			$billTable[$i]['Vlera'] = '';
+			$prescriptionTable[$i][$LDDrug] = $prescriptionData[$i]['article'];
+			$prescriptionTable[$i][$LDQty] = $prescriptionData[$i]['dosage'];
+			$prescriptionTable[$i][$LDHour] = $prescriptionData[$i]['admin_time'];
+			$prescriptionTable[$i][$LDApplicationType] = $prescriptionData[$i]['application_type_nr'];
+			$prescriptionTable[$i][$LDSpeed] = $prescriptionData[$i]['sub_speed'];
+			$prescriptionTable[$i][$LDNotes] = $prescriptionData[$i]['notes_sub'];
+			$billTable[$i][$LDDrug] = $prescriptionData[$i]['article'];
+			$billTable[$i][$LDQty] = $prescriptionData[$i]['dosage'];
+			$billTable[$i][$LDPrice] = '';
+			$billTable[$i][$LDValue] = '';
 		}
 		
 	}
 } else {
-	$prescriptionTable[0]['Medikamenti'] = $prescriptionData[0]['article'];
-	$prescriptionTable[0]['Sasi'] = $prescriptionData[0]['dosage'];
-	$prescriptionTable[0]['Ora'] = $prescriptionData[0]['admin_time'];
-	$prescriptionTable[0]['Menyra'] = $prescriptionData[0]['application_type_nr'];
-	$prescriptionTable[0]['Shpejtesia'] = $prescriptionData[0]['sub_speed'];
-	$prescriptionTable[0]['Shenime'] = $prescriptionData[0]['notes_sub'];
-	$billTable[0]['Medikamenti'] = $prescriptionData[0]['article'];
-	$billTable[0]['Sasi'] = $prescriptionData[0]['dosage'];
-	$billTable[0]['Cmimi'] = '';
-	$billTable[0]['Vlera'] = '';
+	$prescriptionTable[0][$LDDrug] = $prescriptionData[0]['article'];
+	$prescriptionTable[0][$LDQty] = $prescriptionData[0]['dosage'];
+	$prescriptionTable[0][$LDHour] = $prescriptionData[0]['admin_time'];
+	$prescriptionTable[0][$LDApplicationType] = $prescriptionData[0]['application_type_nr'];
+	$prescriptionTable[0][$LDSpeed] = $prescriptionData[0]['sub_speed'];
+	$prescriptionTable[0][$LDNotes] = $prescriptionData[0]['notes_sub'];
+	$billTable[0][$LDDrug] = $prescriptionData[0]['article'];
+	$billTable[0][$LDQty] = $prescriptionData[0]['dosage'];
+	$billTable[0][$LDPrice] = '';
+	$billTable[0][$LDValue] = '';
 
 }
 //sort them out depending on the Hour to be administered
 foreach($prescriptionTable as $res)
-     $sortAux[] = substr($res['Ora'],0,2);
+     $sortAux[] = substr($res[$LDHour],0,2);
      
 array_multisort($sortAux, SORT_ASC, SORT_NUMERIC, $prescriptionTable);
 
@@ -314,9 +314,9 @@ $pdf->ezTable($billTable,'','',$billTableOptions);
 // make empty line
 $pdf->ezText("\n",14);
 $pdf->ezText("Data : " . $prescribeDate ,12,array('justification'=>'left'));
-$pdf->ezText("Shenime : " .$prescriptionNotes,12);
+$pdf->ezText($LDNotes . " : " .$prescriptionNotes,12);
 $pdf->ezText("\n",14);$y=$pdf->ezText("\n",14);
-$pdf->ezText("      Mjeku                                            Farmacisti  ",12);
+$pdf->ezText("      " . $LDDoctor . "                                            " . $LDPharmacist . "  ",12);
 $pdf->ezText($presPrescriber,12);
 $y=$pdf->ezText("\n",10);
 $pdf->ezText("______________________                                        ______________________ ",10);
