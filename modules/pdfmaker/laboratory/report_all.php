@@ -139,10 +139,10 @@ $data[]=array($title);
 $pdf->ezTable($data,'','',array('xPos'=>'left','xOrientation'=>'right','showLines'=>0,'fontSize'=>$report_titlesize,'showHeadings'=>0,'shaded'=>2,'shadeCol2'=>array(0.9,0.9,0.9),'width'=>555));
 $data[]=array(" $LDDate: ".formatDate2Local($report['date'],$date_format)."   $LDTime: ".$report['time']."   $LDBy: ".$report['personell_name']);
 $dataInfo[] = array (
-	'Reparti :' => 'Reparti : ' . $deptName ,
-	'Pavijon :' => 'Pavijon : ' . $wardName['name'],
-	'Dhoma :'   => 'Dhoma : ' . $wardName['roomprefix'].$roomName,
-	'Shtrati :' => 'Shtrati : ' . $roomNumber
+	$LDDepartment => $LDDepartment . ' : ' . $deptName ,
+	$LDWard => $LDWard . ' : ' . $wardName['name'],
+	$LDRoom   => $LDRoom . ' : ' . $wardName['roomprefix'].$roomName,
+	$LDBed => $LDBed . ' : ' . $roomNumber
 );
 $pdf->ezTable($dataInfo,'','',array('showHeadings'=>0,'shaded'=>0,'showLines'=>0,'xPos'=>'307','shaded'=>2,'shadeCol2'=>array(0.9,0.9,0.9),'width'=>555));
 $notShow = explode("-",$skipme);
@@ -235,9 +235,9 @@ while(list($group,$pm)=each($requestData)) {
 $pdf->ezText("\n",14);
 // make empty line
 $pdf->ezText("\n",14);
-$pdf->ezText("Shenime : " .$prescriptionNotes,12);
+$pdf->ezText($LDNotes  . ' : '  .$prescriptionNotes,12);
 $pdf->ezText("\n",14);$y=$pdf->ezText("\n",14);
-$pdf->ezText("      Mjeku                 		                          			 Laboranti  ",12);
+$pdf->ezText("      " . $LDDoctor . "                 		                          			 " . $LDTechnician . "  ",12);
 $pdf->ezText($presPrescriber,12);
 $y=$pdf->ezText("\n",10);
 $pdf->ezText("______________________                                   				 ".$access->login_id,10);

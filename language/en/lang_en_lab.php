@@ -148,4 +148,13 @@ $LDDeletedParams='Parameters in red are deleted';
 $LDHiddenGroups='Groups in green are hidden';
 $LDDeletedGroups='Groups in red are deleted';
 $LDUrgent='Urgent';
-?>
+$LDCheckParamFirst='Please check first the parameter you want to display';
+$LDOpenReport='Print out the report';
+
+$LDWard = 'Ward';
+$LDDepartment = 'Department';
+$LDRoom = 'Room';
+$LDBed = 'Bed';
+$LDNotes = 'Notes';
+$LDDoctor = 'Doctor';
+$LDTechnician = 'Technician';
