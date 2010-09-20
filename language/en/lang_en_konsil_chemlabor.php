@@ -42,14 +42,14 @@ $LDShortMonth[10]='Oct';
 $LDShortMonth[11]='Nov';
 $LDShortMonth[12]='Dec';
 								   
-$LDShortDay[0]='So';
+$LDShortDay[0]='Su';
 $LDShortDay[1]='Mo';
 $LDShortDay[2]='Tu';
 $LDShortDay[3]='We';
 $LDShortDay[4]='Th';
 $LDShortDay[5]='Fr';
 $LDShortDay[6]='Sa';
-$LDShortDay[7]='So';
+$LDShortDay[7]='Su';
 				
 $LDBatchNumber='Batch nr.';
 $LDMaterial='Material:';
