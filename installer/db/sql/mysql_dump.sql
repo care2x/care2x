@@ -7,7 +7,7 @@
 -- Server version: 5.0.51
 -- PHP Version: 5.2.5
 
-ALTER DATABASE DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
+ALTER DATABASE DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 
@@ -3408,9 +3408,8 @@ CREATE TABLE IF NOT EXISTS `care_test_param` (
   `median_y` varchar(20)  default ' ' COMMENT '_y for children form 1 month to 12 months',
   `hi_bound_y` varchar(20)  default ' ',
   `lo_bound_y` varchar(20)  default ' ',
-  `hi_crit	ical_y` varchar(20)  default ' ',
-  `lo_critical_y` varchar(20)  default ' ',
   `hi_critical_y` varchar(20)  default ' ',
+  `lo_critical_y` varchar(20)  default ' ',
   `hi_toxic_y` varchar(20)  default ' ',
   `lo_toxic_y` varchar(20)  default ' ',
   `median_c` varchar(20)  default ' ' COMMENT '_c for children form 1 to 14 years',
@@ -3427,6 +3426,7 @@ CREATE TABLE IF NOT EXISTS `care_test_param` (
   `create_id` varchar(35) NOT NULL,
   `create_time` timestamp NOT NULL default '0000-00-00 00:00:00',
   PRIMARY KEY  (`nr`),
+  UNIQUE KEY (`id`),
   KEY `group_id` (`group_id`)
 ) ENGINE=InnoDB ;
 
