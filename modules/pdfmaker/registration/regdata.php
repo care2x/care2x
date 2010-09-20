@@ -85,7 +85,7 @@ $logo=$root_path.'gui/img/logos/care_logo_print.png';
 $pidbarcode=$root_path.'cache/barcodes/pn_'.$encounter['pid'].'.png';
 $encbarcode=$root_path.'cache/barcodes/en_'.$enc.'.png';
 
-//$idpic=$root_path.'fotos/registration/'.$encounter['photo_filename'];
+//$idpic=$root_path.'uploads/photos/registration/'.$encounter['photo_filename'];
 # Patch for empty file names 2004-05-2 EL
 if(empty($encounter['photo_filename'])){
 	$idpic=$root_path.'uploads/photos/registration/_nothing_';

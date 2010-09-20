@@ -509,7 +509,7 @@ function PersonPhotoIDURL($args){
 		include($root_path.'global_conf/inc_remoteservers_conf.php');
 
 		# Prepare the url path for the image
-		$d = $fotoserver_http."uploads/registration/";
+		$d = $fotoserver_http."uploads/photos/registration/"; // in this function, trailing "/" is needed
 
 		$sql="SELECT photo_filename FROM $person->coretable WHERE pid=".$args[1];
 
@@ -546,7 +546,7 @@ function PersonPhotoIDSave($args){
 	if(checkAccess($args[0])){
 		include($root_path.'global_conf/inc_remoteservers_conf.php');
 
-		$d=$root_path."fotos/$type/";
+		$d=$root_path."uploads/photos/$type";
 
 		# Try to get the extension
 		if(empty($args[2]['ext'])){
@@ -588,7 +588,7 @@ function PersonPhotoIDSave($args){
 
 					# Delete the table record
 					$img->Transact("DELETE FROM care_encounter_image WHERE nr=$picnr");
-					return $d;
+					return $d; // ??????
 					return new IXR_Error(1100,'_ERROR_FILE_NOCREATE');
 				}
 			}else{
@@ -862,7 +862,7 @@ function _ImageAdd($args,$type){
 	if(checkAccess($args[0])){
 		include($root_path.'global_conf/inc_remoteservers_conf.php');
 
-		$d=$root_path."fotos/$type/$picdir";
+		$d=$root_path."uploads/photos/$type/$picdir";
 
 		# Try to get the extension
 		if(empty($args[2]['ext'])){
@@ -903,8 +903,8 @@ function _ImageAdd($args,$type){
 					// if $d directory not exist create it with CHMOD 777
 					mkdir($d,0777);
 					// Copy the trap files to this new directory
-					copy($root_path."fotos/$type/donotremove/index.htm",$d.'/index.htm');
-					copy($root_path."fotos/$type/donotremove/index.php",$d.'/index.php');
+					copy($root_path."uploads/photos/$type/donotremove/index.htm",$d.'/index.htm');
+					copy($root_path."uploads/photos/$type/donotremove/index.php",$d.'/index.php');
 				}
 				// Store to the newly created directory
 

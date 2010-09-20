@@ -34,9 +34,9 @@ $main_url="$httprotocol://$main_domain";
 /*
 this is the server address of the http foto server for patients, required for the preview, displaying, etc.
 */
-//$fotoserver_http="http://".$fotoserver_ip."/fotos/";
+//$fotoserver_http="http://".$fotoserver_ip."/uploads/photos/";
 
-$fotoserver_http="$httprotocol://$main_domain/fotos/";
+$fotoserver_http="$httprotocol://$main_domain/uploads/photos/";
 
 /*
 this is the server address of the ftp foto server for patients, required for probing the pics filenames, number, etc.
@@ -45,7 +45,7 @@ this is the server address of the ftp foto server for patients, required for pro
 
 $fotoserver_ftp="ftp://".$fotoserver_ip.":21";
 
-$fotoserver_localpath="fotos/encounter/";
+$fotoserver_localpath="uploads/photos/encounter/";
 
 /*
 ip address of the ftp server (may be several)
@@ -59,19 +59,19 @@ $ftp_server=$fotoserver_ip;
 /*
 this is the server addresses of the http xray fotos server for patients, required for the preview, displaying, etc.
 */
-//$xray_film_server_http="http://".$fotoserver_ip."/radiology/xrayfilm/";
-//$xray_diagnosis_server_http="http://".$fotoserver_ip."/radiology/diagnosis/";
+//$xray_film_server_http="http://".$fotoserver_ip."/uploads/radiology/xrayfilm/";
+//$xray_diagnosis_server_http="http://".$fotoserver_ip."/uploads/radiology/diagnosis/";
 
-$xray_film_server_http="$httprotocol://".$fotoserver_ip."/radiology/xrayfilms/";
-$xray_diagnosis_server_http="$httprotocol://".$fotoserver_ip."/radiology/diagnosis/";
+$xray_film_server_http="$httprotocol://".$fotoserver_ip."/uploads/radiology/xrayfilms/";
+$xray_diagnosis_server_http="$httprotocol://".$fotoserver_ip."/uploads/radiology/diagnosis/";
 
-$xray_film_localpath="../../radiology/xrayfilms/";
-$xray_diagnosis_localpath="../../radiology/diagnosis/";
+$xray_film_localpath="../../uploads/radiology/xrayfilms/";
+$xray_diagnosis_localpath="../../uploads/radiology/diagnosis/";
 
-$dicom_img_localpath='radiology/dicom_img/';
+$dicom_img_localpath='uploads/radiology/dicom_img/';
 
 # Dicom path used for the Nagoya java applet dicom viewer
-$dicom_img_http="$main_url/imed/radiology/dicom_img/";
+$dicom_img_http="$main_url/imed/radiology/dicom_img/"; // do not know imed and iMed folders!!!
 /*
 webcam http server address... the webcam files are deposited to this server through one or
 several ftp servers with different ports

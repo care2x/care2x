@@ -635,19 +635,20 @@ More information on Mike's work can be viewed at <a href="http://www.michaelpike
 		<P><a href="mailto:t.werfally@lsdc-libya.com"><u>Tarek Alwerfally can be contacted here.</u></a>
 		</TD>
 	</TR>
-<!-- 
-<TR>
+
+	<TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
 		  <hr>
-		  <P><img src="developers/fotos/sven_koechel.jpg" border=0  align=right vspace=10 >
+		  <P><img src="../../uploads/photos/credits/sven_koechel.jpg" border=0  align=right vspace=10 >
 			<P><b>Sven Koechel (AT)</b>
 			<p>
-			Installation and admin of <a href="http://www.care2x.at" target="_blank">"Team Austria"</a> website for Care2x.<br>
+			Installation and admin of <a href="http://www.care2x.at" target="_blank">(link dead) "Team Austria"</a> website for Care2x.at<br>
 			Development of CARE-CAM module for hospital's video monitoring system
 			<p>
 			<a href="mailto:sid61@users.sourceforge.net"><u>Sven Koechel can be contacted here.</u></a>
 			</font>
-</TD></TR>	 -->
+		</TD>
+	</TR>
 
 </TBODY></TABLE>
 <hr>
