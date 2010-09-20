@@ -3408,8 +3408,9 @@ CREATE TABLE IF NOT EXISTS `care_test_param` (
   `median_y` varchar(20)  default ' ' COMMENT '_y for children form 1 month to 12 months',
   `hi_bound_y` varchar(20)  default ' ',
   `lo_bound_y` varchar(20)  default ' ',
-  `hi_critical_y` varchar(20)  default ' ',
+  `hi_crit	ical_y` varchar(20)  default ' ',
   `lo_critical_y` varchar(20)  default ' ',
+  `hi_critical_y` varchar(20)  default ' ',
   `hi_toxic_y` varchar(20)  default ' ',
   `lo_toxic_y` varchar(20)  default ' ',
   `median_c` varchar(20)  default ' ' COMMENT '_c for children form 1 to 14 years',
@@ -3425,7 +3426,8 @@ CREATE TABLE IF NOT EXISTS `care_test_param` (
   `modify_time` timestamp NOT NULL default CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP,
   `create_id` varchar(35) NOT NULL,
   `create_time` timestamp NOT NULL default '0000-00-00 00:00:00',
-  PRIMARY KEY  (`nr`,`group_id`)
+  PRIMARY KEY  (`nr`),
+  KEY `group_id` (`group_id`)
 ) ENGINE=InnoDB ;
 
 
