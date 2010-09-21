@@ -4816,7 +4816,8 @@ INSERT INTO care_config_global VALUES ('person_title_hide', '0', NULL, 'normal',
 INSERT INTO care_config_global VALUES ('person_bloodgroup_hide', '0', NULL, 'normal', '', '', 00000000000000, '', 00000000000000);
 INSERT INTO care_config_global VALUES ('person_civilstatus_hide', '0', NULL, 'normal', '', '', 00000000000000, '', 00000000000000);
 INSERT INTO care_config_global VALUES ('person_insurance_hide', '0', NULL, 'normal', '', '', 00000000000000, '', 00000000000000);
-INSERT INTO care_config_global VALUES ('person_other_his_nr_hide', '0', NULL, 'normal', '', '', 00000000000000, '', 00000000000000);    
+INSERT INTO care_config_global VALUES ('person_other_his_nr_hide', '0', NULL, 'normal', '', '', 00000000000000, '', 00000000000000);
+INSERT INTO care_config_global VALUES ('person_insurance_1_nr_hide', '1', NULL, '', '', '', 00000000000000, '', '0000-00-00 00:00:00');
 
 --
 -- Dumping data for table care_config_user
