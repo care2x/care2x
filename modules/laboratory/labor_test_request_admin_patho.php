@@ -66,7 +66,7 @@ if($dblink_ok) {
 		  switch($mode) {
 		     case 'update':
 							      $sql="UPDATE care_test_request_".$db_request_table." SET 
-                                          entry_date='".formatDate2Std($entry_date,$date_format)."',
+                                          entry_date='".formatDate2STD($entry_date,$date_format)."',
 										  journal_nr='".$journal_nr."',
 										  blocks_nr='".$blocks_nr."',
 										  deep_cuts='".$deep_cuts."',

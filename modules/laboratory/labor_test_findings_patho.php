@@ -94,7 +94,7 @@ switch ( $mode) {
 					   '" . $batch_nr . "','" . $pn . "','" . $dept_nr . "',
 					   '" . addslashes ( htmlspecialchars ( $material ) ) . "','" . addslashes ( htmlspecialchars ( $macro ) ) . "',
 					   '" . addslashes ( htmlspecialchars ( $micro ) ) . "','" . addslashes ( htmlspecialchars ( $findings ) ) . "','" . addslashes ( htmlspecialchars ( $diagnosis ) ) . "',
-					   '" . addslashes ( $doctor_id ) . "', '" . formatDate2Std ( $findings_date, $date_format ) . "', '" . date ( 'H:i:s' ) . "',
+					   '" . addslashes ( $doctor_id ) . "', '" . formatDate2STD ( $findings_date, $date_format ) . "', '" . date ( 'H:i:s' ) . "',
 					   'initial', 'Create: " . date ( 'Y-m-d H:i:s' ) . " = " . $_SESSION [ 'sess_user_name' ] . "\n',
 						'" . $_SESSION [ 'sess_user_name' ] . "', 
 						'" . date ( 'YmdHis' ) . "'
@@ -117,7 +117,7 @@ switch ( $mode) {
 					   material='" . addslashes ( htmlspecialchars ( $material ) ) . "', macro='" . addslashes ( htmlspecialchars ( $macro ) ) . "',
 					   micro='" . addslashes ( htmlspecialchars ( $micro ) ) . "', findings='" . addslashes ( htmlspecialchars ( $findings ) ) . "',
 					   diagnosis='" . addslashes ( htmlspecialchars ( $diagnosis ) ) . "',
-					   doctor_id='" . addslashes ( $doctor_id ) . "', findings_date='" . formatDate2Std ( $findings_date, $date_format ) . "',
+					   doctor_id='" . addslashes ( $doctor_id ) . "', findings_date='" . formatDate2STD ( $findings_date, $date_format ) . "',
 					   findings_time='" . date ( 'H:i:s' ) . "',
 					   history=" . $enc_obj->ConcatHistory ( "Update: " . date ( 'Y-m-d H:i:s' ) . " = " . $_SESSION [ 'sess_user_name' ] . "\n" ) . ",
 					   modify_id = '" . $_SESSION [ 'sess_user_name' ] . "',

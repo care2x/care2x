@@ -31,7 +31,7 @@ function signalNewDiagnosticsReportEvent($report_date='', $script_name='labor_te
 	if(empty($report_date)){
 		$report_date=date('Y-m-d');
 	}else{
-		$report_date=formatDate2Std($report_date,$date_format);
+		$report_date=formatDate2STD($report_date,$date_format);
 	}
 									
     # Check first if a copy is already existing. If yes = update entry, no = insert new entry

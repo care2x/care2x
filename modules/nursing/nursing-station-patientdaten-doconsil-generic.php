@@ -107,7 +107,7 @@ $medical_depts=$dept_obj->getAllActiveSort( 'name_formal' );
 										 VALUES 
 										 (
 										 '".$batch_nr."','".$pn."','".$dept_nr."','".$visit."',
-										 '".$order_patient."','".addslashes($diagnosis_quiry)."','".formatDate2Std($send_date,$date_format)."',
+										 '".$order_patient."','".addslashes($diagnosis_quiry)."','".formatDate2STD($send_date,$date_format)."',
 										 '".addslashes($send_doctor)."', 'pending',
 										 'Create: ".date('Y-m-d H:i:s')." = ".$_SESSION['sess_user_name']."\n',
 										 '".$_SESSION['sess_user_name']."','".date('YmdHis')."'
@@ -138,7 +138,7 @@ $medical_depts=$dept_obj->getAllActiveSort( 'name_formal' );
 											visit = '".$visit."', 
 											order_patient = '".$order_patient."', 
 											diagnosis_quiry = '".$diagnosis_quiry."', 
-											send_date = '".formatDate2Std($send_date,$date_format)."', 
+											send_date = '".formatDate2STD($send_date,$date_format)."', 
 											send_doctor = '".$send_doctor."', 
 											status = '".$status."', 
 										    history=".$dept_obj->ConcatHistory("Update: ".date('Y-m-d H:i:s')." = ".$_SESSION['sess_user_name']."\n").",

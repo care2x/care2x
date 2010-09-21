@@ -64,7 +64,7 @@ if(!isset($mode))   $mode='';
 		     case 'update':
 							      $sql="UPDATE care_test_request_".$db_request_table." SET 
                                           result='".htmlentities(addslashes($result))."',
-										  result_date='".formatDate2Std($result_date,$date_format)."',
+										  result_date='".formatDate2STD($result_date,$date_format)."',
 										  result_doctor='".$result_doctor."',
 										   history=".$dept_obj->ConcatHistory("Update: ".date('Y-m-d H:i:s')." = ".$_SESSION['sess_user_name']."\n").",
 										   modify_id = '".$_SESSION['sess_user_name']."',

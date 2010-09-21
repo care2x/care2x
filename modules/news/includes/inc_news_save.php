@@ -26,7 +26,7 @@ $is_pic=@$img_obj->isValidUploadedImage($_FILES['pic']);
 # Retrieve the filename extension
 $picext=@$img_obj->UploadedImageMimeType();
 
-$publishdate=@ formatDate2Std($publishdate,$date_format);
+$publishdate=@ formatDate2STD($publishdate,$date_format);
 	
 /* Prepare data set for saving */
 $news=array( 'category'=>$category,

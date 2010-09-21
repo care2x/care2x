@@ -103,7 +103,7 @@ if(($mode=='search'||$mode=='paginate')&&($searchkey))
 					  (
 			               reg.name_last LIKE "'.addslashes($suchwort).'%" 
 			              OR reg.name_first LIKE "'.addslashes($suchwort).'%"
-			              OR reg.date_birth LIKE "'.@formatDate2Std($suchwort,$date_format).'%"
+			              OR reg.date_birth LIKE "'.@formatDate2STD($suchwort,$date_format).'%"
 			              OR enc.encounter_nr LIKE "'.addslashes($suchbuffer).'"
 					  )
 					  AND enc.pid=reg.pid  

@@ -120,7 +120,7 @@ switch ($mode) {
 		$data ['findings_current'] = $findings_current;
 		$data ['findings_final'] = $findings_final;
 		$data ['entry_nr'] = $entry_nr;
-		$data ['rec_date'] = formatDate2Std ( $rec_date, $date_format );
+		$data ['rec_date'] = formatDate2STD ( $rec_date, $date_format );
 		$data ['doctor_id'] = $doctor_id;
 		$data ['status'] = 'initial';
 		$data ['history'] = "Create: " . date ( 'Y-m.d H:i:s' ) . " = " . $_SESSION ['sess_user_name'] . "\n";
@@ -220,7 +220,7 @@ switch ($mode) {
 		$data ['findings_current'] = $findings_current;
 		$data ['findings_final'] = $findings_final;
 		$data ['entry_nr'] = $entry_nr;
-		$data ['rec_date'] = formatDate2Std ( $rec_date, $date_format );
+		$data ['rec_date'] = formatDate2STD ( $rec_date, $date_format );
 		$data ['doctor_id'] = $doctor_id;
 		$data ['status'] = 'initial';
 		$data ['history'] = $enc_obj->ConcatHistory ( "Update: " . date ( 'Y-m-d H:i:s' ) . " = " . $_SESSION ['sess_user_name'] . "\n" );

@@ -724,7 +724,7 @@ class GuiInputPerson {
 			if($address->RecordCount()) {
 				while($addr=$address->FetchRow()){
 					if($addr_citytown_nr == $addr['nr'] ) $selected = ' selected '; else $selected = ' ';
-				    $sAddress .= '<option onClick="updateAddress(' . $addr['zip_code'].',' . $addr['nr']. ')" value="' . $addr['name'] . '"' . $selected . ' >' . $addr['name'] . '</option>';
+				    $sAddress .= '<option onClick="updateAddress(\'' . $addr['zip_code'].'\',' . $addr['nr']. ')" value="' . $addr['name'] . '"' . $selected . ' >' . $addr['name'] . '</option>';
 				}
 				$sAddress .= '</select>';
 				$this->smarty->assign('sTownCityInput',$sAddress);

@@ -91,7 +91,7 @@ if(($mode=='search'||$mode=='paginate')&&!empty($searchkey)){
 		$sqlwhere1="WHERE (reg.name_last $sql_LIKE '".addslashes($suchwort)."%' 
 							OR reg.name_first $sql_LIKE '".addslashes($suchwort)."%'";
 		// Try converting the keyword to a proper date format
-		$DOB=formatDate2Std($suchwort,$date_format);
+		$DOB=formatDate2STD($suchwort,$date_format);
 
 		if(!empty($DOB)&&$DOB!='--') $sqlwhere1.="	OR reg.date_birth $sql_LIKE '$DOB' ";
 

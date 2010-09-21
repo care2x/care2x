@@ -97,7 +97,7 @@ $enc_obj=new Encounter;
 										   '".addslashes($gyn_gravida)."', '".addslashes($gyn_menopause_since)."', 
 										   '".addslashes($gyn_hysterectomy)."', '".addslashes($gyn_contraceptive)."', 
 										   '".addslashes($gyn_iud)."', '".addslashes($gyn_hormone_therapy)."', 
-										   '".addslashes($doctor_sign)."', '".formatDate2Std($op_date,$date_format)."', '".date('Y-m-d H:i:s')."',
+										   '".addslashes($doctor_sign)."', '".formatDate2STD($op_date,$date_format)."', '".date('Y-m-d H:i:s')."',
 										   '".$status."',
 										   'Create: ".date('Y-m-d H:i:s')." = ".$_SESSION['sess_user_name']."\n',
 										   '".$_SESSION['sess_user_name']."', '".date('YmdHis')."'

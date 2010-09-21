@@ -127,7 +127,7 @@ if($maxpic){
 		   $picext=strtolower($picext);
 		   if(stristr($picext,'gif')||stristr($picext,'jpg')||stristr($picext,'png'))
 		   {
-				$data['shot_date']=formatDate2Std($$shotdate,$date_format);
+				$data['shot_date']=formatDate2STD($$shotdate,$date_format);
 				$data['shot_nr']=$$shotnr;
 				$data['mime_type']=$picext;
 									

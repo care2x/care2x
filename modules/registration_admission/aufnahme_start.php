@@ -186,18 +186,18 @@ if($pid!='' || $encounter_nr!=''){
 
 			if(!$error) {
 				if(!$GLOBAL_CONFIG['patient_service_care_hide']){
-					if(!empty($sc_care_start)) $sc_care_start=formatDate2Std($sc_care_start,$date_format);
-					if(!empty($sc_care_end)) $sc_care_end=formatDate2Std($sc_care_end,$date_format);
+					if(!empty($sc_care_start)) $sc_care_start=formatDate2STD($sc_care_start,$date_format);
+					if(!empty($sc_care_end)) $sc_care_end=formatDate2STD($sc_care_end,$date_format);
 					$care_class=compact('sc_care_nr','sc_care_class_nr', 'sc_care_start', 'sc_care_end','encoder');
 				}
 				if(!$GLOBAL_CONFIG['patient_service_room_hide']){
-					if(!empty($sc_room_start)) $sc_room_start=formatDate2Std($sc_room_start,$date_format);
-					if(!empty($sc_room_end)) $sc_room_end=formatDate2Std($sc_room_end,$date_format);
+					if(!empty($sc_room_start)) $sc_room_start=formatDate2STD($sc_room_start,$date_format);
+					if(!empty($sc_room_end)) $sc_room_end=formatDate2STD($sc_room_end,$date_format);
 					$room_class=compact('sc_room_nr','sc_room_class_nr', 'sc_room_start', 'sc_room_end','encoder');
 				}
 				if(!$GLOBAL_CONFIG['patient_service_att_dr_hide']){
-					if(!empty($sc_att_dr_start)) $sc_att_dr_start=formatDate2Std($sc_att_dr_start,$date_format);
-					if(!empty($sc_att_dr_end)) $sc_att_dr_end=formatDate2Std($sc_att_dr_end,$date_format);
+					if(!empty($sc_att_dr_start)) $sc_att_dr_start=formatDate2STD($sc_att_dr_start,$date_format);
+					if(!empty($sc_att_dr_end)) $sc_att_dr_end=formatDate2STD($sc_att_dr_end,$date_format);
 					$att_dr_class=compact('sc_att_dr_nr','sc_att_dr_class_nr','sc_att_dr_start', 'sc_att_dr_end','encoder');
 				}
 				if ($GLOBAL_CONFIG['show_doctors_list'] && $encounter_class_nr == 2){

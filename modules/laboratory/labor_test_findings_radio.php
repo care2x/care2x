@@ -91,7 +91,7 @@ $enc_obj=new Encounter;
 										   (
 										   '".$batch_nr."','".$pn."','".$dept_nr."', 
 										   '".addslashes(htmlspecialchars($findings))."','".addslashes(htmlspecialchars($diagnosis))."',
-										   '".htmlspecialchars($doctor_id)."', '".formatDate2Std($findings_date,$date_format)."', '".date('H:i:s')."',
+										   '".htmlspecialchars($doctor_id)."', '".formatDate2STD($findings_date,$date_format)."', '".date('H:i:s')."',
 										   'initial',  
 										   'Create: ".date('Y-m-d H:i:s')." = ".$_SESSION['sess_user_name']."\n',
 										  '".$_SESSION['sess_user_name']."',
@@ -120,7 +120,7 @@ $enc_obj=new Encounter;
 										   findings='".addslashes(htmlspecialchars($findings))."', 
 										   diagnosis='".addslashes(htmlspecialchars($diagnosis))."',
 										   doctor_id='".htmlspecialchars($doctor_id)."', 
-										   findings_date='".formatDate2Std($findings_date,$date_format)."',
+										   findings_date='".formatDate2STD($findings_date,$date_format)."',
 										   findings_time='".date('H:i:s')."', 
 										   history=".$enc_obj->ConcatHistory("Update: ".date('Y-m-d H:i:s')." = ".$_SESSION['sess_user_name']."\n").",
 										   modify_id = '".$_SESSION['sess_user_name']."',

@@ -80,7 +80,7 @@ if((($mode=='search')||$update)&&($keyword!=''))
 			}
 		*/
 		/*
-			$sdt=formatDate2Std($keyword,$date_format);
+			$sdt=formatDate2STD($keyword,$date_format);
 			if(!empty($sdt)) $sdt='%'.$sdt;
 		*/
 		}
@@ -93,7 +93,7 @@ if((($mode=='search')||$update)&&($keyword!=''))
 			$sdt="________$keyword"; // 8 x _ to fill yyyy.mm.
 		}
 
-			$sdt=formatDate2Std($keyword,$date_format);
+			$sdt=formatDate2STD($keyword,$date_format);
 			if(!empty($sdt)) $sdt='%'.$sdt;
 
 	}
