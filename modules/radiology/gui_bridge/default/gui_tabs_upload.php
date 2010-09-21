@@ -17,6 +17,6 @@ if(!isset($notabs)||!$notabs){
 ?>
 <!--  Horizontal blue line below the tabs -->
 <tr>
-<td class="wardlisttitlerow"><img src="p.gif" border=0 width=1 height=5></td>
+<td class="wardlisttitlerow"><img src="../../../../gui/img/common/default/p.gif" border=0 width=1 height=5></td>
 </tr>
 
