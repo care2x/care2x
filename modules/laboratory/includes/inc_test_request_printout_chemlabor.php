@@ -32,7 +32,7 @@
    <tr align="center">
    <td colspan=4><font size=1 face="arial" color= "purple"><?php echo $LDSamplingTime ?></td>
    <td colspan=3><font size=1 face="arial" color= "purple"><?php echo $LDDay ?></td>
-   <td bgcolor= "#990000"><img src="p.gif" border=0 width=1 height=1></td>
+   <td bgcolor= "#990000"><img src="../../../gui/img/common/default/p.gif" border=0 width=1 height=1></td>
    <td colspan=3><font size=1 face="arial" color= "purple"><?php echo $LDMinutes ?></td>
 
    </tr>
@@ -42,7 +42,7 @@
 	for($i=1;$i<8;$i++)
 	   echo 	 "<td><font size=1 face=\"verdana,arial\" color= \"#990000\">".$LDShortDay[$i]."</td>";
 	?>
-   <td bgcolor= "#990000"><img src="p.gif" border=0 width=1 height=1></td>
+   <td bgcolor= "#990000"><img src="../../../gui/img/common/default/p.gif" border=0 width=1 height=1></td>
    <td><font size=1 face="verdana,arial" color= "#990000">15</td>
    <td><font size=1 face="verdana,arial" color= "#990000">30</td>
    <td><font size=1 face="verdana,arial" color= "#990000">45</td>
@@ -75,7 +75,7 @@
 	   echo '</td>';
 	}
 	/* Divide line */
-	echo  ' <td bgcolor= "#990000"><img src="p.gif" border=0 width=1 height=1></td>';
+	echo  ' <td bgcolor= "#990000"><img src="../../../gui/img/common/default/p.gif" border=0 width=1 height=1></td>';
 	
    if(($read_form) && $stored_request['sample_time'])
    {
@@ -345,8 +345,8 @@ for($n=0;$n<8;$n++)
 
 	if($n==2)
 	{
-	   echo '<tr><td colspan=10><img src="p.gif" width=1 height=2></td></tr>
-	           <tr><td bgcolor="#ffcccc" colspan=10><img src="p.gif" width=1 height=1></td></tr>';
+	   echo '<tr><td colspan=10><img src="../../../gui/img/common/default/p.gif" width=1 height=2></td></tr>
+	           <tr><td bgcolor="#ffcccc" colspan=10><img src="../../../gui/img/common/default/p.gif" width=1 height=1></td></tr>';
 	 }
 ?>
    <tr align="center">
@@ -474,7 +474,7 @@ for($i=0;$i<=$max_row;$i++) {
 	echo '</tr><tr>';
 	if($i<$max_row) {
 	  	for($k=0;$k<=$column;$k++) {
-	  		echo '<td width=2></td><td bgcolor="#ffcccc"><img src="p.gif"  width=1 height=1></td>';
+	  		echo '<td width=2></td><td bgcolor="#ffcccc"><img src="../../../gui/img/common/default/p.gif"  width=1 height=1></td>';
 	  	}
   	echo '</tr>';
 	}
