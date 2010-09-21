@@ -4433,7 +4433,7 @@ CREATE TABLE IF NOT EXISTS `care_users` (
   `expire_date` date NOT NULL default '0000-00-00',
   `expire_time` time NOT NULL default '00:00:00',
   `dept_nr` text NOT NULL COMMENT 'the department in which the user is allowed to enter / view',
-  `user_role` tinyint(4) NOT NULL default '0',
+  `user_role` INT(4) NOT NULL default '0',
   `status` varchar(15) NOT NULL,
   `history` text NOT NULL,
   `modify_id` varchar(35) NOT NULL,
@@ -4441,7 +4441,6 @@ CREATE TABLE IF NOT EXISTS `care_users` (
   `create_id` varchar(35) NOT NULL,
   `create_time` timestamp NOT NULL default '0000-00-00 00:00:00',
   PRIMARY KEY  (`login_id`),
-  KEY `login_id` (`login_id`),
   KEY `user_role` (`user_role`)
 ) ENGINE=InnoDB;
 
@@ -4457,7 +4456,7 @@ CREATE TABLE IF NOT EXISTS `care_users` (
 --
 
 CREATE TABLE IF NOT EXISTS `care_user_roles` (
-  `id` int(11) NOT NULL auto_increment,
+  `id` INT(4) NOT NULL auto_increment,
   `role_name` varchar(50) NOT NULL default 'no_name',
   `permission` text ,
   `history` text ,
@@ -4585,8 +4584,7 @@ CREATE TABLE IF NOT EXISTS `care_yellow_paper` (
   `nr` bigint(20) NOT NULL auto_increment,
   `modify_id` text ,
   `modify_time` timestamp NOT NULL default '0000-00-00 00:00:00',
-  PRIMARY KEY  (`nr`),
-  UNIQUE KEY `nr` (`nr`)
+  PRIMARY KEY  (`nr`)
 ) ENGINE=InnoDB ;
 
 --
