@@ -214,7 +214,10 @@ class GuiPersonShow {
 						$insurance_show=FALSE;
 					}
 				}
-				$insurance_class_info=$pinsure_obj->getInsuranceClassInfo($insurance_class_nr);
+				if (isset($insurance_class_nr)) {
+					//TODO $insurance_class_nr might not be set and brings to an undefined situation for insurances. 
+					$insurance_class_info=$pinsure_obj->getInsuranceClassInfo($insurance_class_nr);
+				}
 				
 				# Check if person is currently admitted
 				$this->current_encounter=$this->person_obj->CurrentEncounter($this->pid);
@@ -373,10 +376,13 @@ class GuiPersonShow {
 
 				$this->smarty->assign('sInsuranceNr',$this->createTR($LDInsuranceNr,$insurance_nr,2));
 
-				$buffer=$insurance_class_info['LD_var'];
-				if(isset($$buffer)&&!empty($$buffer)) $this->smarty->append('sInsClasses',$$buffer);
-    				else $this->smarty->append('sInsClasses',$insurance_class_info['name']);
-
+				if (isset($insurance_class_info)) {
+					$buffer=$insurance_class_info['LD_var'];
+					// check if buffer exists, then take the variable name as value and show it
+					if(isset($$buffer)&&!empty($$buffer)) $this->smarty->append('sInsClasses',$$buffer);
+    					else $this->smarty->append('sInsClasses',$insurance_class_info['name']);
+				}
+				
 				$this->smarty->assign('LDInsuranceCo',$LDInsuranceCo);
 				$this->smarty->assign('sInsCoNameInput',$insurance_firm_name);
 
