@@ -20,7 +20,7 @@ if(!isset($notabs)||!$notabs){
 ?>
 <!--  Horizontal blue line below the tabs -->
 <tr>
-<td colspan=3  bgcolor=#00009c><img src="p.gif" border=0 width=1 height=5><?php
+<td colspan=3  bgcolor=#00009c><img src="../../../gui/img/common/default/p.gif" border=0 width=1 height=5><?php
 if(!empty($subtitle)) echo '<font color="#fefefe" SIZE=3  FACE="verdana,Arial"><b>:: '.$subtitle.'</b>';
 ?></td>
 </tr>
