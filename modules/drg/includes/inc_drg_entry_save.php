@@ -53,7 +53,7 @@ switch($element)
 	{
 		$DRG_obj->useInternalDRG();
 		$qlist_type='drg_intern';
-		if(isset($current)&&$current){
+		if(isset($current) && $current){
 			if(!$DRG_obj->EncounterDRGGroupExists($sel)){
 				$data['group_nr']=$sel;
 				# pass the variable as reference

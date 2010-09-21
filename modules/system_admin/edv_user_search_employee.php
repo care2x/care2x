@@ -55,7 +55,7 @@ if(($mode=='search')and($searchkey)){
 	if($ergebnis=$db->Execute($sql)){
 			
 		if ($linecount=$ergebnis->RecordCount()){ 
-			if(($linecount==1)&&$numeric){
+			if(($linecount==1) && $numeric){
 				$zeile=$ergebnis->FetchRow();
 				if(!empty($zeile['login_id'])){
 					$append='&mode=edit&userid='.$zeile['login_id'];

@@ -127,7 +127,7 @@ if($mode=='search'||$mode=='paginate'){
 	//$linecount=$address_obj->LastRecordCount();
 	$pagen->setTotalBlockCount($linecount);
 	# Count total available data
-	if(isset($totalcount)&&$totalcount){
+	if(isset($totalcount) && $totalcount){
 		$pagen->setTotalDataCount($totalcount);
 	}else{
 		@$pers_obj->searchPersonellBasicInfo($searchkey,''); # The second param is empty to prevent sorting
@@ -146,7 +146,7 @@ $img_options_delete=createComIcon($root_path,'delete2.gif','0');
 # Prepare page title
  $sTitle = "$LDNursesList :: ";
  $LDvar=$dept_obj->LDvar();
- if(isset($$LDvar)&&$$LDvar) $sTitle = $sTitle.$$LDvar;
+ if(isset($$LDvar) && $$LDvar) $sTitle = $sTitle.$$LDvar;
    else $sTitle = $sTitle.$dept_obj->FormalName();
 
 # Start Smarty templating here
@@ -233,7 +233,7 @@ function deleteItem(nr){
 <p><br>
 
 <?php
-if(is_object($nurses)&&$nurses->RecordCount()){
+if(is_object($nurses) && $nurses->RecordCount()){
 	# Preload  common icon images
 	$img_male=createComIcon($root_path,'spm.gif','0');
 	$img_female=createComIcon($root_path,'spf.gif','0');
@@ -446,7 +446,7 @@ while(list($x,$v)=each($dept_list))
 		<option value="'.$v['nr'].'" ';
 		if($dept_nr==$v['nr']) echo 'selected';
 		echo '>';
-		if(isset($$v['LD_var'])&&$$v['LD_var']) echo $$v['LD_var'];
+		if(isset($$v['LD_var']) && $$v['LD_var']) echo $$v['LD_var'];
 			else echo $v['name_formal'];
 		echo '</option>';
 	}?>

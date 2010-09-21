@@ -28,7 +28,7 @@ $img=new Image();
 
 if(!isset($mode)){
 	$mode='new';
-} elseif(($mode=='create'||$mode=='update')&&$maxpic) {
+} elseif(($mode=='create'||$mode=='update') && $maxpic) {
 		
 		# makedir lock flags
 		$persd=true;

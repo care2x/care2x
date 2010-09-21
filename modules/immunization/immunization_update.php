@@ -24,8 +24,8 @@ switch($retpath){
 	default: $breakfile='immunization_manage.php'.URL_APPEND; 
 }
 
-if(isset($immu_id)&&$immu_id){
-	if(isset($mode)&&$mode=='update'){
+if(isset($immu_id) && $immu_id){
+	if(isset($mode) && $mode=='update'){
 		//$db->debug=true;
 		if($immu_obj->updateImmuInfoFromArray($immu_id,$_POST)){
     		header("location:immunization_info.php?sid=$sid&lang=$lang&immu_id=$immu_id&mode=show&save_ok=1&retpath=$retpath");

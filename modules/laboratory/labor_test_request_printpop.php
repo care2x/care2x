@@ -120,7 +120,7 @@ if ($target=='generic' || $target=='blood') {
 }
 
 /* Check for the patietn number = $pn. If available get the patients data, */
-if(isset($pn)&&$pn) {	
+if(isset($pn) && $pn) {	
     include_once($root_path.'include/care_api_classes/class_encounter.php');
 	$enc_obj=new Encounter;
 	

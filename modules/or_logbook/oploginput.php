@@ -102,7 +102,7 @@ if($mode=='search'||$mode=='paginate'){
 		//$linecount=$address_obj->LastRecordCount();
 		$pagen->setTotalBlockCount($linecount);
 		# Count total available data
-		if(isset($totalcount)&&$totalcount){
+		if(isset($totalcount) && $totalcount){
 			$pagen->setTotalDataCount($totalcount);
 		}else{
 			@$enc_obj->searchEncounterBasicInfo($sk);

@@ -92,7 +92,7 @@ if($search&&!empty($keyword)){
 
 		$pagen->setTotalBlockCount($linecount);
 		# Count total available data
-		if(isset($totalcount)&&$totalcount){
+		if(isset($totalcount) && $totalcount){
 			$pagen->setTotalDataCount($totalcount);
 		}else{
 			if($editmode){

@@ -127,7 +127,7 @@ if(!$is_discharged){
 			echo '<option value="'.$v['nr'].'" ';
 			if($v['nr']==$dept_nr) echo 'selected';
 			echo '>';
-			if(isset($$v['LD_var'])&&$$v['LD_var']) echo $$v['LD_var'];
+			if(isset($$v['LD_var']) && $$v['LD_var']) echo $$v['LD_var'];
 				else echo $v['name_formal'];
 			echo '</option>
 			';

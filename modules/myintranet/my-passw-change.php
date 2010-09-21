@@ -99,7 +99,7 @@ ob_start();
 	<img <?php echo createMascot($root_path,'mascot1_r.gif','0','bottom') ?> align="absmiddle"><b><?php echo $LDPWChanged ?></b></font>
 <?php else : ?>
 
-<?php if (($pass=='check')&&$passtag) 
+<?php if (($pass=='check') && $passtag) 
 {
 echo '<FONT  class="warnprompt">';
 

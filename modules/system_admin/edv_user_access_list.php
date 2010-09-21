@@ -130,7 +130,7 @@ if ($remark=='itemdelete') echo '<img '.createMascot($root_path,'mascot1_r.gif',
         		if($depts&&is_array($depts)) {
         			while(list($x,$v)=each($depts)) { 
             			 if(in_array($v['nr'],$userDept)) {
-                			 if(isset($$v['LD_var'])&&$$v['LD_var'])  { $sTemp = $sTemp . '<b>' . $$v['LD_var'] . '</b><br>'; }
+                			 if(isset($$v['LD_var']) && $$v['LD_var'])  { $sTemp = $sTemp . '<b>' . $$v['LD_var'] . '</b><br>'; }
                 				 else  { $sTemp = $sTemp . '<b>' . $v['name_formal'] . '</b><br>'; }
             			 }
             	 	 }

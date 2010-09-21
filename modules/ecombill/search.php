@@ -93,7 +93,7 @@ if(($mode=='search'||$mode=='paginate')&&!empty($searchkey)){
 		// Try converting the keyword to a proper date format
 		$DOB=formatDate2STD($suchwort,$date_format);
 
-		if(!empty($DOB)&&$DOB!='--') $sqlwhere1.="	OR reg.date_birth $sql_LIKE '$DOB' ";
+		if(!empty($DOB) && $DOB!='--') $sqlwhere1.="	OR reg.date_birth $sql_LIKE '$DOB' ";
 
 		$sqlwhere1.=")";
 
@@ -106,7 +106,7 @@ if(($mode=='search'||$mode=='paginate')&&!empty($searchkey)){
 		if(defined('SHOW_SQLQUERY')&&SHOW_SQLQUERY) echo $sql;
 
 		if ($linecount=$ergebnis->RecordCount()){
-			if(($linecount==1)&&$numeric&&(!defined('SHOW_SQLQUERY')||!SHOW_SQLQUERY)){
+			if(($linecount==1) && $numeric&&(!defined('SHOW_SQLQUERY')||!SHOW_SQLQUERY)){
 				$zeile=$ergebnis->FetchRow();
 				header('location:patientbill.php'.URL_REDIRECT_APPEND.'&patnum='.$zeile['encounter_nr'].'&update=1&mode='.$mode.'&full_en='.$zeile['encounter_nr']);
 				exit;
@@ -114,7 +114,7 @@ if(($mode=='search'||$mode=='paginate')&&!empty($searchkey)){
 		}
 		$pagen->setTotalBlockCount($linecount);
 		# Count total available data
-		if(isset($totalcount)&&$totalcount){
+		if(isset($totalcount) && $totalcount){
 			$pagen->setTotalDataCount($totalcount);
 		}else{
 			if($result=$db->Execute("SELECT COUNT(enc.encounter_nr) AS max_nr".$sqlfrom.$sqlwhere1.$sqlwhere2)){

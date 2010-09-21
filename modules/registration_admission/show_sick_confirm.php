@@ -24,7 +24,7 @@ if(!isset($mode)||empty($mode)){
 	if($rows=$enc_obj->LastRecordCount()){
 		$mode='show';
 		# If $get_nr is non-empty, get the  single record 
-		if(isset($get_nr)&&$get_nr){
+		if(isset($get_nr) && $get_nr){
 			if(!$single_obj=&$enc_obj->getSicknessConfirm($get_nr)) $get_nr=0;
 		}else{
 			$get_nr=0;

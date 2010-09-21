@@ -54,7 +54,7 @@ $firms=$ins_obj->getLimitActiveFirmsInfo($GLOBAL_CONFIG['pagin_insurance_list_ma
 $linecount=$ins_obj->LastRecordCount();
 $pagen->setTotalBlockCount($linecount);
 # Count total available data
-if(isset($totalcount)&&$totalcount){
+if(isset($totalcount) && $totalcount){
 	$pagen->setTotalDataCount($totalcount);
 }else{
 	$totalcount=$ins_obj->countAllActiveFirms();

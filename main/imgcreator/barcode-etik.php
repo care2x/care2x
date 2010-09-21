@@ -20,7 +20,7 @@ require_once($root_path.'include/core/inc_front_chain_lang.php');
 header ('Content-type: image/png');
 
 # Check the encounter number
-if((!isset($en)||!$en)&&$_SESSION['sess_en']) $en=$_SESSION['sess_en'];
+if((!isset($en)||!$en) && $_SESSION['sess_en']) $en=$_SESSION['sess_en'];
 
 /*
  if(file_exists("../cache/barcodes/pn_".$pn."_bclabel_".$lang.".png"))

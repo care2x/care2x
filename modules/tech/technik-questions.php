@@ -183,7 +183,7 @@ if (($mode=='read')){
 	$smarty->assign('sInquirerData',"$LDInquiry $LDFrom ".$inhalt['inquirer']." $LDOn ".@formatDate2Local($inhalt['tdate'],$date_format)." $LDAt ".convertTimeToLocal($inhalt['ttime'])." $LDOClock:");
 	$smarty->assign('sInquiry','" '.nl2br($inhalt['query']).' "');
 
-	if(isset($inhalt['answered'])&&$inhalt['answered']){
+	if(isset($inhalt['answered']) && $inhalt['answered']){
 		$smarty->assign('bShowAnswer',TRUE);
 
 		$smarty->assign('sReplyData',"$LDReply $LDFrom ".$inhalt['ansby']." $LDOn ".@formatDate2Local($inhalt['astamp'],$date_format,1)." $LDOClock:");

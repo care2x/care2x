@@ -23,7 +23,7 @@ $enc_obj = new DRG($pn);
 
 //$db->debug=true;
 
-if(isset($mode)&&$mode=='save_group'&&isset($group_nr)&&$group_nr){
+if(isset($mode) && $mode=='save_group'&&isset($group_nr) && $group_nr){
 	$enc_obj->groupNonGroupedItems($group_nr);
 	header("location:$thisfile?sid=$sid&lang=$lang&saveok=1&pn=$pn&opnr=$opnr&group_nr=$group_nr&edit=$edit&is_discharged=$is_discharged&ln=$ln&fn=$fn&dept_nr=$dept_nr&oprm=$oprm&display=$display");
 	exit;
@@ -32,7 +32,7 @@ if(isset($mode)&&$mode=='save_group'&&isset($group_nr)&&$group_nr){
 $toggle=0;
 $thisfile=basename(__FILE__);
           
-if(isset($mode)&&$mode=='delete'&&$item){
+if(isset($mode) && $mode=='delete'&&$item){
 	$buf=$enc_obj->ungroupDiagnoses($group_nr);
 	$buf2=$enc_obj->ungroupProcedures($group_nr);
 	$enc_obj->deleteEncounterDRGGroup($item);
@@ -166,12 +166,12 @@ require($root_path.'include/core/inc_css_a_hilitebu.php');
 <?php if($display=="composite") echo 'topmargin=0 marginheight=0 leftmargin=0 marginwidth=0';
 else  echo 'topmargin=2 marginheight=2';
 ?> 
-onLoad="if(window.focus) window.focus();<?php if(isset($saveok)&&$saveok) echo 'updateDisplay(\''.$group_nr.'\');'; ?>" bgcolor="<?php echo $cfg['body_bgcolor']; ?>" 
+onLoad="if(window.focus) window.focus();<?php if(isset($saveok) && $saveok) echo 'updateDisplay(\''.$group_nr.'\');'; ?>" bgcolor="<?php echo $cfg['body_bgcolor']; ?>" 
 <?php if (!$cfg['dhtml']){ echo ' link='.$cfg['idx_txtcolor'].' alink='.$cfg['body_alink'].' vlink='.$cfg['idx_txtcolor']; } ?>>
 <form name="ops_intern" action="drg-ops-intern.php" method="post">
 <FONT    SIZE=2  FACE="verdana,Arial" >
 <?php 
-if(isset($is_discharged)&&$is_discharged){
+if(isset($is_discharged) && $is_discharged){
 ?>
 <table border=0 cellspacing=0 cellpadding=1 width="100%">
   <tr>

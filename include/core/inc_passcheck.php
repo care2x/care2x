@@ -45,7 +45,7 @@ if($ergebnis=$db->Execute($sql))
 {
 	$zeile=$ergebnis->FetchRow();
 
-	if(isset($checkintern)&&$checkintern)
+	if(isset($checkintern) && $checkintern)
 	{
 		$dec_login = new Crypt_HCEMD5($key_login,'');
 		//$keyword = $dec_login->DecodeMimeSelfRand($_COOKIE['ck_login_pw'.$sid]);
@@ -58,7 +58,7 @@ if($ergebnis=$db->Execute($sql))
 	{
 		if (!($zeile['lockflag']))
 		{
-			if ((isset($screenall)&&$screenall) || validarea($zeile['permission']))
+			if ((isset($screenall) && $screenall) || validarea($zeile['permission']))
 			{
 				if(empty($zeile['name'])) $zeile['name']=' ';
 					

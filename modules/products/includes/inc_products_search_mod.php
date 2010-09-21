@@ -98,7 +98,7 @@ if((($mode=='search')||$update)&&($keyword!='')){
 		}
 	//} //end of if $update else
 	//if parent is order catalog
-	if(($linecount==1)&&$bcat){
+	if(($linecount==1) && $bcat){
 		$ttl=$ergebnis->FetchRow();
 		$ergebnis->MoveFirst();
 		$title_art=$ttl['artikelname'];

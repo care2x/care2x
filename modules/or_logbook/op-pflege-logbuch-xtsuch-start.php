@@ -186,7 +186,7 @@ if($srcword!=''||$mode=='paginate'){
 			# If count more than the max row count
 			if($rows>1){
 				# Count per sql
-				if(isset($totalcount)&&$totalcount){
+				if(isset($totalcount) && $totalcount){
 					$pagen->setTotalDataCount($totalcount);
 				}else{
 					# Count total available data
@@ -299,7 +299,7 @@ $smarty->append('JavaScript',$sTemp);
 
 ob_start();
 
-if((($mode=='get')||($datafound))&&$rows){
+if((($mode=='get')||($datafound)) && $rows){
 
 	if($rows>1) echo $LDPatLogbookMany;
 		else echo $LDPatLogbook;

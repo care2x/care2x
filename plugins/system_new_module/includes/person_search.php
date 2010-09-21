@@ -185,7 +185,7 @@ if(isset($mode)&&($mode=='search'||$mode=='paginate')&&isset($searchkey)&&($sear
 					echo $DOB;
 					if($DOB=='') {
 						if(defined('SHOW_FIRSTNAME_CONTROLLER')&&SHOW_FIRSTNAME_CONTROLLER){
-							if(isset($_POST['firstname_too'])&&$_POST['firstname_too']){
+							if(isset($_POST['firstname_too']) && $_POST['firstname_too']){
 								$sql2='	WHERE name_last LIKE "'.strtr($suchwort,'+',' ').'%" OR name_first LIKE "'.strtr($suchwort,'+',' ').'%"';
 								$firstname_too=1;
 							}else{
@@ -224,7 +224,7 @@ if(isset($mode)&&($mode=='search'||$mode=='paginate')&&isset($searchkey)&&($sear
        		{
 				if ($linecount=$ergebnis->RecordCount()) 
 				{ 
-					if(($linecount==1)&&$numeric)
+					if(($linecount==1) && $numeric)
 					{
 						$zeile=$ergebnis->FetchRow();
 						header("location:patient_register_show.php?sid=".$sid."&lang=".$lang."&pid=".$zeile['pid']."&edit=1&status=".$status."&user_origin=".$user_origin."&noresize=1&mode=&target=search");
@@ -234,7 +234,7 @@ if(isset($mode)&&($mode=='search'||$mode=='paginate')&&isset($searchkey)&&($sear
 					$pagen->setTotalBlockCount($linecount);
 					
 					# If more than one count all available
-					if(isset($totalcount)&&$totalcount){
+					if(isset($totalcount) && $totalcount){
 						$pagen->setTotalDataCount($totalcount);
 					}else{
 						# Count total available data

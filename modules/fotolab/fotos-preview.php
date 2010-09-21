@@ -40,12 +40,12 @@ if($disc_pix_mode){
 }else{
 	$final_path="$fotoserver_http$pn/";
 }
-if(isset($pn)&&$pn){
+if(isset($pn) && $pn){
 	/* Create image object */
 	include_once($root_path.'include/care_api_classes/class_image.php');
 	$img_obj=new Image();
 	//$db->debug=true;
-	if(isset($mode)&&$mode=='save'){
+	if(isset($mode) && $mode=='save'){
 
 		//$_POST['history']="CONCAT(history,'Notes ".date('Y-m-d H:i:s')." ".$_SESSION['sess_user_name']."\n')";
 		$_POST['history']=$img_obj->ConcatHistory("Notes ".date('Y-m-d H:i:s')." ".$_SESSION['sess_user_name']."\n");

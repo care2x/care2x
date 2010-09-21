@@ -8,7 +8,7 @@ define('LANG_FILE','radio.php');
 //$local_user='ck_radio_user';
 define('NO_2LEVEL_CHK',1);
 require_once($root_path.'include/core/inc_front_chain_lang.php');
-if(isset($nr)&&$nr){
+if(isset($nr) && $nr){
 	require_once($root_path.'include/care_api_classes/class_image.php');
 	$img=new Image;
 	$img_notes=$img->ImgNotes($nr);

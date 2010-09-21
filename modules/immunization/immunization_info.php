@@ -24,7 +24,7 @@ switch($retpath)
 	default: $breakfile='immunization_manage.php'.URL_APPEND; 
 }
 
-if(isset($immu_id)&&$immu_id&&($row=$immu_obj->getImmuTypeInfo($immu_id))){
+if(isset($immu_id) && $immu_id&&($row=$immu_obj->getImmuTypeInfo($immu_id))){
 	$immu=$row->FetchRow();
 	$edit=true;
 }else{
@@ -64,7 +64,7 @@ ob_start();
 
  <ul>
 <?php
-if(isset($save_ok)&&$save_ok){ 
+if(isset($save_ok) && $save_ok){ 
 ?>
 <img <?php echo createMascot($root_path,'mascot1_r.gif','0','absmiddle') ?>><font class="prompt">
 <b>

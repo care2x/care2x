@@ -37,7 +37,7 @@ if(($mode=='send') && isset($idcare_supply) && $idcare_supply){
 	   
 	if($user->isKnown()){
 		  
-		if($user->hasValidPassword()&&$user->isNotLocked()){
+		if($user->hasValidPassword() && $user->isNotLocked()){
 			if($notes!='' && isset($notes)) {
 				$sql="UPDATE $dbtable SET validator='$validator',
 							status='pending',

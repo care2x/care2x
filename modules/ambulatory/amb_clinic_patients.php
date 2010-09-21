@@ -80,7 +80,7 @@ if(($mode=='')||($mode=='fresh')){
 	$edit=true;
 	
 		# Create the waiting outpatients� list
-		$dnr=(isset($w_waitlist)&&$w_waitlist) ? 0 : $dept_nr;
+		$dnr=(isset($w_waitlist) && $w_waitlist) ? 0 : $dept_nr;
 		$waitlist=&$enc_obj->createWaitingOutpatientList($dnr);
 		$waitlist_count=$enc_obj->LastRecordCount();
 		//echo $waitlist_count.'<p>'.$enc_obj->getLastQuery();
@@ -348,13 +348,13 @@ if($rows){
 
 			$smarty->assign('sTitle',ucfirst($patient['title']));
 
-			if(isset($sln)&&$sln) $sFamNameBuffer = str_ireplace($sln,'<span style="background:yellow">'.ucfirst($sln).'</span>',ucfirst($patient['name_last']));
+			if(isset($sln) && $sln) $sFamNameBuffer = str_ireplace($sln,'<span style="background:yellow">'.ucfirst($sln).'</span>',ucfirst($patient['name_last']));
 				else $sFamNameBuffer = ucfirst($patient['name_last']);
 
 			if($bed['name_last']) $smarty->assign('cComma',',');
 				else $smarty->assign('cComma','');
 
-			if(isset($sfn)&&$sfn) $sNameBuffer = str_ireplace($sfn,'<span style="background:yellow">'.ucfirst($sln).'</span>',ucfirst($patient['name_first']));
+			if(isset($sfn) && $sfn) $sNameBuffer = str_ireplace($sfn,'<span style="background:yellow">'.ucfirst($sln).'</span>',ucfirst($patient['name_first']));
 				else $sNameBuffer = ucfirst($patient['name_first']);
 
 
@@ -369,7 +369,7 @@ if($rows){
 
 			if($patient['date_birth']){
 
-				if(isset($sg)&&$sg) $smarty->assign('sBirthDate',str_ireplace($sg,"<font color=#ff0000><b>".ucfirst($sg)."</b></font>",formatDate2Local($patient['date_birth'],$date_format)));
+				if(isset($sg) && $sg) $smarty->assign('sBirthDate',str_ireplace($sg,"<font color=#ff0000><b>".ucfirst($sg)."</b></font>",formatDate2Local($patient['date_birth'],$date_format)));
 					else $smarty->assign('sBirthDate',formatDate2Local($patient['date_birth'],$date_format));
 			}
 

@@ -77,7 +77,7 @@ require('./gui_bridge/default/gui_tabs_medocs.php');
 
 <?php
 
- if(isset($mode)&&$mode=='search')
+ if(isset($mode) && $mode=='search')
  {
    echo '<FONT  SIZE=2 FACE="verdana,Arial">'.$LDSearchKeyword.': '.$where; 
 ?>
@@ -95,7 +95,7 @@ require('./gui_bridge/default/gui_tabs_medocs.php');
 ?>
 
 <?php
-// if(isset($rows)&&$rows>1) 
+// if(isset($rows) && $rows>1) 
  if(!empty($rows)) 
 {
  ?>
@@ -267,7 +267,7 @@ while($result=$encounter_classes->FetchRow()) {
 <select name="current_ward_nr">
 	<option value="">_______________________________________________</option>
 <?php 
-if(!empty($ward_info)&&$ward_info->RecordCount()){
+if(!empty($ward_info) && $ward_info->RecordCount()){
     while($station=$ward_info->FetchRow()){
 	    echo '
 	    <option value="'.$station['nr'].'" ';

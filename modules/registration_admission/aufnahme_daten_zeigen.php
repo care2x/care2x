@@ -363,7 +363,7 @@ if (isset($$insurance_class['LD_var'])&&!empty($$insurance_class['LD_var'])) $sm
     else $smarty->assign('sBillTypeInput',$insurance_class['name']); 
 	
 $smarty->assign('LDInsuranceNr',$LDInsuranceNr);
-if(isset($insurance_nr)&&$insurance_nr) $smarty->assign('insurance_nr',$insurance_nr);
+if(isset($insurance_nr) && $insurance_nr) $smarty->assign('insurance_nr',$insurance_nr);
 
 $smarty->assign('LDInsuranceCo',$LDInsuranceCo);
 $smarty->assign('insurance_firm_name',$insurance_firm_name);

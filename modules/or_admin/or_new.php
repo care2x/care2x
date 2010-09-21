@@ -38,7 +38,7 @@ $ward_obj=& new Ward;
 //$db->debug=1;
 
 # Validate 3 most important inputs
-if(isset($mode)&&!empty($mode)&&$mode!='select'){
+if(isset($mode)&&!empty($mode) && $mode!='select'){
 	# format date to standard
 	$datebuffer=formatDate2STD($_POST['date_create'],$date_format);
 	if(empty($_POST['room_nr'])||empty($datebuffer)||($mode=='update'&&empty($_POST['nr']))){
@@ -114,15 +114,15 @@ if(!empty($mode)&&!$inputerror){
 		case 'select':
 		{
 			# Get department´s information
-			if(isset($nr)&&$nr){
+			if(isset($nr) && $nr){
 				$OR_Info=$OR_obj->ORRecordInfo($nr);
-			}elseif(isset($OR_nr)&&$OR_nr){
+			}elseif(isset($OR_nr) && $OR_nr){
 				$OR_Info=$OR_obj->ORInfo($OR_nr);
 			}else{
 				$mode='';
 			}
 				
-			if(is_object($OR_Info)&&$mode!=''){
+			if(is_object($OR_Info) && $mode!=''){
 				$ORoom=$OR_Info->FetchRow();
 				extract($ORoom);
 			}
@@ -228,9 +228,9 @@ ob_start();
  
 <FONT class="prompt"><p>
  <?php
- if(isset($inputerror)&&$inputerror){
+ if(isset($inputerror) && $inputerror){
  	echo "$error_msg<p>";
- }elseif(isset($save_ok)&&$save_ok){
+ }elseif(isset($save_ok) && $save_ok){
  	 echo '<img '.createMascot($root_path,'mascot1_r.gif','0','absmiddle').'>'.$LDDataSaved.'<p>';
 }
 
@@ -340,7 +340,7 @@ echo $LDEnterInfo;
 				<option value="'.$v['nr'].'" ';
 			if($v['nr']==$dept_nr) echo 'selected';
 			echo ' >';
-			if(isset($$v['LD_var'])&&$$v['LD_var']) echo $$v['LD_var'];
+			if(isset($$v['LD_var']) && $$v['LD_var']) echo $$v['LD_var'];
 				else echo $v['name_formal'];
 			echo '</option>';
 		}

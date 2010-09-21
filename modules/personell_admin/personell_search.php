@@ -23,7 +23,7 @@ require_once($root_path.'include/core/inc_date_format_functions.php');
 ///$db->debug=true;
 
 # If a forwarded nr is available, convert it to searchkey and set mode to "search"
-if(isset($fwd_nr)&&$fwd_nr){
+if(isset($fwd_nr) && $fwd_nr){
 	$searchkey=$fwd_nr;
 	$mode='search';
 }else{
@@ -167,7 +167,7 @@ if(isset($mode)&&($mode=='search'||$mode=='paginate')&&isset($searchkey)&&($sear
        		{
 				if ($linecount=$ergebnis->RecordCount()) 
 				{ 
-					if(($linecount==1)&&$numeric)
+					if(($linecount==1) && $numeric)
 					{
 						$zeile=$ergebnis->FetchRow();
 						header("location:personell_register_show.php".URL_REDIRECT_APPEND."&from=such&target=personell_search&personell_nr=".$zeile['nr']."&sem=".(!$zeile['is_discharged']));
@@ -177,7 +177,7 @@ if(isset($mode)&&($mode=='search'||$mode=='paginate')&&isset($searchkey)&&($sear
 					$pagen->setTotalBlockCount($linecount);
 					
 					# If more than one count all available
-					if(isset($totalcount)&&$totalcount){
+					if(isset($totalcount) && $totalcount){
 						$pagen->setTotalDataCount($totalcount);
 					}else{
 

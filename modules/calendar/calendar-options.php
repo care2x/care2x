@@ -26,9 +26,9 @@ require_once($root_path.'include/core/inc_front_chain_lang.php');
 $_SESSION['sess_user_origin']='calendar_opt'; // set the origin
 if(!isset($forceback)||empty($forceback)){
 	if(!isset($dept_nr)||empty($dept_nr)){
-		if(isset($_SESSION['sess_dept_nr'])&&$_SESSION['sess_dept_nr']){
+		if(isset($_SESSION['sess_dept_nr']) && $_SESSION['sess_dept_nr']){
 			$dept_nr=$_SESSION['sess_dept_nr'];
-		}elseif(isset($cfg['thispc_dept_nr'])&&$cfg['thispc_dept_nr']){
+		}elseif(isset($cfg['thispc_dept_nr']) && $cfg['thispc_dept_nr']){
 			$dept_nr=$cfg['thispc_dept_nr'];
 		}else{
 			header("Location:".$root_path."modules/nursing_or/nursing-or-select-dept.php".URL_REDIRECT_APPEND."&target=calendar_opt&retpath=$retpath&year=$year&month=$month&day=$day");

@@ -30,7 +30,7 @@ if(!isset($notabs)||!$notabs){
 <tr>
 <td colspan=3  class="<?php echo $tab_bot_line; ?>"><img src="../../../../gui/img/common/default/p.gif" border=0 width=1 height=5><?php
 if(!empty($subtitle)) echo '<font color="#fefefe" SIZE=3><b>:: '.$subtitle.'</b>';
-if(isset($current_employ)&&$current_employ) echo '<font color="white"> <img '.createComIcon($root_path,'warn.gif','0','absmiddle').'> <b>'.$LDPersonIsEmployed.'</b></font>';
+if(isset($current_employ) && $current_employ) echo '<font color="white"> <img '.createComIcon($root_path,'warn.gif','0','absmiddle').'> <b>'.$LDPersonIsEmployed.'</b></font>';
 ?></td>
 </tr>
 

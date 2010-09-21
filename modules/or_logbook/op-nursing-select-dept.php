@@ -35,11 +35,11 @@ switch($target){
 $dept_ok=false;
 $or_ok=false;
 /* Check if department nr and OR nr are available from user config*/
-if(isset($cfg['thispc_dept_nr'])&&!empty($cfg['thispc_dept_nr'])&&$dept_obj->isSurgery($cfg['thispc_dept_nr'])){
+if(isset($cfg['thispc_dept_nr'])&&!empty($cfg['thispc_dept_nr']) && $dept_obj->isSurgery($cfg['thispc_dept_nr'])){
 	$dept_nr=$cfg['thispc_dept_nr'];
 	$dept_ok=true;
 }
-if(isset($cfg['thispc_room_nr'])&&!empty($cfg['thispc_room_nr'])&&$dept_obj->isOR($cfg['thispc_room_nr'])){
+if(isset($cfg['thispc_room_nr'])&&!empty($cfg['thispc_room_nr']) && $dept_obj->isOR($cfg['thispc_room_nr'])){
 	$saal=$cfg['thispc_room_nr'];
 	$or_ok=true;	
 }

@@ -25,7 +25,7 @@ if($_COOKIE["ck_login_logged".$sid]) $breakfile=$root_path."main/startframe.php"
 $admissionfile='aufnahme_start.php'.URL_APPEND;
 
 # Resolve PID
-if((!isset($pid)||!$pid)&&$_SESSION['sess_pid']) $pid=$_SESSION['sess_pid'];
+if((!isset($pid)||!$pid) && $_SESSION['sess_pid']) $pid=$_SESSION['sess_pid'];
 
 # Save session data
 $_SESSION['sess_path_referer']=$top_dir.$thisfile;

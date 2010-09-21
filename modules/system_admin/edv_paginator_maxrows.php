@@ -23,7 +23,7 @@ require_once($root_path.'include/care_api_classes/class_globalconfig.php');
 $glob_obj=new GlobalConfig($GLOBAL_CONFIG);
 
 # Save data if save mode
-if(isset($mode)&&$mode=='save'){
+if(isset($mode) && $mode=='save'){
 	$glob_obj->saveConfigArray($_POST,'pagin_',TRUE,20);
 	header("location:$thisfile".URL_REDIRECT_APPEND."&save_ok=1");
 	exit;
@@ -63,7 +63,7 @@ ob_start();
 <ul>
 <FONT class="prompt"><p>
 <?php
-if(isset($save_ok)&&$save_ok) echo '<img '.createMascot($root_path,'mascot1_r.gif','0','absmiddle').'>'.$LDDataSaved.'<p>';
+if(isset($save_ok) && $save_ok) echo '<img '.createMascot($root_path,'mascot1_r.gif','0','absmiddle').'>'.$LDDataSaved.'<p>';
 
 echo $LDEnterMaxRows;
 ?></font><p>

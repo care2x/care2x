@@ -149,7 +149,7 @@ $_COOKIE[$ck_sid_buffer]=$ciphersid;
 // include('./counter/count.php');
 
 
-if((isset($boot)&&$boot)||!isset($_COOKIE['ck_config'])||empty($_COOKIE['ck_config'])) {
+if((isset($boot) && $boot)||!isset($_COOKIE['ck_config'])||empty($_COOKIE['ck_config'])) {
     configNew($bname,$bversion,$user_id,$ip,$cfgid);
 } else {
     $user_id=$_COOKIE['ck_config'];
@@ -269,7 +269,7 @@ setcookie($ck_lang_buffer,$lang);*/
 
 /*$_COOKIE[$ck_lang_buffer]=$lang;*/
 	 //echo $mask;
-if((isset($mask)&&$mask)||!$config_exists||$savelang) {
+if((isset($mask) && $mask)||!$config_exists||$savelang) {
 	if(!$config_exists) {
 
 		//$cfg_obj->getConfig('default');

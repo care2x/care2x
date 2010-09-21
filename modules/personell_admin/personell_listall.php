@@ -67,7 +67,7 @@ $sql3=" ORDER BY p.$oitem $odir";
 			  
 if($ergebnis=$db->SelectLimit($sql.$sql2.$sql3,$pagen->MaxCount(),$pagen->BlockStartIndex())){
 	if ($linecount=$ergebnis->RecordCount()){ 
-		if(($linecount==1)&&$numeric){
+		if(($linecount==1) && $numeric){
 			$zeile=$ergebnis->FetchRow();
 			header("location:personell_register_show.php".URL_REDIRECT_APPEND."&from=such&target=personell_listall&personell_nr=".$zeile['nr']."&sem=".(!$zeile['is_discharged']));
 			exit;
@@ -77,7 +77,7 @@ if($ergebnis=$db->SelectLimit($sql.$sql2.$sql3,$pagen->MaxCount(),$pagen->BlockS
 	$pagen->setTotalBlockCount($linecount);
 					
 	# If more than one count all available
-	if(isset($totalcount)&&$totalcount){
+	if(isset($totalcount) && $totalcount){
 		$pagen->setTotalDataCount($totalcount);
 	}else{
 		# Count total available data

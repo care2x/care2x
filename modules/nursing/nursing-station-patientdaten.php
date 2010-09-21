@@ -20,7 +20,7 @@ include($custom_lang_file);
 * If the script call comes from the op module replace the user cookie with the user info from op module
 */
 //$db->debug=true;
-if(isset($op_shortcut)&&$op_shortcut){
+if(isset($op_shortcut) && $op_shortcut){
 	$_COOKIE['ck_pflege_user'.$sid]=$op_shortcut;
 	setcookie('ck_pflege_user'.$sid,$op_shortcut,0,'/');
 	$edit=1;

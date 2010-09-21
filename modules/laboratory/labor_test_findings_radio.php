@@ -41,7 +41,7 @@ $enc_obj=new Encounter;
    
 
      /* Check for the patient number = $pn. If available get the patients data, otherwise set edit to 0 */
-     if(isset($pn)&&$pn)
+     if(isset($pn) && $pn)
 	 {		
 
 	    if( $enc_obj->loadEncounterData($pn)) {

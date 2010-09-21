@@ -201,7 +201,7 @@ if (isset($mode) && ($mode=='search'||$mode=='paginate')){
 			$pagen->setTotalBlockCount($rows);
 				
 			# If more than one count all available
-			if(isset($totalcount)&&$totalcount){
+			if(isset($totalcount) && $totalcount){
 				$pagen->setTotalDataCount($totalcount);
 			}else{
 				# Count total available data

@@ -68,7 +68,7 @@ if($mode=='save')
 		header("location:$thisfile?sid=$sid&lang=$lang&saveok=1&pn=$pn&opnr=$opnr&ln=$ln&fn=$fn&bd=$bd&group_nr=$group_nr&dept_nr=$dept_nr&oprm=$oprm&y=$y&m=$m&d=$d&display=$display&target=$target");
 		exit;
 	}
-}elseif(isset($group_nr)&&$group_nr){
+}elseif(isset($group_nr) && $group_nr){
 
 	/* Load related codes */
 	$diag_obj=&$DRG_obj->RelatedDiagnoses($group_nr);

@@ -207,7 +207,7 @@ if($mode=='search'||$mode=='paginate'){
 	//$linecount=$address_obj->LastRecordCount();
 	$pagen->setTotalBlockCount($rows);
 	# Count total available data
-	if(isset($totalcount)&&$totalcount){
+	if(isset($totalcount) && $totalcount){
 		$pagen->setTotalDataCount($totalcount);
 	}else{
 		$sql="SELECT o.nr ".$sql2;

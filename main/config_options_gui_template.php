@@ -20,7 +20,7 @@ $breakfile='config_options.php'.URL_APPEND;
 
 $thisfile=basename(__FILE__);
 
-if(isset($mode)&&$mode=='save'){
+if(isset($mode) && $mode=='save'){
 	// Save to user config table
 
 	$config_new['template_theme']=$gui_theme;
@@ -65,7 +65,7 @@ if(isset($mode)&&$mode=='save'){
  $smarty->assign('sWindowTitle',$LDUserConfigOpt);
 
  # Body Onload js
- if(isset($saved)&&$saved) $smarty->assign('sOnLoadJs','onLoad="reloadParent();"');
+ if(isset($saved) && $saved) $smarty->assign('sOnLoadJs','onLoad="reloadParent();"');
 
 # Collect js code
 
@@ -103,7 +103,7 @@ ob_start();
 <br>
 
 <form method="post">
-<?php if (isset($saved)&&$saved) { 
+<?php if (isset($saved) && $saved) { 
 	echo '<img '.createMascot($root_path,'mascot1_r.gif','0','absmiddle').'>';	
 ?>
 <FONT class="prompt"><?php echo $LDChangeSaved ?></font><br>

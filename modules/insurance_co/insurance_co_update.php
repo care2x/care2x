@@ -24,8 +24,8 @@ switch($retpath){
 	default: $breakfile='insurance_co_manage.php'.URL_APPEND; 
 }
 
-if(isset($firm_id)&&$firm_id){
-	if(isset($mode)&&$mode=='update'){
+if(isset($firm_id) && $firm_id){
+	if(isset($mode) && $mode=='update'){
 		//$db->debug=true;
 		if($ins_obj->updateFirmInfoFromArray($firm_id,$_POST)){
     		header("location:insurance_co_info.php?sid=$sid&lang=$lang&firm_id=$firm_id&mode=show&save_ok=1&retpath=$retpath");

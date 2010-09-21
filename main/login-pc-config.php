@@ -120,7 +120,7 @@ $sTemp = '';
 if($depts&&is_array($depts))
   while(list($x,$v)=each($depts))
    if(in_array($v['nr'],$_SESSION['department_nr']))
-       if(isset($$v['LD_var'])&&$$v['LD_var']) $sTemp = $sTemp . '<b>' . $$v['LD_var'] . '</b><br>';
+       if(isset($$v['LD_var']) && $$v['LD_var']) $sTemp = $sTemp . '<b>' . $$v['LD_var'] . '</b><br>';
       	 else $sTemp = $sTemp . '<b>' . $v['name_formal'] . '</b><br>';
       				 
 $smarty->assign('sDeptSelect',$sTemp);	

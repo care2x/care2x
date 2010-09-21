@@ -33,7 +33,7 @@ if(isset($mode) && ($mode=='search')) {
 
 	if(!isset($db) || !$db) include_once($root_path.'include/core/inc_db_makelink.php');
 
-    if(isset($dblink_ok)&&$dblink_ok) {	
+    if(isset($dblink_ok) && $dblink_ok) {	
 	    /* Load the date formatter */
         include_once($root_path.'include/core/inc_date_format_functions.php');
 	    $sql='SELECT * FROM care_user_roles WHERE role_name LIKE "'.$name.'%" ';					

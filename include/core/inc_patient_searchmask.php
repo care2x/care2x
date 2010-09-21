@@ -34,7 +34,7 @@ if(!isset($searchform_count) || !$searchform_count){
 <?php
 				if(defined('SHOW_FIRSTNAME_CONTROLLER')&&SHOW_FIRSTNAME_CONTROLLER){
 ?>
-				<input type="checkbox" name="firstname_too" <?php if(isset($firstname_too)&&$firstname_too) echo 'checked'; ?>> <?php echo $LDIncludeFirstName; ?><p>
+				<input type="checkbox" name="firstname_too" <?php if(isset($firstname_too) && $firstname_too) echo 'checked'; ?>> <?php echo $LDIncludeFirstName; ?><p>
 <?php
 }
 ?>

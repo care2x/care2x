@@ -43,7 +43,7 @@ if($mode=='show'){
 	# Clean doc
 	if(isset($aux)) $aux=trim($aux);
 	# Get the appointments basing on some conditions
-	if((isset($dept_nr)&&$dept_nr)){
+	if((isset($dept_nr) && $dept_nr)){
 		# Get by department
 		$result=&$appt_obj->getAllByDeptObj($currYear,$currMonth,$currDay,$dept_nr);
 	}elseif(isset($aux)&&!empty($aux)){

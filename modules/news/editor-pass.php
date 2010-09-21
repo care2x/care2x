@@ -33,7 +33,7 @@ if(!isset($_SESSION['sess_file_break']) || empty($_SESSION['sess_file_break'])) 
    else $breakfile=$root_path.$_SESSION['sess_file_break'].URL_APPEND;
 
 # Filter dept_nr if available save to session, else use default department = 1, public relations headline news
-if(isset($dept_nr)&&$dept_nr) $_SESSION['sess_dept_nr']=$dept_nr;
+if(isset($dept_nr) && $dept_nr) $_SESSION['sess_dept_nr']=$dept_nr;
 	elseif(!$_SESSION['sess_dept_nr']) $_SESSION['sess_dept_nr']=1; # Headline news
 # Filter title, if no supplied, use session stored title
 $title= (empty($title)) ? $_SESSION['sess_title'] : $title ; 

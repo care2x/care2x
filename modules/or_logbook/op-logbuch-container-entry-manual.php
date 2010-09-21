@@ -8,7 +8,7 @@ require_once($root_path.'include/core/inc_front_chain_lang.php');
 
 $globdata="sid=$sid&lang=$lang&op_nr=$op_nr&dept_nr=$dept_nr&saal=$saal&enc_nr=$enc_nr&pday=$pday&pmonth=$pmonth&pyear=$pyear";
 
-if(($mode=='force_add')&&$containername&&$pcs){
+if(($mode=='force_add') && $containername&&$pcs){
 	if(!isset($db)||!$db) include($root_path.'include/core/inc_db_makelink.php');
 	if($dblink_ok){	
 	  	$dbtable='care_encounter_op';

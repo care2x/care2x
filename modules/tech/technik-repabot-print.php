@@ -18,7 +18,7 @@ $core = & new Core;
 
 //$db->debug=1;
 
-if(isset($tid)&&$tid&&isset($dept)&&$dept)
+if(isset($tid) && $tid&&isset($dept) && $dept)
 {
 
     $rows=0;

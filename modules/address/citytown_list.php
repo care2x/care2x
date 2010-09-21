@@ -55,7 +55,7 @@ $address=&$address_obj->getLimitActiveCityTown($GLOBAL_CONFIG['pagin_address_lis
 $linecount=$address_obj->LastRecordCount();
 $pagen->setTotalBlockCount($linecount);
 # Count total available data
-if(isset($totalcount)&&$totalcount){
+if(isset($totalcount) && $totalcount){
 	$pagen->setTotalDataCount($totalcount);
 }else{
 	$totalcount=$address_obj->countAllActiveCityTown();

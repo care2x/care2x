@@ -24,7 +24,7 @@ require_once($root_path.'include/care_api_classes/class_globalconfig.php');
 $glob_obj=new GlobalConfig($GLOBAL_CONFIG);
 
 # Save data if save mode
-if(isset($mode)&&$mode=='save'){
+if(isset($mode) && $mode=='save'){
 
 	$filter='main_info_'; # The index filter
 	$numeric=FALSE; # Values are not strictly numeric
@@ -65,7 +65,7 @@ if(isset($mode)&&$mode=='save'){
  $smarty->assign('sWindowTitle',$LDQuickInformer);
 
  # Assign prompt if saved
- if(isset($save_ok)&&$save_ok){
+ if(isset($save_ok) && $save_ok){
 	$smarty->assign('sMascotImg','<img '.createMascot($root_path,'mascot1_r.gif','0','absmiddle').'>');
 	$smarty->assign('LDDataSaved',$LDDataSaved);
   }

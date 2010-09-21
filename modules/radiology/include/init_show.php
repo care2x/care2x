@@ -18,7 +18,7 @@ require_once($root_path.'include/care_api_classes/class_person.php');
 
 $admissionfile='aufnahme_start.php'.URL_APPEND;
 
-if((!isset($pid)||!$pid)&&$_SESSION['sess_pid']) $pid=$_SESSION['sess_pid'];
+if((!isset($pid)||!$pid) && $_SESSION['sess_pid']) $pid=$_SESSION['sess_pid'];
 	elseif($pid) $_SESSION['sess_pid']=$pid;
 
 //$_SESSION['sess_path_referer']=$top_dir.$thisfile;

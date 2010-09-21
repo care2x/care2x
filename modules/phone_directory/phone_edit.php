@@ -11,7 +11,7 @@ require_once($root_path.'include/core/inc_environment_global.php');
 * See the file "copy_notice.txt" for the licence notice
 */
 define('LANG_FILE','phone.php');
-if(isset($user_origin)&&$user_origin=='pers'){
+if(isset($user_origin) && $user_origin=='pers'){
 	$local_user='aufnahme_user';
 	$sBreakUrl = $root_path.'modules/personell_admin/personell_register_show.php'.URL_APPEND.'&personell_nr='.$nr;
 }else{

@@ -20,8 +20,8 @@ $bPastDateError = FALSE;
 #
 # Save PID to session. Patch as result of bug report from Francesco and Marco.
 #
-if((!isset($pid)||!$pid)&&$_SESSION['sess_pid']) $pid=$_SESSION['sess_pid'];
-	elseif(isset($pid)&&$pid) $_SESSION['sess_pid']=$pid;
+if((!isset($pid)||!$pid) && $_SESSION['sess_pid']) $pid=$_SESSION['sess_pid'];
+	elseif(isset($pid) && $pid) $_SESSION['sess_pid']=$pid;
 
 if(!isset($mode)){
 	$mode='show';

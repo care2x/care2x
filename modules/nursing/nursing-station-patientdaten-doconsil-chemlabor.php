@@ -132,7 +132,7 @@ include_once($root_path.'include/care_api_classes/class_lab.php');
 $lab_obj = new Lab;
 
 /* Check for the patietn number = $pn. If available get the patients data, otherwise set edit to 0 */
-if(isset($pn)&&$pn) {
+if(isset($pn) && $pn) {
     include_once($root_path.'include/care_api_classes/class_encounter.php');
 	$enc_obj=new Encounter;
 	
@@ -574,7 +574,7 @@ if($edit){
 	/* Divide line */
 	echo  ' <td bgcolor= "#990000"><img src="p.gif" width=1 height=1></td>';
 	
-   if(($edit_form||$read_form)&&$stored_request['sample_time'])
+   if(($edit_form||$read_form) && $stored_request['sample_time'])
    {
       list($hour,$quarter_mins)=explode(":",$stored_request['sample_time']);
     }

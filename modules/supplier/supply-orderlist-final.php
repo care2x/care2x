@@ -52,7 +52,7 @@ if(($mode=='send') && isset($order_nr) && $order_nr){
 	   
 	if($user->isKnown()){
 		  
-		if($user->hasValidPassword()&&$user->isNotLocked()){
+		if($user->hasValidPassword() && $user->isNotLocked()){
 			 
 			$sql="UPDATE $dbtable SET validator='$validator',
 									priority='$prior',

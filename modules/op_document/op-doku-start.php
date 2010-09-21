@@ -190,7 +190,7 @@ if($mode=='save')
 		//$linecount=$address_obj->LastRecordCount();
 		$pagen->setTotalBlockCount($linecount);
 		# Count total available data
-		if(isset($totalcount)&&$totalcount){
+		if(isset($totalcount) && $totalcount){
 			$pagen->setTotalDataCount($totalcount);
 		}else{
 			@$enc_obj->searchEncounterBasicInfo($searchkey);
@@ -502,7 +502,7 @@ ob_start();
 
 <ul>
 <?php
-if(($mode=='search'||$mode=='paginate')&&$rows){
+if(($mode=='search'||$mode=='paginate') && $rows){
 
 	$append='&dept_nr='.$dept_nr.'&target='.$target;
 	# Preload  common icon images
@@ -953,7 +953,7 @@ echo createElement('op_room',$op_room);
 
 <p>
 <?php
-if(($mode=='search'||$mode=='paginate')&&$rows){
+if(($mode=='search'||$mode=='paginate') && $rows){
 ?>
 </td>
 </tr>

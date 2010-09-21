@@ -23,7 +23,7 @@ if($_COOKIE['ck_login_logged'.$sid]) $breakfile=$root_path.'main/spediens.php'.U
 	
 $admissionfile='aufnahme_start.php'.URL_APPEND;
 
-if((!isset($pid)||!$pid)&&$HTPP_SESSION_VARS['sess_pid']) $pid=$HTPP_SESSION_VARS['sess_pid'];
+if((!isset($pid)||!$pid) && $HTPP_SESSION_VARS['sess_pid']) $pid=$HTPP_SESSION_VARS['sess_pid'];
 
 $_SESSION['sess_path_referer']=$top_dir.$thisfile;
 $_SESSION['sess_pid']=$pid;
@@ -96,7 +96,7 @@ require('./gui_bridge/default/gui_tabs_personell_reg.php');
 <a href="person_register.php<?php echo URL_APPEND ?>&pid=<?php echo $pid ?>&update=1"><img 
 <?php echo createLDImgSrc($root_path,'update_data.gif','0','absmiddle') ?>></a>
 <?php
-if(isset($current_employ)&&$current_employ){
+if(isset($current_employ) && $current_employ){
 ?>
 <a href="personell_register_show.php<?php echo URL_APPEND ?>&personell_nr=<?php echo $current_employ ?>&target=personell_reg"><img <?php echo createLDImgSrc($root_path,'employment_data.gif','0','absmiddle') ?>></a>
 <?php

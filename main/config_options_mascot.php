@@ -20,7 +20,7 @@ $breakfile='config_options.php'.URL_APPEND;
 
 $thisfile=basename(__FILE__);
 
-if(isset($mode)&&$mode=='save'){
+if(isset($mode) && $mode=='save'){
 	// Save to user config table
 
 	$config_new['mascot']=$mascot;
@@ -85,7 +85,7 @@ ob_start();
 <br>
 
 <form method="post">
-<?php if (isset($saved)&&$saved) { 
+<?php if (isset($saved) && $saved) { 
 	echo '<img '.createMascot($root_path,'mascot1_r.gif','0','absmiddle').'>';	
 ?>
 <FONT  class="prompt"><?php echo $LDChangeSaved ?></font><br>

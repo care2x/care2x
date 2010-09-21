@@ -162,7 +162,7 @@ $dbtable='care_encounter_op';
        							{
 									//echo $sql." new update <br> resetmain= $resetmainput";
 									
-									//if((($g=="entry_out")||($g=="cut_close"))&&$resetmainput) header("Location: $fileforward&resetmainput=1");
+									//if((($g=="entry_out")||($g=="cut_close")) && $resetmainput) header("Location: $fileforward&resetmainput=1");
  											//else header("Location: $fileforward");									
 									header("Location: $fileforward&resetmainput=$resetmainput");
 									exit;

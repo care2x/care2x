@@ -29,7 +29,7 @@ $forwardfile="location:amb_clinic_patients.php".URL_REDIRECT_APPEND.$fileappend;
 require_once($root_path.'include/care_api_classes/class_encounter.php');
 $enc_obj= new Encounter;
 
-if(isset($mode)&&$mode=='transferdept'){	
+if(isset($mode) && $mode=='transferdept'){	
 	
 	$date=date('Y-m-d');
 	$time=date('H:i:s');

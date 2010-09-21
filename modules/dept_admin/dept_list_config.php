@@ -97,7 +97,7 @@ while(list($x,$v)=each($deptarray)){
     
  	<td class=pblock  bgColor="#eeeeee"><a href="dept_info.php<?php echo URL_APPEND."&dept_nr=".$v['nr']; ?>">
 	<?php 
-		if(isset($$v['LD_var'])&&$$v['LD_var']) echo $$v['LD_var'];
+		if(isset($$v['LD_var']) && $$v['LD_var']) echo $$v['LD_var'];
 			else echo $v['name_formal']; 
 	?></a> </td>
     <td class=pblock  bgColor="#eeeeee"><?php if($v['is_inactive']) echo '<font color="red">'.$LDInactive.'</font>'; else echo $LDActive ?> 

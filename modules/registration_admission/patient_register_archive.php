@@ -79,7 +79,7 @@ if (isset($mode) && ($mode=='search'||$mode=='paginate')){
 		$sql="SELECT pid, date_reg, name_last, name_first, date_birth, addr_zip, sex, death_date, status FROM $dbtable WHERE ";
 		$s2='';
 							
-							if(isset($pid)&&$pid)
+							if(isset($pid) && $pid)
 							{
 						         if($pid < $GLOBAL_CONFIG['person_id_nr_adder'])
 								 {
@@ -92,7 +92,7 @@ if (isset($mode) && ($mode=='search'||$mode=='paginate')){
 							}
 						
 							
-							if(isset($name_last)&&$name_last)
+							if(isset($name_last) && $name_last)
 							{
 							     if($s2) $s2.=" AND name_last $sql_LIKE '$name_last%'"; else $s2.=" name_last $sql_LIKE '$name_last%'";
 							}
@@ -127,65 +127,65 @@ if (isset($mode) && ($mode=='search'||$mode=='paginate')){
 										else $s2=$buffer;
 								}
 									
-							if(isset($user_id)&&$user_id)
+							if(isset($user_id) && $user_id)
 								if($s2) $s2.=" AND modify_id $sql_LIKE '$user_id%'"; else $s2.=" modify_id $sql_LIKE '$user_id%'";
 								
 								
-							if(isset($name_first)&&$name_first)
+							if(isset($name_first) && $name_first)
 								if($s2) $s2.=" AND name_first $sql_LIKE '$name_first%'"; else $s2.=" name_first $sql_LIKE '$name_first%'";
-							if(isset($name_2)&&$name_2)
+							if(isset($name_2) && $name_2)
 								if($s2) $s2.=" AND name_2 $sql_LIKE '$name_2%'"; else $s2.=" name_2 $sql_LIKE '$name_2%'";
 								
-							if(isset($name_3)&&$name_3)
+							if(isset($name_3) && $name_3)
 								if($s2) $s2.=" AND name_3 $sql_LIKE '$name_3%'"; else $s2.=" name_3 $sql_LIKE '$name_3%'";
-							if(isset($name_middle)&&$name_middle)
+							if(isset($name_middle) && $name_middle)
 								if($s2) $s2.=" AND name_middle $sql_LIKE '$name_middle%'"; else $s2.=" name_middle $sql_LIKE '$name_middle%'";
-							if(isset($name_maiden)&&$name_maiden)
+							if(isset($name_maiden) && $name_maiden)
 								if($s2) $s2.=" AND name_maiden $sql_LIKE '$name_maiden%'"; else $s2.=" name_maiden $sql_LIKE '$name_maiden%'";
-							if(isset($name_others)&&$name_others)
+							if(isset($name_others) && $name_others)
 								if($s2) $s2.=" AND name_others $sql_LIKE '$name_others%'"; else $s2.=" name_others $sql_LIKE '$name_others%'";
 
-							if(isset($date_birth)&&$date_birth)
+							if(isset($date_birth) && $date_birth)
 							  {
 							    $date_birth=@formatDate2STD($date_birth,$date_format);
 								
 								if($s2) $s2.=" AND date_birth='$date_birth'"; else $s2.=" date_birth='$date_birth'";
 							  }
 							  
-							if(isset($addr_str)&&$addr_str)
+							if(isset($addr_str) && $addr_str)
 								if($s2) $s2.=" AND addr_str $sql_LIKE '%$addr_str%'"; else $s2.=" addr_str $sql_LIKE '%$addr_str%'";
 
-							if(isset($addr_str_nr)&&$addr_str_nr)
+							if(isset($addr_str_nr) && $addr_str_nr)
 								if($s2) $s2.=" AND addr_str_nr $sql_LIKE '%$addr_str_nr%'"; else $s2.=" addr_str_nr $sql_LIKE '%$addr_str_nr%'";
-							if(isset($addr_citytown_nr)&&$addr_citytown_nr)
+							if(isset($addr_citytown_nr) && $addr_citytown_nr)
 								if($s2) $s2.=" AND addr_citytown_nr $sql_LIKE '$addr_citytown_nr'"; else $s2.=" addr_citytown_nr $sql_LIKE '$addr_citytown_nr'";
-							if(isset($addr_zip)&&$addr_zip)
+							if(isset($addr_zip) && $addr_zip)
 								if($s2) $s2.=" AND addr_zip $sql_LIKE '%$addr_zip%'"; else $s2.=" addr_zip $sql_LIKE '%$addr_zip%'";
 								
-							if(isset($sex)&&$sex)
+							if(isset($sex) && $sex)
 								if($s2) $s2.=" AND sex = '$sex'"; else $s2.=" sex = '$sex'";
-							if(isset($civil_status)&&$civil_status)
+							if(isset($civil_status) && $civil_status)
 								if($s2) $s2.=" AND civil_status = '$civil_status'"; else $s2.=" civil_status = '$civil_status'";
-							if(isset($phone_1)&&$phone_1)
+							if(isset($phone_1) && $phone_1)
 								if($s2) $s2.=" AND phone_1_nr $sql_LIKE '$phone_1%'"; else $s2.=" phone_1_nr $sql_LIKE '$phone_1%'";
-							if(isset($phone_2)&&$phone_2)
+							if(isset($phone_2) && $phone_2)
 								if($s2) $s2.=" AND phone_2_nr $sql_LIKE '$phone_2%'"; else $s2.=" phone_2_nr $sql_LIKE '$phone_2%'";
-							if(isset($cellphone_1)&&$cellphone_1)
+							if(isset($cellphone_1) && $cellphone_1)
 								if($s2) $s2.=" AND cellphone_1_nr $sql_LIKE '$cellphone_1%'"; else $s2.=" cellphone_1_nr $sql_LIKE '$cellphone_1%'";
-							if(isset($cellphone_2)&&$cellphone_2)
+							if(isset($cellphone_2) && $cellphone_2)
 								if($s2) $s2.=" AND cellphone_2_nr $sql_LIKE '$cellphone_2%'"; else $s2.=" cellphone_2_nr $sql_LIKE '$cellphone_2%'";
 								
-							if(isset($fax)&&$fax)
+							if(isset($fax) && $fax)
 								if($s2) $s2.=" AND fax $sql_LIKE '$fax%'"; else $s2.=" fax $sql_LIKE '$fax%'";
-							if(isset($email)&&$email)
+							if(isset($email) && $email)
 								if($s2) $s2.=" AND email $sql_LIKE '%$email%'"; else $s2.=" email $sql_LIKE '%$email%'";
-							if(isset($sss_nr)&&$sss_nr)
+							if(isset($sss_nr) && $sss_nr)
 								if($s2) $s2.=" AND sss_nr $sql_LIKE '$sss_nr%'"; else $s2.=" sss_nr $sql_LIKE '$sss_nr%'";
-							if(isset($nat_id_nr)&&$nat_id_nr)
+							if(isset($nat_id_nr) && $nat_id_nr)
 								if($s2) $s2.=" AND nat_id_nr $sql_LIKE '$nat_id_nr%'"; else $s2.=" nat_id_nr $sql_LIKE '$nat_id_nr%'";
-							if(isset($religion)&&$religion)
+							if(isset($religion) && $religion)
 								if($s2) $s2.=" AND religion $sql_LIKE '$religion%'"; else $s2.=" religion $sql_LIKE '$religion%'";
-							if(isset($ethnic_orig)&&$ethnic_orig)
+							if(isset($ethnic_orig) && $ethnic_orig)
 								if($s2) $s2.=" AND ethnic_orig $sql_LIKE '$ethnic_orig%'"; else $s2.=" ethnic_orig $sql_LIKE '$ethnic_orig%'";
 								
 		
@@ -213,7 +213,7 @@ if (isset($mode) && ($mode=='search'||$mode=='paginate')){
 				$pagen->setTotalBlockCount($rows);
 					
 				# If more than one count all available
-				if(isset($totalcount)&&$totalcount){
+				if(isset($totalcount) && $totalcount){
 					$pagen->setTotalDataCount($totalcount);
 				}else{
 					$sql="SELECT COUNT(pid) AS maxnr FROM $dbtable WHERE ".$s2;

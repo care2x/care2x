@@ -138,7 +138,7 @@ $sTemp = '';
 if($depts&&is_array($depts)) {
      while(list($x,$v)=each($depts))
     	 if(in_array($v['nr'],$_SESSION['department_nr']))
-    		 if(isset($$v['LD_var'])&&$$v['LD_var']) $sTemp = $sTemp .  $$v['LD_var'] . '<br>';
+    		 if(isset($$v['LD_var']) && $$v['LD_var']) $sTemp = $sTemp .  $$v['LD_var'] . '<br>';
     			 else $sTemp = $sTemp . $v['name_formal'] . '<br>';
     			 
 if($sTemp != '') echo '<img '.createComIcon($root_path,'home.gif').'><br>';

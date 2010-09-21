@@ -67,7 +67,7 @@ if(isset($mode)&&($mode=='search'||$mode=='paginate')){
 
 <?php
 
-if(isset($rows)&&$rows) {
+if(isset($rows) && $rows) {
 
  ?>
 
@@ -314,7 +314,7 @@ else
 </td>
 <td class="reg_input"><input name="addr_str" type="text" size="35" value="<?php if(isset($addr_str)) echo $addr_str; ?>">
 </td>
-<td class="reg_input">&nbsp;&nbsp;&nbsp;<?php if (isset($errorstreetnr)&&$errorstreetnr) echo "<font color=red>"; ?><?php echo $LDStreetNr ?>:<input name="addr_str_nr" type="text" size="10" value="<?php echo $addr_str_nr; ?>">
+<td class="reg_input">&nbsp;&nbsp;&nbsp;<?php if (isset($errorstreetnr) && $errorstreetnr) echo "<font color=red>"; ?><?php echo $LDStreetNr ?>:<input name="addr_str_nr" type="text" size="10" value="<?php echo $addr_str_nr; ?>">
 </td>
 </tr>
 
@@ -324,7 +324,7 @@ else
 <td class="reg_input"><input name="addr_citytown_name" type="text" size="35" value="<?php if(isset($addr_citytown_name)) echo $addr_citytown_name; ?>">
 <a href="javascript:popSearchWin('citytown','aufnahmeform.addr_citytown_nr','aufnahmeform.addr_citytown_name')"><img <?php echo createComIcon($root_path,'l-arrowgrnlrg.gif','0') ?>></a>
 </td>
-<td class="reg_input">&nbsp;&nbsp;&nbsp;<?php if (isset($errorzip)&&$errorzip) echo "<font color=red>"; ?><?php echo $LDZipCode ?>:<input name="addr_zip" type="text" size="10" value="<?php echo $addr_zip; ?>">
+<td class="reg_input">&nbsp;&nbsp;&nbsp;<?php if (isset($errorzip) && $errorzip) echo "<font color=red>"; ?><?php echo $LDZipCode ?>:<input name="addr_zip" type="text" size="10" value="<?php echo $addr_zip; ?>">
 </td>
 </tr>
 

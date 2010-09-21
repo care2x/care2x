@@ -13,7 +13,7 @@ require($root_path.'include/core/inc_environment_global.php');
 define('LANG_FILE','lab.php');
 $local_user='ck_lab_user';
 require_once($root_path.'include/core/inc_front_chain_lang.php');
-if(isset($from)&&$from=='input'){
+if(isset($from) && $from=='input'){
 	$backfile="labor_datainput.php".URL_APPEND."&encounter_nr=$encounter_nr&job_id=$job_id&parameterselect=$parameterselect&allow_update=$allow_update&user_origin=$user_origin";
 }else{
 	$backfile="labor_data_patient_such.php".URL_APPEND."&search=1";

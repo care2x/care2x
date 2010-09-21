@@ -32,7 +32,7 @@ $thisfile=basename(__FILE__);
 
 $breakfile='patient_search.php'.URL_APPEND;
 
-if(isset($img_nr)&&$img_nr){
+if(isset($img_nr) && $img_nr){
 # Get the dicom image
 	include_once($root_path.'include/care_api_classes/class_image.php');
 	$img_obj=new Image;
@@ -66,12 +66,12 @@ if($nogo||!$NUM){
 </TITLE>
 </HEAD>
 <BODY   topmargin=0 leftmargin=0  marginwidth=0 marginheight=0 ><font face="Verdana, Arial" size=1><?php 
-if(isset($pop_only)&&$pop_only){
+if(isset($pop_only) && $pop_only){
 ?>
 <a href="javascript:window.close()"><font size=1>&nbsp;>> <?php echo $LDClose ?> <<</font></a>
 <?php
 }else{
-	if(isset($saved)&&$saved){
+	if(isset($saved) && $saved){
 ?>
 <a href="upload.php<?php echo URL_APPEND."&saved=1&mode=show&pid=$pid&nr=$img_nr"; ?>"><font size=1>&nbsp;<< <?php echo $LDBack ?></font></a>
 <?php

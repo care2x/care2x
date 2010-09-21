@@ -20,7 +20,7 @@ $breakfile='config_options.php'.URL_APPEND;
 
 $thisfile=basename(__FILE__);
 
-if(isset($mode)&&$mode=='save'){
+if(isset($mode) && $mode=='save'){
 	// Save to user config table
 
 	$config_new['mainmenu_tree']=$mainmenu_tree;
@@ -83,7 +83,7 @@ if(isset($mode)&&$mode=='save'){
 
 <form method="post">
 <?php 
-if (isset($saved)&&$saved) {
+if (isset($saved) && $saved) {
 	echo '<img '.createMascot($root_path,'mascot1_r.gif','0','absmiddle').'>';
 	echo '<div class="prompt">'.$LDChangeSaved.'</div><br>'.$LDRefreshBrowser;
 }

@@ -47,7 +47,7 @@ switch($retpath)
 # Prepare page title
  $sTitle = "$LDORNOC::$LDDutyPlan::";
  $LDvar=$dept_obj->LDvar();
- if(isset($$LDvar)&&$$LDvar) $sTitle = $sTitle.$$LDvar;
+ if(isset($$LDvar) && $$LDvar) $sTitle = $sTitle.$$LDvar;
    else $sTitle = $sTitle.$dept_obj->FormalName();
 
 # Start Smarty templating here

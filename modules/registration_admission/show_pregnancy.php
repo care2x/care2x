@@ -51,7 +51,7 @@ if(!isset($mode)){
 		}
 	}else{
 		# Deactivate the old record first if exists
-		if(isset($rec_nr)&&$rec_nr){
+		if(isset($rec_nr) && $rec_nr){
 			$obj->deactivatePregnancy($_POST['rec_nr']);
 		}
 		$_POST['history']="Create ".date('Y-m-d H:i:s')." ".$_SESSION['sess_user_name']."\n";

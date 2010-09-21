@@ -110,7 +110,7 @@ $dm=&$obj->DeliveryModes();
 			$TP_DMODE_RADIOS.='<input type="radio" name="delivery_mode" value="'.$dmod['nr'].'" ';
 			if($pregnancy['delivery_mode']==$dmod['nr']) $TP_DMODE_RADIOS.='checked' ;
 			$TP_DMODE_RADIOS.='>';
-			if(isset($$dmod['LD_var'])&&$$dmod['LD_var']) $TP_DMODE_RADIOS.=$$dmod['LD_var'];
+			if(isset($$dmod['LD_var']) && $$dmod['LD_var']) $TP_DMODE_RADIOS.=$$dmod['LD_var'];
 				else $TP_DMODE_RADIOS.=$dmod['name'];
 			$TP_DMODE_RADIOS.='&nbsp;';
 		}
@@ -160,7 +160,7 @@ if($obj->LastRecordCount()){
 		$TP_INDUCT_RADIOS.=' <input type="radio" name="induction_method" value="'.$induc['nr'].'" ';
 		if($pregnancy['induction_method']==$induc['nr']) $TP_INDUCT_RADIOS.='checked' ;
 		$TP_INDUCT_RADIOS.='>';
-		if(isset($$induc['LD_var'])&&$$induc['LD_var']) $TP_INDUCT_RADIOS.=$$induc['LD_var'];
+		if(isset($$induc['LD_var']) && $$induc['LD_var']) $TP_INDUCT_RADIOS.=$$induc['LD_var'];
 			else $TP_INDUCT_RADIOS.=$induc['name'];
 		$TP_INDUCT_RADIOS.='&nbsp;';
 	}
@@ -181,7 +181,7 @@ if($obj->LastRecordCount()){
 		$TP_ANAESTH_RADIOS.='<input type="radio" name="anaesth_type_nr" value="'.$row['nr'].'" ';
 		if($pregnancy['anaesth_type_nr']==$row['nr']) $TP_ANAESTH_RADIOS.='checked';
 		$TP_ANAESTH_RADIOS.='>';
-		if(isset($$row['LD_var'])&&$$row['LD_var']) $TP_ANAESTH_RADIOS.=$$row['LD_var'];
+		if(isset($$row['LD_var']) && $$row['LD_var']) $TP_ANAESTH_RADIOS.=$$row['LD_var'];
 			else $TP_ANAESTH_RADIOS.=$row['name'];
 		$TP_ANAESTH_RADIOS.='&nbsp;';
 	}
@@ -201,7 +201,7 @@ if($obj->LastRecordCount()){
 		$TP_PERINEUM_RADIOS.=' <input type="radio" name="perineum" value="'.$per['nr'].'" ';
 		if($pregnancy['perineum']==$per['nr']) $TP_PERINEUM_RADIOS.='checked' ;
 		$TP_PERINEUM_RADIOS.='>';
-		if(isset($$per['LD_var'])&&$$per['LD_var']) $TP_PERINEUM_RADIOS.=$$per['LD_var'];
+		if(isset($$per['LD_var']) && $$per['LD_var']) $TP_PERINEUM_RADIOS.=$$per['LD_var'];
 			else $TP_PERINEUM_RADIOS.=$per['name'];
 	}
 }
@@ -241,7 +241,7 @@ if($obj->LastRecordCount()){
 		$TP_OUT_RADIOS.='<input type="radio" name="outcome" value="'.$otc['nr'].'" ';
 		if($pregnancy['outcome']==$otc['nr']) $TP_OUT_RADIOS.='checked' ;
 		$TP_OUT_RADIOS.='>';
-		if(isset($$otc['LD_var'])&&$$otc['LD_var']) $TP_OUT_RADIOS.=$$otc['LD_var'];
+		if(isset($$otc['LD_var']) && $$otc['LD_var']) $TP_OUT_RADIOS.=$$otc['LD_var'];
 			else $TP_OUT_RADIOS.=$otc['name'];
 		$TP_OUT_RADIOS.='&nbsp;';
 	}

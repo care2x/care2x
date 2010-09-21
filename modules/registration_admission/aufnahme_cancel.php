@@ -17,13 +17,13 @@ define('LANG_FILE','prompt.php');
 $local_user='aufnahme_user';
 require_once($root_path.'include/core/inc_front_chain_lang.php');
 # Do some filtering
-if(isset($mode)&&($mode=='cancel')&&isset($encounter_nr)&&$encounter_nr){
+if(isset($mode)&&($mode=='cancel')&&isset($encounter_nr) && $encounter_nr){
 
 	include_once($root_path.'include/care_api_classes/class_access.php');
 	# Create user access object
 	$user=& new Access($cby,$pw);
 
-	if($user->isKnown()&&$user->hasValidPassword()&&$user->isNotLocked()){
+	if($user->isKnown() && $user->hasValidPassword() && $user->isNotLocked()){
 		$is_cancelled=0;
 		include_once($root_path.'include/care_api_classes/class_encounter.php');
 		$encounter=new Encounter;
@@ -56,7 +56,7 @@ if(isset($mode)&&($mode=='cancel')&&isset($encounter_nr)&&$encounter_nr){
  if (!$cfg['dhtml']){ echo ' link='.$cfg['idx_txtcolor'].' alink='.$cfg['body_alink'].' vlink='.$cfg['idx_txtcolor']; } ?>>
 
 <?php
-if(isset($is_cancelled)&&$is_cancelled){
+if(isset($is_cancelled) && $is_cancelled){
 ?>
 <table border=0 align=center>
   <tr>

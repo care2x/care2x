@@ -99,7 +99,7 @@ define('_BATCH_NR_INIT_',30000000);
 						
 /* Here begins the real work */
      /* Check for the patietn number = $pn. If available get the patients data, otherwise set edit to 0 */
-     if(isset($pn)&&$pn) {
+     if(isset($pn) && $pn) {
 	    if( $enc_obj->loadEncounterData($pn)) {
 			$full_en=$pn;				
 			if($enc_obj->is_loaded){

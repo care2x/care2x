@@ -57,27 +57,27 @@ if($rows){
 				case 'delivery_time': echo convertTimeToLocal($pregbuf[$show_preg_enc][$x]); break;
 				case 'delivery_mode':
 					$buf=&$obj->getDeliveryMode($pregbuf[$show_preg_enc]['delivery_mode']);
-					if(isset($$buf['LD_var'])&&$$buf['LD_var']) echo $$buf['LD_var'];
+					if(isset($$buf['LD_var']) && $$buf['LD_var']) echo $$buf['LD_var'];
 						else echo $buf['name'];
 					break;
 				case 'outcome':
 					$buf=&$obj->getOutcome($pregbuf[$show_preg_enc]['outcome']);
-					if(isset($$buf['LD_var'])&&$$buf['LD_var']) echo $$buf['LD_var'];
+					if(isset($$buf['LD_var']) && $$buf['LD_var']) echo $$buf['LD_var'];
 						else echo $buf['name'];
 					break;
 				case 'induction_method':
 					$buf=&$obj->getInductionMethod($pregbuf[$show_preg_enc][$x]);
-					if(isset($$buf['LD_var'])&&$$buf['LD_var']) echo $$buf['LD_var'];
+					if(isset($$buf['LD_var']) && $$buf['LD_var']) echo $$buf['LD_var'];
 						else echo $buf['name'];
 					break;
 				case 'perineum':
 					$buf=&$obj->getPerineum($pregbuf[$show_preg_enc][$x]);
-					if(isset($$buf['LD_var'])&&$$buf['LD_var']) echo $$buf['LD_var'];
+					if(isset($$buf['LD_var']) && $$buf['LD_var']) echo $$buf['LD_var'];
 						else echo $buf['name'];
 					break;
 				case 'anaesth_type_nr':
 					$buf=&$obj->getAnaesthesia($pregbuf[$show_preg_enc][$x]);
-					if(isset($$buf['LD_var'])&&$$buf['LD_var']) echo $$buf['LD_var'];
+					if(isset($$buf['LD_var']) && $$buf['LD_var']) echo $$buf['LD_var'];
 						else echo $buf['name'];
 					break;
 				case 'child_encounter_nr':

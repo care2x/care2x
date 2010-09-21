@@ -33,7 +33,7 @@ $searchprompt=$LDEntryPrompt;
 
 # Special case for direct access from patient listings
 # If forward nr ok, use it as searchkey
-if(isset($fwd_nr)&&$fwd_nr&&is_numeric($fwd_nr)){
+if(isset($fwd_nr) && $fwd_nr&&is_numeric($fwd_nr)){
 	$searchkey=$fwd_nr;
 	$mode='search';
 }else{
@@ -178,7 +178,7 @@ if(isset($mode)&&($mode=='search'||$mode=='paginate')&&isset($searchkey)&&($sear
        		{
 				if ($linecount=$ergebnis->RecordCount()) 
 				{
-					if(($linecount==1)&&$numeric&&$mode=='search')
+					if(($linecount==1) && $numeric&&$mode=='search')
 					{
 						$zeile=$ergebnis->FetchRow();
 						header('Location:aufnahme_daten_zeigen.php'.URL_REDIRECT_APPEND.'&from=such&encounter_nr='.$zeile['encounter_nr'].'&target=search');
@@ -188,7 +188,7 @@ if(isset($mode)&&($mode=='search'||$mode=='paginate')&&isset($searchkey)&&($sear
 					$pagen->setTotalBlockCount($linecount);
 					
 					# If more than one count all available
-					if(isset($totalcount)&&$totalcount){
+					if(isset($totalcount) && $totalcount){
 						$pagen->setTotalDataCount($totalcount);
 					}else{
 						# Count total available data

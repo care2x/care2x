@@ -31,12 +31,12 @@ if(isset($mode)&&($mode=='search'))
 {
 	if(isset($dept)&&empty($dept)&&isset($tech)&&empty($tech)&&isset($sdate)&&empty($sdate)&&isset($edate)&&empty($edate))  $mode='';
 	
-	if(isset($edate)&&$edate)
+	if(isset($edate) && $edate)
 	{
   	    $edate=@formatDate2STD($edate,$date_format);
 	}
 	
-	if(isset($sdate)&&$sdate)
+	if(isset($sdate) && $sdate)
 	{
 	     $sdate=@formatDate2STD($sdate,$date_format);
 	}

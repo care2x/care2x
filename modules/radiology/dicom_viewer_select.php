@@ -8,7 +8,7 @@ define('LANG_FILE','radio.php');
 //$local_user='ck_radio_user';
 define('NO_2LEVEL_CHK',1);
 require_once($root_path.'include/core/inc_front_chain_lang.php');
-if(isset($mode)&&$mode=='save'&&isset($viewer)){
+if(isset($mode) && $mode=='save'&&isset($viewer)){
 	$_SESSION['sess_dicom_viewer']=$viewer;
 	 echo $viewer;
 }

@@ -122,7 +122,7 @@ if(($mode=='search'||$mode=='paginate')&&($searchkey))
 				
 				if ($linecount=$ergebnis->RecordCount())
 				{ 
-					if(($linecount==1)&&$numeric&&$mode=='search')
+					if(($linecount==1) && $numeric&&$mode=='search')
 					{
 						$zeile=$ergebnis->FetchRow();
 						header("location:aufnahme_daten_zeigen.php".URL_REDIRECT_APPEND."&from=such&target=search&pid=".$zeile['pid']."&encounter_nr=".$zeile['encounter_nr']."&sem=".(!$zeile['is_discharged']));
@@ -132,7 +132,7 @@ if(($mode=='search'||$mode=='paginate')&&($searchkey))
 					$pagen->setTotalBlockCount($linecount);
 					
 					# If more than one count all available
-					if(isset($totalcount)&&$totalcount){
+					if(isset($totalcount) && $totalcount){
 						$pagen->setTotalDataCount($totalcount);
 					}else{
 						# Count total available data

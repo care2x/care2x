@@ -99,7 +99,7 @@ if(($mode=='send') && isset($_SESSION['current_order']) ){
 	include_once($root_path.'include/care_api_classes/class_access.php');
 	$user = & new Access($validator,$vpw);
 	if($user->isKnown()){
-		if($user->hasValidPassword()&&$user->isNotLocked()){ 
+		if($user->hasValidPassword() && $user->isNotLocked()){ 
 			createOrderList($validator,$prior,$dept_nr);
   				$ofinal=true;
 				$sendok=true;

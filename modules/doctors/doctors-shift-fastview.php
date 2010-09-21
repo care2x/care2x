@@ -216,7 +216,7 @@ if(!$force_no_cache&&$is_cached){
 	
 	//if ($aelems[l]!="") echo $aelems[l].', ';
 	//echo $aelems[f].'</b></a></td>';
-	if(in_array($v['nr'],$quicklist)&&$DOC_1['name_last']){$temp_out.='<a href="javascript:popinfo(\''.$ha['ha'.(date('d')-1)].'\',\''.$v['nr'].'\')" title="Klik per me shume info."><b>'.$DOC_1['name_last'].', '.$DOC_1['name_first'].'</b></a>'; }
+	if(in_array($v['nr'],$quicklist) && $DOC_1['name_last']){$temp_out.='<a href="javascript:popinfo(\''.$ha['ha'.(date('d')-1)].'\',\''.$v['nr'].'\')" title="Klik per me shume info."><b>'.$DOC_1['name_last'].', '.$DOC_1['name_first'].'</b></a>'; }
 	$temp_out.='</td>
 	<td>';
 	if ($a['a'.(date('d')-1)]!='') 
@@ -227,7 +227,7 @@ if(!$force_no_cache&&$is_cached){
 	$temp_out.='&nbsp;</td><td >
 	<img '.createComIcon($root_path,'mans-red.gif','0','',TRUE).'>&nbsp;';
 
-	if(in_array($v['nr'],$quicklist)&&$DOC_2['name_last']){$temp_out.='<a href="javascript:popinfo(\''.$hr['hr'.(date('d')-1)].'\',\''.$v['nr'].'\')" title="Klik per me shume info."><b>'.$DOC_2['name_last'].', '.$DOC_2['name_first'].'</b></a>';}
+	if(in_array($v['nr'],$quicklist) && $DOC_2['name_last']){$temp_out.='<a href="javascript:popinfo(\''.$hr['hr'.(date('d')-1)].'\',\''.$v['nr'].'\')" title="Klik per me shume info."><b>'.$DOC_2['name_last'].', '.$DOC_2['name_first'].'</b></a>';}
 	$temp_out.='</td>
 	<td>';
 	if ($r['r'.(date('d')-1)]!='') 

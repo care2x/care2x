@@ -33,7 +33,7 @@ $breakfile='patient_search.php'.URL_APPEND;
 
 $nogo=false;
 
-if(isset($img_nr)&&$img_nr&&isset($pid)&&$pid&&isset($fn)&&$fn){
+if(isset($img_nr) && $img_nr&&isset($pid) && $pid&&isset($fn) && $fn){
 	//echo $img_obj->getLastQuery();
 	$imgpath=$root_path.$dicom_img_localpath.$pid.'/'.$img_nr.'/'.$fn;
 	if(!file_exists($imgpath)){
@@ -58,7 +58,7 @@ if($nogo){
 </TITLE>
 </HEAD>
 <BODY topmargin=0 leftmargin=0  marginwidth=0 marginheight=0><font face="Verdana, Arial" size=1><?php 
-if(isset($pop_only)&&$pop_only){
+if(isset($pop_only) && $pop_only){
 ?>
 <a href="javascript:window.close()">&nbsp;>> <?php echo $LDClose ?> <<</a>
 <?php

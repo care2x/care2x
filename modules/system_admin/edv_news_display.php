@@ -42,7 +42,7 @@ require_once($root_path.'include/care_api_classes/class_globalconfig.php');
 $glob_obj=new GlobalConfig($GLOBAL_CONFIG);
 
 # Save data if save mode
-if(isset($mode)&&$mode=='save'){
+if(isset($mode) && $mode=='save'){
 	$filter='news_'; # The index filter
 	$numeric=FALSE; # Values are not strictly numeric
 	$addslash=TRUE; # Slashes should be added to the stored values
@@ -143,7 +143,7 @@ ob_start();
 <FONT  class="prompt"><p>
 <?php
 
-if(isset($save_ok)&&$save_ok) echo '<img '.createMascot($root_path,'mascot1_r.gif','0','absmiddle').'>'.$LDDataSaved.'<p>';
+if(isset($save_ok) && $save_ok) echo '<img '.createMascot($root_path,'mascot1_r.gif','0','absmiddle').'>'.$LDDataSaved.'<p>';
 
 echo $LDEnterInfo;
 

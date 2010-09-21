@@ -63,7 +63,7 @@ $medical_depts=$dept_obj->getAllActiveSort( 'name_formal' );
 /* Load the date format functions and get the local format */
 	require_once($root_path.'include/core/inc_date_format_functions.php');
      /* Check for the patient number = $pn. If available get the patients data, otherwise set edit to 0 */
-	if(isset($pn)&&$pn){		
+	if(isset($pn) && $pn){		
 		include_once($root_path.'include/care_api_classes/class_encounter.php');
 		$enc_obj=new Encounter;
 	    if( $enc_obj->loadEncounterData($pn)) {

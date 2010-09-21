@@ -24,7 +24,7 @@ switch($retpath)
 	default: $breakfile='insurance_co_manage.php'.URL_APPEND; 
 }
 
-if(isset($firm_id)&&$firm_id&&($row=$ins_obj->getFirmInfo($firm_id))){
+if(isset($firm_id) && $firm_id&&($row=$ins_obj->getFirmInfo($firm_id))){
 	$firm=$row->FetchRow();
 	$edit=true;
 }else{
@@ -64,7 +64,7 @@ ob_start();
 
  <ul>
 <?php
-if(isset($save_ok)&&$save_ok){ 
+if(isset($save_ok) && $save_ok){ 
 ?>
 <img <?php echo createMascot($root_path,'mascot1_r.gif','0','absmiddle') ?>><font class="prompt">
 <b>

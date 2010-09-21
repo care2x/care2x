@@ -63,5 +63,5 @@ $smarty->assign('sRegDividerClass',$sDivClass);
 
 if(!empty($subtitle)) $smarty->assign('sSubTitle','<font color="#000099" SIZE=3  FACE="verdana,Arial"><b>:: '.$subtitle.'</b></font>');
 
-if(isset($current_encounter)&&$current_encounter) $smarty->assign('sWarnText','<font size=2 FACE="verdana,Arial"> <img '.createComIcon($root_path,'warn.gif','0','absmiddle').'> '.$LDPersonIsAdmitted.'</font>');
+if(isset($current_encounter) && $current_encounter) $smarty->assign('sWarnText','<font size=2 FACE="verdana,Arial"> <img '.createComIcon($root_path,'warn.gif','0','absmiddle').'> '.$LDPersonIsAdmitted.'</font>');
 ?>

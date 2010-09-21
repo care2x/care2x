@@ -64,7 +64,7 @@ ob_start();
   <?php
 $rows=0;
 
-    if(isset($markseen)&&$markseen) {
+    if(isset($markseen) && $markseen) {
 	
 		include_once($root_path.'include/care_api_classes/class_core.php');
 		$core = & new Core;
@@ -77,7 +77,7 @@ $rows=0;
 								AND tid='$tid'";
 					if($core->Transact($sql))
 					{
-						if(isset($job_id)&&$job_id)
+						if(isset($job_id) && $job_id)
 						{
 							$sql="UPDATE care_tech_repair_job SET done=1 WHERE  tid='$job_id'";
     						if(!$core->Transact($sql))	 {echo "<p>".$sql."$LDDbNoSave<br>"; }
@@ -120,7 +120,7 @@ echo '
 				<td>'.convertTimeToLocal($content['ttime'],$lang).'</td>
 				<td>'.$content['dept'].'</td>
 				<td>';
-	if(isset($content['job_id'])&&$content['job_id']) echo $content['job_id']; else echo "&nbsp;";
+	if(isset($content['job_id']) && $content['job_id']) echo $content['job_id']; else echo "&nbsp;";
 	echo '</td>
 				</tr>
 			<tr bgcolor=#ffffff>

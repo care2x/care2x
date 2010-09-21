@@ -87,7 +87,7 @@ if($retpath=='spec') $breakfile="spediens.php".URL_APPEND;
 							}// end of if rows
 							else
 							{
-							 if($$dt&&($$an||$$rn)&&$$op&&$$dg)
+							 if($$dt&&($$an||$$rn) && $$op&&$$dg)
 							  {
 							  
 							  	list($id,$im,$iy)=explode(".",$$dt);

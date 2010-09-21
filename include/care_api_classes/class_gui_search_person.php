@@ -209,7 +209,7 @@ class GuiSearchPerson {
 			if(isset($_POST['firstname_too'])){
 				if($_POST['firstname_too']){
 					$firstname_too=1;
-				}elseif($mode=='paginate'&&isset($_GET['firstname_too'])&&$_GET['firstname_too']){
+				}elseif($mode=='paginate'&&isset($_GET['firstname_too']) && $_GET['firstname_too']){
 					$firstname_too=1;
 				}
 			}elseif($mode!='search'){
@@ -258,7 +258,7 @@ class GuiSearchPerson {
 				$pagen->setTotalBlockCount($linecount);
 
 				# If more than one count all available
-				if(isset($totalcount)&&$totalcount){
+				if(isset($totalcount) && $totalcount){
 					$pagen->setTotalDataCount($totalcount);
 				}else{
 					# Count total available data
@@ -353,7 +353,7 @@ class GuiSearchPerson {
 		# Prepare the checkbox input
 		#
 		if(defined('SHOW_FIRSTNAME_CONTROLLER')&&SHOW_FIRSTNAME_CONTROLLER){
-			if(isset($firstname_too)&&$firstname_too) $sTemp= 'checked';
+			if(isset($firstname_too) && $firstname_too) $sTemp= 'checked';
 			$this->smarty->assign('sCheckBoxFirstName','<input type="checkbox" name="firstname_too" '.$sTemp.'>');
 			$this->smarty->assign('LDIncludeFirstName',$LDIncludeFirstName);
 		}

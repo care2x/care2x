@@ -177,7 +177,7 @@ if($depts&&is_array($depts)){
 		<option value="'.$v['nr'].'"';
 		if($v['nr']==$dept_nr) $sTemp = $sTemp.' selected';
 		$sTemp = $sTemp.'>';
-		if(isset($$v['LD_var'])&&$$v['LD_var']) $sTemp = $sTemp.$$v['LD_var'];
+		if(isset($$v['LD_var']) && $$v['LD_var']) $sTemp = $sTemp.$$v['LD_var'];
 			else $sTemp = $sTemp.$v['name_formal'];
 		$sTemp = $sTemp.'</option>';
 	}

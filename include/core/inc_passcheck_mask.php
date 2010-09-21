@@ -124,7 +124,7 @@ if(!isset($minimal) || !$minimal) {
 	<input type="hidden" name="ipath" value="'.$ipath.'">';
 }
 
-if(isset($c_flag)&&$c_flag) {
+if(isset($c_flag) && $c_flag) {
 	$sHiddenTemp = $sHiddenTemp.'
 	<input type="hidden" name="cmonth" value="'.$cmonth.'">
 	<input type="hidden" name="cyear" value="'.$cyear.'">

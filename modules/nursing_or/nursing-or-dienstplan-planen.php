@@ -141,7 +141,7 @@ function makefwdpath($path,$dpt,$mo,$yr,$saved)
 # Prepare page title
  $sTitle = "$LDMakeDutyPlan :: ";
  $LDvar=$dept_obj->LDvar();
- if(isset($$LDvar)&&$$LDvar) $sTitle = $sTitle.$$LDvar;
+ if(isset($$LDvar) && $$LDvar) $sTitle = $sTitle.$$LDvar;
    else $sTitle = $sTitle.$dept_obj->FormalName();
 
 # Start Smarty templating here

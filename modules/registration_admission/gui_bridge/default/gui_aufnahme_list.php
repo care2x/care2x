@@ -123,7 +123,7 @@ if(isset($mode)&&($mode=='search'||$mode=='paginate')){
 /*
 * If search result not empty, list the basic info
 */
-// if(isset($rows)&&$rows>1)
+// if(isset($rows) && $rows>1)
 if(!empty($rows)){
  
 	# Initialize the icon and background images
@@ -366,7 +366,7 @@ if(!empty($rows)){
 
 		# Generate select box for the wards
 
-		if(!empty($ward_info)&&$ward_info->RecordCount()){
+		if(!empty($ward_info) && $ward_info->RecordCount()){
 			while($station=$ward_info->FetchRow()){
 				echo '
 				<option value="'.$station['nr'].'" ';

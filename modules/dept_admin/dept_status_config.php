@@ -118,7 +118,7 @@ ob_start();
 ?>
 
 <ul>
-<?php if(isset($updateok)&&$updateok) { 
+<?php if(isset($updateok) && $updateok) { 
 	$backimg='close2.gif';
 ?>
 <img <?php echo createMascot($root_path,'mascot1_r.gif','0','bottom') ?> align="middle"><font class="prompt">
@@ -132,7 +132,7 @@ ob_start();
 <br>
 <FONT  COLOR="<?php echo $cfg['top_txtcolor']; ?>"  SIZE=+2>
 <?php 
-if(isset($$LD_var)&&$$LD_var) echo $$LD_var;
+if(isset($$LD_var) && $$LD_var) echo $$LD_var;
 			else echo $name_formal; 
 ?></font>
 

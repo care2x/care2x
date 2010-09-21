@@ -94,7 +94,7 @@ if(($mode=='')||($mode=='fresh')){
 			$ward_ok=false;
 	}
 }
-if(isset($transfer)&&$transfer){
+if(isset($transfer) && $transfer){
 	$TP_TITLE=$LDTransferPatient;
 }else{
 	$TP_TITLE= $LDAssignOcc.' '.strtoupper($station);
@@ -429,13 +429,13 @@ if($ward_ok){
 
 				$smarty->assign('sTitle',ucfirst($bed['title']));
 
-				if(isset($sln)&&$sln) $smarty->assign('sFamilyName',str_ireplace($sln,'<span style="background:yellow">'.ucfirst($sln).'</span>',ucfirst($bed['name_last'])));
+				if(isset($sln) && $sln) $smarty->assign('sFamilyName',str_ireplace($sln,'<span style="background:yellow">'.ucfirst($sln).'</span>',ucfirst($bed['name_last'])));
 					else $smarty->assign('sFamilyName',ucfirst($bed['name_last']));
 
 				if($bed['name_last']) $smarty->assign('cComma',',');
 					else $smarty->assign('cComma','');
 
-				if(isset($sfn)&&$sfn) $smarty->assign('sName',str_ireplace($sfn,'<span style="background:yellow">'.ucfirst($sln).'</span>',ucfirst($bed['name_first'])));
+				if(isset($sfn) && $sfn) $smarty->assign('sName',str_ireplace($sfn,'<span style="background:yellow">'.ucfirst($sln).'</span>',ucfirst($bed['name_first'])));
 					else $smarty->assign('sName',ucfirst($bed['name_first']));
 
 			}else{
@@ -459,7 +459,7 @@ if($ward_ok){
 
 			if($bed['date_birth']){
 
-				if(isset($sg)&&$sg) $smarty->assign('sBirthDate',str_ireplace($sg,"<font color=#ff0000><b>".ucfirst($sg)."</b></font>",formatDate2Local($bed['date_birth'],$date_format)));
+				if(isset($sg) && $sg) $smarty->assign('sBirthDate',str_ireplace($sg,"<font color=#ff0000><b>".ucfirst($sg)."</b></font>",formatDate2Local($bed['date_birth'],$date_format)));
 					else $smarty->assign('sBirthDate',formatDate2Local($bed['date_birth'],$date_format));
 			}
 

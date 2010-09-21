@@ -136,7 +136,7 @@ if($dblink_ok)
 
  # Body Onload JS
  $sOnLoadJs ='onLoad="if (window.focus) window.focus();';
-if((($mode=='save')||($saved))&&$edit) $sOnLoadJs =$sOnLoadJs.";window.location.href='#bottom';document.berichtform.indatetime_date.focus()";
+if((($mode=='save')||($saved)) && $edit) $sOnLoadJs =$sOnLoadJs.";window.location.href='#bottom';document.berichtform.indatetime_date.focus()";
 $smarty->assign('sOnLoadJs',$sOnLoadJs.'"');
 
 

@@ -12,7 +12,7 @@ define('LANG_FILE','phone.php');
 define('NO_2LEVEL_CHK',1);
 require_once($root_path.'include/core/inc_front_chain_lang.php');
 
-if(isset($user_origin)&&$user_origin=='pers'){
+if(isset($user_origin) && $user_origin=='pers'){
 	$sBreakUrl = 'phone_edit.php'.URL_APPEND.'&user_origin='.$user_origin.'&nr='.$nr;
 }else{
 	$sBreakUrl = 'phone.php'.URL_APPEND;

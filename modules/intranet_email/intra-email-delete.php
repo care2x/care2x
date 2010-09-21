@@ -16,12 +16,12 @@ require_once($root_path.'include/core/inc_front_chain_lang.php');
 
 
 if(!isset($maxrow)||(isset($maxrow)&&empty($maxrow))||!isset($folder)||(isset($folder)&&empty($folder))) { header("location:intra-email.php".URL_REDIRECT_APPEN."&mode=listmail"); exit;}
-if(isset($create)&&$create) {
+if(isset($create) && $create) {
     $del0="t=$t&r=$r&f=$f&s=$s&d=$d&z=$z";
 } else {
     for($i=0;$i<$maxrow;$i++) {
 		$delbuf="del$i"; 
-		if(isset($$delbuf)&&$$delbuf){ $delok=1;	break;}
+		if(isset($$delbuf) && $$delbuf){ $delok=1;	break;}
 	}
 
 if(!isset($delok)||!$delok) { 

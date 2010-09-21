@@ -235,7 +235,7 @@ class Notes extends Core {
 		if(empty($enr)){
 			return false;
 		}else{
-			if(empty($cond)&&$type_nr){
+			if(empty($cond) && $type_nr){
 				$cond="encounter_nr=$enr AND type_nr=$type_nr";
 			}
 			$this->sql="SELECT MIN(date) AS fe_date, MAX(date) AS le_date FROM $this->tb_notes WHERE $cond";

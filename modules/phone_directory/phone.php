@@ -16,7 +16,7 @@ require_once($root_path.'include/core/inc_front_chain_lang.php');
 // reset all 2nd level lock cookies
 require($root_path.'include/core/inc_2level_reset.php');
 
-if(isset($_SESSION['sess_personell_nr'])&&$_SESSION['sess_user_origin']=='personell_admin'){
+if(isset($_SESSION['sess_personell_nr']) && $_SESSION['sess_user_origin']=='personell_admin'){
 	$breakfile=$root_path.'modules/personell_admin/personell_admin_pass.php'.URL_APPEND.'&fwd_nr='.$_SESSION['sess_personell_nr'].'&target=personell_search';
 }elseif(file_exists($root_path.$_SESSION['sess_path_referer'])){
 	$breakfile=$root_path.$_SESSION['sess_path_referer'].URL_APPEND;

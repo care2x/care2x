@@ -25,7 +25,7 @@ $ward_obj=new Ward($ward_nr);
 
 //$db->debug=1;
 
-if(isset($mode)&&$mode=='save_beds'){
+if(isset($mode) && $mode=='save_beds'){
 	$saved_ok=false;
 	
 	// Set the values common to all rooms 

@@ -106,7 +106,7 @@ if($obj->LastRecordCount()){
 		$TP_DMODE_RADIOS.='<input type="radio" name="delivery_mode" value="'.$dmod['nr'].'" ';
 		if($birth['delivery_mode']==$dmod['nr']) $TP_DMODE_RADIOS.='checked' ;
 		$TP_DMODE_RADIOS.='>';
-		if(isset($$dmod['LD_var'])&&$$dmod['LD_var']) $TP_DMODE_RADIOS.=$$dmod['LD_var'];
+		if(isset($$dmod['LD_var']) && $$dmod['LD_var']) $TP_DMODE_RADIOS.=$$dmod['LD_var'];
 			else $TP_DMODE_RADIOS.=$dmod['name'];
 	}
 }
@@ -288,7 +288,7 @@ if($obj->LastRecordCount()){
 		$TP_FEED_RADIOS.='<input type="radio" name="feeding" value="'.$feed['nr'].'" ';
 		if($birth['feeding']==$feed['nr']) $TP_FEED_RADIOS.='checked' ;
 		$TP_FEED_RADIOS.='>';
-		if(isset($$feed['LD_var'])&&$$feed['LD_var']) $TP_FEED_RADIOS.=$$feed['LD_var'];
+		if(isset($$feed['LD_var']) && $$feed['LD_var']) $TP_FEED_RADIOS.=$$feed['LD_var'];
 			else $TP_FEED_RADIOS.=$feed['name'];
 	}
 }
@@ -316,7 +316,7 @@ if($obj->LastRecordCount()){
 		$TP_OUT_RADIOS.='<input type="radio" name="outcome" value="'.$otc['nr'].'" ';
 		if($birth['outcome']==$otc['nr']) $TP_OUT_RADIOS.='checked' ;
 		$TP_OUT_RADIOS.='>';
-		if(isset($$otc['LD_var'])&&$$otc['LD_var']) $TP_OUT_RADIOS.=$$otc['LD_var'];
+		if(isset($$otc['LD_var']) && $$otc['LD_var']) $TP_OUT_RADIOS.=$$otc['LD_var'];
 			else $TP_OUT_RADIOS.=$otc['name'];
 	}
 }
@@ -330,7 +330,7 @@ if($obj->LastRecordCount()){
 		$TP_DISCAT_RADIOS.='<input type="radio" name="disease_category" value="'.$dcat['nr'].'" ';
 		if($birth['disease_category']==$dcat['nr']) $TP_DISCAT_RADIOS.='checked' ;
 		$TP_DISCAT_RADIOS.='>';
-		if(isset($$dcat['LD_var'])&&$$dcat['LD_var']) $TP_DISCAT_RADIOS.=$$dcat['LD_var'];
+		if(isset($$dcat['LD_var']) && $$dcat['LD_var']) $TP_DISCAT_RADIOS.=$$dcat['LD_var'];
 			else $TP_DISCAT_RADIOS.=$dcat['name'];
 	}
 }

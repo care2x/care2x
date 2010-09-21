@@ -267,7 +267,7 @@ if($pid!='' || $encounter_nr!=''){
 							$encounter_nr = $encounter_obj->postgre_Insert_ID($dbtable,'encounter_nr',$db->Insert_ID());
 						}
 						# If appointment number available, mark appointment as "done"
-						if(isset($appt_nr)&&$appt_nr) $encounter_obj->markAppointmentDone($appt_nr,$_POST['encounter_class_nr'],$encounter_nr);
+						if(isset($appt_nr) && $appt_nr) $encounter_obj->markAppointmentDone($appt_nr,$_POST['encounter_class_nr'],$encounter_nr);
 						if ($GLOBAL_CONFIG['show_billable_items'] && $encounter_class_nr == 2 ){
 							if(!empty($billable_item_list)) {
 								$itemPrice = $eComBill_obj->listServiceItemsByCode($billable_item_list);
@@ -524,7 +524,7 @@ if(!isset($pid) || !$pid){
 	}
 
 	$smarty->assign('LDCaseNr',$LDCaseNr);
-	if(isset($encounter_nr)&&$encounter_nr) 	$smarty->assign('encounter_nr',$encounter_nr);
+	if(isset($encounter_nr) && $encounter_nr) 	$smarty->assign('encounter_nr',$encounter_nr);
 	else  $smarty->assign('encounter_nr','<font color="red">'.$LDNotYetAdmitted.'</font>');
 
 	$smarty->assign('img_source',"<img $img_source>");
@@ -535,11 +535,11 @@ if(!isset($pid) || !$pid){
 	//end : gjergji
 	$smarty->assign('LDAdmitDate',$LDAdmitDate);
 
-	if(isset($encounter_nr)&&$encounter_nr) 	$smarty->assign('sAdmitDate',@formatDate2Local(date('Y-m-d'),$date_format));
+	if(isset($encounter_nr) && $encounter_nr) 	$smarty->assign('sAdmitDate',@formatDate2Local(date('Y-m-d'),$date_format));
 
 	$smarty->assign('LDAdmitTime',$LDAdmitTime);
 
-	if(isset($encounter_nr)&&$encounter_nr)  $smarty->assign('sAdmitTime',@convertTimeToLocal(date('H:i:s')));
+	if(isset($encounter_nr) && $encounter_nr)  $smarty->assign('sAdmitTime',@convertTimeToLocal(date('H:i:s')));
 
 	$smarty->assign('LDTitle',$LDTitle);
 	$smarty->assign('title',$title);
@@ -663,7 +663,7 @@ if(!isset($pid) || !$pid){
 			}
 		}else{
 			$sTemp = $sTemp.'<select name="current_ward_nr">';
-			if(!empty($ward_info)&&$ward_info->RecordCount()){
+			if(!empty($ward_info) && $ward_info->RecordCount()){
 				while($station=$ward_info->FetchRow()){
 					if(in_array($station['dept_nr'],$current_dept_nr)) {
 						$sTemp = $sTemp.'<option value="'.$station['nr'].'"  selected >' . $station['name'].'</option>';
@@ -734,7 +734,7 @@ if(!isset($pid) || !$pid){
 	$sTemp = '';
 	if ($error_ins_nr) $smarty->assign('LDInsuranceNr',"<font color=red>$LDInsuranceNr</font>");
 	else  $smarty->assign('LDInsuranceNr',$LDInsuranceNr);
-	if(isset($insurance_nr)&&$insurance_nr) $sTemp = $insurance_nr;
+	if(isset($insurance_nr) && $insurance_nr) $sTemp = $insurance_nr;
 	$smarty->assign('insurance_nr','<input name="insurance_nr" type="text" size="60" value="'.$sTemp.'">');
 
 	$sTemp = '';

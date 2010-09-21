@@ -25,7 +25,7 @@ if($from=='set') $returnfile='edv_system_format_currency_set.php'.URL_APPEND.'&f
 $dbtable='care_currency';
 //$db->debug=1;
 
-if(($mode=='save')&&$short_name&&$long_name&&$info){
+if(($mode=='save') && $short_name&&$long_name&&$info){
 
     if($item_no){
 	   $sql="UPDATE $dbtable SET short_name='$short_name',
@@ -106,7 +106,7 @@ if(($mode=='save')&&$short_name&&$long_name&&$info){
 
 }
 
-if(($mode=='edit')&&$item_no)
+if(($mode=='edit') && $item_no)
 {
 
     $sql="SELECT short_name,long_name,info FROM care_currency WHERE item_no='$item_no'";
@@ -176,7 +176,7 @@ if($info_exist)
 <FONT  COLOR="<?php echo $cfg['top_txtcolor']; ?>"  SIZE=+2>
 <?php if($item_no) echo $LDUpdateCurrencyInfo; else echo $LDAddCurrency ?> </FONT><FONT class="prompt"><p>
 <?php
-if(($mode=='save')&&$new_currency_ok) echo '<img '.createMascot($root_path,'mascot1_r.gif','0','absmiddle').'> '.$saved_msg.'<p>';
+if(($mode=='save') && $new_currency_ok) echo '<img '.createMascot($root_path,'mascot1_r.gif','0','absmiddle').'> '.$saved_msg.'<p>';
 if($item_no) echo $LDPlsEnterUpdate; else echo $LDPlsAddCurrency;
 ?>
 </font>

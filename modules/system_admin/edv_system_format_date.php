@@ -68,7 +68,7 @@ if(($mode=='save')&&($date_format!='')&&(stristr($date_format,$validator))){
 <FONT  SIZE=+2>
 <?php echo $LDSetDateFormat ?> </FONT><FONT class="prompt"><p>
 <?php
-if(($mode=='save')&&$new_date_ok) echo '<img '.createMascot($root_path,'mascot1_r.gif','0','bottom').'> '.$LDNewDateFormatSaved.'<p>';
+if(($mode=='save') && $new_date_ok) echo '<img '.createMascot($root_path,'mascot1_r.gif','0','bottom').'> '.$LDNewDateFormatSaved.'<p>';
 echo $LDSelectDateFormat;
 ?>
 </font>

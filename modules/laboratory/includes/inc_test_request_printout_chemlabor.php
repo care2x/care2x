@@ -77,7 +77,7 @@
 	/* Divide line */
 	echo  ' <td bgcolor= "#990000"><img src="p.gif" border=0 width=1 height=1></td>';
 	
-   if(($read_form)&&$stored_request['sample_time'])
+   if(($read_form) && $stored_request['sample_time'])
    {
       list($hour,$quarter_mins)=explode(":",$stored_request['sample_time']);
     }

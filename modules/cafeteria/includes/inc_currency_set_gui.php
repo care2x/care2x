@@ -21,7 +21,7 @@ function deleteCurrency(n,s)
 <FONT  COLOR="<?php print $cfg['top_txtcolor']; ?>"  SIZE=+2>
 <?php echo $LDSetCurrency ?> </FONT><FONT  class="prompt"><p>
 <?php
-if(($mode=='save')&&$new_main_currency) echo '<img '.createMascot($root_path,'mascot1_r.gif','0','absmiddle').'> '.$LDNewCurrencySet.'<p>';
+if(($mode=='save') && $new_main_currency) echo '<img '.createMascot($root_path,'mascot1_r.gif','0','absmiddle').'> '.$LDNewCurrencySet.'<p>';
 echo $LDPlsSelectCurrency;
 ?>
 </font>

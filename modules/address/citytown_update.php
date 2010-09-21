@@ -24,8 +24,8 @@ switch($retpath)
 	default: $breakfile='citytown_manage.php'.URL_APPEND; 
 }
 
-if(isset($nr)&&$nr){
-	if(isset($mode)&&$mode=='update'){
+if(isset($nr) && $nr){
+	if(isset($mode) && $mode=='update'){
 		if($address_obj->updateCityTownInfoFromArray($nr,$_POST)){
     		header("location:citytown_info.php?sid=$sid&lang=$lang&nr=$nr&mode=show&save_ok=1&retpath=$retpath");
 			exit;

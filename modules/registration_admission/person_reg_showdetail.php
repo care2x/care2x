@@ -20,7 +20,7 @@ $thisfile=basename(__FILE__);
 $breakfile='patient.php';
 $admissionfile='aufnahme_start.php'.URL_APPEND;
 
-if((!isset($pid)||!$pid)&&$HTPP_SESSION_VARS['sess_pid']) $pid=$HTPP_SESSION_VARS['sess_pid'];
+if((!isset($pid)||!$pid) && $HTPP_SESSION_VARS['sess_pid']) $pid=$HTPP_SESSION_VARS['sess_pid'];
 
 $_SESSION['sess_path_referer']=$top_dir.$thisfile;
 $_SESSION['sess_file_return']=$thisfile;

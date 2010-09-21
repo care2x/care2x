@@ -33,7 +33,7 @@ $comm=new Comm;
 //$db->debug=1;
 
 # Validate 3 most important inputs
-if(isset($mode)&&!empty($mode)&&$mode!='select'){
+if(isset($mode)&&!empty($mode) && $mode!='select'){
 	if(empty($_POST['name_formal'])||empty($_POST['id'])||empty($_POST['type'])){
 		$inputerror=TRUE; # Set error flag
 	}
@@ -241,7 +241,7 @@ ob_start();
  <ul>
 
  <?php
- if(isset($inputerror)&&$inputerror){
+ if(isset($inputerror) && $inputerror){
  	echo "<font color=#ff0000 face='verdana,arial' size=2>$LDInputError</font>";
  }
  ?>
@@ -279,7 +279,7 @@ ob_start();
 				<option value="'.$v['nr'].'" ';
 			if($v['nr']==$type) echo 'selected';
 			echo ' >';
-			if(isset($$v['LD_var'])&&$$v['LD_var']) echo $$v['LD_var'];
+			if(isset($$v['LD_var']) && $$v['LD_var']) echo $$v['LD_var'];
 				else echo $v['name'];
 			echo '</option>';
 		}
@@ -312,7 +312,7 @@ ob_start();
 				<option value="'.$v['nr'].'" ';
 			if($v['nr']==$parent_dept_nr) echo 'selected';
 			echo ' >';
-			if(isset($$v['LD_var'])&&$$v['LD_var']) echo $$v['LD_var'];
+			if(isset($$v['LD_var']) && $$v['LD_var']) echo $$v['LD_var'];
 				else echo $v['name_formal'];
 			echo '</option>';
 		}
@@ -452,7 +452,7 @@ ob_start();
 				<option value="'.$v['nr'].'" ';
 			if($v['nr']==$pharma_dept_nr) echo 'selected';
 			echo ' >';
-			if(isset($$v['LD_var'])&&$$v['LD_var']) echo $$v['LD_var'];
+			if(isset($$v['LD_var']) && $$v['LD_var']) echo $$v['LD_var'];
 				else echo $v['name_formal'];
 			echo '</option>';
 		}

@@ -24,7 +24,7 @@ switch($retpath)
 	default: $breakfile='address_manage.php'.URL_APPEND; 
 }
 
-if(isset($nr)&&$nr&&($row=&$address_obj->getCityTownInfo($nr))){
+if(isset($nr) && $nr&&($row=&$address_obj->getCityTownInfo($nr))){
 	$address=$row->FetchRow();
 	$edit=true;
 }else{
@@ -62,7 +62,7 @@ ob_start();
 
 <ul>
 <?php
-if(isset($save_ok)&&$save_ok){ 
+if(isset($save_ok) && $save_ok){ 
 ?>
 <img <?php echo createMascot($root_path,'mascot1_r.gif','0','absmiddle') ?>><font face="Verdana, Arial" size=3 color="#880000">
 <b>

@@ -15,8 +15,8 @@ $TP_obj=new Template($root_path);
 $breakfile='patient.php';
 $admissionfile='aufnahme_start.php'.URL_APPEND;
 
-if((!isset($pid)||!$pid)&&$_SESSION['sess_pid']) $pid=$_SESSION['sess_pid'];
-	elseif((isset($pid)&&$pid)&&!$_SESSION['sess_pid']) $_SESSION['sess_pid']=$pid;
+if((!isset($pid)||!$pid) && $_SESSION['sess_pid']) $pid=$_SESSION['sess_pid'];
+	elseif((isset($pid) && $pid)&&!$_SESSION['sess_pid']) $_SESSION['sess_pid']=$pid;
 
 $_SESSION['sess_path_referer']=$top_dir.$thisfile;
 //$HTPP_SESSION_VARS['sess_pid']=$pid;
@@ -63,8 +63,8 @@ $current_encounter=$person_obj->CurrentEncounter($pid);
 if($_SESSION['sess_parent_mod']=='admission') {
 	
 	# Resolve the encounter number
-	if((!isset($encounter_nr)||!$encounter_nr)&&$_SESSION['sess_en']) $encounter_nr=$_SESSION['sess_en'];
-		elseif((isset($encounter_nr)&&$encounter_nr)&&!$_SESSION['sess_en']) $_SESSION['sess_en']=$encounter_nr;
+	if((!isset($encounter_nr)||!$encounter_nr) && $_SESSION['sess_en']) $encounter_nr=$_SESSION['sess_en'];
+		elseif((isset($encounter_nr) && $encounter_nr)&&!$_SESSION['sess_en']) $_SESSION['sess_en']=$encounter_nr;
 
 	$parent_admit=true;
 	$page_title=$LDAdmission;
