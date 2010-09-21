@@ -588,7 +588,7 @@ function PersonPhotoIDSave($args){
 
 					# Delete the table record
 					$img->Transact("DELETE FROM care_encounter_image WHERE nr=$picnr");
-					return $d; // ??????
+//					return $d; // ?????? possible debug code
 					return new IXR_Error(1100,'_ERROR_FILE_NOCREATE');
 				}
 			}else{
