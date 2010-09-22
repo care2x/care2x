@@ -94,7 +94,7 @@ $LDExtraInfo='Informazioni aggiuntive';
 $LDMedAdvice='Opinione clinica';
 $LDMedocs='Medocs';
 
-$LDYes='Sì';
+$LDYes='Si';
 $LDNo='No';
 
 $LDEditOn='Documento del';
@@ -141,7 +141,7 @@ $LDSeeDiagnosisNote='Note e pubblicazioni relative alla diagnosi:';
 $LDSeeTherapyNote='Note e pubblicazioni relative alla terapia:';
 $LDMakeBarcodeLabels='Prepara etichette codice a barre';
 
-$LDPlsEnterDept='<b>Inserire il reparto, la clinica, o l\'area di lavoro.</b><br>(es. Day Hospital, CED, M4A, etc.)';
+$LDPlsEnterDept='<b>Inserire il reparto, la clinica, o l\'area di lavoro.</b><br>(es. Day Hospital, CED, etc.)';
 $LDOkSaveNow='OK salva';
 
 $LD_ddpMMpyyyy='gg.mm.aaaa';
@@ -163,7 +163,7 @@ $LDNameMaiden='Cognome da nubile';
 $LDNameOthers='Altri cognomi';
 $LDStreet="<font color='red'>Via</font>";
 $LDStreetNr="<font color='red'>Num.</font>";
-$LDTownCity="<font color='red'>Città</font>";
+$LDTownCity="<font color='red'>Citta'</font>";
 $LDProvState='Provincia';
 $LDRegion='Regione';
 $LDCountry='Stato';

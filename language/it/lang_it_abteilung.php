@@ -50,11 +50,11 @@ $target=array('dept_generalsurgery',
 
 $LDBackTxt='Indietro';
 
-$LDOpenDays=array('Lunedì',
-					'Martedì',
-					'Mercoledì',
-					'Giovedì',
-					'Venerdì',
+$LDOpenDays=array('Lunedi',
+					'Martedi',
+					'Mercoledi',
+					'Giovedi',
+					'Venerdi',
 					'Sabato',
 					'Domenica');
 $LDOpenTimes=array('8.30 - 21.00', //Mo
