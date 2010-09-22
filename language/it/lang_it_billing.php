@@ -2,7 +2,7 @@
 /* 2003-06-21 El */
 $TXT['CreateHospitalServiceItem']='Crea voce di servizio ospedaliero';
 $TXT['CreateLabTestItem']='Crea voce di laboratorio';
-$TXT['EditHospitalServiceItems']='Modifica voce di C';
+$TXT['EditHospitalServiceItems']='Modifica voce di Costo';
 $TXT['EditLabTestItems']='Modifica voce di laboratorio';
 $TXT['SearchPatient']='Cerca paziente';
 $TXT['Billing']='InfoCosti';
