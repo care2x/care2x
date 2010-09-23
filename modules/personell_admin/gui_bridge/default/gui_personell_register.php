@@ -390,7 +390,7 @@ echo $calendar->show_calendar($calendar,$date_format,'contract_end',$contract_en
 <td colspan=2 class="adm_input">
 <select name="nr_workday">
 	<?php 
-		for($x=1; $x<8;$x++){
+		for($x=0; $x<14;$x++){
 			echo "<option value=\"$x\" ";
 			if($nr_workday==$x) echo 'selected';
 			echo "> $x </option>";
