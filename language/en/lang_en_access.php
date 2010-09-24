@@ -23,6 +23,7 @@ $_a_3_diagnosticsrequest = 'Diagnostics Request, request only';
 						   
 // Group start
 $title4 = 'Laboratory';
+$_a_1_laball = 'All Laboratory read & write'; // not used anywhere as on 2010-09-24 - APM
 $_a_1_labresultswrite = 'Laboratory results read & write';
 $_a_2_labresultsread = 'Laboratory results read only';
 						   

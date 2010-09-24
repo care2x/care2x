@@ -25,7 +25,7 @@ $area_opt=array(
 
 							/* Group start*/
 						   'title4' => $title4,
-						   '_a_1_laball' => $_a_1_lab_admin,
+						   '_a_1_laball' => $_a_1_laball,
 						   '_a_1_labresultswrite' =>  $_a_1_labresultswrite,
 						   '_a_2_labresultsread' =>  $_a_2_labresultsread,
 

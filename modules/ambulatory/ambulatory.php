@@ -260,9 +260,9 @@ if(!isset($_SESSION['department_nr']) || $_SESSION['department_nr'] == '') {
     	$smarty->assign('sBottomLeftSubMenu',$sTemp);
     
     # Create the  bottom right submenu block
-     $smarty->assign('sBlockTitle',$LDEarNoseThroath);
-     $smarty->assign('sApptLink',"<a href=\"".$root_path."modules/appointment_scheduler/appt_main_pass.php".URL_APPEND."&target=6&dept_nr=6&user_origin=amb&dept=".strtr($LDEarNoseThroath,' ','+')."\">$LDAppointments</a>");
-     $smarty->assign('sOutPatientLink',"<a href=\"amb_clinic_patients_pass.php".URL_APPEND."&dept_nr=6&dept=".strtr($LDEarNoseThroath,' ','+')."\">$LDOutpatientClinic</a>");
+     $smarty->assign('sBlockTitle',$LDEarNoseThroat);
+     $smarty->assign('sApptLink',"<a href=\"".$root_path."modules/appointment_scheduler/appt_main_pass.php".URL_APPEND."&target=6&dept_nr=6&user_origin=amb&dept=".strtr($LDEarNoseThroat,' ','+')."\">$LDAppointments</a>");
+     $smarty->assign('sOutPatientLink',"<a href=\"amb_clinic_patients_pass.php".URL_APPEND."&dept_nr=6&dept=".strtr($LDEarNoseThroat,' ','+')."\">$LDOutpatientClinic</a>");
      $smarty->assign('sPendReqLink',"<a href=\"".$root_path."modules/laboratory/labor_test_request_pass.php".URL_APPEND."&target=generic&subtarget=6&user_origin=amb\">$LDPendingRequest</a>");
      $smarty->assign('sNewsLink',"<a href=\"".$root_path."modules/news/newscolumns.php".URL_APPEND."&dept_nr=6&user_origin=amb\">$LDNews</a>");
 

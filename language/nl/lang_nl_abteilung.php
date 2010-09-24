@@ -8,7 +8,7 @@ $LDDayTxt='Dag';
 
 /**
 * A small dictionary:
-* ENT = Eye, Nose, Throath
+* ENT = Eye, Nose, Throat
 * OB-Gyne = Obstetrics-Gynecology
 */
 $dept=array('Algemene Chirurgie',

@@ -24,9 +24,9 @@ $allow_area=array(
 
 'tech'=>array('_a_1_techreception'),
 
-'lab_r'=>array('_a_1_labresultswrite', '_a_2_labresultsread'),
+'lab_r'=>array('_a_1_laball, _a_1_labresultswrite', '_a_2_labresultsread'),
 
-'lab_w'=>array('_a_1_labresultswrite'),
+'lab_w'=>array('_a_1_laball, _a_1_labresultswrite'),
 
 'lab_all'=>array('_a_1_laball'),
 

@@ -8,7 +8,7 @@ $LDDayTxt='日';
 
 /**
 * A small dictionary:
-* ENT = Eye, Nose, Throath
+* ENT = Eye, Nose, Throat
 * OB-Gyne = Obstetrics-Gynecology
 */
 $dept=array('普通外科',

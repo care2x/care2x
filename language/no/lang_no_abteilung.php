@@ -7,7 +7,7 @@ $LDClk4Info='Trykk for mere informasjon om..';
 $LDDayTxt='Dag';
 /**
 * A small dictionary:
-* ENT = Eye, Nose, Throath
+* ENT = Eye, Nose, Throat
 * OB-Gyne = Obstetrics-Gynecology
 */
 $dept=array('General Surgery',
