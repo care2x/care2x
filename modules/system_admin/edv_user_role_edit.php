@@ -300,10 +300,13 @@ while ( list ( $x, $v ) = each ( $area_opt ) ) {
 		switch ( $cindex) {
 			case 0 :
 				echo '
-		                      <td  valign=top colspan=5><img  ' . createComIcon ( $root_path, 'redpfeil.gif', '0', 'absmiddle' ) . '><input type="checkbox" name="' . $x . '" value="' . $x . '" ' ;
-				if ($edit && strstr ( $userRole [ 'permission' ], $x ))
-					echo 'checked ><FONT SIZE=2  FACE="Arial" color="#ff0000">	' ; else
-					echo '>' ;
+		                      <td  valign=top colspan=5><img  ' . createComIcon ( $root_path, 'redpfeil.gif', '0', 'absmiddle' ) . '>';
+				if (substr($x, 0, 5) != 'title') {
+					echo '<input type="checkbox" name="' . $x . '" value="' . $x . '" ' ;
+					if ($edit && strstr ( $userRole [ 'permission' ], $x ))
+						echo 'checked ><FONT SIZE=2  FACE="Arial" color="#ff0000">	' ; else
+						echo '>' ;
+				}
 				echo $v . '</td>' ;
 			break ;
 			case 1 :

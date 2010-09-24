@@ -105,12 +105,16 @@ $LDFfActualAccess='Following are the actual access permissions.';
 
 $LDAccessIndex[0]='Name';
 $LDAccessIndex[1]='Login';
-$LDAccessIndex[2]='Password';
-$LDAccessIndex[3]='';
-$LDAccessIndex[4]='Allowedareas';
-$LDAccessIndex[5]='Date\Time';
-$LDAccessIndex[6]='Encoder';
-$LDAccessIndex[7]='Option';
+$LDAccessIndex[2]='Departments';
+$LDAccessIndex[3]=''; // Status of the lockflag field in the care_users table
+$LDAccessIndex[4]='Allowed Areas';
+$LDAccessIndex[5]='Date/Time';
+$LDAccessIndex[6]='Created By';
+$LDAccessIndex[7]='Options';
+
+$LDRoleIndex[0]='Role';
+$LDRoleIndex[1]='Allowed Areas';
+$LDRoleIndex[2]='Options';
 
 $LDChange='Change';
 $LDInitChange='C';
@@ -171,8 +175,8 @@ $LDDateFormatsTxt[3]='For example: 01/10/2010 (01 October , 2010)';
 * BEGIN */
 $LD_ddpMMpyyyy='dd.mm.yyyy';
 $LD_yyyyhMMhdd='yyyy-mm-dd';
-$LD_MMsddsyyyy='mm\dd\yyyy';
-$LD_ddsMMsyyyy='dd\mm\yyyy';
+$LD_MMsddsyyyy='mm/dd/yyyy';
+$LD_ddsMMsyyyy='dd/mm/yyyy';
 /* END */
 
 $LDNewDateFormatSaved='The new date format is now in effect.';
@@ -263,7 +267,6 @@ $LDActive='Active';
 $LDDeptStatus='Departments status';
 $LDRecordStatus='Records status';
 /* 2003-03-30 EL*/
-$LDConfigOptions='Configuration Options';
 $LDDoesSurgeryOp='Does operative surgery?';
 $LDList='List';
 $LDUpdate='Update';
