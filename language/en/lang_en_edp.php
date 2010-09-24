@@ -361,6 +361,7 @@ $LDCreateEditRoles='Create Role';
 $LDWelcome='Wellcome';
 $LDNursingManage='Wards administration';
 $LDRole = 'Role';
+$LDRoleStartsWith='Role starts with';
 $LDNewRole='New Role';
 
 $LDClose = 'Close';
