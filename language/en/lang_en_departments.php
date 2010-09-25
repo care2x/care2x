@@ -1,4 +1,7 @@
 <?php
+// All default and English Department Labels and variables are taken from the 
+// care_department table name_formal and LD_var fields respectively
+// In some scripts all dept LD_vars may not be available, then they must be added here.
 
 $LDHeadlines='Headlines';
 
@@ -27,6 +30,7 @@ $LDBack = 'Back';
 $LDHelp = 'Help';
 
 #2010-09-24 APM
+$LDPharmacy='Pharmacy'; // dept_admin/dept_info.php line 290 & dept_new.php line 445 direct assignment
 $LDChemicalLaboratory='Chemical Laboratory'; // labor_test_request_admin_chemlabor.php line 47 direct assignment
 
 ?>
