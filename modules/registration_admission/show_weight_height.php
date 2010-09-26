@@ -77,7 +77,11 @@ if(!isset($mode)){
 
 $lang_tables[]='obstetrics.php';
 require('./include/init_show.php');
-
+if(isset($current_encounter) && $current_encounter) { 
+	$parent_admit=true; 
+	$is_discharged=false;
+	$_SESSION['sess_en'] = $current_encounter;
+}
 if($mode=='show'){
 
 	$sql="SELECT m.nr,m.value,m.msr_date,m.msr_time,m.unit_nr,m.encounter_nr,m.msr_type_nr,m.create_time, m.notes

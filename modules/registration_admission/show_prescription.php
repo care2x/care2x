@@ -38,6 +38,11 @@ if(!isset($mode)){
 }
 
 require('./include/init_show.php');
+if(isset($current_encounter) && $current_encounter) { 
+	$parent_admit=true; 
+	$is_discharged=false;
+	$_SESSION['sess_en'] = $current_encounter;
+}
 //gjergji : new prescription management
 if($parent_admit){
 	$sql="SELECT prs.*, pr.*,

@@ -22,7 +22,11 @@ if(!isset($mode)){
 }
 
 require('./include/init_show.php');
-
+if(isset($current_encounter) && $current_encounter) { 
+	$parent_admit=true; 
+	$is_discharged=false;
+	$_SESSION['sess_en'] = $current_encounter;
+}
 if($mode=='show'){
 	$sql="SELECT i.*, t.LD_var AS \"app_LD_var\", t.name AS app_type_name FROM care_encounter AS e, care_person AS p, care_encounter_immunization AS i, care_type_application AS t
 		WHERE p.pid=".$_SESSION['sess_pid']." AND p.pid=e.pid AND e.encounter_nr=i.encounter_nr  AND i.application_type_nr=t.nr

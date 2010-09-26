@@ -25,7 +25,11 @@ if(!isset($mode)){
 # Load the emr language table
 $lang_tables=array('emr.php');
 require('./include/init_show.php');
-
+if(isset($current_encounter) && $current_encounter) { 
+	$parent_admit=true; 
+	$is_discharged=false;
+	$_SESSION['sess_en'] = $current_encounter;
+}
 $page_title.=" :: $LDNotes $LDAndSym $LDReports";
 
 if($parent_admit){
