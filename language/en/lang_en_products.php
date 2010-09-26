@@ -56,6 +56,8 @@ $LDRedList='Index of Medical Specialties';
 $LDRedListTxt='Pharmaceutical index (needs internet line)';
 $LDOrderBotActivate='OrderBot';
 $LDOrderBotActivateTxt='Activate automatic reception of order lists.';
+$LDRaporteFarmaci='Reports';
+$LDRaporteFarmaciTxt='View Pharmacy Reports (stub only)'; // Remove (stub only) after making reports available at modules/pharmacy/reports/index.php
 
 $LDNotSent='Not yet sent!';
 $LDcatindex[0]='';
