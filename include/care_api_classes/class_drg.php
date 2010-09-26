@@ -223,7 +223,7 @@ class DRG extends Encounter{
 	* Language codes that have corresponding OPS/ICPM tables
 	* @var string
 	*/
-	var $tb_lang_icpm='de,es,it,sq';
+	var $tb_lang_icpm='en,de,es,it,sq';
 	/**
 	* Constructor.
 	*
