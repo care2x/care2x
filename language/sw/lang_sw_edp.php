@@ -301,7 +301,7 @@ $LDEnterMaxRows='Please enter the maximum number rows displayed  per page after 
 #2003-11-01 EL
 $LDTimeOut='Time out';
 $LDTimeOutActive='Time out active';
-$LDTimeOutTxt='Should the password protected modules time out (lock itselt) after a set time of inactivity?';
+$LDTimeOutTxt='Should the password protected modules time out (lock itself) after a set time of inactivity?';
 $LDTimeOutTime='Elapsed time';
 $LDTimeOutTimeTxt='Elapsed idle time (inactivity) that triggers the time out and locks the module. Note: 
 If your entry is invalid, the system will use the default maximum values.';
