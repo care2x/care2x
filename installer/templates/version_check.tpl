@@ -1,5 +1,4 @@
-<tr><td>
-<p>Welcome to the Care2x Installation procedure. </p>
+<h3>Welcome to the Care2x Installation procedure. </h3>
 <p>You are about to install <b>{$APP_NAME|upper} {$LONG_VERSION}</b>. </p>
 <p>The installation procedure consists of the following steps:
 <ul>
@@ -14,5 +13,4 @@
 </ul>
 <p>Some of the above steps does not need user interaction and you may not notice their existance. </p>
 <p>In order to navigate between the different interaction steps you will generally need to click on the <a href="">Continue...</a> link at the bottom. If you want to restart the installation procedure then click on the <a href="">Restart Installation</a> link. </p>
-<p>For more detailed instructions you can follow the <a href="http://www.care2x.org/wiki/index.php/Installation_Guide">Care2x Installation Guide</a>. </p>
-</td></tr>
+<p>For more detailed instructions you can follow the <a href="http://wiki.care2x.org/index.php/Installation_Guide">Care2x Installation Guide</a>. </p>

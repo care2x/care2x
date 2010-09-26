@@ -1,0 +1,83 @@
+html {
+  font-size: 12px;
+}
+
+body.one-sidebar #navigation,
+body.one-sidebar #header,
+body.one-sidebar #main-columns {
+  width: 85%;
+  min-width: 800px;
+  max-width: 1000px;
+}
+
+/* Background */
+body {
+  background-color: #f8f8f8;
+}
+
+/* Text (black) */
+body,
+#site-name a,
+pre,
+code,
+samp,
+var {
+  color: #2e2e2e;
+}
+#site-name a::-moz-selection {
+  background-color: #2e2e2e;
+}
+#site-name a::selection {
+  background-color: #2e2e2e;
+}
+
+/* Link (blue) */
+a,
+a.active,
+li a.active {
+  color: #086782;
+}
+legend {
+  background-color: #086782;
+}
+
+/* Link underline (light blue) */
+a {
+  border-bottom: 1px solid #cfdde5;
+}
+
+#site-slogan::selection {
+  background-color: #e25402;
+}
+#site-slogan::-moz-selection {
+  background-color: #e25402;
+}
+
+/* Border (gray) */
+#page {
+  border: 1px solid #e1e1e1;
+}
+/* Border strong (dark gray) */
+#sidebar-first input,
+#sidebar-second input {
+  border: 1px solid #c4c4c4;
+}
+/* Fieldset (gray) */
+fieldset {
+  background-color: #fbfbfb;
+}
+/* Fieldset border (dark gray) */
+fieldset {
+  border: 1px solid #e1e1e2;
+}
+
+h3 {
+	border-bottom: 1px solid #e1e1e1;	
+}
+
+iframe {
+   height: 500px;
+   width: 620px;
+   border: 1px solid #e1e1e2;
+   overflow: scroll; 
+}

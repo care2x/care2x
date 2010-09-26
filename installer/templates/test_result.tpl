@@ -1,9 +1,10 @@
-<tr><td valign="top">{if $test->getResult() == $smarty.const.INSTALLER_TEST_SUCCESS }
-<img src='images/green_check.gif'>
-{elseif $test->getResult() == $smarty.const.INSTALLER_TEST_WARNING }
-<img src='images/yellow_check.gif'>
-{else}
-<img src='images/red_check.gif'>
-{/if}</td>
-<td align="left" valign="bottom">{$test->getResultMessage()}</td>
-</tr>
+<h5>
+	{if $test->getResult() == $smarty.const.INSTALLER_TEST_SUCCESS }
+		<img src='static/images/tick.png'>
+	{elseif $test->getResult() == $smarty.const.INSTALLER_TEST_WARNING }
+		<img src='static/images/error.png'>
+	{else}
+		<img src='static/images/red.png'>
+	{/if}
+	{$test->getResultMessage()}
+</h5>

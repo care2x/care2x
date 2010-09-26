@@ -257,5 +257,31 @@ class InstallerEngine {
 		
 		return $name;
 	}
+	
+	function getPhaseNumber() {
+		return $this->phase;
+	}
+	
+	function getPhaseList() {
+
+		$phaseList = array (
+			0 => 'Introduction',
+			1 => 'Collect Information',
+			2 => 'System Checks',
+			5 => 'Finished'
+		);
+
+	
+		if($this->phase != '' && $this->action_title != '') {
+			$phaseName = $this->action_title;
+			$phaseList[$this->phase] = $this->action_title;
+		}
+		
+		$phaseList[5] = 'Finished';
+		
+		ksort($phaseList);
+		
+		return $phaseList;
+	}
 }
 ?>

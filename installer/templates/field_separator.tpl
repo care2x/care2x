@@ -1,3 +1,1 @@
-<tr>
-    <td id="field_separator" colspan=2>{$field->label}&nbsp;</td>
-</tr>
+<h3>{$field->label}</h3>

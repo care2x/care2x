@@ -1,9 +1,13 @@
-<tr><td valign="top">{if $ACTION->getResult() == $smarty.const.INSTALLER_TEST_SUCCESS}
-<img src='images/green_check.gif'>
+{if $ACTION->getResult() == $smarty.const.INSTALLER_TEST_SUCCESS}
+	<div class="messages status" style="margin: 10px 0pt;">
+		{$ACTION->getResultMessage()}
+	</div>
 {elseif $ACTION->getResult() == $smarty.const.INSTALLER_TEST_WARNING}
-<img src='images/yellow_check.gif'>
+	<div class="messages warning" style="margin: 10px 0pt;">
+		{$ACTION->getResultMessage()}
+	</div>
 {else}
-<img src='images/red_check.gif'>
-{/if}</td>
-<td align="left" valign="bottom">{$ACTION->getResultMessage()}</td>
-</tr>
+	<div class="messages error" style="margin: 10px 0pt;">
+		{$ACTION->getResultMessage()}
+	</div>
+{/if}
