@@ -101,7 +101,8 @@ $version->addAction('CSVOptions', 'Install Optional DB Tables', array(
     'db_field' => 'db_database',
     'files' => array(
         dirname(__FILE__).'/db/icd10',
-        dirname(__FILE__).'/db/ops301')));
+        dirname(__FILE__).'/db/ops301',
+		dirname(__FILE__).'/db/sample')));
         
 $version->addFinalAction('RenameFile', 'Rename Critical Installation Files', array(
     'message' => "Critical installation files renamed",
@@ -109,13 +110,6 @@ $version->addFinalAction('RenameFile', 'Rename Critical Installation Files', arr
         APP_PATH.'/installer/install.php' => APP_PATH.'/installer/install_'.rand(1,$rmax).'.php')
 
     ));
-    /*
-$version->addFinalAction('RenameFile', 'Rename Critical Installation Files', array(
-    'message' => "Critical installation files renamed",
-    'files' => array(
-        APP_PATH.'/installer/install.php' => APP_PATH.'/installer/install_'.rand(1,$rmax).'.php'),
-        APP_PATH.'/create_admin.php' => APP_PATH.'/create_admin_'.rand(1,$rmax).'.php',
-    ));
-*/
+
 $versions->add($version);
 ?>

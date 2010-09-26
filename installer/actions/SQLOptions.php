@@ -130,22 +130,22 @@ class SQLOptions extends SQLFile {
 
 	function getHTML($smarty){
 		if($this->prepareParameters() === FALSE){
-                        $this->result = INSTALLER_ACTION_FAIL;
-                        return $this->result;
-                }
+            $this->result = INSTALLER_ACTION_FAIL;
+        	return $this->result;
+        }
 
 		$smarty->assign("files",$this->file_list);	
 		$smarty->assign("loop",$this->loop);
 		$smarty->assign_by_ref('ACTION', $this);
-                if ($this->loop == 3) {
+        if ($this->loop == 3) {
 			$es =& $GLOBALS['INSTALLER']['SMARTY'];
-                	$es->assign('HEADER_EXTRAS','<META HTTP-EQUIV=Refresh CONTENT="2; URL=install.php?save_action=true">');
+            $es->assign('HEADER_EXTRAS','<META HTTP-EQUIV=Refresh CONTENT="2; URL=install.php?save_action=true">');
 		}
-                return $smarty->fetch(Installer::getTemplatePath('action_sql_options.tpl'));
-        }
+		return $smarty->fetch(Installer::getTemplatePath('action_sql_options.tpl'));
+    }
 
 	function dataSubmitted(){
-                if (isset($_POST['install_sql_done'])) {
+        if (isset($_POST['install_sql_done'])) {
 			$this->loop = 5;
 			return $this->result;
 		}

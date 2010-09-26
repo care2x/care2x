@@ -133,14 +133,14 @@ class CSVOptions extends SQLOptions {
                                 $d = dir($file);
                                 while (false !== ($entry = $d->read())) {
                                    if (preg_match("/^.*\.csv$/",$entry)) {
-					$pretty_name = ucwords(str_replace("_"," ",preg_replace("/^(.*)\.csv/","\$1",$entry)));
+										$pretty_name = ucwords(str_replace("_"," ",preg_replace("/^(.*)\.csv/","\$1",$entry)));
                                         $this->file_list[$pretty_name] = $d->path . "/" . $entry;
                                    }
                                 }
                                 $d->close();
                         }
                         else if (file_exists($file)) {
-				$pretty_name = ucwords(str_replace("_"," ",preg_replace("/^.*\/(.*)\.csv$/","\$1",$file)));
+								$pretty_name = ucwords(str_replace("_"," ",preg_replace("/^.*\/(.*)\.csv$/","\$1",$file)));
                                 $this->file_list[$pretty_name] = $file;
                         }
                 }
