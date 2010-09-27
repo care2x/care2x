@@ -1854,10 +1854,10 @@ CREATE TABLE IF NOT EXISTS `care_icd10_tr` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `care_img_diagnostic`
+-- Table structure for table `care_encounter_img_diagnostic`
 --
 
-CREATE TABLE IF NOT EXISTS `care_img_diagnostic` (
+CREATE TABLE IF NOT EXISTS `care_encounter_img_diagnostic` (
   `nr` bigint(20) NOT NULL auto_increment,
   `pid` int(11) NOT NULL default '0',
   `encounter_nr` int(11) NOT NULL default '0',
@@ -1879,7 +1879,7 @@ CREATE TABLE IF NOT EXISTS `care_img_diagnostic` (
 ) ENGINE=InnoDB ;
 
 --
--- Dumping data for table `care_img_diagnostic`
+-- Dumping data for table `care_encounter_img_diagnostic`
 --
 
 
