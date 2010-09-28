@@ -20,7 +20,7 @@ $thisfile=basename(__FILE__);
 $breakfile='patient.php';
 $admissionfile='aufnahme_start.php'.URL_APPEND;
 
-if((!isset($pid)||!$pid) && $HTPP_SESSION_VARS['sess_pid']) $pid=$HTPP_SESSION_VARS['sess_pid'];
+if((!isset($pid)||!$pid) && $_SESSION['sess_pid']) $pid=$_SESSION['sess_pid'];
 
 $_SESSION['sess_path_referer']=$top_dir.$thisfile;
 $_SESSION['sess_file_return']=$thisfile;
@@ -72,7 +72,7 @@ href="javascript:window.close()"><img <?php echo createLDImgSrc($root_path,'clos
 	# Display the data
 
 	require_once($root_path.'include/care_api_classes/class_gui_person_show.php');
-	$person = & new GuiPersonShow;
+	$person = new GuiPersonShow;
 	$person->setPID($pid);
 	$person->display();
 
