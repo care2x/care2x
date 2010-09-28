@@ -97,8 +97,15 @@ class GuiPersonShow {
 	* Returns the death data
 	*/
 	function DeathDate(){
-		if($this->data['death_date']) return $this->data['death_date'];
-			else return $this->person_obj->DeathDate();
+		if (isset($this->data['death_date'])) {
+			if($this->data['death_date']) {
+				return $this->data['death_date'];
+			} else {
+				return $this->person_obj->DeathDate();
+			}
+		} else {
+			return FALSE;
+		}
 	}
 	/**
 	*  Gets the encounter number if person is currently admitted
