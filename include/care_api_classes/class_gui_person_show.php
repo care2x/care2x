@@ -240,7 +240,10 @@ class GuiPersonShow {
 			}
 
 		}
-
+		
+		include_once($root_path.'gui/smarty_template/smarty_care.class.php');
+		$this->smarty = new smarty_care('common',FALSE);
+		
 		if($validdata){
 
 		include_once($root_path.'include/core/inc_photo_filename_resolve.php');
@@ -250,8 +253,7 @@ class GuiPersonShow {
 		# Start Smarty templating here
 		# Create smarty object without initiliazing the GUI (2nd param = FALSE)
 
-		include_once($root_path.'gui/smarty_template/smarty_care.class.php');
-		$this->smarty = new smarty_care('common',FALSE);
+
 		
 		# Set from width
 		$this->smarty->assign('sFormWidth','width="100%"');
