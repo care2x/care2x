@@ -125,7 +125,7 @@ class GuiPersonShow {
 	* @access private
 	*/
 	function _load(){
-		if($this->data_obj=&$this->person_obj->getAllInfoObject()){
+		if($this->data_obj= $this->person_obj->getAllInfoObject()){
 				$this->data=$this->data_obj->FetchRow();
 			return $this->is_loaded = TRUE;
 		}else{
@@ -236,7 +236,7 @@ class GuiPersonShow {
 				$photo_path = (is_dir($root_path.$GLOBAL_CONFIG['person_foto_path'])) ? $GLOBAL_CONFIG['person_foto_path'] : $this->default_photo_path;
 
 			}else{
-				$validdata = FALSE;
+				$validdata = FALSE; 
 			}
 
 		}
