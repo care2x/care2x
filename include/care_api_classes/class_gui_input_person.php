@@ -299,6 +299,7 @@ class GuiInputPerson {
 						# the initial value set in the global config
 						if($dbtype=='mysql'){
 							$_POST['pid']=$GLOBAL_CONFIG['person_id_nr_init'];
+							$_SESSION['sess_pid'] = $_POST['pid'];
 						}
 					}else{
 						# Persons are existing. Check if duplicate might exist
