@@ -3,7 +3,7 @@
 /*------begin------ 
 * This protection code was suggested by Luki R. luki@karet.org 
 */
-if (stristr('inc_access.php',$_SERVER['SCRIPT_NAME'])) die('<meta http-equiv="refresh" content="0; url=../">');
+if (stristr($_SERVER['SCRIPT_NAME'],'inc_access.php')) die('<meta http-equiv="refresh" content="0; url=../">');
 /*------end------*/
 
 //include('./class/class_xmlrpcaccess.php');
