@@ -657,7 +657,7 @@ class Person extends Core {
 			while( $row = $result->FetchRow() ){
 				$other_hosp_no[$row['org']] = $row['other_nr'];
 			}
-			return $other_hosp_no;
+			return (isset($other_hosp_no)) ? $other_hosp_no : '';
 		}else{
 			return FALSE;
 		}
@@ -856,7 +856,7 @@ class Person extends Core {
 	* @access public
 	* @param string Search keyword
 	* @param string Sort by the item name, default = name_last (last/family name)
-	* @param string Sort direction, default = ASC (ascending)
+	*ï¿½@param string Sort direction, default = ASC (ascending)
 	* @return mixed integer or boolean
 	*/
 	function Persons($searchkey='',$order_item='name_last',$order_dir='ASC'){
@@ -914,7 +914,7 @@ class Person extends Core {
 	* @access public
 	* @param string Search keyword
 	* @param string Sort by the item name, default = name_last (last/family name)
-	* @param string Sort direction, default = ASC (ascending)
+	*ï¿½@param string Sort direction, default = ASC (ascending)
 	* @return mixed integer or boolean
 	*/
 	function SearchSelect($searchkey='',$maxcount=100,$offset=0,$oitem='name_last',$odir='ASC',$fname=FALSE){
