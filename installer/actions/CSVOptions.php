@@ -11,11 +11,11 @@ class CSVOptions extends SQLOptions {
 		parent::SQLOptions($title, $params);
 
 	}
-	
+
 	/*
 	 * This function needs to be overriden in the implementing class
 	 * and should return either TRUE or FALSE.
-	 * 
+	 *
 	 * @var $params array Array of parameters needed for the specific implementation
 	 */
 	function perform(){
@@ -35,30 +35,30 @@ class CSVOptions extends SQLOptions {
 
 		$file = $this->file;
 		if(!empty($file) && !is_readable($file)){
-                	$this->result = INSTALLER_ACTION_FAIL;
-                        $this->result_message = "Could not read file $file.";
-                        $this->loop = 2;
-                        return $this->result;
-                }
+			$this->result = INSTALLER_ACTION_FAIL;
+			$this->result_message = "Could not read file $file.";
+			$this->loop = 2;
+			return $this->result;
+		}
 		else if ($this->loop < 3) {
 			$this->loop = 3;
 			$this->result = INSTALLER_ACTION_WARNING;
-                        $this->result_message = "The database table you selected is being installed, this may take several minutes especially for larger code packs.";
+			$this->result_message = "The database table you selected is being installed, this may take several minutes especially for larger code packs.";
 			return $this->result;
 		}
-		
+
 		# Connect to the DB
 		$db = $this->connect();
 		if ($db === FALSE)
-			return $this->result;
+		return $this->result;
 
 		# Open the file for reading
 		$handle = fopen($file, "r");
 		if (!$handle) {
-			   $this->result = INSTALLER_ACTION_FAIL;
-                        $this->result_message = "Could not open file $file for reading.";
-                        $this->loop = 2;
-                        return $this->result;
+			$this->result = INSTALLER_ACTION_FAIL;
+			$this->result_message = "Could not open file $file for reading.";
+			$this->loop = 2;
+			return $this->result;
 		}
 
 		# The name of the table is the name of the file without the extention and with prefix "care_"
@@ -67,12 +67,12 @@ class CSVOptions extends SQLOptions {
 		# Read the first line to get the number of table columns
 		$columns = fgetcsv($handle, 32768, ";");
 
-        # Rewind the file pointer to the beginning of the file
-        rewind($handle);
-  	
+		# Rewind the file pointer to the beginning of the file
+		rewind($handle);
+		 
 		# Construct the sql template
 		//$sql_template = "INSERT INTO ".$table." (".implode(",", $columns).") values (".implode(",", array_fill(0, count($columns), "?")).");";
-        $sql_template = "INSERT INTO ".$table." VALUES (".implode(",", array_fill(0, count($columns), "?")).");";
+		$sql_template = "INSERT INTO ".$table." VALUES (".implode(",", array_fill(0, count($columns), "?")).");";
 
 		# Prepare the template
 		$sql = $db->Prepare($sql_template);
@@ -83,8 +83,8 @@ class CSVOptions extends SQLOptions {
 			# Read next line
 			$values = fgetcsv($handle, 32768, ";");
 			if ($values[0] != null) {
-                # Unescape values
-                $values = array_map('stripslashes', $values);
+				# Unescape values
+				$values = array_map('stripslashes', $values);
 
 				# Execute the sql query
 				@$ok = $db->Execute($sql, $values);
@@ -105,21 +105,21 @@ class CSVOptions extends SQLOptions {
 		$this->result_message = "Loaded database table with $query_count queries";
 		$k = array_search($this->file,$this->file_list);
 		if (isset($this->file_list[$k]))
-			unset($this->file_list[$k]);
+		unset($this->file_list[$k]);
 		$this->file = "";
 
-		$this->loop = 1;	
+		$this->loop = 1;
 		return $this->result;
 	}
 
-		
+
 	function prepareParameters(){
 		if ($this->params_prepared) {
 			return true;
 		}
 
 		if ($this->prepareDBParameters() === FALSE)
-			return FALSE;
+		return FALSE;
 
 		// Get file list
 		if(!isset($this->params['files']) || !is_array($this->params['files']) || count($this->params['files']) == 0){
@@ -128,23 +128,26 @@ class CSVOptions extends SQLOptions {
 		}else{
 
 			$this->file_list = array();
-                	foreach($this->params['files'] as $file){
-                        if(is_dir($file)) {
-                                $d = dir($file);
-                                while (false !== ($entry = $d->read())) {
-                                   if (preg_match("/^.*\.csv$/",$entry)) {
-										$pretty_name = ucwords(str_replace("_"," ",preg_replace("/^(.*)\.csv/","\$1",$entry)));
-                                        $this->file_list[$pretty_name] = $d->path . "/" . $entry;
-                                   }
-                                }
-                                $d->close();
-                        }
-                        else if (file_exists($file)) {
-								$pretty_name = ucwords(str_replace("_"," ",preg_replace("/^.*\/(.*)\.csv$/","\$1",$file)));
-                                $this->file_list[$pretty_name] = $file;
-                        }
-                }
-		}	
+			foreach($this->params['files'] as $file){
+				if(is_dir($file)) {
+					$d = dir($file);
+					while (false !== ($entry = $d->read())) {
+						if (preg_match("/^.*\.csv$/",$entry)) {
+							$pretty_name = ucwords(str_replace("_"," ",preg_replace("/^(.*)\.csv/","\$1",$entry)));
+							$this->file_list[$pretty_name] = $d->path . "/" . $entry;
+							if(file_exists(str_replace("csv","info",$d->path . "/" .$entry))) {
+								$this->description[$pretty_name] = parse_ini_file(str_replace("csv","info",$d->path . "/" .$entry));
+							}
+						}
+					}
+					$d->close();
+				}
+				else if (file_exists($file)) {
+					$pretty_name = ucwords(str_replace("_"," ",preg_replace("/^.*\/(.*)\.csv$/","\$1",$file)));
+					$this->file_list[$pretty_name] = $file;
+				}
+			}
+		}
 		$this->params_prepared = true;
 	}
 }
