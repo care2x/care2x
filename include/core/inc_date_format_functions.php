@@ -1,6 +1,6 @@
 <?php
 /*------begin------ This protection code was suggested by Luki R. luki@karet.org ---- */
-if (stristr('inc_date_format_functions.php',$_SERVER['SCRIPT_NAME'])) 
+if (stristr($_SERVER['SCRIPT_NAME'],'inc_date_format_functions.php')) 
 	die('<meta http-equiv="refresh" content="0; url=../">');
 /*------end------*/
 

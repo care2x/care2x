@@ -1,6 +1,6 @@
 <?php
 /*------begin------ This protection code was suggested by Luki R. luki@karet.org ---- */
-if (stristr('inc_2level_reset.php',$_SERVER['SCRIPT_NAME'])) 
+if (stristr($_SERVER['SCRIPT_NAME'],'inc_2level_reset.php')) 
 	die('<meta http-equiv="refresh" content="0; url=../">');
 /*------end------*/
 /** 

@@ -2,8 +2,8 @@
 # To see how the script locking is implemented in this script see /development/dev_docs/script_locking.txt 
 
 #------begin------ This protection code was suggested by Luki R. luki@karet.org ----
-if (stristr('inc_front_chain_lang.php',$_SERVER['SCRIPT_NAME'])) 
-	die('<meta http-equiv="refresh" content="0; url=../">');
+if (stristr($_SERVER['SCRIPT_NAME'],'inc_front_chain_lang.php')) 
+die('<meta http-equiv="refresh" content="0; url=../">');
 #------end-----
 
 # Set  to TRUE if you want to disable the time-out feature,
@@ -18,7 +18,7 @@ require_once($root_path.'include/core/inc_db_makelink.php');
 
 # The function getLang gets the language code and stores it to the lang variable
 # The ck_language variable is a cookie which holds the language code stored at the beginning of
-# browser�s session. After acquiring the language code, the existence of the language table is
+# browser's session. After acquiring the language code, the existence of the language table is
 # checked. If language table does not exist, function returns 0.
 #
 # param chk_file =  filename of the language table
@@ -41,7 +41,7 @@ function getLang($chk_file) {
 require_once($root_path.'include/core/inc_charset_fx.php'); // charset functions
 
 # The following lines of code is the script chaining detector. It compares the sid values propagated via
-# the relative url with the ck_sid+sid (decrypted) cookie values. If the two don�t match, a warning message will apear and
+# the relative url with the ck_sid+sid (decrypted) cookie values. If the two don't match, a warning message will apear and
 # the script exits stopping the execution. If the caller script does not require chaining, it must set the
 # constant NO_CHAIN to 1 before including this script.
 
