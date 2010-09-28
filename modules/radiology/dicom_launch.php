@@ -85,7 +85,7 @@ if(isset($pop_only) && $pop_only){
 <br>
  <APPLET
   CODEBASE = "."
-  CODE = "dicomviewer.Viewer.class"
+  CODE = "src.Viewer.class"
   NAME = "Viewer.java"
   WIDTH = 100%
   HEIGHT = 100%
@@ -95,7 +95,7 @@ if(isset($pop_only) && $pop_only){
 <PARAM NAME = "tmpSize" VALUE = "<?php if(defined('NUM_EQUALS_TMPSIZE')&&NUM_EQUALS_TMPSIZE) echo $NUM;  else echo TMPSIZE_IN_MEM;  ?>">
 <PARAM NAME = "NUM" VALUE = "<?php  echo $NUM; ?>">
 <PARAM NAME = "currentNo" VALUE = "0">
-<PARAM NAME = "dicURL" VALUE = "<?php echo $main_url ?>/imed/<?php echo $top_dir ?>dicomviewer/Dicom.dic">
+<PARAM NAME = "dicURL" VALUE = "<?php echo $main_url ?>/care2x/<?php echo $top_dir ?>dicomviewer/Dicom.dic">
 <?php
 if($NUM){
 	$z=0;
