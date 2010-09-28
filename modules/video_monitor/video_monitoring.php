@@ -22,9 +22,9 @@ var cam3=new Image();
 var cam4=new Image();
 
     cam1.src="http://192.168.11.158/view/index.shtml";
-	cam2.src="http://localhost/imed/modules/video_monitor/cam_img/cam_002.jpg";
-	cam3.src="http://localhost/imed/modules/video_monitor/cam_img/cam_003.jpg";
-	cam4.src="http://localhost/imed/modules/video_monitor/cam_img/cam_004.jpg";
+	cam2.src="http://localhost/care2x/modules/video_monitor/cam_img/cam_002.jpg";
+	cam3.src="http://localhost/care2x/modules/video_monitor/cam_img/cam_003.jpg";
+	cam4.src="http://localhost/care2x/modules/video_monitor/cam_img/cam_004.jpg";
 
 function show()
 {

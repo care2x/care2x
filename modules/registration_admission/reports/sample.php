@@ -8,8 +8,8 @@ include_once('../../../classes/agata/classes/core/AgataAPI.class');
 # Instantiate AgataAPI
 $api = new AgataAPI;
 $api->setLanguage('en'); //'en', 'pt', 'es', 'de', 'fr', 'it', 'se'
-$api->setReportPath(getcwd() . '/imed_bilete_regjistrimi.agt');
-$api->setProject('imed_bilete_regjistrimi');
+$api->setReportPath(getcwd() . '/admission_printout.agt');
+$api->setProject('admission_printout');
 $api->setOutputPath(tmpfile());
 
 #How to set parameters, if they exist
