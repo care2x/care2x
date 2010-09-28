@@ -6,7 +6,7 @@ require ($root_path . 'include/core/inc_environment_global.php') ;
  * CARE2X Integrated Hospital Information System Deployment 2.2 - 2006-07-10
  * GNU General Public License
  * Copyright 2002,2003,2004,2005,2006 Elpidio Latorilla
- * elpidio@care2x.org, 
+ * elpidio@care2x.org,
  *
  * See the file "copy_notice.txt" for the licence notice
  */
@@ -39,23 +39,23 @@ $edit = 0 ;
 $error = 0 ;
 
 if (! isset ( $mode ))
-	$mode = '' ;
+$mode = '' ;
 if (! isset ( $errorname ))
-	$errorname = '' ;
+$errorname = '' ;
 if (! isset ( $erroruser ))
-	$erroruser = '' ;
+$erroruser = '' ;
 if (! isset ( $username ))
-	$username = '' ;
+$username = '' ;
 if (! isset ( $userid ))
-	$userid = '' ;
+$userid = '' ;
 if (! isset ( $errorpass ))
-	$errorpass = '' ;
+$errorpass = '' ;
 if (! isset ( $pass ))
-	$pass = '' ;
+$pass = '' ;
 if (! isset ( $errorbereich ))
-	$errorbereich = '' ;
+$errorbereich = '' ;
 if (! isset ( $dept_nr ))
-	$dept_nr = '0' ;
+$dept_nr = '0' ;
 
 if ($mode != '') {
 	if ($mode != 'edit' && $mode != 'update' && $mode != 'data_saved') {
@@ -63,7 +63,7 @@ if ($mode != '') {
 		$username = trim ( $username ) ;
 		$userid = trim ( $userid ) ;
 		$pass = trim ( $pass ) ;
-		
+
 		if ($username == '') {
 			$errorname = 1 ;
 			$error = 1 ;
@@ -77,23 +77,11 @@ if ($mode != '') {
 			$error = 1 ;
 		}
 	}
-	
+
 	if (($mode == 'save' && ! $error) || ($mode == 'update' && ! $erroruser)) {
-		
-		/* Prepare the permission codes */
-		
-/*		$p_areas = '' ;
-		
-		while ( list ( $x, $v ) = each ( $_POST ) ) {
-			if (! ereg ( '_a_', $x ))
-				continue ;
-			
-			if ($_POST [ $x ] != '')
-				$p_areas .= $v . ' ' ;
-		}*/
+
 		/* If permission area is available, save it */
-		if ($selected_role != '') {
-			///$db->debug=true;			if ($mode == 'save') {
+		if ($selected_role != '') {			if ($mode == 'save') {
 				$sql = "INSERT INTO care_users (
 						   name,
 						   login_id,
@@ -123,11 +111,11 @@ if ($mode != '') {
 						   '" . $_SESSION [ 'sess_user_name' ] . "',
 						   '" . date ( 'YmdHis' ) . "'
 						 )" ;
-			
+					
 			} else {
 				$sql = "UPDATE care_users SET permission='$permission', dept_nr='" . serialize($dept_nr) ."', user_role ='$selected_role' ,modify_id='" . $_COOKIE [ $local_user . $sid ] . "'  WHERE login_id='$userid'" ;
 			}
-			
+				
 			/* Do the query */
 			$db->BeginTrans () ;
 			$ok = $db->Execute ( $sql ) ;
@@ -138,16 +126,16 @@ if ($mode != '') {
 			} else {
 				$db->RollbackTrans () ;
 				if ($mode != 'save')
-					$edit = 1 ;
+				$edit = 1 ;
 				$mode = 'error_double' ;
 			}
 		} else {
 			if ($mode != 'save')
-				$edit = 1 ;
+			$edit = 1 ;
 			$mode = 'error_noareas' ;
 		} // end if ($p_areas!="")
 	} // end of if($mode=="save"
-	
+
 
 	if ($mode == 'edit' || $mode == 'data_saved' || $edit) {
 		$sql = "SELECT name, login_id, permission, dept_nr,user_role FROM care_users WHERE login_id='$userid'" ;
@@ -195,63 +183,63 @@ ob_start () ;
 
 <?php
 if (($mode != '' || $error) && $mode != 'edit') {
-	
+
 	?>
-<table border=0>
+	<table border=0>
 		<tr>
 			<td><img
-				<?php
-	echo createMascot ( $root_path, 'mascot1_r.gif', '0', 'bottom' ) ?>
+			<?php
+			echo createMascot ( $root_path, 'mascot1_r.gif', '0', 'bottom' ) ?>
 				align="absmiddle"></td>
-			<td class="warnprompt">
-	<?php
-	if ($error)
-		echo $LDInputError ; elseif ($mode == 'data_saved')
-		echo $LDUserInfoSaved ; elseif ($mode == 'error_save')
-		echo $LDUserInfoNoSave ; elseif ($mode == 'error_noareas')
-		echo $LDNoAreas ; elseif ($mode == 'error_double')
-		echo $LDUserDouble ;
-	?></td>
+			<td class="warnprompt"><?php
+			if ($error)
+			echo $LDInputError ;
+			elseif ($mode == 'data_saved')
+			echo $LDUserInfoSaved ;
+			elseif ($mode == 'error_save')
+			echo $LDUserInfoNoSave ;
+			elseif ($mode == 'error_noareas')
+			echo $LDNoAreas ;
+			elseif ($mode == 'error_double')
+			echo $LDUserDouble ;
+			?></td>
 		</tr>
 	</table>
-<?php
+	<?php
 }
 ?>
-<FONT class="prompt">
-<?php
+	<FONT class="prompt"> <?php
 
-if (($mode == "") and ($remark != 'fromlist')) {
-	$gtime = date ( 'H.i' ) ;
-	if ($gtime < '9.00')
+	if (($mode == "") and ($remark != 'fromlist')) {
+		$gtime = date ( 'H.i' ) ;
+		if ($gtime < '9.00')
 		echo $LDGoodMorning ;
-	if (($gtime > '9.00') and ($gtime < '18.00'))
+		if (($gtime > '9.00') and ($gtime < '18.00'))
 		echo $LDGoodDay ;
-	if ($gtime > '18.00')
+		if ($gtime > '18.00')
 		echo $LDGoodEvening ;
-	echo ' ' . $_COOKIE [ $local_user . $sid ] ;
-}
-?>
-</FONT>
-<p>
-	
-	
-	<FORM action="edv_user_access_list.php" name="all">
-		<input type="hidden" name="sid" value="<?php echo $sid ; ?>"> 
-		<input type="hidden" name="lang" value="<?php echo $lang ; ?>"> 
-		<input type="submit" name=message value="<?php echo $LDListActual ?>">
-	</FORM>
+		echo ' ' . $_COOKIE [ $local_user . $sid ] ;
+	}
+	?> </FONT>
 	<p>
 	
 	
-	<form method="post" action="edv_user_access_edit.php" name="user">
-		<input type="image" <?php echo createLDImgSrc ( $root_path, 'savedisc.gif', '0', 'absmiddle' ) ?>>
+	<FORM action="edv_user_access_list.php" name="all"><input type="hidden"
+		name="sid" value="<?php echo $sid ; ?>"> <input type="hidden"
+		name="lang" value="<?php echo $lang ; ?>"> <input type="submit"
+		name=message value="<?php echo $LDListActual ?>"></FORM>
+	<p>
+	
+	
+	<form method="post" action="edv_user_access_edit.php" name="user"><input
+		type="image"
+		<?php echo createLDImgSrc ( $root_path, 'savedisc.gif', '0', 'absmiddle' ) ?>>
 
-<?php
-if ($mode == 'data_saved' || $edit) {
-	echo '<input type="button" value="' . $LDEnterNewUser . '" onClick="javascript:window.location.href=\'edv_user_access_edit.php' . URL_REDIRECT_APPEND . '&remark=fromlist\'">' ;
-}
-?>
-<input type="button" value="<?php
+		<?php
+		if ($mode == 'data_saved' || $edit) {
+			echo '<input type="button" value="' . $LDEnterNewUser . '" onClick="javascript:window.location.href=\'edv_user_access_edit.php' . URL_REDIRECT_APPEND . '&remark=fromlist\'">' ;
+		}
+		?> <input type="button" value="<?php
 echo $LDFindEmployee ;
 ?>"
 		onClick="javascript:window.location.href='edv_user_search_employee.php<?php
@@ -265,38 +253,31 @@ echo $LDFindEmployee ;
 			<table border="0" cellpadding="5" cellspacing="1">
 
 				<tr bgcolor="#dddddd">
-					<td colspan="3">
-<?php
-echo $LDNewAccess ?>:
-</td>
-</tr>
+					<td colspan="3"><?php
+					echo $LDNewAccess ?>:</td>
+				</tr>
 
-<tr bgcolor="#dddddd">
-	<td>
-	<input type=hidden name=route value=validroute>
-<?php
-if ($errorname) {
-	echo "<font color=red > <b>$LDName</b>" ;
-} else {
-	echo $LDName ;
-}
-?>
+				<tr bgcolor="#dddddd">
+					<td><input type=hidden name=route value=validroute> <?php
+					if ($errorname) {
+						echo "<font color=red > <b>$LDName</b>" ;
+					} else {
+						echo $LDName ;
+					}
+					?> <?php
 
-<?php
-
-if ($edit) {
-	echo '<input type="hidden" name="username" value="' . $user [ 'name' ] . '">' . '<b>' . $user [ 'name' ] . '</b>' ;
-} elseif (isset ( $is_employee ) && $is_employee) {
-    ?>  
-    <input name="username" type="hidden"
-    <?php
-    	if ($username != "")
-    		echo ' value="' . $username . '"><br><b>' . $username . '</b>' ; 
-    	else
-    		echo '>' ;
-} else {
-	?>
-	<input name="username" type="text" <?php if ($username != "")  echo ' value="' . $username . '"' ; ?>>
+					if ($edit) {
+						echo '<input type="hidden" name="username" value="' . $user [ 'name' ] . '">' . '<b>' . $user [ 'name' ] . '</b>' ;
+					} elseif (isset ( $is_employee ) && $is_employee) {
+						?> <input name="username" type="hidden"
+						<?php
+						if ($username != "")
+						echo ' value="' . $username . '"><br><b>' . $username . '</b>' ;
+						else
+						echo '>' ;
+					} else {
+						?>
+						<input name="username" type="text" <?php if ($username != "")  echo ' value="' . $username . '"' ; ?>>
 <?php
 }
 ?>
@@ -401,7 +382,7 @@ while(list($x,$dept)=each($deptarray)){
     		$found = true;
     	}	
     }
-    if($found == false) echo ' value="">';
+    if($found == false) echo ' value="1">';
 ?>
 
 <input type="hidden" name="mode" value="<?php
