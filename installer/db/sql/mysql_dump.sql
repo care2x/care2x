@@ -2096,6 +2096,217 @@ CREATE TABLE IF NOT EXISTS `care_med_products_main` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `care_med_orderlist_sub`
+--
+
+CREATE TABLE IF NOT EXISTS `care_med_orderlist_sub` (
+  `sub_order` int(20) NOT NULL AUTO_INCREMENT,
+  `order_nr_sub` int(20) NOT NULL,
+  `bestellnum` varchar(25) COLLATE latin1_general_ci DEFAULT '0',
+  `idsub` varchar(20) COLLATE latin1_general_ci NOT NULL DEFAULT '0' COMMENT 'id of care_pharma_products_main_sub',
+  `artikelname` varchar(25) COLLATE latin1_general_ci DEFAULT NULL,
+  `pcs` double NOT NULL DEFAULT '0',
+  `maxorder` int(11) DEFAULT NULL,
+  `minorder` int(11) DEFAULT NULL,
+  `proorder` int(11) DEFAULT NULL,
+  `unit` varchar(20) COLLATE latin1_general_ci DEFAULT NULL,
+  `expiry_date` date DEFAULT NULL,
+  `price` decimal(11,2) DEFAULT NULL,
+  `dose` decimal(11,2) DEFAULT NULL,
+  `value` decimal(11,2) NOT NULL DEFAULT '0.00',
+  PRIMARY KEY (`sub_order`),
+  KEY `order_nr_sub` (`order_nr_sub`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci AUTO_INCREMENT=1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `care_med_products_main_movements`
+--
+
+CREATE TABLE IF NOT EXISTS `care_med_products_main_movements` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `pharmacy_id` int(11) NOT NULL DEFAULT '0',
+  `data` date NOT NULL DEFAULT '0000-00-00',
+  `bill_nr` varchar(255) COLLATE latin1_general_ci NOT NULL DEFAULT '0',
+  `medicament` tinytext COLLATE latin1_general_ci,
+  `qty` double NOT NULL DEFAULT '0',
+  `price` double NOT NULL DEFAULT '0',
+  `value` double NOT NULL DEFAULT '0',
+  `expiry_date` date NOT NULL DEFAULT '0000-00-00',
+  `id_sub` int(11) NOT NULL COMMENT 'connection to id te sub product',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci ROW_FORMAT=COMPACT COMMENT='InnoDB free: 9216 kB' AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `care_med_products_main_sub`
+--
+
+CREATE TABLE IF NOT EXISTS `care_med_products_main_sub` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `pcs` double NOT NULL DEFAULT '0',
+  `expiry_date` date DEFAULT NULL,
+  `price` double DEFAULT NULL,
+  `bestellnum` varchar(25) COLLATE latin1_general_ci DEFAULT NULL COMMENT 'connection to care_med_products_main',
+  `idcare_supply` int(10) DEFAULT NULL,
+  `create_time` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci ROW_FORMAT=DYNAMIC COMMENT='InnoDB free: 9216 kB' AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `care_pharma_orderlist_sub`
+--
+
+CREATE TABLE IF NOT EXISTS `care_pharma_orderlist_sub` (
+  `sub_order` int(20) NOT NULL AUTO_INCREMENT,
+  `order_nr_sub` int(20) NOT NULL,
+  `bestellnum` varchar(25) COLLATE latin1_general_ci DEFAULT '0',
+  `idsub` varchar(20) COLLATE latin1_general_ci NOT NULL DEFAULT '0' COMMENT 'id of care_pharma_products_main_sub',
+  `artikelname` varchar(25) COLLATE latin1_general_ci DEFAULT NULL,
+  `pcs` double NOT NULL DEFAULT '0',
+  `maxorder` int(11) DEFAULT NULL,
+  `minorder` int(11) DEFAULT NULL,
+  `proorder` int(11) DEFAULT NULL,
+  `unit` varchar(20) COLLATE latin1_general_ci DEFAULT NULL,
+  `expiry_date` date DEFAULT NULL,
+  `price` decimal(11,2) DEFAULT NULL,
+  `dose` decimal(11,2) DEFAULT NULL,
+  `value` decimal(11,2) NOT NULL DEFAULT '0.00',
+  PRIMARY KEY (`sub_order`),
+  KEY `order_nr_sub` (`order_nr_sub`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci ROW_FORMAT=DYNAMIC AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `care_pharma_products_main_movements`
+--
+
+CREATE TABLE IF NOT EXISTS `care_pharma_products_main_movements` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `dept_id` int(11) NOT NULL DEFAULT '0',
+  `data` date NOT NULL DEFAULT '0000-00-00',
+  `bill_nr` varchar(255) COLLATE latin1_general_ci NOT NULL DEFAULT '0',
+  `medicament` varchar(255) COLLATE latin1_general_ci NOT NULL DEFAULT '0',
+  `qty` double NOT NULL DEFAULT '0',
+  `price` double NOT NULL DEFAULT '0',
+  `value` double NOT NULL DEFAULT '0',
+  `expiry_date` date NOT NULL DEFAULT '0000-00-00',
+  `id_sub` int(11) NOT NULL COMMENT 'lidhja me nenkatelen e produktit',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci ROW_FORMAT=DYNAMIC COMMENT='InnoDB free: 9216 kB' AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `care_pharma_products_main_sub`
+--
+
+CREATE TABLE IF NOT EXISTS `care_pharma_products_main_sub` (
+  `id` int(10) NOT NULL AUTO_INCREMENT,
+  `bestellnum` varchar(25) COLLATE latin1_general_ci DEFAULT NULL COMMENT 'connection to care_pharma_products_main',
+  `pcs` double NOT NULL DEFAULT '0',
+  `expiry_date` date DEFAULT NULL,
+  `price` double DEFAULT NULL,
+  `idcare_pharma` int(10) DEFAULT NULL,
+  `create_time` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci ROW_FORMAT=DYNAMIC COMMENT='InnoDB free: 9216 kB' AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `care_supplier`
+--
+
+CREATE TABLE IF NOT EXISTS `care_supplier` (
+  `idcare_supplier` int(3) NOT NULL AUTO_INCREMENT,
+  `supplier` varchar(35) COLLATE latin1_general_ci NOT NULL DEFAULT '',
+  `address` varchar(100) COLLATE latin1_general_ci DEFAULT NULL,
+  `telephone` varchar(35) COLLATE latin1_general_ci DEFAULT NULL,
+  `fax` varchar(35) COLLATE latin1_general_ci DEFAULT NULL,
+  `postal_code` varchar(5) COLLATE latin1_general_ci DEFAULT NULL,
+  `representative` varchar(35) COLLATE latin1_general_ci DEFAULT NULL,
+  `history` text COLLATE latin1_general_ci,
+  `create_id` varchar(35) COLLATE latin1_general_ci DEFAULT NULL,
+  `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`idcare_supplier`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci ROW_FORMAT=DYNAMIC COMMENT='InnoDB free: 10240 kB' AUTO_INCREMENT=1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `care_supply`
+--
+
+CREATE TABLE IF NOT EXISTS `care_supply` (
+  `idcare_furnizim` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `idcare_supplier` tinyint(3) unsigned NOT NULL,
+  `bestellnum` varchar(25) COLLATE latin1_general_ci NOT NULL,
+  `expiry_date` varchar(25) COLLATE latin1_general_ci DEFAULT '0000-00-00 00:00:00',
+  `qty` double unsigned NOT NULL DEFAULT '0',
+  `price` double DEFAULT '0',
+  `value` double DEFAULT '0',
+  `notes` varchar(200) COLLATE latin1_general_ci DEFAULT NULL,
+  `bill_nr` varchar(25) COLLATE latin1_general_ci DEFAULT NULL,
+  `create_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `create_id` varchar(35) COLLATE latin1_general_ci DEFAULT NULL,
+  `history` text COLLATE latin1_general_ci,
+  `order_date` date DEFAULT NULL,
+  `articles` text COLLATE latin1_general_ci,
+  `order_time` time DEFAULT NULL,
+  `ip_addr` tinytext COLLATE latin1_general_ci,
+  `status` varchar(25) COLLATE latin1_general_ci DEFAULT NULL,
+  `sent_datetime` datetime DEFAULT '0000-00-00 00:00:00',
+  `validator` tinytext COLLATE latin1_general_ci,
+  `modify_id` varchar(35) COLLATE latin1_general_ci DEFAULT NULL,
+  `process_datetime` datetime DEFAULT NULL,
+  PRIMARY KEY (`idcare_furnizim`,`idcare_supplier`,`bestellnum`),
+  KEY `idcare_furnitor` (`idcare_supplier`),
+  KEY `bestellnum` (`bestellnum`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci ROW_FORMAT=DYNAMIC COMMENT='InnoDB free: 10240 kB' AUTO_INCREMENT=1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `care_supply_movements`
+--
+
+CREATE TABLE IF NOT EXISTS `care_supply_movements` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `id_supplier` int(11) NOT NULL,
+  `data` date NOT NULL,
+  `bill_nr` varchar(255) COLLATE latin1_general_ci NOT NULL DEFAULT '',
+  `medicament` varchar(255) COLLATE latin1_general_ci NOT NULL DEFAULT '',
+  `qty` double NOT NULL,
+  `price` double NOT NULL,
+  `value` double NOT NULL,
+  `expiry_date` date NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci ROW_FORMAT=DYNAMIC COMMENT='InnoDB free: 10240 kB' AUTO_INCREMENT=1;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `care_med_orderlist_sub`
+--
+ALTER TABLE `care_med_orderlist_sub`
+  ADD CONSTRAINT `care_med_orderlist_sub_fk` FOREIGN KEY (`order_nr_sub`) REFERENCES `care_med_orderlist` (`order_nr`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `care_pharma_orderlist_sub`
+--
+ALTER TABLE `care_pharma_orderlist_sub`
+  ADD CONSTRAINT `care_pharma_orderlist_sub_fk` FOREIGN KEY (`order_nr_sub`) REFERENCES `care_pharma_orderlist` (`order_nr`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+
+--
 -- Table structure for table `care_menu_main`
 --
 
