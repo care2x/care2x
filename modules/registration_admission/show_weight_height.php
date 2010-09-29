@@ -99,9 +99,9 @@ if($mode=='show'){
 			while($msr_row=$result->FetchRow()){
 				# group the elements
 				$msr_comp[$msr_row['create_time']]['encounter_nr']=$msr_row['encounter_nr'];
-				$msr_comp[$msr_row['create_time']]['msr_date']=$msr_row['msr_date'];
-				$msr_comp[$msr_row['create_time']]['msr_time']=$msr_row['msr_time'];
-				$msr_comp[$msr_row['create_time']][$msr_row['msr_type_nr']]=$msr_row;
+				$msr_comp[$msr_row['create_time']]['msr_date']    =$msr_row['msr_date'];
+				$msr_comp[$msr_row['create_time']]['msr_time']    =$msr_row['msr_time'];
+				$msr_comp[$msr_row['create_time']]['msr_type_nr'] =$msr_row['msr_type_nr'];
 			}
 		}
 	}
