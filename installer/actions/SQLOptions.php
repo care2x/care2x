@@ -135,6 +135,7 @@ class SQLOptions extends SQLFile {
         }
 
 		$smarty->assign("files",$this->file_list);	
+		$smarty->assign("description",$this->description);	
 		$smarty->assign("loop",$this->loop);
 		$smarty->assign_by_ref('ACTION', $this);
         if ($this->loop == 3) {

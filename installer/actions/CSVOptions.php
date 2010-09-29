@@ -69,7 +69,7 @@ class CSVOptions extends SQLOptions {
 
 		# Rewind the file pointer to the beginning of the file
 		rewind($handle);
-		 
+			
 		# Construct the sql template
 		//$sql_template = "INSERT INTO ".$table." (".implode(",", $columns).") values (".implode(",", array_fill(0, count($columns), "?")).");";
 		$sql_template = "INSERT INTO ".$table." VALUES (".implode(",", array_fill(0, count($columns), "?")).");";

@@ -9,6 +9,8 @@ class SQLFile extends SQLAction {
 	
 	var $file_list;
 	
+	var $description;
+	
 	var $loop;
 	
 	function SQLFile($title, $params){
