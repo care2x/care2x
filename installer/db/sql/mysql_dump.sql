@@ -2289,22 +2289,6 @@ CREATE TABLE IF NOT EXISTS `care_supply_movements` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB ;
 
---
--- Constraints for dumped tables
---
-
---
--- Constraints for table `care_med_orderlist_sub`
---
-ALTER TABLE `care_med_orderlist_sub`
-  ADD CONSTRAINT `care_med_orderlist_sub_fk` FOREIGN KEY (`order_nr_sub`) REFERENCES `care_med_orderlist` (`order_nr`) ON DELETE CASCADE ON UPDATE CASCADE;
-
---
--- Constraints for table `care_pharma_orderlist_sub`
---
-ALTER TABLE `care_pharma_orderlist_sub`
-  ADD CONSTRAINT `care_pharma_orderlist_sub_fk` FOREIGN KEY (`order_nr_sub`) REFERENCES `care_pharma_orderlist` (`order_nr`) ON DELETE CASCADE ON UPDATE CASCADE;
-
 
 --
 -- Table structure for table `care_menu_main`
@@ -2674,8 +2658,6 @@ CREATE TABLE IF NOT EXISTS `care_person` (
   KEY `date_birth` (`date_birth`)
 ) ENGINE=InnoDB ;
 
-ALTER TABLE `care_encounter`
-  ADD CONSTRAINT `care_encounter_ibfk_2` FOREIGN KEY (`pid`) REFERENCES `care_person` (`pid`);
 
 --
 -- Dumping data for table `care_person`
@@ -4798,14 +4780,16 @@ CREATE TABLE IF NOT EXISTS `care_yellow_paper` (
   PRIMARY KEY  (`nr`)
 ) ENGINE=InnoDB ;
 
---
--- Dumping data for table `care_yellow_paper`
---
-
 
 --
 -- Constraints for dumped tables
 --
+
+--
+-- Constraints for table `care_encounter`
+--
+ALTER TABLE `care_encounter`
+  ADD CONSTRAINT `care_encounter_ibfk_2` FOREIGN KEY (`pid`) REFERENCES `care_person` (`pid`);
 
 --
 -- Constraints for table `care_encounter_prescription_sub`
@@ -4813,7 +4797,20 @@ CREATE TABLE IF NOT EXISTS `care_yellow_paper` (
 ALTER TABLE `care_encounter_prescription_sub`
   ADD CONSTRAINT `care_encounter_prescription_sub_fk` FOREIGN KEY (`prescription_nr`) REFERENCES `care_encounter_prescription` (`nr`) ON DELETE CASCADE ON UPDATE CASCADE;
   
- 
+--
+-- Constraints for table `care_med_orderlist_sub`
+--
+ALTER TABLE `care_med_orderlist_sub`
+  ADD CONSTRAINT `care_med_orderlist_sub_fk` FOREIGN KEY (`order_nr_sub`) REFERENCES `care_med_orderlist` (`order_nr`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `care_pharma_orderlist_sub`
+--
+ALTER TABLE `care_pharma_orderlist_sub`
+  ADD CONSTRAINT `care_pharma_orderlist_sub_fk` FOREIGN KEY (`order_nr_sub`) REFERENCES `care_pharma_orderlist` (`order_nr`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+
+  
 -- The preloaded data follows -----------------------
 
 --
