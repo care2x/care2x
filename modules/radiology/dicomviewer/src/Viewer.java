@@ -26,6 +26,7 @@ import java.awt.event.*;
 import java.applet.*;
 import java.util.Locale;
 import java.util.ResourceBundle;
+import java.util.MissingResourceException;
 
 public class Viewer extends Applet {
 
@@ -82,8 +83,10 @@ public class Viewer extends Applet {
     GridBagLayout gridBagLayout2 = new GridBagLayout();
     GridBagConstraints gridBagConstraints1 = new GridBagConstraints();
     GridBagConstraints gridBagConstraints2 = new GridBagConstraints();
-    //resource boundle
-    ResourceBundle _resbundle = ResourceBundle.getBundle("locale/dicom", Locale.getDefault());
+    
+    //resource bundle
+    ResourceBundle _resbundle = ResourceBundle.getBundle("locale/dicom", new Locale("en","US"));
+
     // Panel
     ScrollPane scrollPane1 = new ScrollPane();
     Panel panel1 = new Panel();

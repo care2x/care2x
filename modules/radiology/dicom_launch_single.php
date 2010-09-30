@@ -70,9 +70,9 @@ if(isset($pop_only) && $pop_only){
 ?></font>
 <br>
 <APPLET
-  CODEBASE = "."
-  CODE = "src.Viewer.class"
-  NAME = "Viewer.java"
+  CODEBASE = "dicomviewer/"
+  ARCHIVE = "dicomviewer.jar"
+  CODE="src/Viewer.class"
   WIDTH = 100%
   HEIGHT = 100%
   HSPACE = 0
