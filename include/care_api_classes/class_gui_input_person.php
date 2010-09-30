@@ -315,7 +315,8 @@ class GuiInputPerson {
 							# else get the pid number from the latest primary key
 
 							if(!$update){
-								$oid = ( (isset($pid) && ($pid > 0) ) ? $db->Insert_ID() : $_POST['pid'] );
+								$oid = $db->Insert_ID();
+								if (empty($oid)) $oid = $_POST['pid'];
 								$pid=$person_obj->LastInsertPK('pid',$oid);
 								//EL: set the new pid
 								$person_obj->setPID($pid);
