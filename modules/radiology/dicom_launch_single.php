@@ -69,10 +69,12 @@ if(isset($pop_only) && $pop_only){
 }
 ?></font>
 <br>
-<APPLET
+<!-- Do not forget to set the variable $main_domain to your site domain in include/core/inc_init_main.php -->
+ <APPLET
   CODEBASE = "."
   CODE = "dicomviewer.Viewer.class"
   NAME = "Viewer.java"
+  ARCHIVE = "dicomviewer.jar"
   WIDTH = 100%
   HEIGHT = 100%
   HSPACE = 0
