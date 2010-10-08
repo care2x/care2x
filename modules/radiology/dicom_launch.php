@@ -95,7 +95,7 @@ if(isset($pop_only) && $pop_only){
 <PARAM NAME = "tmpSize" VALUE = "<?php if(defined('NUM_EQUALS_TMPSIZE')&&NUM_EQUALS_TMPSIZE) echo $NUM;  else echo TMPSIZE_IN_MEM;  ?>">
 <PARAM NAME = "NUM" VALUE = "<?php  echo $NUM; ?>">
 <PARAM NAME = "currentNo" VALUE = "0">
-<PARAM NAME = "dicURL" VALUE = "<?php echo $main_url ?>/care2x/<?php echo $top_dir ?>dicomviewer/Dicom.dic">
+<PARAM NAME = "dicURL" VALUE = "http://<?php echo $main_domain ?>/<?php echo $top_dir ?>dicomviewer/Dicom.dic">
 <?php
 if($NUM){
 	$z=0;

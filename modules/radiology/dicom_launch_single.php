@@ -70,9 +70,9 @@ if(isset($pop_only) && $pop_only){
 ?></font>
 <br>
 <APPLET
-  CODEBASE = "dicomviewer/"
-  ARCHIVE = "dicomviewer.jar"
-  CODE="src/Viewer.class"
+  CODEBASE = "."
+  CODE = "dicomviewer.Viewer.class"
+  NAME = "Viewer.java"
   WIDTH = 100%
   HEIGHT = 100%
   HSPACE = 0
@@ -81,8 +81,8 @@ if(isset($pop_only) && $pop_only){
 <PARAM NAME = "tmpSize" VALUE = "1">
 <PARAM NAME = "NUM" VALUE = "1">
 <PARAM NAME = "currentNo" VALUE = "0">
-<PARAM NAME = "dicURL" VALUE = "http://<?php echo $main_domain ?>/care2x/<?php echo $top_dir ?>dicomviewer/Dicom.dic">
-<PARAM NAME = "imgURL0" VALUE = "http://<?php echo "$main_domain/care2x/$dicom_img_localpath$pid/$img_nr/$fn" ?>">
+<PARAM NAME = "dicURL" VALUE = "http://<?php echo $main_domain ?>/<?php echo $top_dir ?>dicomviewer/Dicom.dic">
+<PARAM NAME = "imgURL0" VALUE = "http://<?php echo "$main_domain/$dicom_img_localpath$pid/$img_nr/$fn" ?>">
 </APPLET>  
 </BODY>
 </HTML> 
