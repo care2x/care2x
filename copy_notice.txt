@@ -1,5 +1,6 @@
 CARE2X (formerly CARE 2002) Integrated Information System for Hospitals and Health Care Organizations and Services
 Copyright (C) 2002 - 2007  Elpidio Latorilla
+Copyright (C) 2008 - 2010  Mauri Niemi
 								
 Deployment 2.4 RC2 - 2007-08-31
 								
