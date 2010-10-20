@@ -2,7 +2,7 @@
 
 ?>
 <FONT SIZE=1 FACE="Arial" color=gray>
- <a href="http://www.care2x.org" target=_new>CARE2X 2nd Generation Deployment 2.6.1</a> ::
+ <a href="http://www.care2x.org" target=_new>CARE2X 2nd Generation Deployment 2.6.27</a> ::
  <a href="<?php echo $root_path ?>license.htm" target=_new> ��Ȩ��Ϣ </a> :: 
  <a href=mailto:info@care2x.org> ��ϵ���� </a> <font size=1 face="arial"> ::
  <a href="<?php echo $root_path ?>language/en/en_privacy.htm" target="pp"> ��˽���� </a> :: 
