@@ -17,7 +17,11 @@ $LDOptions='Optionen';
 $LDMemo='Lesen oder Schreiben von Rundbriefen';
 $LDTitleMemo='Rundbrief';
 
-$LDfieldname=array('Fallnummer','Name','Vorname','Geburtsdatum');
+$LDfieldname[0]='Fallnummer';
+$LDfieldname[1]='Name';
+$LDfieldname[2]='Vorname';
+$LDfieldname[3]='Geburtsdatum';
+
 $LDSearchWordPrompt='Stichwort eingeben. z.B. Fallnummer, Name, Vorname, Geburtsdatum, Abkürzung u.s.w.';
 $LDEnterData='Klick um Daten einzugeben';
 $LDClk2See='Klick zum zeigen';
@@ -30,7 +34,6 @@ $LDLabReport='Laborbefund';
 $LDLastName='Name';
 $LDName='Vorname';
 $LDBday='Geburtsdatum';
-
 $LDNoLabReport='Kein Laborbefund gefunden für';
 $LDParameter='Parameter';
 $LDNormalValue='Normbereich';
@@ -39,7 +42,6 @@ $LDClk2Graph='Klick für grafische Kurve';
 $LDClk2SelectAll='Klick um alles zu wählen';
 $LDGraph='Grafische darstellung';
 $LDBack='Zurück';
-
 $LDReportFound='Folgendes is ein Laborbefund von Patient Nr. ';
 $LDReportFoundMany='Folgende sind Laborbefunde von Patient Nr. ';
 $LDIfWantEdit='Falls Sie den Befund bearbeiten möchten, klicken Sie den weiß-grünen Pfeil an.';
@@ -78,10 +80,10 @@ $LDBloodBank='Blutzentrale';
 $LDBloodRequest='Blutkonserven';
 $LDBloodRequestTxt=$LDFillUpSend.'Blutkonserven bzw. -präparaten';
 
-$LDRequestSent= array('insert'=>'Die Anforderung wurde gesendet.',
-                                    'update'=>'Die aktualisierte Anforderung wurde gesendet.');
-$LDFormSaved=array('insert'=>'Die Anforderung wurde gespeichert (nicht gesendet).',
-                                 'update'=>'Die aktualisierte Anforderung wurde gespeichert (nicht gesendet).');
+$LDRequestSent['insert']='Die Anforderung wurde gesendet ';
+$LDFormSaved['insert']='Die Anforderung wurde gespeichert (nicht gesendet).';
+$LDRequestSent['update']='Die aktualisierte Anforderung wurde gesendet. ';
+$LDFormSaved['update']='Die aktualisierte Anforderung wurde gespeichert (nicht gesendet).';
 $LDWhatToDo=' Was möchten Sie jetzt tun?';
 
 $LDNewFormSamePatient='Eine neue Anforderung für <b>denselben</b> Patient erstellen';
@@ -89,11 +91,12 @@ $LDEditForm='Dieselbe Anforderung nachbearbeiten';
 $LDEndTestRequest='Anforderung beenden';
 $LDNewFormOtherPatient='Ein neues Formular für einen anderen Patient bereitstellen';
 
-/* 2002-09-03 EL */							  
+/* 2002-09-03 EL */
 $LDSearchPatient='Patient suchen';
 $LDSearchFound='Die Suche hat ~nr~ Patienten gefunden.';
-/* 2002-09-04 EL */		
+/* 2002-09-04 EL */
 $LDTestRequestFor='Anforderung für ';
+
 $LDTestType=array('chemlabor'=>'Laboruntersuchung',
                                      'patho'=>'Pathologie',
 								 'baclabor'=>'bakteriologische Untersuchung',
@@ -109,7 +112,6 @@ $LDPrintForm='Die Anforderung drucken';
 $LDInitFindings='Vorbefund';
 $LDCurrentFindings='Zwischenbefund';
 $LDFinalFindings='Endbefund';
-
 $LDFillLabOnly='Nur vom Labor auszufüllen!';
 $LDLEN='LDN';  /* Lab entry number */
 /*2003-07-11 EL*/
@@ -124,5 +126,36 @@ $LDUpperCritical='OG: kritisch';
 $LDLowerCritical='UG: kritisch';
 $LDUpperToxic='OG: toxisch';
 $LDLowerToxic='UG: toxisch';
+
+/* 2007-07-22 Gjergj Sheldija*/
+$LDShowParam='Zeige/Verstecke Parameter';
+$LDHide='Verstecke';
+$LDDelete='Lösche';
+$LDShow='Zeige';
+$LDMale='Männlich';
+$LDFemales='Weiblich';
+$LD01Moth='0-1 monate';
+$LD112Month='1-12 monate';
+$LD114Years='1-14 Jahre';
+$LDID='Param ID';
+$LDMethod='Methode';
+$LDGroup='Gruppe';
+$LDTestGroups='Gruppe';
+$LDTestGroupsTxt='Erstelle / Ändere Gruppe';
+$LDHiddenParams='Parameter in grün sind nicht sichtbar';
+$LDDeletedParams='Parameter in rot sind gelöscht';
+$LDHiddenGroups='Gruppen in grün sind nicht sichtbar';
+$LDDeletedGroups='Gruppen in rot sind gelöscht';
+$LDUrgent='Wichtig';
+$LDCheckParamFirst='Bitte wählen sie den Parameter den Sie anzeigen wollen';
+$LDOpenReport='Print out the report';
+
+$LDWard = 'Klinik';
+$LDDepartment = 'Abteilung';
+$LDRoom = 'Raum';
+$LDBed = 'Bett';
+$LDNotes = 'Hinweise';
+$LDDoctor = 'Doktor';
+$LDTechnician = 'LTA';
 
 ?>
