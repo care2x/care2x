@@ -1,7 +1,7 @@
 <?php
 /* 2003-04-05 EL*/
-$LDMonthFullName=array('','Janvier','Février','Mars','Avril','Mai','Juin','Juillet','Août','Septembre','Octobre','Novembre','Décembre');
-$LDMonthShortName=array('','Jan','Fév','Mar','Avr','Mai','Jun','Jul','Aoû','Sep','Oct','Nov','Déc');
+$LDMonthFullName=array('','Janvier','FÃ©vrier','Mars','Avril','Mai','Juin','Juillet','AoÃ»t','Septembre','Octobre','Novembre','DÃ©cembre');
+$LDMonthShortName=array('','Jan','FÃ©v','Mar','Avr','Mai','Jun','Jul','AoÃ»','Sep','Oct','Nov','DÃ©c');
 $LDDayFullName=array('Dimanche','Lundi','Mardi','Mercredi','Jeudi','Vendredi','Samedi');
 $LDDayShortName=array('Lu','Ma','Me','Je','Ve','Sa','Di');
 $LDDate='Date';

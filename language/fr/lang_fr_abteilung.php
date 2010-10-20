@@ -1,8 +1,8 @@
 <?php
-$LDPageTitle='Départements';
-$LDDeptTxt='Département';
+$LDPageTitle='DÃ©partements';
+$LDDeptTxt='DÃ©partement';
 $LDOpenHrsTxt='Horaires de travail';
-$LDChkHrsTxt='Les horaires d\'examens médicaux';
+$LDChkHrsTxt='Les horaires d\'examens mÃ©dicaux';
 $LDClk4Info='Cliquez pour plus d\'informations';
 $LDDayTxt='Jour';
 
@@ -11,25 +11,25 @@ $LDDayTxt='Jour';
 * ENT = Eye, Nose, Throat
 * OB-Gyne = Obstetrics-Gynecology
 */
-$dept=array('Chirurgie générale',
+$dept=array('Chirurgie gÃ©nÃ©rale',
 					'Urgence chirurgicale',
 					'Chirurgie plastique',
 					'ENT',
 					'Opthalmologie',
 					'Pathologie',
-					'Gynécologie Obstétrique',
-					'Thérapie physique',
-					'Médecine interne',
+					'GynÃ©cologie ObstÃ©trique',
+					'ThÃ©rapie physique',
+					'MÃ©decine interne',
 					'Oncologie',
 					'Maintenance',
-					'Unité de soins intermédiaires',
-					'Unité des soins intensifs',
-					'Laboratoire médical',
+					'UnitÃ© de soins intermÃ©diaires',
+					'UnitÃ© des soins intensifs',
+					'Laboratoire mÃ©dical',
 					'Urgence ambulatoire',
-					'Ambulatoire générale',
+					'Ambulatoire gÃ©nÃ©rale',
 					'Sonographie',
-					'Diagnostiques nucléaires',
-					'Ambulatoire de médecine interne');
+					'Diagnostiques nuclÃ©aires',
+					'Ambulatoire de mÃ©decine interne');
 
 /**
 * Do not translate the $target variable

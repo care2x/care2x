@@ -9,11 +9,11 @@ $LDAB='AB';
 $LDO='O';
 # 2003-08-28 EL
 $LDPlsEnterLastName='Svp, entrez le nom de famille';
-$LDPlsEnterFirstName='Svp, entrez le prénom';
+$LDPlsEnterFirstName='Svp, entrez le prÃ©nom';
 $LDPlsEnterDateBirth='Svp, entrez la date de naissance';
-$LDPlsSelectSex='Svp, sélectionnez le sexe';
+$LDPlsSelectSex='Svp, sÃ©lectionnez le sexe';
 $LDPlsEnterStreetName='Svp, entrez le nom de la rue';
-$LDPlsEnterBldgNr='Svp, entrez le numéro de la rue';
+$LDPlsEnterBldgNr='Svp, entrez le numÃ©ro de la rue';
 #2003-10-03 EL
 $LDPlsEnterZip='Svp, entrez le code postal';
 $LDPlsEnterFullName='Svp, entrez votre nom complet';

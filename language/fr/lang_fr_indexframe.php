@@ -10,36 +10,36 @@ $LDOR='OR';
 $LDLabs='Laboratoire';
 $LDRadiology='Radiologie';
 $LDPharmacy='Pharmacie';
-$LDMedDepot='Dépot médical';
+$LDMedDepot='DÃ©pot mÃ©dical';
 $LDDirectory='Annuaire';
 $LDTechSupport='Support Technique';
 $LDEDP='EDP';
 $LDIntraEmail='Intranet Email';
 $LDInterEmail='Internet Email';
-$LDSpecials='Spéciaux';
+$LDSpecials='SpÃ©ciaux';
 $LDLogin='Connexion';
-$LDLogout='Déconnexion';
+$LDLogout='DÃ©connexion';
 $LDAppointments='Rendez-vous';
 
 $VersionChgTarget='_haut';
 $LDLanguage='Langage';
-$LDPlsWaitInit='Veuillez patienter. Le procès d\'initialisation est en cours....';
+$LDPlsWaitInit='Veuillez patienter. Le procÃ¨s d\'initialisation est en cours....';
 
 $LDChange='Modifier';
 /* 2003-04-27 EL */
-$LDBrazilian='Brésilien';
-$LDCzech='Tchèque';
+$LDBrazilian='BrÃ©silien';
+$LDCzech='TchÃ¨que';
 $LDEnglish='Anglais';
-$LDFrench='Français';
+$LDFrench='FranÃ§ais';
 $LDGerman='Allemand';
-$LDIndonesian='Indonésien';
+$LDIndonesian='IndonÃ©sien';
 $LDItalian='Italien';
-$LDNorwegian='Norvégien';
+$LDNorwegian='NorvÃ©gien';
 $LDPolish='Polonais';
 $LDPortuguese='Portugal';
 $LDSpanish='Espagnol';
 /* 2003-04-28 El */
-$LDDutch='Néerlandais';
+$LDDutch='NÃ©erlandais';
 # 2003-08-04 EL
 $LDPerson='Personne';
 # 2003-09-05 EL

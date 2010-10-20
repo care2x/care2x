@@ -1,16 +1,16 @@
 <?php
 $Jan='Janvier';
-$Feb='Février';
+$Feb='FÃ©vrier';
 $Mae='Mars';
 $Apr='Avril';
 $Mai='Mai';
 $Jun='Juin';
 $Jul='Juillet';
-$Aug='Août';
+$Aug='AoÃ»t';
 $Sep='Septembre';
 $Okt='Octobre';
 $Nov='Novembre';
-$Dez='Décembre';
+$Dez='DÃ©cembre';
 
 /**
 * Note: the first element of $monat is set to empty string
@@ -18,26 +18,26 @@ $Dez='Décembre';
 $monat=array('',$Jan,$Feb,$Mae,$Apr,$Mai,$Jun,$Jul,$Aug,$Sep,$Okt,$Nov,$Dez);
 
 $LDDoctors='Docteurs';
-$LDQView='Aperçu rapide des DOC';  // DOC = doctor on call
-$LDQViewTxt='Aperçu rapide du planning quotidien des DOC (docteur en permanence)';
+$LDQView='AperÃ§u rapide des DOC';  // DOC = doctor on call
+$LDQViewTxt='AperÃ§u rapide du planning quotidien des DOC (docteur en permanence)';
 $LDDutyPlan='Planning des obligations';
-$LDDutyPlanTxt='Planning des obligations, aperçu, mise à jour, effacement, gestion, etc.';
+$LDDutyPlanTxt='Planning des obligations, aperÃ§u, mise Ã  jour, effacement, gestion, etc.';
 $LDDocsList='La liste des docteurs';
-$LDDocsListTxt='Créer ou mettre à jour la liste des docteurs, entrer des données, etc..';
+$LDDocsListTxt='CrÃ©er ou mettre Ã  jour la liste des docteurs, entrer des donnÃ©es, etc..';
 $LDDocsForum='Forum';
 $LDDocsForumTxt='Forum de discussion pour les docteurs';
 $LDNews='Nouvelles';
-$LDNewsTxt='Composer, lire, éditer les nouvelles';
-$LDMemo='Mémo';
-$LDMemoTxt='Composer, lire, éditer les mémo';
-$LDCloseAlt='La fenêtre des médecins/chirurgiens à proximité';
+$LDNewsTxt='Composer, lire, Ã©diter les nouvelles';
+$LDMemo='MÃ©mo';
+$LDMemoTxt='Composer, lire, Ã©diter les mÃ©mo';
+$LDCloseAlt='La fenÃªtre des mÃ©decins/chirurgiens Ã  proximitÃ©';
 $LDDocsOnDuty='Docteurs en permanence';
 
-$LDTabElements=array('Département',
+$LDTabElements=array('DÃ©partement',
 								 'DOC 1',
-								 'Beeper/Télephone',
+								 'Beeper/TÃ©lephone',
 								 'DOC 2',
-								 'Beeper/Télephone',
+								 'Beeper/TÃ©lephone',
 								 'Planning des
 obligations'
 								 );
@@ -61,64 +61,64 @@ $LDFullDay=array('Dimanche',
 $LDDoc1='Docteur en permanence 1';
 $LDDoc2='Docteur en permanence 2';
 $LDClosePlan='Fermer ce planning';
-$LDNewPlan='Créer nouveau planning';
+$LDNewPlan='CrÃ©er nouveau planning';
 $LDBack='Retour';
 $LDHelp='Aide';
-$LDMakeDutyPlan='Créer un planning d\'obligation ';
+$LDMakeDutyPlan='CrÃ©er un planning d\'obligation ';
 $LDClk2Plan='Cliquez pour ouvrir la liste du personnel';
 $LDInfo4Duty='Information';
 $LDStayIn='Rester en permanence';
 $LDOnCall='En permanence';
-$LDPhone='Télephone';
+$LDPhone='TÃ©lephone';
 $LDBeeper='Beeper';
 $LDMoreInfo='Plus d\'info';
 $LDOn='le';
-$LDCloseWindow='Fermer la fenêtre';
+$LDCloseWindow='Fermer la fenÃªtre';
 $LDMonth='Mois';
-$LDYear='Année';
+$LDYear='AnnÃ©e';
 $LDPerElements=array('Nom de famille',
-									'Prénom',
+									'PrÃ©nom',
 									'Date de naissance',
 									'Beeper',
-									'Télephone',
+									'TÃ©lephone',
 									'Beeper',
-									'Télephone'
+									'TÃ©lephone'
 									);
-$LDChgDept='Changer le département: ';
+$LDChgDept='Changer le dÃ©partement: ';
 $LDChange='Changer';
-$LDCreatePersonList='Créer une liste du personnel';
-//$LDNoPersonList='La liste du personnel n\'est pas encore créée. Veuillez créer d\'abord la liste. Cliquez sur le bouton suivant.';
-$LDNoPersonList='La liste du personnel n\'est pas encore créée. Veuillez d\'abord
-crèer cette liste.';
+$LDCreatePersonList='CrÃ©er une liste du personnel';
+//$LDNoPersonList='La liste du personnel n\'est pas encore crÃ©Ã©e. Veuillez crÃ©er d\'abord la liste. Cliquez sur le bouton suivant.';
+$LDNoPersonList='La liste du personnel n\'est pas encore crÃ©Ã©e. Veuillez d\'abord
+crÃ¨er cette liste.';
 $LDShow='Montrer';
 
 $LDDOCS='Horaire des DOC';
-$LDDOCSTxt='Horaire des docteurs en permanence, planning, aperçu, mise à jour, éditer, etc.';
+$LDDOCSTxt='Horaire des docteurs en permanence, planning, aperÃ§u, mise Ã  jour, Ã©diter, etc.';
 $LDDOCSR='DOCSR';
-$LDDOCSRTxt='Requête du horaire des docteurs en permanence';
+$LDDOCSRTxt='RequÃªte du horaire des docteurs en permanence';
 /* 2002-09-15 EL */
-$LDTestRequest='Test de requête';
+$LDTestRequest='Test de requÃªte';
 /* 2003-03-16 EL */
 $LDContactInfo='Informations du contact';
 $LDPersonalContactInfo='Information du contact personnel';
-$LDOnCallContactInfo='Informations télephoniques du contact';
-$LDPlsSelectDept='Choisissez un département svp';
-$LDCreateDoctorsList='Créer une liste de docteurs';
-$LDPlsCreateList='Veuillez d\'abord créer la liste.';
+$LDOnCallContactInfo='Informations tÃ©lephoniques du contact';
+$LDPlsSelectDept='Choisissez un dÃ©partement svp';
+$LDCreateDoctorsList='CrÃ©er une liste de docteurs';
+$LDPlsCreateList='Veuillez d\'abord crÃ©er la liste.';
 $LDPlsClickButton='Cliquez sur le bouton Suivant';
 $LDFamilyName='Nom de famille';
-$LDGivenName='Prénom';
+$LDGivenName='PrÃ©nom';
 $LDDateOfBirth='Date de naissance';
-$LDEntryPrompt='Entrez un mot à rechercher:<br>(par ex. nom de famille, prénom, numéro du personnel etc.)<br>';
-$LDPersonellNr='Numéro du personnel';
+$LDEntryPrompt='Entrez un mot Ã  rechercher:<br>(par ex. nom de famille, prÃ©nom, numÃ©ro du personnel etc.)<br>';
+$LDPersonellNr='NumÃ©ro du personnel';
 $LDFunction='Fonction';
 $LDOptions='Options';
-$LDSearchFound='La recherche a trouvée ~nr~ données pertinente.';
-$LDAddDoctorToList='Ajouter un docteur à la liste.';
+$LDSearchFound='La recherche a trouvÃ©e ~nr~ donnÃ©es pertinente.';
+$LDAddDoctorToList='Ajouter un docteur Ã  la liste.';
 $LDAdd='Ajouter';
 $LDDelete='Supprimer';
-$LDSureToDeleteEntry='Vous êtes sûr de vouloir supprimer cette entrée?';
+$LDSureToDeleteEntry='Vous Ãªtes sÃ»r de vouloir supprimer cette entrÃ©e?';
 /* 2003-03-18 EL */
-$LDChangeOnlyDept='Changer le département';
-$LDCreateNursesList='Créer une liste d\'infirmières';
+$LDChangeOnlyDept='Changer le dÃ©partement';
+$LDCreateNursesList='CrÃ©er une liste d\'infirmiÃ¨res';
 ?>

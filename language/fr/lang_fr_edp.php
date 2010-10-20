@@ -1,32 +1,32 @@
 <?php
 $LDClose='Fermer';
 $LDCancel='Annuler';
-$LDResetEntry='Effacer les entrÈes';
+$LDResetEntry='Effacer les entr√©es';
 $LDSave='Sauvegarder';
 $LDReset='Reinitialiser';
 
-$LDEnterData='Cliquez pour entrer les donnÈes';
-$LDClk2See='Cliquer pour voir les donnÈes';
-$LDFoundPatient='La recherche a trouvÈ <b>~nr~</b> patient(s)';
+$LDEnterData='Cliquez pour entrer les donn√©es';
+$LDClk2See='Cliquer pour voir les donn√©es';
+$LDFoundPatient='La recherche a trouv√© <b>~nr~</b> patient(s)';
 $LDWildCards='Ce que sont les wildcards et comment les utiliser';
 $LDNewSearch='Nouvelle recherche';
 $LDSearch='Recherche';
 
 $LDOClock=' ';
 $LDContinue='Continuer';
-$LDBack='PrÈcÈdent';
+$LDBack='Pr√©c√©dent';
 
 $LDOn='Sur';
 $LDAt='at';
-$LDClk2Edit='Cliquer pour Èditer ce rapport';
+$LDClk2Edit='Cliquer pour √©diter ce rapport';
 
 $LDNew='Nouveau';
 $LDEdit='Editer';
-$LDCreate='CrËer';
+$LDCreate='Cr√®er';
 $LDValue='Valeur';
 
 $LDNews='Nouvelles';
-$LDNewsTxt='Lire ou Ecrire de nouveaux articles concernant le dÈpartment EDP';
+$LDNewsTxt='Lire ou Ecrire de nouveaux articles concernant le d√©partment EDP';
 $LDMemo='Memo';
 $LDMemoTxt='Lire ou Ecrire un memo';
 $LDSearchPat='Rechercher un  patient';
@@ -40,10 +40,10 @@ $LDOrderArchive='Archive';
 
 
 
-$LDNoDataFound="La recherche a trouvÈ <font color=red><b>no</b></font> donnÈe(s).";
-$LDClk2SeeInfo="Svp, cliquer sur une donnÈe pour voir toutes les informations";
+$LDNoDataFound="La recherche a trouv√© <font color=red><b>no</b></font> donn√©e(s).";
+$LDClk2SeeInfo="Svp, cliquer sur une donn√©e pour voir toutes les informations";
 /********************** Do not erase or replace the ~nr~ *****************************/
-$LDFoundNrData="La recherche a trouvÈ <font color=red><b>~nr~</b></font> donnÈes qui correspond au mot clÈ recherchÈ.";
+$LDFoundNrData="La recherche a trouv√© <font color=red><b>~nr~</b></font> donn√©es qui correspond au mot cl√© recherch√©.";
 $LDOpenInfo="Afficher toutes les informations au sujet de ";
 
 $LDGoodMorning="Bonjour";
@@ -51,13 +51,13 @@ $LDGoodDay="Bonjour, ravi de vous voir";
 $LDGoodEvening="Bonsoir";
 
 $LDDate="Date";
-$LDDept="DÈpartment";
-$LDPrio="PrioritÈ";
-$LDSearchIn="Rechercher aprËs";
+$LDDept="D√©partment";
+$LDPrio="Priorit√©";
+$LDSearchIn="Rechercher apr√®s";
 
 
 $LDPlsEnterMore="Svp, entrez plus d\'information et essayez de nouveau.";
-$LDNoSingleChar="Un caractËre unique sera ignorÈ.";
+$LDNoSingleChar="Un caract√®re unique sera ignor√©.";
 
 $LDPlsInformDept="Please notify the ~tagword~ department and eventually the EDP department. Thank you.";
 
@@ -86,19 +86,19 @@ $LDClk2Ack="Click the arrow button to acknowledge and/or print the order list.";
 $LDOK="OK";
 $LDManageAccess="Access rights";
 $LDManageAccessTxt="Manage, create, lock, remove, update, or change, etc.";
-$LDSqlDb="Base de donnÈe SQL";
+$LDSqlDb="Base de donn√©e SQL";
 $LDSqlDbTxt="Direct SQL acess. <b>ATTENTION</b> seulement pur les experts";
 $LDSysOpLogin="SysOp Connexion";
-$LDSysOpLoginTxt='Connexion en tant qu\'administrateur systËme';
+$LDSysOpLoginTxt='Connexion en tant qu\'administrateur syst√®me';
 $LDEDP="EDP";
-$LDNewAccess="CrËer de nouveaux droits d\'accËs";
-$LDListActual="List des droits d\'accËs actuel";
+$LDNewAccess="Cr√®er de nouveaux droits d\'acc√®s";
+$LDListActual="List des droits d\'acc√®s actuel";
 $LDName="Nom";
 $LDPassword="Mot de pase";
 $LDUserId="Nom d\'utilisateur";
 $LDArea="Lieu";
 $LDAllowedArea="Les lieux disponibles sont:";
-$LDActualAccess="Droits d\'accËs actuel";
+$LDActualAccess="Droits d\'acc√®s actuel";
 $LDAccessDeleted="The access right was deleted successfully.";
 $LDFfActualAccess="Following are the actual access rights.";
 

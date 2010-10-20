@@ -1,16 +1,16 @@
 <?php
 $LDLab='Laboratoires';
-$LDMedLab='Laboratoire médical';
+$LDMedLab='Laboratoire mÃ©dical';
 $LDPathLab='Laboratoire de pathologie';
-$LDBacLab='Laboratoire bactériologique';
+$LDBacLab='Laboratoire bactÃ©riologique';
 $LDClose='Fermer';
 $LDSeeLabData='Rechercher et afficher les informations Laboratoire du Patient.';
-$LDSeeData='Afficher les données';
+$LDSeeData='Afficher les donnÃ©es';
 $LDEnterLabData='Entrez les informations laboratoires du patient';
-$LDNewData='Entrez de nouvelles données';
-$LDEnterPrioParams='Afficher les paramètres prioritaires';
-$LDPrioParams='Paramètres prioritaires';
-$LDEnterNorms='Définir un nivean normal';
+$LDNewData='Entrez de nouvelles donnÃ©es';
+$LDEnterPrioParams='Afficher les paramÃ¨tres prioritaires';
+$LDPrioParams='ParamÃ¨tres prioritaires';
+$LDEnterNorms='DÃ©finir un nivean normal';
 $LDNorms='Niveau normal';
 $LDOtherOptions='Autres options';
 $LDOptions='Options';

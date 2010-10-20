@@ -1,9 +1,9 @@
 <?php
 $LDClose='Fermer';
 $LDCancel='Annuler';
-$LDResetEntry='Effacer ces entrées';
+$LDResetEntry='Effacer ces entrÃ©es';
 $LDSave='Sauvegarder';
-$LDReset='Réinitialiser';
+$LDReset='RÃ©initialiser';
 
 
 $LDNewSearch='Nouvelle recherche';
@@ -17,7 +17,7 @@ $LDAt='A';
 
 $LDNew='Nouveau';
 $LDEdit='Editer';
-$LDCreate='Crèer';
+$LDCreate='CrÃ¨er';
 
 $LDPastAll='Tous';
 $LDSelect='Selectionner';
@@ -29,13 +29,13 @@ $LDGoodDay='Bonjour, ravi de vous voir';
 $LDGoodEvening='Bonsoir';
 
 $LDDate='Date';
-$LDDept='Départment';
-$LDPrio='Priorité';
+$LDDept='DÃ©partment';
+$LDPrio='PrioritÃ©';
 
 
 $LDPageTop='Haut de page.';
-$LDPreview='Prévisualisation';
-$LDUpdateData='Mettre à jour ou éditer';
+$LDPreview='PrÃ©visualisation';
+$LDUpdateData='Mettre Ã  jour ou Ã©diter';
 
 $LDNoBack='Non. Retour.';
 $LDOK='OK';
@@ -44,22 +44,22 @@ $LDPassword='Mot de passe';
 $LDUserId='Nom d\'utilisateur';
 $LDChange='Modifier';
 $LDLock='Verrouiller';
-$LDUnlock='Déverrouiller';
+$LDUnlock='DÃ©verrouiller';
 $LDDelete='Effacer';
 $LDYesSure='Oui, je suis sur.';
 $LDKeywordPrompt='Entrez un mot clef';
 $LDWelcome='Bienvenu';
 
-$LDErrorLogin='Mot de passe ou Nom d\'utilisateur incorrect. Svp, vérifiez ces données.';
-$LDErrorForm='Le formulaire n\'est pas complètement rempli. Svp, complètez le.';
-$LDErrorPassword='Les mots de passe entrés ne sont pas les mêmes! <br>Svp, coorigez ceci. Les mots de passe doivent être identiques.';
-$LDErrorIncomplete='Les données entrées ne sont pas complettes!  Svp, entrez toutes les informations.';
+$LDErrorLogin='Mot de passe ou Nom d\'utilisateur incorrect. Svp, vÃ©rifiez ces donnÃ©es.';
+$LDErrorForm='Le formulaire n\'est pas complÃ¨tement rempli. Svp, complÃ¨tez le.';
+$LDErrorPassword='Les mots de passe entrÃ©s ne sont pas les mÃªmes! <br>Svp, coorigez ceci. Les mots de passe doivent Ãªtre identiques.';
+$LDErrorIncomplete='Les donnÃ©es entrÃ©es ne sont pas complettes!  Svp, entrez toutes les informations.';
 
 $LDIntraEmail='Intranet Email';
 $LDLogin='Nom d\'utilisateur';
 $LDUrEmailAddr='Votre adresse email';
 
-$LDNotRegUser= 'Vous n\'êtes pas enregistrés. Svp, remplissez le formulaire suivant pour vous inscrire.';
+$LDNotRegUser= 'Vous n\'Ãªtes pas enregistrÃ©s. Svp, remplissez le formulaire suivant pour vous inscrire.';
 $LDFirstName='Nom propre';
 $LDChoiceAddr='Choisissez une adresse email';
 $LDAlias='Alias';
@@ -73,7 +73,7 @@ $LDNewEmail='Nouvel email';
 $LDAddrBook='Carnet d\'adresses';
 $LDOptions='Options';
 $LDHelp='Aide';
-$LDSent='Envoyé';
+$LDSent='EnvoyÃ©';
 $LDDrafts='Brouillon';
 $LDRecycle='Corbeille';
 $LDComposeMail='Ecire un nouveau email';
@@ -93,21 +93,21 @@ $LDChange='Modifier';
 $LDAskAck='Demander un conseil';
 $LDCC='cc';
 $LDBCC='bcc';
-$LDBCCTxt='les BCC adresses ne sont pas affichées dans la boite principale.';
+$LDBCCTxt='les BCC adresses ne sont pas affichÃ©es dans la boite principale.';
 $LDRecipient='Destinataire';
 $LDQuickAddr='Adresses rapides';
 $LDInsertAddr='Inserer';
-$LDFolderEmpty='Le répertoire ~tagword~ est actuellement vide.';
-$LDNoteIntra='Svp, notez que les email intranet peuvent être envoyé et recu uniquement PAR LE SYSTEME INTRANET. <p>Svp, cliquez ici pour ouvrir votre boite de reception.';
-$LDEmailSent='L\'email a été envoyé avec succès!';
-$LDConfirmDelete='Etes-vous sur de vouloir effacer les emails marqués?';
+$LDFolderEmpty='Le rÃ©pertoire ~tagword~ est actuellement vide.';
+$LDNoteIntra='Svp, notez que les email intranet peuvent Ãªtre envoyÃ© et recu uniquement PAR LE SYSTEME INTRANET. <p>Svp, cliquez ici pour ouvrir votre boite de reception.';
+$LDEmailSent='L\'email a Ã©tÃ© envoyÃ© avec succÃ¨s!';
+$LDConfirmDelete='Etes-vous sur de vouloir effacer les emails marquÃ©s?';
 $LDAlertNoRecipient='Destinataire manquant! Svp, entrez une adresse email destinataire.';
 $LDAlertNoSubject='Sujet manquant! Si vous voulez envoyer un email avec ou sans sujet cliquez OK.';
-$LDAlertNoText='Vous n\'avez rien écrit. Svp, ecrivez d\'abord votre message avant de l\'envoyer.';
+$LDAlertNoText='Vous n\'avez rien Ã©crit. Svp, ecrivez d\'abord votre message avant de l\'envoyer.';
 $LDRead='Lire';
-$LDBack2='Retour à';
-$LDReply2='Répondre à';
-$LDReply='Répondre';
+$LDBack2='Retour Ã ';
+$LDReply2='RÃ©pondre Ã ';
+$LDReply='RÃ©pondre';
 $LDResend='Envoyer de nouveau';
 $LDReplyAgain='Repondre de nouveau';
 $LDForward='Faire suivre';
@@ -121,30 +121,30 @@ $LDShortName='Surnom';
 $LDSortName='Trier par nom';
 $LDMoreInfo='Plus d\'info';
 $LDTakeOver='Finir';
-$LDJustReset='Réinitialiser';
+$LDJustReset='RÃ©initialiser';
 $LDMaximum='Maximum';
 $LDSaveNewAddr='Sauver cet adresse email dans le carnet.';
 $LDWriteEmail='Composer un email';
 $LDAddNewAddr='Ajouter une nouvelle adresse email';
-$LDConfirmDeleteAddr='Etes-vous sur de vouloir effacer les emails marqués?';
+$LDConfirmDeleteAddr='Etes-vous sur de vouloir effacer les emails marquÃ©s?';
 
-$LDUrInfo='Vos Coordonnées';
+$LDUrInfo='Vos CoordonnÃ©es';
 $LDEmailProc='Envoi Email';
 $LDProfile='Profile';
-$LDProfileTxt='Nom, Alias, Modifier, Mettre à jour';
+$LDProfileTxt='Nom, Alias, Modifier, Mettre Ã  jour';
 $LDPasswordChange='Changer le mor de passe';
-$LDSecretQ='Question secrète';
-$LDSecretQChange='Changer la question secrète';
+$LDSecretQ='Question secrÃ¨te';
+$LDSecretQChange='Changer la question secrÃ¨te';
 $LDMemberDir='Repertoire des membres';
-$LDMemberDirTxt='Inscrire une adresse dans le répertoire <br>&nbsp;ou la retirer';
-$LDReply2Txt='Modifier \'Répondre à\' Adresse';
+$LDMemberDirTxt='Inscrire une adresse dans le rÃ©pertoire <br>&nbsp;ou la retirer';
+$LDReply2Txt='Modifier \'RÃ©pondre Ã \' Adresse';
 $LDEmailAddrChange='Changer l\'adresse email';
 $LDSignature='Signature';
-$LDSignatureTxt='Crèer une signature<br>&nbsp;qui sera automatique attachée<br>&nbsp;à tous les emails sortants.';
+$LDSignatureTxt='CrÃ¨er une signature<br>&nbsp;qui sera automatique attachÃ©e<br>&nbsp;Ã  tous les emails sortants.';
 
-$LDEmail2Drafts='L\'email a été sauvé dans le dossier brouillon.';
+$LDEmail2Drafts='L\'email a Ã©tÃ© sauvÃ© dans le dossier brouillon.';
 $LDNoEmailAddress='Adresse Email manquante! Svp, entrez une adresse email';
-$LDLogout='Déconnexion';
-$LDNameIsUsed='L\'adresse email est dèjà utilisée par quelqu\'un. Svp, choisissez un autre nom d\'utilisateur.';
+$LDLogout='DÃ©connexion';
+$LDNameIsUsed='L\'adresse email est dÃ¨jÃ  utilisÃ©e par quelqu\'un. Svp, choisissez un autre nom d\'utilisateur.';
 
 ?>

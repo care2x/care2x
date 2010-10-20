@@ -2,22 +2,22 @@
 /* 2002-10-02 EL */
 $LDDepartments='Ambulatoire';
 $LDPendingRequest='Demande en attente';
-$LDPendingRequestTxt='Recevoir, Afficher, Imprimer, Editer les découvertes & résultats';
-$LDGeneralSurgery='Ambulatoire générale';
-$LDInternalMed='Ambulatoire médecine interne';
+$LDPendingRequestTxt='Recevoir, Afficher, Imprimer, Editer les dÃ©couvertes & rÃ©sultats';
+$LDGeneralSurgery='Ambulatoire gÃ©nÃ©rale';
+$LDInternalMed='Ambulatoire mÃ©decine interne';
 $LDEmergency='Urgence ambulatoire';
 $LDSonography='Sonographie';
-$LDNuclearMed='Diagnostics Nucléaires';
+$LDNuclearMed='Diagnostics NuclÃ©aires';
 $LDAdmission='Admission';
 $LDAdmissionTxt='Admission/Renvoi de l\'ambulatoire, recherche, archive';
 $LDNews='Nouvelles';
-$LDNewsTxt='Nouvelles spécifiques de la clinique, mémo, info, etc.';
+$LDNewsTxt='Nouvelles spÃ©cifiques de la clinique, mÃ©mo, info, etc.';
 # 2003-08-01 EL
 $LDAppointments='Rendez-vous';
-$LDAppointmentsTxt='Rendez-vous pour ce département';
+$LDAppointmentsTxt='Rendez-vous pour ce dÃ©partement';
 $LDPatientWaitingList='Liste des patients en attente';
-$LDPWListTxt='Patients admis à la clinique aujourd\'hui';
+$LDPWListTxt='Patients admis Ã  la clinique aujourd\'hui';
 $LDOutpatientClinic='Externat';
-$LDGeneralAmbulatory='Ambulatoire Générale';
+$LDGeneralAmbulatory='Ambulatoire GÃ©nÃ©rale';
 $LDAmbulatory='Ambulatoire';
 ?>

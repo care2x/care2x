@@ -1,22 +1,22 @@
 <?php
 $LDIcd10="ICD-10"; // ICD = International Codes of Diseases  !! Do not translate !!
-$LDOps301="OPS-301"; // OPS = Opertionenschlüssel - German code for surgical operations !! Do not Translate !!
+$LDOps301="OPS-301"; // OPS = OpertionenschlÃ¼ssel - German code for surgical operations !! Do not Translate !!
 $LDBack2Logbook="Retourner au journal";
 $LDIcd10Search="Recherche dans ICD-10";
 $LDSearch4ICD10="Rechercher des codes ICD-10";
 $LDSearch4OPS301="Rechercher des codes OPS-301";
 $LDDescription="Description";
 $LDMainAuxDiag="Principal/Annexe";
-$LDMainAuxOp="Opération principale/annexe";
-$LDDiagBy="Diagnostiqué par";
+$LDMainAuxOp="OpÃ©ration principale/annexe";
+$LDDiagBy="DiagnostiquÃ© par";
 $LDDoneBy="Fait par";
 $LDInclusive="Inclusions";
 $LDExclusive="Exclusions";
 $LDNotes="Notes";
 $LDRemarks="Remarques";
 $LDExtraCodes="Codes ou codages extra";
-$LDAddCodes="Notes ou codes supplémentaires";
-$LDApplySelection="Appliquer sélections";
+$LDAddCodes="Notes ou codes supplÃ©mentaires";
+$LDApplySelection="Appliquer sÃ©lections";
 $LDSGBV="SGB-V";  // !! Do not translate !!
 $LDLocalization="Loc.";
 $LDOpsIntern="Code";
@@ -25,8 +25,8 @@ $LDQuickList="Liste rapide";
 $LDConvert2IcdOps="-> ICD/OPS";  // !! Do not translate !!
 
 $LDSearch="Rechercher";
-$LDOperation="Opération";
-$LDAlertSureDelete="Etes-vous sur de vouloir effacer cette entrée?";
+$LDOperation="OpÃ©ration";
+$LDAlertSureDelete="Etes-vous sur de vouloir effacer cette entrÃ©e?";
 
 $LDAux="A";   // A = Auxiliary
 $LDMain="M"; // M = Main
@@ -34,18 +34,18 @@ $LDRight="D"; // R = Right
 $LDLeft="G";   // L = Left
 $LDBoth="B";  // B = Both or (both sides)
 
-$LDDeleteEntry="Effacer l'entrée";
+$LDDeleteEntry="Effacer l'entrÃ©e";
 $LDNoQuickList="La liste rapide est vide pour le moment.";
-$LDClick2Search="Veuillez cliquer ici afin d'aller à la recherche.";
+$LDClick2Search="Veuillez cliquer ici afin d'aller Ã  la recherche.";
 $LDPossibleCodes="Codes ICD & OPS possibles";
 /*2003-05-25 EL */
-$LDCategory='Catégorie';
+$LDCategory='CatÃ©gorie';
 $LDLoc='Loc.';
 $LDBy='par';
 $LDMostResponsible='Le plus responsable';
-$LDAssociated='Associé;';
-$LDNosocomial='Originaire de l\'hôpital';
-$LDIatrogenic='Provoqué;';
+$LDAssociated='AssociÃ©;';
+$LDNosocomial='Originaire de l\'hÃ´pital';
+$LDIatrogenic='ProvoquÃ©;';
 $LDOther='Autre';
 $LDMostResp_s='M';
 $LDAssociated_s='A';
@@ -53,42 +53,42 @@ $LDNosocomial_s='N';
 $LDIatrogenic_s='I';
 $LDOther_s='O';
 
-$LDBothSides='Les deux cités';
+$LDBothSides='Les deux citÃ©s';
 $LDLeft_s='S';
 $LDRight_s='R';
 $LDBothSides_s='B';
 /* 2003-05-29 EL*/
 $LDQMarks='??????';
-$LDNonSpecifiedGroup='Groupe non-spécifié;';
-$LDSpecifyGroup='Spécifier un groupe';
-$LDCreateGroupName='Créer un nouveau nom de groupe';
-$LDSelect='Sélectionner';
+$LDNonSpecifiedGroup='Groupe non-spÃ©cifiÃ©;';
+$LDSpecifyGroup='SpÃ©cifier un groupe';
+$LDCreateGroupName='CrÃ©er un nouveau nom de groupe';
+$LDSelect='SÃ©lectionner';
 /*2003-06-01 EL*/
-$LDUseToGroupItems='Utilisez ceci afin de grouper les objets pas encore groupés';
-$LDItemsDegrouped='Effacer ce groupe va avoir pour conséquence l\'effacement des liens des objets liés à ce groupe.';
+$LDUseToGroupItems='Utilisez ceci afin de grouper les objets pas encore groupÃ©s';
+$LDItemsDegrouped='Effacer ce groupe va avoir pour consÃ©quence l\'effacement des liens des objets liÃ©s Ã  ce groupe.';
 $LDOptions='Options';
 /*2003-06-01 EL*/
-$LDCreateInternDRGGroup='Créer un nouveau groupe interne DRG';
-$LDInternalCodeNr='Numéro du code interne';
+$LDCreateInternDRGGroup='CrÃ©er un nouveau groupe interne DRG';
+$LDInternalCodeNr='NumÃ©ro du code interne';
 $LDSynonyms='Synonymes ou mots clefs';
-$LDSeparateCommas='Séparer les mots avec des virgules';
+$LDSeparateCommas='SÃ©parer les mots avec des virgules';
 $LDIsSubGroup='Est un sous-groupe?';
-$LDParentCodeNr='Numéro du code parental';
+$LDParentCodeNr='NumÃ©ro du code parental';
 $LDIfSubGroup='Si le groupe est un sous-groupe';
 $LDAuxillaryNotes='Autres notes';
-$LDStdCodeNr='Numéro du code standard';
+$LDStdCodeNr='NumÃ©ro du code standard';
 $LDIfAvailable='Si disponible';
 $LDYes='Oui';
 $LDNo='Non';
-$LDExtraNotes='Notes supplémentaires';
+$LDExtraNotes='Notes supplÃ©mentaires';
 $LDAlertNoCode='Veuillez entrer le code du groupe.';
 $LDAlertNoDescription='Veuillez entrer la description du code.';
 /*2003-06-07 EL*/
 $LDCode='Code';
 /*2003-06-13 EL*/
-$LDAddGroupEncounter='Ajouter un groupe à rencontrer';
+$LDAddGroupEncounter='Ajouter un groupe Ã  rencontrer';
 $LDMain_s='M';
-$LDSupplemental='Complémentaire';
+$LDSupplemental='ComplÃ©mentaire';
 $LDSupp_s='S';
-$LDCreateNew='Créer un nouveau';
+$LDCreateNew='CrÃ©er un nouveau';
 ?>

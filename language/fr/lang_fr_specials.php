@@ -1,14 +1,14 @@
 <?php
 $LDNews='Nouvelles';
-$LDNewsTxt='Ecrire l\'enête d\'un nouvvel article';
+$LDNewsTxt='Ecrire l\'enÃªte d\'un nouvvel article';
 $LDMemo='Memo';
 $LDMemoTxt='Lire ou Ecrire un memo';
 
 $LDClose='Fermer';
 $LDCancel='Annuler';
-$LDResetEntry='Effacer les entrées';
+$LDResetEntry='Effacer les entrÃ©es';
 $LDSave='Sauver';
-$LDReset='Réinitialiser';
+$LDReset='RÃ©initialiser';
 
 $LDNewSearch='Nouvelle recherche';
 $LDSearch='Recherche';
@@ -21,7 +21,7 @@ $LDAt='A';
 
 $LDNew='Nouveau';
 $LDEdit='Editer';
-$LDCreate='Crèer';
+$LDCreate='CrÃ¨er';
 
 $LDPastAll='Tous';
 $LDSelect='Selectionner';
@@ -33,15 +33,15 @@ $LDGoodDay='Bonjour, ravi de vous voir';
 $LDGoodEvening='Bonsoir';
 
 $LDDate='Date';
-$LDDept='Départment';
-$LDPrio='Priorité';
+$LDDept='DÃ©partment';
+$LDPrio='PrioritÃ©';
 
 
 $LDPageTop='Haut de page.';
 $LDPreview='Previsualisation';
-$LDUpdateData='Mettre à jour ou Editer';
+$LDUpdateData='Mettre Ã  jour ou Editer';
 
-$LDNoBack='Non. Revenir en arrière.';
+$LDNoBack='Non. Revenir en arriÃ¨re.';
 $LDOK='OK';
 $LDName='Nom';
 $LDPassword='Mot de passe';
@@ -51,7 +51,7 @@ $LDLock='Verrouiller';
 $LDUnlock='Deverrouiller';
 $LDDelete='Effacer';
 $LDYesSure='Oui, je suis sur.';
-$LDKeywordPrompt='Entrer le mot clef recherché';
+$LDKeywordPrompt='Entrer le mot clef recherchÃ©';
 $LDWelcome='Bonjour';
 
 
@@ -70,13 +70,13 @@ $LDFrom='De';
 $LDTo='A';
 $LDSend='Envoyer';
 $LDChange='Modifier';
-$LDInsertAddr='Insérer';
+$LDInsertAddr='InsÃ©rer';
 $LDRead='Lire';
-$LDBack2='Retour à';
-$LDReply2='Repondre à';
+$LDBack2='Retour Ã ';
+$LDReply2='Repondre Ã ';
 $LDPrint='Imprimer';
 $LDMoreInfo='Plus d\'info';
-$LDTakeOver='Succéder';
+$LDTakeOver='SuccÃ©der';
 $LDJustReset='Reinitialiser';
 $LDMaximum='Maximum';
 

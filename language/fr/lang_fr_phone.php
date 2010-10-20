@@ -2,27 +2,27 @@
 $fieldname=array(
 							"Nom de famille",
 							"Nom",
-							"Téléphone 1",
-							"Téléphone 2",
-							"Téléphone 3",
+							"TÃ©lÃ©phone 1",
+							"TÃ©lÃ©phone 2",
+							"TÃ©lÃ©phone 3",
 							"Beeper 1",
 							"Beeper 2",
-							"Privé 1",
-							"Privé 2"
+							"PrivÃ© 1",
+							"PrivÃ© 2"
 							);
 							
-$LDPhoneDir="Répertoire téléphonique";
+$LDPhoneDir="RÃ©pertoire tÃ©lÃ©phonique";
 $LDSearch="Recherche";
-$LDDir="Répertoire";
-$LDNewData="Nouvelle donnée";
+$LDDir="RÃ©pertoire";
+$LDNewData="Nouvelle donnÃ©e";
 $LDSEARCH="Recherche";
 
 /**************** note the " ~nr~ " must not be erased it will be replaced by the script with the number of search results ******/
-$LDPhoneFound="La recherche a trouvée <font color=red><b> ~nr~ </b></font> donnée(s) pertinente(s).";
+$LDPhoneFound="La recherche a trouvÃ©e <font color=red><b> ~nr~ </b></font> donnÃ©e(s) pertinente(s).";
 
-$LDKeywordPrompt="Entrez un mot clef. Par exemple : un nom, un département ou un shortform, etc.";
-$LDShowDir="Afficher le répertoire complet";
-$LDNewEntry="ENtrez un nouveau numéro de téléphone ou beeper";
+$LDKeywordPrompt="Entrez un mot clef. Par exemple : un nom, un dÃ©partement ou un shortform, etc.";
+$LDShowDir="Afficher le rÃ©pertoire complet";
+$LDNewEntry="ENtrez un nouveau numÃ©ro de tÃ©lÃ©phone ou beeper";
 
 $LDExtFields=array(
 								"Nr.",
@@ -35,8 +35,8 @@ $LDExtFields=array(
 				 				"Tel.1",
 								"Tel.2",
 								"Tel.3",
-								"Privé 1",
-								"Privé 2",
+								"PrivÃ© 1",
+								"PrivÃ© 2",
 								"Beeper 1",
 								"Beeper 2",
 								"Chambre Nr.",
@@ -54,8 +54,8 @@ $LDEditFields=array(
 				 				"Telephone (interne) 1",
 								"Telephone (interne) 2",
 								"Telephone (interne) 3",
-								"Privé (externe) 1",
-								"Privé (externe) 2",
+								"PrivÃ© (externe) 1",
+								"PrivÃ© (externe) 2",
 								"Beeper 1",
 								"Beeper 2",
 								"Chambre Nr.",
@@ -67,33 +67,33 @@ $LDCancel="Annuler";
 $LDSave="Sauvegarder";
 $LDEdit="Editer";
 $LDDelete="Effacer";
-$LDReset="Réinitialiser";
-$LDNewPhoneEntry="Entrez de nouvelles coordonnées téléphoniques";
+$LDReset="RÃ©initialiser";
+$LDNewPhoneEntry="Entrez de nouvelles coordonnÃ©es tÃ©lÃ©phoniques";
 $LDShow="Afficher";
-$LDActualDir="Enregistrement actuel du répertoire";
-$LDMoreInfo="Plus d\'info sur le répertoire";
-$LDMaxItem="Nombre total d\'enregistrement du répertoire";
-$LDUpdateOk="Les informations ont été mise à jour avec sucès";
+$LDActualDir="Enregistrement actuel du rÃ©pertoire";
+$LDMoreInfo="Plus d\'info sur le rÃ©pertoire";
+$LDMaxItem="Nombre total d\'enregistrement du rÃ©pertoire";
+$LDUpdateOk="Les informations ont Ã©tÃ© mise Ã  jour avec sucÃ¨s";
 $LDRows="Lignes";
 
 $LDGoodMorning="Bonjour!";
 $LDGoodDay="Ho! Ravi de vous voir!";
 $LDGoodEvening="Bonsoir";
 
-$LDShowActualDir="Afficher les enregistrements actuels du répertoire";
+$LDShowActualDir="Afficher les enregistrements actuels du rÃ©pertoire";
 $LDYesDelete="Oui, effacer";
 $LDNoCancel="NON! ANNULER";
-$LDDeleteEntry="Effacer l\'entrée";
-$LDNoData="Vous n\'avez rien saisi. Svp, saisissez d\'abord les données avant de cliquer sur le bouton \"Sauvegarder\".";
-$LDReallyDelete="Voulez-vous vraiement effacer les entrées suivantes?";
+$LDDeleteEntry="Effacer l\'entrÃ©e";
+$LDNoData="Vous n\'avez rien saisi. Svp, saisissez d\'abord les donnÃ©es avant de cliquer sur le bouton \"Sauvegarder\".";
+$LDReallyDelete="Voulez-vous vraiement effacer les entrÃ©es suivantes?";
 
-$LDHowManage="Comment gèrer le répertoire";
-$LDHow2OpenDir="Comment ouvrir le répertoire en entier";
-$LDHowEnter="Comment entrer de nouvelles coordonnées téléphoniques";
-$LDHow2SearchPhone="Comment rechercher des coordonées téléphoniques";
-$LDUpdate="Mettre à jour les données";
+$LDHowManage="Comment gÃ¨rer le rÃ©pertoire";
+$LDHow2OpenDir="Comment ouvrir le rÃ©pertoire en entier";
+$LDHowEnter="Comment entrer de nouvelles coordonnÃ©es tÃ©lÃ©phoniques";
+$LDHow2SearchPhone="Comment rechercher des coordonÃ©es tÃ©lÃ©phoniques";
+$LDUpdate="Mettre Ã  jour les donnÃ©es";
 
-$LDDirData="Editer les coordonnées nr. <font color=\"red\">~nr~</font>";
-$LDTelephone='Téléphone';
+$LDDirData="Editer les coordonnÃ©es nr. <font color=\"red\">~nr~</font>";
+$LDTelephone='TÃ©lÃ©phone';
 $LDBeeper='Beeper';
 ?>

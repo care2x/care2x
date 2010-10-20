@@ -37,7 +37,7 @@ $klinichemie_list0=array(
 	'0got'=>'GOT',
 	'0gpt'=>'GPT',
 	'0ucid'=>'Acide Urique',
-	'0urea'=>'Urée',
+	'0urea'=>'UrÃ©e',
 	'0hbdh'=>'HBDH',
 	'0hdlc'=>'HDL Chol',
 	'0pot'=>'Potassium',
@@ -71,18 +71,18 @@ $gerinnung_list2=array(
 	'2q'=>'Quick',
 	'2ptt'=>'PTT',
 	'2ptz'=>'PTZ',
-	'2fibg'=>'Fibrinogène',
+	'2fibg'=>'FibrinogÃ¨ne',
 	'2fibs'=>'Sol.Fibr.mon.',
 	'2fsp'=>'FSP dimer',
 	'2coag'=>'Thr.Coag.',
 	'2at3'=>'AT III',
 	'2f8'=>'Facteur VII',
-	'2apc'=>'APC Résistance',
+	'2apc'=>'APC RÃ©sistance',
 	'2prc'=>'Proteine C',
 	'2prs'=>'Proteine S',
 	'2bt'=>'Temps de coagulation');
 
-//Hämatologie parameter
+//HÃ¤matologie parameter
 $haematologie_list3=array(
 	'3ret'=>'Reticulocytes',
 	'3mal'=>'Malaria',
@@ -104,7 +104,7 @@ $blutzucker_list4=array(
 	'4hba'=>'HBA 1c',
 	'4fru'=>'Fructosamine');
 
-// Säugling parameter
+// SÃ¤ugling parameter
 $saeugling_list5=array(
 	'5bil'=>'Neonate bilirubin',
 	'5bilc'=>'Cord bilirubin',
@@ -132,7 +132,7 @@ $proteine_list6=array(
 	'6ssw'=>'Pregnancy:',
 	'6mic'=>'Alpha 1 Microglobulin');
 
-// Schilddrüse parameter
+// SchilddrÃ¼se parameter
 $schilddruse_list7=array(
 	'7t3'=>'T3',
 	'7t4'=>'Thyroxin/T4',
@@ -264,8 +264,8 @@ $infektion_list14=array(
 	'14pi3'=>'Parainfluenza III AB',
 	'14pic'=>'Picorna Virus AB',
 	'14vric'=>'Rickettsia AB',
-	'14rot'=>'Röteln AB',
-	'14roi'=>'Röteln Immune status',
+	'14rot'=>'RÃ¶teln AB',
+	'14roi'=>'RÃ¶teln Immune status',
 	'14rsv'=>'RS Virus AB',
 	'14shi'=>'Shigella/Salm AB',
 	'14tox'=>'Toxoplasma AB',
@@ -322,7 +322,7 @@ $stuhl_list17=array(
 	'17ob2'=>'Occult blood 2',
 	'17ob3'=>'Occult blood 3');
 
-// Raritäten
+// RaritÃ¤ten
 $raritaeten_list18=array(
 	'18rh'=>'Rare H.',
 	'18re'=>'Rare E.',
@@ -360,7 +360,7 @@ $sammelurin_list20=array(
 	'20hyd'=>'Hydroxyprolin i.u.',
 	'20cat'=>'Catecholamins i.u.',
 	'20pan'=>'Pancreol.',
-	'20gam'=>'Gamma Aminoläbulinsre.i.u.');
+	'20gam'=>'Gamma AminolÃ¤bulinsre.i.u.');
 
 // Sonstiges
 $sonstiges_list21=array(

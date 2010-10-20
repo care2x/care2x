@@ -1,6 +1,6 @@
 <?php
-$LDWhereTo='O˘ voulez-vous poster cet article?';
-$LDPlsSelect='Veuillez sÈlectionner le numÈro basÈ sur le type de graphique et puis appuyer \'Continuer...\'.';
+$LDWhereTo='O√π voulez-vous poster cet article?';
+$LDPlsSelect='Veuillez s√©lectionner le num√©ro bas√© sur le type de graphique et puis appuyer \'Continuer...\'.';
 $LDContinueBut='Continuer...';
 $LDCancelBut='Annuler';
 $LDBackBut='Retour';
@@ -8,15 +8,15 @@ $LDSaveBut='Enregistrer';
 $LDFinishBut='Terminer';
 $LDArticle1='Premier (1) article';
 $LDArticle2='Second (2) article';
-$LDArticle3='TroisiËme (3) article';
-$LDArticle4='QuatriËme (4) article';
+$LDArticle3='Troisi√®me (3) article';
+$LDArticle4='Quatri√®me (4) article';
 $LDArticle5='Article (5) secondaire';
 
 $LDArticleTxt='Article';
 
 $LDTitleTag='Titre';
 $LDTitleMaxNote='Maximum 50';
-$LDHeader='EntÍte';
+$LDHeader='Ent√™te';
 $LDHeaderMaxNote='Maximum 50';
 $LDNews='Article de nouvelles';
 /**
@@ -30,47 +30,47 @@ $LDAuthor='Auteur';
 $LDPublishDate='Date de publication <font size=1>(\'T\' pour aujourd\'hui)</font>';
 
 $LDAlertTitle='Veuillez entrer un titre';
-$LDAlertNews='Veuillez Ècrire l\'article de nouvelles';
+$LDAlertNews='Veuillez √©crire l\'article de nouvelles';
 $LDAlertAuthor='Veuillez entrer l\'auteur';
 $LDAlertDate='Veuillez entrer la date de publication';
 
-$LDWrittenOn='…crit le:';
+$LDWrittenOn='√âcrit le:';
 $LDWrittenFrom='Par:';
 
-$LDArticleSaved='Cet article est enregistrÈ. Vous voyez un aperÁu.';
+$LDArticleSaved='Cet article est enregistr√©. Vous voyez un aper√ßu.';
 $LDBackTxt='Retour';
 
 $LDQuickInfo='Informations rapides';
 $LDPhonePolice='Police';
 $LDPhoneFire='Pompiers';
 $LDAmbulance='Urgence';
-$LDPhone='TÈlÈphone (Hospital)';
+$LDPhone='T√©l√©phone (Hospital)';
 $LDFax='Fax';
 $LDAddress='Adresse';
 $LDEmail='Email';
 
 $LDOpenTimes ='Les horaires d\'admission';
 $LDManagement ='Gestion';
-$LDDept ='DÈpartements';
+$LDDept ='D√©partements';
 $LDCafenews ='Nouvelles de la cafeteria';
 $LDAdmission ='Admission';
-$LDExhibition ='DÈmonstrations';
-$LDEducation ='…ducation';
-$LDAdvStudies ='…tudes';
-$LDPhyTherapy ='ThÈrapie physique';
+$LDExhibition ='D√©monstrations';
+$LDEducation ='√âducation';
+$LDAdvStudies ='√âtudes';
+$LDPhyTherapy ='Th√©rapie physique';
 $LDCalendar ='Calendrier';
 $LDHelp='Aide';
 $LDMore='Plus sur l\'article';
 
 $LDCafeNews='Nouvelles de la cafeteria';
-$LDConfirmEdit='Voulez-vous modifier des donnÈes dans les nouvelles de la cafeteria?';
-$LDNewsDummy=array(1=>'premier',2=>'second',3=>'troisiËme',4=>'quatriËme');
+$LDConfirmEdit='Voulez-vous modifier des donn√©es dans les nouvelles de la cafeteria?';
+$LDNewsDummy=array(1=>'premier',2=>'second',3=>'troisi√®me',4=>'quatri√®me');
 $LDMenuToday='Menu d\'aujourd\'hui';
 $LDMenuAll='Menu pour <br> &nbsp;autres jours';
 $LDPrices='Prix';
 $LDNoMenu='Le menu n\'est pas <br> disponible.';
 $LDWhatToDo='Que souhaitez-vous modifier?';
-$LDPlsMarkSelection='SÈlectionnez une option et puis cliquez sur \'Continuer...\'.';
+$LDPlsMarkSelection='S√©lectionnez une option et puis cliquez sur \'Continuer...\'.';
 $LDMenuEdit='Modifier le menu';
 $LDPriceEdit='Modifier les prix';
 $LDNewsEdit='Modifier un article de nouvelles ou d\'informations';
@@ -80,7 +80,7 @@ $LDCafeMenu='Menu de la cafeteria';
 $LDMenu='Menu';
 $LDThisWeek='Cette semaine';
 $LDNextWeek='La semaine prochaine';
-$LD3rdWeek='La troisiËme semaine';
+$LD3rdWeek='La troisi√®me semaine';
 $LDBack2CafeNews='Retour aux nouvelles de cafeteria';
 
 $LDProdName='Nom du produit';
@@ -88,37 +88,37 @@ $LDPriceDM='Prix DM';
 $LDPriceEuro='Prix EUR';
 $LDPrice='Prix';
 $LDNoPrice='La liste des prix n\'est pas encore disponible pour le moment';
-$LDSorry='Nous sommes sÈsolÈ. RÈessayez un peu plutard.';
+$LDSorry='Nous sommes s√©sol√©. R√©essayez un peu plutard.';
 $LDCafePrices='Liste des prix de la cafeteria';
 
-$LDCreateGroup='CrÈer nouveau groupe de produits';
-$LDCreateGroupPrompt='Vous devez crÈer un nouveau groupe de produits. Veuillez cliquer sur \'Continuer...\'.';
+$LDCreateGroup='Cr√©er nouveau groupe de produits';
+$LDCreateGroupPrompt='Vous devez cr√©er un nouveau groupe de produits. Veuillez cliquer sur \'Continuer...\'.';
 /**
 * Do not translate the '<font color=\'#000000\'>' and '</font>'
 */
-$LDMarkGroup='Vous devez sÈlectionner un groupe de produits ‡ Èditer. <br> Cliquez ensuite sur  \'<font color=\'#000000\'>Continuer...</font>\'';
+$LDMarkGroup='Vous devez s√©lectionner un groupe de produits √† √©diter. <br> Cliquez ensuite sur  \'<font color=\'#000000\'>Continuer...</font>\'';
 $LDEnterGroup='Entrer le nom du nouveau groupe.<br>Cliquez ensuite sur  \'<font color=\'#000000\'>Continuer...</font>\'';
 $LDProdGroup='Groupe de produits';
 $LDClk2End='Pour terminer cliquez ici >> ';
-$LDPriceSaved='Le(s) produit(s) suivant(s) et prix sont enregistrÈs.';
+$LDPriceSaved='Le(s) produit(s) suivant(s) et prix sont enregistr√©s.';
 
-$LDMarkWeek='Veuillez sÈlectionner la semaine.';
+$LDMarkWeek='Veuillez s√©lectionner la semaine.';
 $LDClkContinue='Cliquez ensuite sur \'Continuer...\'.';
 $LDPlsEnter='Entrez le menu ici...';
-$LDClk2Edit='Cliquez ici pour Èditer';
-$LDPreviewPic='AperÁu d\'image';
+$LDClk2Edit='Cliquez ici pour √©diter';
+$LDPreviewPic='Aper√ßu d\'image';
 $LDCafeEditorial='Editeur des nouvelles de la cafeteria';
-$LDHealthTips='Trucs de santÈ';
-$LDClk2Write='Cliquez ici pour lancer l\'Èditeur';
+$LDHealthTips='Trucs de sant√©';
+$LDClk2Write='Cliquez ici pour lancer l\'√©diteur';
 
 $LDOr='Ou';
 $LDSetCurrency='Entrer la monaie';
 $LDNewCurrencySet='La nouvelle monaie est maintenant active.';
-$LDPlsSelectCurrency='Veuillez sÈlectionner la monaie.';
+$LDPlsSelectCurrency='Veuillez s√©lectionner la monaie.';
 $LDmain='principal';
-$LDClk2AddCurrency='Pour entrer un nouveau type de monaie, cliquez ici s\'il vous plaÓt. (NB: Vous allez quitter les nouvelles de la cafeteria!)';
+$LDClk2AddCurrency='Pour entrer un nouveau type de monaie, cliquez ici s\'il vous pla√Æt. (NB: Vous allez quitter les nouvelles de la cafeteria!)';
 
-$LDMenuSaved='Le menu est enregistrÈ.';
+$LDMenuSaved='Le menu est enregistr√©.';
 /* 2002-10-13 EL */
 $LD_ddpMMpyyyy='jj.mm.aaaa';
 $LD_yyyyhMMhdd='aaaa-mm-jj';
@@ -129,5 +129,5 @@ $LDSubmitNews='Poster une nouvelle';
 $LDDelete='Effacer';
 $LDDeleteCurrency='Etes-vous sur de vouloir effacer cette monaie?';
 $LDNoMainDelete='Vous ne pouvez pas effacer la monaie principale. \nSvp, selectionnez d\'abord une autre monaie principale.';
-$LDCurrencyExisting='Cette monaie existe dÈj‡!';
+$LDCurrencyExisting='Cette monaie existe d√©j√†!';
 ?>

@@ -1,9 +1,9 @@
 <?php
 #2003-10-02 EL
-$LDSearchFound='La recherche a trouvÈe <font color=red><b>~nr~</b></font>
-donnÈes pertinente.';
+$LDSearchFound='La recherche a trouv√©e <font color=red><b>~nr~</b></font>
+donn√©es pertinente.';
 $LDShowing='Afficher';
-$LDTo='‡';
+$LDTo='√†';
 $LDSex='Sexe';
 $LDSelect='Selectionner';
 $LDZipCode='Code Postal';

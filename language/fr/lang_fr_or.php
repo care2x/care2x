@@ -2,7 +2,7 @@
 $LDOr='OP Room';
 $LDLOGBOOK='JOURNAL';
 $LDOrDocument='OP Room Documentation';
-$LDOrDocumentTxt='Documenterles services opérationnels';
+$LDOrDocumentTxt='Documenterles services opÃ©rationnels';
 
 /**
 *  A tiny dictionary:
@@ -16,7 +16,7 @@ $LDScheduler='Calendrier';
 
 $LDQuickView='Vue rapide';
 $LDQviewTxtDocs='Vue rapide du DOC d\'aujourd\'hui (Docteur-En-Attente)';
-$LDOrLogBook='OR Maternité logbook';
+$LDOrLogBook='OR MaternitÃ© logbook';
 $LDOrLogBookTxt='Documenting the nursing services in OP Room, archive files';
 $LDOrProgram='OP Room program';
 $LDOrProgramTxt='Show, edit, create, etc. an OP Room program';
@@ -134,7 +134,7 @@ $LDOpMainElements=array(
 										patient=>'Patient',
 										diagnosis=>'Diagnosis',
 										operator=>'Surgeon/Assistant',
-										ana=>'Anästhesie',
+										ana=>'AnÃ¤sthesie',
 										cutclose=>'Cut/Suture',
 										therapy=>'Therapy',
 										result=>'Result',

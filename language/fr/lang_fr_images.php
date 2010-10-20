@@ -1,6 +1,6 @@
 <?php
-$LDTogglePreviewOrig='Cliquez pour afficher l\'image en taille réelle';
-$LDToggleOrigPreview='Cliquez pour afficher l\'image en taille réduite';
+$LDTogglePreviewOrig='Cliquez pour afficher l\'image en taille rÃ©elle';
+$LDToggleOrigPreview='Cliquez pour afficher l\'image en taille rÃ©duite';
 
 #2004-08-06 EL
 $LDHideJavaApplet = 'Hide control panel';

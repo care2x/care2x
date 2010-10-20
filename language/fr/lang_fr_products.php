@@ -1,20 +1,20 @@
 <?php
 $LDClose='Fermer';
 $LDCancel='Annuler';
-$LDResetEntry='Effacer les entrÈes';
+$LDResetEntry='Effacer les entr√©es';
 $LDSave='Sauver';
 $LDReset='Reinitialiser';
 
 $LDPharmacy='Pharmacie';
-$LDMedDepot='DÈpot MÈdical';
+$LDMedDepot='D√©pot M√©dical';
 
-$LDSearchWordPrompt='Entrez un mot clÈ, par exemple: un numÈro d\'ordrer, un
-numÈro de produit ou un nom de produit ...';
-$LDEnterData='Cliquer pour entrer une donnÈe';
-$LDClk2See='Cliquer pour voir une donnÈe';
+$LDSearchWordPrompt='Entrez un mot cl√©, par exemple: un num√©ro d\'ordrer, un
+num√©ro de produit ou un nom de produit ...';
+$LDEnterData='Cliquer pour entrer une donn√©e';
+$LDClk2See='Cliquer pour voir une donn√©e';
 
 /**************** note the ' ~nr~ ' must not be erased it will be replaced by the script with the number of search results ******/
-$LDFoundPatient='La recher a trouvÈ <b>~nr~</b> patients';
+$LDFoundPatient='La recher a trouv√© <b>~nr~</b> patients';
 $LDWildCards='Ce que sont les wildcards et comment les utiliser';
 $LDNewSearch='Nouvelle recherche';
 $LDSearch='Rechercher';
@@ -24,18 +24,18 @@ $LDContinue='Continuer';
 $LDBack='Retour';
 
 $LDOn='Sur';
-$LDAt='‡';
-$LDClk2Edit='Cliquer pour Èditer un rapport';
+$LDAt='√†';
+$LDClk2Edit='Cliquer pour √©diter un rapport';
 
 $LDNew='Nouveau';
 $LDEdit='Editer';
-$LDCreate='CrËer';
+$LDCreate='Cr√®er';
 $LDValue='Valeur';
 
 $LDNews='Nouvelles';
-$LDNewsTxt='Lire ou Ècrire de nouveaux articles concernant la pharmacie';
+$LDNewsTxt='Lire ou √©crire de nouveaux articles concernant la pharmacie';
 $LDMemo='Memo';
-$LDMemoTxt='Lire ou Ècrire un memo';
+$LDMemoTxt='Lire ou √©crire un memo';
 $LDSearchPat='Rechercher un patient';
 $LDCategory='Categorie';
 $LDPast3Days='les trois derniers jours';
@@ -44,22 +44,22 @@ $LDPastAll='Tous';
 $LDSelect='Selectionner';
 
 $LDOrderArchive='Archiver';
-$LDOrderArchiveTxt='Voir, Èditer, archiver les ordres passÈs';
+$LDOrderArchiveTxt='Voir, √©diter, archiver les ordres pass√©s';
 $LDPharmaOrder='Ordonner';
-$LDPharmaOrderTxt='CrËer et/ou envoyer une liste d\'ordre';
-$LDHow2Order='Comment crËer un ordre ?';
+$LDPharmaOrderTxt='Cr√®er et/ou envoyer une liste d\'ordre';
+$LDHow2Order='Comment cr√®er un ordre ?';
 $LDHow2OrderTxt='Comment, pourquoi et quand envoyer un ordre?';
 $LDOrderCat='Mon catalogue de produit';
-$LDOrderCatTxt='CrËer, Èditer, mettre ‡ jour, retirer, etc.';
-$LDPharmaDb='Banque de donnÈe';
-$LDPharmaDbTxt='GËrer les informations produits';
-$LDRedList='Index des spÈcialitÈs mÈdicales';
-$LDRedListTxt='Info DetaillÈe au sujet de produits mÈdicaux';
+$LDOrderCatTxt='Cr√®er, √©diter, mettre √† jour, retirer, etc.';
+$LDPharmaDb='Banque de donn√©e';
+$LDPharmaDbTxt='G√®rer les informations produits';
+$LDRedList='Index des sp√©cialit√©s m√©dicales';
+$LDRedListTxt='Info Detaill√©e au sujet de produits m√©dicaux';
 $LDOrderBotActivate='OrderBot';
 $LDOrderBotActivateTxt='Activer la reception automatique  d\'une liste
 d\'ordre.';
 
-$LDNotSent='Pas encore envoyÈ!';
+$LDNotSent='Pas encore envoy√©!';
 $LDcatindex=array('','Article','Pcs.','','Order nr.','','');
 $LDFinindex=array('','Article','Pcs.','','Order nr.');
 $LDListindex=array('','','Created on','Time','Created  by','');
