@@ -1,3 +1,7 @@
+Version 2.6.27 (Okt 20th, 2010)
+-------------------------------
+- major code review
+
 Version 2.6.26 (June 18th, 2009)
 -------------------------------
 - revert super global access changes, and instead rely on
@@ -468,7 +472,7 @@ Version 2.5.0-RC2 (March 26, 2003)
       the "checked" value of html_radios (Monte)
     - fixed errormessage in _compile_smarty_ref() (messju)
     - updated docs for html_image "name" -> "file" (messju)
-    - fixed bug with html_options-optgroups (Nichlas Löfdahl, messju)
+    - fixed bug with html_options-optgroups (Nichlas Lï¿½fdahl, messju)
     - cleaned up calls to readdir() (messju)
     - fixed bug with passing multiple modifiers to a parameter
       (Monte)
@@ -532,7 +536,7 @@ Version 2.5.0-RC1 (March 5, 2003)
     - fix cache groups with compile_id set (Monte)
     - add support for merging appended vars (messju, Monte)
     - allow null as function attribute value
-      (André Rabold, Monte)
+      (Andrï¿½ Rabold, Monte)
     - support $foo->bar[index] syntax (Monte)
     - add get_registered_object function (messju, Monte)
     - treat unrecognized param attribute syntax as string (Monte)
