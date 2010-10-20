@@ -1,7 +1,7 @@
 <?php
-if($lang=='ar'||$curr_lang=='ar') $lang_name='ÚÑÈí';
+if($lang=='ar'||$curr_lang=='ar') $lang_name='Ø§Ù„Ø¹Ø±Ø¨ÙŠØ©';
 	else $lang_name='Arabic';
 $lang_iso_code='ar';
 //$lang_charset='28596';
-$lang_charset='windows-1256';
+$lang_charset='UTF8';
 ?>
