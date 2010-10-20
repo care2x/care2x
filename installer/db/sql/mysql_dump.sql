@@ -1,11 +1,8 @@
--- phpMyAdmin SQL Dump
--- version 2.11.4
--- http://www.phpmyadmin.net
---
--- Host: localhost
--- Generation Time: Sep 09, 2010  at 07:09 PM
--- Server version: 5.0.51
--- PHP Version: 5.2.5
+-- care2x database tables dump for care2002 version 2.6.27
+
+drop database care2x;
+create database care2x;
+use care2x;
 
 ALTER DATABASE DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
 
@@ -5036,8 +5033,8 @@ INSERT INTO care_config_user VALUES ('default', 'a:19:{s:4:"mask";s:1:"1";s:11:"
 
 INSERT INTO care_currency VALUES (1, 'S$', 'SG Dollar', 'Singapore Dollar (ISO = SGD)', 'main', '', 20100905190000, 'Ap Muthu', 20100905180000);
 INSERT INTO care_currency VALUES (2, '$', 'US Dollar', 'US Dollar (ISO = USD)', '', '', 20100905190000, 'Ap Muthu', 20100905180000);
-INSERT INTO care_currency VALUES (3, '€', 'Euro', 'European currency (ISO = EUR)', '', 'Elpidio Latorilla', 20030802190637, '', 20021126200534);
-INSERT INTO care_currency VALUES (4, '£', 'Pound', 'GB British Pound (ISO = GBP)', '', '', 20030213173107, '', 20020816230349);
+INSERT INTO care_currency VALUES (3, 'â‚¬', 'Euro', 'European currency (ISO = EUR)', '', 'Elpidio Latorilla', 20030802190637, '', 20021126200534);
+INSERT INTO care_currency VALUES (4, 'Â£', 'Pound', 'GB British Pound (ISO = GBP)', '', '', 20030213173107, '', 20020816230349);
 INSERT INTO care_currency VALUES (5, 'R', 'Rand', 'South African Rand (ISO = ZAR)', '', '', 20030802190637, 'Elpidio Latorilla', 20020817171805);
 INSERT INTO care_currency VALUES (6, 'Rs', 'Rupees', 'Indian Rupees (ISO = INR)', '', '', 20030213173059, 'Elpidio Latorilla', 20020920234306);
 
@@ -5543,7 +5540,7 @@ INSERT INTO care_unit_measurement VALUES (14, 4, 'mmHg', 'mmHg', 'LDmmHg', 'metr
 INSERT INTO care_unit_measurement VALUES (15, 5, 'celsius', 'Celsius', 'LDCelsius', 'metric', NULL, '', '', 00000000000000, '', 00000000000000);
 INSERT INTO care_unit_measurement VALUES (16, 1, 'dl', 'deciliter', 'LDDeciliter', 'metric', NULL, '', '', 00000000000000, '', 00000000000000);
 INSERT INTO care_unit_measurement VALUES (17, 1, 'cl', 'centiliter', 'LDCentiliter', 'metric', 0, '', '', 00000000000000, '', 00000000000000);
-INSERT INTO care_unit_measurement VALUES (18, 1, 'µl', 'microliter', 'LDMicroliter', 'metric', 0, '', '', 00000000000000, '', 00000000000000);
+INSERT INTO care_unit_measurement VALUES (18, 1, 'Î¼l', 'microliter', 'LDMicroliter', 'metric', 0, '', '', 00000000000000, '', 00000000000000);
 
 
 --
