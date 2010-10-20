@@ -1,9 +1,5 @@
 -- care2x database tables dump for care2002 version 2.6.27
 
-drop database care2x;
-create database care2x;
-use care2x;
-
 ALTER DATABASE DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
