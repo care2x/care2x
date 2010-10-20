@@ -158,3 +158,4 @@ $LDBed = 'Bed';
 $LDNotes = 'Notes';
 $LDDoctor = 'Doctor';
 $LDTechnician = 'Technician';
+?>
