@@ -29,7 +29,7 @@ $LDPatientSearch='Ricerca dati paziente';
 $LDAdmit='Accettazione';
 $LDSearch='Ricerca';
 $LDArchive='Ricerca in archivio';
-$LDCatPls='Ehi, perché è sparito il gatto?!';
+$LDCatPls='Ehi, perchÃ© Ã¨ sparito il gatto?!';
 $LDGoodMorning='Buongiorno!';
 $LDGoodDay='Salve! Lieto di rivederla!';
 $LDGoodAfternoon='Salve!';
@@ -219,7 +219,7 @@ $LDClickImgToPrint='Selezionare l\'immagine per stamparla.';
 $LDPrintPortraitFormat='Scegliere il formato di stampa orizzontale (landscape).';
 /* 2002-12-14 EL */
 $LDRegistryNr='Numero PID';
-$LDRedirectToRegistry='Nota: la ricerca sarà indirizzata al modulo di accettazione!';
+$LDRedirectToRegistry='Nota: la ricerca sarÃ  indirizzata al modulo di accettazione!';
 /* 2002-12-24 EL */
 $LDSSSNr="<font color='red'>Codice Fiscale</font>";
 $LDNatIdNr='Codice Fiscale';
@@ -243,13 +243,13 @@ $LDAdmitClass='Classe di accettazione';
 $LDEnterSearchKeyword='Inserire chiave di ricerca';
 $LDSearchFoundData='Dati rilevanti trovati: <font color=red><b>~nr~</b></font>.';
 $LDQuickList='Lista veloce';
-$LDSeveralInsurances='Il paziente ha più di una assicurazione: selezionare qui per modificare.';
+$LDSeveralInsurances='Il paziente ha piÃ¹ di una assicurazione: selezionare qui per modificare.';
 $LDTop='Inizio';
 $LDInsuranceClass='Tipo di assicurazione';
 $LDRecordsHistory='Storico database';
 /* 2003-02-16 EL*/
 $LDNotYetAdmitted='Accettazione non ancora conclusa';
-$LDPatientCurrentlyAdmitted='Il paziente è stato accettato!';
+$LDPatientCurrentlyAdmitted='Il paziente Ã¨ stato accettato!';
 $LDOptions='Opzioni';
 /** note the ' ~nr~ ' must not be erased it will be replaced by the script with the number of search results ******/
 $LDSearchFoundAdmit='Dati rilevanti di accettazione trovati: <font color=red><b>~nr~</b></font>.';
@@ -351,7 +351,7 @@ $LDDataOnly='Solo dati essenziali per la visita';
 $LDChartsRecords='Cartella dati';
 # 2003-07-26 EL
 $LDMode='Modo';
-$LDPatientIsDischarged='IL paziente è stato dimesso';
+$LDPatientIsDischarged='IL paziente Ã¨ stato dimesso';
 $LDShow='Visualizza';
 $LDPlannedEncType='Tipo di accettazione pianificato';
 # 2003-08-01 EL

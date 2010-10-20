@@ -37,7 +37,7 @@ $LDGoodEvening="Salve";
 
 $LDDate="Data";
 $LDDept="Dipartimento";
-$LDPrio="Priorit‡";
+$LDPrio="Priorit√†";
 
 $LDPageTop="Torna in cima.";
 $LDPreview="Anteprima";
@@ -52,7 +52,7 @@ $LDChange="Cambia";
 $LDLock="Blocca";
 $LDUnlock="Sblocca";
 $LDDelete="Cancella";
-$LDYesDomre="SÏ";
+$LDYesDomre="S√¨";
 $LDKeywordPrompt="Inserire una chiave di ricerca";
 $LDSalve="Salve";
 
@@ -103,14 +103,14 @@ $LDBCCTxt="Gli indirizzi inseriti come BCC non saranno mostrati nella mail.";
 $LDRecipient="Recipient";
 $LDQuickAddr="Indirizzi veloci";
 $LDInsertAddr="Inserisci";
-$LDFolderEmpty="La cartella ~tagword~ Ë vuota.";
+$LDFolderEmpty="La cartella ~tagword~ √® vuota.";
 $LDNoteIntra="Attenzione: la posta intranet viene spedita e ricevuta ESCLUSIVAMENTE nella intranet.
 <p>Selezionare qui per aprire la cartella della posta.";
-$LDEmailSent="La mail Ë stata inviata";
+$LDEmailSent="La mail √® stata inviata";
 $LDConfirmDelete="Si desidera veramente cancellare le mail selezionate?";
 $LDAlertNoRecipient="Manca il destinatario! Inserirne almeno uno.";
 $LDAlertNoDombject="Manca l'oggetto: se si desidera inviare la mail senza oggetto, premere OK.";
-$LDAlertNoText="Il testo Ë vuoto: scrivere il messaggio prima di inviare.";
+$LDAlertNoText="Il testo √® vuoto: scrivere il messaggio prima di inviare.";
 $LDRead="Leggi";
 $LDBack2="Indietro a";
 $LDReply2="Rispondi a";

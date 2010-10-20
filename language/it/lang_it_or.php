@@ -8,7 +8,7 @@ $LDDOC='CRO';
 $LDORNOC='IROSO';
 $LDScheduler='Scheduler';
 
-$LDDutyPlan='Piano di reperibilit‡';
+$LDDutyPlan='Piano di reperibilit√†';
 $LDQuickView='Quadro di insieme';
 $LDQviewTxtDocs='Quadro di insieme dei medici/chirurghi reperibili oggi';
 $LDOrLogBook='Registro infermieristico di sala operatoria';
@@ -16,9 +16,9 @@ $LDOrLogBookTxt='Documentazione del personale infermieristico in servizio di sal
 $LDOrProgram='Programmazione di sala operatoria';
 $LDOrProgramTxt='Visualizza, modifica, crea, etc. una programmazione di sala operatoria';
 $LDQviewTxtNurse='Quadro di insieme degli infermieri reperibili oggi';
-$LDDutyPlanTxt='Visualizza, modifica, crea il piano di reperibilit‡ per gli infermieri';
-$LDOnCallDuty='Reperibilit‡';
-$LDOnCallDutyTxt='Documenta il lavoro durante la reperibilit‡';
+$LDDutyPlanTxt='Visualizza, modifica, crea il piano di reperibilit√† per gli infermieri';
+$LDOnCallDuty='Reperibilit√†';
+$LDOnCallDutyTxt='Documenta il lavoro durante la reperibilit√†';
 $LDAnaLogBook='Registro anestesia';
 $LDAnaLogBookTxt='Documentazione del servizio di anestesia';
 $LDQviewTxtAna='Quadro di insieme degli anestesisti reperibili';
@@ -40,9 +40,9 @@ $LDReset='Reset';
 $LDContinue='Continua...';
 
 $LDHideCat='Nascondi il gatto';
-$LDPatientsFound='Trovato pi˘ di un paziente!';
+$LDPatientsFound='Trovato pi√π di un paziente!';
 $LDPlsClk1='Selezionare quelli desiderati.';
-$LDShowCat='Ehi, perchÈ il gatto Ë sparito?!';
+$LDShowCat='Ehi, perch√© il gatto √® sparito?!';
 $LDResearchArchive='Ricerca in archivio';
 $LDSearchDocu='Ricerca in un documento';
 
@@ -94,11 +94,11 @@ $LDSrcCondition='Chiave di ricerca e/o condizione';
 $LDNewArchiveSearch='Nuova ricerca in archivio';
 $tage=array(
 				'Domenica',
-				'LunedÏ',
-				'MartedÏ',
-				'MercoledÏ',
-				'GiovedÏ',
-				'VenerdÏ',
+				'Luned√¨',
+				'Marted√¨',
+				'Mercoled√¨',
+				'Gioved√¨',
+				'Venerd√¨',
 				'Sabato');
 $monat=array('',
 				'Gennaio',
@@ -195,7 +195,7 @@ $LDReposition='Posizionamento';
 $LDWaitTime='Tempo di attesa';
 $LDStart='Inizio';
 $LDEnd='Fine';
-$LDPatNoExist='Il paziente non Ë ancora registrato: chiudere questa finestra e creare il registro. Se il problema persiste, contattare il CED.';
+$LDPatNoExist='Il paziente non √® ancora registrato: chiudere questa finestra e creare il registro. Se il problema persiste, contattare il CED.';
 $opts=array('-',
 					'Paziente arrivato in ritardo in sala',
        				'Anestesisti arrivati in ritardo in sala',
@@ -233,13 +233,13 @@ $LDContainerElements=array(
 $LDArticleNr='Codice art.';			
 $LDContainerNr='Contenitore n.';							
 $LDArticleNotFound='Articolo non trovato!';
-$LDNoArticleTxt='L\'articolo non Ë in elenco oppure il codice Ë sbagliato.';
+$LDNoArticleTxt='L\'articolo non √® in elenco oppure il codice √® sbagliato.';
 $LDClk2ManualEntry='Per inserire l\'articolo manualmente, <b>selezionare qui.</b>';
 $LDPlsClkArticle='Please selezionare l\'articolo desiderato!';
 $LDSelectArticle='Selezionare per scegliere questo articolo';
 $LDDbInfo='Informazioni in banca dati';
 $LDRemoveArticle='Rimuovere l\'articolo dalla lista';
-$LDArticleNoList='L\'articolo non Ë in banca dati';
+$LDArticleNoList='L\'articolo non √® in banca dati';
 $LDPromptSearch='Inserire un criterio di ricerca.<br>
 							Per esempio il nome, il cognome, la data di nascita, etc.
 							(Leggere anche i <a href="#">Suggerimenti</a>.)';
@@ -250,11 +250,11 @@ $LDButFf='ma queste voci';
 $LDSimilar=' sono simili';
 $LDSimilarMany=' a quelle che';
 $LDNeededInfo=' si stanno cercando.';
-$LDPatLogbook='Il paziente Ë registrato in questo registro.';
-$LDPatLogbookMany='Il paziente Ë registrato in questi registri.';
+$LDPatLogbook='Il paziente √® registrato in questo registro.';
+$LDPatLogbookMany='Il paziente √® registrato in questi registri.';
 $LDDipartimento='Dipartimento';
 $LDRoom='Stanza';
-$LDLastEntry='Questa Ë l\'ultima voce nel registro';
+$LDLastEntry='Questa √® l\'ultima voce nel registro';
 $LDLastEntryMany='Queste sono le ultime voci nel registro';
 $LDFrom='da';
 $LDFromMany='da';
@@ -264,26 +264,26 @@ $LDDays='giorni fa';
 $LDChangeDept='Cambia sala op. o dipartimento';
 
 $LDTabElements=array('Dipartimento della sala',
-								 'Reperibilit‡',
+								 'Reperibilit√†',
 								 'Cercapersone/Telefono',
 								 'Su chiamata',
 								 'Cercapersone/Telefono',
-								 'Piano attivit‡'
+								 'Piano attivit√†'
 								 );
-$LDStandbyPerson='Reperibilit‡';
+$LDStandbyPerson='Reperibilit√†';
 $LDOnCallPerson='Su chiamata';
 $LDMonth='Mese';
 $LDYear='Anno';
 $LDDutyElements = array('Data','&nbsp;','Cognome, nome','da','a','Sala operatoria','Diagnosi e terapia');
 $LDPrint='Stampa';
 $LDAlertNoPrinter='E\' necessario stampare manualmente. Selezionare la finestra, poi selezionare Stampa.';
-$LDAlertNotSavedYet='L\'ultima voce non Ë ancora salvata: si desidera farlo ora?';
+$LDAlertNotSavedYet='L\'ultima voce non √® ancora salvata: si desidera farlo ora?';
 $LDPhone='Telefono';
 $LDBeeper='Cercapersone';
 $LDOn='on';
 //$LDNoPersonList='E\' necessario creare prima l\'elenco del personale, selezionando questo bottone.';
 $LDNoPersonList='E\' necessario creare prima l\'elenco del personale.';
-$LDNoEntryFound='Il piano attivit‡ Ë vuoto!';
+$LDNoEntryFound='Il piano attivit√† √® vuoto!';
 $LDShow='Visualizza';
 $LDShowPrevLog='Visualizza le precedenti voci del registro';
 $LDShowNextLog='Visualizza le successive voci del registro';
@@ -297,7 +297,7 @@ $LD_MMsddsyyyy='mm/dd/aaaa';
 /* 2002-10-15 EL */
 $LDStandbyInit='R'; /* S = Standby */
 $LDOncallInit='S'; /* O = Oncall */
-$LDDutyPlan='Piano attivit‡';
+$LDDutyPlan='Piano attivit√†';
 /* 2003-03-18 EL */
 $LDSearchInAllDepts='Cerca in tutti i reparti';
 $LDAddNurseToList='Aggiungere un infermiere alla lista';

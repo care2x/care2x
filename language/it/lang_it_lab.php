@@ -9,8 +9,8 @@ $LDSeeLabData='Ricerca e visualizza dati di laboratorio del paziente.';
 $LDSeeData='Visualizza dati';
 $LDEnterLabData='Inserire i dati di laboratorio del paziente';
 $LDNewData='Inserire i nuovi dati';
-$LDEnterPrioParams='Inserire i parametri di priorit‡';
-$LDPrioParams='Parametri di priorit‡';
+$LDEnterPrioParams='Inserire i parametri di priorit√†';
+$LDPrioParams='Parametri di priorit√†';
 $LDEnterNorms='Inserire campo normale';
 $LDNorms='Campo normale';
 $LDOtherOptions='Altre opzioni';
@@ -78,9 +78,9 @@ $LDBloodRequest='Richiesta di sangue';
 $LDBloodRequestTxt=$LDFillUpSend.'scorte di sangue';	
 
 $LDRequestSent['insert']='Richiesta di test inviata. ';
-$LDFormSaved['insert']='Il modulo Ë stato salvato ma non ancora spedito';
-$LDRequestSent['update']='La richiesta di aggiornamento test Ë stata spedita';
-$LDFormSaved['update']='Il test aggiornato Ë stato salvato ma non ancora spedito';
+$LDFormSaved['insert']='Il modulo √® stato salvato ma non ancora spedito';
+$LDRequestSent['update']='La richiesta di aggiornamento test √® stata spedita';
+$LDFormSaved['update']='Il test aggiornato √® stato salvato ma non ancora spedito';
 $LDWhatToDo=' Che cosa si vuole fare adesso?';
 
 $LDNewFormSamePatient='Creare una nuova richiesta di test per <b>lo stesso</b> paziente';
@@ -114,8 +114,8 @@ $LDLEN='LEN';  /* Lab entry number */
 /*2003-07-11 EL*/
 $LDAdministration='Direzione';
 $LDTestParameters='Parametri di test';
-$LDTestParametersTxt='Inserire o modificare unit‡ di misura, valori, limiti, etc.';
-$LDMsrUnit='Unit‡ misura';
+$LDTestParametersTxt='Inserire o modificare unit√† di misura, valori, limiti, etc.';
+$LDMsrUnit='Unit√† misura';
 $LDMedian='Media';
 $LDUpperBound='Limite sup.';
 $LDLowerBound='Limite inf.';

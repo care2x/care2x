@@ -51,11 +51,11 @@ $LDGoodEvening='Salve';
 
 $LDDate='Data';
 $LDDept='Reparto';
-$LDPrio='Priorit‡';
+$LDPrio='Priorit√†';
 $LDSearchIn='Ricerca dopo';
 
 $LDPlsEnterMore='Inserire qualche altro dato e riprovare.';
-$LDNoSingleChar='Un solo carattere sar‡ ignorato.';
+$LDNoSingleChar='Un solo carattere sar√† ignorato.';
 
 $LDPlsInformDept='Notificare al dip. ~tagword~ ed eventualmente al CED.';
 
@@ -64,7 +64,7 @@ $LDReportsTxt='Creare, cercare, leggere report, etc.';
 $LDInfo='Informazioni';
 $LDInfoTxt='Ricerca e leggi informazioni relative al CED';
 $LDManage='Direzione';
-$LDUpdateOk='L\'aggiornamento Ë <b>riuscito</b>:';
+$LDUpdateOk='L\'aggiornamento √® <b>riuscito</b>:';
 $LDDataSaved='Questi dati sono stati correttamente salvati:';
 $LDDataNoUpdate='Aggiornamento <b>fallito</b>. Controllare i dati inseriti.';
 $LDDataNoSaved='Salvataggio <b>fallito</b>. Controllare i dati inseriti.';
@@ -73,12 +73,12 @@ $LDPageTop='Torna in cima.';
 $LDPreview='Anteprima';
 $LDUpdateData='Aggiorna o modifica';
 $LDRemoveFromDb='Rimozione dalla banca dati';
-$LDDataRemoved='Il prodotto Ë stato rimosso dalla banca dati!';
+$LDDataRemoved='Il prodotto √® stato rimosso dalla banca dati!';
 
 $LDConfirmDelete='Si vuole veramente <b>cancellare</b> queste informazioni dalla banca dati ?';
-$LDAlertDelete='<b>Attenzione!</b> L\'operazione non Ë annullabile!';
+$LDAlertDelete='<b>Attenzione!</b> L\'operazione non √® annullabile!';
 $LDNoDelete='Cancellazione fallita!<br>Si prega di notificare il problema al CED.';
-$LDYesDelete='SÏ: cancella i diritti di accesso.';
+$LDYesDelete='S√¨: cancella i diritti di accesso.';
 $LDNoBack='No. Indietro.';
 $LDClk2Ack='Selezionare la freccia per confermare e/o stampare l\'ordine.';
 $LDOK='OK';
@@ -124,7 +124,7 @@ $LDAccessRight='Diritti di accesso';
 $LDSureLock='Si desidera veramente bloccare questi diritti di accesso?';
 $LDSureUnlock='Si desidera veramente sbloccare questi diritti di accesso?';
 $LDSureDelete='Si desidera veramente cancellare questi diritti di accesso?';
-$LDYesSure='SÏ';
+$LDYesSure='S√¨';
 $LDKeywordPrompt='Inserire una chiave di ricerca';
 $LDSystemAdmin='Amministrazione sistema';
 $LDMySQLManage='Gestione archivi SQL tramite PHP MySQLAdmin';
@@ -164,10 +164,10 @@ $LD_MMsddsyyyy='mm/gg/aaaa';
 $LD_ddsMMsyyyy='gg/mm/aaaa';
 /* END */
 
-$LDNewDateFormatSaved='Il nuovo formato di data Ë attivo.';
+$LDNewDateFormatSaved='Il nuovo formato di data √® attivo.';
 									
 $LDSetCurrency='Valuta corrente';
-$LDNewCurrencySet='La nuova valuta Ë attiva..';
+$LDNewCurrencySet='La nuova valuta √® attiva..';
 $LDPlsSelectCurrency='Selezione valuta.';
 $LDAddCurrency='Aggiungi nuova valuta';
 $LDPlsAddCurrency='Inserire le informazioni sulla nuova valuta, poi premere "Salva".';
@@ -186,15 +186,15 @@ $LDEditInfo='Modifica';
 $LDCurrencyAdmin='Gestione della valuta';
 
 /* 2002-10-22 EL */
-$LDUserInfoSaved='L\'accesso dell\'utente Ë stato creato con successo';
-$LDUserInfoNoSave='La creazione dell\'accesso Ë fallita. Per favore controlla le informazioni inserite';
-$LDNoAreas='Non Ë stata selezionata alcuna area!';
-$LDUserDouble='La creazione dell\'accesso Ë fallita. Per favore usa un differente nome di login.';
+$LDUserInfoSaved='L\'accesso dell\'utente √® stato creato con successo';
+$LDUserInfoNoSave='La creazione dell\'accesso √® fallita. Per favore controlla le informazioni inserite';
+$LDNoAreas='Non √® stata selezionata alcuna area!';
+$LDUserDouble='La creazione dell\'accesso √® fallita. Per favore usa un differente nome di login.';
 $LDEnterNewUser='Creare l\'accesso per un nuovo utente';
 /* 2002-11-22 EL*/
 $LDDeleteCurrency='sei sicuro? Vuoi realmente cancellare questa valuta?';
 $LDNoMainDelete='Non puoi cancellare la principale valute. \Per favore, inserisci inizialmente una valuta principale';
-$LDCurrencyExisting='Questa valuta Ë gi‡ esistente!';
+$LDCurrencyExisting='Questa valuta √® gi√† esistente!';
 /* 2003-02-21 EL*/
 $LDMenuItem='Menu';
 $LDOrderNr='Tipo num.';
@@ -202,14 +202,14 @@ $LDStatus='Stato';
 $LDHideBy='Nascosto da:';
 $LDPath='Percorso';
 $LDVisible='Visibile';
-$LDFrameResizable='Il frame Ë ridimensionabile';
+$LDFrameResizable='Il frame √® ridimensionabile';
 $LDBorderColor='Colore bordo';
 $LDBorderWidth='Larghezza bordo';
 $LDFrameWidth='Larghezza del frame';
 $LDNo='No';
-$LDYes='SÏ';
-$LDAllowMultiLang='Abilita la scelta di pi˘ lingue';
-$LDDefaultLang='Lingua predefinita (se abilitata l\'opzione di pi˘ lingue)';
+$LDYes='S√¨';
+$LDAllowMultiLang='Abilita la scelta di pi√π lingue';
+$LDDefaultLang='Lingua predefinita (se abilitata l\'opzione di pi√π lingue)';
 /* 2003-02-22 EL*/
 $LDMainMenuItems='Menu principale';
 $LDMainMenuDisplay='Visualizza menu principale';
@@ -252,7 +252,7 @@ $LDDeptStatus='Stato del reparto';
 $LDRecordStatus='Stato del record';
 /* 2003-03-30 EL*/
 $LDConfigOptions='Opzioni di configurazione';
-$LDDoesSurgeryOp='L\'Ambulatorio Ë attivo?';
+$LDDoesSurgeryOp='L\'Ambulatorio √® attivo?';
 $LDList='Lista';
 $LDUpdate='Aggiorna';
 # 2003-08-03 EL
@@ -273,31 +273,31 @@ $LDPaginatorMaxRows='Impaginazione';
 
 #2003-10-28 EL
 $LDAddressList='Lista indirizzi';
-$LDAddressListTxt='Quando la lista indirizzi Ë mostrata nel modulo di gestione degli indirizzi.';
+$LDAddressListTxt='Quando la lista indirizzi √® mostrata nel modulo di gestione degli indirizzi.';
 $LDAddressSearch='Ricerca indirizzo';
 $LDAddressSearchTxt='Quando la ricerca per indirizzi restituisce una lista';
 $LDInsuranceList='Lista compagnie di assicurazione';
-$LDInsuranceListTxt='Quando la lista delle compagnie di assicurazione Ë mostrata nel modulo gestione compagnie di assicurazione.';
+$LDInsuranceListTxt='Quando la lista delle compagnie di assicurazione √® mostrata nel modulo gestione compagnie di assicurazione.';
 $LDInsuranceSearch='Ricerca assicurazione';
 $LDInsuranceSearchTxt='Quando la ricerca per compagnie di assicurazione restituisce una lista.';
 $LDPersonnelSearch='Ricerca impiegato';
 $LDPersonnelSearchTxt='Quando la ricerca per un impiegato restituisce una lista.';
 $LDPersonnelList='Lista impiegati';
-$LDPersonnelListTxt='Quando la lista impiegati Ë mostrata nel modulo gestione del personale.';
+$LDPersonnelListTxt='Quando la lista impiegati √® mostrata nel modulo gestione del personale.';
 $LDPersonSearch='Ricerca persona';
 $LDPersonSearchTxt='Quando la ricerca per una persona restituisce una lista.';
 $LDPatientSearch='Ricerca paziente';
 $LDPatientSearchTxt='Quando la ricerca per un paziente restituisce una lista.';
 $LDORPatientSearch='Ricerca paziente in attesa di intervento';
 $LDORPatientSearchTxt='Quando si trova una lista di pazienti in attesa di intervento. 
-Il valore Ë solitamente inferiore a 10 per via dello scarso spazio disponibile nel diario di sala operatoria';
+Il valore √® solitamente inferiore a 10 per via dello scarso spazio disponibile nel diario di sala operatoria';
 $LDEnterMaxRows='Per favore inserisci il numero di righe per pagina mostrate dopo una ricerca.';
 #2003-11-01 EL
 $LDTimeOut='Timeout';
 $LDTimeOutActive='Timeout attivo';
 $LDTimeOutTxt='Bloccare il modulo protetto da password dopo un tempo preimpostato?';
 $LDTimeOutTime='Tempo trascorso';
-$LDTimeOutTimeTxt='Tempo di inattivit‡ prima di bloccare il modulo. Nota: Se il dato non Ë valido, il sistema utilizzer‡ il massimo valore predefinito.';
+$LDTimeOutTimeTxt='Tempo di inattivit√† prima di bloccare il modulo. Nota: Se il dato non √® valido, il sistema utilizzer√† il massimo valore predefinito.';
 #2003-11-09 EL
 $LDGUI='Opzioni interfaccia';
 $LDNewsDisplay='Mostra le news';
@@ -330,7 +330,7 @@ $LDDateCreation='Data di creazione';
 $LDDateClose='Data di chiusura';
 $LDOPTableNr='Numero tabella OP';
 $LDORName='Nome della stanza (OR)';
-$LDORNrExists='Numero della stanza (OR) gi‡ esistente!';
+$LDORNrExists='Numero della stanza (OR) gi√† esistente!';
 $LDToggle='Pulsante';
 $LDChange='Cambio';
 $LDClkNextNr='Clicca per passare al successivo numero';

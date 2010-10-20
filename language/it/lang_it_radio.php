@@ -76,8 +76,8 @@ $LDSelectViewer='Seleziona visualizzatore';
 $LDSelectViewerTxt='Seleziona programma visualizzatore DICOM';
 $LDCurrentViewer='Visualizzatore attuale';
 $LDNagoyaTechInst='Nagoya Tech. Institute';
-$LDRAIMJAVA='RAIMJAVA©';
-$LDNoImageSaved='Nessuna immagine è stata salvata';
+$LDRAIMJAVA='RAIMJAVAÂ©';
+$LDNoImageSaved='Nessuna immagine Ã¨ stata salvata';
 $LDImageNotes='Note alla immagine';
 
 #2004-08-05 EL

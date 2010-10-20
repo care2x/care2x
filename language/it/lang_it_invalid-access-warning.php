@@ -34,17 +34,17 @@ Alcune cause possono essere:
 </FONT><p>
 <font size=2 face="verdana,arial">
 <img <?php echo createComIcon('../../','achtung.gif') ?>>
-si è fatto uso dei tasti "Avanti" e "Indietro" del browser: bisognerebbe evitare di usarli.<br>
+si Ã¨ fatto uso dei tasti "Avanti" e "Indietro" del browser: bisognerebbe evitare di usarli.<br>
 <img <?php echo createComIcon('../../','achtung.gif') ?>>
-il browser ha rifiutato un cookie. Configurare il browser in modo da accettarli, perché l'applicativo
+il browser ha rifiutato un cookie. Configurare il browser in modo da accettarli, perchÃ© l'applicativo
 nel fa uso.
 <br>
 <img <?php echo createComIcon('../../','achtung.gif') ?>>
 il browser potrebbe non essere in grado di eseguire javascript, oppure i javascript potrebbero essere
-disattivati. Dato che l'applicativo li usa, è necessario attivarli.
+disattivati. Dato che l'applicativo li usa, Ã¨ necessario attivarli.
 <br>
 <img <?php echo createComIcon('../../','achtung.gif') ?>>
-In alcuni rari casi, possono esserci stati degli errori di trasferimento dati: in questo caso è 
+In alcuni rari casi, possono esserci stati degli errori di trasferimento dati: in questo caso Ã¨ 
 sufficiente premere il bottone "Ricarica" del browser.
 <p>
 </FONT>

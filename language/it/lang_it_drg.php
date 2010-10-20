@@ -35,7 +35,7 @@ $LDLeft='Sinistra';
 $LDBoth='Entrambi i lati';
 
 $LDDeleteEntry='Cancella voce';
-$LDNoQuickList='La quicklist è vuota.';
+$LDNoQuickList='La quicklist Ã¨ vuota.';
 $LDClick2Search='Selezionare qui per avviare la ricerca.';
 $LDPossibleCodes='Possibili codici ICD ed OPS';
 /*2003-05-25 EL */
@@ -74,11 +74,11 @@ $LDSynonyms='Sinonimi o parole chiave';
 $LDSeparateCommas='Separa le parole tramite virgole';
 $LDIsSubGroup='E\' un sottogruppo?';
 $LDParentCodeNr='Codice del gruppo padre';
-$LDIfSubGroup='Se il gruppo è un sottogruppo';
+$LDIfSubGroup='Se il gruppo Ã¨ un sottogruppo';
 $LDAuxillaryNotes='Note ausiliarie';
 $LDStdCodeNr='Codice standard';
 $LDIfAvailable='se disponibile';
-$LDYes='Sì';
+$LDYes='SÃ¬';
 $LDNo='No';
 $LDExtraNotes='Note aggiuntive';
 $LDAlertNoCode='Inserire il codice del gruppo.';

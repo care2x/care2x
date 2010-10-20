@@ -80,7 +80,7 @@ $LDGoodMorning='Buongiorno';
 $LDGoodDay='Salve, lieto di rivederla!';
 $LDGoodEvening='Buonasera';
 
-$LDShowActualDir='Visualizza le voci più recenti in elenco';
+$LDShowActualDir='Visualizza le voci piÃ¹ recenti in elenco';
 $LDYesDelete='Si, cancella';
 $LDNoCancel='No, annulla';
 $LDDeleteEntry='Cancella la voce';

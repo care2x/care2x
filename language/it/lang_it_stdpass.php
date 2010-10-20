@@ -88,7 +88,7 @@ $LDLogout='Logout';
 $LDNewLogin='Nuovo login';
 $LDLogoutConfirm='Si desidera veramente uscire?';
 $LDOK='OK';
-$LDYes='Sì';
+$LDYes='SÃ¬';
 $LDNotReally='No';
 
 $LDDOCScheduler='DOC Scheduler';

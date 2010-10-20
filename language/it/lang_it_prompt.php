@@ -11,17 +11,17 @@ $LDChkWardConflict='Questo paziente era stato assegnato inizialmente al reparto 
 $LDSelectRoomBed='Scegliere qui sotto la stanza ed il letto da assegnare al paziente';
 $LDSureAssignRoomBed='Si conferma l\'assegnazione di questa camera e questo letto al paziente?';
 $LDWhereToTransfer='Dove va trasferito il paziente?';
-$LDErrorOccured='Si Ë verificato un errore.';
+$LDErrorOccured='Si √® verificato un errore.';
 $LDTryOrNotifyEDP='Si prega di ritentare o contattare il CED se il problema persiste';
 # 2003-07-30 EL
 $LDPlsEnterDate='Per favore inserire una data';
 $LDPlsEnterDoctor='Per favore inserire il nome di un Dottore';
 $LDPlsEnterPurpose='Per favore inseriere il motivo della richiesta';
-$LDAppointNotToday='Questo appuntamento NON Ë programmato per oggi!';
+$LDAppointNotToday='Questo appuntamento NON √® programmato per oggi!';
 $LDSureAdmitAppoint='E\' sicuro che vuole inserire questo appuntamento per oggi?';
-$LDPatientIsDischarged='Questo paziente Ë stato gi‡ dimesso';
-$LDPersonIsAdmitted='Questa persona attualmente Ë ricoverata';
-$LDEncounterClosed='Questa visita Ë chiusa';
+$LDPatientIsDischarged='Questo paziente √® stato gi√† dimesso';
+$LDPersonIsAdmitted='Questa persona attualmente √® ricoverata';
+$LDEncounterClosed='Questa visita √® chiusa';
 # 2003-08-02 EL
 $LDNoOutpatients='Non ci sono ancora pazienti dimessi.';
 $LDGoToAppointments='Per favore clicchi qui per controllare gli appuntamenti pendenti.';
@@ -29,12 +29,12 @@ $LDSureTransferPatient='E\' veramente sicuro di voler trasferire questo paziente
 $LDClkTransfer='Clicchi per trasferire il paziente';
 $LDSureTakeOverPatient='E\'sicuro? Vuole ammettere  questo paziente?'; 
 # Do not translate ~dept_id~
-$LDChkClinicConflict='Questo paziente Ë stato precedentemente assegnato ad un\'altra clinica/dipartimento (<b>~dept_id~</b>).Per favore chiarisca prima con l\'accettazione o un\'altra clinica prima di ammettere il paziente all\'interno della sua clinica. Grazie.';
+$LDChkClinicConflict='Questo paziente √® stato precedentemente assegnato ad un\'altra clinica/dipartimento (<b>~dept_id~</b>).Per favore chiarisca prima con l\'accettazione o un\'altra clinica prima di ammettere il paziente all\'interno della sua clinica. Grazie.';
 $LDSureToCancel='E\' sicuro di volerlo cancellare?';
 $LDPlsEnterFullName='Per favore inserisca il suo nome per intero';
 $LDOk='Ok';
-$LDAdmissionCancelled='L\'ammissione Ë stata cancellata con successo.';
-$LDCancelError='Si Ë verificato un errore! La Cancellazione verr‡ fermata.';
+$LDAdmissionCancelled='L\'ammissione √® stata cancellata con successo.';
+$LDCancelError='Si √® verificato un errore! La Cancellazione verr√† fermata.';
 $LDTellEdpIfPersist='Notifichi il problema al suo dipartimento EDP nel caso continui. Grazie.';
 $LDPlsFindPersonFirst='Per favore cerchi la persona come prima cosa.';
 $LDEnterRelatedInfo='Se disponibili, inserisca le informazioni relative qui';
@@ -54,7 +54,7 @@ $LDPlsEnterMedType='Inserire il tipo di medicina';
 $LDPlsSelectAppType='Selezionare il tipo di applicazione';
 $LDPlsSelectPrescType='Selezionare il tipo di prescrizione';
 $LDPlsEnterValue='Inserire un valore';
-$LDPlsSelectUnitMsr='Selezionare l\'unit‡ di misura';
+$LDPlsSelectUnitMsr='Selezionare l\'unit√† di misura';
 
 # 2003-08-26 EL
 $LDEntryInvalidChar='Un dato inserito ha un valore non valido!';
@@ -63,7 +63,7 @@ $LDOptional='Opzionale';
 
 $LDSaveAnyway='Vuole salvare i dati comunque?';
 #2003-08-27 EL
-$LDDeathDateIs='La data di morte inserita Ë';
+$LDDeathDateIs='La data di morte inserita √®';
 $LDIsCorrect='E\' corretta?';
 $LDProceedSave='Vuole salvare?';
 #2003-08-28 EL
@@ -82,10 +82,10 @@ $LDPlsEnterStartTime='Indicare da che ora';
 $LDPlsEnterEndTime='Indicare fino a che ora';
 $LDPlsEnterScrubNurse='Inserire il nome dell\'infermiere/a specializzato/a';
 $LDPlsEnterORNr='Inserire il numero o il proprio identificativo';
-$LDWrongLoginPW='La sua login o password Ë errata';
+$LDWrongLoginPW='La sua login o password √® errata';
 $LDPlsORNr='Inserire il proprio numero identificativo';
 
 #2004-08-06 EL
-$LDInvalidDate ='La data inserita non Ë valida.';
+$LDInvalidDate ='La data inserita non √® valida.';
 $LDNoPastDate = 'Non si possono inserire date nel passato.';
 ?>

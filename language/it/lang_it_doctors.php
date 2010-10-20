@@ -51,11 +51,11 @@ $LDShortDay=array('D',
 								'S'
 								);
 $LDFullDay=array('Domenica',
-								'LunedÏ',
-								'MartedÏ',
-								'MercoledÏ',
-								'GiovedÏ',
-								'VenerdÏ',
+								'Luned√¨',
+								'Marted√¨',
+								'Mercoled√¨',
+								'Gioved√¨',
+								'Venerd√¨',
 								'Sabato'
 								);
 $LDDoc1='Medico';
@@ -68,7 +68,7 @@ $LDMakeDutyPlan='Creare un piano di servizio';
 $LDClk2Plan='Selezionare per aprire l\'elenco del personale';
 $LDInfo4Duty='Informazioni';
 $LDStayIn='Servizio attivo';
-$LDOnCall='Reperibilit‡';
+$LDOnCall='Reperibilit√†';
 $LDPhone='Telefono';
 $LDBeeper='Interno';
 $LDMoreInfo='Ulteriori informazioni';

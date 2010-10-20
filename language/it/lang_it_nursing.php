@@ -30,7 +30,7 @@ $LDBedNr='Numero di letti';
 $LDOptions='Opzioni';
 $LDFreeBed='Vacante';
 
-$LDNoOcc='La lista occupazione letti di oggi non Ë disponibile!';
+$LDNoOcc='La lista occupazione letti di oggi non √® disponibile!';
 $LDClk2Archive='Selezionare per accedere all\'archivio.';
 $LDNrUnocc='Numero di letti vacanti';
 $LDEditStation='Modifica dati data in ward ~station~';
@@ -109,7 +109,7 @@ $LDNurses='Infermieri';
 $LDCreateStation='Crea Reparto';
 $LDEnterAllFields ='I campi identificati da <font color=#ff0000><b>*</b></font> vanno riempiti.';
 $LDPlsSelect='Scegliere un reparto';
-$LDStationExists='Il Reparto ~station~ esiste gi‡!';
+$LDStationExists='Il Reparto ~station~ esiste gi√†!';
 $LDAlertIncomplete='Mancano alcuni dati: si prega di inserirli.';
 $LDAlertRoomNr='Il numero dell\'ultima stanza dev\'essere MAGGIORE del numero della prima stanza!';
 $LDExistStations='Reparti esistenti. Scegliere quello desiderato.';
@@ -128,11 +128,11 @@ $LDLastList='Ultima lista di occupazione.';
 $LDNotToday='(Non di oggi!!)';
 $LDFromYesterday='(Lista di ieri!!)';
 /**********do not change the ~nr~ **************************/
-$LDListFrom='Questa lista Ë di ~nr~ giorni fa.';
+$LDListFrom='Questa lista √® di ~nr~ giorni fa.';
 $LDCopyAnyway='Copiala lo stesso come lista di oggi.';
 $LDTakeoverList='Copiala come lista di oggi.';
 $LDDoNotCopy='Non copiarla e creane una nuova.';
-$LDOldList='Questa Ë una lista vecchia!';
+$LDOldList='Questa √® una lista vecchia!';
 $LDQuickInformer='Informazioni rapide';
 $LDAttention='Attenzione';
 $LDOccupied='Occupato';
@@ -183,10 +183,10 @@ $LDClk2Occupy='Selezionare per occupare il letto';
 $LDSave='Salva';
 $LDNurse='Infermiere';
 $LDYesSure='Dimetti il paziente.';
-$LDFtpAttempted='Il tentativo di connessione al server FTP Ë fallito:<br>potrebbe essere occupato o non disponibile.
+$LDFtpAttempted='Il tentativo di connessione al server FTP √® fallito:<br>potrebbe essere occupato o non disponibile.
                                                         Se il problema persiste per parecchio tempo, contattare il CED.';
 $LDFtpNoLink='Login FTP fallito';
-$LDJustReleased='IL paziente Ë stato dimesso. Selezionare \'Chiudi\' per proseguire.';
+$LDJustReleased='IL paziente √® stato dimesso. Selezionare \'Chiudi\' per proseguire.';
 $LDReleaseType='Tipo di dimissione';
 $LDRegularRelease='Dimissione normale';
 $LDSelfRelease='Il paziente ha voluto lasciare l\'ospedale';
@@ -242,18 +242,18 @@ $LDClk2PlanDaily='Selezionare per inserire ~tagword~ per questo giorno';
 $LDInputWin='Finestra di input';
 $LDFullDayName=array(
                                                                         'Domenica',
-                                                                        'LunedÏ',
-                                                                        'MartedÏ',
-                                                                        'MercoledÏ',
-                                                                        'GiovedÏ',
-                                                                        'VenerdÏ',
+                                                                        'Luned√¨',
+                                                                        'Marted√¨',
+                                                                        'Mercoled√¨',
+                                                                        'Gioved√¨',
+                                                                        'Venerd√¨',
                                                                         'Sabato',
                                                                         'Domenica',
-                                                                        'LunedÏ',
-                                                                        'MartedÏ',
-                                                                        'MercoledÏ',
-                                                                        'GiovedÏ',
-                                                                        'VenerdÏ',
+                                                                        'Luned√¨',
+                                                                        'Marted√¨',
+                                                                        'Mercoled√¨',
+                                                                        'Gioved√¨',
+                                                                        'Venerd√¨',
                                                                         'Sabato',
                                                                         'Domenica'
                                                                         );
@@ -305,7 +305,7 @@ $LDAssignOcc='Assegna occupante';
 $LDSearchFound='La ricerca ha trovato <font color=red><b>~nr~</b></font> pazienti.';
 $LDAssign2Bed='Designa questo paziente come occupante';
 $LDSend='Invia';
-$LDSendLater='Invia pi˘ tardi';
+$LDSendLater='Invia pi√π tardi';
 $LDReqTest='Test diagnostico richiesto';
 $LDSpeedTest='Test urgente.';
 $LDDiagnosticTest='Richiedi test diagnostico';
@@ -329,7 +329,7 @@ $LDChangeBed='Modifica letto';
 $LDPatientDied='Decesso del paziente';
 
 $LDFollowing='seguente';
-$LDErrorDuplicateBed='Errore: letto gi‡ occupato nella tabella nursing_station_patients';
+$LDErrorDuplicateBed='Errore: letto gi√† occupato nella tabella nursing_station_patients';
 $LDNoFound='Nessun paziente trovato.';
 
 $LDNoWardsYet='Non ci sono ancora Reparti.';
@@ -378,7 +378,7 @@ $LDIrreversiblyCloseWard='Chiudi definitivamente il Reparto';
 $LDSureTemporaryClose='Si desidera realmente effettuare la chiusura?';
 $LDSureIrreversibleClose='Si desidera realmente chiudere il Reparto in modo IRREVERSIBILE?';
 /* Do not translate the ~str~ , it will be replaced with the ward's name by the program */
-$LDWardNoClose='Il Reparto ~str~ non puÚ essere chiusa perchÈ ci sono ancora pazienti.<br>Dimettere o spostare i pazienti prima di riprovare.';
+$LDWardNoClose='Il Reparto ~str~ non pu√≤ essere chiusa perch√© ci sono ancora pazienti.<br>Dimettere o spostare i pazienti prima di riprovare.';
 $LDBackToWardProfile='Tornare al profilo del Reparto';
 $LDShowWardOccupancy='Mostrare la lista di occupazione del Reparto';
 $LDTemporaryClosed='Temporaneamente chiusa';
@@ -391,7 +391,7 @@ $LDRoomNotCreated='Non ci sono ancora sale';
 $LDChangeRoom='Cambio sala';
 /*2003-06-14 EL*/
 $LDNrOfBedsRoom='Il num. di letti della stanza';
-$LDIsNotANumber='non Ë un numero valido';
+$LDIsNotANumber='non √® un numero valido';
 $LDWaitingList='Lista d\'attesa';
 $LDShowAll='Mostra tutto'; # <= Pls. keep translation very short
 $LDShowWardOnly='Reparto'; # <= Pls. keep translation very short

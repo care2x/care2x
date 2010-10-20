@@ -1,5 +1,5 @@
 <?php
-$LDAddressCitytown='Lista Città';
+$LDAddressCitytown='Lista CittÃ ';
 $LDTypeImmunization='Lista vaccinazioni';
 $Choose='Seleziona una tabella';
 $Send='Seleziona';

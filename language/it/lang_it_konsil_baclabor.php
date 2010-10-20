@@ -210,7 +210,7 @@ $lab_TestType = array('_lab_culture_aerob_' => 'C.aer.',
 								 '_lab_bbl_1_' => 'BBL 1',
 								 '_lab_api_1_' => 'API 1',
 								 '_lab_api_anaerob_1_' => 'API aner.1',
-								 '_lab_gram_dye_1_' => 'Gramf‰rb.1',
+								 '_lab_gram_dye_1_' => 'Gramf√§rb.1',
 								 
 								 '_lab_streptex_2_' => 'Streptex 2',
 								 '_lab_plasma_coag_2_' => 'Plasmakoag.2',
@@ -221,7 +221,7 @@ $lab_TestType = array('_lab_culture_aerob_' => 'C.aer.',
 								 '_lab_bbl_2_' => 'BBL 2',
 								 '_lab_api_2_' => 'API 2',
 								 '_lab_api_anaerob_2_' => 'API aner.2',
-								 '_lab_gram_dye_2_' => 'Gramf‰rb.2',
+								 '_lab_gram_dye_2_' => 'Gramf√§rb.2',
 								 
 								 
 								 '_lab_streptex_3_' => 'Streptex 3',
@@ -233,14 +233,14 @@ $lab_TestType = array('_lab_culture_aerob_' => 'C.aer.',
 								 '_lab_bbl_3_' => 'BBL 3',
 								 '_lab_api_3_' => 'API 3',
 								 '_lab_api_anaerob_3_' => 'API aner.3',
-								 '_lab_gram_dye_3_' => 'Gramf‰rb.3'
+								 '_lab_gram_dye_3_' => 'Gramf√§rb.3'
 								 );*/
 $lab_ResistANaerobAcro=array('PEN','AMO','AMC','MZL','PIC','IMI','CTX','CMP','TET','CLI','MTR','ERY','TEC','VAN','');
 									
 $lab_ResistAerobAcro=array('P','AMX','AMC','CC','MZ','PIP','GM','AN','CZ',
                                            'CXM','CRO','MER','OFX','SXT','U','AZ',
 										   'VA','NN','IPM','CTX','CAZ','FEP','TEC',
-										   'FF','25','E','OX','CIP','CFS','30','31','ﬂLac.');
+										   'FF','25','E','OX','CIP','CFS','30','31','√üLac.');
 										   
 $lab_ResistAerobExtra=array('AB','MIC','NY','AC','KET','6','','',
                                             'C','NE','GM','D','OFX','K','','',
@@ -250,8 +250,8 @@ $lab_ResistAerobExtra=array('AB','MIC','NY','AC','KET','6','','',
 									  
 $lab_TestResultId_1=array('Staph.aureus', 'E.coli', 'enterob.aerogenes',
                                      'Staph.epiderm', 'E.coli hem.', 'Morganel.morganii',
-									 'Streptokokk.', 'E.coli muc.', 'H‰mophilus spezies',
-									 'h‰m.Streptok.', 'Proteus', 'Salmonella',
+									 'Streptokokk.', 'E.coli muc.', 'H√§mophilus spezies',
+									 'h√§m.Streptok.', 'Proteus', 'Salmonella',
 									 'verg.Streptok.', 'Proteus indol pos.', 'Shigella',
 									 'Group A', 'Proteus indol neg.', 'aerob.Spore',
 									 'Group B', 'Pseudomonas', 'apath.Coryne',
@@ -267,9 +267,9 @@ $lab_TestResultId_1=array('Staph.aureus', 'E.coli', 'enterob.aerogenes',
 									 'Acinetob. Baumannii', 'Serrat.liquefac.', 'Stentrop.maltophl.');
 
 /*$lab_TestResultId_1=array('Staph.aureus', 'E.coli', 'enterobac aerogenes',
-                                     'Staph.epiderm', 'E.coli h‰m.', 'Morganella morganii',
-									 'Streptokokk.', 'E. coli muc.', 'H‰mophilus spezies',
-									 'h‰m.Streptok.', 'Proteus', 'Salmonella',
+                                     'Staph.epiderm', 'E.coli h√§m.', 'Morganella morganii',
+									 'Streptokokk.', 'E. coli muc.', 'H√§mophilus spezies',
+									 'h√§m.Streptok.', 'Proteus', 'Salmonella',
 									 'verg.Streptok.', 'Proteus indol pos.', 'Shigella',
 									 'Group A', 'Proteus indol neg.', 'aerobe Sporenbildner',
 									 'Group B', 'Pseudomonas', 'apath.Coryne',
