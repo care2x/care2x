@@ -116,7 +116,7 @@ while (false!==($theme = readdir($handle))) {
 ?>
   
 	<tr class="submenu">
-		<td>&nbsp;<input type="radio" name="icons" value="<?php echo $theme; ?>" <?php if($cfg['icons'] == $theme) echo 'checked'; ?>></td>
+		<td>&nbsp;<input type="radio" name="icons" value="<?php echo $theme; ?>" <?php if($cfg['icons'] == $theme) echo 'checked';?>></td>
 		<td>&nbsp;<b><?php echo $sIconsThemeName; ?></b></td>
 		<td>&nbsp;
 			<img src="<?php echo $root_path.'gui/img/common/'.$theme.'/team_wksp.gif'; ?>">
@@ -138,7 +138,7 @@ while (false!==($theme = readdir($handle))) {
 ?>
 
 	<tr class="submenu">
-		<td>&nbsp;<input type="radio" name="icons" value="no_icon" <?php if($cfg['icons'] == 'no_icon') echo 'checked'; ?>></td>
+		<td>&nbsp;<input type="radio" name="icons" value="no_icon" <?php if($cfg['icons'] == 'no_icon') echo 'checked';?>></td>
 		<td>&nbsp;<b><?php echo $LDNoIcon; ?></b></td>
 		<td>&nbsp;</td>
 		<td>&nbsp;<?php echo $LDNoIconTxt; ?></td>

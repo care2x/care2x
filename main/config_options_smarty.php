@@ -114,7 +114,7 @@ while (false!==($theme = readdir($handle))) {
 ?>
   
 	<tr class="submenu">
-		<td>&nbsp;<input type="radio" name="template_smarty" value="<?php echo $sTemplateDirectory; ?>" <?php if($cfg['template_smarty'] == $sTemplateDirectory) echo 'checked'; ?>></td>
+		<td>&nbsp;<input type="radio" name="template_smarty" value="<?php echo $sTemplateDirectory; ?>" <?php if($cfg['template_smarty'] == $sTemplateDirectory) echo 'checked';?>></td>
 		<td>&nbsp;<b><?php echo $sTemplateName; ?></b></td>
 		<td>&nbsp;<?php echo $sTemplateDescription; ?></td>
 		<td>&nbsp;<?php if(!empty($sTemplateScreenShot)) echo '<a href="'.$$filepath.$theme.'/'.$sTemplateScreenShot.'" target="_blank">'.$sTemplateScreenShot.'</a>'; ?></td>

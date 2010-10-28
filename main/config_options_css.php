@@ -114,7 +114,7 @@ while (false!==($theme = readdir($handle))) {
 ?>
   
 	<tr class="submenu">
-		<td>&nbsp;<input type="radio" name="css" value="<?php echo $sCssFileLocation; ?>" <?php if($cfg['css'] == $sCssFileLocation) echo 'checked'; ?>></td>
+		<td>&nbsp;<input type="radio" name="css" value="<?php echo $sCssFileLocation; ?>" <?php if($cfg['css'] == $sCssFileLocation) echo 'checked';?>></td>
 		<td>&nbsp;<b><?php echo $sCssThemeName; ?></b></td>
 		<td>&nbsp;<?php echo $sCssDescription; ?></td>
 		<td>&nbsp;<?php if(!empty($sCssScreenShot)) echo '<a href="'.$root_path.'gui/css/themes/'.$sCssScreenShot.'" target="_blank">'.$sCssScreenShot.'</a>'; ?></td>

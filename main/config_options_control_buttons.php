@@ -116,7 +116,7 @@ while (false!==($theme = readdir($handle))) {
 ?>
   
 	<tr class="submenu">
-		<td>&nbsp;<input type="radio" name="control_buttons" value="<?php echo $theme; ?>" <?php if($cfg['control_buttons'] == $theme) echo 'checked'; ?>></td>
+		<td>&nbsp;<input type="radio" name="control_buttons" value="<?php echo $theme; ?>" <?php if($cfg['control_buttons'] == $theme) echo 'checked';?>></td>
 		<td>&nbsp;<b><?php echo $sControlButtonsThemeName; ?></b></td>
 		<td>&nbsp;
 		<img src="<?php echo $root_path."gui/img/control/$theme/$lang/$lang"."_back2.gif"; ?>">

@@ -117,7 +117,7 @@ while (false!==($theme = readdir($handle))) {
 ?>
   
 	<tr class="submenu">
-		<td>&nbsp;<input type="radio" name="mainmenu_tree" value="<?php echo $theme; ?>" <?php if($cfg['mainmenu_tree'] == $theme) echo 'checked'; ?>></td>
+		<td>&nbsp;<input type="radio" name="mainmenu_tree" value="<?php echo $theme; ?>" <?php if($cfg['mainmenu_tree'] == $theme) echo 'checked';?>></td>
 		<td>&nbsp;<b><?php echo $sMainMenuStyleName; ?></b></td>
 		<td>&nbsp;
 		<?php
