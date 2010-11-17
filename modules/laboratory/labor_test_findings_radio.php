@@ -337,7 +337,7 @@ ob_start();
 <?php
 }
 
-require_once($root_path.'includes/inc_test_findings_form_'.$subtarget.'.php');
+require_once($root_path.$top_dir.'includes/inc_test_findings_form_'.$subtarget.'.php');
 
 echo '&nbsp;<br>';
 if ($edit)
