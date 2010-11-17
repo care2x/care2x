@@ -1,0 +1,598 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package packagerversion="1.4.9" version="2.0" xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0     http://pear.php.net/dtd/tasks-1.0.xsd     http://pear.php.net/dtd/package-2.0     http://pear.php.net/dtd/package-2.0.xsd">
+ <name>XML_RPC</name>
+ <channel>pear.php.net</channel>
+ <summary>PHP implementation of the XML-RPC protocol</summary>
+ <description>A PEAR-ified version of Useful Inc&apos;s XML-RPC for PHP.
+
+It has support for HTTP/HTTPS transport, proxies and authentication.</description>
+ <lead>
+  <name>Stig Bakken</name>
+  <user>ssb</user>
+  <email>stig@php.net</email>
+  <active>no</active>
+ </lead>
+ <lead>
+  <name>Daniel Convissor</name>
+  <user>danielc</user>
+  <email>danielc@php.net</email>
+  <active>yes</active>
+ </lead>
+ <date>2006-10-28</date>
+ <time>13:06:09</time>
+ <version>
+  <release>1.5.1</release>
+  <api>1.5.0</api>
+ </version>
+ <stability>
+  <release>stable</release>
+  <api>stable</api>
+ </stability>
+ <license uri="http://www.php.net/license/3_01.txt">PHP License</license>
+ <notes>* Turn passing payload through mb_convert_encoding() off by default.  Use new XML_RPC_Message::setConvertPayloadEncoding() and XML_RPC_Server::setConvertPayloadEncoding() to turn it on.  Bug 8632.
+* Have XML_RPC_Value::scalarval() return FALSE if value is not a scalar.  Bug 8251.</notes>
+ <contents>
+  <dir name="/">
+   <file md5sum="12e82943a83395bfdc00505dfe1c4f16" name="tests/allgot.inc" role="test" />
+   <file md5sum="4362050edd0f6eb280e93b43c836c711" name="tests/empty-value-struct.php" role="test">
+    <tasks:replace from="@package_version@" to="version" type="package-info" />
+   </file>
+   <file md5sum="2d37d500c19606e4ff92364df745e689" name="tests/empty-value.php" role="test">
+    <tasks:replace from="@package_version@" to="version" type="package-info" />
+   </file>
+   <file md5sum="a0ab20aef0c7c3af4ed02b5a6b7ef7fc" name="tests/extra-lines.php" role="test">
+    <tasks:replace from="@package_version@" to="version" type="package-info" />
+   </file>
+   <file md5sum="5b4852b96c0cd4f1e869effef8003e06" name="tests/protoport.php" role="test">
+    <tasks:replace from="@package_version@" to="version" type="package-info" />
+   </file>
+   <file md5sum="9e78b8f4a5cf3a68c6d1b94fb8e621d8" name="tests/test_Dump.php" role="test">
+    <tasks:replace from="@package_version@" to="version" type="package-info" />
+   </file>
+   <file md5sum="1fdd79c28b047409b327063abd144dd0" name="tests/types.php" role="test">
+    <tasks:replace from="@package_version@" to="version" type="package-info" />
+   </file>
+   <file baseinstalldir="XML/RPC" md5sum="91b1ae15a18db161b6ebd52a9a4ed6ae" name="Dump.php" role="php">
+    <tasks:replace from="@package_version@" to="version" type="package-info" />
+   </file>
+   <file baseinstalldir="XML" md5sum="c7b9a2b4bff7e860ca3658775672ffa4" name="RPC.php" role="php">
+    <tasks:replace from="@package_version@" to="version" type="package-info" />
+   </file>
+   <file baseinstalldir="XML/RPC" md5sum="46018f4943f7b9a67f4611d242821dab" name="Server.php" role="php">
+    <tasks:replace from="@package_version@" to="version" type="package-info" />
+   </file>
+  </dir>
+ </contents>
+ <compatible>
+  <name>PEAR</name>
+  <channel>pear.php.net</channel>
+  <min>1.4.0a1</min>
+  <max>1.4.9</max>
+ </compatible>
+ <dependencies>
+  <required>
+   <php>
+    <min>4.2.0</min>
+   </php>
+   <pearinstaller>
+    <min>1.4.0a1</min>
+   </pearinstaller>
+   <extension>
+    <name>xml</name>
+   </extension>
+  </required>
+ </dependencies>
+ <phprelease />
+ <changelog>
+  <release>
+   <version>
+    <release>1.5.0</release>
+    <api>1.5.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2006-07-11</date>
+   <license uri="http://www.php.net/license/3_01.txt">PHP License</license>
+   <notes>No changes from 1.5.0RC2.
+
+The primary change from 1.4.8 is improved multi-byte support.  See the change log for complete information.</notes>
+  </release>
+  <release>
+   <version>
+    <release>1.5.0RC2</release>
+    <api>1.5.0</api>
+   </version>
+   <stability>
+    <release>beta</release>
+    <api>beta</api>
+   </stability>
+   <date>2006-06-21</date>
+   <license uri="http://www.php.net/license/3_01.txt">PHP License</license>
+   <notes>* If PHP&apos;s mbstring extension is enabled, use mb_convert_encoding() to ensure the server payload matches the intended encoding.</notes>
+  </release>
+  <release>
+   <version>
+    <release>1.5.0RC1</release>
+    <api>1.5.0</api>
+   </version>
+   <stability>
+    <release>beta</release>
+    <api>beta</api>
+   </stability>
+   <date>2006-06-16</date>
+   <license uri="http://www.php.net/license/3_01.txt">PHP License</license>
+   <notes>* Provide complete multi-byte string support for systems with the mbstring extension enabled. Bug 7837.
+* If PHP&apos;s mbstring extension is enabled, use mb_convert_encoding() to ensure the client payload matches the intended encoding. This is a better resolution of Bug 7376.
+* Turn off the default of automatically base64 encoding strings that can generate fatal errors in PHP&apos;s SAX parser. The automatic base64 encoding can be turned on via the new XML_RPC_Client::setAutoBase64() method. The auto-encoding is a workaround for systems that don&apos;t have PHP&apos;s mbstring extension available. (The automatic base64 encoding was added in the prior release, 1.4.8, and caused problems for users who don&apos;t control the receiving end of the requests.) Bug 7837.</notes>
+  </release>
+  <release>
+   <version>
+    <release>1.4.8</release>
+    <api>1.4.6</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2006-04-16</date>
+   <license uri="http://www.php.net/license/3_0.txt">PHP License</license>
+   <notes>* Characters other than alpha-numeric, punctuation, SP, TAB, LF and CR break the XML parser, encode value via Base 64.  Bug 7376.</notes>
+  </release>
+  <release>
+   <version>
+    <release>1.4.7</release>
+    <api>1.4.6</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2006-04-10</date>
+   <license uri="http://www.php.net/license/3_0.txt">PHP License</license>
+   <notes>* Add include_once for PEAR if need to load xml extension.  Bug 7358.
+* Add dependency for xml extension in package file.  Bug 7358.</notes>
+  </release>
+  <release>
+   <version>
+    <release>1.4.6</release>
+    <api>1.4.6</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2006-04-07</date>
+   <license uri="http://www.php.net/license/3_0.txt">PHP License</license>
+   <notes>* Add XML_RPC_Message::$remove_extra_lines property. Defaults to true. If set to false, extra lines are left in place. Bug 7088.
+* Add XML_RPC_Message::$response_payload property. Makes logging responses easy.</notes>
+  </release>
+  <release>
+   <version>
+    <release>1.4.5</release>
+    <api>1.4.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2006-01-14</date>
+   <license uri="http://www.php.net/license/3_0.txt">PHP License</license>
+   <notes>* Have server send headers individualy as opposed to sending them all at once. Necessary due to changes PHP 4.4.2.</notes>
+  </release>
+  <release>
+   <version>
+    <release>1.4.4</release>
+    <api>1.4.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2005-10-15</date>
+   <license uri="http://www.php.net/license/3_0.txt">PHP License</license>
+   <notes>* Properly deal with empty values in struct&apos;s.</notes>
+  </release>
+  <release>
+   <version>
+    <release>1.4.3</release>
+    <api>1.4.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2005-09-24</date>
+   <license uri="http://www.php.net/license/3_0.txt">PHP License</license>
+   <notes>* Make XML_RPC_encode() properly handle dateTime.iso8601.  Request 5117.</notes>
+  </release>
+  <release>
+   <version>
+    <release>1.4.2</release>
+    <api>1.4.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2005-09-18</date>
+   <license uri="http://www.php.net/license/3_0.txt">PHP License</license>
+   <notes>* Allow empty &lt;value&gt;&apos;s without &lt;types&gt;&apos;s.  Bug 5315.</notes>
+  </release>
+  <release>
+   <version>
+    <release>1.4.1</release>
+    <api>1.4.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2005-09-07</date>
+   <license uri="http://www.php.net/license/3_0.txt">PHP License</license>
+   <notes>* Don&apos;t add debug info unless debug is on.  Bug 5136.
+* Use is_a() instead of class_name() so people can use their own XML_RPC_Message objects.  Request 5002.</notes>
+  </release>
+  <release>
+   <version>
+    <release>1.4.0</release>
+    <api>1.4.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2005-08-14</date>
+   <license uri="http://www.php.net/license/3_0.txt">PHP License</license>
+   <notes>* MAJOR SECURITY FIX: eliminate use of eval().
+* Using socket_get_status() because stream_get_meta_data() was introduced in 4.3.0, but we need to support 4.2.0.  Bug 4805.</notes>
+  </release>
+  <release>
+   <version>
+    <release>1.3.3</release>
+    <api>1.3.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2005-07-15</date>
+   <license uri="http://www.php.net/license/3_0.txt">PHP License</license>
+   <notes>* Eliminate memory leak by resetting $XML_RPC_xh each time parseResponse() is called.  Bug 4780.
+* Using socket_set_timeout() because stream_set_timeout() was introduced in 4.3.0, but we need to support 4.2.0.  Bug 4805.</notes>
+  </release>
+  <release>
+   <version>
+    <release>1.3.2</release>
+    <api>1.3.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2005-07-07</date>
+   <license uri="http://www.php.net/license/3_0.txt">PHP License</license>
+   <notes>* Eliminate path disclosure vulnerabilities by suppressing error messages when eval()&apos;ing.
+* Eliminate path disclosure vulnerability by catching bogus parameters submitted to XML_RPC_Value::serializeval().
+* In XML_RPC_Server::service(), only call createServerPayload() and createServerHeaders() if necessary.  Fixes compatibility issue introduced in Release 1.3.0RC1 for users who set the $serviceNow parameter of XML_RPC_Server() to 0.  Bug 4757.
+* Change &quot;var $errstring&quot; to &quot;var $errstr&quot;.  Bug 4582.  Was put into CVS version 1.75 of RPC.php but didn&apos;t make it into RELEASE_1_3_1.</notes>
+  </release>
+  <release>
+   <version>
+    <release>1.3.1</release>
+    <api>1.3.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2005-06-29</date>
+   <license uri="http://www.php.net/license/3_0.txt">PHP License</license>
+   <notes>* Security fix. Update highly recommended!</notes>
+  </release>
+  <release>
+   <version>
+    <release>1.3.0</release>
+    <api>1.3.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2005-06-13</date>
+   <license uri="http://www.php.net/license/3_0.txt">PHP License</license>
+   <notes>* Stable release.  See earlier releases for changes since 1.2.2.</notes>
+  </release>
+  <release>
+   <version>
+    <release>1.3.0RC3</release>
+    <api>1.3.0</api>
+   </version>
+   <stability>
+    <release>beta</release>
+    <api>stable</api>
+   </stability>
+   <date>2005-05-10</date>
+   <license uri="http://www.php.net/license/3_0.txt">PHP License</license>
+   <notes>* When verifying requests against function signatures, if the number of parameters don&apos;t match, provide an appropriate message.  NOTE: this resolves a path disclosure vulnerability.  (Refines the changes made in the last commit.)  Bug 4231.
+* XML_RPC_Message::getParam() now returns an XML_RPC_Response object upon error.  Changed from Release 1.3.0RC2.
+* Add the XML_RPC_Value::isValue() method. For testing if an item is an XML_RPC_Value object.
+* If XML_RPC_Client::send() is given an incorrect $msg parameter, raise an error with the new XML_RPC_ERROR_PROGRAMMING code and return 0.
+* Improve cross-platform operation by using PEAR::loadExtension() instead of dl().
+* Use &lt;br /&gt; instead of &lt;br&gt; in XML_RPC_Value::dump().</notes>
+  </release>
+  <release>
+   <version>
+    <release>1.3.0RC2</release>
+    <api>1.3.0</api>
+   </version>
+   <stability>
+    <release>beta</release>
+    <api>beta</api>
+   </stability>
+   <date>2005-05-05</date>
+   <license uri="http://www.php.net/license/3_0.txt">PHP License</license>
+   <notes>* If XML_RPC_Message::getParam() is given an incorrect parameter, raise an error with the new XML_RPC_ERROR_INCORRECT_PARAMS code and return FALSE.
+* Handle improper requests to XML_RPC_Server::verifySignature().  Bug 4231.
+* Try to allow HTTP 100 responses if followed by a 200 response.  Bug 4116.
+* Help Delphi users by making RPCMETHODNAME an alias for METHODNAME.  Request 4205.</notes>
+  </release>
+  <release>
+   <version>
+    <release>1.3.0RC1</release>
+    <api>1.3.0</api>
+   </version>
+   <stability>
+    <release>beta</release>
+    <api>beta</api>
+   </stability>
+   <date>2005-04-07</date>
+   <license uri="http://www.php.net/license/3_0.txt">PHP License</license>
+   <notes>* Improve timeout handling for situations where connection to server is made but no response is not received in time. Accomplished via stream_set_timeout().  Request 3963.
+* Add Fault Code 6: &quot;The requested method didn&apos;t return an XML_RPC_Response object.&quot;  Request 4032.
+* Add the createServerPayload() and createServerHeaders() methods and the $server_payload and $server_headers properties.  Request 3121.
+* As in earlier versions, if the $serviceNow parameter to XML_RPC_Server() is 0, no data will be returned, but now the new $server_payload and $server_headers properties will be set.
+* Convert the parser handle to an integer before using it as an index for $XML_RPC_xh[$parser].  Reduces E_STRICT notices.  Bug 3782.
+* Add createHeaders() method and $headers property to XML_RPC_Client to make testing easier.</notes>
+  </release>
+  <release>
+   <version>
+    <release>1.2.2</release>
+    <api>1.2.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2005-03-07</date>
+   <license uri="http://www.php.net/license/3_0.txt">PHP License</license>
+   <notes>* When using a proxy, add the protocol to the Request-URI, making it an &quot;absoluteURI&quot; as per the HTTP 1.0 spec.  Bug 3679.</notes>
+  </release>
+  <release>
+   <version>
+    <release>1.2.1</release>
+    <api>1.2.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2005-03-01</date>
+   <license uri="http://www.php.net/license/3_0.txt">PHP License</license>
+   <notes>* Add isset() check before examining the dispatch map.  Bug 3658.</notes>
+  </release>
+  <release>
+   <version>
+    <release>1.2.0</release>
+    <api>1.2.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2005-02-27</date>
+   <license uri="http://www.php.net/license/3_0.txt">PHP License</license>
+   <notes>* Provide the &quot;stable&quot; release.
+* Add package2.xml for compatibility with PEAR 1.4.0.
+* For changes since 1.1.0, see the changelogs for the various RC releases.</notes>
+  </release>
+  <release>
+   <version>
+    <release>1.2.0RC7</release>
+    <api>1.2.0RC7</api>
+   </version>
+   <stability>
+    <release>beta</release>
+    <api>beta</api>
+   </stability>
+   <date>2005-02-22</date>
+   <license uri="http://www.php.net/license/3_0.txt">PHP License</license>
+   <notes>* Add the setSendEncoding() method and $send_encoding
+  property to XML_RPC_Message.  Request 3537.
+* Allow class methods to be mapped using either syntax:
+     &apos;function&apos; =&gt; &apos;hello::sayHello&apos;,
+     or
+     &apos;function&apos; =&gt; array(&apos;hello&apos;, &apos;sayhello&apos;),
+  Bug 3363.
+* Use 8192 instead of 32768 for bytes in fread()
+  in parseResponseFile().  Bug 3340.</notes>
+  </release>
+  <release>
+   <version>
+    <release>1.2.0RC6</release>
+    <api>1.2.0RC6</api>
+   </version>
+   <stability>
+    <release>beta</release>
+    <api>beta</api>
+   </stability>
+   <date>2005-01-25</date>
+   <license uri="http://www.php.net/license/3_0.txt">PHP License</license>
+   <notes>* Don&apos;t put the protocol in the Host field of the POST data.  (danielc)</notes>
+  </release>
+  <release>
+   <version>
+    <release>1.2.0RC5</release>
+    <api>1.2.0RC5</api>
+   </version>
+   <stability>
+    <release>beta</release>
+    <api>beta</api>
+   </stability>
+   <date>2005-01-24</date>
+   <license uri="http://www.php.net/license/3_0.txt">PHP License</license>
+   <notes>* If $port is 443 but a protocol isn&apos;t specified in $server, assume ssl:// is the protocol.</notes>
+  </release>
+  <release>
+   <version>
+    <release>1.2.0RC4</release>
+    <api>1.2.0RC4</api>
+   </version>
+   <stability>
+    <release>beta</release>
+    <api>beta</api>
+   </stability>
+   <date>2005-01-24</date>
+   <license uri="http://www.php.net/license/3_0.txt">PHP License</license>
+   <notes>* When a connection attempt fails, have the method return 0.  (danielc)
+* Move the protocol/port checking/switching and the property settings from sendPayloadHTTP10() to the XML_RPC_Client constructor.  (danielc)
+* Add tests for setting the client properties.  (danielc)
+* Remove $GLOBALS[&apos;XML_RPC_twoslash&apos;] since it&apos;s not used.  (danielc)
+* Bundle the tests with the package.  (danielc)</notes>
+  </release>
+  <release>
+   <version>
+    <release>1.2.0RC3</release>
+    <api>1.2.0RC3</api>
+   </version>
+   <stability>
+    <release>beta</release>
+    <api>beta</api>
+   </stability>
+   <date>2005-01-19</date>
+   <license uri="http://www.php.net/license/3_0.txt">PHP License</license>
+   <notes>* ssl uses port 443, not 445.</notes>
+  </release>
+  <release>
+   <version>
+    <release>1.2.0RC2</release>
+    <api>1.2.0RC2</api>
+   </version>
+   <stability>
+    <release>beta</release>
+    <api>beta</api>
+   </stability>
+   <date>2005-01-11</date>
+   <license uri="http://www.php.net/license/3_0.txt">PHP License</license>
+   <notes>* Handle ssl:// in the $server string.  (danielc)
+* Also default to port 445 for ssl:// requests as well.  (danielc)
+* Enhance debugging in the server.  (danielc)</notes>
+  </release>
+  <release>
+   <version>
+    <release>1.2.0RC1</release>
+    <api>1.2.0RC1</api>
+   </version>
+   <stability>
+    <release>beta</release>
+    <api>beta</api>
+   </stability>
+   <date>2004-12-30</date>
+   <license uri="http://www.php.net/license/3_0.txt">PHP License</license>
+   <notes>* Make things work with SSL.  Bug 2489.  (nkukard lbsd net)
+* Allow array function callbacks (Matt Kane)
+* Some minor speed-ups (Matt Kane)
+* Add Dump.php to the package (Christian Weiske)
+* Replace all line endings with \r\n.  Had only done replacements on \n.  Bug 2521.  (danielc)
+* Silence fsockopen() errors.  Bug 1714.  (danielc)
+* Encode empty arrays as an array. Bug 1493.  (danielc)
+* Eliminate undefined index notice when submitting empty arrays to XML_RPC_Encode().  Bug 1819.  (danielc)
+* Speed up check for enumerated arrays in XML_RPC_Encode().  (danielc)
+* Prepend &quot;XML_RPC_&quot; to ERROR_NON_NUMERIC_FOUND, eliminating problem when eval()&apos;ing error messages.  (danielc)
+* Use XML_RPC_Base::raiseError() instead of PEAR::raiseError() in XML_RPC_ee() because PEAR.php is lazy loaded.  (danielc)
+* Allow raiseError() to be called statically.  (danielc)
+* Stop double escaping of character entities.  Bug 987.  (danielc)
+  NOTICE: the following have been removed:
+    * XML_RPC_dh()
+    * $GLOBALS[&apos;XML_RPC_entities&apos;]
+    * XML_RPC_entity_decode()
+    * XML_RPC_lookup_entity()
+* Determine the XML&apos;s encoding via the encoding attribute in the XML declaration.  Bug 52.  (danielc)</notes>
+  </release>
+  <release>
+   <version>
+    <release>1.1.0</release>
+    <api>1.1.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2004-03-15</date>
+   <license uri="http://www.php.net/license/3_0.txt">PHP License</license>
+   <notes>* Added support for sequential arrays to XML_RPC_encode() (mroch)
+* Cleaned up new XML_RPC_encode() changes a bit (mroch, pierre)
+* Remove &quot;require_once &apos;PEAR.php&apos;&quot;, include only when needed to raise an error
+* Replace echo and error_log() with raiseError() (mroch)
+* Make all classes extend XML_RPC_Base, which will handle common functions  (mroch)
+* be tolerant of junk after methodResponse (Luca Mariano, mroch)
+* Silent notice even in the error log (pierre)
+* fix include of shared xml extension on win32 (pierre)</notes>
+  </release>
+  <release>
+   <version>
+    <release>1.0.4</release>
+    <api>1.0.4</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2002-10-02</date>
+   <license uri="http://www.php.net/license/3_0.txt">PHP License</license>
+   <notes>* added HTTP proxy authorization support (thanks to Arnaud Limbourg)</notes>
+  </release>
+  <release>
+   <version>
+    <release>1.0.3</release>
+    <api>1.0.3</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2002-05-19</date>
+   <license uri="http://www.php.net/license/3_0.txt">PHP License</license>
+   <notes>* fix bug when parsing responses with boolean types</notes>
+  </release>
+  <release>
+   <version>
+    <release>1.0.2</release>
+    <api>1.0.2</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2002-04-16</date>
+   <license uri="http://www.php.net/license/3_0.txt">PHP License</license>
+   <notes>* E_ALL fixes
+* fix HTTP response header parsing</notes>
+  </release>
+  <release>
+   <version>
+    <release>1.0.1</release>
+    <api>1.0.1</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2001-09-25</date>
+   <license uri="http://www.php.net/license/3_0.txt">PHP License</license>
+   <notes>This is a PEAR-ified version of Useful Inc&apos;s 1.0.1 release.
+Includes an urgent security fix identified by Dan Libby &lt;dan@libby.com&gt;.</notes>
+  </release>
+ </changelog>
+</package>

@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE package SYSTEM "http://pear.php.net/dtd/package-1.0">
+<package version="1.0" packagerversion="1.4.9">
+ <name>PEAR_Frontend_Web</name>
+ <summary>HTML (Web) PEAR Installer</summary>
+ <description>Web Interface to the PEAR Installer
+ </description>
+ <maintainers>
+  <maintainer>
+   <user>dickmann</user>
+   <name>Christian Dickmann</name>
+   <email>dickmann@php.net</email>
+   <role>lead</role>
+  </maintainer>
+  <maintainer>
+   <user>pajoye</user>
+   <name>Pierre-Alain Joye</name>
+   <email>pajoye@pearfr.org</email>
+   <role>lead</role>
+  </maintainer>
+  <maintainer>
+   <user>cellog</user>
+   <name>Gregory Beaver</name>
+   <email>cellog@php.net</email>
+   <role>developer</role>
+  </maintainer>
+  <maintainer>
+   <user>ssb</user>
+   <name>Stig Bakken</name>
+   <email>stig@php.net</email>
+   <role>helper</role>
+  </maintainer>
+  </maintainers>
+ <release>
+  <version>0.5.1</version>
+  <date>2006-04-18</date>
+  <license>PHP License</license>
+  <state>alpha</state>
+  <notes>- #6995 missing require_once in Web.php
+- #6993 prevents large response time, create the cache_dir
+  if it does not exist
+- #7319, bad display of errors when the install cmd failed
+- remove Pager dependency
+  </notes>
+  <deps>
+   <dep type="pkg" rel="has">Net_UserAgent_Detect</dep>
+   <dep type="pkg" rel="has">HTML_Template_IT</dep>
+   <dep type="pkg" rel="ge" version="1.4.6">PEAR</dep>
+  </deps>
+  <provides type="class" name="PEAR_Frontend_Web" extends="PEAR_Frontend" />
+  <provides type="function" name="PEAR_Frontend_Web::setConfig" />
+  <provides type="function" name="PEAR_Frontend_Web::displayLine" />
+  <provides type="function" name="PEAR_Frontend_Web::display" />
+  <provides type="function" name="PEAR_Frontend_Web::userConfirm" />
+  <provides type="function" name="PEAR_Frontend_Web::displayStart" />
+  <provides type="function" name="PEAR_Frontend_Web::displayError" />
+  <provides type="function" name="PEAR_Frontend_Web::displayFatalError" />
+  <provides type="function" name="PEAR_Frontend_Web::displayErrorImg" />
+  <provides type="function" name="PEAR_Frontend_Web::outputData" />
+  <provides type="function" name="PEAR_Frontend_Web::startSession" />
+  <provides type="function" name="PEAR_Frontend_Web::finishOutput" />
+  <provides type="function" name="PEAR_Frontend_Web::runPostinstallScripts" />
+  <provides type="function" name="PEAR_Frontend_Web::skipParamgroup" />
+  <provides type="function" name="PEAR_Frontend_Web::runInstallScript" />
+  <provides type="function" name="PEAR_Frontend_Web::confirmDialog" />
+  <provides type="function" name="PEAR_Frontend_Web::userDialog" />
+  <provides type="function" name="PEAR_Frontend_Web::log" />
+  <provides type="function" name="PEAR_Frontend_Web::outputFrontendFile" />
+  <filelist>
+   <file role="php" baseinstalldir="PEAR" md5sum="3fc68406519a99e5156d1d24a4771e34" name="WebInstaller.php"/>
+   <file role="php" baseinstalldir="PEAR" md5sum="45a6f10f93d1da4be088c0d0d21350b3" name="Frontend/Web.php"/>
+   <file role="php" baseinstalldir="PEAR" md5sum="89fbaf12b03630cde8fab8f582a2013e" name="Frontend/Web/config.gif"/>
+   <file role="php" baseinstalldir="PEAR" md5sum="917c5480d7887a45fb7ee9e75ffdc90f" name="Frontend/Web/download.gif"/>
+   <file role="php" baseinstalldir="PEAR" md5sum="b7910926d28d2174f766edcd5b0203f3" name="Frontend/Web/error.gif"/>
+   <file role="php" baseinstalldir="PEAR" md5sum="a9fd915f941d8b2767a86a7b86c1157d" name="Frontend/Web/info.gif"/>
+   <file role="php" baseinstalldir="PEAR" md5sum="25ea72ec541af2d75e1c6084bb51c799" name="Frontend/Web/infoplus.gif"/>
+   <file role="php" baseinstalldir="PEAR" md5sum="bf40b1ad414777f2ec1ffd8f49db8cb8" name="Frontend/Web/install.gif"/>
+   <file role="php" baseinstalldir="PEAR" md5sum="3d5ed1a26b7ba8c9d144d289e40359dd" name="Frontend/Web/install_fail.gif"/>
+   <file role="php" baseinstalldir="PEAR" md5sum="b1bd4bab6452562b624834691a2537c6" name="Frontend/Web/install_ok.gif"/>
+   <file role="php" baseinstalldir="PEAR" md5sum="7b0098f037a686f02b925333a30161e9" name="Frontend/Web/install_wait.gif"/>
+   <file role="php" baseinstalldir="PEAR" md5sum="06f6632208ac488b25c582100d97d03d" name="Frontend/Web/login.gif"/>
+   <file role="php" baseinstalldir="PEAR" md5sum="b6ec4b263faa470ff1150637b0d7c63e" name="Frontend/Web/logout.gif"/>
+   <file role="php" baseinstalldir="PEAR" md5sum="5ba6a3c23adbac610cc2d5059402a0d2" name="Frontend/Web/manual.gif"/>
+   <file role="php" baseinstalldir="PEAR" md5sum="1f0ca8116ffeafac272a3f1a8325e408" name="Frontend/Web/pearsmall.gif"/>
+   <file role="php" baseinstalldir="PEAR" md5sum="5c897611197c28498c03da298e5558d7" name="Frontend/Web/trash.gif"/>
+   <file role="php" baseinstalldir="PEAR" md5sum="a059eafc2fb95b0ca42977e29d391cff" name="Frontend/Web/package.jpg"/>
+   <file role="php" baseinstalldir="PEAR" md5sum="77605580daff87d2ea0855db327aab3c" name="Frontend/Web/category.jpg"/>
+   <file role="php" baseinstalldir="PEAR" md5sum="3bed4b639af3ba0b136c0201ac505a7b" name="Frontend/Web/pkglist.png"/>
+   <file role="php" baseinstalldir="PEAR" md5sum="7f8ff108546c678f59f6b8c88ab43c92" name="Frontend/Web/pkgsearch.png"/>
+   <file role="php" baseinstalldir="PEAR" md5sum="d305a1953c27a074c245603aab0666af" name="Frontend/Web/style.css"/>
+   <file role="php" baseinstalldir="PEAR" md5sum="0a6b2a4e941c8229b3070b3e24cc9a39" name="Frontend/Web/dhtml.css"/>
+   <file role="php" baseinstalldir="PEAR" md5sum="25d19b42fd0dd1434b331b7197039733" name="Frontend/Web/dhtml.js"/>
+   <file role="php" baseinstalldir="PEAR" md5sum="83392507cc422df1b57ee7c383d3706d" name="Frontend/Web/nodhtml.js"/>
+   <file role="php" baseinstalldir="PEAR" md5sum="13eecadf30a737dc9fa71deb6c9994b5" name="Frontend/Web/bottom.inc.tpl.html"/>
+   <file role="php" baseinstalldir="PEAR" md5sum="6c0fbe65f855ba51bba40e2d1242c1f4" name="Frontend/Web/channel.info.tpl.html"/>
+   <file role="php" baseinstalldir="PEAR" md5sum="d5afa67d3361db5ba5fbddc2a7469bed" name="Frontend/Web/channel.list.tpl.html"/>
+   <file role="php" baseinstalldir="PEAR" md5sum="06563e065a5601403bd3ab0d268e8711" name="Frontend/Web/error.popup.tpl.html"/>
+   <file role="php" baseinstalldir="PEAR" md5sum="18f41fcd2e3cd6ddb4e1ca1a4592eb6d" name="Frontend/Web/error.tpl.html"/>
+   <file role="php" baseinstalldir="PEAR" md5sum="4d214dd44eaca17a5b8c100a0cee7ebc" name="Frontend/Web/footer.inc.tpl.html"/>
+   <file role="php" baseinstalldir="PEAR" md5sum="700fe24d300daea65e89da7aff494e70" name="Frontend/Web/header.inc.tpl.html"/>
+   <file role="php" baseinstalldir="PEAR" md5sum="885b1c72febb4ab63fee4614a1b67b2d" name="Frontend/Web/info.tpl.html"/>
+   <file role="php" baseinstalldir="PEAR" md5sum="92e8cc6e41243f5e93ce828bfe28e9a5" name="Frontend/Web/package.info.tpl.html"/>
+   <file role="php" baseinstalldir="PEAR" md5sum="78fecd1689673297260090c2810f7723" name="Frontend/Web/package.list.tpl.html"/>
+   <file role="php" baseinstalldir="PEAR" md5sum="ad8444920426a7565fc720517882051c" name="Frontend/Web/start.tpl.html"/>
+   <file role="php" baseinstalldir="PEAR" md5sum="e196e59a33eb6fa48b6b28c3320cba0a" name="Frontend/Web/top.inc.tpl.html"/>
+   <file role="php" baseinstalldir="PEAR" md5sum="ae504f0df333244b4085e4eb229e5a11" name="Frontend/Web/userDialog.tpl.html"/>
+   <file role="doc" baseinstalldir="PEAR" md5sum="ae87762a71b6aa0c11c6c398f5235748" name="docs/example.php">
+    <replace from="@php_bin@" to="php_bin" type="pear-config"/>
+    <replace from="@bin_dir@" to="bin_dir" type="pear-config"/>
+    <replace from="@php_dir@" to="php_dir" type="pear-config"/>
+    <replace from="@pear_version@" to="version" type="package-info"/>
+    <replace from="@include_path@" to="php_dir" type="pear-config"/>
+   </file>
+  </filelist>
+ </release>
+ <changelog>
+   <release>
+    <version>0.5.0</version>
+    <date>2005-03-02</date>
+    <notes>Major features addition: channel support
+Also, support for post-install scripts on install, and package.xml 2.0
+    </notes>
+   </release>
+   <release>
+    <version>0.3</version>
+    <date>2003-05-28</date>
+    <notes>Bugfixes release:
+- Fix a bug while using both CLI and Web installer
+  (Invalid characters, bug #23516)
+- Installs correctly the CLI tools
+    </notes>
+   </release>
+   <release>
+    <version>0.4</version>
+    <date>2003-06-07</date>
+    <notes>Bugfixes release:
+- Remove Pager dep
+- Should work well on non apache system (ie IIS)
+- The &apos;installed packages&apos; is now the entry page
+  (no more remote connection during startup)
+    </notes>
+   </release>
+ </changelog>
+</package>
