@@ -81,7 +81,7 @@ if (!isset ( $mode ))
 	$mode = '';
 
 if ($enc_obj->is_loaded) {
-	if( $target == 'patho' || $target == 'blood'){
+	if( $target == 'patho' || $target == 'blood' || $target == 'radio'){
 		$sql = "SELECT * FROM care_test_request_" . $db_request_table . " ";
 		$sql .= "WHERE care_test_request_" . $db_request_table . ".batch_nr='" . $batch_nr . "' ";
 	} else {
