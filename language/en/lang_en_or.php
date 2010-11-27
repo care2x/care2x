@@ -298,14 +298,7 @@ $LDOnCallPerson='On call';
 $LDMonth='Month';
 $LDYear='Year';
 
-$LDDutyElements[0]='Date';
-$LDDutyElements[1]=' ';
-$LDDutyElements[2]='Family name,Given name';
-$LDDutyElements[4]='from';
-$LDDutyElements[5]='to';
-$LDDutyElements[6]='OP Room';
-$LDDutyElements[7]='Diagnosis and therapy';
-
+$LDDutyElements = array('Date','&nbsp;','Family name,Given name','from','to','OP Room','Diagnosis and therapy');
 
 $LDPrint='Print';
 $LDAlertNoPrinter='You must print manually. Right click on the window,  then select Print.';
