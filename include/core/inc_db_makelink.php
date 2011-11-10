@@ -79,7 +79,7 @@ if(!isset($dbtype)||empty($dbtype)) $dbtype='mysql';
 
 # ADODB connection
 require_once($root_path.'classes/adodb/adodb.inc.php');
-$db = &ADONewConnection($dbtype);
+$db = ADONewConnection($dbtype);
 
 $dblink_ok = $db->Connect($dbhost,$dbusername,$dbpassword,$dbname);
 

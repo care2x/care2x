@@ -4,7 +4,7 @@ require_once($root_path.'include/care_api_classes/class_config.php');
 $userobj=new UserConfig;
 $globobj=new GlobalConfig($GLOBALCONFIG);
 
-$USERCONFIG=&$userobj->getConfig($user_id);
+$USERCONFIG=$userobj->getConfig($user_id);
 $globobj->getConfig('news_%');
 
 while(list($x,$v)=each($GLOBALCONFIG)) {
