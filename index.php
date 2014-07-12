@@ -4,30 +4,30 @@ CARE 2X Integrated Information System for Hospitals and Health Care Organization
 Care 2002, Care2x, Copyright (C) 2002,2003,2004,2005,2006  Elpidio Latorilla
 
 Deployment 2.2 - 2006-07-10
-								
+
 This script(s) is(are) free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public
 License as published by the Free Software Foundation; either
 version 2 of the License, or (at your option) any later version.
-																  
+
 This software is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
 General Public License for more details.
-											   
+
 You should have received a copy of the GNU General Public
 License along with this script; if not, write to the Free Software
 Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
-																		 
+
 Copy of GNU General Public License at: http://www.gnu.org/
-													 
+
 Source code home page: http://www.care2x.org
 Contact author at: elpidio@care2x.org
 
 This notice also applies to other scripts which are integral to the functioning of CARE 2X within this directory and its top level directory
 A copy of this notice is also available as file named copy_notice.txt under the top level directory.
 */
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
+error_reporting(-1);
 define('FROM_ROOT',1);
 
 if(!isset($mask)) $mask=false;
@@ -42,7 +42,7 @@ require('./include/core/inc_environment_global.php');
 //$db->debug=FALSE;
 
 # Register global session variables
-if(!session_is_registered('sess_user_name')) session_register('sess_user_name');
+/*if(!session_is_registered('sess_user_name')) session_register('sess_user_name');
 if(!session_is_registered('sess_user_origin')) session_register('sess_user_origin');
 if(!session_is_registered('sess_file_forward')) session_register('sess_file_forward');
 if(!session_is_registered('sess_file_return')) session_register('sess_file_return');
@@ -55,7 +55,7 @@ if(!session_is_registered('sess_user_id')) session_register('sess_user_id');
 if(!session_is_registered('sess_cur_page')) session_register('sess_cur_page');
 if(!session_is_registered('sess_searchkey')) session_register('sess_searchkey');
 if(!session_is_registered('sess_tos')) session_register('sess_tos'); # the session time out start time
-
+*/
 $bname='';
 $bversion='';
 $user_id='';
@@ -93,9 +93,9 @@ function configNew(&$bn,&$bv,&$f,$i,&$uid)
   # We disable the error reporting, because Konqueror 3.0.3 causes a  runtime error output that stops the program.
   #  could be a bug in phpsniff .. hmmm?
   $old_err_rep= error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
-  
+
   # Function rewritten by Thomas Wiedmann to use phpSniff class
-  
+
   # initialize some vars
   if(!isset($UA)) $UA = '';
   if(!isset($cc)) $cc = '';
@@ -122,12 +122,12 @@ function configNew(&$bn,&$bv,&$f,$i,&$uid)
   $uid=uniqid('');
   $f='CFG'.$uid.microtime().'.cfg';
 
-   # Return previous error reporting 
+   # Return previous error reporting
    error_reporting($old_err_rep);
 }
 
 /**
-* Create simple session id (sid), save a encrpyted  sid to a cookie with a dynamic name 
+* Create simple session id (sid), save a encrpyted  sid to a cookie with a dynamic name
 * consisting of concatenating "ck_sid" and the sid itself.
 * For more information about the encryption class, see the proper docs of the pear's "hcemd5.php" class.
 */
@@ -176,16 +176,16 @@ $glob_cfg=new GlobalConfig($GLOBALCONFIG);
 
 # Get the global config for language usage
 $glob_cfg->getConfig('language_%');
-# Get the global config for frames 
+# Get the global config for frames
 $glob_cfg->getConfig('gui_frame_left_nav_width');
-# Get the global config for lev nav border 
+# Get the global config for lev nav border
 $glob_cfg->getConfig('gui_frame_left_nav_border');
 
 $savelang=0;
 /*echo $GLOBALCONFIG['language_non_single'];
 while (list($x,$v)=each($GLOBALCONFIG)) echo $x.'==>'.$v.'<br>';
 */
-# Start checking language properties 
+# Start checking language properties
 
 if(!$GLOBALCONFIG['language_single']) {
     # We get the language code
@@ -196,8 +196,8 @@ if(!$GLOBALCONFIG['language_single']) {
 		/* if($USERCONFIG['lang']) $lang=$USERCONFIG['lang'];
 		 *   else  include('chklang.php');
 		 * */
-		
-		 
+
+
 		 if(empty($USERCONFIG['lang']) || !isset($USERCONFIG['lang'])) {
 		 	// USERCONFIG contain a value
 		 	if (empty($lang) || !isset ($lang)){
@@ -207,10 +207,10 @@ if(!$GLOBALCONFIG['language_single']) {
 		 		// no language selection given, so try to find out what language is used on this server
 		 		include('chklang.php');
 		 	}
-		 	
+
 		 }
-			  
-	 } 
+
+	 }
 }else{
 
     # If single language is configured, we get the user configured lang
@@ -222,7 +222,7 @@ if(!$GLOBALCONFIG['language_single']) {
             $lang=$GLOBALCONFIG['language_default'];
 		} else {
 	        $lang=LANG_DEFAULT; # Comes from inc_environment_global.php, the last chance, usually set to "en"
-	    }	
+	    }
 	}
 }
 
@@ -239,7 +239,7 @@ if($installerwarn){
 	include_once('./include/core/inc_charset_fx.php');
 	include_once('./include/core/inc_installer_warning.php');
 	#
-	# redirect to the installer page after timeout of 5 seconds 
+	# redirect to the installer page after timeout of 5 seconds
 	#
 	die('<meta http-equiv="refresh" content="5; url=./installer/">');
 }
@@ -351,13 +351,13 @@ if($mask == 2){
 
 	if($lang=='ar'||$lang=='fa') $smarty->assign('sBaseFramesetTemplate','common/frameset_floatingmenu_rtl.tpl');
 		else $smarty->assign('sBaseFramesetTemplate','common/frameset_floatingmenu_ltr.tpl');
-	
+
 	$smarty->assign('sMenuFrameSource','src="main/menubar2.php"');
 	$smarty->assign('sStartFrameSource',"src=\"main/indexframe.php?boot=1&lang=$lang&egal=$egal&cookie=$cookie&sid=$sid&mask=2\"");
 
 }else{
 	$smarty->assign('sStartFrameSource',"src = \"main/indexframe.php?boot=1&mask=$mask&lang=$lang&cookie=$cookie&sid=$sid\"");
-	
+
 	#
 	# Assign frame dimensions
 	#
