@@ -1,11 +1,11 @@
 <?php
 /*
- * Base Installer include file 
+ * Base Installer include file
  *
  */
 
 error_reporting(E_ALL ^ E_NOTICE);
- 
+
 define('INSTALLER_PATH', realpath(dirname(__FILE__)));
 define('INSTALLER_API', true);
 define('APP_PATH', realpath(INSTALLER_PATH.'/..'));
@@ -34,23 +34,23 @@ require_once(INSTALLER_PATH.'/includes/StripSlashes.php');
 class Installer{
 
 	function Installer() {}
-	
-	function getTemplatePath($template_name){
+
+	static function getTemplatePath($template_name){
 		if(isset($GLOBALS['INSTALLER']['TEMPLATE_DIR'])){
 			if(file_exists($GLOBALS['INSTALLER']['TEMPLATE_DIR'].'/'.$template_name)){
 				return 	$GLOBALS['INSTALLER']['TEMPLATE_DIR'].'/'.$template_name;
 			}
 		}
-		
+
 		if(file_exists(INSTALLER_PATH.'/templates/'.$template_name)){
 			return INSTALLER_PATH.'/templates/'.$template_name;
 		}
-		
+
 		ErrorStack::addError("Could not find template file $template_name!", ERRORSTACK_ERROR, 'Installer');
 		return $template_name;
-	}	
+	}
 
-	function getTestPath($class_name){
+	static function getTestPath($class_name){
 		if(isset($GLOBALS['INSTALLER']['TEST_DIRS']) && is_array($GLOBALS['INSTALLER']['TEST_DIRS'])){
 			foreach($GLOBALS['INSTALLER']['TEST_DIRS'] as $dir){
 				if(file_exists($dir.'/'.$class_name.'.php')){
@@ -58,16 +58,16 @@ class Installer{
 				}
 			}
 		}
-		
+
 		if(file_exists(INSTALLER_PATH.'/tests/'.$class_name.'.php')){
 			return INSTALLER_PATH.'/tests/'.$class_name.'.php';
 		}
-		
+
 		ErrorStack::addError("Could not find file for Test class $class_name", ERRORSTACK_FATAL, 'Installer');
 		return FALSE;
 	}
 
-	function getActionPath($class_name){
+	static function getActionPath($class_name){
 		if(isset($GLOBALS['INSTALLER']['ACTION_DIRS']) && is_array($GLOBALS['INSTALLER']['ACTION_DIRS'])){
 			foreach($GLOBALS['INSTALLER']['ACTION_DIRS'] as $dir){
 				if(file_exists($dir.'/'.$class_name.'.php')){
@@ -75,15 +75,15 @@ class Installer{
 				}
 			}
 		}
-		
+
 		if(file_exists(INSTALLER_PATH.'/actions/'.$class_name.'.php')){
 			return INSTALLER_PATH.'/actions/'.$class_name.'.php';
 		}
-		
+
 		ErrorStack::addError("Could not find file for Action class $class_name", ERRORSTACK_FATAL, 'Installer');
 		return FALSE;
 	}
-	
+
 }
 
 // Bootstrapping tests
@@ -97,13 +97,13 @@ $GLOBALS['INSTALLER']['PHP_VERSION_REMAINING'] = implode('.', array_splice($vers
 $ver = $GLOBALS['INSTALLER']['PHP_VERSION_MAJOR'].'.'.$GLOBALS['INSTALLER']['PHP_VERSION_MINOR'];
 if (version_compare($ver, '4.2', '<')) {
 	print("Installer Error: PHP version 4.2 or greater is required to run the installer!");
-	die();	
+	die();
 }
 
-$GLOBALS['INSTALLER']['CONFIG_FILE'] = INSTALLER_PATH.'/config.php'; 
+$GLOBALS['INSTALLER']['CONFIG_FILE'] = INSTALLER_PATH.'/config.php';
 if(!file_exists($GLOBALS['INSTALLER']['CONFIG_FILE'])){
 	print("Installer Error: Cound not find config file at ".$GLOBALS['INSTALLER']['CONFIG_FILE']);
-	die();	
+	die();
 }
 
 $GLOBALS['INSTALLER']['INSTALLER_CONFIG'] = new InstallerConfig($GLOBALS['INSTALLER']['CONFIG_FILE']);
@@ -116,10 +116,10 @@ if($GLOBALS['INSTALLER']['INSTALLER_CONFIG']->parse() === FALSE){
 // No timeout
 set_time_limit(0);
 
-//TODO Detect if session is already started, if so display error 
+//TODO Detect if session is already started, if so display error
 session_start();
 if(isset($_REQUEST['restart_installer']) || !isset($_SESSION['INSTALLER']['ENGINE']) || !is_a($_SESSION['INSTALLER']['ENGINE'], 'InstallerEngine')){
-	$_SESSION['INSTALLER']['ENGINE'] = new InstallerEngine($GLOBALS['INSTALLER']['INSTALLER_CONFIG']); 	
+	$_SESSION['INSTALLER']['ENGINE'] = new InstallerEngine($GLOBALS['INSTALLER']['INSTALLER_CONFIG']);
 }
 $GLOBALS['INSTALLER']['ENGINE'] = $_SESSION['INSTALLER']['ENGINE'];
 
