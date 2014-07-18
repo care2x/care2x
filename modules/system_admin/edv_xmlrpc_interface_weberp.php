@@ -13,12 +13,21 @@ if(isset($_REQUEST['change']) and $_REQUEST['change'] == true)
 {
 	$sql = 'UPDATE care_config_global SET `value` = \''.$_REQUEST['is_transmit_to_weberp_enable'].'\', `modify_time` = NOW() WHERE CONVERT(`care_config_global`.`type` USING utf8) = \'is_transmit_to_weberp_enable\' LIMIT 1;';
 	$db->Execute($sql);
+	$sql = 'UPDATE care_config_global SET `value` = \''.$_REQUEST['ServerURL'].'\', `modify_time` = NOW() WHERE CONVERT(`care_config_global`.`type` USING utf8) = \'xml-rpc_server\' LIMIT 1;';
+	$db->Execute($sql);
 }
 
 $glob_obj->getConfig('is%');
 if($GLOBAL_CONFIG['is_transmit_to_weberp_enable'] == "")
 {
 	$sql = 'INSERT INTO care_config_global (`type`, `value`, `notes`, `status`, `history`, `modify_id`, `modify_time`, `create_id`, `create_time`) VALUES (\'is_transmit_to_weberp_enable\', \'0\', NULL, \'\', \'\', \'\', NOW(), \'\', \'0000-00-00 00:00:00\');';
+	$db->Execute($sql);
+}
+
+$glob_obj->getConfig('xml%');
+if($GLOBAL_CONFIG['xml-rpc_server'] == "")
+{
+	$sql = "INSERT INTO care_config_global (`type`, `value`, `notes`, `status`, `history`, `modify_id`, `modify_time`, `create_id`, `create_time`) VALUES ('xml-rpc_server', '', NULL, '', '', '', NOW(), '', '0000-00-00 00:00:00')";
 	$db->Execute($sql);
 }
 
@@ -91,7 +100,7 @@ function popPic(pid,nm){
  <form  method="post" name="form">
 <table border=0 cellspacing=1 cellpadding=5>
 <tr>
-	<td class="adm_item" align="right"><FONT  color="#0000cc"><b><?php echo 'Enable the XML-RPC Interface to webERP'; ?></b></FONT></td>
+	<td class="adm_item" align="left"><FONT  color="#0000cc"><b><?php echo 'Enable the XML-RPC Interface to KwaMoja'; ?></b></FONT></td>
 	<td  align="left">
 
 	<select name="is_transmit_to_weberp_enable">
@@ -108,6 +117,14 @@ function popPic(pid,nm){
 	}
 	?>
 	</select>
+	</td>
+	</tr>
+	<tr>
+	<td class="adm_item" align="left"><FONT  color="#0000cc"><b><?php echo 'Full URL of the KwaMoja XML-RPC server'; ?></b></FONT></td>
+	<td><input type="text" name="ServerURL" size="70" value="<?php echo $GLOBAL_CONFIG['xml-rpc_server']; ?>" /></td>
+	</tr>
+	<tr>
+		<td colspan="2" align="middle">
 	<input type="hidden" name="change" value="true">
 	<input type="submit" value="Change">
 	</td>
