@@ -1,12 +1,12 @@
 <?php
 # This is the database name
-$dbname='care2x_trunk';
+$dbname='';
 
 # Database user name, default is root or httpd for mysql, or postgres for postgresql
-$dbusername='root';
+$dbusername='';
 
 # Database user password, default is empty char
-$dbpassword='root';
+$dbpassword='';
 
 # Database host name, default = localhost
 $dbhost='localhost';
