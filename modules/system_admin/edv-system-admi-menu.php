@@ -6,7 +6,7 @@ require($root_path.'include/core/inc_environment_global.php');
 * CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
 * GNU General Public License
 * Copyright 2002,2003,2004,2005 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -22,6 +22,9 @@ switch($dbtype){
 	case 'mysql' : $strDbAdminItem = $LDPhpMyAdmin;
 							$strDbAdminUrl='phpmyadmin';
 							break;
+	case 'mysqli' : $strDbAdminItem = $LDPhpMyAdmin;
+							$strDbAdminUrl='phpmyadmin';
+							break;
 	case 'postgres':
 	case 'postgres7':
 							$strDbAdminItem = 'phpPgAdmin';
@@ -33,7 +36,7 @@ switch($dbtype){
 <?php html_rtl($lang); ?>
 <HEAD>
 <?php echo setCharSet(); ?>
-<?php 
+<?php
 require($root_path.'include/core/inc_js_gethelp.php');
 require($root_path.'include/core/inc_css_a_hilitebu.php');
 ?>
@@ -125,15 +128,15 @@ require($root_path.'include/core/inc_css_a_hilitebu.php');
   </tr>
   <tr>
 	<td bgcolor="#ffffff" valign="top">
-	<FONT  color="#0000cc" FACE="verdana,arial" size=2>	
+	<FONT  color="#0000cc" FACE="verdana,arial" size=2>
 	&nbsp;&nbsp;&nbsp;<img <?php echo createComIcon($root_path,'redpfeil.gif','0','absmiddle') ?>> <a href="edv_system_controls_theme.php?sid=<?php echo $sid."&lang=".$lang."&target=currency_admin"; ?>" target="SYSADMIN_WFRAME"><?php echo $LDControlButImg ?></a>
 	</td>
   </tr>
- 
+
 <!--   <tr>
 	<td bgcolor="#e9e9e9"><FONT  color="#0000cc" FACE="verdana,arial" size=2><b><a href="<?php echo $root_path; ?>modules/dept_admin/dept_manage.php<?php echo URL_APPEND; ?>" target="SYSADMIN_WFRAME"><?php echo $LDDeptAdmin ?></a></b> </FONT></td>
   </tr>
- -->  
+ -->
  <tr>
 	<td bgcolor="#e9e9e9"><FONT  color="#0000cc" FACE="verdana,arial" size=2><b><?php echo $LDDeptAdmin ?></b> </FONT></td>
   </tr>
@@ -144,7 +147,7 @@ require($root_path.'include/core/inc_css_a_hilitebu.php');
 	&nbsp;&nbsp;&nbsp;<img <?php echo createComIcon($root_path,'redpfeil.gif','0','absmiddle') ?>> <a href="<?php echo $root_path; ?>modules/dept_admin/dept_list.php<?php echo URL_APPEND; ?>" target="SYSADMIN_WFRAME"><?php echo $LDList ?></a><br>
 	&nbsp;&nbsp;&nbsp;<img <?php echo createComIcon($root_path,'redpfeil.gif','0','absmiddle') ?>> <a href="<?php echo $root_path; ?>modules/dept_admin/dept_list_config.php<?php echo URL_APPEND; ?>" target="SYSADMIN_WFRAME"><?php echo $LDConfigOptions ?></a>
 	</td>
-  </tr> 
+  </tr>
   <!-- gjergji new ward management -->
   <tr>
 	<td bgcolor="#e9e9e9"><FONT  color="#0000cc" FACE="verdana,arial" size=2><b><?php echo $LDNursingManage ?></b> </FONT></td>
@@ -156,7 +159,7 @@ require($root_path.'include/core/inc_css_a_hilitebu.php');
 	&nbsp;&nbsp;&nbsp;<img <?php echo createComIcon($root_path,'redpfeil.gif','0','absmiddle') ?>> <a href="<?php echo $root_path; ?>modules/nursing/nursing-station-info.php<?php echo URL_APPEND; ?>" target="SYSADMIN_WFRAME"><?php echo $LDProfile ?></a><br>
 	</td>
   </tr>
-<!-- end : gjergji -->  
+<!-- end : gjergji -->
   <tr>
 	<td bgcolor="#e9e9e9"><FONT  color="#0000cc" FACE="verdana,arial" size=2><b><?php echo $LDORAdmin ?></b> </FONT></td>
   </tr>
@@ -172,19 +175,30 @@ require($root_path.'include/core/inc_css_a_hilitebu.php');
 	<FONT  color="#0000cc" FACE="verdana,arial" size=2>
 	&nbsp;&nbsp;&nbsp;<img <?php echo createComIcon($root_path,'redpfeil.gif','0','absmiddle') ?>> <a href="<?php echo $root_path; ?>modules/system_admin/access.php<?php echo URL_APPEND; ?>" target="SYSADMIN_WFRAME">Logs Administration</a><br>
 	</td>
-  </tr>  
+  </tr>
 <tr>
 	<td bgcolor="#e9e9e9"><FONT  color="#0000cc" FACE="verdana,arial" size=2><b><?php echo $LDDatabase ?></b> </FONT></td>
   </tr>
   <tr>
- 	<td bgcolor="#ffffff"><FONT  color="#0000cc" FACE="verdana,arial" size=2>&nbsp;&nbsp;&nbsp;<img <?php echo createComIcon($root_path,'redpfeil.gif','0','absmiddle') ?>> 
+ 	<td bgcolor="#ffffff"><FONT  color="#0000cc" FACE="verdana,arial" size=2>&nbsp;&nbsp;&nbsp;<img <?php echo createComIcon($root_path,'redpfeil.gif','0','absmiddle') ?>>
 	<a href="../<?php echo $strDbAdminUrl ?>/index.php?sid=<?php echo $sid."&lang=$lang" ?>" target="SYSADMIN_WFRAME"><?php  echo $strDbAdminItem ?>
 	</a></FONT></td>
 <!--  	<td bgcolor="#e9e9e9"><FONT  color="#0000cc" FACE="verdana,arial" size=2><b><a href="phpmyadmin-start.php?sid=<?php echo $sid."&lang=$lang" ?>"><?php echo $LDMySQLManage ?></a></b> </FONT></td>
- -->  
+ -->
+  </tr>
+  <tr>
+	<td bgcolor="#e9e9e9"><FONT  color="#0000cc" FACE="verdana,arial" size=2><b><?php echo 'XML-RPC Interface'; ?></b> </FONT></td>
+  </tr>
+  <tr>
+ 	<td bgcolor="#ffffff"><FONT  color="#0000cc" FACE="verdana,arial" size=2>&nbsp;&nbsp;&nbsp;<img <?php echo createComIcon($root_path,'redpfeil.gif','0','absmiddle') ?>>
+	<a href="edv_xmlrpc_interface_weberp.php?sid=<?php echo $sid."&lang=".$lang ?>" target="SYSADMIN_WFRAME"><?php  echo 'Configuration';?>
+	</a></FONT><br>
+	</td>
+<!--  	<td bgcolor="#e9e9e9"><FONT  color="#0000cc" FACE="verdana,arial" size=2><b><a href="phpmyadmin-start.php?sid=<?php echo $sid."&lang=".$lang ?>"><?php echo $LDMySQLManage ?></a></b> </FONT></td>
+ -->
   </tr>
 
-<!--  
+<!--
   <tr>
 	<td bgcolor="#e9e9e9"><FONT  color="#0000cc" FACE="verdana,arial" size=2><b><img <?php echo createComIcon($root_path,'update.gif','0','absmiddle') ?>></b> </FONT></td>
 	<td bgcolor="#e9e9e9"><FONT  color="#0000cc" FACE="verdana,arial" size=2><b><a href="<?php echo $root_path; ?>main/ucons.php<?php echo URL_APPEND; ?>"><?php echo $LDSpexFunctions ?></a></b> </FONT></td>
@@ -203,7 +217,7 @@ require($root_path.'include/core/inc_css_a_hilitebu.php');
 <p>
 </td>
 </tr>
-</table>        
+</table>
 <p>
 <a href="<?php echo $breakfile ?>" target="_parent"><img <?php echo createLDImgSrc($root_path,'close2.gif','0') ?>></a>
 
