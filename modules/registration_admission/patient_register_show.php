@@ -39,7 +39,7 @@ $_SESSION['sess_en']=0;
 
 # Create the person show GUI
 require_once($root_path.'include/care_api_classes/class_gui_person_show.php');
-$person = & new GuiPersonShow;
+$person = new GuiPersonShow;
 
 # Set PID to load the data
 $person->setPID($pid);

@@ -170,7 +170,9 @@ if($death_date && $death_date != DBF_NODATE){
 
 	# Set a row span counter, initialize with 7
 	$iRowSpan = 7;
-
+	
+	/*
+	 * TODO Check - if these GLOBAL_CONFIG elements patient_name_2_show, patient_name_3_show and patient_name_middle_show are valid or not
 	if($GLOBAL_CONFIG['patient_name_2_show']&&$name_2){
 		$smarty->assign('LDName2',$LDName2);
 		$smarty->assign('name_2',$name_2);
@@ -188,6 +190,7 @@ if($death_date && $death_date != DBF_NODATE){
 		$smarty->assign('name_middle',$name_middle);
 		$iRowSpan++;
 	}
+	* */
 
 $smarty->assign('sRowSpan',"rowspan=\"$iRowSpan\"");
 
@@ -384,6 +387,7 @@ ob_start();
 			<div class="vi_data">
 				<img <?php echo createComIcon($root_path,'angle_left_s.gif',0); ?>>
 				<br>
+				<?php if (!isset($LDTypes)) $LDTypes=''; ?>
 				<?php echo "$LDNotes $LDAndSym $LDReports $LDTypes" ?>
 			</div>
 			
@@ -398,13 +402,13 @@ ob_start();
 <tr>
 	<td><img <?php echo createComIcon($root_path,'comments.gif','0'); ?>></td>
 	<td vAlign=top>
-		<a href="javascript:yellow(<?php echo $_SESSION['sess_en'] ?>)"><?php echo $LDYellowPaper ?></a>
+		<a href="javascript:yellow(<?php echo $_SESSION['sess_en'] ?>)"><?php echo isset($LDYellowPaper) ? $LDYellowPaper : ''; ?></a>
 	</td>
 </tr>
 <tr>			
 	<td><img <?php echo createComIcon($root_path,'comments.gif','0'); ?>></td>
 	<td vAlign=top>
-		<a href="javascript:target(<?php echo $_SESSION['sess_en'] ?>)"><?php echo $LDTarget ?></a>
+		<a href="javascript:target(<?php echo $_SESSION['sess_en'] ?>)"><?php echo isset($LDTarget)?$LDTarget:''; ?></a>
 	</td>
 </tr>						
 <?php 

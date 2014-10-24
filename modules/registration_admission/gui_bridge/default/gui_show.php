@@ -38,7 +38,10 @@ if($parent_admit) $sTitleNr= ($_SESSION['sess_full_en']);
  $smarty->assign('pbHelp',"javascript:gethelp('notes_router.php','echo $notestype','".strtr($subtitle,' ','+')."','$mode','$rows')");
 
   # href for return button
- $smarty->assign('pbBack',$returnfile.URL_APPEND.'&pid='.$_SESSION['sess_pid'].'&target='.$target.'&mode=show&type_nr='.$type_nr);
+ if (!isset($type_nr))
+	$smarty->assign('pbBack',$returnfile.URL_APPEND.'&pid='.$_SESSION['sess_pid'].'&target='.$target.'&mode=show');
+ else
+	$smarty->assign('pbBack',$returnfile.URL_APPEND.'&pid='.$_SESSION['sess_pid'].'&target='.$target.'&mode=show&type_nr='.$type_nr);
 
 # Start buffering extra javascript output
 ob_start();
@@ -112,24 +115,33 @@ if($death_date && $death_date != DBF_NODATE){
 
 	# Set a row span counter, initialize with 7
 	$iRowSpan = 7;
-
+	/*
+	 * TODO: Check - if patient_name_2_show is really a valid variable in this array (always...)
 	if($GLOBAL_CONFIG['patient_name_2_show']&&$name_2){
 		$smarty->assign('LDName2',$LDName2);
 		$smarty->assign('name_2',$name_2);
 		$iRowSpan++;
 	}
+	* */
 
+	/*
+	 * TODO: Check - if patient_name_3_show is really a valid variable in this array (always...)
 	if($GLOBAL_CONFIG['patient_name_3_show']&&$name_3){
 		$smarty->assign('LDName3',$LDName3);
 		$smarty->assign('name_3',$name_3);
 		$iRowSpan++;
 	}
+	*/
 
+	/*
+	 * TODO: Check - if patient_name_middle_show is really a valid variable in this array (always...)
 	if($GLOBAL_CONFIG['patient_name_middle_show']&&$name_middle){
 		$smarty->assign('LDNameMid',$LDNameMid);
 		$smarty->assign('name_middle',$name_middle);
 		$iRowSpan++;
 	}
+	*/
+
 		
 $smarty->assign('sRowSpan',"rowspan=\"$iRowSpan\"");
 

@@ -72,7 +72,7 @@ if($mode){
 		}// end of switch
 	}else{echo "$LDDbNoLink<br>";} 
 }else{
-	$depts=&$dept->getAllMedical();
+	$depts=$dept->getAllMedical();
 }
 
 # Start the smarty templating

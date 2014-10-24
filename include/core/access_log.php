@@ -29,7 +29,7 @@ class AccessLog {
 	function AccessLog(  ) {
 		global $dbtype,$dbhost,$dbusername,$dbpassword,$dbname;
 		
-		$this->conn = &ADONewConnection($dbtype); 
+		$this->conn = ADONewConnection($dbtype); 
 		$this->conn->PConnect($dbhost,$dbusername,$dbpassword,$dbname);
 		
 		if (!$this->conn){

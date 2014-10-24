@@ -1,5 +1,5 @@
 <?php
-
+if (!isset($sex)) $sex=''; // Should normally never happen - because any patient having it :)
 function Spacer()
 {
 /*?>
