@@ -1,6 +1,6 @@
 <?php
 /*------begin------ This protection code was suggested by Luki R. luki@karet.org ---- */
-if (stristr($_SERVER['SCRIPT_NAME'],'inc_date_format_functions.php')) 
+if (stristr($_SERVER['SCRIPT_NAME'],'inc_date_format_functions.php'))
 	die('<meta http-equiv="refresh" content="0; url=../">');
 /*------end------*/
 
@@ -24,15 +24,15 @@ function getDateFormat()
 
     if($dblink_ok)
     {
-	 
+
 	    $sql="SELECT value AS date_format FROM care_config_global WHERE type='date_format'";
-	  
+
         if($result=$db->Execute($sql)) {
 
             if($result->RecordCount()) {
-            
+
 			    $df=$result->FetchRow();
-                
+
 				return $df['date_format'];
 		    }
 		    else $errFormat=1;
@@ -40,9 +40,9 @@ function getDateFormat()
 	    else $errFormat=1;
 	}
 	else $errFormat=1;
-	
+
 	if($errFormat)	{
-	
+
 	    $df=get_meta_tags($root_path.'global_conf/format_date_default.pid');
 
         if($df['date_format']!='') return $df['date_format'];
@@ -60,13 +60,12 @@ function getDateFormat()
 * The function assumes that the dates are in correct formats
 * therefore a validation routine must be done at the client side
 */
-function formatDate2Local($stdDate, $localFormat, $retTime=FALSE, $timeOnly=FALSE, &$sepChars)
+function formatDate2Local($stdDate, $localFormat, $retTime=FALSE, $timeOnly=FALSE, &$sepChars=array('-','.','/',':',','))
 {
    global $lang;
-   
-   if(!$sepChars) $sepChars=array('-','.','/',':',',');
-   $localFormat=strtolower($localFormat); 
-   
+
+   $localFormat=strtolower($localFormat);
+
    if(stristr('0000',$stdDate))  return strtr($localFormat,'yYmMdDHis','000000000'); // IF  std date is 0 return 0's in local format
 
    /* If time is included then isolate */
@@ -77,7 +76,7 @@ function formatDate2Local($stdDate, $localFormat, $retTime=FALSE, $timeOnly=FALS
    }
 
    $stdArray=explode('-',$stdDate);
-   
+
    /* Detect time separator and explode localFormat */
    for($i=0;$i<sizeof($sepChars);$i++)
    {
@@ -88,27 +87,27 @@ function formatDate2Local($stdDate, $localFormat, $retTime=FALSE, $timeOnly=FALS
 		break;
 	 }
    }
-   
+
    for($i=0;$i<3;$i++)
    {
      if($localArray[$i]=='yyyy') $localArray[$i]=$stdArray[0];
 	  elseif($localArray[$i]=='mm') $localArray[$i]=$stdArray[1];
 	    elseif($localArray[$i]=='dd') $localArray[$i]=$stdArray[2];
    }
-   
+
    //if ($lang=='de') $stdTime=strtr($stdTime,':','.'); // This is a hard coded time  format translator for german "de" language
-   
+
    if($retTime) return implode($localSeparator,$localArray).' '.$stdTime;
     else return implode($localSeparator,$localArray);
-   
+
 }
 
 function formatShortDate2Local($month,$day,$localFormat)
 {
    if(!$sepChars) $sepChars=array('-','.','/',':',',');
-   $localFormat=strtolower($localFormat); 
-   
- 
+   $localFormat=strtolower($localFormat);
+
+
    /* Detect time separator and explode localFormat */
    for($i=0;$i<sizeof($sepChars);$i++)
    {
@@ -119,17 +118,17 @@ function formatShortDate2Local($month,$day,$localFormat)
 		break;
 	 }
    }
-   
+
    for($i=0;$i<3;$i++)
    {
      if($localArray[$i]=='yyyy') $s_tag=$i;
 	  elseif($localArray[$i]=='mm') $localArray[$i]=$month;
 	    elseif($localArray[$i]=='dd') $localArray[$i]=$day;
    }
-   
+
    array_splice($localArray,$s_tag,1);
    return implode($localSeparator,$localArray);
-   
+
 }
 
 
@@ -142,10 +141,10 @@ function formatDate2STD($localDate,$localFormat,&$sepChars)
 
 	  if(stristr('0000',$finalDate)) $finalDate=0;
 
-   
+
    if(!$finalDate)
    {
-     
+
 	 for($i=0;$i<sizeof($sepChars);$i++)
 	 {
         if(strchr($localDate,$sepChars[$i]))
@@ -154,7 +153,7 @@ function formatDate2STD($localDate,$localFormat,&$sepChars)
 		   break;
 		}
 	 }
-     
+
 	 for($i=0;$i<sizeof($sepChars);$i++)
 	 {
         if(strchr($localFormat,$sepChars[$i]))
@@ -163,7 +162,7 @@ function formatDate2STD($localDate,$localFormat,&$sepChars)
 		   break;
 		}
 	 }
-	 
+
 	 /* Detect local format and reformat the local time to DATE standard */
 	 for($i=0;$i<3;$i++)
 	 {
@@ -171,7 +170,7 @@ function formatDate2STD($localDate,$localFormat,&$sepChars)
 		 elseif($Format_array[$i]=='mm') { $vMonth = $loc_array[$i];}
 		   elseif($Format_array[$i]=='dd') { $vDay = $loc_array[$i];}
 	 }
-	 
+
 	 # if invalid numeric return empty string
 	 if(!is_numeric($vYear)||!is_numeric($vMonth)||!is_numeric($vDay)){
 	 	$finalDate= '';
@@ -179,9 +178,9 @@ function formatDate2STD($localDate,$localFormat,&$sepChars)
 		  # DATE standard
 		  if(strlen($vMonth)==1) $vMonth='0'.$vMonth;
 		  if(strlen($vDay)==1) $vDay='0'.$vDay;
-		 $finalDate=$vYear.'-'.$vMonth.'-'.$vDay; 
+		 $finalDate=$vYear.'-'.$vMonth.'-'.$vDay;
 	}
-     
+
    }
    return $finalDate;
 }
@@ -194,34 +193,34 @@ function formatDate2STD($localDate,$localFormat,&$sepChars)
 function convertTimeToStandard($time_val)
 {
    $time_val=strtr($time_val,'.,/-','::::'); // convert the separators to ':'
-   
+
    $sep_count=substr_count($time_val,':');
-   
+
    switch($sep_count)
    {
      case '': $time_val.=':00:00'; break;
      case 0: $time_val.=':00:00'; break;
      case 1: $time_val.=':00';
    }
-   
+
    return $time_val;
 }
 
 /**
-* convertTimeLocal() will return a time in the local format 
+* convertTimeLocal() will return a time in the local format
 * param $time_val = the time value to be converted in HHxMMxSS, where x is the separator which will be converted to ":"
 * return = the time in the format HH:mm:ss
 */
 function convertTimeToLocal($time_val)
 {
    global $lang;
-   
+
    switch($lang)
    {
-     //case 'de': $time_val=strtr($time_val,':,/-','....'); break; # convert the separators to '.' 
+     //case 'de': $time_val=strtr($time_val,':,/-','....'); break; # convert the separators to '.'
      default : $time_val=strtr($time_val,'.,/-','::::'); # convert the separators to ':'
    }
-   
+
    //return $time_val;
    return substr($time_val,0,strrpos($time_val,':'));
 }
