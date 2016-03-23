@@ -9,6 +9,8 @@ function Spacer()
                   width=5></TD></TR>
 <?php
 */}
+
+$target = $_REQUEST['target'];
 ?>
 <img <?php echo createComIcon($root_path,'angle_left_s.gif',0,'',TRUE); ?>>
 <br>
