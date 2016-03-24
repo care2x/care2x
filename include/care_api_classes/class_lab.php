@@ -435,7 +435,8 @@ class Lab extends Encounter {
 		$cond = 'WHERE group_id = \'-1\' ';
 		if(empty($nr)) $cond .='';
 			else $cond .="AND nr='$nr'";
-		$this->sql="SELECT * FROM $this->tb_test_param $cond ORDER BY sort_nr";
+		//$this->sql="SELECT * FROM $this->tb_test_param $cond ORDER BY sort_nr";
+		$this->sql="SELECT * FROM $this->tb_test_param $cond";
 		if($this->tgroups=$db->Execute($this->sql)){
 		    if($this->rec_count=$this->tgroups->RecordCount()) {
 				return $this->tgroups;
@@ -451,7 +452,8 @@ class Lab extends Encounter {
 	*/
 	function TestActiveGroups(){
 		global $db;
-		$this->sql="SELECT * FROM $this->tb_test_param WHERE group_id = '-1' AND status NOT IN ($this->dead_stat) ORDER BY sort_nr";
+		//$this->sql="SELECT * FROM $this->tb_test_param WHERE group_id = '-1' AND status NOT IN ($this->dead_stat) ORDER BY sort_nr";
+		$this->sql="SELECT * FROM $this->tb_test_param WHERE status NOT IN ($this->dead_stat)";		
 		if($this->tgroups=$db->Execute($this->sql)){
 		    if($this->rec_count=$this->tgroups->RecordCount()) {
 				return $this->tgroups;
