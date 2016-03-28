@@ -205,7 +205,7 @@ class Department extends Core {
 	* @return  mixed assoc array (sorted by param $sort) or boolean or adodb record object 
 	*/
 	function getAllMedical() {
-		return $this->_getalldata("type=1 AND is_inactive='0' AND is_pharmacy=0");
+		return $this->_getalldata("type=1 AND is_inactive='0'");
 	}
 	/**
 	* Gets all ACTIVE pharmacys. The result is assoc array sorted by departments formal name

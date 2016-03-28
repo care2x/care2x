@@ -768,7 +768,7 @@ class GuiInputPerson {
 						$this->smarty->append('sInsClasses',$sInsClassBuffer);
 
 					} else {
-						$this->smarty->assign('sInsClasses','Nuk jane konfiguruar klasat e sigurimit');
+						//$this->smarty->assign('sInsClasses','Nuk jane konfiguruar klasat e sigurimit');
 					}
 
 					if ($errorinsurancecoid) $this->smarty->assign('LDInsuranceCo',"<font color=red>$LDInsuranceCo</font> :");

@@ -102,11 +102,12 @@ while($test_request=$requests->FetchRow())
 	 $enc_obj->loadEncounterData($test_request['encounter_nr']);
   	 $result=$enc_obj->encounter;
   	 //gjergji ... urgent is available only for chamlabor
-  	 if($subtarget == trim('chemlabor') ) {
+/*  	 if($subtarget == trim('chemlabor') ) {
 	  	 $urgent = $lab_obj->GetTestUrgent($test_request['batch_nr']);
 	  	 $tmp = $urgent->FetchRow();
 	  	 if($tmp['urgent'] == 1) $bgcolor="red"; else $bgcolor = "#D3E3F6";
-  	 }
+  }
+	*/
   	 $info = $result['name_last']. " " . $result['name_first'] . "<br>" . $result['encounter_date'] . "<br>" . $result['pid'];
   } 
   if($batch_nr!=$test_request['batch_nr'])
@@ -116,8 +117,10 @@ while($test_request=$requests->FetchRow())
   	 	//gjergji ... urgent is available only for chamlabor
   	 	if($subtarget == trim('chemlabor') ) {  	   	
 		  	$urgent = $lab_obj->GetTestUrgent($test_request['batch_nr']);
-		  	$tmp = $urgent->FetchRow();
-	  	 	if($tmp['urgent'] == 1) $bgcolor="red"; else $bgcolor = "#D3E3F6";	
+			if($urgent !== false){
+				$tmp = $urgent->FetchRow();
+	  	 		if($tmp['urgent'] == 1) $bgcolor="red"; else $bgcolor = "#D3E3F6";
+			}			
   	 	}		
   	   	$info = $result['name_last']. " " . $result['name_first'] . "<br>" . $result['encounter_date'] . "<br>" . $result['pid'];
         echo "<img src=\"".$root_path."gui/img/common/default/pixel.gif\" border=0 width=4 height=7> <a href=\"".$thisfile.URL_APPEND."&target=".$target."&subtarget=".$subtarget."&pn=".$test_request['encounter_nr']."&batch_nr=".$test_request['batch_nr']."&user_origin=".$user_origin."&tracker=".$tracker."\" onmouseover=\"Tip('". $info ."',BGCOLOR,'". $bgcolor ."')\" >".$test_request['batch_nr']." ".$test_request['room_nr']."</a><br>";
