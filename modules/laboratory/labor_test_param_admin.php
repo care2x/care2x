@@ -33,10 +33,10 @@ $pitems=array('msr_unit','median','lo_bound','hi_bound','lo_critical','hi_critic
 include_once($root_path.'include/core/inc_date_format_functions.php');
     
 # Get the test test groups
-$tgroups=&$lab_obj->TestActiveGroups();
+$tgroups=$lab_obj->TestActiveGroups();
 
 # Get the test parameter values
-$tparams=&$lab_obj->TestParamsAdmin($parameterselect);
+$tparams=$lab_obj->TestParamsAdmin($parameterselect);
 $breakfile="labor.php".URL_APPEND;
 
 # Start Smarty templating here

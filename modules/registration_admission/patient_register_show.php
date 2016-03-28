@@ -129,7 +129,7 @@ $smarty->assign('sRegOptions',$sTemp);
 # If the data is not new , show new search button
 
 if (!$newdata) { 
-
+$target = $_REQUEST['target'];
 	if($target=="search") $newsearchfile='patient_register_search.php'.URL_APPEND;
 		else $newsearchfile='patient_register_archive.php'.URL_APPEND;
 

@@ -5,11 +5,15 @@ function chkForm(d) {
 		alert("<?php echo $LDPlsEnterDate; ?>");
 		d.date.focus();
 		return false;
-	}else if(d.to_dept_nr.value==''){
+	}
+	/*
+	else if(d.to_dept_nr.value==''){
 		alert("<?php echo $LDPlsSelectDept; ?>");
 		d.to_dept_nr.focus();
 		return false;
-	}else if(d.to_personell_name.value==''){
+	}
+	*/
+	else if(d.to_personell_name.value==''){
 		alert("<?php echo $LDPlsEnterDoctor; ?>");
 		d.to_personell_name.focus();
 		return false;
@@ -53,10 +57,9 @@ if($bPastDateError) echo '<font class="warnprompt">'.$LDInvalidDate.' '.$LDNoPas
      <td><font color="red"><b>*</b><FONT SIZE=-1  FACE="Arial" color="#000066"><?php echo $LDDepartment; ?></td>
      <td>
 	    <select name="to_dept_nr">
-		<option value=""></option>
-	<?php
-		
-		while(list($x,$v)=each($deptarray)){
+		<option value="">Select Department</option>
+		<?php		
+		while(list($x,$v)=each($deptarray)){			
 			echo '
 				<option value="'.$v['nr'].'" ';
 			if($v['nr']==$to_dept_nr) echo 'selected';

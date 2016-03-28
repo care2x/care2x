@@ -100,8 +100,7 @@ $_SESSION['sess_file_return']=$thisfile;
 /* Load departments */
 require_once($root_path.'include/care_api_classes/class_department.php');
 $dept_obj=new Department;
-$deptarray=$dept_obj->getAllMedical('name_formal');
-
+$deptarray=$dept_obj->getAllMedical();
 $buffer=str_replace('~tag~',$title.' '.$name_last,$LDNoRecordYet);
 $norecordyet=str_replace('~obj~',strtolower($subtitle),$buffer); 
 

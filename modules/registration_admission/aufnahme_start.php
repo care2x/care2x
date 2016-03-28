@@ -333,13 +333,13 @@ if($pid!='' || $encounter_nr!=''){
 		# Load all  wards info
 		$ward_obj=new Ward;
 		$items='nr,name,dept_nr';
-		$ward_info=&$ward_obj->getAllWardsItemsObject($items);
+		$ward_info=$ward_obj->getAllWardsItemsObject($items);
 	}
 	if(!$encounter_nr||$encounter_class_nr==2){
 		# Load all medical departments
 		include_once($root_path.'include/care_api_classes/class_department.php');
 		$dept_obj=new Department;
-		$all_meds=&$dept_obj->getAllMedicalObject();
+		$all_meds=$dept_obj->getAllMedicalObject();		
 	}
 	 
 	$person_obj->setPID($pid);
@@ -411,7 +411,9 @@ function chkform(d) {
 	if(d.encounter_class_nr[0]&&d.encounter_class_nr[1]&&!d.encounter_class_nr[0].checked&&!d.encounter_class_nr[1].checked){
 		alert("<?php echo $LDPlsSelectAdmissionType; ?>");
 		return false;
-	}else if(d.encounter_class_nr[0]&&d.encounter_class_nr[0].checked&&!d.current_ward_nr.value){
+	}
+	/*
+	else if(d.encounter_class_nr[0]&&d.encounter_class_nr[0].checked&&!d.current_ward_nr.value){
 		alert("<?php echo $LDPlsSelectWard; ?>");
 		d.current_ward_nr.focus();
 		return false;
@@ -427,7 +429,8 @@ function chkform(d) {
 		alert("<?php echo $LDPlsSelectDept; ?>");
 		d.current_dept_nr.focus();
 		return false;
-	}else if(d.referrer_diagnosis.value==""){
+	}
+	else if(d.referrer_diagnosis.value==""){
 		alert("<?php echo $LDPlsEnterRefererDiagnosis; ?>");
 		d.referrer_diagnosis.focus();
 		return false;
@@ -443,7 +446,8 @@ function chkform(d) {
 		alert("<?php echo $LDPlsEnterRefererNotes; ?>");
 		d.referrer_notes.focus();
 		return false;
-	}else if(d.encoder.value==""){
+	}*/
+	else if(d.encoder.value==""){
 		alert("<?php echo $LDPlsEnterFullName; ?>");
 		d.encoder.focus();
 		return false;
@@ -665,9 +669,9 @@ if(!isset($pid) || !$pid){
 			$sTemp = $sTemp.'<select name="current_ward_nr">';
 			if(!empty($ward_info) && $ward_info->RecordCount()){
 				while($station=$ward_info->FetchRow()){
-					if(in_array($station['dept_nr'],$current_dept_nr)) {
+					//if(in_array($station['dept_nr'],$current_dept_nr)) {
 						$sTemp = $sTemp.'<option value="'.$station['nr'].'"  selected >' . $station['name'].'</option>';
-					}
+					//}
 				}
 			}
 			$sTemp = $sTemp.'</select>
@@ -689,15 +693,16 @@ if(!isset($pid) || !$pid){
 			}
 		}else{
 			$sTemp = $sTemp.'<select name="current_dept_nr">';
-				
+			
 			if(is_object($all_meds)){
 				while($deptrow=$all_meds->FetchRow()){
-					if(in_array($deptrow['nr'],$current_dept_nr)) {
+					
+					//if(in_array($deptrow['nr'],$current_dept_nr)) {						
 						$sTemp = $sTemp.'<option value="'.$deptrow['nr'].'" selected >';
-						if($$deptrow['LD_var']!='') $sTemp = $sTemp.$$deptrow['LD_var'];
+						if($deptrow['LD_var']!='') $sTemp = $sTemp.$deptrow['LD_var'];
 						else $sTemp = $sTemp.$deptrow['name_formal'];
 						$sTemp = $sTemp.'</option>';
-					}
+					//}
 				}
 			}
 			$sTemp = $sTemp.'</select><font size=1><img '.createComIcon($root_path,'redpfeil_l.gif','0','',TRUE).'> '.$LDForOutpatient.'</font>';
