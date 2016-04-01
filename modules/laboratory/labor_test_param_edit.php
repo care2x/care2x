@@ -22,6 +22,7 @@ $thisfile=basename(__FILE__);
 # Create lab object
 require_once($root_path.'include/care_api_classes/class_lab.php');
 $lab_obj=new Lab();
+global $db;
 
 # Load the date formatter */
 include_once($root_path.'include/core/inc_date_format_functions.php');
@@ -52,7 +53,15 @@ if(isset($mode) && !empty($mode)) {
 	<?php   
 			exit;
 		}
-		else echo $lab_obj->getLastQuery();
+	else{
+		$rs = $db->Execute($lab_obj->getLastQuery());
+		if($rs){
+			echo "Update was successful";
+		}
+		else {
+			echo "Update failed with query\n".$lab_obj->getLastQuery();
+		}
+	}
 	# end of if(mode==save)
 	}
 	# begin mode new 	
@@ -82,8 +91,7 @@ if(isset($mode) && !empty($mode)) {
 	
 	<?php    
 			exit;
-		}
-		else echo $lab_obj->getLastQuery();
+		}		
 	# end of if(mode==new)		
 	}
 }
@@ -93,7 +101,7 @@ if(isset($mode) && !empty($mode)) {
 # Get the test parameter values
 if($tparam=&$lab_obj->getTestParam($nr)){
 	$tp=$tparam->FetchRow();
-	$parameters=$paralistarray[$tp['group_id']];
+	$parameters=$paralistarray[$tp['group_id']];	
 }else{
 	$tp=false;
 }
@@ -165,8 +173,7 @@ require($root_path.'include/core/inc_css_a_hilitebu.php');
 
 	if(isset($tp['group_id']) && !empty($tp['group_id'])) {
 		$paramName = &$lab_obj->getGroupName( $tp['group_id']);
-		$paramName = &$paramName->FetchRow();
-		echo $paramName['name']; 
+		//$paramName = &$paramName->FetchRow();		
 	}
 ?>
 </b>
