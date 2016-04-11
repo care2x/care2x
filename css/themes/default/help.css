@@ -1,0 +1,74 @@
+/* help files */
+
+* {
+	font-family:Verdana, Geneva, Arial, Helvetica, sans-serif;
+	text-align:left;	
+}
+
+div { font-size:0.9em; }
+
+H1 {
+ 	font-size:1.4em;
+}
+
+H2 {
+ 	color:#800000;
+ 	background-color: #FFFFFF;
+ 	font-size:0.9em;
+}
+
+ul {
+	font-size:0.9em;
+}
+
+p {
+	margin-left:2.1em;
+	font-size:0.8em;
+}
+
+#screenshot {
+	margin-bottom:0.5em;
+	margin-top:0.5em;
+	vertical-align:bottom;
+}
+
+.bold {
+	font-weight:bold
+}
+
+.red {
+	color:#800000;
+	background-color: #FFFFFF;
+	font-weight:bold;
+}
+
+.blue {
+	color:#00008b;
+	background-color: #FFFFFF;
+}
+
+.text {
+	margin-bottom:2em;
+}
+
+p + ul {
+	margin-left:3.1em;
+	font-size:0.7em;
+}
+
+p + p {
+	margin-left:5.1em;
+}
+
+a:visited {
+	color:#800000;
+	background-color: #FFFFFF;
+}
+
+.underline {
+	text-decoration:underline;
+}
+
+
+
+ 

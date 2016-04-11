@@ -1,0 +1,20 @@
+a {
+	font: normal 12px/normal Arial, Helvetica, sans-serif;
+	text-transform: none;
+	color: #000000;
+	text-decoration: none;
+}
+
+a:visited, a:active {
+	font: normal 12px/normal Arial, Helvetica, sans-serif;
+	text-transform: none;
+	color: #000000;
+	text-decoration: none;
+}
+
+a:hover {
+	font: bold 12px/normal Arial, Helvetica, sans-serif;
+	text-transform: none;
+	color: #000000;
+	text-decoration: none;
+}

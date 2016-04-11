@@ -15,7 +15,8 @@
 # Read new menu structure
 
 
-$sql = "SELECT a.name, a.LD_var AS \"LD_var\",a.url, b.s_main_nr, b.s_name, b.s_LD_var AS \"s_LD_var\", b.s_url, b.s_image,b.s_open_image, b.s_status, " . "b.s_ebene, b.s_url_ext FROM care_menu_main as a LEFT  JOIN care_menu_sub as b on a.nr=b.s_main_nr " . "WHERE a.is_visible=1  OR LD_var='LDEDP' OR LD_var='LDLogin'  ORDER BY a.sort_nr, b.s_sort_nr";
+$sql = "SELECT a.name, a.LD_var AS LD_var,a.url, b.s_main_nr, b.s_name, b.s_LD_var AS s_LD_var, b.s_url, b.s_image,b.s_open_image, b.s_status, b.s_ebene, b.s_url_ext FROM care_menu_main as a LEFT  JOIN care_menu_sub as b on a.nr=b.s_main_nr WHERE a.is_visible=1  OR LD_var='LDEDP' OR LD_var='LDLogin'  ORDER BY a.sort_nr, b.s_sort_nr";
+//$sql = "SELECT a.name, a.LD_var AS \"LD_var\",a.url, b.s_main_nr, b.s_name, b.s_LD_var AS \"s_LD_var\", b.s_url, b.s_image,b.s_open_image, b.s_status, " . "b.s_ebene, b.s_url_ext FROM care_menu_main as a LEFT  JOIN care_menu_sub as b on a.nr=b.s_main_nr " . "WHERE a.is_visible=1  OR LD_var='LDEDP' OR LD_var='LDLogin'  ORDER BY a.sort_nr, b.s_sort_nr";
 
 $result1 = $db->Execute ( $sql );
 
@@ -58,7 +59,7 @@ m.config.useCookies=false;
 	$ip = 0;
 	$i = 0;
 	$j = 1;
-	while ( $menu = $result1->FetchRow () ) {
+while ( $menu = $result1->FetchRow () ) {	
 		if (stristr ( 'LDLogin', $menu ['LD_var'] )) {
 			if ($_COOKIE ['ck_login_logged' . $sid] == 'true') {
 				$menu ['url'] = 'main/logout_confirm.php';
@@ -70,7 +71,7 @@ m.config.useCookies=false;
 			//$my_menu_call=$root_path.$menu['s_url'].URL_APPEND.$menu['s_url_ext'];
 			$my_menu_call = $menu ['s_url'] . URL_APPEND . $menu ['s_url_ext'];
 			$my_menu_LDvar = $menu ['s_LD_var'];
-			$my_menu_name = $menu ['s_LD_var'];
+			$my_menu_name = $menu ['s_name'];
 			$my_menu_img = $menu ['s_image'];
 			$my_menu_open_img = $menu ['s_open_image'];
 			//$i=$ip;
