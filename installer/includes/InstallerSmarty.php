@@ -1,6 +1,6 @@
 <?php
 //error_reporting(E_ALL ^ E_NOTICE);
-require_once(APP_PATH.'/classes/smarty/Smarty.class.php');
+require_once(APP_PATH.'/classes/smarty/libs/Smarty.class.php');
 
 /*
  * InstallerSmarty class

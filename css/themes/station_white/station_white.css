@@ -1,0 +1,236 @@
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	
+	scroll: auto;
+	scrollbar-highlight-color:#dedede;
+	scrollbar-shadow-color:gray;
+	scrollbar-track-color: #eeeeee;
+	scrollbar-face-color: white;
+	scrollbar-arrow-color: green;
+	scrollbar-darkshadow-color:#4C6290;
+	scrollbar-3dlight-color:#333333;
+
+	font-family: verdana;
+	font-size: 14px;
+	font-weight: normal;
+	color: #000088;
+}
+table {
+	font-family: verdana;
+	font-size: 14px;
+	font-weight: normal;
+	color: #000000;
+}
+table.main {
+	border: none;
+	border-width: 0;
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+table.frame {
+	background-color: #999999;
+}
+.titlebar {
+	width: 100%;
+	font-size: 22px;
+	font-weight: bold;
+	color: #546D8F;
+	height: 20px;
+	border-bottom: 1px dotted gray;
+}
+/* Highlights an item */
+.hilite {
+	background-color: yellow;
+}
+.submenu_item{
+	font-weight: bold;
+}
+.submenu{
+	background-color: white;
+}
+.submenu_frame {
+	background-color: #dddddd;
+}
+.submenu_title {
+	background-color: #dddddd;
+	font-size: 14px;
+	font-weight: bold;
+	color: green;
+}
+.submenu2_titlebar {
+	background-color: #999999;
+	font-size: 12px;
+	font-weight: bold;
+	color: white;
+}
+.submenu2_list {
+	background-color: #dddddd;
+	font-size: 10px;
+}
+.submenu2_body {
+	background-color: #dddddd;
+	font-size: 12px;
+}
+.submenu2_body2 {
+	background-color: #ffffcc;
+	font-size: 10px;
+}
+.submenu3_titlebar {
+	background-color: green;
+	background-image: url(../../../gui/img/skin/default/tableHeaderbg3.gif);
+	font-size: 12px;
+	font-weight: bold;
+	color: green;
+}
+.submenu3_body {
+	background-color: white;
+	font-size: 10px;
+	color: green;
+}
+td.vspace {
+	background-color: #efefef;
+}
+ul {
+	margin-left: 20px;
+}
+.passborder{
+	background-color: #dedede;
+}
+.passbody{
+	background-color: #fefefe;
+}
+.passmask{
+	background-color: #eeeeee;
+	margin: 0px;
+}
+.passmaskframe{
+	background-color: #999999;
+	margin: 0px;
+}
+.prompt{
+	color: maroon;
+	font-size: 16px;
+	font-weight: bold;
+}
+.warnprompt{
+	color: red;
+	font-size: 18px;
+	font-weight: bold;
+}
+.copyright {
+	font-size: 9px;
+}
+.wardname{
+	font-weight: bold;
+	color: green;
+}
+.wardlistrow1{
+	background-color: white;
+	padding: 2px 6px 2px 6px;
+}
+.wardlistrow2{
+	background-color: #efefef;
+	padding: 2px 6px 2px 6px;
+}
+/* a thin spacer row for ward occupancy or outpatient list, quick lists */
+.thinrow_vspacer{
+	height: 1px;
+	background-color: green;
+}
+/* ward occupancy or outpatient list or wards quick view title row showing the column names */
+.wardlisttitlerow{
+	background-color: cyan;
+}
+/* block for the photo id */
+.photo_id{
+	background-color: #fefefe;
+	border: 1px solid #999999;
+}
+.reg_div{
+	background-color: #66ee66;
+	height: 5px;
+	border-bottom: 1px solid green;
+}
+.reg_item{
+	/* background-image: url(../../../gui/img/skin/default/tableheader_gr.gif);*/
+	background-color: #eeeeee;
+	padding: 2px 6px 2px 6px;
+	border-bottom: 1px solid green;
+}
+.reg_input{
+	background-color: #ffffee;
+	padding-left: 6px;
+}
+/* registration list, search list, etc. title row showing column names */
+.reg_list_titlebar{
+	background-color: #66ee66;
+	color: #000066;
+}
+/* admission forms item column */
+.adm_item{
+	background-image: url(../../../gui/img/skin/default/tableHeaderbg3.gif);
+	background-color: cyan;
+	padding: 2px 6px 2px 6px;
+}
+/* admission forms input column */
+.adm_input{
+	background-color: #eeeeee;
+	padding-left: 6px;
+}
+/* admission lists vertical spacer row */
+.adm_div{
+	background-color: #00009c;
+	height: 5px;
+	font-size: 16px;
+	font-weight: bold;
+	color: white;
+}
+/* admission list, search list, etc. title row showing column names */
+.adm_list_titlebar{
+	background-image: url(../../../gui/img/skin/default/tableHeaderbg3.gif);
+}
+/* for very important data to hilight e.g. first name, last name, bday */
+.vi_data{
+	font-weight: bold;
+	color: maroon;
+	padding: 2px 6px 2px 6px;
+}
+
+hr {
+	line-height: 1px;
+	color: teal;
+}
+/* elements, areas of saturday */
+.saturday{
+	background-color: #ffffcc;
+	padding-left: 6px;
+	padding-right:6px;
+}
+/* elements, areas of sunday */
+.sunday{
+	background-color: #ffff00;
+	color: red;
+	padding-left: 6px;
+	padding-right:6px;
+}
+/* elements, areas of a weekday */
+.weekday{
+	background-color: white;
+	padding-left: 6px;
+	padding-right:6px;
+}
+/*----- Registration search mask */
+.reg_searchmask{
+	background-color: #f3f3f3;
+}
+/*----- Registration search bordering block */
+.reg_searchmask_border{
+	background-color: #66ee66;
+}
+a:link {color:#546D8F; text-decoration:none}
+a:visited {color:#546D8F; text-decoration:none}

@@ -144,13 +144,18 @@ class Access extends Core {
 			if(!empty($this->pw)) $pw=$this->pw;
 				else return FALSE;
 		}
-		$this->sql="SELECT name,login_id,password, permission, lockflag, dept_nr FROM $this->tb_user WHERE login_id ='".addslashes($login)."'";
-		if ($result=$db->Execute($this->sql)) {
+		$this->sql="SELECT name,login_id,password, permission, lockflag FROM $this->tb_user WHERE login_id ='".addslashes($login)."'";		
+		$result = $db->Execute($this->sql);
+		if ($result) {			
 		    if ($this->rec_count=$result->RecordCount()) {
 		       $this->user=$result->FetchRow();
 			   $this->usr_status=TRUE; # User is known
-			   if($this->user['password']==md5($pw)) $this->pw_status=TRUE; # Password is valid
-			   if((int)$this->user['lockflag'])  $this->lock_status=TRUE; # Access is locked
+				if($this->user['password']==md5($pw)){
+					$this->pw_status=TRUE; # Password is valid
+				}				
+				if((int)$this->user['lockflag']){
+					$this->lock_status=TRUE; # Access is locked
+				}				
 			   return TRUE;
 			}else{
 				$usr_status=FALSE;
