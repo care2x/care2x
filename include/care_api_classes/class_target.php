@@ -136,8 +136,8 @@ class Target extends Core {
 									'reperti_addome');
 	/**
 	* Constructor
-	*/			
-	function Target(){
+	*/
+	function __construct(){
 		$this->setTable($this->tb_notes);
 		$this->setRefArray($this->fld_notes);
 	}
@@ -147,7 +147,7 @@ class Target extends Core {
 	* @param int Encounter number
 	* @param int Notes type number
 	* @return boolean
-	*/			
+	*/
 	function _Exists($enr,$type_nr){
 		if($this->_RecordExists("encounter_nr=$enr")){
 			return true;
@@ -158,10 +158,10 @@ class Target extends Core {
 	* @access public
 	* @param string Sort item
 	* @return mixed 2 dimensional array or boolean
-			
+
 	function getAllTypesSort($sort=''){
 	    global $db;
-	
+
 		if(empty($sort)) $sort=" ORDER BY nr";
 			else $sort=" ORDER BY $sort";
 	    if ($this->result=$db->Execute("SELECT nr,type,name,LD_var AS \"LD_var\" FROM $this->tb_types  $sort")) {
@@ -181,7 +181,7 @@ class Target extends Core {
 	* @access public
 	* @param string Sort item
 	* @return mixed 2 dimensional array or boolean
-				
+
 	function getAllTypes(){
 		return $this->getAllTypesSort();
 	}
@@ -196,7 +196,7 @@ class Target extends Core {
 	* - LD_var  = The name of the language dependent variable containing the foreign name of the notes type.
 	*
 	* @access public
-	* @return mixed 1 dimensional array or boolean			
+	* @return mixed 1 dimensional array or boolean
 	function getType($nr=1){
 	    global $db;
 
@@ -218,7 +218,7 @@ class Target extends Core {
 	* @param string Condition for the WHERE sql part. Query constraint.
 	* @param string Sort directive in complete syntax e.g. "ORDER BY date DESC"
 	* @return mixed adodb record object or boolean
-	*/			
+	*/
 	function _getNotes($cond,$order='ORDER BY create_time DESC'){
 	    global $db;
 		$this->sql="SELECT * FROM $this->tb_notes WHERE $cond $order";
@@ -246,7 +246,7 @@ class Target extends Core {
 		//$this->data_array['modify_id']=$_SESSION['sess_user_name'];
 		$this->data_array['create_id']=$_SESSION['sess_user_name'];
 		$this->data_array['create_time']=date('YmdHis');
-		$this->data_array['history']="Create: ".date('Y-m-d H-i-s')." ".$_SESSION['sess_user_name']."\n\r";	
+		$this->data_array['history']="Create: ".date('Y-m-d H-i-s')." ".$_SESSION['sess_user_name']."\n\r";
         	return $this->insertDataFromInternalArray();
 	}
 	/**
@@ -256,7 +256,7 @@ class Target extends Core {
 	* @access private
 	* @param int Record number of the notes record to be updated.
 	* @return boolean
-	*/			
+	*/
 	function _updateNotesFromInternalArray($nr){
 		global $_SESSION;
 		$this->data_array['modify_id']=$_SESSION['sess_user_name'];
@@ -277,7 +277,7 @@ class Target extends Core {
 	* @param int Encounter number
 	* @param int Notes type number
 	* @param string Condition string. Query constraint.
-	* @return boolean			
+	* @return boolean
 	function _getNotesDateRange($enr='',$type_nr=0,$cond=''){
 		global $db;
 		if(empty($enr)){
@@ -304,9 +304,9 @@ class Target extends Core {
 	function getEncounterNotes($nr){
 		return $this->_getNotes("nr=$nr AND status NOT IN ($this->dead_stat)",'');
 	}
-	
+
 	function saveDailyWardNotes(&$data){
-		$buf;	
+		$buf;
 		if(empty($data)){
 			return false;
 		}else{
@@ -390,9 +390,9 @@ class Target extends Core {
 			return $this->_insertNotesFromInternalArray('');
 		}
 	}
-	
+
 	function updateDailyWardNotes(&$data){
-		$buf;	
+		$buf;
 		if(empty($data)){
 			return false;
 		}else{
@@ -400,7 +400,7 @@ class Target extends Core {
 			$this->data_array['encounter_nr']=$data['pn'];
 			$this->data_array['location_id']=$data['station'];
 			$this->data_array['personell_name']=$data['personell_name'];
-			
+
 			$this->data_array['costitution_type']=$data['costitution_type'];
 			$this->data_array['condizioni_generali']=$data['condizioni_generali'];
 			$this->data_array['stato_nutrizione']=$data['stato_nutrizione'];
@@ -477,7 +477,7 @@ class Target extends Core {
 			return $this->_updateNotesFromInternalArray($data['nr']);
 		}
 	}
-	
+
 	function getDailyWardNotes($enr){
 		if($this->_getNotes("encounter_nr=$enr","")){
 			return $this->result;

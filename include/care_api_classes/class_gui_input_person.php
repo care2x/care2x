@@ -62,7 +62,7 @@ class GuiInputPerson {
 	/**
 	* Constructor
 	*/
-	function GuiInputPerson($filename = ''){
+	function __construct($filename = ''){
 		global $thisfile, $root_path;
 		if(empty($filename)) $this->thisfile = $thisfile;
 			else $this->thisfile = $filename;

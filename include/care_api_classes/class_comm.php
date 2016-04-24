@@ -53,8 +53,8 @@ class Comm extends Core {
 									'create_time');
 	/**
 	* Constructor, sets default table to care_phone (phone directory)
-	*/				
-	function Comm(){
+	*/
+	function __construct(){
 		$this->setTable($this->tb_phone);
 		$this->setRefArray($this->fld_phone);
 	}

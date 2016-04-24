@@ -8,7 +8,7 @@
 require_once($root_path.'include/care_api_classes/class_core.php');
 
 /**
-*  Immunization methods. 
+*  Immunization methods.
 *  Note this class should be instantiated only after a "$db" adodb  connector object  has been established by an adodb instance
 * @author Elpidio Latorilla
 * @version beta 2.0.1
@@ -95,14 +95,14 @@ class Immunization extends Core {
 						'create_time');
 	/**
 	* Constructor
-	*/			
-	function Immunization(){
+	*/
+	function __construct(){
 		$this->setTable($this->tb);
 		$this->setRefArray($this->tabfields);
 	}
 	/**
 	* Constructor
-	*/			
+	*/
 	function ImmunizationType(){
 		$this->setTable($this->tb_type);
 		$this->setRefArray($this->tabfields_type);
@@ -115,10 +115,10 @@ class Immunization extends Core {
 	* @param string Query constraint
 	* @param string Item for sorting basis
 	* @return mixed 2 dimensional array or boolean
-	*/			
+	*/
 	function _getalldata($cond='1',$sort=''){
 	    global $db;
-		
+
 		if(!empty($sort)) $sort=" ORDER BY $sort";
 	    if ($this->result=$db->Execute("SELECT * FROM $this->tb WHERE $cond AND status NOT IN ($this->dead_stat) $sort")) {
 		    if ($this->dept_count=$this->result->RecordCount()) {
@@ -138,10 +138,10 @@ class Immunization extends Core {
 	* @param string Query constraint
 	* @param string Item for sorting basis
 	* @return mixed 2 dimensional array or boolean
-	*/			
+	*/
 	function getAllNoCondition($sort=''){
 	    global $db;
-		
+
 		if(!empty($sort)) $sort=" ORDER BY $sort";
 	    if ($this->result=$db->Execute("SELECT * FROM $this->tb  $sort")) {
 		    if ($this->dept_count=$this->result->RecordCount()) {
@@ -159,7 +159,7 @@ class Immunization extends Core {
 	*
 	* The returned  array contains the data with the index keys as set in the <var>$tabfields</var> array.
 	* @return mixed 2 dimensional array or boolean
-	*/			
+	*/
 	function getAll() {
 		return $this->_getalldata('1');
 	}
@@ -169,7 +169,7 @@ class Immunization extends Core {
 	* The returned  array contains the data with the index keys as set in the <var>$tabfields</var> array.
 	* @param string Item for sorting basis
 	* @return mixed 2 dimensional array or boolean
-	*/			
+	*/
 	function getAllSort($sort='') {
 		return $this->_getalldata('1',$sort);
 	}
@@ -179,7 +179,7 @@ class Immunization extends Core {
 	* The returned  array contains the data with the index keys as set in the <var>$tabfields</var> array.
 	* @param string Item for sorting basis
 	* @return mixed 2 dimensional array or boolean
-	*/			
+	*/
 	function getAllActiveSort($sort='') {
 		return $this->_getalldata("is_inactive=0",$sort);
 	}
@@ -196,10 +196,10 @@ class Immunization extends Core {
 	*
 	* @param string Item for sorting basis
 	* @return mixed 2 dimensional array or boolean
-	*/			
+	*/
 	function getAppTypes(){
 	    global $db;
-	
+
 	    if ($this->result=$db->Execute("SELECT nr,group_nr,type,name,LD_var AS \"LD_var\",description FROM $this->tb_types")) {
 		    if ($this->result->RecordCount()) {
 		        return $this->result->GetArray();
@@ -223,10 +223,10 @@ class Immunization extends Core {
 	*
 	* @param int Application type number
 	* @return mixed or boolean
-	*/			
+	*/
 	function getTypeInfo($type_nr){
 	    global $db;
-	
+
 	    if ($this->result=$db->Execute("SELECT type,group_nr,name,LD_var AS \"LD_var\",description FROM $this->tb_types WHERE nr=$type_nr")) {
 		    if ($this->result->RecordCount()) {
 		        return $this->result->FetchRow();
@@ -238,7 +238,7 @@ class Immunization extends Core {
 		    return false;
 		}
 	}
-	
+
 	/**
 	* Inserts new insurance company's complete information in the database.
 	*
@@ -257,8 +257,8 @@ class Immunization extends Core {
 		//$this->data_array['modify_id']=$_SESSION['sess_user_name'];
 		$this->data_array['create_id']=$_SESSION['sess_user_name'];
 		$this->data_array['create_time']=date('YmdHis');
-		return $this->insertDataFromInternalArray();	
-	
+		return $this->insertDataFromInternalArray();
+
 	}
 	/**
 	* Checks if the insurance company exists in the database based on its firm id.
@@ -296,7 +296,7 @@ class Immunization extends Core {
 		        return $this->result;
 		    } else { return FALSE; }
 	   } else { return FALSE; }
-	} 
+	}
 
 	/**
 	* Updates an insurance company's information in the database.
@@ -323,7 +323,7 @@ class Immunization extends Core {
 		$this->data_array['modify_time']=date('YmdHis');
 		##### param FALSE disables strict numeric id behaviour of the method
 		return $this->updateDataFromInternalArray($nr,FALSE);
-	}	
+	}
 
 	/**
 	* Similar to <var>getImmuTypeInfo()</var>  but returns limited rows.
@@ -380,7 +380,7 @@ class Immunization extends Core {
 		if($this->res['saf']=$db->SelectLimit($this->sql,$len,$so)){
 			if($this->rec_count=$this->res['saf']->RecordCount()){
 				return $this->res['saf'];
-		    }else{	
+		    }else{
 				$this->sql="$select WHERE ( nr $sql_LIKE '%$key' OR name $sql_LIKE '%$key' OR medicine $sql_LIKE '%$key' ) $append";
 				if($this->res['saf']=$db->SelectLimit($this->sql,$len,$so)){
 					if($this->rec_count=$this->res['saf']->RecordCount()){
@@ -400,7 +400,7 @@ class Immunization extends Core {
 
 	/**
 	* Searches similar to searchActiveImmu() but returns the resulting number of rows.
-	* 
+	*
 	* Unsuccessful search returns zero value (0).
 	* @param string Search keyword
 	* @return integer
@@ -414,7 +414,7 @@ class Immunization extends Core {
 		if($this->res['scaf']=$db->Execute($this->sql)){
 			if($this->rec_count=$this->res['scaf']->RecordCount()){
 				return $this->rec_count;
-			}else{	
+			}else{
 				$this->sql="$select WHERE ( nr $sql_LIKE '%$key' OR name $sql_LIKE '%$key' OR medicine $sql_LIKE '%$key' ) $append";
 				if($this->res['scaf']=$db->Execute($this->sql)){
 					if($this->rec_count=$this->res['scaf']->RecordCount()){
@@ -430,7 +430,7 @@ class Immunization extends Core {
 				}else{return 0;}
 			}
 		}else{return 0;}
-   	}   	
-   	
-}	
+   	}
+
+}
 ?>

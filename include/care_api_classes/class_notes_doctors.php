@@ -1,7 +1,7 @@
 <?php
 /**
 *  API class for Doctor's Notes and Documentation
-*  Core 
+*  Core
 *   |_ Notes
 *         |_ DoctorsNotes
 *  Note this class should be instantiated only after a "$db" adodb  connector object
@@ -27,8 +27,8 @@ class DoctorsNotes extends Notes {
 	/**
 	* Constructor
 	*/
-	function DoctorsNotes(){
-		$this->Notes();
+	function __construct(){
+		parent::__construct();
 	}
 	/**
 	* Checks if a physician order for an encounter exists.
@@ -51,7 +51,7 @@ class DoctorsNotes extends Notes {
 		if($this->_RecordExists("type_nr=18 AND encounter_nr=$enr")){
 			return true;
 		}else{return false;}
-	}	
+	}
 	/**
 	* Gets the physician order for an encounter.
 	* @access public
@@ -148,7 +148,7 @@ class DoctorsNotes extends Notes {
 	* - author2 = name of inquiry submitter
 	* - warn2 = auxillary notes
 	* - ref_notes_nr = a reference number to another note within the save table
-	* 
+	*
 	* @access public
 	* @param array Data to save.
 	* @return boolean

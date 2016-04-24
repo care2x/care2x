@@ -6,7 +6,7 @@
 */
 require_once($root_path.'include/care_api_classes/class_core.php');
 /**
-*  Personnel methods. 
+*  Personnel methods.
 *  Note this class should be instantiated only after a "$db" adodb  connector object  has been established by an adodb instance
 * @author Elpidio Latorilla
 * @version beta 2.0.1
@@ -149,7 +149,7 @@ class Personell extends Core {
 	/**
 	* Constructor
 	*/
-	function Personell(){
+	function __construct(){
 		$this->setTable($this->tb);
 		$this->setRefArray($this->personell_fields);
 	}
@@ -191,7 +191,7 @@ class Personell extends Core {
 				return TRUE;
 			} else { return FALSE; }
 		} else { return FALSE; }
-	}	
+	}
 	/**#@+
 	*
 	* The returned adodb record object contains rows of arrays.
@@ -236,21 +236,21 @@ class Personell extends Core {
 	function _getAllPersonell($loc_type_nr,$role_nr=0,$dept_nr){
 	    global $db, $dbf_nodate;
 		$row=array();
-		
+
 		$sql="SELECT a.nr, a.personell_nr, ps.job_function_title, p.name_last, p.name_first, p.date_birth, p.sex
 				FROM 	$this->tb_assign AS a,
 							$this->tb AS ps,
-							$this->tb_person AS p			
-				WHERE a.role_nr=$role_nr 
-					AND a.location_type_nr=$loc_type_nr 
+							$this->tb_person AS p
+				WHERE a.role_nr=$role_nr
+					AND a.location_type_nr=$loc_type_nr
 					AND a.location_nr=$dept_nr
 					AND (a.date_end='$dbf_nodate' OR a.date_end>='".date('Y-m-d')."')
 					AND a.status NOT IN ($this->dead_stat)
 					AND a.personell_nr=ps.nr
-					AND ps.pid=p.pid 
+					AND ps.pid=p.pid
 				ORDER BY a.list_frequency DESC";
-				
-		
+
+
 	    if ($this->result=$db->Execute($sql)) {
 		    if ($this->record_count=$this->result->RecordCount()) {
 		    	return $this->result;
@@ -262,7 +262,7 @@ class Personell extends Core {
 		    return FALSE;
 		}
 	}
-	
+
 	/**
 	* Returns  information of the selected personnel (employee) based on personell id
 	*
@@ -274,18 +274,18 @@ class Personell extends Core {
 	function _getPersonellById($personell_nr){
 	    global $db, $dbf_nodate;
 		$row=array();
-		
+
 		$sql="SELECT a.nr, a.personell_nr, ps.job_function_title, p.name_last, p.name_first, p.date_birth, p.sex
 				FROM 	$this->tb_assign AS a,
 							$this->tb AS ps,
-							$this->tb_person AS p			
-				WHERE ps.nr=$personell_nr 
+							$this->tb_person AS p
+				WHERE ps.nr=$personell_nr
 					AND (a.date_end='$dbf_nodate' OR a.date_end>='".date('Y-m-d')."')
 					AND a.status NOT IN ($this->dead_stat)
 					AND a.personell_nr=ps.nr
-					AND ps.pid=p.pid 
+					AND ps.pid=p.pid
 				ORDER BY a.list_frequency DESC";
-				
+
 		echo $this->sql;
 	    if ($this->result=$db->Execute($sql)) {
 		    if ($this->record_count=$this->result->RecordCount()) {
@@ -298,7 +298,7 @@ class Personell extends Core {
 		    return FALSE;
 		}
 	}
-	
+
 	/**
 	* Returns  information of all personnel (employee) based on role number
 	*
@@ -308,19 +308,19 @@ class Personell extends Core {
 	function _getAllPersonellByRole($role_nr=0){
 	    global $db, $dbf_nodate;
 		$row=array();
-		
+
 		$sql="SELECT a.nr, a.personell_nr, ps.job_function_title, p.name_last, p.name_first, p.date_birth, p.sex
 				FROM 	$this->tb_assign AS a,
 							$this->tb AS ps,
-							$this->tb_person AS p			
-				WHERE a.role_nr=$role_nr 
+							$this->tb_person AS p
+				WHERE a.role_nr=$role_nr
 					AND (a.date_end='$dbf_nodate' OR a.date_end>='".date('Y-m-d')."')
 					AND a.status NOT IN ($this->dead_stat)
 					AND a.personell_nr=ps.nr
-					AND ps.pid=p.pid 
+					AND ps.pid=p.pid
 				ORDER BY p.name_first ASC";
-				
-		
+
+
 	    if ($this->result=$db->Execute($sql)) {
 		    if ($this->record_count=$this->result->RecordCount()) {
 		    	return $this->result;
@@ -333,7 +333,7 @@ class Personell extends Core {
 		}
 	}
 	/**#@-*/
-	
+
 	/**#@+
 	*
 	* If the on-call duty plan exists, its record primary key number will be returned, else FALSE
@@ -384,7 +384,7 @@ class Personell extends Core {
 		return $this->_OCDutyplanExists(14,$dept_nr,$year,$month); // 14 = nurse_on_call (role)
 	}
 	/**#@-*/
-	
+
 	/**#@+
 	*
 	* The returned items are based on the field names passed as string to the method.
@@ -403,7 +403,7 @@ class Personell extends Core {
 	*/
 	function _getOCDutyplan($role_nr,$dept_nr=0,$year=0,$month=0,$elems='*'){
 		global $db;
-		
+
 		if(!$role_nr||!$dept_nr||!$year||!$month){
 			return FALSE;
 		}else{
@@ -440,7 +440,7 @@ class Personell extends Core {
 		return $this->_getOCDutyplan(14,$dept_nr,$year,$month,$elems);
 	}
 	/**#@-*/
-	
+
 	/**
 	* Gets the personnel information based on its personnel number key.
 	*
@@ -462,13 +462,13 @@ class Personell extends Core {
 							c.funk2,
 							c.inphone1,
 							c.inphone2,
-							c.inphone3 
-				FROM $this->tb AS ps, 
+							c.inphone3
+				FROM $this->tb AS ps,
 						$this->tb_person AS p LEFT JOIN
 						$this->tb_cphone AS c ON c.personell_nr=$nr
 				WHERE ps.nr='$nr'
 				 AND ps.pid=p.pid";
-				 
+
 	    if ($this->result=$db->Execute($sql)) {
 		   	if ($this->record_count=$this->result->RecordCount()) {
 				return $this->result->FetchRow();
@@ -506,12 +506,12 @@ class Personell extends Core {
 			}
 
 			$sql="SELECT dept_nr FROM $this->tb_dpoc WHERE role_nr=$role_nr AND dept_nr IN ($dept_list) AND year='$year' AND month='$month'";
-			
+
 	    	if ($this->result=$db->Execute($sql)) {
 		    	if ($this->record_count=$this->result->RecordCount()) {
 					$row=$this->result->GetArray();
 					while(list($x,$v)=each($row)) {
-						$buffer[]=$v['dept_nr']; 
+						$buffer[]=$v['dept_nr'];
 					}
 					return $buffer;
 				} else {
@@ -549,7 +549,7 @@ class Personell extends Core {
 	function getNOCQuicklist(&$depts,$year,$month){
 		$this->depts=$depts;
 		return $this->_getOCQuicklist(14,$year,$month);
-	}	
+	}
 	/**
 	* Searches and returns basic personnel information.
 	*
@@ -601,7 +601,7 @@ class Personell extends Core {
 				return $this->res['spbi'];
 			}else{return FALSE;}
 		}else{return FALSE;}
-	}		
+	}
 	/**
 	* Search similar to searchPersonellBasicInfo but returns a limited number of rows.
 	*
@@ -654,11 +654,11 @@ class Personell extends Core {
 	*/
 	function loadPersonellData($nr=0){
 	    global $db;
-		
+
 		if(!$nr) return FALSE;
 
 		$this->sql="SELECT ps.*, p.title, p.name_last, p.name_first, p.date_birth, p.sex,
-							p.addr_str,p.addr_str_nr,p.addr_zip, 
+							p.addr_str,p.addr_str_nr,p.addr_zip,
 							p.photo_filename,
 							c.item_nr AS phone_pk,
 							c.beruf,
@@ -672,9 +672,9 @@ class Personell extends Core {
 							c.inphone2,
 							c.inphone3,
 							c.roomnr,
-							t.name AS citytown_name 
-				FROM $this->tb AS ps, 
-						$this->tb_person AS p 
+							t.name AS citytown_name
+				FROM $this->tb AS ps,
+						$this->tb_person AS p
 						LEFT JOIN $this->tb_cphone AS c ON c.personell_nr=$nr
 						LEFT JOIN $this->tb_citytown AS t ON p.addr_citytown_nr=t.nr
 				WHERE ps.nr=$nr AND ps.pid=p.pid";
@@ -684,7 +684,7 @@ class Personell extends Core {
 				$this->result=NULL;
 			    $this->is_loaded=TRUE;
 			    $this->is_preloaded=TRUE;
-				//echo $this->sql; 
+				//echo $this->sql;
 				return TRUE;
 		    } else {
 				//echo $this->sql;
@@ -835,6 +835,6 @@ class Personell extends Core {
 	function PID(){
 	    //if(!$this->is_loaded) return FALSE;
 		return $this->personell_data['pid'];
-	}	
+	}
 }
 ?>

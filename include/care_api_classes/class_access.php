@@ -91,7 +91,7 @@ class Access extends Core {
 	* @access public
 	* @return boolean
 	*/
-	function Access($login='',$pw=''){
+	function __construct($login='',$pw=''){
 		$this->coretable=$this->tb_user;
 		$this->login_id =$login;
 		if(!empty($login)&&!empty($pw)){

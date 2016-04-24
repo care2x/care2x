@@ -45,11 +45,11 @@ class Quicklist extends DRG{
 	* Constructor
 	* @param int Encounter number
 	* @param int Department number
-	*/			
-	function Quicklist($enc_nr,$dept_nr){
+	*/
+	function __construct($enc_nr,$dept_nr){
 		$this->enc_nr=$enc_nr;
 		$this->dept_nr=$dept_nr;
-		$this->DRG($enc_nr);
+		parent::__construct($enc_nr);
 	}
 	/**
 	* Resolves the encounter number.
@@ -84,14 +84,14 @@ class Quicklist extends DRG{
 			}
 			case 'diagnosis':
 			{
-				$cond=", d.diagnosis_code AS nr, d.description, p.description AS parent_desc FROM $this->tb_qlist AS q  
+				$cond=", d.diagnosis_code AS nr, d.description, p.description AS parent_desc FROM $this->tb_qlist AS q
 								LEFT JOIN $this->tb_diag_codes AS d ON q.code=d.diagnosis_code
 								LEFT JOIN $this->tb_diag_codes AS p ON q.code_parent=p.diagnosis_code";
 				break;
 			}
 			case 'procedure':
 			{
-				$cond=", d.code AS nr, d.description, p.description AS parent_desc FROM $this->tb_qlist AS q  
+				$cond=", d.code AS nr, d.description, p.description AS parent_desc FROM $this->tb_qlist AS q
 								LEFT JOIN $this->tb_proc_codes AS d ON q.code=d.code
 								LEFT JOIN $this->tb_proc_codes AS p ON q.code_parent=p.code";
 				break;

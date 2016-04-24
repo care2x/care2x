@@ -6,7 +6,7 @@
 */
 require_once($root_path.'include/care_api_classes/class_core.php');
 /**
-*  Insurance methods. 
+*  Insurance methods.
 *  Note this class should be instantiated only after a "$db" adodb  connector object  has been established by an adodb instance
 * @author Elpidio Latorilla
 * @version beta 2.0.1
@@ -87,7 +87,7 @@ class Insurance extends Core {
 	* Constructor
 	* @param string Insurance company id
 	*/
-	function Insurance($firm_id='') {
+	function __construct($firm_id='') {
 	    $this->firm_id=$firm_id;
 		$this->coretable=$this->tb_insurance;
 		$this->ref_array=$this->fld_insurance;
@@ -132,9 +132,9 @@ class Insurance extends Core {
 	* @return mixed adodb record object or boolean
 	*/
     function getInsuranceClassInfoObject($items='class_nr,class_id,name,LD_var AS "LD_var", description,status,history') {
-    
+
 	    global $db;
-	
+
         if ($this->res['gicio']=$db->Execute("SELECT $items  FROM $this->tb_class WHERE status='active'")) {
             if ($this->res['gicio']->RecordCount()) {
                 return $this->res['gicio'];
@@ -149,9 +149,9 @@ class Insurance extends Core {
 	* @return mixed adodb record object or boolean
 	*/
     function getInsuranceClassInfoArray($items='class_nr,class_id,name,LD_var AS "LD_var", description,status,history') {
-    
+
 	    global $db;
-	
+
         if ($this->result=$db->Execute("SELECT $items  FROM $this->tb_class")) {
             if ($this->result->RecordCount()) {
 		return $this->result->GetArray();
@@ -191,9 +191,9 @@ class Insurance extends Core {
 	* @return mixed integer or boolean
 	*/
     function getUseFrequency($firm_id='') {
-	
+
         global $db;
-	   
+
 	    if(!$this->_internResolveFirmID($firm_id)) return FALSE;
 	    if($this->result=$db->Execute("SELECT use_frequency FROM $this->tb_insurance WHERE firm_id=$this->firm_id")) {
 	        if($this->result->RecordCount()) {
@@ -232,7 +232,7 @@ class Insurance extends Core {
    function getFirmName($firm_id) {
        global $db;
 	   if(!$this->_internResolveFirmID($firm_id)) return FALSE;
-	   
+
 	   $this->sql="SELECT name FROM $this->tb_insurance WHERE firm_id='$this->firm_id'";
 	    if($this->result=$db->Execute($this->sql)) {
 	        if($this->result->RecordCount()) {
@@ -387,7 +387,7 @@ class Insurance extends Core {
 		if($this->result=$db->Execute($this->sql)){
 			if($this->result->RecordCount()){
 				return $this->result;
-		    }else{	
+		    }else{
 				$this->sql="$select WHERE ( firm_id $sql_LIKE '%$key' OR name $sql_LIKE '%$key' OR addr_email $sql_LIKE '%$key' ) $append";
 				if($this->result=$db->Execute($this->sql)){
 					if($this->result->RecordCount()){
@@ -426,7 +426,7 @@ class Insurance extends Core {
 		if($this->res['saf']=$db->SelectLimit($this->sql,$len,$so)){
 			if($this->rec_count=$this->res['saf']->RecordCount()){
 				return $this->res['saf'];
-		    }else{	
+		    }else{
 				$this->sql="$select WHERE ( firm_id $sql_LIKE '%$key' OR name $sql_LIKE '%$key' OR addr_email $sql_LIKE '%$key' ) $append";
 				if($this->res['saf']=$db->SelectLimit($this->sql,$len,$so)){
 					if($this->rec_count=$this->res['saf']->RecordCount()){
@@ -445,7 +445,7 @@ class Insurance extends Core {
    	}
 	/**
 	* Searches similar to searchActiveFirm() but returns the resulting number of rows.
-	* 
+	*
 	* Unsuccessful search returns zero value (0).
 	* @param string Search keyword
 	* @return integer
@@ -459,7 +459,7 @@ class Insurance extends Core {
 		if($this->res['scaf']=$db->Execute($this->sql)){
 			if($this->rec_count=$this->res['scaf']->RecordCount()){
 				return $this->rec_count;
-			}else{	
+			}else{
 				$this->sql="$select WHERE ( firm_id $sql_LIKE '%$key' OR name $sql_LIKE '%$key' OR addr_email $sql_LIKE '%$key' ) $append";
 				if($this->res['scaf']=$db->Execute($this->sql)){
 					if($this->rec_count=$this->res['scaf']->RecordCount()){
@@ -476,13 +476,13 @@ class Insurance extends Core {
 			}
 		}else{return 0;}
    	}
-	
+
 }
 
-// ********** class PersonInsurance 
+// ********** class PersonInsurance
 
 /**
-*  Personinsurance methods. 
+*  Personinsurance methods.
 *  Note this class should be instantiated only after a "$db" adodb  connector object  has been established by an adodb instance
 * @author Elpidio Latorilla
 * @version beta 2.0.1
@@ -493,31 +493,31 @@ class PersonInsurance extends Insurance {
 	/**
 	* Table name for  person's insurance data
 	* @var string
-	*/			
+	*/
     var $tb_person_insurance='care_person_insurance';
 	/**
 	* PID number
 	* @var int
-	*/			
+	*/
 	var $pid;
 	/**
 	* Constructor
 	* @param int PID number
-	*/			
+	*/
 	function PersonInsurance ($pid=0) {
 	    $this->pid=$pid;
 	}
 	/**
 	* Sets the internal PID number buffer
 	* @param int PID number
-	*/			
+	*/
 	function setPID($pid) {
 	    $this->pid=$pid;
 	}
 	/**
 	* Resolves the PID number to be used.
 	* @param int PID number
-	*/			
+	*/
 	function internResolvePID($pid) {
 	    if (empty($pid)) {
 		    if(empty($this->pid)) {
@@ -534,8 +534,8 @@ class PersonInsurance extends Insurance {
 	* @param array Data to save. By reference.
 	* @param mixed interger or string
 	* @return boolean
-	*/			
-    function updateDataFromArray(&$array,$item_nr='') { 
+	*/
+    function updateDataFromArray(&$array,$item_nr='') {
 		$x='';
 		$v='';
 		$sql='';
@@ -544,7 +544,7 @@ class PersonInsurance extends Insurance {
 		    $sql.="$x='$v',";
 		}
 		$sql=substr_replace($sql,'',(strlen($sql))-1);
-        $this->sql="UPDATE $this->tb_person_insurance SET $sql WHERE item_nr=$item_nr";				
+        $this->sql="UPDATE $this->tb_person_insurance SET $sql WHERE item_nr=$item_nr";
 		return $this->Transact();
 	}
 	/**
@@ -553,7 +553,7 @@ class PersonInsurance extends Insurance {
 	* @param array Data to save. By reference.
 	* @param mixed interger or string
 	* @return boolean
-	*/			
+	*/
     function insertDataFromArray(&$array) {
 		$x='';
 		$v='';
@@ -589,19 +589,19 @@ class PersonInsurance extends Insurance {
 	    global $db;
 
 		if(!$this->internResolvePID($pid)) return FALSE;
-		
-        $this->sql="SELECT 
+
+        $this->sql="SELECT
                            item_nr AS insurance_item_nr,
     					   type AS insurance_type,
                            insurance_nr,
-    					   firm_id AS insurance_firm_id, 
-    					   class_nr AS insurance_class_nr 
-    					   FROM $this->tb_person_insurance 
-						  WHERE 
-						          pid='$this->pid' AND (is_void=0 OR is_void='') 
-						  ORDER BY 
+    					   firm_id AS insurance_firm_id,
+    					   class_nr AS insurance_class_nr
+    					   FROM $this->tb_person_insurance
+						  WHERE
+						          pid='$this->pid' AND (is_void=0 OR is_void='')
+						  ORDER BY
 						          modify_time DESC";
-			    
+
         if($this->result=$db->Execute($this->sql)) {
             if($this->result->RecordCount()) {
                 return $this->result;
@@ -621,11 +621,11 @@ class PersonInsurance extends Insurance {
 	*/
     function getInsuranceClassInfo($class_nr) {
         global $db;
-		
+
         if($this->result=$db->Execute("SELECT class_nr,class_id,name,LD_var AS  \"LD_var\", description,status,history FROM $this->tb_class WHERE class_nr=$class_nr")) {
             if($this->result->RecordCount()) {
 				 $this->row= $this->result->FetchRow();
-				 return $this->row;	 
+				 return $this->row;
 			} else { return FALSE; }
 		} else { return FALSE; }
 	}

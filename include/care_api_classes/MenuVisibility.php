@@ -6,7 +6,7 @@
  * Window - Preferences - PHPeclipse - PHP - Code Templates
  */
  require_once('StringPermissionParser.php');
- 
+
  class MenuVisibility {
  	var $matches = array("Admission"=>"admission", "Medocs"=>"medocs", "Doctors"=>"doctors", "Nursing"=>"nursing",
  						 "OR"=>"op", "Laboratories"=>"lab", "Radiology"=>"radio", "Pharmacy"=>"pharma",
@@ -15,25 +15,25 @@
  						 "Patient"=>"Patient", "Appointments"=>"Appointments", "Ambulatory"=>"Ambulatory",
  						 "Intranet Email"=>"Intranet Email");
  	var $strParser;
- 	
- 	function MenuVisibility($stringPermissions) {
+
+ 	function __construct($stringPermissions) {
  		$this->strParser = new StringPermissionParser();
  		$this->strParser->setString($stringPermissions);
  	}
- 	
+
  	function isAllowed($stringMenu) {
- 		if (!(array_key_exists($stringMenu, $this->matches))) 
+ 		if (!(array_key_exists($stringMenu, $this->matches)))
  			return false;
- 		if ( $this->strParser->isPresent($this->matches[$stringMenu]) ) 
+ 		if ( $this->strParser->isPresent($this->matches[$stringMenu]) )
  			return true;
- 		else 
+ 		else
  			return false;
  	}
- 	
+
  	function isLogged($user) {
  		if ($_COOKIE[$user]=='true') return true;
  		else return false;
  	}
- 
+
  }
 ?>

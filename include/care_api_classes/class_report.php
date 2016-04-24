@@ -34,7 +34,7 @@ class report extends core {
   /**
   * Class-Constructor: Setting debug=FALSE if you don�t want to have some debugging
   */
-  function report() {
+  function __construct() {
     global $db;
     $this->debug=false;
     $this->debug==TRUE ? $db->debug=TRUE : $db->debug=FALSE;
@@ -182,7 +182,7 @@ class report extends core {
   *</code>
   */
   function SetReportingTable($tbl='') {
- 
+
   	if ($this->debug) echo "class_report::SetReportingTable($tbl)<br>";
   	$result_fields_tbl = $this->_SetColumnNamesAsString($tbl,$this->GetFieldnames($tbl));
   	$result_fields = $this->_ColumnNames($tbl,$result_fields_tbl);
@@ -198,7 +198,7 @@ class report extends core {
       } else {
         $this->sql="CREATE TEMPORARY TABLE $this->coretable  SELECT $result_fields FROM $tbl ";
       }
-    } else {    
+    } else {
       $this->sql="CREATE TEMPORARY TABLE $this->coretable  SELECT $result_fields FROM $tbl ";
     }
     return ($this->Transact($this->sql)) ? $this->coretable : FALSE;

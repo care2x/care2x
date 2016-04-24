@@ -5,19 +5,19 @@
  * To change the template for this generated file go to
  * Window - Preferences - PHPeclipse - PHP - Code Templates
  */
- 
+
  class StringParser {
- 	
+
  	var $pstring;
- 	
- 	function StringParser(){
+
+ 	function __construct(){
  		$this->pstring = NULL;
  	}
- 	
+
  	function setString($perm){
  		$this->pstring = $perm;
  	}
- 	
+
  	function getString(){
  		return $this->pstring;
  	}
@@ -26,6 +26,6 @@
  		return strpos($this->pstring, $perm) != false;
  	}
  };
- 
+
 ?>
 

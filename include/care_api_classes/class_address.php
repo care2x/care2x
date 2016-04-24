@@ -42,17 +42,17 @@ class Address extends Core {
 							'modify_time',
 							'create_id',
 							'create_time');
-									
+
 	/**
 	* Constructor
 	* @param int Primary key of address record.
 	*/
-	function Address($nr){
+	function __construct($nr){
 		$this->coretable=$this->tb_citytown;
 		$this->ref_array=$this->fld_citytown;
 	}
 	/**
-	* Sets the core table to the table name and field names of care_address_citytown 
+	* Sets the core table to the table name and field names of care_address_citytown
 	* @access private
 	*/
 	function _useCityTown(){
@@ -61,7 +61,7 @@ class Address extends Core {
 	}
 	/**
 	* Gets all active city town addresses. Returns ADODB record object or boolean.
-	* The returned adodb object contains rows of array with index keys 
+	* The returned adodb object contains rows of array with index keys
 	* corresponding to $fld_citytown.
 	* @access public
 	* @return mixed
@@ -101,7 +101,7 @@ class Address extends Core {
 	}
 	/**
 	* Counts all active city town addresses. Rreturns the count, else return zero.
-	* @return int 
+	* @return int
 	*/
 	function countAllActiveCityTown(){
 		/**
@@ -134,7 +134,7 @@ class Address extends Core {
 	   } else { return FALSE; }
    }
 	/**
-	* Gets all record information of a city or town based on the record "nr" key. 
+	* Gets all record information of a city or town based on the record "nr" key.
 	* Returns an ADODB record object or boolean.
 	* @param int Record nr (citytown nr) key
 	* @return object
@@ -172,7 +172,7 @@ class Address extends Core {
 	}
 	/**
 	* Updates the city/town's data. The data is contained in associative array and passed by reference.
-	* The array keys must correspond to the field names contained in $fld_citytown. 
+	* The array keys must correspond to the field names contained in $fld_citytown.
 	* Only the keys of data to be updated must be present in the passed array.
 	* @param int City/town's record nr (primary key)
 	* @param array Data passed as reference
@@ -206,7 +206,7 @@ class Address extends Core {
 		if($this->result=$db->Execute($this->sql)){
 			if($this->result->RecordCount()){
 				return $this->result;
-		    }else{	
+		    }else{
 				$this->sql="$select WHERE ( name $sql_LIKE '%$key' OR unece_locode $sql_LIKE '%$key' ) $append";
 				if($this->result=$db->Execute($this->sql)){
 					if($this->result->RecordCount()){
@@ -224,7 +224,7 @@ class Address extends Core {
 	   } else { return FALSE; }
    	}
 	/**
-	* Limited return search for the active city or town. 
+	* Limited return search for the active city or town.
 	* Returns an ADODB record object of search results or boolean.
 	* @param string Search keyword
 	* @param int Maximum number of rows returned, default=30
@@ -281,7 +281,7 @@ class Address extends Core {
 		if($this->res['scact']=$db->Execute($this->sql)){
 			if($this->rec_count=$this->res['scact']->RecordCount()){
 				return $this->rec_count;
-			}else{	
+			}else{
 				$this->sql="$select WHERE ( name $sql_LIKE '%$key' OR unece_locode $sql_LIKE '%$key' ) $append";
 				if($this->res['scact']=$db->Execute($this->sql)){
 					if($this->rec_count=$this->res['scact']->RecordCount()){

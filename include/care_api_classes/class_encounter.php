@@ -84,7 +84,7 @@ class Encounter extends Notes {
 	* Table name for encounter type
 	* @var string
 	*/
-	var $tb_enc_type='care_type_encounter';	
+	var $tb_enc_type='care_type_encounter';
 	/**
 	* Current encounter number
 	* @var int
@@ -216,8 +216,8 @@ class Encounter extends Notes {
 	/**
 	* Constructor
 	* @param int Encounter number
-	*/			
-	function Encounter($enc_nr='') {
+	*/
+	function __construct($enc_nr='') {
 	    $this->enc_nr=$enc_nr;
 		$this->setTable($this->tb_enc);
 		$this->setRefArray($this->tabfields);
@@ -225,42 +225,42 @@ class Encounter extends Notes {
 	/**
 	* Sets internal encounter number buffer to current encounter number
 	* @param int Encounter number
-	*/			
+	*/
 	function setEncounterNr($enc_nr='') {
 	    $this->enc_nr=$enc_nr;
 	}
 	/**
 	* Sets internal encoder buffer to current encoder's name
 	* @param string encoder's name
-	*/			
+	*/
 	function setEncoder($encoder='') {
 	    $this->encoder=$encode;
 	}
 	/**
 	* Sets internal ignore status flag to current ignore status
 	* @param boolean Ignore status
-	*/			
+	*/
 	function setIgnoreStatus($bool=FALSE){
 	    $this->ignore_status=$bool;
 	}
 	/**
 	* Sets internal entire record flag to current record status
 	* @param boolean Entire record status
-	*/			
+	*/
 	function setGetEntireRecord($bool=FALSE){
 	    $this->entire_record=$bool;
 	}
 	/**
 	* Sets core's table name variable to a table name
 	* @param string Table name
-	*/			
+	*/
 	function setCoreTable($table){
 	    $this->setTable($table);
 	}
 	/**
 	* Sets internal single result flag to current single result status
 	* @param boolean Single result status
-	*/			
+	*/
 	function setSingleResult($bool=FALSE){
 	    $this->single_result=$bool;
 	}
@@ -271,7 +271,7 @@ class Encounter extends Notes {
 	* @param int Reference Encounter number
 	* @param int Encounter class number (1=inpatient, 2=outpatient)
 	* @return integer
-	*/			
+	*/
 	function getNewEncounterNr($ref_nr,$enc_class_nr){
 		global $db;
 		$row=array();
@@ -287,11 +287,11 @@ class Encounter extends Notes {
 	/**
 	* Resolves the encounter number internally.
 	*
-	* If there is no encounter number passed as parameter to a method, 
+	* If there is no encounter number passed as parameter to a method,
 	* the method will use the buffered current encounter number,  else it returns FALSE.
 	* @param int Encounter number
 	* @return boolean
-	*/			
+	*/
 	function internResolveEncounterNr($enc_nr='') {
 	    if (empty($enc_nr)) {
 		    if(empty($this->enc_nr)) {
@@ -308,14 +308,14 @@ class Encounter extends Notes {
 	* @param int service class number
 	* @param int Encounter number
 	* @return mixed adodb record object or boolean
-	*/			
+	*/
     function getServiceClass($type,$enc_nr) {
         global $db;
-	    
+
 		if(empty($type)) return FALSE;
 	    if(!$this->internResolveEncounterNr($enc_nr)) return FALSE;
-		
-		$this->sql="SELECT   enfc.class_nr       AS sc_".$type."_class_nr,  
+
+		$this->sql="SELECT   enfc.class_nr       AS sc_".$type."_class_nr,
 			                          enfc.date_start  AS sc_".$type."_start,
 									  enfc.date_end    AS sc_".$type."_end,
 									  enfc.nr               AS sc_".$type."_nr,
@@ -328,9 +328,9 @@ class Encounter extends Notes {
 							WHERE
 							          enfc.encounter_nr='$this->enc_nr' AND fc.type='$type' AND enfc.class_nr=fc.class_nr
 							 ORDER BY enfc.date_create ";
-							 
-		if($this->single_result) $this->sql.=' LIMIT 1';				 
-				     
+
+		if($this->single_result) $this->sql.=' LIMIT 1';
+
 		if($this->result=$db->Execute($this->sql)) {
 		    if($this->result->RecordCount()) {
 			    // echo $this->sql.'<p>';
@@ -352,7 +352,7 @@ class Encounter extends Notes {
 	*
 	* @param int Encounter number
 	* @return mixed adodb record object or boolean
-	*/			
+	*/
 	function CareServiceClass($enc_nr='') {
 	    return $this->getServiceClass('care',$enc_nr);
 	}
@@ -370,7 +370,7 @@ class Encounter extends Notes {
 	*
 	* @param int Encounter number
 	* @return mixed adodb record object or boolean
-	*/			
+	*/
 	function RoomServiceClass($enc_nr='') {
 	    return $this->getServiceClass('room',$enc_nr);
 	}
@@ -388,7 +388,7 @@ class Encounter extends Notes {
 	*
 	* @param int Encounter number
 	* @return mixed adodb record object or boolean
-	*/			
+	*/
 	function AttDrServiceClass($enc_nr='') {
 	    return $this->getServiceClass('att_dr',$enc_nr);
 	}
@@ -400,14 +400,14 @@ class Encounter extends Notes {
 	* @param array Service data for saving. Associative. By reference.
 	* @param int Encounter number
 	* @return boolean
-	*/			
+	*/
     function saveServiceClass($type, &$val_array,$enc_nr='')
     {
 	    global $db;
-    
+
 	    if(empty($type)||empty($val_array)) return FALSE;
         if(!$this->internResolveEncounterNr($enc_nr)) return FALSE;
-	
+
 	    $this->sql="INSERT INTO $this->tb_enc_fc
 	        (
 	               encounter_nr,
@@ -435,7 +435,7 @@ class Encounter extends Notes {
 				NULL
 			)";
         return $this->Transact();
-    }	
+    }
 	/**
 	* Saves the nursing care service class information of an encounter based on service type and encounter number.
 	*
@@ -450,7 +450,7 @@ class Encounter extends Notes {
 	* @param array Service data for saving. Associative. By reference.
 	* @param int Encounter number
 	* @return boolean
-	*/			
+	*/
 	function saveCareServiceClass(&$val_array,$enc_nr) {
 	    return $this->saveServiceClass('care',$val_array,$enc_nr);
 	}
@@ -468,7 +468,7 @@ class Encounter extends Notes {
 	* @param array Service data for saving. Associative. By reference.
 	* @param int Encounter number
 	* @return boolean
-	*/			
+	*/
 	function saveRoomServiceClass(&$val_array,$enc_nr) {
 	    return $this->saveServiceClass('room',$val_array,$enc_nr);
 	}
@@ -486,7 +486,7 @@ class Encounter extends Notes {
 	* @param array Service data for saving. Associative. By reference.
 	* @param int Encounter number
 	* @return boolean
-	*/			
+	*/
 	function saveAttDrServiceClass(&$val_array,$enc_nr) {
 	    return $this->saveServiceClass('att_dr',$val_array,$enc_nr);
 	}
@@ -501,7 +501,7 @@ class Encounter extends Notes {
     function updateServiceClass($type, &$val_array)
     {
 	    global $db;
-	     
+
 		if(empty($val_array['sc_'.$type.'_class_nr'])) return FALSE;
 	    $this->sql="UPDATE $this->tb_enc_fc SET
 				   class_nr = '".$val_array['sc_'.$type.'_class_nr']."',
@@ -511,7 +511,7 @@ class Encounter extends Notes {
 				   modify_id = '".$val_array['encoder']."'
 			WHERE nr = '".$val_array['sc_'.$type.'_nr']."'";
 		return $this->Transact();
-    }	
+    }
 	/**
 	* Updates the nursing care service class information of an encounter based on service type and record's primary key number.
 	*
@@ -526,7 +526,7 @@ class Encounter extends Notes {
 	* @access public
 	* @param array Service data for saving. Associative. By reference.
 	* @return boolean
-	*/			
+	*/
 	function updateCareServiceClass(&$val_array) {
 		if(empty($val_array['sc_care_nr'])) return $this->saveCareServiceClass($val_array);
 	        else return $this->updateServiceClass('care',$val_array);
@@ -546,7 +546,7 @@ class Encounter extends Notes {
 	* @param array Service data for saving. Associative. By reference.
 	* @param int Record's primary key number. (reserved)
 	* @return boolean
-	*/			
+	*/
 	function updateRoomServiceClass(&$val_array,$nr) {
 		if(empty($val_array['sc_room_nr'])) return $this->saveRoomServiceClass($val_array);
 	        else return $this->updateServiceClass('room',$val_array);
@@ -566,7 +566,7 @@ class Encounter extends Notes {
 	* @param array Service data for saving. Associative. By reference.
 	* @param int Record's primary key number. (reserved)
 	* @return boolean
-	*/			
+	*/
 	function updateAttDrServiceClass(&$val_array,$nr) {
 		if(empty($val_array['sc_att_dr_nr'])) return $this->saveAttDrServiceClass($val_array);
 	        else return $this->updateServiceClass('att_dr',$val_array);
@@ -577,7 +577,7 @@ class Encounter extends Notes {
 	* @access private
 	* @param string service class 'care', 'room', 'att_dr'
 	* @return mixed adodb record object or boolean
-	*/			
+	*/
     function getAllServiceClassesObject($type=''){
 	    global $db;
 		if(empty($type)) return FALSE;
@@ -587,13 +587,13 @@ class Encounter extends Notes {
 			    return $this->result;
 		    } else { return FALSE;}
 		} else { return FALSE;}
-    }		
+    }
 	/**
 	* Gets all service classes of 'care' class.
 	*
 	* @access public
 	* @return mixed adodb record object or boolean
-	*/			
+	*/
 	function AllCareServiceClassesObject(){
 	    return $this->getAllServiceClassesObject('care');
 	}
@@ -602,7 +602,7 @@ class Encounter extends Notes {
 	*
 	* @access public
 	* @return mixed adodb record object or boolean
-	*/			
+	*/
 	function AllRoomServiceClassesObject(){
 	    return $this->getAllServiceClassesObject('room');
 	}
@@ -611,7 +611,7 @@ class Encounter extends Notes {
 	*
 	* @access public
 	* @return mixed adodb record object or boolean
-	*/			
+	*/
 	function AllAttDrServiceClassesObject(){
 	    return $this->getAllServiceClassesObject('att_dr');
 	}
@@ -626,7 +626,7 @@ class Encounter extends Notes {
 	*
 	* @access public
 	* @return mixed adodb record object or boolean
-	*/			
+	*/
 	function AllEncounterClassesObject(){
 	    global $db;
 	    //$db->debug=true;
@@ -638,7 +638,7 @@ class Encounter extends Notes {
 		} else { return FALSE;}
 	}
 	/**
-	* Loads the encounter data including some data from the registration into an internal buffer array <var>$encounter</var>. 
+	* Loads the encounter data including some data from the registration into an internal buffer array <var>$encounter</var>.
 	*
 	* This method returns only TRUE (data loaded) or FALSE (data not loaded).
 	* The load success status can also be tested later by using the internal <var>$is_loaded</var> flag.
@@ -671,7 +671,7 @@ class Encounter extends Notes {
 		$this->sql="SELECT e.*, p.pid, p.title,p.name_last, p.name_first, p.date_birth, p.sex,
 									p.addr_str,p.addr_str_nr,p.addr_zip, p.blood_group,
 									p.photo_filename, t.name AS citytown_name,p.death_date
-							FROM $this->tb_enc AS e, 
+							FROM $this->tb_enc AS e,
 									 $this->tb_person AS p
 									 LEFT JOIN $this->tb_citytown AS t ON p.addr_citytown_nr=t.nr
 							WHERE e.encounter_nr=$this->enc_nr
@@ -690,7 +690,7 @@ class Encounter extends Notes {
 	* Returns last or family name.
 	* Use only after the encounter data was successfully loaded by the <var>loadEncounterData()</var> method.
 	* @return mixed string or boolean
-	*/			
+	*/
 	function LastName($enr=0){
 		if($this->is_loaded) {
 			return $this->encounter['name_last'];
@@ -703,7 +703,7 @@ class Encounter extends Notes {
 	* Returns first or given name.
 	* Use only after the encounter data was successfully loaded by the <var>loadEncounterData()</var> method.
 	* @return mixed string or boolean
-	*/			
+	*/
 	function FirstName($enr=0){
 		if($this->is_loaded) {
 			return $this->encounter['name_first'];
@@ -716,7 +716,7 @@ class Encounter extends Notes {
 	* Returns date of birth in yyyy-mm-format.
 	* Use only after the encounter data was successfully loaded by the <var>loadEncounterData()</var> method.
 	* @return mixed string or boolean
-	*/			
+	*/
 	function BirthDate($enr=0){
 		if($this->is_loaded) {
 			return $this->encounter['date_birth'];
@@ -755,7 +755,7 @@ class Encounter extends Notes {
 	* Returns date of admission.
 	* Use only after the encounter data was successfully loaded by the <var>loadEncounterData()</var> method.
 	* @return mixed string or boolean
-	*/			
+	*/
 	function EncounterDate($enr=0){
 		if($this->is_loaded) {
 			return $this->encounter['encounter_date'];
@@ -771,7 +771,7 @@ class Encounter extends Notes {
 	*
 	* Use only after the encounter data was successfully loaded by the <var>loadEncounterData()</var> method.
 	* @return mixed integer or boolean
-	*/			
+	*/
 	function EncounterClass($enr=0){
 		if($this->is_loaded) {
 			return $this->encounter['encounter_class_nr'];
@@ -787,7 +787,7 @@ class Encounter extends Notes {
 	*
 	* Use only after the encounter data was successfully loaded by the <var>loadEncounterData()</var> method.
 	* @return mixed integer or boolean
-	*/			
+	*/
 	function FinancialClass($enr=0){
 		if($this->is_loaded) {
 			return $this->encounter['financial_class'];
@@ -798,7 +798,7 @@ class Encounter extends Notes {
 	}
 	/**
 	* Alias of <var>FinancialClass()</var>
-	*/			
+	*/
 	function BillingClass($enr=0){
 		return $this->FinancialClass($enr);
 	}
@@ -806,7 +806,7 @@ class Encounter extends Notes {
 	* Returns referer's diagnosis text.
 	* Use only after the encounter data was successfully loaded by the <var>loadEncounterData()</var> method.
 	* @return mixed string or boolean
-	*/			
+	*/
 	function RefererDiagnosis($enr=0){
 		if($this->is_loaded) {
 			return $this->encounter['referrer_diagnosis'];
@@ -819,7 +819,7 @@ class Encounter extends Notes {
 	* Returns referered doctor.
 	* Use only after the encounter data was successfully loaded by the <var>loadEncounterData()</var> method.
 	* @return mixed string or boolean
-	*/			
+	*/
 	function ReferredDoctor($enr=0){
 		if($this->is_loaded && isset($this->encounter['referred_dr']) ) {
 			return $this->encounter['referred_dr'];
@@ -832,7 +832,7 @@ class Encounter extends Notes {
 	* Returns referer's recommended therapy text.
 	* Use only after the encounter data was successfully loaded by the <var>loadEncounterData()</var> method.
 	* @return mixed string or boolean
-	*/			
+	*/
 	function RefererRecomTherapy($enr=0){
 		if($this->is_loaded) {
 			return $this->encounter['referrer_recom_therapy'];
@@ -845,7 +845,7 @@ class Encounter extends Notes {
 	* Returns referer's extra notes text.
 	* Use only after the encounter data was successfully loaded by the <var>loadEncounterData()</var> method.
 	* @return mixed string or boolean
-	*/			
+	*/
 	function RefererNotes($enr=0){
 		if($this->is_loaded) {
 			return $this->encounter['referrer_notes'];
@@ -858,7 +858,7 @@ class Encounter extends Notes {
 	* Returns referer's name.
 	* Use only after the encounter data was successfully loaded by the <var>loadEncounterData()</var> method.
 	* @return mixed string or boolean
-	*/			
+	*/
 	function Referer($enr=0){
 		if($this->is_loaded) {
 			return $this->encounter['referrer_dr'];
@@ -871,7 +871,7 @@ class Encounter extends Notes {
 	* Returns refererring department.
 	* Use only after the encounter data was successfully loaded by the <var>loadEncounterData()</var> method.
 	* @return mixed string or boolean
-	*/			
+	*/
 	function RefererDept($enr=0){
 		if($this->is_loaded) {
 			return $this->encounter['referrer_dept'];
@@ -884,7 +884,7 @@ class Encounter extends Notes {
 	* Returns referring institution.
 	* Use only after the encounter data was successfully loaded by the <var>loadEncounterData()</var> method.
 	* @return mixed string or boolean
-	*/			
+	*/
 	function RefererInstitution($enr=0){
 		if($this->is_loaded) {
 			return $this->encounter['referrer_institution'];
@@ -897,7 +897,7 @@ class Encounter extends Notes {
 	* Returns insurance number used in the encounter.
 	* Use only after the encounter data was successfully loaded by the <var>loadEncounterData()</var> method.
 	* @return mixed string or boolean
-	*/			
+	*/
 	function InsuranceNr($enr=0){
 		if($this->is_loaded) {
 			return $this->encounter['insurance_nr'];
@@ -910,7 +910,7 @@ class Encounter extends Notes {
 	* Returns insurance company's id used in the encounter.
 	* Use only after the encounter data was successfully loaded by the <var>loadEncounterData()</var> method.
 	* @return mixed string or boolean
-	*/			
+	*/
 	function InsuranceFirmID($enr=0){
 		if($this->is_loaded) {
 			return $this->encounter['insurance_firm_id'];
@@ -923,7 +923,7 @@ class Encounter extends Notes {
 	* Returns current ward number.
 	* Use only after the encounter data was successfully loaded by the <var>loadEncounterData()</var> method.
 	* @return mixed string or boolean
-	*/			
+	*/
 	function CurrentWardNr($enr=0){
 		if($this->is_loaded) {
 			return $this->encounter['current_ward_nr'];
@@ -936,7 +936,7 @@ class Encounter extends Notes {
 	* Returns current room number.
 	* Use only after the encounter data was successfully loaded by the <var>loadEncounterData()</var> method.
 	* @return mixed string or boolean
-	*/			
+	*/
 	function CurrentRoomNr($enr=0){
 		if($this->is_loaded) {
 			return $this->encounter['current_room_nr'];
@@ -949,7 +949,7 @@ class Encounter extends Notes {
 	* Returns current department number.
 	* Use only after the encounter data was successfully loaded by the <var>loadEncounterData()</var> method.
 	* @return mixed string or boolean
-	*/			
+	*/
 	function CurrentDeptNr($enr=0){
 		if($this->is_loaded) {
 			return $this->encounter['current_dept_nr'];
@@ -962,7 +962,7 @@ class Encounter extends Notes {
 	* Returns current firm number.
 	* Use only after the encounter data was successfully loaded by the <var>loadEncounterData()</var> method.
 	* @return mixed string or boolean
-	*/			
+	*/
 	function CurrentFirmNr($enr=0){
 		if($this->is_loaded) {
 			return $this->encounter['current_firm_nr'];
@@ -975,7 +975,7 @@ class Encounter extends Notes {
 	* Returns current attending physician number.
 	* Use only after the encounter data was successfully loaded by the <var>loadEncounterData()</var> method.
 	* @return mixed string or boolean
-	*/			
+	*/
 	function CurrentAttDrNr($enr=0){
 		if($this->is_loaded) {
 			return $this->encounter['current_att_dr_nr'];
@@ -988,7 +988,7 @@ class Encounter extends Notes {
 	* Returns status flag if patient is finally admitted in ward.
 	* Use only after the encounter data was successfully loaded by the <var>loadEncounterData()</var> method.
 	* @return boolean
-	*/			
+	*/
 	function In_Ward($enr=0){
 		if($this->is_loaded) {
 			return $this->encounter['in_ward'];
@@ -1001,7 +1001,7 @@ class Encounter extends Notes {
 	* Returns status flag if patient is finally admitted in department.
 	* Use only after the encounter data was successfully loaded by the <var>loadEncounterData()</var> method.
 	* @return boolean
-	*/			
+	*/
 	function In_Dept($enr=0){
 		if($this->is_loaded) {
 			return $this->encounter['in_dept'];
@@ -1014,7 +1014,7 @@ class Encounter extends Notes {
 	* Returns status flag if patient is finally discharged.
 	* Use only after the encounter data was successfully loaded by the <var>loadEncounterData()</var> method.
 	* @return boolean
-	*/			
+	*/
 	function Is_Discharged($enr=0){
 		if($this->is_loaded) {
 			return $this->encounter['is_discharged'];
@@ -1035,7 +1035,7 @@ class Encounter extends Notes {
 	*
 	* Use only after the encounter data was successfully loaded by the <var>loadEncounterData()</var> method.
 	* @return mixed string or boolean
-	*/			
+	*/
 	function EncounterStatus($enr=0){
 		if($this->is_loaded) {
 			return $this->encounter['encounter_status'];
@@ -1056,7 +1056,7 @@ class Encounter extends Notes {
 	*
 	* Use only after the encounter data was successfully loaded by the <var>loadEncounterData()</var> method.
 	* @return mixed string or boolean
-	*/			
+	*/
 	function EncounterType($enr=0){
 		if($this->is_loaded) {
 			return $this->encounter['encounter_type'];
@@ -1069,7 +1069,7 @@ class Encounter extends Notes {
 	* Returns consulting physician's name.
 	* Use only after the encounter data was successfully loaded by the <var>loadEncounterData()</var> method.
 	* @return mixed string or boolean
-	*/			
+	*/
 	function ConsultingDr($enr=0){
 		if($this->is_loaded) {
 			return $this->encounter['consulting_dr'];
@@ -1082,7 +1082,7 @@ class Encounter extends Notes {
 	* Returns follow-up date in yyyy-mm-dd format.
 	* Use only after the encounter data was successfully loaded by the <var>loadEncounterData()</var> method.
 	* @return mixed string or boolean
-	*/			
+	*/
 	function FollowUpDate($enr=0){
 		if($this->is_loaded) {
 			return $this->encounter['followup_date'];
@@ -1095,7 +1095,7 @@ class Encounter extends Notes {
 	* Returns the name of physician or service responsible for follow-up.
 	* Use only after the encounter data was successfully loaded by the <var>loadEncounterData()</var> method.
 	* @return mixed string or boolean
-	*/			
+	*/
 	function FollowUpResponsibility($enr=0){
 		if($this->is_loaded) {
 			return $this->encounter['followup_responsibility'];
@@ -1108,7 +1108,7 @@ class Encounter extends Notes {
 	* Returns post encounter notes. Short notes after discharge, not to be used for discharge summary report.
 	* Use only after the encounter data was successfully loaded by the <var>loadEncounterData()</var> method.
 	* @return mixed string or boolean
-	*/			
+	*/
 	function PostEncounterNotes($enr=0){
 		if($this->is_loaded) {
 			return $this->encounter['post_encounter_notes'];
@@ -1131,7 +1131,7 @@ class Encounter extends Notes {
 	*
 	* Use only after the encounter data was successfully loaded by the <var>loadEncounterData()</var> method.
 	* @return mixed string or boolean
-	*/			
+	*/
 	function RecordStatus($enr=0){
 		if($this->is_loaded) {
 			return $this->encounter['status'];
@@ -1144,7 +1144,7 @@ class Encounter extends Notes {
 	* Returns record entry's history. This is the techical history of the record entry, not of the admission.
 	* Use only after the encounter data was successfully loaded by the <var>loadEncounterData()</var> method.
 	* @return mixed string or boolean
-	*/			
+	*/
 	function RecordHistory($enr=0){
 		if($this->is_loaded) {
 			return $this->encounter['history'];
@@ -1157,7 +1157,7 @@ class Encounter extends Notes {
 	* Returns record's modifier id or name. Technical.
 	* Use only after the encounter data was successfully loaded by the <var>loadEncounterData()</var> method.
 	* @return mixed string or boolean
-	*/			
+	*/
 	function RecordModifierID($enr=0){
 		if($this->is_loaded) {
 			return $this->encounter['modify_id'];
@@ -1170,7 +1170,7 @@ class Encounter extends Notes {
 	* Returns record's creator id or name. Technical.
 	* Use only after the encounter data was successfully loaded by the <var>loadEncounterData()</var> method.
 	* @return mixed string or boolean
-	*/			
+	*/
 	function RecordCreatorID($enr=0){
 		if($this->is_loaded) {
 			return $this->encounter['create_id'];
@@ -1183,7 +1183,7 @@ class Encounter extends Notes {
 	* Returns filename of the person's picture id.
 	* Use only after the encounter data was successfully loaded by the <var>loadEncounterData()</var> method.
 	* @return mixed string or boolean
-	*/			
+	*/
 	function PhotoFilename($enr=0){
 		if($this->is_loaded) {
 			return $this->encounter['photo_filename'];
@@ -1216,7 +1216,7 @@ class Encounter extends Notes {
 		if($type=='_ENC') $cond='encounter_nr';
 			elseif($type=='_PID') $cond='pid';
 			 	else return FALSE;
-		$this->sql="SELECT encounter_nr FROM $this->tb_enc 
+		$this->sql="SELECT encounter_nr FROM $this->tb_enc
 						WHERE $cond='$nr' AND encounter_status <> 'cancelled' AND is_discharged=0 AND status NOT IN ($this->dead_stat)";
 		if($buf=$db->Execute($this->sql)){
 		    if($buf->RecordCount()) {
@@ -1294,7 +1294,7 @@ class Encounter extends Notes {
 		}
 	}
 	/**
-	* Gets the encounter type 
+	* Gets the encounter type
 	*
 	* The returned array contains data with following index keys:
 	* - <b>type_nr</b> = the class id (alphanumeric)
@@ -1316,7 +1316,7 @@ class Encounter extends Notes {
 		}else {
 		    return FALSE;
 		}
-	}	
+	}
 	/**
 	* Gets the insurance class' information based on its class_nr key.
 	*
@@ -1342,7 +1342,7 @@ class Encounter extends Notes {
 		    return FALSE;
 		}
 	}
-	/** 
+	/**
 	* Private search function, usually called by another method.
 	*
 	* The resulting count can be fetched with the <var>LastRecordCount()</var> method.
@@ -1369,7 +1369,7 @@ class Encounter extends Notes {
 	*/
 	function _searchAdmissionBasicInfo($key,$enc_class=0,$add_opt='',$limit=FALSE,$len=30,$so=0){
 		global $db,$sql_LIKE;
-		
+
 
 		//if(empty($key)) return FALSE;
 		$this->sql="SELECT e.encounter_nr, e.encounter_class_nr, p.pid, p.name_last, p.name_first, p.date_birth, p.addr_zip, p.sex,p.blood_group
@@ -1401,7 +1401,7 @@ class Encounter extends Notes {
 				return $this->res['sabi'];
 			} else{return FALSE;}
 		}else{return FALSE;}
-	}	
+	}
 	/**
 	* Searches and returns inpatient admissions based on a supplied keyword.
 	*
@@ -1620,14 +1620,14 @@ class Encounter extends Notes {
 		$user=$_SESSION['sess_user_name'];
 		$history="Create: ".date('Y-m-d H:i:s')." ".$user."\n";
 		$this->sql="INSERT INTO $this->tb_location (encounter_nr,type_nr,location_nr,group_nr,date_from,time_from,history,create_id,create_time)
-						VALUES 
+						VALUES
 						('$enr','$type_nr','$loc_nr','$group_nr','$date','$time','$history','$user','".date('YmdHis')."')";
 		//echo $this->sql;
 		//if($this->Transact($this->sql))	return true; else	echo $this->sql;
 		return $this->Transact($this->sql);
 	}
 	/**
-	* Saves the encounter's ward location. 
+	* Saves the encounter's ward location.
 	* If the save routine is successful, the "currently in ward" flag of the encounter record will also be set internally.
 	* @access public
 	* @param int Encounter number
@@ -1643,7 +1643,7 @@ class Encounter extends Notes {
 		}
 	}
 	/**
-	* Saves the encounter's room location. 
+	* Saves the encounter's room location.
 	* @access public
 	* @param int Encounter number
 	* @param int Room number
@@ -1656,7 +1656,7 @@ class Encounter extends Notes {
 		return $this->_setLocation($enr,4,$loc_nr,$group_nr,$date,$time); # loc. type 4 = room
 	}
 	/**
-	* Saves the encounter's room location. 
+	* Saves the encounter's room location.
 	* @access public
 	* @param int Encounter number
 	* @param int Bed number
@@ -1669,7 +1669,7 @@ class Encounter extends Notes {
 		return $this->_setLocation($enr,5,$loc_nr,$group_nr,$date,$time); # loc. type 5 = bed
 	}
 	/**
-	* Saves the encounter's room location. 
+	* Saves the encounter's room location.
 	* If the save routine is successful, the "currently in department" flag of the encounter record will also be set internally.
 	* @access public
 	* @param int Encounter number
@@ -1696,7 +1696,7 @@ class Encounter extends Notes {
 	*/
 	function AdmitInWard($enr,$ward_nr,$room_nr,$bed_nr){
 		global $db;
-		
+
 		$date=date('Y-m-d');
 		$time=date('H:i:s');
 		if($this->InWard($enr,$ward_nr)){
@@ -1896,7 +1896,7 @@ class Encounter extends Notes {
 	function ResetAllCurrentPlaces($enr){
 		return $this->_setCurrentAssignment($enr,'current_ward_nr=0,current_room_nr=0,current_dept_nr=0,current_firm_nr=0,in_ward=0','Reset all locations');
 	}
-	
+
 	/**
 	* Cancels an encounter, but only when its encounter_status is set to '' (emtpy) or 'allow_cancel'.
 	* Sets the encounter_status= 'cancelled', status='void', is_discharged=1 and stores history and modify infos
@@ -1912,7 +1912,7 @@ class Encounter extends Notes {
 		$this->sql="UPDATE $this->tb_enc SET encounter_status='cancelled',status='void',is_discharged=1,
 						history=".$this->ConcatHistory("Cancelled ".date('Y-m- H:i:s')." by $by, logged-user ".$_SESSION['sess_user_name']."\n").",
 						modify_id='".$_SESSION['sess_user_name']."',
-						modify_time='".date('YmdHis')."' 
+						modify_time='".date('YmdHis')."'
 						WHERE encounter_nr=$this->enc_nr AND encounter_status IN ('','0','allow_cancel')";
 		return $this->Transact($this->sql);
 	}
@@ -1960,7 +1960,7 @@ class Encounter extends Notes {
 				return $this->result;
 			}else{return FALSE;}
 		}else{return FALSE;}
-	}		
+	}
 	/**
 	* Discharge an encounter.
 	* Avoid using this function directly. Use the appropriate methods
@@ -2097,7 +2097,7 @@ class Encounter extends Notes {
 		if($this->is_loaded){
 			return $this->encounter;
 		}else{return FALSE;}
-	}	
+	}
 	/**
 	* Gets an adodb object containing the "very basic" encounter's first name, family name, birth date and sex.
 	* @param int Encounter number
@@ -2107,8 +2107,8 @@ class Encounter extends Notes {
 	    global $db;
 		if(!$this->internResolveEncounterNr($enc_nr)) return FALSE;
 		$this->sql="SELECT p.name_last, p.name_first, p.date_birth, p.sex
-							FROM $this->tb_enc AS e, 
-									 $this->tb_person AS p 
+							FROM $this->tb_enc AS e,
+									 $this->tb_person AS p
 							WHERE e.encounter_nr=$this->enc_nr
 								AND e.pid=p.pid";
 		//echo $sql;
@@ -2125,7 +2125,7 @@ class Encounter extends Notes {
 	function useSicknessConfirm(){
 		$this->coretable=$this->tb_sickconfirm;
 		$this->ref_array=$this->fld_sickconfirm;
-	}	
+	}
 	/**
 	* Gets a stored sickness confirmation of an encounter.
 	*
@@ -2143,8 +2143,8 @@ class Encounter extends Notes {
 	function getSicknessConfirm($nr=0){
 	    global $db;
 		if(!$nr) return FALSE;
-		$this->sql="SELECT s.*,d.sig_stamp,d.logo_mime_type 
-							FROM $this->tb_sickconfirm AS s 
+		$this->sql="SELECT s.*,d.sig_stamp,d.logo_mime_type
+							FROM $this->tb_sickconfirm AS s
 							LEFT JOIN $this->tb_dept AS d ON s.dept_nr=d.nr
 							WHERE s.nr=$nr";
 		//echo $sql;
@@ -2170,7 +2170,7 @@ class Encounter extends Notes {
 						WHERE s.encounter_nr=$this->enc_nr AND s.status NOT IN ($this->dead_stat)";
 		if($dept_nr) $this->sql=$this->sql." AND s.dept_nr=$dept_nr";
 		$this->sql.=' ORDER BY s.date_confirm DESC';
-		
+
 		//echo $this->sql;
 		if($this->result=$db->Execute($this->sql)) {
 		    if($this->rec_count=$this->result->RecordCount()) {
@@ -2209,7 +2209,7 @@ class Encounter extends Notes {
 		if(!$this->internResolveEncounterNr($enc_nr)) return FALSE;
 		$this->sql="SELECT e.insurance_nr, i.name, i.sub_area FROM $this->tb_enc  AS e
 							LEFT JOIN $this->tb_insco AS i ON e.insurance_firm_id=i.firm_id
-						WHERE e.encounter_nr=$this->enc_nr AND e.status NOT IN ($this->dead_stat)";	
+						WHERE e.encounter_nr=$this->enc_nr AND e.status NOT IN ($this->dead_stat)";
 		//echo $sql;
 		if($this->result=$db->Execute($this->sql)) {
 		    if($this->rec_count=$this->result->RecordCount()) {
@@ -2269,7 +2269,7 @@ class Encounter extends Notes {
 		$this->sql="SELECT e.encounter_nr,e.pid,e.insurance_class_nr,p.title,p.name_last,p.name_first,p.date_birth,p.sex, p.photo_filename,
 									a.date, a.time,a.urgency, i.LD_var AS \"LD_var\",i.name AS insurance_name,
 									n.nr AS notes
-							FROM $this->tb_enc AS e  
+							FROM $this->tb_enc AS e
 									LEFT JOIN $this->tb_person AS p ON e.pid=p.pid
 									LEFT JOIN $this->tb_appt AS a ON e.encounter_nr=a.encounter_nr
 									LEFT JOIN $this->tb_ic AS i ON e.insurance_class_nr=i.class_nr
@@ -2280,12 +2280,12 @@ class Encounter extends Notes {
 							ORDER BY e.encounter_nr";
 							/*							GROUP BY e.encounter_nr,e.pid,e.insurance_class_nr,p.title,p.name_last,p.name_first,p.date_birth,p.sex,
 							p.photo_filename,a.date, a.time,a.urgency,i.LD_var,i.name, n.nr*/
-							
+
         if($this->res['opb']=$db->Execute($this->sql)) {
             if($this->rec_count=$this->res['opb']->RecordCount()) {
-				 return $this->res['opb'];	 
+				 return $this->res['opb'];
 			} else { return FALSE; }
-		} else { return FALSE; }	
+		} else { return FALSE; }
 	}
 	/**
 	* createWaitingOutpatientList() creates a list of outpatients waiting to be admitted in the clinic
@@ -2315,7 +2315,7 @@ class Encounter extends Notes {
 		if($dept_nr) $cond="AND current_dept_nr='$dept_nr'";
 			else $cond='';
 		$this->sql="SELECT e.encounter_nr, e.encounter_class_nr, e.current_dept_nr,
-									p.pid, p.name_last, p.name_first, p.date_birth, p.sex, 
+									p.pid, p.name_last, p.name_first, p.date_birth, p.sex,
 									d.nr AS dept_nr, d.name_short, d.LD_var AS \"dept_LDvar\"
 				FROM $this->tb_enc AS e
 					LEFT JOIN $this->tb_person AS p ON e.pid=p.pid
@@ -2354,7 +2354,7 @@ class Encounter extends Notes {
 	    global $db;
 		if(!$this->internResolveEncounterNr($enc_nr)) return FALSE;
 		$this->sql="SELECT encounter_status,current_ward_nr,current_room_nr,in_ward,current_dept_nr,in_dept,is_discharged,status
-						FROM $this->tb_enc	WHERE encounter_nr=$this->enc_nr AND status NOT IN ($this->dead_stat)";	
+						FROM $this->tb_enc	WHERE encounter_nr=$this->enc_nr AND status NOT IN ($this->dead_stat)";
 		//echo $sql;
 		if($this->res['ast']=$db->Execute($this->sql)) {
 		    if($this->rec_count=$this->res['ast']->RecordCount()) {
@@ -2389,7 +2389,7 @@ class Encounter extends Notes {
 				    if($this->rec_count=$this->res['ast']->RecordCount()) {
 						return $this->res['ast'];
 				    } else { return FALSE;}
-				} else { return FALSE;}				
+				} else { return FALSE;}
 			}else{ return false; }
 		}
 	}

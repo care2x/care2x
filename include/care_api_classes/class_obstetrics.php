@@ -5,7 +5,7 @@
 /** */
 require_once($root_path.'include/care_api_classes/class_core.php');
 /**
-*  Obstetrics methods. 
+*  Obstetrics methods.
 *  Note this class should be instantiated only after a "$db" adodb  connector object  has been established by an adodb instance
 * @author Elpidio Latorilla
 * @version beta 2.0.1
@@ -17,7 +17,7 @@ class Obstetrics extends Core {
 	* Database table for the neonatal data.
 	* @var string
 	*/
-	var $tb_neonatal='care_encounter_neonatal'; 
+	var $tb_neonatal='care_encounter_neonatal';
 	/**
 	* Database table for the person registration data.
 	* @var string
@@ -161,12 +161,12 @@ class Obstetrics extends Core {
 	* Constructor
 	* @param int Encounter number
 	*/
-	function Obstetrics($nr=0){
+	function __construct($nr=0){
 		if($nr) $this->enc_nr=$nr;
 		$this->coretable=$this->tb_neonatal;
 		$this->ref_array=$this->fld_neonatal;
 	}
-	/** 
+	/**
 	* Gets all birth data based on the PID number.
 	*
 	* The data returned have index keys as outlined at the <var>$fld_neonatal</var> array.
@@ -181,7 +181,7 @@ class Obstetrics extends Core {
 			ORDER BY n.modify_time DESC";
         if($this->bd=$db->Execute($this->sql)) {
             if($this->rec_count=$this->bd->RecordCount()) {
-				 return $this->bd;	 
+				 return $this->bd;
 			} else { return false; }
 		} else { return false; }
 	}
@@ -256,7 +256,7 @@ class Obstetrics extends Core {
 	* Gets all disease categories.
 	* @access public
 	* @return mixed adodb record object or boolean
-	*/ 
+	*/
 	function DiseaseCategories(){
 		global $db;
 		$this->sql="SELECT *,LD_var AS \"LD_var\" FROM   $this->tb_diseases WHERE group_nr=2 AND status NOT IN ($this->dead_stat) ORDER BY nr"; # group_nr = 2 is Neonatal
@@ -270,7 +270,7 @@ class Obstetrics extends Core {
 	* Gets all feeding types.
 	* @access public
 	* @return mixed adodb record object or boolean
-	*/ 
+	*/
 	function FeedingTypes(){
 		global $db;
 		$this->sql="SELECT *, LD_var AS \"LD_var\" FROM   $this->tb_feeds WHERE group_nr=2 AND status NOT IN ($this->dead_stat) ORDER BY nr"; # group_nr = 2 is Neonatal
@@ -284,7 +284,7 @@ class Obstetrics extends Core {
 	* Gets all outcome types.
 	* @access public
 	* @return mixed adodb record object or boolean
-	*/ 
+	*/
 	function Outcomes(){
 		global $db;
 		$this->sql="SELECT *,LD_var AS \"LD_var\" FROM   $this->tb_outcomes WHERE group_nr=2 AND status NOT IN ($this->dead_stat) ORDER BY nr"; # group_nr = 2 is Neonatal
@@ -298,7 +298,7 @@ class Obstetrics extends Core {
 	* Gets all delivery modes.
 	* @access public
 	* @return mixed adodb record object or boolean
-	*/ 
+	*/
 	function DeliveryModes(){
 		global $db;
 		$this->sql="SELECT *, LD_var AS \"LD_var\" FROM   $this->tb_dmodes WHERE group_nr=2 AND status NOT IN ($this->dead_stat) ORDER BY nr"; # group_nr = 2 is Neonatal
@@ -313,10 +313,10 @@ class Obstetrics extends Core {
 	* @access public
 	* @param int PID number
 	* @return mixed adodb record object or boolean
-	*/ 
+	*/
 	function deactivateBirthDetails($pid){
 		global $_SESSION;
-		$this->sql="UPDATE  $this->tb_neonatal SET status='inactive', history=".$this->ConcatHistory("Deactivated ".date('Y-m-d H:i:s')." ".$_SESSION['sess_user_name']."\n")." WHERE pid=$pid"; 
+		$this->sql="UPDATE  $this->tb_neonatal SET status='inactive', history=".$this->ConcatHistory("Deactivated ".date('Y-m-d H:i:s')." ".$_SESSION['sess_user_name']."\n")." WHERE pid=$pid";
 		return $this->Transact();
 	}
 	/**
@@ -324,7 +324,7 @@ class Obstetrics extends Core {
 	* @access public
 	* @param int Primary record key number
 	* @return mixed array or boolean
-	*/ 
+	*/
 	function getDiseaseCategory($nr){
 		global $db;
 		if(!$nr) return false;
@@ -336,11 +336,11 @@ class Obstetrics extends Core {
 		} else { return false; }
 	}
 	/**
-	* Gets complete feeding type information. 
+	* Gets complete feeding type information.
 	* @access public
 	* @param int Primary record key number
 	* @return mixed array or boolean
-	*/ 
+	*/
 	function getFeedingType($nr){
 		global $db;
 		if(!$nr) return false;
@@ -352,11 +352,11 @@ class Obstetrics extends Core {
 		} else { return false; }
 	}
 	/**
-	* Gets complete outcome type information. 
+	* Gets complete outcome type information.
 	* @access public
 	* @param int Primary record key number
 	* @return mixed array or boolean
-	*/ 
+	*/
 	function getOutcome($nr){
 		global $db;
 		if(!$nr) return false;
@@ -368,11 +368,11 @@ class Obstetrics extends Core {
 		} else { return false; }
 	}
 	/**
-	* Gets complete delivery mode information. 
+	* Gets complete delivery mode information.
 	* @access public
 	* @param int Primary record key number
 	* @return mixed array or boolean
-	*/ 
+	*/
 	function getDeliveryMode($nr){
 		global $db;
 		if(!$nr) return false;
@@ -391,7 +391,7 @@ class Obstetrics extends Core {
 	* @param int Primary record key number
 	* @param string Flags the type of the first parameter. '_ENC' = encounter number, '_REG' = pid number.
 	* @return mixed adodb record object or boolean
-	*/ 
+	*/
 	function Pregnancies($nr,$nr_type='_ENC'){
 		global $db;
 		if($nr_type=='_ENC'){
@@ -406,7 +406,7 @@ class Obstetrics extends Core {
 		//echo $this->sql;
         if($this->res['_preg']=$db->Execute($this->sql)) {
             if($this->rec_count=$this->res['_preg']->RecordCount()) {
-				 return $this->res['_preg'];	 
+				 return $this->res['_preg'];
 			} else { return false; }
 		} else { return false; }
 	}
@@ -423,11 +423,11 @@ class Obstetrics extends Core {
 	* @access public
 	* @param int Primary record key number
 	* @return mixed adodb record object or boolean
-	*/ 
+	*/
 	function deactivatePregnancy($nr){
 		global $_SESSION;
 		$this->sql="UPDATE  $this->tb_preg SET status='inactive', history=".$this->ConcatHistory("Deactivated ".date('Y-m-d H:i:s')." ".$_SESSION['sess_user_name']."\n")."
-							WHERE nr=$nr"; 
+							WHERE nr=$nr";
 		return $this->Transact();
 	}
 	/**
@@ -435,11 +435,11 @@ class Obstetrics extends Core {
 	* @access public
 	* @param int Group number
 	* @return mixed adodb record object or boolean
-	*/ 
+	*/
 	function InductionMethods($grp=1){
 		global $db;
 		# Group nr. 1 = pregnancy group
-		$this->sql="SELECT *,LD_var AS \"LD_var\" FROM   $this->tb_indmethod WHERE group_nr=$grp AND status NOT IN ($this->dead_stat) ORDER BY nr"; 
+		$this->sql="SELECT *,LD_var AS \"LD_var\" FROM   $this->tb_indmethod WHERE group_nr=$grp AND status NOT IN ($this->dead_stat) ORDER BY nr";
         if($this->res['_indm']=$db->Execute($this->sql)) {
             if($this->rec_count=$this->res['_indm']->RecordCount()) {
 				return $this->res['_indm'];
@@ -451,13 +451,13 @@ class Obstetrics extends Core {
 	* @access public
 	* @param int Primary record key number
 	* @return mixed array or boolean
-	*/ 
+	*/
 	function getInductionMethod($nr){
 		global $db;
 		if(!$nr) return false;
 		# Group nr. 1 = pregnancy group
 		$this->sql="SELECT *,LD_var AS \"LD_var\" FROM   $this->tb_indmethod WHERE nr=$nr";
-		
+
         if($this->res['_gin']=$db->Execute($this->sql)) {
             if($this->rec_count=$this->res['_gin']->RecordCount()) {
 				return $this->res['_gin']->FetchRow();
@@ -468,7 +468,7 @@ class Obstetrics extends Core {
 	* Gets all perineum types.
 	* @access public
 	* @return mixed adodb record object or boolean
-	*/ 
+	*/
 	function Perineums(){
 		global $db;
 		$this->sql="SELECT *,LD_var AS \"LD_var\" FROM   $this->tb_perineum WHERE status NOT IN ($this->dead_stat) ORDER BY nr";
@@ -483,12 +483,12 @@ class Obstetrics extends Core {
 	* @access public
 	* @param int Primary record key number
 	* @return mixed array or boolean
-	*/ 
+	*/
 	function getPerineum($nr=0){
 		global $db;
 		if(!$nr) return false;
 		$this->sql="SELECT *,LD_var AS \"LD_var\" FROM   $this->tb_perineum WHERE nr=$nr";
-		
+
         if($this->res['_gper']=$db->Execute($this->sql)) {
             if($this->rec_count=$this->res['_gper']->RecordCount()) {
 				return $this->res['_gper']->FetchRow();
@@ -499,7 +499,7 @@ class Obstetrics extends Core {
 	* Gets all classifications.
 	* @access public
 	* @return mixed adodb record object or boolean
-	*/ 
+	*/
 	function Classifications(){
 		global $db;
 		$this->sql="SELECT *,LD_var AS \"LD_var\" FROM   $this->tb_classif WHERE status NOT IN ($this->dead_stat) ORDER BY nr";
@@ -514,7 +514,7 @@ class Obstetrics extends Core {
 	* @access public
 	* @param int Primary record key number
 	* @return mixed array or boolean
-	*/ 
+	*/
 	function getClassification($nr=0){
 		global $db;
 		$this->rec_count=0;
@@ -530,7 +530,7 @@ class Obstetrics extends Core {
 	* Gets all anaesthesia  types.
 	* @access public
 	* @return mixed array or boolean
-	*/ 
+	*/
 	function AnaesthesiaTypes(){
 		global $db;
 		$this->rec_count=0;
@@ -546,12 +546,12 @@ class Obstetrics extends Core {
 	* @access public
 	* @param int Primary record key number
 	* @return mixed array or boolean
-	*/ 
+	*/
 	function getAnaesthesia($nr=0){
 		global $db;
 		if(!$nr) return false;
 		$this->sql="SELECT *,LD_var AS \"LD_var\" FROM   $this->tb_anest WHERE nr=$nr";
-		
+
         if($this->res['gana']=$db->Execute($this->sql)) {
             if($this->rec_count=$this->res['gana']->RecordCount()) {
 				return $this->res['gana']->FetchRow();
@@ -567,8 +567,8 @@ class Obstetrics extends Core {
 	function EncounterPregnancyExists($nr=0){
 		global $db;
 		if(!$nr) return false;
-		$this->sql="SELECT nr FROM   $this->tb_preg WHERE encounter_nr=$nr AND status NOT IN ($this->dead_stat)"; 
-		
+		$this->sql="SELECT nr FROM   $this->tb_preg WHERE encounter_nr=$nr AND status NOT IN ($this->dead_stat)";
+
         if($buf=$db->Execute($this->sql)) {
             if($this->rec_count=$buf->RecordCount()) {
 				$buf2=$buf->FetchRow();
@@ -577,7 +577,7 @@ class Obstetrics extends Core {
 		} else { return false; }
 	}
 	/**
-	* Checks if the encounter number of a child is recorded at the parent's encounter record. 
+	* Checks if the encounter number of a child is recorded at the parent's encounter record.
 	*
 	* return:
 	* - _CHILD_EXISTS = child encounter nr is recorded at parent
@@ -593,7 +593,7 @@ class Obstetrics extends Core {
 		if(!$child_nr||!$parent_nr) return false;
 		if($this->EncounterPregnancyExists($parent_nr)){
 			$this->sql="SELECT encounter_nr FROM   $this->tb_preg WHERE encounter_nr=$parent_nr AND child_encounter_nr $sql_LIKE '%$child_nr%' AND status NOT IN ($this->dead_stat)";
-		
+
 			if($this->res['_cnbp']=$db->Execute($this->sql)) {
            		if($this->rec_count=$this->res['_cnbp']->RecordCount()) {
 					return  '_CHILD_EXISTS';
@@ -604,7 +604,7 @@ class Obstetrics extends Core {
 		}
 	}
 	/**
-	* Adds the encounter number of a child to the parents encounter record. 
+	* Adds the encounter number of a child to the parents encounter record.
 	*
 	* The birth details are passed by reference with an associative array.
 	* The data must be prepared having the following index keys:
@@ -623,15 +623,15 @@ class Obstetrics extends Core {
 		switch($this->ChildNrAtParent($child_nr,$parent_nr))
 		{
 			case '_NO_CHILD': # Update
-				$this->sql="UPDATE $this->tb_preg 
+				$this->sql="UPDATE $this->tb_preg
 								SET child_encounter_nr=".$this->ConcatFieldString('child_encounter_nr', '".$child_nr."').",
 										history=".$this->ConcatHistory("Updated by child  ".date('Y-m-d H:i:s')." ".$_SESSION['sess_user_name']."\n")."
 								WHERE encounter_nr=$parent_nr AND status NOT IN ($this->dead_stat)";
 				return $this->Transact();
-				break; 
+				break;
         	# If record not exists create it
 			case '_NO_EXISTS':
-				$this->sql="INSERT INTO $this->tb_preg 
+				$this->sql="INSERT INTO $this->tb_preg
 									(delivery_date,
 									para,
 									encounter_nr,
@@ -641,8 +641,8 @@ class Obstetrics extends Core {
 									history,
 									create_id,
 									create_time
-									) 
-									VALUES 
+									)
+									VALUES
 									('".$birth['delivery_date']."',
 									'".$birth['delivery_nr']."',
 									'$parent_nr',

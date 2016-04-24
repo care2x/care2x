@@ -88,8 +88,8 @@ class Notes extends Core {
 									'create_time');
 	/**
 	* Constructor
-	*/			
-	function Notes(){
+	*/
+	function __construct(){
 		$this->setTable($this->tb_notes);
 		$this->setRefArray($this->fld_notes);
 	}
@@ -99,7 +99,7 @@ class Notes extends Core {
 	* @param int Encounter number
 	* @param int Notes type number
 	* @return boolean
-	*/			
+	*/
 	function _Exists($enr,$type_nr){
 		if($this->_RecordExists("type_nr=$type_nr AND encounter_nr=$enr")){
 			return true;
@@ -110,10 +110,10 @@ class Notes extends Core {
 	* @access public
 	* @param string Sort item
 	* @return mixed 2 dimensional array or boolean
-	*/			
+	*/
 	function getAllTypesSort($sort=''){
 	    global $db;
-	
+
 		if(empty($sort)) $sort=" ORDER BY nr";
 			else $sort=" ORDER BY $sort";
 	    if ($this->result=$db->Execute("SELECT nr,type,name,LD_var AS \"LD_var\" FROM $this->tb_types WHERE status NOT IN ($this->dead_stat) $sort")) {
@@ -132,7 +132,7 @@ class Notes extends Core {
 	* @access public
 	* @param string Sort item
 	* @return mixed 2 dimensional array or boolean
-	*/			
+	*/
 	function getAllTypes(){
 		return $this->getAllTypesSort();
 	}
@@ -147,7 +147,7 @@ class Notes extends Core {
 	*
 	* @access public
 	* @return mixed 1 dimensional array or boolean
-	*/			
+	*/
 	function getType($nr=1){
 	    global $db;
 
@@ -168,7 +168,7 @@ class Notes extends Core {
 	* @param string Condition for the WHERE sql part. Query constraint.
 	* @param string Sort directive in complete syntax e.g. "ORDER BY date DESC"
 	* @return mixed adodb record object or boolean
-	*/			
+	*/
 	function _getNotes($cond,$order='ORDER BY date,time DESC'){
 	    global $db;
 		$this->sql="SELECT * FROM $this->tb_notes WHERE $cond $order";
@@ -197,7 +197,7 @@ class Notes extends Core {
 		//$this->data_array['modify_id']=$_SESSION['sess_user_name'];
 		$this->data_array['create_id']=$_SESSION['sess_user_name'];
 		$this->data_array['create_time']=date('YmdHis');
-		$this->data_array['history']="Create: ".date('Y-m-d H-i-s')." ".$_SESSION['sess_user_name']."\n\r";	
+		$this->data_array['history']="Create: ".date('Y-m-d H-i-s')." ".$_SESSION['sess_user_name']."\n\r";
         	return $this->insertDataFromInternalArray();
 	}
 	/**
@@ -207,7 +207,7 @@ class Notes extends Core {
 	* @access private
 	* @param int Record number of the notes record to be updated.
 	* @return boolean
-	*/			
+	*/
 	function _updateNotesFromInternalArray($nr){
 		global $_SESSION;
 		$this->data_array['modify_id']=$_SESSION['sess_user_name'];
@@ -229,7 +229,7 @@ class Notes extends Core {
 	* @param int Notes type number
 	* @param string Condition string. Query constraint.
 	* @return boolean
-	*/			
+	*/
 	function _getNotesDateRange($enr='',$type_nr=0,$cond=''){
 		global $db;
 		if(empty($enr)){

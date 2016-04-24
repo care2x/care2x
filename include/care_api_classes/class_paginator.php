@@ -3,7 +3,7 @@
 * @package care_api
 */
 /**
-*  Pagination methods. 
+*  Pagination methods.
 *
 * Handles the pagination of search results or lists with large number of returned rows.
 * Note this class should be instantiated only after a "$db" adodb  connector object  has been established by an adodb instance
@@ -17,17 +17,17 @@ class Paginator {
 	* Maximum number of rows displayed. User configurable.
 	* @var int
 	*/
-	var $max_nr=20;  
+	var $max_nr=20;
 	/**
 	* Current first row index
 	* @var string
 	*/
-	var $csx=0; 
+	var $csx=0;
 	/**
 	* Total available data count
 	* @var string
 	*/
-	var $tcount=0; 
+	var $tcount=0;
 	/**
 	* Number of rows of resulting block
 	* @var string
@@ -67,7 +67,7 @@ class Paginator {
 	* @param string Field name to sort
 	* @param string Sort direction
 	*/
-	function Paginator($x=0,$fwdfile,&$sk,$rootpath,$oitem,$odir) {	
+	function __construct($x=0,$fwdfile,&$sk,$rootpath,$oitem,$odir) {
 		if(empty($x)) $this->csx=0;
 			else $this->csx=$x;
 		$this->page=$fwdfile;
@@ -75,7 +75,7 @@ class Paginator {
 		$this->rootpath=$rootpath;
 		$this->sort_item=$oitem;
 		$this->sort_dir=$odir;
-	}	
+	}
 	/**
 	* Sets the total number of rows of resulting data block.
 	* @param int Total rows in a block count
@@ -208,7 +208,7 @@ class Paginator {
 	*/
 	function SortLink($txt,$item,$dir,$flag=FALSE,$append=''){
 		if(empty($txt)) $txt='Sort';
-		
+
 		if(empty($dir)){
 			if($this->sort_dir=='ASC') $dir='DESC';
 				else $dir='ASC';

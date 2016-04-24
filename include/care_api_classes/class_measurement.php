@@ -6,7 +6,7 @@
 */
 require_once($root_path.'include/care_api_classes/class_core.php');
 /**
-*  Measurement methods. 
+*  Measurement methods.
 *  Note this class should be instantiated only after a "$db" adodb  connector object  has been established by an adodb instance
 * @author Elpidio Latorilla
 * @version beta 2.0.1
@@ -41,7 +41,7 @@ class Measurement extends Core {
 	var $result;
 	/**
 	* Department's preloaded data
-	* @var adodb record object 
+	* @var adodb record object
 	*/
 	var $preload_dept;
 	/**
@@ -77,7 +77,7 @@ class Measurement extends Core {
 	/**
 	* Constructor
 	*/
-	function Measurement(){
+	function __construct(){
 		$this->setTable($this->tb);
 		$this->setRefArray($this->tabfields);
 	}
@@ -104,7 +104,7 @@ class Measurement extends Core {
 	*/
 	function getAllMsrTypes(){
 	    global $db;
-	
+
 	    if ($this->result=$db->Execute("SELECT nr,type,name,LD_var AS \"LD_var\" FROM $this->tb_msr_types")) {
 		    if ($this->result->RecordCount()) {
 		        return $this->result->GetArray();
@@ -117,7 +117,7 @@ class Measurement extends Core {
 		}
 	}
 	/**
-	* Gets measurement units based on a condition. 
+	* Gets measurement units based on a condition.
 	*
 	* The returned 2 dimensional array contains the data with the following index keys:
 	* - nr = primary key number
@@ -141,24 +141,24 @@ class Measurement extends Core {
 		        	else return $this->res['_gunits']->GetArray();
 			}else{return false;}
 		}else{return false;}
-	}	
+	}
 	/**
 	* Gets all measurement units without conditions.
-	* 
+	*
 	* For detailed structure of returned data, see the <var>_getUnits()</var> method.
 	* @access public
 	* @return mixed 2 dimensional array or boolean
 	*/
 	function getUnits(){
 	    return $this->_getUnits();
-	}	
+	}
 /*		function getmetricUnits(){
 	    return $this->_getUnits("system='metric'");
-	}	
+	}
 	function getenglishUnits(){
 	    return $this->_getUnits("system='english'");
-	}	
-	
+	}
+
 function increaseUnitHit($nr,$count='1'){
 	    global $db;
 		if(empty($nr)) return false;
@@ -172,11 +172,11 @@ function increaseUnitHit($nr,$count='1'){
 		else {
 		    return false;
 		}
-	}	
+	}
 	*/
 	/**
 	* Returns all volume units in metric system.
-	* 
+	*
 	* For detailed structure of returned data, see the <var>_getUnits()</var> method.
 	* @access public
 	* @return mixed 2 dimensional array or boolean
@@ -186,7 +186,7 @@ function increaseUnitHit($nr,$count='1'){
 	}
 	/**
 	* Returns all weight units in metric system.
-	* 
+	*
 	* For detailed structure of returned data, see the <var>_getUnits()</var> method.
 	* @access public
 	* @return mixed 2 dimensional array or boolean
@@ -196,13 +196,13 @@ function increaseUnitHit($nr,$count='1'){
 	}
 	/**
 	* Returns all length/height units in metric system.
-	* 
+	*
 	* For detailed structure of returned data, see the <var>_getUnits()</var> method.
 	* @access public
 	* @return mixed 2 dimensional array or boolean
 	*/
 	function LengthUnits(){
-		return $this->_getUnits('unit_type_nr=3'); # Unit type nr 2 = length/height unit 
+		return $this->_getUnits('unit_type_nr=3'); # Unit type nr 2 = length/height unit
 	}
 }
 ?>

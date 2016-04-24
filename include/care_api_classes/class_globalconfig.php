@@ -50,7 +50,7 @@ class GlobalConfig  extends Core{
 	* Constructor
 	* @param array Configuration handler. By reference.
 	*/
-	function GlobalConfig(&$handler) {
+	function __construct(&$handler) {
 	    $this->config=&$handler;
 	}
 	/**
@@ -58,14 +58,14 @@ class GlobalConfig  extends Core{
 	*
 	* The item to be fetched is passed as parameter. This could contain the % wild card where in such case all
 	* values of the configuration items that fit the type will be fetched and stored in the array.
-	* The array must be passed by reference to the class's constructor.	
+	* The array must be passed by reference to the class's constructor.
 	* @access public
-	* @param string Configuration item to be fetched. 
+	* @param string Configuration item to be fetched.
 	* @return mixed string or boolean
 	*/
 	function getConfig($type='') {
 	    global $db, $sql_LIKE;
-		
+
 	    if(empty($type)||!$type) {
 		    $this->condition='1';
 		} else {
@@ -95,11 +95,11 @@ class GlobalConfig  extends Core{
 		global $db;
 		//$db->debug=1;
 		if(empty($type)) return false;
-		
+
 		$buf=$this->getConfigValue($type);
 
 		if($buf!='_config_no_exists'){
-		
+
 			# Update if values differ
 			if($buf!=$value){
 				$this->sql="UPDATE $this->tb SET type='$type',value='$value' WHERE type='$type'";
@@ -138,7 +138,7 @@ class GlobalConfig  extends Core{
 	function saveConfigArray(&$data_array,$filter='',$numeric=FALSE,$def_value='',$addslash=FALSE) {
 
 		if(!is_array($data_array)||empty($filter)) return FALSE;
-		
+
 		while(list($x,$v)=each($data_array)){
 			# If index name fits in filter save the value
 			if(stristr($x,$filter)){
@@ -155,16 +155,16 @@ class GlobalConfig  extends Core{
 	/**
 	* Gets a global config value of a config item supplied as parameter.
 	*
-	* The configuration item CANNOT contain a wildcard. This method returns the value of only one single configuration item.	
-	* @param string Configuration item to be fetched. 
+	* The configuration item CANNOT contain a wildcard. This method returns the value of only one single configuration item.
+	* @param string Configuration item to be fetched.
 	* @return string
 	*/
 	function getConfigValue($type='') {
 	    global $db;
-		
+
 	    if(empty($type)||!$type) {
 		    return '';
-		}else{ 
+		}else{
 			if($this->result=$db->Execute("SELECT value FROM $this->tb WHERE type = '$type'")) {
             	if ($this->result->RecordCount()) {
 					$this->row=$this->result->FetchRow();
@@ -173,6 +173,6 @@ class GlobalConfig  extends Core{
 			}else{return '_config_no_exists';}
 		}
 	}
-	
+
 }
 ?>

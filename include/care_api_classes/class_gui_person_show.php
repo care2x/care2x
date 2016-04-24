@@ -23,17 +23,17 @@ class GuiPersonShow {
 
 	# Filename of script to run in fallback state (when something goes wrong)
 	var $fallbackfile = '';
-	
+
 	# Default path for fotos. Make sure that this directory exists!
 	var $default_photo_path='uploads/photos/registration';
 	var $photo_filename='nopic';
-	
+
 	# Filename of file running this gui
 	var $thisfile = '';
 
 	# The PID
 	var $pid=0;
-	
+
 	# The text holder in front of output block
 	var $pretext='';
 
@@ -42,29 +42,29 @@ class GuiPersonShow {
 
 	# Current encounter number
 	var $current_encounter=0;
-	
+
 	# Person data in array
 	var $data = array();
-	
+
 	# Person data object
 	var $data_obj;
-	
+
 	# Person object
 	var $person_obj;
-	
+
 	# Flag if data is loaded
 	var $is_loaded;
-	
+
 	# Flag if the data is to be returned only as string
 	var $bReturnOnly = FALSE;
-	
+
 	# Internal smarty object
 	var $smarty;
-	
+
 	/**
 	* Constructor
 	*/
-	function GuiPersonShow($pid=0, $filename='', $fallbackfile=''){
+	function __construct($pid=0, $filename='', $fallbackfile=''){
 		global $thisfile, $root_path;
 		if(empty($filename)) $this->thisfile = $thisfile;
 			else $this->thisfile = $filename;
@@ -73,7 +73,7 @@ class GuiPersonShow {
 
 		include_once($root_path.'include/care_api_classes/class_person.php');
 		$this->person_obj=& new Person($pid);
-		
+
 		if($pid){
 			$this->pid =$pid;
 			return $this->_load();
@@ -181,7 +181,7 @@ class GuiPersonShow {
 		include_once($root_path.'include/care_api_classes/class_insurance.php');
 		$pinsure_obj=new PersonInsurance($this->pid);
 
-		# Get the global config for registration form of the person 
+		# Get the global config for registration form of the person
 		include_once($root_path.'include/care_api_classes/class_globalconfig.php');
 
 		$GLOBAL_CONFIG = array();
@@ -192,9 +192,9 @@ class GuiPersonShow {
 		//extract($GLOBAL_CONFIG);
 
 		if(empty($this->pid)) {
-			
+
 			$validdata = FALSE;
-		
+
 		}else{
 
 			//if($data_obj=&$this->person_obj->getAllInfoObject()){
@@ -222,28 +222,28 @@ class GuiPersonShow {
 					}
 				}
 				if (isset($insurance_class_nr)) {
-					//TODO $insurance_class_nr might not be set and brings to an undefined situation for insurances. 
+					//TODO $insurance_class_nr might not be set and brings to an undefined situation for insurances.
 					$insurance_class_info=$pinsure_obj->getInsuranceClassInfo($insurance_class_nr);
 				}
-				
+
 				# Check if person is currently admitted
 				$this->current_encounter=$this->person_obj->CurrentEncounter($this->pid);
 
 				# update history of the record
 				if(empty($newdata)) @$this->person_obj->setHistorySeen($_SESSION['sess_user_name']);
-			
+
 				# Check whether config foto path exists, else use default path
 				$photo_path = (is_dir($root_path.$GLOBAL_CONFIG['person_foto_path'])) ? $GLOBAL_CONFIG['person_foto_path'] : $this->default_photo_path;
 
 			}else{
-				$validdata = FALSE; 
+				$validdata = FALSE;
 			}
 
 		}
-		
+
 		include_once($root_path.'gui/smarty_template/smarty_care.class.php');
 		$this->smarty = new smarty_care('common',FALSE);
-		
+
 		if($validdata){
 
 		include_once($root_path.'include/core/inc_photo_filename_resolve.php');
@@ -254,7 +254,7 @@ class GuiPersonShow {
 		# Create smarty object without initiliazing the GUI (2nd param = FALSE)
 
 
-		
+
 		# Set from width
 		$this->smarty->assign('sFormWidth','width="100%"');
 
@@ -274,14 +274,14 @@ class GuiPersonShow {
 		}
 
 		$this->smarty->assign('img_source',$img_source);
-		
+
 		//gjergji
 		if ($photo_filename=='' || $photo_filename=='nopic' || !file_exists($root_path.$photo_path.'/'.$photo_filename)){
 			$pfile = (isset($pfile)) ? $pfile : '';
 			$this->smarty->assign('sFileBrowserInput','<input name="photo_filename" type="file" size="15"   onChange="showpic(this)" value="'.$pfile.'">');
-		}		
+		}
 		//end : gjergji
-		
+
 		# iRowSpanCount counts the rows on the left of the photo image. Begin with 5 because there are 5 static rows.
 		$iRowSpanCount = 5;
 
@@ -326,7 +326,7 @@ class GuiPersonShow {
 			$this->smarty->assign('sNameOthers',$this->createTR($LDNameOthers,$name_others));
 			$iRowSpanCount++;
 		}
-		
+
 		# Set the rowspan value for the photo image <td>
 		$this->smarty->assign('sPicTdRowSpan',"rowspan=$iRowSpanCount");
 
@@ -337,7 +337,7 @@ class GuiPersonShow {
 			$this->smarty->assign('sDeathDate','<font color="#000000">'.@formatDate2Local($death_date,$date_format).'</font>');
 		}
 		$this->smarty->assign('sBdayInput','<div class="vi_data">'.@formatDate2Local($date_birth,$date_format).'</div>');
-		
+
 		$this->smarty->assign('LDSex', "$LDSex:");
 
 		if($sex=="m") $this->smarty->assign('LDMale','<div class="vi_data">'.$LDMale.'</div>');
@@ -361,7 +361,7 @@ class GuiPersonShow {
 
 			$this->smarty->assign('sCSSingleInput',$sCSBuffer);
 		}
-		
+
 		$this->smarty->assign('LDAddress',"$LDAddress:");
 
 		$this->smarty->assign('LDStreet',"$LDStreet:");
@@ -380,7 +380,7 @@ class GuiPersonShow {
 
 		if (!$GLOBAL_CONFIG['person_insurance_hide']) {
 			if (!$GLOBAL_CONFIG['person_insurance_1_nr_hide']&&$insurance_show&&$insurance_nr){
-				
+
 				$this->smarty->assign('bShowInsurance',TRUE);
 
 				$this->smarty->assign('sInsuranceNr',$this->createTR($LDInsuranceNr,$insurance_nr,2));
@@ -391,7 +391,7 @@ class GuiPersonShow {
 					if(isset($$buffer)&&!empty($$buffer)) $this->smarty->append('sInsClasses',$$buffer);
     					else $this->smarty->append('sInsClasses',$insurance_class_info['name']);
 				}
-				
+
 				$this->smarty->assign('LDInsuranceCo',$LDInsuranceCo);
 				$this->smarty->assign('sInsCoNameInput',$insurance_firm_name);
 
@@ -437,7 +437,7 @@ class GuiPersonShow {
 		if (!$GLOBAL_CONFIG['person_other_his_nr_hide']){
 			$other_hosp_list = $this->person_obj->OtherHospNrList();
 			$iHospCount = sizeof($other_hosp_list);
-			
+
 			if($iHospCount) {
 				$this->smarty->assign('bShowOtherHospNr',TRUE);
 
@@ -453,7 +453,7 @@ class GuiPersonShow {
 				$this->smarty->assign('sOtherNr',$sOtherNrBuffer);
 			}
 		}
-		
+
 		$this->smarty->assign('LDRegBy',$LDRegBy);
 		if(empty($modify_id)) $buffer=$create_id; else $buffer=$modify_id;
 
@@ -462,7 +462,7 @@ class GuiPersonShow {
 		}else{
 			$this->smarty->assign('pretext','Invalid PID number or the data is not available from the databank! Please report this to <a  href=\'mailto:info@care2x.org\'>info@care2x.org</a>. Thank you.');
 		}
-		
+
 
 		# If data is to be returned only, buffer output, get the buffer contents, end and clean buffer and return contents.
 		if($this->bReturnOnly){
@@ -476,7 +476,7 @@ class GuiPersonShow {
 			return TRUE;
 		}
 	} // end of function
-	
+
 	/**
 	* Creates the  data but returns it as a string instead of outputting it
 	*/

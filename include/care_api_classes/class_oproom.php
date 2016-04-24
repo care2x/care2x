@@ -47,13 +47,13 @@ class OPRoom extends Core {
 	* @var int
 	* @access private
 	*/
-	var $room_nr=0; # current room nr. 
+	var $room_nr=0; # current room nr.
 	/**
 	* OP room type number buffer
 	* @var int
 	* @access private
 	*/
-	var $OR_typenr=2; # the type number of OR room. Do not change this if you do not know why. 
+	var $OR_typenr=2; # the type number of OR room. Do not change this if you do not know why.
 	/**
 	* Flag for preloaded OR data
 	* @var boolean
@@ -91,8 +91,8 @@ class OPRoom extends Core {
 	/**
 	* Constructor
 	* @param int OP room number
-	*/	
-	function OPRoom($rm_nr=0){
+	*/
+	function __construct($rm_nr=0){
 		$this->room_nr=$rm_nr;
 		$this->coretable=$this->tb_room;
 		$this->ref_array=$this->fld_room;
@@ -126,15 +126,15 @@ class OPRoom extends Core {
 	* @param int OP room number
 	* @param boolean Flags if the first parameter is room number or record number. Defaults to FALSE = room number.
 	* @return mixed adodb record object or boolean
-	*/ 
+	*/
 	function ORInfo($nr=0,$rec_key=FALSE){
 	    global $db;
-		
+
 		if(!$nr){
 			if($this->room_nr) $nr=$this->room_nr;
 				else return FALSE;
 		}
-		
+
 		//$this->sql="SELECT * FROM $this->tb_room WHERE room_nr='$rm_nr'";
 		$this->sql="SELECT o.*, w.ward_id, w.name AS wardname, d.name_formal AS deptname, d.name_short AS deptshort, d.LD_var AS \"LD_var\"
 						 FROM $this->tb_room AS o
@@ -157,10 +157,10 @@ class OPRoom extends Core {
 	* @access public
 	* @param int Record primary number key
 	* @return mixed adodb record object or boolean
-	*/ 
+	*/
 	function ORRecordInfo($nr=0){
 	    global $db;
-		
+
 		if(!$nr) return FALSE;
 		 	else return $this->ORInfo($nr,TRUE);
 	}
@@ -172,21 +172,21 @@ class OPRoom extends Core {
 	* @param string Field name to sort. Default = room_nr
 	* @param string Addition query constraint string
 	* @return mixed adodb record object or boolean
-	*/ 
+	*/
 	function AllORInfo($sort='',$cond=''){
 	    global $db;
-	
+
 		if(empty($sort)) $sort=" ORDER BY room_nr";
 			else $sort=" ORDER BY $sort";
-		
+
 		if(empty($cond)) $cond='';
-		
+
 		$this->sql="SELECT o.*, w.ward_id, w.name AS wardname, d.name_formal AS deptname, d.name_short AS deptshort, d.LD_var AS \"LD_var\"
 						 FROM $this->tb_room AS o
 						 			LEFT JOIN $this->tb_ward AS w ON o.ward_nr=w.nr
 									LEFT JOIN $this->tb_dept AS d ON o.dept_nr=d.nr
 						WHERE o.type_nr=$this->OR_typenr";
-		
+
 		if(!empty($cond)) $this->sql.=" AND $cond";
 
 		$this->sql.=" $sort";
@@ -215,7 +215,7 @@ class OPRoom extends Core {
 	* @access public
 	* @param string Field name to sort. default = room_nr
 	* @return mixed adodb record object or boolean
-	*/ 
+	*/
 	function AllActiveORInfo($sort=''){
 		return $this->AllORInfo($sort,"o.is_temp_closed IN ('',0) AND o.status NOT IN('inactive','hidden')");
 	}
@@ -224,7 +224,7 @@ class OPRoom extends Core {
 	* @access public
 	* @return integer
 	*/
-	function ORTypeNr(){ 
+	function ORTypeNr(){
 		return $this->OR_typenr;
 	}
 	/**

@@ -24,16 +24,16 @@ class Medocs extends Notes {
 	* @var string
 	*/
 	var $tb_person='care_person';
-	
+
 	/**
 	* Constructor
 	* @param int Encounter number
 	*/
-	function Medocs($nr=0){
+	function __construct($nr=0){
 		if($nr) $this->enc_nr=$nr;
 		$this->coretable=$this->tb_medocs;
 	}
-	/** 
+	/**
 	* Gets all medocs documents based on the given key number.
 	*
 	* The type of key number is determined by the content of the $nr_type parameter.
@@ -67,11 +67,11 @@ class Medocs extends Notes {
 		//echo $this->sql;
         if($this->res['_gmed']=$db->Execute($this->sql)) {
             if($this->rec_count=$this->res['_gmed']->RecordCount()) {
-				 return $this->res['_gmed'];	 
+				 return $this->res['_gmed'];
 			} else { return false; }
 		} else { return false; }
 	}
-	/** 
+	/**
 	* Gets all medocs records of an encounter number.
 	*
 	* For detailed structure of returned data, see the <var> _getMedocsList()</var> method.
@@ -82,7 +82,7 @@ class Medocs extends Notes {
 	function encMedocsList($nr){
 		return $this->_getMedocsList($nr,'_ENC');
 	}
-	/** 
+	/**
 	* Gets all medocs records of a pid number.
 	*
 	* For detailed structure of returned data, see the <var> _getMedocsList()</var> method.
@@ -94,7 +94,7 @@ class Medocs extends Notes {
 		return $this->_getMedocsList($nr,'_REG');
 	}
 
-	/** 
+	/**
 	* Gets medocs document based on a field "nr" key
 	*
 	* The returned  array has the following keys:
@@ -114,8 +114,8 @@ class Medocs extends Notes {
 		global $db;
 		if(empty($nr)) return FALSE;
 		$this->sql="SELECT nd.notes AS diagnosis,
-						nd.short_notes, 
-						nd.aux_notes, 
+						nd.short_notes,
+						nd.aux_notes,
 						nd.date,
 						nd.time,
 						nd.personell_nr,
@@ -123,13 +123,13 @@ class Medocs extends Notes {
 						nt.notes AS therapy
 		FROM $this->tb_notes AS nd LEFT JOIN $this->tb_notes AS nt ON nd.nr=nt.ref_notes_nr
 		WHERE   nd.nr=$nr";
-		
+
         if($this->res['gmd']=$db->Execute($this->sql)) {
             if($this->rec_count=$this->res['gmd']->RecordCount()) {
-				 return $this->res['gmd']->FetchRow(); 
+				 return $this->res['gmd']->FetchRow();
 			} else { return false; }
 		} else { return false; }
 	}
-	
+
 }
 ?>

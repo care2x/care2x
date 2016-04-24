@@ -46,7 +46,7 @@ class DRG extends Encounter{
 	* Table name for drg related codes
 	* @var string
 	*/
-	var $tb_related='care_drg_related_codes';		
+	var $tb_related='care_drg_related_codes';
 	/**
 	* Table name for diagnosis categories
 	* @var string
@@ -230,16 +230,16 @@ class DRG extends Encounter{
 	* @param int Encounter number
 	* @param int Department number
 	*/
-	function DRG($enc_nr=0,$dept_nr=0){
+	function __construct($enc_nr=0,$dept_nr=0){
 		global $lang;
 		$this->enc_nr=$enc_nr;
 		$this->dept_nr=$dept_nr;
 		$this->coretable=$this->tb_diagnosis;
 		$this->ref_array=$this->fld_diagnosis;
-		
+
 		# convert the dashes to underscores in the language code
 		$intlang=strtr($lang,'-','_');
-		
+
 		# Check if language has a corresponding table. if not use default table
 		if(stristr($this->tb_lang_icd,$lang)){
 			$this->tb_diag_codes='care_icd'.$this->icd_version.'_'.$intlang; # construct the code source table e.g. "care_icd10_en"
@@ -366,7 +366,7 @@ class DRG extends Encounter{
 										$this->tb_proc_codes AS c,
 										$this->tb_procedure AS p
 									 LEFT JOIN $this->tb_proc_codes AS m ON p.code_parent=m.code
-									 WHERE p.encounter_nr='$this->enc_nr' 
+									 WHERE p.encounter_nr='$this->enc_nr'
 									 	AND p.group_nr='$grp_nr'
 									 	AND p.status NOT IN ($this->dead_stat)
 										AND  p.code=c.code ORDER BY p.category_nr, p.date";
@@ -387,7 +387,7 @@ class DRG extends Encounter{
 		if(!$this->internResolveEncounterNr($enc_nr)) return FALSE;
 		$this->sql="SELECT e.*, d.code,d.description,d.notes
 							FROM  $this->tb_enc_drg AS e, $this->tb_drg AS d
-									 WHERE e.encounter_nr=$this->enc_nr 
+									 WHERE e.encounter_nr=$this->enc_nr
 									 	AND e.status NOT IN ($this->dead_stat)
 										AND  e.group_nr=d.nr ORDER BY e.date";
 		//echo $this->sql;
@@ -400,7 +400,7 @@ class DRG extends Encounter{
 	/**
 	* "Deletes" a diagnosis code record entry.
 	* The entry is  not actually deleted from the table but its status is set to "deleted".
-	* @param int Diagnosis code record entry number 
+	* @param int Diagnosis code record entry number
 	* @return boolean
 	*/
 	function deleteDiagnosis($diag_nr=0){
@@ -408,7 +408,7 @@ class DRG extends Encounter{
 		if(!$diag_nr) return FALSE;
 		$this->sql="UPDATE $this->tb_diagnosis
 						SET status='deleted',history=".$this->ConcatHistory("Delete ".date('Y-m-d H:i:s')." ".$_SESSION['sess_user_name']."\n").",
-						modify_id='".$_SESSION['sess_user_name']."'			
+						modify_id='".$_SESSION['sess_user_name']."'
 						 WHERE diagnosis_nr=$diag_nr";
 		//echo $sql;
 		return $this->Transact($this->sql);
@@ -416,13 +416,13 @@ class DRG extends Encounter{
 	/**
 	* "Deletes" a procedure code record entry.
 	* The entry is  not actually deleted from the table but its status is set to "deleted".
-	* @param int Procedure code record entry number 
+	* @param int Procedure code record entry number
 	* @return boolean
 	*/
 	function deleteProcedure($proc_nr=0){
 	    global $db, $_SESSION;
 		if(!$proc_nr) return FALSE;
-		$this->sql="UPDATE $this->tb_procedure 
+		$this->sql="UPDATE $this->tb_procedure
 						SET status='deleted',
 						history=".$this->ConcatHistory("Delete ".date('Y-m-d H:i:s')." ".$_SESSION['sess_user_name']."\n").",
 						modify_id='".$_SESSION['sess_user_name']."'
@@ -433,16 +433,16 @@ class DRG extends Encounter{
 	/**
 	* "Deletes" a internal DRG group number record entry.
 	* The entry is  not actually deleted from the table but its status is set to "deleted".
-	* @param int Internal DRG group record entry number 
+	* @param int Internal DRG group record entry number
 	* @return boolean
 	*/
 	function deleteEncounterDRGGroup($drg_nr=0){
 	    global $db, $_SESSION;
 		if(!$drg_nr) return FALSE;
-		$this->sql="UPDATE $this->tb_enc_drg 
+		$this->sql="UPDATE $this->tb_enc_drg
 						SET status='deleted',
 						history=".$this->ConcatHistory("Delete ".date('Y-m-d H:i:s')." ".$_SESSION['sess_user_name']."\n").",
-						modify_id='".$_SESSION['sess_user_name']."'			
+						modify_id='".$_SESSION['sess_user_name']."'
 						 WHERE nr=$drg_nr";
 		//echo $sql;
 		return $this->Transact($this->sql);
@@ -460,13 +460,13 @@ class DRG extends Encounter{
 		if(!$diag_nr||!$cat_nr) return FALSE;
 		// If the new category is most responsible  (1), change the possible current most responsible diagnosis to associated (2)
 		if($cat_nr==1){
-			$this->sql="UPDATE $this->tb_diagnosis 
+			$this->sql="UPDATE $this->tb_diagnosis
 							SET category_nr='2',
 							history=".$this->ConcatHistory("Reset main category ".date('Y-m-d H:i:s')." ".$_SESSION['sess_user_name']."\n")."
 							 WHERE encounter_nr=$enc_nr AND category_nr='1'";
 			$this->Transact($this->sql);
 		}
-		$this->sql="UPDATE $this->tb_diagnosis 
+		$this->sql="UPDATE $this->tb_diagnosis
 						SET category_nr='$cat_nr',
 						history=".$this->ConcatHistory("Set category ".date('Y-m-d H:i:s')." ".$_SESSION['sess_user_name']."\n").",
 						modify_id='".$_SESSION['sess_user_name']."'
@@ -484,7 +484,7 @@ class DRG extends Encounter{
 	function setDiagnosisLocalization($diag_nr=0,$loc=''){
 	    global $db, $_SESSION;
 		if(!$diag_nr||empty($loc)) return FALSE;
-		$this->sql="UPDATE $this->tb_diagnosis 
+		$this->sql="UPDATE $this->tb_diagnosis
 						SET localization='$loc',
 						history=".$this->ConcatHistory("Set localization ".date('Y-m-d H:i:s')." ".$_SESSION['sess_user_name']."\n").",
 						modify_id='".$_SESSION['sess_user_name']."'
@@ -505,15 +505,15 @@ class DRG extends Encounter{
 		if(!$proc_nr||!$cat_nr) return FALSE;
 		// If the new category is most responsible  (1), change the possible current most responsible diagnosis to associated (2)
 		if($cat_nr==1){
-			$this->sql="UPDATE $this->tb_procedure 
+			$this->sql="UPDATE $this->tb_procedure
 							SET category_nr='2',history=".$this->ConcatHistory("Reset main category ".date('Y-m-d H:i:s')." ".$_SESSION['sess_user_name']."\n")."
 							 WHERE encounter_nr=$enc_nr AND category_nr='1'";
 			$this->Transact($this->sql);
 		}
-		$this->sql="UPDATE $this->tb_procedure 
+		$this->sql="UPDATE $this->tb_procedure
 						SET category_nr='$cat_nr',
 						history=".$this->ConcatHistory("Set category ".date('Y-m-d H:i:s')." ".$_SESSION['sess_user_name']."\n").",
-						modify_id='".$_SESSION['sess_user_name']."'			
+						modify_id='".$_SESSION['sess_user_name']."'
 						 WHERE procedure_nr=$proc_nr";
 		//echo $sql;
 		return $this->Transact($this->sql);
@@ -528,10 +528,10 @@ class DRG extends Encounter{
 	function setProcedureLocalization($proc_nr=0,$loc=''){
 	    global $db, $_SESSION;
 		if(!$proc_nr||empty($loc)) return FALSE;
-		$this->sql="UPDATE $this->tb_procedure 
+		$this->sql="UPDATE $this->tb_procedure
 						SET localization='$loc',
 						history=".$this->ConcatHistory("Set localization ".date('Y-m-d H:i:s')." ".$_SESSION['sess_user_name']."\n").",
-						modify_id='".$_SESSION['sess_user_name']."'			
+						modify_id='".$_SESSION['sess_user_name']."'
 						WHERE procedure_nr=$proc_nr";
 		//echo $sql;
 		return $this->Transact($this->sql);
@@ -655,17 +655,17 @@ class DRG extends Encounter{
 	    global  $_SESSION;
 		if(!$this->internResolveEncounterNr($enc_nr)||!$grp_nr) return FALSE;
 		$buf;
-		
-		$this->sql="UPDATE $this->tb_diagnosis 
+
+		$this->sql="UPDATE $this->tb_diagnosis
 						SET group_nr='$grp_nr',
 						history=".$this->ConcatHistory("Set group ".date('Y-m-d H:i:s')." ".$_SESSION['sess_user_name']."\n").",
 						modify_id='".$_SESSION['sess_user_name']."',
 						modify_time='".date('YmdHis')."'
 						WHERE encounter_nr=$this->enc_nr AND  group_nr IN ('',0) AND status NOT IN ($this->dead_stat)";
-		
+
 		$buf=$this->Transact($this->sql);
-		
-		$this->sql="UPDATE $this->tb_procedure 
+
+		$this->sql="UPDATE $this->tb_procedure
 						SET group_nr='$grp_nr',
 						history=".$this->ConcatHistory("Set group ".date('Y-m-d H:i:s')." ".$_SESSION['sess_user_name']."\n").",
 						modify_id='".$_SESSION['sess_user_name']."',
@@ -682,7 +682,7 @@ class DRG extends Encounter{
 	function ungroupDiagnoses($grp_nr,$enc_nr){
 	    global  $_SESSION;
 		if(!$this->internResolveEncounterNr($enc_nr)||!$grp_nr) return FALSE;
-		$this->sql="UPDATE $this->tb_diagnosis 
+		$this->sql="UPDATE $this->tb_diagnosis
 						SET group_nr=0,
 						history=".$this->ConcatHistory("Ungroup ".date('Y-m-d H:i:s')." ".$_SESSION['sess_user_name']."\n").",
 						modify_id='".$_SESSION['sess_user_name']."',
@@ -699,7 +699,7 @@ class DRG extends Encounter{
 	function ungroupProcedures($grp_nr,$enc_nr){
 	    global $_SESSION;
 		if(!$this->internResolveEncounterNr($enc_nr)||!$grp_nr) return FALSE;
-		$this->sql="UPDATE $this->tb_procedure 
+		$this->sql="UPDATE $this->tb_procedure
 						SET group_nr=0,
 						history=".$this->ConcatHistory("Ungroup ".date('Y-m-d H:i:s')." ".$_SESSION['sess_user_name']."\n").",
 						modify_id='".$_SESSION['sess_user_name']."',
@@ -741,14 +741,14 @@ class DRG extends Encounter{
 			}
 			case 'diagnosis':
 			{
-				$cond="q.code,q.code_parent ,d.diagnosis_code AS nr, d.description, p.description AS parent_desc FROM $this->tb_qlist AS q  
+				$cond="q.code,q.code_parent ,d.diagnosis_code AS nr, d.description, p.description AS parent_desc FROM $this->tb_qlist AS q
 								LEFT JOIN $this->tb_diag_codes AS d ON q.code=d.diagnosis_code
 								LEFT JOIN $this->tb_diag_codes AS p ON q.code_parent=p.diagnosis_code";
 				break;
 			}
 			case 'procedure':
 			{
-				$cond="q.code,q.code_parent ,d.code AS nr, d.description, p.description AS parent_desc FROM $this->tb_qlist AS q  
+				$cond="q.code,q.code_parent ,d.code AS nr, d.description, p.description AS parent_desc FROM $this->tb_qlist AS q
 								LEFT JOIN $this->tb_proc_codes AS d ON q.code=d.code
 								LEFT JOIN $this->tb_proc_codes AS p ON q.code_parent=p.code";
 				break;
@@ -795,7 +795,7 @@ class DRG extends Encounter{
 	* The data are packed in the array with the following index keys:
 	* - code = the code to be added
 	* - code_parent = the parent code in case the actual code is a subcode
-	* - qlist_type = type of quick list 
+	* - qlist_type = type of quick list
 	*
 	* @param array Data in associative array
 	* @return boolean
@@ -849,7 +849,7 @@ class DRG extends Encounter{
 	* - group_nr = the group number
 	* - code = the code to be added
 	* - code_parent = the parent code in case the actual code is a subcode
-	* - qlist_type = type of quick list 
+	* - qlist_type = type of quick list
 	*
 	* @param array Data to be stored in the table. By reference.
 	* @return boolean
@@ -878,7 +878,7 @@ class DRG extends Encounter{
 							FROM  $this->tb_related AS c
 									LEFT JOIN $this->tb_diag_codes AS d ON c.code=d.diagnosis_code
 									LEFT JOIN $this->tb_diag_codes AS p ON c.code_parent=p.diagnosis_code
-							 WHERE c.group_nr='$group_nr' 
+							 WHERE c.group_nr='$group_nr'
 									AND c.code_type='diagnosis'
 									AND c.status NOT IN ($this->dead_stat)
 							ORDER BY c.rank DESC";
@@ -901,7 +901,7 @@ class DRG extends Encounter{
 							FROM  $this->tb_related AS c
 									LEFT JOIN $this->tb_proc_codes AS d ON c.code=d.code
 									LEFT JOIN $this->tb_proc_codes AS p ON c.code_parent=p.code
-							 WHERE c.group_nr='$group_nr' 
+							 WHERE c.group_nr='$group_nr'
 									AND c.code_type='procedure'
 									AND c.status NOT IN ($this->dead_stat)
 							ORDER BY c.rank DESC";
@@ -929,7 +929,7 @@ class DRG extends Encounter{
 									 LEFT JOIN $this->tb_diag_codes AS m ON d.code_parent=m.diagnosis_code AND d.code_parent NOT IN ('',' ',0)
 									 LEFT JOIN $this->tb_cat_diag AS cat ON d.category_nr=cat.nr
 									 LEFT JOIN $this->tb_type_loc AS loc ON d.localization=loc.nr
-									 WHERE d.encounter_nr='$this->enc_nr' 
+									 WHERE d.encounter_nr='$this->enc_nr'
 									 	AND d.op_nr='$op_nr'
 									 	AND d.status NOT IN ($this->dead_stat)
 										ORDER BY d.category_nr,d.date";
@@ -953,7 +953,7 @@ class DRG extends Encounter{
 		if(!$this->internResolveEncounterNr($enc_nr)) return FALSE;
 		$this->sql="SELECT p.*, c.description, m.description AS parent_desc,
 								cat.LD_var AS cat_LD_var, cat.LD_var_short_code AS cat_LD_var_short_code, cat.short_code AS cat_short_code, cat.name AS cat_name,
-								loc.LD_var AS loc_LD_var, loc.LD_var_short_code AS loc_LD_var_short_code, loc.short_code AS loc_short_code,loc.name AS loc_name	
+								loc.LD_var AS loc_LD_var, loc.LD_var_short_code AS loc_LD_var_short_code, loc.short_code AS loc_short_code,loc.name AS loc_name
 							FROM
 									 	$this->tb_proc_codes AS c,
 										$this->tb_procedure AS p
@@ -971,7 +971,7 @@ class DRG extends Encounter{
 		    } else { return FALSE;}
 		} else { return FALSE;}
 	}
-	/** 
+	/**
 	* Gets all DRG entries based on the given number
 	* @access private
 	* @param int Select number
@@ -989,8 +989,8 @@ class DRG extends Encounter{
 			$this->error_msg='Type of nr. invalid or empty';
 			return FALSE;
 		}
-		
-		$this->sql="SELECT e.encounter_nr,e.encounter_date,e.is_discharged  
+
+		$this->sql="SELECT e.encounter_nr,e.encounter_date,e.is_discharged
 						FROM   $this->tb_enc AS e
 						LEFT JOIN $this->tb_enc_drg AS i ON  i.encounter_nr=e.encounter_nr AND i.status  NOT  IN ($this->dead_stat)
 						LEFT JOIN $this->tb_diagnosis AS d ON d.encounter_nr=e.encounter_nr AND d.status NOT IN ($this->dead_stat)
@@ -1002,11 +1002,11 @@ class DRG extends Encounter{
 		//echo $this->sql;
         if($this->res['_gmed']=$db->Execute($this->sql)) {
             if($this->rec_count=$this->res['_gmed']->RecordCount()) {
-				 return $this->res['_gmed'];	 
+				 return $this->res['_gmed'];
 			} else { return FALSE; }
 		} else { return FALSE; }
 	}
-	/** 
+	/**
 	* Gets all DRG records of an encounter based on the encounter number.
 	* @access public
 	* @param int Encounter number
@@ -1015,7 +1015,7 @@ class DRG extends Encounter{
 	function encDRGList($nr){
 		return $this->_getDRGList($nr,'_ENC');
 	}
-	/** 
+	/**
 	* Gets all DRG records of a person based on his PID number.
 	* @access public
 	* @param int  PID number
@@ -1024,5 +1024,5 @@ class DRG extends Encounter{
 	function pidDRGList($nr){
 		return $this->_getDRGList($nr,'_REG');
 	}
-	
+
 }

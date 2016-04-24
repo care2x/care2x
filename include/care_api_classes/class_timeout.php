@@ -28,17 +28,17 @@ class TimeOut extends GlobalConfig {
 	* @var int
 	*/
 	var $totime;
-	
+
 	/**
-	* Constructor. 
+	* Constructor.
 	*
 	* The session variable which stores the time out count start value should be passed by reference.
 	* @param $tostart (var) reference passed variable
 	* @param $tcheck (bool) if time out is to be checked or not
-	* @param $totime (int)  time out length of time in MinutesSeconds 
+	* @param $totime (int)  time out length of time in MinutesSeconds
 	*   format e.g.  530 = 5 minutes, 20 seconds or e.g. 2000 = 20 minutes, 00 seconds
 	*/
-	function TimeOut(&$tostart,$tcheck=TRUE,$totime=10){
+	function __construct(&$tostart,$tcheck=TRUE,$totime=10){
 		$this->$tostart=$tostart;
 		$this->$tcheck=$tcheck;
 		$this->totime=$totime;
@@ -48,22 +48,22 @@ class TimeOut extends GlobalConfig {
 	* @param $ts (int) optionally a time value can be passed as the count start
 	* return resetted start value
 	*/
-	
+
 	function Reset($ts=0){
-		if(!$ts) $ts=date('is'); 
+		if(!$ts) $ts=date('is');
 		$this->tostart=$ts;
 		return $ts;
 	}
 	/**
 	* Checks if the session has timed out
 	* @param $tnow (int) the current time
-	* return TRUE if timed out, FALSE if not 
+	* return TRUE if timed out, FALSE if not
 	*/
 	function isTimedOut($tnow=0){
 		if($this->tstatus&&!$now){
-	  		# Check if session is still valid 
+	  		# Check if session is still valid
 			if(($tnow-$this->tostart) >= $this->$totime){
-				 return TRUE;		
+				 return TRUE;
 			}else{
 				# Reset the time-out start time
 				$this->Reset();

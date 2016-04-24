@@ -6,7 +6,7 @@
 */
 require_once($root_path.'include/care_api_classes/class_core.php');
 /**
-*  Supplier methods. 
+*  Supplier methods.
 *
 * Note this class should be instantiated only after a "$db" adodb  connector object  has been established by an adodb instance
 * @author Gjergj Sheldija
@@ -26,7 +26,7 @@ class Supplier extends Core {
 	var $tb='care_supplier';
 	var $supplier_count;
 	/**#@-*/
-	
+
 	/**
 	* Field names of care_pharma_products_main or care_med_products_main tables
 	* @var array
@@ -41,15 +41,15 @@ class Supplier extends Core {
 
 	/**
 	* Constructor
-	*/				
-	function Supplier(){
+	*/
+	function __construct(){
 	}
 	/**
 	* Sets the core object to point  to either care_pharma_products_main or care_med_products_main table and field names.
 	*
-	* The table is determined by the parameter content. 
+	* The table is determined by the parameter content.
 	* @access public
-	* @param string Determines the final table name 
+	* @param string Determines the final table name
 	* @return boolean.
 	*/
 	function useSupplier($type){
@@ -61,7 +61,7 @@ class Supplier extends Core {
 	* @access private
 	* @param string WHERE condition of the sql query
 	* @param string Sort item
-	* @param string  Determines the return type whether adodb object (_OBJECT) or assoc array (_ARRAY, '', empty) 
+	* @param string  Determines the return type whether adodb object (_OBJECT) or assoc array (_ARRAY, '', empty)
 	* @return mixed boolean or adodb record object or assoc array, determined by param $ret_type
 	*/
 	function _getalldata($cond='1',$sort='',$ret_type=''){
@@ -79,7 +79,7 @@ class Supplier extends Core {
 		}else{
 		    return FALSE;
 		}
-	}	
+	}
 	/**
 	* Gets all funitoret without condition. The result is assoc array sorted by departments formal name
 	* @access public
@@ -87,7 +87,7 @@ class Supplier extends Core {
 	*/
 	function getAllSupplier() {
 		return $this->_getalldata('1');
-	}	
+	}
 	/**
 	* Saves (inserts)  an item in the order catalog.
 	*
@@ -95,7 +95,7 @@ class Supplier extends Core {
 	* Data must have the index keys as outlined in the <var>$fld_ocat</var> array.
 	* @access public
 	* @param array Data to save
-	* @param string Determines the final table name 
+	* @param string Determines the final table name
 	* @return boolean
 	*/
 	function SaveSupplierItem(&$data,$type){
@@ -108,7 +108,7 @@ class Supplier extends Core {
 	* Checks if the supplier exists based on its primary key number.
 	* @access public
 	* @param int Item number
-	* @param string Determines the final table name 
+	* @param string Determines the final table name
 	* @return boolean
 	*/
 	function SupplierExists($nr=0,$type=''){
@@ -128,7 +128,7 @@ class Supplier extends Core {
 	* Returns the supplier name based on it's primary key
 	* @access public
 	* @param int Item number
-	* @param string Determines the final table name 
+	* @param string Determines the final table name
 	* @return boolean
 	*/
 	function FormalName($nr=0){
@@ -145,12 +145,12 @@ class Supplier extends Core {
 		    return FALSE;
 		}
 	}
-	
+
 	/**
 	* Returns the data of the selected supplier based on it's primary key
 	* @access public
 	* @param int Item number
-	* @param string Determines the final table name 
+	* @param string Determines the final table name
 	* @return boolean
 	*/
 	function ReturnSupplierData($nr=0){
@@ -166,6 +166,6 @@ class Supplier extends Core {
 		else {
 		    return FALSE;
 		}
-	}	
+	}
 }
 ?>

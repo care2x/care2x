@@ -6,7 +6,7 @@
 */
 require_once($root_path.'include/care_api_classes/class_core.php');
 /**
-*  Product methods. 
+*  Product methods.
 *
 * Note this class should be instantiated only after a "$db" adodb  connector object  has been established by an adodb instance
 * @author Elpidio Latorilla
@@ -22,15 +22,15 @@ class Product extends Core {
 	/**
 	* Table name for pharmay order lists
 	*/
-	var $tb_polist='care_pharma_orderlist'; 
+	var $tb_polist='care_pharma_orderlist';
 	/**
 	* Table name for pharmay order lists sub table
 	*/
-	var $tb_polist_sub='care_pharma_orderlist_sub'; 
+	var $tb_polist_sub='care_pharma_orderlist_sub';
 	/**
 	* Table name for pharmacy order catalog
 	*/
-	var $tb_pocat='care_pharma_ordercatalog'; 
+	var $tb_pocat='care_pharma_ordercatalog';
 	/**
 	* Table name for pharmacy main products
 	*/
@@ -50,7 +50,7 @@ class Product extends Core {
 	/**
 	* Table name for medical depot main products administration
 	*/
-	var $tb_mmain_sub='care_med_products_main_sub';	
+	var $tb_mmain_sub='care_med_products_main_sub';
 	/**
 	 * Table name form pharmacy product administration
 	 */
@@ -64,7 +64,7 @@ class Product extends Core {
 	 */
 	var $tb_prescription_sub='care_encounter_prescription_sub';
 	/**#@-*/
-	
+
 	/**
 	* Field names of care_pharma_ordercatalog or care_med_ordercatalog tables
 	* @var array
@@ -125,7 +125,7 @@ class Product extends Core {
 								'bestellnum',
 								'idcare_supply',
 								'create_time');
-										
+
 	/**
 	* Field names of care_pharma_products_main_sub
 	* @var array
@@ -137,12 +137,12 @@ class Product extends Core {
 									'bestellnum',
 									'idcare_pharma',
 									'create_time');
-	
+
 	/**
 	* Field names of care_encounter_prescription table
 	* @var int
 	*/
-	var $fld_presc_sub=array('nr', 
+	var $fld_presc_sub=array('nr',
 							'prescription_nr',
 							'prescription_type_nr',
 							'bestellnum',
@@ -158,18 +158,18 @@ class Product extends Core {
 							'is_stopped',
 							'stop_date',
 							'status',
-							'companion');		
+							'companion');
 	/**
 	* Constructor
-	*/				
-	function Product(){
+	*/
+	function __construct(){
 	}
 	/**
 	* Sets the core object to point  to either care_pharma_orderlist or care_med_orderlist table and field names.
 	*
-	* The table is determined by the parameter content. 
+	* The table is determined by the parameter content.
 	* @access public
-	* @param string Determines the final table name 
+	* @param string Determines the final table name
 	* @return boolean.
 	*/
 	function useOrderList($type){
@@ -182,9 +182,9 @@ class Product extends Core {
 	/**
 	* Sets the core object to point  to either care_pharma_ordercatalog or care_med_ordercatalog table and field names.
 	*
-	* The table is determined by the parameter content. 
+	* The table is determined by the parameter content.
 	* @access public
-	* @param string Determines the final table name 
+	* @param string Determines the final table name
 	* @return boolean.
 	*/
 	function useOrderCatalog($type){
@@ -199,9 +199,9 @@ class Product extends Core {
 	/**
 	* Sets the core object to point  to either care_pharma_products_main or care_med_products_main table and field names.
 	*
-	* The table is determined by the parameter content. 
+	* The table is determined by the parameter content.
 	* @access public
-	* @param string Determines the final table name 
+	* @param string Determines the final table name
 	* @return boolean.
 	*/
 	function useProduct($type){
@@ -217,7 +217,7 @@ class Product extends Core {
 	* Deletes an order.
 	* @access public
 	* @param int Order number
-	* @param string Determines the final table name 
+	* @param string Determines the final table name
 	* @return boolean.
 	*/
 	function DeleteOrder($order_nr,$type){
@@ -229,14 +229,14 @@ class Product extends Core {
 	* Deletes an order by a supplier.
 	* @access public
 	* @param int Order number
-	* @param string Determines the final table name 
+	* @param string Determines the final table name
 	* @return boolean.
 	*/
 	function DeleteOrderSupplier($idcare_supply,$type){
 		//$this->useOrderList($type);
 		$this->sql="DELETE FROM care_supply WHERE idcare_supply='$idcare_supply'";
 		return $this->Transact();
-	}	
+	}
 	/**
 	* Returns the actual order catalog of a department.
 	*
@@ -244,12 +244,12 @@ class Product extends Core {
 	* Each array contains catalog  data with  index keys as outlined in the <var>$fld_ocat</var> array.
 	* @access public
 	* @param int Department number
-	* @param string Determines the final table name 
+	* @param string Determines the final table name
 	* @return mixed adodb record object or boolean
 	*/
 	function ActualOrderCatalog($dept_nr,$type=''){
 		global $db;
-		if(empty($type)||empty($dept_nr) ) return false;	
+		if(empty($type)||empty($dept_nr) ) return false;
 		$this->useOrderCatalog($type);
 		$this->sql="SELECT * FROM $this->coretable WHERE dept_nr='$dept_nr' ORDER BY hit DESC";
 		if($this->res['aoc']=$db->Execute($this->sql)) {
@@ -265,7 +265,7 @@ class Product extends Core {
 	* Each array contains catalog  data with  index keys as outlined in the <var>$fld_ocat</var> array.
 	* @access public
 	* @param int Department number
-	* @param string Determines the final table name 
+	* @param string Determines the final table name
 	* @return mixed adodb record object or boolean
 	*/
 	function ActualOrderCatalogPharma($type='',$bestellnum, $pharma){
@@ -278,7 +278,7 @@ class Product extends Core {
 				return $this->res['aoc'];
 			} else { return false; }
 		} else { return false; }
-	}	
+	}
 	/**
 	* Returns the actual pcs for the selected product.
 	*
@@ -286,7 +286,7 @@ class Product extends Core {
 	* Each array contains catalog  data with  index keys as outlined in the <var>$fld_ocat</var> array.
 	* @access public
 	* @param int Department number
-	* @param string Determines the final table name 
+	* @param string Determines the final table name
 	* @return mixed adodb record object or boolean
 	*/
 	function ActualOrderCatalogProducts($type='',$bestellnum){
@@ -299,7 +299,7 @@ class Product extends Core {
 				return $this->res['aoc'];
 			} else { return false; }
 		} else { return false; }
-	}	
+	}
 	/**
 	* Returns the actual order catalog of supplier.
 	*
@@ -307,7 +307,7 @@ class Product extends Core {
 	* Each array contains catalog  data with  index keys as outlined in the <var>$fld_ocat</var> array.
 	* @access public
 	* @param int Department number
-	* @param string Determines the final table name 
+	* @param string Determines the final table name
 	* @return mixed adodb record object or boolean
 	*/
 	function ActualOrderCatalogSupply($supplier_nr,$type=''){
@@ -318,7 +318,7 @@ class Product extends Core {
 				return $this->res['aoc'];
 			} else { return false; }
 		} else { return false; }
-	}	
+	}
 	/**
 	* Saves (inserts)  an item in the order catalog.
 	*
@@ -326,7 +326,7 @@ class Product extends Core {
 	* Data must have the index keys as outlined in the <var>$fld_ocat</var> array.
 	* @access public
 	* @param array Data to save
-	* @param string Determines the final table name 
+	* @param string Determines the final table name
 	* @return boolean
 	*/
 	function SaveCatalogItem(&$data,$type){
@@ -342,20 +342,20 @@ class Product extends Core {
 	* Data must have the index keys as outlined in the <var>$fld_ocat</var> array.
 	* @access public
 	* @param array Data to save
-	* @param string Determines the final table name 
+	* @param string Determines the final table name
 	* @return boolean
-	*/	
+	*/
 	function SaveCatalogItemSupply(&$data,$type){
 		if(empty($type)) return false;
 		$this->useOrderCatalog($type);
 		$this->data_array=&$data;
 		return $this->insertDataFromInternalArray();
-	}	
+	}
 	/**
 	* Deletes a catalog item based on its item number key.
 	* @access public
 	* @param int Item number
-	* @param string Determines the final table name 
+	* @param string Determines the final table name
 	* @return boolean
 	*/
 	function DeleteCatalogItem($item_nr,$type){
@@ -370,27 +370,27 @@ class Product extends Core {
 	* The returned adodb record object contains rows of arrays.
 	* Each array contains order  data with the following index keys:
 	* - order_nr = order's primary key number
-	* - dept_nr = department number      
+	* - dept_nr = department number
 	* - order_date = date of ordering
-	* - order_time = time of ordering   
-	* - articles = ordered articles                
-	* - extra1 = extra notes                
-	* - extra2 = extra notes                
-	* - validator = validator's name                
-	* - ip_addr = IP address of the workstation that send the order            
-	* - priority = priority level                
-	* - status = record's status                
-	* - history = record's history                
-	* - modify_id = name of user                
-	* - modify_time = modify time stamp in yyyymmddhhMMss format              
-	* - create_id = name of use                
-	* - create_time = creation time stamp in yyyymmddhhMMss format    
-	* - sent_datetime = date and time sent in yyyy-mm-dd hh:MM:ss format              
-	* - process_datetime = date and time processed in yyyy-mm-dd hh:MM:ss format              
+	* - order_time = time of ordering
+	* - articles = ordered articles
+	* - extra1 = extra notes
+	* - extra2 = extra notes
+	* - validator = validator's name
+	* - ip_addr = IP address of the workstation that send the order
+	* - priority = priority level
+	* - status = record's status
+	* - history = record's history
+	* - modify_id = name of user
+	* - modify_time = modify time stamp in yyyymmddhhMMss format
+	* - create_id = name of use
+	* - create_time = creation time stamp in yyyymmddhhMMss format
+	* - sent_datetime = date and time sent in yyyy-mm-dd hh:MM:ss format
+	* - process_datetime = date and time processed in yyyy-mm-dd hh:MM:ss format
 
 	* @access public
 	* @param int Department number
-	* @param string Determines the final table name 
+	* @param string Determines the final table name
 	* @return mixed adodb record object or boolean
 	*/
 	function OrderDrafts($dept_nr,$type){
@@ -416,27 +416,27 @@ class Product extends Core {
 	* The returned adodb record object contains rows of arrays.
 	* Each array contains order  data with the following index keys:
 	* - order_nr = order's primary key number
-	* - supplier_nr = suplier number      
+	* - supplier_nr = suplier number
 	* - order_date = date of ordering
-	* - order_time = time of ordering   
-	* - articles = ordered articles                
-	* - extra1 = extra notes                
-	* - extra2 = extra notes                
-	* - validator = validator's name                
-	* - ip_addr = IP address of the workstation that send the order            
-	* - priority = priority level                
-	* - status = record's status                
-	* - history = record's history                
-	* - modify_id = name of user                
-	* - modify_time = modify time stamp in yyyymmddhhMMss format              
-	* - create_id = name of use                
-	* - create_time = creation time stamp in yyyymmddhhMMss format    
-	* - sent_datetime = date and time sent in yyyy-mm-dd hh:MM:ss format              
-	* - process_datetime = date and time processed in yyyy-mm-dd hh:MM:ss format              
+	* - order_time = time of ordering
+	* - articles = ordered articles
+	* - extra1 = extra notes
+	* - extra2 = extra notes
+	* - validator = validator's name
+	* - ip_addr = IP address of the workstation that send the order
+	* - priority = priority level
+	* - status = record's status
+	* - history = record's history
+	* - modify_id = name of user
+	* - modify_time = modify time stamp in yyyymmddhhMMss format
+	* - create_id = name of use
+	* - create_time = creation time stamp in yyyymmddhhMMss format
+	* - sent_datetime = date and time sent in yyyy-mm-dd hh:MM:ss format
+	* - process_datetime = date and time processed in yyyy-mm-dd hh:MM:ss format
 
 	* @access public
 	* @param int Suplier number
-	* @param string Determines the final table name 
+	* @param string Determines the final table name
 	* @return mixed adodb record object or boolean
 	*/
 	function OrderDraftsSupplier($supplier_nr,$type){
@@ -454,14 +454,14 @@ class Product extends Core {
 				return $this->res['od'];
 			} else { return false; }
 		} else { return false; }
-	}	
+	}
 	/**
-	* Returns all pending orders or orders with  "acknowledge and print" status. 
+	* Returns all pending orders or orders with  "acknowledge and print" status.
 	*
 	* These orders are marked in the table as "pending" or "ack_print".
 	* For detailed structure of the returned data, see <var>OrderDrafts()</var> method.
 	* @access public
-	* @param string Determines the final table name 
+	* @param string Determines the final table name
 	* @return mixed adodb record object or boolean
 	*/
 	function PendingOrders($type){
@@ -480,7 +480,7 @@ class Product extends Core {
 	* Checks if the product exists based on its primary key number.
 	* @access public
 	* @param int Item number
-	* @param string Determines the final table name 
+	* @param string Determines the final table name
 	* @return boolean
 	*/
 	function ProductExists($nr=0,$type=''){
@@ -499,7 +499,7 @@ class Product extends Core {
 	* Checks if the product exists based on its name.
 	* @access public
 	* @param int Item number
-	* @param string Determines the final table name 
+	* @param string Determines the final table name
 	* @return boolean
 	*/
 	function ProductNameExists($artikelname='',$table=''){
@@ -517,7 +517,7 @@ class Product extends Core {
 	* Checks if the product exists based on its name.
 	* @access public
 	* @param int Item number
-	* @param string Determines the final table name 
+	* @param string Determines the final table name
 	* @return boolean
 	*/
 	function ProductInformation($idsub='',$type){
@@ -529,7 +529,7 @@ class Product extends Core {
 			$tbsub = 'care_pharma_products_main_sub';
 		} else {
 			$tbmain = 'care_med_products_main';
-			$tbsub = 'care_med_products_main_sub';			
+			$tbsub = 'care_med_products_main_sub';
 		}
 		$this->sql="SELECT *
                     FROM $tbmain
@@ -587,7 +587,7 @@ class Product extends Core {
 				return $this->res['od'];
 			} else { return false; }
 		} else { return false; }
-				
+
 	}
 	/**
 	 * function to update the prices of the medicaments on the prescription table
@@ -596,14 +596,14 @@ class Product extends Core {
 	 * 2. update prescription sub with the prices
 	 * 3. update the status to 'done' in prescription
 	 *
-	 * @param int $dept_nr Department number 
+	 * @param int $dept_nr Department number
 	 * @return bool true / false
 	 */
 	function updatePrescriptionPrices($dept_nr){
 		global $db;
 		$doneUpdate = false;
 		if(empty($dept_nr)||!$dept_nr) return false;
-		
+
 		//get the actual prices of the mediaments
 		$this->sql = "SELECT $this->tb_polist.dept_nr,
                            $this->tb_polist.status,
@@ -619,15 +619,15 @@ class Product extends Core {
             if($this->rec_count=$buf->RecordCount()) {
 				$actualPrices = $buf;
 			} else { return false; }
-		} else { return false; } 
-		
+		} else { return false; }
+
 		//update the prices for the prescriptions
 		while($actualProduct = $actualPrices->fetchRow()) {
 			$price = $actualProduct['price'];
 			$bnum = $actualProduct['bestellnum'];
 			$this->sql = "UPDATE $this->tb_prescription,
                                $this->tb_prescription_sub
-                        SET $this->tb_prescription_sub.price = $price, 
+                        SET $this->tb_prescription_sub.price = $price,
                         	$this->tb_prescription_sub.status = 'done'
                         WHERE $this->tb_prescription.nr =
                          $this->tb_prescription_sub.prescription_nr AND

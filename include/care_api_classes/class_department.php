@@ -100,7 +100,7 @@ class Department extends Core {
 	* Constructor
 	* @param int Department number
 	*/
-	function Department($nr=0){
+	function __construct($nr=0){
 		$this->setTable($this->tb);
 		$this->setRefArray($this->tabfields);
 		$this->dept_nr=$nr;
@@ -110,7 +110,7 @@ class Department extends Core {
 	* @access private
 	* @param string WHERE condition of the sql query
 	* @param string Sort item
-	* @param string  Determines the return type whether adodb object (_OBJECT) or assoc array (_ARRAY, '', empty) 
+	* @param string  Determines the return type whether adodb object (_OBJECT) or assoc array (_ARRAY, '', empty)
 	* @return mixed boolean or adodb record object or assoc array, determined by param $ret_type
 	*/
 	function _getalldata($cond='1',$sort='',$ret_type=''){
@@ -137,7 +137,7 @@ class Department extends Core {
 	*/
 	function getAllNoCondition($sort=''){
 	    global $db;
-		
+
 		if(!empty($sort)) $sort=" ORDER BY $sort";
 		$this->sql="SELECT *, LD_var AS \"LD_var\" FROM $this->tb $sort";
 	    if ($this->result=$db->Execute($this->sql)) {
@@ -202,7 +202,7 @@ class Department extends Core {
 	/**
 	* Gets all ACTIVE medical departments. The result is assoc array sorted by departments formal name
 	* @access public
-	* @return  mixed assoc array (sorted by param $sort) or boolean or adodb record object 
+	* @return  mixed assoc array (sorted by param $sort) or boolean or adodb record object
 	*/
 	function getAllMedical() {
 		return $this->_getalldata("type=1 AND is_inactive='0'");
@@ -210,7 +210,7 @@ class Department extends Core {
 	/**
 	* Gets all ACTIVE pharmacys. The result is assoc array sorted by departments formal name
 	* @access public
-	* @return  mixed assoc array (sorted by param $sort) or boolean or adodb record object 
+	* @return  mixed assoc array (sorted by param $sort) or boolean or adodb record object
 	*/
 	function getAllPharmacy() {
 		return $this->_getalldata("type=2 AND is_inactive='0' AND is_pharmacy=1");
@@ -233,7 +233,7 @@ class Department extends Core {
 		} else {
 		    return FALSE;
 		}
-	}	
+	}
 	/**
 	* Gets the id of the pharmacy on wich this department can order. The result is 2 dimensional associative array.
 	* @access public
@@ -252,7 +252,7 @@ class Department extends Core {
 		} else {
 		    return FALSE;
 		}
-	}	
+	}
 	/**
 	* Gets all ACTIVE medical departments. The result is adodb record object sorted by departments formal name
 	* Returns adodb record object sorted by departments formal name
@@ -310,7 +310,7 @@ class Department extends Core {
 	function getAllActiveWithSurgery(){
 		return $this->_getalldata("type=1 AND is_inactive='0' AND does_surgery=1");
 	}
-	
+
 	/**
 	* Gets all department types information. The result is assoc array unsorted.
 	* @access public
@@ -318,7 +318,7 @@ class Department extends Core {
 	*/
 	function getTypes(){
 	    global $db;
-	
+
 	    if ($this->result=$db->Execute("SELECT nr,type,name,LD_var AS \"LD_var\", description FROM $this->tb_types")) {
 		    if ($this->result->RecordCount()) {
 		        return $this->result->GetArray();
@@ -337,7 +337,7 @@ class Department extends Core {
 	*/
 	function getTypeInfo($type_nr){
 	    global $db;
-	
+
 	    if ($this->result=$db->Execute("SELECT type,name,LD_var AS \"LD_var\", description FROM $this->tb_types WHERE nr=$type_nr")) {
 		    if ($this->result->RecordCount()) {
 		        return $this->result->FetchRow();
@@ -481,7 +481,7 @@ class Department extends Core {
 		}
 		return $this->preload_dept['LD_var'];
 	}
-	/** 
+	/**
 	* Gets the item information of a department from the care_department table.
 	* Use only if the department number was previously set with the constructor or with the setDeptNr() method.
 	* @access private
@@ -506,7 +506,7 @@ class Department extends Core {
 		    return FALSE;
 		}
 	}
-	/** 
+	/**
 	* Gets the contact (phone, beeper, etc) of a department from the care_department table.
 	* @access public
 	* @param int Department number
@@ -515,7 +515,7 @@ class Department extends Core {
 	function getPhoneInfo($nr){
 		global $db;
 		$sql="SELECT * FROM $this->tb_cphone WHERE dept_nr=$nr";
-				 
+
 	    if ($this->res['gpi']=$db->Execute($sql)) {
 		   	if ($this->record_count=$this->res['gpi']->RecordCount()) {
 				return $this->res['gpi']->FetchRow();
@@ -539,8 +539,8 @@ class Department extends Core {
 	*/
 	function getAllActiveORNrs(){
 		global $db;
-		$this->sql="SELECT nr, room_nr,info FROM $this->tb_room 
-						WHERE type_nr=2 
+		$this->sql="SELECT nr, room_nr,info FROM $this->tb_room
+						WHERE type_nr=2
 							AND is_temp_closed IN ('',0)
 							AND status NOT IN ('closed',$this->dead_stat)
 						ORDER BY room_nr";
@@ -581,7 +581,7 @@ class Department extends Core {
 				return TRUE;
 			}else{return FALSE;}
 		}else{return FALSE;}
-		
+
 	}
 }
 ?>

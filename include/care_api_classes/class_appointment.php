@@ -71,18 +71,18 @@ class Appointment extends Core {
 									'modify_time',
 									'create_id',
 									'create_time');
-									
+
 	/**
 	* Constructor
 	* @param int Person ID
 	*/
-	function Appointment($pid=''){
+	function __construct($pid=''){
 		if(!empty($pid)) $this->pid=$pid;
 		$this->setTable($this->tb_appt);
 		$this->setRefArray($this->tabfields);
 	}
 	/**
-	* Gets  person's appointment data based on his pid key. 
+	* Gets  person's appointment data based on his pid key.
 	* Returns an ADODB record object or boolean. The return adodb record contains rows of associative array
 	* with index keys corresponding to fieldnames in the $tabfields array.
 	*
@@ -113,7 +113,7 @@ class Appointment extends Core {
 		return $this->getPersonsAppointmentsObj($pid);
 	}
 	/**
-	* Gets  appointment data based on primary record key "nr". 
+	* Gets  appointment data based on primary record key "nr".
 	* Returns  array or boolean. The returned array has index keys corresponding to fieldnames in the $tabfields array.
 	*
 	* For example:
@@ -135,7 +135,7 @@ class Appointment extends Core {
 	}
 	/**
 	* Gets a list of appointments based on a constraint type.
-	* Constraint types are: 
+	* Constraint types are:
 	* -  '_DEPT' = by department nr
 	* -  '_DOC' = by doctor
 	* - '_PRIO' =  by priority
@@ -150,7 +150,7 @@ class Appointment extends Core {
 	*/
 	function _getAll($y=0,$m=0,$d=0,$by='',$val=''){
 		global $db, $sql_LIKE;
-		
+
 		# Set to defaults if empty
 		if(!$y) $y=date('Y');
 		if(!$m) $b=date('m');
@@ -244,7 +244,7 @@ class Appointment extends Core {
 	* @param string Person who made the cancellation
 	* @return boolean
 	*/
-	function cancelAppointment($nr='',$reason='',$by=''){	
+	function cancelAppointment($nr='',$reason='',$by=''){
 		if(empty($nr)) return false;
 		$buffer['history']=$this->ConcatHistory("Cancel: ".date('Y-m-d H:i:s')." : ".$by."\n");
 		$buffer['appt_status']='cancelled';

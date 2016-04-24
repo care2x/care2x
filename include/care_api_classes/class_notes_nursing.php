@@ -1,7 +1,7 @@
 <?php
 /**
 * API class for Nursing Notes and Documentation.
-*  Core 
+*  Core
 *   |_ Notes
 *         |_ NursingNotes
 * @package care_api
@@ -23,15 +23,15 @@ require_once($root_path.'include/care_api_classes/class_notes.php');
 class NursingNotes extends Notes {
 	/**
 	* Constructor
-	*/			
-	function NursingNotes(){
-		$this->Notes();
+	*/
+	function __construct(){
+		parent::__construct();
 	}
 	/**
 	* Checks if nursing report record exists in the database.
 	* @param int Encounter number
 	* @return boolean
-	*/			
+	*/
 	function Exists($enr){
 		if($this->_RecordExists("type_nr=15 AND encounter_nr=$enr")){
 			return true;
@@ -41,17 +41,17 @@ class NursingNotes extends Notes {
 	* Checks if nursing effectivity report record exists in the database.
 	* @param int Encounter number
 	* @return boolean
-	*/			
+	*/
 	function EffectivityExists($enr){
 		if($this->_RecordExists("type_nr=17 AND encounter_nr=$enr")){
 			return true;
 		}else{return false;}
-	}	
+	}
 	/**
 	* Checks if daily ward notes record exists in the database.
 	* @param int Encounter number
 	* @return mixed integer = record number if exists, FALSE=boolean if not exists
-	*/			
+	*/
 	function DailyWardNotesExists($enr){
 		$buf;
 		if($this->_RecordExists("type_nr=6 AND encounter_nr=$enr")){
@@ -63,7 +63,7 @@ class NursingNotes extends Notes {
 	* Gets a nursing report based on the encounter_nr key.
 	* @param int Encounter number
 	* @return mixed adodby record object if exists, FALSE=boolean if not exists
-	*/			
+	*/
 	function getNursingReport($enr){
 		if($this->_getNotes(" type_nr=15 AND encounter_nr=$enr","ORDER BY date,time")){
 			return $this->result;
@@ -75,7 +75,7 @@ class NursingNotes extends Notes {
 	* Gets a nursing effectivity report based on the encounter_nr key.
 	* @param int Encounter number
 	* @return mixed adodby record object if exists, FALSE=boolean if not exists
-	*/			
+	*/
 	function getEffectivityReport($enr){
 		if($this->_getNotes(" type_nr=17 AND encounter_nr=$enr","ORDER BY date,time")){
 			return $this->result;
@@ -87,7 +87,7 @@ class NursingNotes extends Notes {
 	* Gets both nursing report and effectivity report based on the encounter_nr key.
 	* @param int Encounter number
 	* @return mixed adodby record object if exists, FALSE=boolean if not exists
-	*/			
+	*/
 	function getNursingAndEffectivityReport($enr){
 		global $db;
 		$this->sql="SELECT n.*,
@@ -105,7 +105,7 @@ class NursingNotes extends Notes {
 			if($this->result->RecordCount()){
 				return $this->result;
 			}else{return false;}
-		}else{ 
+		}else{
 			return false;
 		}
 	}
@@ -115,7 +115,7 @@ class NursingNotes extends Notes {
 	* The data must be contained in an associative array and passed by reference.
 	* @param array Nursing data in associative array. Reference pass.
 	* @return boolean
-	*/			
+	*/
 	function saveNursingReport(&$data){
 		if(empty($data)){
 			return false;
@@ -135,7 +135,7 @@ class NursingNotes extends Notes {
 	* The data must be contained in an associative array and passed by reference.
 	* @param array Nursing effectivity data in associative array. Reference pass.
 	* @return boolean
-	*/			
+	*/
 	function saveEffectivityReport(&$data){
 		if(empty($data)){
 			return false;
@@ -154,7 +154,7 @@ class NursingNotes extends Notes {
 	* Gets the date range of a nursing report.
 	* @param int Encounter number
 	* @return mixed 1 dimensional array or boolean
-	*/			
+	*/
 	function getNursingReportDateRange($enr){
 		if($this->_getNotesDateRange($enr,0,"encounter_nr=$enr AND (type_nr=15 OR type_nr=17)")){
 			return $this->result->FetchRow();
@@ -164,7 +164,7 @@ class NursingNotes extends Notes {
 	* Gets all daily notes data of an encounter number.
 	* @param int Encounter number
 	* @return mixed adodb record object or boolean
-	*/			
+	*/
 	function getDailyWardNotes($enr){
 		if($this->_getNotes("type_nr=6 AND encounter_nr=$enr","ORDER BY date,time")){
 			return $this->result;
@@ -176,9 +176,9 @@ class NursingNotes extends Notes {
 	* Saves a ward notes of a day.
 	* @param string Ward notes. Reference pass.
 	* @return boolean
-	*/			
+	*/
 	function saveDailyWardNotes(&$data){
-		$buf;	
+		$buf;
 		if(empty($data)){
 			return false;
 		}else{

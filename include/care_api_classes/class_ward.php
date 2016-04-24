@@ -96,18 +96,18 @@ class Ward extends Encounter {
 									'create_id',
 									'create_time');
 	/**#@-*/
-	
+
 	/**
-	* Constructor 
+	* Constructor
 	* @param int Ward number
 	*/
-	function Ward($ward_nr=0) {
+	function __construct($ward_nr=0) {
 	    $this->ward_nr=$ward_nr;
-		$this->Encounter();
-	}	
+		parent::__construct();
+	}
 	/**
 	* Sets the department number buffer.
-	* 
+	*
 	* @access public
 	*/
 	function setDeptNr($dept_nr) {
@@ -115,7 +115,7 @@ class Ward extends Encounter {
 	}
 	/**
 	* Sets core object to point to the care_ward table
-	* 
+	*
 	* @access private
 	*/
 	function _useWard(){
@@ -124,7 +124,7 @@ class Ward extends Encounter {
 	}
 	/**
 	* Returns items of all wards.
-	* 
+	*
 	* @access public
 	* @param string Field names of items to be fetched
 	* @return mixed adodb record object or boolean
@@ -145,13 +145,13 @@ class Ward extends Encounter {
         //echo $this->sql;
         if($this->res['gawio']=$db->Execute($this->sql)) {
             if($this->rec_count=$this->res['gawio']->RecordCount()) {
-				 return $this->res['gawio'];	 
+				 return $this->res['gawio'];
 			} else { return false; }
 		} else { return false; }
 	}
 	/**
 	* Returns all wards data.
-	* 
+	*
 	* The returned adodb record object contains rows of arrays.
 	* Each array contains the  data with the following index keys:
 	* - all ward index keys as outlined in the <var>$fld_ward</var> variable
@@ -167,15 +167,15 @@ class Ward extends Encounter {
         //echo $this->sql;
         if($this->result=$db->Execute($this->sql)) {
             if($this->result->RecordCount()) {
-				 return $this->result;	 
+				 return $this->result;
 			} else { return false; }
 		} else { return false; }
 	}
 	/**
 	* Returns items of all wards.
-	* 
-	* Similar to getAllWardsItemsObject() but returns a 2 dimensional array.  
-	* 
+	*
+	* Similar to getAllWardsItemsObject() but returns a 2 dimensional array.
+	*
 	* @access public
 	* @param string Field names of items to be fetched
 	* @return mixed array or boolean
@@ -185,19 +185,19 @@ class Ward extends Encounter {
 	    $this->sql="SELECT $items  FROM $this->tb_ward WHERE  status NOT IN ('hidden','deleted','closed','inactive')";
         if($this->result=$db->Execute($this->sql)) {
             if($this->result->RecordCount()) {
-				 return $this->result->GetArray(); 
+				 return $this->result->GetArray();
 			} else { return false; }
-		} else { return false; }	
+		} else { return false; }
 	}
 	/**
 	* Returns all wards data.
-	* 
-	* Similar to getAllWardsDataObject() but returns a 2 dimensional array.  
+	*
+	* Similar to getAllWardsDataObject() but returns a 2 dimensional array.
 	* Data returned have index keys as outlined in the <var>$fld_ward</var> array.
-	* 
+	*
 	* @access public
 	* @return mixed array or boolean
-	*/	
+	*/
 	function getAllWardsDataArray() {
 	    global $db;
 	    $this->sql="SELECT *  FROM $this->tb_ward WHERE 1";
@@ -205,7 +205,7 @@ class Ward extends Encounter {
         if($this->result=$db->Execute($this->sql)) {
             if($this->result->RecordCount()) {
 				 while($this->buffer_array=$this->result->FetchRow());
-				 return $this->buffer_array; 
+				 return $this->buffer_array;
 			} else { return false; }
 		} else { return false; }
     }
@@ -214,20 +214,20 @@ class Ward extends Encounter {
 	* @access public
 	* @param int Record number
 	* @return mixed string or boolean
-	*/	
+	*/
 	function WardName($nr){
 	    global $db;
 		if(empty($nr)) return false;
         if($this->result=$db->Execute("SELECT name FROM $this->tb_ward WHERE nr=$nr")) {
             if($this->result->RecordCount()){
 				 $this->row=$this->result->FetchRow();
-				 return $this->row['name'];	 
+				 return $this->row['name'];
 			} else { return false; }
 		} else { return false; }
 	}
 	/**
 	* Returns ward information.
-	* 
+	*
 	* The returned  array contains the  data with the following index keys:
 	* - all ward index keys as outlined in the <var>$fld_ward</var> variable
 	* - dept_name = Department default name
@@ -242,13 +242,13 @@ class Ward extends Encounter {
 					WHERE w.nr=$ward_nr AND w.status NOT IN ('closed',$this->dead_stat)";
         if($this->res['gwi']=$db->Execute($this->sql)) {
             if($this->rec_count=$this->res['gwi']->RecordCount()) {
-				 return $this->res['gwi']->FetchRow();	 
+				 return $this->res['gwi']->FetchRow();
 			} else { return false; }
 		} else { return false; }
-	}	
+	}
 	/**
 	* Returns room information.
-	* 
+	*
 	* The returned adodb record object contains a row of array.
 	* This array contains the  data with index keys as outlined in the <var>$fld_room</var> variable
 	*
@@ -263,13 +263,13 @@ class Ward extends Encounter {
 		$this->sql="SELECT * FROM $this->tb_room WHERE type_nr=1 AND ward_nr=$ward_nr AND room_nr  >= '$s_nr' AND room_nr <= '$e_nr' AND  status NOT IN ($this->dead_stat) ORDER BY room_nr";
 		if($this->result=$db->Execute($this->sql)) {
             if($this->rec_count=$this->result->RecordCount()) {
-				 return $this->result;	 
+				 return $this->result;
 			} else {return false; }
 		} else {return false; }
-	}	
+	}
 	/**
 	* Returns ward occupants (inpatients) information.
-	* 
+	*
 	* The object is stored in the internal buffer <var>$result</var>.
 	* This adodb record object contains rows of arrays.
 	* Each array contains the  data with the following index keys:
@@ -297,13 +297,13 @@ class Ward extends Encounter {
 	*/
 	function _getWardOccupants($ward_nr,$date){
 		global $db, $dbf_nodate;
-		
+
 		if($date==date('Y-m-d')) $pstat='discharged';
 			else $pstat='dummy';
-			
+
 		$this->sql="SELECT r.location_nr AS room_nr,
 									r.nr AS room_loc_nr,
-									b.location_nr AS bed_nr, 
+									b.location_nr AS bed_nr,
 									b.encounter_nr,
 									b.nr AS bed_loc_nr,
 									p.pid,
@@ -317,20 +317,20 @@ class Ward extends Encounter {
 									i.name AS insurance_name,
 									i.LD_var AS \"insurance_LDvar\",
 									n.nr AS ward_notes
-							FROM $this->tb_location AS r 
+							FROM $this->tb_location AS r
 									LEFT JOIN $this->tb_location AS b  ON 	(r.encounter_nr=b.encounter_nr
-																								AND r.group_nr=b.group_nr 
-																								AND	b.type_nr=5 
+																								AND r.group_nr=b.group_nr
+																								AND	b.type_nr=5
 																								AND b.status NOT IN ('$pstat','closed',$this->dead_stat)
 																								AND b.date_from<='$date'
 										 														AND ('$date'<=b.date_to OR b.date_to ='$dbf_nodate')
-																								)	
+																								)
 									LEFT JOIN $this->tb_enc AS e ON b.encounter_nr=e.encounter_nr
 									LEFT JOIN $this->tb_person AS p ON e.pid=p.pid
 									LEFT JOIN $this->tb_ic AS i ON e.insurance_class_nr=i.class_nr
 									LEFT JOIN $this->tb_notes AS n ON b.encounter_nr=n.encounter_nr AND n.type_nr=6
-							WHERE  r.group_nr=$ward_nr 
-											AND	r.type_nr=4 
+							WHERE  r.group_nr=$ward_nr
+											AND	r.type_nr=4
 											AND r.status NOT IN ('$pstat','closed',$this->dead_stat)
 										 	AND ('$date'<=r.date_to OR r.date_to ='$dbf_nodate')
 							/*GROUP BY r.location_nr*/
@@ -348,7 +348,7 @@ class Ward extends Encounter {
 	}
 	/**
 	* Returns ward occupants (inpatients) information on a given date.
-	* 
+	*
 	* For detailed structure of the returned data, see the <var>_getWardOccupants()</var> method.
 	* @access public
 	* @param int Ward number
@@ -378,7 +378,7 @@ class Ward extends Encounter {
 	}
 	/**
 	* Closes a bed.
-	* 
+	*
 	* @access public
 	* @param int Ward number
 	* @param int Room number
@@ -392,7 +392,7 @@ class Ward extends Encounter {
 	}
 	/**
 	* Opens a bed.
-	* 
+	*
 	* @access public
 	* @param int Ward number
 	* @param int Room number
@@ -472,7 +472,7 @@ class Ward extends Encounter {
 			}else{return false;}
 		}else{return false;}
 	}
-	/** 
+	/**
 	* Checks if there is at least one patient admitted in the ward.
 	* @access public
 	* @param int Ward id
@@ -480,11 +480,11 @@ class Ward extends Encounter {
 	*/
 	function hasPatient($nr){
 		global $db;
-		$this->sql="SELECT nr FROM $this->tb_location 
-						WHERE type_nr=4 
-							AND group_nr=$nr 
-							AND date_from NOT  IN  ('0000-00-00','') 
-							AND date_to  IN  ('0000-00-00','') 
+		$this->sql="SELECT nr FROM $this->tb_location
+						WHERE type_nr=4
+							AND group_nr=$nr
+							AND date_from NOT  IN  ('0000-00-00','')
+							AND date_to  IN  ('0000-00-00','')
 							AND status NOT IN ('closed','inactive','void','hidden','deleted')";
 		if($this->result=$db->Execute($this->sql)){
 			if($this->result->RecordCount()){
@@ -511,10 +511,10 @@ class Ward extends Encounter {
 			$action='Closed temporary';
 		}else{
 			$action='Reopened';
-		} 
+		}
 		$data['history']="CONCAT(history,'$action: ".date('Y-m-d H:i:s')." ".$_SESSION['sess_user_name']."\n')";
 		$data['modify_id']=$_SESSION['sess_user_name'];
-		$this->data_array=$data;		
+		$this->data_array=$data;
 		return $this->updateDataFromInternalArray($nr);
 	}
 	/**
@@ -556,7 +556,7 @@ class Ward extends Encounter {
 	/**
 	* Returns information of all ACTIVE wards.
 	*
-	* 
+	*
 	* The returned adodb record object contains rows of arrays.
 	* Each array contains the  data with the following index keys:
 	* - all ward index keys as outlined in the <var>$fld_ward</var> variable
@@ -569,13 +569,13 @@ class Ward extends Encounter {
 	function getAllActiveWards() {
 	    global $db;
 	    $this->sql="SELECT w.*,d.name_formal AS dept_name
-						FROM $this->tb_ward AS w 
+						FROM $this->tb_ward AS w
 							LEFT JOIN $this->tb_dept AS d ON w.dept_nr=d.nr
 				 		WHERE w.status NOT IN ('closed','inactive','void','hidden','deleted')";
         //echo $this->sql;
         if($this->result=$db->Execute($this->sql)) {
             if($this->result->RecordCount()) {
-				 return $this->result;	 
+				 return $this->result;
 			} else { return false; }
 		} else { return false; }
 	}
@@ -655,9 +655,9 @@ class Ward extends Encounter {
 		if(!$room_nr) return false;
 		if($ward_nr) $this->ward_nr=$ward_nr;
 			elseif(!$this->ward_nr) return false;
-		$this->sql="SELECT room_nr FROM $this->tb_room 
-							WHERE ward_nr=$this->ward_nr 
-								AND room_nr=$room_nr 
+		$this->sql="SELECT room_nr FROM $this->tb_room
+							WHERE ward_nr=$this->ward_nr
+								AND room_nr=$room_nr
 								AND date_close = '$dbf_nodate'
 								AND status NOT IN ($this->dead_stat)";
         if($this->result=$db->Execute($this->sql)) {
@@ -668,7 +668,7 @@ class Ward extends Encounter {
 	}
 	/**
 	* Gets one/all active (not closed) room(s) information.
-	* 
+	*
 	* The resulting adodb object is stored in the internal buffer <var>$result</var>.
 	*
 	* param room_nr = the room number. If supplied, the open room's info will be returned, else all open rooms info will be returned.
@@ -690,22 +690,22 @@ class Ward extends Encounter {
 	    //$db->debug=1;
 		if($ward_nr) $this->ward_nr=$ward_nr;
 			elseif(!$this->ward_nr) return false;
-		$this->sql="SELECT * FROM $this->tb_room 
+		$this->sql="SELECT * FROM $this->tb_room
 							WHERE ward_nr=$this->ward_nr";
-							
+
 		if($room_nr) $this->sql.=" AND room_nr=$room_nr";
 
 		$this->sql.="  AND date_close = '$dbf_nodate' AND status NOT IN ($this->dead_stat)";
-							
+
         if($this->result=$db->Execute($this->sql)) {
             if($this->result->RecordCount()) {
 				 return true;
 			} else { return false; }
 		} else { return false; }
 	}
-	/** 
+	/**
 	* Gets all active rooms information.
-	* 
+	*
 	* The returned adodb record object contains rows of arrays.
 	* Each array contains the  data with index keys as outlined in the <var>$fld_room</var> variable
 	*
@@ -718,9 +718,9 @@ class Ward extends Encounter {
 			return $this->result;
 		} else { return false; }
 	}
-	/** 
+	/**
 	* Gets one active room information.
-	* 
+	*
 	* The returned adodb record object contains a row of array.
 	* This array contains the  data with index keys as outlined in the <var>$fld_room</var> variable
 	*
@@ -743,7 +743,7 @@ class Ward extends Encounter {
 	*/
 	function countBeds($ward_nr){
 	    global $db;
-		$this->sql="SELECT SUM(nr_of_beds) AS nr FROM $this->tb_room WHERE ward_nr=$ward_nr AND 
+		$this->sql="SELECT SUM(nr_of_beds) AS nr FROM $this->tb_room WHERE ward_nr=$ward_nr AND
 		is_temp_closed IN ('',0) AND status NOT IN ($this->dead_stat)";
         if($buf=$db->Execute($this->sql)) {
             if($buf->RecordCount()) {
@@ -777,7 +777,7 @@ class Ward extends Encounter {
 			else $cond='';
 		//if(empty($key)) return false;
 		$this->sql="SELECT e.encounter_nr, e.encounter_class_nr, e.current_ward_nr, p.pid, p.name_last, p.name_first, p.date_birth, p.sex,w.ward_id
-				FROM $this->tb_enc AS e 
+				FROM $this->tb_enc AS e
 					LEFT JOIN $this->tb_person AS p ON e.pid=p.pid
 					LEFT JOIN $this->tb_ward AS w ON e.current_ward_nr=w.nr
 				WHERE e.encounter_class_nr='1' AND  e.is_discharged IN ('',0) $cond AND  in_ward IN ('',0)";
@@ -811,7 +811,7 @@ class Ward extends Encounter {
 		$this->sql="SELECT w.ward_id,w.name AS ward_name, w.roomprefix,
 							d.id AS dept_id,d.name_formal AS dept_name,
 							r.location_nr AS room_nr, b.location_nr AS bed_nr
-				FROM $this->tb_enc AS e 
+				FROM $this->tb_enc AS e
 					LEFT JOIN $this->tb_ward AS w ON e.encounter_class_nr=1 AND e.current_ward_nr=w.nr
 					LEFT JOIN $this->tb_dept AS d ON (e.encounter_class_nr=1 AND e.current_ward_nr=w.nr AND w.dept_nr = d.nr)
 																	OR	(e.encounter_class_nr=2 AND e.current_dept_nr=d.nr)

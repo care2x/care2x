@@ -29,7 +29,7 @@ class Insurance_tz extends Core {
   var $pid;
 
   // Constructor
-  function Insurance_tz() {
+  function __construct() {
     return TRUE;
   }
 
@@ -168,22 +168,22 @@ class Insurance_tz extends Core {
 	  	$this->sql="SELECT com.id, com.name,com.contact, com.email, com.phone_code, com.phone_nr, com.po_box, com.city, com.hide_company_flag,
         ins.cancel_flag,ins.start_date,ins.end_date
 
-        FROM 
+        FROM
 
         ( SELECT max(care_tz_insurance.id) as c_id,care_tz_company.id FROM
 
         care_tz_insurance
-         INNER JOIN care_tz_company  ON care_tz_insurance.company_id=care_tz_company.id  GROUP BY care_tz_company.id  
+         INNER JOIN care_tz_company  ON care_tz_insurance.company_id=care_tz_company.id  GROUP BY care_tz_company.id
 
         ) as ins_q
-		
+
 		INNER JOIN care_tz_insurance as ins ON
-        ins_q.c_id      =  ins.id 
+        ins_q.c_id      =  ins.id
 		RIGHT JOIN care_tz_company as com ON
         ins_q.id      =  com.id  ".$hide_sql1." ORDER BY com.id ASC";
-		
-		
-		
+
+
+
     else {
       // This gives a list of companies what are somehow dedicated to a list of contracted companies
       // No check if the contract is valid to any time period...
@@ -980,7 +980,7 @@ class Insurance_tz extends Core {
 		  else
 				$bg="#ffffaa";
 
-		 
+
 
 		  echo '
 		  <tr bgcolor='.$bg.'>
@@ -1349,7 +1349,7 @@ function CheckCurrentContractValidity($company_id) {
 		else
 		return false;
 	}
-	else { 
+	else {
 		return false;
 
 	}
@@ -1842,7 +1842,7 @@ ORDER BY `care_tz_insurance`.`company_id` ASC
     $debug=FALSE;
     ($debug) ? $db->debug=TRUE : $db->debug=FALSE;
 
-	
+
 	$this->sql="SELECT name FROM care_tz_company where id=".$id;
 	$this->result = $db->Execute($this->sql);
 	$return_value="";
@@ -1872,7 +1872,7 @@ ORDER BY `care_tz_insurance`.`company_id` ASC
 	function allocatePrescriptionsToinsurance($bill_number, $prescriptions_nr, $insurance_payment,$insurance_id) {
 	  	global $db;
 	    $debug=FALSE;
-	
+
 	    ($debug) ? $db->debug=TRUE : $db->debug=FALSE;
 	    $this->sql = "SELECT ID, amount, price FROM care_tz_billing_elem where nr=$bill_number AND prescriptions_nr=$prescriptions_nr AND is_medicine=1";
 	    if ($this->result=$db->Execute($this->sql)) {

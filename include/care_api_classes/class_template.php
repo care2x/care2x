@@ -3,7 +3,7 @@
 * @package care_api
 */
 /**
-*  Template methods. 
+*  Template methods.
 *  Note this class should be instantiated only after a "$db" adodb  connector object  has been established by an adodb instance.
 * @author Elpidio Latorilla
 * @version beta 2.0.1
@@ -23,40 +23,40 @@ class Template{
 	var $template;
 	/**
 	* Default template path, modify if you placed the template somewhere else. Will be attempted for use if the path is not passed the object.
-	* @var string 
+	* @var string
 	*/
 	var $default_path='gui/html_template/';
 	/**
 	* Default template theme.
-	* @var string 
+	* @var string
 	*/
 	var $default_theme='default';
 	/**
 	* Template directory.
-	* @var string 
+	* @var string
 	*/
 	var $tp_dirs=array();
 	/**
 	* Root path to template file.
-	* @var string 
+	* @var string
 	*/
 	var $tp_root;
 	/**
 	* Path to template file.
-	* @var string 
+	* @var string
 	*/
 	var $tp_path;
 	/**
 	* Main path to template file.
-	* @var string 
+	* @var string
 	*/
 	var $tp_main_path;
 	/**
 	* Template theme.
-	* @var string 
+	* @var string
 	*/
 	var $tp_theme;
-	
+
 	/**
 	* Constructor
 	* @access public
@@ -64,7 +64,7 @@ class Template{
 	* @param string  Path of template source file.
 	* @param string The template theme.
 	*/
-	function Template($root='./',$path='',$theme='default'){
+	function __construct($root='./',$path='',$theme='default'){
 		$this->tp_root=$root;
 		if(empty($path)) $this->tp_path=$root.$this->default_path;
 			else $this->tp_path=$path;
@@ -72,7 +72,7 @@ class Template{
 		$this->tp_theme=$theme;
 	}
 	/**
-	* Sets the template path 
+	* Sets the template path
 	* @access public
 	* @param string Path to template source file
 	* @return boolean
@@ -84,7 +84,7 @@ class Template{
 		return true;
 	}
 	/**
-	* Sets the template theme 
+	* Sets the template theme
 	* @access public
 	* @param string  Template theme
 	*/
@@ -92,7 +92,7 @@ class Template{
 		if(empty($theme)) return false;
 		$this->tp_theme=$theme;
 	}
-	/** 
+	/**
 	* Sets the template path to the main path which was set at the construction time
 	* @access public
 	* @return boolean
@@ -113,12 +113,12 @@ class Template{
 	function _getTemplates(){
 		$handle=opendir($this->tp_path.'.');  // Modify this path if you have placed the language tables somewhere else
 		$this->tp_dirs=array();
-		while (false!==($tp = readdir($handle))) { 
+		while (false!==($tp = readdir($handle))) {
    			if ($tp != '.' && $tp != '..') {
 				if(is_dir($this->tp_path.$tp)){
 					$this->tp_dirs[$tp]=$tp;
 				}
-			} 
+			}
 		}
 		@asort($this->tp_dirs,SORT_STRING);
 	}
@@ -126,7 +126,7 @@ class Template{
 	* Loads the template file and appends/prepends '"' at the loaded string. Will return the template contents if succesful.
 	* @access public
 	*@param string Template filename.
-	* @return mixed  string boolean 
+	* @return mixed  string boolean
 	*/
 	function load($tp_fn){
 		if(!empty($tp_fn)){

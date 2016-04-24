@@ -7,7 +7,7 @@
 */
 require_once($root_path.'include/care_api_classes/class_core.php');
 /**
-*  Image methods. 
+*  Image methods.
 *  Note this class should be instantiated only after a "$db" adodb  connector object  has been established by an adodb instance
 * @author Elpidio Latorilla
 * @version beta 2.0.1
@@ -24,7 +24,7 @@ class Image extends Core{
 	* Table name for diagnostics images data
 	* @var string
 	*/
-	var $tb_img_diag='care_encounter_img_diagnostic'; 
+	var $tb_img_diag='care_encounter_img_diagnostic';
 	/**
 	* Default filter string for allowed file extensions
 	* @var string
@@ -82,11 +82,11 @@ class Image extends Core{
 									'modify_time',
 									'create_id',
 									'create_time');
-										
+
 	/**
 	* Constructor
 	*/
-	function Image(){
+	function __construct(){
 		$this->coretable=$this->tb_image;
 		$this->ref_array=$this->fld_image;
 	}
@@ -181,7 +181,7 @@ class Image extends Core{
 	}
 	/**
 	* Saves all data pertinent to the image.
-	* 
+	*
 	* If successful, the last insert ID will be returned.
 	* @access public
 	* @param array Data to be saved.
@@ -295,7 +295,7 @@ class Image extends Core{
 				$key=(int)$key;
 				$this->sql.=" WHERE (i.encounter_nr = $key OR i.pid = $key)";
 			}else{
-				$this->sql.=" WHERE (i.encounter_nr $sql_LIKE '$key%' 
+				$this->sql.=" WHERE (i.encounter_nr $sql_LIKE '$key%'
 						OR i.pid $sql_LIKE '$key%'
 						OR p.name_last $sql_LIKE '$key%'
 						OR p.name_first $sql_LIKE '$key%' )";
@@ -304,7 +304,7 @@ class Image extends Core{
 		}else{
 			$this->sql.=' WHERE';
 		}
-		$this->sql.="  i.pid=p.pid AND i.img_type='dicom' AND i.status NOT IN ('cancelled',$this->dead_stat) 
+		$this->sql.="  i.pid=p.pid AND i.img_type='dicom' AND i.status NOT IN ('cancelled',$this->dead_stat)
 					ORDER BY p.name_last, p.name_first, i.pid";
 		//echo $this->sql;
 	    if ($this->res['pdi']=$db->Execute($this->sql)) {
@@ -312,7 +312,7 @@ class Image extends Core{
 				return $this->res['pdi'];
 			}else{return false;}
 		}else{return false;}
-	}	
+	}
 	/**
 	* Gets a dicom image based on its primary key number.
 	*
@@ -330,7 +330,7 @@ class Image extends Core{
 				return $this->res['gdi']->FetchRow();
 			}else{return false;}
 		}else{return false;}
-	}	
+	}
 	/**
 	* Sets the core table and fields to care_encounter_img_diagnostic table.
 	*/
@@ -397,7 +397,7 @@ class Image extends Core{
 		    } else { return false;}
 		} else { return false;}
 	}
-	
+
 	/*
 	* Returns the GD version
 	*/
