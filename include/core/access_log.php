@@ -24,14 +24,14 @@ class AccessLog {
 	private $TF = "THISFILE";
 	private $FF = "FILEFORWARD";
 	private $LS = "LOGIN_SUCCESS";
-		
 
-	function AccessLog(  ) {
+
+	function __construct(  ) {
 		global $dbtype,$dbhost,$dbusername,$dbpassword,$dbname;
-		
-		$this->conn = ADONewConnection($dbtype); 
+
+		$this->conn = ADONewConnection($dbtype);
 		$this->conn->PConnect($dbhost,$dbusername,$dbpassword,$dbname);
-		
+
 		if (!$this->conn){
     		$error_object = ADODB_Pear_Error();
     		die($error_object->message);
@@ -41,17 +41,17 @@ class AccessLog {
 	public function RenderLogsTable ( $sql ) {
 
 		$pager = new ADODB_Pager($this->conn,$sql);
-    	return $pager->Render($rows_per_page=10); 
-		
+    	return $pager->Render($rows_per_page=10);
+
 	}
-	
+
 	/*
 	 * writes a log line
 	 */
 	public function writeline( $datetime = '', $ip = '', $lognote = '',
 							$userid = '', $username = '', $password = '',
 							$thisfile = '', $fileforward = '', $loginsuccess = '0' ) {
-								
+
 		$rs = $this->conn->Execute( "INSERT INTO " . $this->TB . " ( "
 				. $this->DT . ", "
 				. $this->IP . ", "
@@ -76,7 +76,7 @@ class AccessLog {
 		if (!$rs){
     		$error_object = ADODB_Pear_Error();
     		die($error_object->getMessage());
-		}				
+		}
 
 		return true;
 	}
