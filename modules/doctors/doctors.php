@@ -1,12 +1,12 @@
 <?php
-//error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
+error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
 /**
 * CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
 * GNU General Public License
 * Copyright 2002,2003,2004,2005 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -19,9 +19,9 @@ if(!isset($_SESSION['sess_path_referer'])) $_SESSION['sess_path_referer'] = "";
 $breakfile=$root_path.'main/startframe.php'.URL_APPEND;
 
 $_SESSION['sess_path_referer']=$top_dir.basename(__FILE__);
-# Erase the cookie 
+# Erase the cookie
 if(isset($_COOKIE['ck_doctors_dienstplan_user'.$sid])) setcookie('ck_doctors_dienstplan_user'.$sid,'',0,'/');
-# erase the user_origin 
+# erase the user_origin
 if(isset($_SESSION['sess_user_origin'])) $_SESSION['sess_user_origin']='';
 
 # Start Smarty templating here
