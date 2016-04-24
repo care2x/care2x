@@ -6,7 +6,7 @@ require($root_path.'include/core/inc_environment_global.php');
 * CARE2X Integrated Hospital Information System Deployment 2.2 - 2006-07-10
 * GNU General Public License
 * Copyright 2002,2003,2004,2005,2006 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -27,7 +27,7 @@ $_SESSION['sess_user_origin']='pharma';
 require ($root_path.'include/care_api_classes/class_access.php');
 $access = new Access($_SESSION['sess_login_userid'],$_SESSION['sess_login_pw']);
 $hideOrder = 0;
-if(ereg("_a_1_pharmadbadmin",$access->PermissionAreas()))
+if(preg_match("/_a_1_pharmadbadmin/",$access->PermissionAreas()))
 	$hideOrder = 1;
 
 	# Start Smarty templating here
@@ -55,7 +55,7 @@ if(ereg("_a_1_pharmadbadmin",$access->PermissionAreas()))
 
  # Window bar title
  $smarty->assign('title',$LDPharmacy);
- 
+
  # Add the bot onLoad code
 
  if(isset($stb) && $stb) $smarty->assign('sOnLoadJs','onLoad="startbot()"');
@@ -70,7 +70,7 @@ if(ereg("_a_1_pharmadbadmin",$access->PermissionAreas()))
 function closewin() {
 	location.href='startframe.php?sid=<?php echo "$sid&lang=$lang";?>';
 }
-<?php 
+<?php
 
 if($stb)
 echo '
@@ -84,7 +84,7 @@ function startbot() {
 </script>
 
 <?php
-	
+
 $sTemp = ob_get_contents();
 ob_end_clean();
 
@@ -101,7 +101,7 @@ ob_end_clean();
 					createComIcon($root_path,'storage.gif','0'),
 					createComIcon($root_path,'sitemap_animator.gif','0'),
 					createComIcon($root_path,'bubble.gif','0'),
-					createComIcon($root_path,'redlist.gif','0')										
+					createComIcon($root_path,'redlist.gif','0')
 					);
 
 // Prepare the submenu item descriptions

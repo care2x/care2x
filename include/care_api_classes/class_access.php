@@ -22,7 +22,7 @@ class Access extends Core {
 	* Users table name
 	* @var string
 	*/
-	var $tb_role='care_user_roles';	
+	var $tb_role='care_user_roles';
 	/**
 	* Holder for user data in associative array
 	* @var array
@@ -107,9 +107,9 @@ class Access extends Core {
 	function roleAccess($id){
 		$this->coretable=$tb_role;
 		return $this->loadRole($id);
-	}	
+	}
 	/**
-	* Loads the user data and checks its access status. 
+	* Loads the user data and checks its access status.
 	* Use if login and password were not passed during construction OR if a new access data is to be loaded using the same object instance.
 	*
 	* For example:
@@ -144,18 +144,18 @@ class Access extends Core {
 			if(!empty($this->pw)) $pw=$this->pw;
 				else return FALSE;
 		}
-		$this->sql="SELECT name,login_id,password, permission, lockflag FROM $this->tb_user WHERE login_id ='".addslashes($login)."'";		
+		$this->sql="SELECT name,login_id,password, permission, lockflag FROM $this->tb_user WHERE login_id ='".addslashes($login)."'";
 		$result = $db->Execute($this->sql);
-		if ($result) {			
+		if ($result) {
 		    if ($this->rec_count=$result->RecordCount()) {
 		       $this->user=$result->FetchRow();
 			   $this->usr_status=TRUE; # User is known
 				if($this->user['password']==md5($pw)){
 					$this->pw_status=TRUE; # Password is valid
-				}				
+				}
 				if((int)$this->user['lockflag']){
 					$this->lock_status=TRUE; # Access is locked
-				}				
+				}
 			   return TRUE;
 			}else{
 				$usr_status=FALSE;
@@ -262,7 +262,7 @@ class Access extends Core {
 	*/
 	function PermittedDepartment(){
 		return unserialize($this->user['dept_nr']);
-	}	
+	}
 	/**
 	* Checks if the user is permitted in a given protected area.
 	*
@@ -304,15 +304,15 @@ class Access extends Core {
 		if(empty($user_area)){
 			return FALSE;
 		}else{
-			if(ereg('System_Admin', $user_area)){  // if System_admin return true
+			if(preg_match('/System_Admin/', $user_area)){  // if System_admin return true
 	   			return TRUE;
 			}elseif(in_array('no_allow_type_all', $this->allowedareas)){ // check if the type "all" is blocked, if so return false
 	     			return FALSE;
-			}elseif($this->permit_type_all && ereg('_a_0_all', $user_area)){ // if type "all" , return true
+			}elseif($this->permit_type_all && preg_match('/_a_0_all/', $user_area)){ // if type "all" , return true
 				return TRUE;
 			}else{                                                                  // else scan the permission
 				for($j=0;$j<sizeof($this->allowedareas);$j++){
-					if(ereg($this->allowedareas[$j],$user_area)) return TRUE;
+					if(preg_match($this->allowedareas[$j],$user_area)) return TRUE;
 				}
 			}
 			return FALSE;           // otherwise the user has no access permission in the area, return false
@@ -392,7 +392,7 @@ class Access extends Core {
 		} else {
 			return false;
 		}
-	}	
+	}
 	/**
 	*  Changes the lock status of the user
 	*

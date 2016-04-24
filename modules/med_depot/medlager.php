@@ -21,7 +21,7 @@ require ($root_path.'include/care_api_classes/class_access.php');
 
 $access = new Access($_SESSION['sess_login_userid'],$_SESSION['sess_login_pw']);
 $hideOrder = 0;
-if(ereg("_a_1_meddepotdbadmin",$access->PermissionAreas()))
+if(preg_match("/_a_1_meddepotdbadmin/",$access->PermissionAreas()))
 	$hideOrder = 1;
 
 # Start Smarty templating here
