@@ -63,7 +63,7 @@ $thisfile=basename(__FILE__);
  # Create the search object
  #
  require_once($root_path.'include/care_api_classes/class_gui_search_person.php');
- $psearch =  GuiSearchPerson;
+ $psearch = new  GuiSearchPerson;
 
 # Start buffering the text above  the search block
  ob_start();
