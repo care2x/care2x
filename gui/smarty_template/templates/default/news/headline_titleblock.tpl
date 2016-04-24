@@ -1,4 +1,4 @@
-{{* Headline title name block* }}
+{{* Headline title name block *}}
 
 			<!--    The title text bouding box   -->
 			<table border=0 bgcolor=#cfcfcf cellpadding=1 cellspacing=0 width="100%">
