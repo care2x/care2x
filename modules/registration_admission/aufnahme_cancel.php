@@ -9,7 +9,7 @@ require($root_path.'include/core/inc_environment_global.php');
 * CARE2X Integrated Hospital Information System beta 2.0.1 - 2004-07-04
 * GNU General Public License
 * Copyright 2002,2003,2004,2005,2006 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -21,7 +21,7 @@ if(isset($mode)&&($mode=='cancel')&&isset($encounter_nr) && $encounter_nr){
 
 	include_once($root_path.'include/care_api_classes/class_access.php');
 	# Create user access object
-	$user=& new Access($cby,$pw);
+	$user= Access($cby,$pw);
 
 	if($user->isKnown() && $user->hasValidPassword() && $user->isNotLocked()){
 		$is_cancelled=0;
@@ -52,7 +52,7 @@ if(isset($mode)&&($mode=='cancel')&&isset($encounter_nr) && $encounter_nr){
  <TITLE></TITLE>
 </HEAD>
 
-<BODY topmargin=0 leftmargin=0 marginwidth=0 marginheight=0   bgcolor=<?php echo $cfg['body_bgcolor']; 
+<BODY topmargin=0 leftmargin=0 marginwidth=0 marginheight=0   bgcolor=<?php echo $cfg['body_bgcolor'];
  if (!$cfg['dhtml']){ echo ' link='.$cfg['idx_txtcolor'].' alink='.$cfg['body_alink'].' vlink='.$cfg['idx_txtcolor']; } ?>>
 
 <?php

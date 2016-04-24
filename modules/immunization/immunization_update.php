@@ -6,7 +6,7 @@ require($root_path.'include/core/inc_environment_global.php');
 * CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
 * GNU General Public License
 * Copyright 2002,2003,2004,2005 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -16,12 +16,12 @@ require_once($root_path.'include/core/inc_front_chain_lang.php');
 
 // Load the insurance object
 require_once($root_path.'include/care_api_classes/class_immunization.php');
-$immu_obj=& new Immunization();
+$immu_obj= Immunization();
 
 switch($retpath){
 	case 'list': $breakfile='immunization_list.php'.URL_APPEND; break;
 	case 'search': $breakfile='immunization_search.php'.URL_APPEND; break;
-	default: $breakfile='immunization_manage.php'.URL_APPEND; 
+	default: $breakfile='immunization_manage.php'.URL_APPEND;
 }
 
 if(isset($immu_id) && $immu_id){
@@ -33,7 +33,7 @@ if(isset($immu_id) && $immu_id){
 		}else{
 			echo $immu_obj->getLastQuery();
 			$mode='bad_data';
-		}	
+		}
 	}elseif($row=$immu_obj->getImmuTypeInfo($immu_id)){
 		if(is_object($row)){
 			$immu=$row->FetchRow();
@@ -74,7 +74,7 @@ ob_start();
 ?>
 
 <script language="javascript">
-<!-- 
+<!--
 function check(d)
 {
 	if((d.type.value=="")){
@@ -115,13 +115,13 @@ ob_start();
 
  <ul>
 <?php
-if(!empty($mode)){ 
+if(!empty($mode)){
 ?>
 <table border=0>
   <tr>
     <td><img <?php echo createMascot($root_path,'mascot1_r.gif','0','bottom') ?>></td>
     <td valign="bottom"><br><font class="prompt"><b>
-<?php 
+<?php
 	switch($mode)
 	{
 		case 'bad_data':
@@ -144,8 +144,8 @@ if(!empty($mode)){
 </td>
   </tr>
 </table>
-<?php 
-} 
+<?php
+}
 ?>
 <form action="<?php echo $thisfile; ?>" method="post" name="immunization" onSubmit="return check(this)">
 <?php echo $LDEnterAllFields ?>
@@ -154,11 +154,11 @@ if(!empty($mode)){
     <td align=right class="adm_item"><?php echo $LDImmuID ?>: </td>
     <td class="adm_input"><?php echo $nr ?><br>
 </td>
-  </tr> 
+  </tr>
   <tr>
     <td align=right class="adm_item"><font color=#ff0000><b>*</b></font><?php echo $LDImmuName ?>: </td>
     <td class="adm_input"><input type="text" name="name" size=50 maxlength=60 value="<?php echo $name ?>"><br></td>
-  </tr> 
+  </tr>
   <tr>
     <td align=right class="adm_item"><font color=#ff0000></font><?php echo $LDImmuType ?>: </td>
     <td class="adm_input"><textarea name="type" cols=40 rows=4 wrap="physical"><?php echo $type ?></textarea></td>

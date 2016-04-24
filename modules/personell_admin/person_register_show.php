@@ -6,7 +6,7 @@ require($root_path.'include/core/inc_environment_global.php');
 * CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
 * GNU General Public License
 * Copyright 2002,2003,2004,2005 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -20,7 +20,7 @@ require_once($root_path.'include/core/inc_front_chain_lang.php');
 $thisfile=basename(__FILE__);
 if($_COOKIE['ck_login_logged'.$sid]) $breakfile=$root_path.'main/spediens.php'.URL_APPEND;
 	else $breakfile='personell_admin_pass.php'.URL_APPEND.'&target='.$target;
-	
+
 $admissionfile='aufnahme_start.php'.URL_APPEND;
 
 if((!isset($pid)||!$pid) && $HTPP_SESSION_VARS['sess_pid']) $pid=$HTPP_SESSION_VARS['sess_pid'];
@@ -77,7 +77,7 @@ require('./gui_bridge/default/gui_tabs_personell_reg.php');
 	# Display the person´s demographic data using the object class class_gui_person_show.php
 
 	require_once($root_path.'include/care_api_classes/class_gui_person_show.php');
-	$person = & new GuiPersonShow;
+	$person =  GuiPersonShow;
 	$person->setPID($pid);
 	$person->display();
 
@@ -93,7 +93,7 @@ require('./gui_bridge/default/gui_tabs_personell_reg.php');
 <a href="<?php echo $newsearchfile ?>"><img
 <?php echo createLDImgSrc($root_path,'new_search.gif','0','absmiddle') ?>></a>
 <?php } ?>
-<a href="person_register.php<?php echo URL_APPEND ?>&pid=<?php echo $pid ?>&update=1"><img 
+<a href="person_register.php<?php echo URL_APPEND ?>&pid=<?php echo $pid ?>&update=1"><img
 <?php echo createLDImgSrc($root_path,'update_data.gif','0','absmiddle') ?>></a>
 <?php
 if(isset($current_employ) && $current_employ){
@@ -119,7 +119,7 @@ if(isset($current_employ) && $current_employ){
 <p>
 </td>
 </tr>
-</table>        
+</table>
 <p>
 
 <ul>

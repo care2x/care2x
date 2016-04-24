@@ -80,7 +80,7 @@ class Access extends Core {
 	* For example:
 	*
 	* <code>
-	* $user =  & new Access('Smith','Cocapabana');
+	* $user =   Access('Smith','Cocapabana');
 	* if( $user->isKnown() && $user->hasValidPassword && $user->isNotLocked()){
 	* ...
 	* }
@@ -115,7 +115,7 @@ class Access extends Core {
 	* For example:
 	*
 	* <code>
-	* $user =  & new Access;
+	* $user =   Access;
 	* ....
 	* $user->loadAccess('Smith','Cocapabana');
 	* if( $user->isKnown() && $user->hasValidPassword && $user->isNotLocked()){

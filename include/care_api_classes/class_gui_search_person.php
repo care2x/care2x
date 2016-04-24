@@ -225,7 +225,7 @@ class GuiSearchPerson {
 			include_once($root_path.'include/core/inc_date_format_functions.php');
 
 			include_once($root_path.'include/care_api_classes/class_person.php');
-			$person=& new Person();
+			$person= Person();
 
 			# Set the sorting directive
 			if(isset($oitem)&&!empty($oitem)) $sql3 =" ORDER BY $oitem $odir";

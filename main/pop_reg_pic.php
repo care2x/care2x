@@ -15,7 +15,7 @@ require_once($root_path.'include/core/inc_front_chain_lang.php');
 require_once($root_path.'global_conf/inc_remoteservers_conf.php');
 require_once($root_path.'include/core/inc_date_format_functions.php');
 require_once($root_path.'include/care_api_classes/class_person.php');
-$person=& new Person($pid);
+$person= Person($pid);
 $person->preloadPersonInfo();
 ?>
 <?php html_rtl($lang); ?>

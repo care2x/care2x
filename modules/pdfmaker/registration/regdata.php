@@ -30,16 +30,16 @@ require_once($root_path.'include/care_api_classes/class_insurance.php');
 
 
 $insurance_obj=new PersonInsurance;
-$person_obj=& new Person($pid);
+$person_obj= Person($pid);
 # Get the person´s data
 if($person_obj->preloadPersonInfo($pid)){
 	$person=$person_obj->person;
-	# copy to encounter variable 
+	# copy to encounter variable
 	$encounter=& $person;
 	//extract($encounter);
-			
+
 	$p_insurance=&$insurance_obj->getPersonInsuranceObject($pid);
-	
+
 	if($p_insurance==false) {
 		$insurance_show=true;
 	} else {
@@ -51,16 +51,16 @@ if($person_obj->preloadPersonInfo($pid)){
 			//while(list($x,$v)=each($buffer)) {$$x=$v; }
 			$insurance_show=true;
 	        # Get insurace firm name
-			$insurance_firm_name=$insurance_obj->getFirmName($insurance_firm_id); 
-			
+			$insurance_firm_name=$insurance_obj->getFirmName($insurance_firm_id);
+
 		} else { $insurance_show=false;}
-	} 
+	}
 }
 
 $insurance_class=$insurance_obj->getInsuranceClassInfo($insurance_class_nr);
 # Resolve the insurance class name
-if (isset($$insurance_class['LD_var'])&&!empty($$insurance_class['LD_var'])) $insclass=$$insurance_class['LD_var']; 
-    else $insclass=$insurance_class['name']; 
+if (isset($$insurance_class['LD_var'])&&!empty($$insurance_class['LD_var'])) $insclass=$$insurance_class['LD_var'];
+    else $insclass=$insurance_class['name'];
 
 
 # Get the global config for person's registration form*/
@@ -78,7 +78,7 @@ $classpath=$root_path.'classes/phppdf/';
 $fontpath=$classpath.'fonts/';
 # Load and create pdf object
 include($classpath.'class.ezpdf.php');
-$pdf=& new Cezpdf();
+$pdf= Cezpdf();
 
 
 $logo=$root_path.'gui/img/logos/care_logo_print.png';
@@ -142,12 +142,12 @@ if($person['death_date']&&$person['death_date'] != DBF_NODATE){
 	$data[]=array("$LDDeathDate: ",formatDate2Local($person['death_date'],$date_format));
 }
 
-if($person['civil_status']=="single") $civ= $LDSingle; 
- elseif($person['civil_status']=="married") $civ=$LDMarried; 
+if($person['civil_status']=="single") $civ= $LDSingle;
+ elseif($person['civil_status']=="married") $civ=$LDMarried;
   elseif($person['civil_status']=="divorced") $civ=$LDDivorced;
    elseif($person['civil_status']=="widowed") $civ=$LDWidowed;
     elseif($person['civil_status']=="separated") $civ=$LDSeparated;
-	
+
 $data[]=array("$LDCivilStatus: ",$civ);
 # spacer
 $data[]=array('');

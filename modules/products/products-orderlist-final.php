@@ -37,18 +37,18 @@ function createOrderList($validator,$prior,$dept_nr) {
 	$order_nr = '';
 	//select where i'm working
 	if($_POST['cat']=='pharma') {
-		$dbtable='care_pharma_orderlist'; 
+		$dbtable='care_pharma_orderlist';
 		$dbtablesub='care_pharma_orderlist_sub';
 		$dbcatalog='care_pharma_ordercatalog';
 	} else {
-		$dbtable='care_med_orderlist'; 
+		$dbtable='care_med_orderlist';
 		$dbtablesub='care_med_orderlist_sub';
 		$dbcatalog='care_med_ordercatalog';
-	}	
-	
+	}
+
 	$db->BeginTrans();
 	//create the new orderlist
-	$sql="INSERT INTO $dbtable ( dept_nr,order_date,order_time,ip_addr,status,create_id,create_time,validator,priority,sent_datetime) 
+	$sql="INSERT INTO $dbtable ( dept_nr,order_date,order_time,ip_addr,status,create_id,create_time,validator,priority,sent_datetime)
 				VALUES ('$dept_nr','".date('Y-m-d')."','".date('H:i:s')."','".$REMOTE_ADDR."','pending','".$_SESSION['sess_user_name']."',
     					".date('YmdHis').",'$validator','$prior',".date('YmdHis').")";
     if($ergebnis=$product_obj->Transact($sql)) {
@@ -56,7 +56,7 @@ function createOrderList($validator,$prior,$dept_nr) {
 			$product_obj->coretable=$dbtable;
 			$order_nr=$product_obj->LastInsertPK('order_nr',$oid);
 	}else { echo "$sql<br>$LDDbNoSave<br>";$db->RollbackTrans();exit(); }
-	
+
     for($i=0;$i<=$_POST['maxnum'];$i++) {
         $art = 'art' . $i;
     	$p = 'p' . $i;
@@ -73,7 +73,7 @@ function createOrderList($validator,$prior,$dept_nr) {
         	$sqlSub = "INSERT INTO $dbtablesub(order_nr_sub,bestellnum,idsub,artikelname,pcs,proorder,unit,expiry_date,price,dose,value)
         				VALUES ('$order_nr','$_POST[$bestellnum]','$_POST[$idsub]','$_POST[$art]','$_POST[$p]','$_POST[$proorder]','$_POST[$unit]','$_POST[$expiry_date]','$_POST[$price]','$_POST[$dose]','$_POST[$value]')";
         	if($ergebnis=$product_obj->Transact($sqlSub)) {
-        		$saveok = true;	
+        		$saveok = true;
         	}else { echo "$sql<br>$LDDbNoSave<br>";$db->RollbackTrans(); exit();}
     	}
     }
@@ -83,23 +83,23 @@ function createOrderList($validator,$prior,$dept_nr) {
         	//delete the ordercatalog, i don't need it anymore
         	$sqlDel = "DELETE FROM $dbcatalog WHERE dept_nr ='$dept_nr'";
             if($ergebnis=$product_obj->Transact($sqlDel)) {
-        		$saveok = true;	
+        		$saveok = true;
         	}else { echo "$sql<br>$LDDbNoSave<br>";$db->RollbackTrans(); exit();}
         }
     }
     $db->CommitTrans();
-}    
+}
 
 // Load the date formatter
 require_once($root_path.'include/core/inc_date_format_functions.php');
 
 if(($mode=='send') && isset($_SESSION['current_order']) ){
-	
+
 	//Check authenticity of validator person
 	include_once($root_path.'include/care_api_classes/class_access.php');
-	$user = & new Access($validator,$vpw);
+	$user =  Access($validator,$vpw);
 	if($user->isKnown()){
-		if($user->hasValidPassword() && $user->isNotLocked()){ 
+		if($user->hasValidPassword() && $user->isNotLocked()){
 			createOrderList($validator,$prior,$dept_nr);
   				$ofinal=true;
 				$sendok=true;
@@ -107,10 +107,10 @@ if(($mode=='send') && isset($_SESSION['current_order']) ){
 			$error='password';
 			$mode='';
 		}
-	}else{ 
+	}else{
 		$error='validator';
 		$mode='';
-	} 
+	}
 }
 
 if( $ofinal && $sendok )
@@ -138,7 +138,7 @@ function checkform(d) {
 	}
  	return true;
 }
-<?php 
+<?php
 if (($mode=='send')&&($sendok)) {
     $idbuf=$order_nr + 1;
     echo "function hide_bcat() {
@@ -148,13 +148,13 @@ if (($mode=='send')&&($sendok)) {
 ?>
 
 </script>
-<?php 
+<?php
 require($root_path.'include/core/inc_js_gethelp.php');
 require($root_path.'include/core/inc_css_a_hilitebu.php');
 ?>
 </head>
-<BODY  topmargin=5 leftmargin=10  marginwidth=10 marginheight=5 
-<?php 			
+<BODY  topmargin=5 leftmargin=10  marginwidth=10 marginheight=5
+<?php
 switch($mode) {
 	case "add":echo ' onLoad="location.replace(\'#bottom\')"   '; break;
 	case "delete":echo ' onLoad="location.replace(\'#'.($idx-1).'\')"   '; break;
@@ -169,7 +169,7 @@ echo "bgcolor=".$cfg['body_bgcolor']; if (!$cfg['dhtml']){ echo ' link='.$cfg['b
 /* Display event messages */
 
 if ($sendok) echo '<font face="Verdana, Arial" size=2 color="#800000">'.$LDOrderSent.'<p></font>';
-			
+
 if ($error ) {
     ?>
     <table border=0>
@@ -190,11 +190,11 @@ if ($_POST['maxnum']>0) {
     //$content=$ergebnis->FetchRow();
     echo '<font face="Verdana, Arial" size=2 color="#800000">'.$final_orderlist;
     echo '<form action="'.$thisfile.'" method="post" onSubmit="return checkform(this)">';
-    		
+
     		$buff=$dept_obj->LDvar($dept_nr);
     		if(isset($$buff)&&!empty($$buff)) echo $$buff;
     			else echo $dept_obj->FormalName($dept_nr);
-    			
+
     		echo ':</font><br>
     		<font face="Arial" size=1> ('.$LDCreatedOn.': '. formatDate2Local(date('d-m-Y'),$date_format). ' '.$LDTime.': '.convertTimeToLocal(str_replace('24','00',date('H:i:s'))).')</font>
     		<table border=0 cellspacing=0 cellpadding=0 bgcolor="#666666" width="100%"><tr><td>
@@ -202,7 +202,7 @@ if ($_POST['maxnum']>0) {
       		<tr bgcolor="#ffffff">';
     	for ($i=0;$i<sizeof($LDFinindex);$i++)
     		echo '<td><font face=Verdana,Arial size=1 color="#000080">'.$LDFinindex[$i].'</font></td>';
-    	echo '</tr>';	
+    	echo '</tr>';
     $n=1;
     for($i=0;$i<=$_POST['maxnum'];$i++) {
     	//parse_str($artikeln[$n],$r);
@@ -220,10 +220,10 @@ if ($_POST['maxnum']>0) {
         		<td align="right"><font face="Verdana,Arial" size="1">'.$_POST[$p].'</font><input type="hidden" name="p'.$i.'" value="'.$_POST[$p].'"></td>
         		<td align="right"><font face="Verdana,Arial" size="1">'.$prodInfo['proorder'].'</font><input type="hidden" name="proorder'.$i.'" value="'.$prodInfo['proorder'].'"></td>
         		<td align="right"><font face="Verdana,Arial" size="1">'.$prodInfo['dose'].'</font><input type="hidden" name="dose'.$i.'" value="'.$prodInfo['dose'].'"></td>
-        		<td align="right"><font face="Verdana,Arial" size="1">'.$prodInfo['packing'].'</font><input type="hidden" name="unit'.$i.'" value="'.$prodInfo['packing'].'"></td>					
-        		<td align="right"><font face="Verdana,Arial" size="1">'.$prodInfo['price'].'</font><input type="hidden" name="price'.$i.'" value="'.$prodInfo['price'].'"></td>									
-        		<td align="right"><font face="Verdana,Arial" size="1">'.$prodInfo['price'] * $_POST[$p].'</font><input type="hidden" name="value'.$i.'" value="'.$prodInfo['price'] * $_POST[$p].'"></td>									
-        		<td align="right"><font face="Verdana,Arial" size="1">'.$prodInfo['expiry_date'].'</font><input type="hidden" name="expiry_date'.$i.'" value="'.$prodInfo['expiry_date'].'"></td>										
+        		<td align="right"><font face="Verdana,Arial" size="1">'.$prodInfo['packing'].'</font><input type="hidden" name="unit'.$i.'" value="'.$prodInfo['packing'].'"></td>
+        		<td align="right"><font face="Verdana,Arial" size="1">'.$prodInfo['price'].'</font><input type="hidden" name="price'.$i.'" value="'.$prodInfo['price'].'"></td>
+        		<td align="right"><font face="Verdana,Arial" size="1">'.$prodInfo['price'] * $_POST[$p].'</font><input type="hidden" name="value'.$i.'" value="'.$prodInfo['price'] * $_POST[$p].'"></td>
+        		<td align="right"><font face="Verdana,Arial" size="1">'.$prodInfo['expiry_date'].'</font><input type="hidden" name="expiry_date'.$i.'" value="'.$prodInfo['expiry_date'].'"></td>
         		<td align="right"><font face="Verdana,Arial" size="1">'.$_POST[$bestellnum].'</font>
         			<input type="hidden" name="bestellnum'.$i.'" value="'.$_POST[$bestellnum].'"></td>
         			<input type="hidden" name="idsub'.$i.'" value="'.$_POST[$idsub].'"></td>
@@ -231,18 +231,18 @@ if ($_POST['maxnum']>0) {
     	}
     }
     echo '</table></td></tr></table><font face=Verdana,Arial size=2 color="#800000">';
-    	
+
     if(($mode!='send')&&(!$sendok)) {
 		echo $LDListindex[4].'<br>
-			<input type="text" name="sender" size=30 maxlength=40 value="'. $_COOKIE[$local_user.$sid].'"> 
+			<input type="text" name="sender" size=30 maxlength=40 value="'. $_COOKIE[$local_user.$sid].'">
 			 &nbsp;'.$LDNormal.'<input type="radio" name="prior" value="normal" ';
-			 
+
 			 if(!isset($prior) || $prior=='normal' || $prior=='') echo ' checked';
-			 echo '> 
+			 echo '>
 			'.$LDUrgent.'<input type="radio" name="prior" value="urgent" ';
-			
+
 			 if(isset($prior) && $prior=='urgent') echo ' checked';
-			
+
 			echo '> <br>
    			<p>
 			'.$LDValidatedBy.':<br>
@@ -258,7 +258,7 @@ if ($_POST['maxnum']>0) {
 			<input type="hidden" name="mode" value="send">
 			<input type="hidden" name="maxnum" value="'.$_POST['maxnum'].'">
    			<p>
-			<input type="submit" value="'.$LDSendOrderDepo.'">   
+			<input type="submit" value="'.$LDSendOrderDepo.'">
    			</form></font><p>
 			<font face=Verdana,Arial size=2>
 			<a href="products-bestellkorb.php'.URL_APPEND.'&cat='.$cat.'&dept_nr='.$dept_nr.'&order_nr='.$order_nr.'&userck='.$userck.'" ><< '.$LDBack2Edit.'</a></font>

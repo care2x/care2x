@@ -14,7 +14,7 @@ require($root_path.'include/core/inc_environment_global.php');
 * CARE2X Integrated Hospital Information System beta 2.0.1 - 2004-07-04
 * GNU General Public License
 * Copyright 2002,2003,2004,2005,2006 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 *
@@ -26,7 +26,7 @@ require_once($root_path.'include/core/inc_date_format_functions.php');
 require_once($root_path.'classes/datetimemanager/class.dateTimeManager.php');
 
 # Create time manager object
-$datetime_obj= & new dateTimeManager;
+$datetime_obj=  dateTimeManager;
 
 $thisfile=basename(__FILE__);
 $searchmask_bgcolor="#f3f3f3";
@@ -53,7 +53,7 @@ $formname ='aufnahmeform';
 if(isset($target)) {
    switch ($target)
 	{
-	    case 'insurance' :   
+	    case 'insurance' :
 		                            $sql="SELECT name AS \"insurance_firm_name.value\", firm_id AS \"insurance_firm_id.value\", use_frequency FROM care_insurance_firm";
 									if($mode=='search') {
 									$sql.=" WHERE name $sql_LIKE '$searchkey%' OR firm_id $sql_LIKE '$searchkey%'";
@@ -99,12 +99,12 @@ if(isset($target)) {
 									    $sql.=" ORDER BY name DESC";
 										$limitselect=TRUE;
 									}
-									    
+
 		                            $title=$LDSearch.' :: '.$LDEthnicOrigin.' ('.$LDEthnicOrigin.')';
 									$itemname=$LDEthnicOrigin;
 							        break;
 	}
-	
+
 	# The adodb function of limited nr of return query is now used here
 
 	if($limitselect){
@@ -138,9 +138,9 @@ function setValue(val) {
 	<?php
 	$var_parent_document=array_keys($sql_value[0]);
 	$indice=0;
-	for($i3=1;$i3<sizeof($var_parent_document)-1;$i3=$i3+2) 
-		{ 
-		echo 'mywin.document.'.$formname.'.'.$var_parent_document[$i3].'=array_val['.$indice.']; '; 
+	for($i3=1;$i3<sizeof($var_parent_document)-1;$i3=$i3+2)
+		{
+		echo 'mywin.document.'.$formname.'.'.$var_parent_document[$i3].'=array_val['.$indice.']; ';
 		$indice++;
 		};
 	?>
@@ -159,33 +159,33 @@ function setValue(val) {
 		 <table border=0 cellpadding=10 bgcolor="<?php echo $entry_border_bgcolor ?>">
      <tr>
        <td>
-<?php   
+<?php
 include($root_path.'include/core/inc_patient_searchmask.php');
 
 ?>
 </td>
      </tr>
    </table>
-   
+
 <?php
-if($mode=='search')  {    
+if($mode=='search')  {
     if(!$linecount) $linecount=0;
     echo '<hr width=80% align=left>'.str_replace("~nr~",$linecount,$LDSearchFoundData).'<p>';
 } else {
     echo '<hr width=80% align=left><font size=4 color="#990000">'.$LDTop.' '.$quicklistmaxnr.' '.$LDQuickList.'</font>';
 }
-    
+
     //echo $mode;
-    if ($linecount) 
-	{ 
+    if ($linecount)
+	{
          $count=0;
 	 					echo '
-						<table border=0 cellpadding=2 cellspacing=1> 
+						<table border=0 cellpadding=2 cellspacing=1>
 						<tr bgcolor="#66ee66" background="'.$root_path.'gui/img/common/default/tableHeaderbg.gif">';
 
 						echo'
 						<td><font face=arial size=2 color="#336633"><b>'.$itemname.'</b></td>';
-		
+
 						echo'
 						<td><font face=arial size=2 color="#336633">&nbsp;</td>';
 
@@ -195,13 +195,13 @@ if($mode=='search')  {
 					{
 					    if(($mode!='search')&&($count==$quicklistmaxnr)) break;
 						    else $count++;
-							
+
 						echo "
 							<tr bgcolor=";
 						if($toggle) { echo "#efefef>"; $toggle=0;} else {echo "#ffffff>"; $toggle=1;};
 						echo "<td><font face=arial size=2>";
 						echo "&nbsp;".ucfirst($sql_value[$i][0]);
-      
+
 						# This formats the refresh date to local data if available
 						# Uses the dateTimeManager object
 						# Note: the second parameter of the method ::shift_dates is negative to shift the date to the future
@@ -239,10 +239,10 @@ if($mode=='search')  {
      <tr>
        <td>
 	   <?php
-	   
+
 	        $searchform_count=2;
             include($root_path.'include/core/inc_patient_searchmask.php');
-       
+
 	   ?>
 </td>
      </tr>

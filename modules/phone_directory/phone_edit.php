@@ -6,7 +6,7 @@ require_once($root_path.'include/core/inc_environment_global.php');
 * CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
 * GNU General Public License
 * Copyright 2002,2003,2004,2005 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -38,19 +38,19 @@ $curtime=date('H:i:s');
 if ($mode=='save' || ($mode=='update' && !empty($nr)) ){
 	   // start checking input data
 	if (!empty($name) && !empty($vorname)) {
-	
+
 		$bSaveOk = FALSE;
 
          # Create comm object
          include_once($root_path.'include/care_api_classes/class_comm.php');
-         $phone = & new Comm;
+         $phone =  Comm;
 
         # Correctly map some indexes
         $_POST['roomnr']=$_POST['zimmerno'];
         $_POST['date'] = $curdate;
         $_POST['time'] = $curtime;
         $_POST['title'] = $_POST['anrede'];
-		
+
 		if($mode=='save'){
 			$_POST['create_id'] = $_SESSION['sess_user_name'];
 			$_POST['create_time'] = date('YmdHis');
@@ -95,11 +95,11 @@ if($user_origin=='pers'&&$nr){
 	<HEAD>
 <?php echo setCharSet(); ?>
  	<TITLE></TITLE>
-	 
+
 <?php
 require($root_path.'include/core/inc_js_gethelp.php');
 require($root_path.'include/core/inc_css_a_hilitebu.php');
-?> 
+?>
 </HEAD>
 
 <BODY bgcolor=<?php echo $cfg['body_bgcolor']; ?>
@@ -116,7 +116,7 @@ require($root_path.'include/core/inc_css_a_hilitebu.php');
 	<td class="wardlisttitlerow" colspan=3 >
 	&nbsp;<b>
    <?php
-   	   if(($newvalues=='')&&($remark!='fromlist')) 
+   	   if(($newvalues=='')&&($remark!='fromlist'))
 		{
 		$nowtime=date(G);
 		if(($nowtime>=0)&&($nowtime<10)) echo $LDGoodMorning;
@@ -128,14 +128,14 @@ require($root_path.'include/core/inc_css_a_hilitebu.php');
 	</FONT>
 	</td>
 	</tr>
-	
+
 	<tr>
-	
+
 	<td class="wardlisttitlerow" >&nbsp;</td>
 
 	<td><br>
 	<ul>
-	
+
 
 <FORM action="phone_list.php" method="post" name="newentry">
 <input type="hidden" name="sid" value="<?php echo $sid; ?>">
@@ -162,7 +162,7 @@ echo "<img ".createMascot($root_path,'mascot1_r.gif','0','absmiddle')."><FONT  C
 <td colspan=2>
 
 <?php echo $LDEditFields[1] ?>&nbsp;
-<?php 
+<?php
 if($user_origin=='pers'&&$employee->isPreLoaded()){
 	echo $employee->Title();
 ?>
@@ -187,7 +187,7 @@ if($user_origin=='pers'&&$employee->isPreLoaded()){
 <td colspan=2>
 <b>
 <?php echo $LDEditFields[2] ?>&nbsp;
-<?php 
+<?php
 if($user_origin=='pers'&&$employee->isPreLoaded()){
 	echo $employee->LastName();
 ?>
@@ -203,7 +203,7 @@ if($user_origin=='pers'&&$employee->isPreLoaded()){
 </td>
 <td colspan=2><b>
 <?php echo $LDEditFields[3] ?>&nbsp;
-<?php 
+<?php
 if($user_origin=='pers'&&$employee->isPreLoaded()){
 	echo $employee->FirstName();
 ?>
@@ -297,7 +297,7 @@ if($user_origin=='pers'&&$employee->isPreLoaded()){
 <input type="submit" value="<?php echo $LDSave ?>">
 <input type="reset" name="erase" value="<?php echo $LDReset ?>">
 
-<?php 
+<?php
 if($user_origin=='pers'&&$employee->isPreLoaded()){
 ?>
 <input type="hidden" name="personell_nr" value="<?php echo $nr; ?>">
@@ -325,10 +325,10 @@ if($user_origin=='pers'&&$employee->isPreLoaded()){
 </tr>
 <tr >
 <td class="wardlisttitlerow"  colspan=3>
-&nbsp; 
+&nbsp;
 </td>
 </tr>
-</table>        
+</table>
 <p>
 <?php
 require($root_path.'include/core/inc_load_copyrite.php');

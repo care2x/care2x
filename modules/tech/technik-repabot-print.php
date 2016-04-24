@@ -6,7 +6,7 @@ require($root_path.'/include/core/inc_environment_global.php');
 * CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
 * GNU General Public License
 * Copyright 2002,2003,2004,2005 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -14,7 +14,7 @@ define('LANG_FILE','tech.php');
 define('NO_2LEVEL_CHK',1);
 require_once($root_path.'include/core/inc_front_chain_lang.php');
 require_once($root_path.'include/care_api_classes/class_core.php');
-$core = & new Core;
+$core =  Core;
 
 //$db->debug=1;
 
@@ -28,8 +28,8 @@ if(isset($tid) && $tid&&isset($dept) && $dept)
 
         /* Load the date formatter */
         include_once($root_path.'include/core/inc_date_format_functions.php');
-        
-	
+
+
         /* Load editor functions for time format converter */
 
 		 switch($mode)
@@ -41,13 +41,13 @@ if(isset($tid) && $tid&&isset($dept) && $dept)
 								AND tdate='$tdate'
 								AND ttime='$ttime'
 								AND tid='$tid'";
-								
+
 					if($ergebnis=$core->Transact($sql)) {
 						$stat2seen=true;
 					} else {echo "<p>".$sql."$LDDbNoUpdate<br>"; };
 					break;
 				}
-				
+
 			case 'archive':
 				{
 				    $sql="UPDATE care_tech_repair_job SET archive=1, tid='$tid'
@@ -55,7 +55,7 @@ if(isset($tid) && $tid&&isset($dept) && $dept)
 								AND tdate='$tdate'
 								AND ttime='$ttime'
 								AND tid='$tid'";
-								
+
 					if($ergebnis=$core->Transact($sql)) {
 						$deltodo=true;
 					}
@@ -63,7 +63,7 @@ if(isset($tid) && $tid&&isset($dept) && $dept)
 					 break;
 					}// end of case "archive":
 		 		}// end of switch(mode)
-				
+
 				$dbtable='care_tech_repair_job';
 
 				$sql="SELECT * FROM $dbtable
@@ -72,7 +72,7 @@ if(isset($tid) && $tid&&isset($dept) && $dept)
 											AND ttime='$ttime'
 											AND tid='$tid'";
 
-							
+
         		if($ergebnis=$db->Execute($sql)) {
 					//count rows=linecount
 					//reset result
@@ -105,7 +105,7 @@ function move2arch()
 }
 function parentref(n)
 {
-   
+
      if(n==1) window.opener.location.replace("./technik-repabot.php<?php echo URL_REDIRECT_APPEND."&userck=$userck"?>&cat=<?php echo $cat ?>&nofocus="+n+"&showlist=1");
     else window.opener.location.replace("./technik-repabot.php<?php echo URL_REDIRECT_APPEND."&userck=$userck"?>&cat=<?php echo $cat ?>&showlist=1");
     //
@@ -122,7 +122,7 @@ function parentref(n)
 </script>
 
 </head>
-<body bgcolor=#fefefe onLoad="if(window.focus) window.focus(); if(parentref('1')) 1;" 
+<body bgcolor=#fefefe onLoad="if(window.focus) window.focus(); if(parentref('1')) 1;"
 >
 <p>
 <form name="opt">
@@ -140,13 +140,13 @@ if($rows>0)
 		<tr><td>
 		<table border=0 cellspacing=1 cellpadding=3 width="100%">
   		<tr bgcolor="#ffffff" background="../../gui/img/common/default/tableHeaderbg3.gif">';
-		
+
 	for ($i=0;$i<sizeof($requestindex);$i++)
 	{
 	    echo '
 		<td><font face=Verdana,Arial size=2 color="#0000ff">'.$requestindex[$i].'</td>';
 	}
-	
+
 	echo '</tr>
 			<tr bgcolor="#f6f6f6">
 				 <td><font face=Verdana,Arial size=2>'.$content['reporter'].'</td>
@@ -164,12 +164,12 @@ if($rows>0)
 
     if(!$deltodo && !$content['seen'])
     {           echo '
-									
+
 									<input type="button" value="GO" onClick="ack_print()"> '.$LDAckecho.'<p>';
 
     }
     elseif(!$content['archive'])
-    { 
+    {
             echo '<p>
 									<input type="button" value="GO" onClick="window.print()"> <b>'.$LDPrintRequest.'</b><p>
 									'.$LDAckBy.':<input type="text" name="clerk" size=25 maxlength=40><br>

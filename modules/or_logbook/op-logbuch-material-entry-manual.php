@@ -10,12 +10,12 @@ require_once($root_path.'include/core/inc_front_chain_lang.php');
 $globdata="sid=$sid&lang=$lang&op_nr=$op_nr&dept_nr=$dept_nr&saal=$saal&enc_nr=$enc_nr&pday=$pday&pmonth=$pmonth&pyear=$pyear";
 
 require_once($root_path.'include/care_api_classes/class_core.php');
-$core = & new Core;
+$core =  Core;
 
 //$db->debug=1;
 
 if(($mode=="force_add") && !empty($artikelname) && !empty($pcs)){
-	
+
 	$dbtable='care_encounter_op';
 	$sql="SELECT material_codedlist FROM $dbtable
 					WHERE dept_nr='$dept_nr'
@@ -74,7 +74,7 @@ if(($mode=="force_add") && !empty($artikelname) && !empty($pcs)){
 </style>
 
 <script language="javascript">
-<!-- 
+<!--
 
 function popinfo(b)
 {

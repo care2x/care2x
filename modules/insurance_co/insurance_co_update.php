@@ -6,7 +6,7 @@ require($root_path.'include/core/inc_environment_global.php');
 * CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
 * GNU General Public License
 * Copyright 2002,2003,2004,2005 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -16,12 +16,12 @@ require_once($root_path.'include/core/inc_front_chain_lang.php');
 
 // Load the insurance object
 require_once($root_path.'include/care_api_classes/class_insurance.php');
-$ins_obj=& new Insurance;
+$ins_obj= Insurance;
 
 switch($retpath){
 	case 'list': $breakfile='insurance_co_list.php'.URL_APPEND; break;
 	case 'search': $breakfile='insurance_co_search.php'.URL_APPEND; break;
-	default: $breakfile='insurance_co_manage.php'.URL_APPEND; 
+	default: $breakfile='insurance_co_manage.php'.URL_APPEND;
 }
 
 if(isset($firm_id) && $firm_id){
@@ -33,7 +33,7 @@ if(isset($firm_id) && $firm_id){
 		}else{
 			echo $ins_obj->getLastQuery();
 			$mode='bad_data';
-		}	
+		}
 	}elseif($row=$ins_obj->getFirmInfo($firm_id)){
 		if(is_object($row)){
 			$firm=$row->FetchRow();
@@ -74,7 +74,7 @@ ob_start();
 ?>
 
 <script language="javascript">
-<!-- 
+<!--
 function check(d)
 {
 	if((d.name.value=="")){
@@ -111,13 +111,13 @@ ob_start();
 
  <ul>
 <?php
-if(!empty($mode)){ 
+if(!empty($mode)){
 ?>
 <table border=0>
   <tr>
     <td><img <?php echo createMascot($root_path,'mascot1_r.gif','0','bottom') ?>></td>
     <td valign="bottom"><br><font class="prompt"><b>
-<?php 
+<?php
 	switch($mode)
 	{
 		case 'bad_data':
@@ -140,8 +140,8 @@ if(!empty($mode)){
 </td>
   </tr>
 </table>
-<?php 
-} 
+<?php
+}
 ?>
 <form action="<?php echo $thisfile; ?>" method="post" name="insurance_co" onSubmit="return check(this)">
 <?php echo $LDEnterAllFields ?>
@@ -150,11 +150,11 @@ if(!empty($mode)){
     <td align=right class="adm_item"><?php echo $LDInsuranceCoID ?>: </td>
     <td class="adm_input"><?php echo $firm_id ?><br>
 </td>
-  </tr> 
+  </tr>
   <tr>
     <td align=right class="adm_item"><font color=#ff0000><b>*</b></font><?php echo $LDInsuranceCoName ?>: </td>
     <td class="adm_input"><input type="text" name="name" size=50 maxlength=60 value="<?php echo $name ?>"><br></td>
-  </tr> 
+  </tr>
   <tr>
     <td align=right class="adm_item"><font color=#ff0000></font><?php echo $LDAddress ?>: </td>
     <td class="adm_input"><textarea name="addr" cols=40 rows=4 wrap="physical"><?php echo $addr ?></textarea></td>

@@ -50,21 +50,21 @@ function dec2frac( $decimal ) {
   $num = '';
   $den = 1;
   $dec = false;
- 
+
   // find least reduced fractional form of number
   for( $i = 0, $ix = strlen( $decimal ); $i < $ix; $i++ ) {
     // build the denominator as we 'shift' the decimal to the right
     if( $dec ) $den *= 10;
-   
+
     // find the decimal place/ build the numberator
     if( $decimal{$i} == '.' ) $dec = true;
     else $num .= $decimal{$i};
   }
   $num = (int)$num;
-   
+
   // whole number, just return it
   if( $den == 1 ) return $num;
-   
+
   $num2 = $num;
   $den2 = $den;
   $rem  = 1;
@@ -75,7 +75,7 @@ function dec2frac( $decimal ) {
     $den2 = $rem;
   }
   if( $den2 != $den ) $rem = $den2;
-   
+
   // now $rem holds the gcd of the numerator and denominator of our fraction
   return ($num / $rem ) . "/" . ($den / $rem);
 }
@@ -101,7 +101,7 @@ $objPrescription->setPrescriptionStatus($presnr,'printed');
 
 // Get the encouter data
 require_once($root_path.'include/care_api_classes/class_encounter.php');
-$enc_obj=& new Encounter($enc);
+$enc_obj= Encounter($enc);
 $encounter = '';
 if($enc_obj->loadEncounterData()){
 	$encounter=&$enc_obj->getLoadedEncounterData();
@@ -144,7 +144,7 @@ $classpath=$root_path.'classes/phppdf/';
 $fontpath=$classpath.'fonts/';
 
 include($classpath.'class.ezpdf.php');
-$pdf=& new Cezpdf();
+$pdf= Cezpdf();
 
 
 $logo=$root_path.'gui/img/logos/care_logo_print.png';
@@ -169,7 +169,7 @@ $data=NULL;
 $y=$pdf->ezText("\n",14);
 
 if(!stristr($filter,$nr)){
-	
+
 	// Get the report title
 	if(isset($$LD_var)&&!empty($$LD_var)){
 		$title=$$LD_var;
@@ -192,7 +192,7 @@ if(!stristr($filter,$nr)){
 	$pdf->ezText($LDAllergy . " : " .$patientAllergy . "                    " . $LDDiagnosis . " : " .$patientDiagnosis ,13);
 	$y=$pdf->ezText("\n",6);
 	$prescriptionData=array();
-	
+
 	$columnNames = array($LDDrug,$LDDose,$LDHour,$LDApplicationType,$LDSpeed,$LDNotes);
 	$tableoptions = array('cols' => array(
 		$LDDrug=>array('justification'=>'left','width'=>220),
@@ -202,14 +202,14 @@ if(!stristr($filter,$nr)){
 		$LDSpeed=>array('justification'=>'right'),
 		$LDNotes=>array('justification'=>'left','width'=>100)
 		),'width'=>555,'showLines'=> 2,'shaded'=> 0,'titleFontSize' => 14);
-		
+
 	$billTableOptions = array('cols' => array(
 		$LDDrug=>array('justification'=>'left','width'=>220),
 		$LDQty =>array('justification'=>'right'),
 		$LDPrice=>array('justification'=>'right'),
 		$LDValue=>array('justification'=>'right')
 		),'width'=>555,'showLines'=> 2,'shaded'=> 0,'titleFontSize' => 14);
-		
+
 	$presPrescriber = '';
 	$prescribeDate = '';
 	$countCompanions = 0;
@@ -285,7 +285,7 @@ if ($countPrescriptionData > 1 ) {
 			$billTable[$i][$LDPrice] = '';
 			$billTable[$i][$LDValue] = '';
 		}
-		
+
 	}
 } else {
 	$prescriptionTable[0][$LDDrug] = $prescriptionData[0]['article'];
@@ -303,7 +303,7 @@ if ($countPrescriptionData > 1 ) {
 //sort them out depending on the Hour to be administered
 foreach($prescriptionTable as $res)
      $sortAux[] = substr($res[$LDHour],0,2);
-     
+
 array_multisort($sortAux, SORT_ASC, SORT_NUMERIC, $prescriptionTable);
 
 $pdf->ezTable($prescriptionTable,'','',$tableoptions);

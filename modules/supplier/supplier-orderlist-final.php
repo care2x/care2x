@@ -31,12 +31,12 @@ require_once($root_path.'include/core/inc_date_format_functions.php');
 if(($mode=='send') && isset($idcare_supply) && $idcare_supply){
 
 	#Check authenticity of validator person
-	   
+
 	include_once($root_path.'include/care_api_classes/class_access.php');
-	$user = & new Access($validator,$vpw);
-	   
+	$user =  Access($validator,$vpw);
+
 	if($user->isKnown()){
-		  
+
 		if($user->hasValidPassword() && $user->isNotLocked()){
 			if($notes!='' && isset($notes)) {
 				$sql="UPDATE $dbtable SET validator='$validator',
@@ -54,7 +54,7 @@ if(($mode=='send') && isset($idcare_supply) && $idcare_supply){
 				   		WHERE idcare_supply='$idcare_supply'
 						AND idcare_supplier='$supplier_nr'";
 			}
-		
+
 			if($ergebnis=$user->Transact($sql)){
 				//echo $sql;
   				$ofinal=true;
@@ -64,10 +64,10 @@ if(($mode=='send') && isset($idcare_supply) && $idcare_supply){
 			$error='password';
 			$mode='';
 		}
-	}else{ 
+	}else{
 		$error='validator';
 		$mode='';
-	} 
+	}
 }
 ?>
 <?php html_rtl($lang); ?>
@@ -98,7 +98,7 @@ function goactive() {
     <?php if ($nofocus=='') echo "if(window.focus) window.focus();"; ?>
 	window.resizeTo(800,600);
 }
-	
+
 function show_order(d,o,s) {
 	url="supply-bestellbot-print.php<?php echo URL_REDIRECT_APPEND."&userck=$userck"; ?>&cat=<?php echo $cat ?>&supplier_nr="+d+"&idcare_supply="+o+"&status="+s
 	<?php echo $cat.'powin'.$sid; ?>=window.open(url,"<?php echo $cat.'powin'.$sid; ?>","width=800,height=600,menubar=no,resizable=yes,scrollbars=yes");
@@ -112,13 +112,13 @@ function show_order(d,o,s) {
 ?>
 
 </script>
-<?php 
+<?php
 require($root_path.'include/core/inc_js_gethelp.php');
 require($root_path.'include/core/inc_css_a_hilitebu.php');
 ?>
 </head>
-<BODY  topmargin=5 leftmargin=10  marginwidth=10 marginheight=5 
-<?php 			
+<BODY  topmargin=5 leftmargin=10  marginwidth=10 marginheight=5
+<?php
 switch($mode) {
 	case "add":echo ' onLoad="location.replace(\'#bottom\')"   '; break;
 	case "delete":echo ' onLoad="location.replace(\'#'.($idx-1).'\')"   '; break;
@@ -133,7 +133,7 @@ echo "bgcolor=".$cfg['body_bgcolor']; if (!$cfg['dhtml']){ echo ' link='.$cfg['b
 /* Display event messages */
 
 if ($sendok) echo '<font face="Verdana, Arial" size=2 color="#800000">'.$LDBillData.'<p></font>';
-			
+
 if ($error )
 {
 ?>
@@ -152,25 +152,25 @@ if ($error )
 $dbtable='care_supply';
 
 $sql="SELECT * FROM $dbtable WHERE idcare_supply='$idcare_supply' AND idcare_supplier='$supplier_nr'";
-						
+
 if($ergebnis=$db->Execute($sql)){
 	$rows=$ergebnis->RecordCount();
 }else{
 	echo "$LDDbNoRead<br>";
-} 
+}
 
-	 
+
 # ++++++++++++++++++++++++ show the actual list +++++++++++++++++++++++++++
-	
+
 if ($rows>0){
 
 $tog=1;
 $content=$ergebnis->FetchRow();
 echo '
 		<font face="Verdana, Arial" size=2 color="#800000">'.$final_orderlist;
-		
+
         echo $supplier_obj->FormalName($supplier_nr);
-			
+
 		echo ':</font><br>
 		<font face="Arial" size=1> ('.$LDCreatedOn.': ';
 
@@ -182,8 +182,8 @@ echo '
   		<tr bgcolor="#ffffff">';
 	for ($i=0;$i<sizeof($LDFinindexSupply);$i++)
 	    echo '<td><font face=Verdana,Arial size=1 color="#000080">'.$LDFinindexSupply[$i].'</td>';
-	
-	echo '</tr>';	
+
+	echo '</tr>';
 
 $i=1;
 
@@ -194,20 +194,20 @@ for($n=0;$n<sizeof($artikeln);$n++)	{
 	echo'
 				<td>';
 	if($mode=='delete') echo '<a name="'.$i.'"></a>';
-	echo'	
+	echo'
 				<font face=Arial size=1 color="#000080">'.$i.'</td>
 				<td><font face=Verdana,Arial size=1>'.$r['artikelname'].'</td>
 				<td><font face=Verdana,Arial size=1>'.$r['pcs'].'</td>
 				<td ><font face=Verdana,Arial size=1><nobr>X '.$r['proorder'].'</nobr></td>
 				<td>'.$r['price'].'</td>
-				<td>'.$r['value'].'</td>			
+				<td>'.$r['value'].'</td>
 				<td>'.$r['expiry_date'].'</td>
 				<td><font face=Verdana,Arial size=1>'.$r['bestellnum'].'</td>
 			</tr>';
 	$i++;
  	}
  	echo '</table></td></tr></table><font face=Verdana,Arial size=2 color="#800000">';
-	
+
 	if(($mode!='send')&&(!$sendok))	{
 		echo '
 			<form action="'.$thisfile.'" method="post" onSubmit="return checkform(this)">  Nr. Fatures
@@ -229,7 +229,7 @@ for($n=0;$n<sizeof($artikeln);$n++)	{
 			<input type="hidden" name="userck" value="'.$userck.'">
 			<input type="hidden" name="mode" value="send">
    			<p>
-			<input type="submit" value="'.$LDSendBillPrint.'">   
+			<input type="submit" value="'.$LDSendBillPrint.'">
    			</form></font><p>
 			<font face=Verdana,Arial size=2>
 			<a href="supply-bestellkorb.php'.URL_APPEND.'&cat='.$cat.'&supplier_nr='.$supplier_nr.'&idcare_supply='.$idcare_supply.'&userck='.$userck.'" ><< '.$LDBack2Edit.'</a></font>

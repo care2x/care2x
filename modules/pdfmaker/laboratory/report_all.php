@@ -13,7 +13,7 @@ require($root_path.'include/core/inc_environment_global.php');
 * CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
 * GNU General Public License
 * Copyright 2002,2003,2004,2005 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -36,13 +36,13 @@ $thisfile=basename(__FILE__);
 require_once($root_path.'include/core/inc_date_format_functions.php');
 
 require_once($root_path.'include/care_api_classes/class_access.php');
-$access =& new Access();
+$access = Access();
 $access->UserExists($_SESSION['sess_user_name']);
 
 //get in the classes i need
 /* Create encounter object */
 require_once($root_path.'include/care_api_classes/class_encounter.php');
-$enc_obj=& new Encounter($encounter_nr);
+$enc_obj= Encounter($encounter_nr);
 $encounter = '';
 if($enc_obj->loadEncounterData()){
 	$encounter=&$enc_obj->getLoadedEncounterData();
@@ -70,9 +70,9 @@ if($encounterLab=&$enc_obj->getBasic4Data($encounter_nr)) {
 	$patient=$encounterLab->FetchRow();
 
 	$recs=&$lab_obj->getAllResults($encounter_nr);
-	
+
 	if ($rows=$lab_obj->LastRecordCount()){
-	
+
 		# Check if the lab result was recently modified
 		$modtime=$lab_obj->getLastModifyTime();
 
@@ -86,7 +86,7 @@ if($encounterLab=&$enc_obj->getBasic4Data($encounter_nr)) {
 				$tmp = array($buffer['paramater_name'] => $buffer['parameter_value']);
 				$records[$buffer['job_id']][] = $tmp;
 				$tdate[$buffer['job_id']]=&$buffer['test_date'];
-				$ttime[$buffer['job_id']]=&$buffer['test_time'];				
+				$ttime[$buffer['job_id']]=&$buffer['test_time'];
 			}
 		}
 	}else{
@@ -102,7 +102,7 @@ $classpath=$root_path.'classes/phppdf/';
 $fontpath=$classpath.'fonts/';
 
 include($classpath.'class.ezpdf.php');
-$pdf=& new Cezpdf();
+$pdf= Cezpdf();
 
 
 $logo=$root_path.'gui/img/logos/care_logo_print.png';
@@ -126,7 +126,7 @@ require('../std_plates/patientdata.php');
 $data=NULL;
 // make empty line
 $y=$pdf->ezText("\n",14);
-	
+
 // Get the report title
 if(isset($$LD_var)&&!empty($$LD_var)){
 	$title=$$LD_var;
@@ -172,16 +172,16 @@ while (list($job_id,$paramgroupvalue)=each($records)) {
 }
 while(list($x,$v)=each($laboratoryTable[0]))
 	$tmpArray[0][$v] = '';
-	
+
 $laboratoryTable = array();
-$laboratoryTable = $tmpArray;	
+$laboratoryTable = $tmpArray;
 //#147
 reset($tdate);
 reset($ttime);
 $pdf->ezText("\n",8);
 while(list($jid,$date)=each($tdate)) {
 	if(!in_array($jid,$notShow)) continue;
-	$pdf->ezText("Data - " . $jid . " : " . formatDate2Local($date,$date_format) . " ". $ttime[$jid] ,12,array('justification'=>'left')); 
+	$pdf->ezText("Data - " . $jid . " : " . formatDate2Local($date,$date_format) . " ". $ttime[$jid] ,12,array('justification'=>'left'));
 }
 
 //now the print out
@@ -191,13 +191,13 @@ while(list($group,$pm)=each($requestData)) {
 	$laboratoryTable = null;
 	$laboratoryTable = $tmpArray;
 	$gName = $lab_obj->getGroupName($group ) ;
-	$groupName[] = array($gName->fields['name']);	
+	$groupName[] = array($gName->fields['name']);
 	$pdf->ezText("\n",6);
-	$pdf->ezTable($groupName,'','',array('xPos'=>'left','xOrientation'=>'right','showLines'=>0,'fontSize'=>$report_titlesize,'showHeadings'=>0,'shaded'=>2,'shadeCol2'=>array(0.9,0.9,0.9),'width'=>555));	
+	$pdf->ezTable($groupName,'','',array('xPos'=>'left','xOrientation'=>'right','showLines'=>0,'fontSize'=>$report_titlesize,'showHeadings'=>0,'shaded'=>2,'shadeCol2'=>array(0.9,0.9,0.9),'width'=>555));
 	$pdf->ezText("\n",2);
-	$tracker=0;	
+	$tracker=0;
 	while (list($paramId,$encounterNr)=each($pm)) {
-		$pName = $lab_obj->TestParamsDetails($paramId);		
+		$pName = $lab_obj->TestParamsDetails($paramId);
 		$laboratoryTable[$tracker][$LDParameter] = $pName['name'];
 		$dobDiff = dateDiff("-", date("Y-m-d"), $patient['date_birth']);
 		switch ($dobDiff) {
@@ -209,23 +209,23 @@ while(list($group,$pm)=each($requestData)) {
 				break;
 		case ( $dobDiff >= 361) and ($dobDiff <= 5040 ) :
 				$laboratoryTable[$tracker][$LDNormalValue] = $pName['median_c'];
-				break;	
+				break;
 		case $dobDiff > 5040 :
 			if($patient['sex']=='m'){
 				$laboratoryTable[$tracker][$LDNormalValue] = $pName['median'];
 			} elseif ($patient['sex']=='f')	{
-				$laboratoryTable[$tracker][$LDNormalValue] = $pName['median_f'];																			
+				$laboratoryTable[$tracker][$LDNormalValue] = $pName['median_f'];
 			}
 			break;
-		}	
-		if(isset($laboratoryTable[$tracker][$LDNormalValue])) $laboratoryTable[$tracker][$LDNormalValue] = '';	
-		$laboratoryTable[$tracker][$LDMsrUnit] = $pName['msr_unit'];			
+		}
+		if(isset($laboratoryTable[$tracker][$LDNormalValue])) $laboratoryTable[$tracker][$LDNormalValue] = '';
+		$laboratoryTable[$tracker][$LDMsrUnit] = $pName['msr_unit'];
 		while (list($encNr,$paramValue)=each($encounterNr)) {
 			if(!in_array($encNr,$notShow)) continue;
 			$laboratoryTable[$tracker][$encNr] = $requestData[$group][$paramId][$encNr];
 
 		}
-		$tracker++;			
+		$tracker++;
 	}
 	$pdf->ezTable($laboratoryTable,'','',array('xPos'=>'left','xOrientation'=>'right','shaded'=>0,'width'=>555));
 	$groupName = null;

@@ -30,7 +30,7 @@ require_once($root_path.'include/care_api_classes/class_encounter.php');
 
 
 # Get the encouter data
-$enc_obj=& new Encounter($enc);
+$enc_obj= Encounter($enc);
 if($enc_obj->loadEncounterData()){
 	$encounter=$enc_obj->getLoadedEncounterData();
 	//extract($encounter);
@@ -45,10 +45,10 @@ if (isset($$encounter_class['LD_var'])&&!empty($$encounter_class['LD_var'])){
 	$eclass=$$encounter_class['LD_var'];
 }else{
 	$eclass= $encounter_class['name'];
-} 
+}
 # Resolve the insurance class name
-if (isset($$insurance_class['LD_var'])&&!empty($$insurance_class['LD_var'])) $insclass=$$insurance_class['LD_var']; 
-    else $insclass=$insurance_class['name']; 
+if (isset($$insurance_class['LD_var'])&&!empty($$insurance_class['LD_var'])) $insclass=$$insurance_class['LD_var'];
+    else $insclass=$insurance_class['name'];
 
 # Get ward or department infos
 if($encounter['encounter_class_nr']==1){
@@ -74,7 +74,7 @@ $classpath=$root_path.'classes/phppdf/';
 $fontpath=$classpath.'fonts/';
 # Load and create pdf object
 include($classpath.'class.ezpdf.php');
-$pdf=& new Cezpdf();
+$pdf= Cezpdf();
 
 
 //$logo=$root_path.'gui/img/logos/care_logo.jpg';

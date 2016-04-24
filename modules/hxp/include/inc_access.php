@@ -1,14 +1,14 @@
 <?php
 
-/*------begin------ 
-* This protection code was suggested by Luki R. luki@karet.org 
+/*------begin------
+* This protection code was suggested by Luki R. luki@karet.org
 */
 if (stristr($_SERVER['SCRIPT_NAME'],'inc_access.php')) die('<meta http-equiv="refresh" content="0; url=../">');
 /*------end------*/
 
 //include('./class/class_xmlrpcaccess.php');
 include($root_path.'include/care_api_classes/class_access.php');
-$access = & new Access();
+$access =  Access();
 //$permitarea='System_Admin';
 //$permitarea='_a_1_techreception';
 
@@ -26,7 +26,7 @@ function checkAccess($data){
 		return new IXR_Error(1000,'_ERROR_AUTH_BADHEADER');
 	}
 	$access->loadAccess($data['usr'],$data['pw']);
-	
+
 	if($access->isKnown()){
 		if($access->hasValidPassword()){
 			if($access->isNotLocked()){

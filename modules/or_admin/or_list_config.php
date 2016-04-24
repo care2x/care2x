@@ -6,7 +6,7 @@ require($root_path.'include/core/inc_environment_global.php');
 * CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
 * GNU General Public License
 * Copyright 2002,2003,2004,2005 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -26,7 +26,7 @@ if($pyear=='') $pyear=date('Y');
 $t_date=$pday.'.'.$pmonth.'.'.$pyear;
 
 # Create the OR object
-$OR_obj=& new OPRoom;
+$OR_obj= OPRoom;
 # Get all OR
 $OR_rooms=$OR_obj->AllORInfo();
 # Get the number or returned ORs
@@ -63,7 +63,7 @@ ob_start();
 <tbody class="submenu">
   <tr class="wardlisttitlerow">
 <!-- 	<td bgcolor="#e9e9e9"></td>
- -->    
+ -->
  	<td align=center><?php echo $LDORNr ?></td>
  	<td align=center><?php echo $LDORName ?></td>
  	<td align=center><?php echo $LDOPTable ?></td>
@@ -73,7 +73,7 @@ ob_start();
     <td align=center><?php echo $LDOwnerWard ?></td>
     <td  align=center><?php echo $LDOwnerDept ?></td>
  </tr>
-  
+
 <?php
 if(is_object($OR_rooms)){
 
@@ -81,8 +81,8 @@ if(is_object($OR_rooms)){
 ?>
   <tr>
  	<td align=center><a href="or_info.php<?php echo URL_APPEND."&nr=".$ORoom['nr']."&OR_nr=".$ORoom['room_nr']; ?>">
-	<?php 
-		 echo $ORoom['room_nr']; 
+	<?php
+		 echo $ORoom['room_nr'];
 	?></a> </td>
     <td>
 <?php
@@ -97,7 +97,7 @@ if(is_object($OR_rooms)){
     <td  align=center><?php echo $ORoom['nr_of_beds'] ?> </td>
     <td><?php
 	 if($ORoom['is_temp_closed']=='1'){
-	 	echo '<font color="red">'.$LDYes.'</font>'; 
+	 	echo '<font color="red">'.$LDYes.'</font>';
 	 }else{
 		echo $LDNo;
 	}
@@ -109,13 +109,13 @@ if(is_object($OR_rooms)){
  -->    <td><?php  echo formatDate2Local($ORoom['date_create'],$date_format) ?> </td>
     <td><?php echo  $ORoom['ward_id'] ?> </td>
     <td>
-	<?php 
-	
+	<?php
+
 		$buf=$ORoom['LD_var'];
 		if(!empty($buf)&&isset($$buf)&&!empty($$buf)) echo $$buf;
 			else echo $ORoom['deptshort'];
 	?> </td>
- </tr> 
+ </tr>
 <?php
 	}
 }

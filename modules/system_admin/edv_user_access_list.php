@@ -6,7 +6,7 @@ require($root_path.'include/core/inc_environment_global.php');
 * CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
 * GNU General Public License
 * Copyright 2002,2003,2004,2005 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -46,7 +46,7 @@ if($ergebnis=$db->Execute($sql)) {
 	$rows=$ergebnis->RecordCount();
 }
 require_once($root_path.'include/care_api_classes/class_access.php');
-$role = & new Access();
+$role =  Access();
 
 require_once($root_path.'include/care_api_classes/class_department.php');
 $dept=new Department;
@@ -99,15 +99,15 @@ if ($remark=='itemdelete') echo '<img '.createMascot($root_path,'mascot1_r.gif',
 		echo "
 					<td colspan=8><font color=\"#800000\"><b>$LDActualAccess</b></font></td>";
         echo "
-					</tr>"; 
+					</tr>";
         $sRow = '<tr class="wardlisttitlerow">';
 		for($i=0;$i<sizeof($LDAccessIndex);$i++)
-			$sRow .= "<td><b>".$LDAccessIndex[$i]."</b></td>"; 
-		/* Load common icons */	
+			$sRow .= "<td><b>".$LDAccessIndex[$i]."</b></td>";
+		/* Load common icons */
 		$img_padlock=createComIcon($root_path,'padlock.gif','0');
 		$img_arrow=createComIcon($root_path,'arrow-gr.gif','0');
 			$old_role = '';
-			while ($zeile=$ergebnis->FetchRow()) {  
+			while ($zeile=$ergebnis->FetchRow()) {
 				if($zeile['user_role'] != $old_role) {
 					$role->roleExists($zeile['user_role']);
 					echo '</table> </div></td></tr>';
@@ -122,37 +122,37 @@ if ($remark=='itemdelete') echo '<img '.createMascot($root_path,'mascot1_r.gif',
 							<td>".$zeile['name']."</td>\n
 							<td>".$zeile['login_id']."</td>\n
 							<td>";
-				
+
 				//gjergji .. new dept management
 				$userDept = unserialize($zeile['dept_nr']);
 				$sTemp = '';
 				reset($depts);
         		if($depts&&is_array($depts)) {
-        			while(list($x,$v)=each($depts)) { 
+        			while(list($x,$v)=each($depts)) {
             			 if(in_array($v['nr'],$userDept)) {
                 			 if(isset($$v['LD_var']) && $$v['LD_var'])  { $sTemp = $sTemp . '<b>' . $$v['LD_var'] . '</b><br>'; }
                 				 else  { $sTemp = $sTemp . '<b>' . $v['name_formal'] . '</b><br>'; }
             			 }
             	 	 }
-        		}	
-        		//gjergji : end new dept management		 
+        		}
+        		//gjergji : end new dept management
 				echo $sTemp . "</td>\n<td>\n";
 				if ($zeile['lockflag'])
 					   echo '
 					   		<img '.$img_padlock.'>'; else echo '<img '.$img_arrow.'>';
 				echo "
 							</td>\n <td>";
-				
+
 				/* Display the permitted areas */
 				$area=explode(' ',$zeile['permission']);
 				for($n=0;$n<sizeof($area);$n++) echo $area_opt[$area[$n]].'<br>';
-															
+
 				echo '</td>
 						<td> '.formatDate2Local($zeile['s_date'],$date_format).' / '.convertTimeToLocal($zeile['s_time']).' </td>';
-		
+
 				echo '
 						<td>'.$zeile['create_id'].'</td>';
-						
+
 	            echo "
 						<td>
 						<a href=edv_user_access_edit.php?sid=$sid&lang=$lang&mode=edit&userid=".str_replace(' ','+',$zeile['login_id'])." title=\"$LDChange\"> $LDInitChange</a> \n

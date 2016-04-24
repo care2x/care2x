@@ -6,7 +6,7 @@ require($root_path.'include/core/inc_environment_global.php');
 * CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
 * GNU General Public License
 * Copyright 2002,2003,2004,2005 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -15,7 +15,7 @@ $local_user='ck_prod_db_user';
 require_once($root_path.'include/core/inc_front_chain_lang.php');
 
 require_once($root_path.'include/care_api_classes/class_core.php');
-$core = & new Core;
+$core =  Core;
 
 $thisfile=basename(__FILE__);
 
@@ -33,13 +33,13 @@ switch($cat){
 							$imgpath=$root_path."uplodas/med_depot/img/";
 							$breakfile=$root_path."modules/med_depot/medlager-datenbank-functions.php?sid=$sid&lang=$lang&userck=$userck";
 							break;
-	
+
 	default:  {header("Location:".$root_path."language/".$lang."/lang_".$lang."_invalid-access-warning.php"); exit;};
 
 }
 
 if(($mode=='delete')&&($sure)&&($keyword!='')&&($keytype!='')) {
-	
+
 	$deleteok=false;
 
     $sql="DELETE  FROM $dbtable WHERE  $keytype='$keyword'";
@@ -95,7 +95,7 @@ require("includes/inc_products_search_mod_datenbank.php");
 <p>
 <br>
 
-<?php 
+<?php
 if(!$sure)
 {
 	 echo '
@@ -129,7 +129,7 @@ require("includes/inc_products_search_result_mod.php");
 <p>
 <a href="<?php echo $breakfile ?>"><img <?php echo createLDImgSrc($root_path,'cancel.gif','0','right') ?>></a>
 
-<?php 
+<?php
 
 if(!$sure) echo'
 	<form action="'.$thisfile.'" method="get" name=delform>

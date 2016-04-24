@@ -84,12 +84,12 @@ ob_start();
 </HEAD>
 
 
-<BODY bgcolor="<?php echo $cfg['body_bgcolor'];?>" topmargin=0 leftmargin=0 marginwidth=0 marginheight=0 
+<BODY bgcolor="<?php echo $cfg['body_bgcolor'];?>" topmargin=0 leftmargin=0 marginwidth=0 marginheight=0
 <?php
 if(!$personell_nr && !$pid)
 {
 ?>
-onLoad="if(document.searchform.searchkey.focus) document.searchform.searchkey.focus();" 
+onLoad="if(document.searchform.searchkey.focus) document.searchform.searchkey.focus();"
 <?php
 }
 
@@ -103,7 +103,7 @@ onLoad="if(document.searchform.searchkey.focus) document.searchform.searchkey.fo
 <?php
 
 $target='personell_reg';
-include('./gui_bridge/default/gui_tabs_personell_reg.php') 
+include('./gui_bridge/default/gui_tabs_personell_reg.php')
 
 ?>
 
@@ -112,7 +112,7 @@ include('./gui_bridge/default/gui_tabs_personell_reg.php')
 
 <ul>
 
-<?php 
+<?php
 
 # If the origin is admission link, show the search prompt
 if(!$pid&&!$personell_nr){
@@ -130,9 +130,9 @@ if(!$pid&&!$personell_nr){
 	ob_end_clean();
 
 	$user_origin='admit';
-	
+
 	require_once($root_path.'include/care_api_classes/class_gui_search_person.php');
-	$psearch = & new GuiSearchPerson;
+	$psearch =  GuiSearchPerson;
 
 	$psearch->setSearchFile('personell_register_search.php');
 
@@ -160,9 +160,9 @@ if(!$pid&&!$personell_nr){
 
 <table border="0" cellspacing=1 cellpadding=0 width=450>
 
-<?php 
+<?php
 
-if($error) 
+if($error)
 {
 
 ?>
@@ -193,8 +193,8 @@ if($error)
 <td  class="adm_item">&nbsp;<?php //echo $LDDateJoin ?>
 </td>
 <td class="adm_input"><FONT color="#800000">&nbsp;
-<?php 
-    // if($date_join!='0000-00-00') echo @formatDate2Local($date_join,$date_format); 
+<?php
+    // if($date_join!='0000-00-00') echo @formatDate2Local($date_join,$date_format);
 ?>
 </td>
 </tr>
@@ -307,9 +307,9 @@ if($GLOBAL_CONFIG['patient_name_middle_show'])
 <td colspan=2 class="adm_input">
 <?php
 //gjergji : new calendar
-echo $calendar->show_calendar($calendar,$date_format,'date_join',$date_join);	
+echo $calendar->show_calendar($calendar,$date_format,'date_join',$date_join);
 //end : gjergji
-  ?> 
+  ?>
   </font>
 </td>
 </tr>
@@ -319,9 +319,9 @@ echo $calendar->show_calendar($calendar,$date_format,'date_join',$date_join);
 <td colspan=2 class="adm_input">
 <?php
 //gjergji : new calendar
-echo $calendar->show_calendar($calendar,$date_format,'date_exit',$date_exit);	
+echo $calendar->show_calendar($calendar,$date_format,'date_exit',$date_exit);
 //end : gjergji
-  ?>  
+  ?>
   </font>
 </td>
 </tr>
@@ -337,9 +337,9 @@ echo $calendar->show_calendar($calendar,$date_format,'date_exit',$date_exit);
 <td colspan=2 class="adm_input">
 <?php
 //gjergji : new calendar
-echo $calendar->show_calendar($calendar,$date_format,'contract_start',$contract_start);	
+echo $calendar->show_calendar($calendar,$date_format,'contract_start',$contract_start);
 //end : gjergji
-?>  
+?>
 </font>
  </td>
 </tr>
@@ -349,9 +349,9 @@ echo $calendar->show_calendar($calendar,$date_format,'contract_start',$contract_
 <td colspan=2 class="adm_input">
 <?php
 //gjergji : new calendar
-echo $calendar->show_calendar($calendar,$date_format,'contract_end',$contract_end);	
+echo $calendar->show_calendar($calendar,$date_format,'contract_end',$contract_end);
 //end : gjergji
-?>  
+?>
 </font></td>
 </tr>
 <tr>
@@ -389,7 +389,7 @@ echo $calendar->show_calendar($calendar,$date_format,'contract_end',$contract_en
 </td>
 <td colspan=2 class="adm_input">
 <select name="nr_workday">
-	<?php 
+	<?php
 		for($x=0; $x<14;$x++){
 			echo "<option value=\"$x\" ";
 			if($nr_workday==$x) echo 'selected';
@@ -406,7 +406,7 @@ echo $calendar->show_calendar($calendar,$date_format,'contract_end',$contract_en
 </td>
 <td colspan=2 class="adm_input">
 <select name="nr_weekhour">
-	<?php 
+	<?php
 		for($x=0; $x<61;$x++){
 			echo "<option value=\"$x\" ";
 			if($nr_weekhour==$x) echo 'selected';
@@ -423,7 +423,7 @@ echo $calendar->show_calendar($calendar,$date_format,'contract_end',$contract_en
 </td>
 <td colspan=2 class="adm_input">
 <select name="nr_vacation_day">
-	<?php 
+	<?php
 		for($x=0; $x<60;$x++){
 			echo "<option value=\"$x\" ";
 			if($nr_vacation_day==$x) echo 'selected';
@@ -440,7 +440,7 @@ echo $calendar->show_calendar($calendar,$date_format,'contract_end',$contract_en
 </td>
 <td colspan=2 class="adm_input">
 <select name="nr_dependent">
-	<?php 
+	<?php
 		for($x=0; $x<20;$x++){
 			echo "<option value=\"$x\" ";
 			if($nr_dependent==$x) echo 'selected';
@@ -482,13 +482,13 @@ echo $calendar->show_calendar($calendar,$date_format,'contract_end',$contract_en
 <input type="hidden" name="insurance_show" value="<?php echo $insurance_show; ?>">
 
 <?php if($update) echo '<input type="hidden" name=update value=1>'; ?>
-<input  type="image" <?php echo createLDImgSrc($root_path,'savedisc.gif','0') ?>  alt="<?php echo $LDSaveData ?>" align="absmiddle"> 
+<input  type="image" <?php echo createLDImgSrc($root_path,'savedisc.gif','0') ?>  alt="<?php echo $LDSaveData ?>" align="absmiddle">
 <a href="<?php echo $breakfile; ?>"><img <?php echo createLDImgSrc($root_path,'cancel.gif','0') ?> alt="<?php echo $LDResetData ?>"   align="absmiddle"></a>
 <!-- Note: uncomment the ff: line if you want to have a reset button  -->
-<!-- 
-<a href="javascript:document.aufnahmeform.reset()"><img <?php echo createLDImgSrc($root_path,'reset.gif','0') ?> alt="<?php echo $LDResetData ?>"   align="absmiddle"></a> 
+<!--
+<a href="javascript:document.aufnahmeform.reset()"><img <?php echo createLDImgSrc($root_path,'reset.gif','0') ?> alt="<?php echo $LDResetData ?>"   align="absmiddle"></a>
 -->
-<?php if($error==1) 
+<?php if($error==1)
 echo '<input type="hidden" name="forcesave" value="1"><input  type="submit" value="'.$LDForceSave.'">';
  ?>
 </form>

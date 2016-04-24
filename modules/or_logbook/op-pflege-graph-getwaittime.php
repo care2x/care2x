@@ -5,7 +5,7 @@ require($root_path.'include/core/inc_environment_global.php');
 /*if(!$lang)
 	if(!$ck_language) include("../chklang.php");
 		else $lang=$ck_language;
-if (!$sid||($sid!=$$ck_sid_buffer)||!$ck_op_pflegelogbuch_user||!$winid||!$patnum) {header("Location:../language/".$lang."/lang_".$lang."_invalid-access-warning.php"); exit;}; 
+if (!$sid||($sid!=$$ck_sid_buffer)||!$ck_op_pflegelogbuch_user||!$winid||!$patnum) {header("Location:../language/".$lang."/lang_".$lang."_invalid-access-warning.php"); exit;};
 require("../language/".$lang."/lang_".$lang."_or.php");
 */
 define('LANG_FILE','or.php');
@@ -23,21 +23,21 @@ switch($winid)
 							$endid=$LDEnd;
 							$maxelement=5;
 							break;
-	default:{header("Location:".$root_path."language/".$lang."/lang_".$lang."_invalid-access-warning.php"); exit;}; 
+	default:{header("Location:".$root_path."language/".$lang."/lang_".$lang."_invalid-access-warning.php"); exit;};
 }
 
 $dbtable='care_encounter_op';
 
 if($mode=='save'){
-	
+
 	require_once($root_path.'include/care_api_classes/class_core.php');
-	$core = & new Core;
+	$core =  Core;
 
 				// check if entry is already existing
-				$sql="SELECT nr,$element FROM $dbtable 
-						WHERE encounter_nr='$enc_nr' 
-						AND dept_nr='$dept_nr' 
-						AND op_room='$saal' 
+				$sql="SELECT nr,$element FROM $dbtable
+						WHERE encounter_nr='$enc_nr'
+						AND dept_nr='$dept_nr'
+						AND op_room='$saal'
 						AND op_nr='$op_nr'";
 				if($ergebnis=$db->Execute($sql))
        			{
@@ -53,26 +53,26 @@ if($mode=='save'){
 								else $dbuf="s=".$$sx."&e=".$$ex."&r=".$$rx."&t=".$opts[($$rx)];
 						}
 					}
-					
+
 					$rows=$ergebnis->RecordCount();
 					if($rows==1)
 						{
 					 		$item=$ergebnis->FetchRow();
-							
+
 							$sql="UPDATE $dbtable SET $element='$dbuf'
 									WHERE nr=".$item['nr'];
-									
+
 							// $dbuf=htmlspecialchars($dbuf);
 /*							$sql="UPDATE $dbtable SET $element='$dbuf'
 										WHERE encounter_nr='$enc_nr'
 											AND dept_nr='$dept_nr'
 											AND op_room='$saal'
 											AND op_nr='$op_nr'";
-*/											
+*/
 							if($ergebnis=$core->Transact($sql))
        							{
 									//echo $sql." new update <br>";
-									
+
 									header("location:$thisfile?sid=$sid&lang=$lang&saved=1&enc_nr=$enc_nr&winid=$winid&dept_nr=$dept_nr&saal=$saal&op_nr=$op_nr&year=$pyear&pmonth=$pmonth&pday=$pday");
 								}
 								else
@@ -82,13 +82,13 @@ if($mode=='save'){
 								}//end of else
 						}// end of if rows
 				}
-				else { echo "$LDDbNoRead<br>"; } 
+				else { echo "$LDDbNoRead<br>"; }
 }// end of if(mode==save)
  else{
 		 	$sql="SELECT $element FROM $dbtable
-						WHERE encounter_nr='$enc_nr' 
-						AND dept_nr='$dept_nr' 
-						AND op_room='$saal' 
+						WHERE encounter_nr='$enc_nr'
+						AND dept_nr='$dept_nr'
+						AND op_room='$saal'
 						AND op_nr='$op_nr'";
 
 			if($ergebnis=$db->Execute($sql))
@@ -112,7 +112,7 @@ if($mode=='save'){
 <TITLE><?php echo $title ?></TITLE>
 
 <script language="javascript">
-<!-- 
+<!--
   function resetinput(){
 	document.infoform.reset();
 	}
@@ -123,7 +123,7 @@ if($mode=='save'){
  function parentrefresh(){
 	//window.opener.location.href="pflege-station-patientdaten-kurve.php?sid=<?php echo $sid ?>&station=<?php echo $station ?>&pn=<?php echo $pn."&tag=$dystart&monat=$mo&jahr=$yr&tagname=$dyname" ?>&nofocus=1";
 	}
-	
+
 function isnum(val,idx)
 {
 	xdoc=document.infoform;
@@ -133,7 +133,7 @@ function isnum(val,idx)
 		for(i=0;i<val.length;i++)
 		{
 		xval2=val.slice(i,i+1);
-		
+
 		//if (!isNaN(xval3 + xval2)) {xval3=xval3 + xval2;}
 		if (isNaN(xval2))
 		 {
@@ -149,33 +149,33 @@ function isnum(val,idx)
 	{
 		v3=val;
 		if((v3==24)&&(v3.length==2)) v3="00";
-		if (v3>24) 
+		if (v3>24)
 		{
 
-		
+
 			switch(v3.length)
 			{
-			
+
 				case 2: v1=v3.slice(0,1); v2=v3.slice(1,2);
 						if(v2<6) v3="0"+v1+"."+v2; else v3=v3.slice(0,1); break;
 				case 3: v1=val.slice(0,2); v2=val.slice(2,3);
 
-						if(v2<6) v3=v1+"."+v2; 
+						if(v2<6) v3=v1+"."+v2;
 							else v3=v3.slice(0,2);
 						break;
 				case 4: v3=val.slice(0,3); break;
 			}
-			
-			
+
+
 //			alert("Zeitangabe ist ungültig! (ausserhalb des 24H Zeitrahmens)");
-	
+
 		}
 		switch(v3.length)
 			{
-				
+
 				case 2: v1=v3.slice(0,1);v2=v3.slice(1,2);
 						if(v2==".") v3="0"+v3;break;
-		
+
 				case 3: v1=v3.slice(0,2);v2=v3.slice(2,3);
 						if(v2!=".") if(v2<6) v3=v1+"."+v2; else v3=v1; break;
 				case 4: if(v3.slice(3,4)>5) v3=v3.slice(0,3); break;
@@ -183,9 +183,9 @@ function isnum(val,idx)
 		if(v3.length>5) v3=v3.slice(0,v3.length-1);
 		xdoc.elements[idx].value=v3;
 	}
-	
+
 }
-	
+
 function isvalnum(val,idx)
 {
 	xdoc=document.oppflegepatinfo;
@@ -194,12 +194,12 @@ function isvalnum(val,idx)
 		for(i=0;i<val.length;i++)
 		{
 		xval2=val.slice(i,i+1);
-		if (!isNaN(xval2)) 
+		if (!isNaN(xval2))
 			{
 				xval3=xval3 + xval2;
-				if (xval3.length>8) 
-				{ 
-				alert("Die Aufnahmenummer hat maximal 8 Ziffern!"); 
+				if (xval3.length>8)
+				{
+				alert("Die Aufnahmenummer hat maximal 8 Ziffern!");
 				xdoc.elements[idx].value=xval3.slice(0,8);
 				return; }
 			}
@@ -221,9 +221,9 @@ function isgdatum(val,idx)
 				{
 				 if(val.length>1) xval3=xval3+xval2;
 				}
-				else 
+				else
 				{
-					 xval3=xval3+xval2;					
+					 xval3=xval3+xval2;
 				}
 			}
 		}
@@ -236,14 +236,14 @@ function isgdatum(val,idx)
 						if (v1==0) xval3=""; else xval3="0"+xval3;
 					}
 					else {
-					if ((v1+v2)<1) xval3=""; 
-						else if ((v1+v2)>31) xval3="0"+v1+"."+v2; 
-							
+					if ((v1+v2)<1) xval3="";
+						else if ((v1+v2)>31) xval3="0"+v1+"."+v2;
+
 					}
 					 break;
 			case 3: v1=xval3.slice(0,2);
 					v2=xval3.slice(2,3);
-					if (v2!=".") xval3=v1+"."+v2; 
+					if (v2!=".") xval3=v1+"."+v2;
 					break;
 			case 4: v1=xval3.slice(0,3);
 					v2=xval3.slice(3,4);
@@ -254,7 +254,7 @@ function isgdatum(val,idx)
 					v3=xval3.slice(4,5);
 					if (v3==".")
 					{
-						if (v2==0) xval3=v1+v2; 
+						if (v2==0) xval3=v1+v2;
 							else xval3=v1+"0"+v2+v3;
 					}
 					else if((v2+v3)<1) xval3=v1+v2;
@@ -264,7 +264,7 @@ function isgdatum(val,idx)
 					v2=xval3.slice(5,6);
 					if (v3!=".")
 					{
-						if (v2==0) xval3=v1 
+						if (v2==0) xval3=v1
 							else xval3=v1+"."+v2;
 					}
 					break;
@@ -296,7 +296,7 @@ div.box { border: double; border-width: thin; width: 100%; border-color: black; 
 </style>
 
 </HEAD>
-<BODY  bgcolor="#dfdfdf" TEXT="#000000" LINK="#0000FF" VLINK="#800080" 
+<BODY  bgcolor="#dfdfdf" TEXT="#000000" LINK="#0000FF" VLINK="#800080"
 onLoad="<?php if($saved) echo "updatebar();"; ?>if (window.focus) window.focus(); window.focus();" >
 
 <a href="javascript:window.close()"><img <?php echo createLDImgSrc($root_path,'close2.gif','0') ?> alt="<?php echo $LDClose ?>" align="right">
@@ -304,7 +304,7 @@ onLoad="<?php if($saved) echo "updatebar();"; ?>if (window.focus) window.focus()
 
 <font face=verdana,arial size=5 color=maroon>
 <b>
-<?php 
+<?php
 	//echo "$title $patnum $dept $saal $op_nr $pday $pmonth $pyear $winid";
 	echo $title;
 ?>
@@ -327,14 +327,14 @@ onLoad="<?php if($saved) echo "updatebar();"; ?>if (window.focus) window.focus()
   </tr>
   <tr>
     <td align=center bgcolor="#ffffff">
-	
+
 		<table border=0 border=0 cellspacing=0 cellpadding=0>
 			<tr>
    			 <td  align=center class="v12"><?php echo $startid ?>:</td>
    			 <td  align=center class="v12"><?php echo $endid ?>:</td>
    			 <td  align=center class="v12"><?php echo $LDReason ?>:</td>
 		  </tr>
-			<?php 
+			<?php
 			$optsize=sizeof($opts);
 			$b=explode("~",trim($result[$element]));
 			sort($b,SORT_REGULAR);
@@ -365,7 +365,7 @@ onLoad="<?php if($saved) echo "updatebar();"; ?>if (window.focus) window.focus()
 				}
  			?>
 		</table>
-	
+
 	</td>
   </tr>
 </table>
@@ -388,7 +388,7 @@ onLoad="<?php if($saved) echo "updatebar();"; ?>if (window.focus) window.focus()
 
 </form>
 <p>
-<div align=right> 
+<div align=right>
 <a href="javascript:document.infoform.submit();"><img <?php echo createLDImgSrc($root_path,'savedisc.gif','0') ?> alt="<?php echo $LDSave ?>"></a>
 </div>
 </BODY>

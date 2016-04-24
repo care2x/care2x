@@ -6,7 +6,7 @@ require($root_path.'include/core/inc_environment_global.php');
 * CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
 * GNU General Public License
 * Copyright 2002,2003,2004,2005 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -15,7 +15,7 @@ $local_user='ck_edv_user';
 require_once($root_path.'include/core/inc_front_chain_lang.php');
 
 require_once($root_path.'include/care_api_classes/class_core.php');
-$core=& new Core();
+$core= Core();
 
 $breakfile='edv-system-admi-welcome.php'.URL_APPEND.'&target=currency_admin';
 $thisfile='edv_system_format_currency_add.php';
@@ -56,17 +56,17 @@ if(($mode=='save') && $short_name&&$long_name&&$info){
 	else
 	{
 		$info_exist=0;
-		
+
 	   // Check first if the info already exists
-	   
+
 	   $sql="SELECT item_no FROM $dbtable WHERE short_name='$short_name' AND long_name $sql_LIKE '$long_name'";
-	   
+
 	   if($ergebnis=$db->Execute($sql))
        {
 		  if(!$ergebnis->RecordCount())
-		  {   
-	
-		 	$sql="INSERT INTO $dbtable 
+		  {
+
+		 	$sql="INSERT INTO $dbtable
 			                          (short_name,
 						long_name,
 						info,
@@ -101,7 +101,7 @@ if(($mode=='save') && $short_name&&$long_name&&$info){
 		      $info_exist=1;
 		  }
 		}
-		 else echo "<p>".$sql."<p>$LDDbNoRead"; 
+		 else echo "<p>".$sql."<p>$LDDbNoRead";
 	  }
 
 }
@@ -151,10 +151,10 @@ if(($mode=='edit') && $item_no)
 
  # Window bar title
  $smarty->assign('sWindowTitle',$LDCurrencyAdmin);
- 
+
  # Body OnLoad Javascript
  if(!$item_no) $smarty->assign('sOnLoadJs','onLoad="document.c_form.short_name.focus()"');
- 
+
  # Buffer page output
  ob_start();
 
@@ -183,21 +183,21 @@ if($item_no) echo $LDPlsEnterUpdate; else echo $LDPlsAddCurrency;
 <p>
 
 <form action="<?php echo $thisfile ?>" method="post" name="c_form">
-<table border=0 cellspacing=1 cellpadding=5>  
+<table border=0 cellspacing=1 cellpadding=5>
 <tr>
 	<td bgcolor="#e9e9e9" align="right"><FONT  color="#0000cc"><b><?php echo $LDCurrencyShortName ?></b> </FONT></td>
 	<td bgcolor="#f9f9f9"><input type="text" name="short_name" size=10 maxlength=40 value="<?php echo $short_name ?>">
-      </td>  
+      </td>
 	</tr>
 <tr>
 	<td bgcolor="#e9e9e9" align="right"><FONT  color="#0000cc"><b><?php echo $LDCurrencyLongName ?></b> </FONT></td>
 	<td bgcolor="#f9f9f9"><input type="text" name="long_name" size=40 maxlength=10 value="<?php echo $long_name ?>">
-      </td>  
+      </td>
 	</tr>
 <tr>
 	<td bgcolor="#e9e9e9" align="right"><FONT  color="#0000cc"><b><?php echo $LDCurrencyInfo ?></b> </FONT></td>
 	<td bgcolor="#f9f9f9"><input type="text" name="info" size=40 maxlength=60 value="<?php echo $info ?>">
-      </td>  
+      </td>
 	</tr>
 </table>
 <p>

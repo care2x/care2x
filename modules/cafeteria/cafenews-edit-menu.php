@@ -6,7 +6,7 @@ require_once($root_path.'include/core/inc_environment_global.php');
 * CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
 * GNU General Public License
 * Copyright 2002,2003,2004,2005 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -17,7 +17,7 @@ $breakfile='cafenews.php'.URL_APPEND;
 $returnfile='cafenews-edit-menu-select-week.php'.URL_APPEND;
 
 require_once($root_path.'include/care_api_classes/class_core.php');
-$core=& new Core();
+$core= Core();
 
 //$db->debug=true;
 
@@ -46,8 +46,8 @@ $core=& new Core();
 	$year=$arraybuf[2];
 	$daytag=date("w",mktime(0,0,0,$month,$day,$year));
  }
- 
-if(!$mday) 
+
+if(!$mday)
 {
 	if($week==1)
 	{
@@ -72,7 +72,7 @@ if($dblink_ok)
 {
 
   include_once($root_path.'include/core/inc_date_format_functions.php');
-  
+
 
 	 switch($mode)
 	 {
@@ -85,22 +85,22 @@ if($dblink_ok)
 				}
 				else
 				{
-		 			$sql="INSERT INTO $dbtable 
-						(	
+		 			$sql="INSERT INTO $dbtable
+						(
 						    lang,
 						    cdate,
 							menu,
 							create_id,
 							create_time
-							) VALUES 
-						(	
+							) VALUES
+						(
 						    '$lang',
 						    '".formatDate2STD($myear."-".$mmonth."-".$mday,"yyyy-mm-dd")."',
 							'$menuplan',
 							'".$_COOKIE[$local_user.$sid]."',
 							'".date('YmdHis')."'
 							)";
-				}					
+				}
 				//echo $sql;
 				if($ergebnis=$db->Execute($sql))
        				{
@@ -116,7 +116,7 @@ if($dblink_ok)
 					}
 					else echo "<p>".$sql."<p>$LDDbNoSave";
 				break;
-				
+
 		default:
 		 	if($item)
 			{
@@ -125,12 +125,12 @@ if($dblink_ok)
 		 	else
 			{
                 $sql="SELECT item, menu FROM $dbtable WHERE cdate='".formatDate2STD($myear."-".$mmonth."-".$mday,"yyyy-mm-dd")."'" ;
- 
+
 	            if(defined('LANG_DEPENDENT') && (LANG_DEPENDENT))
                 {
 	                $sql.="' AND lang='".$lang."'";
                  }
-	         }		
+	         }
 
 			//echo $sql;
 			if($ergebnis=$db->Execute($sql))
@@ -140,7 +140,7 @@ if($dblink_ok)
 					$content=$ergebnis->FetchRow();
 				}
 			}
-				else echo "<p>".$sql."<p>".$LDDbNoRead; 
+				else echo "<p>".$sql."<p>".$LDDbNoRead;
 		} //end of switch
 
   } else echo "$LDDbNoLink<br> $sql<br>";
@@ -203,14 +203,14 @@ function aligndate(&$ad,&$am,&$ay)
 </td>
   </tr>
   <tr bgcolor="#ccffff">
-  
+
 <?php for ($i=0,$acttag=$day,$dyidx=$daytag-1;$i<7;$i++,$acttag++,$dyidx++)
 	{
 	$spot=0;
 	aligndate($acttag,$month,$year);
 
 	if ((int)$mday==(int)$acttag) 	$spot=1;
-	
+
 	echo '
     <td class="v18_b" ';
 	if ($spot)  echo ' bgcolor="yellow">';

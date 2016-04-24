@@ -6,7 +6,7 @@ require($root_path.'include/core/inc_environment_global.php');
 * CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
 * GNU General Public License
 * Copyright 2002,2003,2004,2005 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -15,7 +15,7 @@ define('LANG_FILE','edp.php');
 $local_user='ck_edv_user';
 require_once($root_path.'include/core/inc_front_chain_lang.php');
 require_once($root_path.'include/care_api_classes/class_core.php');
-$core = & new Core();
+$core =  Core();
 
 $breakfile='edv-system-admi-welcome.php'.URL_APPEND;
 if($from=='add') $returnfile='edv_system_format_menu_item_add.php'.URL_APPEND.'&from=set';
@@ -35,7 +35,7 @@ if(isset($mode)&&($mode=='save')){
 		//$db->Execute($sql);
 		$core->Transact();
 	}
-	
+
 	header('location:'.$thisfile.URL_REDIRECT_APPEND.'&mode=0');
 	exit;
 }
@@ -84,7 +84,7 @@ ob_start();
 ?>
 
 <form>
-<table border=0 cellspacing=1 cellpadding=2>  
+<table border=0 cellspacing=1 cellpadding=2>
 
   <tr class="wardlisttitlerow">
     <td><FONT  color="#000099"></td>
@@ -96,7 +96,7 @@ ob_start();
     <td><FONT  color="#000099"><b><?php echo $LDHideBy; ?></b></td>
   </tr>
 
-<?php 
+<?php
 $i=1;
 while($menu_item=$result->FetchRow())
 {
@@ -111,7 +111,7 @@ while($menu_item=$result->FetchRow())
 	<td align="center"><FONT  color="#0000cc">	<input type="checkbox" name="hide_it_'.$menu_item['nr'].'" value="1" ';
 	if($menu_item['is_visible']) echo 'checked';
 	echo '><br></FONT></td>
-	<td>'.$menu_item['url'].'<br></td>  
+	<td>'.$menu_item['url'].'<br></td>
 	<td class="wardlistrow1">'.$menu_item['status'].'<br></td>
 	<td><FONT  color="#0000cc"><b>'.$menu_item['hide_by'].'</b> </FONT></td>
 	</tr>';

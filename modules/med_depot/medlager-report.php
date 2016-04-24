@@ -6,7 +6,7 @@ require($root_path.'include/core/inc_environment_global.php');
 * CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
 * GNU General Public License
 * Copyright 2002,2003,2004,2005 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -19,7 +19,7 @@ require_once($root_path.'include/core/inc_date_format_functions.php');
 
 # Create a core object
 require_once($root_path.'include/care_api_classes/class_core.php');
-$core = & new Core;
+$core =  Core;
 
 $thisfile='medlager-report.php';
 
@@ -34,8 +34,8 @@ if(($report!=NULL)||($mode!=''))
 			switch($mode)
 			{
 				case 'save':
-						$sql="INSERT INTO ".$dbtable." 
-						(	
+						$sql="INSERT INTO ".$dbtable."
+						(
 							report,
 							reporter,
 							id_nr,
@@ -45,42 +45,42 @@ if(($report!=NULL)||($mode!=''))
 							history,
 							create_id,
 							create_time
-							 ) 
-						VALUES 
+							 )
+						VALUES
 						(
 							'".htmlspecialchars($report)."',
 							'$reporter',
-							'$id_nr', 
-							'$report_date', 
-							'$report_time', 
+							'$id_nr',
+							'$report_date',
+							'$report_time',
 							'pending',
 							'Created: ".$_SESSION['sess_user_name']." ".date('Y-m-d H:i:s')."\n\r',
 							'".$_SESSION['sess_user_name']."',
 							'".date('YmdHis')."'
 						)";
-						
+
 						if($core->Transact($sql))
-						{ 
+						{
 						    $oid=$db->Insert_ID();
 							$core->coretable=$dbtable;
 							$report_nr = $core->LastInsertPK('report_nr',$oid);
 							header("Location: $thisfile".URL_REDIRECT_APPEND."&userck=$userck&dept=$dept&report_nr=$report_nr&mode=sent"); exit;
-							
+
 							exit;
 						}
 			 			else {echo "<p>".$sql."<p>$LDDbNoSave.";};
    						break;
-						
+
 				case 'sent':
 								$sql="SELECT report_nr, report, reporter, report_date, report_time FROM $dbtable
 										WHERE report_nr='$report_nr'";
-										
+
         						if($ergebnis=$db->Execute($sql))
 								{
 									$rows=$ergebnis->RecordCount();
 								}
 								else echo "$sql<br>$LDDbNoRead<br>";
-								
+
 						break;
 			} // end of switch
 }
@@ -92,22 +92,22 @@ if(($report!=NULL)||($mode!=''))
 <?php echo setCharSet(); ?>
 
  <script language="javascript" >
-<!-- 
+<!--
 
 function checkform(d)
 {
 
-	if(d.report.value=="") 
+	if(d.report.value=="")
 		{	alert("<?php echo $LDAlertReport ?>");
 		    d.report.focus();
 			return false;
 		}
-	if(d.reporter.value=="") 
+	if(d.reporter.value=="")
 		{	alert("<?php echo $LDAlertName ?>");
 		    d.reporter.focus();
 			return false;
 		}
-	if(d.id_nr.value=="") 
+	if(d.id_nr.value=="")
 		{	alert("<?php echo $LDAlertPersonNr ?>");
 		    d.id_nr.focus();
 			return false;
@@ -116,14 +116,14 @@ function checkform(d)
 }
 
 // -->
-</script> 
+</script>
 
-<?php 
+<?php
 require($root_path.'include/core/inc_js_gethelp.php');
 require($root_path.'include/core/inc_css_a_hilitebu.php');
 ?></HEAD>
 
-<BODY topmargin=0 leftmargin=0 marginwidth=0 marginheight=0 
+<BODY topmargin=0 leftmargin=0 marginwidth=0 marginheight=0
 <?php if (!$cfg['dhtml']){ echo 'link='.$cfg['body_txtcolor'].' alink='.$cfg['body_alink'].' vlink='.$cfg['body_txtcolor']; } ?>>
 
 <table width=100% border=0 height=100% cellpadding="0" cellspacing="0">
@@ -131,8 +131,8 @@ require($root_path.'include/core/inc_css_a_hilitebu.php');
 <td bgcolor="<?php echo $cfg['top_bgcolor']; ?>"  height="10" >
 <FONT  COLOR="<?php echo $cfg['top_txtcolor']; ?>"  SIZE=+2  FACE="Arial"><STRONG> &nbsp;<?php echo "$LDMedDepot - $LDReport" ?></STRONG></FONT></td>
 <td bgcolor="<?php echo $cfg['top_bgcolor']; ?>" height="10" align=right>
-<a href="#" onClick=history.back(1)><img <?php echo createLDImgSrc($root_path,'back2.gif','0') ?>  <?php if($cfg['dhtml'])echo'class="fadeOut" >';?></a><a 
-href="javascript:gethelp('products_db.php','report','<?php echo $mode ?>','<?php echo $cat ?>','<?php echo $update ?>')"><img <?php echo createLDImgSrc($root_path,'hilfe-r.gif','0') ?>  <?php if($cfg['dhtml'])echo'class="fadeOut" >';?></a><a 
+<a href="#" onClick=history.back(1)><img <?php echo createLDImgSrc($root_path,'back2.gif','0') ?>  <?php if($cfg['dhtml'])echo'class="fadeOut" >';?></a><a
+href="javascript:gethelp('products_db.php','report','<?php echo $mode ?>','<?php echo $cat ?>','<?php echo $update ?>')"><img <?php echo createLDImgSrc($root_path,'hilfe-r.gif','0') ?>  <?php if($cfg['dhtml'])echo'class="fadeOut" >';?></a><a
 href="<?php echo $breakfile ?>?sid=<?php echo "$sid&lang=$lang" ?>"><img <?php echo createLDImgSrc($root_path,'close2.gif','0') ?> <?php if($cfg['dhtml'])echo'class="fadeOut" >';?></a></td></tr>
 <tr valign=top >
 <td bgcolor=<?php echo $cfg['body_bgcolor']; ?> valign=top colspan=2><p><br>
@@ -165,7 +165,7 @@ echo '</font>
 <img <?php echo createComIcon($root_path,'varrow.gif','0') ?>>
 <b><?php echo $LDWriteReport ?></b></FONT> <font size="2" face="arial">
 </font><p>
-<form ENCTYPE="multipart/form-data" action="<?php echo $thisfile ?>" method="post" onSubmit="return checkform(this)"> 
+<form ENCTYPE="multipart/form-data" action="<?php echo $thisfile ?>" method="post" onSubmit="return checkform(this)">
 <table cellpadding=5 border=0 cellspacing=1>
 <tr>
 <td  bgcolor="#dddddd" ><FONT    SIZE=-1  FACE="Arial">
@@ -190,9 +190,9 @@ echo '</font>
 </tr>
 </table>
 <p>
-<!-- <input type="submit" name="versand" value="<?php echo $LDSend ?>"  >  
+<!-- <input type="submit" name="versand" value="<?php echo $LDSend ?>"  >
  -->
- <input type="image" <?php echo createLDImgSrc($root_path,'abschic.gif','0','absmiddle') ?>>  
+ <input type="image" <?php echo createLDImgSrc($root_path,'abschic.gif','0','absmiddle') ?>>
 <input type="reset" value="<?php echo $LDResetAll ?>" >&nbsp;&nbsp;&nbsp;
 </form>
 
@@ -202,7 +202,7 @@ echo '</font>
 
 <p>
 <p>
-<?php 
+<?php
 if($mode=='sent')
 {
    echo '
@@ -228,7 +228,7 @@ else
 require($root_path.'include/core/inc_load_copyrite.php');
 ?>
 </td></tr>
-</table>        
+</table>
 &nbsp;
 </FONT>
 </BODY>

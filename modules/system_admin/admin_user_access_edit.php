@@ -6,7 +6,7 @@ require ($root_path . 'include/helpers/inc_environment_global.php') ;
  * CARE2X Integrated Hospital Information System Deployment 2.2 - 2006-07-10
  * GNU General Public License
  * Copyright 2002,2003,2004,2005,2006 Elpidio Latorilla
- * elpidio@care2x.org, 
+ * elpidio@care2x.org,
  *
  * See the file "copy_notice.txt" for the licence notice
  */
@@ -32,7 +32,7 @@ $deptarray = $dept_obj->getAllActiveSort ( 'name_formal' ) ;
 
 //gjergji : load the access roles
 require_once($root_path.'include/core/class_access.php');
-$role_obj = & new Access();
+$role_obj =  Access();
 $roles = $role_obj->loadAllRoles();
 
 $edit = 0 ;
@@ -63,7 +63,7 @@ if ($mode != '') {
 		$username = trim ( $username ) ;
 		$userid = trim ( $userid ) ;
 		$pass = trim ( $pass ) ;
-		
+
 		if ($username == '') {
 			$errorname = 1 ;
 			$error = 1 ;
@@ -77,23 +77,24 @@ if ($mode != '') {
 			$error = 1 ;
 		}
 	}
-	
+
 	if (($mode == 'save' && ! $error) || ($mode == 'update' && ! $erroruser)) {
-		
+
 		/* Prepare the permission codes */
-		
+
 /*		$p_areas = '' ;
-		
+
 		while ( list ( $x, $v ) = each ( $_POST ) ) {
 			if (! ereg ( '_a_', $x ))
 				continue ;
-			
+
 			if ($_POST [ $x ] != '')
 				$p_areas .= $v . ' ' ;
 		}*/
 		/* If permission area is available, save it */
 		if ($selected_role != '') {
-			///$db->debug=true;			if ($mode == 'save') {
+			///$db->debug=true;
+			if ($mode == 'save') {
 				$sql = "INSERT INTO care_users (
 						   name,
 						   login_id,
@@ -123,11 +124,11 @@ if ($mode != '') {
 						   '" . $_SESSION [ 'sess_user_name' ] . "',
 						   '" . date ( 'YmdHis' ) . "'
 						 )" ;
-			
+
 			} else {
 				$sql = "UPDATE care_users SET permission='$permission', dept_nr='" . serialize($dept_nr) ."', user_role ='$selected_role' ,modify_id='" . $_COOKIE [ $local_user . $sid ] . "'  WHERE login_id='$userid'" ;
 			}
-			
+
 			/* Do the query */
 			$db->BeginTrans () ;
 			$ok = $db->Execute ( $sql ) ;
@@ -147,7 +148,7 @@ if ($mode != '') {
 			$mode = 'error_noareas' ;
 		} // end if ($p_areas!="")
 	} // end of if($mode=="save"
-	
+
 
 	if ($mode == 'edit' || $mode == 'data_saved' || $edit) {
 		$sql = "SELECT name, login_id, permission, dept_nr,user_role FROM care_users WHERE login_id='$userid'" ;
@@ -176,7 +177,7 @@ $smarty->assign ( 'sToolbarTitle', $LDManageAccess ) ;
 $smarty->assign('LDBack', $LDBack);
  $smarty->assign('LDHelp', $LDHelp);
  $smarty->assign('LDClose', $LDClose);
- 
+
 # href for return button
 $smarty->assign ( 'pbBack', $returnfile ) ;
 
@@ -198,7 +199,7 @@ ob_start () ;
 
 <?php
 if (($mode != '' || $error) && $mode != 'edit') {
-	
+
 	?>
 <table border=0>
 		<tr>
@@ -236,16 +237,16 @@ if (($mode == "") and ($remark != 'fromlist')) {
 ?>
 </FONT>
 <p>
-	
-	
+
+
 	<FORM action="admin_user_access_list.php" name="all">
-		<input type="hidden" name="sid" value="<?php echo $sid ; ?>"> 
-		<input type="hidden" name="lang" value="<?php echo $lang ; ?>"> 
+		<input type="hidden" name="sid" value="<?php echo $sid ; ?>">
+		<input type="hidden" name="lang" value="<?php echo $lang ; ?>">
 		<input type="submit" name=message value="<?php echo $LDListActual ?>">
 	</FORM>
 	<p>
-	
-	
+
+
 	<form method="post" action="admin_user_access_edit.php" name="user">
 		<input type="image" <?php echo createLDImgSrc ( $root_path, 'savedisc.gif', '0', 'absmiddle' ) ?>>
 
@@ -289,11 +290,11 @@ if ($errorname) {
 if ($edit) {
 	echo '<input type="hidden" name="username" value="' . $user [ 'name' ] . '">' . '<b>' . $user [ 'name' ] . '</b>' ;
 } elseif (isset ( $is_employee ) && $is_employee) {
-    ?>  
+    ?>
     <input name="username" type="hidden"
     <?php
     	if ($username != "")
-    		echo ' value="' . $username . '"><br><b>' . $username . '</b>' ; 
+    		echo ' value="' . $username . '"><br><b>' . $username . '</b>' ;
     	else
     		echo '>' ;
 } else {
@@ -315,7 +316,7 @@ if ($erroruser) {
 <?php
 if ($edit)
 	echo '<input type="hidden" name="userid" value="' . $user [ 'login_id' ] . '">' . '<b>' . $user [ 'login_id' ] . '</b>' ; else {
-	?> 
+	?>
 	<input type=text name="userid" <?php if ($userid != "") echo 'value="' . $userid . '"' ; 	?>>
 	<?php
 }
@@ -342,12 +343,12 @@ if ($edit)
 </td>
 </tr>
 <tr bgcolor="#dddddd">
-<td valign="top"><b> <?php echo $LDRole ?> : </b> 
-   	<select name="permission"> 
+<td valign="top"><b> <?php echo $LDRole ?> : </b>
+   	<select name="permission">
 		<?php
 		while ( list( $x, $v ) = each( $roles ) ) {
 			?>
-		   	<option value="<?php echo $v['permission'] ?>" onclick="document.getElementById('selected_role').value = <?php echo $v['id'] ?>;"<?php 
+		   	<option value="<?php echo $v['permission'] ?>" onclick="document.getElementById('selected_role').value = <?php echo $v['id'] ?>;"<?php
 		   		if ($v['id'] ==  $user['user_role'] ) echo ' selected' ?>>
 		 	<?php
 				echo $v['role_name'] ;
@@ -359,26 +360,26 @@ if ($edit)
 	</select>
 </td>
 <td colspan="2"><b> <?php echo $LDDept ?> : </b><br>
-<?php 
+<?php
 while(list($x,$dept)=each($deptarray)){
-	$actualDept = unserialize($user['dept_nr']); 
+	$actualDept = unserialize($user['dept_nr']);
 	$subDepts = $dept_obj->getAllSubDepts($dept['nr']);
 ?>
 	<label>
    	<input type="checkbox" name="dept_nr[]" id="<?php echo $dept['nr'] ?>" value="<?php echo $dept['nr']?>" <?php if( in_array($dept['nr'],$actualDept)) echo 'checked' ?>>
- <?php 
+ <?php
 		if(isset($$dept['LD_var'])&&!empty($$dept['LD_var'])) echo $$dept['LD_var'] . '</label><br>';
 				else echo $dept['name_formal'] . '</label><br>';
 		if($subDepts) {
 			while (list($y,$sDept) = each($subDepts)) {
 			?>
 			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<sup>L</sup>&nbsp;
-				<label> 
+				<label>
     			<input type="checkbox" name="dept_nr[]" id="<?php echo $sDept['nr'] ?>" value="<?php echo $sDept['nr']?>" <?php if( in_array($sDept['nr'],$actualDept)) echo 'checked' ?>>
-        		<?php 
+        		<?php
         			if(isset($$sDept['LD_var'])&&!empty($$sDept['LD_var'])) echo $$sDept['LD_var'] . '<br>';
         			else echo $sDept['name_formal'] . '<br>';
-        		?></label><?php 
+        		?></label><?php
 			}
 		}
 }
@@ -392,15 +393,15 @@ while(list($x,$dept)=each($deptarray)){
 <input type="hidden" name="itemname" value="<?php echo $itemname ?>">
 <input type="hidden" name="sid" value="<?php echo $sid ; ?>">
 <input type="hidden" name="lang" value="<?php echo $lang ; ?>">
-<?php 
+<?php
 	reset($roles);
 	echo '<input type="hidden" name="selected_role" id="selected_role"';
     $found = false;
-	while ( list( $x, $v ) = each( $roles ) ) { 
+	while ( list( $x, $v ) = each( $roles ) ) {
     	if ($v['id'] ==  $user['user_role'] ) {
     		echo ' value="'.$v['id'].'">';
     		$found = true;
-    	}	
+    	}
     }
     if($found == false) echo ' value="">';
 ?>
@@ -413,11 +414,11 @@ if ($edit || $mode == 'data_saved' || $mode == 'edit')
 <input type="image"  <?php
 echo createLDImgSrc ( $root_path, 'savedisc.gif', '0', 'absmiddle' ) ?>>
  <input type="reset"  value="<?php
-echo $LDReset ?>"> 
+echo $LDReset ?>">
 </td>
 </tr>
 </table>
-	
+
 	</td>
   </tr>
 </table>

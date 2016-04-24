@@ -6,7 +6,7 @@ require($root_path.'include/core/inc_environment_global.php');
 * CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
 * GNU General Public License
 * Copyright 2002,2003,2004,2005 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -19,7 +19,7 @@ $returnfile='edv_user_access_list.php'.URL_APPEND;
 //$_SESSION['sess_file_return']='edv.php';
 
 require_once($root_path.'include/care_api_classes/class_access.php');
-$user = & new Access($itemname);
+$user =  Access($itemname);
 
 if($user->UserExists()){
 
@@ -114,7 +114,7 @@ echo $zeile['password'];
 
 </td>
 </tr>
-</table>        
+</table>
 
 <?php
 

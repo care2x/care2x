@@ -6,7 +6,7 @@ require($root_path.'include/core/inc_environment_global.php');
 * CARE2X Integrated Hospital Information System beta 2.0.1 - 2004-07-04
 * GNU General Public License
 * Copyright 2002,2003,2004,2005,2006 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -58,12 +58,12 @@ $thisfile=basename(__FILE__);
  $smarty->assign('pbHelp',"javascript:gethelp('person_how2search.php')");
 
  $smarty->assign('pbBack',FALSE);
- 
+
  #
  # Create the search object
  #
  require_once($root_path.'include/care_api_classes/class_gui_search_person.php');
- $psearch = & new GuiSearchPerson;
+ $psearch =  GuiSearchPerson;
 
 # Start buffering the text above  the search block
  ob_start();
@@ -84,7 +84,7 @@ if(isset($origin) && $origin=='pass')
     <td><img <?php echo createMascot($root_path,'mascot1_l.gif','0','absmiddle') ?>></td>
   </tr>
 </table>
-<?php 
+<?php
 }
 
  $sTemp = ob_get_contents();

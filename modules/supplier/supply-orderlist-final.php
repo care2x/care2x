@@ -6,7 +6,7 @@ require($root_path.'include/core/inc_environment_global.php');
 * CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
 * GNU General Public License
 * Copyright 2002,2003,2004,2005 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -46,21 +46,21 @@ require_once($root_path.'include/core/inc_date_format_functions.php');
 if(($mode=='send') && isset($order_nr) && $order_nr){
 
 	#Check authenticity of validator person
-	   
+
 	include_once($root_path.'include/care_api_classes/class_access.php');
-	$user = & new Access($validator,$vpw);
-	   
+	$user =  Access($validator,$vpw);
+
 	if($user->isKnown()){
-		  
+
 		if($user->hasValidPassword() && $user->isNotLocked()){
-			 
+
 			$sql="UPDATE $dbtable SET validator='$validator',
 									priority='$prior',
 									status='pending',
 									sent_datetime='".date('Y-m-d H:i:s')."'
 							   		WHERE order_nr='$order_nr'
 									AND dept_nr='$dept_nr'";// save aux data to the order list
-		
+
 			if($ergebnis=$user->Transact($sql)){
 				//echo $sql;
   				$ofinal=true;
@@ -71,10 +71,10 @@ if(($mode=='send') && isset($order_nr) && $order_nr){
 			$error='password';
 			$mode='';
 		}
-	}else{ 
+	}else{
 		$error='validator';
 		$mode='';
-	} 
+	}
 }
 ?>
 <?php html_rtl($lang); ?>
@@ -89,13 +89,13 @@ function popinfo(b)
 }
 function checkform(d)
 {
-	if (d.validator.value=="") 
+	if (d.validator.value=="")
 	{
 		alert("<?php echo $LDAlertNoValidator ?>");
 		d.validator.focus();
 		return false;
 	}
-	if (d.vpw.value=="") 
+	if (d.vpw.value=="")
 	{
 		alert("<?php echo $LDAlertNoPassword ?>");
 		d.vpw.focus();
@@ -115,13 +115,13 @@ echo "
 ?>
 
 </script>
-<?php 
+<?php
 require($root_path.'include/core/inc_js_gethelp.php');
 require($root_path.'include/core/inc_css_a_hilitebu.php');
 ?>
 </head>
-<BODY  topmargin=5 leftmargin=10  marginwidth=10 marginheight=5 
-<?php 			
+<BODY  topmargin=5 leftmargin=10  marginwidth=10 marginheight=5
+<?php
 switch($mode)
 {
 	case "add":echo ' onLoad="location.replace(\'#bottom\')"   '; break;
@@ -138,7 +138,7 @@ echo "bgcolor=".$cfg['body_bgcolor']; if (!$cfg['dhtml']){ echo ' link='.$cfg['b
 
 if ($sendok) echo '
 			<font face="Verdana, Arial" size=2 color="#800000">'.$LDOrderSent.'<p></font>';
-			
+
 if ($error )
 {
 ?>
@@ -158,17 +158,17 @@ if($cat=='pharma') $dbtable='care_pharma_orderlist';
 
 
 $sql="SELECT * FROM $dbtable WHERE order_nr='$order_nr' AND dept_nr='$dept_nr'";
-						
+
 if($ergebnis=$db->Execute($sql)){
 	$rows=$ergebnis->RecordCount();
 }else{
 	echo "$LDDbNoRead<br>";
-} 
+}
 			//echo $sql;
 
-	 
+
 # ++++++++++++++++++++++++ show the actual list +++++++++++++++++++++++++++
-	
+
 if ($rows>0)
 {
 
@@ -176,11 +176,11 @@ $tog=1;
 $content=$ergebnis->FetchRow();
 echo '
 		<font face="Verdana, Arial" size=2 color="#800000">'.$final_orderlist;
-		
+
 		$buff=$dept_obj->LDvar($dept_nr);
 		if(isset($$buff)&&!empty($$buff)) echo $$buff;
 			else echo $dept_obj->FormalName($dept_nr);
-			
+
 		echo ':</font><br>
 		<font face="Arial" size=1> ('.$LDCreatedOn.': ';
 
@@ -193,7 +193,7 @@ echo '
 	for ($i=0;$i<sizeof($LDFinindex);$i++)
 	echo '
 		<td><font face=Verdana,Arial size=1 color="#000080">'.$LDFinindex[$i].'</td>';
-	echo '</tr>';	
+	echo '</tr>';
 
 $i=1;
 $artikeln=explode(" ",$content[articles]);
@@ -205,7 +205,7 @@ for($n=0;$n<sizeof($artikeln);$n++)
 	echo'
 				<td>';
 	if($mode=='delete') echo '<a name="'.$i.'"></a>';
-	echo'	
+	echo'
 				<font face=Arial size=1 color="#000080">'.$i.'</td>
 				<td><font face=Verdana,Arial size=1>'.$r[artikelname].'</td>
 				 <td><font face=Verdana,Arial size=1>'.$r[pcs].'</td>
@@ -215,24 +215,24 @@ for($n=0;$n<sizeof($artikeln);$n++)
 	$i++;
  	}
 	echo '</table></td></tr></table><font face=Verdana,Arial size=2 color="#800000">';
-	
+
 	if(($mode!='send')&&(!$sendok))
 	{
 		echo '
 			<form action="'.$thisfile.'" method="post" onSubmit="return checkform(this)">'.$LDListindex[4].'<br>
 			<input type="text" name="sender" size=30 maxlength=40 value="';
-		
-		echo $_COOKIE[$local_user.$sid]; 
-		
-		echo '"> 
+
+		echo $_COOKIE[$local_user.$sid];
+
+		echo '">
 			 &nbsp;'.$LDNormal.'<input type="radio" name="prior" value="normal" ';
-			 
+
 			 if(!isset($prior) || $prior=='normal' || $prior=='') echo ' checked';
-			 echo '> 
+			 echo '>
 			'.$LDUrgent.'<input type="radio" name="prior" value="urgent" ';
-			
+
 			 if(isset($prior) && $prior=='urgent') echo ' checked';
-			
+
 			echo '> <br>
    			<p>
 			'.$LDValidatedBy.':<br>
@@ -247,7 +247,7 @@ for($n=0;$n<sizeof($artikeln);$n++)
 			<input type="hidden" name="userck" value="'.$userck.'">
 			<input type="hidden" name="mode" value="send">
    			<p>
-			<input type="submit" value="'.$LDSendOrder.'">   
+			<input type="submit" value="'.$LDSendOrder.'">
    			</form></font><p>
 			<font face=Verdana,Arial size=2>
 			<a href="products-bestellkorb.php'.URL_APPEND.'&cat='.$cat.'&dept_nr='.$dept_nr.'&order_nr='.$order_nr.'&userck='.$userck.'" ><< '.$LDBack2Edit.'</a></font>

@@ -110,7 +110,7 @@ if($pid!='' || $encounter_nr!=''){
 			header('Location:aufnahme_daten_zeigen.php'.URL_REDIRECT_APPEND.'&encounter_nr='.$encounter_nr.'&origin=admit&sem=isadmitted&target=entry');
 			exit;
 		}
-		 
+
 		/* Get the related insurance data */
 		$p_insurance=&$pinsure_obj->getPersonInsuranceObject($pid);
 		if($p_insurance==false) {
@@ -126,7 +126,7 @@ if($pid!='' || $encounter_nr!=''){
 			} else { $insurance_show=false;}
 		}
 
-			
+
 		if (($mode=='save') || ($forcesave!='')) {
 			if(!$forcesave) {
 				//clean and check input data variables
@@ -134,12 +134,12 @@ if($pid!='' || $encounter_nr!=''){
 				*  $error = 1 will cause to show the "save anyway" override button to save the incomplete data
 				*  $error = 2 will cause to force the user to enter a data in an input element (no override allowed)
 				*/
-				 
+
 				//gjergji
 				//added the possibility to upload foto here
 				// Create image object
 				include_once($root_path.'include/care_api_classes/class_image.php');
-				$img_obj=& new Image;
+				$img_obj= Image;
 				$picext='';
 				$valid_image=false;
 				$photo_filename='';
@@ -156,24 +156,24 @@ if($pid!='' || $encounter_nr!=''){
 					$img_obj->saveUploadedImage($_FILES['photo_filename'],$root_path.$photo_path.'/',$photo_filename);
 					$person_obj->setPhotoFilename($pid,$photo_filename);
 				}
-					
+
 				//end : gjergji
 
 				$encoder=trim($encoder);
 				if($encoder=='') $encoder=$_SESSION['sess_user_name'];
-					
+
 				$referrer_diagnosis=trim($referrer_diagnosis);
 				if ($referrer_diagnosis=='') { $errordiagnose=1; $error=1; $errornum++; };
-					
+
 				$referrer_dr=trim($referrer_dr);
 				if ($referrer_dr=='') { $errorreferrer=1; $error=1; $errornum++;};
-					
+
 				$referrer_recom_therapy=trim($referrer_recom_therapy);
 				if ($referrer_recom_therapy=='') { $errortherapie=1; $error=1; $errornum++;};
-					
+
 				$referrer_notes=trim($referrer_notes);
 				if ($referrer_notes=='') { $errorbesonder=1; $error=1; $errornum++;};
-					
+
 				$encounter_class_nr=trim($encounter_class_nr);
 				if ($encounter_class_nr=='') { $errorstatus=1; $error=1; $errornum++;};
 
@@ -181,7 +181,7 @@ if($pid!='' || $encounter_nr!=''){
 					if(trim($insurance_nr) &&  trim($insurance_firm_name)=='') { $error_ins_co=1; $error=1; $errornum++;}
 				}
 			}
-				
+
 
 
 			if(!$error) {
@@ -219,7 +219,7 @@ if($pid!='' || $encounter_nr!=''){
 					if(isset($_POST['pid'])) unset($_POST['pid']);
 
 					$encounter_obj->setDataArray($_POST);
-						
+
 					if($encounter_obj->updateEncounterFromInternalArray($encounter_nr)) {
 						/* Save the service classes */
 						if(!$GLOBAL_CONFIG['patient_service_care_hide']){
@@ -236,7 +236,7 @@ if($pid!='' || $encounter_nr!=''){
 					}
 
 				} else {
-						
+
 					$newdata=1;
 					/* Determine the format of the encounter number */
 					if($GLOBAL_CONFIG['encounter_nr_fullyear_prepend']) $ref_nr=(int)date('Y').$GLOBAL_CONFIG['encounter_nr_init'];
@@ -247,7 +247,7 @@ if($pid!='' || $encounter_nr!=''){
 						break;
 						case '2': $_POST['encounter_nr']=$encounter_obj->getNewEncounterNr($ref_nr+$GLOBAL_CONFIG['patient_outpatient_nr_adder'],2);
 					}
-						
+
 					$_POST['encounter_date']=date('Y-m-d H:i:s');
 					$_POST['modify_id']=$encoder;
 					//$_POST['modify_time']='NULL';
@@ -281,7 +281,7 @@ if($pid!='' || $encounter_nr!=''){
 					}else{
 						echo $LDDbNoSave.'<p>'.$encounter_obj->getLastQuery();
 					}
-						
+
 				}// end of if(update) else()
 			}	// end of if($error)
 		} // end of if($mode)
@@ -298,7 +298,7 @@ if($pid!='' || $encounter_nr!=''){
 			$insurance_firm_name=$pinsure_obj->getFirmName($insurance_firm_id);
 
 			/* GEt the patient's services classes */
-				
+
 			if(!empty($GLOBAL_CONFIG['patient_financial_class_single_result'])) $encounter_obj->setSingleResult(true);
 
 			if(!$GLOBAL_CONFIG['patient_service_care_hide']){
@@ -339,9 +339,9 @@ if($pid!='' || $encounter_nr!=''){
 		# Load all medical departments
 		include_once($root_path.'include/care_api_classes/class_department.php');
 		$dept_obj=new Department;
-		$all_meds=$dept_obj->getAllMedicalObject();		
+		$all_meds=$dept_obj->getAllMedicalObject();
 	}
-	 
+
 	$person_obj->setPID($pid);
 	if($data=&$person_obj->BasicDataArray($pid)){
 		//while(list($x,$v)=each($data))	$$x=$v;
@@ -693,11 +693,11 @@ if(!isset($pid) || !$pid){
 			}
 		}else{
 			$sTemp = $sTemp.'<select name="current_dept_nr">';
-			
+
 			if(is_object($all_meds)){
 				while($deptrow=$all_meds->FetchRow()){
-					
-					//if(in_array($deptrow['nr'],$current_dept_nr)) {						
+
+					//if(in_array($deptrow['nr'],$current_dept_nr)) {
 						$sTemp = $sTemp.'<option value="'.$deptrow['nr'].'" selected >';
 						if($deptrow['LD_var']!='') $sTemp = $sTemp.$deptrow['LD_var'];
 						else $sTemp = $sTemp.$deptrow['name_formal'];
@@ -843,7 +843,7 @@ if(!isset($pid) || !$pid){
 		$smarty->assign('sDSHidden','<input type="hidden" name="sc_att_dr_nr" value="'.$sc_att_dr_nr.'">');
 
 	}
-		
+
 	if ($GLOBAL_CONFIG['show_billable_items'] && $encounter_class_nr == 2){
 		$smarty->assign('LDAdmitBillItem',$LDAdmitBillItem);
 		$eComBillItems = $eComBill_obj->listServiceItems();
@@ -896,7 +896,7 @@ if(!isset($pid) || !$pid){
 		$smarty->assign('sRefDrFromInput',$sTemp);
 		$smarty->assign('sRefDrHidden','<input type="hidden" name="referred_dr_hidden" value="'.$referred_dr.'">');
 	}
-		
+
 	$smarty->assign('LDAdmitBy',$LDAdmitBy);
 	if (empty($encoder)) $encoder = $_COOKIE[$local_user.$sid];
 	$smarty->assign('encoder','<input  name="encoder" type="text" value="'.$encoder.'" size="28" readonly>');
@@ -924,7 +924,7 @@ if(!isset($pid) || !$pid){
 	$smarty->assign('pbRefresh','<a href="javascript:document.aufnahmeform.reset()"><img '.createLDImgSrc($root_path,'reset.gif','0').' alt="'.$LDResetData.'"  align="absmiddle"></a>');
 	-->
 	*/
-		
+
 	if($error==1)
 	$smarty->assign('sErrorHidInputs','<input type="hidden" name="forcesave" value="1">
 				<input  type="submit" value="'.$LDForceSave.'">');

@@ -8,7 +8,7 @@ $logs = new AccessLog();
 * CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
 * GNU General Public License
 * Copyright 2002,2003,2004,2005 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -34,7 +34,7 @@ if(!isset($_SESSION['sess_login_pw'])) $_SESSION['sess_login_pw'] = "";
 if ((($pass=='check')&&($keyword!=''))&&($userid!=''))
 {
 	include_once($root_path.'include/care_api_classes/class_access.php');
-	$user = & new Access($userid,$keyword);
+	$user =  Access($userid,$keyword);
 
 	if($user->isKnown() && $user->hasValidPassword())
 	{
@@ -87,7 +87,7 @@ if(isset($is_logged_out) && $is_logged_out) {
 
 <?php require($root_path.'include/core/inc_passcheck_mask.php') ?>
 
-<p><!-- 
+<p><!--
 <img src="../img/small_help.gif" > <a href="<?php echo $root_path; ?>main/ucons.php<?php echo URL_APPEND; ?>">Was ist login?</a><br>
 <img src="../img/small_help.gif" > <a href="<?php echo $root_path; ?>main/ucons.php<?php echo URL_APPEND; ?>">Wieso soll ich mich einloggen?</a><br>
 <img src="../img/small_help.gif" > <a href="<?php echo $root_path; ?>main/ucons.php<?php echo URL_APPEND; ?>">Was bewirkt das einloggen?</a><br>

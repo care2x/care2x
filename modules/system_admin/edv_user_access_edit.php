@@ -32,7 +32,7 @@ $deptarray = $dept_obj->getAllActiveSort ( 'name_formal' ) ;
 
 //gjergji : load the access roles
 require_once($root_path.'include/care_api_classes/class_access.php');
-$role_obj = & new Access();
+$role_obj =  Access();
 $roles = $role_obj->loadAllRoles();
 
 $edit = 0 ;
@@ -81,7 +81,8 @@ if ($mode != '') {
 	if (($mode == 'save' && ! $error) || ($mode == 'update' && ! $erroruser)) {
 
 		/* If permission area is available, save it */
-		if ($selected_role != '') {			if ($mode == 'save') {
+		if ($selected_role != '') {
+			if ($mode == 'save') {
 				$sql = "INSERT INTO care_users (
 						   name,
 						   login_id,
@@ -111,11 +112,11 @@ if ($mode != '') {
 						   '" . $_SESSION [ 'sess_user_name' ] . "',
 						   '" . date ( 'YmdHis' ) . "'
 						 )" ;
-					
+
 			} else {
 				$sql = "UPDATE care_users SET permission='$permission', dept_nr='" . serialize($dept_nr) ."', user_role ='$selected_role' ,modify_id='" . $_COOKIE [ $local_user . $sid ] . "'  WHERE login_id='$userid'" ;
 			}
-				
+
 			/* Do the query */
 			$db->BeginTrans () ;
 			$ok = $db->Execute ( $sql ) ;
@@ -222,15 +223,15 @@ if (($mode != '' || $error) && $mode != 'edit') {
 	}
 	?> </FONT>
 	<p>
-	
-	
+
+
 	<FORM action="edv_user_access_list.php" name="all"><input type="hidden"
 		name="sid" value="<?php echo $sid ; ?>"> <input type="hidden"
 		name="lang" value="<?php echo $lang ; ?>"> <input type="submit"
 		name=message value="<?php echo $LDListActual ?>"></FORM>
 	<p>
-	
-	
+
+
 	<form method="post" action="edv_user_access_edit.php" name="user"><input
 		type="image"
 		<?php echo createLDImgSrc ( $root_path, 'savedisc.gif', '0', 'absmiddle' ) ?>>
@@ -296,7 +297,7 @@ if ($erroruser) {
 <?php
 if ($edit)
 	echo '<input type="hidden" name="userid" value="' . $user [ 'login_id' ] . '">' . '<b>' . $user [ 'login_id' ] . '</b>' ; else {
-	?> 
+	?>
 	<input type=text name="userid" <?php if ($userid != "") echo 'value="' . $userid . '"' ; 	?>>
 	<?php
 }
@@ -326,12 +327,12 @@ if ($edit)
 </td>
 </tr>
 <tr bgcolor="#dddddd">
-<td valign="top"><b> <?php echo $LDRole ?> : </b> 
-   	<select name="permission"> 
+<td valign="top"><b> <?php echo $LDRole ?> : </b>
+   	<select name="permission">
 		<?php
 		while ( list( $x, $v ) = each( $roles ) ) {
 			?>
-		   	<option value="<?php echo $v['permission'] ?>" onclick="document.getElementById('selected_role').value = <?php echo $v['id'] ?>;"<?php 
+		   	<option value="<?php echo $v['permission'] ?>" onclick="document.getElementById('selected_role').value = <?php echo $v['id'] ?>;"<?php
 		   		if ($v['id'] ==  $user['user_role'] ) echo ' selected' ?>>
 		 	<?php
 				echo $v['role_name'] ;
@@ -343,20 +344,20 @@ if ($edit)
 	</select>
 </td>
 <td colspan="2"><b> <?php echo $LDDept ?> : </b><br>
-<?php 
+<?php
 while(list($x,$dept)=each($deptarray)){
-	$actualDept = unserialize($user['dept_nr']); 
+	$actualDept = unserialize($user['dept_nr']);
 	$subDepts = $dept_obj->getAllSubDepts($dept['nr']);
 ?>
    	<input type="checkbox" name="dept_nr[]" id="<?php echo $dept['nr'] ?>" value="<?php echo $dept['nr']?>" <?php if( in_array($dept['nr'],$actualDept)) echo 'checked' ?>>
- <?php 
+ <?php
 		if(isset($$dept['LD_var'])&&!empty($$dept['LD_var'])) echo $$dept['LD_var'] . '<br>';
 				else echo $dept['name_formal'] . '<br>';
 		if($subDepts) {
 			while (list($y,$sDept) = each($subDepts)) {
-    			?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<sup>L</sup>&nbsp; 
+    			?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<sup>L</sup>&nbsp;
     			<input type="checkbox" name="dept_nr[]" id="<?php echo $sDept['nr'] ?>" value="<?php echo $sDept['nr']?>" <?php if( in_array($sDept['nr'],$actualDept)) echo 'checked' ?>>
-        		<?php 
+        		<?php
         			if(isset($$sDept['LD_var'])&&!empty($$sDept['LD_var'])) echo $$sDept['LD_var'] . '<br>';
         			else echo $sDept['name_formal'] . '<br>';
 			}
@@ -372,15 +373,15 @@ while(list($x,$dept)=each($deptarray)){
 <input type="hidden" name="itemname" value="<?php echo $itemname ?>">
 <input type="hidden" name="sid" value="<?php echo $sid ; ?>">
 <input type="hidden" name="lang" value="<?php echo $lang ; ?>">
-<?php 
+<?php
 	reset($roles);
 	echo '<input type="hidden" name="selected_role" id="selected_role"';
     $found = false;
-	while ( list( $x, $v ) = each( $roles ) ) { 
+	while ( list( $x, $v ) = each( $roles ) ) {
     	if ($v['id'] ==  $user['user_role'] ) {
     		echo ' value="'.$v['id'].'">';
     		$found = true;
-    	}	
+    	}
     }
     if($found == false) echo ' value="1">';
 ?>
@@ -393,11 +394,11 @@ if ($edit || $mode == 'data_saved' || $mode == 'edit')
 <input type="image"  <?php
 echo createLDImgSrc ( $root_path, 'savedisc.gif', '0', 'absmiddle' ) ?>>
  <input type="reset"  value="<?php
-echo $LDReset ?>"> 
+echo $LDReset ?>">
 </td>
 </tr>
 </table>
-	
+
 	</td>
   </tr>
 </table>

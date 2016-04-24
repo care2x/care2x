@@ -12,7 +12,7 @@ require($root_path.'include/core/inc_environment_global.php');
 * CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
 * GNU General Public License
 * Copyright 2002,2003,2004,2005 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -27,7 +27,7 @@ require_once($root_path.'include/core/inc_front_chain_lang.php');
 require_once($root_path.'include/core/inc_date_format_functions.php');
 require_once($root_path.'include/care_api_classes/class_encounter.php');
 # Get the encouter data
-$enc_obj=& new Encounter($enc);
+$enc_obj= Encounter($enc);
 if($enc_obj->loadEncounterData()){
 	$encounter=$enc_obj->getLoadedEncounterData();
 	//extract($encounter);
@@ -41,7 +41,7 @@ $classpath=$root_path.'classes/phppdf/';
 $fontpath=$classpath.'fonts/';
 
 include($classpath.'class.ezpdf.php');
-$pdf=& new Cezpdf();
+$pdf= Cezpdf();
 
 
 $logo=$root_path.'gui/img/logos/care_logo_print.png';
@@ -72,7 +72,7 @@ if(empty($encounter['photo_filename'])){
 		$notestype=$enc_obj->getType($type_nr);
 		$title=$notestype['name'];
 	}
-		
+
 	$data[]=array($title);
 	$pdf->ezTable($data,'','',array('xPos'=>'left','xOrientation'=>'right','showLines'=>0,'fontSize'=>$report_titlesize,'showHeadings'=>0,'shaded'=>2,'shadeCol2'=>array(0.9,0.9,0.9),'width'=>555));
 

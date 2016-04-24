@@ -6,7 +6,7 @@ require($root_path.'include/core/inc_environment_global.php');
 * CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
 * GNU General Public License
 * Copyright 2002,2003,2004,2005 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -49,31 +49,31 @@ switch($g)
 							$endid="Ende";
 							//$maxelement=10;
 							break;
-	default:{header("Location: invalid-access-warning.php?mode=close"); exit;}; 
+	default:{header("Location: invalid-access-warning.php?mode=close"); exit;};
 }
 //echo $g;
 
 require($root_path.'include/care_api_classes/class_core.php');
-$core = & new Core;
+$core =  Core;
 
 $dbtable='care_encounter_op';
 
 			// check if entry is already existing
-				$sql="SELECT $element FROM $dbtable 
-						WHERE encounter_nr='".$varia['enc_nr']."' 
-						AND dept_nr='".$varia['dept_nr']."' 
-						AND op_room='".$varia['saal']."' 
+				$sql="SELECT $element FROM $dbtable
+						WHERE encounter_nr='".$varia['enc_nr']."'
+						AND dept_nr='".$varia['dept_nr']."'
+						AND op_room='".$varia['saal']."'
 						AND op_nr='".$varia['op_nr']."'";
 				if($ergebnis=$db->Execute($sql))
        			{
 					//echo $sql." checked <br>";
-					
+
 					$rows=$ergebnis->RecordCount();
 					if($rows==1)
 						{
 							$content=$ergebnis->FetchRow();
     						if((trim($content[$element])!="")&&($content[$element]!=NULL))
-							{							
+							{
 								//echo "im here";
 								//echo $content[$element];
 								$ebuf=explode("~",trim($content[$element]));
@@ -125,16 +125,16 @@ $dbtable='care_encounter_op';
 											//echo "its here in the elem";
 											{ if (($elem[e]=="")||(($vf<$ef)&&($vf>$sf))) {$ebuf[$i]="s=".$elem[s]."&e=".$v;$append=0;  if(!$i) $resetmainput=1;break;}
 											}
-											//else{ $append=0; break;} 
-											
+											//else{ $append=0; break;}
+
 										}
 										else {$ebuf[$i]="s=".$v."&e="; $append=0; if(!$i) $resetmainput=1;break;}
 									}
 									if($ef>$laste) $laste=$ef; $append=1;
 									//$laste=$ef; $append=1;
 								}	//end of for $i
-							
-								if($append&&($vf>$laste)) 
+
+								if($append&&($vf>$laste))
 								{
 									if($g=="wait_time") $ebuf[]="s=$v&e=&r=-";
 										else $ebuf[]="s=$v&e=";
@@ -149,21 +149,21 @@ $dbtable='care_encounter_op';
 								if($g=="wait_time") $dbuf="s=$v&=&r=";
 								 else $dbuf="s=$v&=";
 								if(($g=="entry_out")||($g=="cut_close")) $resetmainput=1;
-							}	
+							}
 					 		// $dbuf=htmlspecialchars($dbuf);
 							//echo $dbuf;
 							$sql="UPDATE $dbtable SET $element='$dbuf'
 										WHERE encounter_nr='".$varia['enc_nr']."'
-										AND dept_nr='".$varia['dept_nr']."' 
-										AND op_room='".$varia['saal']."' 
+										AND dept_nr='".$varia['dept_nr']."'
+										AND op_room='".$varia['saal']."'
 										AND op_nr='".$varia['op_nr']."'";
-											
+
 							if($ergebnis=$core->Transact($sql))
        							{
 									//echo $sql." new update <br> resetmain= $resetmainput";
-									
+
 									//if((($g=="entry_out")||($g=="cut_close")) && $resetmainput) header("Location: $fileforward&resetmainput=1");
- 											//else header("Location: $fileforward");									
+ 											//else header("Location: $fileforward");
 									header("Location: $fileforward&resetmainput=$resetmainput");
 									exit;
 								}
@@ -174,7 +174,7 @@ $dbtable='care_encounter_op';
 									module and reopen it again. If this problem persists please notify your IT department or <a \"mailto:info@care2x.net\". Thank you.";
 									exit;
 								}//end of else
-						
+
 		 				}// end of if rows
 		 				else
 		 				{
@@ -183,8 +183,8 @@ $dbtable='care_encounter_op';
 									module and reopen it again. If this problem persists please notify your IT department or <a \"mailto:info@care2x.net\". Thank you.";
 									exit;
 							}
-				
-	 			}else echo "<p>".$sql."<p>$LDDbNoRead"; 
+
+	 			}else echo "<p>".$sql."<p>$LDDbNoRead";
 
 header("Location: $fileforward");
 ?>

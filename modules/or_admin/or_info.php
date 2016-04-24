@@ -6,7 +6,7 @@ require($root_path.'include/core/inc_environment_global.php');
 * CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
 * GNU General Public License
 * Copyright 2002,2003,2004,2005 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -20,7 +20,7 @@ require_once($root_path.'include/core/inc_date_format_functions.php');
 $breakfile=$root_path.'modules/system_admin/edv-system-admi-welcome.php'.URL_APPEND	;
 
 # Create the OR object
-$OR_obj=& new OPRoom;
+$OR_obj= OPRoom;
 
 # Get the OR info
 $OR_info=$OR_obj->ORRecordInfo($nr);
@@ -72,17 +72,17 @@ if(is_object($OR_info)){
   <tr>
     <td class= align=right bgColor="#eeeeee"><?php echo $LDORNr ?>: </td>
     <td class= bgColor="#f9f9f9">
-	<?php 	
+	<?php
 		echo $ORoom['room_nr'];
  	?>
 </td>
-  </tr> 
+  </tr>
   <tr>
     <td class= align=right bgColor="#eeeeee"><?php echo $LDOPTableNr ?>: </td>
     <td class= bgColor="#f9f9f9"><?php echo $ORoom['nr_of_beds'] ?>
 </td>
-  </tr> 
-  
+  </tr>
+
   <tr>
     <td class= align=right bgColor="#eeeeee"><?php echo $LDDateCreation ?>: </td>
     <td class= bgColor="#f9f9f9"><?php echo formatDate2Local($ORoom['date_create'],$date_format) ?>
@@ -114,21 +114,21 @@ if(!empty($ORoom['ward_id'])){
 
 <tr>
     <td class= align=right bgColor="#eeeeee"><?php echo $LDOwnerDept ?>: </td>
-    <td class= bgColor="#f9f9f9"><?php 
+    <td class= bgColor="#f9f9f9"><?php
 								if(isset($$ORoom['LD_var'])&&!empty($$ORoom['LD_var'])) echo $$ORoom['LD_var'];
 									else echo $ORoom['deptname'];
 							?>
 </td>
   </tr>
-   
+
   <tr>
     <td class= align=right bgColor="#eeeeee"><?php echo $LDTempClosed ?>: </td>
-    <td class= bgColor="#f9f9f9"><?php 
+    <td class= bgColor="#f9f9f9"><?php
 								if($ORoom['is_temp_closed']) echo $LDYes;
 									else echo $LDNo;
 							?>
 </td>
-  </tr> 
+  </tr>
 </tbody>
 </table>
 <input type="hidden" name="sid" value="<?php echo $sid; ?>">

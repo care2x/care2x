@@ -6,7 +6,7 @@ require($root_path.'include/core/inc_environment_global.php');
 * CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
 * GNU General Public License
 * Copyright 2002,2003,2004,2005 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -29,11 +29,11 @@ $breakfile=$root_path.'modules/system_admin/edv-system-admi-welcome.php'.URL_APP
 
 if(!isset($mode)) $mode='';
 # Create department object
-$dept_obj=& new Department;
+$dept_obj= Department;
 # Create the OR object
-$OR_obj= & new OPRoom;
+$OR_obj=  OPRoom;
 # Create the ward object
-$ward_obj=& new Ward;
+$ward_obj= Ward;
 
 //$db->debug=1;
 
@@ -45,64 +45,64 @@ if(isset($mode)&&!empty($mode) && $mode!='select'){
 		$inputerror=TRUE; # Set error flag
 		$error_msg=$LDInputError;
 	}
-	
+
 }
 
 if(!empty($mode)&&!$inputerror){
-		
+
 	# Compose the data for storing into history field
 	$udata='name='.$_POST['info'].': bed='. $_POST['nr_of_beds'].': ward='.$_POST['ward_nr'].': dept='.$_POST['dept_nr'].': closed='.$_POST['is_temp_closed'];
-	
+
 	switch($mode)
-	{	
-		case 'create': 
+	{
+		case 'create':
 		{
 			if($OR_obj->ORNrExists($_POST['room_nr'])){
 				$error_msg=$LDORNrExists;
 				$inputerror=TRUE;
 			}else{
-					
+
 				# Validate the date creation, if invalid, use today date
 				if(empty($datebuffer)) $_POST['date_create']=date('Y-m-d');
 					else $_POST['date_create']=$datebuffer;
-				
+
 				# Validate number of beds..if invalid use 1
 				if(!$_POST['nr_of_beds']) $_POST['nr_of_beds']=1;
-				
+
 				$_POST['type_nr']=$OR_obj->ORTypeNr(); # 2 = operating room
 				$_POST['history']="Create: ".date('Y-m-d H:i:s')." ".$_SESSION['sess_user_name']." ".$udata."\n";
 				$_POST['create_id']=$_SESSION['sess_user_name'];
 				//$_POST['modify_id']=$_SESSION['sess_user_name'];
 				$_POST['create_time']=date('YmdHis');
 				$_POST['modify_time']=date('YmdHis');
-				
+
 				$OR_obj->setDataArray($_POST);
-				
+
 				if($OR_obj->insertDataFromInternalArray()){
-					
+
 					# Get the last insert primary key as op room nr.
-				
+
 					$nr=$OR_obj->LastInsertPK('nr',$db->Insert_ID());
-							
+
 					header("location:or_info.php".URL_REDIRECT_APPEND."&edit=1&mode=newdata&nr=$nr");
 					exit;
 				}else{
 					echo $OR_obj->getLastQuery."<br>$LDDbNoSave";
 					$inputerror=TRUE;
 				}
-			}	
+			}
 			break;
 		}
 		case 'update':
-		{ 
-			
+		{
+
 			$_POST['history']=$OR_obj->ConcatHistory("Update: ".date('Y-m-d H:i:s')." ".$_SESSION['sess_user_name']." $udata\n");
 			$_POST['modify_id']=$_SESSION['sess_user_name'];
 			$_POST['modify_time']=date('YmdHis');
-			
+
 			$OR_obj->setDataArray($_POST);
 			$OR_obj->where='nr='.$_POST['nr'];
-			
+
 			if($OR_obj->updateDataFromInternalArray($nr)){
 				header("location:or_info.php".URL_REDIRECT_APPEND."&edit=1&mode=newdata&nr=".$_POST['nr']."&OR_nr=".$_POST['room_nr']);
 				exit;
@@ -121,7 +121,7 @@ if(!empty($mode)&&!$inputerror){
 			}else{
 				$mode='';
 			}
-				
+
 			if(is_object($OR_Info) && $mode!=''){
 				$ORoom=$OR_Info->FetchRow();
 				extract($ORoom);
@@ -173,10 +173,10 @@ if($mode=='select') $sTitle = $sTitle.$LDUpdate;
 ?>
 
 <script language="javascript">
-<!-- 
+<!--
 
 function chkForm(d){
-	
+
 	av="<?php echo $OR_obj->CombinedORNrs(); ?>";
 	mode="";
 	if(d.room_nr.value==""){
@@ -199,7 +199,7 @@ function chkForm(d){
 function newORnr(){
 	document.newstat.room_nr.value="<?php echo $newORnr ?>";
 }
-<?php require($root_path.'include/core/inc_checkdate_lang.php'); 
+<?php require($root_path.'include/core/inc_checkdate_lang.php');
 
 ?>
 
@@ -225,7 +225,7 @@ ob_start();
 ?>
 
 <ul>
- 
+
 <FONT class="prompt"><p>
  <?php
  if(isset($inputerror) && $inputerror){
@@ -237,8 +237,8 @@ ob_start();
 echo $LDEnterInfo;
 ?>
 </font>
-<p> 
- 
+<p>
+
 <?php echo $LDEnterAllFields ?>
 
 <form action="or_new.php" method="post" name="newstat"  onSubmit="return chkForm(this)">
@@ -248,19 +248,19 @@ echo $LDEnterInfo;
 
   <tr>
     <td align=right bgColor="#eeeeee"><font color=#ff0000><b>*</b>
-	<?php echo $LDORNr ?></font>: 
+	<?php echo $LDORNr ?></font>:
 	</td>
     <td bgColor="#f9f9f9">
 	<?php
 		if($mode=='select'||$mode=='update') { echo '<input type="hidden" name="room_nr"  value="'.$room_nr.'">'.$room_nr; } else {
 	?>
 	<input type="text" name="room_nr" size=4 maxlength=4 value=<?php echo  $newORnr; ?>> <a href="javascript:newORnr()"><img <?php echo createComIcon($root_path,'l_arrowgrnsm.gif','0') ?>> <?php echo $LDClkNextNr ?></a>
- 
+
 	<?php
 	}
 	?>
 </td>
-  </tr> 
+  </tr>
   <tr>
     <td align=right bgColor="#eeeeee"><font color=#ff0000><b>*</b><?php echo $LDOPTableNr ?></font>: </td>
     <td bgColor="#f9f9f9">
@@ -273,25 +273,25 @@ echo $LDEnterInfo;
  	<option value="6">6</option>
  	<option value="0">??</option>
  </select>
- 
+
 </td>
-  </tr> 
+  </tr>
   <tr>
     <td align=right bgColor="#eeeeee"><font color=#ff0000><b>*</b><?php echo $LDDateCreation; ?>: </td>
     <td bgColor="#f9f9f9">
 	<?php
-		
+
 		if($mode=='select'||$mode=='update'){
 			echo '<input type="hidden" name="date_create" value="'.$date_create.'">';
 			echo formatDate2Local($date_create,$date_format);
 		}else{
 		 	if(isset($inputerror) && $inputerror){
 				//gjergji : new calendar
-		 		echo $calendar->show_calendar($calendar,$date_format,'date_create',$date_create);	
+		 		echo $calendar->show_calendar($calendar,$date_format,'date_create',$date_create);
 		 		//end : gjergji
 			}else{
 				//gjergji : new calendar
-				echo $calendar->show_calendar($calendar,$date_format,'date_create');	
+				echo $calendar->show_calendar($calendar,$date_format,'date_create');
 				//end : gjergji
 			}
 		?>  </font>
@@ -299,19 +299,19 @@ echo $LDEnterInfo;
 	}
 	?>
 </td>
-  </tr> 
+  </tr>
   <tr>
     <td align=right bgColor="#eeeeee"><?php echo $LDORName ?>: </td>
     <td bgColor="#f9f9f9"><input type="text" name="info" size=50 maxlength=60 value="<?php echo $info ?>"><br>
 </td>
-  </tr> 
+  </tr>
 <tr>
     <td align=right bgColor="#eeeeee"><?php echo $LDOwnerWard; ?>: </td>
     <td bgColor="#f9f9f9">
 		<select name="ward_nr">
 		<option value=""> </option>';
 	<?php
-		
+
 		while(list($x,$v)=each($wardsarray)){
 			echo '
 				<option value="'.$v['nr'].'" ';
@@ -349,13 +349,13 @@ echo $LDEnterInfo;
 </td>
   </tr>
 
-  
+
   <tr>
     <td align=right bgColor="#eeeeee"><?php echo $LDTempClosed ?>: </td>
-    <td bgColor="#f9f9f9"><input type="radio" name="is_temp_closed" value="0" <?php if(!$is_temp_closed) echo 'checked'; ?>> <?php echo $LDNo ?> <input type="radio" name="is_temp_closed" value="1" <?php if($is_temp_closed) echo 'checked'; ?>> <?php echo $LDYes ?> 
+    <td bgColor="#f9f9f9"><input type="radio" name="is_temp_closed" value="0" <?php if(!$is_temp_closed) echo 'checked'; ?>> <?php echo $LDNo ?> <input type="radio" name="is_temp_closed" value="1" <?php if($is_temp_closed) echo 'checked'; ?>> <?php echo $LDYes ?>
 </td>
-  </tr> 
- 
+  </tr>
+
 </table>
 <input type="hidden" name="sid" value="<?php echo $sid ?>">
 <input type="hidden" name="edit" value="<?php echo $edit ?>">

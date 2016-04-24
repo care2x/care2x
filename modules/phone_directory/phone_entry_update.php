@@ -6,7 +6,7 @@ require_once($root_path.'include/core/inc_environment_global.php');
 * CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
 * GNU General Public License
 * Copyright 2002,2003,2004,2005 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -16,7 +16,7 @@ require_once($root_path.'include/core/inc_front_chain_lang.php');
 
 # Load the Comm class and create comm (phone) object
 require_once($root_path.'include/care_api_classes/class_comm.php');
-$phone = & new Comm;
+$phone =  Comm;
 
 //$db->debug=true;
 $error=1;
@@ -66,7 +66,7 @@ if ($mode=='save'){
 <STYLE TYPE="text/css">
 	.va12_b {text-decoration: none; color: #0000cc;}
 </style>
-<?php 
+<?php
 require($root_path.'include/core/inc_js_gethelp.php');
 require($root_path.'include/core/inc_css_a_hilitebu.php');
 ?>
@@ -219,7 +219,7 @@ require($root_path.'include/core/inc_css_a_hilitebu.php');
 <p>
 </td>
 </tr>
-</table>        
+</table>
 <p>
 <?php
 require($root_path.'include/core/inc_load_copyrite.php');

@@ -7,7 +7,7 @@ require($root_path.'include/core/inc_environment_global.php');
 //define('NO_CHAIN',1);
 //require_once($root_path.'include/core/inc_front_chain_lang.php');
 include($root_path.'include/care_api_classes/class_person.php');
-$person = & new Person();
+$person =  Person();
 
 require('./include/inc_access.php');
 
@@ -388,7 +388,7 @@ function PersonAppt($args){
 function PersonApptList($args){
 	global $error,$root_path;
 	include($root_path.'include/care_api_classes/class_appointment.php');
-	$appt=& new Appointment();
+	$appt= Appointment();
 	if(checkAccess($args[0])){
 		$buf=$appt->getPersonsAppointmentsObj($args[1]);
 		if($buf){
@@ -405,7 +405,7 @@ function PersonApptList($args){
 $server = new IXR_Server(array(
     'Person'=>'Person',
     'Person.Basic'=>'PersonBasic',
-    'Person.Exists'=>'PersonExists',    
+    'Person.Exists'=>'PersonExists',
     'Person.List'=>'PersonList',
     'Person.Encounter'=>'PersonEnc',
     'Person.Encounter.Search'=>'PersonEncSearch',

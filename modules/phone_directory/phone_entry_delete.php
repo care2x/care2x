@@ -4,7 +4,7 @@ require_once('./roots.php');
 require_once($root_path.'include/core/inc_environment_global.php');
 /*
 CARE2X Integrated Information System Deployment 2.1 - 2004-10-02 for Hospitals and Health Care Organizations and Services
-Copyright (C) 2002,2003,2004,2005  Elpidio Latorilla & Intellin.org	
+Copyright (C) 2002,2003,2004,2005  Elpidio Latorilla & Intellin.org
 
 GNU GPL. For details read file "copy_notice.txt".
 */
@@ -19,7 +19,7 @@ $thisfile=basename(__FILE__);
 
 # Load the Comm class and create comm (phone) object
 require_once($root_path.'include/care_api_classes/class_comm.php');
-$phone = & new Comm;
+$phone =  Comm;
 
 /* Load the date formatter */
 include_once($root_path.'include/core/inc_date_format_functions.php');
@@ -53,7 +53,7 @@ if ($finalcommand=='delete'){
 <HEAD>
 <?php echo setCharSet(); ?>
  <TITLE></TITLE>
-<?php 
+<?php
 require($root_path.'include/core/inc_css_a_hilitebu.php');
 ?>
 </HEAD>
@@ -83,9 +83,9 @@ require($root_path.'include/core/inc_css_a_hilitebu.php');
 <table border="0" cellpadding="2" cellspacing="1">
 <tr class="wardlisttitlerow" nowrap>
 <?php
-	for($i=0;$i<(sizeof($LDEditFields));$i++) 
- 	{	
-		if($zeile[$i]!="") 	
+	for($i=0;$i<(sizeof($LDEditFields));$i++)
+ 	{
+		if($zeile[$i]!="")
 		echo "<td nowrap>".$LDEditFields[$i]."</td>\n";
    	}
 ?>
@@ -95,16 +95,16 @@ require($root_path.'include/core/inc_css_a_hilitebu.php');
 
 $colstop=sizeof($LDEditFields);
 
-	for($i=0;$i<$colstop;$i++) 
- 	{	
-		if($zeile[$i]!="") 	
+	for($i=0;$i<$colstop;$i++)
+ 	{
+		if($zeile[$i]!="")
 		{
 		    echo "<td nowrap><nobr>";
-		
+
 		    if($i == ($colstop-3)) echo formatDate2Local($zeile[$i],$date_format);
 			 elseif($i==($colstop-2)) echo  convertTimeToLocal($zeile[$i]);
 			   else echo $zeile[$i];
-						   
+
 		    echo "</td>\n";
 	    }
    	}
@@ -142,11 +142,11 @@ $colstop=sizeof($LDEditFields);
 </center>
 </td>
 </tr>
-</table>        
+</table>
 <p><br>
 </td>
 </tr>
-</table>        
+</table>
 <p>
 
 <?php

@@ -6,7 +6,7 @@ require($root_path.'include/core/inc_environment_global.php');
 * CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
 * GNU General Public License
 * Copyright 2002,2003,2004,2005 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -15,13 +15,13 @@ define('LANG_FILE','drg.php');
 require_once('drg_inc_local_user.php');
 
 require_once($root_path.'include/core/inc_front_chain_lang.php');
-//if (!$opnr) {header("Location:".$root_path."language/".$lang."/lang_".$lang."_invalid-access-warning.php"); exit;}; 
+//if (!$opnr) {header("Location:".$root_path."language/".$lang."/lang_".$lang."_invalid-access-warning.php"); exit;};
 
 ///$db->debug=true;
 
 # Create drg object
 require_once($root_path.'include/care_api_classes/class_drg.php');
-$drg= & new DRG;
+$drg=  DRG;
 
 if($saveok){
 ?>
@@ -99,7 +99,7 @@ $img['reset']=createComIcon($root_path,'button_reset.gif','0','absmiddle',TRUE);
   <script language="javascript" src="<?php echo $root_path ?>js/showhide-div.js">
 </script>
   <script language="javascript">
-<!-- 
+<!--
 function pruf(d)
 {
 	if((d.keyword.value=="")||(d.keyword.value==" ")) return false;
@@ -131,11 +131,11 @@ function checkselect(d)
 }
 // -->
 </script>
- 
-<?php 
+
+<?php
 require($root_path.'include/core/inc_css_a_hilitebu.php');
 ?>
- 
+
 </HEAD>
 
 <BODY   onLoad="if(window.focus) window.focus();
@@ -178,7 +178,7 @@ document.searchdata.keyword.select();document.searchdata.keyword.focus();
 
 <form name="ops301" onSubmit="return checkselect(this)">
 
-<table border=0 cellpadding=0 cellspacing=0 width='100%'> 
+<table border=0 cellpadding=0 cellspacing=0 width='100%'>
 <tr bgcolor=#009900>
 <td width="20">
 <?php if(!$showonly) : ?>
@@ -189,7 +189,7 @@ document.searchdata.keyword.select();document.searchdata.keyword.focus();
 
 <td colspan=7><font size=2 color=#ffffff>&nbsp;&nbsp;&nbsp;<b><?php echo $LDDescription ?></b>
 </td>
-		
+
 </tr>
 
 <?php
@@ -200,7 +200,7 @@ function cleandata(&$buf)
 
 function drawAdditional($tag,&$codebuf,&$databuf,$bkcolor,&$alttag) {
 	global $LDClose, $img;
-	
+
 							//echo '&nbsp;<a href="javascript:ssm(\''.$tag.'_'.cleandata($codebuf).'\'); clearTimeout(timer)"><img src="../img/l_arrowGrnSm.gif" border=0 width=12 height=12 alt="'.$alttag.'" align="absmiddle"></a>';
 							echo '<DIV id='.$tag.'_'.cleandata($codebuf).'
 									style=" VISIBILITY: hidden; POSITION: absolute;">
@@ -237,9 +237,9 @@ function drawdata(&$data,&$advdata){
 							</td>
 							<td><font size=2><nobr>';
 						//echo " *$parentcode +$grandcode";
-						
+
 						if($priocolor&&($data['code']!=$keyword)) echo '<u><a href="javascript:subsearch(\''.$data['code'].'\')">'.$data['code'].'</a></U>';
-						else echo $data['code'].'&nbsp;';		
+						else echo $data['code'].'&nbsp;';
 						echo "&nbsp;</nobr></td>";
 						switch($data[sub_level])
 							{
@@ -281,8 +281,8 @@ function drawdata(&$data,&$advdata){
 						//echo '<font size=2>'.trim($data[description]);
 						echo '<font size=2>';
 						if($priocolor&&($data['code']!=$keyword)) echo '<u><a href="javascript:subsearch(\''.$data['code'].'\')">'.$data[description].'</a></U>';
-						else echo $data['description'].'&nbsp;';		
-						
+						else echo $data['description'].'&nbsp;';
+
 						if($data[inclusive])
 						{
 							echo '&nbsp;<a href="javascript:ssm(\'i_'.cleandata($data['code']).'\');"><img '.$img['arrow'].' alt="'.$LDInclusive.'"></a>';
@@ -294,12 +294,12 @@ function drawdata(&$data,&$advdata){
 							echo '&nbsp;<a href="javascript:ssm(\'e_'.cleandata($data['code']).'\');"><img '.$img['warn'].' alt="'.$LDExclusive.'"></a>';
 							drawAdditional("e",$data['code'],$data['exclusive'],"ffccee",$LDExclusive);
 						}
-						if($data[notes]) 
+						if($data[notes])
 						{
 							echo '&nbsp;<a href="javascript:ssm(\'n_'.cleandata($data['code']).'\');"><img '.$img['info'].' alt="'.$LDNotes.'"></a>';
 							drawAdditional("n",$data['code'],$data['notes'],"ffcc99",$LDNotes);
 						}
-						if($data[remarks]) 
+						if($data[remarks])
 						{
 							echo '&nbsp;<a href="javascript:ssm(\'r_'.cleandata($data['code']).'\');"><img '.$img['bubble'].' alt="'.$LDRemarks.'"></a>';
 							drawAdditional("r",$data['code'],$data['remarks'],"cceeff",$LDRemarks);
@@ -307,8 +307,8 @@ function drawdata(&$data,&$advdata){
 						echo '</td>';
 }
 
-			if ($linecount>0) 
-				{ 
+			if ($linecount>0)
+				{
 					$idx=0;
 					$grandpa=array();
 					$parent=array();
@@ -324,7 +324,7 @@ function drawdata(&$data,&$advdata){
 								$isparent=1;
 								$iscolor=1;
 							}
-							elseif(stristr($strbuf,".")) 
+							elseif(stristr($strbuf,"."))
 								{
 									$parentcode=substr($strbuf,0,strpos($strbuf,"."));
 									//$parent[strtr($parentcode,"-","_")]=1;
@@ -341,7 +341,7 @@ function drawdata(&$data,&$advdata){
 								{
 									//
 									$parentcode=strtr($strbuf,"-","_");
-									$parent[$parentcode]=1; 
+									$parent[$parentcode]=1;
 									$parentdata=$zeile;
 										// echo "grand";
 									//echo "$grandcode $parentcode";
@@ -349,11 +349,11 @@ function drawdata(&$data,&$advdata){
 									$isparent=0;
 								}
 							//echo "#$zeile[diagnosis_code] *$parentcode +$grandcode";
-							
 
-						
+
+
 							$parentcode=strtr($parentcode,"-","_");
-	
+
 							if(!$parent[$parentcode])
 							{
 								//echo "parent";
@@ -372,7 +372,7 @@ function drawdata(&$data,&$advdata){
 									}
 								}
 							}
-							
+
 							drawdata($zeile,$advzeile);
 							//$idx++;
 							echo "</tr>";
@@ -383,9 +383,9 @@ function drawdata(&$data,&$advdata){
 ?>
 
 </table>
-<?php 
+<?php
 
-if(!$showonly&&($linecount>0)) { 
+if(!$showonly&&($linecount>0)) {
 
 ?>
 <input type="hidden" name="lastindex" value="<?php echo $idx ?>">
@@ -406,7 +406,7 @@ if(!$showonly&&($linecount>0)) {
 <input type="hidden" name="target" value="<?php echo $target; ?>">
 <input type="hidden" name="mode" value="save">
 </form>
-<?php 
+<?php
 
 }else{
 /*

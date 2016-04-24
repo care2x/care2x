@@ -4,7 +4,7 @@ require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
 
 
-# Initializations 
+# Initializations
 $lang_tables[]='departments.php';
 define('LANG_FILE','products.php');
 $local_user='ck_supply_db_user';
@@ -12,11 +12,11 @@ $local_user='ck_supply_db_user';
 require_once($root_path.'include/core/inc_front_chain_lang.php');
 
 require_once($root_path.'include/care_api_classes/class_core.php');
-$core = & new Core;
+$core =  Core;
 
 $thisfile=basename(__FILE__);
 
-if ($_COOKIE[$local_user.$sid]=='') $cat='';  
+if ($_COOKIE[$local_user.$sid]=='') $cat='';
 
 $title="$LDPharmacy - $LDOrderBotActivate $LDAck";
 $dbtable='care_supply';
@@ -29,7 +29,7 @@ $rows=0;
 $stat2seen=false;
 $mov2arc=false;
 $deltodo=false;
-  
+
 
 # Load the date formatter
 include_once($root_path.'include/core/inc_date_format_functions.php');
@@ -38,11 +38,11 @@ include_once($root_path.'include/core/inc_date_format_functions.php');
 $sql="SELECT * FROM $dbtable WHERE idcare_supply='$idcare_supply'";
 if($ergebnis=$db->Execute($sql)) {
 	if($rows=$ergebnis->RecordCount())  $content=$ergebnis->FetchRow();
-} else { 
-   echo "$LDDbNoRead<br>$sql"; 
+} else {
+   echo "$LDDbNoRead<br>$sql";
    $mode='';
-} 
-	
+}
+
 
 		 switch($mode) {
 			case 'ack_print':
@@ -54,7 +54,7 @@ if($ergebnis=$db->Execute($sql)) {
                             WHERE idcare_supply='$idcare_supply'";
 
 					if($ergebnis=$core->Transact($sql))  {
-						$status=""; 
+						$status="";
 						$stat2seen=true;
 					}
 					else { echo "$LDDbNoUpdate<br>$sql"; }
@@ -70,23 +70,23 @@ if($ergebnis=$db->Execute($sql)) {
 						$sql = "INSERT INTO $dbsupplyhistory(id_supplier, data, bill_nr, medicament, qty, price, value, expiry_date) ";
 						$sql .= "VALUES ( " . $supplier_nr. ",'" . $content['order_date'] . "','" . $content['bill_nr'] . "','" . $r['bestellnum'] . "'," . $r['pcs'] . ",". $r['price'] . "," . $r['value'] . ",'" . $expiry_date . "')";
 						if($ergebnis=$core->Transact($sql)){
-								$status=""; 
+								$status="";
 								$stat2seen=true;
 							}
 							else { echo "$LDDbNoUpdate<br>$sql"; }
 				 	}
 				 	//end:gjergji
-				 						
+
 					//gjergji:update the quantity in the depot
 					$artikeln=explode(' ',$content['articles']);
 					for($n=0;$n<sizeof($artikeln);$n++)	{
 						parse_str($artikeln[$n],$r);
 						$dstmp = explode('/',$r['expiry_date']);
-						$expiry_date = $dstmp[2] . '-' . $dstmp[1] . '-' . $dstmp[0];						
+						$expiry_date = $dstmp[2] . '-' . $dstmp[1] . '-' . $dstmp[0];
 						$sql = "INSERT INTO $dbtableupdate( pcs, expiry_date, price, bestellnum, idcare_supply ) ";
 						$sql .= "VALUES ( " . $r[pcs] . ",'" . $expiry_date. "',". $r[price]. ",'" . $r['bestellnum'] . "'," . $idcare_supply . ")";
 						if($ergebnis=$core->Transact($sql)){
-								$status=""; 
+								$status="";
 								$stat2seen=true;
 							}
 							else { echo "$LDDbNoUpdate<br>$sql"; }
@@ -101,14 +101,14 @@ if($ergebnis=$db->Execute($sql)) {
                                    process_datetime='".date('Y-m-d H:i:s')."'
                                    WHERE idcare_supply='$idcare_supply'";
 					if($ergebnis=$core->Transact($sql)) {
-						
+
 						$status='';
 						$deltodo=true;
-														
+
 					}
-						else { echo "$LDDbNoRead<br>$sql"; } 
+						else { echo "$LDDbNoRead<br>$sql"; }
 					 break;
-					
+
 		 		}
 
 
@@ -177,7 +177,7 @@ echo '<p>
 	for ($i=0;$i<sizeof($LDIndexBillPrint);$i++)
 	echo '
 		<td><font face=Verdana,Arial size=2 >'.$LDIndexBillPrint[$i].'</font></td>';
-	echo '</tr>';	
+	echo '</tr>';
 
 $i=1;
 $totali=0;
@@ -191,20 +191,20 @@ for($n=0;$n<sizeof($artikeln);$n++)	{
 		<td><font face=Verdana,Arial size=2>'.$r[pcs].'</font></td>
 		<td ><font face=Verdana,Arial size=2><nobr>X '.$r['proorder'].'</nobr></font></td>
 		<td><font face=Verdana,Arial size=2> &nbsp;'.$r['price'].'</font></td>
-		<td><font face=Verdana,Arial size=2> &nbsp;'.$r['value'].'</font></td>			
-		<td><font face=Verdana,Arial size=2> &nbsp;'.$r['expiry_date'].'</font></td>						
+		<td><font face=Verdana,Arial size=2> &nbsp;'.$r['value'].'</font></td>
+		<td><font face=Verdana,Arial size=2> &nbsp;'.$r['expiry_date'].'</font></td>
 				</tr>';
 	$i++;
 	$totali = $totali + $r['value'];
 }
 	echo "<tr bgcolor=\"#ffffff\"><td colspan=7>&nbsp;</td></tr>";
-	echo "<tr bgcolor=\"#ffffff\"><td colspan=4></td><td><b>Totali : </b></td><td><b>".$totali."</b></td><td colspan=2><b> Lek</b></td></tr>";	
+	echo "<tr bgcolor=\"#ffffff\"><td colspan=4></td><td><b>Totali : </b></td><td><b>".$totali."</b></td><td colspan=2><b> Lek</b></td></tr>";
  	echo '</table></td></tr></table>';
 	echo'<p>'.$LDCreatedBy.': '.$content['modify_id'].'<p><hr>';
-			
+
 	switch($status)	{
 		case 'pending':{ echo '
-						     <form name="opt" action="'.$thisfile.'" method="post" onSubmit="window.print()">	
+						     <form name="opt" action="'.$thisfile.'" method="post" onSubmit="window.print()">
 					        <input type="submit" value="GO"> '.$LDOrderAck.'<p>
                              <input type="hidden" name="mode" value="ack_print">
 							<input type="hidden" name="cat" value="'.$cat.'">
@@ -217,13 +217,13 @@ for($n=0;$n<sizeof($artikeln);$n++)	{
 							break;
 						}
 		case 'ack_print':{ echo '
-							<form name="opt2" action="'.$thisfile.'">	
+							<form name="opt2" action="'.$thisfile.'">
 							<input type="button" value="GO" onClick="window.print()"> <b>'.$LDBillPrint.'</b><p>
 							</form>
-							
-							<form name="opt3" action="'.$thisfile.'" method="post" >	
+
+							<form name="opt3" action="'.$thisfile.'" method="post" >
 							'.$LDProcessedBy.':<input type="text" name="clerk" size=25 maxlength=40><br>
-							<input type="button" value="GO"  onClick="move2arch()"> <b>'.$LDOrder2Archive.'</b>   
+							<input type="button" value="GO"  onClick="move2arch()"> <b>'.$LDOrder2Archive.'</b>
 							</form>
                             <p>';
                             break;

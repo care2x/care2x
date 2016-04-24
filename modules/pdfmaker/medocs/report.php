@@ -12,7 +12,7 @@ require($root_path.'include/core/inc_environment_global.php');
 * CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
 * GNU General Public License
 * Copyright 2002,2003,2004,2005 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -35,14 +35,14 @@ require_once($root_path.'include/core/inc_date_format_functions.php');
 require_once($root_path.'include/care_api_classes/class_encounter.php');
 require_once($root_path.'include/care_api_classes/class_medocs.php');
 # Get the encouter data
-$enc_obj=& new Encounter($enc);
+$enc_obj= Encounter($enc);
 if($enc_obj->loadEncounterData()){
 	$encounter=$enc_obj->getLoadedEncounterData();
 	//extract($encounter);
 }
 
 # Get the medocs document
-$medocs_obj=& new Medocs();
+$medocs_obj= Medocs();
 $medocs=$medocs_obj->getMedocsDocument($mnr);
 
 require_once($root_path.'include/care_api_classes/class_insurance.php');
@@ -53,7 +53,7 @@ $classpath=$root_path.'classes/phppdf/';
 $fontpath=$classpath.'fonts/';
 # Load and create pdf object
 include($classpath.'class.ezpdf.php');
-$pdf=& new Cezpdf();
+$pdf= Cezpdf();
 
 
 $logo=$root_path.'gui/img/logos/care_logo_print.png';
@@ -105,8 +105,8 @@ $pdf->ezTable($data,'','',array('xPos'=>'left','xOrientation'=>'right','showLine
 $y=$pdf->ezText("\n".$medocs['aux_notes']."\n",$report_textsize);
 
 # Check if patient got medical advice
-if(stristr($medocs['short_notes'],'got_medical_advice')) $advice=$LDYes; 
-	else $advice=$LDNo; 
+if(stristr($medocs['short_notes'],'got_medical_advice')) $advice=$LDYes;
+	else $advice=$LDNo;
 $data=NULL;
 # Print the add insurance info
 $data[]=array($LDGotMedAdvice);

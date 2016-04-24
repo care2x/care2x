@@ -22,7 +22,7 @@ require_once($root_path.'include/care_api_classes/class_core.php');
  */
 require ($root_path . 'include/core/inc_accessplan_areas_functions.php') ;
 require_once($root_path.'include/care_api_classes/class_access.php');
-$role = & new Access();
+$role =  Access();
 
 $breakfile = 'edv-system-admi-welcome.php' . URL_APPEND ;
 $returnfile = $_SESSION [ 'sess_file_return' ] . URL_APPEND ;
