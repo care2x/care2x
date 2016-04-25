@@ -3,7 +3,7 @@
  * Base Installer include file
  *
  */
-error_reporting(E_ALL ^ E_NOTICE);
+error_reporting(E_ALL && ~E_NOTICE);
 
 define('INSTALLER_PATH', realpath(dirname(__FILE__)));
 define('INSTALLER_API', true);

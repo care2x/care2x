@@ -7,15 +7,15 @@
  */
 class CSVOptions extends SQLOptions {
 
-	function CSVOptions($title, $params){
-		parent::SQLOptions($title, $params);
+	function __construct($title, $params){
+		parent::__construct($title, $params);
 
 	}
-	
+
 	/*
 	 * This function needs to be overriden in the implementing class
 	 * and should return either TRUE or FALSE.
-	 * 
+	 *
 	 * @var $params array Array of parameters needed for the specific implementation
 	 */
 	function perform(){
@@ -46,7 +46,7 @@ class CSVOptions extends SQLOptions {
                         $this->result_message = "The database table you selected is being installed, this may take several minutes especially for larger code packs.";
 			return $this->result;
 		}
-		
+
 		# Connect to the DB
 		$db = $this->connect();
 		if ($db === FALSE)
@@ -69,7 +69,7 @@ class CSVOptions extends SQLOptions {
 
         # Rewind the file pointer to the beginning of the file
         rewind($handle);
-  	
+
 		# Construct the sql template
 		//$sql_template = "INSERT INTO ".$table." (".implode(",", $columns).") values (".implode(",", array_fill(0, count($columns), "?")).");";
         $sql_template = "INSERT INTO ".$table." VALUES (".implode(",", array_fill(0, count($columns), "?")).");";
@@ -108,11 +108,11 @@ class CSVOptions extends SQLOptions {
 			unset($this->file_list[$k]);
 		$this->file = "";
 
-		$this->loop = 1;	
+		$this->loop = 1;
 		return $this->result;
 	}
 
-		
+
 	function prepareParameters(){
 		if ($this->params_prepared) {
 			return true;
@@ -144,7 +144,7 @@ class CSVOptions extends SQLOptions {
                                 $this->file_list[$pretty_name] = $file;
                         }
                 }
-		}	
+		}
 		$this->params_prepared = true;
 	}
 }

@@ -14,16 +14,16 @@ require_once(APP_PATH.'/classes/adodb/adodb-xmlschema.inc.php');
 class SQLAction extends BaseAction {
 
     var $server;
-    
+
     var $username;
-    
+
     var $password;
-    
+
     var $type;
-    
+
     var $db_name;
 
-    function SQLAction($title, $params) {
+    function __construct($title, $params) {
         $this->title = $title;
         $this->params = $params;
     }
@@ -40,7 +40,7 @@ class SQLAction extends BaseAction {
             $this->result_message = "Could not determine server name, please provide a server_field or server parameter!";
             return FALSE;
         }
-        
+
         if (isset($this->params['username_field'])) {
             $username_field = $engine->getField($this->params['username_field']);
             $this->username = $username_field->value;
@@ -60,7 +60,7 @@ class SQLAction extends BaseAction {
             $this->result_message = "Could not determine database password, please provide a password_field or password parameter!";
             return FALSE;
         }
-        
+
         if (isset($this->params['type_field'])) {
             $type_field = $engine->getField($this->params['type_field']);
             $this->type = $type_field->value;
@@ -70,7 +70,7 @@ class SQLAction extends BaseAction {
             $this->result_message = "Could not determine database type, please provide a type_field or type parameter!";
             return FALSE;
         }
-        
+
         if (isset($this->params['db_field'])) {
             $database_field = $engine->getField($this->params['db_field']);
             $this->db_name = $database_field->value;
@@ -94,10 +94,10 @@ class SQLAction extends BaseAction {
             $this->loop = 2;
             return FALSE;
         }
-        
+
         # First try to connect to the exact database on server
         @$ok = $db->Connect($address, $this->username, $this->password, $this->db_name);
-        
+
         # If failed to connect to the database, then create it
         if (!$ok) {
             # Failed db connection has to be constructed from start
@@ -108,7 +108,7 @@ class SQLAction extends BaseAction {
                 $this->loop = 2;
                 return FALSE;
             }
-            
+
             # Try connecting without database parameter
             @$ok = $db->Connect($address, $this->username, $this->password);
             if (!$ok) {
@@ -117,14 +117,14 @@ class SQLAction extends BaseAction {
                 $this->loop = 2;
                 return FALSE;
             }
-            
+
             # LATIN1 encoding is required for PostgreSQL databases
             $taboptarray = array('postgres' => 'ENCODING = \'LATIN1\'');
-            
+
             # Get SQL to create database
             $dict = NewDataDictionary($db);
             $sql = $dict->CreateDatabase($this->db_name, $taboptarray);
-            
+
             # Try creating database
             # "2" is status returned by ExecuteSQLArray()
             @$ok = (2 == $dict->ExecuteSQLArray($sql));
@@ -134,7 +134,7 @@ class SQLAction extends BaseAction {
                 $this->loop = 2;
                 return FALSE;
             }
-            
+
             # Try to connect after creating
             @$ok = $db->Connect($address, $this->username, $this->password, $this->db_name);
             if (!$ok) {

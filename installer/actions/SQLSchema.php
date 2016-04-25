@@ -2,23 +2,23 @@
 /*
  * SQLSchema Class
  *
- * This action creates the DB schema from the given AXMLS descriptor. 
+ * This action creates the DB schema from the given AXMLS descriptor.
  */
 class SQLSchema extends SQLFile {
-	
+
 	var $schema_file;
-	
-	function SQLSchema($title, $params) {
-		parent::SQLFile($title, $params);
-		
+
+	function __construct($title, $params) {
+		parent::__construct($title, $params);
+
 		$this->interactive = true;
 		$this->grouping = false;
 	}
-	
+
 	/*
 	 * This function needs to be overriden in the implementing class
 	 * and should return either TRUE or FALSE.
-	 * 
+	 *
 	 * @var $params array Array of parameters needed for the specific implementation
 	 */
 	function perform() {
@@ -30,7 +30,7 @@ class SQLSchema extends SQLFile {
 			$this->result = INSTALLER_ACTION_FAIL;
 			return $this->result;
 		}
-		
+
 		if(!is_readable($this->schema_file)){
 			$this->result = INSTALLER_ACTION_FAIL;
 			$this->result_message = "Could not read file sql $this->schema_file.";
@@ -45,10 +45,10 @@ class SQLSchema extends SQLFile {
 
         # Create empty ADOdb connection
         $conn = ADONewConnection($this->type);
-		
+
 		# Create new ADO Schema object
 		$schema = new adoSchema($conn);
-		
+
 		# Build the SQL query from the Schema file
 		$sql = $schema->ParseSchema($this->schema_file);
 
@@ -65,10 +65,10 @@ class SQLSchema extends SQLFile {
 			$this->result_message = "Errors on execution of the schema SQL: ".$db->ErrorMsg();
 			$this->loop = 2;
 		}
-		
+
 		return $this->result;
 	}
-	
+
 	function prepareParameters() {
         if ($this->prepareDBParameters() === FALSE)
             return FALSE;
@@ -80,6 +80,6 @@ class SQLSchema extends SQLFile {
 			$this->schema_file = $this->params['schema'];
 		}
 	}
-	
+
 }
 ?>

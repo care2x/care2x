@@ -6,22 +6,22 @@
  * least the perform method overridden
  */
 class SQLFile extends SQLAction {
-	
+
 	var $file_list;
-	
+
 	var $loop;
-	
-	function SQLFile($title, $params){
-		parent::SQLAction($title, $params);
-		
+
+	function __construct($title, $params){
+		parent::__construct($title, $params);
+
 		$this->interactive = true;
 		$this->grouping = false;
 	}
-	
+
 	/*
 	 * This function needs to be overriden in the implementing class
 	 * and should return either TRUE or FALSE.
-	 * 
+	 *
 	 * @var $params array Array of parameters needed for the specific implementation
 	 */
 	function perform(){
@@ -44,7 +44,7 @@ class SQLFile extends SQLAction {
 				$this->loop = 2;
 				return $this->result;
 			}
-			
+
 			$file_contents = file($file);
 			$file_contents = join('', $file_contents);
 			if(!$this->splitMySqlFile($sql_commands[], $file_contents)){
@@ -78,10 +78,10 @@ class SQLFile extends SQLAction {
         $this->result = INSTALLER_ACTION_SUCCESS;
         $this->result_message = "Loaded ".count($this->file_list)." sql files with $query_count queries";
         $this->loop = 3;
-		
+
 		return $this->result;
 	}
-		
+
 	function prepareParameters() {
         if ($this->prepareDBParameters() === FALSE)
             return FALSE;
@@ -117,12 +117,12 @@ class SQLFile extends SQLAction {
 	    $in_string    = FALSE;
 	    $nothing      = TRUE;
 	    $time0        = time();
-	
+
 	    for ($i = 0; $i < $sql_len; ++$i) {
 	        $char = $sql[$i];
-	
+
 		//echo "parsing character $i<br>";
-	
+
 	        // We are in a string, check for not escaped end of strings except for
 	        // backquotes that can't be escaped
 	        if ($in_string) {
@@ -165,10 +165,10 @@ class SQLFile extends SQLAction {
 	                } // end if...elseif...else
 	            } // end for
 	        } // end if (in string)
-	
+
 	        // lets skip comments (/*, -- and #)
-	        else if (($char == '-' && $sql_len > $i + 2 && $sql[$i + 1] == '-' && $sql[$i + 2] <= ' ') 
-			|| $char == '#' 
+	        else if (($char == '-' && $sql_len > $i + 2 && $sql[$i + 1] == '-' && $sql[$i + 2] <= ' ')
+			|| $char == '#'
 			|| ($char == '/' && $sql_len > $i + 1 && $sql[$i + 1] == '*')) {
 	            $i = strpos($sql, $char == '/' ? '*/' : "\n", $i);
 	            // didn't we hit end of string?
@@ -177,7 +177,7 @@ class SQLFile extends SQLAction {
 	            }
 	            if ($char == '/') $i++;
 	        }
-	
+
 	        // We are not in a string, first check for delimiter...
 	        else if ($char == ';') {
 	            // if delimiter found, add the parsed part to the returned array
@@ -194,18 +194,18 @@ class SQLFile extends SQLAction {
 	                return TRUE;
 	            }
 	        } // end else if (is delimiter)
-	
+
 	        // ... then check for start of a string,...
 	        else if (($char == '"') || ($char == '\'') || ($char == '`')) {
 	            $in_string    = TRUE;
 	            $nothing      = FALSE;
 	            $string_start = $char;
 	        } // end else if (is start of string)
-	
+
 	        elseif ($nothing) {
 	            $nothing = FALSE;
 	        }
-	
+
 	        //loic1: send a fake header each 30 sec. to bypass browser timeout
 	        $time1     = time();
 	        if ($time1 >= $time0 + 30) {
@@ -213,13 +213,13 @@ class SQLFile extends SQLAction {
 	            header('X-pmaPing: Pong');
 	        } // end if
 	    } // end for
-	
+
 	    // add any rest to the returned array
 	    if (!empty($sql) && preg_match('@[^[:space:]]+@', $sql)) {
 		//	echo "<br> bottomone <br>";echo $sql;
 	        $ret[] = array('query' => $sql, 'empty' => $nothing);
 	    }
-	
+
 	    return TRUE;
 	}
 

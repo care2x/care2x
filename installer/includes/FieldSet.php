@@ -9,7 +9,7 @@
 class FieldSet extends BaseSet{
 
 	function __construct(){
-		parent::BaseSet('Field');
+		parent::__construct('Field');
 	}
 }
 ?>

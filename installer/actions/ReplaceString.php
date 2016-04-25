@@ -2,28 +2,28 @@
 /*
  * ReplaceString Class
  *
- * This action will replace all instances of a 
+ * This action will replace all instances of a
  * string with either a field entry or provided
  * string.
  */
 class ReplaceString extends BaseAction {
 	var $file_list;
-	
+
 	var $replacements;
-	
+
 	var $message;
-		
-	function ReplaceString($title, $params){
-		parent::BaseAction($title, $params);
-		
+
+	function __construct($title, $params){
+		parent::__construct($title, $params);
+
 		$this->interactive = false;
 		$this->grouping = true;
 	}
-	
+
 	/*
 	 * This function needs to be overriden in the implementing class
 	 * and should return either TRUE or FALSE.
-	 * 
+	 *
 	 * @var $params array Array of parameters needed for the specific implementation
 	 */
 	function perform(){
@@ -31,7 +31,7 @@ class ReplaceString extends BaseAction {
 			$this->result = INSTALLER_ACTION_FAIL;
 			return $this->result;
 		}
-		
+
 		$sql_commands = array();
 		foreach($this->file_list as $old_file => $new_file){
 			if(!is_readable($old_file)){
@@ -39,26 +39,26 @@ class ReplaceString extends BaseAction {
 				$this->result_message = "Could not read from file $old_file.";
 				return $this->result;
 			}
-			
+
 			list($markers, $replacements) = $this->getReplacementArrays();
 			$file_contents = file($old_file);
 			if(count($file_contents) > 0){
 				$new_contents = preg_replace($markers, $replacements, $file_contents);
-				
+
 				// Write new file
 				$file_handle = fopen($new_file, 'w+');
 				if(!$file_handle){
 					$this->result = INSTALLER_ACTION_FAIL;
 					$this->result_message = "Could not write to file $new_file";
-					return $this->result;	
+					return $this->result;
 				}
 				foreach($new_contents as $line){
-					fwrite($file_handle, $line);	
+					fwrite($file_handle, $line);
 				}
 				fclose($file_handle);
 			}
 		}
-		
+
 		$this->result_message = $this->message;
 		$this->result = INSTALLER_ACTION_SUCCESS;
 		return $this->result;
@@ -71,9 +71,9 @@ class ReplaceString extends BaseAction {
 			$markers[] = '/'.$replacement->marker.'/';
 			$replacements[] = $replacement->getReplacement();
 		}
-		return array($markers, $replacements);	
+		return array($markers, $replacements);
 	}
-			
+
 	function prepareParameters(){
 		$this->replacements = array();
 		$engine =& $GLOBALS['INSTALLER']['ENGINE'];
@@ -83,7 +83,7 @@ class ReplaceString extends BaseAction {
 					if(!empty($marker)){
 						$this->replacements[] = new ReplaceString_Replacement($marker, $field);
 					}
-				}	
+				}
 			}
 		}
 
@@ -93,55 +93,55 @@ class ReplaceString extends BaseAction {
 					if(!empty($marker)){
 						$this->replacements[] = new ReplaceString_Replacement($marker, '',$string);
 					}
-				}	
+				}
 			}
 		}
-		
+
 		// Get file list
 		if(!isset($this->params['files']) || !is_array($this->params['files']) || count($this->params['files']) == 0){
 			$this->result_message = "You must provide a files parameter that is an array of the files to work on";
 			return FALSE;
 		}else{
-			$this->file_list = $this->params['files'];			
-		}		
+			$this->file_list = $this->params['files'];
+		}
 
 		// Get success message
 		if(isset($this->params['message']) && !empty($this->params['message'])){
 			$this->message = $this->params['message'];
 		}else{
-			$this->message = "All files updated!";			
-		}		
+			$this->message = "All files updated!";
+		}
 	}
 }
 
 class ReplaceString_Replacement {
 
 	var $marker;
-	
+
 	var $field;
-	
+
 	var $string;
-	
+
 	var $value;
-	
+
 	function ReplaceString_Replacement($marker, $field = '', $string = ''){
 		$this->marker = $marker;
 		$this->field = $field;
 		$this->string = $string;
 	}
-	
+
 	function setupReplacement(){
 		$this->value = '';
-		
+
 		if(!empty($this->field)){
 			$engine =& $GLOBALS['INSTALLER']['ENGINE'];
 			$field = $engine->getField($this->field);
 			$this->value = $field->value;
 		}else{
-			$this->value = $this->string;	
+			$this->value = $this->string;
 		}
 	}
-	
+
 	function getReplacement(){
 		$this->setupReplacement();
 		return $this->value;

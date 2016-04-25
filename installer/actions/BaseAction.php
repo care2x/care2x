@@ -14,45 +14,45 @@ class BaseAction {
 	var $title;
 
 	var $result = INSTALLER_ACTION_FAIL;
-	
+
 	var $result_message = 'Action not yet ran.';
-	
+
 	var $params;
-	
+
 	var $interactive = false;
 
 	var $grouping = true;
-	
-	function BaseAction($title, $params){
+
+	function __construct($title, $params){
 		$this->title = $title;
 		$this->params = $params;
 	}
-	
+
 	/*
 	 * This function needs to be overriden in the implementing class
 	 * and should return either TRUE or FALSE.
-	 * 
+	 *
 	 */
 	function perform(){
-		return FALSE;	
+		return FALSE;
 	}
-	
+
 	/*
-	 * If the return value is TRUE then 
+	 * If the return value is TRUE then
 	 * the getHTML() and submitData() functions will be called.
 	 */
 	function isInteractive(){
 		return $this->interactive;
 	}
-	
+
 	/*
 	 * This function needs to be overriden in the implementing class and
 	 * should return the HTML used to collect data from the user.
 	 */
 	function getHTML(){
-		return '';	
+		return '';
 	}
-	
+
 	/*
 	 * This function needs to be overriden in the implementing class and
 	 * is called when the data has been submitted from the getHTML()
@@ -60,11 +60,11 @@ class BaseAction {
 	 * process to continue.
 	 */
 	function dataSubmitted(){
-		return TRUE;	
+		return TRUE;
 	}
-	
+
 	/*
-	 * If the return value is FALSE then this action will be displayed 
+	 * If the return value is FALSE then this action will be displayed
 	 * by itself and not be grouped with other actions.
 	 */
 	function allowGrouping(){
@@ -72,11 +72,11 @@ class BaseAction {
 	}
 
 	function getResult(){
-		return $this->result;	
+		return $this->result;
 	}
-	
+
 	function getResultMessage(){
-		return $this->result_message;	
+		return $this->result_message;
 	}
 
 	function success(){
@@ -84,7 +84,7 @@ class BaseAction {
 			return true;
 		return false;
 	}
-	
+
 	function getTitle() {
 		return $this->title;
 	}

@@ -7,30 +7,30 @@
  */
 class AcceptText extends BaseAction {
 	var $file_name;
-	
-	function AcceptText($title, $params){
-		parent::BaseAction($title, $params);
-		
+
+	function __construct($title, $params){
+		parent::__construct($title, $params);
+
 		$this->interactive = true;
 		$this->grouping = false;
-		
+
 		if(!is_array($params) || count($params) <= 0){
 			$this->result = INSTALLER_ACTION_FAIL;
-			$this->result_message = "Invalid parameters passed to AcceptText action, filename is required.";	
+			$this->result_message = "Invalid parameters passed to AcceptText action, filename is required.";
 			ErrorStack::addError($this->result_message, ERRORSTACK_ERROR, 'AcceptText');
 		}else{
 			$this->file_name = $params[0];
 		}
 	}
-	
+
 	/*
 	 * This function returns the result value of the object
-	 * 
+	 *
 	 */
 	function perform(){
-		return $this->result;	
+		return $this->result;
 	}
-		
+
 	/*
 	 * This function accesses the file name and opens the file and places it the
 	 * Smarty template for display
@@ -41,16 +41,16 @@ class AcceptText extends BaseAction {
 			$file_contents = file($this->file_name);
 			$file_contents = join('', $file_contents);
 		}
-		
+
 		$smarty->assign('FILE_CONTENTS', $file_contents);
-		
-		return $smarty->fetch(Installer::getTemplatePath('action_accept_text.tpl'));	
+
+		return $smarty->fetch(Installer::getTemplatePath('action_accept_text.tpl'));
 	}
-	
+
 	/*
 	 * This function returns true (and allows installtion to continue)
 	 * If the user has accepted the license text.
-	 * 
+	 *
 	 */
 	function dataSubmitted(){
 		if($_POST['ACCEPT_TEXT_SUBMIT'] === "I Agree") {
