@@ -22,7 +22,7 @@ class ErrorStack{
 			$GLOBALS['INSTALLER']['ERROR_STACK'] = array();
 		}
 
-		$error =  new Error($message, $level, $class_name);
+		$error =  new BaseError($message, $level, $class_name);
 		$GLOBALS['INSTALLER']['ERROR_STACK'][] =& $error;
 
 		if($level == ERRORSTACK_FATAL){
@@ -68,7 +68,7 @@ class ErrorStack{
 	}
 }
 
-class Error{
+class BaseError{
 
 	var $message = '';
 
