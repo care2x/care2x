@@ -76,7 +76,7 @@ class Error{
 
 	var $class_name = '';
 
-	function Error($message, $level, $class_name){
+	function __construct($message, $level, $class_name){
 		$this->message = $message;
 		$this->level = $level;
 		$this->class_name = $class_name;
