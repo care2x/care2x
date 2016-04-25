@@ -32,7 +32,7 @@ require_once(INSTALLER_PATH.'/includes/StripSlashes.php');
 
 class Installer{
 
-	function Installer() {}
+	function __construct() {}
 
 	function getTemplatePath($template_name){
 		if(isset($GLOBALS['INSTALLER']['TEMPLATE_DIR'])){
@@ -118,9 +118,9 @@ set_time_limit(0);
 //TODO Detect if session is already started, if so display error
 session_start();
 if(isset($_REQUEST['restart_installer']) || !isset($_SESSION['INSTALLER']['ENGINE']) || !is_a($_SESSION['INSTALLER']['ENGINE'], 'InstallerEngine')){
-	$_SESSION['INSTALLER']['ENGINE'] =& new InstallerEngine($GLOBALS['INSTALLER']['INSTALLER_CONFIG']);
+	$_SESSION['INSTALLER']['ENGINE'] = new InstallerEngine($GLOBALS['INSTALLER']['INSTALLER_CONFIG']);
 }
-$GLOBALS['INSTALLER']['ENGINE'] =& $_SESSION['INSTALLER']['ENGINE'];
+$GLOBALS['INSTALLER']['ENGINE'] = $_SESSION['INSTALLER']['ENGINE'];
 
 if(isset($_REQUEST['previous_step'])){
 	$GLOBALS['INSTALLER']['ENGINE']->previousStep();

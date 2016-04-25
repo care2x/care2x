@@ -3,30 +3,30 @@
  * BaseSet class
  *
  * A type sensitive Set implementation for PHP
- * 
+ *
  */
- 
+
 class VersionSet extends BaseSet{
 
 	var $complete = null;
-	
-	function VersionSet(){
-		parent::BaseSet('Version');
+
+	function __construct(){
+		parent::__construct('Version');
 	}
-	
+
 	function validate(){
 		$this->reset();
 		while($version =& $this->get()){
 			if(!$version->validate()){
 				$this->_addError("Validation failed on version ".$version->getVersion().": ".$version->getErrorsHTML());
 			}
-		}	
+		}
 	}
 
 	function complete(){
-		return $this->testsComplete() && $this->actionsComplete();	
+		return $this->testsComplete() && $this->actionsComplete();
 	}
-	
+
 	function &getTestsForUpgrade($old_version){
 		$tests = array();
 		$this->reset();
@@ -38,7 +38,7 @@ class VersionSet extends BaseSet{
 				}
 			}
 		}
-		
+
 		return $tests;
 	}
 
@@ -62,7 +62,7 @@ class VersionSet extends BaseSet{
 				}
 			}
 		}
-		
+
 		return $actions;
 	}
 
@@ -77,7 +77,7 @@ class VersionSet extends BaseSet{
 				}
 			}
 		}
-		
+
 		return $fields;
 	}
 
@@ -94,7 +94,7 @@ class VersionSet extends BaseSet{
 				}
 			}
 		}
-		
+
 		$return = TRUE;
 		return $return;
 	}
@@ -111,7 +111,7 @@ class VersionSet extends BaseSet{
 				}
 			}
 		}
-		
+
 		$return = TRUE;
 		return $return;
 	}
@@ -127,9 +127,9 @@ class VersionSet extends BaseSet{
 				}
 			}
 		}
-		
+
 		$return = false;
-		return $return;		
+		return $return;
 	}
 
 	function &getFinalAction($old_version) {
@@ -139,33 +139,33 @@ class VersionSet extends BaseSet{
 				return $version->finalAction;
 			}
 		}
-		
+
 		return FALSE;
 	}
-	
+
 	function getNewestVersion() {
 		$newest_version = FALSE;
-		
+
 		$this->reset();
 		while ($version =& $this->get()){
 			if (version_compare($version->getVersion(), $newest_version, '>')) {
 				$newest_version = $version->getVersion();
 			}
 		}
-		
+
 		return $newest_version;
 	}
-	
+
 	function getNewestLongVersion() {
 		$newest_version = FALSE;
-		
+
 		$this->reset();
 		while ($version =& $this->get()){
 			if (version_compare($version->getVersion(), $newest_version, '>')) {
 				$newest_version = $version->getLongVersion();
 			}
 		}
-		
+
 		return $newest_version;
 	}
 }

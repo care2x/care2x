@@ -2,13 +2,13 @@
 /*
  * TextField
  *
- * This class represents a text field that will 
+ * This class represents a text field that will
  * collect information from the user.
  */
 class TextField extends Field {
-	
-	function TextField($name, $label, $default){
-		parent::Field($name, $label, 'text', $default);
+
+	function __construct($name, $label, $default){
+		parent::__construct($name, $label, 'text', $default);
 	}
 }
 ?>

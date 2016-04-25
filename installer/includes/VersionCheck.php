@@ -1,18 +1,18 @@
 <?php
 /*
  * VersionCheck class
- * 
+ *
  */
 
 class VersionCheck{
 
-	function VersionCheck(){
+	function __construct(){
 	}
-	
+
 	function getCurrentVersion(){
-		return FALSE; 	
+		return FALSE;
 	}
-	
+
 	function getSpecialActions($old_version){
 		return FALSE;
 	}

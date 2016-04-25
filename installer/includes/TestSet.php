@@ -3,13 +3,13 @@
  * ActionSet class
  *
  * A type sensitive Set implementation for PHP
- * 
+ *
  */
- 
+
 class TestSet extends BaseSet{
 
-	function TestSet(){
-		parent::BaseSet('BaseTest');
+	function __construct(){
+		parent::__construct('BaseTest');
 	}
 }
 ?>

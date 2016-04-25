@@ -13,31 +13,31 @@ define('ERRORSTACK_DEBUG', 8);
 define('ERRORSTACK_FATAL', 16);
 
 class ErrorStack{
-	
-	function ErrorStack(){
+
+	function __construct(){
 	}
-	
+
 	function addError($message, $level = ERRORSTACK_ERROR, $class_name = ''){
 		if(!isset($GLOBALS['INSTALLER']['ERROR_STACK'])){
 			$GLOBALS['INSTALLER']['ERROR_STACK'] = array();
 		}
-		
+
 		$error =  new Error($message, $level, $class_name);
 		$GLOBALS['INSTALLER']['ERROR_STACK'][] =& $error;
-		
+
 		if($level == ERRORSTACK_FATAL){
-			die($error->toString());	
+			die($error->toString());
 		}
 	}
-	
+
 	function errorsExist(){
 		if(isset($GLOBALS['INSTALLER']['ERROR_STACK']) && count($GLOBALS['INSTALLER']['ERROR_STACK'] > 0)){
 			return TRUE;
 		}
-		
-		return FALSE;	
+
+		return FALSE;
 	}
-	
+
 	function levelToString($level){
 		$level_string = 'UNKNOWN';
 		if($level == ERRORSTACK_ERROR){
@@ -51,37 +51,37 @@ class ErrorStack{
 		}elseif($level == ERRORSTACK_FATAL){
 			$level_string = 'FATAL';
 		}
-		
+
 		return $level_string;
 	}
-	
+
 	function errorsAsHTML(){
 		$html = '';
-		
+
 		if(ErrorStack::errorsExist()){
 			foreach($GLOBALS['INSTALLER']['ERROR_STACK'] as $error){
-				$html .= $error->toString()."<BR>\n";	
-			}	
+				$html .= $error->toString()."<BR>\n";
+			}
 		}
-		
-		return $html;			
+
+		return $html;
 	}
 }
 
 class Error{
-	
+
 	var $message = '';
-	
+
 	var $level = ERRORSTACK_ERROR;
-	
+
 	var $class_name = '';
-	
+
 	function Error($message, $level, $class_name){
 		$this->message = $message;
 		$this->level = $level;
 		$this->class_name = $class_name;
 	}
-	
+
 	function toString(){
 		$string = '';
 		if(!empty($this->class_name)){
@@ -89,7 +89,7 @@ class Error{
 		}else{
 			$string = ErrorStack::levelToString($this->level).": $this->message";
 		}
-		
+
 		return $string;
 	}
 }

@@ -2,13 +2,13 @@
 /*
  * TextField
  *
- * This class represents a text field that will 
+ * This class represents a text field that will
  * collect password information from the user.
  */
 class PasswordField extends Field {
-    
-    function PasswordField($name, $label, $default){
-        parent::Field($name, $label, 'password', $default);
+
+    function __construct($name, $label, $default){
+        parent::__construct($name, $label, 'password', $default);
     }
 }
 ?>

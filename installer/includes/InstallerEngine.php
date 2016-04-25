@@ -1,37 +1,37 @@
 <?php
 /*
  * InstallerEngine class
- * 
- * This is the main class for managing the 
+ *
+ * This is the main class for managing the
  * installation process
- * 
+ *
  */
 class InstallerEngine {
 	var $config;
-	
+
 	var $phase;
-	
+
 	var $action_title;
-	
+
 	var $old_version = FALSE;
-	
+
 	var $special_actions = FALSE;
-	
-	function InstallerEngine($config){
+
+	function __construct($config){
 		if(!is_a($config, 'InstallerConfig')){
-			ErrorStack::addError("Invalid configuration object passed in!", ERRORSTACK_FATAL, 'InstallerEngine');	
+			ErrorStack::addError("Invalid configuration object passed in!", ERRORSTACK_FATAL, 'InstallerEngine');
 		}
-		
+
 		$this->config = $config;
 		$this->phase = 0;
 	}
-	
+
 	function run(){
 		$output = '';
 		$field_form = '';
 		$versions =& $this->config->getSetting('VERSION_SET');
 		$smarty =& $GLOBALS['INSTALLER']['SMARTY'];
-		
+
 		if($this->phase == 0){
 			$vc =& $this->config->getSetting('VERSION_CHECK');
 			$this->old_version = $vc->getCurrentVersion();
@@ -81,7 +81,7 @@ class InstallerEngine {
 			if($versions->testsComplete($this->old_version)){
 				$smarty->assign('CAN_CONTINUE', true);
 			}else{
-				$smarty->assign('CAN_CONTINUE', false);				
+				$smarty->assign('CAN_CONTINUE', false);
 			}
 		}elseif($this->phase == 3){
 			if(is_a($this->special_actions, 'ActionSet')){
@@ -99,8 +99,8 @@ class InstallerEngine {
 							$smarty->clear_assign('ACTION');
 						}
 					}
-				}			
-				
+				}
+
 				// See whats next
 				$actions =& $this->special_actions;
 				$action_count = count($actions);
@@ -120,15 +120,15 @@ class InstallerEngine {
 				$smarty->assign('ACTION_HTML', $action_html);
 				$output .= $smarty->fetch(Installer::getTemplatePath('actions.tpl'));
 				$smarty->clear_assign('ACTION_HTML');
-	
+
 				if($versions->actionsComplete($this->old_version)){
 					$smarty->assign('CAN_CONTINUE', true);
 				}else{
-					$smarty->assign('CAN_CONTINUE', false);				
-				}	
+					$smarty->assign('CAN_CONTINUE', false);
+				}
 			}else{
 				$this->phase++;
-				$output .= $this->run();	
+				$output .= $this->run();
 			}
 		}elseif($this->phase == 4){
 			$action_html = '';
@@ -147,7 +147,7 @@ class InstallerEngine {
 						$smarty->clear_assign('ACTION');
 					}
 				}
-			}			
+			}
 			// See whats next
 			$actions = $versions->getNextActionsForUpgrade($this->old_version);
 			$action_count = count($actions);
@@ -176,7 +176,7 @@ class InstallerEngine {
 			if($versions->actionsComplete($this->old_version)){
 				$smarty->assign('CAN_CONTINUE', true);
 			}else{
-				$smarty->assign('CAN_CONTINUE', false);				
+				$smarty->assign('CAN_CONTINUE', false);
 			}
 		}elseif($this->phase == 5) {
 			$finalAction = $versions->getFinalAction($this->old_version);
@@ -189,30 +189,30 @@ class InstallerEngine {
 
 			$output .= $smarty->fetch(Installer::getTemplatePath('finished.tpl'));
 
-			$url = str_replace('installer', '', dirname($_SERVER['SCRIPT_NAME']));	
+			$url = str_replace('installer', '', dirname($_SERVER['SCRIPT_NAME']));
 			$smarty->assign('APP_URL', $url);
 			$smarty->assign('FINISHED', true);
 		}
-		
+
 		return $output;
 	}
-	
+
 	function &getSetting($name){
-		return $this->config->getSetting($name);	
+		return $this->config->getSetting($name);
 	}
-	
+
 	function &getField($name){
 		$versions =& $this->config->getSetting('VERSION_SET');
 		$return = $versions->getField($name);
 		return $return;
 	}
-	
+
 	function previousStep(){
 		if($this->phase > 0){
 			$this->phase--;
 		}
 	}
-	
+
 	function nextStep(){
 		$versions =& $this->config->getSetting('VERSION_SET');
 		if($this->phase == 2){
@@ -228,8 +228,8 @@ class InstallerEngine {
 		}else{
 			$this->phase++;
 		}
-		
-		
+
+
 	}
 
 	function getPhaseName(){
@@ -254,7 +254,7 @@ class InstallerEngine {
 				$name = 'Finished';
 				break;
 		}
-		
+
 		return $name;
 	}
 }
