@@ -72,7 +72,7 @@ class GuiPersonShow {
 //		if(!empty($this->default_photo_path)) $this->default_photo_path = $root_path.$this->default_photo_path;
 
 		include_once($root_path.'include/care_api_classes/class_person.php');
-		$this->person_obj= Person($pid);
+		$this->person_obj= new Person($pid);
 
 		if($pid){
 			$this->pid =$pid;
