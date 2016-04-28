@@ -1,11 +1,11 @@
 <?php
-//error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
+error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
 /*
 CARE2X Integrated Information System beta 2.0.1 - 2004-07-04 for Hospitals and Health Care Organizations and Services
-Copyright (C) 2002,2003,2004,2005  Elpidio Latorilla & Intellin.org	
-GNU GPL. 
+Copyright (C) 2002,2003,2004,2005  Elpidio Latorilla & Intellin.org
+GNU GPL.
 For details read file "copy_notice.txt".
 */
 $lang_tables[]='prompt.php';
@@ -40,7 +40,7 @@ if($_COOKIE['ck_login_logged'.$sid]) $breakfile=$root_path.'main/startframe.php'
 $GLOBAL_CONFIG=array();
 $glob_obj=new GlobalConfig($GLOBAL_CONFIG);
 
-/* Get the patient global configs */	
+/* Get the patient global configs */
 $glob_obj->getConfig('patient_%');
 $glob_obj->getConfig('person_foto_path');
 $glob_obj->getConfig('show_billable_items');
@@ -57,39 +57,39 @@ $dbtable='care_encounter';
 //$db->debug=1;
 
 	if(!empty($GLOBAL_CONFIG['patient_financial_class_single_result'])) $encounter_obj->setSingleResult(true);
-	
+
 	if(!isset($GLOBAL_CONFIG['patient_service_care_hide'])){
 	/* Get the care service classes*/
 		$care_service=$encounter_obj->AllCareServiceClassesObject();
-		
+
 		if($buff=&$encounter_obj->CareServiceClass()){
 		    $care_class=$buff->FetchRow();
-			extract($care_class);      
+			extract($care_class);
 			reset($care_class);
-		}    			  
+		}
 	}
 	if(!isset($GLOBAL_CONFIG['patient_service_room_hide'])){
 	/* Get the room service classes */
 		$room_service=$encounter_obj->AllRoomServiceClassesObject();
-		
+
 		if($buff=&$encounter_obj->RoomServiceClass()){
 			$room_class=$buff->FetchRow();
-			extract($room_class);      
+			extract($room_class);
 			reset($room_class);
-		}    			  
+		}
 	}
 	if(!isset($GLOBAL_CONFIG['patient_service_att_dr_hide'])){
 		/* Get the attending doctor service classes */
 		$att_dr_service=$encounter_obj->AllAttDrServiceClassesObject();
-		
+
 		if($buff=&$encounter_obj->AttDrServiceClass()){
 			$att_dr_class=$buff->FetchRow();
 			//while(list($x,$v)=each($att_dr_class))	$$x=$v;
-			extract($att_dr_class);      
+			extract($att_dr_class);
 			reset($att_dr_class);
-		}    			  
-	}		
-		
+		}
+	}
+
 	$encounter_obj->loadEncounterData();
 	if($encounter_obj->is_loaded) {
 		$row=$encounter_obj->encounter;
@@ -105,17 +105,17 @@ $dbtable='care_encounter';
 		//if($data_obj=&$person_obj->getAllInfoObject($pid))
 		$list='title,name_first,name_last,name_2,name_3,name_middle,name_maiden,name_others,date_birth,
 		         sex,addr_str,addr_str_nr,addr_zip,addr_citytown_nr,photo_filename';
-			
+
 		$person_obj->setPID($pid);
 		if($row=&$person_obj->getValueByList($list)) {
-			extract($row);      
-		}      
+			extract($row);
+		}
 
 		$addr_citytown_name=$person_obj->CityTownName($addr_citytown_nr);
 		$encoder=$encounter_obj->RecordModifierID();
 		# Get current encounter to check if current encounter is this encounter nr
 		$current_encounter=$person_obj->CurrentEncounter($pid);
-		
+
 		# Get the overall status
 		if($stat=&$encounter_obj->AllStatus($encounter_nr)){
 			$enc_status=$stat->FetchRow();
@@ -141,17 +141,17 @@ $dbtable='care_encounter';
 	}
 
 	include_once($root_path.'include/core/inc_date_format_functions.php');
-        
+
 	/* Update History */
 	if(!isset($newdata) || empty($newdata)) $encounter_obj->setHistorySeen($_SESSION['sess_user_name'],$encounter_nr);
 	/* Get insurance firm name*/
 	$insurance_firm_name=$insurance_obj->getFirmName($insurance_firm_id);
-	/* Check whether config path exists, else use default path */			
+	/* Check whether config path exists, else use default path */
 	$photo_path = (is_dir($root_path.$GLOBAL_CONFIG['person_foto_path'])) ? $GLOBAL_CONFIG['person_foto_path'] : $default_photo_path;
 
 
 /* Prepare text and resolve the numbers */
-require_once($root_path.'include/core/inc_patient_encounter_type.php');		 
+require_once($root_path.'include/core/inc_patient_encounter_type.php');
 
 /* Save encounter nrs to session */
 $_SESSION['sess_pid']=$pid;
@@ -192,7 +192,7 @@ require_once($root_path.'include/core/inc_photo_filename_resolve.php');
  $smarty->assign('pbBack',FALSE);
 
  # Collect extra javascript
- 
+
  ob_start();
 
 require($root_path.'main/imgcreator/inc_js_barcode_wristband_popwin.php');
@@ -210,7 +210,7 @@ $parent_admit = TRUE;
 include('./gui_bridge/default/gui_tabs_patadmit.php');
 
 if($is_discharged){
-	
+
 	$smarty->assign('is_discharged',TRUE);
 	$smarty->assign('sWarnIcon',"<img ".createComIcon($root_path,'warn.gif','0','absmiddle').">");
 	if($current_encounter) $smarty->assign('sDischarged',$LDEncounterClosed);
@@ -219,9 +219,9 @@ if($is_discharged){
 
 $smarty->assign('LDCaseNr',$LDCaseNr);
 $smarty->assign('encounter_nr',$encounter_nr);
-	
+
 # Create the encounter barcode image
-	
+
 if(file_exists($root_path.'cache/barcodes/en_'.$encounter_nr.'.png')) {
 	$smarty->assign('sEncBarcode','<img src="'.$root_path.'cache/barcodes/en_'.$encounter_nr.'.png" border=0 width=180 height=35>');
 }else{
@@ -280,7 +280,7 @@ $smarty->assign('sBdayDate',@formatDate2Local($date_birth,$date_format));
 $smarty->assign('LDSex',$LDSex);
 if($sex=='m') $smarty->assign('sSexType',$LDMale);
 	elseif($sex=='f') $smarty->assign('sSexType',$LDFemale);
-	
+
 $smarty->assign('LDBloodGroup',$LDBloodGroup);
 if($blood_group){
 	$buf='LD'.$blood_group;
@@ -298,7 +298,7 @@ $smarty->assign('addr_citytown',$addr_citytown_name);
 //simple admission type, how the patietnt came in
 $enc_type = $encounter_obj->getEncounterType();
 while( $typeResults = $enc_type->FetchRow()) {
-	if($typeResults['type_nr'] == $admit_type )$sTemp = $typeResults['name'] ; 
+	if($typeResults['type_nr'] == $admit_type )$sTemp = $typeResults['name'] ;
 }
 
 $smarty->assign('LDAdmitShowTypeInput',$LDAdmitShowTypeInput);
@@ -323,7 +323,7 @@ if (isset($$encounter_class['LD_var']) && !empty($$encounter_class['LD_var'])){
 	//$fcolor='red';
 }else{
 	$eclass= $encounter_class['name'];
-} 
+}
 
 if($encounter_class_nr==1){
 	$fcolor='black';
@@ -335,7 +335,7 @@ if($encounter_class_nr==1){
 $smarty->assign('sAdmitClassInput',"<font color=$fcolor>$eclass</font>");
 
 if($encounter_class_nr==1){
-	
+
 	$smarty->assign('LDWard',$LDWard);
 
 	$smarty->assign('sWardInput','<a href="'.$root_path.'modules/nursing/'.strtr('nursing-station-pass.php'.URL_APPEND.'&rt=pflege&edit=1&station='.$current_ward_name.'&location_id='.$current_ward_name.'&ward_nr='.$current_ward_nr,' ',' ').'">'.$current_ward_name.'</a>');
@@ -360,8 +360,8 @@ $smarty->assign('referrer_notes',$referrer_notes);
 $smarty->assign('LDBillType',$LDBillType);
 
 if (isset($$insurance_class['LD_var'])&&!empty($$insurance_class['LD_var'])) $smarty->assign('sBillTypeInput',$$insurance_class['LD_var']);
-    else $smarty->assign('sBillTypeInput',$insurance_class['name']); 
-	
+    else $smarty->assign('sBillTypeInput',$insurance_class['name']);
+
 $smarty->assign('LDInsuranceNr',$LDInsuranceNr);
 if(isset($insurance_nr) && $insurance_nr) $smarty->assign('insurance_nr',$insurance_nr);
 
@@ -394,7 +394,7 @@ if(!isset($GLOBAL_CONFIG['patient_service_room_hide']) && $sc_room_class_nr){
 
 	while($buffer=$room_service->FetchRow()){
 		if($sc_room_class_nr==$buffer['class_nr']){
-			if(empty($$buffer['LD_var'])) $smarty->assign('sCareRoomInput',$buffer['name']); 
+			if(empty($$buffer['LD_var'])) $smarty->assign('sCareRoomInput',$buffer['name']);
 				else $smarty->assign('sCareRoomInput',$$buffer['LD_var']);
 				break;
 		}
@@ -457,7 +457,7 @@ $smarty->assign('encoder',$encoder);
 # Buffer the options block
 
 ob_start();
-	
+
 	require('./gui_bridge/default/gui_patient_encounter_showdata_options.php');
 	$sTemp = ob_get_contents();
 
@@ -470,7 +470,7 @@ if(!$is_discharged){
 
 	# Buffer the control buttons
 	ob_start();
-		
+
 		include('./include/bottom_controls_admission.inc.php');
 		$sTemp = ob_get_contents();
 
