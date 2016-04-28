@@ -21,32 +21,32 @@
 if(!defined('_PHP_TIMER_INCLUDED')) define('_PHP_TIMER_INCLUDED',1);
 class phpTimer {
 
-function phpTimer () 
+function __construct ()
 {	$this->_version = '0.1';
     $this->_enabled = true;
 }
 
-function start ($name = 'default') 
-{	if($this->_enabled) 
+function start ($name = 'default')
+{	if($this->_enabled)
 	{	$this->_timing_start_times[$name] = explode(' ', microtime());
     }
 }
 
-function stop ($name = 'default') 
-{	if($this->_enabled) 
+function stop ($name = 'default')
+{	if($this->_enabled)
 	{	$this->_timing_stop_times[$name] = explode(' ', microtime());
     }
 }
 
-function get_current ($name = 'default') 
-{	if($this->_enabled) 
-	{	if (!isset($this->_timing_start_times[$name])) 
+function get_current ($name = 'default')
+{	if($this->_enabled)
+	{	if (!isset($this->_timing_start_times[$name]))
 		{	return 0;
         }
-        if (!isset($this->_timing_stop_times[$name])) 
+        if (!isset($this->_timing_stop_times[$name]))
 		{	$stop_time = explode(' ', microtime());
         }
-        else 
+        else
 		{	$stop_time = $this->_timing_stop_times[$name];
         }
         // do the big numbers first so the small ones aren't lost
@@ -54,7 +54,7 @@ function get_current ($name = 'default')
         $current += $stop_time[0] - $this->_timing_start_times[$name][0];
         return sprintf("%.10f",$current);
     }
-    else 
+    else
 	{	return 0;
     }
 }

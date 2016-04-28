@@ -2,7 +2,7 @@
 if(!isset($root_path)||empty($root_path)) include('./roots.php'); // added for Care2002 1.0.04
 /*******************************************************************************
 	$Id: phpSniff.class.php 4304 2005-09-19 11:25:56Z flash2005 $
-    
+
     phpSniff: HTTP_USER_AGENT Client Sniffer for PHP
 	Copyright (C) 2001 Roger Raymond ~ epsilon7@users.sourceforge.net
 
@@ -86,7 +86,7 @@ class phpSniff extends phpSniff_core
     var $_default_language      = 'en-us';
     var $_allow_masquerading    = NULL;
     var $_php_version           = '';
-    
+
     var $_browsers = array(
         'microsoft internet explorer' => 'ie',
         'msie'                        => 'ie',
@@ -97,7 +97,7 @@ class phpSniff extends phpSniff_core
         'konqueror'                   => 'konq',
         'icab'                        => 'icab',
         'lynx'                        => 'lynx',
-		'links'                       => 'links',					
+		'links'                       => 'links',
         'ncsa mosaic'                 => 'mosaic',
         'amaya'                       => 'amaya',
         'omniweb'                     => 'ow',
@@ -111,9 +111,9 @@ class phpSniff extends phpSniff_core
         '1.2'   =>  'NS4UP,IE4UP',
         '1.1'   =>  'NS3UP,OP,KQ',
         '1.0'   =>  'NS2UP,IE3UP',
-		'0'     =>	'LN,LX,HJ'	
+		'0'     =>	'LN,LX,HJ'
         );
-		
+
 	var $_browser_features = array(
 		/**
 		 *	the following are true by default
@@ -126,7 +126,7 @@ class phpSniff extends phpSniff_core
 		'tables'	=>	'',
 		'java'		=>	'OP3,LX,LN,NS1,MO,IE1,IE2',
 		'plugins'	=>	'IE1,IE2,LX,LN',
-		/**  
+		/**
 		 *	the following are false by default
 		 *	(see phpSniff.core.php $_feature_set array)
 		 *	browsers listed here will be set to true
@@ -139,7 +139,7 @@ class phpSniff extends phpSniff_core
 		'hdml'		=>	'',
 		'wml'		=>	''
 		);
-		
+
 	var $_browser_quirks = array(
 		'must_cache_forms'			=>	'NS',
 		'avoid_popup_windows'		=>	'IE3,LX,LN',
@@ -149,7 +149,7 @@ class phpSniff extends phpSniff_core
 		'scrollbar_in_way'			=>	'IE6'
 		);
 
-    function phpSniff($UA='',$settings = true)
+    function __construct($UA='',$settings = true)
     {   //  populate the HTTP_USER_AGENT string
         //  20020425 :: rraymond
         //      routine for easier configuration of the client at runtime
@@ -163,7 +163,7 @@ class phpSniff extends phpSniff_core
             // for backwards compatibility with 2.0.x series
             $run = $settings;
         }
-        
+
         // 20020425 :: besfred
         if(empty($UA)) $UA = getenv('HTTP_USER_AGENT');
         if(empty($UA)) {
@@ -172,7 +172,7 @@ class phpSniff extends phpSniff_core
         }
         // 20020910 :: rraymond
         if(empty($UA)) return false;
-        
+
         $this->_set_browser('ua',$UA);
         if($run) $this->init();
     }
