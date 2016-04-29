@@ -8,16 +8,16 @@ $bShowThisPage = FALSE;
 
 /*
  * $passtag is defined in login.php
- * Values: 
+ * Values:
  * 	passtag == 1 -> either user is unknown or passoword was not correct
  * passtag == 3 -> user is locked
  */
 if (!isset($passtag)) {
-	// no passtag given, so it is ok (we set the flag here to FALSE, if it would 
+	// no passtag given, so it is ok (we set the flag here to FALSE, if it would
 	// have an value, then there is a case of login failure given
 	$passtag=FALSE;
 }
-	
+
 // Form values, if it is not set, define it with empty value (because it is been used in this script)
 if (!isset($direction)) {
 	$direction='';
@@ -40,8 +40,8 @@ if (!isset($fwd_nr)){
 if (!isset($mode)) {
 	$mode='';
 }
-	
-	
+
+
 
 #
 # Create a smarty object if it is not yet available, without initializing the gui
@@ -79,6 +79,8 @@ if (isset($pass)&&($pass=='check')&&($passtag)){
 
 	$smarty->assign('sMascotImg','<img '.createMascot($root_path,'mascot1_r.gif','0').'>');
 	$smarty->assign('sErrorMsg',$err_msg);
+} else {
+	$smarty->assign('bShowErrorPrompt',FALSE);
 }
 
 if(!$passtag) $smarty->assign('sMascotColumn','<td><img '.createMascot($root_path,'mascot3_r.gif','0').'></td>');

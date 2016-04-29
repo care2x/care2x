@@ -2,8 +2,6 @@
 
 <!--<table width=100% border=0 cellpadding="0" cellspacing="0">-->
 
-	{{* Any eventuall display content for the top part of the mask (sTopDisplayRow) must be packaged as a table row *}}
-	{{$sTopDisplayRow}}
 
 	<tr>
 		<td class="passborder" colspan=3>&nbsp;</td>

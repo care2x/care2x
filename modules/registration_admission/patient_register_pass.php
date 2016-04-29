@@ -6,7 +6,7 @@ require($root_path.'include/core/inc_environment_global.php');
 * CARE2X Integrated Hospital Information System beta 2.0.1 - 2004-07-04
 * GNU General Public License
 * Copyright 2002,2003,2004,2005,2006 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -16,21 +16,21 @@ define('NO_2LEVEL_CHK',1);
 require_once($root_path.'include/core/inc_front_chain_lang.php');
 
 require_once($root_path.'global_conf/areas_allow.php');
-
+if(empty($target)) $target='entry';
 $allowedarea=&$allow_area['admit'];
-$append=URL_REDIRECT_APPEND; 
+$append=URL_REDIRECT_APPEND;
 switch($target)
 {
-	case 'entry':$fileforward='patient_register.php'.$append.'&origin=pass&target=entry'; 
+	case 'entry':$fileforward='patient_register.php'.$append.'&origin=pass&target=entry';
 						$lognote='Patient register ok';
 						break;
-	case 'search':$fileforward='patient_register_search.php'.$append.'&origin=pass&target=search'; 
+	case 'search':$fileforward='patient_register_search.php'.$append.'&origin=pass&target=search';
 						$lognote='Patient register search ok';
 						break;
 	case 'archiv':$fileforward='patient_register_archive.php'.$append.'&origin=pass';
 						$lognote='Patient register archive ok';
 						 break;
-	default: 
+	default:
 				$target='entry';
 				$lognote='Patient register ok';
 				$fileforward='patient_register.php'.$append;
@@ -44,12 +44,12 @@ $userck='aufnahme_user';
 //reset cookie;
 // reset all 2nd level lock cookies
 setcookie($userck.$sid,'',0,'/');
-require($root_path.'include/core/inc_2level_reset.php'); setcookie(ck_2level_sid.$sid,'',0,'/');
+require($root_path.'include/core/inc_2level_reset.php'); setcookie('ck_2level_sid'.$sid,'',0,'/');
 
 require($root_path.'include/core/inc_passcheck_internchk.php');
-if ($pass=='check') 	
+if (isset($pass)&&$pass=='check')
 	include($root_path.'include/core/inc_passcheck.php');
-
+$minimal=1;
 $errbuf=$LDAdmission;
 
 require($root_path.'include/core/inc_passcheck_head.php');
@@ -75,21 +75,21 @@ if($cfg['dhtml'])
 echo '
 <script language=javascript>
 <!--
- if (window.screen.width) 
+ if (window.screen.width)
  { if((window.screen.width)>1000) document.write(\'<img '.createComIcon($root_path,'smiley.gif','0','top').'><FONT  COLOR="'.$cfg['top_txtcolor'].'"  SIZE=6  FACE="verdana"> <b>'.$buf.'</b></font>\');}
  //-->
  </script>';
  }
  ?>
 
-  
-<table width=100% border=0 cellpadding="0" cellspacing="0"> 
+
+<table width=100% border=0 cellpadding="0" cellspacing="0">
 <tr>
 	<td colspan=3>
 <?php
 
 #
-# Starting at version 2.0.2, the "new person" button is "new patient". 
+# Starting at version 2.0.2, the "new person" button is "new patient".
 # It can be reverted to "new person"  by defining the ADMISSION_EXT_TABS constant to TRUE
 # at the /include/inc_enviroment_global.php script
 #
@@ -116,10 +116,10 @@ echo '
 	</td>
 </tr>
 
-<?php 
+<?php
 $maskBorderColor='#66ee66';
-require($root_path.'include/core/inc_passcheck_mask.php') 
-?>  
+require($root_path.'include/core/inc_passcheck_mask.php')
+?>
 
 <!-- <p>
 <?php if($target!="entry") : ?>

@@ -6,7 +6,7 @@ require($root_path.'include/core/inc_environment_global.php');
 * CARE2X Integrated Hospital Information System beta 2.0.1 - 2004-07-04
 * GNU General Public License
 * Copyright 2002,2003,2004,2005,2006 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -17,7 +17,7 @@ require_once($root_path.'include/core/inc_front_chain_lang.php');
 require_once($root_path.'global_conf/areas_allow.php');
 
 $allowedarea=&$allow_area['admit'];
-$append=URL_REDIRECT_APPEND.'&from=pass&fwd_nr='.$fwd_nr; 
+$append=URL_REDIRECT_APPEND.'&from=pass&fwd_nr='.$fwd_nr;
 
 #
 # Starting at version 2.0.2, the "new patient" button is hidden. It can be shown by defining the ADMISSION_EXT_TABS constant to TRUE
@@ -52,11 +52,11 @@ $breakfile='patient.php'.URL_APPEND.'&pid='.$pid;
 $userck='aufnahme_user';
 
 setcookie($userck.$sid,'');
-require($root_path.'include/core/inc_2level_reset.php'); 
-setcookie(ck_2level_sid.$sid,'');
+require($root_path.'include/core/inc_2level_reset.php');
+setcookie('ck_2level_sid'.$sid,'');
 
 require($root_path.'include/core/inc_passcheck_internchk.php');
-if ($pass=='check') 	
+if ($pass=='check')
 	include($root_path.'include/core/inc_passcheck.php');
 
 $errbuf=$LDAdmission;
@@ -82,11 +82,11 @@ echo '
 <img '.createComIcon($root_path,'persons.gif','0','top').'><FONT  COLOR="'.$cfg['top_txtcolor'].'"  SIZE=6  FACE="verdana"> <b>'.$buf.'</b></font>';
  ?>
 
-  
-<table width=100% border=0 cellpadding="0" cellspacing="0"> 
+
+<table width=100% border=0 cellpadding="0" cellspacing="0">
 <tr>
 <td colspan=3>
-<?php 
+<?php
 #
 # Starting at version 2.0.2, the "new patient" button is hidden. It can be shown by defining the ADMISSION_EXT_TABS constant to TRUE
 # at the /include/inc_enviroment_global.php script
@@ -105,7 +105,7 @@ if(defined('ADMISSION_EXT_TABS') && ADMISSION_EXT_TABS){
 	</td>
 </tr>
 
-<?php require($root_path.'include/core/inc_passcheck_mask.php') ?>  
+<?php require($root_path.'include/core/inc_passcheck_mask.php') ?>
 
 <p>
 <?php
@@ -115,7 +115,7 @@ if(defined('ADMISSION_EXT_TABS') && ADMISSION_EXT_TABS){
 	/*
  if($target!="entry") : ?>
 <img <?php echo createComIcon($root_path,'update.gif','0','absmiddle') ?>> <a href="aufnahme_pass.php?sid=<?php echo "$sid&lang=$lang" ?>&target=entry"><?php echo $LDAdmWantEntry ?></a><br>
-<?php 
+<?php
 endif
 */
 ?>
