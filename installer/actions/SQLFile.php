@@ -225,7 +225,7 @@ class SQLFile extends SQLAction {
 
     function getHTML($smarty) {
         $smarty->assign("loop",$this->loop);
-        $smarty->assign_by_ref('ACTION', $this);
+        $smarty->assign('ACTION', $this);
         if ($this->loop < 2) {
             $es =& $GLOBALS['INSTALLER']['SMARTY'];
             $es->assign('HEADER_EXTRAS','<META HTTP-EQUIV=Refresh CONTENT="2; URL=install.php?save_action=true">');

@@ -5,11 +5,11 @@
  * Tests that the extensions passed in as parameters
  * are loaded into the running PHP instance
  */
- 
+
 class PHPExtension extends BaseTest{
 
-	function PHPExtension($params){
-		parent::BaseTest($params);	
+	function __construct($params){
+		parent::__construct($params);
 
 		if(!is_array($this->params) || count($this->params) <= 0){
 			ErrorStack::addError("Invalid parameters, you must provide at least one extension to test for", ERRORSTACK_ERROR, 'PHPExtension');
@@ -17,7 +17,7 @@ class PHPExtension extends BaseTest{
 			return $this->result;
 		}
 	}
-	
+
 	function perform(){
 		$this->result_message = "PHP Extensions ".join(', ', $this->params)." found";
 		$this->result = INSTALLER_TEST_SUCCESS;
@@ -27,7 +27,7 @@ class PHPExtension extends BaseTest{
 				$this->result_message = "PHP Extension $extension is not loaded";
 			}
 		}
-		
+
 		return $this->result;
 	}
 }

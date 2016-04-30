@@ -49,7 +49,7 @@ class BaseAction {
 	 * This function needs to be overriden in the implementing class and
 	 * should return the HTML used to collect data from the user.
 	 */
-	function getHTML(){
+	function getHTML($smarty){
 		return '';
 	}
 

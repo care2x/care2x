@@ -4,6 +4,7 @@
  *
  */
 error_reporting(E_ALL && ~E_NOTICE);
+error_reporting(-1);
 
 define('INSTALLER_PATH', realpath(dirname(__FILE__)));
 define('INSTALLER_API', true);
@@ -34,7 +35,7 @@ class Installer{
 
 	function __construct() {}
 
-	function getTemplatePath($template_name){
+	static function getTemplatePath($template_name){
 		if(isset($GLOBALS['INSTALLER']['TEMPLATE_DIR'])){
 			if(file_exists($GLOBALS['INSTALLER']['TEMPLATE_DIR'].'/'.$template_name)){
 				return 	$GLOBALS['INSTALLER']['TEMPLATE_DIR'].'/'.$template_name;
@@ -49,7 +50,7 @@ class Installer{
 		return $template_name;
 	}
 
-	function getTestPath($class_name){
+	static function getTestPath($class_name){
 		if(isset($GLOBALS['INSTALLER']['TEST_DIRS']) && is_array($GLOBALS['INSTALLER']['TEST_DIRS'])){
 			foreach($GLOBALS['INSTALLER']['TEST_DIRS'] as $dir){
 				if(file_exists($dir.'/'.$class_name.'.php')){
@@ -66,7 +67,7 @@ class Installer{
 		return FALSE;
 	}
 
-	function getActionPath($class_name){
+	static function getActionPath($class_name){
 		if(isset($GLOBALS['INSTALLER']['ACTION_DIRS']) && is_array($GLOBALS['INSTALLER']['ACTION_DIRS'])){
 			foreach($GLOBALS['INSTALLER']['ACTION_DIRS'] as $dir){
 				if(file_exists($dir.'/'.$class_name.'.php')){
@@ -87,7 +88,8 @@ class Installer{
 
 // Bootstrapping tests
 // Setup PHP Version numbers
-$version_components = explode('\.', phpversion());
+$version_components = explode('.', phpversion());
+
 $GLOBALS['INSTALLER']['PHP_VERSION_MAJOR'] = $version_components[0];
 $GLOBALS['INSTALLER']['PHP_VERSION_MINOR'] = $version_components[1];
 $GLOBALS['INSTALLER']['PHP_VERSION_REMAINING'] = implode('.', array_splice($version_components, 2));

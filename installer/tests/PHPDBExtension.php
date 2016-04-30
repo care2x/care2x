@@ -5,13 +5,13 @@
  * Tests that the database extension for the selected
  * database type is loaded into the running PHP instance
  */
- 
+
 class PHPDBExtension extends BaseTest {
 
     var $type;
 
-    function PHPDBExtension($params) {
-        parent::BaseTest($params);
+    function __construct($params) {
+        parent::__construct($params);
 
         if(!is_array($this->params) || count($this->params) <= 0){
             ErrorStack::addError("Invalid parameters, you need to provide the field names", ERRORSTACK_ERROR, 'PHPDBExtension');
@@ -46,7 +46,7 @@ class PHPDBExtension extends BaseTest {
             $this->result = INSTALLER_TEST_FAIL;
             $this->result_message = "PHP Database Extension $this->type is not loaded";
         }
-        
+
         return $this->result;
     }
 }

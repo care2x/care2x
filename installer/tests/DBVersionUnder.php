@@ -4,20 +4,20 @@
  *
  * Tests that the running Database Version is >= the supplied parameter
  */
- 
+
 class DBVersionUnder extends BaseTest {
     var $server;
-    
+
     var $username;
-    
+
     var $password;
 
     var $type;
-    
+
     var $version;
-    
-    function DBVersionUnder($params) {
-        parent::BaseTest($params);
+
+    function __construct($params) {
+        parent::__construct($params);
 
         if(!is_array($this->params) || count($this->params) <= 0){
             ErrorStack::addError("Invalid parameters, you need to provide the field names and version", ERRORSTACK_ERROR, 'DBVersionUnder');
@@ -25,7 +25,7 @@ class DBVersionUnder extends BaseTest {
             return $this->result;
         }
     }
-    
+
     function prepareParameters() {
         $engine =& $GLOBALS['INSTALLER']['ENGINE'];
         if (isset($this->params['server_field'])) {
@@ -37,7 +37,7 @@ class DBVersionUnder extends BaseTest {
             $this->result_message = "Could not determine server name, please provide a server_field or server parameter!";
             return FALSE;
         }
-        
+
         if (isset($this->params['username_field'])) {
             $username_field = $engine->getField($this->params['username_field']);
             $this->username = $username_field->value;
@@ -67,7 +67,7 @@ class DBVersionUnder extends BaseTest {
             $this->result_message = "Could not determine datbase type, please provide a type_field or type parameter!";
             return FALSE;
         }
-        
+
         if(isset($this->params['version'])) {
             $this->version = $this->params['version'];
         } else {
@@ -75,7 +75,7 @@ class DBVersionUnder extends BaseTest {
             return FALSE;
         }
     }
-    
+
     function perform(){
         if ($this->prepareParameters() === FALSE) {
             $this->result = INSTALLER_TEST_FAIL;
@@ -121,7 +121,7 @@ class DBVersionUnder extends BaseTest {
             $this->result = INSTALLER_TEST_FAIL;
             $this->result_message = "You are running $this->type version $ver which is >= $target_version";
         }
-        
+
         return $this->result;
     }
 }

@@ -2,17 +2,17 @@
 /*
  * AdminPasswordConfirmed
  *
- * Tests if the user has entered the administrator twice identically. 
+ * Tests if the user has entered the administrator twice identically.
  */
- 
+
 class AdminPasswordConfirmed extends BaseTest {
-    
+
     var $password;
-    
+
     var $confirm;
-    
-    function AdminPasswordConfirmed($params) {
-        parent::BaseTest($params);
+
+    function __construct($params) {
+        parent::__construct($params);
 
         if(!is_array($this->params) || count($this->params) <= 0){
             ErrorStack::addError("Invalid parameters, you need to provide the password field names", ERRORSTACK_ERROR, 'AdminPasswordConfirmed');
@@ -20,7 +20,7 @@ class AdminPasswordConfirmed extends BaseTest {
             return $this->result;
         }
     }
-    
+
     function prepareParameters() {
         $engine =& $GLOBALS['INSTALLER']['ENGINE'];
 
@@ -44,7 +44,7 @@ class AdminPasswordConfirmed extends BaseTest {
             return FALSE;
         }
     }
-    
+
     function perform(){
         if ($this->prepareParameters() === FALSE) {
             $this->result = INSTALLER_TEST_FAIL;
@@ -58,7 +58,7 @@ class AdminPasswordConfirmed extends BaseTest {
             $this->result = INSTALLER_TEST_FAIL;
             $this->result_message = "Administrator password is not confirmed correctly. Make sure you have entered identical values in the 'Password' and 'Confirm Password' fields";
         }
-        
+
         return $this->result;
     }
 }

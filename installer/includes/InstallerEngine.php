@@ -68,15 +68,16 @@ class InstallerEngine {
 				$smarty->assign('FORM_FIELDS', $field_form);
 				$output .= $smarty->fetch(Installer::getTemplatePath('collect_data.tpl'));
 			}
+			$smarty->assign('CAN_CONTINUE', true);
 		}elseif($this->phase == 2){
 			$tests =& $versions->getTestsForUpgrade($this->old_version);
 			$test_count = count($tests);
 			for($i = 0; $i < $test_count; $i++){
 				$test =& $tests[$i];
 				$test->perform();
-				$smarty->assign_by_ref('test', $test);
+				$smarty->assign('test', $test);
 				$output .= $smarty->fetch(Installer::getTemplatePath('test_result.tpl'));
-				$smarty->clear_assign('test');
+				$smarty->clearAssign('test');
 			}
 			if($versions->testsComplete($this->old_version)){
 				$smarty->assign('CAN_CONTINUE', true);
@@ -94,9 +95,9 @@ class InstallerEngine {
 						if($action->isInteractive()){
 							$action->dataSubmitted();
 							$action->perform();
-							$smarty->assign_by_ref('ACTION', $action);
+							$smarty->assign('ACTION', $action);
 							$action_html .= $smarty->fetch(Installer::getTemplatePath('action_complete.tpl'));
-							$smarty->clear_assign('ACTION');
+							$smarty->clearAssign('ACTION');
 						}
 					}
 				}
@@ -111,15 +112,15 @@ class InstallerEngine {
 							$action_html .= $action->getHTML($smarty);
 						}else{
 							$action->perform();
-							$smarty->assign_by_ref('ACTION', $action);
+							$smarty->assign('ACTION', $action);
 							$action_html .= $smarty->fetch(Installer::getTemplatePath('action_complete.tpl'));
-							$smarty->clear_assign('ACTION');
+							$smarty->clearAssign('ACTION');
 						}
 					}
 				}
 				$smarty->assign('ACTION_HTML', $action_html);
 				$output .= $smarty->fetch(Installer::getTemplatePath('actions.tpl'));
-				$smarty->clear_assign('ACTION_HTML');
+				$smarty->clearAssign('ACTION_HTML');
 
 				if($versions->actionsComplete($this->old_version)){
 					$smarty->assign('CAN_CONTINUE', true);
@@ -142,9 +143,9 @@ class InstallerEngine {
 					if($action->isInteractive()){
 						$action->dataSubmitted();
 						$action->perform();
-						$smarty->assign_by_ref('ACTION', $action);
+						$smarty->assign('ACTION', $action);
 						$action_html .= $smarty->fetch(Installer::getTemplatePath('action_complete.tpl'));
-						$smarty->clear_assign('ACTION');
+						$smarty->clearAssign('ACTION');
 					}
 				}
 			}
@@ -158,9 +159,9 @@ class InstallerEngine {
 						$action_html .= $action->getHTML($smarty);
 					}else{
 						$action->perform();
-						$smarty->assign_by_ref('ACTION', $action);
+						$smarty->assign('ACTION', $action);
 						$action_html .= $smarty->fetch(Installer::getTemplatePath('action_complete.tpl'));
-						$smarty->clear_assign('ACTION');
+						$smarty->clearAssign('ACTION');
 					}
 				}
 			}
@@ -171,7 +172,7 @@ class InstallerEngine {
 			$this->action_title = $action->getTitle();
 			$smarty->assign('ACTION_HTML', $action_html);
 			$output .= $smarty->fetch(Installer::getTemplatePath('actions.tpl'));
-			$smarty->clear_assign('ACTION_HTML');
+			$smarty->clearAssign('ACTION_HTML');
 
 			if($versions->actionsComplete($this->old_version)){
 				$smarty->assign('CAN_CONTINUE', true);
@@ -182,9 +183,9 @@ class InstallerEngine {
 			$finalAction = $versions->getFinalAction($this->old_version);
 			if ($finalAction) {
 				$finalAction->perform();
-				$smarty->assign_by_ref('ACTION', $finalAction);
+				$smarty->assign('ACTION', $finalAction);
 				$output .= $smarty->fetch(Installer::getTemplatePath('action_complete.tpl'));
-				$smarty->clear_assign('ACTION');
+				$smarty->clearAssign('ACTION');
 			}
 
 			$output .= $smarty->fetch(Installer::getTemplatePath('finished.tpl'));

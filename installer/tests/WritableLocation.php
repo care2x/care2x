@@ -5,11 +5,11 @@
  * Tests that the extensions passed in as parameters
  * are loaded into the running PHP instance
  */
- 
+
 class WritableLocation extends BaseTest{
 
-	function WritableLocation($params){
-		parent::BaseTest($params);	
+	function __construct($params){
+		parent::__construct($params);
 
 		if(!is_array($this->params) || count($this->params) <= 0){
 			ErrorStack::addError("Invalid parameters, you must provide at least one location to test.", ERRORSTACK_ERROR, 'WritableLocation');
@@ -17,7 +17,7 @@ class WritableLocation extends BaseTest{
 			return $this->result;
 		}
 	}
-	
+
 	function perform(){
 		if (count($this->params) > 1) {
 			$this->result_message = "All files and locations writable: ".join(', ', $this->params);
@@ -32,7 +32,7 @@ class WritableLocation extends BaseTest{
 				$this->result_message = "Can not write to $location!";
 			}
 		}
-		
+
 		return $this->result;
 	}
 }

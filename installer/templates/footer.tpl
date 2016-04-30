@@ -1,4 +1,4 @@
-</table>		
+</table>
 		{if $FINISHED}
 			<div id="install_block">
 				<a href="{$APP_URL}">Start using Care2x</a>
@@ -20,12 +20,11 @@
 			<tr>
 				<td>
 					<p align="center">
-					<a href="http://www.care2x.org/">Care2x Home</a> :: 
-					<a href="http://wiki.care2x.org/">Wiki</a> :: 
-					<a href="http://sourceforge.net/mailarchive/forum.php?forum_name=care2002-developers">Mailing List</a> :: 
-					<a href="http://sourceforge.net/projects/care2002/">SF.net Project</a>&nbsp; 
-                    //
-					Copyright 2002-2010 Elpidio Latorilla; 2010-now Mauri Niemi
+					<a href="http://www.care2x.org/">Care2x Home</a> ::
+					<a href="http://wiki.care2x.org/">Wiki</a> ::
+					<a href="http://sourceforge.net/mailarchive/forum.php?forum_name=care2002-developers">Mailing List</a> ::
+					<a href="http://sourceforge.net/projects/care2002/">SF.net Project</a>&nbsp;
+					<a href="../copy_notice.txt">Copyright Notice</a>
 				</td>
 				<td align="right" valign="bottom">
 					&nbsp;</td>

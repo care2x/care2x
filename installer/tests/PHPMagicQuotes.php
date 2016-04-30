@@ -4,16 +4,16 @@
  *
  * Tests that the PHP Magic quotes matches the parameter
  */
- 
+
 class PHPMagicQuotes extends BaseTest{
 
 
 	var $desired_state;
 
-	function PHPMagicQuotes($params){
-		parent::BaseTest($params);
+	function __construct($params){
+		parent::__construct($params);
 
-	
+
 		if(is_array($this->params) || count($this->params) < 0){
 
 			if($params[0] != "On" && $params[0] != "Off")
@@ -22,9 +22,9 @@ class PHPMagicQuotes extends BaseTest{
 			return $this->result;
 		}
 	}
-	
-	function perform(){	
-	
+
+	function perform(){
+
 		if(get_magic_quotes_gpc() == 1){
 			$actual_state="On";
 		}else{
@@ -42,7 +42,7 @@ class PHPMagicQuotes extends BaseTest{
 			$this->result = INSTALLER_TEST_WARNING;
 			$this->result_message = "PHP Magic Quotes is $actual_state but it should be ".$this->desired_state;
 		}
-		
+
 		return $this->result;
 
 	}

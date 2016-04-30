@@ -4,11 +4,11 @@
  *
  * Tests that the PHP Memory configuration is >= the supplied parameter
  */
- 
+
 class PHPMemory extends BaseTest{
 
-	function PHPMemory($params){
-		parent::BaseTest($params);	
+	function __construct($params){
+		parent::__construct($params);
 
 		if(!is_array($this->params) || count($this->params) <= 0){
 			ErrorStack::addError("Invalid parameters, memory to test against must be supplied as the only item in an array", ERRORSTACK_ERROR, 'PHPMemory');
@@ -16,9 +16,9 @@ class PHPMemory extends BaseTest{
 			return $this->result;
 		}
 	}
-	
-	function perform(){	
-	
+
+	function perform(){
+
 		if($this->return_bytes($this->return_bytes(ini_get('memory_limit')) < $this->params[0])){
 			$this->result_message = "PHP Memory {$this->params[0]} or greater is required, you are running ".ini_get('memory_limit');
 			$this->result = INSTALLER_TEST_SUCCESS;
@@ -27,7 +27,7 @@ class PHPMemory extends BaseTest{
 			$this->result = INSTALLER_TEST_FAIL;
 			$this->result_message = "PHP Memory {$this->params[0]} or greater is required, you are running ".ini_get('memory_limit');
 		}
-		
+
 		return $this->result;
 
 	}

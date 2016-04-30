@@ -4,11 +4,11 @@
  *
  * Tests that the running PHP Version is >= the supplied parameter
  */
- 
+
 class PHPVersionUnder extends BaseTest{
 
-	function PHPVersionUnder($params){
-		parent::BaseTest($params);	
+	function __construct($params){
+		parent::__construct($params);
 
 		if(!is_array($this->params) || count($this->params) <= 0){
 			ErrorStack::addError("Invalid parameters, version to test against must be supplied as the only item in an array", ERRORSTACK_ERROR, 'PHPVersionUnder');
@@ -16,8 +16,8 @@ class PHPVersionUnder extends BaseTest{
 			return $this->result;
 		}
 	}
-	
-	function perform(){		
+
+	function perform(){
 		if(version_compare(phpversion(), $this->params[0], '<')){
 			$this->result_message = "PHP Version lower than {$this->params[0]}  is required, you are running ".phpversion();
 			$this->result = INSTALLER_TEST_SUCCESS;
@@ -26,7 +26,7 @@ class PHPVersionUnder extends BaseTest{
 			$this->result = INSTALLER_TEST_FAIL;
 			$this->result_message = "PHP Version lower than {$this->params[0]}  is required, you are running ".phpversion();
 		}
-		
+
 		return $this->result;
 	}
 }

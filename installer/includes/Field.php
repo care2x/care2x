@@ -31,9 +31,9 @@ class Field {
      * the user input.
      */
     function getHTML($smarty) {
-        $smarty->assign_by_ref('field', $this);
+        $smarty->assign('field', $this);
         $output = $smarty->fetch(Installer::getTemplatePath("field_$this->type.tpl"));
-        $smarty->clear_assign('field');
+        $smarty->clearAssign('field');
 
         return $output;
     }

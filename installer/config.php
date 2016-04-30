@@ -7,18 +7,18 @@
 
 /*
  * Application name setting
- */ 
+ */
 $app_name = "Care2x";
 
 /*
  * Version number
  */
-$short_version = "3.0";
+$short_version = "2.7";
 
 /*
  * Deployment | beta
  */
-$version_status = "beta";
+$version_status = "alpha";
 
 /*
  * Long version description
@@ -32,7 +32,7 @@ $long_version = "- Version $short_version - $version_status";
   * are added here. This variable is optional and is intended
   * as a way to allow developers to use their own Test classes
   * and not have to pollute the installer dir with files
-  * 
+  *
   * The Installer will always look in the $INSTALLER_BASE/tests
   * directory for Test classes last
   */
@@ -45,7 +45,7 @@ $test_dirs = array();
   * are added here. This variable is optional and is intended
   * as a way to allow developers to use their own Actions and
   * not have to pollute the installer dir with files
-  * 
+  *
   * The Installer will always look in the $INSTALLER_BASE/actions
   * directory for Actions last
   */
@@ -63,7 +63,7 @@ $version_file = realpath(dirname(__FILE__)).'/versions.php';
  * is available here.
  */
 //require_once('MyVersionCheck.class.php');
- 
+
  /*
   * Define the class name for the version detection class. This
   * class must extend the VersionCheck class included with the

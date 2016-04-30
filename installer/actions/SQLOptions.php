@@ -136,7 +136,7 @@ class SQLOptions extends SQLFile {
 
 		$smarty->assign("files",$this->file_list);
 		$smarty->assign("loop",$this->loop);
-		$smarty->assign_by_ref('ACTION', $this);
+		$smarty->assign('ACTION', $this);
                 if ($this->loop == 3) {
 			$es =& $GLOBALS['INSTALLER']['SMARTY'];
                 	$es->assign('HEADER_EXTRAS','<META HTTP-EQUIV=Refresh CONTENT="2; URL=install.php?save_action=true">');
