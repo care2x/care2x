@@ -15,7 +15,7 @@ define('LANG_FILE','edp.php');
 $local_user='ck_edv_user';
 require_once($root_path.'include/core/inc_front_chain_lang.php');
 require_once($root_path.'include/care_api_classes/class_core.php');
-$core =  Core();
+$core = new Core;
 
 $breakfile='edv-system-admi-welcome.php'.URL_APPEND;
 if($from=='add') $returnfile='edv_system_format_menu_item_add.php'.URL_APPEND.'&from=set';
