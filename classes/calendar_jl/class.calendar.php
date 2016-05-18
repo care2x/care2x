@@ -1,7 +1,7 @@
 <?php
 /**
 *    class.Calendar by Jürgen Lang - www.getinspired.at
-*   Modifications done by elpidio latorilla for Care2002 
+*   Modifications done by elpidio latorilla for Care2002
 */
 class Calendar {
 	/** CONFIG **/
@@ -37,12 +37,12 @@ class Calendar {
 		var $intDayPadding = 1;
 		// Calendar spacing
 		var $intDaySpacing = 1;
-		
+
 		// Flag to deactivate "future" link : added by Elpidio Latorilla 2003-04-25
 		var $deactivate_future=0;
 		// future date color
 		var $strFutureDayColor='gray';
-		
+
 	/* Function to set the activate "future" day : Added by Elpidio Latorilla 2003-04-25 */
 	function activateFutureDay(){
 		$this->deactivate_future=0;
@@ -51,12 +51,12 @@ class Calendar {
 	function deactivateFutureDay(){
 		$this->deactivate_future=1;
 	}
-		
+
 
 	/** MAIN FUNCTION **/
 	function mkCalendar ($intYear = "", $intMonth = "", $intDay = "", $dept_nr=0, $aux='') {
 		## added by Elpidio Latorilla 2003-04-05
-		global $LDMonthFullName, $LDDayShortName; 
+		global $LDMonthFullName, $LDDayShortName;
 		## Added by Elpidio Latorilla 2003-08-28
 		global $thisfile;
 		if(empty($PHP_SELF)) $PHP_SELF=$thisfile;
@@ -66,7 +66,7 @@ class Calendar {
 		$intMonthTS = mktime (0, 0, 0, $intMonth, 1, $intYear);
 		$intDaysInMonth = date("t", $intMonthTS);
 		$intDayMonthStarts = date("w", $intMonthTS);
-		
+
 		$nextMonth = sprintf ("%02d", $intMonth + 1);
 		if ($nextMonth > 12) {
 			$nextMonth = sprintf ("%02d", 1);
@@ -107,7 +107,7 @@ class Calendar {
 /*			echo "
 										<OPTION value=\"" . sprintf ("%02d", $m) . "\" $statusMonth>" . date ("F", mktime (0, 0, 0, $m, 1, $intYear))
 			;
-*/			
+*/
 			echo "
 										<OPTION value=\"" . sprintf ("%02d", $m) . "\" $statusMonth>" . $LDMonthFullName[$m]; // modified by ELpidio Latorilla 2003-04-05
 			;
@@ -128,8 +128,6 @@ class Calendar {
 		echo "					</TD>
 								<TD align=\"center\" nowrap=\"nowrap\"><INPUT type=\"button\" value=\" > \" onClick=\"location.href = '$PHP_SELF".URL_REDIRECT_APPEND."&currYear=$nextYear&currMonth=$nextMonth';\" class=\"button\"></TD>
 							</TR>
-								<input type=\"hidden\" name=\"sid\" value=\"$sid\">
-       							<input type=\"hidden\" name=\"lang\" value=\"$lang\">
 							</FORM>
 						</TABLE>
 					</TD>
@@ -157,6 +155,7 @@ class Calendar {
 								<TD align=\"center\" bgcolor=\"" . $this -> strEmptyColor . "\"><font size=1 face=\"verdana,arial\">&nbsp;</font></TD>
 			";
 		}
+		$intWeekDay = 0;
 		for ($i = 1; $i <= $intDaysInMonth; $i++) {
 			$i = sprintf ("%02d", $i);
 			$intWeekDay++;
@@ -183,18 +182,18 @@ class Calendar {
 /*			echo "
 								<TD align=\"center\" bgcolor=\"$currBGColor\"><font size=1 face=\"verdana,arial\"><A href=\"$PHP_SELF".URL_APPEND."&currYear=$intYear&currMonth=$intMonth&currDay=$i\">$DayPrepend$i$DayAppend</A></font></TD>
 			";
-*/			
+*/
 			/* Modified by Elpidio Latorilla 2003-04-25 for the future day activation/deactivation */
 			if($this->deactivate_future&&("$intYear-$intMonth-$i">date('Y-m-d'))){
 				echo "
 								<TD align=\"center\" bgcolor=\"$currBGColor\"><font size=1 face=\"verdana,arial\" color=\"$this->strFutureDayColor\">$DayPrepend$i$DayAppend</font></TD>
 				";
-			}else{ 
+			}else{
 				echo "
 								<TD align=\"center\" bgcolor=\"$currBGColor\"><font size=1 face=\"verdana,arial\"><A href=\"$PHP_SELF".URL_APPEND."&currYear=$intYear&currMonth=$intMonth&currDay=$i&dept_nr=$dept_nr&aux=$aux\">$DayPrepend$i$DayAppend</A></font></TD>
 				";
 			}
-			
+
 			if (date ("w", $intCurrMonthTS) == 0 && $i < $intDaysInMonth) {
 				$intWeekDay = 0;
 				echo "

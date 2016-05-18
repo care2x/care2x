@@ -6,7 +6,7 @@ require($root_path.'include/core/inc_environment_global.php');
 * CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
 * GNU General Public License
 * Copyright 2002,2003,2004,2005 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -36,22 +36,26 @@ if(!isset($mode)){
 		exit;
 	}else{
 		echo "$appt_obj->sql<br>$LDDbNoUpdate";
-	}	
+	}
 }
 
 if($mode=='show'){
 	# Clean doc
-	if(isset($aux)) $aux=trim($aux);
+	if(isset($aux)) {
+		$aux=trim($aux);
+	} else {
+		$aux='';
+	}
 	# Get the appointments basing on some conditions
 	if((isset($dept_nr) && $dept_nr)){
 		# Get by department
-		$result=&$appt_obj->getAllByDeptObj($currYear,$currMonth,$currDay,$dept_nr);
+		$result=$appt_obj->getAllByDeptObj($currYear,$currMonth,$currDay,$dept_nr);
 	}elseif(isset($aux)&&!empty($aux)){
 		# Get by doctor
-		$result=&$appt_obj->getAllByDocObj($currYear,$currMonth,$currDay,$aux);
+		$result=$appt_obj->getAllByDocObj($currYear,$currMonth,$currDay,$aux);
 	}else{
 		# Get all appointments
-		$result=&$appt_obj->getAllByDateObj($currYear,$currMonth,$currDay);
+		$result=$appt_obj->getAllByDateObj($currYear,$currMonth,$currDay);
 	}
 }
 
@@ -64,7 +68,7 @@ require_once($root_path.'include/care_api_classes/class_encounter.php');
 $enc_obj=new Encounter;
 
 # load all encounter classes
-if($ec_obj=&$enc_obj->AllEncounterClassesObject()){
+if($ec_obj=$enc_obj->AllEncounterClassesObject()){
 	# Prepare to an array, technique is used in listing routines
 	while($ec_row=$ec_obj->FetchRow()) $enc_class[$ec_row['class_nr']]=$ec_row;
 }
@@ -83,7 +87,7 @@ switch($_SESSION['sess_user_origin']){
 require_once($root_path.'include/care_api_classes/class_department.php');
 $dept_obj=new Department;
 # Load all medical departments
-$med_arr=&$dept_obj->getAllMedical();
+$med_arr=$dept_obj->getAllMedical();
 
 # Prepare the html select options
 $options='';
@@ -91,7 +95,7 @@ while(list($x,$v)=each($med_arr)){
 	if($x==42) continue;
 	$buffer=$v['LD_var'];
 	if(isset($$buffer)&&!empty($$buffer)) $buf2=$$buffer;
-		else $buf2=$v['name_formal'];	
+		else $buf2=$v['name_formal'];
 	$options.='
 	<option value="'.$v['nr'].'"';
 	if ($dept_nr==$v['nr']){
@@ -101,7 +105,7 @@ while(list($x,$v)=each($med_arr)){
 	$options.='>'.$buf2.'</option>';
 }
 
-# Load the common icons 
+# Load the common icons
 $img_male=createComIcon($root_path,'spm.gif','0','',TRUE);
 $img_female=createComIcon($root_path,'spf.gif','0','',TRUE);
 
@@ -115,11 +119,13 @@ $img_female=createComIcon($root_path,'spf.gif','0','',TRUE);
 
  require_once($root_path.'gui/smarty_template/smarty_care.class.php');
  $smarty = new smarty_care('common');
-
+$smarty->assign('sOnLoadJs','onLoad=""');
+$smarty->assign('bHideTitleBar',FALSE);
+$smarty->assign('sTitleImage','<img '.createComIcon($root_path,'calendar.gif','0').'>');
 # Toolbar title
 
  $smarty->assign('sToolbarTitle',$LDAppointments);
-
+$smarty->assign('Subtitle','' );
 # href for the  button
  $smarty->assign('pbHelp',"javascript:gethelp('appointment_show.php')");
 
@@ -127,28 +133,30 @@ $img_female=createComIcon($root_path,'spf.gif','0','',TRUE);
 
  # Window bar title
  $smarty->assign('title',$LDAppointments);
-
+$smarty->assign('pbAux1', '');
+$smarty->assign('pbAux2', '');
+$smarty->assign('sCloseTarget','target="_parent"');
  # Collect extra javascript code
- 
+
  ob_start();
 
 ?>
 
 <script language="javascript">
-<!-- 
+<!--
 
 var urlholder;
 
 function popinfo(l,d){
 	urlholder="nursing-or-dienstplan-popinfo.php<?php echo URL_REDIRECT_APPEND ?>&nr="+l+"&dept_nr="+d+"&user=<?php echo $aufnahme_user.'"' ?>;
-	
+
 	infowin=window.open(urlholder,"dienstinfo","width=400,height=300,menubar=no,resizable=yes,scrollbars=yes");
 }
 
 -->
 </script>
 
-<?php 
+<?php
 
 	$sTemp = ob_get_contents();
 ob_end_clean();
@@ -170,6 +178,7 @@ ob_end_clean();
 
 $smarty->assign('sMiniCalendar',$sTemp);
 
+$smarty->assign('pbByDeptGo','');
 $smarty->assign('LDListApptByDept',$LDListApptByDept);
 $smarty->assign('sByDeptSelect','<select name="dept_nr">
 			<option value="">'.$LD_AllMedicalDept.'</option>'.$options.'
@@ -182,6 +191,7 @@ $smarty->assign('sByDeptHiddenInputs','<input type="submit" value="'.$LDShow.'">
 			<input type="hidden"  name="lang" value="'.$lang.'">');
 
 $smarty->assign('LDListApptByDoc',$LDListApptByDoc);
+$smarty->assign('pbByDocGo','');
 $smarty->assign('sByDocSelect','<input type="text" name="aux" size=35 maxlength=40 value="'.$aux.'">');
 $smarty->assign('sByDocHiddenInputs','<input type="submit" value="'.$LDShow.'">
 			<input type="hidden"  name="name_last" value="">
@@ -206,10 +216,11 @@ if($appt_obj->count){
 	$smarty->assign('bShowPrompt',TRUE);
 	$smarty->assign('sMascotImg','<img '.createMascot($root_path,'mascot1_r.gif','0','absmiddle').'>');
 	$smarty->assign('sPrompt',((date('Y-m-d'))==$currYear.'-'.$currMonth.'-'.$currDay) ? $LDNoPendingApptToday : $LDNoPendingApptThisDay);
+	$smarty->assign('sApptList','');
 }
 
 $smarty->assign('sButton','<img '.createComIcon($root_path,'bul_arrowgrnlrg.gif','0','absmiddle',TRUE).'>');
-$smarty->assign('sNewApptLink','<a href="'.$root_path.'modules/registration_admission/patient_register_pass.php'.URL_APPEND.'&pid='.$_SESSION['sess_pid'].'&target=search">'.$LDScheduleNewAppointment.'</a>');
+$smarty->assign('sNewApptLink','<a href="'.$root_path.'modules/registration_admission/patient_register_pass.php'.URL_APPEND.'&target=search">'.$LDScheduleNewAppointment.'</a>');
 
 $smarty->assign('pbClose','<a href="'.$breakfile.'"><img '.createLDImgSrc($root_path,'close2.gif','0').' alt="'.$LDCloseAlt.'">');
 
@@ -218,7 +229,7 @@ $smarty->assign('sMainBlockIncludeFile','appointment/appt_list.tpl');
  /**
  * show Template
  */
-
+$smarty->assign('sMainFrameBlockData',"");
 $smarty->display('common/mainframe.tpl');
 
  ?>
