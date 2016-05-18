@@ -4,7 +4,7 @@ require_once('./roots.php');
 require_once($root_path.'include/core/inc_environment_global.php');
 /*
 CARE2X Integrated Information System Deployment 2.1 - 2004-10-02 for Hospitals and Health Care Organizations and Services
-Copyright (C) 2002,2003,2004,2005  Elpidio Latorilla & Intellin.org	
+Copyright (C) 2002,2003,2004,2005  Elpidio Latorilla & Intellin.org
 
 GNU GPL. For details read file "copy_notice.txt".
 */
@@ -18,13 +18,13 @@ $breakfile=$root_path.$_SESSION['sess_file_break'].URL_APPEND;
 
 if($_SESSION['sess_file_return']==$thisfile) $returnfile='start_page.php'.URL_APPEND;
     else $returnfile=$root_path.$_SESSION['sess_file_return'].URL_APPEND;
-	
+
 /* Set the new return file for the preview page */
 $_SESSION['sess_file_return']=$thisfile;
 
 $_SESSION['sess_file_forward']='headline-read.php';
 
-$title= $_SESSION['sess_title']; 
+$title= $_SESSION['sess_title'];
 ?>
 <?php html_rtl($lang); ?>
 <head>
@@ -58,7 +58,7 @@ function chkForm(d)
     <td bgcolor="ccffff"><p><br>
 <!-- 		&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $LDArticle1 ?><br>
 		<input type="hidden" name="artopt" value="">
- -->    	
+ -->
  		<input type="radio" name="artopt" value="1"> <a href="#" onClick="document.selectform.artopt[0].checked=true"><?php echo $LDArticle1 ?></a><br>
  		<input type="radio" name="artopt" value="2"> <a href="#" onClick="document.selectform.artopt[1].checked=true"><?php echo $LDArticle2 ?></a><br>
     	<input type="radio" name="artopt" value="3"> <a href="#" onClick="document.selectform.artopt[2].checked=true"><?php echo $LDArticle3 ?></a><br><p>
@@ -81,7 +81,7 @@ function chkForm(d)
 <input type="hidden" name="lang" value="<?php echo $lang ?>">
 <input type="hidden" name="title" value="<?php echo $title ?>">
 <p>
-<?php 
+<?php
 require($root_path.'include/core/inc_load_copyrite.php');
 ?>
 </form>

@@ -2,11 +2,12 @@
 error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+require($root_path.'language/en/lang_en_date_time.php');
 /**
 * CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
 * GNU General Public License
 * Copyright 2002,2003,2004,2005 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -35,7 +36,7 @@ $returnfile='headline-edit-select-art.php'.URL_APPEND;
 
 $_SESSION['sess_file_forward']='headline-read.php';
 
-$title= (!empty($title)) ? $title : $_SESSION['sess_title']; 
+$title= (!empty($title)) ? $title : $_SESSION['sess_title'];
 
 /* Load the date formatter */
 require_once($root_path.'include/core/inc_date_format_functions.php');
@@ -61,12 +62,12 @@ function showpic(d)
 	if(d.value) document.images.headpic.src=d.value;
 }
 
-<?php 
-# Load the javascript editor form checker 
+<?php
+# Load the javascript editor form checker
 require_once('includes/inc_js_editor_chkform.php');
 
 # Load the dates js values
-require($root_path.'include/core/inc_checkdate_lang.php'); 
+require($root_path.'include/core/inc_checkdate_lang.php');
 ?>
 <!--  Root path for the html WYSIWYG editor -->
 var _editor_url="<?php echo $root_path.'js/html_editor/'; ?>";
@@ -81,7 +82,7 @@ var _editor_url="<?php echo $root_path.'js/html_editor/'; ?>";
 
 <!--  Load validators -->
 <script language="javascript" src="<?php echo $root_path; ?>js/editor_chkform.js" type="text/javascript"></script>
- 
+
 <?php require($root_path.'include/core/inc_css_a_hilitebu.php'); ?>
 
 </head>
@@ -104,14 +105,14 @@ var _editor_url="<?php echo $root_path.'js/html_editor/'; ?>";
 	<FONT color="#0000cc" size=3><b><?php echo $LDHeader ?>:</b><br>
 	<font size=1><?php echo $LDHeaderMaxNote ?><br>
 	<!-- <input type="text" name="preface" size=50 maxlength=50><br> -->
-	
+
 	<textarea name="preface" cols=50 rows=5 wrap="physical" id="preface"></textarea><br>
-	
+
 	<FONT color="#0000cc" size=3><b><?php echo $LDNews ?>:</b><br>
 	<font size=1>
-	
+
 	<textarea name="newsbody" cols=50 rows=14 wrap="physical" id="newsbody"></textarea><br>
-	
+
   	<FONT color="#0000cc" size=2><b><?php echo $LDPicFile ?>:</b><br>
 	<input type="file" name="pic" onChange="showpic(this)" ><br>
     <input type="button" value="<?php echo $LDPreviewPic ?>" onClick="showpic(document.selectform.pic)"><br>
@@ -140,7 +141,7 @@ var _editor_url="<?php echo $root_path.'js/html_editor/'; ?>";
 <?php if($alignright) : ?>
 		<a href="<?php echo $returnfile ?>"><img <?php echo createLDImgSrc($root_path,'back2.gif','0') ?>></a>
 <?php endif ?>
- <input type="image" <?php echo createLDImgSrc($root_path,'continue.gif','0') ?>> 
+ <input type="image" <?php echo createLDImgSrc($root_path,'continue.gif','0') ?>>
 <!-- <a href="javascript:chkForm(document.selectform)"><img <?php echo createLDImgSrc($root_path,'continue.gif','0') ?>></a> -->
   </td>
     <td align=right >
