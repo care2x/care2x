@@ -6,7 +6,7 @@ require_once($root_path.'include/core/inc_environment_global.php');
 * CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
 * GNU General Public License
 * Copyright 2002,2003,2004,2005 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -16,14 +16,14 @@ define('NO_2LEVEL_CHK',1);
 require_once($root_path.'include/core/inc_front_chain_lang.php');
 
 $returnfile='headline-edit-select-art.php'.URL_APPEND;
-$breakfile=$root_path.$_SESSION['sess_file_break'].URL_APPEND;
-
+//$breakfile=$root_path.$_SESSION['sess_file_break'].URL_APPEND;
+if(isset($_SESSION['sess_file_break'])) $breakfile=$root_path.$_SESSION['sess_file_break'].URL_APPEND;
 //$_SESSION['sess_file_return']='start_page.php';
 
 # Get the news article
 require_once($root_path.'include/care_api_classes/class_news.php');
 $newsobj=new News;
-$news=&$newsobj->getNews($nr);
+$news=$newsobj->getNews($nr);
 
 # Get the news global configurations
 
@@ -38,12 +38,14 @@ require_once('includes/inc_news_display_config.php');
 
  require_once($root_path.'gui/smarty_template/smarty_care.class.php');
  $smarty = new smarty_care('common');
+$smarty->assign('sOnLoadJs','onLoad=""');
+$smarty->assign('sMainFrameBlockData',"");
 
  # Hide the title bar
  $smarty->assign('bHideTitleBar',TRUE);
 
  # Window title
- $smarty->assign('title',$title);
+ $smarty->assign('title',$news['title']);
 
  $smarty->assign('news_normal_display_width',$news_normal_display_width);
 
@@ -51,12 +53,14 @@ require_once('includes/inc_news_display_config.php');
  $smarty->assign('LDHeadline',$LDHeadline);
 
 
-if($mode=="preview4saved"){
+if(isset($mode) and $mode=="preview4saved"){
 
 	$smarty->assign('bShowPrompt',TRUE);
 
 	$smarty->assign('sMascotImg','<img '.createMascot($root_path,'mascot1_r.gif','0').'>');
     $smarty->assign('LDArticleSaved', $LDArticleSaved);
+} else {
+	$smarty->assign('bShowPrompt',FALSE);
 }
 
 require('includes/inc_news_display_one.php');
