@@ -44,7 +44,10 @@ if(isset($news[$j])){
 
 				if(!$picsize||($picsize[0]>150)) $smarty->assign('sImgWidth','width="150"');
 				    else $smarty->assign('sImgWidth',$picsize[3]);
-		    }
+		    } else {
+				 $smarty->assign('sHeadlineImg',createComIcon($root_path,'pplanu-s.jpg','0','',TRUE));
+				 $smarty->assign('sImgWidth','width="150"');
+			 }
 
 			$sBuffer = $sBuffer.'</font>';
 
@@ -83,7 +86,7 @@ if(isset($news[$j])){
 		 }
 	}
 
-	if(!isset($news[$j])||$nofile)
+	if(!isset($news[$j])||$nofile===1)
 	{
 		$i=$j;
 

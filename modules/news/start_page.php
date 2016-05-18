@@ -65,7 +65,8 @@ require_once('includes/inc_news_display_config.php');
 
  require_once($root_path.'gui/smarty_template/smarty_care.class.php');
  $smarty = new smarty_care('common');
-
+$smarty->assign('sOnLoadJs','onLoad=""');
+$smarty->assign('sMainFrameBlockData',"");
  # Hide the title bar
  $smarty->assign('bHideTitleBar',TRUE);
 
