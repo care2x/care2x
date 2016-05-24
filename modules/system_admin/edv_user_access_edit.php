@@ -32,7 +32,7 @@ $deptarray = $dept_obj->getAllActiveSort ( 'name_formal' ) ;
 
 //gjergji : load the access roles
 require_once($root_path.'include/care_api_classes/class_access.php');
-$role_obj =  Access();
+$role_obj =  new Access();
 $roles = $role_obj->loadAllRoles();
 
 $edit = 0 ;
