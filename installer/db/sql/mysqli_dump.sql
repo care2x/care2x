@@ -4739,7 +4739,7 @@ INSERT INTO care_config_global VALUES ('use_old_gui_style', '0', NULL, 'normal',
 -- Dumping data for table care_config_user
 --
 
-INSERT INTO care_config_user VALUES ('default', 'a:19:{s:4:"mask";s:1:"1";s:11:"idx_bgcolor";s:7:"#ffffff";s:12:"idx_txtcolor";s:7:"#000066";s:9:"idx_hover";s:7:"#ffffcc";s:9:"idx_alink";s:7:"#ffffff";s:11:"top_bgcolor";s:7:"#99ccff";s:12:"top_txtcolor";s:7:"#330066";s:12:"body_bgcolor";s:7:"#ffffff";s:13:"body_txtcolor";s:7:"#000066";s:10:"body_hover";s:7:"#cc0033";s:10:"body_alink";s:7:"#cc0000";s:11:"bot_bgcolor";s:7:"#cccccc";s:12:"bot_txtcolor";s:4:"gray";s:5:"bname";s:0:"";s:8:"bversion";s:0:"";s:2:"ip";s:0:"";s:3:"cid";s:0:"";s:5:"dhtml";s:1:"1";s:4:"lang";s:0:"";}', 'default values', 'normal', 'installed', 'auto-installer', 0, 'auto-installer', 0);
+INSERT INTO care_config_user VALUES ('default', 'a:19:{s:4:"mask";s:1:"1";s:11:"idx_bgcolor";s:7:"#99CCFF";s:12:"idx_txtcolor";s:7:"#000066";s:9:"idx_hover";s:7:"#ffffcc";s:9:"idx_alink";s:7:"#ffffff";s:11:"top_bgcolor";s:7:"#99ccff";s:12:"top_txtcolor";s:7:"#330066";s:12:"body_bgcolor";s:7:"#ffffff";s:13:"body_txtcolor";s:7:"#000066";s:10:"body_hover";s:7:"#cc0033";s:10:"body_alink";s:7:"#cc0000";s:11:"bot_bgcolor";s:7:"#cccccc";s:12:"bot_txtcolor";s:4:"gray";s:5:"bname";s:0:"";s:8:"bversion";s:0:"";s:2:"ip";s:0:"";s:3:"cid";s:0:"";s:5:"dhtml";s:1:"1";s:4:"lang";s:0:"";}', 'default values', 'normal', 'installed', 'auto-installer', 0, 'auto-installer', 0);
 
 --
 -- Dumping data for table care_currency
@@ -4824,36 +4824,7 @@ INSERT INTO care_group VALUES (6, 'prescription', 'Prescription', 'LDPrescriptio
 --
 -- Dumping data for table care_menu_main
 --
-INSERT INTO `care_menu_main` VALUES
-(2, 5, 0, 'Patient', '', '', 'LDPatient', 'modules/registration_admission/patient_register_pass.php', 1, '', '', '20030922232015', '0000-00-00 00:00:00'),
-(3, 10, 0, 'Admission', 'admission', '', 'LDAdmission', 'modules/registration_admission/admission_pass.php', 1, '', '', '20030922232015', '0000-00-00 00:00:00'),
-(4, 15, 0, 'Ambulatory', '', '', 'LDAmbulatory', 'modules/ambulatory/ambulatory.php', 1, '', '', '20030922232015', '0000-00-00 00:00:00'),
-(5, 20, 7, 'Medocs', 'medocs', '', 'LDMedocs', 'modules/medocs/medocs_pass.php', 1, '', '', '20030922232015', '0000-00-00 00:00:00'),
-(6, 25, 29, 'Doctors', 'doctors', '', 'LDDoctors', 'modules/doctors/doctors.php', 1, '', '', '20030922232015', '0000-00-00 00:00:00'),
-(7, 35, 0, 'Nursing', 'nursing', '', 'LDNursing', 'modules/nursing/nursing.php', 1, '', '', '20030922232015', '0000-00-00 00:00:00'),
-(8, 40, 0, 'OR', 'op', 'LDOR', '', 'main/op-docu.php', 1, '', '', '20030922232015', '0000-00-00 00:00:00'),
-(9, 45, 31, 'Laboratories', 'lab', '', 'LDLabs', 'modules/laboratory/labor.php', 1, '', '', '20030922232015', '0000-00-00 00:00:00'),
-(10, 50, 31, 'Radiology', 'radio', '', 'LDRadiology', 'modules/radiology/radiolog.php', 1, '', '', '20030922232015', '0000-00-00 00:00:00'),
-(11, 55, 30, 'Pharmacy', 'pharma', '', 'LDPharmacy', 'modules/pharmacy/pharmacy.php', 1, '', '', '20030922232015', '0000-00-00 00:00:00'),
-(12, 60, 30, 'Medical Depot', 'meddepot', '', 'LDMedDepot', 'modules/medstock/medstock.php ', 1, '', '', '20030922232015', '0000-00-00 00:00:00'),
-(13, 65, 29, 'Directory', 'teldir', '', 'LDDirectory', 'modules/phone_directory/phone.php', 1, '', '', '20030922232015', '0000-00-00 00:00:00'),
-(14, 70, 29, 'Tech Support', 'tech', '', 'LDTechSupport', 'modules/tech/tech.php', 1, '', '', '20030922232015', '0000-00-00 00:00:00'),
-(15, 72, 29, 'System Admin', 'System Admin', '', 'LDEDP', 'modules/system_admin/admin.php', 1, '', '', '20030922232015', '0000-00-00 00:00:00'),
-(16, 75, 29, 'Intranet Email', '', '', 'LDIntraEmail', 'modules/intranet_email/intra-email-pass.php', 1, '', '', '20030922232015', '0000-00-00 00:00:00'),
-(18, 85, 29, 'Modules', '', '', 'LDSpecials', 'main/plugin.php', 1, '', '', '20030922232015', '0000-00-00 00:00:00'),
-(19, 90, 0, 'Login', '', '', 'LDLogin', 'main/login.php', 1, '', '', '20030922232015', '0000-00-00 00:00:00'),
-(20, 7, 2, 'Appointments', '', '', 'LDAppointments', 'modules/appointment_scheduler/appt_main_pass.php', 1, '', '', '20030922232015', '2003-04-05 00:01:45'),
-(21, 0, 2, 'Admission', '', NULL, 'LDAdmission', 'modules/registration_admission/patient_register_pass.php', 1, NULL, '', NULL, '2011-08-24 22:01:58'),
-(22, 0, 2, 'Registration', '', 'gui/img/common/default/post_discussion.gif', '', 'modules/registration_admission/patient_register_pass.php', 1, NULL, '', NULL, '2011-08-24 22:04:17'),
-(23, 0, 2, 'Search', '', 'gui/img/common/default/findnew.gif', 'LDSearch', 'modules/registration_admission/patient_register_pass.php&target=search', 1, NULL, '', NULL, '2011-08-24 22:04:59'),
-(24, 0, 2, 'Archive', '', 'LDArchive', '', 'modules/registration_admission/patient_register_pass.php?target=archiv', 1, NULL, '', NULL, '2011-08-24 22:05:50'),
-(25, 0, 7, 'Wards', '', 'gui/img/common/default/bul_arrowgrnsm.gif', '', 'modules/nursing/nursing.php', 1, NULL, '', NULL, '2011-08-24 22:07:09'),
-(26, 0, 3, 'Archive', '', NULL, 'LDArchive', 'modules/registration_admission/admission_pass.php?target=archiv', 1, NULL, '', NULL, '2011-08-24 22:07:39'),
-(27, 0, 7, 'Search', '', 'gui/img/common/default/findnew.gif', '', 'modules/nursing/nursing-patient-search-start.php', 1, NULL, '', NULL, '2011-08-24 22:08:06'),
-(28, 0, 7, 'Quick view', '', 'gui/img/common/default/eye_s.gif', '', 'modules/nursing/nursing-quickview.php', 1, NULL, '', NULL, '2011-08-24 22:08:36'),
-(29, 0, 0, 'Special Tools', '', NULL, '', '', 1, NULL, '', NULL, '2011-08-29 19:12:10'),
-(30, 0, 0, 'Medicaments', '', NULL, '', '', 1, NULL, '', NULL, '2011-08-29 19:20:15'),
-(31, 0, 0, 'Analysis', '', NULL, '', '', 1, NULL, '', NULL, '2011-08-29 19:23:08');
+INSERT INTO `care_menu_main` VALUES (1,1,'Home','LDHome','modules/news/start_page.php',1,'','','2010-12-08 03:50:30','0000-00-00 00:00:00'),(2,5,'Registration','LDPatient','modules/registration_admission/patient_register_pass.php',1,'','','2010-02-08 05:50:17','0000-00-00 00:00:00'),(3,10,'Admission','LDAdmission','modules/registration_admission/aufnahme_pass.php',1,'','','2010-02-08 07:10:04','0000-00-00 00:00:00'),(4,15,'Ambulatory','LDAmbulatory','modules/ambulatory/ambulatory.php',1,'','','2005-02-25 01:25:09','0000-00-00 00:00:00'),(5,20,'Medocs','LDMedocs','modules/medocs/medocs_pass.php',0,'','','2011-04-12 11:51:19','0000-00-00 00:00:00'),(6,25,'Doctors','LDDoctors','modules/doctors/doctors.php',1,'','','2009-02-26 07:28:59','0000-00-00 00:00:00'),(7,35,'Nursing','LDNursing','modules/nursing/nursing.php',1,'','','2008-08-20 12:46:16','0000-00-00 00:00:00'),(8,40,'OR','LDOR','main/op-doku.php',1,'','','2009-02-17 11:21:16','0000-00-00 00:00:00'),(9,45,'Laboratories','LDLabs','modules/laboratory/labor.php',1,'','','2003-09-22 10:20:15','0000-00-00 00:00:00'),(10,50,'Radiology','LDRadiology','modules/radiology/radiolog.php',1,'','','2008-03-06 04:52:12','0000-00-00 00:00:00'),(11,55,'Pharmacy','LDPharmacy','modules/pharmacy_tz/pharmacy_tz_pass.php',0,'','','2016-04-11 13:09:18','0000-00-00 00:00:00'),(12,60,'Medical Depot','LDMedDepot','modules/med_depot/medlager.php',1,'','','2016-04-30 06:43:25','0000-00-00 00:00:00'),(13,65,'Directory','LDDirectory','modules/phone_directory/phone.php',1,'','','2016-04-30 06:43:25','0000-00-00 00:00:00'),(14,70,'Tech Support','LDTechSupport','modules/tech/technik.php',1,'','','2016-04-30 06:43:25','0000-00-00 00:00:00'),(15,72,'System Admin','LDEDP','modules/system_admin/edv.php',1,'','','2003-09-22 10:20:15','0000-00-00 00:00:00'),(16,75,'Intranet Email','LDIntraEmail','modules/intranet_email/intra-email-pass.php',0,'','','2006-11-08 10:48:04','0000-00-00 00:00:00'),(17,80,'Internet Email','LDInterEmail','modules/nocc/index.php',0,'','','2005-11-08 02:29:44','0000-00-00 00:00:00'),(18,85,'Special Tools','LDSpecials','main/spediens.php',1,'','','2006-06-28 21:35:23','0000-00-00 00:00:00'),(23,91,'Logout','LDLogout','main/logout_confirm.php',0,'','','2016-05-24 14:53:54','0000-00-00 00:00:00'),(20,7,'Appointments','LDAppointments','modules/appointment_scheduler/appt_main_pass.php',1,'','','2008-12-22 11:59:45','2003-04-04 10:01:45'),(21,16,'Inpatient','LDInpatient','modules/inpatient/inpatient.php',1,'','','2008-08-20 12:46:16','0000-00-00 00:00:00'),(22,46,'Laboratories TZ','LDLabs','modules/laboratory_tz/labor.php',0,'','','2005-03-07 23:05:45','0000-00-00 00:00:00'),(24,90,'Login','LDLogin','main/login.php',1,'','','2016-04-30 06:43:25','0000-00-00 00:00:00'),(25,57,'Billing','LDBilling','modules/billing_tz/billing_tz_pass.php',0,'','','2012-10-18 10:07:43','0000-00-00 00:00:00'),(27,59,'Reporting','LDreporting','modules/reporting_tz/reporting_tz_pass.php',0,'','','2016-04-11 13:09:18','0000-00-00 00:00:00'),(19,58,'Dhis Export','LDDhis','modules/care_dhis/care_dhis_pass.php',1,'','','2016-04-30 06:43:25','0000-00-00 00:00:00'),(28,16,'AAR','LDAAR','modules/ambulatory/sub_clinic_pass.php',1,'','','2011-04-12 11:51:19','0000-00-00 00:00:00');
 
 --
 -- Dumping data for table care_method_induction
