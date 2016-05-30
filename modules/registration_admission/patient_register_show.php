@@ -1,12 +1,12 @@
 <?php
-//error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
+error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
 /**
 * CARE2X Integrated Hospital Information System beta 2.0.1 - 2004-07-04
 * GNU General Public License
 * Copyright 2002,2003,2004,2005,2006 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -128,7 +128,7 @@ $smarty->assign('sRegOptions',$sTemp);
 
 # If the data is not new , show new search button
 
-if (!$newdata) { 
+if (!$newdata) {
 $target = $_REQUEST['target'];
 	if($target=="search") $newsearchfile='patient_register_search.php'.URL_APPEND;
 		else $newsearchfile='patient_register_archive.php'.URL_APPEND;

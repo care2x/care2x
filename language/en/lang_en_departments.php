@@ -1,15 +1,49 @@
 <?php
-// All default and English Department Labels and variables are taken from the 
-// care_department table name_formal and LD_var fields respectively
-// In some scripts all dept LD_vars may not be available, then they must be added here.
-
 $LDHeadlines='Headlines';
-
+$LDCafeNews='Cafeteria News';
+$LDManagement='Management';
+$LDHealthTips='Health Tips';
+$LDEducation='Education';
+$LDStudies='Studies';
+$LDExhibitions='Exhibitions';
+$LDHeadline='Headline';
+$LDAdmission='Admission';
+/* 2003-08-20 DH */
+$LDAnesthesiology='Anesthesiology';
+$LDCafeteria='Cafeteria';
+$LDGeneralSurgery='General Surgery';
+$LDEmergencySurgery='Emergency Surgery';
+$LDPlasticSurgery='Plastic Surgery';
+$LDEarNoseThroat='ENT';
+$LDOpthalmology='Opthalmology';
+$LDPathology='Pathology';
+$LDObGynecology='Gynecology';
+$LDPhysicalTherapy='Physical Therapy';
+$LDInternalMedicine='Internal Medicine';
+$LDIntermediateCareUnit='Intermediate Care Unit';
+$LDIntensiveCareUnit='Intensive Care Unit';
+$LDEmergencyAmbulatory='Emergency Ambulatory';
+$LDInternalMedicineAmbulatory='Internal Medicine Ambulatory';
+$LDSonography='Sonography';
+$LDNuclearDiagnostics='Nuclear Diagnostics';
+$LDRadiology='Radiology';
+$LDOncology='Oncology';
+$LDNeonatal='Neonatal';
+$LDCentralLaboratory='Central Laboratory';
+$LDSerologicalLaboratory='Serological Laboratory';
+$LDChemicalLaboratory='ChemicalLaboratory';
+$LDBacteriologicalLaboratory='Bacteriological Laboratory';
+$LDTechnicalMaintenance='Technical Maintenance';
+$LDITDepartment='IT Department';
+$LDGeneralAmbulatory='General Ambulatory';
+$LDBloodBank='Blood Bank';
+$LDNursing='Nursing';
 /* 2003-04-27 EL */
 $LDMedical='Medical';
 $LDSupport='Support';
 $LDNews='News';
 $LDDepartment='Department';
+$LDPressRelations='Public Relations';
 
 /* 2003-05-19 EL */
 $LDSelectDept='Select a Department';
@@ -17,7 +51,9 @@ $LDSelectDept='Select a Department';
 $LDPlsSelectDept='Please Select a Department';
 $LD_AllMedicalDept='____All Medical Departments_____';
 $LDClinic='Clinic';
-
+$LDDepartment='Department';
+$LDARVClinic='ARV Clinic';
+$LDGeneralOutpatientClinic='General outpatient clinic';
 #2003-10-23 EL
 $LDPlsNameFormal='Please write the Formal Name';
 $LDPlsDeptID='Please write the Department ID';

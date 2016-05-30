@@ -1,7 +1,7 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 /**
 * CARE2X Integrated Hospital Information System beta 2.0.1 - 2004-07-04
 * GNU General Public License
@@ -97,4 +97,3 @@ $smarty->assign('sMainBlockIncludeFile','registration_admission/reg_input.tpl');
 $smarty->display('common/mainframe.tpl');
 
 ?>
-

@@ -143,7 +143,7 @@ if($pid!='' || $encounter_nr!=''){
 				$picext='';
 				$valid_image=false;
 				$photo_filename='';
-				if($img_obj->isValidUploadedImage($_FILES['photo_filename'])){
+				if($_FILES['photo_filename'][size]>0 and $img_obj->isValidUploadedImage($_FILES['photo_filename'])){
 					$valid_image=TRUE;
 					# Get the file extension
 					$picext=$img_obj->UploadedImageMimeType();
@@ -584,7 +584,7 @@ if(!isset($pid) || !$pid){
 	$smarty->assign('LDBloodGroup',$LDBloodGroup);
 	if($blood_group){
 		$buf='LD'.$blood_group;
-		$smarty->assign('blood_group',$$buf);
+		$smarty->assign('blood_group',${$buf});
 	}
 
 	$smarty->assign('LDAddress',$LDAddress);
@@ -699,7 +699,7 @@ if(!isset($pid) || !$pid){
 
 					//if(in_array($deptrow['nr'],$current_dept_nr)) {
 						$sTemp = $sTemp.'<option value="'.$deptrow['nr'].'" selected >';
-						if($deptrow['LD_var']!='') $sTemp = $sTemp.$deptrow['LD_var'];
+						if($deptrow['LD_var']!='') $sTemp = $sTemp.${$deptrow['LD_var']};
 						else $sTemp = $sTemp.$deptrow['name_formal'];
 						$sTemp = $sTemp.'</option>';
 					//}

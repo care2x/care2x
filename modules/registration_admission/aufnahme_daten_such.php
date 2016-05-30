@@ -1,12 +1,12 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 /**
 * CARE2X Integrated Hospital Information System beta 2.0.1 - 2004-07-04
 * GNU General Public License
 * Copyright 2002,2003,2004,2005,2006 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -15,12 +15,13 @@ require($root_path.'include/core/inc_environment_global.php');
 # In normal cases this value is derived from the db table "care_config_global" using the "pagin_insurance_list_max_block_rows" element.
 ///$db->debug=true;
 
-define('MAX_BLOCK_ROWS',30); 
+define('MAX_BLOCK_ROWS',30);
 
 define('LANG_FILE','aufnahme.php');
 $local_user='aufnahme_user';
 require($root_path.'include/core/inc_front_chain_lang.php');
 require_once($root_path.'include/core/inc_date_format_functions.php');
+require_once($root_path.'language/'.$lang.'/lang_'.$lang.'_aufnahme.php');
 
 $thisfile=basename(__FILE__);
 $toggle=0;
@@ -54,20 +55,20 @@ if($mode=='paginate'){
 }
 #Load and create paginator object
 require_once($root_path.'include/care_api_classes/class_paginator.php');
-$pagen=new Paginator($pgx,$thisfile,$_SESSION['sess_searchkey'],$root_path);
+$pagen=new Paginator($pgx,$thisfile,$_SESSION['sess_searchkey'],$root_path,'ASC', 'name_last');
 
 if(isset($mode)&&($mode=='search'||$mode=='paginate')&&isset($searchkey)&&($searchkey)){
-	
+
 	include_once($root_path.'include/core/inc_date_format_functions.php');
 
 	//$db->debug=true;
 
 	if($mode!='paginate'){
 		$_SESSION['sess_searchkey']=$searchkey;
-	}	
+	}
 		# convert * and ? to % and &
 		$searchkey=strtr($searchkey,'*?','%_');
-		
+
 		$GLOBAL_CONFIG=array();
 		include_once($root_path.'include/care_api_classes/class_globalconfig.php');
 		$glob_obj=new GlobalConfig($GLOBAL_CONFIG);
@@ -76,18 +77,18 @@ if(isset($mode)&&($mode=='search'||$mode=='paginate')&&isset($searchkey)&&($sear
 		$glob_obj->getConfig('pagin_patient_search_max_block_rows');
 		if(empty($GLOBAL_CONFIG['pagin_patient_search_max_block_rows'])) $pagen->setMaxCount(MAX_BLOCK_ROWS); # Last resort, use the default defined at the start of this page
 			else $pagen->setMaxCount($GLOBAL_CONFIG['pagin_patient_search_max_block_rows']);
-		
+
 	   	$searchkey=trim($searchkey);
 		$suchwort=$searchkey;
-		
+
 		if(is_numeric($suchwort)) {
 
             $suchwort=(int) $suchwort;
 			$numeric=1;
-			
-			if(empty($oitem)) $oitem='encounter_nr';			
+
+			if(empty($oitem)) $oitem='encounter_nr';
 			if(empty($odir)) $odir='DESC'; # default, latest pid at top
-			
+
 			$sql2=" WHERE ( enc.encounter_nr='$suchwort'  OR enc.encounter_nr $sql_LIKE '%.$suchwort' )";
 	    } else {
 			# Try to detect if searchkey is composite of first name + last name
@@ -96,47 +97,48 @@ if(isset($mode)&&($mode=='search'||$mode=='paginate')&&isset($searchkey)&&($sear
 			}else{
 				$lastnamefirst=FALSE;
 			}
-			
+
 			$searchkey=strtr($searchkey,',',' ');
 			$cbuffer=explode(' ',$searchkey);
+			$numeric=0;
 
 			# Remove empty variables
 			for($x=0;$x<sizeof($cbuffer);$x++){
 				$cbuffer[$x]=trim($cbuffer[$x]);
 				if($cbuffer[$x]!='') $comp[]=$cbuffer[$x];
 			}
-			
+
 			# Arrange the values, ln= lastname, fn=first name, bd = birthday
 			if($lastnamefirst){
-				$fn=$comp[1];
-				$ln=$comp[0];
-				$bd=$comp[2];
+				if (isset($comp[1])) $fn=$comp[1];
+				if (isset($comp[0])) $ln=$comp[0];
+				if (isset($comp[2])) $bd=$comp[2];
 			}else{
-				$fn=$comp[0];
-				$ln=$comp[1];
-				$bd=$comp[2];
+				if (isset($comp[0])) $fn=$comp[0];
+				if (isset($comp[1])) $ln=$comp[1];
+				if (isset($comp[2])) $bd=$comp[2];
 			}
-			
-			if(empty($oitem)) $oitem='name_last';						
-        			
+
+			if(empty($oitem)) $oitem='name_last';
+
 			# Check the size of the comp
 			if(sizeof($comp)>1){
 				$sql2=" WHERE ( reg.name_last $sql_LIKE '".strtr($ln,'+',' ')."%'
 			                		AND reg.name_first $sql_LIKE '".strtr($fn,'+',' ')."%')";
-				if($bd){ 
+				if($bd){
 					$stddate=formatDate2STD($bd,$date_format);
 					if(!empty($stddate)){
 						$sql2.=" AND (reg.date_birth = '$stddate' OR reg.date_birth $sql_LIKE '%$bd%')";
 					}
 				}
-					
+
 				if(empty($odir)) $odir='DESC'; # default, latest birth at top
-		
+
 			}else{
-			
+
 				$sql2=" WHERE (reg.name_last $sql_LIKE '".strtr($suchwort,'+',' ')."%'
 			                		OR reg.name_first $sql_LIKE '".strtr($suchwort,'+',' ')."%'";
-				$bufdate=formatDate2STD($suchwort,$date_format);
+				$bufdate=formatDate2STD($suchwort,$date_format,array('-','.','/',':',','));
 				if(!empty($bufdate)){
 					$sql2.= " OR reg.date_birth $sql_LIKE '$bufdate'";
 				}
@@ -150,14 +152,14 @@ if(isset($mode)&&($mode=='search'||$mode=='paginate')&&isset($searchkey)&&($sear
     		$cond.=" AND ( ";
     		while (list($key, $val) = each($_SESSION['department_nr'])) {
     			$tmp .= "enc.current_dept_nr = " . $val . " OR ";
-    
+
     		}
     		$cond .= substr($tmp,0,-4) ;
     		$cond .= " ) "	;
     	}
 		$sql2 .= $cond;*/
-		//end : gjergji	
-			
+		//end : gjergji
+
 			$sql2.=" AND enc.pid=reg.pid
 					  AND enc.encounter_status <> 'cancelled'
 					  AND enc.is_discharged=0
@@ -166,17 +168,17 @@ if(isset($mode)&&($mode=='search'||$mode=='paginate')&&isset($searchkey)&&($sear
 			# Filter if it is personnel nr
 			if($oitem=='encounter_nr') $sql2.='enc.'.$oitem.' '.$odir;
 				else $sql2.='reg.'.$oitem.' '.$odir;
-				
+
 
 			$dbtable='FROM care_encounter as enc,care_person as reg ';
 
 			$sql='SELECT enc.encounter_nr, enc.encounter_class_nr, enc.is_discharged,
 								reg.name_last, reg.name_first, reg.date_birth, reg.addr_zip,reg.sex '.$dbtable.$sql2;
 			//echo $sql;
-
+echo $sql;
 			if($ergebnis=$db->SelectLimit($sql,$pagen->MaxCount(),$pagen->BlockStartIndex()))
        		{
-				if ($linecount=$ergebnis->RecordCount()) 
+				if ($linecount=$ergebnis->RecordCount())
 				{
 					if(($linecount==1) && $numeric&&$mode=='search')
 					{
@@ -184,9 +186,9 @@ if(isset($mode)&&($mode=='search'||$mode=='paginate')&&isset($searchkey)&&($sear
 						header('Location:aufnahme_daten_zeigen.php'.URL_REDIRECT_APPEND.'&from=such&encounter_nr='.$zeile['encounter_nr'].'&target=search');
 						exit;
 					}
-					
+
 					$pagen->setTotalBlockCount($linecount);
-					
+
 					# If more than one count all available
 					if(isset($totalcount) && $totalcount){
 						$pagen->setTotalDataCount($totalcount);
@@ -212,7 +214,7 @@ if(isset($mode)&&($mode=='search'||$mode=='paginate')&&isset($searchkey)&&($sear
 					$pagen->setSortItem($oitem);
 					$pagen->setSortDirection($odir);
 				}
-				
+
 			}
 			 else {echo "<p>".$sql."<p>$LDDbNoRead";};
 }
@@ -229,6 +231,14 @@ if(isset($mode)&&($mode=='search'||$mode=='paginate')&&isset($searchkey)&&($sear
 
 # Title in the toolbar
  //$smarty->assign('sToolbarTitle',$LDPatientSearch);
+ $smarty->assign('sTitleImage','<img '.createComIcon($root_path,'search_glass.gif','0').'>');
+
+ $smarty->assign('Subtitle','' );
+ $smarty->assign('sSubTitle','' );
+ $smarty->assign('pbAux1', '');
+ $smarty->assign('pbAux2', '');
+ $smarty->assign('sPretext', '');
+ $smarty->assign('sCloseTarget','target="_parent"');
  $smarty->assign('sToolbarTitle',"$LDAdmission :: $LDSearch");
 
  $smarty->assign('breakfile',$breakfile);
@@ -244,6 +254,9 @@ if(isset($mode)&&($mode=='search'||$mode=='paginate')&&isset($searchkey)&&($sear
 
  # Hide the return button
  $smarty->assign('pbBack',FALSE);
+
+ $smarty->assign('sWarnText','');
+ $smarty->assign('sMainDataBlock','');
 
 #
 # Load the tabs
@@ -274,15 +287,22 @@ if(!isset($searchform_count) || !$searchform_count){
 # Prepare the form params
 #
 $sTemp = 'method="post" name="searchform';
-if($searchform_count) $sTemp = $sTemp."_".$searchform_count;
+if(isset($searchform_count)) $sTemp = $sTemp."_".$searchform_count;
 $sTemp = $sTemp.'" onSubmit="return chkSearch(this)"';
 if(isset($search_script) && $search_script!='') $sTemp = $sTemp.' action="'.$search_script.'"';
 $smarty->assign('sFormParams',$sTemp);
 $smarty->assign('searchprompt',$searchprompt);
+$smarty->assign('bHideTitleBar',FALSE);
 
 #
 # Prepare the hidden inputs
 #
+if (!isset($noresize)) $noresize='';
+if (!isset($user_origin)) $user_origin='';
+if (!isset($origin)) $origin='';
+if (!isset($retpath)) $retpath='';
+if (!isset($aux1)) $aux1='';
+if (!isset($ipath)) $ipath='';
 $smarty->assign('sHiddenInputs','<input type="image" '.createLDImgSrc($root_path,'searchlamp.gif','0','absmiddle').'>
 		<input type="hidden" name="sid" value="'.$sid.'">
 		<input type="hidden" name="lang" value="'.$lang.'">
@@ -296,9 +316,10 @@ $smarty->assign('sHiddenInputs','<input type="image" '.createLDImgSrc($root_path
 		<input type="hidden" name="mode" value="search">');
 
 $smarty->assign('sCancelButton','<a href="patient.php'.URL_APPEND.'&target=search"><img '.createLDImgSrc($root_path,'cancel.gif','0').'></a>');
-
+$smarty->assign('LDIncludeFirstName',$LDIncludeFirstName);
+$smarty->assign('sCheckBoxFirstName','<input type="checkbox" name="firstname_too" '.$sTemp.'>');
 if($mode=='search'||$mode=='paginate'){
-	
+
 	if ($linecount) $smarty->assign('LDSearchFound',str_replace("~nr~",$totalcount,$LDSearchFound).' '.$LDShowing.' '.$pagen->BlockStartNr().' '.$LDTo.' '.$pagen->BlockEndNr().'.');
 		else $smarty->assign('LDSearchFound',str_replace('~nr~','0',$LDSearchFound));
 
@@ -310,6 +331,7 @@ if($mode=='search'||$mode=='paginate'){
 		$img_options=createComIcon($root_path,'pdata.gif','0');
 		$img_male=createComIcon($root_path,'spm.gif','0');
 		$img_female=createComIcon($root_path,'spf.gif','0');
+		$targetappend = '';
 
 		$smarty->assign('LDCaseNr',$pagen->makeSortLink($LDCaseNr,'encounter_nr',$oitem,$odir,$targetappend));
 		$smarty->assign('LDSex',$pagen->makeSortLink($LDSex,'sex',$oitem,$odir,$targetappend));
@@ -348,7 +370,7 @@ if($mode=='search'||$mode=='paginate'){
 			#
 			# If person is dead show a black cross
 			#
-			if($zeile['death_date']&&$zeile['death_date']!=$dbf_nodate) $smarty->assign('sCrossIcon','<img '.createComIcon($root_path,'blackcross_sm.gif','0','absmiddle').'>');
+			if(isset($zeile['death_date'])&&$zeile['death_date']!=$dbf_nodate) $smarty->assign('sCrossIcon','<img '.createComIcon($root_path,'blackcross_sm.gif','0','absmiddle').'>');
 				else $smarty->assign('sCrossIcon','');
 
 			$smarty->assign('sBday',formatDate2Local($zeile['date_birth'],$date_format));
@@ -378,7 +400,14 @@ if($mode=='search'||$mode=='paginate'){
 
 		$smarty->assign('sPreviousPage',$pagen->makePrevLink($LDPrevious));
 		$smarty->assign('sNextPage',$pagen->makeNextLink($LDNext));
+	}else {
+		$smarty->assign('LDSearchFound','');
+		$smarty->assign('bShowResult',FALSE);
+
 	}
+}else {
+		$smarty->assign('LDSearchFound','');
+		$smarty->assign('bShowResult',FALSE);
 }
 /*
 $smarty->assign('sPostText','<a href="aufnahme_start.php'.URL_APPEND.'&mode=?">'.$LDAdmWantEntry.'</a><br>
@@ -391,6 +420,7 @@ $smarty->assign('sPostText','<a href="aufnahme_list.php'.URL_APPEND.'">'.$LDAdmW
 $smarty->assign('sMainIncludeFile','registration_admission/admit_search_main.tpl');
 
 $smarty->assign('sMainBlockIncludeFile','registration_admission/admit_plain.tpl');
+$smarty->assign('sMainFrameBlockData',"");
 
 $smarty->display('common/mainframe.tpl');
 

@@ -6,7 +6,7 @@
 	{{if $bSetAsForm}}
 	<form method="post" action="{{$thisfile}}" name="aufnahmeform" onSubmit="return chkform(this)"  ENCTYPE="multipart/form-data">
 	{{/if}}
-		
+
 		<table border="0" cellspacing=1 cellpadding=0 width="100%">
 
 		{{if $error}}
@@ -44,11 +44,11 @@
 						{{$sEncBarcode}} {{$sHiddenBarcode}}
 					</td>
 					<td {{$sRowSpan}} align="center" class="photo_id">
-						{{$img_source}}	
+						{{$img_source}}
 						<!--  gjergji -->
-						<br> 
+						<br>
 						{{$sFileBrowserInput}}
-						<!--  end : gjergji -->	
+						<!--  end : gjergji -->
 					</td>
 				</tr>
 
@@ -183,10 +183,10 @@
 						<label class="triageGreen"><input type = 'radio' name ='triage' value='green'>{{$sAdmitTriageGreen}}</label>
 						<label class="triageYellow"><input type = 'radio' name ='triage' value='yellow'>{{$sAdmitTriageYellow}}</label>
 						<label class="triageRed"><input type = 'radio' name ='triage' value='red'>{{$sAdmitTriageRed}}</label>
-					{{/if}}					
+					{{/if}}
 					</td>
 				</tr>
-				<tr>					
+				<tr>
 					<td class="adm_item">
 						<font color="red">{{$LDAdmitClass}}</font>:
 					</td>
@@ -215,7 +215,7 @@
 					</td>
 				</tr>
 			{{/if}}
-			
+
 				<tr>
 					<td class="adm_item">
 						{{$LDDiagnosis}}:
@@ -237,7 +237,7 @@
 						{{$LDTherapy}}:
 					</td>
 					<td colspan=2 class="adm_input">
-						{{ $referrer_recom_therapy}}
+						{{$referrer_recom_therapy}}
 					</td>
 				</tr>
 				<tr>
@@ -296,7 +296,7 @@
 					</td>
 				</tr>
 			{{/if}}
-			
+
 			{{if $LDAttDrServiceClass}}
 				<tr>
 					<td class="adm_item">
@@ -314,18 +314,18 @@
 						{{$LDAdmitBillItem}}:
 					</td>
 					<td colspan=2 class="adm_input">
-						{{$sAdmitBillItem}} {{$sBIFromInput}} {{$sBIHidden}} 
+						{{$sAdmitBillItem}} {{$sBIFromInput}} {{$sBIHidden}}
 					</td>
 				</tr>
 			{{/if}}
-			
+
 			{{if $LDAdmitDoctorRefered}}
 				<tr>
 					<td class="adm_item">
 						{{$LDAdmitDoctorRefered}}:
 					</td>
 					<td colspan=2 class="adm_input">
-						{{$sAdmitDoctorRefered}} {{$sRefDrFromInput}} {{$sRefDrHidden}} 
+						{{$sAdmitDoctorRefered}} {{$sRefDrFromInput}} {{$sRefDrHidden}}
 					</td>
 				</tr>
 			{{/if}}
@@ -359,7 +359,7 @@
 				</tr>
 
 		</table>
-	
+
 			{{$sErrorHidInputs}}
 			{{$sUpdateHidInputs}}
 

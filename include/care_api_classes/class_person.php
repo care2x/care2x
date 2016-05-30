@@ -99,7 +99,7 @@ class Person extends Core {
 	* @var array
 	*/
 	var $basic_list='pid,title,name_first,name_last,name_2,name_3,name_middle,name_maiden,name_others,date_birth,
-				           sex,addr_str,addr_str_nr,addr_zip,addr_citytown_nr,photo_filename';
+				           sex,addr_str,addr_str_nr,addr_zip,addr_citytown_nr,photo_filename,blood_group';
 	/**
 	* Field names of table care_person
 	* @var array

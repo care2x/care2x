@@ -132,7 +132,7 @@ function formatShortDate2Local($month,$day,$localFormat)
 }
 
 
-function formatDate2STD($localDate,$localFormat,&$sepChars)
+function formatDate2STD($localDate,$localFormat,$sepChars)
 {
    $finalDate=0;
    $localFormat=strtolower($localFormat);
@@ -145,46 +145,49 @@ function formatDate2STD($localDate,$localFormat,&$sepChars)
    if(!$finalDate)
    {
 
-	 for($i=0;$i<sizeof($sepChars);$i++)
-	 {
-        if(strchr($localDate,$sepChars[$i]))
+		for($i=0;$i<sizeof($sepChars);$i++)
 		{
-	       $loc_array=explode($sepChars[$i],$localDate);
-		   break;
+			if(strchr($localDate,$sepChars[$i]))
+			{
+				$loc_array=explode($sepChars[$i],$localDate);
+			break;
+			}
 		}
-	 }
 
-	 for($i=0;$i<sizeof($sepChars);$i++)
-	 {
-        if(strchr($localFormat,$sepChars[$i]))
+		for($i=0;$i<sizeof($sepChars);$i++)
 		{
-	       $Format_array=explode($sepChars[$i],$localFormat);
-		   break;
+			if(strchr($localFormat,$sepChars[$i]))
+			{
+				$Format_array=explode($sepChars[$i],$localFormat);
+				break;
+			}
 		}
-	 }
 
-	 /* Detect local format and reformat the local time to DATE standard */
-	 for($i=0;$i<3;$i++)
-	 {
-	    if($Format_array[$i]=='yyyy')   	{ $vYear = $loc_array[$i];}
-		 elseif($Format_array[$i]=='mm') { $vMonth = $loc_array[$i];}
-		   elseif($Format_array[$i]=='dd') { $vDay = $loc_array[$i];}
-	 }
+		/* Detect local format and reformat the local time to DATE standard */
+		if (isset($loc_array) and sizeof($loc_array) == 3) {
+			for($i=0;$i<3;$i++)
+			{
+				if($Format_array[$i]=='yyyy')   	{ $vYear = $loc_array[$i];}
+					elseif($Format_array[$i]=='mm') { $vMonth = $loc_array[$i];}
+						elseif($Format_array[$i]=='dd') { $vDay = $loc_array[$i];}
+			}
 
-	 # if invalid numeric return empty string
-	 if(!is_numeric($vYear)||!is_numeric($vMonth)||!is_numeric($vDay)){
-	 	$finalDate= '';
- 	 }else{
-		  # DATE standard
-		  if(strlen($vMonth)==1) $vMonth='0'.$vMonth;
-		  if(strlen($vDay)==1) $vDay='0'.$vDay;
-		 $finalDate=$vYear.'-'.$vMonth.'-'.$vDay;
+			# if invalid numeric return empty string
+			if(!is_numeric($vYear)||!is_numeric($vMonth)||!is_numeric($vDay)){
+				$finalDate= '';
+			}else{
+				# DATE standard
+				if(strlen($vMonth)==1) $vMonth='0'.$vMonth;
+				if(strlen($vDay)==1) $vDay='0'.$vDay;
+				$finalDate=$vYear.'-'.$vMonth.'-'.$vDay;
+			}
+		return $finalDate;
+
+		} else {
+			return FALSE;
+		}
 	}
-
-   }
-   return $finalDate;
 }
-
 /**
 * convertTimeStandard() will return a time in the format HH:mm:ss
 * param $time_val = the time value to be converted

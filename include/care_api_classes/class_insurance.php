@@ -504,7 +504,7 @@ class PersonInsurance extends Insurance {
 	* Constructor
 	* @param int PID number
 	*/
-	function PersonInsurance ($pid=0) {
+	function __construct($pid=0) {
 	    $this->pid=$pid;
 	}
 	/**
@@ -535,7 +535,7 @@ class PersonInsurance extends Insurance {
 	* @param mixed interger or string
 	* @return boolean
 	*/
-    function updateDataFromArray(&$array,$item_nr='') {
+    function updateDataFromArray(&$array,$item_nr='', $isnum = true) {
 		$x='';
 		$v='';
 		$sql='';
