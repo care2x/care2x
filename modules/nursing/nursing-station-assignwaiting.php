@@ -6,7 +6,7 @@ require($root_path.'include/core/inc_environment_global.php');
 * CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
 * GNU General Public License
 * Copyright 2002,2003,2004,2005 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -39,9 +39,9 @@ $breakfile='javascript:window.close()'; # Set default breakfile
 require_once($root_path.'include/care_api_classes/class_ward.php');
 $ward_obj= new Ward;
 
-# Load date formatter 
+# Load date formatter
 require_once($root_path.'include/core/inc_date_format_functions.php');
-  
+
 if(($mode=='')||($mode=='fresh')){
 	if($ward_info=&$ward_obj->getWardInfo($ward_nr)){
 		$room_obj=&$ward_obj->getRoomInfo($ward_nr,$ward_info['room_nr_start'],$ward_info['room_nr_end']);
@@ -64,16 +64,16 @@ if(($mode=='')||($mode=='fresh')){
 		}else{
 				$patients_ok=false;
 		}
-				
+
 		$ward_ok=true;
-		
+
 		# Load global person photo source path
 		include_once($root_path.'include/care_api_classes/class_globalconfig.php');
 		$GLOBAL_CONFIG=array();
 		$glob_obj=new GlobalConfig($GLOBAL_CONFIG);
-		$glob_obj->getConfig('person_foto_path');
+		$glob_obj->getConfig('person_photo_path');
 		$default_photo_path='uploads/photos/registration';
-		$photo_path = (is_dir($root_path.$GLOBAL_CONFIG['person_foto_path'])) ? $GLOBAL_CONFIG['person_foto_path'] : $default_photo_path;
+		$photo_path = (is_dir($root_path.$GLOBAL_CONFIG['person_photo_path'])) ? $GLOBAL_CONFIG['person_photo_path'] : $default_photo_path;
 
 		#Create encounter object and load encounter info
 		$enc_obj=new Encounter($pn);
@@ -81,7 +81,7 @@ if(($mode=='')||($mode=='fresh')){
 		if($enc_obj->is_loaded) {
 			$encounter=&$enc_obj->encounter;
 		}
-		
+
 		# Set the foto filename
 		$photo_filename=$encounter['photo_filename'];
 		/* Prepare the photo filename */
@@ -89,7 +89,7 @@ if(($mode=='')||($mode=='fresh')){
 
 		# Get billing type
 		$billing_type=&$enc_obj->getInsuranceClassInfo($encounter['insurance_class_nr']);
-			
+
 	}else{
 			$ward_ok=false;
 	}
@@ -495,7 +495,7 @@ if($ward_ok){
 
 		$smarty->assign('sOccListRows',$sListRows);
 	} // end of ward loop
-	
+
 	# Display the empty bed transfer list
 	$smarty->display('nursing/ward_transferbed_list.tpl');
 

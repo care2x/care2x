@@ -233,7 +233,7 @@ class GuiPersonShow {
 				if(empty($newdata)) @$this->person_obj->setHistorySeen($_SESSION['sess_user_name']);
 
 				# Check whether config foto path exists, else use default path
-				$photo_path = (is_dir($root_path.$GLOBAL_CONFIG['person_foto_path'])) ? $GLOBAL_CONFIG['person_foto_path'] : $this->default_photo_path;
+				$photo_path = (is_dir($root_path.$GLOBAL_CONFIG['person_photo_path'])) ? $GLOBAL_CONFIG['person_photo_path'] : $this->default_photo_path;
 
 			}else{
 				$validdata = FALSE;

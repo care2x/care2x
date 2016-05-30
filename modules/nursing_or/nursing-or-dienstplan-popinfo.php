@@ -6,7 +6,7 @@ require($root_path.'include/core/inc_environment_global.php');
 * CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
 * GNU General Public License
 * Copyright 2002,2003,2004,2005 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -25,10 +25,10 @@ $dept=&$dept_obj->getPhoneInfo($dept_nr);
 require_once($root_path.'include/care_api_classes/class_globalconfig.php');
 $glob_obj=new GlobalConfig($GLOBAL_CONFIG);
 $glob_obj->getConfig('person_%');
-/* Check whether config foto path exists, else use default path */			
+/* Check whether config foto path exists, else use default path */
 $default_photo_path='uploads/photos/registration';
 $photo_filename=$person['photo_filename'];
-$photo_path = (is_dir($root_path.$GLOBAL_CONFIG['person_foto_path'])) ? $GLOBAL_CONFIG['person_foto_path'] : $default_photo_path;
+$photo_path = (is_dir($root_path.$GLOBAL_CONFIG['person_photo_path'])) ? $GLOBAL_CONFIG['person_photo_path'] : $default_photo_path;
 require_once($root_path.'include/core/inc_photo_filename_resolve.php');
 ?>
 <?php html_rtl($lang); ?>
@@ -84,7 +84,7 @@ echo ucfirst($person['name_last']).', '.ucfirst($person['name_first']);
 </td>
 </tr>
 
-<!-- Temporarily deactivated 
+<!-- Temporarily deactivated
 <tr>
 <td bgcolor=#ffffcc><img <?php echo createComIcon($root_path,'warn.gif') ?>>&nbsp;<font face=verdana,arial size=2 ><b><?php echo $LDMoreInfo ?></b><br></font>
 </td>

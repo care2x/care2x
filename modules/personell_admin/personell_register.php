@@ -6,7 +6,7 @@ require($root_path.'include/core/inc_environment_global.php');
 * CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
 * GNU General Public License
 * Copyright 2002,2003,2004,2005 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -60,7 +60,7 @@ $patregtable='care_person';  // The table of the patient registration data
 //$dbtable='care_encounter'; // The table of admission data
 
 /* Create new person's insurance object */
-$pinsure_obj=new PersonInsurance($pid);	 
+$pinsure_obj=new PersonInsurance($pid);
 /* Get the insurance classes */
 $insurance_classes=&$pinsure_obj->getInsuranceClassInfoObject('class_nr,name,LD_var');
 
@@ -70,14 +70,14 @@ $person_obj=new Person($pid);
 $personell_obj=new Personell();
 
 if($pid||$personell_nr){
-	
+
 	# Get the patient global configs
         $glob_obj=new GlobalConfig($GLOBAL_CONFIG);
         $glob_obj->getConfig('personell_%');
-        $glob_obj->getConfig('person_foto_path'); 
+        $glob_obj->getConfig('person_photo_path');
 
-        # Check whether config path exists, else use default path			
-        $photo_path = (is_dir($root_path.$GLOBAL_CONFIG['person_foto_path'])) ? $GLOBAL_CONFIG['person_foto_path'] : $default_photo_path;
+        # Check whether config path exists, else use default path
+        $photo_path = (is_dir($root_path.$GLOBAL_CONFIG['person_photo_path'])) ? $GLOBAL_CONFIG['person_photo_path'] : $default_photo_path;
 
         if ($pid){
 		  # Check whether the person is currently admitted. If yes jump to display admission data
@@ -126,7 +126,7 @@ if($pid||$personell_nr){
 					$_POST['modify_id']=$encoder;
 					$_POST['modify_time']=date('YmdHis');
 					$_POST['history']= $personell_obj->ConcatHistory("Update: ".date('Y-m-d H:i:s')." = ".$encoder."\n");
-					
+
 					# Disable the pid variable
 					if(isset($_POST['pid'])) unset($_POST['pid']);
 
@@ -146,7 +146,7 @@ if($pid||$personell_nr){
 					if($_POST['date_exit']) $_POST['date_exit']=@formatDate2STD($_POST['date_exit'],$date_format);
 					if($_POST['contract_start']) $_POST['contract_start']=@formatDate2STD($_POST['contract_start'],$date_format);
 					if($_POST['contract_end']) $_POST['contract_end']=@formatDate2STD($_POST['contract_end'],$date_format);
-					
+
 					$_POST['create_id']=$encoder;
 					$_POST['create_time']=date('YmdHis');
 					$_POST['history']="Create: ".date('Y-m-d H:i:s')." = ".$encoder."\n";
@@ -157,7 +157,7 @@ if($pid||$personell_nr){
 						# Get the PID
 						$oid = $db->Insert_ID();
 						$personell_nr = $personell_obj->LastInsertPK('nr',$oid);
-				            
+
 						header("Location: personell_register_show.php".URL_REDIRECT_APPEND."&personell_nr=$personell_nr&origin=admit&target=personell_reg&newdata=$newdata");
 						exit;
 					}else{
@@ -165,7 +165,7 @@ if($pid||$personell_nr){
 					}
 				} // end of if(update) else()
 			} // end of if($error)
-		
+
 			if($error){
 				header("Location: $thisfile".URL_REDIRECT_APPEND."&personell_nr=$personell_nr&error=1");
 				exit;
@@ -192,7 +192,7 @@ if($pid||$personell_nr){
 		}
 	}
 }
-    
+
 # Load the wards info
 $ward_obj=new Ward;
 $items='nr,name';

@@ -25,7 +25,7 @@ $thisfile=basename(__FILE__);
 require_once($root_path.'include/core/inc_date_format_functions.php');
 require_once($root_path.'include/care_api_classes/class_encounter.php');
 $enc_obj=new Encounter;
-	
+
 if( $enc_obj->loadEncounterData($pn)) {
 
 	if(($mode=='release')&&!(isset($lock)||$lock)){
@@ -46,7 +46,7 @@ if( $enc_obj->loadEncounterData($pn)) {
 						break;
 			default: $released=false;
 		}
-												
+
 		if($released){
 			if(!empty($info)){
 				$data_array['notes']=$info;
@@ -73,29 +73,29 @@ if( $enc_obj->loadEncounterData($pn)) {
 			exit;
 		}
 
-	}	// end of if (mode=release)		
+	}	// end of if (mode=release)
 
-		
+
 		include_once($root_path.'include/care_api_classes/class_globalconfig.php');
 		$GLOBAL_CONFIG=array();
 		$glob_obj=new GlobalConfig($GLOBAL_CONFIG);
-		$glob_obj->getConfig('patient_%');	
-		$glob_obj->getConfig('person_%');	
+		$glob_obj->getConfig('patient_%');
+		$glob_obj->getConfig('person_%');
 
 		$result=&$enc_obj->encounter;
-		/* Check whether config foto path exists, else use default path */			
+		/* Check whether config foto path exists, else use default path */
 		$default_photo_path='uploads/photos/registration';
 		$photo_filename=$result['photo_filename'];
-		$photo_path = (is_dir($root_path.$GLOBAL_CONFIG['person_foto_path'])) ? $GLOBAL_CONFIG['person_foto_path'] : $default_photo_path;
+		$photo_path = (is_dir($root_path.$GLOBAL_CONFIG['person_photo_path'])) ? $GLOBAL_CONFIG['person_photo_path'] : $default_photo_path;
 		require_once($root_path.'include/core/inc_photo_filename_resolve.php');
 		/* Load the discharge types */
 		$discharge_types=&$enc_obj->getDischargeTypesData();
-		
+
 		$patient_ok=TRUE;
 }else{
 	$patient_ok=FALSE;
 }
-		
+
 # Start Smarty templating here
  /**
  * LOAD Smarty
@@ -123,21 +123,21 @@ if( $enc_obj->loadEncounterData($pn)) {
  $smarty->assign('title',$LDReleasePatient);
 
  # Collect extra javascrit code if patient is not released yet
- 
+
  if(!$released){
 
 	ob_start();
 ?>
 
 <script language="javascript">
-<!-- 
+<!--
 
 function pruf(d){
 	if(!d.sure.checked){
 		return false;
 	}else{
-		if(!d.encoder.value){ 
-			alert("<?php echo $LDAlertNoName ?>"); 
+		if(!d.encoder.value){
+			alert("<?php echo $LDAlertNoName ?>");
 			d.encoder.focus();
 			return false;
 		}
@@ -179,13 +179,13 @@ if($patient_ok){
 	$smarty->assign('LDLocation',$LDPatListElements[0]);
 	$smarty->assign('sLocation',$rm.strtoupper(chr($bd+96)));
 	$smarty->assign('LDDate',$LDDate);
-	
+
 	//gjergji : new calendar
 	require_once ('../../js/jscalendar/calendar.php');
 	$calendar = new DHTML_Calendar('../../js/jscalendar/', $lang, 'calendar-system', true);
 	$calendar->load_files();
 	//end gjergji
-	
+
 	if($released){
 		$smarty->assign('released',TRUE);
 		$smarty->assign('x_date',nl2br($x_date));

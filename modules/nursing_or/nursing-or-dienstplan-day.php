@@ -6,7 +6,7 @@ require($root_path.'include/core/inc_environment_global.php');
 * CARE2X Integrated Hospital Information System beta 1.0.03 - 2002-10-26
 * GNU General Public License
 * Copyright 2002,2003,2004,2005 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -38,11 +38,11 @@ $dbtable='care_dutyplan_oncall';
 // test dept nr
 //$dept_nr=4;
 
-$sql="SELECT duty_1_pnr,duty_2_pnr FROM $dbtable 
+$sql="SELECT duty_1_pnr,duty_2_pnr FROM $dbtable
 			WHERE dept_nr='$dept_nr'
 							AND year='$pyear'
 							AND month='".(int)$pmonth."'";
-			
+
 if($ergebnis=$db->Execute($sql)){
 	if($rows=$ergebnis->RecordCount()){
 		$result=$ergebnis->FetchRow();
@@ -75,9 +75,9 @@ if(isset($$dept_ldvar)&&!empty($$dept_ldvar)) $dept_name=$$dept_ldvar;
 require_once($root_path.'include/care_api_classes/class_globalconfig.php');
 $glob_obj=new GlobalConfig($GLOBAL_CONFIG);
 $glob_obj->getConfig('person_%');
-/* Check whether config foto path exists, else use default path */			
+/* Check whether config foto path exists, else use default path */
 $default_photo_path='uploads/photos/registration';
-$photo_path = (is_dir($root_path.$GLOBAL_CONFIG['person_foto_path'])) ? $GLOBAL_CONFIG['person_foto_path'] : $default_photo_path;
+$photo_path = (is_dir($root_path.$GLOBAL_CONFIG['person_photo_path'])) ? $GLOBAL_CONFIG['person_photo_path'] : $default_photo_path;
 
 ?>
 
@@ -117,7 +117,7 @@ function popinfo(l,f,b)
 	ww=400;
 	wh=400;
 	urlholder="op-pflege-dienstplan-popinfo.php?ln="+l+"&fn="+f+"&bd="+b+"&dept=<?php echo "$dept&sid=$sid&lang=$lang" ?>&route=validroute&user=<?php echo $aufnahme_user.'"' ?>;
-	
+
 	infowin=window.open(urlholder,"infowin","width=" + ww + ",height=" + wh +",menubar=no,resizable=yes,scrollbars=yes");
 	window.infowin.moveTo((w/2)+20,(h/2)-(wh/2));
 
@@ -132,7 +132,7 @@ function popinfo(l,f,b)
 
 <b> <?php echo "$LDOnCallDuty ($dept_name) $LDOn ".formatDate2Local("$pyear-$pmonth-$pday",$date_format); ?></b>
 <p>
-<?php if($person1) { 
+<?php if($person1) {
 
 	$photo_filename=$person1['photo_filename'];
 	include($root_path.'include/core/inc_photo_filename_resolve.php');
@@ -181,7 +181,7 @@ echo ucfirst($person1['name_last']).', '.ucfirst($person1['name_first']);
 <p>
 
 <?php } ?>
-<?php if($person2) { 
+<?php if($person2) {
 
 	$photo_filename=$person2['photo_filename'];
 	include($root_path.'include/core/inc_photo_filename_resolve.php');
@@ -231,7 +231,7 @@ echo ucfirst($person2['name_last']).', '.ucfirst($person2['name_first']);
 </td>
 </tr>
  --></table>
- 
+
 
 <p>
 

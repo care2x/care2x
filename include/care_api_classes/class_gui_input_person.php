@@ -149,7 +149,7 @@ class GuiInputPerson {
 		//extract($GLOBAL_CONFIG);
 
 		# Check whether config foto path exists, else use default path
-		$photo_path = (is_dir($root_path.$GLOBAL_CONFIG['person_foto_path'])) ? $GLOBAL_CONFIG['person_foto_path'] : $this->default_photo_path;
+		$photo_path = (is_dir($root_path.$GLOBAL_CONFIG['person_photo_path'])) ? $GLOBAL_CONFIG['person_photo_path'] : $this->default_photo_path;
 
 		if (($mode=='save') || ($mode=='forcesave')) {
 
@@ -398,7 +398,7 @@ class GuiInputPerson {
 			$date_reg=date('Y-m-d H:i:s');
 		}
 		# Get the insurance classes
-		$insurance_classes=&$pinsure_obj->getInsuranceClassInfoObject('class_nr,name,LD_var AS "LD_var"');
+		$insurance_classes=$pinsure_obj->getInsuranceClassInfoObject('class_nr,name,LD_var AS "LD_var"');
 
 		include_once($root_path.'include/core/inc_photo_filename_resolve.php');
 

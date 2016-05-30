@@ -6,7 +6,7 @@ require($root_path.'include/core/inc_environment_global.php');
 * CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
 * GNU General Public License
 * Copyright 2002,2003,2004,2005 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -30,18 +30,18 @@ require_once($root_path.'include/care_api_classes/class_encounter.php');
 #Create encounter object and load encounter info
 $enc_obj=new Encounter($pn);
 
-# Load date formatter 
+# Load date formatter
 require_once($root_path.'include/core/inc_date_format_functions.php');
-  
+
 if(($mode=='')||($mode=='fresh')){
-		
+
 		# Load global person photo source path
 		require_once($root_path.'include/care_api_classes/class_globalconfig.php');
 		$GLOBAL_CONFIG=array();
 		$glob_obj=new GlobalConfig($GLOBAL_CONFIG);
-		$glob_obj->getConfig('person_foto_path');
+		$glob_obj->getConfig('person_photo_path');
 		$default_photo_path='uploads/photos/registration';
-		$photo_path = (is_dir($root_path.$GLOBAL_CONFIG['person_foto_path'])) ? $GLOBAL_CONFIG['person_foto_path'] : $default_photo_path;
+		$photo_path = (is_dir($root_path.$GLOBAL_CONFIG['person_photo_path'])) ? $GLOBAL_CONFIG['person_photo_path'] : $default_photo_path;
 
 		@$enc_obj->loadEncounterData();
 		if($enc_obj->is_loaded) {
@@ -49,7 +49,7 @@ if(($mode=='')||($mode=='fresh')){
 		}else{
 			$encounter=array();
 		}
-		
+
 		if($encounter['current_dept_nr'] != $dept_nr){
 			if(!isset($pdept)||empty($pdept)){
 				require_once($root_path.'include/care_api_classes/class_department.php');
@@ -68,7 +68,7 @@ if(($mode=='')||($mode=='fresh')){
 		# Get billing type
 		$billing_type=&$enc_obj->getInsuranceClassInfo($encounter['insurance_class_nr']);
 		$breakfile='javascript:window.close()'; # Set default breakfile
-		
+
 }elseif($mode=='save'){
 
 	# Save data
@@ -117,7 +117,7 @@ if(($mode=='')||($mode=='fresh')){
 ?>
 
 <script language="javascript">
-<!-- 
+<!--
   var urlholder;
 
 

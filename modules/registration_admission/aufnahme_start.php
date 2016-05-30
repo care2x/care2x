@@ -82,7 +82,7 @@ if($pid!='' || $encounter_nr!=''){
 	/* Get the patient global configs */
 	$glob_obj=new GlobalConfig($GLOBAL_CONFIG);
 	$glob_obj->getConfig('patient_%');
-	$glob_obj->getConfig('person_foto_path');
+	$glob_obj->getConfig('person_photo_path');
 	$glob_obj->getConfig('encounter_%');
 	$glob_obj->getConfig('show_billable_items');
 	$glob_obj->getConfig('show_doctors_list');
@@ -101,7 +101,7 @@ if($pid!='' || $encounter_nr!=''){
 	}
 
 	/* Check whether config path exists, else use default path */
-	$photo_path = (is_dir($root_path.$GLOBAL_CONFIG['person_foto_path'])) ? $GLOBAL_CONFIG['person_foto_path'] : $default_photo_path;
+	$photo_path = (is_dir($root_path.$GLOBAL_CONFIG['person_photo_path'])) ? $GLOBAL_CONFIG['person_photo_path'] : $default_photo_path;
 
 	if ($pid)
 	{
