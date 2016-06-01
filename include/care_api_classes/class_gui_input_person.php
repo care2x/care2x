@@ -92,9 +92,12 @@ class GuiInputPerson {
 			else $sBuffer=$ld_text;
 			//$this->smarty->assign('must',1);
 			$this->smarty->assign('sItem',$sBuffer);
+			$this->smarty->assign('sColSpan1',"colspan=1");
 			$this->smarty->assign('sColSpan2',"colspan=$colspan");
+			$this->smarty->assign('sFormWidth','width="auto"');
 			$this->smarty->assign('sInput','<input name="'.$input_name.'" type="text" size="'.$input_size.'" value="'.$input_val.'" >');
 			$this->smarty->display('registration_admission/reg_row.tpl');
+			$this->smarty->assign('sBarcodeImg','');
 			$sBuffer = ob_get_contents();
 		ob_end_clean();
 
@@ -297,13 +300,15 @@ class GuiInputPerson {
 						# else let the dbms make an initial value via the sequence generator e.g. postgres
 						# However, the sequence generator must be configured during db creation to start at
 						# the initial value set in the global config
-						if($dbtype=='mysql'){
+						if($dbtype=='mysqli'){
 							$_POST['pid']=$GLOBAL_CONFIG['person_id_nr_init'];
 						}
 					}else{
 						# Persons are existing. Check if duplicate might exist
 						if(is_object($duperson=$person_obj->PIDbyData($_POST))){
 							$error_person_exists=TRUE;
+						} else {
+							$error_person_exists=False;
 						}
 					}
 					//echo $person_obj->getLastQuery();
@@ -395,7 +400,70 @@ class GuiInputPerson {
 				}
 			}
 		} else {
+			// Then we are showing an empty form
 			$date_reg=date('Y-m-d H:i:s');
+			$error_person_exists=False;
+
+			//Set the error flags to false
+			$errortitle = 0;
+			$errornamefirst = 0;
+			$errornamelast = 0;
+			$errorname2 = 0;
+			$errorname3 = 0;
+			$errornamemid = 0;
+			$errornamemaiden = 0;
+			$errornameothers = 0;
+			$errordatebirth = 0;
+			$errorsex = 0;
+			$erroraddress = 0;
+			$errorstreet = 0;
+			$errorstreetnr = 0;
+			$errortown = 0;
+			$errorzip = 0;
+			$errorinsurancenr = 0;
+			$errorinsuranceclass = 0;
+			$errorinsurancecoid = 0;
+			$errorphone1 = 0;
+			$errorphone2 = 0;
+			$errorcell1 = 0;
+			$errorcell2 = 0;
+			$errorfax = 0;
+			$erroremail = 0;
+			$errorcitizen = 0;
+			$errorsss = 0;
+			$errornatid = 0;
+			$errorreligion = 0;
+
+			//Set default values for input fields
+			$title = '';
+			$name_first = '';
+			$name_last = '';
+			$name_2 = '';
+			$name_3 = '';
+			$name_middle = '';
+			$name_maiden = '';
+			$name_others = '';
+			$date_birth = '0000-00-00';
+			$blood_group = '';
+			$sex = 'male';
+			$civil_status = '';
+			$addr_str = '';
+			$addr_str_nr = '';
+			$addr_citytown_nr = '';
+			$addr_zip = '';
+			$insurance_nr = '';
+			$insurance_class_nr = '';
+			$phone_1_nr = '';
+			$phone_2_nr = '';
+			$cellphone_1_nr = '';
+			$cellphone_2_nr = '';
+			$fax = '';
+			$email = '';
+			$citizenship = '';
+			$sss_nr = '';
+			$nat_id_nr = '';
+			$religion = '';
+			$ethnic_orig_txt = '';
 		}
 		# Get the insurance classes
 		$insurance_classes=$pinsure_obj->getInsuranceClassInfoObject('class_nr,name,LD_var AS "LD_var"');
@@ -413,7 +481,14 @@ class GuiInputPerson {
 
 		include_once($root_path.'gui/smarty_template/smarty_care.class.php');
 		$this->smarty = new smarty_care('common',FALSE);
-
+		$this->smarty->assign('error',FALSE);
+		$this->smarty->assign('errorDupPerson',FALSE);
+		$this->smarty->assign('bNoInsurance',True);
+		if(isset($death_date)&&$death_date!=$dbf_nodate) $sCross = '&nbsp;<img '.createComIcon($root_path,'blackcross_sm.gif','0','',TRUE).'>';
+		else $sCross ='';
+		$this->smarty->assign('sCrossImg',$sCross);
+        $this->smarty->assign('sDeathDate','');
+        $this->smarty->assign('pretext','');
 		$img_male=createComIcon($root_path,'spm.gif','0');
 		$img_female=createComIcon($root_path,'spf.gif','0');
 
@@ -493,7 +568,7 @@ class GuiInputPerson {
 
 		$this->smarty->assign('sRegFormJavaScript',$sTemp);
 
-		$this->smarty->assign('thisfile',$thisfile);
+		$this->smarty->assign('thisfile',$this->thisfile);
 
 		if($error) {
 			$this->smarty->assign('error',TRUE);
@@ -553,7 +628,11 @@ class GuiInputPerson {
 			$this->smarty->assign('sDupDataRows',$sTemp);
 		}
 
-		if($pid) $this->smarty->assign('LDRegistryNr',$LDRegistryNr);
+		if($pid) {
+			$this->smarty->assign('LDRegistryNr',$LDRegistryNr);
+		} else {
+			$this->smarty->assign('LDRegistryNr','');
+		}
 		$this->smarty->assign('pid',$pid);
 		$this->smarty->assign('img_source',$img_source);
 		$this->smarty->assign('LDPhoto',$LDPhoto);
@@ -740,11 +819,12 @@ class GuiInputPerson {
 		 else  $this->smarty->assign('LDZipCode'," $LDZipCode :");
 		 $this->smarty->assign('sZipCodeInput','<input id="addr_zip" name="addr_zip" type="text" size="10" value="'.$addr_zip.'">');
 
-
+		$this->smarty->assign('bShowInsurance',False);
+		$this->smarty->assign('LDSeveralInsurances','');
 		// KB: make insurance completely hideable
 		if (!$GLOBAL_CONFIG['person_insurance_hide']){
 			if($insurance_show) {
-				if (!$person_insurance_1_nr_hide) {
+				if (isset($GLOBAL_CONFIG['person_insurance_1_nr_hide']) and !$GLOBAL_CONFIG['person_insurance_1_nr_hide']) {
 
 					$this->smarty->assign('bShowInsurance',TRUE);
 
@@ -782,36 +862,58 @@ class GuiInputPerson {
 				$this->smarty->assign('bNoInsurance',TRUE);
 				$this->smarty->assign('LDSeveralInsurances','<a href="#">$LDSeveralInsurances <img '.createComIcon($root_path,'frage.gif','0').'></a>');
 			}
+		} else {
+			$this->smarty->assign('bNoInsurance',TRUE);
 		}
 		if (!$GLOBAL_CONFIG['person_phone_1_nr_hide']){
 			$this->smarty->assign('sPhone1',$this->createTR($errorphone1, 'phone_1_nr', $LDPhone.' 1',$phone_1_nr,2));
+		} else {
+			$this->smarty->assign('sPhone1','');
 		}
 		if (!$GLOBAL_CONFIG['person_phone_2_nr_hide']){
 			$this->smarty->assign('sPhone2',$this->createTR($errorphone2, 'phone_2_nr', $LDPhone.' 2',$phone_2_nr,2));
+		} else {
+			$this->smarty->assign('sPhone2','');
 		}
 		if (!$GLOBAL_CONFIG['person_cellphone_1_nr_hide']){
 			$this->smarty->assign('sCellPhone1',$this->createTR($errorcell1, 'cellphone_1_nr', $LDCellPhone.' 1',$cellphone_1_nr,2));
+		} else {
+			$this->smarty->assign('sCellPhone1','');
 		}
 		if (!$GLOBAL_CONFIG['person_cellphone_2_nr_hide']){
 			$this->smarty->assign('sCellPhone2',$this->createTR($errorcell2, 'cellphone_2_nr', $LDCellPhone.' 2',$cellphone_2_nr,2));
+		} else {
+			$this->smarty->assign('sCellPhone2','');
 		}
 		if (!$GLOBAL_CONFIG['person_fax_hide']){
 			$this->smarty->assign('sFax',$this->createTR($errorfax, 'fax', $LDFax,$fax,2));
+		} else {
+			$this->smarty->assign('sFax','');
 		}
 		if (!$GLOBAL_CONFIG['person_email_hide']){
 			$this->smarty->assign('sEmail',$this->createTR($erroremail, 'email', $LDEmail,$email,2));
+		} else {
+			$this->smarty->assign('sEmail','');
 		}
 		if (!$GLOBAL_CONFIG['person_citizenship_hide']){
 			$this->smarty->assign('sCitizenship',$this->createTR($errorcitizen, 'citizenship', $LDCitizenship,$citizenship,2));
+		} else {
+			$this->smarty->assign('sCitizenship','');
 		}
 		if (!$GLOBAL_CONFIG['person_sss_nr_hide']){
 			$this->smarty->assign('sSSSNr',$this->createTR($errorsss, 'sss_nr', $LDSSSNr,$sss_nr,2));
+		} else {
+			$this->smarty->assign('sSSSNr','');
 		}
 		if (!$GLOBAL_CONFIG['person_nat_id_nr_hide']){
 			$this->smarty->assign('sNatIdNr',$this->createTR($errornatid, 'nat_id_nr', $LDNatIdNr,$nat_id_nr,2));
+		} else {
+			$this->smarty->assign('sNatIdNr','');
 		}
 		if (!$GLOBAL_CONFIG['person_religion_hide']){
 			$this->smarty->assign('sReligion',$this->createTR($errorreligion, 'religion', $LDReligion,$religion,2));
+		} else {
+			$this->smarty->assign('sReligion','');
 		}
 		if (!$GLOBAL_CONFIG['person_ethnic_orig_hide']){
 
@@ -828,8 +930,10 @@ class GuiInputPerson {
 
 			$other_hosp_list = $person_obj->OtherHospNrList();
 			$sOtherNrBuffer='';
-			foreach( $other_hosp_list as $k=>$v ){
-				$sOtherNrBuffer.="<b>".$kb_other_his_array[$k].":</b> ".$v."<br />\n";
+			if ($other_hosp_list) {
+				foreach( $other_hosp_list as $k=>$v ){
+					$sOtherNrBuffer.="<b>".$kb_other_his_array[$k].":</b> ".$v."<br />\n";
+				}
 			}
 
 			$this->smarty->assign('sOtherNr',$sOtherNrBuffer);
@@ -838,7 +942,7 @@ class GuiInputPerson {
 			$sOtherNrBuffer.="<SELECT name=\"other_his_org\">".
 						"<OPTION value=\"\">--</OPTION>";
 			foreach( $kb_other_his_array as $k=>$v ){
-				$sOtherNrBuffer.="<OPTION value=\"$k\" $check>$v</OPTION>";
+				$sOtherNrBuffer.="<OPTION value=\"$k\" >$v</OPTION>";
 			}
 			$sOtherNrBuffer.="</SELECT>\n".
 					"&nbsp;&nbsp;".
@@ -873,6 +977,8 @@ class GuiInputPerson {
 <?php
 		if($update){
 			$this->smarty->assign('sUpdateHiddenInputs','<input type="hidden" name="update" value=1><input type="hidden" name="pid" value="'.$pid.'">');
+		} else {
+			$this->smarty->assign('sUpdateHiddenInputs','');
 		}
 
 		$sTemp= ob_get_contents();
@@ -882,7 +988,11 @@ class GuiInputPerson {
 		$this->smarty->assign('pbSubmit','<input  type="image" '.createLDImgSrc($root_path,'savedisc.gif','0').'  alt="'.$LDSaveData.'" align="absmiddle">');
 		$this->smarty->assign('pbReset','<a href="javascript:document.aufnahmeform.reset()"><img '.createLDImgSrc($root_path,'reset.gif','0').' alt="'.$LDResetData.'"   align="absmiddle"></a>');
 
-		if($error||$error_person_exists) $this->smarty->assign('pbForceSave','<input  type="button" value="'.$LDForceSave.'" onClick="forceSave()">');
+		if($error||$error_person_exists) {
+			$this->smarty->assign('pbForceSave','<input  type="button" value="'.$LDForceSave.'" onClick="forceSave()">');
+		} else {
+			$this->smarty->assign('pbForceSave','');
+		}
 
 		if (!$newdata){
 			ob_start();
@@ -898,6 +1008,8 @@ class GuiInputPerson {
 			$sTemp= ob_get_contents();
 			ob_end_clean();
 			$this->smarty->assign('sNewDataForm',$sTemp);
+		} else {
+			$this->smarty->assign('sNewDataForm','');
 		}
 
 		# Set the form template as form

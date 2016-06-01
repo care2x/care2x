@@ -210,7 +210,7 @@ if($pid!='' || $encounter_nr!=''){
 					//echo formatDate2STD($geburtsdatum,$date_format);
 					$itemno=$itemname;
 					$_POST['modify_id']=$encoder;
-					if($dbtype=='mysql' ){
+					if($dbtype=='mysqli' ){
 						$_POST['history']= "CONCAT(history,\"\n Update: ".date('Y-m-d H:i:s')." = $encoder\")";
 					}else{
 						$_POST['history']= "(history || '\n Update: ".date('Y-m-d H:i:s')." = $encoder')";
@@ -260,7 +260,7 @@ if($pid!='' || $encounter_nr!=''){
 
 					if($encounter_obj->insertDataFromInternalArray()) {
 						/* Get last insert id */
-						if($dbtype=='mysql') {
+						if($dbtype=='mysqli') {
 							//$encounter_nr = $db->Insert_ID();
 							$encounter_nr = $encounter_obj->buffer_array['encounter_nr'];
 						}else{

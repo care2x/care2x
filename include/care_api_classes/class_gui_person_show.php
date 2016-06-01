@@ -379,7 +379,7 @@ class GuiPersonShow {
 		$this->smarty->assign('sZipCodeInput',$addr_zip);
 
 		if (!$GLOBAL_CONFIG['person_insurance_hide']) {
-			if (!$GLOBAL_CONFIG['person_insurance_1_nr_hide']&&$insurance_show&&$insurance_nr){
+			if (!$GLOBAL_CONFIG['person_insurance_hide']&&$insurance_show&&$insurance_nr){
 
 				$this->smarty->assign('bShowInsurance',TRUE);
 

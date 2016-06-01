@@ -19,7 +19,8 @@ $local_user='aufnahme_user';
 require($root_path.'include/core/inc_front_chain_lang.php');
 
 //$db->debug=true;
-
+$error=0;
+$error_person_exists=0;
 $thisfile=basename(__FILE__);
 $default_filebreak=$root_path.'main/startframe.php'.URL_APPEND;
 
@@ -47,14 +48,18 @@ $target='entry';
  $smarty = new smarty_care('common');
 
 # Title in the toolbar
-
+$smarty->assign('bHideTitleBar',FALSE);
  $smarty->assign('sToolbarTitle',$LDPatientRegister);
-
+$smarty->assign('sTitleImage','<img '.createComIcon($root_path,'pers_tree.gif','0').'>');
+$smarty->assign('Subtitle','' );
  # href for help button
  $smarty->assign('pbHelp',"javascript:gethelp('submenu1.php','$LDPatientRegister')");
-
+$smarty->assign('pbAux1', '');
+$smarty->assign('pbAux2', '');
+$smarty->assign('sCloseTarget','target="_parent"');
  $smarty->assign('breakfile',$breakfile);
-
+$smarty->assign('sSubTitle','' );
+$smarty->assign('sWarnText','' );
  # Window bar title
  $smarty->assign('title',$LDPatientRegister);
 
@@ -74,7 +79,8 @@ require_once($root_path.'include/care_api_classes/class_gui_input_person.php');
 
 $inperson = new GuiInputPerson;
 
-$inperson->setPID($pid);
+if (isset($pid)) $inperson->setPID($pid);
+if (!isset($sTemp)) $sTemp='';
 $inperson->pretext = $sTemp;
 $inperson->setDisplayFile('patient_register_show.php');
 
@@ -91,7 +97,7 @@ else $sCancel.='aufnahme_pass.php';
 $sCancel.=URL_APPEND.'><img '.createLDImgSrc($root_path,'cancel.gif','0').' alt="'.$LDCancelClose.'"></a>';
 
 $smarty->assign('pbCancel',$sCancel);
-
+$smarty->assign('sMainFrameBlockData',"");
 $smarty->assign('sMainBlockIncludeFile','registration_admission/reg_input.tpl');
 
 $smarty->display('common/mainframe.tpl');

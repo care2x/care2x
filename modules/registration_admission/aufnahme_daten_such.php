@@ -175,7 +175,7 @@ if(isset($mode)&&($mode=='search'||$mode=='paginate')&&isset($searchkey)&&($sear
 			$sql='SELECT enc.encounter_nr, enc.encounter_class_nr, enc.is_discharged,
 								reg.name_last, reg.name_first, reg.date_birth, reg.addr_zip,reg.sex '.$dbtable.$sql2;
 			//echo $sql;
-echo $sql;
+
 			if($ergebnis=$db->SelectLimit($sql,$pagen->MaxCount(),$pagen->BlockStartIndex()))
        		{
 				if ($linecount=$ergebnis->RecordCount())
@@ -194,7 +194,7 @@ echo $sql;
 						$pagen->setTotalDataCount($totalcount);
 					}else{
 						# Count total available data
-						if($dbtype=='mysql' ){
+						if($dbtype=='mysqli' ){
 							$sql='SELECT COUNT(enc.encounter_nr) AS "count" '.$dbtable.$sql2;
 						}else{
 							$sql='SELECT * '.$dbtable.$sql2;
@@ -202,7 +202,7 @@ echo $sql;
 
 						if($result=$db->Execute($sql)){
 							if ($totalcount=$result->RecordCount()) {
-								if($dbtype=='mysql'){
+								if($dbtype=='mysqli'){
 									$rescount=$result->FetchRow();
     									$totalcount=$rescount['count'];
 								}

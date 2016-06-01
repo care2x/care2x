@@ -47,7 +47,7 @@ class Address extends Core {
 	* Constructor
 	* @param int Primary key of address record.
 	*/
-	function __construct($nr){
+	function __construct(){
 		$this->coretable=$this->tb_citytown;
 		$this->ref_array=$this->fld_citytown;
 	}
