@@ -137,10 +137,11 @@ class GuiPersonShow {
 	*/
 	function createTR($ld_text, $input_val, $colspan = 1, $vidata = FALSE){
 
-		ob_start();
-			if($vidata) $input_val="<div class=\"vi_data\">$input_val</div>";
+		ob_start();			if($vidata) $input_val="<div class=\"vi_data\">$input_val</div>";
 			$sBuffer=$ld_text;
+			$this->smarty->assign('must',$vidata);
 			$this->smarty->assign('sItem',$sBuffer);
+			$this->smarty->assign('sColSpan1',"colspan=1");
 			$this->smarty->assign('sColSpan2',"colspan=$colspan");
 			$this->smarty->assign('sInput',$input_val);
 			$this->smarty->display('registration_admission/reg_row.tpl');
@@ -203,7 +204,7 @@ class GuiPersonShow {
 				extract($this->data);
 
 				# Get related insurance data
-				$p_insurance=&$pinsure_obj->getPersonInsuranceObject($this->pid);
+				$p_insurance=$pinsure_obj->getPersonInsuranceObject($this->pid);
 
 				if($p_insurance==FALSE) {
 					$insurance_show=true;
@@ -265,6 +266,10 @@ class GuiPersonShow {
 
 		$this->smarty->assign('LDRegistryNr',$LDRegistryNr);
 		$this->smarty->assign('pid',$pid);
+		$this->smarty->assign('error',FALSE);
+		$this->smarty->assign('errorDupPerson',FALSE);
+        $this->smarty->assign('pretext','');
+        $this->smarty->assign('LDPhoto',$LDPhoto);
 
 		if(file_exists($root_path.'cache/barcodes/pn_'.$pid.'.png')){
 			$this->smarty->assign('sBarcodeImg','<img src="'.$root_path.'cache/barcodes/pn_'.$pid.'.png" border=0 width=180 height=35>');
@@ -272,6 +277,8 @@ class GuiPersonShow {
 			$this->smarty->assign('sBarcodeImg',"<img src='".$root_path."classes/barcode/image.php?code=".$pid."&style=68&type=I25&width=180&height=50&xres=2&font=5&label=2&form_file=pn' border=0 width=0 height=0>");
 			$this->smarty->assign('sBarcodeImg',"<img src='".$root_path."classes/barcode/image.php?code=".$pid."&style=68&type=I25&width=180&height=50&xres=2&font=5' border=0 width=180  height=35>");
 		}
+
+		$this->smarty->assign('sRegFormJavaScript','');
 
 		$this->smarty->assign('img_source',$img_source);
 
@@ -284,7 +291,7 @@ class GuiPersonShow {
 
 		# iRowSpanCount counts the rows on the left of the photo image. Begin with 5 because there are 5 static rows.
 		$iRowSpanCount = 5;
-
+		$this->smarty->assign('bSetAsForm',TRUE);
 		$this->smarty->assign('LDRegDate',$LDRegDate);
 		$this->smarty->assign('sRegDate',@formatDate2Local($date_reg,$date_format).'<input name="date_reg" type="hidden" value="'.$date_reg.'"');
 
@@ -306,27 +313,36 @@ class GuiPersonShow {
 
 		$this->smarty->assign('sNameFirst',$this->createTR($LDFirstName,$name_first.$sCross,1,TRUE));
 
-		if (!$GLOBAL_CONFIG['person_name_2_hide']&&$name_2){
+		if (!$GLOBAL_CONFIG['person_name_2_hide']){
 			$this->smarty->assign('sName2',$this->createTR($LDName2,$name_2));
 			$iRowSpanCount++;
+		} else {
+			$this->smarty->assign('sName2','');
 		}
 		if (!$GLOBAL_CONFIG['person_name_3_hide']&&$name_3){
 			$this->smarty->assign('sName3',$this->createTR($LDName3,$name_3));
 			$iRowSpanCount++;
+		}else {
+			$this->smarty->assign('sName3','');
 		}
 		if (!$GLOBAL_CONFIG['person_name_middle_hide']&&$name_middle){
 			$this->smarty->assign('sNameMiddle',$this->createTR($LDNameMid,$name_middle));
 			$iRowSpanCount++;
+		} else {
+			$this->smarty->assign('sNameMiddle','');
 		}
 		if (!$GLOBAL_CONFIG['person_name_maiden_hide']&&$name_maiden){
 			$this->smarty->assign('sNameMaiden',$this->createTR($LDNameMaiden,$name_maiden));
 			$iRowSpanCount++;
+		} else {
+			$this->smarty->assign('sNameMaiden','');
 		}
 		if (!$GLOBAL_CONFIG['person_name_others_hide']&&$name_others){
 			$this->smarty->assign('sNameOthers',$this->createTR($LDNameOthers,$name_others));
 			$iRowSpanCount++;
+		} else {
+			$this->smarty->assign('sNameOthers','');
 		}
-
 		# Set the rowspan value for the photo image <td>
 		$this->smarty->assign('sPicTdRowSpan',"rowspan=$iRowSpanCount");
 
@@ -335,19 +351,63 @@ class GuiPersonShow {
 		if($death_date&&$death_date!=$dbf_nodate){
 			$this->smarty->assign('sCrossImg',$sCross);
 			$this->smarty->assign('sDeathDate','<font color="#000000">'.@formatDate2Local($death_date,$date_format).'</font>');
+		} else {
+			$this->smarty->assign('sCrossImg','');
+			$this->smarty->assign('sDeathDate','');
 		}
 		$this->smarty->assign('sBdayInput','<div class="vi_data">'.@formatDate2Local($date_birth,$date_format).'</div>');
 
 		$this->smarty->assign('LDSex', "$LDSex:");
+		$this->smarty->assign('sSexM', '');
+		$this->smarty->assign('sSexF', '');
 
-		if($sex=="m") $this->smarty->assign('LDMale','<div class="vi_data">'.$LDMale.'</div>');
-			elseif($sex=="f") $this->smarty->assign('LDFemale','<div class="vi_data">'.$LDFemale.'</div>');
+		if($sex=="m") {
+			$this->smarty->assign('LDMale','<div class="vi_data">'.$LDMale.'</div>');
+			$this->smarty->assign('LDFemale','');
+		} elseif($sex=="f") {
+			$this->smarty->assign('LDFemale','<div class="vi_data">'.$LDFemale.'</div>');
+			$this->smarty->assign('LDMale','');
+		}
 
 		if (!$GLOBAL_CONFIG['person_bloodgroup_hide'] && trim($blood_group)) {
 			// KB: make blood group hideable
 			$this->smarty->assign('LDBloodGroup',$LDBloodGroup);
-			$buf='LD'.trim($blood_group);
-			$this->smarty->assign('sBGAInput',$$buf);
+			$this->smarty->assign('LDA','');
+			$this->smarty->assign('LDB','');
+			$this->smarty->assign('LDAB','');
+			$this->smarty->assign('LDO','');
+			switch($blood_group){
+				case 'A':
+					$this->smarty->assign('sBGAInput',$LDA);
+					$this->smarty->assign('sBGBInput','');
+					$this->smarty->assign('sBGABInput','');
+					$this->smarty->assign('sBGOInput','');
+					break;
+				case 'B':
+					$this->smarty->assign('sBGAInput','');
+					$this->smarty->assign('sBGBInput',$LDB);
+					$this->smarty->assign('sBGABInput','');
+					$this->smarty->assign('sBGOInput','');
+					break;
+				case 'AB':
+					$this->smarty->assign('sBGAInput','');
+					$this->smarty->assign('sBGBInput','');
+					$this->smarty->assign('sBGABInput',$LDAB);
+					$this->smarty->assign('sBGOInput','');
+					break;
+				case 'o':
+					$this->smarty->assign('sBGAInput','');
+					$this->smarty->assign('sBGBInput','');
+					$this->smarty->assign('sBGABInput','');
+					$this->smarty->assign('sBGOInput',$LDO);
+					break;
+				default:
+					$this->smarty->assign('sBGAInput','');
+					$this->smarty->assign('sBGBInput','');
+					$this->smarty->assign('sBGABInput','');
+					$this->smarty->assign('sBGOInput','');
+					break;
+			}
 		}
 
 		if (!$GLOBAL_CONFIG['person_civilstatus_hide'] && trim($civil_status)) {
@@ -360,6 +420,16 @@ class GuiPersonShow {
 							elseif($civil_status=="separated") $sCSBuffer =  $LDSeparated;
 
 			$this->smarty->assign('sCSSingleInput',$sCSBuffer);
+			$this->smarty->assign('sCSMarriedInput','');
+			$this->smarty->assign('sCSDivorcedInput','');
+			$this->smarty->assign('sCSWidowedInput','');
+			$this->smarty->assign('sCSSeparatedInput','');
+
+			$this->smarty->assign('LDSingle','');
+			$this->smarty->assign('LDMarried','');
+			$this->smarty->assign('LDDivorced','');
+			$this->smarty->assign('LDWidowed','');
+			$this->smarty->assign('LDSeparated','');
 		}
 
 		$this->smarty->assign('LDAddress',"$LDAddress:");
@@ -377,9 +447,10 @@ class GuiPersonShow {
 
 		$this->smarty->assign('LDZipCode',"$LDZipCode :");
 		$this->smarty->assign('sZipCodeInput',$addr_zip);
+		$this->smarty->assign('LDSeveralInsurances','');
 
 		if (!$GLOBAL_CONFIG['person_insurance_hide']) {
-			if (!$GLOBAL_CONFIG['person_insurance_hide']&&$insurance_show&&$insurance_nr){
+			if (!$GLOBAL_CONFIG['person_insurance_hide']&&isset($insurance_show)&&isset($insurance_nr)){
 
 				$this->smarty->assign('bShowInsurance',TRUE);
 
@@ -396,47 +467,74 @@ class GuiPersonShow {
 				$this->smarty->assign('sInsCoNameInput',$insurance_firm_name);
 
 				$this->createTR($LDInsuranceCo.' 1',$insurance_firm_name,2);
+			} else {
+				$this->smarty->assign('bNoInsurance',TRUE);
+				$this->smarty->assign('bShowInsurance',False);
 			}
 		}
 		if (!$GLOBAL_CONFIG['person_phone_1_nr_hide']&&$phone_1_nr){
 			$this->smarty->assign('sPhone1',$this->createTR($LDPhone.' 1',$phone_1_nr,2));
+		} else {
+			$this->smarty->assign('sPhone1','');
 		}
 		if (!$GLOBAL_CONFIG['person_phone_2_nr_hide']&&$phone_2_nr){
 			$this->smarty->assign('sPhone2',$this->createTR($LDPhone.' 2',$phone_2_nr,2));
+		} else {
+			$this->smarty->assign('sPhone2','');
 		}
 		if (!$GLOBAL_CONFIG['person_cellphone_1_nr_hide']&&$cellphone_1_nr){
 			$this->smarty->assign('sCellPhone1',$this->createTR($LDCellPhone.' 1',$cellphone_1_nr,2));
+		} else {
+			$this->smarty->assign('sCellPhone1','');
 		}
 		if (!$GLOBAL_CONFIG['person_cellphone_2_nr_hide']&&$cellphone_2_nr){
 			$this->smarty->assign('sCellPhone2',$this->createTR($LDCellPhone.' 2',$cellphone_2_nr,2));
+		} else {
+			$this->smarty->assign('sCellPhone2','');
 		}
 		if (!$GLOBAL_CONFIG['person_fax_hide']&&$fax){
 			$this->smarty->assign('sFax',$this->createTR($LDFax,$fax,2));
+		} else {
+			$this->smarty->assign('sFax','');
 		}
 		if (!$GLOBAL_CONFIG['person_email_hide']&&$email){
 			$this->smarty->assign('sEmail',$this->createTR($LDEmail,"<a href=\"mailto:$email\">$email</a>",2));
+		} else {
+			$this->smarty->assign('sEmail','');
 		}
 
 		if (!$GLOBAL_CONFIG['person_citizenship_hide']&&$citizenship){
-			$this->smarty->assign('sCitzenship',$this->createTR($LDCitizenship,$citizenship,2));
+			$this->smarty->assign('sCitizenship',$this->createTR($LDCitizenship,$citizenship,2));
+		} else {
+			$this->smarty->assign('sCitizenship','');
 		}
 		if (!$GLOBAL_CONFIG['person_sss_nr_hide']&&$sss_nr){
 			$this->smarty->assign('sSSSNr',$this->createTR($LDSSSNr,$sss_nr,2));
+		} else {
+			$this->smarty->assign('sSSSNr','');
 		}
 		if (!$GLOBAL_CONFIG['person_nat_id_nr_hide']&&$nat_id_nr){
 			$this->smarty->assign('sNatIdNr',$this->createTR($LDNatIdNr,$nat_id_nr,2));
+		} else {
+			$this->smarty->assign('sNatIdNr','');
 		}
 		if (!$GLOBAL_CONFIG['person_religion_hide']&&$religion){
 			$this->smarty->assign('sReligion',$this->createTR($LDReligion,$religion,2));
+		} else {
+			$this->smarty->assign('sReligion','');
 		}
 		if (!$GLOBAL_CONFIG['person_ethnic_orig_hide']&&$ethnic_orig){
 			$this->smarty->assign('LDEthnicOrig',$LDEthnicOrigin);
 			$this->smarty->assign('sEthnicOrigInput',$ethnic_orig_txt);
+		} else {
+			$this->smarty->assign('LDEthnicOrig','');
+			$this->smarty->assign('sEthnicOrigInput','');
 		}
 
 		if (!$GLOBAL_CONFIG['person_other_his_nr_hide']){
 			$other_hosp_list = $this->person_obj->OtherHospNrList();
 			$iHospCount = sizeof($other_hosp_list);
+			$this->smarty->assign('sOtherNrSelect','');
 
 			if($iHospCount) {
 				$this->smarty->assign('bShowOtherHospNr',TRUE);
@@ -462,8 +560,14 @@ class GuiPersonShow {
 		}else{
 			$this->smarty->assign('pretext','Invalid PID number or the data is not available from the databank! Please report this to <a  href=\'mailto:info@care2x.org\'>info@care2x.org</a>. Thank you.');
 		}
+		$this->smarty->assign('sHiddenInputs','');
+		$this->smarty->assign('sUpdateHiddenInputs','');
+		$this->smarty->assign('sEthnicOrigMiniCalendar','');
+		$this->smarty->assign('pbSubmit','');
+		$this->smarty->assign('pbReset','');
+		$this->smarty->assign('pbForceSave','');
 
-
+		$this->smarty->assign('sNewDataForm','');
 		# If data is to be returned only, buffer output, get the buffer contents, end and clean buffer and return contents.
 		if($this->bReturnOnly){
 			ob_start();

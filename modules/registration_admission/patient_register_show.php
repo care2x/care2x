@@ -1,7 +1,7 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 /**
 * CARE2X Integrated Hospital Information System beta 2.0.1 - 2004-07-04
 * GNU General Public License
@@ -65,10 +65,16 @@ $death_date = $person->DeathDate();
 
 # Title in the toolbar
  $smarty->assign('sToolbarTitle',$LDPatientRegister);
-
+$smarty->assign('bHideTitleBar',FALSE);
+$smarty->assign('sTitleImage','<img '.createComIcon($root_path,'pers_tree.gif','0').'>');
+$smarty->assign('Subtitle','' );
  # href for help button
  $smarty->assign('pbHelp',"javascript:gethelp('submenu1.php','$LDPatientRegister')");
-
+$smarty->assign('pbAux1', '');
+$smarty->assign('pbAux2', '');
+$smarty->assign('sCloseTarget','target="_parent"');
+$smarty->assign('sSubTitle','' );
+$smarty->assign('sWarnText','' );
  $smarty->assign('breakfile',$breakfile);
 
  # Window bar title
@@ -173,9 +179,12 @@ if($_COOKIE['ck_login_logged'.$sid]) $sCancel.=$breakfile;
 $sCancel.=URL_APPEND.'><img '.createLDImgSrc($root_path,'cancel.gif','0').' alt="'.$LDCancelClose.'"></a>';
 
 $smarty->assign('pbCancel',$sCancel);
+$smarty->assign('pbNewSearch','');
+$smarty->assign('pbShowAdmData','');
 
 # Assign the page template to mainframe block
 $smarty->assign('sMainBlockIncludeFile','registration_admission/reg_show.tpl');
+$smarty->assign('sMainFrameBlockData',"");
 
 # Show main frame
 $smarty->display('common/mainframe.tpl');

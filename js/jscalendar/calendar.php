@@ -28,7 +28,7 @@ class DHTML_Calendar {
     var $set_datetime = 'setdatetime.js';
     var $check_date = 'checkdate.js';
 
-    function DHTML_Calendar($calendar_lib_path = 'jscalendar',
+    function __construct($calendar_lib_path = 'jscalendar',
                             $lang              = 'en',
                             $theme             = 'calendar-win2k-1',
                             $stripped          = true) {
@@ -87,13 +87,13 @@ class DHTML_Calendar {
 	//gjergji
 	//modified to fit care2x needs
     function show_calendar ($calendar,$date_format,$input_field,$value='') {
-		
+
     	//date value check
-    	
+
 		if($value != DBF_NODATE && !empty($value)) {
 			$value = formatDate2Local($value,$date_format);
 		} else {
-			//$value = formatDate2Local(date('Y-m-d'),$date_format); 
+			//$value = formatDate2Local(date('Y-m-d'),$date_format);
 			$value = '';
 		}
     	//convert date_format from care2x model to the calendar model
@@ -101,7 +101,7 @@ class DHTML_Calendar {
 		$replace = array('%Y','%m','%d');
 		$date_format_calendar = str_replace($search,$replace,strtolower($date_format));
 
-		
+
 		$calendarJS = $calendar->make_input_field(
    		array('firstDay'       => 1,
          	  'showOthers'     => true,
@@ -113,7 +113,7 @@ class DHTML_Calendar {
    			  $date_format);
    		return $calendarJS;
     }
-    
+
     function make_input_field($cal_options = array(), $field_attributes = array(), $date_format) {
     	$code = '';
         $id = $this->_gen_id();
