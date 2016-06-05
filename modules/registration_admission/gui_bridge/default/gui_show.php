@@ -16,18 +16,28 @@ if($_COOKIE["ck_login_logged".$sid]) $breakfile = $root_path."main/startframe.ph
 
  require_once($root_path.'gui/smarty_template/smarty_care.class.php');
  $smarty = new smarty_care('common');
- 
+if (!isset($rows)) {
+	$rows=0;
+	$smarty->assign('bShowNoRecord',true);
+} else {
+	$smarty->assign('bShowNoRecord',false);
+}
 if($parent_admit) $sTitleNr= ($_SESSION['sess_full_en']);
 	else $sTitleNr = ($_SESSION['sess_full_pid']);
 
 # Title in the toolbar
+ $smarty->assign('Name',"");
+ $smarty->assign('sWindowTitle',"$page_title ($sTitleNr)");
  $smarty->assign('sToolbarTitle',"$page_title ($sTitleNr)");
-
+$smarty->assign('bHideTitleBar',FALSE);
  # href for help button
  $smarty->assign('pbHelp',"javascript:gethelp('submenu1.php','$LDPatientRegister')");
-
+$smarty->assign('sTitleImage','<img '.createComIcon($root_path,'calendar.gif','0').'>');
  $smarty->assign('breakfile',$breakfile);
-
+$smarty->assign('Subtitle','' );
+$smarty->assign('pbAux1', '');
+$smarty->assign('pbAux2', '');
+$smarty->assign('sCloseTarget','target="_parent"');
  # Window bar title
  $smarty->assign('title',"$page_title ( $sTitleNr)");
 
@@ -49,7 +59,7 @@ ob_start();
 ?>
 
 <script  language="javascript">
-<!-- 
+<!--
 
 <?php require($root_path.'include/core/inc_checkdate_lang.php'); ?>
 
@@ -59,7 +69,7 @@ function popRecordHistory(table,pid) {
 }
 -->
 </script>
-<?php 
+<?php
 if($parent_admit) include($root_path.'main/imgcreator/inc_js_barcode_wristband_popwin.php');
 
 $sTemp = ob_get_contents();
@@ -89,6 +99,8 @@ if($parent_admit&&$is_discharged){
 	$smarty->assign('sWarnIcon',"<img ".createComIcon($root_path,'warn.gif','0','absmiddle',TRUE).">");
 	if($current_encounter) $smarty->assign('sDischarged',$LDEncounterClosed);
 		else $smarty->assign('sDischarged',$LDPatientIsDischarged);
+}else {
+	$smarty->assign('is_discharged',false);
 }
 
 if($parent_admit) $smarty->assign('LDCaseNr',$LDAdmitNr);
@@ -105,12 +117,18 @@ $smarty->assign('LDLastName',$LDLastName);
 $smarty->assign('name_last',$name_last);
 $smarty->assign('LDFirstName',$LDFirstName);
 $smarty->assign('name_first',$name_first);
+$smarty->assign('name_2',$name_2);
+$smarty->assign('name_3',$name_3);
+$smarty->assign('name_middle',$name_middle);
 
 # If person is dead show a black cross and assign death date
 
 if($death_date && $death_date != DBF_NODATE){
 	$smarty->assign('sCrossImg','<img '.createComIcon($root_path,'blackcross_sm.gif','0','',TRUE).'>');
 	$smarty->assign('sDeathDate',@formatDate2Local($death_date,$date_format));
+} else {
+	$smarty->assign('sCrossImg','');
+	$smarty->assign('sDeathDate','');
 }
 
 	# Set a row span counter, initialize with 7
@@ -142,7 +160,7 @@ if($death_date && $death_date != DBF_NODATE){
 	}
 	*/
 
-		
+
 $smarty->assign('sRowSpan',"rowspan=\"$iRowSpan\"");
 
 $smarty->assign('LDBday',$LDBday);
@@ -180,7 +198,7 @@ if($mode=='show'){
 	$tbg= 'background="'.$root_path.'gui/img/common/'.$theme_com_icon.'/'.$bgimg.'"';
 
 	if($rows){
-		
+
 		# Buffer the option block
 		ob_start();
 			include('./gui_bridge/default/gui_'.$thisfile);
@@ -191,7 +209,7 @@ if($mode=='show'){
 	}else{
 
 		$smarty->assign('bShowNoRecord',TRUE);
-		
+
 		$smarty->assign('sMascotImg','<img '.createMascot($root_path,'mascot1_r.gif','0','absmiddle').'>');
 		$smarty->assign('norecordyet',$norecordyet);
 
@@ -199,8 +217,11 @@ if($mode=='show'){
 			$smarty->assign('sPromptIcon','<img '.createComIcon($root_path,'bul_arrowgrnlrg.gif','0','absmiddle',TRUE).'>');
 			$smarty->assign('sPromptLink','<a href="'.$thisfile.URL_APPEND.'&pid='.$_SESSION['sess_pid'].'&target='.$target.'&mode=new">'.$LDEnterNewRecord.'</a>');
  		}else{
-			if(file_exists('./gui_bridge/default/gui_person_createnew_'.$thisfile)) include('./gui_bridge/default/gui_person_createnew_'.$thisfile);
+			$smarty->assign('sPromptIcon','');
+			$smarty->assign('sPromptLink','');
+ 			if(file_exists('./gui_bridge/default/gui_person_createnew_'.$thisfile)) include('./gui_bridge/default/gui_person_createnew_'.$thisfile);
 		}
+		$smarty->assign('sOptionBlock','');
 	}
 }else {
 	# Buffer the option input block
@@ -209,6 +230,7 @@ if($mode=='show'){
 		$sTemp = ob_get_contents();
 	ob_end_clean();
 	$smarty->assign('sOptionBlock',$sTemp);
+	$smarty->assign('bShowNoRecord',False);
 }
 
 # Buffer the bottom controls
@@ -231,9 +253,19 @@ $smarty->assign('sBottomControls',$sTemp);
 
 $smarty->assign('pbBottomClose','<a href="'.$breakfile.'"><img '.createLDImgSrc($root_path,'close2.gif','0').'  title="'.$LDCancel.'"  align="absmiddle"></a>');
 
+$smarty->assign('pbPersonData','');
+$smarty->assign('pbAdmitData','');
+$smarty->assign('pbMakeBarcode','');
+$smarty->assign('pbMakeWristBands','');
+
+$smarty->assign('sAdmitLink','');
+$smarty->assign('sSearchLink','');
+$smarty->assign('sArchiveLink','');
+
+$smarty->assign('sWarnText','' );
 
 $smarty->assign('sMainBlockIncludeFile','registration_admission/common_option.tpl');
-
+$smarty->assign('sMainFrameBlockData',"");
 
 $smarty->display('common/mainframe.tpl');
 

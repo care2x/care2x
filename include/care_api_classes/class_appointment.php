@@ -51,8 +51,8 @@ class Appointment extends Core {
 									'time',
 									'to_dept_id',
 									'to_dept_nr',
-									'to_personell_nr',
-									'to_personell_name',
+									'to_staff_nr',
+									'to_staff_name',
 									'purpose',
 									'urgency',
 									'remind',
@@ -160,7 +160,7 @@ class Appointment extends Core {
 				WHERE a.date='$y-$m-$d'";
 		switch($by){
 			case '_DEPT': $this->sql.=" AND a.to_dept_nr=$val"; break;
-			case '_DOC': $this->sql.=" AND a.to_personell_name  $sql_LIKE '%$val%'"; break;
+			case '_DOC': $this->sql.=" AND a.to_staff_name  $sql_LIKE '%$val%'"; break;
 		}
 		$this->sql.=" AND a.status NOT IN ($this->dead_stat) ORDER BY a.date DESC";
 		if($this->res['_ga']=$db->Execute($this->sql)){

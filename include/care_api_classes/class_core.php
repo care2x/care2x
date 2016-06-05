@@ -346,7 +346,7 @@ class Core {
 			# use backquoting for mysql and no-quoting for other dbs
 			if ($dbtype=='mysql') $index.="`$x`,";
 				else $index.="$x,";
-				
+
 			if(stristr($v,$concatfx)||stristr($v,'null')) $values.=" $v,";
 				else $values.="'$v',";
 		}
@@ -381,7 +381,7 @@ class Core {
 			# use backquoting for mysql and no-quoting for other dbs.
 			if ($dbtype=='mysql') $elems.="`$x`=";
 				else $elems.="$x=";
-			
+
 			if(stristr($v,$concatfx)||stristr($v,'null')) $elems.=" $v,";
 				else $elems.="'$v',";
 		}
@@ -519,7 +519,7 @@ class Core {
 		if(empty($batch_nr) || empty($encounter_nr)) return FALSE;
 		$this->sql="DELETE  FROM $this->coretable WHERE batch_nr = '$batch_nr' AND encounter_nr = '$encounter_nr'";
 		return $this->Transact();
-	}	
+	}
 	/**
 	* Returns the  core field names of the core table in an array.
 	* @access public

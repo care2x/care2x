@@ -156,18 +156,12 @@ if($current_encounter){
 	$smarty->assign('pbAdmitOutpatient',"<a href=\"$admissionfile&pid=$pid&origin=patreg_reg&encounter_class_nr=2\"><img ".createLDImgSrc($root_path,'admit_outpatient.gif','0','absmiddle')."></a>");
 }
 //gjergji
-$smarty->assign('pbAdmitPrintout',"<a href=". $root_path."modules/pdfmaker/registration/regdata_admit.php".URL_APPEND."&pid=".$pid ." target=_blank><img ".createLDImgSrc($root_path,'printout.gif','0','absmiddle')."></a>'");
+$smarty->assign('pbAdmitPrintout',"<a href=". $root_path."modules/pdfmaker/registration/regdata_admit.php".URL_APPEND."&pid=".$pid ." target=_blank><img ".createLDImgSrc($root_path,'printout.gif','0','absmiddle')."></a>");
 //$smarty->assign('pbAdmitPrintout',"<a href=". $root_path."modules/registration_admission/reports/sample.php".URL_APPEND."&pid=".$pid . "><img ".createLDImgSrc($root_path,'printout.gif','0','absmiddle')."></a>'");
 //end :  gjergji
 # Create new button to fresh input form
-$sNewRegBuffer='
-<form action="patient_register.php" method=post>
-<input type=submit value="'.$LDRegisterNewPerson.'">
-<input type=hidden name="sid" value="'.$sid.'">
-<input type=hidden name="lang" value="'.$lang.'">
-</form>';
 
-$smarty->assign('pbRegNewPerson',$sNewRegBuffer);
+$smarty->assign('pbRegNewPerson','<a href="patient_register.php'.URL_APPEND.'"><img '.createLDImgSrc($root_path,'register.gif','0','absmiddle').'></a>');
 
 # Assign help links
 $smarty->assign('sSearchLink','<img '.createComIcon($root_path,'varrow.gif','0').'> <a href="patient_register_search.php'.URL_APPEND.'">'.$LDPatientSearch.'</a>');

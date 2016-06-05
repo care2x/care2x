@@ -1,12 +1,13 @@
 <?php
-//error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
+
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 /**
 * CARE2X Integrated Hospital Information System beta 2.0.1 - 2004-07-04
 * GNU General Public License
 * Copyright 2002,2003,2004,2005,2006 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -26,7 +27,7 @@ if((!isset($pid)||!$pid) && $_SESSION['sess_pid']) $pid=$_SESSION['sess_pid'];
 if(!isset($mode)){
 	$mode='show';
 } else{
-	
+
 	#
 	# Validate date against past date
 	#
@@ -78,12 +79,12 @@ if(!isset($mode)){
 			$mode='update';
 		include('./include/save_admission_data.inc.php');
 	}
-	
+
 }
 $lang_tables=array('prompt.php','departments.php');
 require('./include/init_show.php');
 
-if($result=&$obj->getPersonsAppointmentsObj($pid)){
+if($result=$obj->getPersonsAppointmentsObj($pid)){
 	$rows=$result->RecordCount();
 }
 
@@ -92,7 +93,7 @@ require_once($root_path.'include/care_api_classes/class_encounter.php');
 $enc_obj=new Encounter;
 
 /* Get all encounter classes */
-$encounter_classes=&$enc_obj->AllEncounterClassesObject();
+$encounter_classes=$enc_obj->AllEncounterClassesObject();
 
 $subtitle=$LDAppointments;
 $_SESSION['sess_file_return']=$thisfile;
@@ -102,8 +103,8 @@ require_once($root_path.'include/care_api_classes/class_department.php');
 $dept_obj=new Department;
 $deptarray=$dept_obj->getAllMedical();
 $buffer=str_replace('~tag~',$title.' '.$name_last,$LDNoRecordYet);
-$norecordyet=str_replace('~obj~',strtolower($subtitle),$buffer); 
-
+$norecordyet=str_replace('~obj~',strtolower($subtitle),$buffer);
+$notestype='appointments';
 /* Load GUI page */
 require('./gui_bridge/default/gui_show.php');
 ?>

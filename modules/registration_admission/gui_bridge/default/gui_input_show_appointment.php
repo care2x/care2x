@@ -13,9 +13,9 @@ function chkForm(d) {
 		return false;
 	}
 	*/
-	else if(d.to_personell_name.value==''){
+	else if(d.to_staff_name.value==''){
 		alert("<?php echo $LDPlsEnterDoctor; ?>");
-		d.to_personell_name.focus();
+		d.to_staff_name.focus();
 		return false;
 	}else if(d.purpose.value==''){
 		alert("<?php echo $LDPlsEnterPurpose; ?>");
@@ -44,9 +44,11 @@ if($bPastDateError) echo '<font class="warnprompt">'.$LDInvalidDate.' '.$LDNoPas
 			require_once ('../../js/jscalendar/calendar.php');
 			$calendar = new DHTML_Calendar('../../js/jscalendar/', $lang, 'calendar-system', true);
 			$calendar->load_files();
-			
+			if (!isset($date)) {
+				$date = '';
+			}
 			echo $calendar->show_calendar($calendar,$date_format,'date',$date);
-		?> 		
+		?>
 		</td>
    </tr>
    <tr bgcolor="#f6f6f6">
@@ -58,24 +60,42 @@ if($bPastDateError) echo '<font class="warnprompt">'.$LDInvalidDate.' '.$LDNoPas
      <td>
 	    <select name="to_dept_nr">
 		<option value="">Select Department</option>
-		<?php		
-		while(list($x,$v)=each($deptarray)){			
+		<?php
+		if (!isset($to_dept_nr)) {
+			$to_dept_nr = 0;
+		}
+		while(list($x,$v)=each($deptarray)){
 			echo '
 				<option value="'.$v['nr'].'" ';
 			if($v['nr']==$to_dept_nr) echo 'selected';
 			echo ' >';
-			if(isset($$v['LD_var'])&&!empty($$v['LD_var'])) echo $$v['LD_var'];
+			if(!empty(${$v['LD_var']})) echo ${$v['LD_var']};
 				else  echo $v['name_formal'];
 			echo '</option>';
+		}
+		if (!isset($urgency)) {
+			$urgency=0;
+		}
+		if (!isset($remind)) {
+			$remind=0;
+		}
+		if (!isset($remind_email)) {
+			$remind_email=0;
+		}
+		if (!isset($remind_phone)) {
+			$remind_phone=0;
+		}
+		if (!isset($remind_mail)) {
+			$remind_mail=0;
 		}
 	?>
         </select>
 	 </td>
    </tr>
-   
+
    <tr bgcolor="#f6f6f6">
      <td><font color="red"><b>*</b><FONT SIZE=-1  FACE="Arial" color="#000066"><?php echo "$LDPhysician/$LDClinician"; ?></td>
-     <td><input type="text" name="to_personell_name" size=50 maxlength=60  value="<?php if(isset($to_personell_name)) echo $to_personell_name; ?>"></td>
+     <td><input type="text" name="to_personell_name" size=50 maxlength=60  value="<?php if(isset($to_staff_name)) echo $to_personell_name; ?>"></td>
    </tr>
 
    <tr bgcolor="#f6f6f6">
@@ -86,9 +106,9 @@ if($bPastDateError) echo '<font class="warnprompt">'.$LDInvalidDate.' '.$LDNoPas
    <tr bgcolor="#f6f6f6">
      <td><FONT SIZE=-1  FACE="Arial" color="#000066"><?php echo $LDUrgency; ?></td>
      <td><FONT SIZE=-1  FACE="Arial" color="#000066">
-	 		<input type="radio" name="urgency" value="0" <?php if($urgency==0) echo 'checked'; ?>><?php echo $LDNormal; ?>	
+	 		<input type="radio" name="urgency" value="0" <?php if($urgency==0) echo 'checked'; ?>><?php echo $LDNormal; ?>
 			<input type="radio" name="urgency" value="3" <?php if($urgency==3) echo 'checked'; ?>><?php echo $LDPriority; ?>
-	 		<input type="radio" name="urgency" value="5" <?php if($urgency==5) echo 'checked'; ?>><?php echo $LDUrgent; ?>	
+	 		<input type="radio" name="urgency" value="5" <?php if($urgency==5) echo 'checked'; ?>><?php echo $LDUrgent; ?>
 			<input type="radio" name="urgency" value="7" <?php if($urgency==7) echo 'checked'; ?>><?php echo $LDEmergency; ?>
      </td>
    </tr>
@@ -113,13 +133,13 @@ if($bPastDateError) echo '<font class="warnprompt">'.$LDInvalidDate.' '.$LDNoPas
 if(is_object($encounter_classes)){
     while($result=$encounter_classes->FetchRow()) {
 ?>
-		<input name="encounter_class_nr" type="radio"  value="<?php echo $result['class_nr']; ?>" <?php if($encounter_class_nr==$result['class_nr']) echo 'checked'; ?>>
-<?php 
+		<input name="encounter_class_nr" type="radio"  value="<?php echo $result['class_nr']; ?>" <?php if(isset($encounter_class_nr)&&$encounter_class_nr==$result['class_nr']) echo 'checked'; ?>>
+<?php
         $LD=$result['LD_var'];
         if(isset($$LD)&&!empty($$LD)) echo $$LD; else echo $result['name'];
         echo '&nbsp;';
 	}
-} 
+}
 ?>
      </td>
    </tr>

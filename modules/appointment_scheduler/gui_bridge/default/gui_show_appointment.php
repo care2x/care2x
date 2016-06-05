@@ -55,26 +55,26 @@ while($row=$result->FetchRow()){
     <td><FONT SIZE=-1  FACE="Arial" color="<?php echo $tc; ?>"><?php echo @formatDate2Local($row['date'],$date_format); ?></td>
     <td rowspan=4 valign="top"><FONT SIZE=-1  FACE="Arial" color="<?php echo $tc; ?>"><font color="<?php if(empty($tc)) echo '#0000cc'; else echo $tc; ?>"><b>
 	<a href="<?php echo $root_path.'modules/registration_admission/patient_register_show.php'.URL_APPEND.'&pid='.$row['pid']; ?>" title="<?php echo "$LDRegistration: $LDClk2Show" ?>">
-	<?php 
+	<?php
 		echo ucfirst($row['name_last']).'</b></font>, '.ucfirst($row['name_first']).'<br>';
 		echo @formatDate2Local($row['date_birth'],$date_format);
 
 		if($row['death_date']&&$row['death_date']!=DBF_NODATE){
 			echo '&nbsp;<img '.createComIcon($root_path,'blackcross_sm.gif','0','',TRUE).'>&nbsp;'.@formatDate2Local($row['death_date'],$date_format).'</font>';
 		}
-		
+
 		echo '<br>';
 		# Show sex icons
 		switch($row['sex']){
 			case 'f': echo '<img '.$img_female.'>'; break;
 			case 'm': echo '<img '.$img_male.'>'; break;
 			default: echo '&nbsp;'; break;
-		}	
+		}
 	?>
 	</a>
 	</td>
     <td rowspan=4 valign="top"><FONT SIZE=-1  FACE="Arial" color="<?php echo $tc; ?>">
-	<?php 
+	<?php
 		echo nl2br($row['purpose']);
 		if($row['appt_status']=='cancelled'){
 			echo '<br>______________________<br>'.$LDCancelReason.'<br>'.nl2br($row['cancel_reason']);
@@ -82,26 +82,26 @@ while($row=$result->FetchRow()){
 	?>
 	</td>
     <td><FONT SIZE=1  FACE="Arial" color="<?php echo $tc; ?>">
-	 <?php 
+	 <?php
 	if($row['appt_status']!='cancelled'){
 		if($row['appt_status']=='done'){
 			$urg_img='check-r.gif';
 		}else{
 			$urg_img='level_'.$row['urgency'].'.gif';
 		}
-		echo '<img '.createComIcon($root_path,$urg_img,'0','absmiddle',TRUE).'>'; 
+		echo '<img '.createComIcon($root_path,$urg_img,'0','absmiddle',TRUE).'>';
 	?>
-<?php 
+<?php
 		if($row['appt_status']=='done' && $row['encounter_nr']){
 			echo '<a href="'.$root_path.'modules/registration_admission/aufnahme_daten_zeigen.php'.URL_APPEND.'&encounter_nr='.$row['encounter_nr'].'&origin=appt&target='.$target.'">'.$row['encounter_nr'].'</a>';
 		}
 	}else{
 		echo '&nbsp;';
 	}
-	?>	
-	
+	?>
+
 	</td>
-    <td rowspan=4 valign="top"> 
+    <td rowspan=4 valign="top">
 	<?php
 		if($row['appt_status']=='pending'){
 			if(!$row['death_date']||$row['death_date']==DBF_NODATE){
@@ -119,25 +119,25 @@ while($row=$result->FetchRow()){
 			echo '&nbsp;';
 		}
 	?>
-	</td>  
+	</td>
   </tr>
   <tr   class="<?php echo $bgc; ?>" >
     <td><FONT SIZE=-1  FACE="Arial" color="<?php echo $tc; ?>"><?php echo $row['time']; ?></td>
     <td><FONT SIZE=-1  FACE="Arial" color="<?php echo $tc; ?>">
-		<?php 
+		<?php
 			$buffer='LD'.$row['appt_status'];
-			if(isset($$buffer)&&!empty($$buffer)) echo $$buffer; else echo $row['appt_status']; 
+			if(isset($$buffer)&&!empty($$buffer)) echo $$buffer; else echo $row['appt_status'];
 		?>
 	</td>
 	</tr>
   <tr  class="<?php echo $bgc; ?>" >
     <td><FONT SIZE=-1  FACE="Arial" color="<?php echo $tc; ?>">
-	<?php 
-		if(isset($$dept['LD_var'])&&!empty($$dept['LD_var'])) echo $$dept['LD_var']; 
+	<?php
+		if(isset($$dept['LD_var'])&&!empty($$dept['LD_var'])) echo $$dept['LD_var'];
 			else echo $dept['name_formal'];
 	?></td>
     <td><FONT SIZE=-1  FACE="Arial" color="<?php echo $tc; ?>">
-	<?php 
+	<?php
 		if($row['remind']&&$row['appt_status']=='pending'){
 			if($row['remind_email']) echo '<img '.createComIcon($root_path,'email.gif','0','',TRUE).'> ';
 			if($row['remind_mail']) echo '<img '.createComIcon($root_path,'print.gif','0','',TRUE).'> ';
@@ -146,12 +146,12 @@ while($row=$result->FetchRow()){
 		 ?></td>
   </tr>
   <tr  class="<?php echo $bgc; ?>" >
-    <td><FONT SIZE=-1  FACE="Arial" color="<?php echo $tc; ?>"><?php echo $row['to_personell_name']; ?></td>
+    <td><FONT SIZE=-1  FACE="Arial" color="<?php echo $tc; ?>"><?php echo $row['to_staff_name']; ?></td>
     <td><FONT SIZE=-1  FACE="Arial" color="<?php echo $tc; ?>">
 	<?php
 		$buf=$enc_class[$row['encounter_class_nr']]['LD_var'];
-		 if (isset($$buf)&&!empty($$buf)) echo $$buf; 
-    		else echo  $enc_class[$row['encounter_class_nr']]['name']; 
+		 if (isset($$buf)&&!empty($$buf)) echo $$buf;
+    		else echo  $enc_class[$row['encounter_class_nr']]['name'];
 	?>
 	</td>
   </tr>
