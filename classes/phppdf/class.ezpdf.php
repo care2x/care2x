@@ -5,19 +5,17 @@ include_once('class.pdf.php');
 class Cezpdf extends Cpdf {
 //==============================================================================
 // this class will take the basic interaction facilities of the Cpdf class
-// and make more useful functions so that the user does not have to 
+// and make more useful functions so that the user does not have to
 // know all the ins and outs of pdf presentation to produce something pretty.
 //
 // IMPORTANT NOTE
 // there is no warranty, implied or otherwise with this software.
-// 
-// version 010a (versioning is linked to class.pdf.php)
+//
+// version 009 (versioning is linked to class.pdf.php)
 //
 // released under a public domain licence.
-// 
-// http://pdf-php.sourceforge.net/
 //
-// Wayne Munro, R&OS Ltd, http://www.ros.co.nz/pdf 
+// Wayne Munro, R&OS Ltd, http://www.ros.co.nz/pdf
 //==============================================================================
 
 var $ez=array('fontSize'=>10); // used for storing most of the page configuration parameters
@@ -25,47 +23,20 @@ var $y; // this is the current vertical positon on the page of the writing point
 var $ezPages=array(); // keep an array of the ids of the pages, making it easy to go back and add page numbers etc.
 var $ezPageCount=0;
 
-// Background color and image stuff added
-var $bg_UseSameFile = true;
-var $bg_files = array(); /* array('blank.png'=>array('obj'=>8)) */
-var $bg_type;
-var $bg_color = array();
-var $bg_img;
-var $bg_img_width;
-var $bg_img_height;
-var $bg_img_xpos;
-var $bg_img_ypos;
-var $bg_img_type;
-var $bg_img_types_jpg = array('jpg', 'jpeg', 'pjpg', 'pjpeg');
-var $bg_img_types_png = array('png');
-
 // ------------------------------------------------------------------------------
-function Cezpdf($paper='a4',$orientation='portrait', $type = 'none', $options = array()){
-    /****************************************
-     *   $type        : { 'none' | 'color' | 'colour' | 'image' }
-     *   $options     : if type == 'color' or 'colour':
-     *                    $options[0] = red-component   of backgroundcolour ( 0 <= r <= 1)
-     *                    $options[1] = green-component of backgroundcolour ( 0 <= g <= 1)
-     *                    $options[2] = blue-component  of backgroundcolour ( 0 <= b <= 1)
-     *                  if type == 'image':
-     *                    $options['img']    = location of image file; URI's are allowed if allow_url_open is enabled in php.ini
-     *                    $options['width']  = width of background image; default is width of page
-     *                    $options['height'] = height of background image; default is height of page
-     *                    $options['xpos']   = horizontal position of background image; default is 0
-     *                    $options['ypos']   = vertical position of background image; default is 0
-     ****************************************/
 
+function Cezpdf($paper='a4',$orientation='portrait'){
 	// Assuming that people don't want to specify the paper size using the absolute coordinates
 	// allow a couple of options:
 	// orientation can be 'portrait' or 'landscape'
 	// or, to actually set the coordinates, then pass an array in as the first parameter.
 	// the defaults are as shown.
-	// 
+	//
 	// -------------------------
 	// 2002-07-24 - Nicola Asuni (info@tecnick.com):
 	// Added new page formats (45 standard ISO paper formats and 4 american common formats)
 	// paper cordinates are calculated in this way: (inches * 72) where 1 inch = 2.54 cm
-	// 
+	//
 	// Now you may also pass a 2 values array containing the page width and height in centimeters
 	// -------------------------
 
@@ -140,79 +111,21 @@ function Cezpdf($paper='a4',$orientation='portrait', $type = 'none', $options = 
 			$size[3] = ( $paper[1] / 2.54 ) * 72;
 		}
 	}
-	$this->Cpdf($size);
+	$this->__construct($size);
 	$this->ez['pageWidth']=$size[2];
 	$this->ez['pageHeight']=$size[3];
-	
+
 	// also set the margins to some reasonable defaults
 	$this->ez['topMargin']=30;
 	$this->ez['bottomMargin']=30;
 	$this->ez['leftMargin']=30;
 	$this->ez['rightMargin']=30;
-	
+
 	// set the current writing position to the top of the first page
 	$this->y = $this->ez['pageHeight']-$this->ez['topMargin'];
 	// and get the ID of the page that was created during the instancing process.
 	$this->ezPages[1]=$this->getFirstPageId();
 	$this->ezPageCount=1;
-
-	switch ($type)
-	  {
-	    case 'color'  :
-	    case 'colour' :
-            $this->bg_type = 'colour';
-            $this->saveState();
-            if (is_float($options[0]) && is_float($options[1]) && is_float($options[2]))
-            {
-              $this->bg_color = $options;
-              $this->setColor($this->bg_color[0], $this->bg_color[1], $this->bg_color[2], 1);
-            }
-            else
-              $this->bg_color = array(1, 1, 1);
-            $this->filledRectangle(0, 0, $this->ez['pageWidth'], $this->ez['pageHeight']);
-            $this->restoreState();
-            break;
-	    case 'image'  :
-            $this->bg_type = 'image';
-            if (isset($options['img']))
-            {
-              $bg_img_types = array_merge($this->bg_img_types_jpg, $this->bg_img_types_png);
-              $bg_img_ext = strtolower(substr($options['img'], strpos($options['img'], '.') + 1));
-
-              if (is_array($this->bg_img_types_jpg) && in_array($bg_img_ext, $this->bg_img_types_jpg))
-                $this->bg_img_type = 'jpg';
-              else if (is_array($this->bg_img_types_png) && in_array($bg_img_ext, $this->bg_img_types_png))
-                $this->bg_img_type = 'png';
-              else
-                $this->bg_img_type = NULL;
-            }
-            else
-              $this->bg_img_type = NULL;
-
-            // Don't continue if image does not exist, or if image has a wrong type
-            if (!isset($options['img']) || (!isset($this->bg_img_type)) || !file_exists($options['img']))
-            {
-            if (!file_exists($options['img']))
-              $errormsg="Background Image '".$options['img']."' does not exists";
-              $this->bg_type = 'none';
-              break;
-            }
-            $this->bg_img = $options['img'];
-            if (is_numeric($options['width']))  $this->bg_img_width  = $options['width'];  else $this->bg_img_width  = $this->ez['pageWidth'];
-            if (is_numeric($options['height'])) $this->bg_img_height = $options['height']; else $this->bg_img_height = $this->ez['pageHeight'];
-            if (is_numeric($options['xpos']))   $this->bg_img_xpos   = $options['xpos'];   else $this->bg_img_xpos   = 0;
-            if (is_numeric($options['ypos']))   $this->bg_img_ypos   = $options['ypos'];   else $this->bg_img_ypos   = 0;
-            switch ($this->bg_img_type)
-            {
-              case 'jpg' : $this->addJpegFromFile($this->bg_img, $this->bg_img_xpos, $this->bg_img_ypos, $this->bg_img_width, $this->bg_img_height); break;
-              case 'png' : $this->addPngFromFile($this->bg_img, $this->bg_img_xpos, $this->bg_img_ypos, $this->bg_img_width, $this->bg_img_height);  break;
-            }
-            break;
-	    case 'none'   :
-	    default      :
-            $this->bg_type = 'none';
-            break;
-	  }
 }
 
 // ------------------------------------------------------------------------------
@@ -258,7 +171,7 @@ function ezColumnsStart($options=array()){
   $width=($this->ez['pageWidth']-$this->ez['leftMargin']-$this->ez['rightMargin']-($options['num']-1)*$options['gap'])/$options['num'];
   $this->ez['columns']['width']=$width;
   $this->ez['rightMargin']=$this->ez['pageWidth']-$this->ez['leftMargin']-$width;
-  
+
 }
 // ------------------------------------------------------------------------------
 function ezColumnsStop(){
@@ -326,26 +239,6 @@ function ezNewPage(){
   } else {
     $this->y = $this->ez['pageHeight']-$this->ez['topMargin'];
   }
-
-	switch ($this->bg_type)
-    {
-        case 'colour' :
-            $this->saveState();
-            $this->setColor($this->bg_color[0], $this->bg_color[1], $this->bg_color[2], 1);
-            $this->filledRectangle(0, 0, $this->ez['pageWidth'], $this->ez['pageHeight']);
-            $this->restoreState();
-            break;
-        case 'image'  :
-            switch ($this->bg_img_type)
-            {
-              case 'jpg' : $this->addJpegFromFile($this->bg_img, $this->bg_img_xpos, $this->bg_img_ypos, $this->bg_img_width, $this->bg_img_height); break;
-              case 'png' : $this->addPngFromFile($this->bg_img, $this->bg_img_xpos, $this->bg_img_ypos, $this->bg_img_width, $this->bg_img_height);  break;
-            }
-            break;
-        case 'none'   :
-        default      :
-            break;
-    }
 }
 
 // ------------------------------------------------------------------------------
@@ -356,7 +249,7 @@ function ezSetMargins($top,$bottom,$left,$right){
   $this->ez['bottomMargin']=$bottom;
   $this->ez['leftMargin']=$left;
   $this->ez['rightMargin']=$right;
-  // check to see if this means that the current writing position is outside the 
+  // check to see if this means that the current writing position is outside the
   // writable area
   if ($this->y > $this->ez['pageHeight']-$top){
     // then move y down
@@ -366,7 +259,7 @@ function ezSetMargins($top,$bottom,$left,$right){
     // then make a new page
     $this->ezNewPage();
   }
-}  
+}
 
 // ------------------------------------------------------------------------------
 
@@ -587,7 +480,7 @@ function ezSetDy($dy,$mod=''){
   // used to change the vertical position of the writing point.
   // changes up by a positive increment, so enter a negative number to go
   // down the page
-  // if $mod is set to 'makeSpace' and a new page is forced, then the pointed will be moved 
+  // if $mod is set to 'makeSpace' and a new page is forced, then the pointed will be moved
   // down on the new page, this will allow space to be reserved for graphics etc.
   $this->y += $dy;
   if ( $this->y < $this->ez['bottomMargin']){
@@ -602,30 +495,30 @@ function ezSetDy($dy,$mod=''){
 // ------------------------------------------------------------------------------
 
 function ezPrvtTableDrawLines($pos,$gap,$x0,$x1,$y0,$y1,$y2,$col,$inner,$outer,$opt=1){
-	$x0=1000;
-	$x1=0;
-	$this->setStrokeColor($col[0],$col[1],$col[2]);
-	$cnt=0;
-	$n = count($pos);
-	foreach($pos as $x){
-		$cnt++;
-		if ($cnt==1 || $cnt==$n)
-			$this->setLineStyle($outer);
-		else
-			$this->setLineStyle($inner);
-		
-		if($opt != 3) $this->line($x-$gap/2,$y0,$x-$gap/2,$y2);
-		if ($x>$x1) $x1=$x;
-		if ($x<$x0) $x0=$x;
-	}
-	$this->setLineStyle($outer);
-	$this->line($x0-$gap/2 - $outer/2,$y0, $x1 - $gap/2+$outer/2,$y0);
-	// only do the second line if it is different to the first, AND each row does not have
-	// a line on it.
-	if ($y0!=$y1 && $opt<2)
-		$this->line($x0-$gap/2,$y1,$x1-$gap/2,$y1);
-
-	$this->line($x0-$gap/2 - $outer/2,$y2,$x1 - $gap/2+$outer/2,$y2);
+  $x0=1000;
+  $x1=0;
+  $this->setStrokeColor($col[0],$col[1],$col[2]);
+  $cnt=0;
+  $n = count($pos);
+  foreach($pos as $x){
+    $cnt++;
+    if ($cnt==1 || $cnt==$n){
+      $this->setLineStyle($outer);
+    } else {
+      $this->setLineStyle($inner);
+    }
+    $this->line($x-$gap/2,$y0,$x-$gap/2,$y2);
+    if ($x>$x1){ $x1=$x; };
+    if ($x<$x0){ $x0=$x; };
+  }
+  $this->setLineStyle($outer);
+  $this->line($x0-$gap/2-$outer/2,$y0,$x1-$gap/2+$outer/2,$y0);
+  // only do the second line if it is different to the first, AND each row does not have
+  // a line on it.
+  if ($y0!=$y1 && $opt<2){
+    $this->line($x0-$gap/2,$y1,$x1-$gap/2,$y1);
+  }
+  $this->line($x0-$gap/2-$outer/2,$y2,$x1-$gap/2+$outer/2,$y2);
 }
 
 // ------------------------------------------------------------------------------
@@ -640,17 +533,17 @@ function ezPrvtTableColumnHeadings($cols,$pos,$maxWidth,$height,$decender,$gap,$
   } else {
     $options = array();
   }
-  
+
   $mx=0;
   $startPage = $this->ezPageCount;
   $secondGo=0;
 
   // $y is the position at which the top of the table should start, so the base
   // of the first text, is $y-$height-$gap-$decender, but ezText starts by dropping $height
-  
+
   // the return from this function is the total cell height, including gaps, and $y is adjusted
   // to be the postion of the bottom line
-  
+
   // begin the transaction
   $this->transaction('start');
   $ok=0;
@@ -672,7 +565,7 @@ function ezPrvtTableColumnHeadings($cols,$pos,$maxWidth,$height,$decender,$gap,$
     }
     $y = $y - $mx - $gap + $decender;
 //    $y -= $mx-$gap+$decender;
-    
+
     // now, if this has moved to a new page, then abort the transaction, move to a new page, and put it there
     // do not check on the second time around, to avoid an infinite loop
     if ($this->ezPageCount != $startPage && $secondGo==0){
@@ -712,604 +605,595 @@ function ezPrvtGetTextWidth($size,$text){
 // ------------------------------------------------------------------------------
 
 function ezTable(&$data,$cols='',$title='',$options=''){
-// add a table of information to the pdf document
-// $data is a two dimensional array
-// $cols (optional) is an associative array, the keys are the names of the columns from $data
-// to be presented (and in that order), the values are the titles to be given to the columns
-// $title (optional) is the title to be put on the top of the table
-//
-// $options is an associative array which can contain:
-// 'showLines'=> 0,1,2,3,4 default is 1 (show outside and top lines only), 2=> lines on each row, 3=> lines for only rowa (excl. headline), 4=> HEAD LINE only
-// 'showHeadings' => 0 or 1
-// 'shaded'=> 0,1,2,3 default is 1 (1->alternate lines are shaded, 0->no shading, 2-> both shaded, second uses shadeCol2)
-// 'showBgCol'=> 0,1 default is 0 (1->active bg color column setting. if is set to 1, bgcolor attribute ca be used in 'cols' 0->no active bg color columns setting)
-// 'shadeCol' => (r,g,b) array, defining the colour of the shading, default is (0.8,0.8,0.8)
-// 'shadeCol2' => (r,g,b) array, defining the colour of the shading of the other blocks, default is (0.7,0.7,0.7)
-// 'fontSize' => 10
-// 'textCol' => (r,g,b) array, text colour
-// 'titleFontSize' => 12
-// 'rowGap' => 2 , the space added at the top and bottom of each row, between the text and the lines
-// 'colGap' => 5 , the space on the left and right sides of each cell
-// 'lineCol' => (r,g,b) array, defining the colour of the lines, default, black.
-// 'xPos' => 'left','right','center','centre',or coordinate, reference coordinate in the x-direction
-// 'xOrientation' => 'left','right','center','centre', position of the table w.r.t 'xPos' 
-// 'width'=> <number> which will specify the width of the table, if it turns out to not be this
-// wide, then it will stretch the table to fit, if it is wider then each cell will be made
-// proportionalty smaller, and the content may have to wrap.
-// 'maxWidth'=> <number> similar to 'width', but will only make table smaller than it wants to be
-// 'cols' => array(<colname>=>array('justification'=>'left','width'=>100,'link'=>linkDataName,'bgcolor'=>array(r,g,b) ),<colname>=>....) allow the setting of other paramaters for the individual columns
-// 'minRowSpace'=> the minimum space between the bottom of each row and the bottom margin, in which a new row will be started
-// if it is less, then a new page would be started, default=-100
-// 'innerLineThickness'=>1
-// 'outerLineThickness'=>1
-// 'splitRows'=>0, 0 or 1, whether or not to allow the rows to be split across page boundaries
-// 'protectRows'=>number, the number of rows to hold with the heading on page, ie, if there less than this number of rows on the page, then move the whole lot onto the next page, default=1
-// 'nextPageY'=> true or false (eg. 0 or 1) Sets the Y Postion of the Table of a newPage to current Table Postion
-// note that the user will have had to make a font selection already or this will not // produce a valid pdf file.
+  // add a table of information to the pdf document
+  // $data is a two dimensional array
+  // $cols (optional) is an associative array, the keys are the names of the columns from $data
+  // to be presented (and in that order), the values are the titles to be given to the columns
+  // $title (optional) is the title to be put on the top of the table
+  //
+  // $options is an associative array which can contain:
+  // 'showLines'=> 0,1,2, default is 1 (show outside and top lines only), 2=> lines on each row
+  // 'showHeadings' => 0 or 1
+  // 'shaded'=> 0,1,2,3 default is 1 (1->alternate lines are shaded, 0->no shading, 2-> both shaded, second uses shadeCol2)
+  // 'shadeCol' => (r,g,b) array, defining the colour of the shading, default is (0.8,0.8,0.8)
+  // 'shadeCol2' => (r,g,b) array, defining the colour of the shading of the other blocks, default is (0.7,0.7,0.7)
+  // 'fontSize' => 10
+  // 'textCol' => (r,g,b) array, text colour
+  // 'titleFontSize' => 12
+  // 'rowGap' => 2 , the space added at the top and bottom of each row, between the text and the lines
+  // 'colGap' => 5 , the space on the left and right sides of each cell
+  // 'lineCol' => (r,g,b) array, defining the colour of the lines, default, black.
+  // 'xPos' => 'left','right','center','centre',or coordinate, reference coordinate in the x-direction
+  // 'xOrientation' => 'left','right','center','centre', position of the table w.r.t 'xPos'
+  // 'width'=> <number> which will specify the width of the table, if it turns out to not be this
+  //    wide, then it will stretch the table to fit, if it is wider then each cell will be made
+  //    proportionalty smaller, and the content may have to wrap.
+  // 'maxWidth'=> <number> similar to 'width', but will only make table smaller than it wants to be
+  // 'options' => array(<colname>=>array('justification'=>'left','width'=>100,'link'=>linkDataName),<colname>=>....)
+  //             allow the setting of other paramaters for the individual columns
+  // 'minRowSpace'=> the minimum space between the bottom of each row and the bottom margin, in which a new row will be started
+  //                  if it is less, then a new page would be started, default=-100
+  // 'innerLineThickness'=>1
+  // 'outerLineThickness'=>1
+  // 'splitRows'=>0, 0 or 1, whether or not to allow the rows to be split across page boundaries
+  // 'protectRows'=>number, the number of rows to hold with the heading on page, ie, if there less than this number of
+  //                rows on the page, then move the whole lot onto the next page, default=1
+  //
+  // note that the user will have had to make a font selection already or this will not
+  // produce a valid pdf file.
 
-	if (!is_array($data)){
-		return;
-	}
+  if (!is_array($data)){
+    return;
+  }
 
-	if (!is_array($cols)){
-		// take the columns from the first row of the data set
-		reset($data);
-		list($k,$v)=each($data);
-		if (!is_array($v)){
-			return;
-		}
-		$cols=array();
-		foreach($v as $k1=>$v1){
-			$cols[$k1]=$k1;
-		}
-	}
-	
-	if (!is_array($options)){
-		$options=array();
-	}
+  if (!is_array($cols)){
+    // take the columns from the first row of the data set
+    reset($data);
+    list($k,$v)=each($data);
+    if (!is_array($v)){
+      return;
+    }
+    $cols=array();
+    foreach($v as $k1=>$v1){
+      $cols[$k1]=$k1;
+    }
+  }
 
-	$defaults = array( 'shaded'=>1,'showBgCol'=>0,'showLines'=>1,'shadeCol'=>array(0.8,0.8,0.8),'shadeCol2'=>array(0.7,0.7,0.7),'fontSize'=>10,'titleFontSize'=>12
-	,'titleGap'=>5,'lineCol'=>array(0,0,0),'gap'=>5,'xPos'=>'centre','xOrientation'=>'centre'
-	,'showHeadings'=>1,'textCol'=>array(0,0,0),'width'=>0,'maxWidth'=>0,'cols'=>array(),'minRowSpace'=>-100,'rowGap'=>2,'colGap'=>5
-	,'innerLineThickness'=>1,'outerLineThickness'=>1,'splitRows'=>0,'protectRows'=>1,'nextPageY'=>0
-	);
+  if (!is_array($options)){
+    $options=array();
+  }
 
-	foreach($defaults as $key=>$value){
-		if (is_array($value)){
-			if (!isset($options[$key]) || !is_array($options[$key])){
-				$options[$key]=$value;
-			}
-		} else {
-			if (!isset($options[$key])){
-				$options[$key]=$value;
-			}
-		}
-	}
-	$options['gap']=2*$options['colGap'];
-	// Use Y Position of Current Page position in Table
-	if($options['nextPageY']) $nextPageY = $this->y;
+  $defaults = array(
+    'shaded'=>1,'showLines'=>1,'shadeCol'=>array(0.8,0.8,0.8),'shadeCol2'=>array(0.7,0.7,0.7),'fontSize'=>10,'titleFontSize'=>12
+    ,'titleGap'=>5,'lineCol'=>array(0,0,0),'gap'=>5,'xPos'=>'centre','xOrientation'=>'centre'
+    ,'showHeadings'=>1,'textCol'=>array(0,0,0),'width'=>0,'maxWidth'=>0,'cols'=>array(),'minRowSpace'=>-100,'rowGap'=>2,'colGap'=>5
+    ,'innerLineThickness'=>1,'outerLineThickness'=>1,'splitRows'=>0,'protectRows'=>1
+    );
 
-	$middle = ($this->ez['pageWidth']-$this->ez['rightMargin'])/2+($this->ez['leftMargin'])/2;
-	// figure out the maximum widths of the text within each column
-	$maxWidth=array();
-	foreach($cols as $colName=>$colHeading){
-		$maxWidth[$colName]=0;
-	}
-	// find the maximum cell widths based on the data
-	foreach($data as $row){
-		foreach($cols as $colName=>$colHeading){
-			$w = $this->ezPrvtGetTextWidth($options['fontSize'],(string)$row[$colName])*1.01;
-			if ($w > $maxWidth[$colName]){
-				$maxWidth[$colName]=$w;
-			}
-		}
-	}
-	// and the maximum widths to fit in the headings
-	foreach($cols as $colName=>$colTitle){
-		$w = $this->ezPrvtGetTextWidth($options['fontSize'],(string)$colTitle)*1.01;
-		if ($w > $maxWidth[$colName]){
-			$maxWidth[$colName]=$w;
-		}
-	}
+  foreach($defaults as $key=>$value){
+    if (is_array($value)){
+      if (!isset($options[$key]) || !is_array($options[$key])){
+        $options[$key]=$value;
+      }
+    } else {
+      if (!isset($options[$key])){
+        $options[$key]=$value;
+      }
+    }
+  }
+  $options['gap']=2*$options['colGap'];
 
-	// calculate the start positions of each of the columns
-	$pos=array();
-	$x=0;
-	$t=$x;
-	$adjustmentWidth=0;
-	$setWidth=0;
-	foreach($maxWidth as $colName => $w){
-		$pos[$colName]=$t;
-		// if the column width has been specified then set that here, also total the
-		// width avaliable for adjustment
-		if (isset($options['cols'][$colName]) && isset($options['cols'][$colName]['width']) && $options['cols'][$colName]['width']>0){
-			$t=$t+$options['cols'][$colName]['width'];
-			$maxWidth[$colName] = $options['cols'][$colName]['width']-$options['gap'];
-			$setWidth += $options['cols'][$colName]['width'];
-		} else {
-			$t=$t+$w+$options['gap'];
-			$adjustmentWidth += $w;
-			$setWidth += $options['gap'];
-		}
-	}
-	$pos['_end_']=$t;
+  $middle = ($this->ez['pageWidth']-$this->ez['rightMargin'])/2+($this->ez['leftMargin'])/2;
+  // figure out the maximum widths of the text within each column
+  $maxWidth=array();
+  foreach($cols as $colName=>$colHeading){
+    $maxWidth[$colName]=0;
+  }
+  // find the maximum cell widths based on the data
+  foreach($data as $row){
+    foreach($cols as $colName=>$colHeading){
+      $w = $this->ezPrvtGetTextWidth($options['fontSize'],(string)$row[$colName])*1.01;
+      if ($w > $maxWidth[$colName]){
+        $maxWidth[$colName]=$w;
+      }
+    }
+  }
+  // and the maximum widths to fit in the headings
+  foreach($cols as $colName=>$colTitle){
+    $w = $this->ezPrvtGetTextWidth($options['fontSize'],(string)$colTitle)*1.01;
+    if ($w > $maxWidth[$colName]){
+      $maxWidth[$colName]=$w;
+    }
+  }
 
-// if maxWidth is specified, and the table is too wide, and the width has not been set,
-// then set the width.
-	if ($options['width']==0 && $options['maxWidth'] && ($t-$x)>$options['maxWidth']){
-		// then need to make this one smaller
-		$options['width']=$options['maxWidth'];
-	}
+  // calculate the start positions of each of the columns
+  $pos=array();
+  $x=0;
+  $t=$x;
+  $adjustmentWidth=0;
+  $setWidth=0;
+  foreach($maxWidth as $colName => $w){
+    $pos[$colName]=$t;
+    // if the column width has been specified then set that here, also total the
+    // width avaliable for adjustment
+    if (isset($options['cols'][$colName]) && isset($options['cols'][$colName]['width']) && $options['cols'][$colName]['width']>0){
+      $t=$t+$options['cols'][$colName]['width'];
+      $maxWidth[$colName] = $options['cols'][$colName]['width']-$options['gap'];
+      $setWidth += $options['cols'][$colName]['width'];
+    } else {
+      $t=$t+$w+$options['gap'];
+      $adjustmentWidth += $w;
+      $setWidth += $options['gap'];
+    }
+  }
+  $pos['_end_']=$t;
 
-	if ($options['width'] && $adjustmentWidth>0 && $setWidth<$options['width']){
-		// first find the current widths of the columns involved in this mystery
-		$cols0 = array();
-		$cols1 = array();
-		$xq=0;
-		$presentWidth=0;
-		$last='';
-		foreach($pos as $colName=>$p){
-			if (!isset($options['cols'][$last]) || !isset($options['cols'][$last]['width']) || $options['cols'][$last]['width']<=0){
-				if (strlen($last)){
-					$cols0[$last]=$p-$xq -$options['gap'];
-					$presentWidth += ($p-$xq - $options['gap']);
-				}
-			} else {
-				$cols1[$last]=$p-$xq;
-			}
-			$last=$colName;
-			$xq=$p;
-		}
-		// $cols0 contains the widths of all the columns which are not set
-		$neededWidth = $options['width']-$setWidth;
-		// if needed width is negative then add it equally to each column, else get more tricky
-		if ($presentWidth<$neededWidth){
-			foreach($cols0 as $colName=>$w){
-				$cols0[$colName]+= ($neededWidth-$presentWidth)/count($cols0);
-			}
-		} else {
-			
-			$cnt=0;
-			while ($presentWidth>$neededWidth && $cnt<100){
-				$cnt++; // insurance policy
-				// find the widest columns, and the next to widest width
-				$aWidest = array();
-				$nWidest=0;
-				$widest=0;
-				foreach($cols0 as $colName=>$w){
-					if ($w>$widest){
-						$aWidest=array($colName);
-						$nWidest = $widest;
-						$widest=$w;
-					} else if ($w==$widest){
-						$aWidest[]=$colName;
-					}
-				}
-				// then figure out what the width of the widest columns would have to be to take up all the slack
-				$newWidestWidth = $widest - ($presentWidth-$neededWidth)/count($aWidest);
-				if ($newWidestWidth > $nWidest){
-				// then there is space to set them to this
-					foreach($aWidest as $colName){
-						$cols0[$colName] = $newWidestWidth;
-					}
-					$presentWidth=$neededWidth;
-				} else {
-					// there is not space, reduce the size of the widest ones down to the next size down, and we
-					// will go round again
-					foreach($aWidest as $colName){
-						$cols0[$colName] = $nWidest;
-					}
-					$presentWidth=$presentWidth-($widest-$nWidest)*count($aWidest);
-				}
-			}
-		}
-		// $cols0 now contains the new widths of the constrained columns.
-		// now need to update the $pos and $maxWidth arrays
-		$xq=0;
-		foreach($pos as $colName=>$p){
-			$pos[$colName]=$xq;
-			if (!isset($options['cols'][$colName]) || !isset($options['cols'][$colName]['width']) || $options['cols'][$colName]['width']<=0){
-				if (isset($cols0[$colName])){
-					$xq += $cols0[$colName] + $options['gap'];
-					$maxWidth[$colName]=$cols0[$colName];
-				}
-			} else {
-				if (isset($cols1[$colName])){
-					$xq += $cols1[$colName];
-				}
-			}
-		}
+  // if maxWidth is specified, and the table is too wide, and the width has not been set,
+  // then set the width.
+  if ($options['width']==0 && $options['maxWidth'] && ($t-$x)>$options['maxWidth']){
+    // then need to make this one smaller
+    $options['width']=$options['maxWidth'];
+  }
 
-		$t=$x+$options['width'];
-		$pos['_end_']=$t;
-	}
+  if ($options['width'] && $adjustmentWidth>0 && $setWidth<$options['width']){
+    // first find the current widths of the columns involved in this mystery
+    $cols0 = array();
+    $cols1 = array();
+    $xq=0;
+    $presentWidth=0;
+    $last='';
+    foreach($pos as $colName=>$p){
+      if (!isset($options['cols'][$last]) || !isset($options['cols'][$last]['width']) || $options['cols'][$last]['width']<=0){
+        if (strlen($last)){
+          $cols0[$last]=$p-$xq -$options['gap'];
+          $presentWidth += ($p-$xq - $options['gap']);
+        }
+      } else {
+        $cols1[$last]=$p-$xq;
+      }
+      $last=$colName;
+      $xq=$p;
+    }
+    // $cols0 contains the widths of all the columns which are not set
+    $neededWidth = $options['width']-$setWidth;
+    // if needed width is negative then add it equally to each column, else get more tricky
+    if ($presentWidth<$neededWidth){
+      foreach($cols0 as $colName=>$w){
+        $cols0[$colName]+= ($neededWidth-$presentWidth)/count($cols0);
+      }
+    } else {
 
-	// now adjust the table to the correct location across the page
-	switch ($options['xPos']){
-		case 'left':
-			$xref = $this->ez['leftMargin'];
-			break;
-		case 'right':
-			$xref = $this->ez['pageWidth'] - $this->ez['rightMargin'];
-			break;
-		case 'centre':
-		case 'center':
-			$xref = $middle;
-			break;
-		default:
-			$xref = $options['xPos'];
-			break;
-	}
-	switch ($options['xOrientation']){
-		case 'left':
-			$dx = $xref-$t;
-			break;
-		case 'right':
-			$dx = $xref;
-			break;
-		case 'centre':
-		case 'center':
-			$dx = $xref-$t/2;
-			break;
-	}
+      $cnt=0;
+      while ($presentWidth>$neededWidth && $cnt<100){
+        $cnt++; // insurance policy
+        // find the widest columns, and the next to widest width
+        $aWidest = array();
+        $nWidest=0;
+        $widest=0;
+        foreach($cols0 as $colName=>$w){
+          if ($w>$widest){
+            $aWidest=array($colName);
+            $nWidest = $widest;
+            $widest=$w;
+          } else if ($w==$widest){
+            $aWidest[]=$colName;
+          }
+        }
+        // then figure out what the width of the widest columns would have to be to take up all the slack
+        $newWidestWidth = $widest - ($presentWidth-$neededWidth)/count($aWidest);
+        if ($newWidestWidth > $nWidest){
+          // then there is space to set them to this
+          foreach($aWidest as $colName){
+            $cols0[$colName] = $newWidestWidth;
+          }
+          $presentWidth=$neededWidth;
+        } else {
+          // there is not space, reduce the size of the widest ones down to the next size down, and we
+          // will go round again
+          foreach($aWidest as $colName){
+            $cols0[$colName] = $nWidest;
+          }
+          $presentWidth=$presentWidth-($widest-$nWidest)*count($aWidest);
+        }
+      }
+    }
+    // $cols0 now contains the new widths of the constrained columns.
+    // now need to update the $pos and $maxWidth arrays
+    $xq=0;
+    foreach($pos as $colName=>$p){
+      $pos[$colName]=$xq;
+      if (!isset($options['cols'][$colName]) || !isset($options['cols'][$colName]['width']) || $options['cols'][$colName]['width']<=0){
+        if (isset($cols0[$colName])){
+          $xq += $cols0[$colName] + $options['gap'];
+          $maxWidth[$colName]=$cols0[$colName];
+        }
+      } else {
+        if (isset($cols1[$colName])){
+          $xq += $cols1[$colName];
+        }
+      }
+    }
 
+    $t=$x+$options['width'];
+    $pos['_end_']=$t;
+  }
 
-	foreach($pos as $k=>$v){
-		$pos[$k]=$v+$dx;
-	}
-	$x0=$x+$dx;
-	$x1=$t+$dx;
-
-	$baseLeftMargin = $this->ez['leftMargin'];
-	$basePos = $pos;
-	$baseX0 = $x0;
-	$baseX1 = $x1;
-	// ok, just about ready to make me a table
-	$this->setColor($options['textCol'][0],$options['textCol'][1],$options['textCol'][2]);
-	$this->setStrokeColor($options['shadeCol'][0],$options['shadeCol'][1],$options['shadeCol'][2]);
-	
-	$middle = ($x1+$x0)/2;
-	
-	// start a transaction which will be used to regress the table, if there are not enough rows protected
-	if ($options['protectRows']>0){
-		$this->transaction('start');
-		$movedOnce=0;
-	}
-	$abortTable = 1;
-	while ($abortTable){
-		$abortTable=0;
-		$dm = $this->ez['leftMargin']-$baseLeftMargin;
-		foreach($basePos as $k=>$v){
-			$pos[$k]=$v+$dm;
-		}
-		$x0=$baseX0+$dm;
-		$x1=$baseX1+$dm;
-		$middle = ($x1+$x0)/2;
+  // now adjust the table to the correct location across the page
+  switch ($options['xPos']){
+    case 'left':
+      $xref = $this->ez['leftMargin'];
+      break;
+    case 'right':
+      $xref = $this->ez['pageWidth'] - $this->ez['rightMargin'];
+      break;
+    case 'centre':
+    case 'center':
+      $xref = $middle;
+      break;
+    default:
+      $xref = $options['xPos'];
+      break;
+  }
+  switch ($options['xOrientation']){
+    case 'left':
+      $dx = $xref-$t;
+      break;
+    case 'right':
+      $dx = $xref;
+      break;
+    case 'centre':
+    case 'center':
+      $dx = $xref-$t/2;
+      break;
+  }
 
 
-		// if the title is set, then do that
-		if (strlen($title)){
-			$w = $this->getTextWidth($options['titleFontSize'],$title);
-			$this->y -= $this->getFontHeight($options['titleFontSize']);
-			if ($this->y < $this->ez['bottomMargin']){
-				$this->ezNewPage();
-				// margins may have changed on the newpage
-				$dm = $this->ez['leftMargin']-$baseLeftMargin;
-				foreach($basePos as $k=>$v){
-					$pos[$k]=$v+$dm;
-				}
-				$x0=$baseX0+$dm;
-				$x1=$baseX1+$dm;
-				$middle = ($x1+$x0)/2;
-				$this->y -= $this->getFontHeight($options['titleFontSize']);
-			}
-			$this->addText($middle-$w/2,$this->y,$options['titleFontSize'],$title);
-			$this->y -= $options['titleGap'];
-		}
-		// margins may have changed on the newpage
-		$dm = $this->ez['leftMargin']-$baseLeftMargin;
-		foreach($basePos as $k=>$v){
-			$pos[$k]=$v+$dm;
-		}
-		$x0=$baseX0+$dm;
-		$x1=$baseX1+$dm;
+  foreach($pos as $k=>$v){
+    $pos[$k]=$v+$dx;
+  }
+  $x0=$x+$dx;
+  $x1=$t+$dx;
 
-		$y=$this->y; // to simplify the code a bit
+  $baseLeftMargin = $this->ez['leftMargin'];
+  $basePos = $pos;
+  $baseX0 = $x0;
+  $baseX1 = $x1;
 
-		// make the table
-		$height = $this->getFontHeight($options['fontSize']);
-		$decender = $this->getFontDecender($options['fontSize']);
+  // ok, just about ready to make me a table
+  $this->setColor($options['textCol'][0],$options['textCol'][1],$options['textCol'][2]);
+  $this->setStrokeColor($options['shadeCol'][0],$options['shadeCol'][1],$options['shadeCol'][2]);
 
+  $middle = ($x1+$x0)/2;
 
+  // start a transaction which will be used to regress the table, if there are not enough rows protected
+  if ($options['protectRows']>0){
+    $this->transaction('start');
+    $movedOnce=0;
+  }
+  $abortTable = 1;
+  while ($abortTable){
+  $abortTable=0;
 
-		$y0=$y+$decender;
-		$dy=0;
-		if ($options['showHeadings']){
-			// this function will move the start of the table to a new page if it does not fit on this one
-			$headingHeight = $this->ezPrvtTableColumnHeadings($cols,$pos,$maxWidth,$height,$decender,$options['rowGap'],$options['fontSize'],$y,$options);
-			$y0 = $y+$headingHeight;
-			$y1 = $y;
-
-			$dm = $this->ez['leftMargin']-$baseLeftMargin;
-			foreach($basePos as $k=>$v){
-				$pos[$k]=$v+$dm;
-			}
-			$x0=$baseX0+$dm;
-			$x1=$baseX1+$dm;
-		} else {
-			$y1 = $y0;
-		}
-		$firstLine=1;
-
-		// open an object here so that the text can be put in over the shading
-		if ($options['shaded'] || $options['showBgCol']){
-			$this->saveState();
-			$textObjectId = $this->openObject();
-			$this->closeObject();
-			$this->addObject($textObjectId);
-			$this->reopenObject($textObjectId);
-		}
-
-		$cnt=0;
-		$newPage=0;
-		foreach($data as $row){
-			$cnt++;
-			// the transaction support will be used to prevent rows being split
-			if ($options['splitRows']==0){
-				$pageStart = $this->ezPageCount;
-				if (isset($this->ez['columns']) && $this->ez['columns']['on']==1){
-					$columnStart = $this->ez['columns']['colNum'];
-				}
-				$this->transaction('start');
-				$row_orig = $row;
-				$y_orig = $y;
-				$y0_orig = $y0;
-				$y1_orig = $y1;
-			}
-			$ok=0;
-			$secondTurn=0;
-			while(!$abortTable && $ok == 0){
-
-				$mx=0;
-				$newRow=1;
-				while(!$abortTable && ($newPage || $newRow)){
-
-					$y-=$height;
-					if ($newPage || $y<$this->ez['bottomMargin'] || (isset($options['minRowSpace']) && $y<($this->ez['bottomMargin']+$options['minRowSpace'])) ){
-						// check that enough rows are with the heading
-						if ($options['protectRows']>0 && $movedOnce==0 && $cnt<=$options['protectRows']){
-							// then we need to move the whole table onto the next page
-							$movedOnce = 1;
-							$abortTable = 1;
-						}
-
-						$y2=$y-$mx+2*$height+$decender-$newRow*$height;
-						if ($options['showLines']){
-							if (!$options['showHeadings']){
-								$y0=$y1;
-							}
-							if($options['showLines'] > 3){
-								$this->SetStrokeColor($options['lineCol'][0],$options['lineCol'][1],$options['lineCol'][2],1);
-								$this->line($x0,$y1,$x1,$y1);
-							}else if($options['showLines'] < 3){
-								$this->ezPrvtTableDrawLines($pos,$options['gap'],$x0,$x1,$y0,$y1,$y2,$options['lineCol'],$options['innerLineThickness'],$options['outerLineThickness'],$options['showLines']);
-							}
-						}
-						if ($options['shaded'] || $options['showBgCol']){
-							$this->closeObject();
-							$this->restoreState();
-						}
-						$this->ezNewPage();
-						// and the margins may have changed, this is due to the possibility of the columns being turned on
-						// as the columns are managed by manipulating the margins
-						$dm	= $this->ez['leftMargin']-$baseLeftMargin;
-						foreach($basePos as $k=>$v){
-							$pos[$k]=$v+$dm;
-						}
-						// $x0=$x0+$dm;
-						// $x1=$x1+$dm;
-						$x0=$baseX0+$dm;
-						$x1=$baseX1+$dm;
-						if ($options['shaded'] || $options['showBgCol']){
-							$this->saveState();
-							$textObjectId = $this->openObject();
-							$this->closeObject();
-							$this->addObject($textObjectId);
-							$this->reopenObject($textObjectId);
-						}
-						$this->setColor($options['textCol'][0],$options['textCol'][1],$options['textCol'][2],1);
-						$y = ($options['nextPageY'])?$nextPageY:($this->ez['pageHeight']-$this->ez['topMargin']);
-						$y0=$y+$decender;
-						$mx=0;
-						if ($options['showHeadings']){
-							$this->ezPrvtTableColumnHeadings($cols,$pos,$maxWidth,$height,$decender,$options['rowGap'],$options['fontSize'],$y,$options);
-							$y1=$y;
-						} else {
-							$y1=$y0;
-						}
-						$firstLine=1;
-						$y -= $height;
-					}
-					$newRow=0;
-					// write the actual data
-					// if these cells need to be split over a page, then $newPage will be set, and the remaining
-					// text will be placed in $leftOvers
-					$newPage=0;
-					$leftOvers=array();
-
-					foreach($cols as $colName=>$colTitle){
-						$this->ezSetY($y+$height);
-						$colNewPage=0;
-						if (isset($row[$colName])){
-							if (isset($options['cols'][$colName]) && isset($options['cols'][$colName]['link']) && strlen($options['cols'][$colName]['link'])){
-
-								$lines = explode("\n",$row[$colName]);
-								if (isset($row[$options['cols'][$colName]['link']]) && strlen($row[$options['cols'][$colName]['link']])){
-									foreach($lines as $k=>$v){
-										$lines[$k]='<c:alink:'.$row[$options['cols'][$colName]['link']].'>'.$v.'</c:alink>';
-									}
-								}
-							} else {
-								$lines = explode("\n",$row[$colName]);
-							}
-						} else {
-							$lines = array();
-						}
-						$this->y -= $options['rowGap'];
-						foreach ($lines as $line){
-							$line = $this->ezProcessText($line);
-							$start=1;
-
-							while (strlen($line) || $start){
-								$start=0;
-								if (!$colNewPage){
-									$this->y=$this->y-$height;
-								}
-								if ($this->y < $this->ez['bottomMargin']){
-									// $this->ezNewPage();
-									$newPage=1; // whether a new page is required for any of the columns
-									$colNewPage=1; // whether a new page is required for this column
-								}
-								if ($colNewPage){
-									if (isset($leftOvers[$colName])){
-										$leftOvers[$colName].="\n".$line;
-									} else {
-										$leftOvers[$colName] = $line;
-									}
-									$line='';
-								} else {
-									if (isset($options['cols'][$colName]) && isset($options['cols'][$colName]['justification']) ){
-										$just = $options['cols'][$colName]['justification'];
-									} else {
-										$just='left';
-									}
-
-								$line=$this->addTextWrap($pos[$colName],$this->y,$maxWidth[$colName],$options['fontSize'],$line,$just);
-								}
-							}
-						}
-
-						$dy=$y+$height-$this->y+$options['rowGap'];
-						if ($dy-$height*$newPage>$mx){
-							$mx=$dy-$height*$newPage;
-						}
-					}
-					// set $row to $leftOvers so that they will be processed onto the new page
-					$row = $leftOvers;
-					// now add the shading underneath
-					if ($options['shaded'] && $cnt%2==0){
-						$this->closeObject();
-						$this->setColor($options['shadeCol'][0],$options['shadeCol'][1],$options['shadeCol'][2],1);
-						$this->filledRectangle($x0-$options['gap']/2,$y+$decender+$height-$mx,$x1-$x0,$mx);
-						$this->reopenObject($textObjectId);
-					}
-
-					if ($options['shaded']==2 && $cnt%2==1){
-						$this->closeObject();
-						$this->setColor($options['shadeCol2'][0],$options['shadeCol2'][1],$options['shadeCol2'][2],1);
-						$this->filledRectangle($x0-$options['gap']/2,$y+$decender+$height-$mx,$x1-$x0,$mx);
-						$this->reopenObject($textObjectId);
-					}
-
-					// if option showColColor is set,  then can draw filledrectangle column
-					if ($options['showBgCol'] == 1) {
-						foreach($cols as $colName=>$colTitle){
-							if ( isset($options['cols'][$colName]) && isset($options['cols'][$colName]['bgcolor'])) {
-								$arrColColor = $options['cols'][$colName]['bgcolor'];
-								$this->closeObject();
-								$this->setColor($arrColColor[0],$arrColColor[1],$arrColColor[2],1);
-								$this->filledRectangle($pos[$colName]-$options['gap']/2,$y+$decender+$height-$mx,$maxWidth[$colName]+$options['gap'],$mx);
-								$this->reopenObject($textObjectId);
-							}
-						}
-					}
-					if ($options['showLines']>1){
-						// then draw a line on the top of each block
-						// $this->closeObject();
-						$this->saveState();
-						$this->setStrokeColor($options['lineCol'][0],$options['lineCol'][1],$options['lineCol'][2],1);
-						// $this->line($x0-$options['gap']/2,$y+$decender+$height-$mx,$x1-$x0,$mx);
-						if ($firstLine){
-							$this->setLineStyle($options['outerLineThickness']);
-							$firstLine=0;
-						} else {
-							$this->setLineStyle($options['innerLineThickness']);
-						}
-						if($options['showLines'] < 4){
-							$this->line($x0-$options['gap']/2,$y+$decender+$height,$x1-$options['gap']/2,$y+$decender+$height);
-						}
-						$this->restoreState();
-						// $this->reopenObject($textObjectId);
-					}
-				} // end of while 
-				$y=$y-$mx+$height;
-
-				// checking row split over pages
-				if ($options['splitRows']==0){
-					if ( ( ($this->ezPageCount != $pageStart) || (isset($this->ez['columns']) && $this->ez['columns']['on']==1 && $columnStart != $this->ez['columns']['colNum'] )) && $secondTurn==0){
-						// then we need to go back and try that again !
-						$newPage=1;
-						$secondTurn=1;
-						$this->transaction('rewind');
-						$row = $row_orig;
-						$y = $y_orig;
-						$y0 = $y0_orig;
-						$y1 = $y1_orig;
-						$ok=0;
-						// MARKIERT
-						$dm = $this->ez['leftMargin']-$baseLeftMargin;
-						foreach($basePos as $k=>$v){
-							$pos[$k]=$v+$dm;
-						}
-						$x0=$baseX0+$dm;
-						$x1=$baseX1+$dm;
-
-					} else {
-						$this->transaction('commit');
-						$ok=1;
-					}
-				} else {
-					$ok=1; // don't go round the loop if splitting rows is allowed
-				}
-			} // end of while to check for row splitting
-			if ($abortTable){
-				if ($ok==0){
-					$this->transaction('abort');
-			}
-			// only the outer transaction should be operational
-			$this->transaction('rewind');
-			$this->ezNewPage();
-			break;
-		}
-
-	} // end of foreach ($data as $row)
-
-	} // end of while ($abortTable)
-
-	// table has been put on the page, the rows guarded as required, commit.
-	$this->transaction('commit');
-
-	$y2=$y+$decender;
-	if ($options['showLines']){
-		if (!$options['showHeadings']){
-			$y0=$y1;
-		}
-		if($options['showLines'] > 3){
-			$this->SetStrokeColor($options['lineCol'][0],$options['lineCol'][1],$options['lineCol'][2],1);
-			$this->line($x0,$y1,$x1,$y1);
-		}else if($options['showLines'] < 3){
-			$this->ezPrvtTableDrawLines($pos,$options['gap'],$x0,$x1,$y0,$y1,$y2,$options['lineCol'],$options['innerLineThickness'],$options['outerLineThickness'],$options['showLines']);
-		}
-	}
-	// close the object for drawing the text on top
-	if ($options['shaded'] || $options['showBgCol']){
-		$this->closeObject();
-		$this->restoreState();
-	}
+  $dm = $this->ez['leftMargin']-$baseLeftMargin;
+  foreach($basePos as $k=>$v){
+    $pos[$k]=$v+$dm;
+  }
+  $x0=$baseX0+$dm;
+  $x1=$baseX1+$dm;
+  $middle = ($x1+$x0)/2;
 
 
-	$this->y=$y;
-	return $y;
+  // if the title is set, then do that
+  if (strlen($title)){
+    $w = $this->getTextWidth($options['titleFontSize'],$title);
+    $this->y -= $this->getFontHeight($options['titleFontSize']);
+    if ($this->y < $this->ez['bottomMargin']){
+      $this->ezNewPage();
+        // margins may have changed on the newpage
+        $dm = $this->ez['leftMargin']-$baseLeftMargin;
+        foreach($basePos as $k=>$v){
+          $pos[$k]=$v+$dm;
+        }
+        $x0=$baseX0+$dm;
+        $x1=$baseX1+$dm;
+        $middle = ($x1+$x0)/2;
+      $this->y -= $this->getFontHeight($options['titleFontSize']);
+    }
+    $this->addText($middle-$w/2,$this->y,$options['titleFontSize'],$title);
+    $this->y -= $options['titleGap'];
+  }
+
+        // margins may have changed on the newpage
+        $dm = $this->ez['leftMargin']-$baseLeftMargin;
+        foreach($basePos as $k=>$v){
+          $pos[$k]=$v+$dm;
+        }
+        $x0=$baseX0+$dm;
+        $x1=$baseX1+$dm;
+
+  $y=$this->y; // to simplify the code a bit
+
+  // make the table
+  $height = $this->getFontHeight($options['fontSize']);
+  $decender = $this->getFontDecender($options['fontSize']);
+
+
+
+  $y0=$y+$decender;
+  $dy=0;
+  if ($options['showHeadings']){
+    // this function will move the start of the table to a new page if it does not fit on this one
+    $headingHeight = $this->ezPrvtTableColumnHeadings($cols,$pos,$maxWidth,$height,$decender,$options['rowGap'],$options['fontSize'],$y,$options);
+    $y0 = $y+$headingHeight;
+    $y1 = $y;
+
+
+    $dm = $this->ez['leftMargin']-$baseLeftMargin;
+    foreach($basePos as $k=>$v){
+      $pos[$k]=$v+$dm;
+    }
+    $x0=$baseX0+$dm;
+    $x1=$baseX1+$dm;
+
+  } else {
+    $y1 = $y0;
+  }
+  $firstLine=1;
+
+
+  // open an object here so that the text can be put in over the shading
+  if ($options['shaded']){
+    $this->saveState();
+    $textObjectId = $this->openObject();
+    $this->closeObject();
+    $this->addObject($textObjectId);
+    $this->reopenObject($textObjectId);
+  }
+
+  $cnt=0;
+  $newPage=0;
+  foreach($data as $row){
+    $cnt++;
+    // the transaction support will be used to prevent rows being split
+    if ($options['splitRows']==0){
+      $pageStart = $this->ezPageCount;
+      if (isset($this->ez['columns']) && $this->ez['columns']['on']==1){
+        $columnStart = $this->ez['columns']['colNum'];
+      }
+      $this->transaction('start');
+      $row_orig = $row;
+      $y_orig = $y;
+      $y0_orig = $y0;
+      $y1_orig = $y1;
+    }
+    $ok=0;
+    $secondTurn=0;
+    while(!$abortTable && $ok == 0){
+
+    $mx=0;
+    $newRow=1;
+    while(!$abortTable && ($newPage || $newRow)){
+
+      $y-=$height;
+      if ($newPage || $y<$this->ez['bottomMargin'] || (isset($options['minRowSpace']) && $y<($this->ez['bottomMargin']+$options['minRowSpace'])) ){
+        // check that enough rows are with the heading
+        if ($options['protectRows']>0 && $movedOnce==0 && $cnt<=$options['protectRows']){
+          // then we need to move the whole table onto the next page
+          $movedOnce = 1;
+          $abortTable = 1;
+        }
+
+        $y2=$y-$mx+2*$height+$decender-$newRow*$height;
+        if ($options['showLines']){
+          if (!$options['showHeadings']){
+            $y0=$y1;
+          }
+          $this->ezPrvtTableDrawLines($pos,$options['gap'],$x0,$x1,$y0,$y1,$y2,$options['lineCol'],$options['innerLineThickness'],$options['outerLineThickness'],$options['showLines']);
+        }
+        if ($options['shaded']){
+          $this->closeObject();
+          $this->restoreState();
+        }
+        $this->ezNewPage();
+        // and the margins may have changed, this is due to the possibility of the columns being turned on
+        // as the columns are managed by manipulating the margins
+
+        $dm = $this->ez['leftMargin']-$baseLeftMargin;
+        foreach($basePos as $k=>$v){
+          $pos[$k]=$v+$dm;
+        }
+//        $x0=$x0+$dm;
+//        $x1=$x1+$dm;
+        $x0=$baseX0+$dm;
+        $x1=$baseX1+$dm;
+
+        if ($options['shaded']){
+          $this->saveState();
+          $textObjectId = $this->openObject();
+          $this->closeObject();
+          $this->addObject($textObjectId);
+          $this->reopenObject($textObjectId);
+        }
+        $this->setColor($options['textCol'][0],$options['textCol'][1],$options['textCol'][2],1);
+        $y = $this->ez['pageHeight']-$this->ez['topMargin'];
+        $y0=$y+$decender;
+        $mx=0;
+        if ($options['showHeadings']){
+          $this->ezPrvtTableColumnHeadings($cols,$pos,$maxWidth,$height,$decender,$options['rowGap'],$options['fontSize'],$y,$options);
+          $y1=$y;
+        } else {
+          $y1=$y0;
+        }
+        $firstLine=1;
+        $y -= $height;
+      }
+      $newRow=0;
+      // write the actual data
+      // if these cells need to be split over a page, then $newPage will be set, and the remaining
+      // text will be placed in $leftOvers
+      $newPage=0;
+      $leftOvers=array();
+
+      foreach($cols as $colName=>$colTitle){
+        $this->ezSetY($y+$height);
+        $colNewPage=0;
+        if (isset($row[$colName])){
+          if (isset($options['cols'][$colName]) && isset($options['cols'][$colName]['link']) && strlen($options['cols'][$colName]['link'])){
+
+            $lines = explode("\n",$row[$colName]);
+            if (isset($row[$options['cols'][$colName]['link']]) && strlen($row[$options['cols'][$colName]['link']])){
+              foreach($lines as $k=>$v){
+                $lines[$k]='<c:alink:'.$row[$options['cols'][$colName]['link']].'>'.$v.'</c:alink>';
+              }
+            }
+          } else {
+            $lines = explode("\n",$row[$colName]);
+          }
+        } else {
+          $lines = array();
+        }
+        $this->y -= $options['rowGap'];
+        foreach ($lines as $line){
+          $this->newTableCell($this->y-$height,$line);
+          $line = $this->ezProcessText($line);
+          $start=1;
+
+          while (strlen($line) || $start){
+            $start=0;
+            if (!$colNewPage){
+              $this->y=$this->y-$height;
+            }
+            if ($this->y < $this->ez['bottomMargin']){
+  //            $this->ezNewPage();
+              $newPage=1;  // whether a new page is required for any of the columns
+              $colNewPage=1; // whether a new page is required for this column
+            }
+            if ($colNewPage){
+              if (isset($leftOvers[$colName])){
+                $leftOvers[$colName].="\n".$line;
+              } else {
+                $leftOvers[$colName] = $line;
+              }
+              $line='';
+            } else {
+              if (isset($options['cols'][$colName]) && isset($options['cols'][$colName]['justification']) ){
+                $just = $options['cols'][$colName]['justification'];
+              } else {
+                $just='left';
+              }
+
+              $line=$this->addTextWrap($pos[$colName],$this->y,$maxWidth[$colName],$options['fontSize'],$line,$just);
+            }
+          }
+        }
+
+        $dy=$y+$height-$this->y+$options['rowGap'];
+        if ($dy-$height*$newPage>$mx){
+          $mx=$dy-$height*$newPage;
+        }
+      }
+      // set $row to $leftOvers so that they will be processed onto the new page
+      $row = $leftOvers;
+      // now add the shading underneath
+      if ($options['shaded'] && $cnt%2==0){
+        $this->closeObject();
+        $this->setColor($options['shadeCol'][0],$options['shadeCol'][1],$options['shadeCol'][2],1);
+        $this->filledRectangle($x0-$options['gap']/2,$y+$decender+$height-$mx,$x1-$x0,$mx);
+        $this->reopenObject($textObjectId);
+      }
+
+      if ($options['shaded']==2 && $cnt%2==1){
+        $this->closeObject();
+        $this->setColor($options['shadeCol2'][0],$options['shadeCol2'][1],$options['shadeCol2'][2],1);
+        $this->filledRectangle($x0-$options['gap']/2,$y+$decender+$height-$mx,$x1-$x0,$mx);
+        $this->reopenObject($textObjectId);
+      }
+
+      if ($options['showLines']>1){
+        // then draw a line on the top of each block
+//        $this->closeObject();
+        $this->saveState();
+        $this->setStrokeColor($options['lineCol'][0],$options['lineCol'][1],$options['lineCol'][2],1);
+//        $this->line($x0-$options['gap']/2,$y+$decender+$height-$mx,$x1-$x0,$mx);
+        if ($firstLine){
+          $this->setLineStyle($options['outerLineThickness']);
+          $firstLine=0;
+        } else {
+          $this->setLineStyle($options['innerLineThickness']);
+        }
+        $this->line($x0-$options['gap']/2,$y+$decender+$height,$x1-$options['gap']/2,$y+$decender+$height);
+        $this->restoreState();
+//        $this->reopenObject($textObjectId);
+      }
+    } // end of while
+    $y=$y-$mx+$height;
+
+    // checking row split over pages
+    if ($options['splitRows']==0){
+      if ( ( ($this->ezPageCount != $pageStart) || (isset($this->ez['columns']) && $this->ez['columns']['on']==1 && $columnStart != $this->ez['columns']['colNum'] ))  && $secondTurn==0){
+        // then we need to go back and try that again !
+        $newPage=1;
+        $secondTurn=1;
+        $this->transaction('rewind');
+        $row = $row_orig;
+        $y = $y_orig;
+        $y0 = $y0_orig;
+        $y1 = $y1_orig;
+        $ok=0;
+
+        $dm = $this->ez['leftMargin']-$baseLeftMargin;
+        foreach($basePos as $k=>$v){
+          $pos[$k]=$v+$dm;
+        }
+        $x0=$baseX0+$dm;
+        $x1=$baseX1+$dm;
+
+      } else {
+        $this->transaction('commit');
+        $ok=1;
+      }
+    } else {
+      $ok=1;  // don't go round the loop if splitting rows is allowed
+    }
+
+    }  // end of while to check for row splitting
+    if ($abortTable){
+      if ($ok==0){
+        $this->transaction('abort');
+      }
+      // only the outer transaction should be operational
+      $this->transaction('rewind');
+      $this->ezNewPage();
+      break;
+    }
+
+  } // end of foreach ($data as $row)
+
+  } // end of while ($abortTable)
+
+  // table has been put on the page, the rows guarded as required, commit.
+  $this->transaction('commit');
+
+  $y2=$y+$decender;
+  if ($options['showLines']){
+    if (!$options['showHeadings']){
+      $y0=$y1;
+    }
+    $this->ezPrvtTableDrawLines($pos,$options['gap'],$x0,$x1,$y0,$y1,$y2,$options['lineCol'],$options['innerLineThickness'],$options['outerLineThickness'],$options['showLines']);
+  }
+
+  // close the object for drawing the text on top
+  if ($options['shaded']){
+    $this->closeObject();
+    $this->restoreState();
+  }
+
+  $this->y=$y;
+  return $y;
+}
+
+protected function newTableCell($y,&$line)
+{
 }
 
 // ------------------------------------------------------------------------------
@@ -1340,15 +1224,15 @@ function ezText($text,$size=0,$options=array(),$test=0){
   // only set one of the next two items (leading overrides spacing)
   // 'leading' => number, defines the total height taken by the line, independent of the font height.
   // 'spacing' => a real number, though usually set to one of 1, 1.5, 2 (line spacing as used in word processing)
-  
+
   // if $test is set then this should just check if the text is going to flow onto a new page or not, returning true or false
-  
+
   // apply the filtering which will make the underlining function.
   $text = $this->ezProcessText($text);
-  
+
   $newPage=false;
   $store_y = $this->y;
-  
+
   if (is_array($options) && isset($options['aleft'])){
     $left=$options['aleft'];
   } else {
@@ -1364,13 +1248,13 @@ function ezText($text,$size=0,$options=array(),$test=0){
   } else {
     $this->ez['fontSize']=$size;
   }
-  
+
   if (is_array($options) && isset($options['justification'])){
     $just = $options['justification'];
   } else {
     $just = 'left';
   }
-  
+
   // modifications to give leading and spacing based on those given by Craig Heydenburg 1/1/02
   if (is_array($options) && isset($options['leading'])) { ## use leading instead of spacing
     $height = $options['leading'];
@@ -1380,7 +1264,7 @@ function ezText($text,$size=0,$options=array(),$test=0){
 		$height = $this->getFontHeight($size);
 	}
 
-  
+
   $lines = explode("\n",$text);
   foreach ($lines as $line){
     $start=1;
@@ -1429,13 +1313,13 @@ function ezImage($image,$pad = 5,$width = 0,$resize = 'full',$just = 'center',$b
       			$cont.= fread($fp,1024);
    		}
    		fclose($fp);
-   		
-		$image = tempnam (sys_get_temp_dir(), "php-pdf");
+		$image = tempnam ("/tmp", "php-pdf");
 		$fp2 = @fopen($image,"w");
    		fwrite($fp2,$cont);
   		fclose($fp2);
 		$temp = true;
 	}
+
 	if (!(file_exists($image))) return false; //return immediately if image file does not exist
 	$imageInfo = getimagesize($image);
 	switch ($imageInfo[2]){
@@ -1453,9 +1337,13 @@ function ezImage($image,$pad = 5,$width = 0,$resize = 'full',$just = 'center',$b
 
 	//get maximum width of image
 	if (isset($this->ez['columns']) && $this->ez['columns']['on'] == 1)
+	{
 		$bigwidth = $this->ez['columns']['width'] - ($pad * 2);
+	}
 	else
-		$bigwidth = $this->ez['pageWidth'] - ($pad * 2) - $this->ez['leftMargin'] - $this->ez['rightMargin'];
+	{
+		$bigwidth = $this->ez['pageWidth'] - ($pad * 2);
+	}
 	//fix width if larger than maximum or if $resize=full
 	if ($resize == 'full' || $resize == 'width' || $width > $bigwidth)
 	{
@@ -1499,6 +1387,7 @@ function ezImage($image,$pad = 5,$width = 0,$resize = 'full',$just = 'center',$b
 		}
 	}
 
+
 	//call appropriate function
 	if ($type == "jpeg"){
 		$this->addJpegFromFile($image,$this->ez['leftMargin'] + $pad + $offset, $this->y + $this->getFontHeight($this->ez['fontSize']) - $pad - $height,$width);
@@ -1519,7 +1408,7 @@ function ezImage($image,$pad = 5,$width = 0,$resize = 'full',$just = 'center',$b
 	if (!(isset($border['width']))) $border['width'] = 1;
 	if (!(isset($border['cap']))) $border['cap'] = 'round';
 	if (!(isset($border['join']))) $border['join'] = 'round';
-	
+
 
 	$this->setStrokeColor($border['color']['red'],$border['color']['green'],$border['color']['blue']);
 	$this->setLineStyle($border['width'],$border['cap'],$border['join']);
@@ -1538,7 +1427,7 @@ function ezImage($image,$pad = 5,$width = 0,$resize = 'full',$just = 'center',$b
 // out a good way of doing this yet.
 function loadTemplate($templateFile){
   // this function will load the requested template ($file includes full or relative pathname)
-  // the code for the template will be modified to make it name safe, and then stored in 
+  // the code for the template will be modified to make it name safe, and then stored in
   // an array for later use
   // The id of the template will be returned for the user to operate on it later
   if (!file_exists($templateFile)){
@@ -1637,7 +1526,7 @@ function uline($info){
   switch($info['status']){
     case 'start':
     case 'sol':
-    
+
       // the beginning of the underline zone
       if (!isset($this->ez['links'])){
         $this->ez['links']=array();
