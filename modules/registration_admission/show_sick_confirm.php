@@ -1,12 +1,12 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 /**
 * CARE2X Integrated Hospital Information System beta 2.0.1 - 2004-07-04
 * GNU General Public License
 * Copyright 2002,2003,2004,2005,2006 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -19,11 +19,11 @@ $enc_obj=new Encounter($_SESSION['sess_full_en']);
 $thisfile=basename(__FILE__);
 
 if(!isset($mode)||empty($mode)){
-	
+
 	$sickconfirm_obj=&$enc_obj->allSicknessConfirm();
 	if($rows=$enc_obj->LastRecordCount()){
 		$mode='show';
-		# If $get_nr is non-empty, get the  single record 
+		# If $get_nr is non-empty, get the  single record
 		if(isset($get_nr) && $get_nr){
 			if(!$single_obj=&$enc_obj->getSicknessConfirm($get_nr)) $get_nr=0;
 		}else{
@@ -32,7 +32,7 @@ if(!isset($mode)||empty($mode)){
 	}else{
 		$mode='';
 	}
-	
+
 }elseif($mode=='create'||$mode=='update') {
 	//$db->debug=true;
 	include_once($root_path.'include/core/inc_date_format_functions.php');
@@ -40,14 +40,14 @@ if(!isset($mode)||empty($mode)){
 	$_POST['date_end']=formatDate2STD($_POST['date_end'],$date_format);
 	$_POST['date_start']=formatDate2STD($_POST['date_start'],$date_format);
 	$_POST['date_confirm']=formatDate2STD($_POST['date_confirm'],$date_format);
-	
+
 	$_POST['encounter_nr']=$_SESSION['sess_en'];
 	$_POST['history']="Create ".date('Y-m-d H:i:s')." ".$_SESSION['sess_user_name']."\n";
 	$_POST['modify_id']=$_SESSION['sess_user_name'];
 	$_POST['create_id']=$_SESSION['sess_user_name'];
 	$_POST['create_time']=date('YmdHis');
 
-	
+
 	if($enc_obj->saveSicknessConfirm($_POST)) {
 		$get_nr=$db->Insert_ID();
 		header("location:".$thisfile.URL_REDIRECT_APPEND."&get_nr=$get_nr&dept_nr=$dept_nr&target=$target&type_nr=$type_nr&pid=".$_SESSION['sess_pid']);
@@ -56,7 +56,7 @@ if(!isset($mode)||empty($mode)){
 }
 
 if($mode=='new'){
-	# Load the department class 
+	# Load the department class
 	include_once($root_path.'include/care_api_classes/class_department.php');
 	$dept_obj=new Department($dept_nr);
 	$dept=&$dept_obj->getDeptAllInfo($dept_nr);
@@ -75,7 +75,7 @@ $subtitle=$LDSickReport;
 $notestype='sickness';
 
 $buffer=str_replace('~tag~',$title.' '.$name_last,$LDNoRecordFor);
-$norecordyet=str_replace('~obj~',strtolower($subtitle),$buffer); 
+$norecordyet=str_replace('~obj~',strtolower($subtitle),$buffer);
 $_SESSION['sess_file_return']=$thisfile;
 
 /* Load all  medical depts info */

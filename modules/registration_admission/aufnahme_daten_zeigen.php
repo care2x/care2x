@@ -1,8 +1,7 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
-error_reporting(-1);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 /*
 CARE2X Integrated Information System beta 2.0.1 - 2004-07-04 for Hospitals and Health Care Organizations and Services
 Copyright (C) 2002,2003,2004,2005  Elpidio Latorilla & Intellin.org
@@ -157,6 +156,9 @@ $dbtable='care_encounter';
 /* Prepare text and resolve the numbers */
 require_once($root_path.'include/core/inc_patient_encounter_type.php');
 
+if (!isset($from)) {
+	$from = '';
+}
 /* Save encounter nrs to session */
 $_SESSION['sess_pid']=$pid;
 $_SESSION['sess_en']=$encounter_nr;
@@ -178,6 +180,8 @@ require_once($root_path.'include/core/inc_photo_filename_resolve.php');
  require_once($root_path.'gui/smarty_template/smarty_care.class.php');
  $smarty = new smarty_care('common');
 $smarty->assign('error',FALSE);
+$smarty->assign('sWindowTitle',$LDPatientData.' ('.$encounter_nr.')');
+ $smarty->assign('Name',"");
 # Title in the toolbar
  $smarty->assign('sToolbarTitle',$LDPatientData.' ('.$encounter_nr.')');
 
@@ -338,10 +342,27 @@ $smarty->assign('sAdmitShowTypeInput',$sTemp);
 
 //start simple triage
 if (isset($triage)) {
-	if($triage == 'white') { $smarty->assign('sAdmitTriageWhite',$sAdmitTriageWhite); }
-		elseif($triage == 'green') { $smarty->assign('sAdmitTriageGreen',$sAdmitTriageGreen); }
-			elseif ($triage == 'yellow') { $smarty->assign('sAdmitTriageYellow',$sAdmitTriageYellow); }
-				elseif ($triage == 'red') { $smarty->assign('sAdmitTriageRed',$sAdmitTriageRed); }
+	if($triage == 'white') {
+		$smarty->assign('sAdmitTriageWhite',$sAdmitTriageWhite);
+		$smarty->assign('sAdmitTriageGreen','');
+		$smarty->assign('sAdmitTriageYellow','');
+		$smarty->assign('sAdmitTriageRed','');
+	}elseif($triage == 'green') {
+		$smarty->assign('sAdmitTriageWhite','');
+		$smarty->assign('sAdmitTriageGreen',$sAdmitTriageGreen);
+		$smarty->assign('sAdmitTriageYellow','');
+		$smarty->assign('sAdmitTriageRed','');
+	}elseif ($triage == 'yellow') {
+		$smarty->assign('sAdmitTriageWhite','');
+		$smarty->assign('sAdmitTriageGreen','');
+		$smarty->assign('sAdmitTriageYellow',$sAdmitTriageYellow);
+		$smarty->assign('sAdmitTriageRed','');
+	}elseif ($triage == 'red') {
+		$smarty->assign('sAdmitTriageWhite','');
+		$smarty->assign('sAdmitTriageGreen','');
+		$smarty->assign('sAdmitTriageYellow','');
+		$smarty->assign('sAdmitTriageRed',$sAdmitTriageRed);
+	}
 }else {
 	$smarty->assign('sAdmitTriageWhite','');
 	$smarty->assign('sAdmitTriageGreen','');
@@ -386,7 +407,7 @@ if($encounter_class_nr==1){
 	$smarty->assign('LDDepartment',"$LDClinic/$LDDepartment");
 	$smarty->assign('LDWard',"");
 
-	$smarty->assign('sWardInput','<a href="'.$root_path.'modules/ambulatory/'.strtr('amb_clinic_patients_pass.php'.URL_APPEND.'&rt=pflege&edit=1&dept='.$$current_dept_LDvar.'&location_id='.$$current_dept_LDvar.'&dept_nr='.$current_dept_nr,' ',' ').'">'.$current_dept_name.'</a>');
+	$smarty->assign('sWardInput','<a href="'.$root_path.'modules/ambulatory/'.strtr('amb_clinic_patients_pass.php'.URL_APPEND.'&rt=pflege&edit=1&dept='.${$current_dept_LDvar}.'&location_id='.${$current_dept_LDvar}.'&dept_nr='.$current_dept_nr,' ',' ').'">'.$current_dept_name.'</a>');
 
 }
 
@@ -401,7 +422,7 @@ $smarty->assign('referrer_notes',$referrer_notes);
 
 $smarty->assign('LDBillType',$LDBillType);
 
-if (isset($$insurance_class['LD_var'])&&!empty($$insurance_class['LD_var'])) $smarty->assign('sBillTypeInput',$$insurance_class['LD_var']);
+if (isset(${$insurance_class['LD_var']})&&!empty(${$insurance_class['LD_var']})) $smarty->assign('sBillTypeInput',${$insurance_class['LD_var']});
     else $smarty->assign('sBillTypeInput',$insurance_class['name']);
 
 $smarty->assign('LDInsuranceNr',$LDInsuranceNr);

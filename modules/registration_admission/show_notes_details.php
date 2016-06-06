@@ -1,7 +1,7 @@
-<?php 
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
+<?php
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 define('LANG_FILE','');
 //define('LANG_FILE','aufnahme.php');
 $local_user='aufnahme_user';
@@ -19,7 +19,7 @@ $TP_CHARSET=setCharSet();
 $TP_DATE=@formatDate2Local($notes['date'],$date_format);
 $TP_TIME=@convertTimeToLocal($notes['time']);
 $TP_DOC=$notes['personell_name'];
-$TP_USR=$notes['modify_id']; 
+$TP_USR=$notes['modify_id'];
 $TP_NOTES=nl2br($notes['notes']);
 $TP_CLOSE='<a href="javascript:window.close()"><img '.createLDImgSrc($root_path,'close2.gif','0').'></a>';
 

@@ -1,7 +1,7 @@
-<?php 
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
+<?php
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 $lang_tables[]='actions.php';
 define('LANG_FILE','obstetrics.php');
 $local_user='aufnahme_user';
@@ -27,10 +27,10 @@ function process(d) {
 	wd=window.opener.document.report.classification;
 	for(i = 0; i<<?php echo $rows ?>; i++){
 		eval("if(d.c"+i+".checked) {wd.value=wd.value + d.c"+i+".value + \"\\n\"; clo=true;}");
-		
+
 	}
 	if(clo) window.close();
-		else return false;	
+		else return false;
 }
 //  Script End -->
 </script>
@@ -41,9 +41,9 @@ function process(d) {
 <table border=0 cellpadding=0 cellspacing=0 bgcolor="#efefef">
   <tr>
     <td>
-	
+
 	<table border=0 cellspacing=1>
-	
+
 
    <tr>
      <td background="../../gui/img/common/default/tableHeaderbg.gif">
@@ -53,9 +53,9 @@ function process(d) {
 
 <?php
     //echo $mode;
-    if ($rows) 
-	{ 
-?> 
+    if ($rows)
+	{
+?>
    <tr bgcolor="#ffffff">
      <td ><font face=arial size=2>
 	 <?php
@@ -71,19 +71,19 @@ function process(d) {
 	 &nbsp;
 	 </td>
    </tr>
-<?php	     
+<?php
 	}
 ?>		 </table>
- 
+
 	</td>
   </tr>
 </table>
  	<input type="submit" value="<?php echo $LDOk ?>">
   <input type="button" value="<?php echo $LDClose ?>" onClick="window.close()">
-  
+
 </form>
-	 
-			
+
+
 
 </font>
 </body>

@@ -23,9 +23,9 @@ if($rows){
 	<a href="aufnahme_daten_zeigen.php<?php echo URL_APPEND ?>&encounter_nr=<?php echo $row['encounter_nr']; ?>&origin=patreg_reg"><?php echo $row['encounter_nr'];	?></a>
 	</td>
     <td>
-	<?php 
- 		if (isset($$enc_class[$row['encounter_class_nr']]['LD_var'])&&!empty($$enc_class[$row['encounter_class_nr']]['LD_var'])) echo $$enc_class[$row['encounter_class_nr']]['LD_var']; 
-    		else echo  $enc_class[$row['encounter_class_nr']]['name']; 	
+	<?php
+ 		if (isset(${$enc_class[$row['encounter_class_nr']]['LD_var']})&&!empty(${$enc_class[$row['encounter_class_nr']]['LD_var']})) echo ${$enc_class[$row['encounter_class_nr']]['LD_var']};
+    		else echo  $enc_class[$row['encounter_class_nr']]['name'];
 	?>
 	</td>
     <td><?php if($row['is_discharged']) echo $LDDischarged; ?></td>

@@ -24,7 +24,7 @@ while($row=$result->FetchRow()){
     <td><FONT SIZE=-1  FACE="Arial"><?php if(!empty($row['date'])) echo @formatDate2Local($row['date'],$date_format); ?></td>
     <td><FONT SIZE=-1  FACE="Arial" color="#000033"><?php echo $row['notes']; ?></td>
     <td align="center"><a href="#"><img <?php echo createComIcon($root_path,'info3.gif','0'); ?>></a></td>
-    <td><FONT SIZE=-1  FACE="Arial"><?php if($row['personell_nr']) echo $row['personell_nr']; ?></td>
+    <td><FONT SIZE=-1  FACE="Arial"><?php if($row['staff_nr']) echo $row['staff_nr']; ?></td>
     <td><FONT SIZE=-1  FACE="Arial"><?php echo $_SESSION['sess_full_en']; ?></td>
   </tr>
 
@@ -34,6 +34,6 @@ while($row=$result->FetchRow()){
 </table>
 <p>
 <img <?php echo createComIcon($root_path,'bul_arrowgrnlrg.gif','0','absmiddle'); ?>>
-<a href="<?php echo $thisfile.URL_APPEND.'&pid='.$_SESSION['sess_pid'].'&target='.$target.'&mode=new&type_nr='.$type_nr; ?>"> 
+<a href="<?php echo $thisfile.URL_APPEND.'&pid='.$_SESSION['sess_pid'].'&target='.$target.'&mode=new&type_nr='.$type_nr; ?>">
 <?php echo $LDEnterNewRecord; ?>
 </a>

@@ -25,7 +25,7 @@ require_once ('../../js/jscalendar/calendar.php');
 $calendar = new DHTML_Calendar('../../js/jscalendar/', $lang, 'calendar-system', true);
 $calendar->load_files();
 //end : gjergji
-?>	
+?>
 <form method="post" name="notes_form" onSubmit="chkform(this)">
  <table border=0 cellpadding=2 width=100%>
    <tr bgcolor="#f6f6f6">
@@ -33,7 +33,7 @@ $calendar->load_files();
      <td>
 		<?php
 			//gjergji : new calendar
-			echo $calendar->show_calendar($calendar,$date_format,'date_create',$content[$i]['date']);	
+			echo $calendar->show_calendar($calendar,$date_format,'date_create',$content[$i]['date']);
 			//end : gjergji
 		?>
 	</td>
@@ -49,7 +49,7 @@ $calendar->load_files();
    </tr>
    <tr bgcolor="#f6f6f6">
      <td><FONT SIZE=-1  FACE="Arial" color="#000066"><?php echo $LDBy; ?></td>
-     <td><input type="text" name="personell_name" size=50 maxlength=60 value="<?php echo $_SESSION['sess_user_name']; ?>" readonly></td>
+     <td><input type="text" name="staff_name" size=50 maxlength=60 value="<?php echo $_SESSION['sess_user_name']; ?>" readonly></td>
    </tr>
  </table>
 <input type="hidden" name="encounter_nr" value="<?php echo $_SESSION['sess_en']; ?>">
@@ -58,7 +58,7 @@ $calendar->load_files();
 <input type="hidden" name="create_id" value="<?php echo $_SESSION['sess_user_name']; ?>">
 <input type="hidden" name="create_time" value="null">
 <input type="hidden" name="mode" value="create">
-<input type="hidden" name="personell_nr">
+<input type="hidden" name="staff_nr">
 <input type="hidden" name="send_to_pid">
 <input type="hidden" name="type_nr" value="<?php echo $type_nr; ?>">
 <input type="hidden" name="target" value="<?php echo $target; ?>">

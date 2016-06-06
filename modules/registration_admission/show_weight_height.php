@@ -1,12 +1,12 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 /**
 * CARE2X Integrated Hospital Information System beta 2.0.1 - 2004-07-04
 * GNU General Public License
 * Copyright 2002,2003,2004,2005,2006 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -35,7 +35,7 @@ if(!isset($mode)){
 	include_once($root_path.'include/core/inc_date_format_functions.php');
 	if($_POST['msr_date']) 	$_POST['msr_date']=@formatDate2STD($_POST['msr_date'],$date_format);
 		else $_POST['msr_date']=date('Y-m-d');
-	
+
 	# Non standard time format
 	$_POST['msr_time']=date('H.i');
 	$_POST['create_time']=date('YmdHis'); # Create the timestamp to group the values
@@ -44,7 +44,7 @@ if(!isset($mode)){
 	if($weight||$height||$head_c){
 		# Set to no redirect
 		$no_redirect=TRUE;
-		
+
 		if($weight){
 			$_POST['value']=$weight;
 			$_POST['msr_type_nr']=6; # msrmt type 6 = weight
@@ -69,7 +69,7 @@ if(!isset($mode)){
 			$_POST['unit_type_nr']=3; # 3 = length
 			include('./include/save_admission_data.inc.php');
 		}
-	
+
 		header("location:".$thisfile.URL_REDIRECT_APPEND."&target=$target&allow_update=1&pid=".$_SESSION['sess_pid']);
 		exit;
 	}
@@ -77,20 +77,20 @@ if(!isset($mode)){
 
 $lang_tables[]='obstetrics.php';
 require('./include/init_show.php');
-if(isset($current_encounter) && $current_encounter) { 
-	$parent_admit=true; 
+if(isset($current_encounter) && $current_encounter) {
+	$parent_admit=true;
 	$is_discharged=false;
 	$_SESSION['sess_en'] = $current_encounter;
 }
 if($mode=='show'){
 
 	$sql="SELECT m.nr,m.value,m.msr_date,m.msr_time,m.unit_nr,m.encounter_nr,m.msr_type_nr,m.create_time, m.notes
-		FROM 	care_encounter AS e, 
-					care_person AS p, 
+		FROM 	care_encounter AS e,
+					care_person AS p,
 					care_encounter_measurement AS m
-		WHERE p.pid=".$_SESSION['sess_pid']." 
-			AND p.pid=e.pid 
-			AND e.encounter_nr=m.encounter_nr  
+		WHERE p.pid=".$_SESSION['sess_pid']."
+			AND p.pid=e.pid
+			AND e.encounter_nr=m.encounter_nr
 			AND (m.msr_type_nr=6 OR m.msr_type_nr=7 OR m.msr_type_nr=9)
 		ORDER BY m.msr_date DESC";
 
@@ -123,7 +123,7 @@ $notestype='msr';
 $_SESSION['sess_file_return']=$thisfile;
 
 $buffer=str_replace('~tag~',$title.' '.$name_last,$LDNoRecordFor);
-$norecordyet=str_replace('~obj~',strtolower($subtitle),$buffer); 
+$norecordyet=str_replace('~obj~',strtolower($subtitle),$buffer);
 
 # Load GUI page
 require('./gui_bridge/default/gui_show.php');

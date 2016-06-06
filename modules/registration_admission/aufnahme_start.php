@@ -1,7 +1,7 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 /**
  * CARE2X Integrated Hospital Information System beta 2.0.1 - 2004-07-04
  * GNU General Public License
@@ -254,7 +254,12 @@ if($pid!='' || $encounter_nr!=''){
 					$_POST['create_id']=$encoder;
 					$_POST['create_time']=date('YmdHis');
 					$_POST['history']='Create: '.date('Y-m-d H:i:s').' = '.$encoder;
-					//if(isset($_POST['encounter_nr'])) unset($_POST['encounter_nr']);
+					if($_POST['encounter_nr']==1) {
+						$_POST['status']='in_ward';
+					} else {
+						$_POST['status']='in_dept';
+					}
+
 
 					$encounter_obj->setDataArray($_POST);
 

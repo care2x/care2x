@@ -1,7 +1,7 @@
-<?php 
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
+<?php
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 define('LANG_FILE','aufnahme.php');
 $local_user='aufnahme_user';
 require_once($root_path.'include/core/inc_front_chain_lang.php');
@@ -35,9 +35,9 @@ if($result=$db->Execute($sql)){
 <table border=0 cellpadding=0 cellspacing=0 bgcolor="#efefef">
   <tr>
     <td>
-	
+
 	<table border=0 cellspacing=1>
-	
+
 
    <tr>
      <td background="../../gui/img/common/default/tableHeaderbg.gif">
@@ -47,9 +47,9 @@ if($result=$db->Execute($sql)){
 
 <?php
     //echo $mode;
-    if ($rows) 
-	{ 
-?> 
+    if ($rows)
+	{
+?>
    <tr bgcolor="#ffffff">
      <td ><font face=arial size=2>
 	 <?php
@@ -58,14 +58,14 @@ if($result=$db->Execute($sql)){
 	 &nbsp;
 	 </td>
    </tr>
-<?php	     
+<?php
 	}
 ?>		 </table>
- 
+
 	</td>
   </tr>
 </table>
-			
+
 
 </font>
 </body>

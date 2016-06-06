@@ -72,7 +72,7 @@ if($_SESSION['sess_parent_mod']=='admission') {
 	# Get the overall status
 	include_once($root_path.'include/care_api_classes/class_encounter.php');
 	$enc_obj=new Encounter;
-	if($stat=&$enc_obj->AllStatus($_SESSION['sess_en'])){
+	if($stat=$enc_obj->AllStatus($_SESSION['sess_en'])){
 		$enc_status=$stat->FetchRow();
 	}
 	# If current_encounter is this encounter nr

@@ -1,7 +1,7 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 define('LANG_FILE','aufnahme.php');
 $local_user='aufnahme_user';
 require_once($root_path.'include/core/inc_front_chain_lang.php');
@@ -16,7 +16,7 @@ switch($table)
 {
     case 'care_person':  $sql="SELECT name_last AS \"LastName\", name_first AS \"FirstName\", history FROM care_person WHERE pid=$pid";
 						  break;
-    case 'care_encounter':  $sql=$sql="SELECT p.name_last AS  \"LastName\", p.name_first AS  \"FirstName\", e.history 
+    case 'care_encounter':  $sql=$sql="SELECT p.name_last AS  \"LastName\", p.name_first AS  \"FirstName\", e.history
 	                                                    FROM care_person AS p, care_encounter AS e WHERE p.pid=e.pid AND e.encounter_nr=$pid";
 						  break;
 }
@@ -39,9 +39,9 @@ $history=$result->FetchRow();
 <table border=0 cellpadding=0 cellspacing=0 bgcolor="#efefef">
   <tr>
     <td>
-	
+
 	<table border=0 cellspacing=1>
-	
+
 
    <tr>
      <td background="../../gui/img/common/default/tableHeaderbg.gif">
@@ -51,9 +51,9 @@ $history=$result->FetchRow();
 
 <?php
     //echo $mode;
-    if (!empty($history['history'])) 
-	{ 
-?> 
+    if (!empty($history['history']))
+	{
+?>
    <tr bgcolor="#ffffff">
      <td ><font face=arial size=2>
 	 <?php
@@ -62,7 +62,7 @@ $history=$result->FetchRow();
 	  $str='</td></tr><tr bgcolor="#ffffff"><td><font face=arial size=2>';
 
 	 $toggle=!$toggle;
-	  
+
 	 $buffer=str_replace('<br>',$str,$buffer);
 	 $buffer=str_replace(',','</td><td>',$buffer);
 	 echo $buffer;
@@ -70,16 +70,16 @@ $history=$result->FetchRow();
 	 &nbsp;
 	 </td>
    </tr>
-<?php	     
+<?php
 	}
 ?>		 </table>
- 
+
 	</td>
   </tr>
 </table>
-     
-	 
-			
+
+
+
 
 </font>
 </body>

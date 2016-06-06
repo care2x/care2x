@@ -6,7 +6,7 @@ if(isset($_SESSION['sess_file_return'])&&!empty($_SESSION['sess_file_return']))
 	$returnfile=$_SESSION['sess_file_return'];
 	else $returnfile=$top_dir.'show_appointment.php';
 
-# Patch 2003-11-20 
+# Patch 2003-11-20
 if($parent_admit){
 	$retbuf='&encounter_nr='.$_SESSION['sess_full_en'];
 	$sTitleNr =($_SESSION['sess_full_en']);
@@ -29,9 +29,12 @@ if($_COOKIE["ck_login_logged".$sid]) $breakfilen = $root_path."main/startframe.p
 
  require_once($root_path.'gui/smarty_template/smarty_care.class.php');
  $smarty = new smarty_care('common');
-
+$smarty->assign('bHideTitleBar',FALSE);
 # Title in the toolbar
  $smarty->assign('sToolbarTitle',"$page_title ($sTitleNr)");
+$smarty->assign('sWindowTitle',"$page_title ($sTitleNr)");
+ $smarty->assign('Name',"");
+$smarty->assign('sTitleImage','<img '.createComIcon($root_path,'notepad.gif','0').'>');
 
  $smarty->assign('breakfile',$breakfile);
 
@@ -46,6 +49,12 @@ if($_COOKIE["ck_login_logged".$sid]) $breakfilen = $root_path."main/startframe.p
 
  # href for the return button
  $smarty->assign('pbBack',$returnfile.URL_APPEND.$retbuf.'&target='.$target.'&mode=show&type_nr='.$type_nr);
+ $smarty->assign('pbAux1', '');
+ $smarty->assign('pbAux2', '');
+ $smarty->assign('sCloseTarget','target="_parent"');
+$smarty->assign('Subtitle','' );
+$smarty->assign('bShowTabs',False);
+ $smarty->assign('sWarnText','');
 
 /**
 * Helper function to generate rows
@@ -74,7 +83,7 @@ ob_start();
 ?>
 
 <script  language="javascript">
-<!-- 
+<!--
 
 function popRecordHistory(table,pid) {
 	urlholder="./record_history.php<?php echo URL_REDIRECT_APPEND; ?>&table="+table+"&pid="+pid;
@@ -144,6 +153,9 @@ if($parent_admit&&$is_discharged){
 	$smarty->assign('sWarnIcon',"<img ".createComIcon($root_path,'warn.gif','0','absmiddle').">");
 	if($current_encounter) $smarty->assign('sDischarged',$LDEncounterClosed);
 		else $smarty->assign('sDischarged',$LDPatientIsDischarged);
+} else {
+	$smarty->assign('is_discharged',False);
+	$smarty->assign('sWarnIcon',"");
 }
 
 if($parent_admit) $smarty->assign('LDCaseNr',$LDAdmitNr);
@@ -166,31 +178,40 @@ $smarty->assign('name_first',$name_first);
 if($death_date && $death_date != DBF_NODATE){
 	$smarty->assign('sCrossImg','<img '.createComIcon($root_path,'blackcross_sm.gif','0').'>');
 	$smarty->assign('sDeathDate',@formatDate2Local($death_date,$date_format));
+} else {
+	$smarty->assign('sCrossImg','');
+	$smarty->assign('sDeathDate','');
 }
 
 	# Set a row span counter, initialize with 7
 	$iRowSpan = 7;
-	
-	/*
-	 * TODO Check - if these GLOBAL_CONFIG elements patient_name_2_show, patient_name_3_show and patient_name_middle_show are valid or not
+
 	if($GLOBAL_CONFIG['patient_name_2_show']&&$name_2){
 		$smarty->assign('LDName2',$LDName2);
 		$smarty->assign('name_2',$name_2);
 		$iRowSpan++;
+	} else {
+		$smarty->assign('LDName2','');
+		$smarty->assign('name_2','');
 	}
 
 	if($GLOBAL_CONFIG['patient_name_3_show']&&$name_3){
 		$smarty->assign('LDName3',$LDName3);
 		$smarty->assign('name_3',$name_3);
 		$iRowSpan++;
+	} else {
+		$smarty->assign('LDName3','');
+		$smarty->assign('name_3','');
 	}
 
 	if($GLOBAL_CONFIG['patient_name_middle_show']&&$name_middle){
 		$smarty->assign('LDNameMid',$LDNameMid);
 		$smarty->assign('name_middle',$name_middle);
 		$iRowSpan++;
+	} else {
+		$smarty->assign('LDNameMid','');
+		$smarty->assign('name_middle','');
 	}
-	* */
 
 $smarty->assign('sRowSpan',"rowspan=\"$iRowSpan\"");
 
@@ -241,11 +262,11 @@ if($mode=='show'){
 				 $sRowClass = 'class="wardlistrow1"';
 			}
 			$toggle=!$toggle;
-			
+
 			$smarty->assign('sRowClass',$sRowClass);
-			
+
 			if(!empty($row['date'])) $smarty->assign('sDate',@formatDate2Local($row['date'],$date_format));
-			
+
 			$sTemp = '';
 
 			if(!empty($row['notes'])) $sTemp = hilite(substr($row['notes'],0,$GLOBAL_CONFIG['notes_preview_maxlen']));
@@ -264,9 +285,9 @@ if($mode=='show'){
 			}elseif(!empty($row['notes'])){
 				$smarty->assign('sMakePdf',$topdf);
 			}
-			
+
 			if($row['personell_name']) $smarty->assign('sAuthor',$row['personell_name']);
-			
+
 			if(!$parent_admit){
 				$smarty->assign('sEncNr','<a href="aufnahme_daten_zeigen.php'.URL_APPEND.'&encounter_nr='.$row['encounter_nr'].'&origin=patreg_reg">'.$row['encounter_nr'].'</a>');
 			}
@@ -277,10 +298,10 @@ if($mode=='show'){
 			ob_end_clean();
 		}
 		$smarty->assign('sReportRows',$sRows);
-	}else{
+ 	}else{
 
 		# Else prompt no data available yet.
-		
+
 		$smarty->assign('bShowNoRecord',TRUE);
 		$smarty->assign('sMascotImg','<img '.createMascot($root_path,'mascot1_r.gif','0','absmiddle').'>');
 		$smarty->assign('norecordyet',$norecordyet);
@@ -289,10 +310,10 @@ if($mode=='show'){
 }else{
 
 	# Else, mode is new data entry. Show the entry form
-	
+
 	$smarty->assign('bShowEntryForm',TRUE);
 	$smarty->assign('bSetAsForm',TRUE);
-	
+
 	# collect Javascript for the form
 
 	ob_start();
@@ -321,17 +342,17 @@ function chkform(d) {
 //  Script End -->
 </script>
 
-<?
+<?php
 
 	$sTemp = ob_get_contents();
 	ob_end_clean();
-	
+
 	$smarty->assign('sFormJavaScript',$sTemp);
 
 	//gjergji : new calendar
 	$smarty->assign('sDateMiniCalendar',$calendar->show_calendar($calendar,$date_format,'date'));
 	//end : gjergji
-	
+
 	$smarty->assign('LDNotes',$LDApplication.' '.$LDNotes);
 	$smarty->assign('sNotesInput','<textarea name="notes" cols=40 rows=8 wrap="virtual"></textarea>');
 	$smarty->assign('LDShortNotes',$LDShortNotes);
@@ -339,7 +360,7 @@ function chkform(d) {
 	$smarty->assign('LDSendCopyTo',$LDSendCopyTo);
 	$smarty->assign('sSendCopyInput','<input type="text" name="send_to_name" size=50 maxlength=60>');
 
-	$smarty->assign('sAuthorInput','<input type="text" name="personell_name" size=50 maxlength=60 value="'.$_SESSION['sess_user_name'].'" readonly>');
+	$smarty->assign('sAuthorInput','<input type="text" name="staff_name" size=50 maxlength=60 value="'.$_SESSION['sess_user_name'].'" readonly>');
 
 
 $sTemp = '<input type="hidden" name="encounter_nr" value="'.$_SESSION['sess_en'].'">
@@ -348,7 +369,7 @@ $sTemp = '<input type="hidden" name="encounter_nr" value="'.$_SESSION['sess_en']
 <input type="hidden" name="create_id" value="'.$_SESSION['sess_user_name'].'">
 <input type="hidden" name="create_time" value="null">
 <input type="hidden" name="mode" value="create">
-<input type="hidden" name="personell_nr">
+<input type="hidden" name="staff_nr">
 <input type="hidden" name="send_to_pid">
 <input type="hidden" name="type_nr" value="'.$type_nr.'">
 <input type="hidden" name="target" value="'.$target.'">
@@ -374,6 +395,9 @@ if($parent_admit&&(!$is_discharged||$type_nr==3||$type_nr==99)) {
 
 	$smarty->assign('sNewRecIcon','<img '.createComIcon($root_path,'bul_arrowgrnlrg.gif','0','absmiddle').'>');
 	$smarty->assign('sNewRecLink','<a href="'.$thisfile.URL_APPEND.'&pid='.$_SESSION['sess_pid'].'&target='.$target.'&mode=new&type_nr='.$type_nr.'">'.$LDEnterNewRecord.'</a>');
+} else {
+	$smarty->assign('sNewRecIcon','');
+	$smarty->assign('sNewRecLink','');
 }
 
 // Buffer the options table
@@ -383,14 +407,14 @@ ob_start();
 ?>
 		<!-- Column for the options table -->
 		<!-- Load the options table  -->
-			
+
 			<div class="vi_data">
 				<img <?php echo createComIcon($root_path,'angle_left_s.gif',0); ?>>
 				<br>
 				<?php if (!isset($LDTypes)) $LDTypes=''; ?>
 				<?php echo "$LDNotes $LDAndSym $LDReports $LDTypes" ?>
 			</div>
-			
+
 			<!-- Reports/Notes types table -->
 
 			<TABLE cellSpacing=0 cellPadding=0 class="frame" border=0>
@@ -405,13 +429,13 @@ ob_start();
 		<a href="javascript:yellow(<?php echo $_SESSION['sess_en'] ?>)"><?php echo isset($LDYellowPaper) ? $LDYellowPaper : ''; ?></a>
 	</td>
 </tr>
-<tr>			
+<tr>
 	<td><img <?php echo createComIcon($root_path,'comments.gif','0'); ?>></td>
 	<td vAlign=top>
 		<a href="javascript:target(<?php echo $_SESSION['sess_en'] ?>)"><?php echo isset($LDTarget)?$LDTarget:''; ?></a>
 	</td>
-</tr>						
-<?php 
+</tr>
+<?php
 						while(list($x,$v)=each($types)){
 ?>
 							<TR>
@@ -420,7 +444,7 @@ ob_start();
 									<?php
 										# Type nr 3 = discharge summary/notes
 										# Type nr 99 = auxilliary notes
-										
+
 										if($parent_admit&&(!$is_discharged||$v['nr']==3||$v['nr']==99)) echo createComIcon($root_path,'comments.gif','0');
 											else  echo createComIcon($root_path,'docu_unrd.gif','0');
 									?>>
@@ -428,7 +452,7 @@ ob_start();
 								<TD vAlign=top >
 									<a href="show_notes.php<?php echo URL_APPEND ?>&pid=<?php echo $pid ?>&target=<?php echo $target ?>&type_nr=<?php echo $v['nr'] ?>">
 <?php
-									if(isset($$v['LD_var'])&&!empty($$v['LD_var'])) echo $$v['LD_var']; else echo $v['name']
+									if(isset(${$v['LD_var']})&&!empty(${$v['LD_var']})) echo ${$v['LD_var']}; else echo $v['name']
 ?>
 									</a>
 								</TD>
@@ -485,12 +509,26 @@ if($parent_admit) {
 
 $sTemp = ob_get_contents();
 ob_end_clean();
+$smarty->assign('sPromptIcon','');
+$smarty->assign('sPromptLink','');
+
+$smarty->assign('pbPersonData','');
+$smarty->assign('pbAdmitData','');
+$smarty->assign('pbMakeBarcode','');
+$smarty->assign('pbMakeWristBands','');
+
+$smarty->assign('pbBottomClose','<a href="'.$breakfile.'"><img '.createLDImgSrc($root_path,'close2.gif','0').'  title="'.$LDCancel.'"  align="absmiddle"></a>');
 
 $smarty->assign('sBottomControls',$sTemp);
+
+$smarty->assign('sAdmitLink','');
+$smarty->assign('sSearchLink','');
+$smarty->assign('sArchiveLink','');
 
 $smarty->assign('pbCancel','<a href="'.$returnfile.URL_APPEND.$buf.'&target='.$target.'&mode=show&type_nr='.$type_nr.'"><img '.createLDImgSrc($root_path,'cancel.gif','0').' alt="'.$LDCancelClose.'"></a>');
 
 $smarty->assign('sMainBlockIncludeFile','registration_admission/common_report.tpl');
+$smarty->assign('sMainFrameBlockData',"");
 
 $smarty->display('common/mainframe.tpl');
 

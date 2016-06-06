@@ -1,12 +1,12 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 /**
 * CARE2X Integrated Hospital Information System beta 2.0.1 - 2004-07-04
 * GNU General Public License
 * Copyright 2002,2003,2004,2005,2006 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -21,7 +21,7 @@ if(!isset($allow_update)) $allow_update=false;
 if(!isset($mode)){
 	$mode='show';
 }elseif($mode=='newdata') {
-	
+
 	include_once($root_path.'include/core/inc_date_format_functions.php');
 	$saved=false;
 
@@ -36,7 +36,7 @@ if(!isset($mode)){
 	# Update child encounter to parent encounter
 	if(!empty($_POST['parent_encounter_nr'])) $obj->AddChildNrToParent($_SESSION['sess_en'],$_POST['parent_encounter_nr'],$_POST);
 	//echo $obj->getLastQuery();
-	
+
 	if($allow_update){
 		$obj->setWhereCondition('pid='.$_POST['pid']);
 		$obj->setDataArray($_POST);
@@ -49,7 +49,7 @@ if(!isset($mode)){
 	}else{
 		# Deactivate the old record first if exists
 		$obj->deactivateBirthDetails($_SESSION['sess_pid']);
-		
+
 		$_POST['history']="Create ".date('Y-m-d H:i:s')." ".$_SESSION['sess_user_name']."\n";
 		if($_POST['docu_by']) $_POST['create_id']=$_POST['docu_by'];
 			else $_POST['create_id']=$_SESSION['sess_user_name'];
@@ -60,7 +60,7 @@ if(!isset($mode)){
 			$saved=true;
 		}else{
 			echo $obj->getLastQuery."<br>$LDDbNoSave";
-		}		
+		}
 	}
 	if($saved){
 		header("location:".$thisfile.URL_REDIRECT_APPEND."&target=$target&allow_update=1&pid=".$_SESSION['sess_pid']);
@@ -71,23 +71,23 @@ if(!isset($mode)){
 # Add extra language table
 $lang_tables=array('obstetrics.php');
 require('./include/init_show.php');
-if(isset($current_encounter) && $current_encounter) { 
-	$parent_admit=true; 
+if(isset($current_encounter) && $current_encounter) {
+	$parent_admit=true;
 	$is_discharged=false;
 	$_SESSION['sess_en'] = $current_encounter;
 }
 # Get all birth details data of the person
-$result=&$obj->BirthDetails($_SESSION['sess_pid']);
+$result=$obj->BirthDetails($_SESSION['sess_pid']);
 if($rows=$obj->LastRecordCount()){
 	$birth=$result->FetchRow();
 }
-
+$notestype='birth';
 $subtitle=$LDBirthDetails;
 
 $_SESSION['sess_file_return']=$thisfile;
 
 $buffer=str_replace('~tag~',$title.' '.$name_last,$LDNoRecordFor);
-$norecordyet=str_replace('~obj~',strtolower($subtitle),$buffer); 
+$norecordyet=str_replace('~obj~',strtolower($subtitle),$buffer);
 
 /* Load GUI page */
 require('./gui_bridge/default/gui_show.php');

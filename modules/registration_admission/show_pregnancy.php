@@ -1,12 +1,12 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 /**
 * CARE2X Integrated Hospital Information System beta 2.0.1 - 2004-07-04
 * GNU General Public License
 * Copyright 2002,2003,2004,2005,2006 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -25,7 +25,7 @@ if(!isset($allow_update)) $allow_update=FALSE;
 if(!isset($mode)){
 	$mode='show';
 }elseif($mode=='newdata') {
-	
+
 	include_once($root_path.'include/core/inc_date_format_functions.php');
 	$saved=FALSE;
 
@@ -38,7 +38,7 @@ if(!isset($mode)){
 		else $_POST['delivery_time']=@convertTimeToStandard($_POST['delivery_time']);
 
 	//if(empty($_POST['blood_loss'])) $_POST['blood_loss_unit']=0;
-		
+
 
 	if($allow_update){
 		$obj->setWhereCondition('nr='.$_POST['rec_nr']);
@@ -86,7 +86,7 @@ $subtitle=$LDPregnancies;
 $_SESSION['sess_file_return']=$thisfile;
 
 $buffer=str_replace('~tag~',$title.' '.$name_last,$LDNoRecordFor);
-$norecordyet=str_replace('~obj~',strtolower($subtitle),$buffer); 
+$norecordyet=str_replace('~obj~',strtolower($subtitle),$buffer);
 
 /* Load GUI page */
 require('./gui_bridge/default/gui_show.php');

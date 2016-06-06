@@ -1,7 +1,7 @@
 <?php
-//error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 ///$db->debug = true;
 $thisfile=basename(__FILE__);
 
@@ -25,45 +25,45 @@ if(!isset($mode)){
 # Load the emr language table
 $lang_tables=array('emr.php');
 require('./include/init_show.php');
-if(isset($current_encounter) && $current_encounter) { 
-	$parent_admit=true; 
+if(isset($current_encounter) && $current_encounter) {
+	$parent_admit=true;
 	$is_discharged=false;
 	$_SESSION['sess_en'] = $current_encounter;
 }
 $page_title.=" :: $LDNotes $LDAndSym $LDReports";
 
 if($parent_admit){
-	$sql="SELECT n.nr,n.notes,n.short_notes, n.encounter_nr,n.date,n.personell_nr,n.personell_name,e.encounter_class_nr
-		FROM care_encounter AS e, 
-			care_person AS p, 
-			care_encounter_notes AS n 
-		WHERE p.pid=".$_SESSION['sess_pid']." 		
-			AND p.pid=e.pid 
-			AND e.encounter_nr=".$_SESSION['sess_en']." 
-			AND e.encounter_nr=n.encounter_nr 
+	$sql="SELECT n.nr,n.notes,n.short_notes, n.encounter_nr,n.date,n.sstaff_nr,n.staff_name,e.encounter_class_nr
+		FROM care_encounter AS e,
+			care_person AS p,
+			care_encounter_notes AS n
+		WHERE p.pid=".$_SESSION['sess_pid']."
+			AND p.pid=e.pid
+			AND e.encounter_nr=".$_SESSION['sess_en']."
+			AND e.encounter_nr=n.encounter_nr
 			AND n.type_nr=".$type_nr."
 		ORDER BY n.date DESC";
 }else{
-	$sql="SELECT n.nr,n.notes,n.short_notes, n.encounter_nr,n.date,n.personell_nr,n.personell_name,e.encounter_class_nr
-		FROM care_encounter AS e, 
-			care_person AS p, 
+	$sql="SELECT n.nr,n.notes,n.short_notes, n.encounter_nr,n.date,n.staff_nr,n.staff_name,e.encounter_class_nr
+		FROM care_encounter AS e,
+			care_person AS p,
 			care_encounter_notes AS n
-		WHERE	p.pid=".$_SESSION['sess_pid']." 
-			AND	p.pid=e.pid 
-			AND e.encounter_nr=n.encounter_nr 
+		WHERE	p.pid=".$_SESSION['sess_pid']."
+			AND	p.pid=e.pid
+			AND e.encounter_nr=n.encounter_nr
 			AND n.type_nr=".$type_nr."
 		ORDER BY n.date DESC";
 }
 
-		
+
 if($result=$db->Execute($sql)){
 	$rows=$result->RecordCount();
 }else{
 	echo $sql;
 }
 
-if(isset($$this_type['LD_var'])&&!empty($$this_type['LD_var'])) {
-	$subtitle=$$this_type['LD_var'];
+if(isset(${$this_type['LD_var']})&&!empty(${$this_type['LD_var']})) {
+	$subtitle=${$this_type['LD_var']};
 }else{
 	$subtitle=$this_type['name'];
 }
@@ -72,10 +72,19 @@ if(isset($$this_type['LD_var'])&&!empty($$this_type['LD_var'])) {
 $notestype='notes';
 
 $buffer=str_replace('~tag~',$title.' '.$name_last,$LDNoRecordFor);
-$norecordyet=str_replace('~obj~',strtolower($subtitle),$buffer); 
+$norecordyet=str_replace('~obj~',strtolower($subtitle),$buffer);
 
 /* Hide tabs */
 $notabs=true;
+
+$GLOBAL_CONFIG=array();
+$glob_obj=new GlobalConfig($GLOBAL_CONFIG);
+
+/* Get the patient global configs */
+$glob_obj->getConfig('patient_%');
+$glob_obj->getConfig('person_photo_path');
+$glob_obj->getConfig('show_billable_items');
+$glob_obj->getConfig('show_doctors_list');
 
 /* Load GUI page */
 require('./gui_bridge/default/gui_show_notes.php');
