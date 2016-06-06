@@ -13,9 +13,10 @@ $diff=array(199=>'Ccedilla',208=>'Gbreve',
 $pdf->selectFont($fontpath.'Helvetica.afm');
 $pdf->ezStartPageNumbers(550,25,8);
 # Get the main informations
+
 if(!isset($GLOBAL_CONFIG)) $GLOBAL_CONFIG=array();
 include_once($root_path.'include/care_api_classes/class_globalconfig.php');
-$glob= GlobalConfig($GLOBAL_CONFIG);
+$glob=new GlobalConfig($GLOBAL_CONFIG);
 # Get all config items starting with "main_"
 $glob->getConfig('main_%');
 $addr[]=array($GLOBAL_CONFIG['main_info_address'],

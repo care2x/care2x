@@ -1,13 +1,13 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
+
+require('./roots.php');
+require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 
 $report_textsize=12;
 $report_titlesize=16;
 $report_auxtitlesize=10;
 $report_authorsize=10;
-
-require('./roots.php');
-require($root_path.'include/core/inc_environment_global.php');
 /**
 * CARE 2X Integrated Hospital Information System version deployment 1.1 (mysql) 2004-01-11
 * GNU General Public License
@@ -30,7 +30,7 @@ require_once($root_path.'include/care_api_classes/class_insurance.php');
 
 
 $insurance_obj=new PersonInsurance;
-$person_obj= Person($pid);
+$person_obj=new Person($pid);
 # Get the person´s data
 if($person_obj->preloadPersonInfo($pid)){
 	$person=$person_obj->person;
@@ -38,7 +38,7 @@ if($person_obj->preloadPersonInfo($pid)){
 	$encounter=& $person;
 	//extract($encounter);
 
-	$p_insurance=&$insurance_obj->getPersonInsuranceObject($pid);
+	$p_insurance=$insurance_obj->getPersonInsuranceObject($pid);
 
 	if($p_insurance==false) {
 		$insurance_show=true;
@@ -78,7 +78,7 @@ $classpath=$root_path.'classes/phppdf/';
 $fontpath=$classpath.'fonts/';
 # Load and create pdf object
 include($classpath.'class.ezpdf.php');
-$pdf= Cezpdf();
+$pdf= new Cezpdf();
 
 
 $logo=$root_path.'gui/img/logos/care_logo_print.png';
