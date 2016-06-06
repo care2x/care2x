@@ -344,7 +344,7 @@ class Core {
 		if(!is_array($array)){ return FALSE;}
 		while(list($x,$v)=each($array)) {
 			# use backquoting for mysql and no-quoting for other dbs
-			if ($dbtype=='mysql') $index.="`$x`,";
+			if ($dbtype=='mysqli') $index.="`$x`,";
 				else $index.="$x,";
 
 			if(stristr($v,$concatfx)||stristr($v,'null')) $values.=" $v,";
