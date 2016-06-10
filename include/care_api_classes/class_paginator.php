@@ -67,7 +67,7 @@ class Paginator {
 	* @param string Field name to sort
 	* @param string Sort direction
 	*/
-	function __construct($x=0,$fwdfile,&$sk,$rootpath,$oitem,$odir) {
+	function __construct($x=0,$fwdfile,&$sk,$rootpath,$oitem='',$odir='ASC') {
 		if(empty($x)) $this->csx=0;
 			else $this->csx=$x;
 		$this->page=$fwdfile;

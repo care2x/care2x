@@ -1,12 +1,12 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 /**
 * CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
 * GNU General Public License
 * Copyright 2002,2003,2004,2005 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -25,10 +25,12 @@ $breakfile=$root_path."main/spediens.php".URL_APPEND;
 
  require_once($root_path.'gui/smarty_template/smarty_care.class.php');
  $smarty = new smarty_care('system_admin');
-
+$smarty->assign('sOnLoadJs','');
 # Title in toolbar
  $smarty->assign('sToolbarTitle',"$LDAddress :: $LDManager");
-
+$smarty->assign('bHideTitleBar',FALSE);
+$smarty->assign('sTitleImage','<img '.createComIcon($root_path,'address_book2.gif','0').'>');
+$smarty->assign('Subtitle','' );
  # href for help button
  $smarty->assign('pbHelp',"javascript:gethelp('address_manage.php')");
 
@@ -37,14 +39,15 @@ $breakfile=$root_path."main/spediens.php".URL_APPEND;
 
  # Window bar title
  $smarty->assign('sWindowTitle',"$LDAddress :: $LDManager");
-
+  $smarty->assign('Name','');
+$smarty->assign('sMainBlockIncludeFile',"");
 # Buffer page output
 
 ob_start();
 ?>
 
   <p><br>
-  
+
   <table border=0 cellpadding=5>
     <tr>
       <td> <a href="citytown_new.php<?php echo URL_APPEND; ?>"><img <?php  echo createComIcon($root_path,'form_pen.gif','0'); ?>></a> </td>
@@ -65,14 +68,16 @@ ob_start();
 			<?php echo $LDSearchTxt ?></td>
     </tr>
   </table>
-  
+
 <p>
 <ul>
 <a href="<?php echo $breakfile ?>"><img <?php echo createLDImgSrc($root_path,'close2.gif','0') ?> border="0"></a>
 </ul>
 
 <?php
-
+$smarty->assign('pbAux1', '');
+$smarty->assign('pbAux2', '');
+$smarty->assign('sCloseTarget','target="_parent"');
 $sTemp = ob_get_contents();
 ob_end_clean();
 

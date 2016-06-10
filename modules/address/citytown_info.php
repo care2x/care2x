@@ -1,12 +1,12 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 /**
 * CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
 * GNU General Public License
 * Copyright 2002,2003,2004,2005 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -21,10 +21,9 @@ switch($retpath)
 {
 	case 'list': $breakfile='citytown_list.php'.URL_APPEND; break;
 	case 'search': $breakfile='citytown_search.php'.URL_APPEND; break;
-	default: $breakfile='address_manage.php'.URL_APPEND; 
+	default: $breakfile='address_manage.php'.URL_APPEND;
 }
-
-if(isset($nr) && $nr&&($row=&$address_obj->getCityTownInfo($nr))){
+if(isset($nr) && $nr&&($row=$address_obj->getCityTownInfo($nr))){
 	$address=$row->FetchRow();
 	$edit=true;
 }else{
@@ -41,6 +40,8 @@ if(isset($nr) && $nr&&($row=&$address_obj->getCityTownInfo($nr))){
 
  require_once($root_path.'gui/smarty_template/smarty_care.class.php');
  $smarty = new smarty_care('system_admin');
+$smarty->assign('sOnLoadJs','');
+  $smarty->assign('Name','');
 
 # Title in toolbar
  $smarty->assign('sToolbarTitle',"$LDCityTown :: $LDData");
@@ -53,6 +54,10 @@ if(isset($nr) && $nr&&($row=&$address_obj->getCityTownInfo($nr))){
 
  # Window bar title
  $smarty->assign('sWindowTitle',"$LDCityTown :: $LDData");
+$smarty->assign('bHideTitleBar',FALSE);
+$smarty->assign('sTitleImage','<img '.createComIcon($root_path,'address_book2.gif','0').'>');
+$smarty->assign('Subtitle','' );
+
 
 # Buffer page output
 
@@ -62,29 +67,29 @@ ob_start();
 
 <ul>
 <?php
-if(isset($save_ok) && $save_ok){ 
+if(isset($save_ok) && $save_ok){
 ?>
 <img <?php echo createMascot($root_path,'mascot1_r.gif','0','absmiddle') ?>><font face="Verdana, Arial" size=3 color="#880000">
 <b>
-<?php 
+<?php
  	echo $LDAddressInfoSaved;
 ?>
 </b></font>
-<?php 
-} 
+<?php
+}
 ?>
 <table border=0 cellpadding=4 >
-  </tr> 
+  </tr>
   <tr>
     <td align=right class="adm_item"></font><?php echo $LDCityTownName ?>: </td>
     <td class="adm_input"><?php echo $address['name'] ?><br></td>
-  </tr> 
+  </tr>
   <!-- gjergji added zip code -->
   <tr>
     <td align=right class="adm_item"><font color=#ff0000></font><?php echo $LDZipCode ?>: </td>
     <td class="adm_input"><?php echo $address['zip_code']; ?></td>
-  </tr>  
-  <!-- end:gjergji added zip code -->  
+  </tr>
+  <!-- end:gjergji added zip code -->
   <tr>
     <td align=right class="adm_item"><font color=#ff0000></font><?php echo $LDISOCountryCode ?>: </td>
     <td class="adm_input"><?php echo $address['iso_country_id']; ?></td>
@@ -129,6 +134,10 @@ $sTemp = ob_get_contents();
 ob_end_clean();
 
 # Assign page output to the mainframe template
+$smarty->assign('pbAux1', '');
+$smarty->assign('pbAux2', '');
+$smarty->assign('sCloseTarget','target="_parent"');
+$smarty->assign('sMainBlockIncludeFile',"");
 
 $smarty->assign('sMainFrameBlockData',$sTemp);
  /**

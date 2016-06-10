@@ -160,7 +160,7 @@ class Address extends Core {
 	* @return boolean
 	*/
 	function saveCityTownInfoFromArray(&$data){
-		global $_SESSION;
+		global $_SESSION, $db;
 		$this->_useCityTown();
 		$this->data_array=$data;
 		$this->data_array['status']='normal';
@@ -168,7 +168,8 @@ class Address extends Core {
 		$this->data_array['modify_id']=$_SESSION['sess_user_name'];
 		$this->data_array['create_id']=$_SESSION['sess_user_name'];
 		$this->data_array['create_time']='NULL';
-		return $this->insertDataFromInternalArray();
+		$ReturnValue = $this->insertDataFromInternalArray();
+		return $ReturnValue;
 	}
 	/**
 	* Updates the city/town's data. The data is contained in associative array and passed by reference.

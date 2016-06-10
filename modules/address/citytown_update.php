@@ -1,12 +1,12 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 /**
 * CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
 * GNU General Public License
 * Copyright 2002,2003,2004,2005 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -16,12 +16,12 @@ require_once($root_path.'include/core/inc_front_chain_lang.php');
 # Load the insurance object
 require_once($root_path.'include/care_api_classes/class_address.php');
 $address_obj=new Address;
-
+$thisfile=basename(__FILE__);
 switch($retpath)
 {
 	case 'list': $breakfile='citytown_list.php'.URL_APPEND; break;
 	case 'search': $breakfile='citytown_search.php'.URL_APPEND; break;
-	default: $breakfile='citytown_manage.php'.URL_APPEND; 
+	default: $breakfile='citytown_manage.php'.URL_APPEND;
 }
 
 if(isset($nr) && $nr){
@@ -32,7 +32,7 @@ if(isset($nr) && $nr){
 		}else{
 			echo $address_obj->getLastQuery();
 			$mode='bad_data';
-		}	
+		}
 	}elseif($row=$address_obj->getCityTownInfo($nr)){
 		if(is_object($row)){
 			$address=$row->FetchRow();
@@ -53,7 +53,7 @@ if(isset($nr) && $nr){
 
  require_once($root_path.'gui/smarty_template/smarty_care.class.php');
  $smarty = new smarty_care('system_admin');
-
+$smarty->assign('sOnLoadJs','');
 # Title in toolbar
  $smarty->assign('sToolbarTitle',"$LDAddress :: $LDUpdateData");
 
@@ -65,6 +65,10 @@ if(isset($nr) && $nr){
 
  # Window bar title
  $smarty->assign('sWindowTitle',"$LDAddress :: $LDUpdateData");
+  $smarty->assign('Name','');
+$smarty->assign('bHideTitleBar',FALSE);
+$smarty->assign('sTitleImage','<img '.createComIcon($root_path,'address_book2.gif','0').'>');
+$smarty->assign('Subtitle','' );
 
 # Buffer page output
 
@@ -74,13 +78,13 @@ ob_start();
 
 <ul>
 <?php
-if(!empty($mode)){ 
+if(!empty($mode)){
 ?>
 <table border=0>
   <tr>
     <td><img <?php echo createMascot($root_path,'mascot1_r.gif','0','bottom') ?>></td>
     <td valign="bottom"><br><font class="warnprompt"><b>
-<?php 
+<?php
 	switch($mode)
 	{
 		case 'bad_data':
@@ -98,8 +102,8 @@ if(!empty($mode)){
 </td>
   </tr>
 </table>
-<?php 
-} 
+<?php
+}
 ?>
 <script language="javascript">
 <!--
@@ -124,17 +128,17 @@ function check(d)
   <tr>
     <td align=right class="adm_item"><?php echo $LDCityTownName ?>: </td>
     <td class="adm_input"><?php echo $name ?><br></td>
-  </tr> 
+  </tr>
   <!-- apmuthu added zip code -->
   <tr>
     <td align=right class="adm_item"><font color=#ff0000><b>*</b></font><?php echo $LDZipCode ?>: </td>
     <td class="adm_input"><input type="text" name="zip_code" size=50 maxlength=15 value="<?php echo $zip_code ?>"><br></td>
-  </tr>  
-  <!-- end:apmuthu added zip code  -->   
+  </tr>
+  <!-- end:apmuthu added zip code  -->
   <tr>
     <td align=right class="adm_item"><font color=#ff0000><b>*</b></font><?php echo $LDISOCountryCode ?>: </td>
     <td class="adm_input"><input type="text" name="iso_country_id" size=50 maxlength=3 value="<?php echo $iso_country_id ?>"><br></td>
-  </tr> 
+  </tr>
   <tr>
     <td align=right class="adm_item"><?php echo $LDWebsiteURL ?>: </td>
     <td class="adm_input"><input type="text" name="info_url"  size=50 maxlength=60 value="<?php echo $info_url ?>"></td>
@@ -176,6 +180,10 @@ $sTemp = ob_get_contents();
 ob_end_clean();
 
 # Assign page output to the mainframe template
+$smarty->assign('pbAux1', '');
+$smarty->assign('pbAux2', '');
+$smarty->assign('sCloseTarget','target="_parent"');
+$smarty->assign('sMainBlockIncludeFile',"");
 
 $smarty->assign('sMainFrameBlockData',$sTemp);
  /**

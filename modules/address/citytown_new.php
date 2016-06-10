@@ -1,34 +1,35 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 /**
 * CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
 * GNU General Public License
 * Copyright 2002,2003,2004,2005 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
 define('LANG_FILE','place.php');
 $local_user='aufnahme_user';
+$thisfile=basename(__FILE__);
 require_once($root_path.'include/core/inc_front_chain_lang.php');
 # Load the insurance object
 require_once($root_path.'include/care_api_classes/class_address.php');
 $address_obj=new Address;
 
 //$db->debug=1;
-
+if (!isset($retpath)) $retpath='';
 switch($retpath)
 {
 	case 'list': $breakfile='citytown_list.php'.URL_APPEND; break;
 	case 'search': $breakfile='citytown_search.php'.URL_APPEND; break;
-	default: $breakfile='address_manage.php'.URL_APPEND; 
+	default: $breakfile='address_manage.php'.URL_APPEND;
 }
 
 if(!isset($mode)){
 	$mode='';
-	$edit=true;		
+	$edit=true;
 }else{
 	switch($mode)
 	{
@@ -52,11 +53,7 @@ if(!isset($mode)){
 						#
 						# Get the last insert ID
 						#
-						$insid=$db->Insert_ID();
-						#
-						# Resolve the ID to the primary key
-						#
-						$nr=$address_obj->LastInsertPK('nr',$insid);
+						$nr=$address_obj->last_insert;
 
     					header("location:citytown_info.php?sid=$sid&lang=$lang&nr=$nr&mode=show&save_ok=1&retpath=$retpath");
 						exit;
@@ -79,6 +76,7 @@ if(!isset($mode)){
 
  require_once($root_path.'gui/smarty_template/smarty_care.class.php');
  $smarty = new smarty_care('system_admin');
+$smarty->assign('sOnLoadJs','');
 
 # Title in toolbar
  $smarty->assign('sToolbarTitle',"$LDAddress :: $LDNewCityTown");
@@ -88,9 +86,13 @@ if(!isset($mode)){
 
  # href for close button
  $smarty->assign('breakfile',$breakfile);
+  $smarty->assign('Name','');
 
  # Window bar title
  $smarty->assign('sWindowTitle',"$LDAddress :: $LDNewCityTown");
+$smarty->assign('bHideTitleBar',FALSE);
+$smarty->assign('sTitleImage','<img '.createComIcon($root_path,'address_book2.gif','0').'>');
+$smarty->assign('Subtitle','' );
 
 # Coller Javascript code
 
@@ -98,7 +100,7 @@ ob_start();
 ?>
 
 <script language="javascript">
-<!-- 
+<!--
 function check(d)
 {
 	if((d.name.value=="")){
@@ -135,13 +137,13 @@ ob_start();
 
 <ul>
 <?php
-if(!empty($mode)){ 
+if(!empty($mode)){
 ?>
 <table border=0>
   <tr>
     <td><img <?php echo createMascot($root_path,'mascot1_r.gif','0','bottom') ?>></td>
     <td valign="bottom"><br><font class="warnprompt"><b>
-<?php 
+<?php
 	switch($mode)
 	{
 		case 'bad_data':
@@ -159,8 +161,17 @@ if(!empty($mode)){
 </td>
   </tr>
 </table>
-<?php 
-} 
+<?php
+}
+if (!isset($name)) $name='';
+if (!isset($zip_code)) $zip_code='';
+if (!isset($iso_country_id)) $iso_country_id='';
+if (!isset($unece_locode)) $unece_locode='';
+if (!isset($unece_modifier)) $unece_modifier='';
+if (!isset($unece_locode_type)) $unece_locode_type='';
+if (!isset($unece_coordinates)) $unece_coordinates='';
+if (!isset($info_url)) $info_url='';
+
 ?>
 &nbsp;<br>
 
@@ -171,17 +182,17 @@ if(!empty($mode)){
     <td align=right class="adm_item"><font color=#ff0000><b>*</b></font> <?php echo $LDCityTownName ?>: </td>
     <td class="adm_input"><input type="text" name="name" size=50 maxlength=60 value="<?php echo $name ?>"><br>
 </td>
-  </tr> 
+  </tr>
   <!-- gjergji added zip code -->
   <tr>
     <td align=right class="adm_item"><font color=#ff0000><b>*</b></font><?php echo $LDZipCode ?>: </td>
     <td class="adm_input"><input type="text" name="zip_code" size=50 maxlength=15 value="<?php echo $zip_code ?>"><br></td>
-  </tr>  
-  <!-- end:gjergji added zip code. apmuthu increased maxlength from 5 to 15 - db table field is VARCHAR(25).  -->   
+  </tr>
+  <!-- end:gjergji added zip code. apmuthu increased maxlength from 5 to 15 - db table field is VARCHAR(25).  -->
   <tr>
     <td align=right class="adm_item"><font color=#ff0000><b>*</b></font><?php echo $LDISOCountryCode ?>: </td>
     <td class="adm_input"><input type="text" name="iso_country_id" size=50 maxlength=3 value="<?php echo $iso_country_id ?>"><br></td>
-  </tr> 
+  </tr>
   <tr>
     <td align=right class="adm_item"><?php echo $LDUNECELocalCode ?>: </td>
     <td class="adm_input"><input type="text" name="unece_locode" size=50 maxlength=60 value="<?php echo $unece_locode ?>"><br></td>
@@ -219,8 +230,12 @@ if(!empty($mode)){
 
 $sTemp = ob_get_contents();
 ob_end_clean();
+$smarty->assign('pbAux1', '');
+$smarty->assign('pbAux2', '');
+$smarty->assign('sCloseTarget','target="_parent"');
 
 # Assign page output to the mainframe template
+$smarty->assign('sMainBlockIncludeFile',"");
 
 $smarty->assign('sMainFrameBlockData',$sTemp);
  /**
