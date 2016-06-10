@@ -6,7 +6,7 @@ require($root_path.'include/core/inc_environment_global.php');
 * CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
 * GNU General Public License
 * Copyright 2002,2003,2004,2005 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -15,7 +15,7 @@ define('LANG_FILE','or.php');
 define('NO_2LEVEL_CHK',1);
 require_once($root_path.'include/core/inc_front_chain_lang.php');
 
-if (!$internok&&!$_COOKIE['ck_op_pflegelogbuch_user'.$sid]) {header("Location:".$root_path."language/".$lang."/lang_".$lang."_invalid-access-warning.php"); exit;}; 
+if (!$internok&&!$_COOKIE['ck_op_pflegelogbuch_user'.$sid]) {header("Location:".$root_path."language/".$lang."/lang_".$lang."_invalid-access-warning.php"); exit;};
 
 //$db->debug=1;
 
@@ -35,13 +35,13 @@ if(isset($sdate)&&!empty($sdate)){
 	# Set default date to today
 	$thisday=date('Y-m-d');
 }
-# Load date shifter class 
+# Load date shifter class
 require_once($root_path.'classes/datetimemanager/class.dateTimeManager.php');
 # Create new dateTimeManager object */
 $tshifter = new dateTimeManager;
-# Shift time back 1 day 
+# Shift time back 1 day
 $yesday = $tshifter->shift_dates($thisday, '1', 'd');
-# Shift time forward 1 day 
+# Shift time forward 1 day
 $tomorow = $tshifter->shift_dates($thisday, '-1', 'd');
 # Todays date
 $today=date('Y-m-d');
@@ -77,22 +77,22 @@ function yesterday(&$fd,&$fm,&$fy,$minyr)
 						{
 							return false;
 						}
-						else	
+						else
 							{
 								$fy=$fy-1; $fm=12; $fd=31;
 							}
 	 			}
-	 			else	
+	 			else
 	 				{
 						$fm=$fm-1;
 						$fd=date("t",mktime(0,0,0,$fm,1,$fy)) ;
 					}
 		}
-		else 
+		else
 			{
 				$fd=$fd-1;
 			}
-	if (strlen($fd)==1) $fd="0".$fd; 
+	if (strlen($fd)==1) $fd="0".$fd;
 	if (strlen($fm)==1) $fm="0".$fm;
 	return true;
 }
@@ -110,7 +110,7 @@ function tomorrow(&$fd,&$fm,&$fy,$maxyr)
 			$fm++;
 			$fd="01";
 		}
-		else 
+		else
 		{
 			$fy++;
 			$fm="01";
@@ -136,14 +136,14 @@ function tomorrow(&$fd,&$fm,&$fy,$maxyr)
 						}
 	}
 	*/
-	if (strlen($fd)==1) $fd="0".$fd; 
+	if (strlen($fd)==1) $fd="0".$fd;
 	if (strlen($fm)==1) $fm="0".$fm;
 	return true;
 }
-	
-	
+
+
 $md=$pday;
-if (strlen($md)==1) $md="0".$md; 
+if (strlen($md)==1) $md="0".$md;
 
 
 setcookie(firstentry,'1');
@@ -152,9 +152,9 @@ $dbtable='care_encounter_op';
 
 $selectfrom="SELECT o.*,
 								e.encounter_class_nr,
-								 p.name_last, 
-								 p.name_first, 
-								 p.date_birth, 
+								 p.name_last,
+								 p.name_first,
+								 p.date_birth,
 								 p.addr_str,
 								 p.addr_str_nr,
 								 p.addr_zip,
@@ -175,7 +175,7 @@ $selectfrom  = $selectfrom . " FROM  care_encounter_op AS o LEFT JOIN care_depar
 
 $sql=$selectfrom."	WHERE  o.dept_nr='$dept_nr'
 								AND o.op_room='$saal'
-								AND op_date='$thisday' 								
+								AND op_date='$thisday'
 								AND o.encounter_nr=e.encounter_nr
 								AND e.pid=p.pid
 					ORDER BY o.create_time DESC";
@@ -194,7 +194,7 @@ $validyr=true;
 # Prepate title
 $sTitle = "$LDOrLogBook::$LDArchive - ";
 $buffer=$dept_obj->LDvar();
-if(isset($$buffer)&&!empty($$buffer)) $sTitle = $sTitle.$$buffer;
+if(isset(${$buffer})&&!empty(${$buffer})) $sTitle = $sTitle.${$buffer};
 	else $sTitle = $sTitle.$dept_obj->FormalName();
 $sTitle = $sTitle." $LDRoom $saal";
 
@@ -246,7 +246,7 @@ function pruf(d)
 function openeditwin(filename,y,m,d)
 {
 	url="op-pflege-logbuch-arch-edit.php?mode=edit&fileid="+filename+"&sid=<?php echo $sid; ?>&user=<?php echo str_replace(" ","+",$user); ?>&pyear="+y+"&pmonth="+m+"&pday="+d+"&dept_nr=<?php echo $dept_nr;?>&saal=<?php echo $saal;?>";
-	
+
 	w=window.parent.screen.width;
 	h=window.parent.screen.height;
 	archeditwin=window.open(url,"editwin","menubar=no,resizable=yes,scrollbars=yes, width=" + (w-15) + ", height=400");
@@ -257,8 +257,8 @@ function getinfo(pid,pdata){
 	urlholder="<?php echo $root_path; ?>modules/nursing/nursing-station-patientdaten.php<?php echo URL_REDIRECT_APPEND; ?>&pn="+pid+"&patient=" + pdata + "&station=<?php echo "$dept_nr&dept_nr=$dept_nr&pday=$pday&pmonth=$pmonth&pyear=$pyear&op_shortcut=".$_COOKIE['ck_op_pflegelogbuch_user'.$sid]; ?>";
 	patientwin=window.open(urlholder,pid,"width=700,height=450,menubar=no,resizable=yes,scrollbars=yes");
 	}
-	
-<?php } ?>	
+
+<?php } ?>
 
 <?php require($root_path.'include/core/inc_checkdate_lang.php'); ?>
 // -->
@@ -285,26 +285,26 @@ ob_start();
 echo '
 		<table cellpadding=0 cellspacing=0 border=0 bgcolor="#999999" width="100%">
 		<tr><td>
-		<table  cellpadding="3" cellspacing="1" border="0" width="100%">';	
+		<table  cellpadding="3" cellspacing="1" border="0" width="100%">';
 echo '
 		<tr class="wardlisttitlerow"><td colspan=2   ><nobr>';
- 	
+
 echo '
-			<a href="op-pflege-logbuch-arch-start.php?sid='.$sid.'&lang='.$lang.'&nogetlast=1&dept_nr='.$dept_nr.'&saal='.$saal.'&thisday='.$yesday.'&noseek=1" 
+			<a href="op-pflege-logbuch-arch-start.php?sid='.$sid.'&lang='.$lang.'&nogetlast=1&dept_nr='.$dept_nr.'&saal='.$saal.'&thisday='.$yesday.'&noseek=1"
 			title="'.formatDate2Local($yesday,$date_format).'">
 			&lt;&lt; '.$LDPrevDay.'</a>';
 
-echo '				
+echo '
 		</td><td colspan=5 align=center ><FONT  SIZE=4>
 		<b>';
-		
+
 list($ty,$tm,$td)=explode('-',$thisday);
 
 echo $tage[(date("w",mktime(0,0,0,$tm,$td,$ty)))].' ('.formatDate2Local($thisday,$date_format).')</b> </td>
 		<td colspan=2 align=right >';
 
 if($thisday!=$today) echo '
-					<a href="op-pflege-logbuch-arch-start.php?sid='.$sid.'&lang='.$lang.'&nogetlast=1&dept_nr='.$dept_nr.'&saal='.$saal.'&thisday='.$tomorow.'&noseek=1" 
+					<a href="op-pflege-logbuch-arch-start.php?sid='.$sid.'&lang='.$lang.'&nogetlast=1&dept_nr='.$dept_nr.'&saal='.$saal.'&thisday='.$tomorow.'&noseek=1"
 					title="'.formatDate2Local($tomorow,$date_format).'">
 					<nobr>'.$LDNextDay.' &gt;&gt;</a></td></tr>';
 echo '
@@ -322,21 +322,21 @@ if($datafound)
 
   while($pdata=$ergebnis->FetchRow())
   {
-	if ($toggler==0) { echo '<tr bgcolor="#fdfdfd">'; $toggler=1;} 
+	if ($toggler==0) { echo '<tr bgcolor="#fdfdfd">'; $toggler=1;}
 		else { echo '<tr bgcolor="#dddddd">'; $toggler=0;}
-		
+
 	echo '
 			<a name="'.$pdata['encounter_nr'].'"></a>';
-			
+
 	list($iyear,$imonth,$iday)=explode('-',$pdata['op_date']);
-	
+
 	echo '
 			<td valign=top><font size="1" ><font size=2 color=red><b>'.$pdata['op_nr'].'</b></font><hr>'.formatDate2Local($pdata['op_date'],$date_format).'<br>
 			'.$tage[date("w",mktime(0,0,0,$imonth,$iday,$iyear))].'<br>
 			<a href="op-pflege-logbuch-start.php?sid='.$sid.'&lang='.$lang.'&mode=saveok&enc_nr='.$pdata['encounter_nr'].'&op_nr='.$pdata['op_nr'].'&dept_nr='.$pdata['dept_nr'].'&saal='.$pdata['op_room'].'&thisday='.$pdata['op_date'].'" ';
-	
-	if ($child) echo 'target="_parent"';		
-	
+
+	if ($child) echo 'target="_parent"';
+
 	echo '>
 			<img '.createComIcon($root_path,'bul_arrowgrnlrg.gif','0').' alt="'.str_replace("~tagword~",$pdata['name_last'],$LDEditPatientData).'"></a>
 			</td>';
@@ -357,7 +357,7 @@ if($datafound)
 	echo '
 			</td>
 			<td valign=top><font size="1" ><nobr>';
-	
+
 	$ebuf=array('operator','assistant','scrub_nurse','rotating_nurse');
 	//$tbuf=array("O","A","I","S");
 	//$cbuf=array("Operateur","Assistent","Instrumenteur","Springer");
@@ -372,15 +372,15 @@ if($datafound)
 			if($elems[n]=="") continue;
 			else echo '&nbsp;'.$elems[n]." ".$tbuf[$n].$elems[x]."<br>";
 		}
-	}	
-		
+	}
+
 	echo '</td>';
-	
+
 	echo '
 	</td>
 	<td valign=top><font size="1" >'.$LDAnaTypes[$pdata['anesthesia']].'<p>';
 	if($pdata[an_doctor])
-		{ 
+		{
 			echo '<font color="#cc0000">'.$LDAnaDoc.'</font><br><font color="#000000">';
 			$dbuf=explode("~",$pdata[an_doctor]);
 			for($i=0;$i<sizeof($dbuf);$i++)
@@ -405,7 +405,7 @@ if($datafound)
 	if(trim($ccbuf[s])) break;
 	}
 */
-			
+
 	echo '
 	</td>
 	<td valign=top><font size="1" >';
@@ -426,12 +426,12 @@ if($datafound)
 */
 	echo '
 	<td valign=top><font size="1" color="#cc0000">'.$LDOpMainElements[therapy].':<font color=black><br>'.nl2br($pdata['op_therapy']).'</td>';
-	
+
 	echo '
 	<td valign=top><nobr><font size="1" color="#cc0000">'.$LDOpMainElements[result].':<br>';
-	
+
 	echo '<font color=black>'.nl2br($pdata['result_info']).'</td>';
-	
+
 	echo '
 	<td valign=top><font size="1" >';
 
@@ -479,14 +479,14 @@ if($datafound)
 	   				</td>
      				</tr>
   		 </table>
-	
+
 	   		</td>
      		</tr>
   		 </table>
 		 </DIV>';
 		}
 		else
-			{ 
+			{
 				$buffy=str_replace(" ","+",$_COOKIE['ck_op_pflegelogbuch_user'.$sid]);
 				echo '<img src="'.$root_path.'main/imgcreator/catcom.php?person='.$buffy.'&rnd='.$r.'">';
 				if($nofile) echo '<p><b><font color="#800000" size=4>'.$LDPatNoExist.'</b>';
@@ -503,11 +503,11 @@ echo '
 		</tr>
 		</table>
 		';
-		
+
 ?>
 
 <p>
-        
+
 <ul>
 
 <form action="op-pflege-logbuch-arch-start.php" method="post" name="chgdept" onSubmit="return pruf(this)">
@@ -517,7 +517,7 @@ echo '
 <input type="hidden" name="user" value="<?php echo $user; ?>">
 <input type="hidden" name="child" value="<?php echo $child; ?>">
 
-<img <?php echo createComIcon($root_path,'varrow.gif','0') ?>> 
+<img <?php echo createComIcon($root_path,'varrow.gif','0') ?>>
 <nobr>
 <?php echo $LDChangeDept ?><br>
 				<select name="dept_nr" size=1>
@@ -530,12 +530,12 @@ echo '
 						if ($dept_nr==$v['nr']) echo ' selected';
 						echo '>';
 						$buffer=$v['LD_var'];
-						if(isset($$buffer)&&!empty($$buffer)) echo $$buffer;
+						if(isset(${$buffer})&&!empty(${$buffer})) echo ${$buffer};
 							else echo $v['name_formal'];
 						echo '</option>';
 					}
 				?>
-					
+
 				</select>
 			<select name="saal" size=1>
 				<?php
@@ -551,10 +551,10 @@ echo '
 				?>
 			</select>
 			<?php
-			//gjergji : new calendar 
-			echo $calendar->show_calendar($calendar,$date_format,'sdate',$thisday);	
+			//gjergji : new calendar
+			echo $calendar->show_calendar($calendar,$date_format,'sdate',$thisday);
 			//end : gjergji
-			?>   
+			?>
 			</nobr>
 <input type="submit" value="<?php echo $LDChange ?>">
 
@@ -564,7 +564,7 @@ echo '
 <img <?php echo createComIcon($root_path,'varrow.gif','0') ?>> <a href="op-pflege-logbuch-xtsuch-start.php?sid=<?php echo "$sid&lang=$lang&mode=fresh&dept_nr=$dept_nr&saal=$saal&child=$child" ?>"><?php echo "$LDSearchPatient [$LDOrLogBook]" ?></a><br>
 <img <?php echo createComIcon($root_path,'varrow.gif','0') ?>> <a href="op-pflege-logbuch-start.php?sid=<?php echo "$sid&lang=$lang&mode=fresh&dept_nr=$dept_nr&saal=$saal" ?>" <?php if ($child) echo "target=\"_parent\""; ?>><?php echo "$LDStartNewDocu [$opabt[$dept_nr] $LDRoom $saal]" ?></a><br>
 <img <?php echo createComIcon($root_path,'varrow.gif','0') ?>> <a href="javascript:gethelp('oplog.php','arch','<?php echo $dif ?>','<?php echo $lastlog ?>','<?php echo $datafound ?>')"><?php echo "$LDHelp" ?></a><br>
-<!-- 
+<!--
 <p>
 <a href="javascript:window.close();"><img <?php echo createLDImgSrc($root_path,'cancel.gif','0') ?>  alt="<?php echo $LDCancel ?>"></a>
  --></ul>

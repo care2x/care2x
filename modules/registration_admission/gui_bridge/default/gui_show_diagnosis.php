@@ -4,17 +4,17 @@ while($row=$result->FetchRow()){
 
 /*	if($row['encounter_class_nr']==1) $full_en=$row['encounter_nr']+$GLOBAL_CONFIG['patient_inpatient_nr_adder']; // inpatient admission
 		else $full_en=$row['encounter_nr']+$GLOBAL_CONFIG['patient_outpatient_nr_adder']; // outpatient admission
-*/	
+*/
 	$full_en=$row['encounter_nr'];
 	# Prepare the category value
-	if(isset($$row['cat_LD_var'])&&!empty($$row['cat_LD_var']))  $cat_name=$$row['cat_LD_var'];
+	if(isset(${$row['cat_LD_var']})&&!empty(${$row['cat_LD_var']}))  $cat_name=${$row['cat_LD_var']}{;
 		else $cat_name=$row['cat_name'];
 
 	# Prepare the localization value
-	if(isset($$row['loc_LD_var'])&&!empty($$row['loc_LD_var']))  $loc_name=$$row['loc_LD_var'];
+	if(isset(${$row['loc_LD_var']})&&!empty(${$row['loc_LD_var']}))  $loc_name=${$row['loc_LD_var']};
 		else $loc_name=$row['loc_name'];
 
-	
+
 ?>
 
   <tr bgcolor="#fefefe">

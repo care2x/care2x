@@ -329,7 +329,7 @@ class Immunization extends Core {
 	* Similar to <var>getImmuTypeInfo()</var>  but returns limited rows.
 	*
 	* The returned adodb record object contains  a row of array.
-	* Each array contains the company's data with index keys as outlined in the <var>$$tabfields_type</var> array.
+	* Each array contains the company's data with index keys as outlined in the <var>${$tabfields_type}</var> array.
 	*
 	* @access public
 	* @param int Maximum number of rows returned

@@ -6,24 +6,24 @@ require($root_path.'include/core/inc_environment_global.php');
 * CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
 * GNU General Public License
 * Copyright 2002,2003,2004,2005 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
 
 # Default value for the maximum nr of rows per block displayed, define this to the value you wish
 # In normal cases this value is derived from the db table "care_config_global" using the "pagin_insurance_list_max_block_rows" element.
-define('MAX_BLOCK_ROWS',30); 
+define('MAX_BLOCK_ROWS',30);
 define('REDIRECT_SINGLERESULT',0); # Define to 1 if single result must be redirected to input page
 
 function createElement($item,$err, $f_size=7, $mx=5)
 {
     global $mode, $err_data, $result, $lang, $isTimeElement,$opdoc;
-	
+
 	if($mode=='saveok')
     {
        $ret_str= '<font color="#800000">'.$opdoc[$item].' &nbsp;</font>';
-    } 
+    }
     else
     {
         $ret_str= '<input name="'.$item.'" type="text" size="'.$f_size.'"   maxlength='.$mx.' value="';
@@ -31,13 +31,13 @@ function createElement($item,$err, $f_size=7, $mx=5)
           $ret_str.=$err;
        }else{
           $ret_str.=$opdoc[$item];
-       }	  
-          
+       }
+
 	   if($mode=='') $ret_str.='" ';
 	     else $ret_str.='"';
-		 
+
 	   if($isTimeElement)  $ret_str.= ' onKeyUp="setTime(this,\''.$lang.'\')">';
-	     else $ret_str.='>';		 
+	     else $ret_str.='>';
 	}
 	return $ret_str;
 }
@@ -74,16 +74,16 @@ require_once($root_path.'include/care_api_classes/class_department.php');
 $dept_obj=new Department;
 $dept_obj->preloadDept($dept_nr);
 $buffer=$dept_obj->LDvar();
-if(isset($$buffer)&&!empty($$buffer)) $_SESSION['sess_dept_name']=$$buffer;
+if(isset(${$buffer})&&!empty(${$buffer})) $_SESSION['sess_dept_name']=${$buffer};
 	else $_SESSION['sess_dept_name']=$dept_obj->FormalName();
 /* Load global configs */
 include_once($root_path.'include/care_api_classes/class_globalconfig.php');
 $GLOBAL_CONFIG=array();
 $glob_obj=new GlobalConfig($GLOBAL_CONFIG);
-$glob_obj->getConfig('patient_%');	
+$glob_obj->getConfig('patient_%');
 
 
-if ((substr($matchcode,0,1)=='%')||(substr($matchcode,0,1)=='&')) {header("Location:'.$root_path.'language/".$lang."/lang_".$lang."_invalid-access-warning.php"); exit;}; 
+if ((substr($matchcode,0,1)=='%')||(substr($matchcode,0,1)=='&')) {header("Location:'.$root_path.'language/".$lang."/lang_".$lang."_invalid-access-warning.php"); exit;};
 
 $breakfile=$root_path.'main/op-doku.php'.URL_APPEND;
 $thisfile=basename(__FILE__);
@@ -117,32 +117,32 @@ if($mode=='save')
 	if(!$op_end) {$err_op_end=1;$err_data=1;}
 	if(!$scrub_nurse) {$err_scrub_nurse=1;$err_data=1;}
 	if(!$op_room) {$err_op_room=1;$err_data=1;}
-	
+
 	if($err_data) $mode='?';
-	
+
 }
 
     /* Load date formatter */
     include_once($root_path.'include/core/inc_date_format_functions.php');
-    
-	
+
+
 	/* If the patient number is available = $patnum , get the data from the admission table */
 	if(isset($pn) && !empty($pn)){
 		$enc_obj->where=" encounter_nr=$pn";
 	    if( $enc_obj->loadEncounterData($pn)) {
-			
+
 			$full_en=$pn;
 
 			if( $enc_obj->is_loaded){
-				$result=&$enc_obj->encounter;		
-				$rows=$enc_obj->record_count;	
+				$result=&$enc_obj->encounter;
+				$rows=$enc_obj->record_count;
 			}
-		}else{ 
+		}else{
 			echo "$sql<br>$LDDbNoRead";
 			$mode='?';
-		} 	
+		}
 	}
-	
+
 	if($mode=='search'||$mode=='paginate'){	# Filter the search and paginate modes
 
 		# Initialize page´s control variables
@@ -199,35 +199,35 @@ if($mode=='save')
 		}
 		$pagen->setSortItem($oitem);
 		$pagen->setSortDirection($odir);
-	
+
 	}else{
 
 		# switch possible modes
-		
+
 		switch($mode){
-									
+
 			case 'update':
-			
+
 							$dbtable='care_op_med_doc';
-							
+
 							$sql="SELECT * FROM $dbtable WHERE  nr='$nr'";
-																			
-							if($ergebnis=$db->Execute($sql)) 
-							{			
+
+							if($ergebnis=$db->Execute($sql))
+							{
 								if($rows=$ergebnis->RecordCount())
 								{
 									$opdoc=$ergebnis->FetchRow();
 								}
-							}else echo "$sql<br>$LDDbNoRead"; 
+							}else echo "$sql<br>$LDDbNoRead";
 							//echo $sql;
 							break;
-							
+
 			case 'save':
-			
+
 					$dbtable='care_op_med_doc';
-					
+
 					/* Prepare the time data */
-					
+
 					$op_start=strtr($op_start,'.;,',':::');
 					$s_count=substr_count($op_start,':');
 					switch($s_count)
@@ -236,7 +236,7 @@ if($mode=='save')
 					   case 1: $op_start.=':00';break;
 					   case '': $op_start.=':00:00';
 					}
-					
+
 					$op_end=strtr($op_end,'.;,',':::');
 					$s_count=substr_count($op_end,':');
 					switch($s_count)
@@ -245,10 +245,10 @@ if($mode=='save')
 					   case 1: $op_end.=':00';break;
 					   case '': $op_end.=':00:00';
 					}
-					
+
 					if($update)
 					{
-					  
+
 						$sql="UPDATE $dbtable SET
 									op_date='".formatDate2STD($op_date,$date_format)."',
 									operator='$operator',
@@ -267,12 +267,12 @@ if($mode=='save')
 									modify_id='".$_SESSION['sess_user_name']."',
 									modify_time='".date('YmdHis')."'
 									WHERE nr='$nr'";
-									
+
 						if($ergebnis=$enc_obj->Transact($sql))
 						{
 								header("location:op-doku-start.php?sid=$sid&lang=$lang&target=$target&mode=saveok&pn=$pn&nr=$nr&dept_nr=$dept_nr");
 								exit;
-						}else echo "$sql<br>$LDDbNoUpdate"; 
+						}else echo "$sql<br>$LDDbNoUpdate";
 					}
 					else
 					{
@@ -296,19 +296,19 @@ if($mode=='save')
 									history,
 									create_id,
 									create_time
-									 ) 
+									 )
 								VALUES (
 									'$dept_nr',
 									'".formatDate2STD($op_date,$date_format)."',
-									'$operator', 
+									'$operator',
 									'$pn',
-									'".htmlspecialchars($diagnosis)."', 
-									'".htmlspecialchars($localize)."', 
-									'".htmlspecialchars($therapy)."', 
-									'".htmlspecialchars($special)."', 
-									'$class_s', 
-									'$class_m', 
-									'$class_l', 
+									'".htmlspecialchars($diagnosis)."',
+									'".htmlspecialchars($localize)."',
+									'".htmlspecialchars($therapy)."',
+									'".htmlspecialchars($special)."',
+									'$class_s',
+									'$class_m',
+									'$class_l',
 									'$op_start',
 									'$op_end',
 									'$scrub_nurse',
@@ -323,30 +323,30 @@ if($mode=='save')
 		                                $oid=$db->Insert_ID();
 										$enc_obj->coretable=$dbtable;
 										$nr = $enc_obj->LastInsertPK('nr',$oid);
-							  			
+
 										header("location:op-doku-start.php?sid=$sid&lang=$lang&target=$target&mode=saveok&pn=$pn&nr=$nr&dept_nr=$dept_nr");
 										exit;
-										
-  							    }else echo "$sql<br>$LDDbNoSave"; 
+
+  							    }else echo "$sql<br>$LDDbNoSave";
 
 					} // end of if(update) else
 							//$sdate=date(YmdHis); // time stamp
 					break;
-					
+
 			case 'saveok':
-			
+
 					$dbtable='care_op_med_doc';
-					
+
 					$sql="SELECT * FROM $dbtable WHERE  nr='$nr'";
-					
-					if($ergebnis=$db->Execute($sql)) 
-					{			
+
+					if($ergebnis=$db->Execute($sql))
+					{
 
 						if($rows=$ergebnis->RecordCount())
 						{
 							$opdoc=$ergebnis->FetchRow();
 						}
-					}else echo "$sql<br>$LDDbNoRead"; 
+					}else echo "$sql<br>$LDDbNoRead";
 					break;
 
 			case 'select': break;
@@ -354,7 +354,7 @@ if($mode=='save')
 			default:
 
 					if($_COOKIE["ck_login_logged".$sid]) $mode="dummy";
-					
+
 		} // end of switch
 	}
 
@@ -398,13 +398,13 @@ if($mode=='save')
 ?>
 
 <script  language="javascript">
-<!-- 
+<!--
 var iscat=true;
 var cat=new Image();
 var pix=new Image();
 
 
-function hilite(idx,mode) 
+function hilite(idx,mode)
 	{
 	if(mode==1) idx.filters.alpha.opacity=100
 	else idx.filters.alpha.opacity=70;
@@ -423,7 +423,7 @@ function lookmatch(d)
 	return false;
 }
 
-<?php 
+<?php
 if($mode!='saveok'){
 ?>
 function chkForm(d){
@@ -517,10 +517,10 @@ if(($mode=='search'||$mode=='paginate') && $rows){
     <td><img <?php echo createMascot($root_path,'mascot1_r.gif','0','bottom') ?> align="absmiddle"></td>
     <td class="prompt">
 <b>
-<?php 
+<?php
 
 	if ($rows) echo str_replace("~nr~",$totalcount,$LDSearchFound).' '.$LDShowing.' '.$pagen->BlockStartNr().' '.$LDTo.' '.$pagen->BlockEndNr().'.';
-		else echo str_replace('~nr~','0',$LDSearchFound); 
+		else echo str_replace('~nr~','0',$LDSearchFound);
  ?></b></font></td>
   </tr>
 </table>
@@ -541,7 +541,7 @@ if(($mode=='search'||$mode=='paginate') && $rows){
 
 	</tr>
 
-<?php 
+<?php
 $toggle=0;
 while($enc_row=$encounter->FetchRow()){
  	echo'
@@ -551,13 +551,13 @@ while($enc_row=$encounter->FetchRow()){
     <td>&nbsp;';
 	echo $enc_row['encounter_nr'];
    echo '&nbsp;</td><td>';
-  
+
 	switch($enc_row['sex']){
 		case 'f': echo '<img '.$img_female.'>'; break;
 		case 'm': echo '<img '.$img_male.'>'; break;
 		default: echo '&nbsp;'; break;
-	}	
-   
+	}
+
    echo '
     <td>&nbsp; <a href="'.$thisfile.URL_APPEND.'&mode=select&pn='.$enc_row['encounter_nr'].'&dept_nr='.$dept_nr.'&target='.$target.'">'.$enc_row['name_last'].'</a></td>
     <td>&nbsp; &nbsp;'.$enc_row['name_first'].'</td>
@@ -565,9 +565,9 @@ while($enc_row=$encounter->FetchRow()){
 	echo '
 	<td><font face=arial size=2>&nbsp;';
 	echo '<a href="'.$thisfile.URL_APPEND.'&mode=select&pn='.$enc_row['encounter_nr'].'&dept_nr='.$dept_nr.'&target='.$target.'">';
-	echo '	
+	echo '
 	<img '.createLDImgSrc($root_path,'ok_small.gif','0').' alt="'.$LDTestThisPatient.'"></a>&nbsp;';
-							
+
 	if(!file_exists($root_path."cache/barcodes/en_".$full_en.".png")){
 		echo "<img src='".$root_path."classes/barcode/image.php?code=".$full_en."&style=68&type=I25&width=180&height=50&xres=2&font=5&label=2&form_file=en' border=0 width=0 height=0>";
 	}
@@ -585,7 +585,7 @@ echo '
 ?>
 </table>
 <p>
-<?php 
+<?php
 }else{
 
    if(!$rows&&!$err_data) {
@@ -594,12 +594,12 @@ echo '
           <tr>
             <td><img <?php echo createComIcon($root_path,'angle_down_l.gif','0','absmiddle',TRUE) ?>></td>
             <td class="prompt">
-			<?php 
+			<?php
 				if($mode=='search') echo '<font color=maroon>'.$LDSorryNotFound.'</font>';
-					else echo $LDPlsSelectPatientFirst; 
+					else echo $LDPlsSelectPatientFirst;
 			?>
 			</td>
-            <td valign="top"> 
+            <td valign="top">
 			<img <?php echo createMascot($root_path,'mascot1_l.gif','0','absmiddle') ?>>
 			</td>
           </tr>
@@ -619,8 +619,8 @@ echo '
 	}
 	?>
 
-	
-<?php 
+
+<?php
 if($rows || $err_data){
 
 $bg_img=$root_path.'gui/img/common/default/tableHeaderbg3.gif';
@@ -644,7 +644,7 @@ $bg_img=$root_path.'gui/img/common/default/tableHeaderbg3.gif';
 </td>
 <td>
 
-<?php 
+<?php
 
 //gjergji : new calendar
 require_once ('../../js/jscalendar/calendar.php');
@@ -653,25 +653,25 @@ $calendar->load_files();
 //end : gjergji
 
 if($mode=='saveok'){
-   echo '<b>'.formatDate2Local($opdoc['op_date'],$date_format).'</b>'; 
+   echo '<b>'.formatDate2Local($opdoc['op_date'],$date_format).'</b>';
 }else{
 	//gjergji : new calendar
-	echo $calendar->show_calendar($calendar,$date_format,'op_date');	
-	//end : gjergji 
+	echo $calendar->show_calendar($calendar,$date_format,'op_date');
+	//end : gjergji
 }
-  
 
-?> 
+
+?>
 
 <font size=2 face="arial" color=red>&nbsp; &nbsp;<?php if($err_operator) echo 'color=#cc0000'; ?> <?php echo $LDOperator ?>:
-<?php 
+<?php
 if($mode=='saveok'){
 	echo '<font color="#800000">'.$opdoc['operator'];
 }else{
 	 echo '
 	<input name="operator" type="text" size="25" value="';
 	if($err_data){
-	  	echo $operator; 
+	  	echo $operator;
 	 }else{
 		    echo $_COOKIE[$local_user.$sid];
 	  }
@@ -687,9 +687,9 @@ if($mode=='saveok'){
 </td>
 <td><FONT color="#000099">
 
-<?php 
+<?php
 
-   echo '<b>'.$full_en.'</b>'; 
+   echo '<b>'.$full_en.'</b>';
 
 ?>
 </td>
@@ -699,9 +699,9 @@ if($mode=='saveok'){
 </td>
 <td><FONT color="#000099">
 
-<?php 
+<?php
 
-   echo '<b>'.$result['name_last'].'</b>'; 
+   echo '<b>'.$result['name_last'].'</b>';
 
 ?>
 </td>
@@ -710,9 +710,9 @@ if($mode=='saveok'){
 <td background="<?php echo $bg_img; ?>"><FONT <?php if($err_vorname) echo 'color=#cc0000'; ?>><?php echo $LDName ?>:
 </td>
 <td><FONT color="#000099">
-<?php 
+<?php
 
-   echo '<b>'.$result['name_first'].'</b>'; 
+   echo '<b>'.$result['name_first'].'</b>';
 
 ?>
 </td>
@@ -734,7 +734,7 @@ if($mode=='saveok'){
 <td><FONT  color="#000099">
 
 <font color="#000099">
-<?php 
+<?php
 
 
 switch($result['status'])
@@ -747,7 +747,7 @@ switch($result['status'])
 </font>
 <br>
 <FONT color="#000099">
-<?php 
+<?php
 
 if ($result['kasse']=="kasse")
 {
@@ -762,7 +762,7 @@ if ($result['kasse']=="kasse")
 	  echo $LDSelfPay;
     }
 
-?>     
+?>
 
 </td>
 </tr>
@@ -773,8 +773,8 @@ if ($result['kasse']=="kasse")
 <td>
 <?php
 
- echo createElement('diagnosis',$diagnosis,60,100); 
- 
+ echo createElement('diagnosis',$diagnosis,60,100);
+
 ?>
 </td>
 </tr>
@@ -785,8 +785,8 @@ if ($result['kasse']=="kasse")
 
 <?php
 
- echo createElement('localize',$localize,60,100); 
- 
+ echo createElement('localize',$localize,60,100);
+
 ?>
 </td>
 </tr>
@@ -798,8 +798,8 @@ if ($result['kasse']=="kasse")
 
 <?php
 
- echo createElement('therapy',$therapy,60,100); 
- 
+ echo createElement('therapy',$therapy,60,100);
+
 ?>
 </td>
 </tr >
@@ -810,7 +810,7 @@ if ($result['kasse']=="kasse")
 
 <?php
 
-echo createElement('special',$special,60,100); 
+echo createElement('special',$special,60,100);
 
 ?>
 </td>
@@ -882,14 +882,14 @@ else
 
 </table>
 
-<?php 
-if($rows || $err_data) 
+<?php
+if($rows || $err_data)
 {
 ?>
 
 <p>
  <FONT color=red><?php if($err_op_start) echo '*'; ?>
-<?php 
+<?php
 
 /* Set the global $isTimeElement to 1 to cause the function to insert the setTime Code in the form input code */
 $isTimeElement=1;
@@ -899,7 +899,7 @@ echo $LDOpStart.':';
 echo createElement('op_start',$op_start);
 
 echo '<font color="red">';if($err_op_end) echo '<font color="*">'; ?> &nbsp; <?php echo $LDOpEnd.':';
- 
+
 echo createElement('op_end',$op_end);
 
 /* Reset the global $isTimeElement to 1 to disable the setTime code insertion*/
@@ -907,7 +907,7 @@ $isTimeElement=0;
 
 echo '<font color="red">';if($err_scrub_nurse) echo '<font color="*">'; ?> &nbsp; <?php echo $LDScrubNurse.':';
 
-echo createElement('scrub_nurse',$scrub_nurse);	
+echo createElement('scrub_nurse',$scrub_nurse);
 
 echo '<font color="red">';if($err_op_room) echo '<font color="*">'; ?>  &nbsp; <?php echo $LDOpRoom.':';
 
@@ -945,7 +945,7 @@ echo createElement('op_room',$op_room);
 
 
 <?php
-} 
+}
 ?>
 
 <p>

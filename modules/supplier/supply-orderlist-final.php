@@ -178,7 +178,7 @@ echo '
 		<font face="Verdana, Arial" size=2 color="#800000">'.$final_orderlist;
 
 		$buff=$dept_obj->LDvar($dept_nr);
-		if(isset($$buff)&&!empty($$buff)) echo $$buff;
+		if(isset(${$buff})&&!empty(${$buff})) echo ${$buff};
 			else echo $dept_obj->FormalName($dept_nr);
 
 		echo ':</font><br>

@@ -53,7 +53,7 @@ if($result){
 			}
 		}
 		echo '<br>';
-		if(isset($$menu['LD_var'])&&!empty($$menu['LD_var'])) echo $$menu['LD_var'];
+		if(isset(${$menu['LD_var']})&&!empty(${$menu['LD_var']})) echo ${$menu['LD_var']};
 			else echo $menu['name'];
 		echo '</A></font>';
 		echo "</td></tr>\n";

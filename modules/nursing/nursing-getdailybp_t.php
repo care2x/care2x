@@ -6,7 +6,7 @@ require($root_path.'include/core/inc_environment_global.php');
 * CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
 * GNU General Public License
 * Copyright 2002,2003,2004,2005 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -32,16 +32,16 @@ $maxelement=10;
 		$data_array['encounter_nr']=$pn;
         $data_array['measured_by']=$_SESSION['sess_user_name'];
 		$data_array['unit_nr']=14; // 14 = mmHg unit of measurement , must be set to local standards
-		$data_array['msr_date']=date('Y-m-d',mktime(0,0,0,$mo,$dy,$yr)); 
+		$data_array['msr_date']=date('Y-m-d',mktime(0,0,0,$mo,$dy,$yr));
 		// Save the blood pressure data
 		for($i=0;$i<$maxelement;$i++)
 		{
 			$tdx="btime".$i;$ddx="bdata".$i;
-			if(empty($$tdx) || empty($$ddx)) continue;
-			//$bbuf=$bbuf."B".$$tdx."b".$$ddx;
-			$data_array['msr_time']=strtr($$tdx,':,;-/_','......');
-			$data_array['value']=$$ddx;
-			//echo $$ddx.$$tdx;
+			if(empty(${$tdx}) || empty(${$ddx})) continue;
+
+			$data_array['msr_time']=strtr(${$tdx},':,;-/_','......');
+			$data_array['value']=${$ddx};
+
 			if($charts_obj->saveBPFromArray($data_array)) $saved=1;
 		}
 		$data_array['unit_nr']=15; // 15 = Celsius unit of measurement , must be set to local standards
@@ -49,30 +49,30 @@ $maxelement=10;
 		for($i=0;$i<$maxelement;$i++)
 		{
 			$tdx="ttime".$i;$ddx="tdata".$i;
-			if(empty($$tdx) || empty($$ddx)) continue;
-			//$bbuf=$bbuf."B".$$tdx."b".$$ddx;
-			$data_array['msr_time']=strtr($$tdx,':,;-/_','......');
-			$data_array['value']=$$ddx;
+			if(empty(${$tdx}) || empty(${$ddx})) continue;
+
+			$data_array['msr_time']=strtr(${$tdx},':,;-/_','......');
+			$data_array['value']=${$ddx};
 			if($charts_obj->saveTemperatureFromArray($data_array)) $saved=1;
 		}
-		
+
 		if($saved){
 			header("location:$thisfile?sid=$sid&lang=$lang&edit=$edit&saved=1&pn=$pn&station=$station&winid=$winid&yr=$yr&mo=$mo&dy=$dy&dyidx=$dyidx&yrstart=$yrstart&monstart=$monstart&dystart=$dystart&dyname=$dyname");
 			exit;
-		}	
+		}
 	}else{ // end of if(mode==save)
 		include_once($root_path.'modules/news/includes/inc_editor_fx.php');
 		include_once($root_path.'include/core/inc_date_format_functions.php');
 		$bpcount=0;
 		$tempcount=0;
-		$chart_bp=$charts_obj->getDayBP($pn,date('Y-m-d',mktime(0,0,0,$mo,$dy,$yr)));		
+		$chart_bp=$charts_obj->getDayBP($pn,date('Y-m-d',mktime(0,0,0,$mo,$dy,$yr)));
 		if(is_object($chart_bp)){
 			$bpcount=$chart_bp->RecordCount();
-		}	
-		$chart_temp=$charts_obj->getDayTemperature($pn,date('Y-m-d',mktime(0,0,0,$mo,$dy,$yr)));		
+		}
+		$chart_temp=$charts_obj->getDayTemperature($pn,date('Y-m-d',mktime(0,0,0,$mo,$dy,$yr)));
 		if(is_object($chart_temp)){
 			$tempcount=$chart_temp->RecordCount();
-		}	
+		}
 
 
 /*		 	$sql="SELECT * FROM $dbtable WHERE patnum='$pn'";
@@ -101,7 +101,7 @@ require($root_path.'include/core/inc_css_a_hilitebu.php');
 <script language="javascript" src="<?php echo $root_path; ?>js/chkValidTime.js"></script>
 
 <script language="javascript">
-<!-- 
+<!--
   function resetinput(){
 	document.infoform.reset();
 	}
@@ -123,13 +123,13 @@ div.box { border: double; border-width: thin; width: 100%; border-color: black; 
 </style>
 
 </HEAD>
-<BODY  bgcolor="#99ccff" TEXT="#000000" LINK="#0000FF" VLINK="#800080"   topmargin="0" marginheight="0" 
+<BODY  bgcolor="#99ccff" TEXT="#000000" LINK="#0000FF" VLINK="#800080"   topmargin="0" marginheight="0"
 onLoad="<?php if($saved) echo "parentrefresh();"; ?>if (window.focus) window.focus(); window.focus();" >
 <table border=0 width="100%">
   <tr>
     <td><b><font face=verdana,arial size=5 color=maroon>
-<?php 
-	echo $title.'<br><font size=4>';	
+<?php
+	echo $title.'<br><font size=4>';
 	echo $LDFullDayName[$dyidx].' ('.formatDate2Local(date('Y-m-d',mktime(0,0,0,$mo,$dy,$yr)),$date_format).')</font>';
 ?>
 	</font></b>
@@ -154,7 +154,7 @@ if($bpcount||$tempcount){
 ?>
   <tr>
     <td align=center bgcolor="#ffffff">
-	
+
 <?php
 	$tbg= 'background="'.$root_path.'gui/img/common/'.$theme_com_icon.'/tableHeaderbg3.gif"';
 ?>
@@ -167,16 +167,16 @@ if($bpcount||$tempcount){
 	$toggle=0;
 	$bb=array();
 	for($i=0;$i<$rcount;$i++){
-		if($bpcount) $bb=$chart_bp->FetchRow();	
+		if($bpcount) $bb=$chart_bp->FetchRow();
 		if($toggle) $bgc='#efefef';
 			else $bgc='#f0f0f0';
-		$toggle=!$toggle;	
+		$toggle=!$toggle;
 ?>
 
   <tr  bgcolor="<?php echo $bgc; ?>"  valign="top">
     <td><FONT SIZE=1  FACE="Arial" color="#000033">
-	<?php 
-		if(!empty($bb['msr_time'])) echo $bb['msr_time']; 
+	<?php
+		if(!empty($bb['msr_time'])) echo $bb['msr_time'];
 	?>
 	</td>
     <td><FONT SIZE=-1  FACE="Arial"><?php if($bb['value']) echo $bb['value'];else echo '&nbsp;'; ?></td>
@@ -189,7 +189,7 @@ if($bpcount||$tempcount){
 
 	</td>
     <td align=center bgcolor="#ffffff" >
-	
+
 	<table border=0 cellpadding=1 cellspacing=1 width=100%>
   <tr bgcolor="#f6f6f6">
     <td <?php echo $tbg; ?>><FONT SIZE=-1  FACE="Arial" color="#000066"><?php echo $LDTime; ?></td>
@@ -207,8 +207,8 @@ if($bpcount||$tempcount){
 
   <tr  bgcolor="<?php echo $bgc; ?>"  valign="top">
     <td><FONT SIZE=1  FACE="Arial" color="#000033">
-	<?php 
-		if(!empty($bb['msr_time'])) echo $bb['msr_time']; 
+	<?php
+		if(!empty($bb['msr_time'])) echo $bb['msr_time'];
 	?>
 	</td>
     <td><FONT SIZE=-1  FACE="Arial"><?php if($bb['value']) echo $bb['value']; else echo '&nbsp;';?></td>
@@ -218,7 +218,7 @@ if($bpcount||$tempcount){
 	}
 ?>
 </table>
-	
+
 	</td>
   </tr>
 <?php
@@ -233,13 +233,13 @@ if($bpcount||$tempcount){
 
   <tr>
     <td align=center bgcolor="#ffffff">
-	
+
 		<table border=0 border=0 cellspacing=0 cellpadding=0>
 			<tr>
    			 <td  align=center class="v12"><?php echo $LDClockTime ?>:</td>
    			 <td  align=center class="v12"><?php echo $LDBp ?>:</td>
 		  </tr>
-			<?php 
+			<?php
 			$bb=array();
 			for($i=0;$i<$maxelement;$i++)
 			{
@@ -254,16 +254,16 @@ if($bpcount||$tempcount){
 				}
  			?>
 		</table>
-	
+
 	</td>
     <td align=center bgcolor="#ffffff">
-	
+
 		<table border=0 border=0 cellspacing=0 cellpadding=0>
 			<tr>
    			 <td  align=center class="v12"><?php echo $LDClockTime ?>:</td>
    			 <td  align=center class="v12"><?php echo $LDTemp ?>:</td>
 		  </tr>
-			<?php 
+			<?php
 			for($i=0;$i<$maxelement;$i++)
 			{
 				if($tempcount) $bb=$chart_temp->FetchRow();
@@ -277,7 +277,7 @@ if($bpcount||$tempcount){
 			}
  			?>
 		</table>
-	
+
 	</td>
   </tr>
 </table>

@@ -6,7 +6,7 @@ require($root_path.'include/core/inc_environment_global.php');
 * CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
 * GNU General Public License
 * Copyright 2002,2003,2004,2005 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -29,7 +29,7 @@ switch($retpath)
 {
 	case "docs": $breakfile='doctors.php'.URL_APPEND; break;
 	case "op": $breakfile=$root_path.'main/op-doku.php'.URL_APPEND; break;
-	default: $breakfile='doctors.php'.URL_APPEND; 
+	default: $breakfile='doctors.php'.URL_APPEND;
 }
 
 $thisfile=basename(__FILE__);
@@ -65,7 +65,7 @@ if(date('H.i')<DOC_CHANGE_TIME){
 	$core->deleteDBCache('DOCS_'.$plan_yesterday);
 }
 //echo "$plan_date $plan_day";
- 
+
 	# Get the cached plan
 
 	$cached_plan='';
@@ -76,7 +76,7 @@ if($force_no_cache || (!$force_no_cache && !$is_cached)){
 	if(!$hilitedept){
 		if($dept_nr) $hilitedept=$dept_nr;
 	}
-	# Load the department list with oncall doctors 
+	# Load the department list with oncall doctors
 	include_once($root_path.'include/care_api_classes/class_department.php');
 	$dept_obj=new Department;
 	$dept_DOC=$dept_obj->getAllActiveWithDOC();
@@ -118,12 +118,12 @@ if($force_no_cache || (!$force_no_cache && !$is_cached)){
 ?>
 
 <script language="javascript">
-<!-- 
+<!--
   var urlholder;
 function popinfo(l,d)
 {
 	urlholder="doctors-dienstplan-popinfo.php<?php echo URL_REDIRECT_APPEND ?>&nr="+l+"&dept_nr="+d+"&user=<?php echo $aufnahme_user.'"' ?>;
-	
+
 	infowin=window.open(urlholder,"dienstinfo","width=400,height=300,menubar=no,resizable=yes,scrollbars=yes");
 
 }
@@ -131,7 +131,7 @@ function popinfo(l,d)
 -->
 </script>
 
-<?php 
+<?php
 
  $sTemp=ob_get_contents();
  ob_end_clean();
@@ -153,20 +153,20 @@ echo '
 	</tr>';
 
 if(!$force_no_cache&&$is_cached){
-	
+
 /*	echo '<tr>
 	<td colspan=6><font face="verdana,arial" size=2> <img '.createComIcon($root_path,'warn.gif','0').'> <font color=red>'.$LDCachedInfo.'</font> <a href="'.$thisfile.URL_APPEND.'&force_no_cache=1&retpath='.$retpath.'">'.$LDClkNoCache.'</a>
 	</td>
 	</tr>';
-*/	
+*/
 	$cached_plan=str_replace('URLAPPEND',URL_APPEND,$cached_plan);
 	$cached_plan=str_replace('IMGALT',$LDShowActualPlan,$cached_plan);
 	$cached_plan=str_replace('SHOWBUTTON',$LDShow,$cached_plan);
 	echo str_replace('URLREDIRECTAPPEND',URL_REDIRECT_APPEND,$cached_plan);
 
 }else{
-	
-	
+
+
 	$toggler=0;
 
 	# Start generating the DOC list
@@ -174,18 +174,18 @@ if(!$force_no_cache&&$is_cached){
 	$temp_out='';
 
 	while(list($x,$v)=each($dept_DOC)){
-	
+
 	if(in_array($v['nr'],$quicklist)){
 		if($dutyplan=$pers_obj->getDOCDutyplan($v['nr'],$pyear,$pmonth)){
-	
-			$a=unserialize($dutyplan['duty_1_txt']);	
+
+			$a=unserialize($dutyplan['duty_1_txt']);
 			$r=unserialize($dutyplan['duty_2_txt']);
-			$ha=unserialize($dutyplan['duty_1_pnr']);	
-			$hr=unserialize($dutyplan['duty_2_pnr']);	
+			$ha=unserialize($dutyplan['duty_1_pnr']);
+			$hr=unserialize($dutyplan['duty_2_pnr']);
 			if($ha['ha'.($plan_day-1)]) $DOC_1=$pers_obj->getPersonellInfo($ha['ha'.($plan_day-1)]);
 			if($hr['hr'.($plan_day-1)]) $DOC_2=$pers_obj->getPersonellInfo($hr['hr'.($plan_day-1)]);
 		}
-	
+
 	}else{
 		if(isset($a)) unset($a);
 		if(isset($r)) unset($r);
@@ -195,12 +195,12 @@ if(!$force_no_cache&&$is_cached){
 		if(isset($DOC_2)) unset($DOC_2);
 	}
 
-	
+
 	$bold='';
 	$boldx='';
-	if($hilitedept==$v['nr']){ 
+	if($hilitedept==$v['nr']){
 		$temp_out.='<tr class="hilite">'; $bold="<font color=\"red\" size=2><b>";$boldx="</b></font>";
-	} 
+	}
 	elseif ($toggler==0) {
 		$temp_out.='<tr class="wardlistrow1">'; $toggler=1;
 	}else{
@@ -209,17 +209,17 @@ if(!$force_no_cache&&$is_cached){
 
 	$temp_out.='<td ><font size="1" >&nbsp;'.$bold;
 	$buff= $v['LD_var'];
-	if(isset($$buff)&&!empty($$buff)) $temp_out.=$$buff;
+	if(isset(${$buff})&&!empty(${$buff})) $temp_out.=${$buff};
 	 	else $temp_out.=$v['name_formal'];
 	$temp_out.=$boldx.'&nbsp;</td><td >&nbsp;
 	<img '.createComIcon($root_path,'mans-gr.gif','0','',TRUE).'>&nbsp;';
-	
+
 	//if ($aelems[l]!="") echo $aelems[l].', ';
 	//echo $aelems[f].'</b></a></td>';
 	if(in_array($v['nr'],$quicklist) && $DOC_1['name_last']){$temp_out.='<a href="javascript:popinfo(\''.$ha['ha'.(date('d')-1)].'\',\''.$v['nr'].'\')" title="Klik per me shume info."><b>'.$DOC_1['name_last'].', '.$DOC_1['name_first'].'</b></a>'; }
 	$temp_out.='</td>
 	<td>';
-	if ($a['a'.(date('d')-1)]!='') 
+	if ($a['a'.(date('d')-1)]!='')
 	{
 		$temp_out.=' <font color=red> '.$DOC_1['funk1'].'</font>';
 		if($DOC_1['inphone1']) $temp_out.=' / '.$DOC_1['inphone1'];
@@ -230,18 +230,18 @@ if(!$force_no_cache&&$is_cached){
 	if(in_array($v['nr'],$quicklist) && $DOC_2['name_last']){$temp_out.='<a href="javascript:popinfo(\''.$hr['hr'.(date('d')-1)].'\',\''.$v['nr'].'\')" title="Klik per me shume info."><b>'.$DOC_2['name_last'].', '.$DOC_2['name_first'].'</b></a>';}
 	$temp_out.='</td>
 	<td>';
-	if ($r['r'.(date('d')-1)]!='') 
+	if ($r['r'.(date('d')-1)]!='')
 	{
 		$temp_out.=' <font color=red> '.$DOC_2['funk1'].'</font>';
 		if($DOC_2['inphone1']) $temp_out.=' / '.$DOC_2['inphone1'];
 	}
-	
+
 	$temp_out.='&nbsp;
 	</td><td >&nbsp; <a href="doctors-dienstplan.phpURLAPPEND&dept_nr='.$v['nr'].'&retpath=qview">
 	<button onClick="javascript:window.location.href=\'doctors-dienstplan.phpURLREDIRECTAPPEND&dept_nr='.$v['nr'].'&retpath=qview\'"><img '.createComIcon($root_path,'new_address.gif','0','absmiddle',FALSE).' alt="IMGALT" ><font size=1> SHOWBUTTON </font></button></a> </td></tr>';
-	
+
 }
-# Save in cache 
+# Save in cache
 if(!$force_no_cache || ($force_no_cache && !$is_cached)) $dept_obj->saveDBCache('DOCS_'.date('Y-m-d'),addslashes($temp_out));
 # Display list
 $temp_out=str_replace('URLAPPEND',URL_APPEND,$temp_out);

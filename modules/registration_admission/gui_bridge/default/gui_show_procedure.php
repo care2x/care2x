@@ -3,11 +3,11 @@
 while($row=$result->FetchRow()){
 
 	# Prepare the category value
-	if(isset($$row['cat_LD_var'])&&!empty($$row['cat_LD_var']))  $cat_name=$$row['cat_LD_var'];
+	if(isset(${$row['cat_LD_var']})&&!empty(${$row['cat_LD_var']}))  $cat_name=${$row['cat_LD_var']};
 		else $cat_name=$row['cat_name'];
 
 	# Prepare the localization value
-	if(isset($$row['loc_LD_var'])&&!empty($$row['loc_LD_var']))  $loc_name=$$row['loc_LD_var'];
+	if(isset(${$row['loc_LD_var']})&&!empty(${$row['loc_LD_var']}))  $loc_name=${$row['loc_LD_var']};
 		else $loc_name=$row['loc_name'];
 
 ?>
@@ -28,7 +28,7 @@ while($row=$result->FetchRow()){
     <td><FONT SIZE=-1  FACE="Arial"><?php echo $row['localcode']; ?></td>
     <td><FONT SIZE=-1  FACE="Arial"><?php echo $row['responsible_clinician']; ?></td>
  </tr>
- --> 
+ -->
 <?php
 }
 ?>

@@ -143,7 +143,7 @@ function pruf(d){
 		}
 		if (!d.x_date.value){ alert("<?php echo "$LDAlertNoDate ";
  $dfbuffer="LD_".strtr($date_format,".-/","phs");
-  echo $$dfbuffer;
+  echo ${$dfbuffer};
 ?>"); d.x_date.focus();return false;}
 		if (!d.x_time.value){ alert("<?php echo $LDAlertNoTime ?>"); d.x_time.focus();return false;}
 		// Check if death
@@ -206,7 +206,7 @@ if($patient_ok){
 		while($dis_type=$discharge_types->FetchRow()){
 			if($dis_type['nr']==$relart){
 				$sTemp = $sTemp.'&nbsp;';
-				if(isset($$dis_type['LD_var'])&&!empty($$dis_type['LD_var'])) $sTemp = $sTemp.$$dis_type['LD_var'];
+				if(isset(${$dis_type['LD_var']})&&!empty(${$dis_type['LD_var']})) $sTemp = $sTemp.${$dis_type['LD_var']};
 					else $sTemp = $sTemp.$dis_type['name'];
 				break;
 			}
@@ -223,7 +223,7 @@ if($patient_ok){
 				    $init=0;
 		         }
 			     $sTemp = $sTemp.'>';
-			     if(isset($$dis_type['LD_var'])&&!empty($$dis_type['LD_var'])) $sTemp = $sTemp.$$dis_type['LD_var'];
+			     if(isset(${$dis_type['LD_var']})&&!empty(${$dis_type['LD_var']})) $sTemp = $sTemp.${$dis_type['LD_var']};
 				    else $sTemp = $sTemp.$dis_type['name'];
 			     $sTemp = $sTemp.'<br>';
               }

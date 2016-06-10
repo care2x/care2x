@@ -24,7 +24,7 @@ require_once($root_path.'include/care_api_classes/class_department.php');
 $dept=new Department;
 $depts=&$dept->getAllActive();
 
-// Load the ward object and wards info 
+// Load the ward object and wards info
 require_once($root_path.'include/care_api_classes/class_ward.php');
 $ward_obj=new Ward;
 $items='nr,ward_id,name, dept_nr'; // set the items to be fetched
@@ -37,9 +37,9 @@ if(isset($mode)&&($mode=='save')){
 	$config['thispc_room_nr']=$_POST['thispc_room_nr'];
 	$config['thispc_phone']=$_POST['thispc_phone'];
 	$config['thispc_intercom']=$_POST['thispc_intercom'];
-	
+
 	$user->saveConfig($_COOKIE['ck_config'],$config);
-	
+
 	header("location: login-pc-config.php?sid=$sid&lang=$lang&saved=1");
 	exit;
 }
@@ -92,10 +92,10 @@ if(isset($mode)&&($mode=='save')){
 
  $smarty->assign('sDeptIcon','<img '.createComIcon($root_path,'home.gif').'>');
  $smarty->assign('LDDept',$LDDept);
-	
+
  $smarty->assign('sWardIcon','<img '.createComIcon($root_path,'statbel2.gif').'>');
  $smarty->assign('LDWard',$LDWard);
-	
+
  $smarty->assign('sWardORIcon','<img '.createComIcon($root_path,'button_info.gif').'>');
  $smarty->assign('sWardORValue',$config['thispc_room_nr']);
  $smarty->assign('LDWardOR',$LDWardOR);
@@ -120,18 +120,18 @@ $sTemp = '';
 if($depts&&is_array($depts))
   while(list($x,$v)=each($depts))
    if(in_array($v['nr'],$_SESSION['department_nr']))
-       if(isset($$v['LD_var']) && $$v['LD_var']) $sTemp = $sTemp . '<b>' . $$v['LD_var'] . '</b><br>';
+       if(isset(${$v['LD_var']}) && ${$v['LD_var']}) $sTemp = $sTemp . '<b>' . ${$v['LD_var']} . '</b><br>';
       	 else $sTemp = $sTemp . '<b>' . $v['name_formal'] . '</b><br>';
-      				 
-$smarty->assign('sDeptSelect',$sTemp);	
-       	 	 
+
+$smarty->assign('sDeptSelect',$sTemp);
+
 #
 # Prepare the ward selector element
 #
-$sTemp = '';         
+$sTemp = '';
 if($ward_info&&is_array($ward_info)){
 	while(list($x,$v)=each($ward_info)){
-  		 if(in_array($v['dept_nr'],$_SESSION['department_nr']))         			 
+  		 if(in_array($v['dept_nr'],$_SESSION['department_nr']))
 			$sTemp = $sTemp . '<b>' . $v['name'] . '</b><br>';
   		}
   	}
@@ -145,16 +145,16 @@ $smarty->assign('sWardSelect',$sTemp);
  $smarty->assign('sSubmitFormButton','<input type="submit" value="'.$LDSave.'">');
  $smarty->assign('sNoChangeButton','<input type="button" value="'.$LDNoChange.'" onClick="window.location.href=\'startframe.php'.URL_REDIRECT_APPEND.'\'">');
  $smarty->assign('sCancelButton','<a href="startframe.php'.URL_APPEND.'"><img '.createLDImgSrc($root_path,'close2.gif','0','top').'  alt="'.$LDClose.'"></a>');
- 
+
  #
  # Prepare the hidden inputs
  #
  $smarty->assign('sHiddenInputs','<input type="hidden" name="sid" value="'.$sid.'">
 	<input type="hidden" name="lang" value="'.$lang.'">
-	<input type="hidden" name="mode" value="save">');		 
- 
+	<input type="hidden" name="mode" value="save">');
+
  $smarty->assign('sMainBlockIncludeFile','main/login_config.tpl');
-	 
+
 #
 # Prepare the hidden inputs
 #

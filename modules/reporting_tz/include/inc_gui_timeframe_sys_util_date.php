@@ -6,17 +6,17 @@
 						      <input name="tarehe" type="text" size=10 maxlength=10 >
 							  <a href="javascript:show_calendar('form1.tarehe','<?php echo $date_format ?>')">
 			<img <?php echo createComIcon($root_path,'show-calendar.gif','0','absmiddle'); ?>></a>
-                         
-                                              
-			 
-			
- 
+
+
+
+
+
 
                                <font size=1>[<?php
 			$dfbuffer="LD_".strtr($date_format,".-/","phs");
-			echo $$dfbuffer;
-			?>]			 
-                                                       
+			echo ${$dfbuffer};
+			?>]
+
 							<label><?php // echo $LDAdmitType; ?>
 
                                                 <?php //echo '<SELECT name="admission_id">';
@@ -30,7 +30,7 @@
 
                                                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                                         </label>
-                                                        
+
                                                         <label>
 <label><?php echo 'Dept';
 ?>
@@ -48,15 +48,15 @@ while(list($x,$v)=each($medical_depts)){
 </select>
 </label>
 
-                                               
+
 
                                                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                                         </label>
 
-                                            
-                                                                                                        
-                                                      
+
+
+
 							<label>
 								<input type="submit" name="show" value="<?php echo $LDShow; ?>">
 							</label>
-				
+

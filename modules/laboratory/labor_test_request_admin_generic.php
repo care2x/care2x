@@ -14,7 +14,7 @@ require($root_path.'include/core/inc_environment_global.php');
 $lang_tables[]='departments.php';
 define('LANG_FILE','konsil.php');
 
-/* We need to differentiate from where the user is coming: 
+/* We need to differentiate from where the user is coming:
 *  $user_origin != lab ;  from patient charts folder
 *  $user_origin == lab ;  from the laboratory
 *  $user_origin == amb ;  from the ambulatory clinics
@@ -56,13 +56,13 @@ $dept_obj=new Department;
 
 /* Here begins the real work */
 require_once($root_path.'include/core/inc_date_format_functions.php');
-	 
+
 if(!isset($mode))   $mode='';
 
 	switch($mode)
 		  {
 		     case 'update':
-							      $sql="UPDATE care_test_request_".$db_request_table." SET 
+							      $sql="UPDATE care_test_request_".$db_request_table." SET
                                           result='".htmlentities(addslashes($result))."',
 										  result_date='".formatDate2STD($result_date,$date_format)."',
 										  result_doctor='".$result_doctor."',
@@ -70,7 +70,7 @@ if(!isset($mode))   $mode='';
 										   modify_id = '".$_SESSION['sess_user_name']."',
 										   modify_time = '".date('YmdHis')."'
 										   WHERE batch_nr = '".$batch_nr."'";
-										   
+
 							      if($ergebnis=$dept_obj->Transact($sql)){
 									/* If the findings are succesfully saved, make an entry into the care_nursing_station_patients_diagnostics_report table
 									*  for signalling purposes
@@ -82,14 +82,14 @@ if(!isset($mode))   $mode='';
 								  }
 								  else
 								   {
-								      echo "<p>$sql<p>$LDDbNoSave"; 
+								      echo "<p>$sql<p>$LDDbNoSave";
 								      $mode='';
 								   }
 								break; // end of case 'save'
-								
-								
+
+
 		     case 'done':
-							      $sql="UPDATE care_test_request_".$db_request_table." SET 
+							      $sql="UPDATE care_test_request_".$db_request_table." SET
                                           status='done',
 										   history=".$dept_obj->ConcatHistory("Done: ".date('Y-m-d H:i:s')." = ".$_SESSION['sess_user_name']."\n").",
 										   modify_id = '".$_SESSION['sess_user_name']."',
@@ -100,30 +100,30 @@ if(!isset($mode))   $mode='';
 									//echo $sql;
 								  	// Load the visual signalling functions
 									include_once($root_path.'include/core/inc_visual_signalling_fx.php');
-									// Set the visual signal 
-									setEventSignalColor($pn,SIGNAL_COLOR_DIAGNOSTICS_REPORT);									
+									// Set the visual signal
+									setEventSignalColor($pn,SIGNAL_COLOR_DIAGNOSTICS_REPORT);
 									 header("location:".$thisfile."?sid=$sid&lang=$lang&edit=$edit&saved=update&station=$station&user_origin=$user_origin&status=$status&target=$target&subtarget=$subtarget&noresize=$noresize");
 									 exit;
 								  }
 								  else
 								   {
-								      echo "<p>$sql<p>$LDDbNoSave"; 
+								      echo "<p>$sql<p>$LDDbNoSave";
 								      $mode='';
 								   }
 								break; // end of case 'save'
-			
+
 			 default: $mode="";
-						   
+
 		  }// end of switch($mode)
-  
+
           if(!$mode) /* Get the pending test requests */
 		  {
-		                $sql="SELECT batch_nr,encounter_nr,send_date FROM care_test_request_".$db_request_table." 
+		                $sql="SELECT batch_nr,encounter_nr,send_date FROM care_test_request_".$db_request_table."
 						         WHERE status='pending' AND testing_dept='".$subtarget."' ORDER BY  send_date DESC";
 		                if($requests=$db->Execute($sql))
        		            {
 				            $batchrows=$requests->RecordCount();
-	                        if($batchrows && (!isset($batch_nr) || !$batch_nr)) 
+	                        if($batchrows && (!isset($batch_nr) || !$batch_nr))
 					        {
 						       $test_request=$requests->FetchRow();
                                /* Check for the patietn number = $pn. If available get the patients data */
@@ -132,21 +132,21 @@ if(!isset($mode))   $mode='';
 							}
 			             }
 			               else {echo "<p>$sql<p>$LDDbNoRead"; exit;}
-						 $mode='update';   
-		   }	
-		       
-	   
+						 $mode='update';
+		   }
+
+
      /* Check for the patietn number = $pn. If available get the patients data */
      if($batchrows && $pn)
-	 {		
+	 {
 		include_once($root_path.'include/care_api_classes/class_encounter.php');
 		$enc_obj=new Encounter;
 	    if( $enc_obj->loadEncounterData($pn)) {
-		
+
 			include_once($root_path.'include/care_api_classes/class_globalconfig.php');
 			$GLOBAL_CONFIG=array();
 			$glob_obj=new GlobalConfig($GLOBAL_CONFIG);
-			$glob_obj->getConfig('patient_%');	
+			$glob_obj->getConfig('patient_%');
 			switch ($enc_obj->EncounterClass())
 			{
 		    	case '1': $full_en = ($pn + $GLOBAL_CONFIG['patient_inpatient_nr_adder']);
@@ -171,14 +171,14 @@ if(!isset($mode))   $mode='';
 		}else{
 		  $mode='';
 		  $pn='';
-	   }		
-     }		   
+	   }
+     }
 
 # Load the department info
 
 if($dept_obj->preloadDept($stored_request['testing_dept'])){
 	$buffer=$dept_obj->LDvar();
-	if(isset($$buffer)&&!empty($$buffer)) $formtitle=$$buffer;
+	if(isset(${$buffer})&&!empty(${$buffer})) $formtitle=${$buffer};
 		else $formtitle=$dept_obj->FormalName();
 }
 
@@ -230,10 +230,10 @@ div.fa2_ml3 {font-family: arial; font-size: 12; margin-left: 3; }
 </style>
 
 <script language="javascript">
-<!-- 
+<!--
 
 function chkForm(d)
-{ 
+{
 
   if(d.result.value=="" || d.result.value==" " ) return false;
 	else if(d.result_date.value=="" || d.result_date.value==" ")
@@ -248,7 +248,7 @@ function chkForm(d)
 		 d.result_doctor.focus();
 		   return false;
 		}
-		else return true; 
+		else return true;
 }
 
 
@@ -293,7 +293,7 @@ include_once('includes/inc_test_request_lister_fx.php');
 		<!--  right frame for the request form -->
 		<td >
         <form name="form_test_request" method="post" action="<?php echo $thisfile ?>" onSubmit="return chkForm(this)">
-		<input type="image" <?php echo createLDImgSrc($root_path,'savedisc.gif','0','absmiddle') ?>  title="<?php echo $LDSaveEntry ?>"> 
+		<input type="image" <?php echo createLDImgSrc($root_path,'savedisc.gif','0','absmiddle') ?>  title="<?php echo $LDSaveEntry ?>">
         <a href="javascript:printOut()"><img <?php echo createLDImgSrc($root_path,'printout.gif','0','absmiddle') ?> alt="<?php echo $LDPrintOut ?>"></a>
 <?php
 if (($stored_request['result']!='') && $stored_request['status']!='done')
@@ -301,17 +301,17 @@ if (($stored_request['result']!='') && $stored_request['status']!='done')
   echo'
          <a href="'. $thisfile.'?sid='.$sid.'&lang='.$lang.'&edit='.$edit.'&mode=done&target='.$target.'&subtarget='.$subtarget.'&batch_nr='.$batch_nr.'&pn='.$pn.'&user_origin='.$user_origin.'&entry_date='.$entry_date.'"><img '.createLDImgSrc($root_path,'done.gif','0','absmiddle').' alt="'.$LDDone.'"></a>';
 }
-	
-	#  Start of the form  	
+
+	#  Start of the form
 	# Prepare the values
 	$TP_checkbox_1=printCheckBox('visit',false);
-	$TP_checkbox_2=printCheckBox('order_patient',false); 
+	$TP_checkbox_2=printCheckBox('order_patient',false);
 	$TP_img_barcode= "<img src='".$root_path."classes/barcode/image.php?code=$batch_nr&style=68&type=I25&width=145&height=40&xres=2&font=5' border=0>";
 	$TP_img_patient_label='<img src="'.$root_path.'main/imgcreator/barcode_label_single_large.php?sid='.$sid.'&lang='.$lang.'&fen='.$full_en.'&en='.$pn.'" width=282 height=178>';
 
 	if($stored_request['diagnosis_quiry']) $TP_diagnosis_quiry=nl2br(stripslashes($stored_request['diagnosis_quiry']));
 		else $TP_diagnosis_quiry='';
-	
+
 	if($edit_form || $read_form) $TP_send_date=formatDate2Local($stored_request['send_date'],$date_format);
 		else $TP_send_date='';
 	$TP_calendar_1='';
@@ -320,10 +320,10 @@ if (($stored_request['result']!='') && $stored_request['status']!='done')
 	$TP_send_doctor='';
 	if($edit_form || $read_form) $TP_send_doctor_x=stripslashes($stored_request['send_doctor']);
 		else $TP_send_doctor_x='';
-	
+
 	$TP_vspacer_2='';
 	$TP_block_2='textarea';
-	
+
 	if($stored_request['result']) $TP_result=stripslashes($stored_request['result']);
 		else $TP_result='';
 	//gjergji : new calendar
@@ -332,23 +332,23 @@ if (($stored_request['result']!='') && $stored_request['status']!='done')
 	$calendar->load_files();
 
 	echo $calendar->show_calendar($calendar,$date_format,'result_date',$stored_request['result_date']);
-	//end : gjergji	
-	
+	//end : gjergji
+
 	$TP_result_doctor_x='';
 	if($stored_request['result_doctor']) $TP_result_doctor=stripslashes($stored_request['result_doctor']);
 		else $TP_result_doctor='';
-	
+
 	$TP_input_2='input';
-	
+
 	# Load template
 	$TP_generic=$TP_obj->load('laboratory/tp_form_generic.htm');
 	eval("echo $TP_generic;");
-	#  End of form 
+	#  End of form
 
 require($root_path.'modules/laboratory/includes/inc_test_request_hiddenvars.php');
 
 ?>	<br>
-		<input type="image" <?php echo createLDImgSrc($root_path,'savedisc.gif','0','absmiddle') ?>  title="<?php echo $LDSaveEntry ?>"> 
+		<input type="image" <?php echo createLDImgSrc($root_path,'savedisc.gif','0','absmiddle') ?>  title="<?php echo $LDSaveEntry ?>">
         <a href="javascript:printOut()"><img <?php echo createLDImgSrc($root_path,'printout.gif','0','absmiddle') ?> alt="<?php echo $LDPrintOut ?>"></a>
 <?php
 if (($stored_request['result']!='') && $stored_request['status']!="done" )
@@ -356,11 +356,11 @@ if (($stored_request['result']!='') && $stored_request['status']!="done" )
   echo'
          <a href="'. $thisfile.'?sid='.$sid.'&lang='.$lang.'&edit='.$edit.'&mode=done&target='.$target.'&subtarget='.$subtarget.'&batch_nr='.$batch_nr.'&pn='.$pn.'&user_origin='.$user_origin.'&entry_date='.$entry_date.'"><img '.createLDImgSrc($root_path,'done.gif','0','absmiddle').' alt="'.$LDDone.'"></a>';
 }
-?>		
+?>
 			</form>
 		</td>
 	</tr>
-</table>        	
+</table>
 <?php
 }
 else

@@ -17,18 +17,18 @@
 
 <font size=1>[<?php
 $dfbuffer = "LD_" . strtr($date_format, ".-/", "phs");
-echo $$dfbuffer;
+echo ${$dfbuffer};
 ?>]
 <select name="paytype">
 <option value=0>CASH</option>
 <option value=1>CREDIT</option>
 </select>
 
-<input type="submit" name="show" value="<?php echo $LDShow;?>"			 
+<input type="submit" name="show" value="<?php echo $LDShow;?>"
 </br>
 </br>
 
 <label>
-    
+
 </label>
 

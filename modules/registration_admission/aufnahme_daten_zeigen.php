@@ -85,7 +85,7 @@ $dbtable='care_encounter';
 
 		if($buff=&$encounter_obj->AttDrServiceClass()){
 			$att_dr_class=$buff->FetchRow();
-			//while(list($x,$v)=each($att_dr_class))	$$x=$v;
+			//while(list($x,$v)=each($att_dr_class))	${$x}=$v;
 			extract($att_dr_class);
 			reset($att_dr_class);
 		}
@@ -135,7 +135,7 @@ $dbtable='care_encounter';
 			//$current_dept_name=$dept_obj->FormalName($current_dept_nr);
 			$current_dept_LDvar=$dept_obj->LDvar($current_dept_nr);
 
-			if(isset($$current_dept_LDvar)&&!empty($$current_dept_LDvar)) $current_dept_name=$$current_dept_LDvar;
+			if(isset(${$current_dept_LDvar})&&!empty(${$current_dept_LDvar})) $current_dept_name=${$current_dept_LDvar};
 				else $current_dept_name=$dept_obj->FormalName($current_dept_nr);
 		}
 
@@ -317,7 +317,7 @@ if($sex=='m') $smarty->assign('sSexType',$LDMale);
 $smarty->assign('LDBloodGroup',$LDBloodGroup);
 if($blood_group){
 	$buf='LD'.$blood_group;
-	$smarty->assign('blood_group',$$buf);
+	$smarty->assign('blood_group',${$buf});
 } else {
 	$buf='LD'.$blood_group;
 	$smarty->assign('blood_group','N/A');
@@ -443,8 +443,8 @@ if(!isset($GLOBAL_CONFIG['patient_service_care_hide']) && $sc_care_class_nr){
 
 	while($buffer=$care_service->FetchRow()){
 		if($sc_care_class_nr==$buffer['class_nr']){
-			if(empty($$buffer['LD_var'])) $smarty->assign('sCareServiceInput',$buffer['name']);
-				else $smarty->assign('sCareServiceInput',$$buffer['LD_var']);
+			if(empty(${$buffer['LD_var']})) $smarty->assign('sCareServiceInput',$buffer['name']);
+				else $smarty->assign('sCareServiceInput',${$buffer['LD_var']});
 			break;
 		}
 	}
@@ -463,8 +463,8 @@ if(!isset($GLOBAL_CONFIG['patient_service_room_hide']) && $sc_room_class_nr){
 
 	while($buffer=$room_service->FetchRow()){
 		if($sc_room_class_nr==$buffer['class_nr']){
-			if(empty($$buffer['LD_var'])) $smarty->assign('sCareRoomInput',$buffer['name']);
-				else $smarty->assign('sCareRoomInput',$$buffer['LD_var']);
+			if(empty(${$buffer['LD_var']})) $smarty->assign('sCareRoomInput',$buffer['name']);
+				else $smarty->assign('sCareRoomInput',${$buffer['LD_var']});
 				break;
 		}
 	}
@@ -481,8 +481,8 @@ if(!isset($GLOBAL_CONFIG['patient_service_att_dr_hide']) && $sc_att_dr_class_nr)
 
 	while($buffer=$att_dr_service->FetchRow()){
 		if($sc_att_dr_class_nr==$buffer['class_nr']){
-			if(empty($$buffer['LD_var'])) $smarty->assign('sCareDrInput',$buffer['name']);
-				else $smarty->assign('sCareDrInput',$$buffer['LD_var']);
+			if(empty(${$buffer['LD_var']})) $smarty->assign('sCareDrInput',$buffer['name']);
+				else $smarty->assign('sCareDrInput',${$buffer['LD_var']});
 			break;
 		}
 	}

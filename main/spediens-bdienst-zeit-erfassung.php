@@ -6,7 +6,7 @@ require($root_path.'include/core/inc_environment_global.php');
 * CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
 * GNU General Public License
 * Copyright 2002,2003,2004,2005 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -30,18 +30,18 @@ if($retpath=='spec') $breakfile="spediens.php".URL_APPEND;
 /********************************* Resolve the department and op room ***********************/
 	    /* Load date formatter */
         include_once($root_path.'include/core/inc_date_format_functions.php');
-        
-		
+
+
 		if($mode=='save')
 		{
-				
+
 				$history_txt=$encoder." ".date('Y-m-d H:i:s')."\n\r";
 
 					//echo $sql." checked <br>";
 				for($i=0;$i<$maxelement;$i++)
 				{
 					$tg='tag'.$i;
-					if($$tg)
+					if(${$tg})
 					{
 						$dt='date'.$i;
 						$an='standby_name'.$i;
@@ -55,24 +55,24 @@ if($retpath=='spec') $breakfile="spediens.php".URL_APPEND;
 						$td='report_nr'.$i;
 						$en='encoding'.$i;
 						$hist='history'.$i;
-						
-						if($$td)
+
+						if(${$td})
 							{
 
 							// $dbuf=htmlspecialchars($dbuf);
-								$sql="UPDATE $dbtable 
-										SET standby_name='".$$an."',
-											  standby_start='".convertTimeToStandard($$av)."',
-										      standby_end='".convertTimeToStandard($$ab)."',
-    						                  oncall_name='".$$rn."',
-										      oncall_start='".convertTimeToStandard($$rv)."',
-										      oncall_end='".convertTimeToStandard($$rb)."',
-										      op_room='".$$op."',
-										      diagnosis_therapy='".htmlspecialchars($$dg)."',
-											  encoding='".$$en." ~e=$encoder&a=$a_enc&r=$r_enc&d=".date('Y-m-d')."&t=".date('H:i:s')."',
-											  history='".$$hist."Updated: ".$history_txt."'
-										WHERE report_nr='".$$td."'";
-											
+								$sql="UPDATE $dbtable
+										SET standby_name='".${$an}."',
+											  standby_start='".convertTimeToStandard(${$av})."',
+										      standby_end='".convertTimeToStandard(${$ab})."',
+    						                  oncall_name='".${$rn}."',
+										      oncall_start='".convertTimeToStandard(${$rv})."',
+										      oncall_end='".convertTimeToStandard(${$rb})."',
+										      op_room='".${$op}."',
+										      diagnosis_therapy='".htmlspecialchars(${$dg})."',
+											  encoding='".${$en}." ~e=$encoder&a=$a_enc&r=$r_enc&d=".date('Y-m-d')."&t=".date('H:i:s')."',
+											  history='".${$hist}."Updated: ".$history_txt."'
+										WHERE report_nr='".${$td}."'";
+
 								if($ergebnis=$db->Execute($sql))
        							{
 									//echo $sql." new update <br>";
@@ -87,14 +87,14 @@ if($retpath=='spec') $breakfile="spediens.php".URL_APPEND;
 							}// end of if rows
 							else
 							{
-							 if($$dt&&($$an||$$rn) && $$op&&$$dg)
+							 if(${$dt}&&(${$an}||${$rn}) && ${$op}&&${$dg})
 							  {
-							  
-							  	list($id,$im,$iy)=explode(".",$$dt);
+
+							  	list($id,$im,$iy)=explode(".",${$dt});
 								if(strlen($id)<2) $id="0".$id;
 								if(strlen($im)<2) $im="0".$im;
-								
-							 	$sql="INSERT INTO $dbtable 
+
+							 	$sql="INSERT INTO $dbtable
 									(
 										dept,
 										date,
@@ -112,19 +112,19 @@ if($retpath=='spec') $breakfile="spediens.php".URL_APPEND;
 										modify_id,
 										create_id,
 										create_time
-									) 
-									VALUES 
-									( 
+									)
+									VALUES
+									(
 										'".$dept."',
-										'".formatDate2STD($$dt,$date_format)."',
-										'".$$an."',
-										'".convertTimeToStandard($$av)."',
-										'".convertTimeToStandard($$ab)."',
-										'".$$rn."',
-										'".convertTimeToStandard($$rv)."',
-										'".convertTimeToStandard($$rb)."',
-										'".$$op."',
-										'".htmlspecialchars($$dg)."',
+										'".formatDate2STD(${$dt},$date_format)."',
+										'".${$an}."',
+										'".convertTimeToStandard(${$av})."',
+										'".convertTimeToStandard(${$ab})."',
+										'".${$rn}."',
+										'".convertTimeToStandard(${$rv})."',
+										'".convertTimeToStandard(${$rb})."',
+										'".${$op}."',
+										'".htmlspecialchars(${$dg})."',
 										'e=$encoder&a=$a_enc&r=$r_enc&d=".date('Y-m-d')."&t=".date('H:i:s')."',
 										'pending',
 										'Created: ".$history_txt."',
@@ -133,10 +133,10 @@ if($retpath=='spec') $breakfile="spediens.php".URL_APPEND;
 										NULL
 									)";
 
-									if(!$ergebnis=$db->Execute($sql))  echo "<p>".$sql."<p>$LDDbNoSave"; 
+									if(!$ergebnis=$db->Execute($sql))  echo "<p>".$sql."<p>$LDDbNoSave";
 								 } // end of if
-							}// end of else	
-					  } // end of if $$tg
+							}// end of else
+					  } // end of if $tg
 				}// end of for
 			header("location:$thisfile?sid=$sid&lang=$lang&saved=1&dept=$dept&pmonth=$pmonth&pyear=$pyear&pday=$pday&retpath=$retpath");
 		 }// end of if(mode==save)
@@ -160,7 +160,7 @@ if($retpath=='spec') $breakfile="spediens.php".URL_APPEND;
 						while (!checkdate($tm,$td,$pyear)) $td--;
 					}
 				}
-				else 
+				else
 				{
 						$td=$pday-1; $tm=$pmonth; $ty=$pyear;
 				}
@@ -169,7 +169,7 @@ if($retpath=='spec') $breakfile="spediens.php".URL_APPEND;
 			//echo $sql."<br>file found!";
 			if($ergebnis=$db->Execute($sql))
        		{
-				$rows=0; 
+				$rows=0;
 				while( $result=$ergebnis->FetchRow())
 				{
 					if($result) $content[]=$result;
@@ -181,7 +181,7 @@ if($retpath=='spec') $breakfile="spediens.php".URL_APPEND;
 					//echo $sql."<br>file found!";
 				}
 			}
-				else echo "<p>".$sql."<p>$LDDbNoRead"; 
+				else echo "<p>".$sql."<p>$LDDbNoRead";
 	 	}// end of else
 
 # Start the smarty templating
@@ -215,12 +215,12 @@ ob_start();
 <!--
 	var newdataflag=0;
 	var speichern=0;
-	
+
 function winreset(){ newdataflag=0;}
 
 function newdata(d)
-{ 
-newdataflag=1; 
+{
+newdataflag=1;
 eval("document.reportform.tag"+d+".value=1");
 }
 
@@ -234,9 +234,9 @@ switch($retpath)
 ?>
 
 function closeifok()
-{ 
+{
 	if (newdataflag==0)
-	{ window.location.href="<?php echo $breakfile ?>";} 
+	{ window.location.href="<?php echo $breakfile ?>";}
 	else
 	{
 		 if(confirm("<?php echo $LDAlertNotSavedYet ?>"))	{ window.document.reportform.submit();}
@@ -261,7 +261,7 @@ function isnum(val,idx)
 		{
 		xval2=val.slice(i,i+1);
 		//if (!isNaN(xval3 + xval2)) {xval3=xval3 + xval2;}
-		
+
 		/* If input is not numeric envoke the auto-date-entry function */
 		if (isNaN(xval2))
 		 {
@@ -277,33 +277,33 @@ function isnum(val,idx)
 	{
 		v3=val;
 		if((v3==24)&&(v3.length==2)) v3="00";
-		if (v3>24) 
+		if (v3>24)
 		{
 
-		
+
 			switch(v3.length)
 			{
-			
+
 				case 2: v1=v3.slice(0,1); v2=v3.slice(1,2);
 						if(v2<6) v3="0"+v1+"."+v2; else v3=v3.slice(0,1); break;
 				case 3: v1=val.slice(0,2); v2=val.slice(2,3);
 
-						if(v2<6) v3=v1+"."+v2; 
+						if(v2<6) v3=v1+"."+v2;
 							else v3=v3.slice(0,2);
 						break;
 				case 4: v3=val.slice(0,3); break;
 			}
-			
-			
+
+
 //			alert("Zeitangabe ist ungültig! (ausserhalb des 24H Zeitrahmens)");
-	
+
 		}
 		switch(v3.length)
 			{
-				
+
 				case 2: v1=v3.slice(0,1);v2=v3.slice(1,2);
 						if(v2==".") v3="0"+v3;break;
-		
+
 				case 3: v1=v3.slice(0,2);v2=v3.slice(2,3);
 						if(v2!=".") if(v2<6) v3=v1+"."+v2; else v3=v1; break;
 				case 4: if(v3.slice(3,4)>5) v3=v3.slice(0,3); break;
@@ -311,9 +311,9 @@ function isnum(val,idx)
 		if(v3.length>5) v3=v3.slice(0,v3.length-1);
 		xdoc.elements[idx].value=v3;
 	}
-	
+
 }
-	
+
 
 function isgdatum(val,idx)
 {
@@ -328,9 +328,9 @@ function isgdatum(val,idx)
 				{
 				 if(val.length>1) xval3=xval3+xval2;
 				}
-				else 
+				else
 				{
-					 xval3=xval3+xval2;					
+					 xval3=xval3+xval2;
 				}
 			}
 			else
@@ -349,14 +349,14 @@ function isgdatum(val,idx)
 						if (v1==0) xval3=""; else xval3="0"+xval3;
 					}
 					else {
-					if ((v1+v2)<1) xval3=""; 
-						else if ((v1+v2)>31) xval3="0"+v1+"."+v2; 
-							
+					if ((v1+v2)<1) xval3="";
+						else if ((v1+v2)>31) xval3="0"+v1+"."+v2;
+
 					}
 					 break;
 			case 3: v1=xval3.slice(0,2);
 					v2=xval3.slice(2,3);
-					if (v2!=".") xval3=v1+"."+v2; 
+					if (v2!=".") xval3=v1+"."+v2;
 					break;
 			case 4: v1=xval3.slice(0,3);
 					v2=xval3.slice(3,4);
@@ -367,7 +367,7 @@ function isgdatum(val,idx)
 					v3=xval3.slice(4,5);
 					if (v3==".")
 					{
-						if (v2==0) xval3=v1+v2; 
+						if (v2==0) xval3=v1+v2;
 							else xval3=v1+"0"+v2+v3;
 					}
 					else if((v2+v3)<1) xval3=v1+v2;
@@ -377,7 +377,7 @@ function isgdatum(val,idx)
 					v2=xval3.slice(5,6);
 					if (v3!=".")
 					{
-						if (v2==0) xval3=v1 
+						if (v2==0) xval3=v1
 							else xval3=v1+"."+v2;
 					}
 					break;
@@ -411,7 +411,7 @@ ob_start();
 
 <tr class="wardlisttitlerow">
 
-<?php 
+<?php
 
 for ($i=0;$i<sizeof($LDDutyElements);$i++){
 	echo '<td>&nbsp;'.$LDDutyElements[$i].'</td>';
@@ -434,9 +434,9 @@ if($toggle){ echo 'class="wardlistrow2"';}else { echo 'class="wardlistrow1"'; }
 $toggle=!$toggle;
 echo '>
 <td rowspan=2 valign=top>';
-	
+
 //gjergji : new calendar
-echo $calendar->show_calendar($calendar,$date_format,'date'.$i,$content[$i]['date']);	
+echo $calendar->show_calendar($calendar,$date_format,'date'.$i,$content[$i]['date']);
 //end : gjergji
 
 echo '
@@ -457,7 +457,7 @@ echo '
 </td>
 <td rowspan=2 valign=top>
 	<input type=text name="op_room'.$i.'" size=3 value="';
-	
+
 if($content[$i]['op_room']) echo $content[$i]['op_room']; else echo $saal;
 
 echo '" onKeyUp=newdata(\''.$i.'\')>

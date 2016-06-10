@@ -1,7 +1,7 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 /**
 * CARE2X Integrated Hospital Information System version deployment 1.1 (mysql) 2004-01-11
 * GNU General Public License
@@ -37,7 +37,7 @@ if($s_date==date('Y-m-d')) $is_today=true;
 //$db->debug=1;
 
 $tnow=date('H:i:s');
-	
+
 if(!isset($mode)) $mode='';
 
 $breakfile='ambulatory.php'.URL_APPEND; # Set default breakfile
@@ -54,46 +54,46 @@ if(isset($retpath)){
 # Mark where we are
 $_SESSION['sess_user_origin']='amb';
 
-# Load date formatter 
+# Load date formatter
 require_once($root_path.'include/core/inc_date_format_functions.php');
-  
+
 if(($mode=='')||($mode=='fresh')){
 
 	# Create encounter object
 	include_once($root_path.'include/care_api_classes/class_encounter.php');
 	$enc_obj= new Encounter;
-	
+
 	# Get all outpatients for this dept
 	$opat_obj=&$enc_obj->OutPatientsBasic($dept_nr);
 	//echo $enc_obj->getLastQuery();
 	$rows=$enc_obj->LastRecordCount();
 	# If dept name is empty, fetch by location nr
 	if(!isset($dept)||empty($dept)){
-		# Create department object 
+		# Create department object
 		include_once($root_path.'include/care_api_classes/class_department.php');
 		$dept_obj= new Department;
 		$deptLDvar=$dept_obj->LDvar($dept_nr);
-		if(isset($$deptLDvar)&&!empty($$deptLDvar)) $dept=$$deptLDvar;
+		if(isset(${$deptLDvar})&&!empty(${$deptLDvar})) $dept=${$deptLDvar};
 			else $dept=$dept_obj->FormalName($dept_nr);
 	}
 	# set to edit mode
 	$edit=true;
-	
+
 		# Create the waiting outpatients� list
 		$dnr=(isset($w_waitlist) && $w_waitlist) ? 0 : $dept_nr;
 		$waitlist=&$enc_obj->createWaitingOutpatientList($dnr);
 		$waitlist_count=$enc_obj->LastRecordCount();
 		//echo $waitlist_count.'<p>'.$enc_obj->getLastQuery();
-		
+
 		# Get the doctor�s on duty information
 		#### Start of routine to fetch doctors on duty
 		$elem='duty_1_pnr';
 		if(SHOW_DOC_2) $elem.=',duty_2_pnr';
-		
+
 		# Create personnel object
 		include_once($root_path.'include/care_api_classes/class_personell.php');
 		$pers_obj=new Personell;
-			
+
 		if($result=$pers_obj->getDOCDutyplan($dept_nr,$pyear,$pmonth,$elem)){
 			$duty1=&unserialize($result['duty_1_pnr']);
 			if(SHOW_DOC_2) $duty2=&unserialize($result['duty_2_pnr']);
@@ -145,7 +145,7 @@ if(($mode=='')||($mode=='fresh')){
 ?>
 
 <script language="javascript">
-<!-- 
+<!--
   var urlholder;
 
 function getinfo(pn){
@@ -153,7 +153,7 @@ function getinfo(pn){
 	{ echo '
 	urlholder="'.$root_path.'modules/nursing/nursing-station-patientdaten.php'.URL_REDIRECT_APPEND;
 	echo '&pn=" + pn + "';
-	echo "&pday=$pday&pmonth=$pmonth&pyear=$pyear&edit=$edit&station=$station"; 
+	echo "&pday=$pday&pmonth=$pmonth&pyear=$pyear&edit=$edit&station=$station";
 	echo '";';
 	echo '
 	patientwin=window.open(urlholder,pn,"width=700,height=600,menubar=no,resizable=yes,scrollbars=yes");
@@ -192,20 +192,20 @@ function target(pn){
 function popinfo(l,d)
 {
 	urlholder="<?php echo $root_path ?>modules/doctors/doctors-dienstplan-popinfo.php<?php echo URL_REDIRECT_APPEND ?>&nr="+l+"&dept_nr="+d+"&user=<?php echo $aufnahme_user.'"' ?>;
-	
+
 	infowin=window.open(urlholder,"dienstinfo","width=400,height=450,menubar=no,resizable=yes,scrollbars=yes");
 
 }
 function assignWaiting(pn,pw)
 {
-	urlholder="amb_clinic_assignwaiting.php<?php echo URL_REDIRECT_APPEND ?>&pn="+pn+"&pdept="+pw+"&dept_nr=<?php echo $dept_nr ?>&station=<?php echo $station ?>";	
+	urlholder="amb_clinic_assignwaiting.php<?php echo URL_REDIRECT_APPEND ?>&pn="+pn+"&pdept="+pw+"&dept_nr=<?php echo $dept_nr ?>&station=<?php echo $station ?>";
 	asswin<?php echo $sid ?>=window.open(urlholder,"asswind<?php echo $sid ?>","width=650,height=500,menubar=no,resizable=yes,scrollbars=yes");
 
 }
 function Transfer(pn,pw)
 {
 	if(confirm("<?php echo $LDSureTransferPatient ?>")){
-		urlholder="amb_clinic_transfer_select.php<?php echo URL_REDIRECT_APPEND ?>&pn="+pn+"&pat_station="+pw+"&dept_nr=<?php echo $dept_nr ?>&station=<?php echo $station ?>";	
+		urlholder="amb_clinic_transfer_select.php<?php echo URL_REDIRECT_APPEND ?>&pn="+pn+"&pat_station="+pw+"&dept_nr=<?php echo $dept_nr ?>&station=<?php echo $station ?>";
 		transwin<?php echo $sid ?>=window.open(urlholder,"transwin<?php echo $sid ?>","width=550,height=620,menubar=no,resizable=yes,scrollbars=yes");
 	}
 }
@@ -216,8 +216,8 @@ function billinfo(patnum)
 	window.location.href=urlholder;
 }
 
-<?php 
-require($root_path.'include/core/inc_checkdate_lang.php'); 
+<?php
+require($root_path.'include/core/inc_checkdate_lang.php');
 ?>
 
 // -->
@@ -321,7 +321,7 @@ if($rows){
 			 		<img src="'.$root_path.'main/imgcreator/imgcreate_colorbar_small.php'.URL_APPEND.'&pn='.$patient['encounter_nr'].'" alt="'.$LDSetColorRider.'" align="absmiddle" border=0 width=80 height=18>
 			 		</a>');
 			}
-			
+
 
 			# Show images by sex
 
@@ -378,7 +378,7 @@ if($rows){
 			$sBuffer = '';
 			if($patient['insurance_class_nr']!=2) $sBuffer = $sBuffer.'<font color="#ff0000">';
 
-			if(isset($$patient['LD_var'])&&!empty($$patient['LD_var']))  $sBuffer = $sBuffer.$$patient['LD_var'];
+			if(isset(${$patient['LD_var']})&&!empty(${$patient['LD_var']}))  $sBuffer = $sBuffer.${$patient['LD_var']};
 				else  $sBuffer = $sBuffer.$patient['insurance_name'];
 
 			$smarty->assign('sInsuranceType',$sBuffer);
@@ -451,7 +451,7 @@ $occ_list.='
 	<td><font face="verdana,arial" size="2" color="#ffffff"><b>'.$LDFinanceType.'&nbsp;&nbsp;</b></td>
 	<td><font face="verdana,arial" size="2" color="#ffffff"><b>'.$LDAdm_Nr.'&nbsp;&nbsp;</b></td>
 	<td><font face="verdana,arial" size="2" color="#ffffff"><b>'.$LDOptions.'&nbsp;&nbsp;</b></td>';
-	
+
 
 $occ_list.= '</tr>';
 
@@ -462,12 +462,12 @@ $room_info=array();
 $males=0;
 $females=0;
 while ($patient=$opat_obj->FetchRow()){
- 	
+
 	# set row color
 	$occ_list.='
 			<tr bgcolor=';
 	if ($toggle) $occ_list.='"#fefefe">'; else $occ_list.='"#dfdfdf">';
-	
+
 	$toggle=!$toggle;
 
 	$occ_list.='
@@ -480,7 +480,7 @@ while ($patient=$opat_obj->FetchRow()){
 	$occ_list.='&nbsp;</td><td>';
 	# If edit show small color bars
 	if($edit)
-	{  
+	{
 		 $occ_list.='<a href="javascript:getinfo(\''.$patient['encounter_nr'].'\')" title="'.$LDSetColorRider.'">
 		 <img src="'.$root_path.'main/imgcreator/imgcreate_colorbar_small.php'.URL_APPEND.'&pn='.$patient['encounter_nr'].'" alt="'.$LDSetColorRider.'" align="absmiddle" border=0 width=80 height=18>
 		 </a>';
@@ -507,24 +507,24 @@ while ($patient=$opat_obj->FetchRow()){
 	if($edit)
 	{
 	  //$occ_list.='<a href="javascript:';
-	   //$occ_list.='getinfo(\''.$patient['encounter_nr'].'\')" title="'.$LDShowPatData.'">'; 
+	   //$occ_list.='getinfo(\''.$patient['encounter_nr'].'\')" title="'.$LDShowPatData.'">';
 	  $occ_list.='<a href="'.$root_path.'modules/registration_admission/aufnahme_pass.php'.URL_APPEND.'&target=search&fwd_nr='.$patient['encounter_nr'].'" title="'.$LDAdmissionData.' : '.$LDClk2Show.'">';
 	}
 
 	$occ_list.=ucfirst($patient['title']).' ';
-		
-	 $occ_list.=ucfirst($patient['name_last']); 
-	
+
+	 $occ_list.=ucfirst($patient['name_last']);
+
 	if($edit) $occ_list.='</a>';
-			
-	
+
+
 	$occ_list.='&nbsp;
 	</td><td><font face="verdana,arial" size="2">'.ucfirst($patient['name_first']);
 
-	
+
 	$occ_list.='&nbsp;
 			</td><td align=right><font face="verdana,arial" size="2">&nbsp;';
-			
+
     if($patient['date_birth'])
 	{
 	   $occ_list.=formatDate2Local($patient['date_birth'],$date_format);
@@ -532,18 +532,18 @@ while ($patient=$opat_obj->FetchRow()){
 	$occ_list.='&nbsp;
 			</td><td ><font face="verdana,arial" size="2" >&nbsp;';
 	if($patient['insurance_class_nr']!=2) $occ_list.='<font color="#ff0000">';
-	if(isset($$patient['LD_var'])&&!empty($$patient['LD_var'])) $occ_list.=$$patient['LD_var'];
+	if(isset(${$patient['LD_var']})&&!empty(${$patient['LD_var']})) $occ_list.=${$patient['LD_var']};
 		else $occ_list.=$patient['insurance_name'];
 	$occ_list.='&nbsp;
 	</td>
 	<td><font face="verdana,arial" size="2">&nbsp;'.$patient['encounter_nr'].'&nbsp;
 	</td>';
-	
+
 	if($edit)
 	{
 		$occ_list.='
 			<td><nobr>&nbsp;';
-			
+
 		$occ_list.='<a href="'.$root_path.'modules/registration_admission/aufnahme_pass.php'.URL_APPEND.'&target=search&fwd_nr='.$patient['encounter_nr'].'" title="'.$LDAdmissionData.' : '.$LDClk2Show.'">';
 		$occ_list.='<img '.createComIcon($root_path,'pdata.gif','0').' alt="'.$LDAdmissionData.' : '.$LDClk2Show.'"></a>';
 		$occ_list.='
@@ -559,10 +559,10 @@ while ($patient=$opat_obj->FetchRow()){
 		 $occ_list.='</nobr>
 	 	</td>
 		</tr>
-		 <tr><td bgcolor="#0000ee" colspan="9"><img '.createComIcon($root_path,'pixel.gif').'></td></tr> 
+		 <tr><td bgcolor="#0000ee" colspan="9"><img '.createComIcon($root_path,'pixel.gif').'></td></tr>
 	 	';
 	}
-}	
+}
 # Final occupancy list line
 $occ_list.='</table>';
 }
@@ -612,7 +612,7 @@ if($edit&&$rows){
 $TP_Legend1_BLOCK.= '&nbsp;<img '.createComIcon($root_path,'pdata.gif','0','absmiddle',TRUE).'> <b>'.$LDAdmissionData.'</b><br>
 		&nbsp;<img '.createComIcon($root_path,'open.gif','0','absmiddle',TRUE).'> <b>'.$LDOpenFile.'</b><br>
 		&nbsp;<img '.createComIcon($root_path,'yellowlist.gif','0','absmiddle',TRUE).'> <b>'.$LDYellowPaper.'</b><br>
-		&nbsp;<img '.createComIcon($root_path,'articles.gif','0','absmiddle',TRUE).'> <b>'.$LDTarget.'</b><br>		
+		&nbsp;<img '.createComIcon($root_path,'articles.gif','0','absmiddle',TRUE).'> <b>'.$LDTarget.'</b><br>
 		&nbsp;<img '.createComIcon($root_path,'bubble2.gif','0','absmiddle',TRUE).'> <b>'.$LDNotesEmpty.'</b><br>
 		&nbsp;<img '.createComIcon($root_path,'bubble3.gif','0','absmiddle',TRUE).'> <b>'.$LDNotes.'</b><br>
 		&nbsp;<nobr><img '.createComIcon($root_path,'xchange.gif','0','absmiddle',TRUE).'> <b>'.$LDTransferPatient.'</b></nobr><br>

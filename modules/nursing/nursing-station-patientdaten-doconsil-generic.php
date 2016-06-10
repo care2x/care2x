@@ -14,7 +14,7 @@ $lang_tables[]='departments.php';
 define('LANG_FILE','konsil.php');
 
 /**
-*  We need to differentiate from where the user is coming: 
+*  We need to differentiate from where the user is coming:
 *  $user_origin != lab ;  from patient charts folder
 *  $user_origin == lab ;  from the laboratory
 *  and set the user cookie name and break or return filename
@@ -46,11 +46,11 @@ $db_request_table=$target;
 $formtitle=$abtname[$konsil];
 /*
 *  The following are  batch nr inits for each type of test request
-*   chemlabor = 10000000; 
-*   patho = 20000000; 
-*   baclabor = 30000000; 
-*   blood = 40000000; 
-*   generic = 50000000; 
+*   chemlabor = 10000000;
+*   patho = 20000000;
+*   baclabor = 30000000;
+*   blood = 40000000;
+*   generic = 50000000;
 */
 define('_BATCH_NR_INIT_',50000000);  // define the initial batch nr for generic forms
 
@@ -63,15 +63,15 @@ $medical_depts=$dept_obj->getAllActiveSort( 'name_formal' );
 /* Load the date format functions and get the local format */
 	require_once($root_path.'include/core/inc_date_format_functions.php');
      /* Check for the patient number = $pn. If available get the patients data, otherwise set edit to 0 */
-	if(isset($pn) && $pn){		
+	if(isset($pn) && $pn){
 		include_once($root_path.'include/care_api_classes/class_encounter.php');
 		$enc_obj=new Encounter;
 	    if( $enc_obj->loadEncounterData($pn)) {
-		
+
 /*			include_once($root_path.'include/care_api_classes/class_globalconfig.php');
 			$GLOBAL_CONFIG=array();
 			$glob_obj=new GlobalConfig($GLOBAL_CONFIG);
-			$glob_obj->getConfig('patient_%');	
+			$glob_obj->getConfig('patient_%');
 			switch ($enc_obj->EncounterClass())
 			{
 		    	case '1': $full_en = ($pn + $GLOBAL_CONFIG['patient_inpatient_nr_adder']);
@@ -79,32 +79,32 @@ $medical_depts=$dept_obj->getAllActiveSort( 'name_formal' );
 				case '2': $full_en = ($pn + $GLOBAL_CONFIG['patient_outpatient_nr_adder']);
 							break;
 				default: $full_en = ($pn + $GLOBAL_CONFIG['patient_inpatient_nr_adder']);
-			}						
+			}
 */			$full_en=$pn;
 			$result=&$enc_obj->encounter;
 		}
-	   else 
+	   else
 	   {
 	      $edit=0;
 		  $mode="";
 		  $pn="";
-	   }		
+	   }
 	}
-	   
+
 	if(!isset($mode))   $mode='';
-		
+
 	switch($mode)
 	{
-	     case 'save':	$sql="INSERT INTO care_test_request_".$db_request_table." 
+	     case 'save':	$sql="INSERT INTO care_test_request_".$db_request_table."
 										 (
-										 batch_nr, encounter_nr, testing_dept, visit, 
-										 order_patient, diagnosis_quiry, send_date, 
-										 send_doctor, status, 
+										 batch_nr, encounter_nr, testing_dept, visit,
+										 order_patient, diagnosis_quiry, send_date,
+										 send_doctor, status,
 										 history,
 										 create_id,
 										  create_time
-										 ) 
-										 VALUES 
+										 )
+										 VALUES
 										 (
 										 '".$batch_nr."','".$pn."','".$dept_nr."','".$visit."',
 										 '".$order_patient."','".addslashes($diagnosis_quiry)."','".formatDate2STD($send_date,$date_format)."',
@@ -117,59 +117,59 @@ $medical_depts=$dept_obj->getAllActiveSort( 'name_formal' );
        							  {
 								  	// Load the visual signalling functions
 									include_once($root_path.'include/core/inc_visual_signalling_fx.php');
-									// Set the visual signal 
+									// Set the visual signal
 									setEventSignalColor($pn,SIGNAL_COLOR_DIAGNOSTICS_REQUEST);
 									//echo $sql;
 									 header("location:".$root_path."modules/laboratory/labor_test_request_aftersave.php?sid=".$sid."&lang=".$lang."&edit=".$edit."&saved=insert&pn=".$pn."&station=".$station."&user_origin=".$user_origin."&status=".$status."&target=".$target."&dept_nr=".$dept_nr."&noresize=".$noresize."&batch_nr=".$batch_nr);
 									 exit;
 								  }
-								  else 
+								  else
 								  {
-								     echo "<p>$sql<p>$LDDbNoSave"; 
+								     echo "<p>$sql<p>$LDDbNoSave";
 									 $mode="";
 								  }
-								
+
 								break; // end of case 'save'
-								
+
 			case 'update':
-			 
-							      $sql="UPDATE care_test_request_".$db_request_table." SET 
-											testing_dept = '".$dept_nr."', 
-											visit = '".$visit."', 
-											order_patient = '".$order_patient."', 
-											diagnosis_quiry = '".$diagnosis_quiry."', 
-											send_date = '".formatDate2STD($send_date,$date_format)."', 
-											send_doctor = '".$send_doctor."', 
-											status = '".$status."', 
+
+							      $sql="UPDATE care_test_request_".$db_request_table." SET
+											testing_dept = '".$dept_nr."',
+											visit = '".$visit."',
+											order_patient = '".$order_patient."',
+											diagnosis_quiry = '".$diagnosis_quiry."',
+											send_date = '".formatDate2STD($send_date,$date_format)."',
+											send_doctor = '".$send_doctor."',
+											status = '".$status."',
 										    history=".$dept_obj->ConcatHistory("Update: ".date('Y-m-d H:i:s')." = ".$_SESSION['sess_user_name']."\n").",
 										    modify_id = '".$_SESSION['sess_user_name']."',
 											modify_time='".date('YmdHis')."'
-											WHERE batch_nr = '".$batch_nr."' ";						 
+											WHERE batch_nr = '".$batch_nr."' ";
 
-									  							
+
 							      if($ergebnis=$dept_obj->Transact($sql))
        							  {
 								  	// Load the visual signalling functions
 									include_once($root_path.'include/core/inc_visual_signalling_fx.php');
-									// Set the visual signal 
-									setEventSignalColor($pn,SIGNAL_COLOR_DIAGNOSTICS_REQUEST);									
+									// Set the visual signal
+									setEventSignalColor($pn,SIGNAL_COLOR_DIAGNOSTICS_REQUEST);
 									//echo $sql;
 									 header("location:".$root_path."modules/laboratory/labor_test_request_aftersave.php?sid=".$sid."&lang=".$lang."&edit=".$edit."&saved=update&pn=".$pn."&station=".$station."&user_origin=".$user_origin."&status=".$status."&target=".$target."&dept_nr=".$dept_nr."&batch_nr=".$batch_nr."&noresize=".$noresize);
 									 exit;
 								  }
 								  else
 								   {
-								      echo "<p>$sql<p>$LDDbNoSave"; 
+								      echo "<p>$sql<p>$LDDbNoSave";
 								      $mode="";
 								   }
-								
+
 								break; // end of case 'save'
 	        /* If mode is edit, get the stored test request when its status is either "pending" or "draft"
 			*  otherwise it is not editable anymore which happens when the lab has already processed the request,
-			*  or when it is discarded, hidden, locked, or otherwise. 
+			*  or when it is discarded, hidden, locked, or otherwise.
 			*/
 			case 'edit':
-			
+
 		                $sql="SELECT * FROM care_test_request_".$db_request_table." WHERE batch_nr='".$batch_nr."' AND (status='pending' OR status='draft')";
 		                if($ergebnis=$db->Execute($sql)){
 				            if($editable_rows=$ergebnis->RecordCount()){
@@ -179,9 +179,9 @@ $medical_depts=$dept_obj->getAllActiveSort( 'name_formal' );
 			             }
 						 break; ///* End of case 'edit': */
 			 default: $mode='';
-						   
+
 	}// end of switch($mode)
-	
+
 	/* Get a new batch number */
 	if(!$mode){
 		$sql="SELECT batch_nr FROM care_test_request_".$db_request_table." ORDER BY batch_nr DESC";
@@ -197,7 +197,7 @@ $medical_depts=$dept_obj->getAllActiveSort( 'name_formal' );
 			echo "<p>$sql<p>$LDDbNoRead";
 			exit;
 		}
-		$mode="save";   
+		$mode="save";
 	}
 
 # Start the smarty templating
@@ -263,7 +263,7 @@ div.fa2_ml3 {font-family: arial; font-size: 12; margin-left: 3; }
 </style>
 
 <script language="javascript">
-<!-- 
+<!--
 function chkForm(d){
 
    if(d.dept_nr.value=='')
@@ -296,7 +296,7 @@ function chkForm(d){
 function sendLater()
 {
    document.form_test_request.status.value="draft";
-   if(chkForm(document.form_test_request)) document.form_test_request.submit(); 
+   if(chkForm(document.form_test_request)) document.form_test_request.submit();
 }
 
 function printOut()
@@ -326,12 +326,12 @@ if(!$noresize){
 
 ?>
 
-<script>	
+<script>
       window.moveTo(0,0);
 	 window.resizeTo(1000,740);
 </script>
 
-<?php 
+<?php
 }
 ?>
 
@@ -384,7 +384,7 @@ elseif(!$read_form && !$no_proc_assist)
 				if($v['nr']==$dept_nr) echo ' selected>';
 					else echo '>';
 				$buffer=$v['LD_var'];
-				if(isset($$buffer)&&!empty($$buffer)) echo $$buffer;
+				if(isset(${$buffer})&&!empty(${$buffer})) echo ${$buffer};
 					else echo $v['name_formal'];
 				echo '</option>';
 			    //added subdepts
@@ -394,18 +394,18 @@ elseif(!$read_form && !$no_proc_assist)
             				if($sDept['nr']==$dept_nr) echo ' selected>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<sup>L</sup>&nbsp;';
             					else echo '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<sup>L</sup>&nbsp;';
             				$buffer=$sDept['LD_var'];
-            				if(isset($$buffer)&&!empty($$buffer)) echo $$buffer;
+            				if(isset(${$buffer})&&!empty(${$buffer})) echo ${$buffer};
             					else echo $sDept['name_formal'];
             				echo '</option>';
 			    		}
-			    }					
+			    }
 			}
 
 /*		 while(list($x,$v)=each($abtname))
 		 {
 		    echo '
 			<option value="'.$x.'" ';
-			
+
 			if(($edit_form || $read_form)&&($x==$stored_request['testing_dept']))
 			{
 			    echo 'selected';
@@ -414,10 +414,10 @@ elseif(!$read_form && !$no_proc_assist)
 			{
 			    echo 'selected';
 			}
-			
+
 			echo '> '.$v.'</option>';
 		 }*/
-?>        
+?>
    </select>
 <?php echo $LDDepartment ?>
    <p>
@@ -426,7 +426,7 @@ elseif(!$read_form && !$no_proc_assist)
 <?php
 	  echo '<font size=1 color="#000099" face="verdana,arial">'.$batch_nr.'</font>&nbsp;<br>';
           echo "<img src='".$root_path."classes/barcode/image.php?code=$batch_nr&style=68&type=I25&width=145&height=40&xres=2&font=5' border=0>";
-?>		
+?>
 
 </td>
          <td  bgcolor="<?php echo $bgc1 ?>"  align="right"><div class=fva2b_ml10>
@@ -441,12 +441,12 @@ elseif(!$read_form && !$no_proc_assist)
 		?>
 		</div></td>
 	</tr>
-	
+
 	<tr bgcolor="<?php echo $bgc1 ?>">
 		<td colspan=2><div class=fva2_ml10><?php echo $LDDiagnosesInquiries ?><br>
 		<textarea name="diagnosis_quiry" cols=80 rows=10 wrap="physical"><?php if($edit_form || $read_form) echo stripslashes($stored_request['diagnosis_quiry']) ?></textarea>
 				</td>
-		</tr>	
+		</tr>
 
 	<tr bgcolor="<?php echo $bgc1 ?>">
 		<td ><div class=fva2_ml10><font color="#000099">
@@ -456,7 +456,7 @@ elseif(!$read_form && !$no_proc_assist)
 				$calendar = new DHTML_Calendar('../../js/jscalendar/', $lang, 'calendar-system', true);
 				$calendar->load_files();
 	  			echo $calendar->show_calendar($calendar,$date_format,'send_date',$stored_request['send_date']);
-				//end : gjergji  
+				//end : gjergji
  			?>
   </div></td>
 			<td align="right"><div class=fva2_ml10><font color="#000099">
@@ -469,7 +469,7 @@ elseif(!$read_form && !$no_proc_assist)
 		<td colspan=2><div class=fva2_ml10>&nbsp;<br><font color="#969696"><?php echo $LDDeptReport ?><br>
 		<img src="../../gui/img/common/default/gray_pixel.gif" height=75 width=<?php echo $controls_table_width-25; ?>></div><br>
 				</td>
-		</tr>	
+		</tr>
 		</table>
 <p>
 <?php

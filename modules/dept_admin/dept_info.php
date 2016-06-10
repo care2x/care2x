@@ -6,7 +6,7 @@ require($root_path.'include/core/inc_environment_global.php');
 * CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
 * GNU General Public License
 * Copyright 2002,2003,2004,2005 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -39,7 +39,7 @@ $phone=$dept_obj->getPhoneInfo($dept_nr);
 
 # Prepare title
 $sTitle = "$LDDepartment :: ";
-if(isset($$dept['LD_var'])&&!empty($$dept['LD_var'])) $sTitle = $sTitle.$$dept['LD_var'];
+if(isset(${$dept['LD_var']})&&!empty(${$dept['LD_var']})) $sTitle = $sTitle.${$dept['LD_var']};
 	else $sTitle = $sTitle.$dept['name_formal'];
 
 # Start Smarty templating here
@@ -117,8 +117,8 @@ ob_start();
 			<tr>
 				<td class=pblock align=right bgColor="#eeeeee"><?php echo $LDFormalName ?>: </td>
 				<td class=pblock>
-	<?php 	
-		if(isset($$dept['LD_var'])&&!empty($$dept['LD_var'])) echo $$dept['LD_var'];
+	<?php
+		if(isset(${$dept['LD_var']})&&!empty(${$dept['LD_var']})) echo ${$dept['LD_var']};
 				else echo $dept['name_formal'];
  	?>
 </td>
@@ -131,8 +131,8 @@ ob_start();
 
 			<tr>
 				<td class=pblock align=right bgColor="#eeeeee"><?php echo $LDTypeDept ?>: </td>
-				<td class=pblock><?php 
-								if(isset($$dept_info['LD_var'])&&!empty($$dept_info['LD_var'])) echo $$dept_info['LD_var'];
+				<td class=pblock><?php
+								if(isset(${$dept_info['LD_var']})&&!empty(${$dept_info['LD_var']})) echo ${$dept_info['LD_var']};
 									else echo $dept_info['name'];
 							?>
 </td>
@@ -147,7 +147,7 @@ ob_start();
 
 			<tr>
 				<td class=pblock align=right bgColor="#eeeeee"><?php echo $LDIsSubDept ?>: </td>
-				<td class=pblock><?php 
+				<td class=pblock><?php
 								if($dept['is_sub_dept']) echo $LDYes;
 									else echo $LDNo;
 							?>
@@ -155,10 +155,10 @@ ob_start();
 			</tr>
 			<tr>
 				<td class=pblock align=right bgColor="#eeeeee"><?php echo $LDParentDept ?>: </td>
-				<td class=pblock><?php 
+				<td class=pblock><?php
 								if($dept['is_sub_dept']){
 									$info=$dept_obj->getDeptAllInfo($dept['parent_dept_nr']);
-									if(isset($$info['LD_var'])&&!empty($$info['LD_var'])) echo $$info['LD_var'];
+									if(isset(${$info['LD_var']})&&!empty(${$info['LD_var']})) echo ${$info['LD_var']};
 										else echo $info['name_formal'];
 								}
 							?>
@@ -183,7 +183,7 @@ ob_start();
 
 			<tr>
 				<td class=pblock align=right bgColor="#eeeeee"><?php echo $LDDoesSurgeryOp ?>: </td>
-				<td class=pblock><?php 
+				<td class=pblock><?php
 								if($dept['does_surgery']) echo $LDYes;
 									else echo $LDNo;
 							?>
@@ -192,7 +192,7 @@ ob_start();
 
 			<tr>
 				<td class=pblock align=right bgColor="#eeeeee"><?php echo $LDAdmitsInpatients ?>: </td>
-				<td class=pblock><?php 
+				<td class=pblock><?php
 								if($dept['admit_inpatient']) echo $LDYes;
 									else echo $LDNo;
 							?>
@@ -201,7 +201,7 @@ ob_start();
 
 			<tr>
 				<td class=pblock align=right bgColor="#eeeeee"><?php echo $LDAdmitsOutpatients; ?>: </td>
-				<td class=pblock><?php 
+				<td class=pblock><?php
 								if($dept['admit_outpatient']) echo $LDYes;
 									else echo $LDNo;
 							?>
@@ -210,7 +210,7 @@ ob_start();
 
 			<tr>
 				<td class=pblock align=right bgColor="#eeeeee"><?php echo $LDBelongsToInst ?>: </td>
-				<td class=pblock><?php 
+				<td class=pblock><?php
 								if($dept['this_institution']) echo $LDYes;
 									else echo $LDNo;
 							?>
@@ -274,13 +274,13 @@ ob_start();
 			<tr>
 				<td class=pblock align=right bgColor="#eeeeee"><?php echo $LDDeptLogo ?>: </td>
 				<td class=pblock><?php
-									if(file_exists($root_path.'uploads/logos_dept/dept_'.$dept_nr.'.'.$dept['logo_mime_type'])) echo '<img src="'.$root_path.'gui/img/logos_dept/dept_'.$dept_nr.'.'.$dept['logo_mime_type'].'">'; 
+									if(file_exists($root_path.'uploads/logos_dept/dept_'.$dept_nr.'.'.$dept['logo_mime_type'])) echo '<img src="'.$root_path.'gui/img/logos_dept/dept_'.$dept_nr.'.'.$dept['logo_mime_type'].'">';
 							?>
 	</td>
 			</tr>
 			<tr>
 				<td class=pblock align=right bgColor="#eeeeee"><?php echo $LDIsPharmacy ?>: </td>
-				<td class=pblock><?php 
+				<td class=pblock><?php
 								if($dept['is_pharmacy']) echo $LDYes;
 									else echo $LDNo;
 							?>
@@ -288,10 +288,10 @@ ob_start();
 			</tr>
 			<tr>
 				<td class=pblock align=right bgColor="#eeeeee"><?php echo $LDPharmacy ?>: </td>
-				<td class=pblock><?php 
+				<td class=pblock><?php
 								if($dept['pharma_dept_nr']){
 									$infopharma=$dept_obj->getPharmaAllInfo($dept['pharma_dept_nr']);
-									if(isset($$infopharma['name_formal'])&&!empty($$infopharma['name_formal'])) echo $$infopharma['name_formal'];
+									if(isset(${$infopharma['name_formal']})&&!empty(${$infopharma['name_formal']})) echo ${$infopharma['name_formal']};
 										else echo $infopharma['name_formal'];
 								}
 							?>

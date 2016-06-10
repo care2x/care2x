@@ -1,12 +1,12 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 /**
 * CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
 * GNU General Public License
 * Copyright 2002,2003,2004,2005 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -18,7 +18,7 @@ require_once($root_path.'include/core/inc_front_chain_lang.php');
 /* Create nursing notes object */
 require_once($root_path.'include/care_api_classes/class_target.php');
 $report_obj= new Target;
- 
+
 //if ($station=='') { $station='Non-department specific';  }
 if($pday=='') $pday=date('d');
 if($pmonth=='') $pmonth=date('m');
@@ -26,7 +26,7 @@ if($pyear=='') $pyear=date('Y');
 $s_date=$pyear.'-'.$pmonth.'-'.$pday;
 
 $thisfile=basename(__FILE__);
-			
+
 require_once($root_path.'include/core/inc_date_format_functions.php');
 
 
@@ -35,10 +35,10 @@ if($mode=='save'){
 	switch($_SESSION['sess_user_origin']){
 		case 'lab': $_POST['location_type_nr']=1; # 1 =department
 						break;
-		default: 	$_POST['location_type_nr']=2; # 2 = ward 
+		default: 	$_POST['location_type_nr']=2; # 2 = ward
 						break;
 	}
-	$_POST['location_id']=$station; 
+	$_POST['location_id']=$station;
 	if($report_obj->saveDailyWardNotes($_POST)){
 		//echo $report_obj->getLastQuery();
 		header("Location:$thisfile".URL_REDIRECT_APPEND."&pn=$pn&station=$station&dept_nr=$dept_nr&location_nr=$location_nr&saved=1");
@@ -49,7 +49,7 @@ if($mode=='save'){
 	switch($_SESSION['sess_user_origin']){
 		case 'lab': $_POST['location_type_nr']=1; # 1 =department
 						break;
-		default: 	$_POST['location_type_nr']=2; # 2 = ward 
+		default: 	$_POST['location_type_nr']=2; # 2 = ward
 						break;
 	}
 	$_POST['location_id']=$station;
@@ -67,12 +67,12 @@ if($mode=='save'){
 	if(!isset($station)||empty($station)){
 		# Know where we are
 		switch($_SESSION['sess_user_origin']){
-			case 'amb': # Create nursing notes object 
+			case 'amb': # Create nursing notes object
 						include_once($root_path.'include/care_api_classes/class_department.php');
 						$obj= new Department;
 						$station=$obj->FormalName($dept_nr);
 						break;
-			default: # Create nursing notes object 
+			default: # Create nursing notes object
 						include_once($root_path.'include/care_api_classes/class_ward.php');
 						$obj= new Ward;
 						$station=$obj->WardName($location_nr);
@@ -120,7 +120,7 @@ if($mode=='save'){
 ?>
 
 <script language="javascript">
-<!-- 
+<!--
 var n=false;
 function checkForm(f)
 {
@@ -151,13 +151,13 @@ ob_start();
 ?>
 
  <ul>
- 
+
  <?php
  	if ($occup) {
  		$row = $d_notes->FetchRow();
  	}
  ?>
- 
+
  <form method="post" name=remform action="amb_target_paper.php" onSubmit="return checkForm(this)">
  <table>
  <tr>
@@ -167,7 +167,7 @@ ob_start();
  	<td><select name='condizioni_generali'><option name='Buone' <?php if (($occup)&&($row['condizioni_generali']=="Buone")) echo "selected"; ?>><?php echo $LDGood;?></option><option name='Discrete' <?php if (($occup)&&($row['condizioni_generali']=="Discrete")) echo "selected"; ?>><?php echo $LDNormal;?></option><option name='Scadute' <?php if (($occup)&&($row['condizioni_generali']=="Scadute")) echo "selected"; ?>><?php echo $LDBad;?></option></select></td>
  </tr>
  </table>
- 
+
 <table>
 <tr>
 <td><strong><?php echo $LDNutritionalStatus;?></strong><br>
@@ -274,7 +274,7 @@ ob_start();
 </tr>
 </table>
  Reperti <select name='reperti_torace'><option name='Si'<?php if (($occup)&&($row['reperti_torace']=="Si")) echo "selected"; ?>>Si</option><option name='No' <?php if (($occup)&&($row['reperti_torace']=="No")) echo "selected"; ?>>No</option></select><br>
-<strong>Apparato respiratorio</strong><br> 
+<strong>Apparato respiratorio</strong><br>
 <table>
 <tr>
 <td>Ispezione<br>
@@ -291,7 +291,7 @@ ob_start();
 </table>
 Reperti <select name='reperti_respiratoria'><option name='Si'<?php if (($occup)&&($row['reperti_respiratoria']=="Si")) echo "selected"; ?>>Si</option><option name='No' <?php if (($occup)&&($row['reperti_respiratoria']=="No")) echo "selected"; ?>>No</option></select><br>
 <p><strong>Cuore</strong></p>
-<br> 
+<br>
 <table>
 <tr>
 <td>Ispezione<br>
@@ -320,7 +320,7 @@ Reperti <select name='reperti_cuore'><option name='Si'<?php if (($occup)&&($row[
 </tr>
 </table>
  Reperti <select name='reperti_vasi'><option name='Si'<?php if (($occup)&&($row['reperti_vasi']=="Si")) echo "selected"; ?>>Si</option><option name='No' <?php if (($occup)&&($row['reperti_vasi']=="No")) echo "selected"; ?>>No</option></select><br>
-<strong>Addome</strong><br> 
+<strong>Addome</strong><br>
 <table>
 <tr>
 <td>Ispezione<br>

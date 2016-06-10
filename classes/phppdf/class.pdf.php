@@ -2063,7 +2063,7 @@ function PRVTcheckTextDirective1(&$text,$i,&$f,$final,&$x,&$y,$size=0,$angle=0,$
                       switch($rk){
                         case 'x':
                         case 'y':
-                          $$rk=$rv;
+                          ${$rk}=$rv;
                           break;
                       }
                     }
@@ -2134,7 +2134,7 @@ function PRVTcheckTextDirective1(&$text,$i,&$f,$final,&$x,&$y,$size=0,$angle=0,$
                   switch($rk){
                     case 'x':
                     case 'y':
-                      $$rk=$rv;
+                      ${$rk}=$rv;
                       break;
                   }
                 }

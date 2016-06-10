@@ -6,14 +6,14 @@ require ($root_path . 'include/core/inc_environment_global.php');
  * CARE2X Integrated Hospital Information System Deployment 2.2 - 2006-07-10
  * GNU General Public License
  * Copyright 2002,2003,2004,2005,2006 Elpidio Latorilla
- * elpidio@care2x.org, 
+ * elpidio@care2x.org,
  *
  * See the file "copy_notice.txt" for the licence notice
  */
 $lang_tables [] = 'departments.php';
 $lang_tables [] = 'konsil.php';
 define ( 'LANG_FILE', 'lab.php' );
-/* We need to differentiate from where the user is coming: 
+/* We need to differentiate from where the user is coming:
 *  $user_origin != lab ;  from patient charts folder
 *  $user_origin == lab ;  from the laboratory
 *  and set the user cookie name and break or return filename
@@ -52,7 +52,7 @@ $db_request_table_sub = $target . "_sub";
 if (isset ( $pn ) && $pn) {
 	include_once ($root_path . 'include/care_api_classes/class_encounter.php');
 	$enc_obj = new Encounter ( );
-	
+
 	if ($enc_obj->loadEncounterData ( $pn )) {
 		$edit = true;
 		include_once ($root_path . 'include/care_api_classes/class_globalconfig.php');
@@ -133,8 +133,8 @@ switch ($target) {
 		$dept_obj = new Department ( );
 		if ($dept_obj->preloadDept ( $stored_request ['testing_dept'] )) {
 			$buffer = $dept_obj->LDvar ();
-			if (isset ( $$buffer ) && !empty ( $$buffer ))
-				$formtitle = $$buffer;
+			if (isset ( ${$buffer} ) && !empty ( ${$buffer} ))
+				$formtitle = ${$buffer};
 			else
 				$formtitle = $dept_obj->FormalName ();
 		}
@@ -179,7 +179,7 @@ $smarty->assign ( 'setCharSet', setCharSet () );
 
 if (!isset ( $edit ) || empty ( $edit ))
 	$smarty->assign ( 'edit', FALSE );
-	
+
 # Set it to be purely printout
 $smarty->assign ( 'printmode', TRUE );
 
@@ -221,11 +221,11 @@ $smarty->assign ( 'title', $LDTestRequest );
 $smarty->assign ( 'Name', $station );
 
 if ($target == 'baclabor') {
-	
+
 	$smarty->assign ( 'css_lab', '.lab {font-family: arial; font-size: 9; color:#ee6666;}' );
 
 } else {
-	
+
 	$smarty->assign ( 'css_lab', '.lab {font-family: arial; font-size: 9; color:purple;}' );
 
 }
@@ -239,7 +239,7 @@ ob_start ();
 ?>
 
 <script language="javascript">
-<!-- 
+<!--
 function printOut() {
 	urlholder="labor_test_request_printpop.php?sid=<?php
 		echo $sid?>&lang=<?php
@@ -292,19 +292,19 @@ $smarty->assign ( 'LDEndTestRequest', $LDEndTestRequest );
 
 require_once ('includes/inc_test_request_printout_fx.php');
 
-/* Load the form for printing out 
+/* Load the form for printing out
 * This is a hybrid compromise as long as not all forms are converted to smarty
 * templates. In this case, when the form is pathology, the smarty assignments are done
 * otherwise the output is buffered
 */
 //$edit=0;
 if ($target == 'patho') {
-	
+
 	$smarty->assign ( 'patho', TRUE );
 	include ('includes/inc_test_request_printout_patho.php');
 
 } else {
-	
+
 	# Collect output buffer
 	ob_start ();
 	if ($target == 'baclabor') {

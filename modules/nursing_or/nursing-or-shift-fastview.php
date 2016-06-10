@@ -6,7 +6,7 @@ require($root_path.'include/core/inc_environment_global.php');
 * CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
 * GNU General Public License
 * Copyright 2002,2003,2004,2005 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -77,7 +77,7 @@ if(!$is_cached || ($is_cached && $force_no_cache)){
 	if(!$hilitedept){
 		if($dept_nr) $hilitedept=$dept_nr;
 	}
-	# Load the department list with oncall doctors 
+	# Load the department list with oncall doctors
 	include_once($root_path.'include/care_api_classes/class_department.php');
 	$dept_obj=new Department;
 	$dept_OC=$dept_obj->getAllActiveWithNOC();
@@ -119,12 +119,12 @@ if(!$is_cached || ($is_cached && $force_no_cache)){
 ?>
 
 <script language="javascript">
-<!-- 
+<!--
   var urlholder;
 function popinfo(l,d)
 {
 	urlholder="nursing-or-dienstplan-popinfo.php<?php echo URL_REDIRECT_APPEND ?>&nr="+l+"&dept_nr="+d+"&user=<?php echo $aufnahme_user.'"' ?>;
-	
+
 	infowin=window.open(urlholder,"dienstinfo","width=400,height=300,menubar=no,resizable=yes,scrollbars=yes");
 
 }
@@ -132,14 +132,14 @@ function popinfo(l,d)
 -->
 </script>
 
-<?php 
+<?php
 
  $sTemp=ob_get_contents();
  ob_end_clean();
  $smarty->append('JavaScript',$sTemp);
- 
+
  # Buffer page output
- 
+
  ob_start();
 
 ?>
@@ -172,18 +172,18 @@ if(!$force_no_cache&&$is_cached){
 	$temp_out='';
 
 	while(list($x,$v)=each($dept_OC)){
-	
+
 	if(in_array($v['nr'],$quicklist)){
 		if($dutyplan=$pers_obj->getNOCDutyplan($v['nr'],$pyear,$pmonth)){
-	
-			$a=unserialize($dutyplan['duty_1_txt']);	
+
+			$a=unserialize($dutyplan['duty_1_txt']);
 			$r=unserialize($dutyplan['duty_2_txt']);
 			$ha=unserialize($dutyplan['duty_1_pnr']);
-			$hr=unserialize($dutyplan['duty_2_pnr']);	
+			$hr=unserialize($dutyplan['duty_2_pnr']);
 			if($ha['ha'.($plan_day-1)]) $OC_1=$pers_obj->getPersonellInfo($ha['ha'.($plan_day-1)]);
 			if($hr['hr'.($plan_day-1)]) $OC_2=$pers_obj->getPersonellInfo($hr['hr'.($plan_day-1)]);
 		}
-	
+
 	}else{
 		if(isset($a)) unset($a);
 		if(isset($r)) unset($r);
@@ -193,29 +193,29 @@ if(!$force_no_cache&&$is_cached){
 		if(isset($OC_2)) unset($OC_2);
 	}
 
-	
+
 	$bold='';
 	$boldx='';
 	if($hilitedept==$v['nr']) 	{ $temp_out.='<tr class="hilite">'; $bold="<font color=\"red\" size=2><b>";$boldx="</b></font>"; }
 	else
-		if ($toggler==0) 
+		if ($toggler==0)
 			{ $temp_out.='<tr class="wardlistrow1">'; $toggler=1;}
 				else { $temp_out.='<tr class="wardlistrow2">'; $toggler=0;}
 	$temp_out.='<td ><font size="1" >&nbsp;'.$bold;
-				
+
 	//echo '<td ><font face="verdana,arial" size="1" >&nbsp;'.$bold.$v['name_formal'].$boldx.'&nbsp;</td><td >&nbsp;<font face="verdana,arial" size="2" >
-	
-	if(isset($$v['LD_var'])&&!empty($$v['LD_var'])) $temp_out.=$$v['LD_var'];
+
+	if(isset(${$v['LD_var']})&&!empty(${$v['LD_var']})) $temp_out.=${$v['LD_var']};
 	 	else $temp_out.=$v['name_formal'];
 	$temp_out.=$boldx.'&nbsp;</td><td >&nbsp;
 	<img '.createComIcon($root_path,'mans-gr.gif','0').'>&nbsp;';
-	
+
 	//if ($aelems[l]!="") echo $aelems[l].', ';
 	//echo $aelems[f].'</b></a></td>';
 	if(in_array($v['nr'],$quicklist) && $OC_1['name_last']){$temp_out.='<a href="javascript:popinfo(\''.$ha['ha'.(date('d')-1)].'\',\''.$v['nr'].'\')" title="Click für mehr Info."><b>'.$OC_1['name_last'].', '.$OC_1['name_first'].'</b></a>'; }
 	$temp_out.='</td>
 	<td>';
-	if ($a['a'.(date('d')-1)]!='') 
+	if ($a['a'.(date('d')-1)]!='')
 	{
 		$temp_out.=' <font color=red> '.$OC_1['funk1'].'</font>';
 		if($OC_1['inphone1']) $temp_out.=' / '.$OC_1['inphone1'];
@@ -226,7 +226,7 @@ if(!$force_no_cache&&$is_cached){
 	if(in_array($v['nr'],$quicklist) && $OC_2['name_last']){$temp_out.='<a href="javascript:popinfo(\''.$hr['hr'.(date('d')-1)].'\',\''.$v['nr'].'\')" title="Click für mehr Info."><b>'.$OC_2['name_last'].', '.$OC_2['name_first'].'</b></a>';}
 	$temp_out.='</td>
 	<td>';
-	if ($r['r'.(date('d')-1)]!='') 
+	if ($r['r'.(date('d')-1)]!='')
 	{
 		$temp_out.=' <font color=red> '.$OC_2['funk1'].'</font>';
 		if($OC_2['inphone1']) $temp_out.=' / '.$OC_2['inphone1'];

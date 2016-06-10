@@ -6,7 +6,7 @@ require($root_path.'include/core/inc_environment_global.php');
 * CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
 * GNU General Public License
 * Copyright 2002,2003,2004,2005 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -19,12 +19,12 @@ switch($_SESSION['sess_user_origin'])
 		$local_user='aufnahme_user';
 		$breakfile=$root_path.'modules/personell_admin/personell_register_show.php'.URL_APPEND.'&target=personell_reg&personell_nr='.$nr;
 		break;
-		
+
 	case 'calendar_opt':
 		define('NO_2LEVEL_CHK',1);
 		$breakfile = $root_path."modules/calendar/calendar-options.php".URL_APPEND."&year=$year&month=$month&day=$day&forceback=1";
 		break;
-		
+
 	default:
 		$local_user='ck_op_dienstplan_user';
 		if (!empty($_SESSION['sess_path_referer'])){
@@ -63,7 +63,7 @@ switch($target){
 					  break;
 	case 'calendar_opt': $title=$LDSelectDept;
 					  $fileforward=$root_path."modules/calendar/calendar-options.php".URL_APPEND."&year=$year&month=$month&day=$day";
-					  break;	
+					  break;
 	default: $title=$LDMakeDutyPlan;
 					  $fileforward='nursing-or-dienstplan-planen.php'.URL_APPEND.'&retpath='.$retpath;
 					  break;
@@ -110,7 +110,7 @@ while(list($x,$v)=each($dept_DOC)){
 			{ echo '<tr class="wardlistrow1">'; $toggler=1;}
 				else { echo '<tr class="wardlistrow2">'; $toggler=0;}
 	echo '<td>&nbsp;'.$bold;
-	if(isset($$v['LD_var'])&&!empty($$v['LD_var'])) echo $$v['LD_var'];
+	if(isset(${$v['LD_var']})&&!empty(${$v['LD_var']})) echo ${$v['LD_var']};
 		else echo $v['name_formal'];
 	echo $boldx.'&nbsp;</td>';
 	echo '<td >&nbsp; <a href="'.$fileforward.'&dept_nr='.$v['nr'].'&nr='.$nr.'">

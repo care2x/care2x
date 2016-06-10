@@ -6,7 +6,7 @@ require($root_path.'include/core/inc_environment_global.php');
 * CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
 * GNU General Public License
 * Copyright 2002,2003,2004,2005 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -79,7 +79,7 @@ switch($target){
 
  # href for close button
  $smarty->assign('breakfile',$breakfile);
- 
+
  # Window bar title
  $smarty->assign('sWindowTitle',$title);
 
@@ -92,17 +92,17 @@ $smarty->assign('LDPlsSelectDept',$LDPlsSelectDept);
 $toggler=0;
 
 while(list($x,$v)=each($dept_DOC)){
-		
+
 	$bold='';
 	$boldx='';
-	if($hilitedept==$v['nr']) 	{ echo '<tr bgcolor="yellow">'; $bold="<font color=\"red\" size=2><b>";$boldx="</b></font>"; } 
+	if($hilitedept==$v['nr']) 	{ echo '<tr bgcolor="yellow">'; $bold="<font color=\"red\" size=2><b>";$boldx="</b></font>"; }
 	else
-		if ($toggler==0) 
+		if ($toggler==0)
 			{ echo '<tr class="wardlistrow1">'; $toggler=1;}
 				else { echo '<tr class="wardlistrow2">'; $toggler=0;}
 	echo '<td ><font face="verdana,arial" size="2" >&nbsp;'.$bold;
 	$buff=$v['LD_var'];
-	if(isset($$buff)&&!empty($$buff)) echo $$buff;
+	if(isset(${$buff})&&!empty(${$buff})) echo ${$buff};
 		else echo $v['name_formal'];
 	echo $boldx.'&nbsp;</td>';
 	echo '<td >&nbsp; <a href="'.$fileforward.'&dept_nr='.$v['nr'].'&nr='.$nr.'">

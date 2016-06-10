@@ -6,7 +6,7 @@ require($root_path.'include/core/inc_environment_global.php');
 * CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
 * GNU General Public License
 * Copyright 2002,2003,2004,2005 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -16,17 +16,17 @@ define('LANG_FILE','or.php');
 define('NO_2LEVEL_CHK',1);
 require_once($root_path.'include/core/inc_front_chain_lang.php');
 
-if (!$internok&&!$_COOKIE['ck_op_pflegelogbuch_user'.$sid]) {header("Location:../language/".$lang."/lang_".$lang."_invalid-access-warning.php"); exit;}; 
+if (!$internok&&!$_COOKIE['ck_op_pflegelogbuch_user'.$sid]) {header("Location:../language/".$lang."/lang_".$lang."_invalid-access-warning.php"); exit;};
 
-# Load date shifter class 
+# Load date shifter class
 require_once($root_path.'classes/datetimemanager/class.dateTimeManager.php');
 # Create new dateTimeManager object */
 $tshifter = new dateTimeManager;
 # Set default date to today
 if(!isset($thisday)) $thisday=date('Y-m-d');
-# Shift time back 1 day 
+# Shift time back 1 day
 $yesday = $tshifter->shift_dates($thisday, '1', 'd');
-# Shift time forward 1 day 
+# Shift time forward 1 day
 $tomorow = $tshifter->shift_dates($thisday, '-1', 'd');
 # Todays date
 $today=date('Y-m-d');
@@ -37,24 +37,24 @@ $pdata=array();
 $template=array();
 
 # Default is op room #1
-if(!isset($saal)||empty($saal)) $saal=1; 
+if(!isset($saal)||empty($saal)) $saal=1;
 # Set first entry flag
 setcookie(firstentry,'1');
 
 require_once($root_path.'include/care_api_classes/class_department.php');
 $dept_obj=new Department;
-# Preload the deparment info 
+# Preload the deparment info
 $dept_obj->preloadDept($dept_nr);
-# Get list of all the OR room numbers 
+# Get list of all the OR room numbers
 $ORNrs=&$dept_obj->getAllActiveORNrs();
 
 $surgery_arr=&$dept_obj->getAllActiveWithSurgery();
 
-# Load the date formatter 
+# Load the date formatter
 require_once($root_path.'include/core/inc_date_format_functions.php');
-	
+
 $dbtable='care_encounter_op';
-			
+
 $sql="SELECT o.*,e.encounter_class_nr, p.name_last, p.name_first, p.date_birth, p.addr_str, p.addr_str_nr, p.addr_zip, t.name AS citytown_name
 			FROM $dbtable AS o, care_encounter AS e, care_person AS p
 				LEFT JOIN care_address_citytown AS t ON p.addr_citytown_nr=t.nr
@@ -71,18 +71,18 @@ if($ergebnis=$db->Execute($sql)){
 		$datafound=1;
 	}
 }else{
-	echo "$LDDbNoRead<br>$sql"; 
-} 
+	echo "$LDDbNoRead<br>$sql";
+}
 ?>
 <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 3.0//EN" "html.dtd">
 <?php html_rtl($lang); ?>
 <HEAD>
 <?php echo setCharSet(); ?>
- 
+
  <script language=javascript src="<?php echo $root_path; ?>js/syncdeptsaal.js"></script>
- 
+
  <script language=javascript>
- <!-- 
+ <!--
  function pruf(d)
 {
  	if((d.dept_nr.value=='<?php echo $dept_nr; ?>')&&(d.saal.value=='<?php echo $saal;?>')) return false;
@@ -113,13 +113,13 @@ onLoad="window.location.replace('#<?php if ($gotoid) echo $gotoid; else echo 'bo
 
 <CENTER>
 <?php
-	
+
 $opabt=get_meta_tags($root_path.'global_conf/'.$lang.'/op_tag_dept.pid');
 
 
 echo '
-<table  cellpadding="3" cellspacing="1" border="0" width="100%">';	
-		
+<table  cellpadding="3" cellspacing="1" border="0" width="100%">';
+
 echo '
 		<tr class="wardlisttitlerow"><td colspan=2><nobr>
 		<a href="oplogmain.php?sid='.$sid.'&lang='.$lang.'&internok='.$internok.'&thisday='.$yesday.'&dept_nr='.$dept_nr.'&saal='.$saal.'" title="'.formatDate2Local($yesday,$date_format).'">
@@ -127,20 +127,20 @@ echo '
 		<td colspan=3 align=center><FONT  SIZE=+1>
 		<b>';
 		$buffer=$dept_obj->LDvar();
-		if(isset($$buffer)&&!empty($$buffer)) echo $$buffer;
+		if(isset(${$buffer})&&!empty(${$buffer})) echo ${$buffer};
 			else echo $dept_obj->FormalName();
 		echo ' '.$LDRoom.'-'.strtoupper($saal).' ('.formatDate2Local($thisday,$date_format).')</b></td>';
 ?>
 		<td colspan=2>
 		<nobr>
-			<table cellpadding=0 cellspacing=0 border=0>	
+			<table cellpadding=0 cellspacing=0 border=0>
 			<form action="oplogmain.php" method="post" name="chgdept" onSubmit="return pruf(this)">
 			<tr>
 			<td>
 				<input type="hidden" name="thisday" value="<?php  echo $thisday; ?>">
     			<input type="hidden" name="sid" value="<?php echo $sid; ?>">
     			<input type="hidden" name="lang" value="<?php echo $lang; ?>">
-    
+
 				<!-- <select name="dept_nr" size=1 onChange="syncDept(this,document.chgdept.saal)"> -->
 				<select name="dept_nr" size=1>
 				<?php
@@ -152,12 +152,12 @@ echo '
 						if ($dept_nr==$v['nr']) echo " selected";
 						echo '>';
 						$buffer=$v['LD_var'];
-						if(isset($$buffer)&&!empty($$buffer)) echo $$buffer;
+						if(isset(${$buffer})&&!empty(${$buffer})) echo ${$buffer};
 							else echo $v['name_formal'];
 						echo '</option>';
 					}
 				?>
-					
+
 				</select>
 			</td>
 			<td>
@@ -213,17 +213,17 @@ echo '
 
 while($pdata=$ergebnis->FetchRow())
 	{
-	if ($toggler==0) 
+	if ($toggler==0)
 		{ echo '
-		<tr bgcolor="#fdfdfd">'; $toggler=1;} 
+		<tr bgcolor="#fdfdfd">'; $toggler=1;}
 		else { echo '
 		<tr bgcolor="#fdfdfd">'; $toggler=0;}
 	echo '<a name="'.$pdata['op_nr'].'"></a>
 	<td valign=top><font face="verdana,arial" size="1" ><font size=2 color=red><b>'.$pdata['op_nr'].'</b></font>
 	<hr>'.formatDate2Local($pdata['op_date'],$date_format).'<br>';
-	
+
 	list($pyear,$pmonth,$pday)=explode('-',$pdata['op_date']);
-	
+
 	echo $tage[date(w,mktime(0,0,0,$pmonth,$pday,$pyear))].'<br>
 	<a href="oploginput.php?sid='.$sid.'&lang='.$lang.'&internok='.$internok.'&mode=edit&enc_nr='.$pdata['encounter_nr'].'&dept_nr='.$dept_nr.'&saal='.$saal.'&op_nr='.$pdata['op_nr'].'&thisday='.$pdata['op_date'].'" target="LOGINPUT" >
 	<img '.createComIcon($root_path,'dwnarrowgrnlrg.gif','0').' alt="'.str_replace("~tagword~",$pdata['lastname'],$LDEditPatientData).'"></a>
@@ -236,7 +236,7 @@ while($pdata=$ergebnis->FetchRow())
 	<td valign=top><nobr><font face="verdana,arial" size="1" color=blue>
 	<a href="javascript:getinfo(\''.$pdata['encounter_nr'].'\')">
 	<img '.createComIcon($root_path,'info2.gif','0').' alt="'.str_replace("~tagword~",$pdata['lastname'],$LDOpenPatientFolder).'"></a> ';
-	
+
 	//echo ($pdata['encounter_class_nr']==1)?($pdata['encounter_nr']+$GLOBAL_CONFIG['patient_inpatient_nr_adder']) : ($pdata['encounter_nr']+$GLOBAL_CONFIG['patient_outpatient_nr_adder']);
 
 	echo $pdata['encounter_nr'];
@@ -250,7 +250,7 @@ while($pdata=$ergebnis->FetchRow())
 	echo nl2br($pdata['diagnosis']);
 	echo '
 	</td><td valign=top><font face="verdana,arial" size="1" ><nobr>';
-	
+
 	$ebuf=array("operator","assistant","scrub_nurse","rotating_nurse");
 	//$tbuf=array("O","A","I","S");
 	//$cbuf=array("Operateur","Assistent","Instrumenteur","Springer");
@@ -265,13 +265,13 @@ while($pdata=$ergebnis->FetchRow())
 			if($elems[n]=="") continue;
 			else echo '&nbsp;'.$elems[n]." ".$tbuf[$n].$elems[x]."<br>";
 		}
-	}	
-		
+	}
+
 	echo '
 	</td>
 	<td valign=top><font face="verdana,arial" size="1" >'.$LDAnaTypes[$pdata['anesthesia']].'<p>';
 	if($pdata[an_doctor])
-		{ 
+		{
 			echo '<font color="#cc0000">'.$LDAnaDoc.'</font><br><font color="#000000">';
 			$dbuf=explode("~",$pdata[an_doctor]);
 			for($i=0;$i<sizeof($dbuf);$i++)
@@ -303,7 +303,7 @@ while($pdata=$ergebnis->FetchRow())
 	echo '<font color=black>'.nl2br($pdata['result_info']).'</td>';
 	echo '
 	<td valign=top><font face="verdana,arial" size="1" >';
-	
+
 	 $eo=explode("~",$pdata['entry_out']);
 	for($i=0;$i<sizeof($eo);$i++)
 	{
@@ -345,7 +345,7 @@ if(!$datafound)
 	   				</td>
      				</tr>
   		 </table>
-	
+
 	   		</td>
      		</tr>
   		 </table>
@@ -353,8 +353,8 @@ if(!$datafound)
 <?php
 		/*echo '<img src="../img/'.$lang.'/'.$lang.'_cat-com2.gif">';*/
 	}elseif(!$firstentry){
-	
-		$buffy=str_replace(" ","+",$_SESSION['sess_user_name']); 
+
+		$buffy=str_replace(" ","+",$_SESSION['sess_user_name']);
 		 echo '<img src="'.$root_path.'main/imgcreator/catcom.php?lang='.$lang.'&person='.$buffy.'">';
 	}
 }

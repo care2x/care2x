@@ -25,42 +25,42 @@ $linecount=0;
 if(!isset($mode)) $mode='';
 
 if(!isset($db) || !$db) include_once($root_path.'include/core/inc_db_makelink.php');
-if($dblink_ok) {	
+if($dblink_ok) {
     $sql='SELECT addr_book, lastcheck FROM '.$dbtable.' WHERE  email="'.addslashes($eadd).'"';
-    if($ergebnis=$db->Execute($sql)) { 
+    if($ergebnis=$db->Execute($sql)) {
 	    if($ergebnis->RecordCount()) {
             $content=$ergebnis->FetchRow();
         } //end of if rows
 
-    } else { echo "$LDDbNoRead<br>$sql"; } 
-	
+    } else { echo "$LDDbNoRead<br>$sql"; }
+
 	if($mode=='saveQadd'){
         $buf='';
         for($i=0;$i<5;$i++) {
-            $abuf="qadres$i";//echo "$abuf<br>".$$abuf."<br>";
-            if($$abuf=='') continue;
-			if($buf=='') $buf=$$abuf;
-				else $buf.="; ".$$abuf; //echo "$buf<br>".$$abuf."<br>";
+            $abuf="qadres$i";
+            if(${$abuf}=='') continue;
+			if($buf=='') $buf=${$abuf};
+				else $buf.="; ".${$abuf};
 		}
 				$sql='UPDATE '.$dbtable.' SET addr_quick="'.$buf.'", lastcheck="'.$content['lastcheck'].'" WHERE  email="'.addslashes($eadd).'"';
-			
+
 			$db->BeginTrans();
 			$ok=$db->Execute($sql);
-			if($ok&&$db->CommitTrans()) { 				
+			if($ok&&$db->CommitTrans()) {
 			    $saveok=1;
-			} else { 
+			} else {
 			    $db->RollbackTrans();
-			    echo "$LDDbNoUpdate<br>$sql"; 
-			} 
+			    echo "$LDDbNoUpdate<br>$sql";
+			}
     }
-		
+
 	$sql='SELECT addr_quick FROM '.$dbtable.' WHERE  email="'.addslashes($eadd).'"';
-	if($ergebnis=$db->Execute($sql)) { 
+	if($ergebnis=$db->Execute($sql)) {
 		if($ergebnis->RecordCount()) {
             $result=$ergebnis->FetchRow();
 		} //end of if rows
-	}else { echo "$LDDbNoRead<br>$sql"; } 
-} else { echo "$LDDbNoLink<br>$sql"; } 
+	}else { echo "$LDDbNoRead<br>$sql"; }
+} else { echo "$LDDbNoLink<br>$sql"; }
 
 
 ?>
@@ -71,16 +71,16 @@ if($dblink_ok) {
  <TITLE><?php echo "$LDIntraEmail $LDQuickAddr"; ?></TITLE>
 
  <script language="javascript" >
-<!-- 
+<!--
 var chgTag=false;
-<?php if($saveok) echo "var saveTag=true;"; 
-else echo "var saveTag=false;"; 
+<?php if($saveok) echo "var saveTag=true;";
+else echo "var saveTag=false;";
 ?>
 
 function chkform(d)
 {
  	if(!chgTag) return false;
-	return true;		
+	return true;
 }
 
 function selectAll(s,m)
@@ -94,7 +94,7 @@ function enterQadd()
 {
 	d=document.qaselect;
 	s=d.quick.length;
-	if((s==5)||(d.adrs.selectedIndex==-1)) 
+	if((s==5)||(d.adrs.selectedIndex==-1))
 	{	d.adrs.selectedIndex=-1; return;}
 	idx=d.adrs.selectedIndex;
 	var opt= new Option(d.adrs.options[idx].text,d.adrs.options[idx].text);
@@ -119,17 +119,17 @@ if(saveTag) window.opener.location.reload();
 window.close();
 }
 // -->
-</script> 
+</script>
 
-<?php 
+<?php
 require($root_path.'include/core/inc_js_gethelp.php');
 require($root_path.'include/core/inc_css_a_hilitebu.php');
 ?></HEAD>
 
-<BODY topmargin=0 leftmargin=0 marginwidth=0 marginheight=0 onLoad="if (window.focus) window.focus()" 
-<?php 
+<BODY topmargin=0 leftmargin=0 marginwidth=0 marginheight=0 onLoad="if (window.focus) window.focus()"
+<?php
  if (!$cfg['dhtml']){ echo ' link='.$cfg['body_txtcolor'].' alink='.$cfg['body_alink'].' vlink='.$cfg['body_txtcolor']; } ?>>
- 
+
 <?php if($mode=="saveQadd") : ?>
 <script language=javascript>
 
@@ -168,7 +168,7 @@ $a_info=explode("_",$content[addr_book]);
 	}
 ?>
         </select>
-        
+
         </td>
     <td><input type="button" value="<?php echo $LDInsertAddr; ?> >>" onClick="enterQadd()">
         </td>
@@ -181,19 +181,19 @@ echo '
 	if(($maxrow==1)&&(trim($c[0])=="")) $maxrow=0;
 	for ($i=0;$i<$maxrow;$i++)
 	{
-		echo' 
+		echo'
 				<option value="'.trim($c[$i]).'">'.trim($c[$i]).'</option>';
 	}
-	echo '	
+	echo '
 		</select>';
 	for ($i=0;$i<5;$i++)
 	{
-		echo' 
+		echo'
 				<input type="hidden" name="qadres'.$i.'" value="'.trim($c[$i]).'">';
 	}
 ?>
 
-          
+
         </td>
     <td><input type="button" value="<?php echo $LDDelete ?> >>" onClick="delQadd()">
         </td>
@@ -219,14 +219,14 @@ echo '
    <font size=1><a href="javascript:closeit()">
    <img <?php echo createComIcon($root_path,'l_arrowgrnsm.gif','0','middle') ?>> <?php echo $LDClose; ?>
 </a></font>
-  
-  
+
+
 </FONT>
 <p>
 </td>
 </tr>
 
-</table>        
+</table>
 
 </FONT>
 

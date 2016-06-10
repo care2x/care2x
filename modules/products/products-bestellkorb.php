@@ -46,7 +46,7 @@ switch($mode) {
 }
 
 // Load common icon images
-$img_warn=createComIcon($root_path,'warn.gif','0');	
+$img_warn=createComIcon($root_path,'warn.gif','0');
 $img_uparrow=createComIcon($root_path,'uparrowgrnlrg.gif','0');
 $img_info=createComIcon($root_path,'info3.gif','0');
 $img_delete=createComIcon($root_path,'delete2.gif','0');
@@ -67,7 +67,7 @@ function resize() {
 </script>
 
 <script language="javascript" src="../js/products_validate_order_num.js"></script>
-<?php 
+<?php
     require($root_path.'include/core/inc_js_gethelp.php');
     require($root_path.'include/core/inc_css_a_hilitebu.php');
 ?>
@@ -80,9 +80,9 @@ function resize() {
 <a href="javascript:resize()"><img <?php echo createComIcon($root_path,'r_arrowgrnsm.gif','0'); ?> alt="Zgjero"></a>
 </td></tr></table>
 <font size=2 face="verdana,arial">
-<?php 
+<?php
     $buff=$dept_obj->LDvar($dept_nr);
-    if(isset($$buff)&&!empty($$buff)) echo $$buff;
+    if(isset(${$buff})&&!empty(${$buff})) echo ${$buff};
     else echo $dept_obj->FormalName($dept_nr);
 ?>
 </font><br>
@@ -96,14 +96,14 @@ if($_SESSION['current_order']){
     	<tr class="wardlisttitlerow">';
 	for ($i=0;$i<sizeof($LDcatindex);$i++)
 	echo '<td>'.$LDcatindex[$i].'</td>';
-	echo '</tr>';	
+	echo '</tr>';
     $i=1;
     foreach ($_SESSION['current_order'] as $orderVals) {
     	$currID = each($_SESSION['current_order']);
     	if($tog) { echo '<tr class="wardlistrow1">'; $tog=0; }
     	else{ echo '<tr class="wardlistrow2">'; $tog=1; }
     	echo'<td>';
-    	echo'	
+    	echo'
     		<font size=1 color="#000080">'.$i++.'</font></td>
     		<td><font size=1>'.$orderVals['art1'].'</font><input type="hidden" name="art'.$i.'" value="'.$orderVals['art1'].'"></td>
     		<td><font size=1>'.$orderVals['p1'].'</font><input type="hidden" name="p'.$i.'" value="'.$orderVals['p1'].'"></td>
@@ -122,7 +122,7 @@ if($_SESSION['current_order']){
     		<input type="hidden" name="cat" value="'.$cat.'">
     		<input type="hidden" name="userck" value="'.$userck.'">
     		<br><br>
-    		<input type="submit" value="'.$LDFinalizeList.'">   
+    		<input type="submit" value="'.$LDFinalizeList.'">
     		</form>	';
 }
 ?>

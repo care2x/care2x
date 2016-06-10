@@ -1,7 +1,7 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 
 $lang_tables=array('departments.php');
 define('LANG_FILE','ambulatory.php');
@@ -19,9 +19,9 @@ $_SESSION['sess_parent_mod']='';
 require_once($root_path.'include/care_api_classes/class_department.php');
 $dept_obj= new Department;
 if(!isset($_SESSION['department_nr']) || $_SESSION['department_nr'] == '')
-	$medical_depts=&$dept_obj->getAllActiveSort( 'name_formal' ) ; //get only the main depts
+	$medical_depts=$dept_obj->getAllActiveSort( 'name_formal' ) ; //get only the main depts
 else
-	$medical_depts=&$dept_obj->getAllMedical() ; // get all depts
+	$medical_depts=$dept_obj->getAllMedical() ; // get all depts
 # Start Smarty templating here
  /**
  * LOAD Smarty
@@ -35,7 +35,11 @@ else
 
 # Title in toolbar
  $smarty->assign('sToolbarTitle',$LDAmbulatory);
-
+  $smarty->assign('Name','');
+$smarty->assign('bHideTitleBar',FALSE);
+$smarty->assign('sTitleImage','<img '.createComIcon($root_path,'authors.gif','0').'>');
+$smarty->assign('Subtitle','' );
+$smarty->assign('sOnLoadJs','');
  # href for help button
  $smarty->assign('pbHelp',"javascript:gethelp('submenu1.php','$LDAmbulatory')");
 
@@ -48,13 +52,11 @@ else
  # Prepare the submenu icons
 
  $smarty->assign('sTitleIcon','<img '.createComIcon($root_path,'l-arrowgrnlrg.gif','0','',TRUE).'>');
- 
- if($cfg['icons'] != 'no_icon') {
-	$smarty->assign('sApptIcon','<img '.createComIcon($root_path,'icon-date-hour.gif','0').'>');
-	$smarty->assign('sOutPatientIcon','<img '.createComIcon($root_path,'forums.gif','0').'>');
-	$smarty->assign('sPendReqIcon','<img '.createComIcon($root_path,'waiting.gif','0').'>');
-	$smarty->assign('sNewsIcon','<img '.createComIcon($root_path,'bubble2.gif','0').'>');
-}
+
+$smarty->assign('sApptIcon','<img '.createComIcon($root_path,'icon-date-hour.gif','0').'>');
+$smarty->assign('sOutPatientIcon','<img '.createComIcon($root_path,'forums.gif','0').'>');
+$smarty->assign('sPendReqIcon','<img '.createComIcon($root_path,'waiting.gif','0').'>');
+$smarty->assign('sNewsIcon','<img '.createComIcon($root_path,'bubble2.gif','0').'>');
 
  # Assign the text
 
@@ -63,7 +65,7 @@ else
  $smarty->assign('LDPWListTxt',$LDPWListTxt);
  $smarty->assign('LDPendingRequestTxt',$LDPendingRequestTxt);
  $smarty->assign('LDNewsTxt',$LDNewsTxt);
- 
+
  # Collect extra javascript
 
  $sTemp='
@@ -93,7 +95,7 @@ if(!isset($_SESSION['department_nr']) || $_SESSION['department_nr'] == '') {
     	$subDepts = $dept_obj->getAllSubDepts($v['nr']);
     	$TP_SELECT_BLOCK.='<option value="'.$v['nr'].'" >';
     	$buffer=$v['LD_var'];
-    	if(isset($$buffer)&&!empty($$buffer)) $TP_SELECT_BLOCK.=$$buffer;
+    	if(isset(${$buffer})&&!empty(${$buffer})) $TP_SELECT_BLOCK.=${$buffer};
     	else $TP_SELECT_BLOCK.=$v['name_formal'];
     	$TP_SELECT_BLOCK.='</option>';
     	//add the subdept
@@ -101,22 +103,22 @@ if(!isset($_SESSION['department_nr']) || $_SESSION['department_nr'] == '') {
 			while (list($y,$sDept) = each($subDepts)) {
             	$TP_SELECT_BLOCK.='<option value="'.$sDept['nr'].'" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<sup>L</sup>&nbsp;';
             	$buffer=$sDept['LD_var'];
-            	if(isset($$buffer)&&!empty($$buffer)) $TP_SELECT_BLOCK.=$$buffer;
+            	if(isset(${$buffer})&&!empty(${$buffer})) $TP_SELECT_BLOCK.=${$buffer};
             	else $TP_SELECT_BLOCK.=$sDept['name_formal'];
             	$TP_SELECT_BLOCK.='</option>';			}
 		}
-    }  
+    }
 } else {
     while(list($x,$v)=each($medical_depts)){
-    	if(in_array($v['nr'],$_SESSION['department_nr']))  { 
+    	if(in_array($v['nr'],$_SESSION['department_nr']))  {
         	$TP_SELECT_BLOCK.='<option value="'.$v['nr'].'" selected >';
         	$buffer=$v['LD_var'];
-        	if(isset($$buffer)&&!empty($$buffer)) $TP_SELECT_BLOCK.=$$buffer;
+        	if(isset(${$buffer})&&!empty(${$buffer})) $TP_SELECT_BLOCK.=${$buffer};
         	else $TP_SELECT_BLOCK.=$v['name_formal'];
         	$TP_SELECT_BLOCK.='</option>';
     	}
     	else continue;
-    }    
+    }
 }
 $TP_SELECT_BLOCK.='</select>';
 
@@ -127,14 +129,14 @@ if(!isset($_SESSION['department_nr']) || $_SESSION['department_nr'] == '') {
 	while(list($x,$v)=each($medical_depts)){
 		$subDepts = $dept_obj->getAllSubDepts($v['nr']);
 		$buffer=$v['LD_var'];
-		if(isset($$buffer)&&!empty($$buffer)) $dname=$$buffer;
+		if(isset(${$buffer})&&!empty(${$buffer})) $dname=${$buffer};
 			else $dname= $v['name_formal'];
 		$TP_HIDDENS.='
 		<input type="hidden" name="dname'.$v['nr'].'" value="'.$dname.'">';
 	    	if($subDepts) {
 				while (list($y,$sDept) = each($subDepts)) {
 					$buffer=$sDept['LD_var'];
-					if(isset($$buffer)&&!empty($$buffer)) $dname=$$buffer;
+					if(isset(${$buffer})&&!empty(${$buffer})) $dname=${$buffer};
 					else $dname= $sDept['name_formal'];
 					$TP_HIDDENS.='
 					<input type="hidden" name="dname'.$sDept['nr'].'" value="'.$dname.'">';
@@ -144,11 +146,11 @@ if(!isset($_SESSION['department_nr']) || $_SESSION['department_nr'] == '') {
 } else {
 	while(list($x,$v)=each($medical_depts)){
 		$buffer=$v['LD_var'];
-		if(isset($$buffer)&&!empty($$buffer)) $dname=$$buffer;
+		if(isset(${$buffer})&&!empty(${$buffer})) $dname=${$buffer};
 			else $dname= $v['name_formal'];
 		$TP_HIDDENS.='
 		<input type="hidden" name="dname'.$v['nr'].'" value="'.$dname.'">';
-	}	
+	}
 }
 # hidden
 $TP_HINPUTS='<input type="hidden" name="sid" value="'.$sid.'">
@@ -175,90 +177,90 @@ if(!isset($_SESSION['department_nr']) || $_SESSION['department_nr'] == '') {
      $smarty->assign('sOutPatientLink',"<a href=\"amb_clinic_patients_pass.php".URL_APPEND."&dept_nr=14&dept=".strtr($LDEmergency,' ','+')."\">$LDOutpatientClinic</a>");
      $smarty->assign('sPendReqLink',"<a href=\"".$root_path."modules/laboratory/labor_test_request_pass.php".URL_APPEND."&target=generic&subtarget=14&user_origin=amb\">$LDPendingRequest</a>");
      $smarty->assign('sNewsLink',"<a href=\"".$root_path."modules/news/newscolumns.php".URL_APPEND."&dept_nr=14&user_origin=amb\">$LDNews</a>");
-    
+
      # Generate the block using a sub template
-    
+
      $sTemp='';
      ob_start();
      		$smarty->display('ambulatory/submenu_dept.tpl');
      		$sTemp = ob_get_contents();
      ob_end_clean();
-    
+
      # Assign to main template object
     	$smarty->assign('sTopLeftSubMenu',$sTemp);
-    
+
     # Create the top right submenu block
      $smarty->assign('sBlockTitle',$LDGeneralAmbulatory);
      $smarty->assign('sApptLink',"<a href=\"".$root_path."modules/appointment_scheduler/appt_main_pass.php".URL_APPEND."&target=15&dept_nr=15&user_origin=amb&dept=".strtr($LDGeneralAmbulatory,' ','+')."\">$LDAppointments</a>");
      $smarty->assign('sOutPatientLink',"<a href=\"amb_clinic_patients_pass.php".URL_APPEND."&dept_nr=15&dept=".strtr($LDGeneralAmbulatory,' ','+')."\">$LDOutpatientClinic</a>");
      $smarty->assign('sPendReqLink',"<a href=\"".$root_path."modules/laboratory/labor_test_request_pass.php".URL_APPEND."&target=generic&subtarget=15&user_origin=amb\">$LDPendingRequest</a>");
      $smarty->assign('sNewsLink',"<a href=\"".$root_path."modules/news/newscolumns.php".URL_APPEND."&dept_nr=15&user_origin=amb\">$LDNews</a>");
-    
+
      # Generate the block using a sub template
-    
+
      $sTemp='';
      ob_start();
      		$smarty->display('ambulatory/submenu_dept.tpl');
      		$sTemp = ob_get_contents();
      ob_end_clean();
-    
+
      # Assign to main template object
     	$smarty->assign('sTopRightSubMenu',$sTemp);
-    
+
     # Create the  mid left submenu block
      $smarty->assign('sBlockTitle',$LDSonography);
      $smarty->assign('sApptLink',"<a href=\"".$root_path."modules/appointment_scheduler/appt_main_pass.php".URL_APPEND."&target=17&dept_nr=17&user_origin=amb&dept=".strtr($LDSonography,' ','+')."\">$LDAppointments</a>");
      $smarty->assign('sOutPatientLink',"<a href=\"amb_clinic_patients_pass.php".URL_APPEND."&dept_nr=17&dept=".strtr($LDSonography,' ','+')."\">$LDOutpatientClinic</a>");
      $smarty->assign('sPendReqLink',"<a href=\"".$root_path."modules/laboratory/labor_test_request_pass.php".URL_APPEND."&target=generic&subtarget=17&user_origin=amb\">$LDPendingRequest</a>");
      $smarty->assign('sNewsLink',"<a href=\"".$root_path."modules/news/newscolumns.php".URL_APPEND."&dept_nr=17&user_origin=amb\">$LDNews</a>");
-    
+
      # Generate the block using a sub template
-    
+
      $sTemp='';
      ob_start();
      		$smarty->display('ambulatory/submenu_dept.tpl');
      		$sTemp = ob_get_contents();
      ob_end_clean();
-    
+
      # Assign to main template object
     	$smarty->assign('sMidLeftSubMenu',$sTemp);
-    
+
     # Create the  mid right submenu block
      $smarty->assign('sBlockTitle',$LDInternalMed);
      $smarty->assign('sApptLink',"<a href=\"".$root_path."modules/appointment_scheduler/appt_main_pass.php".URL_APPEND."&target=16&dept_nr=16&user_origin=amb&dept=".strtr($LDInternalMed,' ','+')."\">$LDAppointments</a>");
      $smarty->assign('sOutPatientLink',"<a href=\"amb_clinic_patients_pass.php".URL_APPEND."&dept_nr=16&dept=".strtr($LDInternalMed,' ','+')."\">$LDOutpatientClinic</a>");
      $smarty->assign('sPendReqLink',"<a href=\"".$root_path."modules/laboratory/labor_test_request_pass.php".URL_APPEND."&target=generic&subtarget=16&user_origin=amb\">$LDPendingRequest</a>");
      $smarty->assign('sNewsLink',"<a href=\"".$root_path."modules/news/newscolumns.php".URL_APPEND."&dept_nr=16&user_origin=amb\">$LDNews</a>");
-    
+
      # Generate the block using a sub template
-    
+
      $sTemp='';
      ob_start();
      		$smarty->display('ambulatory/submenu_dept.tpl');
      		$sTemp = ob_get_contents();
      ob_end_clean();
-    
+
      # Assign to main template object
     	$smarty->assign('sMidRightSubMenu',$sTemp);
-    	
+
     # Create the  bottom left submenu block
      $smarty->assign('sBlockTitle',$LDNuclearMed);
      $smarty->assign('sApptLink',"<a href=\"".$root_path."modules/appointment_scheduler/appt_main_pass.php".URL_APPEND."&target=18&dept_nr=18&user_origin=amb&dept=".strtr($LDNuclearMed,' ','+')."\">$LDAppointments</a>");
      $smarty->assign('sOutPatientLink',"<a href=\"amb_clinic_patients_pass.php".URL_APPEND."&dept_nr=18&dept=".strtr($LDNuclearMed,' ','+')."\">$LDOutpatientClinic</a>");
      $smarty->assign('sPendReqLink',"<a href=\"".$root_path."modules/laboratory/labor_test_request_pass.php".URL_APPEND."&target=generic&subtarget=18&user_origin=amb\">$LDPendingRequest</a>");
      $smarty->assign('sNewsLink',"<a href=\"".$root_path."modules/news/newscolumns.php".URL_APPEND."&dept_nr=18&user_origin=amb\">$LDNews</a>");
-    
+
      # Generate the block using a sub template
-    
+
      $sTemp='';
      ob_start();
      		$smarty->display('ambulatory/submenu_dept.tpl');
      		$sTemp = ob_get_contents();
      ob_end_clean();
-    
+
      # Assign to main template object
     	$smarty->assign('sBottomLeftSubMenu',$sTemp);
-    
+
     # Create the  bottom right submenu block
      $smarty->assign('sBlockTitle',$LDEarNoseThroat);
      $smarty->assign('sApptLink',"<a href=\"".$root_path."modules/appointment_scheduler/appt_main_pass.php".URL_APPEND."&target=6&dept_nr=6&user_origin=amb&dept=".strtr($LDEarNoseThroat,' ','+')."\">$LDAppointments</a>");
@@ -267,7 +269,7 @@ if(!isset($_SESSION['department_nr']) || $_SESSION['department_nr'] == '') {
      $smarty->assign('sNewsLink',"<a href=\"".$root_path."modules/news/newscolumns.php".URL_APPEND."&dept_nr=6&user_origin=amb\">$LDNews</a>");
 
      # Generate the block using a sub template
-    
+
      $sTemp='';
      ob_start();
      		$smarty->display('ambulatory/submenu_dept.tpl');
@@ -278,8 +280,12 @@ if(!isset($_SESSION['department_nr']) || $_SESSION['department_nr'] == '') {
 	$smarty->assign('sBottomRightSubMenu',$sTemp);
 
 # Assign the submenu to the mainframe center block
-
+$smarty->assign('pbAux1', '');
+$smarty->assign('pbAux2', '');
+$smarty->assign('sCloseTarget','target="_parent"');
+$smarty->assign('sMainBlockIncludeFile',"");
  $smarty->assign('sMainBlockIncludeFile','ambulatory/submenu_ambulatory.tpl');
+ $smarty->assign('sMainFrameBlockData','');
 
  /**
  * show Template

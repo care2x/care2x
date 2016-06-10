@@ -94,7 +94,7 @@ $options='';
 while(list($x,$v)=each($med_arr)){
 	if($x==42) continue;
 	$buffer=$v['LD_var'];
-	if(isset($$buffer)&&!empty($$buffer)) $buf2=$$buffer;
+	if(isset(${$buffer})&&!empty(${$buffer})) $buf2=${$buffer};
 		else $buf2=$v['name_formal'];
 	$options.='
 	<option value="'.$v['nr'].'"';

@@ -6,7 +6,7 @@ require($root_path.'include/core/inc_environment_global.php');
 * CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
 * GNU General Public License
 * Copyright 2002,2003,2004,2005 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -29,8 +29,8 @@ $new_date_ok=0;
 # Create global config object
 require_once($root_path.'include/care_api_classes/class_globalconfig.php');
 $glob_obj=new GlobalConfig($GLOBAL_CONFIG);
-	
-if(($mode=='save')&&($date_format!='')&&(stristr($date_format,$validator))){  
+
+if(($mode=='save')&&($date_format!='')&&(stristr($date_format,$validator))){
 	  $new_date_ok=$glob_obj->saveConfigItem('date_format',$date_format);
 }else{
 	if($glob_obj->getConfig('date_format')) $date_format=$GLOBAL_CONFIG['date_format'];
@@ -59,7 +59,7 @@ if(($mode=='save')&&($date_format!='')&&(stristr($date_format,$validator))){
  $smarty->assign('sWindowTitle',$LDDate);
 
  # Buffer page output
- 
+
  ob_start();
 
 ?>
@@ -74,8 +74,8 @@ echo $LDSelectDateFormat;
 </font>
 
 <form action="<?php echo $thisfile ?>" method="get">
-<table border=0 cellspacing=1 cellpadding=5>  
-<?php 
+<table border=0 cellspacing=1 cellpadding=5>
+<?php
 for($i=0;$i<sizeof($LDDateFormats);$i++)
 {
   echo '<tr>
@@ -84,7 +84,7 @@ for($i=0;$i<sizeof($LDDateFormats);$i++)
   echo '></td>
 	<td bgcolor="#e9e9e9"><FONT  color="#0000cc"><b>';
   $dfbuffer="LD_".strtr($LDDateFormats[$i],".-/","phs");
-  echo $$dfbuffer;
+  echo ${$dfbuffer};
   echo '</b> </FONT></td>
 	<td>'.$LDDateFormatsTxt[$i].'<br></td>
 	</tr>';

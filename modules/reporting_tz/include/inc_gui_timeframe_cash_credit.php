@@ -10,7 +10,7 @@
 
             <font size=1>[<?php
             $dfbuffer = "LD_" . strtr($date_format, ".-/", "phs");
-            echo $$dfbuffer;
+            echo ${$dfbuffer};
             ?>]
             <?php echo $insurance_obj->ShowAllInsurancesForQuotatuion(); ?>
             <select name="admission_id" id="admission_id" onChange="javascript:popdepts()">
@@ -24,7 +24,7 @@
         </td>
 
     </tr>
-</table>	
+</table>
 
 
 

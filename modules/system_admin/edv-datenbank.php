@@ -1,4 +1,4 @@
-<?php if (($sid=="")or($sid==NULL)or($sid!=$$ck_sid_buffer)or($ck_edv_db_user==""))
+<?php if (($sid=="")or($sid==NULL)or($sid!=${$ck_sid_buffer})or($ck_edv_db_user==""))
 {header("Location: invalid-access-warning.php"); exit;}
 
 require_once($root_path.'include/core/inc_config_color.php');
@@ -22,20 +22,20 @@ setcookie(ck_edv_sysadmin,"");
  <TITLE> EDV - Datenbank</TITLE>
 
 <script language="javascript" >
-<!-- 
+<!--
 function closewin()
 {
-	location.href='edv.php?sid=<?php echo $$ck_sid_buffer.'&uid='.$r;?>';
+	location.href='edv.php?sid=<?php echo ${$ck_sid_buffer}.'&uid='.$r;?>';
 }
 // -->
-</script> 
- 
-<?php 
+</script>
+
+<?php
 require($root_path.'include/core/inc_css_a_hilitebu.php');
 ?>
 </HEAD>
 
-<BODY  topmargin=0 leftmargin=0  marginwidth=0 marginheight=0 
+<BODY  topmargin=0 leftmargin=0  marginwidth=0 marginheight=0
 <?php if (!$cfg['dhtml']){ echo 'link='.$cfg['body_txtcolor'].' alink='.$cfg['body_alink'].' vlink='.$cfg['body_txtcolor']; } ?>>
 
 
@@ -46,12 +46,12 @@ require($root_path.'include/core/inc_css_a_hilitebu.php');
 <td bgcolor="<?php echo $cfg['top_bgcolor']; ?>" height="10" align=right>
 <a href="#" onClick=history.back()><img src="../img/zuruck.gif" border=0 <?php if($cfg['dhtml'])echo'class="fadeOut" >';?></a>
 <a href="#"><img src="../img/hilfe.gif" border=0  <?php if($cfg['dhtml'])echo'class="fadeOut" >';?></a>
-<a href="startframe.php?sid=<?php echo $$ck_sid_buffer;?>"><img src="../img/fenszu.gif" border=0  <?php if($cfg['dhtml'])echo'class="fadeOut" >';?></a></td></tr>
+<a href="startframe.php?sid=<?php echo ${$ck_sid_buffer};?>"><img src="../img/fenszu.gif" border=0  <?php if($cfg['dhtml'])echo'class="fadeOut" >';?></a></td></tr>
 <tr valign=top >
 <td bgcolor=<?php echo $cfg['body_bgcolor']; ?> valign=top colspan=2><p><br>
-<ul><FONT 
+<ul><FONT
                   face="Verdana,Helvetica,Arial" size=2>
-			
+
 <?php
 $curtime=date("H.i");
 if ($curtime<"9.00") echo "Guten Morgen ";
@@ -60,7 +60,7 @@ if ($curtime>"18.00") echo "Guten Abend ";
 echo "$ck_edv_db_user!";
 
 ?>
-				  
+
 
 <p>
 <a href="#">Neue Datenbank erstellen</a><br>
@@ -88,7 +88,7 @@ require($root_path.'include/core/inc_load_copyrite.php');
 ?>
 </td>
 </tr>
-</table>        
+</table>
 &nbsp;
 
 </BODY>

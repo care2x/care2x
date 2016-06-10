@@ -6,7 +6,7 @@ require($root_path.'include/core/inc_environment_global.php');
 * CARE2X Integrated Hospital Information System Deployment 2.2 - 2006-07-10
 * GNU General Public License
 * Copyright 2002,2003,2004,2005,2006 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -22,7 +22,7 @@ if(!isset($keyword)) $keyword='';
 $thisfile='products-archive.php';
 $searchfile=$thisfile;
 switch($cat) {
-	case 'pharma':	
+	case 'pharma':
 				$title="$LDPharmacy $LDOrderArchive";
 				$dbtable='care_pharma_orderlist';
 				$breakfile=$root_path.'modules/pharmacy/apotheke.php'.URL_APPEND;
@@ -32,7 +32,7 @@ switch($cat) {
 				$dbtable='care_med_orderlist';
 				$breakfile=$root_path.'modules/med_depot/medlager.php'.URL_APPEND;
 				break;
-	default:  {header('Location:'.$root_path.'language/'.$lang.'/lang_'.$lang.'_invalid-access-warning.php'); exit;}; 
+	default:  {header('Location:'.$root_path.'language/'.$lang.'/lang_'.$lang.'_invalid-access-warning.php'); exit;};
 }
 
 if($mode=='search')
@@ -186,7 +186,7 @@ if((($mode=='search')||$update)&&($keyword!=''))
 function pruf(d)
 {
 	kw=d.keyword;
-	var k=kw.value; 
+	var k=kw.value;
 	//if(k=="") return false;
 	if((k=="")||(k==" ")||(!(k.indexOf('%')))||(!(k.indexOf('&'))))
 	{
@@ -203,9 +203,9 @@ function show_order(d,o)
 	}
 
 // -->
-</script> 
+</script>
 
-<?php 
+<?php
 
 $sTemp = ob_get_contents();
 ob_end_clean();
@@ -236,7 +236,7 @@ echo ' '.$_COOKIE[$local_user.$sid];
 <?php require('includes/inc_products_archive_search_form.php'); ?>
 
 <hr width=80%>
-<?php 
+<?php
 if($linecount>0){
 
 	# Create the department object
@@ -250,8 +250,8 @@ if($linecount>0){
 
 	echo '
 			<p> ';
-			if ($linecount>1) echo $LDListFoundMany; else echo $LDListFound; 
-			 
+			if ($linecount>1) echo $LDListFoundMany; else echo $LDListFound;
+
 			echo '.<br> '.$LDClk2SeeEdit.'<br></font><p>';
 
 		$tog=1;
@@ -265,7 +265,7 @@ if($linecount>0){
 		echo '
 				<td><font color="#000080">'.$LDArchindex[$i].'</td>';
 		echo '
-				</tr>';	
+				</tr>';
 
 		$i=$ofset+1;
 
@@ -273,31 +273,31 @@ if($linecount>0){
  		{
 			if($tog)
 			{ echo '<tr class="wardlistrow2">'; $tog=0; }else{ echo '<tr  class="wardlistrow1">'; $tog=1; }
-			
+
 /*			echo'
 				<td>'.$i.'</td>
 				<td><a href="javascript:show_order(\''.$content['dept'].'\',\''.$content['order_nr'].'\')"><img '.createComIcon($root_path,'uparrowgrnlrg.gif','0').' alt="'.$LDClk2SeeEdit.'"></a></td>
 				<td >'.strtoupper($content['dept']).'</td>
 				<td>';
-*/			
+*/
             echo'
 				<td>'.$i.'</td>
 				<td><a href="products-archive-orderlist-showcontent.php'.URL_APPEND.'&userck='.$userck.'&cat='.$cat.'&dept_nr='.$content['dept_nr'].'&order_nr='.$content['order_nr'].'"><img '.createComIcon($root_path,'uparrowgrnlrg.gif','0').' alt="'.$LDClk2SeeEdit.'"></a></td>
 				<td >';
-				
+
 				$buffer=$dept[$content['dept_nr']]['LD_var'];
-				if(isset($$buffer)&&!empty($$buffer)) 	echo $$buffer;
+				if(isset(${$buffer})&&!empty(${$buffer})) 	echo ${$buffer};
 					else echo $dept[$content['dept_nr']]['name_formal'];
-				
+
 				echo '
 				</td>
 				<td>';
-				
+
 			echo formatDate2Local($content['order_date'],$date_format).'</td>
-			
+
 				 <td>'.convertTimeToLocal(str_replace('24','00',$content['order_time'])).'</td>
 				<td align="center">';
-				
+
 			if($content['status']=='normal')
 				echo '&nbsp;';
 				else if($content['priority']=='urgent')  echo '<img '.createComIcon($root_path,'warn.gif','0').' alt="'.$LDUrgent.'!">';
@@ -324,13 +324,13 @@ if($linecount>0){
               					<input type="hidden" name="such_dept" value="'.$such_dept.'">
               					<input type="hidden" name="ofset" value="'.($ofset-$nrows).'">
                    				<input type="hidden" name="nrows" value="'.$nrows.'">
-                       			<input type="hidden" name="sid" value="'.$sid.'">           
+                       			<input type="hidden" name="sid" value="'.$sid.'">
 								<input type="hidden" name="lang" value="'.$lang.'">
-                       			<input type="hidden" name="cat" value="'.$cat.'">           
+                       			<input type="hidden" name="cat" value="'.$cat.'">
 								<input type="submit" value="&lt;&lt; '.$LDBack.'">
 								</form>';
 		echo "</td><td align=right>";
-		if($linecount==$nrows) 
+		if($linecount==$nrows)
 						echo '<form name=forward action="'.$thisfile.'" method=post>
 								<input type="hidden" name="keyword" value="'.$keyword.'">
 								<input type="hidden" name="mode" value="search">
@@ -339,15 +339,15 @@ if($linecount>0){
                    				<input type="hidden" name="such_prio" value="'.$such_prio.'">
         						<input type="hidden" name="ofset" value="'.($ofset+$nrows).'">
               					<input type="hidden" name="nrows" value="'.$nrows.'">
-                   				<input type="hidden" name="sid" value="'.$sid.'">     
+                   				<input type="hidden" name="sid" value="'.$sid.'">
 								<input type="hidden" name="lang" value="'.$lang.'">
-                       			<input type="hidden" name="cat" value="'.$cat.'">           
+                       			<input type="hidden" name="cat" value="'.$cat.'">
 								<input type="submit" value="'.$LDContinue.' &gt;&gt;">
 								</form>';
 		echo '
 			</td>
-			</tr>	
-			</table>';                            
+			</tr>
+			</table>';
 }
 else
 {
@@ -359,12 +359,12 @@ if($ofset) echo '	<form name=back action="'.$thisfile.'" method=post>
               					<input type="hidden" name="such_dept" value="'.$such_dept.'">
               					<input type="hidden" name="ofset" value="'.($ofset-$nrows).'">
                    				<input type="hidden" name="nrows" value="'.$nrows.'">
-                       			<input type="hidden" name="sid" value="'.$sid.'">           
-                       			<input type="hidden" name="cat" value="'.$cat.'">           
+                       			<input type="hidden" name="sid" value="'.$sid.'">
+                       			<input type="hidden" name="cat" value="'.$cat.'">
 								<input type="hidden" name="lang" value="'.$lang.'">
 								<input type="submit" value="&lt;&lt; '.$LDBack.'">
 								</form>';
-							
+
 if($mode=='search') echo '
 	<table border=0>
    <tr>
@@ -372,8 +372,8 @@ if($mode=='search') echo '
      <td>'.$LDNoDataFound.'<br>'.$LDPlsEnterMore.'</td>
    </tr>
  </table>';
- 
-	
+
+
 }
 if($invalid) echo'
 

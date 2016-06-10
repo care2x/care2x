@@ -5,7 +5,7 @@ require($root_path.'include/core/inc_environment_global.php');
 /*if(!$lang)
 	if(!$ck_language) include("../chklang.php");
 		else $lang=$ck_language;
-if (!$sid||($sid!=$$ck_sid_buffer)||!$ck_op_pflegelogbuch_user||!$winid||!$patnum) {header("Location:../language/".$lang."/lang_".$lang."_invalid-access-warning.php"); exit;};
+if (!$sid||($sid!=${$ck_sid_buffer})||!$ck_op_pflegelogbuch_user||!$winid||!$patnum) {header("Location:../language/".$lang."/lang_".$lang."_invalid-access-warning.php"); exit;};
 require("../language/".$lang."/lang_".$lang."_or.php");
 */
 define('LANG_FILE','or.php');
@@ -47,10 +47,10 @@ if($mode=='save'){
 						$sx="tstart".$i;
 						$ex="tend".$i;
 						$rx="reason".$i;
-						if($$sx){$ib=(float)$$sx;	if($ib<10) $$sx="0".$ib; } else continue;
-						if($$ex){$ib=(float)$$ex;	if($ib<10) $$ex="0".$ib; }
-						{ if($dbuf) $dbuf=$dbuf." ~s=".$$sx."&e=".$$ex."&r=".$$rx."&t=".$opts[($$rx)];
-								else $dbuf="s=".$$sx."&e=".$$ex."&r=".$$rx."&t=".$opts[($$rx)];
+						if(${$sx}){$ib=(float)${$sx};	if($ib<10) ${$sx}="0".$ib; } else continue;
+						if(${$ex}){$ib=(float)${$ex};	if($ib<10) ${$ex}="0".$ib; }
+						{ if($dbuf) $dbuf=$dbuf." ~s=".${$sx}."&e=".${$ex}."&r=".${$rx}."&t=".$opts[(${$rx})];
+								else $dbuf="s=".${$sx}."&e=".${$ex}."&r=".${$rx}."&t=".$opts[(${$rx})];
 						}
 					}
 

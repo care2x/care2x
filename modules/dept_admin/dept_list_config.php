@@ -63,7 +63,7 @@ div.pcont{ margin-left: 3; }
 
 </style>
 
-<?php 
+<?php
 
 $sTemp = ob_get_contents();
 ob_end_clean();
@@ -82,36 +82,36 @@ ob_start();
 <table border=0>
   <tr class="wardlisttitlerow">
 <!-- 	<td bgcolor="#e9e9e9"></td>
- -->    
+ -->
  	<td class=pblock align=center><?php echo $LDDept ?></td>
     <td class=pblock align=center><?php echo $LDDeptStatus ?></td>
     <td class=pblock align=center><?php echo $LDRecordStatus ?></td>
     <td class=pblock align=center></td>
- </tr> 
-  
+ </tr>
+
 <?php
 while(list($x,$v)=each($deptarray)){
 ?>
   <tr>
 	<td bgcolor="#e9e9e9"><img <?php echo createComIcon($root_path,'arrow_blueW.gif','0'); ?>></td>
-    
+
  	<td class=pblock  bgColor="#eeeeee"><a href="dept_info.php<?php echo URL_APPEND."&dept_nr=".$v['nr']; ?>">
-	<?php 
-		if(isset($$v['LD_var']) && $$v['LD_var']) echo $$v['LD_var'];
-			else echo $v['name_formal']; 
+	<?php
+		if(isset(${$v['LD_var']}) && ${$v['LD_var']}) echo ${$v['LD_var']};
+			else echo $v['name_formal'];
 	?></a> </td>
-    <td class=pblock  bgColor="#eeeeee"><?php if($v['is_inactive']) echo '<font color="red">'.$LDInactive.'</font>'; else echo $LDActive ?> 
+    <td class=pblock  bgColor="#eeeeee"><?php if($v['is_inactive']) echo '<font color="red">'.$LDInactive.'</font>'; else echo $LDActive ?>
 [<a href="dept_status.php<?php echo URL_APPEND; ?>&nr=<?PHP echo $v['nr']."&active=".$v['is_inactive']; ?>">x</a>]
 </td>
-    <td class=pblock  bgColor="#eeeeee"><?php if($v['status']=='hidden') echo '<font color="red">'.$LDHidden.'</font>'; else echo $LDVisible ?> 
+    <td class=pblock  bgColor="#eeeeee"><?php if($v['status']=='hidden') echo '<font color="red">'.$LDHidden.'</font>'; else echo $LDVisible ?>
 [<a href="dept_status.php<?php echo URL_APPEND; ?>&nr=<?PHP echo $v['nr']; ?>&status=<?PHP if($v['status']=='hidden') echo 'visible'; else echo "hidden"; ?>">x</a>]
 </td>
  	<td class=pblock  bgColor="#eeeeee"><a href="dept_status_config.php<?php echo URL_APPEND."&dept_nr=".$v['nr']; ?>"><?php echo $LDChange; ?></a> </td>
- </tr> 
+ </tr>
 <?php
 }
  ?>
- 
+
 </table>
 
 <p>

@@ -53,9 +53,9 @@ function popSearchWin(target,obj_val,obj_name){
 			require_once ('../../js/jscalendar/calendar.php');
 			$calendar = new DHTML_Calendar('../../js/jscalendar/', $lang, 'calendar-system', true);
 			$calendar->load_files();
-			
+
 			echo $calendar->show_calendar($calendar,$date_format,'date',$date);
-		?> 	
+		?>
 	</td>
    </tr>
    <tr bgcolor="#f6f6f6">
@@ -79,10 +79,10 @@ function popSearchWin(target,obj_val,obj_name){
      <td><FONT SIZE=-1  FACE="Arial" color="#000066"><?php echo $LDRefreshDate; ?></td>
      <td>
 	 	 <?php
-			//gjergji : new calendar			
+			//gjergji : new calendar
 			echo $calendar->show_calendar($calendar,$date_format,'refresh_date');
 			//gjergji : end
-		?> 	 
+		?>
 	 </td>
    </tr>
    <tr bgcolor="#f6f6f6">
@@ -92,7 +92,7 @@ function popSearchWin(target,obj_val,obj_name){
 		<?php
 			while(list($x,$v)=each($imm_types)){
 				echo '<option value="'.$v['nr'].'">';
-				if(isset($$v['LD_var'])&&!empty($$v['LD_var'])) echo $$v['LD_var'];
+				if(isset(${$v['LD_var']})&&!empty(${$v['LD_var']})) echo ${$v['LD_var']};
 					else echo $v['name'];
 				echo '</option>
 				';

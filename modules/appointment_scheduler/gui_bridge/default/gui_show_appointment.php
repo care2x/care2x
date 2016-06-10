@@ -126,14 +126,14 @@ while($row=$result->FetchRow()){
     <td><FONT SIZE=-1  FACE="Arial" color="<?php echo $tc; ?>">
 		<?php
 			$buffer='LD'.$row['appt_status'];
-			if(isset($$buffer)&&!empty($$buffer)) echo $$buffer; else echo $row['appt_status'];
+			if(isset(${$buffer})&&!empty(${$buffer})) echo ${$buffer}; else echo $row['appt_status'];
 		?>
 	</td>
 	</tr>
   <tr  class="<?php echo $bgc; ?>" >
     <td><FONT SIZE=-1  FACE="Arial" color="<?php echo $tc; ?>">
 	<?php
-		if(isset($$dept['LD_var'])&&!empty($$dept['LD_var'])) echo $$dept['LD_var'];
+		if(isset(${$dept['LD_var']})&&!empty(${$dept['LD_var']})) echo ${$dept['LD_var']};
 			else echo $dept['name_formal'];
 	?></td>
     <td><FONT SIZE=-1  FACE="Arial" color="<?php echo $tc; ?>">
@@ -150,7 +150,7 @@ while($row=$result->FetchRow()){
     <td><FONT SIZE=-1  FACE="Arial" color="<?php echo $tc; ?>">
 	<?php
 		$buf=$enc_class[$row['encounter_class_nr']]['LD_var'];
-		 if (isset($$buf)&&!empty($$buf)) echo $$buf;
+		 if (isset(${$buf})&&!empty(${$buf})) echo ${$buf};
     		else echo  $enc_class[$row['encounter_class_nr']]['name'];
 	?>
 	</td>

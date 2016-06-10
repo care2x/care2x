@@ -6,7 +6,7 @@ require($root_path.'include/core/inc_environment_global.php');
 * CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
 * GNU General Public License
 * Copyright 2002,2003,2004,2005 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -47,15 +47,15 @@ if(!empty($mode)&&!$inputerror){
 	if(is_uploaded_file($_FILES['img']['tmp_name']) && $_FILES['img']['size']){
 		$picext=substr($_FILES['img']['name'],strrpos($_FILES['img']['name'],'.')+1);
 		if(stristr('jpg,gif,png',$picext)){
-			$is_img=true;	
+			$is_img=true;
 			# Forcibly convert file extension to lower case.
 			$_POST['logo_mime_type']=strtolower($picext);
 		}
 	}
-	
+
 	switch($mode)
-	{	
-		case 'create': 
+	{
+		case 'create':
 		{
 			$_POST['history']='Create: '.date('Y-m-d H:i:s').' '.$_SESSION['sess_user_name'];
 			$_POST['create_id']=$_SESSION['sess_user_name'];
@@ -64,7 +64,7 @@ if(!empty($mode)&&!$inputerror){
 			$_POST['modify_time']=date('YmdHis');
 			$dept_obj->setDataArray($_POST);
 			if($dept_obj->insertDataFromInternalArray()){
-				
+
 				# Get the inserted primary key as department nr.
 				$oid=$db->Insert_ID();
 				$dept_nr=$dept_obj->LastInsertPK('nr',$oid);
@@ -82,7 +82,7 @@ if(!empty($mode)&&!$inputerror){
 						$comm->setDataArray($_POST);
 						if(!@$comm->insertDataFromInternalArray()) echo $comm->getLastQuery()."<br>$LDDbNosave";
 				}
-							
+
 				# Save the uploaded image
 				if($is_img){
 				    $picfilename='dept_'.$dept_nr.'.'.$picext;
@@ -94,9 +94,9 @@ if(!empty($mode)&&!$inputerror){
 				echo $dept_obj->getLastQuery."<br>$LDDbNoSave";
 			}
 			break;
-		}	
+		}
 		case 'update':
-		{ 
+		{
 			$_POST['history']=$dept_obj->ConcatHistory("Update: ".date('Y-m-d H:i:s')." ".$_SESSION['sess_user_name']."\n");
 			$_POST['modify_id']=$_SESSION['sess_user_name'];
 			$_POST['modify_time']=date('YmdHis');
@@ -145,14 +145,14 @@ if(!empty($mode)&&!$inputerror){
 		{
 			# Get department´s information
 			$dept=$dept_obj->getDeptAllInfo($dept_nr);
-			//while(list($x,$v)=each($dept)) $$x=$v;
+			//while(list($x,$v)=each($dept)) ${$x}=$v;
 			extract($dept);
-			
+
 			# Get departments phone info
 			if($dept_phone=$comm->DeptInfo($dept_nr)){
 				extract($dept_phone);
 			}
-		}	
+		}
 	}// end of switch
 }
 
@@ -201,7 +201,7 @@ div.pcont{ margin-left: 3; }
 </style>
 
 <script language="javascript">
-<!-- 
+<!--
 
 function chkForm(d){
 
@@ -245,7 +245,7 @@ ob_start();
  	echo "<font color=#ff0000 face='verdana,arial' size=2>$LDInputError</font>";
  }
  ?>
- 
+
 <font face="Verdana, Arial" size=-1><?php echo $LDEnterAllFields ?>
 <form action="dept_new.php" method="post" name="newstat" ENCTYPE="multipart/form-data" onSubmit="return chkForm(this)">
 <table border=0>
@@ -253,10 +253,10 @@ ob_start();
     <td class=pblock align=right bgColor="#eeeeee"><font color=#ff0000><b>*</b><?php echo $LDFormalName ?></font>: </td>
     <td class=pblock><input type="text" name="name_formal" size=40 maxlength=40 value="<?php echo $name_formal ?>"><br>
 </td>
-  </tr> 
+  </tr>
   <tr>
     <td class=pblock align=right bgColor="#eeeeee"><font color=#ff0000><b>*</b>
-	<?php echo $LDInternalID ?></font>: 
+	<?php echo $LDInternalID ?></font>:
 	</td>
     <td class=pblock>
 	<?php
@@ -267,19 +267,19 @@ ob_start();
 	}
 	?>
 </td>
-  </tr> 
+  </tr>
 
 <tr>
     <td class=pblock align=right bgColor="#eeeeee"><font color=#ff0000><b>*</b><?php echo $LDTypeDept ?></font>: </td>
     <td class=pblock><select name="type">
 	<?php
-		
+
 		while(list($x,$v)=each($depttypes)){
 			echo '
 				<option value="'.$v['nr'].'" ';
 			if($v['nr']==$type) echo 'selected';
 			echo ' >';
-			if(isset($$v['LD_var']) && $$v['LD_var']) echo $$v['LD_var'];
+			if(isset(${$v['LD_var']}) && ${$v['LD_var']}) echo ${$v['LD_var']};
 				else echo $v['name'];
 			echo '</option>';
 		}
@@ -288,31 +288,31 @@ ob_start();
 		<img <?php echo createComIcon($root_path,'l_arrowgrnsm.gif','0') ?>> <?php echo $LDPlsSelect ?>
 </td>
   </tr>
-  
-  
+
+
   <tr>
     <td class=pblock align=right bgColor="#eeeeee"><?php echo $LDDescription ?>: </td>
     <td class=pblock><textarea name="description" cols=40 rows=4 wrap="physical"><?php echo $description ?></textarea>
 </td>
   </tr>
-  
+
   <tr>
     <td class=pblock align=right bgColor="#eeeeee"><font color=#ff0000><b>*</b></font><?php echo $LDIsSubDept ?>: </td>
     <td class=pblock>	<input type="radio" name="is_sub_dept" value="1" <?php if($is_sub_dept) echo 'checked'; ?>> <?php echo $LDYes ?> <input type="radio" name="is_sub_dept" value="0" <?php if(!$is_sub_dept) echo 'checked'; ?>> <?php echo $LDNo ?>
 </td>
-  </tr> 
+  </tr>
 <tr>
     <td class=pblock align=right bgColor="#eeeeee"><font color=#ff0000><b>*</b></font><?php echo $LDParentDept; ?>: </td>
     <td class=pblock><select name="parent_dept_nr">
 	<option value=""> </option>';
 	<?php
-		
+
 		while(list($x,$v)=each($deptarray)){
 			echo '
 				<option value="'.$v['nr'].'" ';
 			if($v['nr']==$parent_dept_nr) echo 'selected';
 			echo ' >';
-			if(isset($$v['LD_var']) && $$v['LD_var']) echo $$v['LD_var'];
+			if(isset(${$v['LD_var']}) && ${$v['LD_var']}) echo ${$v['LD_var']};
 				else echo $v['name_formal'];
 			echo '</option>';
 		}
@@ -321,11 +321,11 @@ ob_start();
 		<img <?php echo createComIcon($root_path,'l_arrowgrnsm.gif','0') ?>> <?php echo $LDPlsSelect ?>
 </td>
   </tr>
-  
+
   <tr>
     <td class=pblock align=right bgColor="#eeeeee">
 	<?php if($mode!='select') echo '<font color=#ff0000><b>*</b></font>'; ?>
-	<?php echo $LDLangVariable ?>: 
+	<?php echo $LDLangVariable ?>:
 	</td>
     <td class=pblock>
 	<?php
@@ -338,121 +338,121 @@ ob_start();
 		}
 	?>
 </td>
-  </tr> 
+  </tr>
   <tr>
     <td class=pblock align=right bgColor="#eeeeee"><?php echo $LDShortName ?>: </td>
     <td class=pblock><input type="text" name="name_short" size=40 maxlength=40 value="<?php echo $name_short ?>"><br>
 </td>
-  </tr> 
+  </tr>
   <tr>
     <td class=pblock align=right bgColor="#eeeeee"><?php echo $LDAlternateName ?>: </td>
     <td class=pblock><input type="text" name="name_alternate" size=40 maxlength=40 value="<?php echo $name_alternate ?>"><br>
 </td>
-  </tr> 
-  
+  </tr>
+
   <tr>
     <td class=pblock align=right bgColor="#eeeeee"><font color=#ff0000><b>*</b></font><?php echo $LDDoesSurgeryOp ?>: </td>
     <td class=pblock>	<input type="radio" name="does_surgery" value="1" <?php if($does_surgery) echo 'checked'; ?>> <?php echo $LDYes ?> <input type="radio" name="does_surgery" value="0" <?php if(!$does_surgery) echo 'checked'; ?>> <?php echo $LDNo ?>
 </td>
-  </tr> 
-  
+  </tr>
+
   <tr>
     <td class=pblock align=right bgColor="#eeeeee"><font color=#ff0000><b>*</b></font><?php echo $LDAdmitsInpatients ?>: </td>
     <td class=pblock>	<input type="radio" name="admit_inpatient" value="1" <?php if($admit_inpatient) echo 'checked'; ?>> <?php echo $LDYes ?> <input type="radio" name="admit_inpatient" value="0" <?php if(!$admit_inpatient) echo 'checked'; ?>> <?php echo $LDNo ?>
 </td>
-  </tr> 
-  
+  </tr>
+
   <tr>
     <td class=pblock align=right bgColor="#eeeeee"><font color=#ff0000><b>*</b></font><?php echo $LDAdmitsOutpatients ?>: </td>
     <td class=pblock>	<input type="radio" name="admit_outpatient" value="1" <?php if($admit_outpatient) echo 'checked'; ?>> <?php echo $LDYes ?> <input type="radio" name="admit_outpatient" value="0" <?php if(!$admit_outpatient) echo 'checked'; ?>> <?php echo $LDNo ?>
 </td>
-  </tr> 
+  </tr>
 
     <tr>
     <td class=pblock align=right bgColor="#eeeeee"><font color=#ff0000><b>*</b></font><?php echo $LDBelongsToInst ?>: </td>
     <td class=pblock>	<input type="radio" name="this_institution" value="1" <?php if($this_institution) echo 'checked'; ?>> <?php echo $LDYes ?> <input type="radio" name="this_institution" value="0" <?php if(!$this_institution) echo 'checked'; ?>> <?php echo $LDNo ?>
 </td>
-  </tr> 
-  
+  </tr>
+
   <tr>
     <td class=pblock align=right bgColor="#eeeeee"><?php echo $LDWorkHrs ?>: </td>
     <td class=pblock><input type="text" name="work_hours" size=40 maxlength=40 value="<?php echo $work_hours ?>"><br>
 </td>
-  </tr> 
+  </tr>
 
   <tr>
     <td class=pblock align=right bgColor="#eeeeee"><?php echo $LDConsultationHrs ?>: </td>
     <td class=pblock><input type="text" name="consult_hours" size=40 maxlength=40 value="<?php echo $consult_hours ?>"><br>
 </td>
-  </tr> 
-  
+  </tr>
+
   <tr>
     <td class=pblock align=right bgColor="#eeeeee"><?php echo $LDTelephone ?> 1: </td>
     <td class=pblock><input type="text" name="inphone1" size=40 maxlength=15 value="<?php echo $inphone1 ?>"><br>
 </td>
-  </tr> 
-  
+  </tr>
+
   <tr>
     <td class=pblock align=right bgColor="#eeeeee"><?php echo $LDTelephone ?> 2: </td>
     <td class=pblock><input type="text" name="inphone2" size=40 maxlength=15 value="<?php echo $inphone2 ?>"><br>
 </td>
-  </tr> 
-  
-  
+  </tr>
+
+
   <tr>
     <td class=pblock align=right bgColor="#eeeeee"><?php echo $LDTelephone ?> 3: </td>
     <td class=pblock><input type="text" name="inphone3" size=40 maxlength=15 value="<?php echo $inphone3 ?>"><br>
 </td>
-  </tr> 
-  
+  </tr>
+
   <tr>
     <td class=pblock align=right bgColor="#eeeeee"><?php echo "$LDBeeper ($LDOnCall)" ?> 1: </td>
     <td class=pblock><input type="text" name="funk1" size=40 maxlength=15 value="<?php echo $funk1 ?>"><br>
 </td>
-  </tr> 
-  
+  </tr>
+
   <tr>
     <td class=pblock align=right bgColor="#eeeeee"><?php echo "$LDBeeper ($LDOnCall)" ?> 2: </td>
     <td class=pblock><input type="text" name="funk2" size=40 maxlength=15 value="<?php echo $funk2 ?>"><br>
 </td>
-  </tr> 
-  
+  </tr>
+
   <tr>
     <td class=pblock align=right bgColor="#eeeeee"><?php echo $LDSigLine ?>: </td>
     <td class=pblock><input type="text" name="sig_line" size=40 maxlength=40 value="<?php echo $sig_line ?>"><br>
 </td>
-  </tr> 
- 
+  </tr>
+
   <tr>
     <td class=pblock align=right bgColor="#eeeeee"><?php echo $LDSigStampTxt ?>: </td>
     <td class=pblock><textarea name="sig_stamp" cols=40 rows=4 wrap="physical"><?php echo $sig_stamp ?></textarea>
 </td>
   </tr>
-  
+
   <tr>
     <td class=pblock align=right bgColor="#eeeeee"><?php echo $LDDeptLogo ?>: </td>
     <td class=pblock><input type="file" name="img" ><br>
 </td>
-  </tr> 
+  </tr>
   <tr>
     <td class=pblock align=right bgColor="#eeeeee"><font color=#ff0000><b>*</b></font><?php echo $LDIsPharmacy ?>: </td>
     <td class=pblock>	<input type="radio" name="is_pharmacy" value="1" <?php if($is_pharmacy) echo 'checked'; ?>> <?php echo $LDYes ?> <input type="radio" name="is_pharmacy" value="0" <?php if(!$is_pharmacy) echo 'checked'; ?>> <?php echo $LDNo ?>
 </td>
-  </tr>  
+  </tr>
 
-<!-- select the pharmacy this department will use -->  
+<!-- select the pharmacy this department will use -->
 <tr>
     <td class=pblock align=right bgColor="#eeeeee"><font color=#ff0000><b>*</b></font><?php echo $LDPharmacy; ?>: </td>
     <td class=pblock><select name="pharma_dept_nr">
 	<option value=""> </option>';
 	<?php
-		
+
 		while(list($x,$v)=each($pharmaarray)){
 			echo '
 				<option value="'.$v['nr'].'" ';
 			if($v['nr']==$pharma_dept_nr) echo 'selected';
 			echo ' >';
-			if(isset($$v['LD_var']) && $$v['LD_var']) echo $$v['LD_var'];
+			if(isset(${$v['LD_var']}) && ${$v['LD_var']}) echo ${$v['LD_var']};
 				else echo $v['name_formal'];
 			echo '</option>';
 		}
@@ -461,7 +461,7 @@ ob_start();
 		<img <?php echo createComIcon($root_path,'l_arrowgrnsm.gif','0') ?>> <?php echo $LDPlsSelect ?>
 </td>
   </tr>
- 
+
 </table>
 <INPUT TYPE="hidden" name="MAX_FILE_SIZE" value="1000000">
 <input type="hidden" name="sid" value="<?php echo $sid ?>">

@@ -41,13 +41,13 @@ $encounter_class=$enc_obj->getEncounterClassInfo($encounter['encounter_class_nr'
 $insurance_class=$enc_obj->getInsuranceClassInfo($encounter['insurance_class_nr']);
 
 # Resolve the encounter class name
-if (isset($$encounter_class['LD_var'])&&!empty($$encounter_class['LD_var'])){
-	$eclass=$$encounter_class['LD_var'];
+if (isset(${$encounter_class['LD_var']})&&!empty(${$encounter_class['LD_var']})){
+	$eclass=${$encounter_class['LD_var']};
 }else{
 	$eclass= $encounter_class['name'];
 }
 # Resolve the insurance class name
-if (isset($$insurance_class['LD_var'])&&!empty($$insurance_class['LD_var'])) $insclass=$$insurance_class['LD_var'];
+if (isset(${$insurance_class['LD_var']})&&!empty(${$insurance_class['LD_var']})) $insclass=${$insurance_class['LD_var']};
     else $insclass=$insurance_class['name'];
 
 # Get ward or department infos
@@ -62,7 +62,7 @@ if($encounter['encounter_class_nr']==1){
 	$dept_obj=new Department;
 	//$current_dept_name=$dept_obj->FormalName($current_dept_nr);
 	$current_dept_LDvar=$dept_obj->LDvar($encounter['current_dept_nr']);
-	if(isset($$current_dept_LDvar)&&!empty($$current_dept_LDvar)) $current_dept_name=$$current_dept_LDvar;
+	if(isset(${$current_dept_LDvar})&&!empty(${$current_dept_LDvar})) $current_dept_name=${$current_dept_LDvar};
 		else $current_dept_name=$dept_obj->FormalName($encounter['current_dept_nr']);
 }
 

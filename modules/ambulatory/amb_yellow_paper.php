@@ -1,12 +1,12 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 /**
 * CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
 * GNU General Public License
 * Copyright 2002,2003,2004,2005 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -18,7 +18,7 @@ require_once($root_path.'include/core/inc_front_chain_lang.php');
 /* Create nursing notes object */
 require_once($root_path.'include/care_api_classes/class_yellow_paper.php');
 $report_obj= new YellowPaper;
-///$db->debug=true; 
+///$db->debug=true;
 //if ($station=='') { $station='Non-department specific';  }
 if($pday=='') $pday=date('d');
 if($pmonth=='') $pmonth=date('m');
@@ -26,7 +26,7 @@ if($pyear=='') $pyear=date('Y');
 $s_date=$pyear.'-'.$pmonth.'-'.$pday;
 
 $thisfile=basename(__FILE__);
-			
+
 require_once($root_path.'include/core/inc_date_format_functions.php');
 
 if($mode=='save'){
@@ -34,25 +34,25 @@ if($mode=='save'){
 	switch($_SESSION['sess_user_origin']){
 		case 'lab': $_POST['location_type_nr']=1; # 1 =department
 						break;
-		default: 	$_POST['location_type_nr']=2; # 2 = ward 
+		default: 	$_POST['location_type_nr']=2; # 2 = ward
 						break;
 	}
-	$_POST['location_id']=$station; 
+	$_POST['location_id']=$station;
 	if($report_obj->saveDailyWardNotes($_POST)){
 		//echo $report_obj->getLastQuery();
 		header("Location:$thisfile".URL_REDIRECT_APPEND."&pn=$pn&station=$station&dept_nr=$dept_nr&location_nr=$location_nr&saved=1");
 		exit;
 	}else{echo $report_obj->getLastQuery()."<p>$LDDbNoUpdate";}
 } elseif ($mode=='update') {
-	
+
 	# Know where we are
 	switch($_SESSION['sess_user_origin']){
 		case 'lab': $_POST['location_type_nr']=1; # 1 =department
 						break;
-		default: 	$_POST['location_type_nr']=2; # 2 = ward 
+		default: 	$_POST['location_type_nr']=2; # 2 = ward
 						break;
 	}
-	$_POST['location_id']=$station; 
+	$_POST['location_id']=$station;
 	if($report_obj->updateDailyWardNotes($_POST)){
 		//echo $report_obj->getLastQuery();
 		//header("Location:$thisfile".URL_REDIRECT_APPEND."&pn=$pn&station=$station&dept_nr=$dept_nr&location_nr=$location_nr&saved=1");
@@ -68,12 +68,12 @@ if($mode=='save'){
 	if(!isset($station)||empty($station)){
 		# Know where we are
 		switch($_SESSION['sess_user_origin']){
-			case 'amb': # Create nursing notes object 
+			case 'amb': # Create nursing notes object
 						include_once($root_path.'include/care_api_classes/class_department.php');
 						$obj= new Department;
 						$station=$obj->FormalName($dept_nr);
 						break;
-			default: # Create nursing notes object 
+			default: # Create nursing notes object
 						include_once($root_path.'include/care_api_classes/class_ward.php');
 						$obj= new Ward;
 						$station=$obj->WardName($location_nr);
@@ -122,7 +122,7 @@ if($mode=='save'){
 <link href="../../js/SpryAssets/SpryTabbedPanels.css" rel="stylesheet" type="text/css" />';
 ?>
 <script language="javascript">
-<!-- 
+<!--
 var n=false;
 function checkForm(f)
 {
@@ -172,7 +172,7 @@ if($occup){
 			else $sRowClass='wardlistrow1';
 		$toggle=!$toggle;
 		if(!empty($row['short_notes'])) $bgc='yellow';
-	
+
 ?>
 
 
@@ -180,8 +180,8 @@ if($occup){
     <td><?php if(!empty($row['date'])) echo @formatDate2Local($row['date'],$date_format); ?></td>
     <td><?php if($row['time']) echo $row['time']; ?></td>
     <td><FONT color="#000033">
-	<?php 
-		if(!empty($row['notes'])) echo deactivateHotHtml(nl2br($row['notes'])); 
+	<?php
+		if(!empty($row['notes'])) echo deactivateHotHtml(nl2br($row['notes']));
 		if(!empty($row['short_notes'])) echo '<br>[ '.deactivateHotHtml($row['short_notes']).' ]';
 	?>
 	</td>

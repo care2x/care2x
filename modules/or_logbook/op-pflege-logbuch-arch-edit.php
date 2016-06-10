@@ -1,5 +1,5 @@
 <?php
-if (($sid == NULL) || ($sid != $$ck_sid_buffer) || ($user == NULL)) {
+if (($sid == NULL) || ($sid != ${$ck_sid_buffer}) || ($user == NULL)) {
 	header ( "Location: invalid-access-warning.php?mode=close" ) ;
 	exit () ;
 }
@@ -28,10 +28,10 @@ if (strlen ( $md ) == 1)
 $mainpath = "op/abteilung/" . strtolower ( $dept ) . "/op_saal_" . strtolower ( $saal ) . "/opbuch/" . $pyear . "/" . $monat [ ( int ) $pmonth - 1 ] . "/" . $md . "/" ;
 
 function getlastnum ( $xyr , $xmon , $xday ) {
-	
+
 	$xmonat = array ( "januar" , "februar" , "märz" , "april" , "mai" , "juni" , "juli" , "august" , "september" , "oktober" , "november" , "dezember" ) ;
 	while ( ! sizeof ( $titles ) ) {
-		
+
 		if ($xday > 1) {
 			$xday = $xday - 1 ;
 			if ($xday < 10)
@@ -45,9 +45,9 @@ function getlastnum ( $xyr , $xmon , $xday ) {
 				$xday = 28 ;
 		} else
 			$xyr -- ;
-		
+
 		if ($xyr < 1950)
-			break ; //limits the backwards lookup 
+			break ; //limits the backwards lookup
 		$xpath = "op/abteilung/" . strtolower ( $dept ) . "/op_saal_" . strtolower ( $saal ) . "/opbuch/" . $xyr . "/" . $xmonat [ ( int ) $xmon - 1 ] . "/" . $xday . "/" ;
 		//  echo $xday." ".$xpath."   ".$lastnum[0]; echo "<br>";
 		if (file_exists ( $xpath )) {
@@ -66,7 +66,7 @@ function getlastnum ( $xyr , $xmon , $xday ) {
 		array_multisort ( $titles, SORT_DESC ) ;
 		$lastnum = explode ( "_", $titles [ 0 ] ) ;
 	}
-	
+
 	return $lastnum [ 0 ] ;
 
 }
@@ -75,7 +75,7 @@ switch ( $mode) {
 	case 'edit' :
 		{
 			$filename = $mainpath . $fileid ;
-			
+
 			if (file_exists ( $filename ))
 				$pdata = get_meta_tags ( $filename ) ; else
 				echo "alert('File not found '.$filename.')" ;
@@ -83,9 +83,9 @@ switch ( $mode) {
 		}
 	case 'save' :
 		{
-			
+
 			$filename = $mainpath . $opnumber . "_" . $pyear . "-" . $pmonth . "-" . $md . ".opb" ;
-			
+
 			if (! file_exists ( $filename )) {
 				$path = "op/abteilung/" . strtolower ( $dept ) . "/op_saal_" . strtolower ( $saal ) . "/opbuch/template.opb" ;
 				$template = get_meta_tags ( $path ) ;
@@ -93,7 +93,7 @@ switch ( $mode) {
 			} else {
 				$template = get_meta_tags ( $filename ) ;
 			}
-			
+
 			$file = fopen ( $filename, "w+" ) ;
 			if ($file) {
 				reset ( $template ) ;
@@ -102,7 +102,7 @@ switch ( $mode) {
 					$template [ $k ] = addcslashes ( $v, "\n\r" ) ;
 					$pdata [ $k ] = $v ;
 				}
-				
+
 				$buf = explode ( " ", $_POST [ 'pname' ] ) ;
 				if (strstr ( $_POST [ 'pname' ], "," )) {
 					$template [ 'nname' ] = str_replace ( ",", "", $buf [ 0 ] ) ;
@@ -115,19 +115,19 @@ switch ( $mode) {
 						$template [ 'nname' ] = $buf [ 0 ] ;
 					}
 				}
-				
+
 				reset ( $template ) ;
 				while ( list ( $k, $v ) = each ( $template ) ) {
 					$line = '<meta name="' . $k . '" content="' . $v . '">' ;
 					fputs ( $file, $line ) ;
 					fputs ( $file, "\r\n" ) ;
 				}
-				
+
 				fclose ( $file ) ;
 				$gotoid = $pdata [ 'patnumber' ] ;
 			} else
 				die ( "fail" ) ;
-			
+
 			break ;
 		}
 	default :
@@ -153,7 +153,7 @@ switch ( $mode) {
 				if ($pdata [ 'opnumber' ] < 10)
 					$pdata [ 'opnumber' ] = "0" . $pdata [ 'opnumber' ] ;
 				//			$mode="fresh";
-			
+
 
 			}
 			$filename = $mainpath . $pdata [ 'opnumber' ] . "_" . $pyear . "-" . $pmonth . "-" . $md . ".opb" ;
@@ -194,33 +194,33 @@ function isnum(val,idx)
 	{
 		v3=val;
 		if((v3==24)&&(v3.length==2)) v3="00";
-		if (v3>24) 
+		if (v3>24)
 		{
 
-		
+
 			switch(v3.length)
 			{
-			
+
 				case 2: v1=v3.slice(0,1); v2=v3.slice(1,2);
 						if(v2<6) v3="0"+v1+"."+v2; else v3=v3.slice(0,1); break;
 				case 3: v1=val.slice(0,2); v2=val.slice(2,3);
 
-						if(v2<6) v3=v1+"."+v2; 
+						if(v2<6) v3=v1+"."+v2;
 							else v3=v3.slice(0,2);
 						break;
 				case 4: v3=val.slice(0,3); break;
 			}
-			
-			
+
+
 //			alert("Zeitangabe ist ungültig! (ausserhalb des 24H Zeitrahmens)");
-	
+
 		}
 		switch(v3.length)
 			{
-				
+
 				case 2: v1=v3.slice(0,1);v2=v3.slice(1,2);
 						if(v2==".") v3="0"+v3;break;
-		
+
 				case 3: v1=v3.slice(0,2);v2=v3.slice(2,3);
 						if(v2!=".") if(v2<6) v3=v1+"."+v2; else v3=v1; break;
 				case 4: if(v3.slice(3,4)>5) v3=v3.slice(0,3); break;
@@ -228,9 +228,9 @@ function isnum(val,idx)
 		if(v3.length>5) v3=v3.slice(0,v3.length-1);
 		xdoc.elements[idx].value=v3;
 	}
-	
+
 }
-	
+
 function isvalnum(val,idx)
 {
 	xdoc=document.oppflegepatinfo;
@@ -239,12 +239,12 @@ function isvalnum(val,idx)
 		for(i=0;i<val.length;i++)
 		{
 		xval2=val.slice(i,i+1);
-		if (!isNaN(xval2)) 
+		if (!isNaN(xval2))
 			{
 				xval3=xval3 + xval2;
-				if (xval3.length>8) 
-				{ 
-				alert("Die Aufnahmenummer hat maximal 8 Ziffern!"); 
+				if (xval3.length>8)
+				{
+				alert("Die Aufnahmenummer hat maximal 8 Ziffern!");
 				xdoc.elements[idx].value=xval3.slice(0,8);
 				return; }
 			}
@@ -266,9 +266,9 @@ function isgdatum(val,idx)
 				{
 				 if(val.length>1) xval3=xval3+xval2;
 				}
-				else 
+				else
 				{
-					 xval3=xval3+xval2;					
+					 xval3=xval3+xval2;
 				}
 			}
 		}
@@ -281,14 +281,14 @@ function isgdatum(val,idx)
 						if (v1=0) xval3=""; else xval3="0"+xval3;
 					}
 					else {
-					if ((v1+v2)<1) xval3=""; 
-						else if ((v1+v2)>31) xval3="0"+v1+"."+v2; 
-							
+					if ((v1+v2)<1) xval3="";
+						else if ((v1+v2)>31) xval3="0"+v1+"."+v2;
+
 					}
 					 break;
 			case 3: v1=xval3.slice(0,2);
 					v2=xval3.slice(2,3);
-					if (v2!=".") xval3=v1+"."+v2; 
+					if (v2!=".") xval3=v1+"."+v2;
 					break;
 			case 4: v1=xval3.slice(0,3);
 					v2=xval3.slice(3,4);
@@ -299,7 +299,7 @@ function isgdatum(val,idx)
 					v3=xval3.slice(4,5);
 					if (v3==".")
 					{
-						if (v2==0) xval3=v1+v2; 
+						if (v2==0) xval3=v1+v2;
 							else xval3=v1+"0"+v2+v3;
 					}
 					else if((v2+v3)<1) xval3=v1+v2;
@@ -309,7 +309,7 @@ function isgdatum(val,idx)
 					v2=xval3.slice(5,6);
 					if (v3!=".")
 					{
-						if (v2==0) xval3=v1 
+						if (v2==0) xval3=v1
 							else xval3=v1+"."+v2;
 					}
 					break;
@@ -341,10 +341,10 @@ function checksubmit()
 			xdoc.gdatum.focus(); return false;
 		}
 	}
-	
+
 	if (xdoc.patnumber.value=="")
 	{
-		react=confirm("Die Aufnahmenummer fehlt! Möchten Sie trotzdem speichern?!");	
+		react=confirm("Die Aufnahmenummer fehlt! Möchten Sie trotzdem speichern?!");
 		xdoc.patnumber.focus();
 		return react;
 	}
@@ -354,7 +354,7 @@ function checksubmit()
 
  <?php
 	if ($cfg [ 'dhtml' ]) {
-		echo ' 
+		echo '
 
 	<STYLE TYPE="text/css">
 	A:link  {text-decoration: none; color: ' . $cfg [ 'body_txtcolor' ] . ';}
@@ -369,12 +369,12 @@ function checksubmit()
 </HEAD>
 
 <BODY background="../img/gray2.jpg" topmargin=0 leftmargin=0
-	marginwidth=0 marginheight=0 onLoad="if (window.focus) window.focus();"> 
+	marginwidth=0 marginheight=0 onLoad="if (window.focus) window.focus();">
 <?php
 if ($mode == 'save')
 	echo 'window.opener.location.reload(true);window.close()' ;
 echo '"' ;
-//echo  ' bgcolor='.$cfg['body_bgcolor']; 
+//echo  ' bgcolor='.$cfg['body_bgcolor'];
 if (! $cfg [ 'dhtml' ]) {
 	echo ' link=' . $cfg [ 'body_txtcolor' ] . ' alink=' . $cfg [ 'body_alink' ] . ' vlink=' . $cfg [ 'body_txtcolor' ] ;
 }
@@ -428,7 +428,7 @@ if (! $cfg [ 'dhtml' ]) {
 	echo $pdata [ 'opnumber' ] ;
 	?></b>
 </FONT>
-Datum: 
+Datum:
 
 <?php
 if (($mode != "") && ($mode != "fresh")) {
@@ -442,7 +442,7 @@ if (($mode != "") && ($mode != "fresh")) {
 ?>
 
 &nbsp;
-&nbsp; <!-- 
+&nbsp; <!--
 <a href="op-pflege-logbuch-arch-edit.php?mode=fresh&filename=<?php
 echo $filename . '&pyear=' . date ( Y ) . '&pmonth=' . date ( m ) . '&pday=' . date ( d ) ;
 ?>"><img src="../img/newpat2.gif" border=0></a>
@@ -460,7 +460,7 @@ echo $filename . '&pyear=' . date ( Y ) . '&pmonth=' . date ( m ) . '&pday=' . d
 			?>" SIZE="20"><BR>
 		Geburtsdatum<br>
 		<INPUT NAME="gdatum" TYPE="text"
-			VALUE="<?php 
+			VALUE="<?php
 			echo $pdata [ 'gdatum' ] ;
 			?>" SIZE="20"
 			onKeyUp="isgdatum(this.value,this.name)"><BR>
@@ -515,8 +515,8 @@ echo $filename . '&pyear=' . date ( Y ) . '&pmonth=' . date ( m ) . '&pday=' . d
 		echo stripcslashes ( $pdata [ 'anadoc1' ] ) ;
 		?></TEXTAREA>
 		<p>
-		
-		
+
+
 		<table cellpadding="0" cellspacing="0" border=0 width=100%>
 			<tr>
 				<td><font face=verdana,arial size=1> Schnitt:<br>

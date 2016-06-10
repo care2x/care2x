@@ -65,8 +65,8 @@ if(empty($encounter['photo_filename'])){
 	$y=$pdf->ezText("\n",14);
 
 	#Get the report title
-	if(isset($$LD_var)&&!empty($$LD_var)){
-		$title=$$LD_var;
+	if(isset(${$LD_var})&&!empty(${$LD_var})){
+		$title=${$LD_var};
 	}else{
 		# Get the notes type info
 		$notestype=$enc_obj->getType($type_nr);

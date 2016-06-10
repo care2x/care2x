@@ -7,12 +7,12 @@ function printForm() {
 }
 //  Script End -->
 </script>
-<?php 
+<?php
 # Prepare some values for the template
 if($insurance){
-	$TP_enc_insurance_name=$insurance['name']; 
-	$TP_enc_insurance_nr=$insurance['insurance_nr']; 
-	$TP_enc_insurance_subarea=$insurance['sub_area']; 
+	$TP_enc_insurance_name=$insurance['name'];
+	$TP_enc_insurance_nr=$insurance['insurance_nr'];
+	$TP_enc_insurance_subarea=$insurance['sub_area'];
 }
 
 # Extract the  confirmation record for display
@@ -20,7 +20,7 @@ if($get_nr){
 	$sickconfirm=$single_obj->FetchRow();
 }elseif(is_object($sickconfirm_obj)){
 	$sickconfirm=$sickconfirm_obj->FetchRow();
-} 
+}
 
 # Take over the dept number
 $dept_nr=$sickconfirm['dept_nr'];
@@ -36,12 +36,12 @@ $TP_insco_6='BGG';
 $TP_date_birth=formatDate2Local($date_birth,$date_format);
 $TP_care_logo=createLogo($root_path,'care_logo.gif','0','right','','nodim','25');
 # Signature stamp of the department
-$TP_dept_sigstamp=nl2br($sickconfirm['sig_stamp']); 
+$TP_dept_sigstamp=nl2br($sickconfirm['sig_stamp']);
 $TP_width='';
 # Logo of the department
 $logobuff=$root_path.'uploads/logos_dept/dept_'.$dept_nr.'.'.$sickconfirm['logo_mime_type'];
 if(file_exists($logobuff)){
-	$TP_dept_logo=$logobuff; 
+	$TP_dept_logo=$logobuff;
 	# Check the logo dimensions
 	$logosize=GetImageSize($logobuff);
 	# If height > $logo_ht_limit, use limit
@@ -85,13 +85,13 @@ if($rows>1){
 
 	$toggle=false;
 	# List the remaining confirmation records if any
-	
+
 	while($other_row=$sickconfirm_obj->FetchRow()){
-	
+
 		if($toggle) $TP_bgcolor='#fdfdfd';
 			else $TP_bgcolor='#ffffff';
 		$toggle=!$toggle;
-		
+
 		if($other_row['nr']==$get_nr) continue;
 		# If still empty, load and show the table header row.
 		if($TP_tb_header==''){
@@ -102,7 +102,7 @@ if($rows>1){
 		$TP_date_confirm=formatDate2Local($other_row['date_confirm'],$date_format);
 		$TP_diagnosis=nl2br($other_row['diagnosis']);
 		$TP_href=$thisfile.URL_APPEND.'&get_nr='.$other_row['nr'].'&dept_nr='.$dept_nr;
-		if(isset($$other_row['LD_var'])&&!empty($$other_row['LD_var'])) $TP_dept_name=$$other_row['LD_var'];
+		if(isset(${$other_row['LD_var']})&&!empty(${$other_row['LD_var']})) $TP_dept_name=${$other_row['LD_var']};
 			else $TP_dept_name=$other_row['name_formal'];
 		# Load  item row template if still empty
 		if($TP_tb_row==''){
@@ -127,7 +127,7 @@ if(!$is_discharged){
 			echo '<option value="'.$v['nr'].'" ';
 			if($v['nr']==$dept_nr) echo 'selected';
 			echo '>';
-			if(isset($$v['LD_var']) && $$v['LD_var']) echo $$v['LD_var'];
+			if(isset(${$v['LD_var']}) && ${$v['LD_var']}) echo ${$v['LD_var']};
 				else echo $v['name_formal'];
 			echo '</option>
 			';
@@ -140,9 +140,9 @@ if(!$is_discharged){
 	<input type="hidden" name="pid" value="<?php echo $_SESSION['sess_pid']; ?>">
 	<input type="hidden" name="mode" value="new">
 	<input type="hidden" name="target" value="<?php echo $target; ?>">
-<!-- <input type="submit" <?php echo createLDImgSrc($root_path,'ok.gif','0','absmiddle'); ?> >            
+<!-- <input type="submit" <?php echo createLDImgSrc($root_path,'ok.gif','0','absmiddle'); ?> >
  -->
-	<input type="submit"  value="go"> 
+	<input type="submit"  value="go">
 </form>
 <?php
 }

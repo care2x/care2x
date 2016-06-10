@@ -22,12 +22,12 @@ $toggle=!$toggle;
 }
 
 echo StdHeader();
-echo setCharSet(); 
+echo setCharSet();
 ?>
  <TITLE><?php echo $title ?></TITLE>
 
 <script  language="javascript">
-<!-- 
+<!--
 
 <?php require($root_path.'include/core/inc_checkdate_lang.php'); ?>
 
@@ -38,8 +38,8 @@ function popRecordHistory(table,pid) {
 
 -->
 </script>
-<?php 
-require($root_path.'include/core/inc_js_gethelp.php'); 
+<?php
+require($root_path.'include/core/inc_js_gethelp.php');
 require($root_path.'include/core/inc_css_a_hilitebu.php');
 
 //gjergji : new calendar
@@ -52,7 +52,7 @@ $calendar->load_files();
 </HEAD>
 
 
-<BODY bgcolor="<?php echo $cfg['bot_bgcolor'];?>" topmargin=0 leftmargin=0 marginwidth=0 marginheight=0 onLoad="if (window.focus) window.focus();" 
+<BODY bgcolor="<?php echo $cfg['bot_bgcolor'];?>" topmargin=0 leftmargin=0 marginwidth=0 marginheight=0 onLoad="if (window.focus) window.focus();"
 <?php if (!$cfg['dhtml']){ echo 'link='.$cfg['body_txtcolor'].' alink='.$cfg['body_alink'].' vlink='.$cfg['body_txtcolor']; } ?>>
 
 
@@ -60,14 +60,14 @@ $calendar->load_files();
 
 <tr>
 <td bgcolor="<?php echo $cfg['top_bgcolor']; ?>">
-<FONT  COLOR="<?php echo $cfg['top_txtcolor']; ?>"  SIZE=+2  FACE="Arial"><STRONG> &nbsp;<?php echo $page_title ?></STRONG> 
+<FONT  COLOR="<?php echo $cfg['top_txtcolor']; ?>"  SIZE=+2  FACE="Arial"><STRONG> &nbsp;<?php echo $page_title ?></STRONG>
 <font size=+2>(<?php echo $encounter_nr; ?>)</font></FONT>
 </td>
 
 <td bgcolor="<?php echo $cfg['top_bgcolor']; ?>" align="right">
-<a href="<?php echo $returnfile.URL_APPEND.'&pid='.$_SESSION['sess_pid'].'&target='.$target.'&mode=show&type_nr='.$type_nr; ?>" ><img 
-<?php echo createLDImgSrc($root_path,'back2.gif','0'); ?> <?php if($cfg['dhtml'])echo'class="fadeOut" ';?>><a 
-href="javascript:gethelp('admission_how2new.php')"><img <?php echo createLDImgSrc($root_path,'hilfe-r.gif','0') ?>  <?php if($cfg['dhtml'])echo'class="fadeOut" >';?></a><a href="<?php 
+<a href="<?php echo $returnfile.URL_APPEND.'&pid='.$_SESSION['sess_pid'].'&target='.$target.'&mode=show&type_nr='.$type_nr; ?>" ><img
+<?php echo createLDImgSrc($root_path,'back2.gif','0'); ?> <?php if($cfg['dhtml'])echo'class="fadeOut" ';?>><a
+href="javascript:gethelp('admission_how2new.php')"><img <?php echo createLDImgSrc($root_path,'hilfe-r.gif','0') ?>  <?php if($cfg['dhtml'])echo'class="fadeOut" >';?></a><a href="<?php
  echo $breakfile; ?>"><img <?php echo createLDImgSrc($root_path,'close2.gif','0') ?> alt="<?php echo $LDCloseWin ?>"   <?php if($cfg['dhtml'])echo'class="fadeOut" >';?></a>
 </td>
 </tr>
@@ -101,12 +101,12 @@ if($is_discharged){
 ?>
 <tr>
 <td bgColor="#eeeeee"><FONT SIZE=-1  FACE="Arial">
-<?php 
+<?php
 echo $LDAdmitNr;
 ?>
 </td>
 <td width="30%"  bgcolor="#ffffee"><FONT SIZE=-1  FACE="Arial" color="#800000">
-<?php 
+<?php
  echo ($_SESSION['sess_en']) ;
 ?>
 </td>
@@ -174,7 +174,7 @@ createTR($LDNameOthers,$name_others);
 </tr>
 
 <tr>
-<td bgColor="#eeeeee" ><FONT SIZE=-1  FACE="Arial"><?php  echo $LDSex ?>: 
+<td bgColor="#eeeeee" ><FONT SIZE=-1  FACE="Arial"><?php  echo $LDSex ?>:
 </td>
 <td bgcolor="#ffffee" ><FONT SIZE=-1  FACE="Arial"><?php if($sex=="m") echo  $LDMale; elseif($sex=="f") echo $LDFemale ?>
 </td>
@@ -203,8 +203,8 @@ if($mode=='show'){
 					else $bgc='#f0f0f0';
 				$toggle=!$toggle;
 			?>
-			
-			
+
+
 			  <tr  bgcolor="<?php echo $bgc; ?>"  valign="top">
 			    <td><FONT SIZE=-1  FACE="Arial"><?php if(!empty($row['date'])) echo @formatDate2Local($row['date'],$date_format); else echo '?'; ?></td>
 			    <td><FONT SIZE=-1  FACE="Arial" color="#000033"><?php if(!empty($row['diagnosis'])) echo substr($row['diagnosis'],0,$GLOBAL_CONFIG['medocs_text_preview_maxlen']).'<br>'; ?>
@@ -213,17 +213,17 @@ if($mode=='show'){
 				?>
 				</td>
 			    <td><FONT SIZE=-1  FACE="Arial" color="#000033"><?php if(!empty($row['therapy'])) echo substr($row['therapy'],0,$GLOBAL_CONFIG['medocs_text_preview_maxlen']).'<br>'; ?>
-			
+
 				</td>    <td align="center"><a href="<?php echo $thisfile.URL_APPEND.'&pid='.$_SESSION['sess_pid'].'&encounter_nr='.$_SESSION['sess_en'].'&target='.$target.'&mode=details&type_nr='.$type_nr.'&nr='.$row['nr']; ?>"><img <?php echo createComIcon($root_path,'info3.gif','0'); ?>></a></td>
 			    <td><FONT SIZE=-1  FACE="Arial"><?php if($row['personell_name']) echo $row['personell_name']; ?></td>
 			  </tr>
-			
+
 			<?php
 			}
 		?>
 		</table>
-		
-		<?php	
+
+		<?php
 	}else{
 		?>
 		</table>
@@ -231,7 +231,7 @@ if($mode=='show'){
 		  <tr>
 		    <td><img <?php echo createMascot($root_path,'mascot1_r.gif','0','absmiddle') ?>></td>
 		    <td><font color="#000099" SIZE=3  FACE="verdana,Arial"> <b>
-			<?php 
+			<?php
 				echo $norecordyet;
 			?></b></font></td>
 		  </tr>
@@ -241,34 +241,34 @@ if($mode=='show'){
 }elseif($mode=='details'){
 
 	$TP_aux_notes=nl2br($row['aux_notes']);
-	
-	if(stristr($row['short_notes'],'marre_keshille_mjekesore')) $TP_YesNo=$LDYes; 
-		else $TP_YesNo=$LDNo; 
-		
+
+	if(stristr($row['short_notes'],'marre_keshille_mjekesore')) $TP_YesNo=$LDYes;
+		else $TP_YesNo=$LDNo;
+
 	$TP_diagnosis=nl2br($row['diagnosis']);
 	$TP_therapy=nl2br($row['therapy']);
 	$TP_date=formatDate2Local($row['date'],$date_format);
 	$TP_personell_name=$row['personell_name'];
-	# Load and output the template 
+	# Load and output the template
 	$TP_form=$TP_obj->load('medocs/tp_medocs_showdata.htm');
 	eval("echo $TP_form;");
-	
+
 	# Create a new form
 }else {
 	?>
 	<form method="post" name="entryform">
-	<?php 
-	
+	<?php
+
 		$TP_date_validate='value="'.formatDate2Local(date('Y-m-d'),$date_format).'" onBlur="IsValidDate(this,\''.$date_format.'\')" onKeyUp="setDate(this,\''.$date_format.'\',\''.$lang.'\')"';
 		$TP_href_date="javascript:show_calendar('entryform.date','".$date_format."')";
-	
+
 		$dfbuffer="LD_".strtr($date_format,".-/","phs");
-		$TP_date_format=$$dfbuffer;
-	
+		$TP_date_format=${$dfbuffer};
+
 		$TP_img_calendar=createComIcon($root_path,'show-calendar.gif','0','absmiddle');
-		
+
 		$TP_user_name=$_SESSION['sess_user_name'];
-		# Load and output the template 
+		# Load and output the template
 		$TP_form=$TP_obj->load('medocs/tp_medocs_newform.htm');
 		eval("echo $TP_form;");
 	?>
@@ -283,29 +283,29 @@ if($mode=='show'){
 	<input type="hidden" name="is_discharged" value="<?php echo $is_discharged; ?>">
 	<input type="hidden" name="history" value="Created: <?php echo date('Y-m-d H:i:s'); ?> : <?php echo $_SESSION['sess_user_name']."\n"; ?>">
 	<input type="image" <?php echo createLDImgSrc($root_path,'savedisc.gif','0'); ?>>
-	
+
 	</form>
 	<?php
-} 
+}
 
 if(($mode=='show'||$mode=='details')&&!$is_discharged){
 ?>
 
 <p>
 <img <?php echo createComIcon($root_path,'bul_arrowgrnlrg.gif','0','absmiddle'); ?>>
-<a href="<?php echo $thisfile.URL_APPEND.'&pid='.$_SESSION['sess_pid'].'&encounter_nr='.$_SESSION['sess_en'].'&target='.$target.'&mode=new&type_nr='.$type_nr; ?>"> 
+<a href="<?php echo $thisfile.URL_APPEND.'&pid='.$_SESSION['sess_pid'].'&encounter_nr='.$_SESSION['sess_en'].'&target='.$target.'&mode=new&type_nr='.$type_nr; ?>">
 <?php echo $LDEnterNewRecord; ?>
 </a><br>
 <?php
-} 
+}
 if(($mode!='show'&&!$nolist) ||($mode=='show'&&$nolist&&$rows>1)){
 ?>
 <img <?php echo createComIcon($root_path,'l-arrowgrnlrg.gif','0','absmiddle'); ?>>
-<a href="<?php echo $thisfile.URL_APPEND.'&pid='.$_SESSION['sess_pid'].'&encounter_nr='.$_SESSION['sess_en'].'&target='.$target.'&mode=show&type_nr='.$type_nr; ?>"> 
+<a href="<?php echo $thisfile.URL_APPEND.'&pid='.$_SESSION['sess_pid'].'&encounter_nr='.$_SESSION['sess_en'].'&target='.$target.'&mode=show&type_nr='.$type_nr; ?>">
 <?php echo $LDShowDocList; ?>
 </a>
 <?php
-} 
+}
 ?>
 </td>
 <!-- Load the options table  -->
@@ -317,7 +317,7 @@ if(($mode!='show'&&!$nolist) ||($mode=='show'&&$nolist&&$rows>1)){
 </table>
 <p>
 
-<?php 
+<?php
 if($parent_admit) {
 	include('./include/bottom_controls_admission_options.inc.php');
 }else{
@@ -332,7 +332,7 @@ if($parent_admit) {
 <p>
 </td>
 </tr>
-</table>        
+</table>
 <ul>
 <p>
 <a href="<?php echo $breakfile?>"><img <?php echo createLDImgSrc($root_path,'cancel.gif','0') ?> alt="<?php echo $LDCancelClose ?>"></a>

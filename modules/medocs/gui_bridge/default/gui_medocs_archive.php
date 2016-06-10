@@ -19,13 +19,13 @@ function createTR($input_name, $ld_text, $input_val, $colspan = 2, $input_size =
 }
 
 echo StdHeader();
-echo setCharSet(); 
+echo setCharSet();
 ?>
  <TITLE><?php echo $LDPatientRegister ?></TITLE>
 
 
 <script  language="javascript">
-<!-- 
+<!--
 
 function popSearchWin(target,obj_val,obj_name) {
 	urlholder="./data_search.php<?php echo URL_REDIRECT_APPEND; ?>&target="+target+"&obj_val="+obj_val+"&obj_name="+obj_name;
@@ -44,7 +44,7 @@ require($root_path.'include/core/inc_css_a_hilitebu.php');
 </HEAD>
 
 
-<BODY bgcolor="<?php echo $cfg['bot_bgcolor'];?>" topmargin=0 leftmargin=0 marginwidth=0 marginheight=0 onLoad="if (window.focus) window.focus();" 
+<BODY bgcolor="<?php echo $cfg['bot_bgcolor'];?>" topmargin=0 leftmargin=0 marginwidth=0 marginheight=0 onLoad="if (window.focus) window.focus();"
 <?php if (!$cfg['dhtml']){ echo 'link='.$cfg['body_txtcolor'].' alink='.$cfg['body_alink'].' vlink='.$cfg['body_txtcolor']; } ?>>
 
 
@@ -56,8 +56,8 @@ require($root_path.'include/core/inc_css_a_hilitebu.php');
 </td>
 
 <td bgcolor="<?php echo $cfg['top_bgcolor']; ?>" align="right">
-<a href="javascript:gethelp('admission_how2new.php')"><img <?php echo createLDImgSrc($root_path,'hilfe-r.gif','0') ?>  <?php if($cfg['dhtml'])echo'class="fadeOut" >';?></a><a href="<?php 
-if($_COOKIE["ck_login_logged".$sid]) echo "startframe.php?sid=".$sid."&lang=".$lang; 
+<a href="javascript:gethelp('admission_how2new.php')"><img <?php echo createLDImgSrc($root_path,'hilfe-r.gif','0') ?>  <?php if($cfg['dhtml'])echo'class="fadeOut" >';?></a><a href="<?php
+if($_COOKIE["ck_login_logged".$sid]) echo "startframe.php?sid=".$sid."&lang=".$lang;
 	else echo $breakfile."?sid=$sid&target=entry&lang=$lang"; ?>"><img <?php echo createLDImgSrc($root_path,'close2.gif','0') ?> alt="<?php echo $LDCloseWin ?>"   <?php if($cfg['dhtml'])echo'class="fadeOut" >';?></a>
 </td>
 </tr>
@@ -79,7 +79,7 @@ require('./gui_bridge/default/gui_tabs_medocs.php');
 
  if(isset($mode) && $mode=='search')
  {
-   echo '<FONT  SIZE=2 FACE="verdana,Arial">'.$LDSearchKeyword.': '.$where; 
+   echo '<FONT  SIZE=2 FACE="verdana,Arial">'.$LDSearchKeyword.': '.$where;
 ?>
 
 <table border=0>
@@ -95,8 +95,8 @@ require('./gui_bridge/default/gui_tabs_medocs.php');
 ?>
 
 <?php
-// if(isset($rows) && $rows>1) 
- if(!empty($rows)) 
+// if(isset($rows) && $rows>1)
+ if(!empty($rows))
 {
  ?>
 
@@ -116,10 +116,10 @@ require('./gui_bridge/default/gui_tabs_medocs.php');
 			<td><FONT  SIZE=-1  FACE="Arial" color="#ffffff"><b>&nbsp;&nbsp;'.$LDElements[$j].'</b></td>';
 */	?>
   </tr>
- <?php 
+ <?php
  /* Load common icons*/
  $img_arrow=createComIcon($root_path,'r_arrowgrnsm.gif','0');
- 
+
  $toggle=0;
  while($result=$ergebnis->FetchRow())
  {
@@ -153,7 +153,7 @@ require('./gui_bridge/default/gui_tabs_medocs.php');
 <input type="submit" value="<?php echo $LDNewArchive ?>" >
                              </form>
 
-<?php 
+<?php
 }
 else
 {
@@ -169,19 +169,19 @@ createTR('encounter_nr', $LDAdmitNr,$encounter_nr);
 ?>
 
 <tr>
-<td background="<?php echo createBgSkin($root_path,'tableHeaderbg3.gif'); ?>"><FONT SIZE=-1  FACE="Arial"><?php echo $LDAdmitDate ?>: 
+<td background="<?php echo createBgSkin($root_path,'tableHeaderbg3.gif'); ?>"><FONT SIZE=-1  FACE="Arial"><?php echo $LDAdmitDate ?>:
 </td>
 <td bgcolor="#eeeeee"><FONT SIZE=-1  FACE="Arial">
 <input name="date_start" type="text" size=10 maxlength=10    onBlur="IsValidDate(this,'<?php echo $date_format ?>')" onKeyUp="setDate(this,'<?php echo $date_format ?>','<?php echo $lang ?>')">
-[ <?php   
+[ <?php
  $dfbuffer="LD_".strtr($date_format,".-/","phs");
-  echo $$dfbuffer;
+  echo ${$dfbuffer};
  ?> ]
 </td>
 <td bgcolor="#eeeeee"><nobr><FONT SIZE=-1  FACE="Arial"><?php echo $LDTo ?>: <input name="date_end" type="text" size=10 maxlength=10   onBlur="IsValidDate(this,'<?php echo $date_format ?>')" onKeyUp="setDate(this,'<?php echo $date_format ?>','<?php echo $lang ?>')">
-[ <?php   
+[ <?php
  $dfbuffer="LD_".strtr($date_format,".-/","phs");
-  echo $$dfbuffer;
+  echo ${$dfbuffer};
  ?> ]
 </nobr></td>
 </tr>
@@ -225,10 +225,10 @@ if(!isset($addr_city_town)) $addr_city_town='';
 </td>
 <td bgcolor="#eeeeee" colspan=2><FONT SIZE=-1  FACE="Arial">
 <input name="date_birth" type="text" size="15" maxlength=10 value="<?php   echo $date_birth;  ?>"
- onFocus="this.select();"  onBlur="IsValidDate(this,'<?php echo $date_format ?>')" onKeyUp="setDate(this,'<?php echo $date_format ?>','<?php echo $lang ?>')"> 
- [ <?php   
+ onFocus="this.select();"  onBlur="IsValidDate(this,'<?php echo $date_format ?>')" onKeyUp="setDate(this,'<?php echo $date_format ?>','<?php echo $lang ?>')">
+ [ <?php
  $dfbuffer="LD_".strtr($date_format,".-/","phs");
-  echo $$dfbuffer;
+  echo ${$dfbuffer};
  ?> ]
 </td>
 </tr>
@@ -251,9 +251,9 @@ if(!isset($addr_city_town)) $addr_city_town='';
 while($result=$encounter_classes->FetchRow()) {
 ?>
 <input name="encounter_class_nr" type="radio"  value="<?php echo $result['class_nr']; ?>"  <?php if($encounter_class_nr==$result['class_nr']) echo 'checked'; ?>>
-<?php 
+<?php
         $LD=$result['LD_var'];
-        if(isset($$LD)&&!empty($$LD)) echo $$LD; else echo $result['name'];
+        if(isset(${$LD})&&!empty(${$LD})) echo ${$LD}; else echo $result['name'];
         echo '&nbsp;';
 	}
 ?>
@@ -266,7 +266,7 @@ while($result=$encounter_classes->FetchRow()) {
 <td colspan=2 bgcolor="#eeeeee">
 <select name="current_ward_nr">
 	<option value="">_______________________________________________</option>
-<?php 
+<?php
 if(!empty($ward_info) && $ward_info->RecordCount()){
     while($station=$ward_info->FetchRow()){
 	    echo '
@@ -298,12 +298,12 @@ if($insurance_classes){
     while($result=$insurance_classes->FetchRow()) {
 ?>
 <input name="insurance_class_nr" type="radio"  value="<?php echo $result['class_nr']; ?>" >
-<?php 
+<?php
         $LD=$result['LD_var'];
-        if(isset($$LD)&&!empty($$LD)) echo $$LD; else echo $result['name'];
+        if(isset(${$LD})&&!empty(${$LD})) echo ${$LD}; else echo $result['name'];
         echo '&nbsp;';
 	}
-} 
+}
 ?>
 </td>
 </tr>
@@ -331,7 +331,7 @@ while($buffer=$care_service->FetchRow())
 {
    echo '
 	<option value="'.$buffer['class_nr'].'">';
-	if(empty($$buffer['LD_var'])) echo $buffer['name']; else echo $$buffer['LD_var'];
+	if(empty(${$buffer['LD_var']})) echo $buffer['name']; else echo ${$buffer['LD_var']};
 	echo '</option>';
 	}
 ?>
@@ -356,7 +356,7 @@ while($buffer=$room_service->FetchRow())
 {
    echo '
 	<option value="'.$buffer['class_nr'].'">';
-	if(empty($$buffer['LD_var'])) echo $buffer['name']; else echo $$buffer['LD_var'];
+	if(empty(${$buffer['LD_var']})) echo $buffer['name']; else echo ${$buffer['LD_var']};
 	echo '</option>';
 	}
 ?>
@@ -382,9 +382,9 @@ while($buffer=$att_dr_service->FetchRow())
 {
    echo '
 	<option value="'.$buffer['class_nr'].'">';
-	if(empty($$buffer['LD_var'])) echo $buffer['name']; else echo $$buffer['LD_var'];
+	if(empty(${$buffer['LD_var']})) echo $buffer['name']; else echo ${$buffer['LD_var']};
 	echo '</option>';
-	
+
 }
 ?>
 </select>
@@ -403,7 +403,7 @@ while($buffer=$att_dr_service->FetchRow())
 <input type="hidden" name="mode" value="search">
 <input type="hidden" name="addr_citytown_nr">
 
-<input  type="image" <?php echo createLDImgSrc($root_path,'searchlamp.gif','0') ?> alt="<?php echo $LDSaveData ?>" align="absmiddle"> 
+<input  type="image" <?php echo createLDImgSrc($root_path,'searchlamp.gif','0') ?> alt="<?php echo $LDSaveData ?>" align="absmiddle">
 
 </form>
 
@@ -423,7 +423,7 @@ while($buffer=$att_dr_service->FetchRow())
 <p>
 </td>
 </tr>
-</table>        
+</table>
 <p>
 <ul>
 <FONT    SIZE=2  FACE="Arial">

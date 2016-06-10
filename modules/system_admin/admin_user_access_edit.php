@@ -368,7 +368,7 @@ while(list($x,$dept)=each($deptarray)){
 	<label>
    	<input type="checkbox" name="dept_nr[]" id="<?php echo $dept['nr'] ?>" value="<?php echo $dept['nr']?>" <?php if( in_array($dept['nr'],$actualDept)) echo 'checked' ?>>
  <?php
-		if(isset($$dept['LD_var'])&&!empty($$dept['LD_var'])) echo $$dept['LD_var'] . '</label><br>';
+		if(isset(${$dept['LD_var']})&&!empty(${$dept['LD_var']})) echo ${$dept['LD_var']} . '</label><br>';
 				else echo $dept['name_formal'] . '</label><br>';
 		if($subDepts) {
 			while (list($y,$sDept) = each($subDepts)) {
@@ -377,7 +377,7 @@ while(list($x,$dept)=each($deptarray)){
 				<label>
     			<input type="checkbox" name="dept_nr[]" id="<?php echo $sDept['nr'] ?>" value="<?php echo $sDept['nr']?>" <?php if( in_array($sDept['nr'],$actualDept)) echo 'checked' ?>>
         		<?php
-        			if(isset($$sDept['LD_var'])&&!empty($$sDept['LD_var'])) echo $$sDept['LD_var'] . '<br>';
+        			if(isset(${$sDept['LD_var']})&&!empty(${$sDept['LD_var']})) echo ${$sDept['LD_var']} . '<br>';
         			else echo $sDept['name_formal'] . '<br>';
         		?></label><?php
 			}

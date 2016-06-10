@@ -3,7 +3,7 @@
 if($rows){
 	# Get the field names
 	$fields=&$obj->coreFieldNames();
-	
+
 	while(list($z,$x)=each($fields)){
 		if($x=='status') break;
 		if(empty($birth[$x])||stristr('nr,encounter_nr,delivery_date,pid',$x)) continue;
@@ -13,7 +13,7 @@ if($rows){
   <tr bgcolor="#fefefe">
     <td><FONT color="#006600"><b><?php echo $LD[$x]; ?></b></td>
     <td>
-	<?php 
+	<?php
 		switch($x){
 				    //  header('Location:aufnahme_daten_zeigen.php'.URL_REDIRECT_APPEND.'&encounter_nr='.$encounter_nr.'&origin=admit&sem=isadmitted&target=entry');
 
@@ -22,22 +22,22 @@ if($rows){
 			case 'c_s_reason': 	echo nl2br($birth[$x]); break;
 			case 'delivery_mode':
 					$buf=&$obj->getDeliveryMode($birth[$x]);
-					if(isset($$buf['LD_var']) && $$buf['LD_var']) echo $$buf['LD_var'];
+					if(isset(${$buf['LD_var']}) && ${$buf['LD_var']}) echo ${$buf['LD_var']};
 						else echo $buf['name'];
 					break;
 			case 'feeding':
 					$buf=&$obj->getFeedingType($birth[$x]);
-					if(isset($$buf['LD_var']) && $$buf['LD_var']) echo $$buf['LD_var'];
+					if(isset(${$buf['LD_var']}) && ${$buf['LD_var']}) echo ${$buf['LD_var']};
 						else echo $buf['name'];
 					break;
 			case 'disease_category':
 					$buf=&$obj->getDiseaseCategory($birth[$x]);
-					if(isset($$buf['LD_var']) && $$buf['LD_var']) echo $$buf['LD_var'];
+					if(isset(${$buf['LD_var']}) && ${$buf['LD_var']}) echo ${$buf['LD_var']};
 						else echo $buf['name'];
 					break;
 			case 'outcome':
 					$buf=&$obj->getOutcome($birth[$x]);
-					if(isset($$buf['LD_var']) && $$buf['LD_var']) echo $$buf['LD_var'];
+					if(isset(${$buf['LD_var']}) && ${$buf['LD_var']}) echo ${$buf['LD_var']};
 						else echo $buf['name'];
 					break;
 			case 'born_before_arrival':
@@ -68,8 +68,8 @@ if($parent_admit&&$edit) {
 ?>
 <p>
 <img <?php echo createComIcon($root_path,'bul_arrowgrnlrg.gif','0','absmiddle'); ?>>
-<a href="<?php echo $thisfile.URL_APPEND.'&pid='.$_SESSION['sess_pid'].'&target='.$target.'&mode=new&allow_update='.$allow_update; ?>"> 
-<?php 
+<a href="<?php echo $thisfile.URL_APPEND.'&pid='.$_SESSION['sess_pid'].'&target='.$target.'&mode=new&allow_update='.$allow_update; ?>">
+<?php
 if($rows) echo $LD['update_bd'];
 	else echo $LDEnterNewRecord; ?>
 </a>

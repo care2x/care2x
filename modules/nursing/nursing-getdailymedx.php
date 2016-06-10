@@ -6,7 +6,7 @@ require ($root_path . 'include/core/inc_environment_global.php') ;
  * CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
  * GNU General Public License
  * Copyright 2002,2003,2004,2005 Elpidio Latorilla
- * elpidio@care2x.org, 
+ * elpidio@care2x.org,
  *
  * See the file "copy_notice.txt" for the licence notice
  */
@@ -28,7 +28,7 @@ if (! isset ( $db ) || ! $db)
 if ($dblink_ok) {
 	/* Load date formatter */
 	include_once ($root_path . 'include/core/inc_date_format_functions.php') ;
-	
+
 	if ($mode == 'save') {
 		$saved = false ;
 		$data_array = array ( ) ;
@@ -37,11 +37,11 @@ if ($dblink_ok) {
 			$prev = 'prev' . $i ;
 			$notes_nr = 'notes_nr' . $i ;
 			$presc_nr = 'p_nr' . $i ;
-			
-			if (! empty ( $$notes )) {
-				$data_array [ 'short_notes' ] = $$prev . ' ' . $$notes ;
-				if (empty ( $$notes_nr )) {
-					$data_array [ 'prescription_nr' ] = $$presc_nr ;
+
+			if (! empty ( ${$notes} )) {
+				$data_array [ 'short_notes' ] = ${$prev} . ' ' . ${$notes} ;
+				if (empty ( ${$notes_nr} )) {
+					$data_array [ 'prescription_nr' ] = ${$presc_nr} ;
 					$data_array [ 'date' ] = date ( 'Y-m-d', mktime ( 0, 0, 0, $mo, $dy, $yr ) ) ;
 					if ($charts_obj->savePrescriptionNotesFromArray ( $data_array ))
 						$saved = true ;
@@ -51,19 +51,19 @@ if ($dblink_ok) {
 						unset ( $data_array [ 'date' ] ) ;
 					if (isset ( $data_array [ 'prescription_nr' ] ))
 						unset ( $data_array [ 'prescription_nr' ] ) ;
-					if ($charts_obj->updatePrescriptionNotesFromArray ( $$notes_nr, $data_array ))
+					if ($charts_obj->updatePrescriptionNotesFromArray ( ${$notes_nr}, $data_array ))
 						$saved = true ;
 				}
 			}
 		}
-		
+
 		if ($saved) {
 			header ( "location:$thisfile?sid=$sid&lang=$lang&edit=$edit&saved=1&pn=$pn&station=$station&winid=$winid&yr=$yr&mo=$mo&dy=$dy&dyidx=$dyidx&yrstart=$yrstart&monstart=$monstart&dystart=$dystart&dyname=$dyname" ) ;
 			exit () ;
 		}
-	
+
 	}
-	
+
 	// end of if(mode==save)
 	$count = 0 ;
 	$medis = $charts_obj->getDayPrescriptionNotes ( $pn, date ( 'Y-m-d', mktime ( 0, 0, 0, $mo, $dy, $yr ) ) ) ;
@@ -90,7 +90,7 @@ require ($root_path . 'include/core/inc_css_a_hilitebu.php') ;
 ?>
 
 <script language="javascript">
-<!-- 
+<!--
 	function resetinput(){
 		document.infoform.reset();
 	}
@@ -145,7 +145,7 @@ echo $LDFullDayName [ $dyidx ] . ' (' . formatDate2Local ( date ( 'Y-m-d', mktim
 ?>
 	</font></b></td>
 		<td align="right" valign="top">
-			<a href="javascript:gethelp('nursing_feverchart_xp.php','medication_dailydose','','<?php echo $mdcsize ?>','<?php echo $title ?>')"><img <?php echo createLDImgSrc ( $root_path, 'hilfe-r.gif', '0' ) ?> 
+			<a href="javascript:gethelp('nursing_feverchart_xp.php','medication_dailydose','','<?php echo $mdcsize ?>','<?php echo $title ?>')"><img <?php echo createLDImgSrc ( $root_path, 'hilfe-r.gif', '0' ) ?>
 				<?php if ($cfg [ 'dhtml' ]) echo 'class="fadeOut" >' ;?></a><a href="javascript:window.close()"><img <?php echo createLDImgSrc ( $root_path, 'close2.gif', '0' ) ?>
 				<?php if ($cfg [ 'dhtml' ]) echo 'class="fadeOut" >' ;?></a>
 			</nobr>
@@ -203,21 +203,21 @@ echo $LDFullDayName [ $dyidx ] . ' (' . formatDate2Local ( date ( 'Y-m-d', mktim
 </table>
 
 
-<input type="hidden" name="sid" value="<?php echo $sid ?>"> 
-<input type="hidden" name="winid" value="<?php echo $winid ?>"> 
-<input type="hidden" name="lang" value="<?php echo $lang ?>"> 
-<input type="hidden" name="station" value="<?php echo $station ?>"> 
-<input type="hidden" name="yr" value="<?php echo $yr ?>"> 
-<input type="hidden" name="mo" value="<?php echo $mo ?>"> 
-<input type="hidden" name="dy" value="<?php echo $dy ?>"> 
-<input type="hidden" name="dyidx" value="<?php echo $dyidx ?>"> 
-<input type="hidden" name="dystart" value="<?php echo $dystart ?>"> 
-<input type="hidden" name="monstart" value="<?php echo $monstart ?>"> 
-<input type="hidden" name="yrstart" value="<?php echo $yrstart ?>"> 
-<input type="hidden" name="dyname" value="<?php echo $dyname ?>"> 
-<input type="hidden" name="pn" value="<?php echo $pn ?>"> 
-<input type="hidden" name="edit" value="<?php echo $edit ?>"> 
-<input type="hidden" name="mode" value="save"> 
+<input type="hidden" name="sid" value="<?php echo $sid ?>">
+<input type="hidden" name="winid" value="<?php echo $winid ?>">
+<input type="hidden" name="lang" value="<?php echo $lang ?>">
+<input type="hidden" name="station" value="<?php echo $station ?>">
+<input type="hidden" name="yr" value="<?php echo $yr ?>">
+<input type="hidden" name="mo" value="<?php echo $mo ?>">
+<input type="hidden" name="dy" value="<?php echo $dy ?>">
+<input type="hidden" name="dyidx" value="<?php echo $dyidx ?>">
+<input type="hidden" name="dystart" value="<?php echo $dystart ?>">
+<input type="hidden" name="monstart" value="<?php echo $monstart ?>">
+<input type="hidden" name="yrstart" value="<?php echo $yrstart ?>">
+<input type="hidden" name="dyname" value="<?php echo $dyname ?>">
+<input type="hidden" name="pn" value="<?php echo $pn ?>">
+<input type="hidden" name="edit" value="<?php echo $edit ?>">
+<input type="hidden" name="mode" value="save">
 <input type="hidden" name="maxelement" value="<?php echo $maxelement ?>">
 </form>
 <p>
@@ -226,8 +226,8 @@ if ($count) {
 	?>
 <a href="javascript:document.infoform.submit();">
 	<img <?php echo createLDImgSrc ( $root_path, 'savedisc.gif', '0' ) ?> alt="<?php echo $LDSave ?>">
-</a> &nbsp;&nbsp; 
-<!-- 
+</a> &nbsp;&nbsp;
+<!--
 <a href="javascript:resetinput()">
 	<img <?php echo createLDImgSrc ( $root_path, 'reset.gif', '0' ) ?> alt="<?php echo $LDReset ?>">
 </a>

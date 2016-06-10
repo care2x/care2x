@@ -1,5 +1,5 @@
 <script language="javascript">
-<!-- 
+<!--
 function deleteCurrency(n,s)
 {
 	if(s=="main")
@@ -28,8 +28,8 @@ echo $LDPlsSelectCurrency;
 <p>
 
 <form action="<?php echo $thisfile ?>" name="c_form" method="post" onSubmit="return chkForm(this)">
-<table border=0 cellspacing=1 cellpadding=5>  
-<?php 
+<table border=0 cellspacing=1 cellpadding=5>
+<?php
 
 while($currency=$ergebnis->FetchRow())
 {
@@ -48,7 +48,7 @@ while($currency=$ergebnis->FetchRow())
 	if($currency['status']=='main') {
 	    echo ' color="red"';
 	    $ld_buffer='LD'.$currency['status'];
-	    echo '>'.$$ld_buffer.'<br>';
+	    echo '>'.${$ld_buffer}.'<br>';
 	}
 	echo '
 	</td>';

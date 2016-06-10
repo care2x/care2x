@@ -6,7 +6,7 @@ require($root_path.'include/core/inc_environment_global.php');
 * CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
 * GNU General Public License
 * Copyright 2002,2003,2004,2005 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -16,7 +16,7 @@ require_once($root_path.'include/core/inc_front_chain_lang.php');
 
 /* Load date formatter */
 require_once($root_path.'include/core/inc_date_format_functions.php');
-				
+
 if(!isset($maxpic)||!$maxpic) $maxpic=4;
 
 $thisfile=basename(__FILE__);
@@ -43,7 +43,7 @@ $breakfile="javascript:window.parent.location.replace('".$root_path."main/spedie
 
  # Window bar title
  $smarty->assign('sWindowTitle',$LDFotoLab);
-  
+
  # Body Onload js
  if(!$same_pat) $smarty->assign('sOnLoadJs','onLoad="window.parent.PREVIEWFRAME.location.replace(\'fotolab-preview.php?sid='.$sid.'&lang='.$lang.'\');"');
 	else $smarty->assign('sOnLoadJs','onLoad="window.parent.PREVIEWFRAME.location.replace(\'fotolab-preview.php?sid='.$sid.'&lang='.$lang.'\');" ');
@@ -54,7 +54,7 @@ ob_start();
 ?>
 
 <script language="javascript">
-<!-- 
+<!--
 function chkNumber(n)
 {
 	var d;
@@ -92,7 +92,7 @@ function chkform(d)
 	var flag=false;
 	for(i=0;i<maxpix;i++)
 	{
-		if((eval("d.sdate"+i+".value!=''"))&&(eval("d.picfile"+i+".value!=''"))) 
+		if((eval("d.sdate"+i+".value!=''"))&&(eval("d.picfile"+i+".value!=''")))
 		{
 			flag=true;
 			break;
@@ -128,7 +128,7 @@ ob_start();
 <!-- Tabs  -->
 <tr valign=top >
 <td colspan=2 style="border-bottom: 2px solid gray">
-<?php 
+<?php
 	if($target=="search") $img='such-b.gif'; //echo '<img '.createLDImgSrc($root_path,'such-b.gif','0').' alt="'.$LDSearch.'">';
 		else{ $img='such-gray.gif'; }
 	echo '<a href="upload_search_patient.php'.URL_APPEND.'&target=search"><img '.createLDImgSrc($root_path,$img,'0').' alt="'.$LDSearch.'" ';if($cfg['dhtml'])echo'class="fadeOut" '; echo '></a>';
@@ -154,19 +154,19 @@ $calendar->load_files();
 ?>
 <form ENCTYPE="multipart/form-data"  action="fotolab-pic-save.php" method="post"  name="srcform" onSubmit="return chkform(this)">
 <INPUT TYPE="hidden" name="MAX_FILE_SIZE" value="2000000">
-<?php 
+<?php
 /* Load the common icons*/
 $img_cam=createComIcon($root_path,'lilcamera.gif','0');
 for ($i=0;$i<$maxpic;$i++) {
 	 echo $LDShotDate;
 	 //gjergji : new date
-	 echo $calendar->show_calendar($calendar,$date_format,'sdate'.$i);	
+	 echo $calendar->show_calendar($calendar,$date_format,'sdate'.$i);
 	 //end : gjergji
-	echo '&nbsp;&nbsp;'.$LDNr.' 
+	echo '&nbsp;&nbsp;'.$LDNr.'
 	 <input type="text" name="nr'.$i.'" size=4 maxlength=4 onFocus="previewpic(document.srcform.picfile'.$i.'.value)" value="'.($i+1+$lastnr).'" >
-	<input type="file" name="picfile'.$i.'" size="30" onFocus="previewpic(this.value)" >  
+	<input type="file" name="picfile'.$i.'" size="30" onFocus="previewpic(this.value)" >
 	<a href="javascript:previewpic(document.srcform.picfile'.$i.'.value)" title="'.$LDPreview.'">
-	<img '.$img_cam.'></a>     
+	<img '.$img_cam.'></a>
 	<hr>
 	';
 }
@@ -195,7 +195,7 @@ for ($i=0;$i<$maxpic;$i++) {
 <input type="hidden" name="lastname" value="<?php echo $lastname ?>">
 <input type="hidden" name="firstname" value="<?php echo $firstname ?>">
 <input type="hidden" name="bday" value="<?php echo $bday ?>">
-<input type="hidden" name="lastnr" value="<?php $lastnr='nr'.($maxpic-1); echo $$lastnr; ?>">
+<input type="hidden" name="lastnr" value="<?php $lastnr='nr'.($maxpic-1); echo ${$lastnr}; ?>">
 <input type="hidden" name="same_pat" value="1">
 </form>
 

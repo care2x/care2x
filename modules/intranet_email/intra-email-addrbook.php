@@ -6,7 +6,7 @@ require($root_path.'include/core/inc_environment_global.php');
 * CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
 * GNU General Public License
 * Copyright 2002,2003,2004,2005 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -35,13 +35,13 @@ $modetypes=array('sendmail','listmail');
 
 				$sql="SELECT addr_book, lastcheck FROM $dbtable WHERE  email='".$_COOKIE[$local_user.$sid]."'";
 				if($ergebnis=$db->Execute($sql))
-				{ 
+				{
 					if($rows=$ergebnis->RecordCount())
 					{
 						$content=$ergebnis->FetchRow();
 						switch($task)
 						{
-						
+
 						// if new address save new address
 							case 'saveadd':
 							{
@@ -64,7 +64,7 @@ $modetypes=array('sendmail','listmail');
 								 break;
 							}
 							// if mode is delete entry
-							case 'delete': 
+							case 'delete':
 							{		//$content[addr_book]=strtolower($content[addr_book]);
 									$inb=explode("_",trim($content[addr_book]));
 									for($i=0;$i<sizeof($inb);$i++)
@@ -72,9 +72,9 @@ $modetypes=array('sendmail','listmail');
 										for($n=0;$n<$maxrow;$n++)
 										{
 											$delbuf="del$n";
-											if(!$$delbuf) continue;
-											$delbuf2=trim(strtr($$delbuf,"+"," "));
-											//echo "$delbuf2<br>$inb[$i]<br>"; 
+											if(!${$delbuf}) continue;
+											$delbuf2=trim(strtr(${$delbuf},"+"," "));
+											//echo "$delbuf2<br>$inb[$i]<br>";
 												//echo "vor comp $delbuf2<br>$inb[$i]<br>";
 											if(!strcmp($delbuf2,strtolower(trim($inb[$i]))))
 											{
@@ -90,20 +90,20 @@ $modetypes=array('sendmail','listmail');
 																		WHERE email='".$_COOKIE[$local_user.$sid]."'";
 								    $db->BeginTrans();
 								    $ok=$db->Execute($sql);
-								    if($ok&&$db->CommitTrans()) { 
+								    if($ok&&$db->CommitTrans()) {
 									    header("location:intra-email-addrbook.php".URL_REDIRECT_APPEND."&l2h=$l2h&folder=$folder&mode=$mode");
 										exit;
-								    } else { 
+								    } else {
 								        $db->RollbackTrans();
-									    echo "$LDDbNoUpdate<br>$sql"; 
-								    } 
+									    echo "$LDDbNoUpdate<br>$sql";
+								    }
 								 	break;
 							}
 						} // end of switch mode
-						
+
 					} //end of if rows
-				}else { echo "$LDDbNoRead<br>$sql"; } 
-				
+				}else { echo "$LDDbNoRead<br>$sql"; }
+
 # Start Smarty templating here
  /**
  * LOAD Smarty
@@ -137,8 +137,8 @@ ob_start();
 ?>
 
 <script language="javascript" >
-<!-- 
-	
+<!--
+
 function newAddr()
 {
 	document.addrlist.task.value="newadd";
@@ -147,7 +147,7 @@ function newAddr()
 
 function chkAddress(d)
 {
-	if(d.addr.value=="") 
+	if(d.addr.value=="")
 	{
 		alert("<?php echo $LDNoEmailAddress; ?>");
 		d.addr.focus();
@@ -178,9 +178,9 @@ function selectAll(s,m)
 }
 
 // -->
-</script> 
+</script>
 
-<?php 
+<?php
 
 $sTemp = ob_get_contents();
 ob_end_clean();
@@ -194,7 +194,7 @@ ob_start();
  echo '
   &nbsp; <b><a href="intra-email.php'.URL_APPEND.'&mode=listmail">'.$LDInbox.'</a> |
   <a href="intra-email.php'.URL_APPEND.'&mode=compose">'.$LDNewEmail.'</a> | '.$LDAddrBook.' |
-   <a href="javascript:gethelp(\'intramail.php\',\'address\',\''.$mode.'\',\''.$folder.'\')">'.$LDHelp.'</a>| 
+   <a href="javascript:gethelp(\'intramail.php\',\'address\',\''.$mode.'\',\''.$folder.'\')">'.$LDHelp.'</a>|
 	<a href="intra-email-pass.php'.URL_APPEND.'">'.$LDLogout.'</a></b>
   <hr color=#000080>
    &nbsp; <FONT  color="#800000">'.$_COOKIE[$local_user.$sid].'</font>';
@@ -219,13 +219,13 @@ ob_start();
     <td><input type="text" name="addr" size=25 maxlength=40 value="<?php echo $addr ?>"></td>
     <td><FONT face="Verdana,Helvetica,Arial" size=2 color="#800000"><b>@</b>
 	 <select name="dept" size=1>
-                                                                            	
+
 	<?php require("includes/inc_email_domains_options.php");
 		for ($j=0;$j<sizeof($email_domains);$j++)
 	{
 		 echo '
 		<option value="'.$email_domains[$j].'"';
-		if ($dept==$email_domains[$j]) echo "selected"; 
+		if ($dept==$email_domains[$j]) echo "selected";
 		echo '>'.$email_domains[$j].'</option>';
 	}
 	?>
@@ -254,11 +254,11 @@ ob_start();
 // ******************************** show address book***************************************
 
  	$arrlist=explode("_",strtolower($content[addr_book]));
-	if($l2h) rsort($arrlist); else sort($arrlist); 
+	if($l2h) rsort($arrlist); else sort($arrlist);
 	reset($arrlist);
 	$maxrow=sizeof($arrlist);
 	if(($maxrow==1)&&($arrlist[0]=="")) $maxrow=0;
-	
+
  	echo '</b></font>
 		<form name="addrlist" action="intra-email-addrbook.php" method="post"  onSubmit="return chkDelete(this,'.sizeof($arrlist).')">
 	';
@@ -308,7 +308,7 @@ ob_start();
  	<input type="hidden" name="l2h" value="'.$l2h.'">
  	<input type="hidden" name="folder" value="'.$folder.'">
 	<input type="hidden" name="mode" value="'.$mode.'">
- </form>	
+ </form>
 	';
 echo ' &nbsp; &nbsp;
    <font size=1><a href="intra-email.php'.URL_APPEND.'&mode='.$mode.'&l2h='.$l2h.'&folder='.$folder.'">
@@ -323,7 +323,7 @@ if($mode=="compose") echo $LDWriteEmail;
 		case "trash": echo $LDRecycle; break;
 		}
 echo '</a></font>';
- 
+
 
  $sTemp = ob_get_contents();
  ob_end_clean();

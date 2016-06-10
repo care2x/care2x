@@ -38,7 +38,7 @@ $calendar->load_files();*/
  $smarty->assign('pbBack',FALSE);
 
 /**
-* Helper function to generate rows 
+* Helper function to generate rows
 */
 function createTR($input_name, $ld_text, $input_val, $colspan = 2, $input_size = 55){
 	global $root_path;
@@ -62,7 +62,7 @@ ob_start();
 ?>
 
 <script  language="javascript">
-<!-- 
+<!--
 
 function popSearchWin(target,obj_val,obj_name) {
 	urlholder="./data_search.php<?php echo URL_REDIRECT_APPEND; ?>&target="+target+"&obj_val="+obj_val+"&obj_name="+obj_name;
@@ -125,7 +125,7 @@ if(isset($mode)&&($mode=='search'||$mode=='paginate')){
 */
 // if(isset($rows) && $rows>1)
 if(!empty($rows)){
- 
+
 	# Initialize the icon and background images
 
 	$img_male=createComIcon($root_path,'spm.gif','0');
@@ -142,46 +142,46 @@ if(!empty($rows)){
 		<?php
 	  		if($oitem=='sex') $flag=TRUE;
 				else $flag=FALSE;
-			
+
 			echo $pagen->SortLink($LDSex,'sex',$odir,$flag);
 		?></b></td>
       <td><b>
-	  <?php 
+	  <?php
 	  	if($oitem=='name_last') $flag=TRUE;
-			else $flag=FALSE; 
-		echo $pagen->SortLink($LDLastName,'name_last',$odir,$flag); 
+			else $flag=FALSE;
+		echo $pagen->SortLink($LDLastName,'name_last',$odir,$flag);
 			 ?></b></td>
       <td><b>
-	  <?php 
+	  <?php
 	  	if($oitem=='name_first') $flag=TRUE;
-			else $flag=FALSE; 
-		echo $pagen->SortLink($LDFirstName,'name_first',$odir,$flag); 
+			else $flag=FALSE;
+		echo $pagen->SortLink($LDFirstName,'name_first',$odir,$flag);
 			 ?></b></td>
       <td><b>
-	  <?php 
+	  <?php
 	  	if($oitem=='date_birth') $flag=TRUE;
-			else $flag=FALSE; 
-		echo $pagen->SortLink($LDBday,'date_birth',$odir,$flag); 
+			else $flag=FALSE;
+		echo $pagen->SortLink($LDBday,'date_birth',$odir,$flag);
 			 ?></b></td>
       <td align="center"><b>
-	  <?php 
+	  <?php
 	  	if($oitem=='addr_zip') $flag=TRUE;
 			else $flag=FALSE;
-		 echo $pagen->SortLink($LDZipCode,'addr_zip',$odir,$flag); 
-		 	
+		 echo $pagen->SortLink($LDZipCode,'addr_zip',$odir,$flag);
+
 		?></b></td>
       <td><b>
-	  <?php 
+	  <?php
 	  	if($oitem=='encounter_nr') $flag=TRUE;
-			else $flag=FALSE; 
-		echo $pagen->SortLink($LDAdmitNr,'encounter_nr',$odir,$flag); 
+			else $flag=FALSE;
+		echo $pagen->SortLink($LDAdmitNr,'encounter_nr',$odir,$flag);
 			 ?></b></td>
-    
+
       <td><b>
-	  <?php 
+	  <?php
 	  	if($oitem=='encounter_date') $flag=TRUE;
-			else $flag=FALSE; 
-		echo $pagen->SortLink($LDAdmitDate,'encounter_date',$odir,$flag); 
+			else $flag=FALSE;
+		echo $pagen->SortLink($LDAdmitDate,'encounter_date',$odir,$flag);
 			 ?></b></td>
 
 	</tr>
@@ -274,7 +274,7 @@ if(!empty($rows)){
 			<nobr>&nbsp;<?php echo $LDTo ?>:
 			<?php
 				//gjergji : new calendar
-				echo $calendar->show_calendar($calendar,$date_format,'date_end',$date_end);	
+				echo $calendar->show_calendar($calendar,$date_format,'date_end',$date_end);
 				//end : gjergji
 			?>
 			</nobr>
@@ -318,11 +318,11 @@ if(!empty($rows)){
 /*			require_once ('../../js/jscalendar/calendar.php');
 			$calendar = new DHTML_Calendar('../../js/jscalendar/', $lang, 'calendar-system', true);
 			$calendar->load_files();*/
-			
-			
+
+
 			if(!empty($date_birth))
 				echo $calendar->show_calendar($calendar,$date_format,'date_birth',$date_birth);
-			else 
+			else
 				echo $calendar->show_calendar($calendar,$date_format,'date_birth');
 			//end : gjergji
 		?>
@@ -347,9 +347,9 @@ if(!empty($rows)){
 		while($result=$encounter_classes->FetchRow()) {
 ?>
 			<input name="encounter_class_nr" type="radio"  value="<?php echo $result['class_nr']; ?>"  <?php if($encounter_class_nr==$result['class_nr']) echo 'checked'; ?>>
-<?php 
+<?php
 			$LD=$result['LD_var'];
-			if(isset($$LD)&&!empty($$LD)) echo $$LD; else echo $result['name'];
+			if(isset(${$LD})&&!empty(${$LD})) echo ${$LD}; else echo $result['name'];
 			echo '&nbsp;';
 		}
 ?>
@@ -391,7 +391,7 @@ if(!empty($rows)){
 		</td>
 		<td colspan=2 bgcolor="#eeeeee">
 <?php
-	
+
 	# Create the bill type radiobuttons
 
 	if($insurance_classes){
@@ -400,7 +400,7 @@ if(!empty($rows)){
 			<input name="insurance_class_nr" type="radio"  value="<?php echo $result['class_nr']; ?>" >
 <?php
 			$LD=$result['LD_var'];
-			if(isset($$LD)&&!empty($$LD)) echo $$LD; else echo $result['name'];
+			if(isset(${$LD})&&!empty(${$LD})) echo ${$LD}; else echo $result['name'];
 			echo '&nbsp;';
 		}
 	}
@@ -428,7 +428,7 @@ if(!empty($rows)){
 		while($buffer=$care_service->FetchRow()){
 			echo '
 				<option value="'.$buffer['class_nr'].'">';
-			if(empty($$buffer['LD_var'])) echo $buffer['name']; else echo $$buffer['LD_var'];
+			if(empty(${$buffer['LD_var']})) echo $buffer['name']; else echo ${$buffer['LD_var']};
 			echo '</option>';
 		}
 ?>
@@ -453,7 +453,7 @@ if(!empty($rows)){
 		while($buffer=$room_service->FetchRow()){
 			echo '
 				<option value="'.$buffer['class_nr'].'">';
-			if(empty($$buffer['LD_var'])) echo $buffer['name']; else echo $$buffer['LD_var'];
+			if(empty(${$buffer['LD_var']})) echo $buffer['name']; else echo ${$buffer['LD_var']};
 			echo '</option>';
 		}
 ?>
@@ -478,9 +478,9 @@ if(!empty($rows)){
 		while($buffer=$att_dr_service->FetchRow()){
 			echo '
 				<option value="'.$buffer['class_nr'].'">';
-			if(empty($$buffer['LD_var'])) echo $buffer['name']; else echo $$buffer['LD_var'];
+			if(empty(${$buffer['LD_var']})) echo $buffer['name']; else echo ${$buffer['LD_var']};
 			echo '</option>';
-	
+
 		}
 ?>
 			</select>

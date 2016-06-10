@@ -7,7 +7,7 @@ require($root_path.'include/core/inc_environment_global.php');
 * CARE2X Integrated Hospital Information System Deployment 2.2 - 2006-07-10
 * GNU General Public License
 * Copyright 2002,2003,2004,2005,2006 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -49,8 +49,8 @@ if(($mode=='delete')&&($keyword!='')) {
 	$delete_ok=$product_obj->DeleteCatalogItem($keyword,$cat);
 }
 
-/* Load common icon images */	 
-$img_leftarrow=createComIcon($root_path,'l-arrowgrnlrg.gif','0');	
+/* Load common icon images */
+$img_leftarrow=createComIcon($root_path,'l-arrowgrnlrg.gif','0');
 $img_uparrow=createComIcon($root_path,'uparrowgrnlrg.gif','0');
 $img_dwnarrow=createComIcon($root_path,'dwnarrowgrnlrg.gif','0');
 $img_info=createComIcon($root_path,'info3.gif','0');
@@ -76,7 +76,7 @@ function add2basket(b,i,id,art){
 	var n;
 	if(eval("document.curcatform.p"+i+".value")=="") n=1;
 	else n=eval("document.curcatform.p"+i+".value")
-	
+
 	window.parent.BESTELLKORB.location.href="products-bestellkorb.php<?php echo URL_REDIRECT_APPEND."&userck=$userck" ?>&dept_nr=<?php echo $dept_nr; ?>&order_nr=<?php echo $order_nr; ?>&mode=add&cat=<?php echo $cat; ?>&maxcount=1&order1=1&bestellnum1="+b+"&p1="+n+"&idsub1="+id+"&art1="+art;
 }
 
@@ -97,7 +97,7 @@ function resize() {
 
 <script language="javascript"
 	src="<?php echo $root_path; ?>js/products_validate_order_num.js"></script>
-<?php 
+<?php
 require($root_path.'include/core/inc_js_gethelp.php');
 require($root_path.'include/core/inc_css_a_hilitebu.php');
 ?>
@@ -112,12 +112,12 @@ require($root_path.'include/core/inc_css_a_hilitebu.php');
 		<td><a
 			href="javascript:gethelp('products.php','catalog','','<?php echo $cat ?>')"><img
 			<?php echo createComIcon($root_path,'frage.gif','0','right') ?>
-			alt="<?php echo 
+			alt="<?php echo
 $LDOpenHelp ?>"></a></td>
 	</tr>
 </table>
 <form action="<?php echo $thisfile; ?>" method="get" name="smed"><font
-	face="Verdana, Arial" size=1 color=#800000><?php echo $LDSearchKey ?>: 
+	face="Verdana, Arial" size=1 color=#800000><?php echo $LDSearchKey ?>:
     <br>
 <input type="hidden" name="sid" value="<?php echo $sid ?>"> <input
 	type="hidden" name="lang" value="<?php echo $lang?>"> <input
@@ -129,24 +129,24 @@ $LDOpenHelp ?>"></a></td>
 	name="userck" value="<?php echo $userck?>"> <input type="submit"
 	value="<?php echo $LDSearchArticle ?>"> </font></form>
 
-<?php 
+<?php
 if (isset($mode)&&($mode=='search')&&($keyword!='')) {
 		if($linecount) {
-    	// The following routine displays the search results	
+    	// The following routine displays the search results
     	echo "<p><font size=1>".str_replace("~nr~",$linecount,$LDFoundNrData)."<br>$LDClk2SeeInfo</font><br>";
-    
+
     		$ergebnis->MoveFirst();
-    		echo '<table border=0 cellpadding=3 cellspacing=1> 
+    		echo '<table border=0 cellpadding=3 cellspacing=1>
     		  		<tr class="wardlisttitlerow">';
     		for ($i=0;$i<sizeof($LDGenindex);$i++)
     		echo '
     				<td><font color="#000080">'.$LDGenindex[$i].'</font></td>';
-    		echo '</tr>';	
-    
+    		echo '</tr>';
+
     		while($zeile=$ergebnis->FetchRow()) {
     			echo '<tr class=wardlistrow2">';
     			echo '	<td valign="top"><a href="'.$thisfile.URL_APPEND.'&order_nr='.$order_nr.'&dept_nr='.$dept_nr.'&mode=save&cat='.$cat.'&artikelname='.str_replace("&","%26",strtr($zeile['artikelname']," ","+")).'&dose='.$zeile['dose'].'&packing='.$zeile['packing'].'&bestellnum='.$zeile['bestellnum'].'&minorder='.$zeile['minorder'].'&maxorder='.$zeile['maxorder'].'&proorder='.str_replace(" ","+",$zeile['proorder']).'&hit=0&userck='.$userck.'" onClick="add_update(\''.$zeile['bestellnum'].'\')"><img '.$img_leftarrow.' alt="'.$LDPut2BasketAway.'"></a></td>
-    					<td valign="top"><a href="'.$thisfile.URL_APPEND.'&order_nr='.$order_nr.'&dept_nr='.$dept_nr.'&mode=save&cat='.$cat.'&artikelname='.str_replace("&","%26",strtr($zeile['artikelname']," ","+")).'&dose='.$zeile['dose'].'&packing='.$zeile['packing'].'&bestellnum='.$zeile['bestellnum'].'&minorder='.$zeile['minorder'].'&maxorder='.$zeile['maxorder'].'&proorder='.str_replace(" ","+",$zeile['proorder']).'&hit=0&userck='.$userck.'"><img '.$img_dwnarrow.' alt="'.$LDPut2Catalog.'"></a></td>		
+    					<td valign="top"><a href="'.$thisfile.URL_APPEND.'&order_nr='.$order_nr.'&dept_nr='.$dept_nr.'&mode=save&cat='.$cat.'&artikelname='.str_replace("&","%26",strtr($zeile['artikelname']," ","+")).'&dose='.$zeile['dose'].'&packing='.$zeile['packing'].'&bestellnum='.$zeile['bestellnum'].'&minorder='.$zeile['minorder'].'&maxorder='.$zeile['maxorder'].'&proorder='.str_replace(" ","+",$zeile['proorder']).'&hit=0&userck='.$userck.'"><img '.$img_dwnarrow.' alt="'.$LDPut2Catalog.'"></a></td>
     					<td valign="top"><a href="javascript:popinfo(\''.$zeile['bestellnum'].'\')" ><img '.$img_info.' alt="'.$complete_info.$zeile['artikelname'].' - '.$LDClk2See.'"></a></td>
     					<td valign="top"><a href="javascript:popinfo(\''.$zeile['bestellnum'].'\')" ><font color="#800000">'.$zeile['artikelname'].' - '.$zeile['dose']. ' - ' .$zeile['packing'] . '</font></a></td>
     					<td valign="top"><font size=1>'.$zeile['generic'].'</td>
@@ -161,20 +161,20 @@ if (isset($mode)&&($mode=='search')&&($keyword!='')) {
     		echo "<p>$LDNoDataFound";
     	echo '<p>';
     }
-    
+
     // get the actual order catalog
     $ergebnis=&$product_obj->ActualOrderCatalog($dept_nr,$cat);
     $rows=$product_obj->LastRecordCount();
     // show catalog
-    
+
 if($rows){
-    
+
 	echo'<form name="curcatform" onSubmit="return checkform(this)">';
     echo '<font color="#800000">'.$LDCatalog.' :: ';
-    
+
     $buff=$dept_obj->LDvar($dept_nr);
-    		
-	if(isset($$buff)&&!empty($$buff)) echo $$buff;
+
+	if(isset(${$buff})&&!empty(${$buff})) echo ${$buff};
 	else echo $dept_obj->FormalName($dept_nr);
 
 	echo '</font>
@@ -182,14 +182,14 @@ if($rows){
 	<tr class="wardlisttitlerow">';
 	for ($i=0;$i<sizeof($LDCindex);$i++)
 		echo '<td><font color="#000080">'.$LDCindex[$i].'</font></td>';
-    
+
     $i=1;
     $mi=2;
-    $ergebnis->MoveFirst();		
+    $ergebnis->MoveFirst();
     while($content=$ergebnis->FetchRow()) {
     	echo '<tr class="wardlistrow2">';
     	echo'
-    		<td>&nbsp;</td><td><b>'.$content['quantity'].'</b>&nbsp;'.$content['packing'] .'</td>		
+    		<td>&nbsp;</td><td><b>'.$content['quantity'].'</b>&nbsp;'.$content['packing'] .'</td>
     		<td><font size=1>'.$content['artikelname'].' - '.$content['dose']. ' - ' .$content['packing'] .'</font></td>
     		</td>
     		<td ><font size=1><nobr>&nbsp;X '.$content['proorder'].'</nobr></font></td>
@@ -212,14 +212,14 @@ if($rows){
     				 <td align="right"><input type="text" onKeyUp="validate_value(this,1,'.$content_sub['pcs'].')" name="p'.$i.'" size=5 maxlength=5 ';
     				$o="order".$i;
     				$pc="p".$i;
-    				if(($$o) &&($$pc=='')) $$pc=$mi;			 
-    				if($$pc!='') echo ' value="'.$$pc.'">'; 
+    				if((${$o}) &&(${$pc}=='')) ${$pc}=$mi;
+    				if(${$pc}!='') echo ' value="'.${$pc}.'">';
     				else {
     					  echo 'value="">';
-    				} 
+    				}
     				echo '<input type="hidden" name="bestellnum'.$i.'" value="'.$content['bestellnum'].'">';
-    				echo '<input type="hidden" name="art'.$i.'" value="'.$content['artikelname'].'">'; 				 
-    				echo '<input type="hidden" name="idsub'.$i.'" value="'.$content_sub['id'].'">'; 				 
+    				echo '<input type="hidden" name="art'.$i.'" value="'.$content['artikelname'].'">';
+    				echo '<input type="hidden" name="idsub'.$i.'" value="'.$content_sub['id'].'">';
     				echo '<td align="right">'.$content_sub['pcs'].'</td><td align="right">'.$content_sub['expiry_date'].'</td><tr>';
     				//gjergji:had to put it here to correctly generate p+i on the input boxes
     				$i++;
@@ -239,7 +239,7 @@ if($rows){
     	if($rows > 1) echo '<input type="submit" value="'.$LDPutNBasket.'">';
     	echo '</form>';
 }
-    
+
     if(isset($mode)&&($mode=="multiadd")) {
      	echo '<script language="javascript">window.parent.BESTELLKORB.location.href="products-bestellkorb.php'.URL_REDIRECT_APPEND.'&dept_nr='.$dept_nr.'&order_nr='.$order_nr.'&mode=multiadd&cat='.$cat.'&maxcount='.$maxcount.'&userck='.$userck;
     	for($i=1;$i<=$maxcount;$i++) {
@@ -247,10 +247,10 @@ if($rows){
     		$pc="p".$i;
     		$art="art".$i;
     		$idsub="idsub".$i;
-    		if((!$$o)||($$pc=="0")) continue;
+    		if((!${$o})||(${$pc}=="0")) continue;
     		$b="bestellnum".$i;
-    		if($$pc=="") $$pc=1; // what ?!
-    		echo '&bestellnum'.$i.'='.$$b.'&pcs'.$i.'='.$$pc.'&art'.$i.'='.$$art.'&idsub'.$i.'='.$$idsub;
+    		if(${$pc}=="") ${$pc}=1; // what ?!
+    		echo '&bestellnum'.$i.'='.${$b}.'&pcs'.$i.'='.${$pc}.'&art'.$i.'='.${$art}.'&idsub'.$i.'='.${$idsub};
     	}
     	echo'"</script>';
 	}

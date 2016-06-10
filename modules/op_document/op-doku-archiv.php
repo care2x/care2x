@@ -6,14 +6,14 @@ require($root_path.'include/core/inc_environment_global.php');
 * CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
 * GNU General Public License
 * Copyright 2002,2003,2004,2005 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
 
 # Default value for the maximum nr of rows per block displayed, define this to the value you wish
 # In normal cases this value is derived from the db table "care_config_global" using the "pagin_insurance_list_max_block_rows" element.
-define('MAX_BLOCK_ROWS',30); 
+define('MAX_BLOCK_ROWS',30);
 
 $lang_tables[]='departments.php';
 $lang_tables[]='doctors.php';
@@ -38,7 +38,7 @@ if(!isset($dept_nr)||!$dept_nr){
 $thisfile=basename(__FILE__);
 $breakfile=$root_path.'main/op-doku.php'.URL_APPEND;
 
-# Save dept name to session 
+# Save dept name to session
 if(!isset($_SESSION['sess_dept_name'])) $_SESSION['sess_dept_name'] = "";
 
 # Create dept object and preload dept info
@@ -46,13 +46,13 @@ require_once($root_path.'include/care_api_classes/class_department.php');
 $dept_obj=new Department;
 $dept_obj->preloadDept($dept_nr);
 $buffer=$dept_obj->LDvar();
-if(isset($$buffer)&&!empty($$buffer)) $_SESSION['sess_dept_name']=$$buffer;
+if(isset(${$buffer})&&!empty(${$buffer})) $_SESSION['sess_dept_name']=${$buffer};
 	else $_SESSION['sess_dept_name']=$dept_obj->FormalName();
 
 # Create the encounter object
 include_once($root_path.'include/care_api_classes/class_encounter.php');
 $enc_obj=new Encounter();
-		
+
 $linecount=0;
 $patientselected=FALSE;
 
@@ -66,7 +66,7 @@ function clean_it(&$d)
 
 # Load date formatter
 require_once($root_path.'include/core/inc_date_format_functions.php');
-    
+
 
 if($mode=='search'||$mode=='paginate'){
 	# Initialize page´s control variables
@@ -100,15 +100,15 @@ if($mode=='search'||$mode=='paginate'){
 			 $prefx='o';
 		else
 			$prefx='p';
-	
+
 	$dbtable='care_op_med_doc';
-			
+
 	if($mode=='paginate'){
 		$s2=$_SESSION['sess_searchkey'];
 	}else{
-		
-							
-						
+
+
+
 							$s2="";
 							if (clean_it(&$name)) $s2.=" p.name_last $sql_LIKE '".addslashes($name)."%'";
 							if (clean_it(&$vorname))
@@ -162,18 +162,18 @@ if($mode=='search'||$mode=='paginate'){
 		#Save the search condition for pagination routines
 		$_SESSION['sess_searchkey']=$s2;
 	}
-														
+
 	$select_sql="SELECT o.*,  e.encounter_class_nr, p.name_last, p.name_first, p.date_birth, p.sex, d.name_formal, d.LD_var  AS \"LD_var\"";
 	$from_sql="	FROM $dbtable AS o, care_encounter AS e, care_person AS p, care_department AS d WHERE ";
 	$order_sql=" ORDER BY $prefx.$oitem $odir";
-							
+
 							$sql2=$from_sql.$s2." AND o.encounter_nr=e.encounter_nr AND e.pid=p.pid AND o.dept_nr=d.nr";
-							
-							
+
+
 							$sql=$select_sql.$sql2.$order_sql;
-							
-							if($ergebnis=$db->SelectLimit($sql,$pagen->MaxCount(),$pgx)) 
-							{			
+
+							if($ergebnis=$db->SelectLimit($sql,$pagen->MaxCount(),$pgx))
+							{
 								$rows=$ergebnis->RecordCount();
 								if(!$rows)
 								{
@@ -186,15 +186,15 @@ if($mode=='search'||$mode=='paginate'){
 									$sql2=$from_sql.$s2." AND o.encounter_nr=e.encounter_nr AND e.pid=p.pid AND o.dept_nr=d.nr";
 									$sql=$select_sql.$sql2.$order_sql;
 									//echo $sql;
-									if($ergebnis=$db->SelectLimit($sql,$pagen->MaxCount(),$pgx)) 
-									{			
+									if($ergebnis=$db->SelectLimit($sql,$pagen->MaxCount(),$pgx))
+									{
 										$rows=$ergebnis->RecordCount();
 									}
 								}
 							}else echo "$LDDbNoRead<p> $sql <p>";
-														
+
 							//echo $sql;
-							
+
 							if($rows==1&&!$mode=='paginate')
 							 {
 								$row=$ergebnis->FetchRow();
@@ -211,8 +211,8 @@ if($mode=='search'||$mode=='paginate'){
 		$pagen->setTotalDataCount($totalcount);
 	}else{
 		$sql="SELECT o.nr ".$sql2;
-		if($cresult=$db->Execute($sql)) {		
-			//echo "<p>$sql";	
+		if($cresult=$db->Execute($sql)) {
+			//echo "<p>$sql";
 			$totalcount=$cresult->RecordCount();
 			//echo $totalcount;
 		}
@@ -220,16 +220,16 @@ if($mode=='search'||$mode=='paginate'){
 	}
 	$pagen->setSortItem($oitem);
 	$pagen->setSortDirection($odir);
-							
-							
+
+
 }elseif($mode=='select'){
-			
+
 							$dbtable='care_op_med_doc';
-							
+
 							$sql="SELECT * FROM $dbtable WHERE nr='$nr'";
-							
-							if($ergebnis=$db->Execute($sql)) 
-							{			
+
+							if($ergebnis=$db->Execute($sql))
+							{
 								if($rows=$ergebnis->RecordCount())
 								{
 									$row=$ergebnis->FetchRow();
@@ -239,10 +239,10 @@ if($mode=='search'||$mode=='paginate'){
 							}else echo "$LDDbNoRead<p> $sql <p>";
 
 
-							
+
 }else{
 	if($_COOKIE['ck_login_logged'.$sid]) $mode='dummy';
-} 
+}
 
 # Start the smarty templating
  /**
@@ -278,7 +278,7 @@ $smarty->assign('sOnLoadJs','onLoad="if(window.focus) window.focus();"');
 ?>
 
 <script  language="javascript">
-<!-- 
+<!--
 
 function hilite(idx,mode)
 	{
@@ -302,13 +302,13 @@ function chkForm(d)
 	return false;
 }
 
-<?php 
-require($root_path.'include/core/inc_checkdate_lang.php'); 
+<?php
+require($root_path.'include/core/inc_checkdate_lang.php');
 ?>
 
 // -->
 </script>
-<?php 
+<?php
 
 $sTemp = ob_get_contents();
 ob_end_clean();
@@ -328,10 +328,10 @@ ob_start();
 <tr>
 <td colspan=2><p><br>
 <ul>
-<?php 
-//if($mode=='search')echo "<FONT  SIZE=2 FACE='verdana,Arial'>$LDSrcCondition: $s2"; 
+<?php
+//if($mode=='search')echo "<FONT  SIZE=2 FACE='verdana,Arial'>$LDSrcCondition: $s2";
 
-if($rows&&!$patientselected) { 
+if($rows&&!$patientselected) {
 ?>
 <table border=0>
   <tr>
@@ -340,15 +340,15 @@ if($rows&&!$patientselected) {
 <?php
 if (($mode=='search'||$mode=='paginate')){
 	if($rows) echo str_replace("~nr~",$totalcount,$LDSearchFound).' '.$LDShowing.' '.$pagen->BlockStartNr().' '.$LDTo.' '.$pagen->BlockEndNr().'.';
-		else echo str_replace('~nr~','0',$LDSearchFound); 
+		else echo str_replace('~nr~','0',$LDSearchFound);
 
-$append="&dept_nr=$dept_nr&target=archiv&all_depts=$all_depts";		
+$append="&dept_nr=$dept_nr&target=archiv&all_depts=$all_depts";
 	# Preload  common icon images
 	$img_male=createComIcon($root_path,'spm.gif','0','',TRUE);
 	$img_female=createComIcon($root_path,'spf.gif','0','',TRUE);
 	$bgimg='tableHeaderbg3.gif';
 	$tbg= 'background="'.$root_path.'gui/img/common/'.$theme_com_icon.'/'.$bgimg.'"';
-		
+
 ?>
 	</td>
   </tr>
@@ -373,7 +373,7 @@ $append="&dept_nr=$dept_nr&target=archiv&all_depts=$all_depts";
        <td><b>
 	  <?php echo $pagen->makeSortLink($LDOpNr,'nr',$oitem,$odir,$append);  ?></b></td>
   </tr>
- <?php 
+ <?php
  $toggle=0;
  while($row=$ergebnis->FetchRow())
  {
@@ -383,15 +383,15 @@ $append="&dept_nr=$dept_nr&target=archiv&all_depts=$all_depts";
   # Prepare the url get values
   $buf="op-doku-search.php".URL_APPEND."&dept_nr=".$row['dept_nr']."&target=search&mode=select&nr=".$row['nr']."&all_depts=".$all_depts;
   echo '><td>';
- 
- 
+
+
 	switch($row['sex']){
 		case 'f': echo '<img '.$img_female.'>'; break;
 		case 'm': echo '<img '.$img_male.'>'; break;
 		default: echo '&nbsp;'; break;
 	}
- 
-  
+
+
   echo '
 	</td>
     <td>&nbsp; <a href="'.$buf.'" title="'.$LDClk2Show.'">'.$row['name_last'].'</a></td>
@@ -404,9 +404,9 @@ $append="&dept_nr=$dept_nr&target=archiv&all_depts=$all_depts";
     <td>&nbsp; &nbsp;';
 
 	$buffer=$row['LD_var'];
-	if(isset($$buffer)&&!empty($$buffer)) echo $$buffer;
+	if(isset(${$buffer})&&!empty(${$buffer})) echo ${$buffer};
 		else echo $row['name_formal'];
-		
+
 	echo '</td>
     <td align=right>&nbsp; &nbsp;<a href="'.$buf.'" title="'.$LDClk2Show.'">'.$row['nr'].'</a>&nbsp; &nbsp;</td>
   </tr>
@@ -419,7 +419,7 @@ $append="&dept_nr=$dept_nr&target=archiv&all_depts=$all_depts";
 						<td align=right>'.$pagen->makeNextLink($LDNext,$append).'</td>
 						</tr>';
 
-}						
+}
 ?>
 </table>
 <p>
@@ -432,7 +432,7 @@ $append="&dept_nr=$dept_nr&target=archiv&all_depts=$all_depts";
 <input type="hidden" name="mode" value="dummy">
 <input type="submit" value="<?php echo $LDNewArchiveSearch ?>" >
                              </form>
-<?php 
+<?php
 
 }else{
 
@@ -468,10 +468,10 @@ $calendar->load_files();
 echo $calendar->show_calendar($calendar,$date_format,'op_date',$row['op_date']);
 
 ?>
- 
+
 <font color="#000000">&nbsp; &nbsp;<?php echo $LDOperator ?>:
-<?php 
-	if($mode=="select") echo '<font color="#800000">'.$row[operator]; 
+<?php
+	if($mode=="select") echo '<font color="#800000">'.$row[operator];
 		else echo '
 		<input name="operator" type="text" size="14" >';
  ?>
@@ -497,7 +497,7 @@ echo $calendar->show_calendar($calendar,$date_format,'op_date',$row['op_date']);
 <td><?php echo $LDLastName ?>:
 </td>
 <td>
-<?php if($mode=="select") echo '<font color="#000099"><b>'.$enc_obj->LastName().'</b>'; 
+<?php if($mode=="select") echo '<font color="#000099"><b>'.$enc_obj->LastName().'</b>';
 	else echo '
 	<input name="name" type="text" size="14">';
 ?>
@@ -507,7 +507,7 @@ echo $calendar->show_calendar($calendar,$date_format,'op_date',$row['op_date']);
 <td><?php echo $LDName ?>:
 </td>
 <td>
-<?php if($mode=="select") echo '<font color="#000099"><b>'.$enc_obj->FirstName().'</b>'; 
+<?php if($mode=="select") echo '<font color="#000099"><b>'.$enc_obj->FirstName().'</b>';
 	else echo '
 	<input name="vorname" type="text" size="14" >';
 ?>
@@ -517,14 +517,14 @@ echo $calendar->show_calendar($calendar,$date_format,'op_date',$row['op_date']);
 <td><?php echo $LDBday ?>:
 </td>
 <td>
-<?php 
+<?php
 //echo $calendar->show_calendar($calendar,$date_format,'gebdatum',$enc_obj->BirthDate());
 if($mode=="select") {
-    echo '<font color="#000099">'.formatDate2Local($enc_obj->BirthDate(),$date_format); 
+    echo '<font color="#000099">'.formatDate2Local($enc_obj->BirthDate(),$date_format);
 }else{
   echo $calendar->show_calendar($calendar,$date_format,'gebdatum',$enc_obj->BirthDate());
 }
-?> 
+?>
 
 </td>
 </tr>
@@ -553,7 +553,7 @@ if($mode=="select") {
 <td><?php echo $LDDiagnosis ?>:
 </td>
 <td>
-<?php if($mode=="select") echo '<font color="#800000">'.$row[diagnosis]; 
+<?php if($mode=="select") echo '<font color="#800000">'.$row[diagnosis];
 	else echo '
 	<input name="diagnosis" type="text" size="60" >';
 ?>
@@ -563,7 +563,7 @@ if($mode=="select") {
 <td><?php echo $LDLocalization ?>:
 </td>
 <td>
-<?php if($mode=="select") echo '<font color="#800000">'.$row[localize]; 
+<?php if($mode=="select") echo '<font color="#800000">'.$row[localize];
 	else echo '
 	<input name="localize" type="text" size="60" >';
 ?>
@@ -574,7 +574,7 @@ if($mode=="select") {
 </td>
 <td>
 
-<?php if($mode=="select") echo '<font color="#800000">'.$row[therapy]; 
+<?php if($mode=="select") echo '<font color="#800000">'.$row[therapy];
 	else echo '
 	<input name="therapy" type="text" size="60" >';
 ?>
@@ -584,7 +584,7 @@ if($mode=="select") {
 <td><?php echo $LDSpecials ?>:
 </td>
 <td>
-<?php if($mode=="select") echo '<font color="#800000">'.$row[special]; 
+<?php if($mode=="select") echo '<font color="#800000">'.$row[special];
 	else echo '
 	<input name="special" type="text" size="60" >';
 ?>
@@ -641,14 +641,14 @@ if($row[class_s]) echo "$row[class_s] $LDMinor  &nbsp; ";
 </tr>
 </table>
 <p>
- 
-<font color="#0"> &nbsp; <?php echo $LDScrubNurse ?>: 
-<?php if($mode=="select") echo '<font color="#800000">'.$row[scrub_nurse].' &nbsp;'; 
+
+<font color="#0"> &nbsp; <?php echo $LDScrubNurse ?>:
+<?php if($mode=="select") echo '<font color="#800000">'.$row[scrub_nurse].' &nbsp;';
 	else echo '
 	<input name="inst" type="text" size="14" >';
 ?>
 <font color="#0"> &nbsp; <?php echo $LDOpRoom ?>: <font color="#0">
-<?php if($mode=="select") echo '<font color="#800000">'.$row[op_room]; 
+<?php if($mode=="select") echo '<font color="#800000">'.$row[op_room];
 	else echo '
 	<input name="opsaal" type="text" size="3" >';
 ?>
@@ -674,8 +674,8 @@ if($row[class_s]) echo "$row[class_s] $LDMinor  &nbsp; ";
 <input type="hidden" name="lang" value="<?php echo $lang ?>">
 <input type="hidden" name="dept_nr" value="<?php echo $dept_nr ?>">
 </form>
-<?php 
-} 
+<?php
+}
 ?>
 <p>
 </ul>
@@ -684,7 +684,7 @@ if($row[class_s]) echo "$row[class_s] $LDMinor  &nbsp; ";
 <p>
 </td>
 </tr>
-</table>        
+</table>
 <hr>
 <ul>
 <FONT    SIZE=2  FACE="Arial">

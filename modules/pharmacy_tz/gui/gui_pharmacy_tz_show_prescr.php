@@ -292,7 +292,7 @@ function reset()
 				<font size=1>[
 <?php
 					$dfbuffer="LD_".strtr($date_format,".-/","phs");
-					echo $$dfbuffer;
+					echo ${$dfbuffer};
 ?>
 				 ] </font><br>
 

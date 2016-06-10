@@ -14,7 +14,7 @@ if($rows){
 			$show_preg_enc=$buffer;
 		}
 	}
-	
+
 ?>
 <table border=0 cellpadding=0 cellspacing=0 width=100%>
 <?php
@@ -24,7 +24,7 @@ if($rows){
 		# Get the field names
 		$fields=&$obj->coreFieldNames();
 		# If not this encounter´s pregnancy, show warn notice
-		
+
 ?>
 
 	<tr>
@@ -51,33 +51,33 @@ if($rows){
   <tr bgcolor="#fefefe">
     <td><FONT color="#006600"><b><?php echo $LD[$x]; ?></b></font></td>
     <td>
-	<?php 
+	<?php
 			switch($x){
 				case 'delivery_date': echo formatDate2Local($pregbuf[$show_preg_enc][$x],$date_format); break;
 				case 'delivery_time': echo convertTimeToLocal($pregbuf[$show_preg_enc][$x]); break;
 				case 'delivery_mode':
 					$buf=&$obj->getDeliveryMode($pregbuf[$show_preg_enc]['delivery_mode']);
-					if(isset($$buf['LD_var']) && $$buf['LD_var']) echo $$buf['LD_var'];
+					if(isset(${$buf['LD_var']}) && ${$buf['LD_var']}) echo ${$buf['LD_var']};
 						else echo $buf['name'];
 					break;
 				case 'outcome':
 					$buf=&$obj->getOutcome($pregbuf[$show_preg_enc]['outcome']);
-					if(isset($$buf['LD_var']) && $$buf['LD_var']) echo $$buf['LD_var'];
+					if(isset(${$buf['LD_var']}) && ${$buf['LD_var']}) echo ${$buf['LD_var']};
 						else echo $buf['name'];
 					break;
 				case 'induction_method':
 					$buf=&$obj->getInductionMethod($pregbuf[$show_preg_enc][$x]);
-					if(isset($$buf['LD_var']) && $$buf['LD_var']) echo $$buf['LD_var'];
+					if(isset(${$buf['LD_var']}) && ${$buf['LD_var']}) echo ${$buf['LD_var']};
 						else echo $buf['name'];
 					break;
 				case 'perineum':
 					$buf=&$obj->getPerineum($pregbuf[$show_preg_enc][$x]);
-					if(isset($$buf['LD_var']) && $$buf['LD_var']) echo $$buf['LD_var'];
+					if(isset(${$buf['LD_var']}) && ${$buf['LD_var']}) echo ${$buf['LD_var']};
 						else echo $buf['name'];
 					break;
 				case 'anaesth_type_nr':
 					$buf=&$obj->getAnaesthesia($pregbuf[$show_preg_enc][$x]);
-					if(isset($$buf['LD_var']) && $$buf['LD_var']) echo $$buf['LD_var'];
+					if(isset(${$buf['LD_var']}) && ${$buf['LD_var']}) echo ${$buf['LD_var']};
 						else echo $buf['name'];
 					break;
 				case 'child_encounter_nr':
@@ -106,7 +106,7 @@ if($rows){
 		}
 ?>
 	</table>
-	
+
 	</td>
 	</tr>
 <?php
@@ -117,13 +117,13 @@ if($rows){
   <tr valign="top">
     <td colspan=2>&nbsp;<br>
 	<img <?php echo createComIcon($root_path,'bul_arrowgrnlrg.gif','0','absmiddle'); ?>>
-	<a href="<?php 
+	<a href="<?php
 		echo$thisfile.URL_APPEND.'&pid='.$_SESSION['sess_pid'].'&target='. strtr($target,' ','+').'&mode=new&allow_update='.$allow_update;
 		if($this_enc_preg) echo '&rec_nr='.$pregbuf[$show_preg_enc]['nr'];
-	 ?>"> 
-<?php 
+	 ?>">
+<?php
 		if($no_enc_preg) echo $LDEnterNewRecord;
-			else echo $LD['update_preg_details']; 
+			else echo $LD['update_preg_details'];
 ?>
 	</a>&nbsp;<p>
 	</td>
@@ -137,11 +137,11 @@ if($rows){
 </td>
   </tr>
 
-<?php	
+<?php
 	}
 
 	if($rows>1||($no_enc_preg)){
-	
+
 ?>
   <tr bgcolor="#f6f6f6" valign="top">
     <td <?php echo $tbg; ?>><FONT color="#000066">&nbsp;</td>

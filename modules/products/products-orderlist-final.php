@@ -192,7 +192,7 @@ if ($_POST['maxnum']>0) {
     echo '<form action="'.$thisfile.'" method="post" onSubmit="return checkform(this)">';
 
     		$buff=$dept_obj->LDvar($dept_nr);
-    		if(isset($$buff)&&!empty($$buff)) echo $$buff;
+    		if(isset(${$buff})&&!empty(${$buff})) echo ${$buff};
     			else echo $dept_obj->FormalName($dept_nr);
 
     		echo ':</font><br>

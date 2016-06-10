@@ -6,7 +6,7 @@ require($root_path.'include/core/inc_environment_global.php');
 * CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
 * GNU General Public License
 * Copyright 2002,2003,2004,2005 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -75,9 +75,9 @@ if($dept_nr){
 	$dept_obj=new Department;
 	/* Resolve the departments name, "language dependent" */
 	$dept_ldvar=$dept_obj->LDvar($dept_nr);
-	if(isset($$dept_ldvar)&&!empty($$dept_ldvar)) $dept_name=$$dept_ldvar;
+	if(isset(${$dept_ldvar})&&!empty(${$dept_ldvar})) $dept_name=${$dept_ldvar};
 		else $dept_name=$dept_obj->FormalName($dept_nr);
-	
+
 	$_SESSION['sess_dept_nr']=$dept_nr;
 }
 
@@ -92,10 +92,10 @@ if($dept_nr){
 <body onLoad="window.resizeTo(500,400);<?php if(!$nofocus) echo 'if(window.focus) window.focus();'; ?>" vlink="#0000ff" alink="#0000ff" link="#0000ff" >
 <font face="Verdana, Arial" size=2>
 
-<?php 
-if(isset($_COOKIE['ck_login_logged'.$sid])&&($_SESSION['sess_login_username'])) { 
+<?php
+if(isset($_COOKIE['ck_login_logged'.$sid])&&($_SESSION['sess_login_username'])) {
 ?>
-<!-- 
+<!--
 <b> <?php echo "$LDOptions $LDFor ".$_SESSION['sess_login_username']." ".$LDOn." ".formatDate2Local($i_date,$date_format) ?></b>
 <ul>
 <li><a href="#"><?php echo $LDShowMyCalendar ?></a></li>
@@ -112,7 +112,7 @@ if(isset($_COOKIE['ck_login_logged'.$sid])&&($_SESSION['sess_login_username'])) 
 </ul>
 <p>
  -->
-<?php 
+<?php
 }elseif($forceback){
 ?>
 <script language="javascript">
@@ -126,7 +126,7 @@ window.close();
 <p>
 <b><?php echo "$LDOptions $LDFor ".$dept_name." (".formatDate2Local($i_date,$date_format).")"; ?></b>
 <ul>
-<!-- 
+<!--
 <li><a href="#"><?php echo $LDORProgram ?></a></li>
  -->
  <li><a href="<?php echo $root_path ?>modules/nursing_or/nursing-or-dienstplan-day.php<?php echo URL_APPEND."&dept_nr=$dept_nr&pday=$day&pmonth=$month&pyear=$year" ?>&retpath=calendar_opt"><?php echo "$LDDutyPerson $LDOn (".formatDate2Local($i_date,$date_format).")" ?></a></li>

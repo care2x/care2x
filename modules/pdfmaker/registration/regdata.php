@@ -48,7 +48,7 @@ if($person_obj->preloadPersonInfo($pid)){
 		} elseif ($p_insurance->RecordCount()==1){
 			$buffer= $p_insurance->FetchRow();
 			extract($buffer);
-			//while(list($x,$v)=each($buffer)) {$$x=$v; }
+			//while(list($x,$v)=each($buffer)) {${$x}=$v; }
 			$insurance_show=true;
 	        # Get insurace firm name
 			$insurance_firm_name=$insurance_obj->getFirmName($insurance_firm_id);
@@ -59,7 +59,7 @@ if($person_obj->preloadPersonInfo($pid)){
 
 $insurance_class=$insurance_obj->getInsuranceClassInfo($insurance_class_nr);
 # Resolve the insurance class name
-if (isset($$insurance_class['LD_var'])&&!empty($$insurance_class['LD_var'])) $insclass=$$insurance_class['LD_var'];
+if (isset(${$insurance_class['LD_var']})&&!empty(${$insurance_class['LD_var']})) $insclass=${$insurance_class['LD_var']};
     else $insclass=$insurance_class['name'];
 
 

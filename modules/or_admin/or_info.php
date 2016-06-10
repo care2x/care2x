@@ -115,7 +115,7 @@ if(!empty($ORoom['ward_id'])){
 <tr>
     <td class= align=right bgColor="#eeeeee"><?php echo $LDOwnerDept ?>: </td>
     <td class= bgColor="#f9f9f9"><?php
-								if(isset($$ORoom['LD_var'])&&!empty($$ORoom['LD_var'])) echo $$ORoom['LD_var'];
+								if(isset(${$ORoom['LD_var']})&&!empty(${$ORoom['LD_var']})) echo ${$ORoom['LD_var']};
 									else echo $ORoom['deptname'];
 							?>
 </td>

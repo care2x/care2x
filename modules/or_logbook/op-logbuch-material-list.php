@@ -186,7 +186,7 @@ $material_nr=trim($material_nr);
 					$pcs="pcs".$i;
 					reset($parsedstr);
 					parse_str(trim($matbuf[$i]),$parsedstr);
-					$matbuf[$i]="b=$parsedstr[b]&a=".$parsedstr['a']."&n=$parsedstr[n]&g=$parsedstr[g]&i=$parsedstr[i]&c=".$$pcs."\r\n";
+					$matbuf[$i]="b=$parsedstr[b]&a=".$parsedstr['a']."&n=$parsedstr[n]&g=$parsedstr[g]&i=$parsedstr[i]&c=".${$pcs}."\r\n";
 				}
 
 			$matlist[0]=implode("~",$matbuf);

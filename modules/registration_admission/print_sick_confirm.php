@@ -88,14 +88,14 @@ if((!isset($pid)||!$pid) && $_SESSION['sess_pid']) $pid=$_SESSION['sess_pid'];
 if(!isset($user_id) || !$user_id)
 {
     $user_id=$local_user.$sid;
-    $user_id=$$user_id;
+    $user_id=${$user_id};
 }
 
 if(isset($pid) && ($pid!='')) {
 	$person_obj=new Person($pid);
 	if($data_obj=&$person_obj->getAllInfoObject()){
 		$zeile=$data_obj->FetchRow();
-		//while(list($x,$v)=each($zeile))	$$x=$v;
+		//while(list($x,$v)=each($zeile))	${$x}=$v;
 		extract($zeile);
 	}
 }

@@ -459,7 +459,7 @@ class GuiPersonShow {
 				if (isset($insurance_class_info)) {
 					$buffer=$insurance_class_info['LD_var'];
 					// check if buffer exists, then take the variable name as value and show it
-					if(isset($$buffer)&&!empty($$buffer)) $this->smarty->append('sInsClasses',$$buffer);
+					if(isset(${$buffer})&&!empty(${$buffer})) $this->smarty->append('sInsClasses',${$buffer});
     					else $this->smarty->append('sInsClasses',$insurance_class_info['name']);
 				}
 

@@ -6,7 +6,7 @@ require($root_path.'include/core/inc_environment_global.php');
 * CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
 * GNU General Public License
 * Copyright 2002,2003,2004,2005 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -86,12 +86,12 @@ $dept_DOC=$dept_obj->getAllActiveWithDOC();
 ?>
 
 <script language="javascript">
-<!-- 
+<!--
   var urlholder;
 function popinfo(l,d)
 {
 	urlholder="doctors-dienstplan-popinfo.php<?php echo URL_REDIRECT_APPEND ?>&nr="+l+"&dept_nr="+d+"&user=<?php echo $aufnahme_user.'"' ?>;
-	
+
 	infowin=window.open(urlholder,"dienstinfo","width=400,height=300,menubar=no,resizable=yes,scrollbars=yes");
 
 }
@@ -99,7 +99,7 @@ function popinfo(l,d)
 -->
 </script>
 
-<?php 
+<?php
 
  $sTemp=ob_get_contents();
  ob_end_clean();
@@ -117,13 +117,13 @@ while(list($x,$v)=each($dept_DOC)){
 	$boldx='';
 	if($hilitedept==$v['nr']){
 		echo '<tr bgcolor="yellow">'; $bold="<font color=\"red\" size=2><b>";$boldx="</b></font>";
-	} 
+	}
 	else
-		if ($toggler==0) 
+		if ($toggler==0)
 			{ echo '<tr class="wardlistrow1">'; $toggler=1;}
 				else { echo '<tr class="wardlistrow2">'; $toggler=0;}
 	echo '<td ><font face="verdana,arial" size="2" >&nbsp;'.$bold;
-	if(isset($$v['LD_var']) && !empty($$v['LD_var'] )) echo  $$v['LD_var'];
+	if(isset(${$v['LD_var']}) && !empty(${$v['LD_var']} )) echo  ${$v['LD_var']};
 		else echo $v['name_formal'];
 	echo $boldx.'&nbsp;</td>';
 	echo '<td >&nbsp; <a href="'.$fileforward.'&dept_nr='.$v['nr'].'&target='.$target.'">

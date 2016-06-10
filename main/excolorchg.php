@@ -6,7 +6,7 @@ require($root_path.'include/core/inc_environment_global.php');
 * CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
 * GNU General Public License
 * Copyright 2002,2003,2004,2005 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -24,15 +24,15 @@ if(!isset($_SESSION['sess_serial_buffer'])){
 }
 if(isset($_SESSION['sess_serial_buffer'])){
 	$config_new=unserialize($_SESSION['sess_serial_buffer']);
-}	
+}
 
-      
+
 if ($mode=='change'){
 
 	$color='#'.$color;
 
 	$config_new[$item]=$color;
-	
+
 	$_SESSION['sess_serial_buffer']=serialize($config_new);
 	$config_new=array_merge($cfg,$config_new);
 
@@ -44,7 +44,7 @@ if ($mode=='change'){
 	if($user->getConfig($_COOKIE['ck_config'])){
 
 		$config=&$user->getConfigData();
-	
+
 		$config=array_merge($config,$config_new);
 
 		if($user->saveConfig($_COOKIE['ck_config'],$config)){
@@ -97,7 +97,7 @@ require_once($root_path.'include/core/inc_nocache_headers.php');
 
  # Window bar title
  $smarty->assign('sWindowTitle',$LDColorOptExt);
- 
+
  # Body Onload js
   if($idxreload=="j"){
  	$sOnLoadJs = 'onLoad="window.parent.STARTPAGE.location.replace(\'indexframe.php?sid='.$sid.'&lang='.$lang.'\'); ';
@@ -113,7 +113,7 @@ require_once($root_path.'include/core/inc_nocache_headers.php');
  <TITLE>Spezielle Dienste</TITLE>
 
 <script language="javascript">
-<!-- 
+<!--
 var urlholder;
 
   function chgcolor(p,x){
@@ -121,7 +121,7 @@ var urlholder;
 <?php
 echo 'urlholder="chg-color.php?item="+p+"&sid='.$sid.'&lang='.$lang.'&mode=ex&tb='.str_replace('#','',$cfg['top_bgcolor']).'&tt='.str_replace('#','',$cfg['top_txtcolor']).'&bb='.str_replace('#','',$cfg['body_bgcolor']).'&btb='.str_replace('#','',$cfg['bot_bgcolor']).'&d='.$cfg['dhtml'].'";';
 ?>
-	
+
 	colorwin=window.open(urlholder,"colorwin",winspecs);
 	}
 //  -->
@@ -152,7 +152,7 @@ ob_start();
 <?php
 if(is_object($menu_obj)){
 	while($menu=$menu_obj->FetchRow()){
-		if(isset($$menu['LD_var'])&&!empty($$menu['LD_var'])) echo $$menu['LD_var'];
+		if(isset(${$menu['LD_var']})&&!empty(${$menu['LD_var']})) echo ${$menu['LD_var']};
 			else echo $menu['name'];
 		echo '<br>';
 	}
@@ -172,7 +172,7 @@ Index frame<p align=left >
 </td>
   </tr>
   <tr valign=top>
-  
+
 <td bgcolor=<?php echo $cfg['body_bgcolor']; ?> width=400 >
 <p><br>&nbsp; <?php echo $LDMainFrame ?><p><br>
 &nbsp;<a href="#" onClick="chgcolor('body_hover','ex')"><img <?php echo createComIcon($root_path,'settings_tree.gif','0','absmiddle') ?>  alt="<?php echo $LDMainFrame ?> hover  link "><font face="Verdana, Arial" color=<?php echo $config_new['body_hover']; ?>> <?php echo $LDMainFrame ?> hover link.</font></a><br>
@@ -181,7 +181,7 @@ Index frame<p align=left >
 </td>
   </tr>
   <tr>
- 
+
     <td bgcolor=<?php echo $cfg['bot_bgcolor']; ?>>
 	<p><br>
 	&nbsp;&nbsp;&nbsp;<?php echo $LDBottomFrame ?>

@@ -6,7 +6,7 @@ require($root_path.'include/core/inc_environment_global.php');
 * CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
 * GNU General Public License
 * Copyright 2002,2003,2004,2005 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -20,11 +20,11 @@ if(isset($create) && $create) {
     $del0="t=$t&r=$r&f=$f&s=$s&d=$d&z=$z";
 } else {
     for($i=0;$i<$maxrow;$i++) {
-		$delbuf="del$i"; 
-		if(isset($$delbuf) && $$delbuf){ $delok=1;	break;}
+		$delbuf="del$i";
+		if(isset(${$delbuf}) && ${$delbuf}){ $delok=1;	break;}
 	}
 
-if(!isset($delok)||!$delok) { 
+if(!isset($delok)||!$delok) {
     header("location:intra-email.php".URL_REDIRECT_APPEND."&mode=listmail"); exit;}
 }
 
@@ -40,8 +40,8 @@ $linecount=0;
 $modetypes=array('sendmail','listmail');
 
 							$sql="SELECT $folder, lastcheck FROM $dbtable WHERE  email='".$_COOKIE[$local_user.$sid]."'";
-							if($ergebnis=$db->Execute($sql)) 
-							{			
+							if($ergebnis=$db->Execute($sql))
+							{
 								if($ergebnis->RecordCount())
 								{
 									$result=$ergebnis->FetchRow();
@@ -51,9 +51,9 @@ $modetypes=array('sendmail','listmail');
 										for($n=0;$n<$maxrow;$n++)
 										{
 											$delbuf="del$n";
-											if(!isset($$delbuf)||!$$delbuf) continue;
-											$delbuf2=trim(strtr($$delbuf,"+"," "));
-											//echo "$delbuf2<br>$inb[$i]<br>"; 
+											if(!isset(${$delbuf})||!${$delbuf}) continue;
+											$delbuf2=trim(strtr(${$delbuf},"+"," "));
+
 											if(stristr($delbuf2,trim($inb[$i])))
 											{
 												$trash=array_splice($inb,$i,1);
@@ -68,14 +68,14 @@ $modetypes=array('sendmail','listmail');
 
 								    $db->BeginTrans();
 								    $ok=$db->Execute($sql);
-								    if($ok&&$db->CommitTrans()) { 
+								    if($ok&&$db->CommitTrans()) {
 
-										// update the recyle folder 
+										// update the recyle folder
 										if($folder!='trash')
 										{
 											$sql="SELECT trash, lastcheck FROM $dbtable WHERE  email='".$_COOKIE[$local_user.$sid]."'";
-											if($ergebnis=$db->Execute($sql)) 
-											{			
+											if($ergebnis=$db->Execute($sql))
+											{
 												if($ergebnis->RecordCount())
 												{
 													$result=$ergebnis->FetchRow();
@@ -83,8 +83,8 @@ $modetypes=array('sendmail','listmail');
 													for($n=0;$n<$maxrow;$n++)
 													{
 														$delbuf="del$n";
-														if(!isset($$delbuf)||!$$delbuf) continue;
-														$delbuf2=trim(strtr($$delbuf,"+"," "));
+														if(!isset(${$delbuf})||!${$delbuf}) continue;
+														$delbuf2=trim(strtr(${$delbuf},"+"," "));
 														//echo $delbuf2."<br>";
 														if($result['trash']=="") $result['trash']=$delbuf2."\r\n";
 														else $result['trash'].="_".$delbuf2."\r\n";
@@ -95,19 +95,19 @@ $modetypes=array('sendmail','listmail');
 								                   $ok=$db->Execute($sql);
 								                   if($ok) {
 												       $db->CommitTrans();
-												   } else { 
+												   } else {
 												      $db->RollbackTrans();
 													  echo "$LDDbNoUpdate<br>$sql";
-												   } 
+												   }
 												}
 											//echo $sql;
-											} else { echo "$LDDbNoRead<br>$sql"; } 
+											} else { echo "$LDDbNoRead<br>$sql"; }
 										}
 										header("location:intra-email.php?sid=$sid&lang=$lang&mode=listmail&l2h=$l2h&folder=$folder");
 									}else {
 									   $db->RollbackTrans();
-									   echo "$LDDbNoUpdate<br>$sql"; 
-									} 
+									   echo "$LDDbNoUpdate<br>$sql";
+									}
 								}
-				}else { echo "$LDDbNoRead<br>$sql"; } 
+				}else { echo "$LDDbNoRead<br>$sql"; }
 ?>

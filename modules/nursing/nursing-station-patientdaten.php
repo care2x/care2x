@@ -31,7 +31,7 @@ if(isset($op_shortcut) && $op_shortcut){
 	setcookie('ck_pflege_user'.$sid,$_COOKIE['aufnahme_user'.$sid],0,'/');
 	$edit=1;
 }elseif(!$_COOKIE['ck_pflege_user'.$sid]){
-	if($edit) {header('Location:'.$root_path.'language/'.$lang.'/lang_'.$lang.'_invalid-access-warning.php'); exit;}; 
+	if($edit) {header('Location:'.$root_path.'language/'.$lang.'/lang_'.$lang.'_invalid-access-warning.php'); exit;};
 }
 /* Load the visual signalling defined constants */
 require_once($root_path.'include/core/inc_visual_signalling_fx.php');
@@ -56,12 +56,12 @@ $enc_obj= new Encounter;
 include_once($root_path.'include/care_api_classes/class_globalconfig.php');
 $GLOBAL_CONFIG=array();
 $glob_obj=new GlobalConfig($GLOBAL_CONFIG);
-$glob_obj->getConfig('patient_%');	
+$glob_obj->getConfig('patient_%');
 
 /* Establish db connection */
 if(!isset($db)||!$db) include($root_path.'include/core/inc_db_makelink.php');
 if($dblink_ok)
-{	
+{
     /* Load date formatter */
 	include_once($root_path.'include/core/inc_date_format_functions.php');
 		$enc_obj->where=" encounter_nr=$pn";
@@ -73,31 +73,31 @@ if($dblink_ok)
 				case '2': $full_en = ($pn + $GLOBAL_CONFIG['patient_outpatient_nr_adder']);
 							break;
 				default: $full_en = ($pn + $GLOBAL_CONFIG['patient_inpatient_nr_adder']);
-			}						
+			}
 */
 			$full_en=$pn;
-			
+
 			if( $enc_obj->is_loaded){
-				$result=&$enc_obj->encounter;		
-				$rows=$enc_obj->record_count;	
+				$result=&$enc_obj->encounter;
+				$rows=$enc_obj->record_count;
 
 					if($result['is_discharged']) $edit=0;
-					
+
 					$event_table= 'care_encounter_event_signaller';
-					
+
 					/* If mode = save_event_changes, save the color bar status */
-					
+
 					if($mode=='save_event_changes')
 					{
 					   $sql_buf='';
-					   
+
 					   /* prepare the rose_x part sql query */
-					   
+
 					   for ($i=1;$i<25;$i++)
 					   {
 					       $buf='rose_'.$i;
-						   
-						   $sql_buf.=$buf." ='".$$buf."', ";
+
+						   $sql_buf.=$buf." ='".${$buf}."', ";
 					   }
 
 					   /* prepare the green_x part */
@@ -106,39 +106,39 @@ if($dblink_ok)
 					   {
 					       $buf='green_'.$i;
 
-						   $sql_buf.=$buf."='".$$buf."', ";
+						   $sql_buf.=$buf."='".${$buf}."', ";
 					   }
-					   
+
 					   /* append the additional color event signallers */
-					   
+
 					   $sql_buf.="yellow='$yellow', black='$black', blue_pale='$blue_pale', brown='$brown',
 					                   pink='$pink', yellow_pale='$yellow_pale', red='$red', green_pale='$green_pale',
 									   violet='$violet', blue='$blue', biege='$biege', orange='$orange'";
-					   
-					   
+
+
 					   $sql = "UPDATE $event_table SET $sql_buf WHERE encounter_nr='$pn'";
-					 
-					 //  echo $sql; 
+
+					 //  echo $sql;
 
 					   if ($event_result=$enc_obj->Transact($sql))
 					   {
 					     if (!$db->Affected_Rows())
 					      {
                             /* If entry not yet existing, insert data */
-							
+
 					        /* prepare the rose_x part sql query */
-					       
+
 						    $set_str='';
 							$sql_buf='';
-					   
+
 					        for ($i=1;$i<25;$i++)
 					       {
-						   
+
 					          $buf='rose_'.$i;
-							  
+
 							  $set_str.=$buf.', ';
 
-						       $sql_buf.="'".$$buf."', ";
+						       $sql_buf.="'".${$buf}."', ";
 					       }
 
 					       /* prepare the green_x part */
@@ -149,7 +149,7 @@ if($dblink_ok)
 
 							  $set_str.=$buf.', ';
 
-						       $sql_buf.="'".$$buf."', ";
+						       $sql_buf.="'".${$buf}."', ";
 					       }
 
 					   /* append the additional color event signallers */
@@ -192,18 +192,18 @@ if($dblink_ok)
 						   //echo " failed update $sql";
 					}
 			    }
-				
+
 				//echo $sql;
 
 			   if(!isset($mode) || ($mode=='') || ($mode=='changes_saved'))
 			   {
 					/* Get the color event signaller data */
-					
+
 					$sql="SELECT * FROM ".$event_table." WHERE encounter_nr='".$pn."'";
 
 					if($event_result=$db->Execute($sql))
 					{
-					   if($event_result->RecordCount()) 
+					   if($event_result->RecordCount())
 					   {
 					      $event=$event_result->FetchRow();
 						}
@@ -222,18 +222,18 @@ if($dblink_ok)
 						       $event['rose_'.$i]=$z;
 						    }
 					    }
-							
+
 					}
 			   }
 			} // end of if($rows)
 	  }else{ // end of if ($ergebnis)
-	  	echo "<p>$sql$LDDbNoRead"; 
+	  	echo "<p>$sql$LDDbNoRead";
 		exit;
 	}
 }else{
-	echo "$LDDbNoLink<br>$sql<br>"; 
+	echo "$LDDbNoLink<br>$sql<br>";
 }
-		
+
 $fr=strtolower(str_replace('.','-',($result['encounter_nr'].'_'.$result['name_last'].'_'.$result['name_first'].'_'.$result['date_birth'])));
 
 # Start Smarty templating here
@@ -274,7 +274,7 @@ ob_start();
 ?>
 
 <script language="javascript">
-<!-- 
+<!--
   var urlholder;
   var changed_flag=0;
 
@@ -294,27 +294,27 @@ function enlargewin(){
 }
 
 function xmakekonsil(v)
-{ 
+{
     var x=v;
 /*	if((v=="patho")||(v=="inmed")||(v=="radio")||(v=="baclabor")||(v=="blood")||(v=="chemlabor"))
 	{
-*/	
+*/
 	   if((v=="inmed")||(v=="allamb")||(v=="unfamb")||(v=="sono")	||(v=="nuklear"))
 	   {
 	     v="generic";
 	   }
 	   location.href="nursing-station-patientdaten-doconsil-"+v+".php?sid=<?php echo "$sid&lang=$lang&edit=$edit&station=$station&pn=$pn&konsil="; ?>"+x+"&target="+v;
 /*	}
-	else 
+	else
 	{v="radio";
 	location.href="ucons.php?sid=<?php echo "$sid&lang=$lang&station=$station&pn=$pn&konsil="; ?>"+v;
 	}
 */	//enlargewin();
 }
 function makekonsil(d)
-{ 
+{
 	if(d!=""){
-	   location.href="nursing-station-patientdaten-doconsil-router.php?sid=<?php 
+	   location.href="nursing-station-patientdaten-doconsil-router.php?sid=<?php
 	   //echo "$sid&lang=$lang&edit=$edit&station=$station&pn=$pn&dept_nr=";
 	   echo "$sid&lang=$lang&edit=$edit&station=$station&pn=$pn&dept_id=";
 	   ?>"+d;
@@ -323,16 +323,16 @@ function makekonsil(d)
 function pullbar(cb)
 {
     var buf;
-	
+
 	eval("buf = document.patient_folder." + cb.name + ".value");
-	
+
 	buf=parseInt(buf);
-	
+
 	if((buf == '<?php echo $f ?>') || (buf) || (buf==<?php echo $f ?>))
 	{ eval("document."+cb.name+".src='<?php echo $root_path; ?>gui/img/common/default/qbar_<?php echo $z ?>_"+cb.name+".gif'");
 		 eval("document.patient_folder." + cb.name + ".value = <?php echo $z ?>");
 	}
-		else 
+		else
 		{
 		 eval("document."+cb.name+".src='<?php echo $root_path; ?>gui/img/common/default/qbar_<?php echo $f ?>_"+cb.name+".gif'");
 		 eval("document.patient_folder." + cb.name + ".value = <?php echo $f ?>");
@@ -343,16 +343,16 @@ function pullbar(cb)
 function pullGreenbar(cb)
 {
     var buf;
-	
+
 	eval("buf = document.patient_folder." + cb.name + ".value");
-	
+
      buf=parseInt(buf);
-	
+
 	if((buf == '<?php echo $f ?>') || (buf) || (buf==<?php echo $f ?>))
 	{ eval("document."+cb.name+".src='<?php echo $root_path; ?>gui/img/common/default/qbar_<?php echo $z ?>_green.gif'");
 		 eval("document.patient_folder." + cb.name + ".value = <?php echo $z ?>");
 	}
-		else 
+		else
 		{
 		 eval("document."+cb.name+".src='<?php echo $root_path; ?>gui/img/common/default/qbar_<?php echo $f ?>_green.gif'");
 		 eval("document.patient_folder." + cb.name + ".value = <?php echo $f ?>");
@@ -363,16 +363,16 @@ function pullGreenbar(cb)
 function pullRosebar(cb)
 {
     var buf;
-	
+
 	eval("buf = document.patient_folder." + cb.name + ".value");
-	
+
      buf=parseInt(buf);
-	
+
 	if((buf == '<?php echo $f ?>') || (buf) || (buf==<?php echo $f ?>))
 	{ eval("document."+cb.name+".src='<?php echo $root_path; ?>gui/img/common/default/qbar_<?php echo $z ?>_rose.gif'");
 		 eval("document.patient_folder." + cb.name + ".value = <?php echo $z ?>");
 	}
-		else 
+		else
 		{
 		 eval("document."+cb.name+".src='<?php echo $root_path; ?>gui/img/common/default/qbar_<?php echo $f ?>_rose.gif'");
 		 eval("document.patient_folder." + cb.name + ".value = <?php echo $f ?>");
@@ -399,10 +399,10 @@ function openDRGComposite(){
 			w=800;
 			h=650;';
 ?>
-	
+
 	drgcomp_<?php echo $_SESSION['sess_full_en']."_".$op_nr."_".$dept_nr."_".$saal ?>=window.open("<?php echo $root_path ?>modules/drg/drg-composite-start.php<?php echo URL_REDIRECT_APPEND."&display=composite&pn=".$pn."&edit=$edit&ln=$name_last&fn=$name_first&bd=$date_birth&dept_nr=$dept_nr&oprm=$saal"; ?>","drgcomp_<?php echo $encounter_nr."_".$op_nr."_".$dept_nr."_".$saal ?>","menubar=no,resizable=yes,scrollbars=yes, width=" + (w-15) + ", height=" + (h-60));
 	window.drgcomp_<?php echo $_SESSION['sess_full_en']."_".$op_nr."_".$dept_nr."_".$saal ?>.moveTo(0,0);
-} 
+}
 
 //-->
 </script>
@@ -422,7 +422,7 @@ ob_start();
 
 	<form method="post" name="patient_folder"
 		onSubmit="return isColorBarUpdated()">
- 
+
 
 <?php
 
@@ -454,13 +454,13 @@ function rx(){
 
        /* Now create the first group of color event signaller */
         echo '<table   cellpadding="0" cellspacing=0 border="0" >
-		<tr bgcolor="#696969" ><td colspan="3" ><nobr>'.ha().'<img 
-		'.createComIcon($root_path,'qbar_'.$event['yellow'].'_yellow.gif','0').' name="yellow" '.he().'<img 
-		'.createComIcon($root_path,'qbar_'.$event['black'].'_black.gif','0').' name="black" '.he().'<img 
-		'.createComIcon($root_path,'qbar_'.$event['blue_pale'].'_blue_pale.gif','0').' name="blue_pale" '.he().'<img 
-		'.createComIcon($root_path,'qbar_'.$event['brown'].'_brown.gif','0').' name="brown" '.he().'<img 
-		'.createComIcon($root_path,'qbar_'.$event['pink'].'_pink.gif','0').' name="pink" '.he().'<img 
-		'.createComIcon($root_path,'qbar_'.$event['yellow_pale'].'_yellow_pale.gif','0').' name="yellow_pale" '.he().'<img 
+		<tr bgcolor="#696969" ><td colspan="3" ><nobr>'.ha().'<img
+		'.createComIcon($root_path,'qbar_'.$event['yellow'].'_yellow.gif','0').' name="yellow" '.he().'<img
+		'.createComIcon($root_path,'qbar_'.$event['black'].'_black.gif','0').' name="black" '.he().'<img
+		'.createComIcon($root_path,'qbar_'.$event['blue_pale'].'_blue_pale.gif','0').' name="blue_pale" '.he().'<img
+		'.createComIcon($root_path,'qbar_'.$event['brown'].'_brown.gif','0').' name="brown" '.he().'<img
+		'.createComIcon($root_path,'qbar_'.$event['pink'].'_pink.gif','0').' name="pink" '.he().'<img
+		'.createComIcon($root_path,'qbar_'.$event['yellow_pale'].'_yellow_pale.gif','0').' name="yellow_pale" '.he().'<img
 		'.createComIcon($root_path,'qbar_'.$event['red'].'_red.gif','0').' name="red" '.he().'<img
 		'.createComIcon($root_path,'qbar_'.$event['green_pale'].'_green_pale.gif','0').' name="green_pale" '.he().'<img
 		'.createComIcon($root_path,'qbar_'.$event['violet'].'_violet.gif','0').' name="violet" '.he().'<img
@@ -471,29 +471,29 @@ function rx(){
 		'.createComIcon($root_path,'qbar_trans.gif','0').'><img
 		'.createComIcon($root_path,'qbar_trans.gif','0').'><img
 		'.createComIcon($root_path,'qbar_trans.gif','0').'>';
-		
+
 		/* Create the green bars */
 		/* Note $h is used here as counter  */
 		for($h=1;$h<8;$h++)
-		{ 
+		{
 		  echo ha().'<img
 		 '.createComIcon($root_path,'qbar_'.$event['green_'.$h].'_green.gif','0').' alt="'.$LDFullDayName[$h].'"  name="green_'.$h.'" '.gx();
 		  }
 		 echo '<img
 		'.createComIcon($root_path,'qbar_trans.gif','0').'>';
-		
+
 		/* Create the rose bars*/
 		/* Note $h is used here as counter  */
 		for($h=1;$h<25;$h++)
-		{ 
+		{
 
-		  echo '<img 
+		  echo '<img
 			 '.createComIcon($root_path,'qbar_'.$event['rose_'.$h].'_rose.gif','0').' alt="'.$h.' '.$LDHour.'"  name="rose_'.$h.'">';
 			if(($h==6)||($h==12)||($h==18))
 		 	echo'<img
 			  '.createComIcon($root_path,'qbar_trans.gif','0').'>';
 		 }
-		 
+
 		 /* Create the tag links */
 		echo '</td></nobr>
 		</tr>
@@ -518,23 +518,23 @@ function rx(){
 		<td><input type="button" onClick="javascript:enlargewin();window.location.href=\''.$root_path.'main/diagnostics-report-start.php'.URL_REDIRECT_APPEND.'&station='.$station.'&pn='.$pn.'&edit='.$edit.'&header='.$result['name_last'].',+'.$result['name_first'].'+'.formatDate2Local($result['date_birth'],$date_format).'\'" value="'.$LDReports.'"></td>
 		';
 		echo '<td><input type="button" onClick="javascript:window.location.href=\''.$root_path.'modules/laboratory/labor_datalist_noedit.php'.URL_REDIRECT_APPEND.'&station='.$station.'&pn='.$pn.'&user_origin='.$user_origin.'&edit='.$edit.'\'" value="'.$LDLabReports.'"></td>';
-		
-		//<input type="button" value="'.$LDRootData.'"><input 
+
+		//<input type="button" value="'.$LDRootData.'"><input
 		//type="button" value="'.$LDNursingPlan.'">
 		echo '</tr></table></td></tr>';
 		echo '<tr><td bgcolor=333333><font color=white><b>'.$LDOther.'<b></font></td></tr>';
 		echo '<tr><td><table cellpadding=3><tr><td>';
-		echo '<input 
+		echo '<input
 		type="button" onClick="javascript:openDRGComposite()" value="'.$LDDRG.'"></td><td>';
 		echo '<td><input type="button" onClick="javascript:enlargewin();window.location.href=\'nursing-station-patientdaten-todo.php'.URL_REDIRECT_APPEND.'&station='.$station.'&pn='.$pn.'&edit='.$edit.'\'" value="'.$LDDocsPrescription.'"></td>';
 		echo '<td><input type="button" onClick="javascript:enlargewin();window.location.href=\''.$root_path.'modules/fotolab/fotos-start.php'.URL_REDIRECT_APPEND.'&pn='.$pn.'&station='.$station.'&fileroot='.$fr.'&edit='.$edit.'\'" value="'.$LDPhotos.'"></td></tr></table></td></tr></table>';
-		
-		
+
+
 		/* Create the select  menu in edit mode */
 /*		if($edit){
 			$ChkUpOptions=get_meta_tags($root_path.'global_conf/'.$lang.'/konsil_tag_dept.pid');
-		
-			echo '<select 
+
+			echo '<select
 			name="konsiltyp" size="1" onChange=makekonsil(this.value)>
 			<option value="">'.$LDChkUpRequests.'</option>';
 
@@ -546,7 +546,7 @@ function rx(){
 		}
 */
 		if($edit){
-		
+
 			echo '<table cellpadding=3><tr><td><select name="konsiltyp" size="1" onChange=makekonsil(this.value)>
 			<option value="">'.$LDChkUpRequests.'</option>';
 
@@ -554,7 +554,7 @@ function rx(){
 				$subDepts = $dept_obj->getAllSubDepts($v['nr']);
 				echo'<option value="'.$v['nr'].'~'.$v['id'].'">';
 				$buffer=$v['LD_var'];
-				if(isset($$buffer)&&!empty($$buffer)) echo $$buffer;
+				if(isset(${$buffer})&&!empty(${$buffer})) echo ${$buffer};
 				else echo $v['name_formal'];
 				echo '</option>';
 			    //added subdepts
@@ -562,16 +562,16 @@ function rx(){
 			    		while (list($y,$sDept) = each($subDepts)) {
             				echo'<option value="'.$sDept['nr'].'~'.$sDept['id'].'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<sup>L</sup>&nbsp;';
             				$buffer=$sDept['LD_var'];
-            				if(isset($$buffer)&&!empty($$buffer)) echo $$buffer;
+            				if(isset(${$buffer})&&!empty(${$buffer})) echo ${$buffer};
             				else echo $sDept['name_formal'];
             				echo '</option>';
 			    		}
-			    }	
+			    }
 			}
 			echo '
 			</select></td></tr></table>';
 		}
-		
+
 		/* Create frames witht the skins */
 		echo '
 		</nobr>
@@ -585,8 +585,8 @@ function rx(){
 * By default, the png image label displayed
 * To use the html display form uncomment the code within the PATIENT_INFO_HTML tags
 *  and comment out the code within the PATIENT_INFO_IMAGE tags
-*/		
-/*	
+*/
+/*
 
 #..................... START...... PATIENT_INFO_HTML
 
@@ -597,7 +597,7 @@ function rx(){
 		</tr>';
 
 #..................... END....... PATIENT_INFO_HTML
-		
+
 */
 echo '
 <tr  bgcolor="#696969" >

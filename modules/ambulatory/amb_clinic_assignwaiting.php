@@ -1,7 +1,7 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 /**
 * CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
 * GNU General Public License
@@ -175,7 +175,7 @@ $iRowSpan = 5;
 if(trim($encounter['blood_group'])){
 	$smarty->assign('LDBloodGroup',$LDBloodGroup);
 	$buf=trim('LD'.$encounter['blood_group']);
-	$smarty->assign('blood_group',$$buf);
+	$smarty->assign('blood_group',${$buf});
 	$iRowSpan++;
 }
 
@@ -189,7 +189,7 @@ if($encounter['sex']=='m') $smarty->assign('sSexType',$LDMale);
 	elseif($encounter['sex']=='f') $smarty->assign('sSexType',$LDFemale);
 
 $smarty->assign('LDBillType',$LDBillType);
-if (isset($$billing_type['LD_var'])&&!empty($$billing_type['LD_var'])) $smarty->assign('billing_type',$$billing_type['LD_var']);
+if (isset(${$billing_type['LD_var']})&&!empty(${$billing_type['LD_var']})) $smarty->assign('billing_type',${$billing_type['LD_var']});
     else $smarty->assign('billing_type',$billing_type['name']);
 
 $smarty->assign('LDDiagnosis',$LDDiagnosis);

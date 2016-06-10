@@ -1,4 +1,4 @@
-<?php if(($sid==NULL)||($sid!=$$ck_sid_buffer)) { header("location:invalid-access-warning.php"); exit;}
+<?php if(($sid==NULL)||($sid!=${$ck_sid_buffer})) { header("location:invalid-access-warning.php"); exit;}
 require_once($root_path.'include/core/inc_config_color.php');
 
 $thisfile="medlager-datenbank-info.php";
@@ -12,10 +12,10 @@ $breakfile="medlager-datenbank-functions.php";
  <TITLE> Medicallager Datenbank - Information </TITLE>
 
  <script language="javascript" >
-<!-- 
+<!--
 function closewin()
 {
-	location.href='apotheke.php?sid=<?php echo $$ck_sid_buffer.'&uid='.$r;?>';
+	location.href='apotheke.php?sid=<?php echo ${$ck_sid_buffer}.'&uid='.$r;?>';
 }
 
 function pruf(d)
@@ -29,9 +29,9 @@ function pruf(d)
 }
 
 // -->
-</script> 
+</script>
 
-<?php 
+<?php
 require($root_path.'include/core/inc_js_gethelp.php');
 require($root_path.'include/core/inc_css_a_hilitebu.php');
 ?></HEAD>
@@ -49,7 +49,7 @@ require($root_path.'include/core/inc_css_a_hilitebu.php');
 <td bgcolor="<?php echo $cfg['top_bgcolor']; ?>" height="10" align=right>
 <!-- <a href="#" onClick=history.back(1)><img src="../img/zuruck.gif" border=0 <?php if($cfg['dhtml'])echo'class="fadeOut" >';?></a> -->
 <a href="#"><img src="../img/hilfe.gif" border=0 width=93 height=41  <?php if($cfg['dhtml'])echo'class="fadeOut" >';?></a>
-<a href="apotheke.php?sid=<?php echo $$ck_sid_buffer;?>"><img src="../img/fenszu.gif" border=0 width=93 height=41  <?php if($cfg['dhtml'])echo'class="fadeOut" >';?></a></td></tr>
+<a href="apotheke.php?sid=<?php echo ${$ck_sid_buffer};?>"><img src="../img/fenszu.gif" border=0 width=93 height=41  <?php if($cfg['dhtml'])echo'class="fadeOut" >';?></a></td></tr>
 <tr valign=top >
 <td bgcolor=<?php echo $cfg['body_bgcolor']; ?> valign=top colspan=2>
 <ul>
@@ -66,7 +66,7 @@ require($root_path.'include/core/inc_css_a_hilitebu.php');
       <td><input type="text" name="keyword" size=40 maxlength=40>
           </td>
     </tr>
-   
+
 
     <tr >
       <td ><input type="submit" value="Suchen" >
@@ -125,7 +125,7 @@ require("../language/$lang/".$lang."_copyrite.php");
 
 </td>
 </tr>
-</table>        
+</table>
 &nbsp;
 
 

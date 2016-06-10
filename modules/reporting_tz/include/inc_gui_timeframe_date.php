@@ -15,7 +15,7 @@
 
 <font size=1>[<?php
 $dfbuffer = "LD_" . strtr($date_format, ".-/", "phs");
-echo $$dfbuffer;
+echo ${$dfbuffer};
 ?>]
 <select name="paytype">
    <option value=0>CASH</option>
@@ -35,14 +35,14 @@ switch($_POST['paytype']){
    default:
      $payment_type="UNKNOWN";
      break;
-     
+
 }
 $sql_loc  ="SELECT loccode, locationname FROM locations";
 $result   =$db->execute($sql_loc);
 
 $data=array();
 while($row_loc=$result->FetchRow()){
-      $data['loc'][]=$row_loc; 
+      $data['loc'][]=$row_loc;
 }
 $row_qty=count($data['loc']);
 
@@ -63,18 +63,18 @@ if(isset($_POST['show'])){
 
 ?>
 <select name="stockloc">
-<?php 
+<?php
 echo $first_option;
 for($i=0; $i<$row_qty; $i++){
 echo $options='<option value='.$data['loc'][$i]['loccode'].'>'.$data['loc'][$i]['locationname'].'</option>';
 
-} 
+}
 ?>
-</select>	
+</select>
  <label><input type="submit" name="show" value="<?php echo $LDShow;?>"</label>
-    
 
-				
+
+
 
 
 

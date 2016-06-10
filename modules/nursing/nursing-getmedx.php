@@ -51,14 +51,14 @@ $charts_obj= new Charts;
 			'create_time' => date("Y-m-d H:m:s")
 		);
 		$objPrescription->insertDataFromArray($prescription);
-		
+
 		//get the selected prescription & the id inserted
 		$objPrescription->usePrescription('prescription_sub');
 		$pk =  $db->Insert_ID();
 		$lastId = $objPrescription->LastInsertPK('nr',$pk);
 		//prescriptio sub
 		$prescription = $objPrescription->getAllPrescriptionById($prescriptionId);
-		
+
 		while (!$prescription->EOF){
 			$prescription_sub = array(
 				'prescription_nr' => $lastId,
@@ -82,9 +82,9 @@ $charts_obj= new Charts;
 			$objPrescription->insertDataFromArray($prescription_sub);
 			$prescription->MoveNext();
 		}
-		
+
 		$repeated = true;
-		
+
 		if($repeated) {
 			header("location:$thisfile?sid=$sid&lang=$lang&edit=$edit&repeated=1&pn=$pn&station=$station&winid=$winid&yr=$yr&mo=$mo&dy=$dy&dyidx=$dyidx&dystart=$dystart&dyname=$dyname&dept_nr=$dept_nr");
 			exit;
@@ -119,27 +119,27 @@ $charts_obj= new Charts;
 				$pdx='p'.$i; //submission speed for IV
 				$ndx='n'.$i; //notes for medicament
 				$cdx='c'.$i; //bestellnum of the companion medicament(s)
-				$tmpTimes = explode("-",$$tdx);
-				if($$mdx){
+				$tmpTimes = explode("-",${$tdx});
+				if(${$mdx}){
 					$prescription_sub = array(
 						'prescription_nr' => $lastId,
 						//'prescription_type_nr' => $prescription->fields['prescription_type_nr'],
-						'bestellnum' => $$bdx,
-						'article' => $$mdx,
-						'admin_time' => $$tdx,
-						'dosage' => $$ddx,
-						//'quantity' => ( $$ddx * count($tmpTimes)),
-						'quantity' => ( $$ddx ),
-						'application_type_nr' => $$adx,
-						'sub_speed' => $$pdx,
-						'notes_sub' => $$ndx,
+						'bestellnum' => ${$bdx},
+						'article' => ${$mdx},
+						'admin_time' => ${$tdx},
+						'dosage' => ${$ddx},
+
+						'quantity' => ( ${$ddx} ),
+						'application_type_nr' => ${$adx},
+						'sub_speed' => ${$pdx},
+						'notes_sub' => ${$ndx},
 						//'color_marker' => $prescription->fields['color_marker'],
 						//'is_stopped' => $prescription->fields['is_stopped'],
 						//'stop_date' => $prescription->fields['stop_date'],
 						'status' => 'saved',
-						'companion' => $$cdx == '' ? serialize('0') : serialize($$cdx)
+						'companion' => ${$cdx} == '' ? serialize('0') : serialize(${$cdx})
 					);
-					$actualRoseBars .= $$tdx . "-";
+					$actualRoseBars .= ${$tdx} . "-";
 					$objPrescription->insertDataFromArray($prescription_sub);
 					$saved = true;
 					$prescription_sub=null;
@@ -153,13 +153,13 @@ $charts_obj= new Charts;
 				if($roseBarNr == '' ) $roseBarNr = '24';
 				setEventSignalColor($pn, 'rose_'.$roseBarNr, SIGNAL_COLOR_LEVEL_FULL);
 			}
-			
+
 		}
 		if($saved){
 			header("location:$thisfile?sid=$sid&lang=$lang&edit=$edit&saved=1&pn=$pn&station=$station&winid=$winid&yr=$yr&mo=$mo&dy=$dy&dyidx=$dyidx&dystart=$dystart&dyname=$dyname&dept_nr=$dept_nr");
 			exit;
 		}
-			
+
 	}
 	 // end of if(mode==save)
 	$count=0;
@@ -184,20 +184,20 @@ require($root_path.'include/core/inc_css_a_hilitebu.php');
 <script type="text/javascript" src="../../js/scriptaculous/src/builder.js"></script>
 <script src="../../js/SpryAssets/SpryTabbedPanels.js" type="text/javascript"></script>
 <script language="javascript"><!--
- 
+
 	function resetinput(){
 		document.infoform.reset();
 	}
-	
+
 	function pruf(d){
 		if(!d.newdata.value) return false;
 		else return true
 	}
-	
+
 	function parentrefresh(){
 		window.opener.location.href="nursing-station-patientdaten-kurve.php?sid=<?php echo "$sid&lang=$lang&edit=$edit&station=$station&pn=$pn&tag=$dystart&monat=$mo&dept_nr=$dept_nr&jahr=$yr&tagname=$dyname" ?>&nofocus=1";
 	}
-		
+
 	function repeatPrescription(prescriptionId){
 		var answer = "<?php echo $LDWantToRepeat; ?>";
 		if( confirm(answer) ) {
@@ -218,7 +218,7 @@ require($root_path.'include/core/inc_css_a_hilitebu.php');
         d.value = d.value + "**";
         d.focus();
     }
-    
+
 	function pullRosebar(cb) {
 		var oldValue, newValue;
 		oldValue = document.getElementById(cb.name).value;
@@ -231,7 +231,7 @@ require($root_path.'include/core/inc_css_a_hilitebu.php');
 		}
 		document.getElementById(cb.name).value = newValue;
 	}
-		    	
+
 	function countRoseBars(){
 		var nr = 0;
 		var str = new String;
@@ -253,25 +253,25 @@ require($root_path.'include/core/inc_css_a_hilitebu.php');
 		else
 			return(str);
 	}
-	
+
 	function cleanRoseBars(){
 		for( nr = 1; nr < 25; nr++ ) {
 			document.getElementById('rose_'+nr).value = 0;
 			document.getElementById('r_'+nr).src = '<?php echo $root_path; ?>gui/img/common/default/qbar_0_rose.gif';
 		}
 	}
-	
+
 	function createBNumCode(strBNum) {
 		if(strBNum.charAt(strBNum.length-1) == ',' && strBNum.length > 0)
 			return strBNum.substr(0,strBNum.length-1);
 		else
 			return false;
 	}
-	
+
 	function checkQuantity (elembName,elemdName,roseBars)  {
 
 	}
-	
+
 	var companionBNum = '';
 	var prescriptionNr = 0;
 	var countCompanions = 0;
@@ -303,7 +303,7 @@ require($root_path.'include/core/inc_css_a_hilitebu.php');
 		else { alert('<?php echo $LDSelectRouting; ?>'); return true; }
 		elempName = document.getElementById('pspeed').value;
 		elemnName = document.getElementById('notesMed').value;
-		
+
 		var tmpatn = document.getElementById('application_type_nr');
 		var appTmp = tmpatn.options[tmpatn.selectedIndex].text;
 
@@ -321,7 +321,7 @@ require($root_path.'include/core/inc_css_a_hilitebu.php');
         	}
       	});
 		if(notfound) { document.getElementById('search').value = ''; return true; }
-		
+
 		prescriptionNr++;
 		var elemId;
 		elemId = 'elem' + prescriptionNr;
@@ -334,7 +334,7 @@ require($root_path.'include/core/inc_css_a_hilitebu.php');
 		elemnNr = 'n' + prescriptionNr;
 		elemtNr = 't' + prescriptionNr;
 		elemcNr = 'c' + prescriptionNr;
-		
+
 		//show them to the masses & use them for me :)
 		var trFirst,pBestellnum,medicine,dosage,appType,prescriptionSpeed, notesMed ,elemRemove;
 		trFirst = Builder.node('tr',{id:elemId,bgcolor:'#fefefe',valign:'top'});
@@ -354,7 +354,7 @@ require($root_path.'include/core/inc_css_a_hilitebu.php');
 		 				Builder.node('input',{name:elembNr,type:'hidden',value:elembName}),
 		 				Builder.node('input',{name:elemmNr,type:'hidden',value:elemmName})
 		 			]);
-		 			
+
 	 		dosage = Builder.node('td',[Builder.node('h4',{name:elemdNr},elemdName)],
 	 			[Builder.node('h4', roseBars),
 	 			Builder.node('input',{name:elemdNr,type:'hidden',value:elemdName}),
@@ -375,9 +375,9 @@ require($root_path.'include/core/inc_css_a_hilitebu.php');
 		  	trFirst.appendChild(notesMed);
 		  	trFirst.appendChild(elemRemove);
 
-		  	
+
 	  	$('prescriptionTable').appendChild(trFirst);
-	  	
+
 	  	//clean up things a bit depending on medicament is composed or not
 	  	if(document.getElementById('companion').checked) {
 			document.getElementById('bestellnum').value = '';
@@ -399,26 +399,26 @@ require($root_path.'include/core/inc_css_a_hilitebu.php');
 			cleanRoseBars();
 	  	}
 
-		
+
 		//update the maxelements
 		document.getElementById('maxelements').value = prescriptionNr;
-	  	
+
 	}
 	function popinfo(b) {
 		urlholder="../products/products-bestellkatalog-popinfo.php?sid=7071bab054d376600a2ecf70ac6128a5&lang=sq&keyword="+b+"&mode=search&cat=pharma";
 		ordercatwin=window.open(urlholder,"ordercat","width=850,height=550,menubar=no,resizable=yes,scrollbars=yes");
 	}
-	
+
 	function removeMedicament(id) {
 		Element.remove(id);
 		countCompanions = 0;
 	}
-	
+
 	function printPrescription(enc,presnr) {
 		urlholder="<?php echo $root_path ?>modules/pdfmaker/prescription/report_all.php<?php echo URL_REDIRECT_APPEND; ?>&enc="+enc+"&presnr="+presnr;
 		window.open(urlholder,'Terapia Ditore',"width=700,height=500,menubar=no,resizable=yes,scrollbars=yes");
 	}
-	
+
 	function submitMainForm() {
 		if(countCompanions == 1) {
 			alert('<?php echo $LDSearchError; ?>');
@@ -524,7 +524,7 @@ li.selected {
 <table border=0 width=100%  cellspacing=0 cellpadding=0 >
   <tr>
     <td>
-	
+
   <?php
 if($count){
 	$tbg= 'background="'.$root_path.'gui/img/common/'.$theme_com_icon.'/tableHeaderbg3.gif"';
@@ -560,7 +560,7 @@ if($count){
 						if($toggle) $bgc='#f3f3f3';
 							else $bgc='#fefefe';
 						$toggle=!$toggle;
-//TODO : finish the outpatinet daily therapy					
+//TODO : finish the outpatinet daily therapy
 /*						if($row['encounter_class_nr']==1) $full_en=$row['encounter_nr']+$GLOBAL_CONFIG['patient_inpatient_nr_adder']; // inpatient admission
 							else $full_en=$row['encounter_nr']+$GLOBAL_CONFIG['patient_outpatient_nr_adder']; // outpatient admission*/
 					?>
@@ -583,7 +583,7 @@ if($count){
 			    			reset($app_types);
 			    			while(list($x,$v)=each($app_types)){
 								if( $row['application_type_nr'] == $v['nr'] ) {
-									if(isset($$v['LD_var'])&&!empty($$v['LD_var'])) echo $$v['LD_var'];
+									if(isset(${$v['LD_var']})&&!empty(${$v['LD_var']})) echo ${$v['LD_var']};
 										else echo $v['name'];
 										break;
 								}
@@ -640,7 +640,7 @@ if($count){
       <script type="text/javascript">
       var includeScript = "include/inc_search_medicaments.php?";
 		var kot = new Ajax.Autocompleter("search","hint",includeScript, {afterUpdateElement : setSelectionId,autoSelect: true, minChars: 2,callback:funxkot});
-		
+
 		function setSelectionId(text, li) {
     		document.getElementById('bestellnum').value = li.id;
 		}
@@ -678,7 +678,7 @@ if($count){
 			reset($app_types);
 			while(list($x,$v)=each($app_types)){
 				echo '<option value="'.$v['nr'].'">';
-				if(isset($$v['LD_var'])&&!empty($$v['LD_var'])) echo $$v['LD_var'];
+				if(isset(${$v['LD_var']})&&!empty(${$v['LD_var']})) echo ${$v['LD_var']};
 					else echo $v['name'];
 				echo '</option>';
 			}

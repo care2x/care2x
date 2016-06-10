@@ -1,5 +1,5 @@
-<?php 
-if(($sid==NULL)||($sid!=$$ck_sid_buffer)) { header("location:invalid-access-warning.php"); exit;}
+<?php
+if(($sid==NULL)||($sid!=${$ck_sid_buffer})) { header("location:invalid-access-warning.php"); exit;}
 
 require_once($root_path.'include/core/inc_config_color.php');
 require_once($root_path.'include/core/access_log.php');
@@ -35,32 +35,32 @@ if ($versand=="Abschicken")
 
 				$link=mysql_connect("localhost","httpd","");
 				if ($link)
- 				{ if(mysql_select_db($dbname,$link)) 
+ 				{ if(mysql_select_db($dbname,$link))
 					{	$sql='SELECT * FROM mahopass WHERE mahopass_id="'.$userid.'"';
 						$ergebnis=$db->Execute($sql);
 						if($ergebnis)
 							{$zeile=$ergebnis->FetchRow();
 								if (($zeile[mahopass_password]==$keyword)&&($zeile[mahopass_id]==$userid))
-								{	
+								{
 									if (!($zeile[mahopass_lockflag]))
 									{
 										if (validarea($allowedarea,$zeile,mysql_num_fields($ergebnis)))
-										{				
-										setcookie(ck_edv_db_user,$zeile[mahopass_name]);	
+										{
+										setcookie(ck_edv_db_user,$zeile[mahopass_name]);
 										$logs->writeline(date('Y-m-d').'/'.date('H:i'),'',$REMOTE_ADDR,'EDV DB verwalten Access OK',$zeile[mahopass_name],'','',$thisfile,$fileforward,0);
 										//logentry($zeile[mahopass_name],"*","IP:".$REMOTE_ADDR."EDV DB verwalten Access OK'd",$thisfile,$fileforward);
-										header("Location: $fileforward?sid=$$ck_sid_buffer");
+										header("Location: $fileforward?sid=${$ck_sid_buffer}");
 										exit;
 										}else {$passtag=2;};
 									}else $passtag=3;
 								}else {$passtag=1;};
 							}
 							else {$passtag=1;};
-	
+
 					};
-				
+
 				}
-				 else 
+				 else
 				{ echo "Verbindung zur Datenbank konnte nicht hergestellt werden.<br>"; $passtag=5;}
 }
 
@@ -72,7 +72,7 @@ if ($versand=="Abschicken")
 <HEAD>
 <?php echo setCharSet(); ?>
  <TITLE>EDV - Datenbank Verwalten</TITLE>
- 
+
  <?php if($cfg['dhtml'])
 { echo'
 	 <STYLE TYPE="text/css">
@@ -85,11 +85,11 @@ if ($versand=="Abschicken")
 	</style>';
 }
 ?>
- 
+
 </HEAD>
 
-<BODY  <?php if (!$nofocus) echo 'onLoad="document.passwindow.userid.focus()"'; echo  ' bgcolor='.$cfg['body_bgcolor']; 
- if (!$cfg['dhtml']){ echo ' link='.$cfg['body_txtcolor'].' alink='.$cfg['body_alink'].' vlink='.$cfg['body_txtcolor']; } 
+<BODY  <?php if (!$nofocus) echo 'onLoad="document.passwindow.userid.focus()"'; echo  ' bgcolor='.$cfg['body_bgcolor'];
+ if (!$cfg['dhtml']){ echo ' link='.$cfg['body_txtcolor'].' alink='.$cfg['body_alink'].' vlink='.$cfg['body_txtcolor']; }
 ?>>
 
 <p>
@@ -98,9 +98,9 @@ if ($versand=="Abschicken")
 <P>
 <FONT  COLOR=#cc6600  SIZE=5  FACE="verdana"> <b>Datenbank Verwalten</b></font>
 <p>
-<table width=100% border=0 cellpadding="0" cellspacing="0"> 
+<table width=100% border=0 cellpadding="0" cellspacing="0">
 <tr>
-<td colspan=3><img src=../img/einga-b.gif border=0  width=130 height=25><!-- <a href="op-pflege-logbuch-such-pass.php?sid=<?php echo $$ck_sid_buffer;?>"><img src="../img/such-gray.gif" border=0 width=130 height=25 <?php if($cfg['dhtml'])echo'class="fadeOut" >';?></a><a href="op-pflege-logbuch-arch-pass.php?sid=<?php echo $$ck_sid_buffer;?>"><img src="../img/arch-gray.gif" border=0 width=130 height=25 <?php if($cfg['dhtml'])echo'class="fadeOut" >';?></a> --></td>
+<td colspan=3><img src=../img/einga-b.gif border=0  width=130 height=25><!-- <a href="op-pflege-logbuch-such-pass.php?sid=<?php echo ${$ck_sid_buffer};?>"><img src="../img/such-gray.gif" border=0 width=130 height=25 <?php if($cfg['dhtml'])echo'class="fadeOut" >';?></a><a href="op-pflege-logbuch-arch-pass.php?sid=<?php echo ${$ck_sid_buffer};?>"><img src="../img/arch-gray.gif" border=0 width=130 height=25 <?php if($cfg['dhtml'])echo'class="fadeOut" >';?></a> --></td>
 </tr>
 
 <tr>
@@ -118,7 +118,7 @@ if ($versand=="Abschicken")
 <center>
 
 
-<?php if ((($userid!=NULL)||($keyword!=NULL))&&($passtag!=NULL)) 
+<?php if ((($userid!=NULL)||($keyword!=NULL))&&($passtag!=NULL))
 {
 echo '<FONT  COLOR="red"  SIZE=+2  FACE="Arial"><STRONG>';
 
@@ -128,7 +128,7 @@ switch($passtag)
 {
 case 1:$errbuf=$errbuf."Falsche Eingabe"; echo '<img src=../img/cat-fe.gif align=left>';break;
 case 2:$errbuf=$errbuf."Keine Berechtigung"; echo '<img src=../img/cat-noacc.gif align=left>';break;
-default:$errbuf=$errbuf."Zugang gesperrt"; echo '<img src=../img/warn.gif align=left>'; 
+default:$errbuf=$errbuf."Zugang gesperrt"; echo '<img src=../img/warn.gif align=left>';
 }
 
 
@@ -167,7 +167,7 @@ echo '</STRONG></FONT><P>';
 Benutzername eingeben:<br></font>
 <INPUT type="text" name="userid" size="14" maxlength="25"> <p>
 <font face="Arial,Verdana"  color="#000000" size=-1>Passwort eingeben:</font><br>
-<INPUT type="password" name="keyword" size="14" maxlength="25"> 
+<INPUT type="password" name="keyword" size="14" maxlength="25">
 <input type="hidden" name="versand" value="Abschicken">
 <input type="hidden" name="sid" value="<?php echo $sid; ?>">
 <input type="image" src="../img/abschic.gif" border=0 width=110 height=24>
@@ -187,7 +187,7 @@ Benutzername eingeben:<br></font>
 </table>
 </td>
 </tr>
-</table>        
+</table>
 
 <p><br>
 
@@ -199,12 +199,12 @@ Benutzername eingeben:<br></font>
 
 <tr >
 <td bgcolor="#333399" colspan=3><font size=1>
-&nbsp; 
+&nbsp;
 </td>
 </tr>
 
 
-</table>        
+</table>
 
 <p>
 <img src="../img/small_help.gif"> <a href="<?php echo $root_path; ?>main/ucons.php<?php echo URL_APPEND; ?>">Einführung in die SQL Datenbank.</a><br>

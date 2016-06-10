@@ -40,24 +40,24 @@ if($mode!=''){
 			$sql="SELECT * FROM $dbtable
 							WHERE idcare_supply='$idcare_supply'
 							AND idcare_supplier='$supplier_nr'";
-							
+
 			if($ergebnis=$db->Execute($sql))			{
 				$rows=$ergebnis->RecordCount();
 			}
-			else { echo "$LDDbNoRead<br>"; } 
-			
+			else { echo "$LDDbNoRead<br>"; }
+
 		 	$content=$ergebnis->FetchRow();
 			$artikeln=explode(' ',$content['articles']);
 			$ocount=sizeof($artikeln);
-			
+
 		if(($mode=='delete')&&($idx!='')) {
 			if($ocount==1){
         		$product_obj->DeleteOrderSupplier($idcare_supply,$cat);
 		 	}else{
-			
+
 			    $trash=array_splice($artikeln,$idx-1,1);
 			    $content['articles']=implode(' ',$artikeln);
-			
+
 			    $sql="UPDATE $dbtable SET
 							 		order_date='".$content['order_date']."',
 							  		articles='".$content['articles']."',
@@ -68,9 +68,9 @@ if($mode!=''){
 									modify_id= '".$_COOKIE[$local_user.$sid]."'
 							   		WHERE idcare_supply='".$content['idcare_supply']."'
 									AND idcare_supplier='$supplier_nr'";
-									
+
 			     if(!$ergebnis=$product_obj->Transact($sql)) { echo "$sql<br>$LDDbNoSave<br>"; }
-		  	}	
+		  	}
 		}
 
 //*** Mode add ******
@@ -79,41 +79,41 @@ if($mode!=''){
 			$dbtable='care_med_products_main';
 			// data on the meds from the comming bill
 			for($i=1;$i<=$maxcount;$i++){
-					$o='order'.$i; 
-					if(!$$o) continue;
-					$b='bestellnum'.$i; 
+					$o='order'.$i;
+					if(!${$o}) continue;
+					$b='bestellnum'.$i;
 					// get the needed info from the main pharma db
-					$sql="SELECT artikelname, minorder, maxorder, proorder FROM $dbtable WHERE bestellnum='".$$b."'";
+					$sql="SELECT artikelname, minorder, maxorder, proorder FROM $dbtable WHERE bestellnum='".${$b}."'";
 					if($ergeb=$db->Execute($sql)){
 						$result=$ergeb->FetchRow();
 							$a='artikelname'.$i;
-							$$a=str_replace('&','%26',strtr($result['artikelname'],' ','+')); 
+							${$a}=str_replace('&','%26',strtr($result['artikelname'],' ','+'));
 							$mi='minorder'.$i;
-							$$mi=$result['minorder'];
+							${$mi}=$result['minorder'];
 							$mx='maxorder'.$i;
-							$$mx=$result['maxorder'];
+							${$mx}=$result['maxorder'];
 							$po='porder'.$i;
-							$$po=$result['proorder'];
-					}else { echo "$sql<br>$LDDbNoRead<br>"; } 
+							${$po}=$result['proorder'];
+					}else { echo "$sql<br>$LDDbNoRead<br>"; }
 			}
-			
+
 		    if($rows) $tart=$content['articles']; else $tart="";
-		    
+
 			for ($i=1;$i<=$maxcount;$i++){
-				$o='order'.$i; 
-				if(!$$o) continue;
-				$b='bestellnum'.$i; 
+				$o='order'.$i;
+				if(!${$o}) continue;
+				$b='bestellnum'.$i;
 				$a='artikelname'.$i;
 				$po='porder'.$i;
 				$pc='p'.$i;
-				$c="c".$i; 
+				$c="c".$i;
 				$v="v".$i;
 				$s="s".$i;
-				$tart.=' bestellnum='.$$b.'&artikelname='.$$a.'&pcs='.$$pc.'&minorder='.$$mi.'&maxorder='.$$mx.'&proorder='.$$po.'&price='.$$c.'&value='.$$v.'&expiry_date='.$$s; // append new bestellnum to articles
+				$tart.=' bestellnum='.${$b}.'&artikelname='.${$a}.'&pcs='.${$pc}.'&minorder='.${$mi}.'&maxorder='.${$mx}.'&proorder='.${$po}.'&price='.${$c}.'&value='.${$v}.'&expiry_date='.${$s}; // append new bestellnum to articles
 				$tart=trim($tart);
-			
+
 			}
-			
+
 		    $saveok=false;
 			//save the orderlisr
 			$dbtable='care_supply';
@@ -139,7 +139,7 @@ if($mode!=''){
 							'$supplier_nr',
 							'".date('Y-m-d')."',
 							'".$tart."',
-							'".$$pc."',
+							'".${$pc}."',
 							'".date('H:i:s')."',
 							'".$REMOTE_ADDR."',
 							'draft',
@@ -156,7 +156,7 @@ if($mode!=''){
 						$cat_table='care_med_ordercatalog';
 					for($i=1;$i<=$maxcount;$i++) {
 						$b='bestellnum'.$i;
- 						$sql="UPDATE $cat_table SET hit= hit +1  WHERE bestellnum='".$$b."' AND supplier_nr='$supplier_nr'";
+ 						$sql="UPDATE $cat_table SET hit= hit +1  WHERE bestellnum='".${$b}."' AND supplier_nr='$supplier_nr'";
 						$product_obj->Transact($sql);
 					}
 					$saveok=true;
@@ -182,15 +182,15 @@ if($ergebnis=$db->Execute($sql)){
 			 $rows=0;
 		} // if sent_stamp or validator filled then reject this data
 	}
-}else{ echo "$LDDbNoRead<br>$sql"; } 
+}else{ echo "$LDDbNoRead<br>$sql"; }
 
-	 
+
 # Load common icon images
-$img_warn=createComIcon($root_path,'warn.gif','0');	
+$img_warn=createComIcon($root_path,'warn.gif','0');
 $img_uparrow=createComIcon($root_path,'uparrowgrnlrg.gif','0');
 $img_info=createComIcon($root_path,'info3.gif','0');
 $img_delete=createComIcon($root_path,'delete2.gif','0');
- 
+
 ?>
 <?php html_rtl($lang); ?>
 <head>
@@ -209,13 +209,13 @@ function resize() {
 </script>
 
 <script language="javascript" src="../js/products_validate_order_num.js"></script>
-<?php 
+<?php
 require($root_path.'include/core/inc_js_gethelp.php');
 require($root_path.'include/core/inc_css_a_hilitebu.php');
 ?>
 </head>
-<BODY  topmargin=5 leftmargin=10  marginwidth=10 marginheight=5 
-<?php 
+<BODY  topmargin=5 leftmargin=10  marginwidth=10 marginheight=5
+<?php
 switch($mode)
 {
 	case "add"://echo ' onLoad="location.replace(\'#bottom\')"   '; break;
@@ -224,7 +224,7 @@ switch($mode)
 echo "bgcolor=".$cfg['body_bgcolor']; if (!$cfg['dhtml']){ echo ' link='.$cfg['body_txtcolor'].' alink='.$cfg['body_alink'].' vlink='.$cfg['body_txtcolor']; } ?>>
 
 <table><tr><td>
-<a href="javascript:gethelp('products.php','catalog','','<?php echo $cat ?>')"><img <?php echo createComIcon($root_path,'frage.gif','0','right') ?> alt="<?php echo 
+<a href="javascript:gethelp('products.php','catalog','','<?php echo $cat ?>')"><img <?php echo createComIcon($root_path,'frage.gif','0','right') ?> alt="<?php echo
 $LDOpenHelp ?>"></a>
 </td><td>
 <a href="javascript:resize()"><img <?php echo createComIcon($root_path,'r_arrowgrnsm.gif','0'); ?> alt="Zgjero"></a>
@@ -239,7 +239,7 @@ $tog=1;
 echo '<form name=actlist>
 		<font size=2 color="#800000">'.$LDActualOrderSupply.':</font>
 		<font size=1> ('.$LDOn.': ';
-		
+
 		echo formatDate2Local($content['order_date'],$date_format);
 
 		echo ' '.$LDTime.': '.str_replace('24','00',convertTimeToLocal($content['order_time'])).')</font>
@@ -248,7 +248,7 @@ echo '<form name=actlist>
 	for ($i=0;$i<sizeof($LDcatindexSupply);$i++)
 	echo '
 		<td>'.$LDcatindexSupply[$i].'</td>';
-	echo '</tr>';	
+	echo '</tr>';
 
 $i=1;
 
@@ -262,13 +262,13 @@ for($n=0;$n<sizeof($artikeln);$n++)	{
 	echo'
 				<td>';
 	if($mode=='delete') echo '<a name="'.$i.'"></a>';
-	echo'	
+	echo'
 				<font ize=1 color="#000080">'.$i.'</td>
-				<td><font size=1>'.$r['artikelname'].'</td>';				 
+				<td><font size=1>'.$r['artikelname'].'</td>';
     echo '<td><font size=1>'.$r['pcs'].'</td>
 				<td ><font size=1><nobr>X '.$r['proorder'].'</nobr></td>
 				<td>'.$r['price'].'</td>
-				<td>'.$r['value'].'</td>			
+				<td>'.$r['value'].'</td>
 				<td>'.$r['expiry_date'].'</td>
 				<td><font size=1>'.$r['bestellnum'].'</td>
 				<td><a href="javascript:popinfo(\''.$r['bestellnum'].'\')" ><img '.$img_info.' alt="'.$complete_info.$r['artikelname'].'"></a></td>
@@ -286,7 +286,7 @@ for($n=0;$n<sizeof($artikeln);$n++)	{
    			<input type="hidden" name="supplier_nr" value="'.$supplier_nr.'">
    			<input type="hidden" name="cat" value="'.$cat.'">
    			<input type="hidden" name="userck" value="'.$userck.'">
-			<input type="submit" value="'.$LDFinalizeListFur.'">   
+			<input type="submit" value="'.$LDFinalizeListFur.'">
    			</form>	';
 }else{
 	if($itwassent) echo '<font size=2>'.$LDWasSent.'<p></font>';
@@ -303,10 +303,10 @@ for($n=0;$n<sizeof($artikeln);$n++)	{
 # +++++++++ show the last lists+++++++++++++++++++++++++++++++++++++++++
 
 	if($rows>0)
-	{	
-	
+	{
+
 		if ($rows>1) echo $LDListNotSentManyF;
-			 else echo $LDListNotSentSupply; 
+			 else echo $LDListNotSentSupply;
 		echo $LDClk2SeeEdit.'<br></font><p>';
 
 		$tog=1;
@@ -333,7 +333,7 @@ for($n=0;$n<sizeof($artikeln);$n++)	{
 				<td><font size=1>'.$content['idcare_supply'].'</td>
 				<td align="center"><a href="supply.php'.URL_APPEND.'&supplier_nr='.$supplier_nr.'&cat='.$cat.'&idcare_supply='.$content['idcare_supply'].'&userck='.$userck.'"  target="_parent" ><img '.$img_uparrow.' alt="'.$LDEditList.'"></a></td>
 				<td><font size=1>'.formatDate2Local($content['order_date'],$date_format);
-				
+
 			echo '</td>
 				 <td><font size=1>'.convertTimeToLocal(str_replace('24','00',$content['order_time'])).'</td>
 				<td ><font size=1>'.$content['modify_id'].'</td>

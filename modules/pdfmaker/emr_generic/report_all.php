@@ -103,8 +103,8 @@ if(empty($encounter['photo_filename'])){
 			if(!stristr($filter,$nr)){
 
 				#Get the report title
-				if(isset($$LD_var)&&!empty($$LD_var)){
-					$title=$$LD_var;
+				if(isset(${$LD_var})&&!empty(${$LD_var})){
+					$title=${$LD_var};
 				}else{
 					$title=$name;
 				}

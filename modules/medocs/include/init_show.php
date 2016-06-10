@@ -32,7 +32,7 @@ $photo_filename='nopic';
 if(!isset($user_id) || !$user_id)
 {
     $user_id=$local_user.$sid;
-    $user_id=$$user_id;
+    $user_id=${$user_id};
 }
 
 if(isset($pid) && ($pid!='')) {
@@ -42,7 +42,7 @@ if(isset($pid) && ($pid!='')) {
 	if($data_obj=&$person_obj->getAllInfoObject()){
 		$zeile=$data_obj->FetchRow();
 
-		while(list($x,$v)=each($zeile))	$$x=$v;
+		while(list($x,$v)=each($zeile))	${$x}=$v;
 
 	}
 

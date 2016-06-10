@@ -25,17 +25,17 @@ while($row=$result->FetchRow()){
     <td><FONT SIZE=-1  FACE="Arial"><?php echo @formatDate2Local($row['prescribe_date'],$date_format); ?></td>
     <td><FONT SIZE=-1  FACE="Arial"><?php echo $row['article']; ?></td>
     <td><FONT SIZE=-1  FACE="Arial" color="#006600"><?php echo $row['dosage']; ?></td>
-    <td><FONT SIZE=-1  FACE="Arial"><?php 
+    <td><FONT SIZE=-1  FACE="Arial"><?php
     			//gjergji
     			reset($app_types);
     			while(list($x,$v)=each($app_types)){
 					if( $row['application_type_nr'] == $v['nr'] ) {
-						if(isset($$v['LD_var'])&&!empty($$v['LD_var'])) echo $$v['LD_var'];
+						if(isset(${$v['LD_var']})&&!empty(${$v['LD_var']})) echo ${$v['LD_var']};
 							else echo $v['name'];
 							break;
 					}
 				}
-				//end : gjergji    	
+				//end : gjergji
     ?></td>
   </tr>
   <tr bgcolor="<?php echo $bgc; ?>" valign="top">
@@ -49,8 +49,8 @@ while($row=$result->FetchRow()){
     			//gjergji
     			reset($pres_types);
     			while(list($x,$v)=each($pres_types)){
-    				if( $row['prescription_type_nr'] == $v['nr'] ) {  
-						if(isset($$v['LD_var'])&&!empty($$v['LD_var'])) echo $$v['LD_var'];
+    				if( $row['prescription_type_nr'] == $v['nr'] ) {
+						if(isset(${$v['LD_var']})&&!empty(${$v['LD_var']})) echo ${$v['LD_var']};
 							else echo $v['name'];
 							break;
     				}
@@ -72,7 +72,7 @@ if($parent_admit&&!$is_discharged) {
 ?>
 <p>
 <img <?php echo createComIcon($root_path,'bul_arrowgrnlrg.gif','0','absmiddle'); ?>>
-<a href="<?php echo $thisfile.URL_APPEND.'&pid='.$_SESSION['sess_pid'].'&target='.$target.'&mode=new'; ?>"> 
+<a href="<?php echo $thisfile.URL_APPEND.'&pid='.$_SESSION['sess_pid'].'&target='.$target.'&mode=new'; ?>">
 <?php echo $LDEnterNewRecord; ?>
 </a>
 <?php

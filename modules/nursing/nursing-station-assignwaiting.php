@@ -218,7 +218,7 @@ $iRowSpan = 5;
 if(trim($encounter['blood_group'])){
 	$smarty->assign('LDBloodGroup',$LDBloodGroup);
 	$buf=trim('LD'.$encounter['blood_group']);
-	$smarty->assign('blood_group',$$buf);
+	$smarty->assign('blood_group',${$buf});
 	$iRowSpan++;
 }
 
@@ -232,7 +232,7 @@ if($encounter['sex']=='m') $smarty->assign('sSexType',$LDMale);
 	elseif($encounter['sex']=='f') $smarty->assign('sSexType',$LDFemale);
 
 $smarty->assign('LDBillType',$LDBillType);
-if (isset($$billing_type['LD_var'])&&!empty($$billing_type['LD_var'])) $smarty->assign('billing_type',$$billing_type['LD_var']);
+if (isset(${$billing_type['LD_var']})&&!empty(${$billing_type['LD_var']})) $smarty->assign('billing_type',${$billing_type['LD_var']});
     else $smarty->assign('billing_type',$billing_type['name']);
 
 $smarty->assign('LDDiagnosis',$LDDiagnosis);
@@ -468,7 +468,7 @@ if($ward_ok){
 			$sBuffer = '';
 			if($bed['insurance_class_nr']!=2) $sBuffer = $sBuffer.'<font color="#ff0000">';
 
-			if(isset($$bed['insurance_LDvar'])&&!empty($$bed['insurance_LDvar']))  $sBuffer = $sBuffer.$$bed['insurance_LDvar'];
+			if(isset(${$bed['insurance_LDvar']})&&!empty(${$bed['insurance_LDvar']}))  $sBuffer = $sBuffer.${$bed['insurance_LDvar']};
 				else  $sBuffer = $sBuffer.$bed['insurance_name'];
 
 			$smarty->assign('sInsuranceType',$sBuffer);

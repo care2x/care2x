@@ -6,7 +6,7 @@ require($root_path.'include/core/inc_environment_global.php');
 * CARE2X Integrated Hospital Information System Deployment 2.2 - 2006-07-10
 * GNU General Public License
 * Copyright 2002,2003,2004,2005,2006 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -65,43 +65,43 @@ switch($target)
 
   case 'blood':  $title=$LDBloodOrder;
                       break;
-					  
+
   case 'radio':  $title=$LDTestRequest." - ".$LDTestType[$target];
 		              $breakfile=$root_path."modules/radiology/radiolog.php".URL_APPEND;
 					   $test_pass_logo='thorax_sm.jpg';
                       break;
-					  
+
   case 'admin':  $title=$LDPendingRequest." - ".$LDTestType[$subtarget];
                        if($subtarget=='radio'){  $breakfile=$root_path."modules/radiology/radiolog.php".URL_APPEND;
 					       $test_pass_logo="thorax_sm.jpg";
 					   }
-                       $fileforward="labor_test_request_admin_".$subtarget.".php".URL_REDIRECT_APPEND."&target=".$target."&subtarget=".$subtarget."&noresize=1&&user_origin=".$user_origin;                      
+                       $fileforward="labor_test_request_admin_".$subtarget.".php".URL_REDIRECT_APPEND."&target=".$target."&subtarget=".$subtarget."&noresize=1&&user_origin=".$user_origin;
 					   break;
-					   
-  case 'generic': 
+
+  case 'generic':
   						include_once($root_path.'include/care_api_classes/class_department.php');
 						$dept_obj=new Department;
 						if($dept_obj->preloadDept($subtarget)){
 							$buffer=$dept_obj->LDvar();
-							if(isset($$buffer)&&!empty($$buffer)) $title=$LDPendingRequest." - ".$$buffer;
+							if(isset(${$buffer})&&!empty(${$buffer})) $title=$LDPendingRequest." - ".${$buffer};
 								else $title=$LDPendingRequest." - ".$dept_obj->FormalName();
 						}
-                        $fileforward="labor_test_request_admin_generic.php".URL_REDIRECT_APPEND."&target=".$target."&subtarget=".$subtarget."&noresize=1&&user_origin=".$user_origin;     
+                        $fileforward="labor_test_request_admin_generic.php".URL_REDIRECT_APPEND."&target=".$target."&subtarget=".$subtarget."&noresize=1&&user_origin=".$user_origin;
 						if($user_origin=='amb')
 						{
 						   $userck='ck_amb_user';
 						   $breakfile=$root_path.'modules/ambulatory/ambulatory.php'.URL_APPEND;
 						}
 						else
-						{                 
+						{
 						   $userck='ck_lab_user';
 					       $breakfile=$root_path."modules/doctors/doctors.php".URL_APPEND;
 					     }
 					    break;
-						
+
         default : $title=$LDTestRequest." - ".$LDTestType[$target];
 }
-					  
+
 $lognote="$title ok";
 
 //reset cookie;
@@ -109,7 +109,7 @@ $lognote="$title ok";
 setcookie($userck.$sid,'');
 require($root_path.'include/core/inc_2level_reset.php'); setcookie('ck_2level_sid'.$sid,'');
 require($root_path.'include/core/inc_passcheck_internchk.php');
-if ($pass=='check') 	
+if ($pass=='check')
 	include($root_path.'include/core/inc_passcheck.php');
 
 $errbuf=$title;
@@ -127,9 +127,9 @@ require($root_path.'include/core/inc_passcheck_head.php');
 
 <img <?php echo createComIcon($root_path,$test_pass_logo,'0','absmiddle') ?>><FONT  COLOR="<?php echo $cfg[top_txtcolor] ?>"  size=5 FACE="verdana"> <b><?php echo $title;  ?></b></font>
 <p>
-<table width=100% border=0 cellpadding="0" cellspacing="0"> 
+<table width=100% border=0 cellpadding="0" cellspacing="0">
 
-<?php require($root_path.'include/core/inc_passcheck_mask.php') ?>  
+<?php require($root_path.'include/core/inc_passcheck_mask.php') ?>
 
 <p>
 

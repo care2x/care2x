@@ -349,7 +349,7 @@ if($pid!='' || $encounter_nr!=''){
 
 	$person_obj->setPID($pid);
 	if($data=&$person_obj->BasicDataArray($pid)){
-		//while(list($x,$v)=each($data))	$$x=$v;
+		//while(list($x,$v)=each($data))	${$x}=$v;
 		extract($data);
 	}
 
@@ -639,7 +639,7 @@ if(!isset($pid) || !$pid){
 			$LD=$result['LD_var'];
 			if($encounter_nr ){ # If admitted, freeze encounter class
 				if ($encounter_class_nr==$result['class_nr']){
-					if(isset($$LD)&&!empty($$LD)) $sTemp = $sTemp.$$LD;
+					if(isset(${$LD})&&!empty(${$LD})) $sTemp = $sTemp.${$LD};
 					else $sTemp = $sTemp.$result['name'];
 					$sTemp = $sTemp.'<input name="encounter_class_nr" type="hidden"  value="'.$encounter_class_nr.'">';
 					break;
@@ -649,7 +649,7 @@ if(!isset($pid) || !$pid){
 				if($encounter_class_nr==$result['class_nr']) $sTemp = $sTemp.'checked';
 				$sTemp = $sTemp.'>';
 
-				if(isset($$LD)&&!empty($$LD)) $sTemp = $sTemp.$$LD;
+				if(isset(${$LD})&&!empty(${$LD})) $sTemp = $sTemp.${$LD};
 				else $sTemp = $sTemp.$result['name'];
 			}
 		}
@@ -736,7 +736,7 @@ if(!isset($pid) || !$pid){
 			$sTemp = $sTemp.'>';
 
 			$LD=$result['LD_var'];
-			if(isset($$LD)&&!empty($$LD)) $sTemp = $sTemp.$$LD;
+			if(isset(${$LD})&&!empty(${$LD})) $sTemp = $sTemp.${$LD};
 			else $sTemp = $sTemp.$result['name'];
 		}
 	}
@@ -766,8 +766,8 @@ if(!isset($pid) || !$pid){
 						<option value="'.$buffer['class_nr'].'" ';
 			if($sc_care_class_nr==$buffer['class_nr']) $sTemp = $sTemp.'selected';
 			$sTemp = $sTemp.'>';
-			if(empty($$buffer['LD_var'])) $sTemp = $sTemp.$buffer['name'];
-			else $sTemp = $sTemp.$$buffer['LD_var'];
+			if(empty(${$buffer['LD_var']})) $sTemp = $sTemp.$buffer['name'];
+			else $sTemp = $sTemp.${$buffer['LD_var']};
 			$sTemp = $sTemp.'</option>';
 		}
 		$sTemp = $sTemp.'</select>';
@@ -798,8 +798,8 @@ if(!isset($pid) || !$pid){
 						<option value="'.$buffer['class_nr'].'" ';
 			if($sc_room_class_nr==$buffer['class_nr']) $sTemp = $sTemp.'selected';
 			$sTemp = $sTemp.'>';
-			if(empty($$buffer['LD_var'])) $sTemp = $sTemp.$buffer['name'];
-			else $sTemp = $sTemp.$$buffer['LD_var'];
+			if(empty(${$buffer['LD_var']})) $sTemp = $sTemp.$buffer['name'];
+			else $sTemp = $sTemp.${$buffer['LD_var']};
 			$sTemp = $sTemp.'</option>';
 		}
 		$sTemp = $sTemp.'</select>';
@@ -830,8 +830,8 @@ if(!isset($pid) || !$pid){
 						<option value="'.$buffer['class_nr'].'" ';
 			if($sc_att_dr_class_nr==$buffer['class_nr']) $sTemp = $sTemp.'selected';
 			$sTemp = $sTemp.'>';
-			if(empty($$buffer['LD_var'])) $sTemp = $sTemp.$buffer['name'];
-			else $sTemp = $sTemp.$$buffer['LD_var'];
+			if(empty(${$buffer['LD_var']})) $sTemp = $sTemp.$buffer['name'];
+			else $sTemp = $sTemp.${$buffer['LD_var']};
 			$sTemp = $sTemp.'</option>';
 		}
 		$sTemp = $sTemp.'</select>';

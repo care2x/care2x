@@ -6,7 +6,7 @@ require($root_path.'include/core/inc_environment_global.php');
 * CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
 * GNU General Public License
 * Copyright 2002,2003,2004,2005 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -21,7 +21,7 @@ switch($_SESSION['sess_user_origin'])
 	case 'pharma':
 		$breakfile=$root_path.'modules/pharmacy/apotheke.php'.URL_APPEND;
 		break;
-		
+
 	case 'meddepot':
 		$breakfile=$root_path.'modules/med_depot/medlager.php'.URL_APPEND;
 		break;
@@ -39,18 +39,18 @@ $datum=date('d.m.Y');
 require_once($root_path.'include/care_api_classes/class_department.php');
 $dept_obj=new Department;
 
-//begin:gjergji 
+//begin:gjergji
 //if i'm the depot then i only take the pharmacy
 //else, all the departments
-if($cat=='medlager') 
+if($cat=='medlager')
 		$dept=$dept_obj->getAllPharmacy();
-elseif($cat=='pharma') 
+elseif($cat=='pharma')
 		$dept=$dept_obj->getAllMedical();
 //end:gjergji
 
 if($cat=='medlager')
 	$title=$LDSelectPharma;
-elseif($cat=='pharma') 
+elseif($cat=='pharma')
 	$title=$LDSelectDept;
 # Set forward file
 switch($target){
@@ -85,7 +85,7 @@ switch($target){
 $smarty->assign('sMascotImg','<img '.createMascot($root_path,'mascot1_r.gif','0','bottom').' align="absmiddle">');
 if($cat=='medlager')
 	$smarty->assign('LDPlsSelectDept',$LDPlsSelectFarma);
-elseif($cat=='pharma') 
+elseif($cat=='pharma')
 	$smarty->assign('LDPlsSelectDept',$LDPlsSelectDept);
 
  # Buffer department rows output
@@ -94,16 +94,16 @@ elseif($cat=='pharma')
 $toggler=0;
 
 while(list($x,$v)=each($dept)){
-		
+
 	$bold='';
 	$boldx='';
-	if($hilitedept==$v['nr']) 	{ echo '<tr bgcolor="yellow">'; $bold="<font color=\"red\" size=2><b>";$boldx="</b></font>"; } 
+	if($hilitedept==$v['nr']) 	{ echo '<tr bgcolor="yellow">'; $bold="<font color=\"red\" size=2><b>";$boldx="</b></font>"; }
 	else
-		if ($toggler==0) 
+		if ($toggler==0)
 			{ echo '<tr class="wardlistrow1">'; $toggler=1;}
 				else { echo '<tr class="wardlistrow2">'; $toggler=0;}
 	echo '<td>&nbsp;'.$bold;
-	if(isset($$v['LD_var'])&&!empty($$v['LD_var'])) echo $$v['LD_var'];
+	if(isset(${$v['LD_var']})&&!empty(${$v['LD_var']})) echo ${$v['LD_var']};
 		else echo $v['name_formal'];
 	echo $boldx.'&nbsp;</td>';
 	echo '<td >&nbsp; <a href="'.$fileforward.'&dept_nr='.$v['nr'].'">

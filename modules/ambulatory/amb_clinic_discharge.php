@@ -1,7 +1,7 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 /**
 * CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
 * GNU General Public License
@@ -200,7 +200,7 @@ $calendar->load_files();
 		while($dis_type=$discharge_types->FetchRow()){
 			if($dis_type['nr']==$relart){
 				//$sTemp = $sTemp.'&nbsp;';
-				if(isset($$dis_type['LD_var'])&&!empty($$dis_type['LD_var'])) $sTemp = $sTemp.$$dis_type['LD_var'];
+				if(isset(${$dis_type['LD_var']})&&!empty(${$dis_type['LD_var']})) $sTemp = $sTemp.${$dis_type['LD_var']};
 					else $sTemp = $sTemp.$dis_type['name'];
 				break;
 			}
@@ -216,7 +216,7 @@ $calendar->load_files();
 				    $init=0;
 		         }
 			     $sTemp = $sTemp.'>';
-			     if(isset($$dis_type['LD_var'])&&!empty($$dis_type['LD_var'])) $sTemp = $sTemp.$$dis_type['LD_var'];
+			     if(isset(${$dis_type['LD_var']})&&!empty(${$dis_type['LD_var']})) $sTemp = $sTemp.${$dis_type['LD_var']};
 				    else $sTemp = $sTemp.$dis_type['name'];
 			     $sTemp = $sTemp.'<br>';
 		}

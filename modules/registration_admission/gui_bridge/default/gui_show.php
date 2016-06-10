@@ -173,7 +173,7 @@ if($sex=='m') $smarty->assign('sSexType',$LDMale);
 $smarty->assign('LDBloodGroup',$LDBloodGroup);
 if($blood_group){
 	$buf='LD'.$blood_group;
-	$smarty->assign('blood_group',$$buf);
+	$smarty->assign('blood_group',${$buf});
 }
 
 /* Buffer and load the options table  */

@@ -95,7 +95,7 @@ if($pid||$personell_nr){
 			} elseif ($p_insurance->RecordCount()==1){
 				$buffer= $p_insurance->FetchRow();
 				extract($buffer);
-				//while(list($x,$v)=each($buffer)) {$$x=$v; }
+				//while(list($x,$v)=each($buffer)) {${$x}=$v; }
 				$insurance_show=TRUE;
 				$insurance_firm_name=$pinsure_obj->getFirmName($insurance_firm_id);
 			} else { $insurance_show=FALSE;}
@@ -174,7 +174,7 @@ if($pid||$personell_nr){
 		else{
 			$person_obj->setPID($pid);
 			if($data=&$person_obj->BasicDataArray($pid)){
-				//while(list($x,$v)=each($data))	$$x=$v;
+				//while(list($x,$v)=each($data))	${$x}=$v;
 				extract($data);
 			}
 			# Get the citytown name

@@ -136,7 +136,7 @@ if(is_object($encounter_classes)){
 		<input name="encounter_class_nr" type="radio"  value="<?php echo $result['class_nr']; ?>" <?php if(isset($encounter_class_nr)&&$encounter_class_nr==$result['class_nr']) echo 'checked'; ?>>
 <?php
         $LD=$result['LD_var'];
-        if(isset($$LD)&&!empty($$LD)) echo $$LD; else echo $result['name'];
+        if(isset(${$LD})&&!empty(${$LD})) echo ${$LD}; else echo $result['name'];
         echo '&nbsp;';
 	}
 }

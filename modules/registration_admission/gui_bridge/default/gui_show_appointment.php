@@ -109,7 +109,7 @@ while($row=$result->FetchRow()){
     <td><FONT SIZE=-1  FACE="Arial" color="<?php echo $tc; ?>">
 		<?php
 			$buffer='LD'.$row['appt_status'];
-			if(isset($$buffer)&&!empty($$buffer)) echo $$buffer; else echo $row['appt_status'];
+			if(isset(${$buffer})&&!empty(${$buffer})) echo ${$buffer}; else echo $row['appt_status'];
 		?>
 	</td>
   </tr>

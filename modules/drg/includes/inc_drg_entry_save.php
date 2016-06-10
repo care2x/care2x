@@ -1,6 +1,6 @@
 <?php
 /*------begin------ This protection code was suggested by Luki R. luki@karet.org ---- */
-if (stristr($_SERVER['SCRIPT_NAME'],'inc_drg_entry_save.php')) 
+if (stristr($_SERVER['SCRIPT_NAME'],'inc_drg_entry_save.php'))
 	die('<meta http-equiv="refresh" content="0; url=../">');
 /*------end------*/
 
@@ -31,8 +31,8 @@ $data['create_time']=date('YmdHis');
 
 switch($element)
 {
-	case 'icd_code': 
-	{	
+	case 'icd_code':
+	{
 		$data['code_version']=$DRG_obj->ICDVersion();
 		$data['diagnosing_clinician']=$_SESSION['sess_user_name'];
 		$data['diagnosing_dept_nr']=$dept_nr;
@@ -75,14 +75,14 @@ if($multiple_save){
 	for($i=0;$i<$lastindex;$i++){
 		$selx="$itemselector$i";
 		$hidx="$hidselector$i";
-		if($$selx=='') continue;
+		if(${$selx}=='') continue;
 		if($element=='ops_intern_code'){
-			if($DRG_obj->EncounterDRGGroupExists($$selx)) continue;
-				else $data['group_nr']=$$selx;
+			if($DRG_obj->EncounterDRGGroupExists(${$selx})) continue;
+				else $data['group_nr']=${$selx};
 		}
-		$data['code']=$$selx;
-		$data['code_parent']=$$hidx;
-			
+		$data['code']=${$selx};
+		$data['code_parent']=${$hidx};
+
 		# pass the variable as reference
 		$DRG_obj->setDataArray($data);
 		# Now insert the data
@@ -92,7 +92,7 @@ if($multiple_save){
 		$data['qlist_type']=$qlist_type;
 		$data['code_type']=$qlist_type;
 		$data['dept_nr']=$dept_nr;
-		
+
 		# Update quick list table
 		$DRG_obj->addQuickCode($data);
 		//echo $DRG_obj->getLastQuery()."<br>";
@@ -102,7 +102,7 @@ if($multiple_save){
 	}
 	$saveok=1;
 }
-// Redirect and exit 
+// Redirect and exit
 $buf="location:$thisfile?sid=$sid&lang=$lang&saveok=$saveok&pn=$pn&opnr=$opnr&group_nr=$group_nr&edit=$edit&ln=$ln&fn=$fn&bd=$bd&dept_nr=$dept_nr&oprm=$oprm&y=$y&m=$m&d=$d&display=$display&target=$target";
 //echo $buf;
 if(!$noheader){

@@ -69,7 +69,7 @@ $dept_obj=new Department;
 $dept=&$dept_obj->getPhoneInfo($dept_nr);
 /* Resolve the departments name "language dependent" */
 $dept_ldvar=$dept_obj->LDvar($dept_nr);
-if(isset($$dept_ldvar)&&!empty($$dept_ldvar)) $dept_name=$$dept_ldvar;
+if(isset(${$dept_ldvar})&&!empty(${$dept_ldvar})) $dept_name=${$dept_ldvar};
 	else $dept_name=$dept_obj->FormalName($dept_nr);
 
 require_once($root_path.'include/care_api_classes/class_globalconfig.php');

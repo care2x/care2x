@@ -6,7 +6,7 @@ require($root_path.'include/core/inc_environment_global.php');
 * CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
 * GNU General Public License
 * Copyright 2002,2003,2004,2005 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -47,7 +47,7 @@ switch($retpath)
 # Prepare page title
  $sTitle = "$LDORNOC::$LDDutyPlan::";
  $LDvar=$dept_obj->LDvar();
- if(isset($$LDvar) && $$LDvar) $sTitle = $sTitle.$$LDvar;
+ if(isset(${$LDvar}) && ${$LDvar}) $sTitle = $sTitle.${$LDvar};
    else $sTitle = $sTitle.$dept_obj->FormalName();
 
 # Start Smarty templating here
@@ -91,14 +91,14 @@ function popinfo(l)
 	ww=400;
 	wh=400;
 	urlholder="nursing-or-dienstplan-popinfo.php<?php echo URL_REDIRECT_APPEND ?>&nr="+l+"&dept_nr=<?php echo $dept_nr ?>&route=validroute&user=<?php echo $aufnahme_user.'"' ?>;
-	
+
 	infowin<?php echo $sid ?>=window.open(urlholder,"infowin<?php echo $sid ?>","width=" + ww + ",height=" + wh +",menubar=no,resizable=yes,scrollbars=yes");
 	window.infowin<?php echo $sid ?>.moveTo((w/2)+20,(h/2)-(wh/2));
 
 }
 </script>
 
-<?php 
+<?php
 
  $sTemp=ob_get_contents();
  ob_end_clean();
@@ -128,7 +128,7 @@ if ($pmonth==12) $sBuffer = $sBuffer.$monat[1];
 	else $sBuffer = $sBuffer.$monat[$pmonth+1];
 
 $smarty->assign('sNextMonth',$sBuffer.'</a>');
- 
+
 # Assign control links
 $smarty->assign('sNewPlan',"<a href=\"nursing-or-main-pass.php".URL_APPEND."&target=dutyplan&dept_nr=$dept_nr&pmonth=$pmonth&pyear=$pyear&retpath=$retpath\"><img ".createLDImgSrc($root_path,'newplan.gif','0')."  alt=\"$LDNewPlan\"></a>");
 $smarty->assign('sCancel',"<a href=\"$rettarget\"><img ".createLDImgSrc($root_path,'close2.gif','0')." alt=\"$LDClosePlan\"></a>");
@@ -148,7 +148,7 @@ for ($i=1,$n=0,$wd=$firstday;$i<=$maxdays;$i++,$n++,$wd++){
 		case 0: $backcolor='class="sunday"';break;
 		default: $backcolor='class="weekday"';
 	}
-	
+
 	$aelems=unserialize($dutyplan['duty_1_txt']);
 	$relems=unserialize($dutyplan['duty_2_txt']);
 	$a_pnr=unserialize($dutyplan['duty_1_pnr']);

@@ -17,7 +17,7 @@ function chkform(d){
 			return false;
 		}
 	}
-	
+
 	if(isNaN(d.parent_encounter_nr.value)){
 		d.length.focus(); // patch for Konqueror
 		alert("<?php echo $LDEntryInvalidChar; ?>");
@@ -92,7 +92,7 @@ if($birth['delivery_nr']) $TP_DNR= $birth['delivery_nr'];
 
 # Delivery place
 $TP_DELIV_PLACE=$LD['delivery_place'];
-$TP_DPLACE=$birth['delivery_place']; 
+$TP_DPLACE=$birth['delivery_place'];
 
 # Delivery mode
 $TP_DELIV_MODE=$LD['delivery_mode'];
@@ -106,7 +106,7 @@ if($obj->LastRecordCount()){
 		$TP_DMODE_RADIOS.='<input type="radio" name="delivery_mode" value="'.$dmod['nr'].'" ';
 		if($birth['delivery_mode']==$dmod['nr']) $TP_DMODE_RADIOS.='checked' ;
 		$TP_DMODE_RADIOS.='>';
-		if(isset($$dmod['LD_var']) && $$dmod['LD_var']) $TP_DMODE_RADIOS.=$$dmod['LD_var'];
+		if(isset(${$dmod['LD_var']}) && ${$dmod['LD_var']}) $TP_DMODE_RADIOS.=${$dmod['LD_var']};
 			else $TP_DMODE_RADIOS.=$dmod['name'];
 	}
 }
@@ -135,7 +135,7 @@ $TP_FACE_PRES_YES.='>'.$LDYes;
 $TP_FACE_PRES_NO='<input type="radio" name="face_presentation" value="0" ';
 if(!$birth['face_presentation']) $TP_FACE_PRES_NO.='checked';
 $TP_FACE_PRES_NO.='>'.$LDNo;
-	 
+
 # Posterio -occipital position
 $TP_POS_OCCI=$LD['posterio_occipital_position'];
 $TP_POS_OCCI_YES='<input type="radio" name="posterio_occipital_position" value="1" ';
@@ -288,16 +288,16 @@ if($obj->LastRecordCount()){
 		$TP_FEED_RADIOS.='<input type="radio" name="feeding" value="'.$feed['nr'].'" ';
 		if($birth['feeding']==$feed['nr']) $TP_FEED_RADIOS.='checked' ;
 		$TP_FEED_RADIOS.='>';
-		if(isset($$feed['LD_var']) && $$feed['LD_var']) $TP_FEED_RADIOS.=$$feed['LD_var'];
+		if(isset(${$feed['LD_var']}) && ${$feed['LD_var']}) $TP_FEED_RADIOS.=${$feed['LD_var']};
 			else $TP_FEED_RADIOS.=$feed['name'];
 	}
 }
 
-# congenital abnormality 
+# congenital abnormality
 $TP_CONG_ABNORM=$LD['congenital_abnormality'];
 if($birth['congenital_abnormality']) $TP_CABNORM=$birth['congenital_abnormality'];
 	else $TP_CABNORM='';
-# Classification 
+# Classification
 $TP_CLASSIFICATION=$LD['classification'];
 $TP_CLASSIF='';
 if(!empty($birth['classification'])) $TP_CLASSIF=$birth['classification'];
@@ -316,7 +316,7 @@ if($obj->LastRecordCount()){
 		$TP_OUT_RADIOS.='<input type="radio" name="outcome" value="'.$otc['nr'].'" ';
 		if($birth['outcome']==$otc['nr']) $TP_OUT_RADIOS.='checked' ;
 		$TP_OUT_RADIOS.='>';
-		if(isset($$otc['LD_var']) && $$otc['LD_var']) $TP_OUT_RADIOS.=$$otc['LD_var'];
+		if(isset(${$otc['LD_var']}) && ${$otc['LD_var']}) $TP_OUT_RADIOS.=${$otc['LD_var']};
 			else $TP_OUT_RADIOS.=$otc['name'];
 	}
 }
@@ -330,7 +330,7 @@ if($obj->LastRecordCount()){
 		$TP_DISCAT_RADIOS.='<input type="radio" name="disease_category" value="'.$dcat['nr'].'" ';
 		if($birth['disease_category']==$dcat['nr']) $TP_DISCAT_RADIOS.='checked' ;
 		$TP_DISCAT_RADIOS.='>';
-		if(isset($$dcat['LD_var']) && $$dcat['LD_var']) $TP_DISCAT_RADIOS.=$$dcat['LD_var'];
+		if(isset(${$dcat['LD_var']}) && ${$dcat['LD_var']}) $TP_DISCAT_RADIOS.=${$dcat['LD_var']};
 			else $TP_DISCAT_RADIOS.=$dcat['name'];
 	}
 }

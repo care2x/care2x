@@ -6,7 +6,7 @@ require($root_path.'include/core/inc_environment_global.php');
 * CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
 * GNU General Public License
 * Copyright 2002,2003,2004,2005 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -63,7 +63,7 @@ div.pcont{ margin-left: 3; }
 
 </style>
 
-<?php 
+<?php
 
 $sTemp = ob_get_contents();
 ob_end_clean();
@@ -80,25 +80,25 @@ ob_start();
 <!-- 	<td bgcolor="#e9e9e9"></td>
  -->    <td class=pblock align=center><?php echo $LDDept ?></td>
     <td class=pblock align=center><?php echo $LDDescription ?></td>
- </tr> 
-  
+ </tr>
+
 <?php
 while(list($x,$dept)=each($deptarray)){
 ?>
   <tr>
 <!-- 	<td bgcolor="#e9e9e9"><img <?php echo createComIcon($root_path,'arrow_blueW.gif','0'); ?>></td>
  -->    <td class=pblock  bgColor="#eeeeee"><a href="dept_info.php<?php echo URL_APPEND."&dept_nr=".$dept['nr']; ?>">
- <?php 
-		if(isset($$dept['LD_var'])&&!empty($$dept['LD_var'])) echo $$dept['LD_var'];
+ <?php
+		if(isset(${$dept['LD_var']})&&!empty(${$dept['LD_var']})) echo ${$dept['LD_var']};
 				else echo $dept['name_formal'];
  ?>
  </a> </td>
     <td class=pblock  bgColor="#eeeeee"><?php echo deactivateHotHtml(nl2br($dept['description'])); ?> </td>
- </tr> 
+ </tr>
 <?php
 }
  ?>
- 
+
 </table>
 
 <p>

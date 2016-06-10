@@ -236,11 +236,11 @@ $debug=FALSE;
 							$var_hist = $variables[$i].'_hist';
 							$var = $variables[$i];
 
-							if ($$var != '')
+							if (${$var} != '')
 							{
-								$$var_hist = $$var.'\\n';
+								${$var_hist} = ${$var}.'\\n';
 							}
-							else $$var_hist = '-\\n';
+							else ${$var_hist} = '-\\n';
 
 						}
 
@@ -259,7 +259,7 @@ $debug=FALSE;
 			if (isset($_GET['clear']))
 			{
 				foreach ($variables as $v)
-					$$v = '';
+					${$v} = '';
 
 			}	//SHOW-Option
 
@@ -276,7 +276,7 @@ $debug=FALSE;
 
 					for ($i = 0; $i<9; ++$i)
 					{
-						$$variables[$i] = $row[$variables[$i]];
+						${$variables[$i]} = $row[$variables[$i]];
 					}
 			}
 

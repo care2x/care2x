@@ -4,11 +4,11 @@ require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
 /*
 CARE2X Integrated Information System Deployment 2.1 - 2004-10-02 for Hospitals and Health Care Organizations and Services
-Copyright (C) 2002,2003,2004,2005  Elpidio Latorilla & Intellin.org	
+Copyright (C) 2002,2003,2004,2005  Elpidio Latorilla & Intellin.org
 GNU GPL. For details read file "copy_notice.txt".
 */
-define('CATEGORY_NAME_FULL',1); // 1= the category names are to be displayed in full, 0 = only short codes are displayed 
-define('LOCALIZATION_NAME_FULL',1);// 1= the localization names are to be displayed in full, 0 = only short codes are displayed 
+define('CATEGORY_NAME_FULL',1); // 1= the category names are to be displayed in full, 0 = only short codes are displayed
+define('LOCALIZATION_NAME_FULL',1);// 1= the localization names are to be displayed in full, 0 = only short codes are displayed
 define('LANG_FILE','drg.php');
 
 require_once('drg_inc_local_user.php');
@@ -27,30 +27,30 @@ if(isset($mode)&&!empty($mode)){
 }
 switch($mode)
 {
-	case 'delete': 
-	{				
+	case 'delete':
+	{
 		if($DRG_obj->deleteProcedure($itemx)){
 			header($saved_header);
 			exit;
 		}
 		break;
-	}									
+	}
 	case 'update_stat':
-	{				
+	{
 		if($DRG_obj->setProcedureCategory($pn,$itemx,$val)){
 			header($saved_header);
 			exit;
 		}
 		break;
-	}									
+	}
 	case 'update_loc':
-	{				
+	{
 		if($DRG_obj->setProcedureLocalization($itemx,$val)){
 			header($saved_header);
 			exit;
 		}
 		break;
-	}									
+	}
 } // end of switch
 if(!isset($group_nr)) $group_nr=0;
 if(!isset($opnr)) $opnr=0;
@@ -69,9 +69,9 @@ $img_delete=createComIcon($root_path,'delete2.gif','0','right',TRUE);
 <HEAD>
 <?php echo setCharSet(); ?>
  <TITLE></TITLE>
- 
+
   <script language="javascript">
-<!-- 
+<!--
 function pruf(d)
 {
 	if((d.keyword.value=="")||(d.keyword.value==" ")) return false;
@@ -109,8 +109,8 @@ function makeChange(v,i,m)
 
 // -->
 </script>
- 
-<?php 
+
+<?php
 require($root_path.'include/core/inc_js_gethelp.php');
 require($root_path.'include/core/inc_css_a_hilitebu.php');
 ?>
@@ -121,7 +121,7 @@ require($root_path.'include/core/inc_css_a_hilitebu.php');
 <?php endif; ?>
 </HEAD>
 
-<BODY 
+<BODY
 <?php if($display=='composite') echo 'topmargin=0 marginheight=0 leftmargin=0 marginwidth=0';
 else  echo 'topmargin=2 marginheight=2';
 ?>
@@ -140,7 +140,7 @@ else  echo 'topmargin=2 marginheight=2';
 <table border=0 width=100%>
   <tr>
     <td width=100% valign="top">
-	<table border=0 cellpadding=1 cellspacing=1 width=100%> 
+	<table border=0 cellpadding=1 cellspacing=1 width=100%>
 		<tr bgcolor="#009900">
  		<td><font size=2 color=#ffffff><b><nobr><?php echo $LDOps301 ?></nobr></b></td>
  		<td ><font size=2 color=#ffffff><b><?php echo $LDDescription ?></b></td>
@@ -153,21 +153,21 @@ else  echo 'topmargin=2 marginheight=2';
     	</tr>
 
 <?php
-if (is_object($drg)) { 
+if (is_object($drg)) {
 	# Load the diagnosis categories
 	if($cat_obj=&$DRG_obj->ProcedureCategories()) $cat_ok=true;
 		else $cat_ok=false;
 	# Load the localization types
 	if($loc_obj=&$DRG_obj->LocalizationTypes()) $loc_ok=true;
 		else $loc_ok=false;
-	
+
 	while($procedure=$drg->FetchRow()){
 		if($procedure['category_nr']=="1") $fcolor="#006600"; else $fcolor="#000000";
 		echo "<tr class=";
 		if($toggle) { echo "wardlistrow2>"; $toggle=0;} else {echo "wardlistrow1>"; $toggle=1;};
 		echo '
 		<td><font size=2><a href="javascript:openOPSsearch(\''.$procedure['code'].'\',\'1\')">'.$procedure['code'].'</a>
-		</td>	
+		</td>
 		<td><font size=2 color="'.$fcolor.'">'.$procedure['parent_desc'].' <b>'.$procedure['description'].'</b>
 		</td>
 		<td><font size=2  color="'.$fcolor.'">';
@@ -184,10 +184,10 @@ if (is_object($drg)) {
 						if($procedure['category_nr']==$cat['nr']) break;
 					}
 					if(defined('CATEGORY_NAME_FULL')&&CATEGORY_NAME_FULL){
-						if(isset($$cat['LD_var'])&&!empty($$cat['LD_var']))  echo $$cat['LD_var'];
+						if(isset(${$cat['LD_var']})&&!empty(${$cat['LD_var']}))  echo ${$cat['LD_var']};
 							else echo $cat['name'];
 					}else{
-						if(isset($$cat['LD_var_short_code'])&&!empty($$cat['LD_var_short_code'])) echo $$cat['LD_var_short_code'];
+						if(isset(${$cat['LD_var_short_code']})&&!empty(${$cat['LD_var_short_code']})) echo ${$cat['LD_var_short_code']};
 							else echo $cat['short_code'];
 					}
 					# Reset the $cat_obj
@@ -210,10 +210,10 @@ if (is_object($drg)) {
 			if($procedure['category_nr']==$cat['nr']) echo ' selected';
 			echo '>';
 			if(defined('CATEGORY_NAME_FULL')&&CATEGORY_NAME_FULL){
-				if(isset($$cat['LD_var'])&&!empty($$cat['LD_var'])) echo $$cat['LD_var'];
+				if(isset(${$cat['LD_var']})&&!empty(${$cat['LD_var']})) echo ${$cat['LD_var']};
 					else echo $cat['name'];
 			}else{
-				if(isset($$cat['LD_var_short_code'])&&!empty($$cat['LD_var_short_code'])) echo $$cat['LD_var_short_code'];
+				if(isset(${$cat['LD_var_short_code']})&&!empty(${$cat['LD_var_short_code']})) echo ${$cat['LD_var_short_code']};
 					else echo $cat['short_code'];
 			}
 			echo '</option>';
@@ -221,16 +221,16 @@ if (is_object($drg)) {
 		# Reset the $cat_obj
 		$cat_obj->MoveFirst();
 	}
-?>		
+?>
         	</select>
 <?php
 		}else{
-		
+
 			if(defined('CATEGORY_NAME_FULL')&&CATEGORY_NAME_FULL){
-				if(isset($$procedure['cat_LD_var'])&&!empty($$procedure['cat_LD_var']))  echo $$procedure['cat_LD_var'];
+				if(isset(${$procedure['cat_LD_var']})&&!empty(${$procedure['cat_LD_var']}))  echo ${$procedure['cat_LD_var']};
 					else echo $procedure['cat_name'];
 			}else{
-				if(isset($$procedure['cat_LD_var_short_code'])&&!empty($$procedure['cat_LD_var_short_code'])) echo $$procedure['cat_LD_var_short_code'];
+				if(isset(${$procedure['cat_LD_var_short_code']})&&!empty(${$procedure['cat_LD_var_short_code']})) echo ${$procedure['cat_LD_var_short_code']};
 					else echo $procedure['cat_short_code'];
 			}
 		}
@@ -238,10 +238,10 @@ if (is_object($drg)) {
 				<td><font size=2  color="'.$fcolor.'">';
 		if($display!='composite'){
 			if(defined('LOCALIZATION_NAME_FULL')&&LOCALIZATION_NAME_FULL){
-				if(isset($$procedure['loc_LD_var'])&&!empty($$procedure['loc_LD_var']))  echo $$procedure['loc_LD_var'];
+				if(isset(${$procedure['loc_LD_var']})&&!empty(${$procedure['loc_LD_var']}))  echo ${$procedure['loc_LD_var']};
 					else echo $icd['loc_name'];
 			}else{
-				if(isset($$procedure['loc_LD_var_short_code'])&&!empty($$procedure['loc_LD_var_short_code'])) echo $$procedure['loc_LD_var_short_code'];
+				if(isset(${$procedure['loc_LD_var_short_code']})&&!empty(${$procedure['loc_LD_var_short_code']})) echo ${$procedure['loc_LD_var_short_code']};
 					else echo $procedure['loc_short_code'];
 			}
 		}elseif(!$edit){
@@ -251,10 +251,10 @@ if (is_object($drg)) {
 						if($procedure['localization']==$loc['nr']) break;
 					}
 					if(defined('LOCALIZATION_NAME_FULL')&&LOCALIZATION_NAME_FULL){
-						if(isset($$loc['LD_var'])&&!empty($$loc['LD_var'])) echo $$loc['LD_var'];
+						if(isset(${$loc['LD_var']})&&!empty(${$loc['LD_var']})) echo ${$loc['LD_var']};
 							else echo $loc['name'];
 					}else{
-						if(isset($$loc['LD_var_short_code'])&&!empty($$loc['LD_var_short_code'])) echo $$loc['LD_var_short_code'];
+						if(isset(${$loc['LD_var_short_code']})&&!empty(${$loc['LD_var_short_code']})) echo ${$loc['LD_var_short_code']};
 							else echo $loc['short_code'];
 					}
 					# Reset the loc_obj object
@@ -277,23 +277,23 @@ if (is_object($drg)) {
 			if($procedure['localization']==$loc['nr']) echo ' selected';
 			echo '>';
 			if(defined('LOCALIZATION_NAME_FULL')&&LOCALIZATION_NAME_FULL){
-				if(isset($$loc['LD_var'])&&!empty($$loc['LD_var'])) echo $$loc['LD_var'];
+				if(isset(${$loc['LD_var']})&&!empty(${$loc['LD_var']})) echo ${$loc['LD_var']};
 					else echo $loc['name'];
 			}else{
-				if(isset($$loc['LD_var_short_code'])&&!empty($$loc['LD_var_short_code'])) echo $$loc['LD_var_short_code'];
+				if(isset(${$loc['LD_var_short_code']})&&!empty(${$loc['LD_var_short_code']})) echo ${$loc['LD_var_short_code']};
 					else echo $loc['short_code'];
 			}
 			echo '</option>';
 		}
-			
+
 		# Reset the loc_obj object
 		$loc_obj->MoveFirst();
 
 	}
-?>		
+?>
         	</select>
-								
-<?php       
+
+<?php
 		}
 		echo '</td>
 				<td><font size=2>'.stripslashes($procedure['responsible_clinician']).' - '.$procedure['responsible_dept_nr'].'
@@ -313,21 +313,21 @@ if (is_object($drg)) {
 
 ?>
 	</table>
-	
+
 	</td>
-	<?php if($display=="composite") { ?> 	 
+	<?php if($display=="composite") { ?>
 	<td valign="top" bgcolor="#009900"><font size=2 color=#ffffff>
   		<?php
 			if($edit){
 		?>
 	<input type="button" value="<?php echo $LDSearch ?>" onClick="javascript:openOPSsearch('','0')">&nbsp;
  	<p><input type="button" value="<?php echo $LDQuickList ?>" onClick="javascript:openQuicklist('procedure')"><p><br><p>
-	
+
 		<?php
 			}
 		?>
 	<a href="javascript:window.parent.close()" ><img <?php echo createLDImgSrc($root_path,'close2.gif','0') ?>></a></td>
-	<?php } ?>  
+	<?php } ?>
 	</tr>
 </table>
 

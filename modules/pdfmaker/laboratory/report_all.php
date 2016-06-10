@@ -128,8 +128,8 @@ $data=NULL;
 $y=$pdf->ezText("\n",14);
 
 // Get the report title
-if(isset($$LD_var)&&!empty($$LD_var)){
-	$title=$$LD_var;
+if(isset(${$LD_var})&&!empty(${$LD_var})){
+	$title=${$LD_var};
 }else{
 	$title=$name;
 }

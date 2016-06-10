@@ -6,7 +6,7 @@ require($root_path.'include/core/inc_environment_global.php');
 * CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
 * GNU General Public License
 * Copyright 2002,2003,2004,2005 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -27,8 +27,8 @@ $ward_obj=new Ward($ward_nr);
 
 if(isset($mode) && $mode=='save_beds'){
 	$saved_ok=false;
-	
-	// Set the values common to all rooms 
+
+	// Set the values common to all rooms
 	$_POST['date_create']=date('Y-m-d');
 	$_POST['history']="Created: ".date('Y-m-d H:i:s')." ".$_SESSION['sess_user_name']."\n";
 	//$_POST['modify_id']=$_SESSION['sess_user_name'];
@@ -41,15 +41,15 @@ if(isset($mode) && $mode=='save_beds'){
 			$beds='beds'.$i;
 			$info='info'.$i;
 			$_POST['room_nr']=$i;
-			if(empty($$beds)) $$beds=DEFAULT_NR_OF_BEDS;
-			$_POST['nr_of_beds']=$$beds;
-			if(empty($$info)) $_POST['info'] = ' ';
-				else $_POST['info']=$$info;
+			if(empty(${$beds})) ${$beds}=DEFAULT_NR_OF_BEDS;
+			$_POST['nr_of_beds']=${$beds};
+			if(empty(${$info})) $_POST['info'] = ' ';
+				else $_POST['info']=${$info};
 			if($ward_obj->saveWardRoomInfoFromArray($_POST)) $saved_ok=true;
 			//echo $ward_obj->getLastQuery().'<p>';
 		}
 	}
-	
+
 	if($saved_ok){
 		//gjergji : commented it out for the changing of the magament
 		//header("location:nursing-station.php".URL_REDIRECT_APPEND."&edit=1&ward_nr=$ward_nr&retpath=ward_mng");
@@ -70,7 +70,7 @@ if(isset($mode) && $mode=='save_beds'){
 <?php echo setCharSet(); ?>
 
 <script language="javascript">
-<!-- 
+<!--
 function checkForm(f){
 	var i;
 	var v;
@@ -110,7 +110,7 @@ div.pcont{ margin-left: 3; }
 
 </HEAD>
 
-<BODY bgcolor=<?php echo $cfg['body_bgcolor']; ?> onLoad="if (window.focus) window.focus()" topmargin=0 leftmargin=0 marginwidth=0 marginheight=0 
+<BODY bgcolor=<?php echo $cfg['body_bgcolor']; ?> onLoad="if (window.focus) window.focus()" topmargin=0 leftmargin=0 marginwidth=0 marginheight=0
 <?php if (!$cfg['dhtml']){ echo 'link='.$cfg['idx_txtcolor'].' alink='.$cfg['body_alink'].' vlink='.$cfg['idx_txtcolor']; } ?>>
 
 
@@ -126,7 +126,7 @@ div.pcont{ margin-left: 3; }
  <ul>
 <?php if(is_array($ward)) { ?>
 <p><br>
-<?php 	
+<?php
 
 $room_nr=$ward['room_nr_end']-$ward['room_nr_start'];
 
@@ -140,19 +140,19 @@ $bgc2='#eeeeee';
   <tr>
     <td class=pblock background="<?php echo $bgc ?>">&nbsp;<b><?php echo $LDStation ?></b>:</td>
     <td class=pblock bgcolor="<?php echo $bgc2 ?>"  colspan=2>&nbsp; <?php echo $ward['name'] ?><br></td>
-  </tr> 
+  </tr>
   <tr>
     <td class=pblock background="<?php echo $bgc ?>">&nbsp;<b><?php echo $LDWard_ID ?></b>:</td>
     <td class=pblock bgcolor="<?php echo $bgc2 ?>" colspan=2>&nbsp; <?php echo $ward['ward_id'] ?><br></td>
-  </tr> 
+  </tr>
   <tr>
     <td class=pblock colspan=3>&nbsp;</td>
-  </tr> 
+  </tr>
   <tr>
     <td class=pblock colspan=3><font face="Verdana, Arial" size=-1><?php echo $LDEnterAllFields ?></td>
-  </tr> 
+  </tr>
 
-<?php 
+<?php
 $bgc=$root_path.'gui/img/skin/default/tableHeaderbg3.gif';
 echo '<tr>
 		<td background="'.$bgc.'"><font face="verdana,arial" size="2" >&nbsp;<b>'.$LDRoom.'</b></td>
@@ -167,12 +167,12 @@ $toggle=0;
 		echo '
 	<tr bgcolor="'.$trc.'">
     <td>&nbsp;<font face="Verdana, Arial" size=2>'.strtoupper($ward['roomprefix']).' '.$i.'&nbsp;&nbsp;&nbsp;
-	</td> 
+	</td>
 	<td>&nbsp;<font color="#ff0000"><b>*</b><input type="text" name="beds'.$i.'" size=2 maxlength=2 value="2">
-     &nbsp;  
-	</td> 
+     &nbsp;
+	</td>
 	<td>&nbsp; <input type="text" name="info'.$i.'" size=60 maxlength=100 value="">
-	</td> 
+	</td>
 	</tr>';
 	}
 ?>
@@ -188,7 +188,7 @@ $toggle=0;
 </form>
 <p>
   <?php } ?>
-  
+
  <font face="Verdana, Arial" size=2>
 
 </FONT>
@@ -198,7 +198,7 @@ $toggle=0;
 <p>
 </td>
 </tr>
-</table>        
+</table>
 <p>
 <?php
 require($root_path.'include/core/inc_load_copyrite.php');

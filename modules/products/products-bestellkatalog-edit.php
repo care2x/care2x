@@ -6,7 +6,7 @@ require($root_path.'include/core/inc_environment_global.php');
 * CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
 * GNU General Public License
 * Copyright 2002,2003,2004,2005 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -48,9 +48,9 @@ if(isset($cat))
 }
 else $invalid=1;
 
-if ($invalid) 
+if ($invalid)
 {
-    header("Location:".$root_path."language/".$lang."/lang_".$lang."_invalid-access-warning.php"); 
+    header("Location:".$root_path."language/".$lang."/lang_".$lang."_invalid-access-warning.php");
 	exit;
 }
 
@@ -61,7 +61,7 @@ if(($mode=='search')&&($keyword!='')&&($keyword!='%')){
 		$saveok=$product_obj->SaveCatalogItem($_GET,$cat);
 }
 
-if(($mode=='delete')&&($keyword!='')) 
+if(($mode=='delete')&&($keyword!=''))
 {
 	$delete_ok=$product_obj->DeleteCatalogItem($keyword,$cat);
 }
@@ -69,7 +69,7 @@ if(($mode=='delete')&&($keyword!=''))
 # Prepare title
 $sTitle="$title::$LDCatalog::";
 $buff=$dept_obj->LDvar($dept_nr);
-if(isset($$buff)&&!empty($$buff)) $sTitle=$sTitle.$$buff;
+if(isset(${$buff})&&!empty(${$buff})) $sTitle=$sTitle.${$buff};
 	else $sTitle=$sTitle.$dept_obj->FormalName($dept_nr);
 
 # Start Smarty templating here
@@ -109,7 +109,7 @@ function popinfo(b)
 	}
 
 </script>
-<?php 
+<?php
 
 $sTemp = ob_get_contents();
 ob_end_clean();
@@ -136,10 +136,10 @@ ob_start();
 </font>
 </form>
 <font face="Verdana, Arial" size=2>
-<?php 
+<?php
 if (($mode=='search')&&($keyword!='')) {
 	//set order catalog flag
-	
+
 	# Workaround to force the form template to be shown
 	$bShowThisForm = TRUE;
 

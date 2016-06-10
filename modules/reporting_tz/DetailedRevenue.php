@@ -1,6 +1,6 @@
 <html>
 	<head>
-		
+
 	</head>
 </html>
 <?php
@@ -28,7 +28,7 @@ $ward_info=$ward_obj->getAllWardsItemsObject($items);
 							$TP_SELECT_BLOCK_IN.='>'.$station['name'].'</option>';
 						}
 					}
-					$TP_SELECT_BLOCK_IN.='</select>';				
+					$TP_SELECT_BLOCK_IN.='</select>';
 
 require_once($root_path.'include/care_api_classes/class_department.php');
 $dept_obj= new Department;
@@ -40,7 +40,7 @@ while(list($x,$v)=each($medical_depts)){
 	$TP_SELECT_BLOCK.='
 	<option value="'.$v['nr'].'">';
 	$buffer=$v['LD_var'];
-	if(isset($$buffer)&&!empty($$buffer)) $TP_SELECT_BLOCK.=$$buffer;
+	if(isset(${$buffer})&&!empty(${$buffer})) $TP_SELECT_BLOCK.=${$buffer};
 		else $TP_SELECT_BLOCK.=$v['name_formal'];
 	$TP_SELECT_BLOCK.='</option>';
 }
@@ -78,12 +78,12 @@ if (empty($_GET['printout']) && empty($_GET['export'])) {
     }
 
 
-			
-   
-} 
 
 
-	   
+}
+
+
+
 if ($_GET['printout'] || isset($_GET['printout'])) {
     $PRINTOUT = TRUE;
 }

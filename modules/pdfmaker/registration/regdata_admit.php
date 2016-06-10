@@ -59,8 +59,8 @@ if ($person_obj->preloadPersonInfo ( $pid )) {
 
 $insurance_class = $insurance_obj->getInsuranceClassInfo ( $insurance_class_nr ) ;
 # Resolve the insurance class name
-if (isset ( $$insurance_class [ 'LD_var' ] ) && ! empty ( $$insurance_class [ 'LD_var' ] ))
-	$insclass = $$insurance_class [ 'LD_var' ] ; else
+if (isset ( ${$insurance_class['LD_var']} ) && ! empty ( ${$insurance_class [ 'LD_var' ]} ))
+	$insclass = ${$insurance_class [ 'LD_var' ]} ; else
 	$insclass = $insurance_class [ 'name' ] ;
 
 # Get the global config for person's registration form*/

@@ -7,12 +7,12 @@ require($root_path.'include/core/inc_environment_global.php');
 * CARE2X Integrated Hospital Information System Deployment 2.2 - 2006-07-10
 * GNU General Public License
 * Copyright 2002,2003,2004,2005,2006 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
 //$db->debug=true;
-/* We need to differentiate from where the user is coming: 
+/* We need to differentiate from where the user is coming:
 *  $user_origin != lab ;  from patient charts folder
 *  $user_origin == lab ;  from the laboratory
 *  $user_origin == amb ;  from the ambulatory clinics
@@ -25,21 +25,21 @@ switch($user_origin)
   $local_user='ck_lab_user';
   $breakfile=$root_path.'labor.php'.URL_APPEND;
   break;
-  
+
   case 'amb':
-  
+
   $local_user='ck_amb_user';
   $breakfile=$root_path.'dept.php?sid='.URL_APPEND;
   break;
-  
+
   case 'patreg':
-  
+
   $local_user='aufnahme_user';
   $breakfile='javascript:window.close()';
   break;
 
   default:
-  
+
   $local_user='ck_pflege_user';
   $breakfile=$root_path."pflege-station-patientdaten.php".URL_APPEND."&edit=$edit&station=$station&pn=$pn";
 }
@@ -120,16 +120,16 @@ if ($target=='generic' || $target=='blood') {
 }
 
 /* Check for the patietn number = $pn. If available get the patients data, */
-if(isset($pn) && $pn) {	
+if(isset($pn) && $pn) {
     include_once($root_path.'include/care_api_classes/class_encounter.php');
 	$enc_obj=new Encounter;
-	
+
 	if($enc_obj->loadEncounterData($pn)){
 		$edit=true;
 		include_once($root_path.'include/care_api_classes/class_globalconfig.php');
 		$GLOBAL_CONFIG=array();
 		$glob_obj=new GlobalConfig($GLOBAL_CONFIG);
-		$glob_obj->getConfig('patient_%');	
+		$glob_obj->getConfig('patient_%');
 		switch ($enc_obj->EncounterClass())
 		{
 		    case '1': $full_en = ($pn + $GLOBAL_CONFIG['patient_inpatient_nr_adder']);
@@ -137,19 +137,19 @@ if(isset($pn) && $pn) {
 			case '2': $full_en = ($pn + $GLOBAL_CONFIG['patient_outpatient_nr_adder']);
 							break;
 			default: $full_en = ($pn + $GLOBAL_CONFIG['patient_inpatient_nr_adder']);
-		}						
-		$_SESSION['sess_en']=$pn;	
-		$_SESSION['sess_full_en']=$full_en;	
-	}	
+		}
+		$_SESSION['sess_en']=$pn;
+		$_SESSION['sess_full_en']=$full_en;
+	}
 }
 
 /* Here begins the real work */
 /* Load date formatter */
      include_once($root_path.'include/core/inc_date_format_functions.php');
-     
+
      /* Load editor functions */
 	 if(!isset($mode))   $mode="";
-  
+
 
 				if($enc_obj->is_loaded) {
 		                if($ergebnis=$db->Execute($sql_2)){
@@ -172,17 +172,17 @@ if(isset($pn) && $pn) {
 								}
 				            }
 			             } else {
-						     echo "<p>$sql<p>$LDDbNoRead"; 
-						  }					
+						     echo "<p>$sql<p>$LDDbNoRead";
+						  }
 				}
 
-require_once($root_path.'include/care_api_classes/class_department.php');	
+require_once($root_path.'include/care_api_classes/class_department.php');
 $dept_obj=new Department;
 if($dept_obj->preloadDept($stored_request['testing_dept'])){
 	$buffer=$dept_obj->LDvar();
-	if(isset($$buffer)&&!empty($$buffer)) $formtitle=$$buffer;
+	if(isset(${$buffer})&&!empty(${$buffer})) $formtitle=${$buffer};
 		else $formtitle=$dept_obj->FormalName();
-}		
+}
 ?>
 
 <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 3.0//EN" "html.dtd">
@@ -205,11 +205,11 @@ div.fa2_ml3 {font-family: arial; font-size: 12; margin-left: 3; }
 .fva0_ml10 {font-family: verdana,arial; font-size: 10; margin-left: 10; color:#000099;}
 .fvag_ml10 {font-family: verdana,arial; font-size: 10; margin-left: 10; color:#969696;}
 
-<?php if($target=='baclabor') 
+<?php if($target=='baclabor')
 {
 ?>
 .lab {font-family: arial; font-size: 9; color:#ee6666;}
-<?php 
+<?php
 }
 else
 {
@@ -222,7 +222,7 @@ else
 .lmargin {margin-left: 5;}
 </style>
 
-</HEAD> 
+</HEAD>
 
 <BODY bgcolor="white" OnLoad="window.print();">
 
@@ -246,7 +246,7 @@ if($subtarget=='chemlabor' || $subtarget=='baclabor'){
 
 	$read_form=TRUE;
 	include('includes/inc_test_request_printout_'.$formfile.'.php');
-	
+
 	$smarty->display('forms/pathology.tpl');
 
 }else{
@@ -254,7 +254,7 @@ if($subtarget=='chemlabor' || $subtarget=='baclabor'){
 }
 
 ?>
-     	
+
 
 </BODY>
 </HTML>

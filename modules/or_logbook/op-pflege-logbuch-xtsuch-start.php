@@ -329,7 +329,7 @@ if((($mode=='get')||($datafound)) && $rows){
 				<td colspan=9>&nbsp;
 				<font color="#000033">';
 				$buffer=$pdata['LD_var'];
-				if(isset($$buffer)&&!empty($$buffer)) echo $$buffer;
+				if(isset(${$buffer})&&!empty(${$buffer})) echo ${$buffer};
 					else echo $pdata['name_formal'];
 				echo ' :: '.strtoupper($pdata[op_room]).'</font></font>
 				</td></tr>';

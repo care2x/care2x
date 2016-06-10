@@ -30,8 +30,8 @@ if(isset($mode)&&($mode=='save')){
 	for($i=1;$i<=$max_items;$i++){
 		$sort_nr='sort_nr_'.$i;
 		$is_visible='hide_it_'.$i;
-		$core->sql="UPDATE care_menu_main SET sort_nr=".$$sort_nr.",is_visible='".$$is_visible."',hide_by='' WHERE nr=$i";
-		//$sql="UPDATE care_menu_main SET sort_nr=".$$sort_nr.",is_visible='".$$is_visible."',hide_by='' WHERE nr=$i";
+		$core->sql="UPDATE care_menu_main SET sort_nr=".${$sort_nr}.",is_visible='".${$is_visible}."',hide_by='' WHERE nr=$i";
+		//$sql="UPDATE care_menu_main SET sort_nr=".${$sort_nr}.",is_visible='".${$is_visible}."',hide_by='' WHERE nr=$i";
 		//$db->Execute($sql);
 		$core->Transact();
 	}
@@ -104,7 +104,7 @@ while($menu_item=$result->FetchRow())
   echo '<tr class="submenu">
 	<td><img '.createComIcon($root_path,'arrow_blueW.gif','0').'></td>
 	<td><FONT  color="#0000cc"><b>';
-	if(isset($$menu_item['LD_var'])&&!empty($$menu_item['LD_var'])) echo $$menu_item['LD_var'];
+	if(isset(${$menu_item['LD_var']})&&!empty(${$menu_item['LD_var']})) echo ${$menu_item['LD_var']};
 		else echo $menu_item['name'];
 	echo '</b> </FONT></td>
 	<td><FONT  color="#0000cc"><input type="text" name="sort_nr_'.$menu_item['nr'].'" size=2 maxlength=3 value="'.$menu_item['sort_nr'].'"></FONT></td>

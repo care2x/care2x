@@ -112,7 +112,7 @@ if(is_object($OR_rooms)){
 	<?php
 
 		$buf=$ORoom['LD_var'];
-		if(!empty($buf)&&isset($$buf)&&!empty($$buf)) echo $$buf;
+		if(!empty($buf)&&isset(${$buf})&&!empty(${$buf})) echo ${$buf};
 			else echo $ORoom['deptshort'];
 	?> </td>
  </tr>

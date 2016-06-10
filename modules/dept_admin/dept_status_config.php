@@ -6,7 +6,7 @@ require($root_path.'include/core/inc_environment_global.php');
 * CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
 * GNU General Public License
 * Copyright 2002,2003,2004,2005 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -26,7 +26,7 @@ $dept_obj=new Department;
 
 if($mode){
 			switch($mode){
-				
+
 				case 'update':
 									$_POST['history']=$dept_obj->ConcatHistory("Update: ".date('Y-m-d H:i:s')." = ".$_SESSION['sess_user_name']."\n");
 									$_POST['modify_id']=$_SESSION['sess_user_name'];
@@ -41,7 +41,7 @@ if($mode){
 										echo "$sql<br>$LDDbNoSave";
 									}
 									break;
-									
+
 			}// end of switch
 }
 
@@ -85,7 +85,7 @@ div.pcont{ margin-left: 3; }
 </style>
 
 <script language="javascript">
-<!-- 
+<!--
 
 function check(d)
 {
@@ -94,7 +94,7 @@ function check(d)
 		alert("<?php echo $LDAlertIncomplete ?>");
 		return false;
 	}
-	if(parseInt(d.start_no.value)>=parseInt(d.end_no.value)) 
+	if(parseInt(d.start_no.value)>=parseInt(d.end_no.value))
 	{
 		alert("<?php echo $LDAlertRoomNr ?>");
 		return false;
@@ -118,22 +118,22 @@ ob_start();
 ?>
 
 <ul>
-<?php if(isset($updateok) && $updateok) { 
+<?php if(isset($updateok) && $updateok) {
 	$backimg='close2.gif';
 ?>
 <img <?php echo createMascot($root_path,'mascot1_r.gif','0','bottom') ?> align="middle"><font class="prompt">
 <?php echo $LDUpdateOk; ?></font>
 
-<?php 
+<?php
 }else{
 	$backimg='cancel.gif';
 } ?>
 &nbsp;
 <br>
 <FONT  COLOR="<?php echo $cfg['top_txtcolor']; ?>"  SIZE=+2>
-<?php 
-if(isset($$LD_var) && $$LD_var) echo $$LD_var;
-			else echo $name_formal; 
+<?php
+if(isset(${$LD_var}) && ${$LD_var}) echo ${$LD_var};
+			else echo $name_formal;
 ?></font>
 
 <?php echo $LDEnterAllFields ?>
@@ -146,14 +146,14 @@ if(isset($$LD_var) && $$LD_var) echo $$LD_var;
     <td>	<input type="radio" name="is_inactive" value="0" <?php if(!$is_inactive) echo 'checked'; ?>> <?php echo $LDActive ?>
     <td>	<input type="radio" name="is_inactive" value="1" <?php if($is_inactive) echo 'checked'; ?>> <?php echo $LDInactive ?>
 	</td>
-  </tr> 
+  </tr>
   <tr>
     <td align=right bgColor="#eeeeee"><?php echo $LDRecordStatus ?>: </td>
     <td>	<input type="radio" name="status" value="visible" <?php if($status!='hidden') echo 'checked'; ?>> <?php echo $LDVisible ?>
     <td>	<input type="radio" name="status" value="hidden" <?php if($status=='hidden') echo 'checked'; ?>> <?php echo $LDHidden ?>
 	</td>
-  </tr> 
-</tbody> 
+  </tr>
+</tbody>
 </table>
 <p>
 <input type="hidden" name="sid" value="<?php echo $sid ?>">

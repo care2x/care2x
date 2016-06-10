@@ -47,14 +47,14 @@ if($result){
 			}
 		}
 		$TP_menu_item='<a href="'.$root_path.$menu['url'].URL_APPEND.'" TARGET="CONTENTS" REL="child">';
-		if(isset($$menu['LD_var'])&&!empty($$menu['LD_var'])) $TP_menu_item.=$$menu['LD_var'];
+		if(isset(${$menu['LD_var']})&&!empty(${$menu['LD_var']})) $TP_menu_item.=${$menu['LD_var']};
 			else $TP_menu_item.=$menu['name'];
 		$TP_menu_item.='</A>';
 		// Modified the following line
 		if ($mv->isAllowed($menu['name'])||$menu['name']=='Login'||$menu['name']=='Home')	eval("echo $tp;");
 	}
 	echo $gui;
-	
+
 	echo '</table>';
 }
 ?>

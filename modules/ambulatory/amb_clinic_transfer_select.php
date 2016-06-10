@@ -1,12 +1,12 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 /**
 * CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
 * GNU General Public License
 * Copyright 2002,2003,2004,2005 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -17,7 +17,7 @@ $local_user='ck_pflege_user';
 require_once($root_path.'include/core/inc_front_chain_lang.php');
 
 require_once($root_path.'include/care_api_classes/class_department.php');
-## Load all wards info 
+## Load all wards info
 $dept_obj=new Department;
 $allmed=&$dept_obj->getAllMedical();
 $dept_count=$dept_obj->LastRecordCount();
@@ -60,7 +60,7 @@ $dept_count=$dept_obj->LastRecordCount();
 ?>
 
 <script language="javascript">
-<!-- 
+<!--
 var urlholder;
 
 function TransferDept(dn){
@@ -114,7 +114,7 @@ ob_start();
 while(list($x,$v)=each($allmed)){
 	if($v['nr']==$dept_nr) continue;
 	echo '<tr bgcolor="#f6f6f6"><td>&nbsp;';
-	 if(isset($$v['LD_var'])&&!empty($$v['LD_var'])) echo $$v['LD_var'];
+	 if(isset(${$v['LD_var']})&&!empty(${$v['LD_var']})) echo ${$v['LD_var']};
 	 	else echo $v['name_formal'];
 	echo'
 	 </td>
@@ -122,7 +122,7 @@ while(list($x,$v)=each($allmed)){
 	 </tr>';
 }
 ?>
-  
+
 </table>
 <?php
 

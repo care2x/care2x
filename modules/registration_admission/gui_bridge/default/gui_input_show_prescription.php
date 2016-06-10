@@ -43,13 +43,13 @@ function chkform(d) {
 			require_once ('../../js/jscalendar/calendar.php');
 			$calendar = new DHTML_Calendar('../../js/jscalendar/', $lang, 'calendar-system', true);
 			$calendar->load_files();
-			
+
 			echo $calendar->show_calendar($calendar,$date_format,'prescribe_date');
 			//gjergji : end
-		?> 		 	 
+		?>
 	</td>
    </tr>
-   
+
    <tr bgcolor="#f6f6f6">
      <td><FONT SIZE=-1  FACE="Arial" color="#000066"><?php echo $LDPrescription.' '.$LDType; ?></td>
      <td><select name="prescription_type_nr">
@@ -57,7 +57,7 @@ function chkform(d) {
 		<?php
 			while(list($x,$v)=each($pres_types)){
 				echo '<option value="'.$v['nr'].'">';
-				if(isset($$v['LD_var'])&&!empty($$v['LD_var'])) echo $$v['LD_var'];
+				if(isset(${$v['LD_var']})&&!empty(${$v['LD_var']})) echo ${$v['LD_var']};
 					else echo $v['name'];
 				echo '</option>
 				';
@@ -86,7 +86,7 @@ function chkform(d) {
 		<?php
 			while(list($x,$v)=each($app_types)){
 				echo '<option value="'.$v['nr'].'">';
-				if(isset($$v['LD_var'])&&!empty($$v['LD_var'])) echo $$v['LD_var'];
+				if(isset(${$v['LD_var']})&&!empty(${$v['LD_var']})) echo ${$v['LD_var']};
 					else echo $v['name'];
 				echo '</option>
 				';

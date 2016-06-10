@@ -6,7 +6,7 @@ require($root_path.'include/core/inc_environment_global.php');
 * CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
 * GNU General Public License
 * Copyright 2002,2003,2004,2005 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -14,7 +14,7 @@ require($root_path.'include/core/inc_environment_global.php');
 # Default value for the maximum nr of rows per block displayed, define this to the value you wish
 # In normal cases this value is derived from the db table "care_config_global" using the "pagin_insurance_list_max_block_rows" element.
 
-define('MAX_BLOCK_ROWS',30); 
+define('MAX_BLOCK_ROWS',30);
 
 $lang_tables[]='search.php';
 $lang_tables[]='or.php';
@@ -88,7 +88,7 @@ if(!empty($ipath)){
 	}
 }
 
-$append='&retpath='.$retpath.'&ipath='.$ipath;		
+$append='&retpath='.$retpath.'&ipath='.$ipath;
 
 # Initialize page�s control variables
 if($mode=='paginate'){
@@ -119,7 +119,7 @@ if($mode=='search'||$mode=='paginate'){
 	$searchkey=strtr($searchkey,'*?','%_');
 	# Save the search keyword for eventual pagination routines
 	if($mode=='search') $_SESSION['sess_searchkey']=$searchkey;
-	
+
 	$search_result=&$pers_obj->searchLimitPersonellBasicInfo($searchkey,$pagen->MaxCount(),$pgx,$oitem,$odi);
 	//echo $pers_obj->getLastQuery();
 	# Get the resulting record count
@@ -146,7 +146,7 @@ $img_options_delete=createComIcon($root_path,'delete2.gif','0');
 # Prepare page title
  $sTitle = "$LDNursesList :: ";
  $LDvar=$dept_obj->LDvar();
- if(isset($$LDvar) && $$LDvar) $sTitle = $sTitle.$$LDvar;
+ if(isset(${$LDvar}) && ${$LDvar}) $sTitle = $sTitle.${$LDvar};
    else $sTitle = $sTitle.$dept_obj->FormalName();
 
 # Start Smarty templating here
@@ -174,7 +174,7 @@ $img_options_delete=createComIcon($root_path,'delete2.gif','0');
 
  # Window bar title
  $smarty->assign('sWindowTitle',$sTitle);
- 
+
   # Body onLoad javascript
  $smarty->assign('sOnLoadJs','onLoad="document.searchform.searchkey.focus()"');
 
@@ -200,7 +200,7 @@ div.a3 {font-family: arial; font-size: 14; margin-left: 3; margin-right:3; }
 </style>
 
 <script language="javascript">
-<!-- 
+<!--
   var urlholder;
 function popinfo(l,d){
 	urlholder="nursing-or-dienstplan-popinfo.php<?php echo URL_REDIRECT_APPEND ?>&nr="+l+"&dept_nr="+d+"&user=<?php echo $aufnahme_user.'"' ?>;
@@ -226,7 +226,7 @@ function deleteItem(nr){
  # Buffer form
 
  ob_start();
- 
+
 ?>
 
 <ul>
@@ -242,7 +242,7 @@ if(is_object($nurses) && $nurses->RecordCount()){
 <table border=0  bgcolor="#6f6f6f" cellspacing=0 cellpadding=0>
   <tr>
     <td>
-	
+
 	<table border=0  cellspacing=1>
   	<tr class="wardlisttitlerow">
     <td  align=center class="v13" colspan=3><nobr>&nbsp;</nobr></td>
@@ -253,18 +253,18 @@ if(is_object($nurses) && $nurses->RecordCount()){
     <td  align=center  class="v13" colspan=2><nobr>&nbsp;<?php echo $LDMoreInfo; ?></nobr></td>
     <td  align=center  class="v13" colspan=2><nobr>&nbsp;</nobr></td>
   	</tr>
-	
-	<?php 
+
+	<?php
 		while($row=$nurses->FetchRow()){
 	?>
   	<tr bgcolor="#ffffff">
     <td  class="v13" colspan=3><nobr>&nbsp;
-	<?php  
+	<?php
 		switch($row['sex']){
 			case 'f': echo '<img '.$img_female.'>'; break;
 			case 'm': echo '<img '.$img_male.'>'; break;
 			default: echo '&nbsp;'; break;
-		}	
+		}
 	?></nobr></td>
     <td  class="v13" colspan=3><nobr>&nbsp;<?php echo $row['name_last']; ?></nobr></td>
     <td  class="v13" colspan=2><nobr>&nbsp;<?php echo $row['name_first']; ?></nobr></td>
@@ -275,17 +275,17 @@ if(is_object($nurses) && $nurses->RecordCount()){
 							<a href="javascript:popinfo(\''.$row['personell_nr'].'\',\''.$dept_nr.'\')" title="'.$LDContactInfo.'">
 							<img '.$img_options_contact.' alt="'.$LDShowData.'"></a>&nbsp;';	 ?></td>
 	<td><a href="javascript:deleteItem('<?php echo $row['nr']; ?>')" title="<?php echo $LDDelete; ?>">
-							<img <?php echo $img_options_delete.' alt="'.$LDDelete.'"'; ?>></a>&nbsp</td>  	
-							
-							
+							<img <?php echo $img_options_delete.' alt="'.$LDDelete.'"'; ?>></a>&nbsp</td>
+
+
 	</tr>
-	
+
 	<?php
 	}
 	?>
-	
+
   	</table>
-  
+
   </td>
   </tr>
 </table>
@@ -313,7 +313,7 @@ if($bShowSearchEntry){
 	   <?php
 
             include($root_path.'include/core/inc_patient_searchmask.php');
-       
+
 	   ?>
 		</td>
     </tr>
@@ -325,10 +325,10 @@ if($bShowSearchEntry){
 if($mode=='search'||$mode=='paginate'){
 	if($bShowSearchEntry){
 		if ($linecount) echo str_replace("~nr~",$totalcount,$LDSearchFound).' '.$LDShowing.' '.$pagen->BlockStartNr().' '.$LDTo.' '.$pagen->BlockEndNr().'.';
-			else echo str_replace('~nr~','0',$LDSearchFound); 
+			else echo str_replace('~nr~','0',$LDSearchFound);
 	}
 
-	if ($pers_obj->record_count) { 
+	if ($pers_obj->record_count) {
 
 		# Load the common icons
 		//$img_options_add=createComIcon($root_path,'add.gif','0');
@@ -342,7 +342,7 @@ if($mode=='search'||$mode=='paginate'){
 	echo '<p>
 			<table border=0 cellpadding=2 cellspacing=1>
 		<tr class="wardlisttitlerow">';
-			
+
 ?>
 
      <td><b>
@@ -371,33 +371,33 @@ if($mode=='search'||$mode=='paginate'){
 						if($toggle) { echo "wardlistrow2>"; $toggle=0;} else {echo "wardlistrow1>"; $toggle=1;};
 						echo"<td>";
                         echo '&nbsp;'.($row['nr']+$GLOBAL_CONFIG['personell_nr_adder']);
-						
-                        echo "</td><td>";	
+
+                        echo "</td><td>";
 
 						switch($row['sex']){
 							case 'f': echo '<img '.$img_female.'>'; break;
 							case 'm': echo '<img '.$img_male.'>'; break;
 							default: echo '&nbsp;'; break;
-						}	
-						
+						}
+
 						echo"</td><td>";
 						echo "&nbsp;".ucfirst($row['name_last']);
-                        echo "</td>";	
+                        echo "</td>";
 						echo"<td>";
 						echo "&nbsp;".ucfirst($row['name_first']);
-                        echo "</td>";	
+                        echo "</td>";
 						echo"<td>";
 						echo "&nbsp;".formatDate2Local($row['date_birth'],$date_format);
-                        echo "</td>";	
+                        echo "</td>";
 						echo"<td>";
 						echo "&nbsp;".ucfirst($row['job_function_title']);
-                        echo "</td>";	
+                        echo "</td>";
 
 					    if($_COOKIE[$local_user.$sid]) echo '
 						<td>&nbsp;
 							<a href="nursing-or-list-add.php'.URL_APPEND.'&nr='.$row['nr'].'&dept_nr='.$dept_nr.'&mode=save&retpath='.$retpath.'&ipath='.$ipath.'" title="'.$LDAddNurseToList.'">
 							<img '.$img_options_add.' alt="'.$LDShowData.'"></a>&nbsp;';
-							
+
                        if(!file_exists($root_path.'cache/barcodes/en_'.$full_en.'.png'))
 	      		       {
 			               echo "<img src='".$root_path."classes/barcode/image.php?code=".$full_en."&style=68&type=I25&width=180&height=50&xres=2&font=5&label=2&form_file=en' border=0 width=0 height=0>";
@@ -406,7 +406,7 @@ if($mode=='search'||$mode=='paginate'){
 						echo '
 						<td align=center>&nbsp;
 							<a href="javascript:popinfo(\''.$row['nr'].'\',\''.$dept_nr.'\')" title="'.$LDContactInfo.'">
-							<img '.$img_options_contact.' alt="'.$LDShowData.'"></a>&nbsp;</td>';						
+							<img '.$img_options_contact.' alt="'.$LDShowData.'"></a>&nbsp;</td>';
 						echo '</tr>';
 
 					}
@@ -446,7 +446,7 @@ while(list($x,$v)=each($dept_list))
 		<option value="'.$v['nr'].'" ';
 		if($dept_nr==$v['nr']) echo 'selected';
 		echo '>';
-		if(isset($$v['LD_var']) && $$v['LD_var']) echo $$v['LD_var'];
+		if(isset(${$v['LD_var']}) && ${$v['LD_var']}) echo ${$v['LD_var']};
 			else echo $v['name_formal'];
 		echo '</option>';
 	}?>

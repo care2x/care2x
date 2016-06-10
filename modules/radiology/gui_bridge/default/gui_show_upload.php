@@ -60,7 +60,7 @@ $toggle=!$toggle;
 ?>
 
 <script  language="javascript">
-<!-- 
+<!--
 
 <?php require($root_path.'include/core/inc_checkdate_lang.php'); ?>
 
@@ -92,7 +92,7 @@ function popDicom(nr){
 dicomwin<?php echo $sid ?>=window.open("dicom_launch.php<?php echo URL_REDIRECT_APPEND ?>&pop_only=1&saved=1&img_nr="+nr,"dicomwin<?php echo $sid ?>","menubar=no,resizable=yes,scrollbars=yes, width=" + (w-15) + ", height=" + (h-60) );
 <?php if($cfg['dhtml']) echo '
 	window.dicomwin'.$sid.'.moveTo(0,0);'; ?>
-	
+
 }
 
 function popDicomSingle(fn){
@@ -110,7 +110,7 @@ function popDicomSingle(fn){
 dicomwin<?php echo $sid ?>=window.open("dicom_launch_single.php<?php echo URL_REDIRECT_APPEND ?>&pop_only=1&saved=1&pid=<?php echo $pid ?>&img_nr=<?php echo $nr ?>&fn="+fn,"dicomwin<?php echo $sid ?>","menubar=no,resizable=yes,scrollbars=yes, width=" + (w-15) + ", height=" + (h-60) );
 <?php if($cfg['dhtml']) echo '
 	window.dicomwin'.$sid.'.moveTo(0,0);'; ?>
-	
+
 }
 
 // -->
@@ -119,7 +119,7 @@ dicomwin<?php echo $sid ?>=window.open("dicom_launch_single.php<?php echo URL_RE
 
 <script language="javascript" src="<?php echo $root_path; ?>js/dicom.js"></script>
 
-<?php 
+<?php
 $sTemp = ob_get_contents();
 
 ob_end_clean();
@@ -204,7 +204,7 @@ if($sex=='m') $smarty->assign('sSexType',$LDMale);
 $smarty->assign('LDBloodGroup',$LDBloodGroup);
 if($blood_group){
 	$buf='LD'.$blood_group;
-	$smarty->assign('blood_group',$$buf);
+	$smarty->assign('blood_group',${$buf});
 }
 
 $smarty->display('registration_admission/basic_data.tpl');
@@ -219,7 +219,7 @@ $smarty->display('registration_admission/basic_data.tpl');
 if($mode=='new'){
 ?>
 <tr>
-<td colspan=3><img <?php  echo createComIcon($root_path,'warn.gif','0') ?>> &nbsp;<FONT SIZE=-1  FACE="Arial"><?php  echo $LDEnterRelatedInfo ?>: 
+<td colspan=3><img <?php  echo createComIcon($root_path,'warn.gif','0') ?>> &nbsp;<FONT SIZE=-1  FACE="Arial"><?php  echo $LDEnterRelatedInfo ?>:
 </td>
 </tr>
 <tr>
@@ -263,11 +263,11 @@ if($mode=='show'){
 <table border=0 cellpadding=4 cellspacing=1 width=100%>
   <tr bgcolor="#f6f6f6">
     <td  colspan=5><FONT class="prompt"><nobr><?php echo $LDImageGroupNr; ?><?php echo $nr ?>&nbsp;
-<?php 
+<?php
 		if(!$pop_only){
 ?>
 	<a href="<?php echo "dicom_launch.php".URL_APPEND."&saved=1&img_nr=$nr" ?>" title="<?php echo "$LDViewImage ($LDViewInFrame)" ?>"><img <?php echo $img_torso ?>></a> &nbsp;
-<?php 
+<?php
 		}
 ?>
 	<a href="javascript:popDicom('<?php echo $nr ?>')" title="<?php echo "$LDViewInWindow ($LDFullScreen)" ?>"><img <?php echo $img_torsowin ?>></a></nobr></td>
@@ -276,11 +276,11 @@ if($mode=='show'){
     <td <?php echo $tbg; ?>><nobr><?php echo $LDImgNumber; ?></nobr></td>
     <td <?php echo $tbg; ?>><nobr><?php echo $LDNewFileName; ?></nobr></td>
     <td <?php echo $tbg; ?>><nobr><?php echo $LDDownload ?></nobr></td>
-<?php 
+<?php
 		if(!$pop_only){
 ?>
     <td <?php echo $tbg; ?>><nobr><?php echo "$LDViewImage ($LDSingleImage)" ?></nobr></td>
-<?php 
+<?php
 		}
 ?>
     <td <?php echo $tbg; ?>><nobr><?php echo "$LDViewInWindow ($LDSingleImage)" ?></nobr></td>
@@ -307,7 +307,7 @@ if($mode=='show'){
 ?>
 </table>
 
-<?php	
+<?php
 	}else{
 ?>
 
@@ -315,7 +315,7 @@ if($mode=='show'){
   <tr>
     <td><img <?php echo createMascot($root_path,'mascot2_r.gif','0','absmiddle') ?>></td>
     <td><font class="warnprompt">
-	<?php 
+	<?php
 		echo $LDNoImageSaved;
 	?></font></td>
   </tr>
@@ -347,8 +347,8 @@ for($i=0;$i<$maxpic;$i++){
 			  </tr>';
 }
 ?>
-   
-    
+
+
 </table>
 
 <input type="hidden" name="sid" value="<?php echo $sid; ?>">
@@ -370,7 +370,7 @@ for($i=0;$i<$maxpic;$i++){
 <input type="hidden" name="history" value="Created: <?php echo date('Y-m-d H:i:s'); ?> : <?php echo $_SESSION['sess_user_name']."\n"; ?>">
  -->
 <?php
-} 
+}
 
 
 ?>
@@ -384,7 +384,7 @@ for($i=0;$i<$maxpic;$i++){
 </table>
 <p>
 
-<?php 
+<?php
 if($parent_admit) {
 	include('./include/bottom_controls_admission_options.inc.php');
 }else{
@@ -410,7 +410,7 @@ if($parent_admit) {
 <p>
 </td>
 </tr>
-</table>       
+</table>
 
 <p>
 &nbsp;

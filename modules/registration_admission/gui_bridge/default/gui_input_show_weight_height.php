@@ -60,24 +60,24 @@ function chkform(d) {
 			require_once ('../../js/jscalendar/calendar.php');
 			$calendar = new DHTML_Calendar('../../js/jscalendar/', $lang, 'calendar-system', true);
 			$calendar->load_files();
-			
+
 			echo $calendar->show_calendar($calendar,$date_format,'msr_date');
 			//gjergji : end
-		?> 	
+		?>
 	 </td>
    </tr>
 <!--    <tr bgcolor="#f6f6f6">
      <td><FONT SIZE=-1  FACE="Arial" color="#000066"><?php echo $LDTime; ?></td>
      <td><input type="text" name="msr_time" size=10 maxlength=5 ></td>
    </tr>
- -->   
+ -->
    <tr bgcolor="#f6f6f6">
      <td><FONT SIZE=-1  FACE="Arial" color="#000066"><?php echo $LDType; ?></td>
      <td><font color=red>*</font><FONT SIZE=-1  FACE="Arial" color="#000066"><?php echo $LDUnit.' '.$LDValue; ?></td>
      <td><FONT SIZE=-1  FACE="Arial" color="#000066"><?php echo $LDUnit.' '.$LDType; ?></td>
      <td><FONT SIZE=-1  FACE="Arial" color="#000066"><?php echo "$LDNotes ($LDOptional)"; ?></td>
    </tr>
-   
+
    <tr bgcolor="#f6f6f6">
      <td><FONT SIZE=-1  FACE="Arial"><?php echo $LDWeight; ?></td>
      <td><FONT SIZE=-1  FACE="Arial"><input type="text" name="weight" size=10 maxlength=10 value="<?php echo $weight; ?>"></td>
@@ -88,7 +88,7 @@ function chkform(d) {
 				echo '<option value="'.$v['nr'].'"';
 				if($v['nr']==$wt_unit_nr) echo 'selected';
 				echo '>';
-				if(isset($$v['LD_var'])&&!empty($$v['LD_var'])) echo $$v['LD_var'];
+				if(isset(${$v['LD_var']})&&!empty(${$v['LD_var']})) echo ${$v['LD_var']};
 					else echo $v['name'];
 				echo '</option>
 				';
@@ -99,7 +99,7 @@ function chkform(d) {
 	 </td>
      <td><FONT SIZE=-1  FACE="Arial"><input type="text" name="wt_notes" size=40 maxlength=60 value="<?php echo $wt_notes; ?>"></td>
    </tr>
-   
+
    <tr bgcolor="#f6f6f6">
      <td><FONT SIZE=-1  FACE="Arial"><?php echo $LDHeight; ?></td>
      <td><FONT SIZE=-1  FACE="Arial"><input type="text" name="height" size=10 maxlength=10 value="<?php echo $height; ?>"></td>
@@ -110,7 +110,7 @@ function chkform(d) {
 				echo '<option value="'.$v['nr'].'"';
 				if($v['nr']==$ht_unit_nr) echo 'selected';
 				echo '>';
-				if(isset($$v['LD_var'])&&!empty($$v['LD_var'])) echo $$v['LD_var'];
+				if(isset(${$v['LD_var']})&&!empty(${$v['LD_var']})) echo ${$v['LD_var']};
 					else echo $v['name'];
 				echo '</option>
 				';
@@ -121,7 +121,7 @@ function chkform(d) {
 	 </td>
      <td><FONT SIZE=-1  FACE="Arial"><input type="text" name="ht_notes" size=40 maxlength=60 value="<?php echo $ht_notes; ?>"></td>
    </tr>
-   
+
    <tr bgcolor="#f6f6f6">
      <td><FONT SIZE=-1  FACE="Arial" ><?php echo $LD['head_circumference']; ?></td>
      <td><FONT SIZE=-1  FACE="Arial"><input type="text" name="head_c" size=10 maxlength=10 value="<?php echo $head_c; ?>"></td>
@@ -132,7 +132,7 @@ function chkform(d) {
 				echo '<option value="'.$v['nr'].'"';
 				if($v['nr']==$hc_unit_nr) echo 'selected';
 				echo '>';
-				if(isset($$v['LD_var'])&&!empty($$v['LD_var'])) echo $$v['LD_var'];
+				if(isset(${$v['LD_var']})&&!empty(${$v['LD_var']})) echo ${$v['LD_var']};
 					else echo $v['name'];
 				echo '</option>
 				';
@@ -145,7 +145,7 @@ function chkform(d) {
 <!--  wt = 6, ht= 7 -->
    <tr bgcolor="#f6f6f6">
      <td colspan=4>&nbsp;</td>
-   </tr>   
+   </tr>
    <tr bgcolor="#f6f6f6">
      <td><font color=red>*</font><FONT SIZE=-1  FACE="Arial" color="#000066"><?php echo $LDMeasuredBy; ?></td>
      <td colspan=3><input type="text" name="measured_by" size=50 maxlength=60 value="<?php echo $_SESSION['sess_user_name']; ?>"></td>

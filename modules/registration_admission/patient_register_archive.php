@@ -251,7 +251,7 @@ if (isset($mode) && ($mode=='search'||$mode=='paginate')){
  $smarty->assign('breakfile',$breakfile);
 
  # Window bar title
- $smarty->assign('title',$$LDPatientRegister.' - '.$LDAdvancedSearch);
+ $smarty->assign('title',${$LDPatientRegister}.' - '.$LDAdvancedSearch);
 
  $smarty->assign('sOnLoadJs','onLoad="if (window.focus) window.focus();"');
 

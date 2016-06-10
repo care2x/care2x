@@ -1,5 +1,5 @@
-<?php 
-if(($sid==NULL)||($sid!=$$ck_sid_buffer)) { header("location:invalid-access-warning.php"); exit;}
+<?php
+if(($sid==NULL)||($sid!=${$ck_sid_buffer})) { header("location:invalid-access-warning.php"); exit;}
 
 require_once($root_path.'include/core/inc_config_color.php');
 
@@ -17,19 +17,19 @@ if ($versand=="Abschicken")
 {
 				$link=mysql_connect("localhost","httpd","");
 				if ($link)
- 				{ if(mysql_select_db($dbname,$link)) 
+ 				{ if(mysql_select_db($dbname,$link))
 					{	$sql='SELECT * FROM mahopass WHERE mahopass_id="'.$userid.'"';
 						$ergebnis=$db->Execute($sql);
 						if($ergebnis)
 							{$zeile=$ergebnis->FetchRow();
 								if (($zeile[mahopass_password]==$keyword)&&($zeile[mahopass_id]==$userid))
-								{	
+								{
 									if (!($zeile[mahopass_lockflag]))
 									{
 										if (validarea($allowedarea,$zeile,mysql_num_fields($ergebnis)))
-										{				
-										setcookie(ck_technik_repabot_user,$zeile[mahopass_name]);	
-										setcookie(ck_technik_repabot_src,"repabotpass");	
+										{
+										setcookie(ck_technik_repabot_user,$zeile[mahopass_name]);
+										setcookie(ck_technik_repabot_src,"repabotpass");
 										//logentry($zeile[mahopass_name],"*","IP:".$REMOTE_ADDR."Technik Repabot Launch OK'd",$thisfile,$fileforward);
 										header("Location: $fileforward?sid=$sid&stb=1");
 										exit;
@@ -38,11 +38,11 @@ if ($versand=="Abschicken")
 								}else {$passtag=1;};
 							}
 							else {$passtag=1;};
-	
+
 					};
-				
+
 				}
-				 else 
+				 else
 				{ echo "Verbindung zur Datenbank konnte nicht hergestellt werden.<br>"; $passtag=5;}
 }
 
@@ -54,15 +54,15 @@ if ($versand=="Abschicken")
 <HEAD>
 <?php echo setCharSet(); ?>
  <TITLE>Repabot Aktivieren</TITLE>
- 
- <?php 
+
+ <?php
 require($root_path.'include/core/inc_css_a_hilitebu.php');
 ?>
- 
+
 </HEAD>
 
-<BODY  <?php if (!$nofocus) echo 'onLoad="document.passwindow.userid.focus()"'; echo  ' bgcolor='.$cfg['body_bgcolor']; 
- if (!$cfg['dhtml']){ echo ' link='.$cfg['body_txtcolor'].' alink='.$cfg['body_alink'].' vlink='.$cfg['body_txtcolor']; } 
+<BODY  <?php if (!$nofocus) echo 'onLoad="document.passwindow.userid.focus()"'; echo  ' bgcolor='.$cfg['body_bgcolor'];
+ if (!$cfg['dhtml']){ echo ' link='.$cfg['body_txtcolor'].' alink='.$cfg['body_alink'].' vlink='.$cfg['body_txtcolor']; }
 ?>>
 
 <p>
@@ -71,7 +71,7 @@ require($root_path.'include/core/inc_css_a_hilitebu.php');
 <P>
 <FONT  COLOR=#cc6600  SIZE=5  FACE="verdana"> <b>Repabot Aktivieren</b></font>
 <p>
-<table width=100% border=0 cellpadding="0" cellspacing="0"> 
+<table width=100% border=0 cellpadding="0" cellspacing="0">
 <tr>
 <td colspan=3><FONT   SIZE=2  FACE="verdana,Arial">Dieser Bereich ist passwortgeschützt!<br></td>
 </tr>
@@ -91,7 +91,7 @@ require($root_path.'include/core/inc_css_a_hilitebu.php');
 <center>
 
 
-<?php if ((($userid!=NULL)||($keyword!=NULL))&&($passtag!=NULL)) 
+<?php if ((($userid!=NULL)||($keyword!=NULL))&&($passtag!=NULL))
 {
 echo '<FONT  COLOR="red"  SIZE=+2  FACE="Arial"><STRONG>';
 
@@ -101,7 +101,7 @@ switch($passtag)
 {
 case 1:$errbuf=$errbuf."Falsche Eingabe"; echo '<img src=../img/cat-fe.gif >';break;
 case 2:$errbuf=$errbuf."Keine Berechtigung"; echo '<img src=../img/cat-noacc.gif >';break;
-default:$errbuf=$errbuf."Zugang gesperrt"; echo '<img src=../img/cat-sperr.gif >'; 
+default:$errbuf=$errbuf."Zugang gesperrt"; echo '<img src=../img/cat-sperr.gif >';
 }
 
 
@@ -140,7 +140,7 @@ echo '</STRONG></FONT><P>';
 Benutzername eingeben:<br></font>
 <INPUT type="text" name="userid" size="14" maxlength="25"> <p>
 <font face="Arial,Verdana"  color="#000000" size=-1>Passwort eingeben:</font><br>
-<INPUT type="password" name="keyword" size="14" maxlength="25"> 
+<INPUT type="password" name="keyword" size="14" maxlength="25">
 <input type="hidden" name="versand" value="Abschicken">
 <input type="hidden" name="sid" value="<?php echo $sid; ?>">
 <input type="image" src="../img/abschic.gif" border=0 width=110 height=24>
@@ -160,7 +160,7 @@ Benutzername eingeben:<br></font>
 </table>
 </td>
 </tr>
-</table>        
+</table>
 
 <p><br>
 
@@ -172,12 +172,12 @@ Benutzername eingeben:<br></font>
 
 <tr >
 <td bgcolor="#333399" colspan=3><font size=1>
-&nbsp; 
+&nbsp;
 </td>
 </tr>
 
 
-</table>        
+</table>
 
 <p>
 <img <?php echo createComIcon($root_path,'small_help.gif','0') ?>> <a href="<?php echo $root_path; ?>main/ucons.php<?php echo URL_APPEND; ?>">Was ist der Bestellbot?.</a><br>

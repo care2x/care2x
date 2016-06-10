@@ -61,7 +61,7 @@ function process(d) {
 	 <?php
 	 $c=0;
 	 while($row=$classif->FetchRow()){
-	 	if(isset($$row['LD_var'])&&!empty($$row['LD_var'])) $buffer= $$row['LD_var'];
+	 	if(isset(${$row['LD_var']})&&!empty(${$row['LD_var']})) $buffer= ${$row['LD_var']};
 			else $buffer= $row['name'];
 	 	echo '<nobr><input type="checkbox" name="c'.$c.'" value="'.$buffer.'">&nbsp;'.$buffer.'</nobr><br>
 		';

@@ -20,7 +20,7 @@ while($row=$result->FetchRow()){
     <td><a href="<?php echo $buf; ?>&user_origin=patreg" target="_new"><img <?php echo createComIcon($root_path,'info3.gif','0','',TRUE); ?>></a></td>
     <td><?php echo $row['report_nr']; ?></td>
     <td><FONT color="#006600"><b>
-	<?php 
+	<?php
 		$deptnr_ok=false;
 		while(list($x,$v)=each($depts_array)){
 			if($v['nr']==$row['reporting_dept_nr']){
@@ -30,7 +30,7 @@ while($row=$result->FetchRow()){
 		}
 		reset($depts_array);
 		if($deptnr_ok){
-			if(isset($$v['LD_var'])&&!empty($$v['LD_var'])) echo $$v['LD_var'];
+			if(isset(${$v['LD_var']})&&!empty(${$v['LD_var']})) echo ${$v['LD_var']};
 				else echo $v['name_formal'];
 		}else{
 			echo $row['reporting_dept'].$row['reporting_dept_nr'];

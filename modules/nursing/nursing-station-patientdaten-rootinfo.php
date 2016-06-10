@@ -1,7 +1,7 @@
 <?php if(!$lang)
 	if(!$ck_language) include("../chklang.php");
 		else $lang=$ck_language;
-if (!$sid||($sid!=$$ck_sid_buffer)||!$ck_pflege_user) {header("Location:../language/".$lang."/lang_".$lang."_invalid-access-warning.php"); exit;}; 
+if (!$sid||($sid!=${$ck_sid_buffer})||!$ck_pflege_user) {header("Location:../language/".$lang."/lang_".$lang."_invalid-access-warning.php"); exit;};
 require("../language/".$lang."/lang_".$lang."_nursing.php");
 require_once($root_path.'include/core/inc_config_color.php'); // load color preferences
 
@@ -11,7 +11,7 @@ $breakfile="nursing-station-patientdaten.php?sid=$sid&lang=$lang&station=$statio
 /* Establish db connection */
 if(!isset($db)||!$db) include($root_path.'include/core/inc_db_makelink.php');
 if($dblink_ok)
-	{	
+	{
 		// get orig data
 		$dbtable='care_admission_patient';
 		$sql="SELECT * FROM $dbtable WHERE patnum='$pn' ";
@@ -26,8 +26,8 @@ if($dblink_ok)
 					}
 				}
 			else {echo "<p>$sql$LDDbNoRead";exit;}
-		
-		
+
+
 		if($mode=='save')
 		{
 			if((($dateput)&&($timeput)&&($berichtput)&&($author))||(($dateput2)&&($berichtput2)&&($author2)))
@@ -37,7 +37,7 @@ if($dblink_ok)
 				$np_report="d=$dateput2&t=$timeput2&b=$berichtput2&a=$author2&w=$warn2\r\n";
 				$np_report=strtr($np_report," ","+");
 				if((!$dateput)&&($dateput2)) $dateput=$dateput2;
-				
+
 				// check if entry is already existing
 				$dbtable="nursing_station_patients_root";
 				$sql="SELECT report,np_report FROM $dbtable WHERE patnum='$pn'";
@@ -51,20 +51,20 @@ if($dblink_ok)
 							$content=$ergebnis->FetchRow();
 							$report=$content[report]."_".$report;
 							$np_report=$content[np_report]."_".$np_report;
-							
+
 							$sql="UPDATE $dbtable SET report='$report', np_report='$np_report',le_date='$dateput'
 									WHERE patnum='$pn'";
 							if($ergebnis=$db->Execute($sql))
        							{
 									//echo $sql;
-									
+
 									header("location:$thisfile?sid=$sid&lang=$lang&saved=1&pn=$pn&station=$station");
 								}
 								else {echo "<p>$sql$LDDbNoUpdate";exit;}
 						} // else create new entry
 						else
 						{
-							$sql="INSERT INTO $dbtable 
+							$sql="INSERT INTO $dbtable
 										(
 										patnum,
 										lastname,
@@ -90,7 +90,7 @@ if($dblink_ok)
 							if($ergebnis=$db->Execute($sql))
        							{
 									//echo $sql;
-									
+
 									header("location:$thisfile?sid=$sid&lang=$lang&saved=1&pn=$pn&station=$station");
 								}
 								else {echo "<p>$sql$LDDbNoSave";exit;}
@@ -100,7 +100,7 @@ if($dblink_ok)
 			}
 			else $saved=0;
 		}// end of if(mode==save)
-		
+
 		$dbtable='care_nursing_station_patients_report';
 		$sql="SELECT * FROM $dbtable WHERE patnum='$pn' ";
 		if($ergebnis=$db->Execute($sql))
@@ -117,7 +117,7 @@ if($dblink_ok)
 				}
 			else{echo "<p>$sql$LDDbNoRead";exit;}
 	}
-	else 
+	else
 		{ echo "$LDDbNoLink<br>$sql<br>"; }
 ?>
 
@@ -140,14 +140,14 @@ div.fa2_ml3 {font-family: arial; font-size: 12; margin-left: 3; }
 </style>
 
 <script language="javascript">
-<!-- 
+<!--
   var urlholder;
   var focusflag=0;
   var formsaved=0;
-  
+
 function pruf(d){
 	if(((d.dateput.value)&&(d.timeput.value)&&(d.berichtput.value)&&(d.author.value))||((d.dateput2.value)&&(d.berichtput2.value)&&(d.author2.value))) return true;
-	else 
+	else
 	{
 		alert("Es fehlen noch Angaben!");
 		return false;
@@ -175,7 +175,7 @@ function resetinput(){
 function select_this(formtag){
 		document.berichtform.elements[formtag].select();
 	}
-	
+
 function getinfo(patientID){
 	urlholder="nursing-station.php?route=validroute&patient=" + patientID + "&user=<?php echo $aufnahme_user.'"' ?>;
 	patientwin=window.open(urlholder,patientID,"width=600,height=400,menubar=no,resizable=yes,scrollbars=yes");
@@ -203,10 +203,10 @@ function gethelp(x,s,x1,x2,x3)
 </script>
 </HEAD>
 
-<BODY bgcolor=<?php echo $cfg['body_bgcolor']; ?> 
-onLoad="if (window.focus) window.focus(); 
-<?php if(($mode=='save')||($saved)) echo ";window.location.href='#bottom';document.berichtform.berichtput.focus()"; ?>"  
-topmargin=0 leftmargin=0 marginwidth=0 marginheight=0 
+<BODY bgcolor=<?php echo $cfg['body_bgcolor']; ?>
+onLoad="if (window.focus) window.focus();
+<?php if(($mode=='save')||($saved)) echo ";window.location.href='#bottom';document.berichtform.berichtput.focus()"; ?>"
+topmargin=0 leftmargin=0 marginwidth=0 marginheight=0
 <?php if (!$cfg['dhtml']){ echo 'link='.$cfg['idx_txtcolor'].' alink='.$cfg['body_alink'].' vlink='.$cfg['idx_txtcolor']; } ?>>
 
 
@@ -262,39 +262,39 @@ echo '
 		<b>Grund der Aufnahme</b>
 		<input type="text" name="reason" size=60 maxlength=100>
   </div></td>
-		</tr>	
+		</tr>
 		<tr bgcolor="#ffffff">
 		<td ><div class=fva2_ml10><font color="#000099">
 		<input type="checkbox" name="glass" >
-		Brille > 		
+		Brille >
 		<input type="checkbox" name="clens" >
 		Kontaktlens >  </div></td>
 			<td ><div class=fva2_ml10><font color="#000099">
 		 weitere Angaben:
 		<input type="text" name="glass_info" size=40 maxlength=60>
-		
+
   </div></td>
 </tr>
 	<tr bgcolor="#ffffff">
 		<td ><div class=fva2_ml10><font color="#000099">
 		<input type="checkbox" name="fteeth" >
-		Zahnprothese > 		
+		Zahnprothese >
   </div></td>
 			<td ><div class=fva2_ml10><font color="#000099">
 		 weitere Angaben:
 		<input type="text" name="fteeth_info" size=40 maxlength=60>
-		
+
   </div></td>
 </tr>
 	<tr bgcolor="#ffffff">
 		<td ><div class=fva2_ml10><font color="#000099">
 		<input type="checkbox" name="hws" >
-		HWS > 		
+		HWS >
   </div></td>
 			<td ><div class=fva2_ml10><font color="#000099">
 		 weitere Angaben:
 		<input type="text" name="hws_info" size=40 maxlength=60>
-		
+
   </div></td>
 </tr>
 	<tr bgcolor="#ffffff">
@@ -302,13 +302,13 @@ echo '
 		Allergy:
 		<input type="text" name="allergy" size=60 maxlength=100>
   </div></td>
-		</tr>	
+		</tr>
 	<tr bgcolor="#ffffff">
 		<td colspan=2><div class=fva2_ml10><font color="#000099">
-		Medication: 
+		Medication:
 		<input type="text" name="medx" size=60 maxlength=100>
   </div></td>
-		</tr>	
+		</tr>
 	<tr bgcolor="#ffffff">
 		<td ><div class=fva2_ml10><font color="#000099">
 		 Datum:
@@ -317,7 +317,7 @@ echo '
 			<td ><div class=fva2_ml10><font color="#000099">
 		Aufgenommen von:
 		<input type="text" name="encoder" size=40 maxlength=60>
-		
+
   </div></td>
 </tr>
 
@@ -355,7 +355,7 @@ echo '
 
 
 </tr>
-</table>        
+</table>
 <p>
 
 <?php

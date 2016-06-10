@@ -6,7 +6,7 @@ require($root_path.'include/core/inc_environment_global.php');
 * CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
 * GNU General Public License
 * Copyright 2002,2003,2004,2005 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -16,12 +16,12 @@ require_once($root_path.'include/core/inc_front_chain_lang.php');
 
 # Load date formatter
 include_once($root_path.'include/core/inc_date_format_functions.php');
-				
+
 # If data incomplete go back to select page
 if(!$patnum||!$firstname||!$lastname||!$bday||!$maxpic)	{
-	header("Location:fotolab-dir-select.php?sid=$sid&lang=$lang&maxpic=$maxpic&nopatdata=1"); 
+	header("Location:fotolab-dir-select.php?sid=$sid&lang=$lang&maxpic=$maxpic&nopatdata=1");
 	exit;
-}; 
+};
 require($root_path.'global_conf/inc_remoteservers_conf.php');
 
 require_once($root_path.'include/care_api_classes/class_image.php');
@@ -59,7 +59,7 @@ ob_start();
 ?>
 
 <script language="javascript">
-<!-- 
+<!--
 
 function previewpic(fn) {
 if(fn=="") return;
@@ -85,7 +85,7 @@ ob_start();
 
 <p>
 
-<?php	
+<?php
 echo "[$patnum] $lastname, $firstname ($bday)<p>";
 echo "<font color=\"#cc0000\">$LDPicsSaved</font>";
  ?><p>
@@ -98,13 +98,13 @@ if($maxpic){
 <table border=0>
 <?php
 
-	# Set the encounter as the directory name		
+	# Set the encounter as the directory name
 		$picdir=$patnum;
-		
+
 		if($disc_pix_mode){
 			$d=$root_path.$fotoserver_localpath.$picdir;
 		}
-		
+
 		$data=array('encounter_nr'=>$patnum,
 									'upload_date'=>date('Y-m-d'),
 									'history'=>"Upload ".date('Y-m-d H:i:s')." ".$_SESSION['sess_user_name']."\n",
@@ -112,7 +112,7 @@ if($maxpic){
 									'modify_time'=>0,
 									'create_id'=>$_SESSION['sess_user_name'],
 									'create_time'=>date('YmdHis'));
-		
+
 		for ($i=0;$i<$maxpic;$i++)
 		{
 		   $picfile='picfile'.$i;
@@ -127,24 +127,24 @@ if($maxpic){
 		   $picext=strtolower($picext);
 		   if(stristr($picext,'gif')||stristr($picext,'jpg')||stristr($picext,'png'))
 		   {
-				$data['shot_date']=formatDate2STD($$shotdate,$date_format);
-				$data['shot_nr']=$$shotnr;
+				$data['shot_date']=formatDate2STD(${$shotdate},$date_format);
+				$data['shot_nr']=${$shotnr};
 				$data['mime_type']=$picext;
-									
+
 				if($insid=$img->saveImageData($data)){
 
 			 	# Get the last inserted primary key
-				
+
 				$picnr = $img->LastInsertPK('nr',$insid);
 
 				$picfilename[$i]=$picnr.'.'.$picext;
-		
+
 		      		echo '<tr><td>'.$_FILES[$picfile]['name'].'</td><td> <img '.createComIcon($root_path,'fwd.gif','0','absmiddle').'> ';
 		       		if($disc_pix_mode)
 		       		{
 			      		if(!is_dir($d)){
 							# if $d directory not exist create it with CHMOD 777
-							mkdir($d,0777); 
+							mkdir($d,0777);
 							# Copy the trap files to this new directory
 							copy($root_path.'uploads/photos/encounter/donotremove/index.htm',$d.'/index.htm');
 							copy($root_path.'uploads/photos/encounter/donotremove/index.php',$d.'/index.php');
@@ -159,18 +159,18 @@ if($maxpic){
 			   		}
 					# Save the uploaded image
 					$img->saveUploadedImage($_FILES[$picfile],$dir_path,$picfilename[$i]);
-					
+
 		       		echo '<font color="#cc0000"><a href="javascript:previewpic(\'';
 		       		if($disc_pix_mode) echo $root_path.$fotoserver_localpath; else echo $fotoserver_http;
 		       		echo $picdir.'/'.$picfilename[$i].'\')">'.$picfilename[$i].'</a></font>';
- 		       		echo '</td></tr>';	
- 		       		//echo '<hr>';	
+ 		       		echo '</td></tr>';
+ 		       		//echo '<hr>';
 			   }else{
 			   		echo $img->getLastQuery();
 				}
 		   }
 		}
-	
+
 $filelist=array();
 
 /**
@@ -183,15 +183,15 @@ if(!$disc_pix_mode)
  	# The ftp username and password should be set here
 	$user='maryhospital_fotolabor';
 	$pw='bong';
-	
-	$conn_id = ftp_connect($ftp_server); 
+
+	$conn_id = ftp_connect($ftp_server);
 	if($conn_id)
 	{
 		// login with username and password
-		$login_result = ftp_login($conn_id, $user, $pw); 
+		$login_result = ftp_login($conn_id, $user, $pw);
 
 		if($login_result)
-		{ 
+		{
 			$curdir=ftp_pwd($conn_id);
 			//ftp_chdir($conn_id,"$curdir/");
 			//echo $curdir."<br>";
@@ -209,7 +209,7 @@ if(!$disc_pix_mode)
 						{
 						 	if(ftp_chdir($conn_id,"$picdir/"))	$cdok=1;
 						}
-					}			
+					}
 				}
 				else
 				{
@@ -217,11 +217,11 @@ if(!$disc_pix_mode)
 					{
 					 	if(ftp_chdir($conn_id,"$picdir/"))	$cdok=1;
 					}
-				}	
+				}
 				if($cdok)
 				{
 					reset($picfilename);
-					for($i=0;$i<$maxpic;$i++)	
+					for($i=0;$i<$maxpic;$i++)
 					{
 						if($picfilename[$i]=='') continue;
 					 	if (ftp_put($conn_id,$picfilename[$i],$root_path.'cache/'.$picfilename[$i],FTP_BINARY))
@@ -232,12 +232,12 @@ if(!$disc_pix_mode)
 								$removefile='unlink("'.$root_path.'cache/'.$picfilename[$i].'");';
 								eval($removefile);
 							}
-						}		
+						}
 					}
 				}
 			}
 		  	else	echo $LDLinkBroken;
-			ftp_quit($conn_id); 
+			ftp_quit($conn_id);
 		}
 	}
  }
@@ -250,7 +250,7 @@ if(!$disc_pix_mode)
 <p>
 <font color="#cc0000"><b><?php echo "$LDSave $LDOptions:" ?></b></font>
 <form action="<?php echo $dirselectfile ?>" method="post">
-<img <?php echo createComIcon($root_path,'video.gif','0') ?>><br><?php echo "$LDSave " ?><?php echo $LDAdditional ?> 
+<img <?php echo createComIcon($root_path,'video.gif','0') ?>><br><?php echo "$LDSave " ?><?php echo $LDAdditional ?>
 <input type="text" name="maxpic" size=1 maxlength=2 value="<?php echo $maxpic ?>"> <?php echo $LDMorePics ?>:<input type="submit" value="<?php echo $LDGO ?>">
 <input type="hidden" name="sid" value="<?php echo $sid ?>">
 <input type="hidden" name="lang" value="<?php echo $lang ?>">
@@ -258,7 +258,7 @@ if(!$disc_pix_mode)
 <input type="hidden" name="lastname" value="<?php echo $lastname ?>">
 <input type="hidden" name="firstname" value="<?php echo $firstname ?>">
 <input type="hidden" name="bday" value="<?php echo $bday ?>">
-<input type="hidden" name="lastnr" value="<?php $lastnr='nr'.($maxpic-1); echo $$lastnr; ?>">
+<input type="hidden" name="lastnr" value="<?php $lastnr='nr'.($maxpic-1); echo ${$lastnr}; ?>">
 <input type="hidden" name="same_pat" value="1">
 
 </form>

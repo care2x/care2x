@@ -6,7 +6,7 @@ require($root_path.'include/core/inc_environment_global.php');
 * CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
 * GNU General Public License
 * Copyright 2002,2003,2004,2005 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -24,16 +24,16 @@ if(!isset($_SESSION['sess_serial_buffer'])){
 }
 if(isset($_SESSION['sess_serial_buffer'])){
 	$config_new=unserialize($_SESSION['sess_serial_buffer']);
-}	
+}
 
 if ($mode=='change'){
 	$color='#'.$color;
-	//$$item=$color;
+	//${$item}=$color;
 	$config_new[$item]=$color;
-	
+
 	$_SESSION['sess_serial_buffer']=serialize($config_new);
 	$config_new=array_merge($cfg,$config_new);
-	
+
 }elseif((($mode=='ok')||($mode=='remain'))&&isset($_SESSION['sess_serial_buffer'])){
 
 	// Save to user config table
@@ -44,7 +44,7 @@ if ($mode=='change'){
 	if($user->getConfig($_COOKIE['ck_config'])){
 
 		$config=&$user->getConfigData();
-	
+
 		$config=array_merge($config,$config_new);
 
 		if($user->saveConfig($_COOKIE['ck_config'],$config)){
@@ -59,7 +59,7 @@ if ($mode=='change'){
 	}else{
     	$config=array(); // just declare the array
     }
-}else{	
+}else{
 	// Get  default values
 	$config_new=$cfg;
 }
@@ -85,7 +85,7 @@ require_once($root_path.'include/core/inc_nocache_headers.php');
 
 # Title image
  $smarty->assign('sTitleImage','<img '.createComIcon($root_path,'settings_tree.gif','0').'>');
- 
+
  # href for help button
  $smarty->assign('pbHelp',"javascript:gethelp('color_opt.php','')");
 
@@ -109,17 +109,17 @@ ob_start();
 ?>
 
 <script language="javascript">
-<!-- 
+<!--
 	var urlholder;
   function chgcolor(p){
 	winspecs="width=550,height=600,menubar=no,resizable=yes,scrollbars=yes";
-<?php 
+<?php
 	echo 'urlholder="chg-color.php?item="+p+"&sid='.$sid.'&lang='.$lang.'&tb='.str_replace('#','',$cfg['top_bgcolor']).'&tt='.str_replace('#','',$cfg['top_txtcolor']).'&bb='.str_replace('#','',$cfg['body_bgcolor']).'&btb='.str_replace('#','',$cfg['bot_bgcolor']).'&d='.$cfg['dhtml'].'";';
 ?>
-	
+
 		colorwin=window.open(urlholder,"colorwin",winspecs);
 	}
-	
+
 	function ok(){
 		location.href="colorchg.php?mode=ok&sid=<?php echo "$sid&lang=$lang"; ?>";
 	}
@@ -151,7 +151,7 @@ ob_start();
 <?php
 if(is_object($menu_obj)){
 	while($menu=$menu_obj->FetchRow()){
-		if(isset($$menu['LD_var'])&&!empty($$menu['LD_var'])) echo $$menu['LD_var'];
+		if(isset(${$menu['LD_var']})&&!empty(${$menu['LD_var']})) echo ${$menu['LD_var']};
 			else echo $menu['name'];
 		echo '<br>';
 	}
@@ -167,15 +167,15 @@ if(is_object($menu_obj)){
 </a></td>
   </tr>
   <tr>
-  
+
 <td bgcolor="<?php echo $config_new['body_bgcolor']; ?>" width=400 ><p><br>
-	<a href="#" onClick="chgcolor('body_txtcolor')"><FONT    SIZE=4 color="<?php echo $config_new['body_txtcolor']; ?>">	<?php echo $LDMainFrame ?></font></a><p><FONT    SIZE=1>	
+	<a href="#" onClick="chgcolor('body_txtcolor')"><FONT    SIZE=4 color="<?php echo $config_new['body_txtcolor']; ?>">	<?php echo $LDMainFrame ?></font></a><p><FONT    SIZE=1>
 	<a href="#" title="<?php echo $LDClk4BgColor ?>" onClick="chgcolor('body_bgcolor')"><?php echo $LDBgColor ?> <img <?php echo createComIcon($root_path,'settings_tree.gif','0') ?> alt="<?php echo $LDClk4BgColor ?>">
 	</a><p><br>
 </td>
   </tr>
   <tr>
- 
+
     <td bgcolor="<?php echo $config_new['bot_bgcolor']; ?>">
 
 <?php

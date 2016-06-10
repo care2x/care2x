@@ -841,7 +841,7 @@ class GuiInputPerson {
 							$sInsClassBuffer.='>';
 
 							$LD=$result['LD_var'];
-							if(isset($$LD)&&!empty($$LD)) $sInsClassBuffer.=$$LD; else $sInsClassBuffer.=$result['name'];
+							if(isset(${$LD})&&!empty(${$LD})) $sInsClassBuffer.=${$LD}; else $sInsClassBuffer.=$result['name'];
 							$sInsClassBuffer.='&nbsp;';
 						}
 

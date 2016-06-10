@@ -44,7 +44,7 @@ function importGlobalVariable($variable)
 /**
  * This routine will check whether the register_globals of php is on or off.
  * If it is off, all GET,POST, and COOKIE variables will be explicitely 'globalized' here
- * Note: this uses the $$ variable which will not work in php3
+ * Note: this uses the $ variable which will not work in php3
  */
 $reg_glob_ini=ini_get('register_globals');
 
@@ -56,7 +56,7 @@ if(empty($reg_glob_ini)||(!$reg_glob_ini)) {
 	if(sizeof($global_vars=&importGlobalVariable('get'))) {
 		//while(list($x,$v)=each($_GET))
 		while(list($x,$v)=each($global_vars)) {
-			$$x=$v;
+			${$x}=$v;
 		}
 		reset($global_vars);
 	}
@@ -67,7 +67,7 @@ if(empty($reg_glob_ini)||(!$reg_glob_ini)) {
 	if(sizeof($global_vars=&importGlobalVariable('post'))) {
 		//while(list($x,$v)=each($_POST))
 		while(list($x,$v)=each($global_vars)) {
-			$$x=$v;
+			${$x}=$v;
 		}
 		//reset($_POST);
 		reset($global_vars);
@@ -79,7 +79,7 @@ if(empty($reg_glob_ini)||(!$reg_glob_ini)) {
 	if(sizeof($global_vars=&importGlobalVariable('cookie'))) {
 		//while(list($x,$v)=each($_COOKIE))
 		while(list($x,$v)=each($global_vars)) {
-			$$x=$v;
+			${$x}=$v;
 		}
 		//reset($_COOKIE);
 		reset($global_vars);
@@ -90,13 +90,13 @@ if(empty($reg_glob_ini)||(!$reg_glob_ini)) {
 
 	/* Process SERVER vars */
 
-	//if(sizeof($$_SERVER))
+	//if(sizeof($_SERVER))
 	if(sizeof($global_vars=&importGlobalVariable('server'))) {
-		//while(list($x,$v)=each($$_SERVER))
+		//while(list($x,$v)=each($_SERVER))
 		while(list($x,$v)=each($global_vars)) {
-			$$x=$v;
+			${$x}=$v;
 		}
-		//reset($$_SERVER);
+		//reset($_SERVER);
 		reset($global_vars);
 	}
 
@@ -106,12 +106,12 @@ if(empty($reg_glob_ini)||(!$reg_glob_ini)) {
 	/* Process SESSION vars */
 	/*  if(sizeof($global_vars=&importGlobalVariable('session')))
 	 {
-	 //while(list($x,$v)=each($$_SERVER))
+	 //while(list($x,$v)=each($_SERVER))
 	 while(list($x,$v)=each($global_vars))
 	 {
-		$$x=$v;
+		${$x}=$v;
 		}
-		//reset($$_SERVER);
+		//reset($_SERVER);
 		reset($global_vars);
 		}
 

@@ -6,7 +6,7 @@ require($root_path.'include/core/inc_environment_global.php');
 * CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
 * GNU General Public License
 * Copyright 2002,2003,2004,2005 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -41,7 +41,7 @@ if(isset($cfg['thispc_dept_nr'])&&!empty($cfg['thispc_dept_nr']) && $dept_obj->i
 }
 if(isset($cfg['thispc_room_nr'])&&!empty($cfg['thispc_room_nr']) && $dept_obj->isOR($cfg['thispc_room_nr'])){
 	$saal=$cfg['thispc_room_nr'];
-	$or_ok=true;	
+	$or_ok=true;
 }
 if($dept_ok&&$or_ok){
 	header("Location:$targetfile".URL_REDIRECT_APPEND."&dept_nr=".$cfg['thispc_dept_nr']."&saal=".$cfg['thispc_room_nr']."&retpath=".$retpath);
@@ -102,17 +102,17 @@ ob_start();
 ?>
 
 <script language="javascript">
-<!-- 
+<!--
   var urlholder;
 function popinfo(l,d)
 {
 	urlholder="nursing-or-dienstplan-popinfo.php<?php echo URL_REDIRECT_APPEND ?>&nr="+l+"&dept_nr="+d+"&user=<?php echo $aufnahme_user.'"' ?>;
-	
+
 	infowin=window.open(urlholder,"dienstinfo","width=400,height=300,menubar=no,resizable=yes,scrollbars=yes");
 
 }
 function check(d)
-{	
+{
 	var i;
 	var n=false;
 	var s=false;
@@ -164,7 +164,7 @@ ob_start();
 
 		<font class="prompt">
 		<?php echo $LDPlsSelectDept; ?>
-		
+
 	</td>
 	<td  valign="top">
 		&nbsp;
@@ -172,7 +172,7 @@ ob_start();
 
   <tr>
     <td colspan=2 valign="top">
-	
+
 	<!--  The department list block  -->
 		<table  cellpadding="2" cellspacing=0 border="0">
 		<?php
@@ -180,10 +180,10 @@ ob_start();
 			$toggler=0;
 
 			while(list($x,$v)=each($dept_DOC)){
-		
+
 				$bold='';
 				$boldx='';
-				if($dept_nr==$v['nr']) 	{ echo '<tr bgcolor="yellow">'; $bold="<font color=\"red\" size=2><b>";$boldx="</b></font>"; } 
+				if($dept_nr==$v['nr']) 	{ echo '<tr bgcolor="yellow">'; $bold="<font color=\"red\" size=2><b>";$boldx="</b></font>"; }
 					elseif ($toggler==0){ echo '<tr class="wardlistrow1">'; }
 						else { echo '<tr class="wardlistrow2">';}
 				$toggler=!$toggler;
@@ -194,21 +194,21 @@ ob_start();
 				if($dept_nr==$v['nr']) echo ' checked';
 
 				echo '>&nbsp;&nbsp;'.$bold;
-				if(isset($$v['LD_var'])&&!empty($$v['LD_var'])) echo $$v['LD_var'];
+				if(isset(${$v['LD_var']})&&!empty(${$v['LD_var']})) echo ${$v['LD_var']};
 					else echo $v['name_formal'];
 				echo $boldx.'&nbsp;</td>';
 				echo '<td >&nbsp;';
-	
+
 				/*	echo '<a href="'.$fileforward.'&dept_nr='.$v['nr'].'">
 				<img '.createLDImgSrc($root_path,'ok_small.gif','0','absmiddle').' alt="'.$LDShowActualPlan.'" ></a>';
-				*/	
+				*/
 				echo '</td></tr>';
         		echo "\n";
 			}
 		?>
 		</table>
 	<!--  End of department list block  -->
-	
+
 	</td>
     <td>
 	<!--  Start of the OR room numbers block -->
@@ -224,10 +224,10 @@ ob_start();
 			$toggler=0;
 
 			while($room=$ORNrs->FetchRow()){
-		
+
 				$bold='';
 				$boldx='';
-				if($saal==$room['room_nr']) 	{ echo '<tr bgcolor="yellow">'; $bold="<font color=\"red\" size=2><b>";$boldx="</b></font>"; } 
+				if($saal==$room['room_nr']) 	{ echo '<tr bgcolor="yellow">'; $bold="<font color=\"red\" size=2><b>";$boldx="</b></font>"; }
 					elseif ($toggler==0){ echo '<tr class="wardlistrow1">'; }
 						else { echo '<tr class="wardlistrow2">';}
 				$toggler=!$toggler;
@@ -237,13 +237,13 @@ ob_start();
 				if($saal==$room['room_nr']) echo ' checked';
 				echo '>&nbsp;&nbsp;'.$bold;
 				echo $LDORoom.' '.$room['room_nr'];
-				
+
 				echo '&nbsp;</td>';
-				
+
 				echo '<td >&nbsp;';
 
 				echo $LDORoom.' '.$room['info'];
-				
+
 				echo '&nbsp;</td>
 						</tr>
 						';
@@ -254,18 +254,18 @@ ob_start();
 		</table>
 		</td>
 		</tr>
-		</table>	
+		</table>
 	<!--  End of the OR room numbers block -->
 	</td>
   </tr>
   </tr>
-  
-  
+
+
     <tr>
       <td colspan=2><a href="<?php echo $breakfile ?>"><img <?php echo createLDImgSrc($root_path,'cancel.gif','0') ?> alt="<?php echo $LDCloseAlt ?>"></a></td>
       <td align="right"><input type="image" <?php echo createLDImgSrc($root_path,'continue.gif','0') ?>></td>
     </tr>
-  
+
 </table>
 <input type="hidden" name="sid" value="<?php echo $sid ?>">
 <input type="hidden" name="lang" value="<?php echo $lang ?>">

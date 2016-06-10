@@ -41,7 +41,7 @@ function chkNewForm(v) {
 </script>
 
 <form name="sickform" onSubmit="return chkSickForm(this)" method="post">
-<?php 
+<?php
 # Prepare some values for the template
 $TP_insco_1='ISKSH';
 /*$TP_insco_2='BKK';
@@ -51,13 +51,13 @@ $TP_insco_5='HKH';
 $TP_insco_6='BGG';*/
 
 if($insurance){
-	$TP_enc_insurance_name=$insurance['name']; 
-	$TP_enc_insurance_nr=$insurance['insurance_nr']; 
-	$TP_enc_insurance_subarea=$insurance['sub_area']; 
+	$TP_enc_insurance_name=$insurance['name'];
+	$TP_enc_insurance_nr=$insurance['insurance_nr'];
+	$TP_enc_insurance_subarea=$insurance['sub_area'];
 }
 
 
-$TP_dept_sigstamp=nl2br($dept_sigstamp); 
+$TP_dept_sigstamp=nl2br($dept_sigstamp);
 $TP_care_logo=createLogo($root_path,'care_logo.gif','0','right');
 $TP_date_birth=formatDate2Local($date_birth,$date_format);
 
@@ -70,16 +70,16 @@ $TP_date_end= $calendar->show_calendar($calendar,$date_format,'date_end');
 $TP_date_start= $calendar->show_calendar($calendar,$date_format,'date_start');
 $TP_date_confirm= $calendar->show_calendar($calendar,$date_format,'date_confirm');
 //gjergji : end
-		 	
+
 $TP_diagnosis='<textarea name="diagnosis" cols=40 rows=5 wrap="physical"></textarea>';
 
 # Signature stamp of the department
-$TP_dept_sigstamp=nl2br($dept['sig_stamp']); 
+$TP_dept_sigstamp=nl2br($dept['sig_stamp']);
 
 # Logo of the department
 $logobuff=$root_path.'uploads/logos_dept/dept_'.$dept_nr.'.'.$dept['logo_mime_type'];
 if(file_exists($logobuff)){
-	$TP_dept_logo=$logobuff; 
+	$TP_dept_logo=$logobuff;
 	# Check the logo dimensions
 	$logosize=GetImageSize($logobuff);
 	# If height > $logo_ht_limit, use limit
@@ -109,7 +109,7 @@ eval("echo $TP_sickform;");
 <p>
 
 <form method="post" name="newform" onSubmit="return chkNewForm(this.dept_nr.value)">
-<img <?php echo createComIcon($root_path,'bul_arrowgrnlrg.gif','0','absmiddle'); ?>> 
+<img <?php echo createComIcon($root_path,'bul_arrowgrnlrg.gif','0','absmiddle'); ?>>
 <?php echo $LDCreateNewForm; ?>
 <select name="dept_nr">
 	<option value=""></option>
@@ -118,7 +118,7 @@ eval("echo $TP_sickform;");
 			echo '<option value="'.$v['nr'].'" ';
 			if($v['nr']==$dept_nr) echo 'selected';
 			echo '>';
-			if(isset($$v['LD_var']) && $$v['LD_var']) echo $$v['LD_var'];
+			if(isset(${$v['LD_var']}) && ${$v['LD_var']}) echo ${$v['LD_var']};
 				else echo $v['name_formal'];
 			echo '</option>
 			';
@@ -130,9 +130,9 @@ eval("echo $TP_sickform;");
 <input type="hidden" name="pid" value="<?php echo $_SESSION['sess_pid']; ?>">
 <input type="hidden" name="mode" value="new">
 <input type="hidden" name="target" value="<?php echo $target; ?>">
-<!-- <input type="submit" <?php echo createLDImgSrc($root_path,'ok.gif','0','absmiddle'); ?> >            
+<!-- <input type="submit" <?php echo createLDImgSrc($root_path,'ok.gif','0','absmiddle'); ?> >
  -->
-<input type="submit"  value="go"> 
+<input type="submit"  value="go">
 </form>
 <?php
 }else{
@@ -141,7 +141,7 @@ eval("echo $TP_sickform;");
   <tr>
     <td><img <?php echo createMascot($root_path,'mascot1_r.gif','0','absmiddle') ?>></td>
     <td><font color="#000099" SIZE=3  FACE="verdana,Arial"> <b>
-	<?php 
+	<?php
 		echo $norecordyet;
 	?></b></font>
 	</td>

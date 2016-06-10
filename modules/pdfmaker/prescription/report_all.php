@@ -171,8 +171,8 @@ $y=$pdf->ezText("\n",14);
 if(!stristr($filter,$nr)){
 
 	// Get the report title
-	if(isset($$LD_var)&&!empty($$LD_var)){
-		$title=$$LD_var;
+	if(isset(${$LD_var})&&!empty(${$LD_var})){
+		$title=${$LD_var};
 	}else{
 		$title=$name;
 	}
@@ -222,7 +222,7 @@ if(!stristr($filter,$nr)){
 			reset($app_types);
 			while(list($x,$v)=each($app_types)){
 				if( $report['application_type_nr'] == $v['nr'] ) {
-					if(isset($$v['LD_var'])&&!empty($$v['LD_var'])) $app_type =  $$v['LD_var'];
+					if(isset(${$v['LD_var']})&&!empty(${$v['LD_var']})) $app_type =  ${$v['LD_var']};
 						else $app_type =  $v['name'];
 						break;
 				}

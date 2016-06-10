@@ -29,7 +29,7 @@ function checkIfChanged(lang)
 "
 <?php
 echo 'bgcolor='.$cfg['idx_bgcolor'];
- if(!$cfg['dhtml']) echo ' link='.$cfg['idx_txtcolor'].' vlink='.$cfg['idx_txtcolor'].' alink='.$cfg['idx_alink']; ?> 
+ if(!$cfg['dhtml']) echo ' link='.$cfg['idx_txtcolor'].' vlink='.$cfg['idx_txtcolor'].' alink='.$cfg['idx_alink']; ?>
  >
 <center><img <?php echo createLogo($root_path,'care_logo.gif','0') ?>></center>
 <TABLE CELLPADDING=2 CELLSPACING=0 border=0 >
@@ -43,18 +43,18 @@ if($result){
 			if ($_COOKIE['ck_login_logged'.$sid]=='true'){
 				$menu['url']='main/logout_confirm.php';
 				$menu['LD_var']='LDLogout';
-			}	
+			}
 		}
 		echo '<TR><TD bgcolor='.$cfg['idx_bgcolor'].' ALIGN="left">'; echo "\n";
 		echo '<A HREF="'.$root_path.$menu['url'].URL_APPEND.'"';
 		echo ' TARGET="CONTENTS" REL="child">';
 		echo "\n";
 		echo '<nobr><img '.createComIcon('../','blue_bullet.gif','0','middle').'><font FACE="verdana,Arial" SIZE=-1 ><b>';
-		if(isset($$menu['LD_var'])&&!empty($$menu['LD_var'])) echo $$menu['LD_var'];
+		if(isset(${$menu['LD_var']})&&!empty(${$menu['LD_var']})) echo ${$menu['LD_var']};
 			else echo $menu['name'];
 		echo '</b></nobr></FONT></A>';
 		echo "\n";
-		echo '</TD></TR>';		
+		echo '</TD></TR>';
 	}
 }
 
@@ -66,7 +66,7 @@ if(!$GLOBALCONFIG['language_single']){
 <form action="#" onSubmit="return checkIfChanged(this.lang.value)">
 <hr>
 <?php echo $LDLanguage ?><br>
- <select name="lang"> 
+ <select name="lang">
 <?php
 
 require($root_path.'include/care_api_classes/class_language.php');

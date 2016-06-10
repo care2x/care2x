@@ -6,7 +6,7 @@ require_once($root_path.'include/core/inc_environment_global.php');
 * CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
 * GNU General Public License
 * Copyright 2002,2003,2004,2005 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -30,23 +30,23 @@ if($mode=='save')
 		$item="item$i";
 		$price="price$i";
 
-		if($$item)
+		if(${$item})
 		{
-			if(!$$product)
-				$sql="DELETE FROM $dbtable WHERE item='".$$item."'";
+			if(!${$product})
+				$sql="DELETE FROM $dbtable WHERE item='".${$item}."'";
 			else
 				$sql="UPDATE $dbtable SET productgroup='$groupname',
-					article='".$$product."',
-					price='".$$price."',
+					article='".${$product}."',
+					price='".${$price}."',
 					modify_id='".$_COOKIE[$local_user.$sid]."',
 					modify_time='".date('YmdHis')."'
-					WHERE item='".$$item."'";
+					WHERE item='".${$item}."'";
 		}
 		else
 		{
-			if($$product)
+			if(${$product})
 			$sql="INSERT INTO $dbtable (lang,productgroup,article,price,create_id,create_time)
-					VALUES ('$lang','$groupname','".$$product."','".$$price."','".$_COOKIE[$local_user.$sid]."','".date('YmdHis')."')";
+					VALUES ('$lang','$groupname','".${$product}."','".${$price}."','".$_COOKIE[$local_user.$sid]."','".date('YmdHis')."')";
 			else continue;
 		}
 		//echo $sql."<br>";
@@ -122,25 +122,25 @@ if(!$currency_short||!$currency_long)
     <td><b><?php echo $LDProdName ?></b></td>
 	 <td>&nbsp;<b><?php echo $LDPrice." ".$currency_short." ".$currency_long ?></b></td>
   </tr>
-<?php 
+<?php
 
 if($rows<10) $maxitem=10; else $maxitem=$rows+3;
 
 for($i=0;$i<$maxitem;$i++) {
 
     $prod=$ergebnis->FetchRow();
-    
+
 	echo '
     <tr bgcolor="ccffff" >
     <td><input type="text" name="product'.$i.'" size=40 maxlength=40 value="'.$prod['article'].'">
         </td>
-    <td><input type="text" name="price'.$i.'" size=4 maxlength=5 value="'.$prod['price'].'"> 
+    <td><input type="text" name="price'.$i.'" size=4 maxlength=5 value="'.$prod['price'].'">
 	<input type="hidden" name="item'.$i.'" value="'.$prod['item'].'">
  	</td>
   </tr>';
 }
 ?>
- <tr>    
+ <tr>
  <td><p><br>
  <?php if($mode!='saveok') : ?>
 	<a href="<?php echo $returnfile ?>"><img <?php echo createLDImgSrc($root_path,'back2.gif','0') ?>></a>
