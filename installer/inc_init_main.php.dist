@@ -36,4 +36,10 @@ $dbtype='INSTALL_DB_TYPE';
 $timezone = 'TIMEZONE';
 date_default_timezone_set($timezone);
 
+//For production server
+$ErrorLevel = E_ALL && ~E_NOTICE && ~E_WARNING;
+
+//For development
+//$ErrorLevel = -1;
+
 ?>
