@@ -6,7 +6,7 @@ require($root_path.'include/core/inc_environment_global.php');
 * CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
 * GNU General Public License
 * Copyright 2002,2003,2004,2005 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -16,7 +16,7 @@ require('./include/inc_admit_station_bridge.php');
 
 require_once($root_path.'include/core/inc_front_chain_lang.php');
 
-require_once($root_path.'modules/news/includes/inc_editor_fx.php'); 
+require_once($root_path.'modules/news/includes/inc_editor_fx.php');
 /* Load the data time shifter and create object */
 require_once($root_path.'classes/datetimemanager/class.dateTimeManager.php');
 $dateshifter=new dateTimeManager();
@@ -33,7 +33,7 @@ if(!$tag) $tag=date('j');
 if(!$jahr) $jahr=date('Y');
 
 if($dayback)
-{ 
+{
 	if($tag>$dayback)
 	{
 		$tag-=$dayback;
@@ -42,7 +42,7 @@ if($dayback)
 	{
 		for($i=0;$i<$dayback;$i++)
 		{
-			if($tag>1) $tag--; 
+			if($tag>1) $tag--;
 			elseif($kmonat==1)
 				{
 				$jahr--;
@@ -56,19 +56,19 @@ if($dayback)
 				//while(!checkdate($kmonat,$tag,$jahr)) $tag--;
 				$tag=date("t",mktime(0,0,0,$kmonat,1,$jahr));
 				}
-		//if($tagname) $tagname--; else $tagname=6; 
+		//if($tagname) $tagname--; else $tagname=6;
 		}
 	}
 } else if($dayfwd)
 	{
-		//if($tagname==7) $tagname=1; else $tagname++;			
+		//if($tagname==7) $tagname=1; else $tagname++;
 	    $tag++;
 		if(!checkdate($kmonat,$tag,$jahr))
 			{
 				$tag=1;
-				if($kmonat==12) 
+				if($kmonat==12)
 				{
-					$kmonat=1; 
+					$kmonat=1;
 					$jahr++;
 				}
 				else $kmonat++;
@@ -89,7 +89,7 @@ $date_end=$dateshifter->shift_dates($date_start,-6,'d');
 	include_once($root_path.'include/care_api_classes/class_globalconfig.php');
 	$GLOBAL_CONFIG=array();
 	$glob_obj=new GlobalConfig($GLOBAL_CONFIG);
-	$glob_obj->getConfig('patient_%');	
+	$glob_obj->getConfig('patient_%');
 
 	$enc_obj->where=" encounter_nr=$pn";
 	// Preload the patient encounter object
@@ -101,17 +101,17 @@ $date_end=$dateshifter->shift_dates($date_start,-6,'d');
 			case '2': $full_en = ($pn + $GLOBAL_CONFIG['patient_outpatient_nr_adder']);
 							break;
 			default: $full_en = ($pn + $GLOBAL_CONFIG['patient_inpatient_nr_adder']);
-		}						
+		}
 */
 		$full_en=$pn;
-		
+
 		if( $enc_obj->is_loaded){
-			$result=&$enc_obj->encounter;		
-			$rows=$enc_obj->record_count;	
+			$result=&$enc_obj->encounter;
+			$rows=$enc_obj->record_count;
 			/* Create charts object */
 			include_once($root_path.'include/care_api_classes/class_charts.php');
 			$charts_obj= new Charts;
-		
+
 			// get Allergy notes  type = 22
 			$allergy=&$charts_obj->getChartNotes($pn,22);
 			// get Diagnosis notes  type = 12
@@ -258,7 +258,7 @@ div.pcont {
 </style>
 
 <script language="javascript">
-<!-- 
+<!--
   var urlholder="";
   var infowinflag=0;
   var sw=window.screen.width/2;
@@ -301,7 +301,7 @@ function popgetdailymedx(winID,patientID,jahrID,monatID,tagID,tagIDX,jahrS,monat
    	window.dailymedx.moveTo(sw-(w600/2),sh-(h600/2));
    	infowinflag=1;
 	}
-	
+
 function setStartDate(winID,patientID,jahrID,monatID,tagID,station,tagN){
 
 <?php
@@ -319,12 +319,12 @@ if($cfg['bname']=='msie'){
    			infowinflag=1;
 			}
 		}
-		else 
+		else
 <?php
 }
 ?>
 		{
-		// alert("left click");	
+		// alert("left click");
 		urlholder="nursing-station-patientdaten-kurve.php?sid=<?php echo "$sid&lang=$lang&edit=$edit" ?>&"+winID+"=1&pn=" + patientID + "&jahr=" + jahrID + "&kmonat=" + monatID + "&tag="+ tagID + "&station="+station+"&tagname="+ tagN ;
  		window.location.replace(urlholder);
    		}
@@ -339,24 +339,24 @@ function closeifok()
 			else
 			{
 	 			window.infowin.focus()
-				window.infowin.alert("Ein Eingabefenster ist noch nicht abgeschlossen")	
+				window.infowin.alert("Ein Eingabefenster ist noch nicht abgeschlossen")
 			}
 		}
 		else ok=1;
-	}	
+	}
 	else ok=1;
 	if(ok)
 	{
 		window.opener.focus();
 		window.close();
 	}
-}	
-	
+}
+
 function returnifok(){
 	if (infowinflag){
 		if(window.infowin.closed)  history.go(-2)
 	window.infowin.focus()
-	window.infowin.alert("Ein Eingabefenster ist noch nicht abgeschlossen")	
+	window.infowin.alert("Ein Eingabefenster ist noch nicht abgeschlossen")
 	}
 	else history.back()
 	}
@@ -390,7 +390,7 @@ echo '
 		<tr  >
 		<td bgcolor="aqua" class=pblock><font size="2" ><div class=pcont><b>'.$full_en.'</b></div></td>
 		<td bgcolor="white" >';
-		
+
 //****************************** Allergy ********************************
 		if($edit){
 			echo '
@@ -407,7 +407,7 @@ echo '
 //****************************** DAy scale ********************************
 
 echo '
-		<td colspan="7"> 
+		<td colspan="7">
 		<table cellpadding="0"  cellspacing="0" border="1" width="100%"><tr>';
 
 $actmonat=$kmonat;
@@ -417,9 +417,9 @@ for ($i=$tag,$acttag=$tag,$d=0,$tgbuf=$tagname;$i<($tag+7);$i++,$d++,$tgbuf++,$a
 	{
 	echo '<td';
 
-	aligndate(&$acttag,&$actmonat,&$actjahr); // function to align the date
+	aligndate($acttag,$actmonat,$actjahr); // function to align the date
 
-	switch($tgbuf) 
+	switch($tgbuf)
 		{
 			case 0: echo' bgcolor="orange"';break;
 			case 6: echo' bgcolor="#ffffcc"';break;
@@ -434,7 +434,7 @@ for ($i=$tag,$acttag=$tag,$d=0,$tgbuf=$tagname;$i<($tag+7);$i++,$d++,$tgbuf++,$a
 	<font face="verdana,arial" size="2" color="#000000" >'.formatShortDate2Local($actmonat,$acttag,$date_format).' . '.$tage[$tgbuf];
 	if ($d==6) echo ' <a href="#">
 		<img '.createComIcon($root_path,'r_arrowgrnsm.gif','0','',TRUE).' alt="'.$LDFwdDay.'" onMouseDown="setStartDate(\'dayfwd\',\''.$pn.'\',\''.$jahr.'\',\''.$kmonat.'\',\''.$tag.'\',\''.$station.'\',\''.$tagname.'\')"></a>';
-	
+
 	echo '</td>';
 	//$tgbuf++;
 	echo "\n";
@@ -449,23 +449,23 @@ echo '</tr><tr>';
 for ($i=$tag,$acttag=$tag,$d=0;$i<($tag+7);$i++,$d++,$acttag++)
 {
 
-	aligndate(&$acttag,&$actmonat,&$actjahr); // function to align the date
+	aligndate($acttag,$actmonat,$actjahr); // function to align the date
 	echo '
 	<td bgcolor=white align=center class="a12" width="98">';
 	if($edit) echo '
 	<a href="javascript:popgetdailyinfo(\'diet\',\''.$pn.'\',\''.$actjahr.'\',\''.$actmonat.'\',\''.$acttag.'\',\''.($d+$tagnamebuf).'\',\''.$jahr.'\',\''.$kmonat.'\',\''.$tag.'\',\''.$tagname.'\')" title="'.$LDClk2PlanDiet.'">';
 	echo '
 	<font face="verdana,arial" size="2" color="#0" >';
-	
+
 	if($r=getlatestdata($diet,$i,$kmonat,$jahr))  echo hilite($r['short_notes']);
 	 	else  echo $LDDiet;
-		
+
 }
 //**************** Patient personal data ************************************
 	if($edit) echo '</a>';
 echo '</td>
-		</tr></table> 
-		
+		</tr></table>
+
 		</td>
 		</tr>
 		<tr   valign="top">
@@ -488,8 +488,8 @@ echo'
 //**************** curve graph ************************************
 echo '
 		<td bgcolor=white colspan="7">';
-		if($edit) 
-		
+		if($edit)
+
 $actmonat=$kmonat;
 $actjahr=$jahr;
 
@@ -499,7 +499,7 @@ if($edit)
 		<MAP NAME="FrontPageMap">';
 	for($i=$tag,$acttag=$tag,$d=0,$x0=0,$x1=99;$i<($tag+7);$i++,$d++,$x0+=100,$x1+=100,$acttag++)
 	{
-		aligndate(&$acttag,&$actmonat,&$actjahr); // function to align the date
+		aligndate($acttag,$actmonat,$actjahr); // function to align the date
 	 echo'
 		<AREA SHAPE="RECT" COORDS="'.$x0.',0,'.$x1.',133" HREF="javascript:popgetdailybpt(\'bp_temp\',\''.$pn.'\',\''.$actjahr.'\',\''.$actmonat.'\',\''.$acttag.'\',\''.($d+$tagnamebuf).'\',\''.$jahr.'\',\''.$kmonat.'\',\''.$tag.'\',\''.$tagname.'\')" title="'.str_replace("~tagword~",$LDBpTemp,$LDClk2EnterDaily).'" >';
 	}
@@ -515,7 +515,7 @@ echo ' src="'.$root_path.'main/imgcreator/datacurve.php'.URL_APPEND.'&pn='.$pn.'
 		<tr   valign="top" >
 		<td bgcolor=white colspan="2" height="150">
 		<font size=1 face="verdana,arial">';;
-		
+
 /******************** Main diagnose Therapy *****************************************/
 if($edit){
 	echo '
@@ -530,27 +530,27 @@ if($edit){
 			}
 		}
 		echo '</td>';
-		
+
 //********************************** diagnose therapie daily report ****************************
 $actmonat=$kmonat;
 $actjahr=$jahr;
 
 for ($i=$tag,$acttag=$tag,$d=0;$i<($tag+7);$i++,$d++,$acttag++)
 {
-	aligndate(&$acttag,&$actmonat,&$actjahr); // function to align the date
+	aligndate($acttag,$actmonat,$actjahr); // function to align the date
 	echo '
 		<td bgcolor=white  height="150" width="98"><font face="verdana,arial" size="1" color="#000000">';
 	if($edit) echo '
 		<a href="javascript:popgetdailyinfo(\'diag_ther_dailyreport\',\''.$pn.'\',\''.$actjahr.'\',\''.$actmonat.'\',\''.$acttag.'\',\''.($d+$tagnamebuf).'\',\''.$jahr.'\',\''.$kmonat.'\',\''.$tag.'\',\''.$tagname.'\')">';
 
 	if($r=&getdata($main_notes,$i,$kmonat,$jahr))  echo hilite(nl2br($r));
-	else 
+	else
 	  if($edit) echo '<img src="'.$root_path.'gui/img/common/default/pixel.gif" width="97" height="148"  border=0 alt="'.str_replace("~tagword~",$LDDiagnosisTherapy,$LDClk2EnterDaily).'" >';
 	if($edit) echo "</a>";
 	echo "
 	</td>";
 	}
-	
+
 //************************* extra Diagnoses specials **********************************
 echo '
 		</tr>
@@ -573,10 +573,10 @@ echo '</td>';
 	//***************************  KG ATG etc .  daily report ***************************
 $actmonat=$kmonat;
 $actjahr=$jahr;
-	
+
 for ($i=$tag,$acttag=$tag,$d=0;$i<($tag+7);$i++,$d++,$acttag++)
 {
-	aligndate(&$acttag,&$actmonat,&$actjahr); // function to align the date
+	aligndate($acttag,$actmonat,$actjahr); // function to align the date
 	echo '
 		<td bgcolor=white  height="50"><font face="verdana,arial" size="1" color="#000000">';
 	if($edit) echo '
@@ -627,7 +627,7 @@ $actmonat=$kmonat;
 $actjahr=$jahr;
 for ($i=$tag,$acttag=$tag,$d=0;$i<($tag+7);$i++,$d++,$acttag++)
 {
-	aligndate(&$acttag,&$actmonat,&$actjahr); // function to align the date
+	aligndate($acttag,$actmonat,$actjahr); // function to align the date
 	$r=&getdata($daily_anticoag,$i,$kmonat,$jahr,1);
 	echo '
 	<td ';
@@ -638,12 +638,12 @@ for ($i=$tag,$acttag=$tag,$d=0;$i<($tag+7);$i++,$d++,$acttag++)
 
 	if(!empty($r))
 	 echo $r;
-	else 
+	else
 	  if($edit) echo '<img src="p.gif" width="95" height="12"  align="absmiddle"  border=0 alt="'.str_replace("~tagword~",$LDAntiCoag,$LDClk2EnterDaily).'" >';
 	if($edit) echo '</a>';
 	echo '
 	</td>';
-	
+
 	}
 
 echo '
@@ -665,7 +665,7 @@ if($edit){
 		}
 
 echo '</td>';
-		
+
 // ************** medication ************************
 
 if(is_object($medis)){
@@ -707,7 +707,7 @@ echo	'</td>';
 $actmonat=$kmonat;
 $actjahr=$jahr;
 for ($i=$tag,$acttag=$tag,$d=0;$i<($tag+7);$i++,$d++,$acttag++) {
-	aligndate(&$acttag,&$actmonat,&$actjahr); // function to align the date
+	aligndate($acttag,$actmonat,$actjahr); // function to align the date
 	$r=&getdata($daily_iv,$i,$kmonat,$jahr,1);
 	echo '
 	<td valign="bottom" ';
@@ -722,7 +722,7 @@ for ($i=$tag,$acttag=$tag,$d=0;$i<($tag+7);$i++,$d++,$acttag++) {
 		echo '<img src="p.gif" width="95" height="9"  align="absmiddle"  border=0 alt="'.str_replace("~tagword~",$LDIvPort,$LDClk2EnterDaily).'">';
 	}
 	if($edit) echo '</a></font>';
-	
+
 // ************** medication dailydose ************************
 	//$dosis=&getdata($daily_medis,$acttag,$actmonat,$actjahr);
 	$date=date('Y-m-d',mktime(0,0,0,$kmonat,$i,$jahr));
@@ -752,13 +752,13 @@ for ($i=$tag,$acttag=$tag,$d=0;$i<($tag+7);$i++,$d++,$acttag++) {
 		echo ' bgcolor="'.$bgc.'" class="a10">&nbsp;';
 		if($edit) echo '<a href="javascript:popgetdailymedx(\'medication\',\''.$pn.'\',\''.$actjahr.'\',\''.$actmonat.'\',\''.$acttag.'\',\''.($d+$tagnamebuf).'\',\''.$jahr.'\',\''.$kmonat.'\',\''.$tag.'\',\''.$tagname.'\')" title="'.str_replace("~tagword~",$LDMedication,$LDClk2PlanDaily).'">';
 
-		if($ok) 
-			echo $dosis['short_notes']; 
-		else 
+		if($ok)
+			echo $dosis['short_notes'];
+		else
 			echo'<img src="p.gif" width="90" height="9"  align="absmiddle"  border=0>';
 		if($edit) echo '</a>';
 		echo '</td></tr>';
-		$toggle=!$toggle;	
+		$toggle=!$toggle;
 		echo "\n";
 	}
 		echo '</table>
@@ -769,7 +769,7 @@ for ($i=$tag,$acttag=$tag,$d=0;$i<($tag+7);$i++,$d++,$acttag++) {
 	echo '</td>';
 }
 
-echo 
+echo
 '</tr>
 	</table>
 ';
