@@ -2084,23 +2084,19 @@ CREATE TABLE IF NOT EXISTS `care_med_products_main` (
 -- Table structure for table `care_menu_main`
 --
 
-CREATE TABLE IF NOT EXISTS `care_menu_main` (
-  `nr` tinyint(3) unsigned NOT NULL AUTO_INCREMENT,
-  `sort` tinyint(2) NOT NULL DEFAULT '0',
-  `parent` int(2) NOT NULL DEFAULT '0',
-  `name` varchar(35) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL,
-  `permission` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `image` varchar(100) CHARACTER SET latin1 COLLATE latin1_general_ci DEFAULT NULL,
-  `LD_var` varchar(35) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL,
-  `url` varchar(255) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL,
+CREATE TABLE `care_menu_main` (
+  `nr` tinyint(3) unsigned NOT NULL DEFAULT '0',
+  `sort_nr` tinyint(2) NOT NULL DEFAULT '0',
+  `name` varchar(35) COLLATE latin1_general_ci NOT NULL DEFAULT '',
+  `LD_var` varchar(35) COLLATE latin1_general_ci NOT NULL DEFAULT '',
+  `url` varchar(255) COLLATE latin1_general_ci NOT NULL DEFAULT '',
   `is_visible` tinyint(1) unsigned NOT NULL DEFAULT '1',
-  `hide_by` text CHARACTER SET latin1 COLLATE latin1_general_ci,
-  `status` varchar(25) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL,
-  `modify_id` varchar(60) CHARACTER SET latin1 COLLATE latin1_general_ci DEFAULT NULL,
-  `modify_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `hide_by` text COLLATE latin1_general_ci,
+  `status` varchar(25) COLLATE latin1_general_ci NOT NULL DEFAULT '',
+  `modify_id` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `modify_time` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`nr`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=32 ;
--- --------------------------------------------------------
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
 
 --
 -- Table structure for table `care_method_induction`
@@ -4824,8 +4820,7 @@ INSERT INTO care_group VALUES (6, 'prescription', 'Prescription', 'LDPrescriptio
 --
 -- Dumping data for table care_menu_main
 --
-INSERT INTO `care_menu_main` VALUES (1,1,'Home','LDHome','modules/news/start_page.php',1,'','','2010-12-08 03:50:30','0000-00-00 00:00:00'),(2,5,'Registration','LDPatient','modules/registration_admission/patient_register_pass.php',1,'','','2010-02-08 05:50:17','0000-00-00 00:00:00'),(3,10,'Admission','LDAdmission','modules/registration_admission/aufnahme_pass.php',1,'','','2010-02-08 07:10:04','0000-00-00 00:00:00'),(4,15,'Ambulatory','LDAmbulatory','modules/ambulatory/ambulatory.php',1,'','','2005-02-25 01:25:09','0000-00-00 00:00:00'),(5,20,'Medocs','LDMedocs','modules/medocs/medocs_pass.php',0,'','','2011-04-12 11:51:19','0000-00-00 00:00:00'),(6,25,'Doctors','LDDoctors','modules/doctors/doctors.php',1,'','','2009-02-26 07:28:59','0000-00-00 00:00:00'),(7,35,'Nursing','LDNursing','modules/nursing/nursing.php',1,'','','2008-08-20 12:46:16','0000-00-00 00:00:00'),(8,40,'OR','LDOR','main/op-doku.php',1,'','','2009-02-17 11:21:16','0000-00-00 00:00:00'),(9,45,'Laboratories','LDLabs','modules/laboratory/labor.php',1,'','','2003-09-22 10:20:15','0000-00-00 00:00:00'),(10,50,'Radiology','LDRadiology','modules/radiology/radiolog.php',1,'','','2008-03-06 04:52:12','0000-00-00 00:00:00'),(11,55,'Pharmacy','LDPharmacy','modules/pharmacy_tz/pharmacy_tz_pass.php',0,'','','2016-04-11 13:09:18','0000-00-00 00:00:00'),(12,60,'Medical Depot','LDMedDepot','modules/med_depot/medlager.php',1,'','','2016-04-30 06:43:25','0000-00-00 00:00:00'),(13,65,'Directory','LDDirectory','modules/phone_directory/phone.php',1,'','','2016-04-30 06:43:25','0000-00-00 00:00:00'),(14,70,'Tech Support','LDTechSupport','modules/tech/technik.php',1,'','','2016-04-30 06:43:25','0000-00-00 00:00:00'),(15,72,'System Admin','LDEDP','modules/system_admin/edv.php',1,'','','2003-09-22 10:20:15','0000-00-00 00:00:00'),(16,75,'Intranet Email','LDIntraEmail','modules/intranet_email/intra-email-pass.php',0,'','','2006-11-08 10:48:04','0000-00-00 00:00:00'),(17,80,'Internet Email','LDInterEmail','modules/nocc/index.php',0,'','','2005-11-08 02:29:44','0000-00-00 00:00:00'),(18,85,'Special Tools','LDSpecials','main/spediens.php',1,'','','2006-06-28 21:35:23','0000-00-00 00:00:00'),(23,91,'Logout','LDLogout','main/logout_confirm.php',0,'','','2016-05-24 14:53:54','0000-00-00 00:00:00'),(20,7,'Appointments','LDAppointments','modules/appointment_scheduler/appt_main_pass.php',1,'','','2008-12-22 11:59:45','2003-04-04 10:01:45'),(21,16,'Inpatient','LDInpatient','modules/inpatient/inpatient.php',1,'','','2008-08-20 12:46:16','0000-00-00 00:00:00'),(22,46,'Laboratories TZ','LDLabs','modules/laboratory_tz/labor.php',0,'','','2005-03-07 23:05:45','0000-00-00 00:00:00'),(24,90,'Login','LDLogin','main/login.php',1,'','','2016-04-30 06:43:25','0000-00-00 00:00:00'),(25,57,'Billing','LDBilling','modules/billing_tz/billing_tz_pass.php',0,'','','2012-10-18 10:07:43','0000-00-00 00:00:00'),(27,59,'Reporting','LDreporting','modules/reporting_tz/reporting_tz_pass.php',0,'','','2016-04-11 13:09:18','0000-00-00 00:00:00'),(19,58,'Dhis Export','LDDhis','modules/care_dhis/care_dhis_pass.php',1,'','','2016-04-30 06:43:25','0000-00-00 00:00:00'),(28,16,'AAR','LDAAR','modules/ambulatory/sub_clinic_pass.php',1,'','','2011-04-12 11:51:19','0000-00-00 00:00:00');
-
+INSERT INTO `care_menu_main` VALUES (1,1,'Home','LDHome','modules/news/start_page.php',1,'','','2010-12-08 03:50:30','0000-00-00 00:00:00'),(2,5,'Registration','LDPatient','modules/registration_admission/patient_register_pass.php',1,'','','2010-02-08 05:50:17','0000-00-00 00:00:00'),(3,10,'Admission','LDAdmission','modules/registration_admission/aufnahme_pass.php',1,'','','2010-02-08 07:10:04','0000-00-00 00:00:00'),(4,15,'Ambulatory','LDAmbulatory','modules/ambulatory/ambulatory.php',1,'','','2005-02-25 01:25:09','0000-00-00 00:00:00'),(5,20,'Medocs','LDMedocs','modules/medocs/medocs_pass.php',0,'','','2011-04-12 10:51:19','0000-00-00 00:00:00'),(6,25,'Doctors','LDDoctors','modules/doctors/doctors.php',1,'','','2009-02-26 07:28:59','0000-00-00 00:00:00'),(7,35,'Nursing','LDNursing','modules/nursing/nursing.php',1,'','','2008-08-20 11:46:16','0000-00-00 00:00:00'),(8,40,'OR','LDOR','main/op-doku.php',1,'','','2009-02-17 11:21:16','0000-00-00 00:00:00'),(9,45,'Laboratories','LDLabs','modules/laboratory/labor.php',1,'','','2003-09-22 09:20:15','0000-00-00 00:00:00'),(10,50,'Radiology','LDRadiology','modules/radiology/radiolog.php',1,'','','2008-03-06 04:52:12','0000-00-00 00:00:00'),(11,55,'Pharmacy','LDPharmacy','modules/pharmacy_tz/pharmacy_tz_pass.php',0,'','','2016-04-11 12:09:18','0000-00-00 00:00:00'),(12,60,'Medical Depot','LDMedDepot','modules/med_depot/medlager.php',1,'','','2016-04-30 05:43:25','0000-00-00 00:00:00'),(13,65,'Directory','LDDirectory','modules/phone_directory/phone.php',1,'','','2016-04-30 05:43:25','0000-00-00 00:00:00'),(14,70,'Tech Support','LDTechSupport','modules/tech/technik.php',1,'','','2016-04-30 05:43:25','0000-00-00 00:00:00'),(15,72,'System Admin','LDEDP','modules/system_admin/edv.php',1,'','','2003-09-22 09:20:15','0000-00-00 00:00:00'),(16,75,'Intranet Email','LDIntraEmail','modules/intranet_email/intra-email-pass.php',0,'','','2006-11-08 10:48:04','0000-00-00 00:00:00'),(17,80,'Internet Email','LDInterEmail','modules/nocc/index.php',0,'','','2005-11-08 02:29:44','0000-00-00 00:00:00'),(18,85,'Special Tools','LDSpecials','main/spediens.php',1,'','','2006-06-28 20:35:23','0000-00-00 00:00:00'),(23,91,'Logout','LDLogout','main/logout_confirm.php',0,'','','2016-05-24 13:53:54','0000-00-00 00:00:00'),(20,7,'Appointments','LDAppointments','modules/appointment_scheduler/appt_main_pass.php',1,'','','2008-12-22 11:59:45','2003-04-04 09:01:45'),(21,16,'Inpatient','LDInpatient','modules/inpatient/inpatient.php',0,'','','2016-05-26 09:17:03','0000-00-00 00:00:00'),(22,46,'Laboratories TZ','LDLabs','modules/laboratory_tz/labor.php',0,'','','2005-03-07 23:05:45','0000-00-00 00:00:00'),(24,90,'Login','LDLogin','main/login.php',1,'','','2016-04-30 05:43:25','0000-00-00 00:00:00'),(25,57,'Billing','LDBilling','modules/billing_tz/billing_tz_pass.php',0,'','','2012-10-18 09:07:43','0000-00-00 00:00:00'),(27,59,'Reporting','LDreporting','modules/reporting_tz/reporting_tz_pass.php',0,'','','2016-04-11 12:09:18','0000-00-00 00:00:00'),(19,58,'Dhis Export','LDDhis','modules/care_dhis/care_dhis_pass.php',1,'','','2016-04-30 05:43:25','0000-00-00 00:00:00'),(28,16,'AAR','LDAAR','modules/ambulatory/sub_clinic_pass.php',1,'','','2011-04-12 10:51:19','0000-00-00 00:00:00');
 --
 -- Dumping data for table care_method_induction
 --
