@@ -110,8 +110,8 @@ if($mode=='search'||$mode=='paginate'){
 
 
 							$s2="";
-							if (clean_it(&$name)) $s2.=" p.name_last $sql_LIKE '".addslashes($name)."%'";
-							if (clean_it(&$vorname))
+							if (clean_it($name)) $s2.=" p.name_last $sql_LIKE '".addslashes($name)."%'";
+							if (clean_it($vorname))
 								if($s2) $s2.=" AND p.name_first $sql_LIKE '".addslashes($vorname)."%'"; else $s2.=" p.name_first $sql_LIKE '".addslashes($vorname)."%'";
 							if($gebdatum)
 							{
@@ -123,34 +123,34 @@ if($mode=='search'||$mode=='paginate'){
 							    $op_date=formatDate2STD($op_date,$date_format);
 								if($s2) $s2.=" AND o.op_date='$op_date'"; else $s2.=" o.op_date='$op_date'";
 							}
-							if (clean_it(&$patnum))
+							if (clean_it($patnum))
 							{
 								if(is_numeric($patnum)) $patnum=(int)$patnum; else $patnum='"'.addslashes($patnum).'"';
 								if($s2) $s2.=" AND o.encounter_nr=$patnum"; else $s2.=" o.encounter_nr=$patnum";
 							}
-							if(clean_it(&$operator))
+							if(clean_it($operator))
 								if($s2) $s2.=" AND o.operator='".addslashes($operator)."'"; else $s2.=" o.operator='".addslashes($operator)."'";
 							if ($status)
 								if($s2) $s2.=" AND e.encounter_class_nr='$status'"; else $s2.=" e.encounter_class_nr='$status'";
 							if ($kasse)
 								if($s2) $s2.=" AND e.insurance_firm_id='$kasse'"; else $s2.=" e.insurance_firm_id='$kasse'";
-							if(clean_it(&$diagnosis))
+							if(clean_it($diagnosis))
 								if($s2) $s2.=" AND o.diagnosis $sql_LIKE '%$diagnosis%'"; else $s2.=" o.diagnosis $sql_LIKE '%$diagnosis%'";
-							if(clean_it(&$localize))
+							if(clean_it($localize))
 								if($s2) $s2.=" AND o.localize $sql_LIKE '%$localize%'"; else $s2.=" o.localize $sql_LIKE '%$localize%'";
-							if(clean_it(&$therapy))
+							if(clean_it($therapy))
 								if($s2) $s2.=" AND o.therapy $sql_LIKE '%$therapy%'"; else $s2.=" o.therapy $sql_LIKE '%$therapy%'";
-							if(clean_it(&$special))
+							if(clean_it($special))
 								if($s2) $s2.=" AND o.special $sql_LIKE '%$special%'"; else $s2.=" o.special $sql_LIKE '%$special%'";
-							if(clean_it(&$klas_s))
+							if(clean_it($klas_s))
 								if($s2) $s2.=" AND o.class_s = '$klas_s'"; else $s2.=" o.class_s = '$klas_s'";
-							if(clean_it(&$klas_m))
+							if(clean_it($klas_m))
 								if($s2) $s2.=" AND o.class_m = '$klas_m'"; else $s2.=" o.class_m = '$klas_m'";
-							if(clean_it(&$klas_l))
+							if(clean_it($klas_l))
 								if($s2) $s2.=" AND o.class_l = '$klas_l'"; else $s2.=" o.class_l = '$klas_l'";
-							if(clean_it(&$inst))
+							if(clean_it($inst))
 								if($s2) $s2.=" AND o.scrub_nurse='".addslashes($inst)."'"; else $s2.=" o.scrub_nurse='".addslashes($inst)."'";
-							if(clean_it(&$opsaal))
+							if(clean_it($opsaal))
 								if($s2) $s2.=" AND o.op_room='".addslashes($opsaal)."'"; else $s2.=" o.op_room='".addslashes($opsaal)."'";
 
 							$s2=trim($s2);
