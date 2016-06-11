@@ -3,7 +3,7 @@
    /*** H A U P T D A T E I    E R S T E L L E N ***/
 /***************************************************/
 
-// Datei <modulname.php> im neuen Verzeichnis erstellen 
+// Datei <modulname.php> im neuen Verzeichnis erstellen
 
 //Pfad für das neue Modul
 $pfad=$root_path."modules/$ModulNeuBez/";
@@ -11,12 +11,11 @@ $pfad=$root_path."modules/$ModulNeuBez/";
 //Dateiname generieren auf Grundlage des Modulnamens
 if ($ModulNeuBez=""){
    echo "Fehler, leere Modulbezeichnungen sind nicht erlaubt.";
-	 break;
 	 }
 else{
     $dateiname=$ModulNeuBez . ".php";
 		}
- 
+
 //Datei öffnen
 $datei=fopen($pfad . $dateiname,"w");
 
@@ -51,7 +50,7 @@ $mainline[11]="require(\"./roots.php\");\n";
 
 // Die soeben kopierten Dateien einbinden
 $mainline[12]="// Error Meldungen unterdrücken, inc_environment_global.php includen, Standard-Sprachdateien einbinden,\n";
-$mainline[13]="// Dateischutz etc.\n"; 
+$mainline[13]="// Dateischutz etc.\n";
 $mainline[14]="require(\$root_path.\"modules/"."$ModulNeuBez"."/"."$inc_datei_array[0]\");\n";
 $mainline[15]="// Den <HEAD> includen\n";
 $mainline[16]="require(\$root_path.\"modules/"."$ModulNeuBez"."/"."$inc_datei_array[1]\");\n";
@@ -66,7 +65,7 @@ $mainline[22]="/****************************************************************
 $mainline[23]="// Ab hier kann ihr Code stehen, bzw. mit include oder require eingebunden werden.\n";
 $mainline[24]="/*********************************************************************************/\n";
 //if ($patientenbezogen="1"){
-    
+
 $mainline[25]="require(\$root_path.\"modules/system_new_module/includes/footnote.inc.php\");\n";
 $mainline[26]="?>\n";
 
@@ -82,9 +81,9 @@ while($i<$anzahl_mainline){
 			}
 fclose($datei);
 
-//echo "<p>Eine Datei mit der Bezeichnung <strong><i>" . $dateiname . "</strong></i> wurde erstellt.</p>";	 
+//echo "<p>Eine Datei mit der Bezeichnung <strong><i>" . $dateiname . "</strong></i> wurde erstellt.</p>";
 //echo "<p>Diese Datei ist der Ausgangspunkt für die Programmierung neuer Module.</p>";
 /***************************************************/
-//Ende5 der <modulname>.php 
+//Ende5 der <modulname>.php
 
 ?>
