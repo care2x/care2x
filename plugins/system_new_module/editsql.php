@@ -1,16 +1,16 @@
 <?PHP
 //***Variablen für dieses Modul setzen***
 
-//Variable für die in diesem Modul benutzte Individual-Sprachdatei 
+//Variable für die in diesem Modul benutzte Individual-Sprachdatei
 $lang_thismodule_used="modulneu.php";
 require('./roots.php');
 
 // Error Meldungen unterdrücken, inc_environment_global.php includen, Standard-Sprachdateien einbinden,
 // Dateischutz etc
 	 						 //variabeln für inc_modul_top.php
-							 						 //Variable für die in diesem Modul benutzte Individual-Sprachdatei 
+							 						 //Variable für die in diesem Modul benutzte Individual-Sprachdatei
 													 $lang_thismodule_used="modulneu.php";
-													 
+
 													 //Cookiename setzen
 													 $this_cookie_name='ck_edv_user';
 require_once($root_path.$newmodule_includepath."inc_modul_top.php");
@@ -22,17 +22,17 @@ $breakfile=$root_path."main/startframe.php?sid=$sid&lang=$lang";
 //Head includen
 require_once($root_path.$newmodule_includepath."head_include.inc.php");
 
-// Den <BODY> includen 
+// Den <BODY> includen
 require ($root_path.$newmodule_includepath."inc_body.php");
 
 // blauer Titelblock einbinden
  	 				//Variablen des Titelblocks
 										 //Hilfedatei
 										 $new_hlp_file="edv_modul_neu_hlp1.php";
-										 
+
 										 //Variable für Überschrift Titellesite
 										 $thismodulname=$LDEDP . " - " . $LDNeuesModulanlegen;
-	
+
 include($root_path.$newmodule_includepath."inc_titelblock.php");
 // Ende der Standardeinbindungen
 
@@ -64,11 +64,11 @@ echo $sql_meldung;?>
 </th>
 <tr>
 <td bgcolor="#ffff99">
-<?echo "<br>".$sqlstring."<br><br>";?>
+<?php echo "<br>".$sqlstring."<br><br>";?>
 </td><br><br>
 </tr>
 </table>
-<?
+<?php
 
 
 //ADODB Funktionen einbinden

@@ -11,7 +11,7 @@ $lang_thismodule_used="modulneu.php";
 
 //Cookiename setzen
 $this_cookie_name='ck_edv_user';
-													 
+
 require_once($root_path.$newmodule_includepath."inc_modul_top.php");
 
 // ggf. $breakfile und $returnfile neu definieren
@@ -25,7 +25,7 @@ require_once($root_path.$newmodule_includepath."head_include.inc.php");
 
 <!-- Java Script für Entscheidung ob das Modul so angelegt werden soll oder nicht.
 FAlls ja, edv_modul_neu_2 php ausführen, falls nein, eine Seite zurück zu edv.php
-return false ist nötig damit die action - Anweisung in der FORM nicht ausgeführt wird. 
+return false ist nötig damit die action - Anweisung in der FORM nicht ausgeführt wird.
 Die Action muss vorhanden sein, falls ein Browser Java nicht aktiviert hat. -->
 <script language="JavaScript" type="text/javascript">
 <!--
@@ -38,29 +38,29 @@ function submitnein(){
 				 //document.ModulNeu.action="../system_admin/edv.php";
 				  document.ModulNeu.action="../system_admin/sub_modul_neu.php";
 				 document.ModulNeu.submit();
-				 return false;				 
-				 }				 
+				 return false;
+				 }
 //-->
 </script>
 
 <!-- JavaSript um das Pulldownmenü im Formular zu aktivieren oder nicht -->
 <!-- http://www.werner-jakob.de/WEB-DHTML/der_divtag.htm -->
-<script> 
+<script>
 <!--
-function turnOn() 
-{ 
-//document.ModulNeu.menufolge.disabled=false; 
+function turnOn()
+{
+//document.ModulNeu.menufolge.disabled=false;
 elem=document.getElementById("test");
 elem.style.visibility="visible";
-} 
-function turnOff() 
-{ 
-//document.ModulNeu.menufolge.disabled=true; 
+}
+function turnOff()
+{
+//document.ModulNeu.menufolge.disabled=true;
 elem=document.getElementById("test");
-elem.style.visibility="hidden"; 
-} 
+elem.style.visibility="hidden";
+}
 //-->
-</script> 
+</script>
 
 <?php
 
@@ -79,7 +79,7 @@ $new_hlp_file="edv_modul_neu_hlp1.php";
 
 //Variable für Überschrift Titellesite
 $thismodulname=$LDEDP . " - " . $LDNeuesModulanlegen;
-										 
+
 include($root_path.$newmodule_includepath."inc_titelblock.php");
 ?>
 
@@ -124,7 +124,7 @@ else {
 
 <!-- Select legt das Pulldownmenü an-->
 <div id="test">
-<?
+<?php
 //*** Vorbereitung zum Füllen des Menüs ***//
 
 //Verbindung zur Datenbank herstellen
@@ -143,7 +143,7 @@ $max_sort_nr=$rs->fields[0];
 
 
 <SELECT name="menufolge" size="1" >
-<?
+<?php
 //hier war die mysqlverbindung
 
 //Menüstellen füllen //
@@ -155,7 +155,7 @@ for($i=1;$i<=$max_sort_nr;$i++){
 			elseif ($i>=10) {
 			   echo "<OPTION>".$i.". ".$LD_stelle."</OPTION>";
 			}
-}			
+}
 ?>
 
 <!-- Pulldown-Menue und Tabelle schliessen -->
@@ -163,8 +163,8 @@ for($i=1;$i<=$max_sort_nr;$i++){
 <!-- Beschreibung ausgeben, wozu das Pulldownmenü gut ist-->
 <FONT FACE='ARIAL' COLOR="#990000""<?php echo $cfg['top_txtcolor']; ?>"><?php echo $LD_menufolge_txt1." "; ?></font>
 <FONT FACE='ARIAL' COLOR="#990000""<?php echo $cfg['top_txtcolor']; ?>"><?php echo $LD_menufolge_txt2; ?></font><br/>
-									
-</td></tr></table>	
+
+</td></tr></table>
 
 </div>
 
@@ -178,17 +178,17 @@ for($i=1;$i<=$max_sort_nr;$i++){
 <input type="radio" name="stdmenuejanein" value="2"  onClick="turnOff()">
 <FONT FACE='ARIAL' COLOR="<?php echo $cfg['top_txtcolor']; ?>"><?php echo $menue_eintrag_nein ?><br/><br/>
 
-</td></tr></table>	
+</td></tr></table>
 
 
 <br/>
 
-<!-- Rahmen erstellen für die Checkbox ob ein Untermenü gewünscht ist oder nicht 
+<!-- Rahmen erstellen für die Checkbox ob ein Untermenü gewünscht ist oder nicht
 <table border="1" width="80%" >
 <tr><td><br/>
 <input type="checkbox" name="mit_untermenu" value="1" >
 <FONT FACE='ARIAL' COLOR="<?php echo $cfg['top_txtcolor']; ?>"><?php echo $LD_mit_untermenu; ?>
-<br/></br>										
+<br/></br>
 </td></tr></table><br/>
 -->
 
@@ -199,7 +199,7 @@ for($i=1;$i<=$max_sort_nr;$i++){
 <!-- Ende des Formulars -->
 </FORM>
 
-<?
+<?php
 // Fusszeile mit Copyright, etc. includen
 require_once ($root_path.$newmodule_includepath."footnote.inc.php");
 ?>

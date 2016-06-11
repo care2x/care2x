@@ -16,8 +16,8 @@ $lang_tables=array('actions.php');
 define('LANG_FILE','nursing.php');
 $local_user='ck_pflege_user';
 require_once($root_path.'include/core/inc_front_chain_lang.php');
-if($edit&&!$_COOKIE[$local_user.$sid]) {header('Location:'.$root_path.'language/'.$lang.'/lang_'.$lang.'_invalid-access-warning.php'); exit;}; 
- 
+if($edit&&!$_COOKIE[$local_user.$sid]) {header('Location:'.$root_path.'language/'.$lang.'/lang_'.$lang.'_invalid-access-warning.php'); exit;};
+
 $thisfile=basename(__FILE__);
 $breakfile="nursing-station-patientdaten.php?sid=$sid&lang=$lang&station=$station&pn=$pn&edit=$edit";
 
@@ -39,7 +39,7 @@ include($custom_lang_file);
 
 $GLOBAL_CONFIG=array();
 $glob_obj=new GlobalConfig($GLOBAL_CONFIG);
-$glob_obj->getConfig('patient_%');	
+$glob_obj->getConfig('patient_%');
 
 /* Establish db connection */
 if(!isset($db)||!$db) include($root_path.'include/core/inc_db_makelink.php');
@@ -47,27 +47,27 @@ if($dblink_ok)
 {
 	/* Load date formatter */
     include_once($root_path.'include/core/inc_date_format_functions.php');
-    
-       
+
+
 	if($mode=='save'){
-		
-		
-	
-		
+
+
+
+
 		if(($indatetime_date&&$indatetime_time&&$urinesugar&&$acetone&&$bloodsugar) || ($indatetime_date&&$indatetime_time&&$insulin&&$insulinamount)){
-			
+
 		if ($_POST['editid'] != "") {
-			
-		    // Load the editor functions 
+
+		    // Load the editor functions
 			include_once($root_path.'modules/news/includes/inc_editor_fx.php');
 		    // Load the visual signalling functions
 			include_once($root_path.'include/core/inc_visual_signalling_fx.php');
-			// Prepare  the date 
+			// Prepare  the date
 			$indatetime_date=formatDate2STD($indatetime_date,$date_format);
 			$indatetime_time=$_POST['indatetime_time'].':00';
-			
+
 			$q="update care_encounter_custom_ddc set
-			
+
 			indatetime='".$indatetime_date." ".$indatetime_time."',
 			createid='".$_SESSION['sess_login_userid']."',
 			urinesugar='".$urinesugar."',
@@ -75,23 +75,23 @@ if($dblink_ok)
 			bloodsugar='".$bloodsugar."',
 			tablets='".mysql_escape_string(stripslashes($tablets))."',
 			insulin='".$insulin."'
-			
+
 			where nr = '".$editid."'
-			
+
 			";
 			//echo $q;
 			mysql_query($q);
 			echo mysql_error();
-			
+
 			if (mysql_affected_rows()>0) {$saved=true;}
-			
+
 		}else{
-		
-		    // Load the editor functions 
+
+		    // Load the editor functions
 			include_once($root_path.'modules/news/includes/inc_editor_fx.php');
 		    // Load the visual signalling functions
 			include_once($root_path.'include/core/inc_visual_signalling_fx.php');
-			// Prepare  the date 
+			// Prepare  the date
 			$indatetime_date=formatDate2STD($indatetime_date,$date_format);
 			$indatetime_time=$_POST['indatetime_time'].':00';
 			$q="insert into care_encounter_custom_ddc (encounter_nr,createid,indatetime,urinesugar,acetone,bloodsugar,tablets,insulin) values (
@@ -107,29 +107,29 @@ if($dblink_ok)
 			//echo $q;
 			mysql_query($q);
 			echo mysql_error();
-			
+
 			if (mysql_insert_id()>0) {$saved=true;}
-			
+
 		} // insert of new record
-			
+
 		} else {
 						$saved=false;
 					echo "<p>$report_obj->sql$LDDbNoSave";
 		}
-		
-		
-		
-		
-		
-		
-		
+
+
+
+
+
+
+
 			if($saved){
 					header("location:$thisfile?sid=$sid&lang=$lang&saved=1&pn=$pn&station=$station&edit=$edit");
 			} else {
-				
-				
+
+
 			}
-	
+
 }
 
 }
@@ -187,10 +187,10 @@ div.fa2_ml3 {font-size: 12; margin-left: 3; }
   var urlholder;
   var focusflag=0;
   var formsaved=0;
-  
+
 function pruf(d){
 	if(((d.indatetime_date.value)&&(d.urinesugar.value)&&(d.acetone.value)&&(d.bloodsugar.value)&&(d.tablets.value)&&(d.insulin.value))) return true;
-	else 
+	else
 	{
 		alert("<?php echo $LDAlertIncomplete ?>");
 		return false;
@@ -213,7 +213,7 @@ function resetinput(){
 function select_this(formtag){
 		document.berichtform.elements[formtag].select();
 	}
-	
+
 function getinfo(patientID){
 	urlholder="nursing-station.php?sid=<?php echo "$sid&lang=$lang" ?>&route=validroute&patient=" + patientID + "&user=<?php echo $_COOKIE[$local_user.$sid].'"' ?>;
 	patientwin=window.open(urlholder,patientID,"width=600,height=400,menubar=no,resizable=yes,scrollbars=yes");
@@ -279,56 +279,56 @@ echo '	<tr bgcolor="#99ccff">
 		<td><div class=fva2_ml3><b>'.$LDTablets.'</b></div></td>
 		<td><div class=fva2_ml3><b>'.$LDInsulin.'</b></div></td>
 		<td></td>
-		</tr>';	
-		
+		</tr>';
+
 		?>
-		
+
 		<script language='JavaScript'>
-		
+
 		editcolor='#FFFF00';
-		
+
 		function Edit(id) {
-		
+
 			document.getElementById('editid').value=id;
-			
+
 			document.getElementById('indatetime_date').value=eval("document.getElementById('id_"+id+"_indatetime_date').innerHTML");
 			document.getElementById('indatetime_date').style.backgroundColor=editcolor;
-			
+
 			document.getElementById('indatetime_time').value=eval("document.getElementById('id_"+id+"_indatetime_time').innerHTML");
 			document.getElementById('indatetime_time').style.backgroundColor=editcolor;
-			
+
 			document.getElementById('urinesugar').value=eval("document.getElementById('id_"+id+"_urinesugar').innerHTML");
 			document.getElementById('urinesugar').style.backgroundColor=editcolor;
-			
+
 			document.getElementById('acetone').value=eval("document.getElementById('id_"+id+"_acetone').innerHTML");
 			document.getElementById('acetone').style.backgroundColor=editcolor;
-			
+
 			document.getElementById('bloodsugar').value=eval("document.getElementById('id_"+id+"_bloodsugar').innerHTML");
 			document.getElementById('bloodsugar').style.backgroundColor=editcolor;
-			
+
 			document.getElementById('tablets').value=eval("document.getElementById('id_"+id+"_tablets').innerHTML");
 			document.getElementById('tablets').style.backgroundColor=editcolor;
-			
+
 			document.getElementById('insulin').value=eval("document.getElementById('id_"+id+"_insulin').innerHTML");
 			document.getElementById('insulin').style.backgroundColor=editcolor;
-			
-			
+
+
 		}
-		
+
 		</script>
-		
-		
-		<?
-		
+
+
+		<?php
+
 $res=mysql_query("select * from care_encounter_custom_ddc where encounter_nr = '".$pn."' order by indatetime asc");
 
 $rows=0;
 
 while ($iod=mysql_fetch_assoc($res)) {
-	
+
 	$rows++;
 
-	
+
 		?>
 
 	<tr bgcolor="#99ccff">
@@ -340,16 +340,16 @@ while ($iod=mysql_fetch_assoc($res)) {
 		<td><div class=fva2_ml3 id="id_<?php echo $iod['nr']?>_tablets"><?php echo $iod['tablets']?></div></td>
 		<td align=right><div class=fva2_ml3 id="id_<?php echo $iod['nr']?>_insulin"><?php echo $iod['insulin']?></div></td>
 		<td align=center><div class=fva2_ml3><a href='#' OnClick=Edit('<?php echo $iod['nr']?>')><span style='background-color:#FFFF00'><?php echo $LDEDIT; ?></span></a></div></td>
-	</tr>	
-	
-		<?
-	
+	</tr>
+
+		<?php
+
 }
 
 if ($rows<5) {$extrarows=5;} else {$extrarows=2;}
 
 for ($extra=1;$extra<=$extrarows;$extra++) {
-	
+
 			?>
 
 	<tr bgcolor="#99ccff">
@@ -361,24 +361,24 @@ for ($extra=1;$extra<=$extrarows;$extra++) {
 		<td align=right><div class=fva2_ml3></div></td>
 		<td><div class=fva2_ml3></div></td>
 		<td><div class=fva2_ml3></div></td>
-		
-	</tr>	
-	
-		<?
+
+	</tr>
+
+		<?php
 }
 
-		
-if($edit) { 
+
+if($edit) {
 ?>
 		<tr>
 		<td colspan=8 bgcolor="#ffffff">&nbsp;
 		</td>
 		</tr>
-		
+
 		<tr bgcolor="#99ccff">
-		
+
 		<input type=hidden name=editid id=editid value="">
-	
+
         <td valign="top"><?php echo $LDDate ?>:<br>
 		<?php
 			//gjergji : new calendar
@@ -386,38 +386,38 @@ if($edit) {
 			$calendar = new DHTML_Calendar('../../js/jscalendar/', $lang, 'calendar-system', true);
 			$calendar->load_files();
   			echo $calendar->show_calendar($calendar,$date_format,'indatetime_date');
-			//end : gjergji  
+			//end : gjergji
  		?>
          </td>
-		 
+
 		<td valign="top"><?php echo $LDClockTime ?>:<br>
 		<input type=text size=4 maxlength=5 name="indatetime_time" id="indatetime_time"  value="<?php echo date('H:i'); ?>" onKeyUp=setTime(this,'<?php echo $lang ?>') onFocus=this.select()><br>
 		</td>
-		
+
 		<td valign="top"><?php echo $LDUrineSugar ?>:<br>
-		<input type=text size=15 maxlength=35 name="urinesugar"  id="urinesugar" value="<?if (!($saved)) echo $_POST['urinesugar']?>">
+		<input type=text size=15 maxlength=35 name="urinesugar"  id="urinesugar" value="<?php if (!($saved)) echo $_POST['urinesugar']?>">
 		</td>
 		<td valign="top"><?php echo $LDAcetone ?>:<br>
-		<input type=text size=15 maxlength=35 name="acetone"  id="acetone" value="<?if (!($saved)) echo $_POST['acetone']?>">
+		<input type=text size=15 maxlength=35 name="acetone"  id="acetone" value="<?php if (!($saved)) echo $_POST['acetone']?>">
 		</td>
 		<td valign="top"><?php echo $LDBloodSugar ?>:<br>
-		<input type=text size=10 maxlength=6 name="bloodsugar"  id="bloodsugar" value="<?if (!($saved)) echo $_POST['bloodsugar']?>">
+		<input type=text size=10 maxlength=6 name="bloodsugar"  id="bloodsugar" value="<?php if (!($saved)) echo $_POST['bloodsugar']?>">
 		</td>
 		<td valign="top"><?php echo $LDTablets ?>:<br>
-		<input type=text size=15 maxlength=35 name="tablets"  id="tablets" value="<?if (!($saved)) echo $_POST['tablets']?>">
+		<input type=text size=15 maxlength=35 name="tablets"  id="tablets" value="<?php if (!($saved)) echo $_POST['tablets']?>">
 		</td>
 		<td valign="top"><?php echo $LDInsulin ?>:<br>
-		<input type=text size=10 maxlength=6 name="insulin"  id="insulin" value="<?if (!($saved)) echo $_POST['insulin']?>">
+		<input type=text size=10 maxlength=6 name="insulin"  id="insulin" value="<?php if (!($saved)) echo $_POST['insulin']?>">
 		</td>
-	<td align=center><a <?
-			
+	<td align=center><a <?php
+
 			echo 'href=\'nursing-station-patientdaten-custom-ddc.php'.URL_REDIRECT_APPEND.'&station='.$station.'&pn='.$pn.'&edit='.$edit.'\'';
-			
+
 			?>> <span style="background-color:#FFFF00"> <?php echo $LDCLEAR; ?> </span> </a></td>
 		</tr>
-		
+
 <?php
-} 
+}
 ?>
 		</table>
 
@@ -426,7 +426,7 @@ if($edit) {
 <table width="650"  cellpadding="0" cellspacing="0">
 <tr>
 <td>
-<input type="image" <?php echo createLDImgSrc($root_path,'savedisc.gif','0') ?> width=99 height=24 alt="<?php echo $LDSave ?>">  
+<input type="image" <?php echo createLDImgSrc($root_path,'savedisc.gif','0') ?> width=99 height=24 alt="<?php echo $LDSave ?>">
 </td>
 
 <td>

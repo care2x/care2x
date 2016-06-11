@@ -1,4 +1,4 @@
-<?
+<?php
 require ('./roots.php') ;
 $pidbarcode = $root_path . 'cache/barcodes/pn_' . $_GET['pid'] . '.png' ;
 //echo $pidbarcode;

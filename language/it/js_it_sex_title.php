@@ -1,4 +1,4 @@
-<?
+<?php
 $LDTitles=array(_=>"-",
                                                 Ms_f=>"Sig.na",
                                                 Mrs_f=>"Sig.ra",

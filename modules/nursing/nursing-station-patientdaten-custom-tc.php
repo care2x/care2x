@@ -16,8 +16,8 @@ $lang_tables=array('actions.php');
 define('LANG_FILE','nursing.php');
 $local_user='ck_pflege_user';
 require_once($root_path.'include/core/inc_front_chain_lang.php');
-if($edit&&!$_COOKIE[$local_user.$sid]) {header('Location:'.$root_path.'language/'.$lang.'/lang_'.$lang.'_invalid-access-warning.php'); exit;}; 
- 
+if($edit&&!$_COOKIE[$local_user.$sid]) {header('Location:'.$root_path.'language/'.$lang.'/lang_'.$lang.'_invalid-access-warning.php'); exit;};
+
 $thisfile=basename(__FILE__);
 $breakfile="nursing-station-patientdaten.php?sid=$sid&lang=$lang&station=$station&pn=$pn&edit=$edit";
 
@@ -39,7 +39,7 @@ include($custom_lang_file);
 
 $GLOBAL_CONFIG=array();
 $glob_obj=new GlobalConfig($GLOBAL_CONFIG);
-$glob_obj->getConfig('patient_%');	
+$glob_obj->getConfig('patient_%');
 
 /* Establish db connection */
 if(!isset($db)||!$db) include($root_path.'include/core/inc_db_makelink.php');
@@ -47,56 +47,56 @@ if($dblink_ok)
 {
 	/* Load date formatter */
     include_once($root_path.'include/core/inc_date_format_functions.php');
-    
-       
+
+
 	if($mode=='save'){
-		
+
 		if(($indatetime_date)){
-		
+
 		if ($_POST['editid'] != "") {
-			
-		    // Load the editor functions 
+
+		    // Load the editor functions
 			include_once($root_path.'modules/news/includes/inc_editor_fx.php');
 		    // Load the visual signalling functions
 			include_once($root_path.'include/core/inc_visual_signalling_fx.php');
-			// Prepare  the date 
+			// Prepare  the date
 			$indatetime_date=formatDate2STD($indatetime_date,$date_format);
 			//$indatetime_time=$_POST['indatetime_time'].':00';
 			$indatetime_time="00:00:00";
-			
+
 			$q="update care_encounter_custom_tc set
-	
+
 			indatetime='".$indatetime_date." ".$indatetime_time."',
-					
+
 			`time` = '".$_POST['turntime']."',
 			`position` = '".$_POST['pos']."',
 						createid='".$_SESSION['sess_login_userid']."'
-		
+
 			where nr = '".$editid."'
-			
+
 			";
 			//echo $q;
 			mysql_query($q);
 			echo mysql_error();
-			
+
 			if (mysql_affected_rows()>0) {$saved=true;}
-			
+
 		}else{
-		
-		    // Load the editor functions 
+
+		    // Load the editor functions
 			include_once($root_path.'modules/news/includes/inc_editor_fx.php');
 		    // Load the visual signalling functions
 			include_once($root_path.'include/core/inc_visual_signalling_fx.php');
-			// Prepare  the date 
+			// Prepare  the date
 			$indatetime_date=formatDate2STD($indatetime_date,$date_format);
 			//$indatetime_time=$_POST['indatetime_time'].':00';
 			$indatetime_time=date("h:i",strtotime($_POST['turntime']));
 			// first, check if this date has been added before
-			
-			
+
+
 			$q="insert into care_encounter_custom_tc (
-				
-				encounter_nr,createid,indatetime,time,position				
+
+				encounter_nr,createid,indatetime,time,position
 				) values (
 				'".$pn."',
 				'".$_SESSION['sess_login_userid']."',
@@ -104,40 +104,40 @@ if($dblink_ok)
 				'".$_POST['turntime']."',
 				'".$_POST['pos']."'
 				)";
-				
+
 				mysql_query($q);
 
 				echo mysql_error();
-				
+
 				if (mysql_insert_id()>0) {$saved=true;}
-				
-			
+
+
 			//echo $q;
-			
+
 			echo mysql_error();
-			
-			
-			
+
+
+
 		} // insert of new record
-			
+
 		} else {
 						$saved=false;
 					echo "<p>$report_obj->sql$LDDbNoSave";
 		}
-		
-		
-		
-		
-		
-		
-		
+
+
+
+
+
+
+
 			if($saved){
 					header("location:$thisfile?sid=$sid&lang=$lang&saved=1&pn=$pn&station=$station&edit=$edit");
 			} else {
-				
-				
+
+
 			}
-	
+
 }
 
 }
@@ -195,9 +195,9 @@ div.fa2_ml3 {font-size: 12; margin-left: 3; }
   var urlholder;
   var focusflag=0;
   var formsaved=0;
-  
+
 function pruf(d){
-	
+
 	if(((d.indatetime_date.value)&&(
 		(document.getElementById('6am_supine').checked)||
 		(document.getElementById('8am_llat').checked)||
@@ -213,7 +213,7 @@ function pruf(d){
 		(document.getElementById('4am_rlat').checked)||
 		(document.getElementById('6am_supine').checked)
 		))) return true;
-	else 
+	else
 	{
 		alert("<?php echo $LDAlertIncomplete ?>");
 		return false;
@@ -236,7 +236,7 @@ function resetinput(){
 function select_this(formtag){
 		document.berichtform.elements[formtag].select();
 	}
-	
+
 function getinfo(patientID){
 	urlholder="nursing-station.php?sid=<?php echo "$sid&lang=$lang" ?>&route=validroute&patient=" + patientID + "&user=<?php echo $_COOKIE[$local_user.$sid].'"' ?>;
 	patientwin=window.open(urlholder,patientID,"width=600,height=400,menubar=no,resizable=yes,scrollbars=yes");
@@ -288,34 +288,34 @@ echo '<font size="7">'.$TC_title.' <p><font size=2>';
 <script language="JavaScript">
 
 function EditRecord(id,rec) {
-	
+
 	editcolor='#FFFF00';
-	
+
 	document.getElementById('editid').value=rec;
-	
+
 	// prefill date
-	
+
 	document.getElementById('indatetime_date').value=eval("document.getElementById('date_'+id).value");
 	document.getElementById('indatetime_date').style.backgroundColor=editcolor;
-	
+
 	// prefill time
-	
+
 	document.getElementById('turntime').value=eval("document.getElementById('time_'+id).innerHTML");
 	document.getElementById('turntime').style.backgroundColor=editcolor;
 
 	// prefill turn
-	
+
 	thisturn=eval("document.getElementById('pos_"+id+"').innerHTML");
-	
+
 	for (i=0;i<document.getElementById('pos_sel').options.length;i++) {
-		
+
 		if (document.getElementById('pos_sel').options[i].text == thisturn) {
-			
+
 			document.getElementById('pos_sel').options.selectedIndex=i;
 		}
-		
+
 	}
-	
+
 	document.getElementById('pos_sel').style.backgroundColor=editcolor;
 
 }
@@ -329,18 +329,18 @@ function EditRecord(id,rec) {
 
 </td>
 
-<?
+<?php
 
 // now, loop through all records and then show a column representing each day
 
 $res=mysql_query("select * from care_encounter_custom_tc where encounter_nr = '".$pn."' order by DATE(indatetime),time");
 
 while ($resd=mysql_fetch_assoc($res)) {
-	
+
 $thisdate=date("m/d/Y",strtotime($resd['indatetime']));
 
 $alldates[$thisdate][]=$resd['time']."\t".$resd['position']."\t".$resd['nr'];
-	
+
 }
 
 foreach ($alldates as $var => $val) {
@@ -356,7 +356,7 @@ foreach ($alldates as $var => $val) {
 </tr>
 </table>
 
-<?
+<?php
 
 $days++;
 
@@ -380,17 +380,17 @@ $tc++;
 <span style="font-size:9px"><font color=white><b><span id="time_<?php echo $tc?>"><?php echo date("H:i",strtotime($time))?></span> <span><?php echo " (".date("h:i a",strtotime($time)).")"?></span></b> : <span id="pos_<?php echo $tc?>"><?php echo $pos?></span></font></font>
 </td><td align=right><span style="background-color:yellow">&nbsp;<a href="javascript:EditRecord('<?php echo $tc?>','<?php echo $id?>')"><?php echo $LDEDIT ?></a>&nbsp;</span></td></tr></table>
 </div>
-	
-<?
-	
+
+<?php
+
 }
 
 ?>
 
 </td>
 
-<?
-		
+<?php
+
 }
 
 ?>
@@ -411,7 +411,7 @@ $tc++;
 			$calendar = new DHTML_Calendar('../../js/jscalendar/', $lang, 'calendar-system', true);
 			$calendar->load_files();
   			echo $calendar->show_calendar($calendar,$date_format,'indatetime_date');
-			//end : gjergji  
+			//end : gjergji
  		?>
 </td>
 </tr></table>
@@ -440,13 +440,13 @@ $tc++;
 </td>
 </tr></table>
 
-	
+
 <p>
 
 <table width="650"  cellpadding="0" cellspacing="0">
 <tr>
 <td>
-<input type="image" <?php echo createLDImgSrc($root_path,'savedisc.gif','0') ?> width=99 height=24 alt="<?php echo $LDSave ?>">  
+<input type="image" <?php echo createLDImgSrc($root_path,'savedisc.gif','0') ?> width=99 height=24 alt="<?php echo $LDSave ?>">
 </td>
 
 <td>
@@ -458,7 +458,7 @@ $tc++;
 </table>
 
 <input type=hidden name=editid id=editid value="">
-	
+
 <input type="hidden" name="sid" value="<?php echo $sid ?>">
 <input type="hidden" name="lang" value="<?php echo $lang ?>">
 <input type="hidden" name="station" value="<?php echo $station ?>">

@@ -42,17 +42,17 @@ border-collapse:collapse;
 </form>
 <!-- <P> -->
 
-<script language="javascript" src="../../js/datetimepicker.js"></script>						    
+<script language="javascript" src="../../js/datetimepicker.js"></script>
 <form id="form1" name="form1" method="post" action="">
 <table width="596" border="0" align="center" bgcolor="#CCCCFF">
     <tr>
-      <td width="47">FROM:</td><td width="144"><input type="text" id="dfrom" name="dfrom" value="<? echo $_POST['dfrom']?>"/></td>
+      <td width="47">FROM:</td><td width="144"><input type="text" id="dfrom" name="dfrom" value="<?php echo $_POST['dfrom']?>"/></td>
       <td width="98"><a href="javascript:NewCal('dfrom','ddmmyyyy')"><img src="../../gui/img/common/default/calendar.gif" /></a></td>
       <td width="47">TO:</td>
       <td width="144"><input type="text" id="dto" name="dto" value="<?php echo $_POST['dto']?>" /></td>
       <td width="56"><p><a href="javascript:NewCal('dto','ddmmyyyy')"><img src="../../gui/img/common/default/calendar.gif" /></a></p></td></tr>
-      
-     
+
+
 </table>
 <table width="596" border="0" align="center" bgcolor="#CCCCFF">
   <tr>
@@ -122,7 +122,7 @@ default:
 
 $in_out_patients= FALSE;
 break;
- 
+
 }
 
 
@@ -138,7 +138,7 @@ $dfrom_unixtime=strtotime($dfrom);
 $dto_unixtime  =strtotime($dto. '+1 day');
 
 
- 
+
 //query all the necessary data
 
 /*
@@ -185,14 +185,14 @@ $insurance_temp_group_result=$db->Execute($sql_insurance_temp_group);
 
 
 
-	
-
-	
 
 
 
 
- 
+
+
+
+
 
 
 
@@ -218,13 +218,13 @@ while($company_row=$company_result->FetchRow()){
 
 if(!$company_names){
 	$company_names='CASH';
-	}                 
+	}
 ?>
-                                          
+
 <form>
-<table class="report" width="90%" border="1" valign="top"> 
+<table class="report" width="90%" border="1" valign="top">
   <tr bgcolor="lightgrey">
-  <th width="70" >FROM:</th><th><?php echo date('d-m-Y',strtotime($dfrom));?></th><th width="70">TO:</th><th><?php echo date('d-m-Y',strtotime($dto));?></th><th colspan="6"><?php echo $company_names;?></th> 
+  <th width="70" >FROM:</th><th><?php echo date('d-m-Y',strtotime($dfrom));?></th><th width="70">TO:</th><th><?php echo date('d-m-Y',strtotime($dto));?></th><th colspan="6"><?php echo $company_names;?></th>
   </tr>
 
   <tr>
@@ -250,7 +250,7 @@ $admission_date          =date('j-m-Y',strtotime($admission_date ));
 $first_name              =$rows['name_first'];
 $last_name               =$rows['name_last'];
 $birth_date              =$rows['date_birth'];
-$birth_date              =date('j-m-Y',strtotime($birth_date )); 
+$birth_date              =date('j-m-Y',strtotime($birth_date ));
 $registration_nr         =$rows['selian_pid'];
 $membership_nr           =$rows['membership_nr'];
 $form_nr                 =$rows['form_nr'];
@@ -290,14 +290,14 @@ while($rows_adv=$result_adv->FetchRow()){
     <td>&nbsp;'.$LDDeposit.'</td>
     <td>&nbsp;'.$LDDeposit.'</td>
     <td>&nbsp;'.number_format($rows_adv['price']).'</td>
-       
+
   </tr>';
     $total_deposit+=$rows_adv['price'];
-	 
+
 	}
-	
-	
-	
+
+
+
 while($rows_topup=$result_topup->FetchRow()){
 	echo '<tr>
     <td>&nbsp;'.date('j-m-Y',$rows_topup['billed_date']).'</td>
@@ -310,8 +310,8 @@ while($rows_topup=$result_topup->FetchRow()){
     <td>&nbsp;'.$LDTopup.'</td>
     <td>&nbsp;'.$LDTopup.'</td>
     <td>&nbsp;'.number_format($rows_topup['price']).'</td>
-       
-  </tr>';	
+
+  </tr>';
 	$total_deposit+=$rows_topup['price'];
 }
 
@@ -327,76 +327,76 @@ while($rows_refund=$result_refund->FetchRow()){
     <td>&nbsp;'.$LDRefund.'</td>
     <td>&nbsp;'.$LDRefund.'</td>
     <td>&nbsp;'.number_format($rows_refund['price']).'</td>
-       
-  </tr>';	
+
+  </tr>';
 	$total_deposit+=$rows_refund['price'];
 }
 
 echo '<tr bgcolor="lightgrey"><td colspan="9" align="center"><h2>GRAND TOTAL:</h2></td><td><h2>'.number_format($total_all+$total_deposit).'</h2></td></tr>';
- 
+
 echo '</table>';
-?>  
+?>
 <?php
 
 while($rows_class=$insurance_temp_group_result->FetchRow()){
 	  if($rows_class[0]==labtest){
 		  $lab_total=$rows_class[1];
 		}
-		
+
 	  if($rows_class[0]==xray){
 		  $radio_total=$rows_class[1];
 		  }
-		  
-		  
+
+
 	  if($rows_class[0]==drug_list){
 		  $drugs_total=$rows_class[1];
 		  }
-		  
-		  
+
+
 	  if($rows_class[0]==drug_list_nhif){
 		  $drugs_nhif_total=$rows_class[1];
 		  }
-	
+
 	  if($rows_class[0]==drug_list_ctc){
 		  $drugs_ctc_total=$rows_class[1];
 		  }
-		
+
 	  if($rows_class[0]==dental){
 		  $dental_total=$rows_class[1];
 		  }
-	   
+
 	  if($rows_class[0]==eye_service){
 		  $macho_total=$rows_class[1];
 		  }
-		  
+
 	   if($rows_class[0]==minor_proc_op){
 		   $minor_proc_op_total=$rows_class[1];
 		   }
-		   
-		   
+
+
 	    if($rows_class[0]==surgical_op){
 			$surgical_op_total=$rows_class[1];
 			}
-			
+
 		if($rows_class[0]==service){
 			$services_total=$rows_class[1];
 			}
-			
+
 		 if($rows_class[0]==supplies){
-			$supplies_total=$rows_class[1]; 
+			$supplies_total=$rows_class[1];
 			}
-			
+
 		 if($rows_class[0]==supplies_laboratory){
-			$supplies_laboratory_total=$rows_class[1]; 
+			$supplies_laboratory_total=$rows_class[1];
 			 }
-			 
-		 
-			 
-		 	 			  	  	  
-		  	   	  	   	  	
+
+
+
+
+
 	}
 
-	
+
 $all_drugs_total=$drugs_total+$drugs_ctc_total+$drugs_nhif_total;
 
 
@@ -411,7 +411,7 @@ $grand_total=$all_drugs_total+$total_deposit+$lab_total+$radio_total+$dental_tot
 
 
 echo $company_names;
-?>            
+?>
 <p>FROM:<?php echo date('d-m-Y',strtotime($dfrom)).'   ';  ?> TO:<?php echo date('d-m-Y',strtotime($dto));?></p>
 <table class="report" width="90%" border="1">
   <tr>
@@ -449,13 +449,13 @@ echo $company_names;
 <p>Authorized by......................................................................................</p>
 <p>&nbsp;</p>
 
-<?php 
+<?php
 ?>
  <p>&nbsp;   </p>
-   
+
      <input type="button" name="print" value="PRINT" onclick="window.print(form2)" />
-     
-</BODY>   
+
+</BODY>
 
 
 

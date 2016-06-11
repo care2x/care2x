@@ -1,4 +1,4 @@
-<?
+<?php
 $tab_name=$_REQUEST['tab_name'];
 $suchfeld=$_REQUEST['suchfeld'];
 $tabellentitel=$_REQUEST['tabellentitel'];

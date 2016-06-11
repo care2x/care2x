@@ -1,6 +1,6 @@
 <?PHP
 /**************************************************/
-//1 Datei roots.php im neuen Verzeichnis erstellen und füllen		
+//1 Datei roots.php im neuen Verzeichnis erstellen und füllen
 $dateiname=("roots.php");
 //Pfad für das neue Modul
 $pfad=$root_path."modules/$ModulNeuBez/";
@@ -9,7 +9,7 @@ $pfad=$root_path."modules/$ModulNeuBez/";
 $datei=fopen($pfad . $dateiname,"w");
 
 //Inhalt der neuen roots.php Datei
-$zeile1="<?php\n";
+$zeile1="<?php \n";
 $zeile2="\$root_path='../../';\n";
 $zeile3="\$top_dir='modules/" . $ModulNeuBez . "';\n";
 $zeile4="?>\n";
@@ -24,7 +24,7 @@ fclose($datei);
 //Ende1 Datei roots.php erstellen
 ?>
 
-<?
+<?php
 /**************************************************/
 //2 Datei index.htm im neuen Verzeichnis erstellen und füllen
 $dateiname=("index.htm");
@@ -44,7 +44,7 @@ fclose($datei);
 //Ende2 der index.htm
 ?>
 
-<?
+<?php
 /***************************************************/
 //3 Datei index.html im neuen Verzeichnis erstellen und füllen
 copy($pfad . $dateiname,$pfad . $dateiname . "l");
@@ -53,7 +53,7 @@ copy($pfad . $dateiname,$pfad . $dateiname . "l");
 //Ende3 der index.html
 ?>
 
-<?
+<?php
 /**************************************************/
 //4 Datei index.php im neuen Verzeichnis erstellen und füllen
 $dateiname=("index.php");
@@ -75,9 +75,9 @@ fwrite($datei,$zeile2);
 fwrite($datei,$zeile3);
 fwrite($datei,$zeile4);
 fclose($datei);
-//echo "<p>Eine Datei mit der Bezeichnung <strong><i>" . $dateiname . "</strong></i> wurde erstellt. </p>";	 
+//echo "<p>Eine Datei mit der Bezeichnung <strong><i>" . $dateiname . "</strong></i> wurde erstellt. </p>";
 /***************************************************/
-//Ende4 der index.php   
+//Ende4 der index.php
 ?>
 
 <?PHP
@@ -89,7 +89,7 @@ require_once("inc_datei_array.php");
 //require_once ("fileparsen.php");
 // Datei mit Submenü erstellen
    include("sub_modulname_anlegen.php");
-   
+
 ?>
 
 

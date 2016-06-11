@@ -4,7 +4,7 @@
 //Variable für dieHilfedatei
 $new_hlp_file="edv_modul_neu_hlp2.php";
 
-//Variable für die in diesem Modul benutzte Individual-Sprachdatei 
+//Variable für die in diesem Modul benutzte Individual-Sprachdatei
 $lang_thismodule_used="modulneu.php";
 
 //*** Variablen, SPEZIELL in dieser Datei gebraucht ***//
@@ -16,7 +16,7 @@ if ($ModulNeuBez==""){
 else {
 	 $this_page_focusfeld="document.modul3.jafeld.focus()";
 	 }
-	 
+
 //Variable, ob ein Standardmenü generiert werden soll oder nicht
 $stdmenuejanein=$_REQUEST['stdmenuejanein'];
 
@@ -50,7 +50,7 @@ require_once($root_path.$newmodule_includepath."head_include.inc.php");
 
 <!-- Java Script für Entscheidung ob das Modul so angelegt werden soll oder nicht.
 FAlls ja, edv_modul_neu_3.php ausführen, falls nein, eine Seite zurück zu edv_modul_neu.php
-return false ist nötig damit die action - Anweisung in der FORM nicht ausgeführt wird. 
+return false ist nötig damit die action - Anweisung in der FORM nicht ausgeführt wird.
 Die Action muss vorhanden sein, falls ein Browser Java nicht aktiviert hat. -->
 <script language="JavaScript" type="text/javascript">
 <!--
@@ -63,19 +63,19 @@ function submityes(){
 function submitno(){
 				 document.modul3.action="edv_modul_neu.php";
 				 document.modul3.submit();
-				 return false;				 
-				 }				 
+				 return false;
+				 }
 //-->
 
 </script>
 
-<!-- Cursor beim öffnen standardmässig auf "JA" setzen 
-<? $javaline="'document.modul3.jafeld.focus()'" ?>
-<? echo "$javaline;" ?> onLoad="document.modul3.jafeld.focus()"
+<!-- Cursor beim öffnen standardmässig auf "JA" setzen
+<?php $javaline="'document.modul3.jafeld.focus()'" ?>
+<?php echo "$javaline;" ?> onLoad="document.modul3.jafeld.focus()"
 -->
 <?PHP
 
-// Den <BODY> includen 
+// Den <BODY> includen
 require ($root_path.$newmodule_includepath."inc_body.php");
 
 // blauer Titelblock einbinden
@@ -85,7 +85,7 @@ $new_hlp_file="edv_modul_neu_hlp1.php";
 
 //Variable für Überschrift Titellesite
 $thismodulname=$LDEDP . " - " . $LDNeuesModulanlegen;
-										 
+
 include($root_path.$newmodule_includepath."inc_titelblock.php");
 ?>
 
@@ -121,7 +121,7 @@ else {
 
 <FONT FACE='ARIAL' COLOR="<?php echo $cfg['top_txtcolor']; ?>"><STRONG><?php echo $kontrollmeldung_3; ?></STRONG></FONT><br/><br/><br/>
 <input type="submit"   name="jafeld"  value="<?php echo $LDja; ?>" maxlength="30" size="30"  >
-<input type="hidden" value="<? echo $ModulNeuBez; ?>" name="ModulNeuBez"  size="37" maxlength="30" >
+<input type="hidden" value="<?php echo $ModulNeuBez; ?>" name="ModulNeuBez"  size="37" maxlength="30" >
 <INPUT type='hidden' value="<?php echo $max_sort_nr; ?>" name="max_sort_nr" />
 <INPUT type='hidden' value="<?php echo $menufolge; ?>" name="menufolge" />
 <INPUT type='hidden' value="<?php echo $sid; ?>" name="sid" />
@@ -132,15 +132,15 @@ else {
 
 <FORM name= "no" action="edv_modul_neu.php" method="post">
 <INPUT type="submit" name="neinfeld" value="<?PHP echo $LDnein; ?>">
-<INPUT type="hidden" name="ModulNeuBez" value="<? echo $alteBez; ?>"> 
+<INPUT type="hidden" name="ModulNeuBez" value="<?php echo $alteBez; ?>">
 <INPUT type='hidden' name="sid"  value="<?php echo $sid ?>"  />
 <INPUT type='hidden' name="lang" value="<?php echo $lang ?>"  />
 
 </form>
-<?
+<?php
 }
 ?>
-<?
+<?php
 // Fusszeile mit Copyright, etc. includen
 require_once ($root_path.$newmodule_includepath."footnote.inc.php");
 ?>

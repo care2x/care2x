@@ -11,36 +11,36 @@
  </tr>
 </table>
 <br><br>
-<?php 
+<?php
  define (__TRACE_ENABLED__, false);
  define (__DEBUG_ENABLED__, false);
-								   
- require("barcode.php");		   
+
+ require("barcode.php");
  require("i25object.php");
  require("c39object.php");
  require("c128aobject.php");
  require("c128bobject.php");
  require("c128cobject.php");
- 						  
+
 /* Default value */
-if (!isset($output))  $output   = "png"; 
+if (!isset($output))  $output   = "png";
 if (!isset($barcode)) $barcode  = "0123456789";
 if (!isset($type))    $type     = "I25";
 if (!isset($width))   $width    = "460";
 if (!isset($height))  $height   = "120";
 if (!isset($xres))    $xres     = "2";
 if (!isset($font))    $font     = "5";
-/*********************************/ 
-									
-if (isset($barcode) && strlen($barcode)>0) {    
-  $style  = BCS_ALIGN_CENTER;					       
-  $style |= ($output  == "png" ) ? BCS_IMAGE_PNG  : 0; 
-  $style |= ($output  == "jpeg") ? BCS_IMAGE_JPEG : 0; 
-  $style |= ($border  == "on"  ) ? BCS_BORDER 	  : 0; 
-  $style |= ($drawtext== "on"  ) ? BCS_DRAW_TEXT  : 0; 
-  $style |= ($stretchtext== "on" ) ? BCS_STRETCH_TEXT  : 0; 
-  $style |= ($negative== "on"  ) ? BCS_REVERSE_COLOR  : 0; 
-  
+/*********************************/
+
+if (isset($barcode) && strlen($barcode)>0) {
+  $style  = BCS_ALIGN_CENTER;
+  $style |= ($output  == "png" ) ? BCS_IMAGE_PNG  : 0;
+  $style |= ($output  == "jpeg") ? BCS_IMAGE_JPEG : 0;
+  $style |= ($border  == "on"  ) ? BCS_BORDER 	  : 0;
+  $style |= ($drawtext== "on"  ) ? BCS_DRAW_TEXT  : 0;
+  $style |= ($stretchtext== "on" ) ? BCS_STRETCH_TEXT  : 0;
+  $style |= ($negative== "on"  ) ? BCS_REVERSE_COLOR  : 0;
+
   switch ($type)
   {
     case "I25":
@@ -74,30 +74,30 @@ if (isset($barcode) && strlen($barcode)>0) {
  <tr>
   <td bgcolor="#EFEFEF"><b>Type</b></td>
   <td><select name="type" style="WIDTH: 260px" size="1">
-  		<option value="I25" <?=($type=="I25" ? "selected" : " ")?>>Interleaved 2 of 5
-  		<option value="C39" <?=($type=="C39" ? "selected" : " ")?>>Code 39
-  		<option value="C128A" <?=($type=="C128A" ? "selected" : " ")?>>Code 128-A
-		<option value="C128B" <?=($type=="C128B" ? "selected" : " ")?>>Code 128-B
-        <option value="C128C" <?=($type=="C128C" ? "selected" : " ")?>>Code 128-C</select></td>
+  		<option value="I25" <?php =($type=="I25" ? "selected" : " ")?>>Interleaved 2 of 5
+  		<option value="C39" <?php =($type=="C39" ? "selected" : " ")?>>Code 39
+  		<option value="C128A" <?php =($type=="C128A" ? "selected" : " ")?>>Code 128-A
+		<option value="C128B" <?php =($type=="C128B" ? "selected" : " ")?>>Code 128-B
+        <option value="C128C" <?php =($type=="C128C" ? "selected" : " ")?>>Code 128-C</select></td>
  </tr>
  <tr>
   <td bgcolor="#EFEFEF"><b>Output</b></td>
   <td><select name="output" style="WIDTH: 260px" size="1">
-   		<option value="png" <?=($output=="png" ? "selected" : " ")?>>Portable Network Graphics (PNG)
-   		<option value="jpeg" <?=($output=="jpeg" ? "selected" : " ")?>>Joint Photographic Experts Group(JPEG)</select></td>
+   		<option value="png" <?php =($output=="png" ? "selected" : " ")?>>Portable Network Graphics (PNG)
+   		<option value="jpeg" <?php =($output=="jpeg" ? "selected" : " ")?>>Joint Photographic Experts Group(JPEG)</select></td>
  </tr>
  <tr>
   <td rowspan="4" bgcolor="#EFEFEF"><b>Styles</b></td>
-  <td rowspan="1"><input type="Checkbox" name="border" <?=($border=="on" ? "CHECKED" : " ")?>>Draw border</td>
+  <td rowspan="1"><input type="Checkbox" name="border" <?php =($border=="on" ? "CHECKED" : " ")?>>Draw border</td>
  </tr>
  <tr>
-  <td><input type="Checkbox" name="drawtext" <?=($drawtext=="on" ? "CHECKED" : " ")?>>Draw value text</td>
+  <td><input type="Checkbox" name="drawtext" <?php =($drawtext=="on" ? "CHECKED" : " ")?>>Draw value text</td>
  </tr>
  <tr>
-  <td><input type="Checkbox" name="stretchtext" <?=($stretchtext=="on" ? "CHECKED" : " ")?>>Stretch text</td>
+  <td><input type="Checkbox" name="stretchtext" <?php =($stretchtext=="on" ? "CHECKED" : " ")?>>Stretch text</td>
  </tr>
  <tr>
-  <td><input type="Checkbox" name="negative" <?=($negative=="on" ? "CHECKED" : " ")?>>Negative (White on black)</td>
+  <td><input type="Checkbox" name="negative" <?php =($negative=="on" ? "CHECKED" : " ")?>>Negative (White on black)</td>
  </tr>
  <tr>
   <td rowspan="2" bgcolor="#EFEFEF"><b>Size</b></td>
@@ -109,19 +109,19 @@ if (isset($barcode) && strlen($barcode)>0) {
  <tr>
   <td bgcolor="#EFEFEF"><b>Xres</b></td>
   <td>
-      <input type="Radio" name="xres" value="1" <?=($xres=="1" ? "CHECKED" : " ")?>>1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      <input type="Radio" name="xres" value="2" <?=($xres=="2" ? "CHECKED" : " ")?>>2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      <input type="Radio" name="xres" value="3" <?=($xres=="3" ? "CHECKED" : " ")?>>3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <input type="Radio" name="xres" value="1" <?php =($xres=="1" ? "CHECKED" : " ")?>>1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <input type="Radio" name="xres" value="2" <?php =($xres=="2" ? "CHECKED" : " ")?>>2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <input type="Radio" name="xres" value="3" <?php =($xres=="3" ? "CHECKED" : " ")?>>3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   </td>
  </tr>
  <tr>
   <td bgcolor="#EFEFEF"><b>Text Font</b></td>
   <td>
-      <input type="Radio" name="font" value="1" <?=($font=="1" ? "CHECKED" : " ")?>>1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      <input type="Radio" name="font" value="2" <?=($font=="2" ? "CHECKED" : " ")?>>2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      <input type="Radio" name="font" value="3" <?=($font=="3" ? "CHECKED" : " ")?>>3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      <input type="Radio" name="font" value="4" <?=($font=="4" ? "CHECKED" : " ")?>>4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      <input type="Radio" name="font" value="5" <?=($font=="5" ? "CHECKED" : " ")?>>5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <input type="Radio" name="font" value="1" <?php =($font=="1" ? "CHECKED" : " ")?>>1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <input type="Radio" name="font" value="2" <?php =($font=="2" ? "CHECKED" : " ")?>>2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <input type="Radio" name="font" value="3" <?php =($font=="3" ? "CHECKED" : " ")?>>3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <input type="Radio" name="font" value="4" <?php =($font=="4" ? "CHECKED" : " ")?>>4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <input type="Radio" name="font" value="5" <?php =($font=="5" ? "CHECKED" : " ")?>>5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   </td>
  </tr>
  <tr>

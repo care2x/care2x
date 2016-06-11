@@ -25,7 +25,7 @@ require_once($root_path.$newmodule_includepath."head_include.inc.php");
 
 //für den <BODY>, Angabe wo bei onclick der Focus stehen soll beim Laden der Seite
 $this_page_focusfeld="";
-					
+
 require ($root_path.$newmodule_includepath."inc_body.php");
 
 // blauer Titelblock einbinden
@@ -37,8 +37,8 @@ $new_hlp_file="edv_modul_neu_hlp1.php";
 $thismodulname=$LDEDP . " - " . $LDNeuesModulanlegen;
 
 //Name dieser Datei oben ausgeben
-//echo "Diese Datei heisst <strong>check_patientwahl.php</strong>";		
-								 
+//echo "Diese Datei heisst <strong>check_patientwahl.php</strong>";
+
 include($root_path.$newmodule_includepath."inc_titelblock.php");
 
 //echo $lang.$sid.$ModulNeuBez."<br/>";
@@ -51,15 +51,15 @@ $ModulNeuBez=$_REQUEST['ModulNeuBez'];
 <FONT FACE='ARIAL' COLOR="<?php echo $cfg['top_txtcolor']; ?>"><STRONG><?PHP echo $LD_headline_frage;?></STRONG></FONT>
 <p>
 
-<!-- Rahmen erstellen für die Checkbox ob Patientenbezogen gewünscht ist oder nicht--> 
+<!-- Rahmen erstellen für die Checkbox ob Patientenbezogen gewünscht ist oder nicht-->
 <table border="1" width="80%" >
 <tr><td><br/>
 <input type="checkbox" name="pat_bez" value="1" checked >
 <FONT FACE='ARIAL' COLOR="<?php echo $cfg['top_txtcolor']; ?>"><?php echo $haken_info; ?></FONT>
-<input type="hidden"name="ModulNeuBez" value="<? echo $ModulNeuBez; ?>">
+<input type="hidden"name="ModulNeuBez" value="<?php echo $ModulNeuBez; ?>">
 <INPUT type='hidden' value="<?php echo $sid ?>" name="sid" />
 <INPUT type='hidden' value="<?php echo $lang ?>" name="lang" />
-<br/></br>										
+<br/></br>
 </td></tr></table>
 <br/><br/><br/><br/>
 

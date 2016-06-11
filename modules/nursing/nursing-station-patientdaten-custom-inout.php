@@ -16,8 +16,8 @@ $lang_tables=array('actions.php');
 define('LANG_FILE','nursing.php');
 $local_user='ck_pflege_user';
 require_once($root_path.'include/core/inc_front_chain_lang.php');
-if($edit&&!$_COOKIE[$local_user.$sid]) {header('Location:'.$root_path.'language/'.$lang.'/lang_'.$lang.'_invalid-access-warning.php'); exit;}; 
- 
+if($edit&&!$_COOKIE[$local_user.$sid]) {header('Location:'.$root_path.'language/'.$lang.'/lang_'.$lang.'_invalid-access-warning.php'); exit;};
+
 $thisfile=basename(__FILE__);
 $breakfile="nursing-station-patientdaten.php?sid=$sid&lang=$lang&station=$station&pn=$pn&edit=$edit";
 
@@ -39,7 +39,7 @@ include($custom_lang_file);
 
 $GLOBAL_CONFIG=array();
 $glob_obj=new GlobalConfig($GLOBAL_CONFIG);
-$glob_obj->getConfig('patient_%');	
+$glob_obj->getConfig('patient_%');
 
 /* Establish db connection */
 if(!isset($db)||!$db) include($root_path.'include/core/inc_db_makelink.php');
@@ -47,27 +47,27 @@ if($dblink_ok)
 {
 	/* Load date formatter */
     include_once($root_path.'include/core/inc_date_format_functions.php');
-    
-       
+
+
 	if($mode=='save'){
-		
-		
-	
-		
+
+
+
+
 		if(($indatetime_date&&$indatetime_time&&$pint&&$solution&&$solutionamount) || ($indatetime_date&&$indatetime_time&&$oralfluid&&$oralfluidamount)){
-			
+
 		if ($_POST['editid'] != "") {
-			
-		    // Load the editor functions 
+
+		    // Load the editor functions
 			include_once($root_path.'modules/news/includes/inc_editor_fx.php');
 		    // Load the visual signalling functions
 			include_once($root_path.'include/core/inc_visual_signalling_fx.php');
-			// Prepare  the date 
+			// Prepare  the date
 			$indatetime_date=formatDate2STD($indatetime_date,$date_format);
 			$indatetime_time=$_POST['indatetime_time'].':00';
-			
+
 			$q="update care_encounter_custom_inout set
-			
+
 			indatetime='".$indatetime_date." ".$indatetime_time."',
 			createid='".$_SESSION['sess_login_userid']."',
 			pint='".$pint."',
@@ -80,23 +80,23 @@ if($dblink_ok)
 			urineamount='".$urineamount."',
 			rta='".$rta."',
 			drain='".$drain."'
-			
+
 			where nr = '".$editid."'
-			
+
 			";
 			//echo $q;
 			mysql_query($q);
 			echo mysql_error();
-			
+
 			if (mysql_affected_rows()>0) {$saved=true;}
-			
+
 		}else{
-		
-		    // Load the editor functions 
+
+		    // Load the editor functions
 			include_once($root_path.'modules/news/includes/inc_editor_fx.php');
 		    // Load the visual signalling functions
 			include_once($root_path.'include/core/inc_visual_signalling_fx.php');
-			// Prepare  the date 
+			// Prepare  the date
 			$indatetime_date=formatDate2STD($indatetime_date,$date_format);
 			$indatetime_time=$_POST['indatetime_time'].':00';
 			$q="insert into care_encounter_custom_inout (encounter_nr,createid,indatetime,pint,solution,solutionamount,initial,oralfluid,oralfluidamount,urinetime,urineamount,rta,drain) values (
@@ -117,29 +117,29 @@ if($dblink_ok)
 			//echo $q;
 			mysql_query($q);
 			echo mysql_error();
-			
+
 			if (mysql_insert_id()>0) {$saved=true;}
-			
+
 		} // insert of new record
-			
+
 		} else {
 						$saved=false;
 					echo "<p>$report_obj->sql$LDDbNoSave";
 		}
-		
-		
-		
-		
-		
-		
-		
+
+
+
+
+
+
+
 			if($saved){
 					header("location:$thisfile?sid=$sid&lang=$lang&saved=1&pn=$pn&station=$station&edit=$edit");
 			} else {
-				
-				
+
+
 			}
-	
+
 }
 
 }
@@ -197,10 +197,10 @@ div.fa2_ml3 {font-size: 12; margin-left: 3; }
   var urlholder;
   var focusflag=0;
   var formsaved=0;
-  
+
 function pruf(d){
 	if(((d.indatetime_date.value)&&(d.indatetime_time.value)&&(d.pint.value)&&(d.solution.value)&&(d.solutionamount.value))||((d.indatetime_date.value)&&(d.oralfluid.value)&&(d.oralfluidamount.value))) return true;
-	else 
+	else
 	{
 		alert("<?php echo $LDAlertIncomplete ?>");
 		return false;
@@ -223,7 +223,7 @@ function resetinput(){
 function select_this(formtag){
 		document.berichtform.elements[formtag].select();
 	}
-	
+
 function getinfo(patientID){
 	urlholder="nursing-station.php?sid=<?php echo "$sid&lang=$lang" ?>&route=validroute&patient=" + patientID + "&user=<?php echo $_COOKIE[$local_user.$sid].'"' ?>;
 	patientwin=window.open(urlholder,patientID,"width=600,height=400,menubar=no,resizable=yes,scrollbars=yes");
@@ -286,7 +286,7 @@ echo '	<tr bgcolor="#99ccff">
 		<td colspan=10><div class=fva2_ml10></div></td>
 		<td colspan=2><div class=fva2_ml10><font color="#000000"><b>'.$LDUrine.'</b></div></td>
 		<td colspan=4><div class=fva2_ml10></div></td>
-		</tr>';	
+		</tr>';
 
 echo '	<tr bgcolor="#99ccff">
 		<td><div class=fva2_ml3><b>'.$LDDate.'</b></div></td>
@@ -305,74 +305,74 @@ echo '	<tr bgcolor="#99ccff">
 		<td><div class=fva2_ml3><b>'.$LDDrain.'</b></div></td>
 		<td><div class=fva2_ml3><b>'.$LDTotal.'</b></div></td>
 		<td></td>
-		</tr>';	
-		
+		</tr>';
+
 		?>
-		
+
 		<script language='JavaScript'>
-		
+
 		editcolor='#FFFF00';
-		
+
 		function Edit(id) {
-		
+
 			document.getElementById('editid').value=id;
-			
+
 			document.getElementById('indatetime_date').value=eval("document.getElementById('id_"+id+"_indatetime_date').innerHTML");
 			document.getElementById('indatetime_date').style.backgroundColor=editcolor;
-			
+
 			document.getElementById('indatetime_time').value=eval("document.getElementById('id_"+id+"_indatetime_time').innerHTML");
 			document.getElementById('indatetime_time').style.backgroundColor=editcolor;
-			
+
 			document.getElementById('pint').value=eval("document.getElementById('id_"+id+"_pint').innerHTML");
 			document.getElementById('pint').style.backgroundColor=editcolor;
-			
+
 			document.getElementById('solution').value=eval("document.getElementById('id_"+id+"_solution').innerHTML");
 			document.getElementById('solution').style.backgroundColor=editcolor;
-			
+
 			document.getElementById('solutionamount').value=eval("document.getElementById('id_"+id+"_solutionamount').innerHTML");
 			document.getElementById('solutionamount').style.backgroundColor=editcolor;
-			
+
 			document.getElementById('initial').value=eval("document.getElementById('id_"+id+"_initial').innerHTML");
 			document.getElementById('initial').style.backgroundColor=editcolor;
-			
+
 			document.getElementById('oralfluid').value=eval("document.getElementById('id_"+id+"_oralfluid').innerHTML");
 			document.getElementById('oralfluid').style.backgroundColor=editcolor;
-			
+
 			document.getElementById('oralfluidamount').value=eval("document.getElementById('id_"+id+"_oralfluidamount').innerHTML");
 			document.getElementById('oralfluidamount').style.backgroundColor=editcolor;
-			
+
 			document.getElementById('urinetime').value=eval("document.getElementById('id_"+id+"_urinetime').innerHTML");
 			document.getElementById('urinetime').style.backgroundColor=editcolor;
-			
+
 			document.getElementById('urineamount').value=eval("document.getElementById('id_"+id+"_urineamount').innerHTML");
 			document.getElementById('urineamount').style.backgroundColor=editcolor;
-			
+
 			document.getElementById('rta').value=eval("document.getElementById('id_"+id+"_rta').innerHTML");
 			document.getElementById('rta').style.backgroundColor=editcolor;
-			
+
 			document.getElementById('drain').value=eval("document.getElementById('id_"+id+"_drain').innerHTML");
 			document.getElementById('drain').style.backgroundColor=editcolor;
-			
+
 		}
-		
+
 		</script>
-		
-		
-		<?
-		
+
+
+		<?php
+
 $res=mysql_query("select * from care_encounter_custom_inout where encounter_nr = '".$pn."'");
 
 $rows=0;
 
 while ($iod=mysql_fetch_assoc($res)) {
-	
+
 	$rows++;
-	
+
 	$soltotal+=$iod['solutionamount'];
 	$oraltotal+=$iod['oralfluidamount'];
 	$urinetotal+=$iod['urineamount'];
 
-	
+
 		?>
 
 	<tr bgcolor="#99ccff">
@@ -392,16 +392,16 @@ while ($iod=mysql_fetch_assoc($res)) {
 		<td><div class=fva2_ml3 id="id_<?php echo $iod['nr']?>_drain"><?php echo $iod['drain']?></div></td>
 		<td align=right><div class=fva2_ml3><?php echo $urinetotal?></div></td>
 		<td><div class=fva2_ml3><a href='#' OnClick=Edit('<?php echo $iod['nr']?>')><span style='background-color:#FFFF00'><?php echo $LDEDIT ?></span></a></div></td>
-	</tr>	
-	
-		<?
-	
+	</tr>
+
+		<?php
+
 }
 
 if ($rows<5) {$extrarows=5;} else {$extrarows=2;}
 
 for ($extra=1;$extra<=$extrarows;$extra++) {
-	
+
 			?>
 
 	<tr bgcolor="#99ccff">
@@ -421,23 +421,23 @@ for ($extra=1;$extra<=$extrarows;$extra++) {
 		<td><div class=fva2_ml3></div></td>
 		<td align=right><div class=fva2_ml3></div></td>
 			<td></td>
-	</tr>	
-	
-		<?
+	</tr>
+
+		<?php
 }
 
-		
-if($edit) { 
+
+if($edit) {
 ?>
 		<tr>
 		<td colspan=16 bgcolor="#ffffff">&nbsp;
 		</td>
 		</tr>
-		
+
 		<tr bgcolor="#99ccff">
-		
+
 		<input type=hidden name=editid id=editid value="">
-	
+
         <td valign="top"><?php echo $LDDate ?>:<br>
 		<?php
 			//gjergji : new calendar
@@ -445,55 +445,55 @@ if($edit) {
 			$calendar = new DHTML_Calendar('../../js/jscalendar/', $lang, 'calendar-system', true);
 			$calendar->load_files();
   			echo $calendar->show_calendar($calendar,$date_format,'indatetime_date');
-			//end : gjergji  
+			//end : gjergji
  		?>
-	
+
          </td>
-		 
+
 		<td valign="top"><?php echo $LDClockTime ?>:<br>
 		<input type=text size=4 maxlength=5 name="indatetime_time" id="indatetime_time"  value="<?php echo date('H:i'); ?>" onKeyUp=setTime(this,'<?php echo $lang ?>') onFocus=this.select()><br>
 		</td>
-		
+
 		<td valign="top"><?php echo $LDNoofPint ?>:<br>
-		<input type=text size=5 maxlength=6 name="pint"  id="pint" value="<?if (!($saved)) echo $_POST['pint']?>">
+		<input type=text size=5 maxlength=6 name="pint"  id="pint" value="<?php if (!($saved)) echo $_POST['pint']?>">
 		</td>
 		<td valign="top"><?php echo $LDSolution ?>:<br>
-		<input type=text size=10 maxlength=32 name="solution"  id="solution" value="<?if (!($saved)) echo $_POST['solution']?>">
+		<input type=text size=10 maxlength=32 name="solution"  id="solution" value="<?php if (!($saved)) echo $_POST['solution']?>">
 		</td>
 		<td valign="top"><?php echo $LDAmount ?>:<br>
-		<input type=text size=5 maxlength=6 name="solutionamount"  id="solutionamount" value="<?if (!($saved)) echo $_POST['solutionamount']?>">
+		<input type=text size=5 maxlength=6 name="solutionamount"  id="solutionamount" value="<?php if (!($saved)) echo $_POST['solutionamount']?>">
 		</td>
 			<td></td>
 		<td valign="top"><?php echo $LDInitial ?>:<br>
-		<input type=text size=5 maxlength=6 name="initial"  id="initial" value="<?if (!($saved)) echo $_POST['initial']?>">
+		<input type=text size=5 maxlength=6 name="initial"  id="initial" value="<?php if (!($saved)) echo $_POST['initial']?>">
 		</td>
 		<td valign="top"><?php echo $LDOralFluid ?>:<br>
-		<input type=text size=10 maxlength=32 name="oralfluid"  id="oralfluid" value="<?if (!($saved)) echo $_POST['oralfluid']?>">
+		<input type=text size=10 maxlength=32 name="oralfluid"  id="oralfluid" value="<?php if (!($saved)) echo $_POST['oralfluid']?>">
 		</td>
 		<td valign="top"><?php echo $LDAmount ?>:<br>
-		<input type=text size=5 maxlength=6 name="oralfluidamount"  id="oralfluidamount" value="<?if (!($saved)) echo $_POST['oralfluidamount']?>">
-		</td>	
+		<input type=text size=5 maxlength=6 name="oralfluidamount"  id="oralfluidamount" value="<?php if (!($saved)) echo $_POST['oralfluidamount']?>">
+		</td>
 			<td></td>
 		<td valign="top"><?php echo $LDTime ?>:<br>
-		<input type=text size=5 maxlength=5 name="urinetime"  id="urinetime" value="<?if (!($saved)) echo $_POST['urinetime']?>">
+		<input type=text size=5 maxlength=5 name="urinetime"  id="urinetime" value="<?php if (!($saved)) echo $_POST['urinetime']?>">
 		</td>
 		<td valign="top"><?php echo $LDAmount ?>:<br>
-		<input type=text size=5 maxlength=6 name="urineamount"  id="urineamount" value="<?if (!($saved)) echo $_POST['urineamount']?>">
+		<input type=text size=5 maxlength=6 name="urineamount"  id="urineamount" value="<?php if (!($saved)) echo $_POST['urineamount']?>">
 		</td>
 		<td valign="top"><?php echo $LDRTA ?>:<br>
-		<input type=text size=5 maxlength=6 name="rta"  id="rta" value="<?if (!($saved)) echo $_POST['rta']?>">
+		<input type=text size=5 maxlength=6 name="rta"  id="rta" value="<?php if (!($saved)) echo $_POST['rta']?>">
 		</td>
 		<td valign="top"><?php echo $LDDrain ?>:<br>
-		<input type=text size=5 maxlength=6 name="drain"  id="drain" value="<?if (!($saved)) echo $_POST['drain']?>">
-		</td><td colspan=2 align=center><a <?
-			
+		<input type=text size=5 maxlength=6 name="drain"  id="drain" value="<?php if (!($saved)) echo $_POST['drain']?>">
+		</td><td colspan=2 align=center><a <?php
+
 			echo 'href=\'nursing-station-patientdaten-custom-inout.php'.URL_REDIRECT_APPEND.'&station='.$station.'&pn='.$pn.'&edit='.$edit.'\'';
-			
+
 			?>> <span style="background-color:#FFFF00"> <?php echo $LDCLEAR ?> </span> </a></td>
 		</tr>
-		
+
 <?php
-} 
+}
 ?>
 		</table>
 
@@ -502,7 +502,7 @@ if($edit) {
 <table width="650"  cellpadding="0" cellspacing="0">
 <tr>
 <td>
-<input type="image" <?php echo createLDImgSrc($root_path,'savedisc.gif','0') ?> width=99 height=24 alt="<?php echo $LDSave ?>">  
+<input type="image" <?php echo createLDImgSrc($root_path,'savedisc.gif','0') ?> width=99 height=24 alt="<?php echo $LDSave ?>">
 </td>
 
 <td>

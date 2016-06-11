@@ -12,7 +12,7 @@
 	A:visited:hover {text-decoration: underline; color: #cc0033;}
 </STYLE>
 </HEAD>
-<?php 
+<?php
 
 	// Capture the entered data!
 	$do = $_POST["do"];
@@ -38,7 +38,7 @@ switch ($do)
 
 		// Get today's date
 		$today = time();
-		
+
 		// Check whether the date is in future, if so, then ask for another
 		if ($today < $dobdate)
 		{
@@ -55,7 +55,7 @@ switch ($do)
 		{
 			$term="She";
 			$termS = "Her";
-		} 
+		}
 
 		// BCG date
 		$bcgdate = DateAdd("m", 3, $dobdate);
@@ -66,12 +66,12 @@ switch ($do)
 		$opv3=DateAdd("d", 30, $opv2);
 		$opv4=DateAdd("d", 30, $opv3);
 		$opv5=DateAdd("d", 30, $opv4);
-  
+
 		// Hepatitis B dates
 		$hepb1=$opv1;
 		$hepb2=DateAdd("m", 1, $hepb1);
 		$hepb3=DateAdd("m", 6, $hepb2);
-		
+
 		// Hepatitis A dates
 		$hepa1=DateAdd("m", 60, $dobdate);
 		$hepa2=DateAdd("m", 1, $hepa1);
@@ -79,41 +79,41 @@ switch ($do)
 
 		// Measles date
 		$measles=DateAdd("m", 9, $dobdate);
-  
+
 		// MMR date
 		$mmr=DateAdd("m", 15, $dobdate);
-		
+
 		// Meningitis date
 		$menin=DateAdd("m", 12, $opv1);
-		
+
 		// HIB dates
 		$hib1=DateAdd("m", 2, $dobdate);
 		$hib2=DateAdd("m", 4, $dobdate);
 		$hib3=DateAdd("m", 6, $dobdate);
 		$hib4=DateAdd("m", 15, $dobdate);
-		
+
 		// Typhoid date
 		$typh=DateAdd("m", 24, $dobdate);
-		
+
 		// Chicken pox date
 		$cpox=DateAdd("m", 12, $dobdate);
-		
+
 		// Rubella date
 		$rubella=DateAdd("m", 144, $dobdate);
-  
+
 		// Hepatitis booster dates
 		$hepboost1=DateAdd("m", 12, $dobdate);
 		$hepboost2=DateAdd("m", 120, $dobdate);
-  
+
 		// OPV booster dates
 		$opvboost1=DateAdd("m", 18, $dobdate);
 		$opvboost2=DateAdd("m", 54, $dobdate);
-  
+
 		// Typhoid booster dates
 		//$typhboost=DateAdd("m", 36, $typh);
 		$typhboost = date("l, dS of F, Y", $typh);
 		$typhboost = "Every three years after $typhboost";
-		
+
 		// DT booster date
 		$dtboost = DateAdd("m", 96, $dobdate);
 
@@ -173,8 +173,8 @@ switch ($do)
 		{
 			$opv5 = date("l, dS of F, Y", $opv5);
 		}
-		
-		
+
+
 		if ($today > $hepb1)
 		{
 			$hepb1 = date("l, dS of F, Y", $hepb1);
@@ -203,7 +203,7 @@ switch ($do)
 			$hepb3 = date("l, dS of F, Y", $hepb3);
 		}
 
-		
+
 		if ($today > $hepa1)
 		{
 			$hepa1 = date("l, dS of F, Y", $hepa1);
@@ -232,7 +232,7 @@ switch ($do)
 			$hepa3 = date("l, dS of F, Y", $hepa3);
 		}
 
-		
+
 		if ($today > $measles)
 		{
 			$measles = date("l, dS of F, Y", $measles);
@@ -344,8 +344,8 @@ switch ($do)
 		{
 			$hepboost2 = date("l, dS of F, Y", $hepboost2);
 		}
-  
-  
+
+
 		if ($today > $opvboost1)
 		{
 			$opvboost1 = date("l, dS of F, Y", $opvboost1);
@@ -364,7 +364,7 @@ switch ($do)
 		{
 			$opvboost2 = date("l, dS of F, Y", $opvboost2);
 		}
-  
+
 
 		if ($today > $dtboost)
 		{
@@ -378,14 +378,14 @@ switch ($do)
 
 		// Calculate the child's age in days
 		$childAgeInDays = DateDiff("d", $dobdate, $today);
-		
+
 		// Calculate the child's age in months
 		$childAgeInMonths = ($childAgeInDays/30);
 
 		// Calculate the child's age in years
 		$childAgeInYears = floor($childAgeInMonths/12);
-			
-		if ($childAgeInYears < 1) 
+
+		if ($childAgeInYears < 1)
 		{
 			$childAgeInMs = floor($childAgeInDays/30);
 			$childAgeInDs = ($childAgeInDays%30);
@@ -438,7 +438,7 @@ switch ($do)
   </tr>
  <tr>
     <td ALIGN="LEFT"><font face="verdana" size="2">BCG</font></td>
-    <td ALIGN="LEFT"><font face="verdana" size="2"><? echo "$bcgdate" ?></font></td>
+    <td ALIGN="LEFT"><font face="verdana" size="2"><?php echo "$bcgdate" ?></font></td>
     <td ALIGN="CENTER"><font face="verdana" size="2">---</font></td>
     <td ALIGN="CENTER"><font face="verdana" size="2">---</font></td>
     <td ALIGN="CENTER"><font face="verdana" size="2">---</font></td>
@@ -446,39 +446,39 @@ switch ($do)
   </tr>
   <tr>
     <td ALIGN="LEFT"><font face="verdana" size="2">OPV</font></td>
-    <td ALIGN="LEFT"><font face="verdana" size="2"><? echo "$opv1" ?></font></td>
-    <td ALIGN="LEFT"><font face="verdana" size="2"><? echo "$opv2" ?></font></td>
-    <td ALIGN="LEFT"><font face="verdana" size="2"><? echo "$opv3" ?></font></td>
-    <td ALIGN="LEFT"><font face="verdana" size="2"><? echo "$opv4" ?></font></td>
-    <td ALIGN="LEFT"><font face="verdana" size="2"><? echo "$opv5" ?></font></td>
+    <td ALIGN="LEFT"><font face="verdana" size="2"><?php echo "$opv1" ?></font></td>
+    <td ALIGN="LEFT"><font face="verdana" size="2"><?php echo "$opv2" ?></font></td>
+    <td ALIGN="LEFT"><font face="verdana" size="2"><?php echo "$opv3" ?></font></td>
+    <td ALIGN="LEFT"><font face="verdana" size="2"><?php echo "$opv4" ?></font></td>
+    <td ALIGN="LEFT"><font face="verdana" size="2"><?php echo "$opv5" ?></font></td>
   </tr>
   <tr>
     <td ALIGN="LEFT"><font face="verdana" size="2">DPT</font></td>
-    <td ALIGN="LEFT"><font face="verdana" size="2"><? echo "$opv2" ?></font></td>
-    <td ALIGN="LEFT"><font face="verdana" size="2"><? echo "$opv3" ?></font></td>
-    <td ALIGN="LEFT"><font face="verdana" size="2"><? echo "$opv4" ?></font></td>
+    <td ALIGN="LEFT"><font face="verdana" size="2"><?php echo "$opv2" ?></font></td>
+    <td ALIGN="LEFT"><font face="verdana" size="2"><?php echo "$opv3" ?></font></td>
+    <td ALIGN="LEFT"><font face="verdana" size="2"><?php echo "$opv4" ?></font></td>
     <td ALIGN="CENTER"><font face="verdana" size="2">---</font></td>
     <td ALIGN="CENTER"><font face="verdana" size="2">---</font></td>
   </tr>
   <tr>
     <td ALIGN="LEFT"><font face="verdana" size="2">Hepatitis B</font></td>
-    <td ALIGN="LEFT"><font face="verdana" size="2"><? echo "$hepb1" ?></font></td>
-    <td ALIGN="LEFT"><font face="verdana" size="2"><? echo "$hepb2" ?></font></td>
-    <td ALIGN="LEFT"><font face="verdana" size="2"><? echo "$hepb3" ?></font></td>
+    <td ALIGN="LEFT"><font face="verdana" size="2"><?php echo "$hepb1" ?></font></td>
+    <td ALIGN="LEFT"><font face="verdana" size="2"><?php echo "$hepb2" ?></font></td>
+    <td ALIGN="LEFT"><font face="verdana" size="2"><?php echo "$hepb3" ?></font></td>
     <td ALIGN="CENTER"><font face="verdana" size="2">---</font></td>
     <td ALIGN="CENTER"><font face="verdana" size="2">---</font></td>
   </tr>
   <tr>
     <td ALIGN="LEFT"><font face="verdana" size="2">HIB Titre</font></td>
-    <td ALIGN="LEFT"><font face="verdana" size="2"><? echo "$hib1" ?></font></td>
-    <td ALIGN="LEFT"><font face="verdana" size="2"><? echo "$hib2" ?></font></td>
-    <td ALIGN="LEFT"><font face="verdana" size="2"><? echo "$hib3" ?></font></td>
+    <td ALIGN="LEFT"><font face="verdana" size="2"><?php echo "$hib1" ?></font></td>
+    <td ALIGN="LEFT"><font face="verdana" size="2"><?php echo "$hib2" ?></font></td>
+    <td ALIGN="LEFT"><font face="verdana" size="2"><?php echo "$hib3" ?></font></td>
     <td ALIGN="CENTER"><font face="verdana" size="2">---</font></td>
     <td ALIGN="CENTER"><font face="verdana" size="2">---</font></td>
   </tr>
   <tr>
     <td ALIGN="LEFT"><font face="verdana" size="2">Measles</font></td>
-    <td ALIGN="LEFT"><font face="verdana" size="2"><? echo "$measles" ?></font></td>
+    <td ALIGN="LEFT"><font face="verdana" size="2"><?php echo "$measles" ?></font></td>
     <td ALIGN="CENTER"><font face="verdana" size="2">---</font></td>
     <td ALIGN="CENTER"><font face="verdana" size="2">---</font></td>
     <td ALIGN="CENTER"><font face="verdana" size="2">---</font></td>
@@ -486,7 +486,7 @@ switch ($do)
   </tr>
   <tr>
     <td ALIGN="LEFT"><font face="verdana" size="2">MMR</font></td>
-    <td ALIGN="LEFT"><font face="verdana" size="2"><? echo "$mmr" ?></font></td>
+    <td ALIGN="LEFT"><font face="verdana" size="2"><?php echo "$mmr" ?></font></td>
     <td ALIGN="CENTER"><font face="verdana" size="2">---</font></td>
     <td ALIGN="CENTER"><font face="verdana" size="2">---</font></td>
     <td ALIGN="CENTER"><font face="verdana" size="2">---</font></td>
@@ -494,7 +494,7 @@ switch ($do)
   </tr>
   <tr>
     <td ALIGN="LEFT"><font face="verdana" size="2">Typhoid</font></td>
-    <td ALIGN="LEFT"><font face="verdana" size="2"><? echo "$typh" ?></font></td>
+    <td ALIGN="LEFT"><font face="verdana" size="2"><?php echo "$typh" ?></font></td>
     <td ALIGN="CENTER"><font face="verdana" size="2">---</font></td>
     <td ALIGN="CENTER"><font face="verdana" size="2">---</font></td>
     <td ALIGN="CENTER"><font face="verdana" size="2">---</font></td>
@@ -502,7 +502,7 @@ switch ($do)
   </tr>
   <tr>
     <td ALIGN="LEFT"><font face="verdana" size="2">Meningitis</font></td>
-    <td ALIGN="LEFT"><font face="verdana" size="2"><? echo "$menin" ?></font></td>
+    <td ALIGN="LEFT"><font face="verdana" size="2"><?php echo "$menin" ?></font></td>
     <td ALIGN="CENTER"><font face="verdana" size="2">---</font></td>
     <td ALIGN="CENTER"><font face="verdana" size="2">---</font></td>
     <td ALIGN="CENTER"><font face="verdana" size="2">---</font></td>
@@ -510,7 +510,7 @@ switch ($do)
   </tr>
   <tr>
     <td ALIGN="LEFT"><font face="verdana" size="2">Chicken Pox </font>/td>
-    <td ALIGN="LEFT"><font face="verdana" size="2"><? echo "$cpox" ?></font></td>
+    <td ALIGN="LEFT"><font face="verdana" size="2"><?php echo "$cpox" ?></font></td>
     <td ALIGN="CENTER"><font face="verdana" size="2">---</font></td>
     <td ALIGN="CENTER"><font face="verdana" size="2">---</font></td>
     <td ALIGN="CENTER"><font face="verdana" size="2">---</font></td>
@@ -518,12 +518,12 @@ switch ($do)
   </tr>
   <tr>
     <td ALIGN="LEFT"><font face="verdana" size="2">Hepatitis A</font></td>
-    <td ALIGN="LEFT"><font face="verdana" size="2"><? echo "$hepa1" ?></font></td>
-    <td ALIGN="LEFT"><font face="verdana" size="2"><? echo "$hepa2" ?></font></td>
-    <td ALIGN="LEFT"><font face="verdana" size="2"><? echo "$hepa3" ?></font></td>
+    <td ALIGN="LEFT"><font face="verdana" size="2"><?php echo "$hepa1" ?></font></td>
+    <td ALIGN="LEFT"><font face="verdana" size="2"><?php echo "$hepa2" ?></font></td>
+    <td ALIGN="LEFT"><font face="verdana" size="2"><?php echo "$hepa3" ?></font></td>
     <td ALIGN="CENTER"><font face="verdana" size="2">---</font></td>
     <td ALIGN="CENTER"><font face="verdana" size="2">---</font></td>
-  </tr></FONT> 
+  </tr></FONT>
 </table>
 
 <!-- Booster Doses //-->
@@ -539,44 +539,44 @@ switch ($do)
   </tr>
   <tr>
     <td ALIGN="LEFT"><font face="verdana" size="2">Hepatitis B</font> </td>
-    <td ALIGN="LEFT"><font face="verdana" size="2"><? echo "$hepboost1" ?></font> </td>
-    <td ALIGN="LEFT"><font face="verdana" size="2"><? echo "$hepboost2" ?></font> </td>
+    <td ALIGN="LEFT"><font face="verdana" size="2"><?php echo "$hepboost1" ?></font> </td>
+    <td ALIGN="LEFT"><font face="verdana" size="2"><?php echo "$hepboost2" ?></font> </td>
   </tr>
   <tr>
     <td ALIGN="LEFT"><font face="verdana" size="2">OPV</font> </td>
-    <td ALIGN="LEFT"><font face="verdana" size="2"><? echo "$opvboost1" ?></font> </td>
-    <td ALIGN="LEFT"><font face="verdana" size="2"><? echo "$opvboost2" ?></font> </td>
+    <td ALIGN="LEFT"><font face="verdana" size="2"><?php echo "$opvboost1" ?></font> </td>
+    <td ALIGN="LEFT"><font face="verdana" size="2"><?php echo "$opvboost2" ?></font> </td>
   </tr>
   <tr>
     <td ALIGN="LEFT"><font face="verdana" size="2">DPT</font> </td>
-    <td ALIGN="LEFT"><font face="verdana" size="2"><? echo "$opvboost1" ?></font> </td>
-    <td ALIGN="LEFT"><font face="verdana" size="2"><? echo "$opvboost2" ?></font> </td>
+    <td ALIGN="LEFT"><font face="verdana" size="2"><?php echo "$opvboost1" ?></font> </td>
+    <td ALIGN="LEFT"><font face="verdana" size="2"><?php echo "$opvboost2" ?></font> </td>
   </tr>
   <tr>
     <td ALIGN="LEFT"><font face="verdana" size="2">Typhoid</font> </td>
-    <td ALIGN="LEFT"><font face="verdana" size="2"><? echo "$typhboost" ?></font> </td>
+    <td ALIGN="LEFT"><font face="verdana" size="2"><?php echo "$typhboost" ?></font> </td>
     <td ALIGN="CENTER">---</td>
   </tr>
   <tr>
     <td ALIGN="LEFT"><font face="verdana" size="2">DT</font> </td>
-    <td ALIGN="LEFT"><font face="verdana" size="2"><? echo "$dtboost" ?></font> </td>
+    <td ALIGN="LEFT"><font face="verdana" size="2"><?php echo "$dtboost" ?></font> </td>
     <td ALIGN="CENTER">---</td>
   </tr>
   <tr>
     <td ALIGN="LEFT"><font face="verdana" size="2">TT</font> </td>
-    <td ALIGN="LEFT"><font face="verdana" size="2">Once every 10 years after <? echo "$dobdate" ?></font> </td>
+    <td ALIGN="LEFT"><font face="verdana" size="2">Once every 10 years after <?php echo "$dobdate" ?></font> </td>
     <td ALIGN="CENTER">---</td>
   </tr>
   <tr>
-<?
+<?php
 	if ($theSex==2)
 	{
 ?>
 		<td ALIGN="LEFT"><font face="verdana" size="2">Rubella (for girls at 12yrs +)</font> </td>
-		<td ALIGN="LEFT"><font face="verdana" size="2"><? echo "$rubella" ?></font> </td>
+		<td ALIGN="LEFT"><font face="verdana" size="2"><?php echo "$rubella" ?></font> </td>
 		<td ALIGN="CENTER">---</td>
-<?   
-	} 
+<?php
+	}
 ?>
   </tr>
 </table>
@@ -593,9 +593,9 @@ Please remember that the doctor's decision is final. Any alterations/additions s
 	<center><INPUT TYPE="submit" NAME="doagain" VALUE="Repeat Calculations"></center>
 </FORM>
 </div>
-<?
+<?php
 		break;
-	
+
 	default:
 	// The default case.
 	include("imsch_form.inc");
