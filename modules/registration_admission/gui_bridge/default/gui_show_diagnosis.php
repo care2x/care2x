@@ -7,7 +7,7 @@ while($row=$result->FetchRow()){
 */
 	$full_en=$row['encounter_nr'];
 	# Prepare the category value
-	if(isset(${$row['cat_LD_var']})&&!empty(${$row['cat_LD_var']}))  $cat_name=${$row['cat_LD_var']}{;
+	if(isset(${$row['cat_LD_var']})&&!empty(${$row['cat_LD_var']}))  $cat_name=${$row['cat_LD_var']};
 		else $cat_name=$row['cat_name'];
 
 	# Prepare the localization value
