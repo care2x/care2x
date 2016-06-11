@@ -86,10 +86,10 @@ require("../req/css-a-hilitebu.php");
 <input type="hidden" name="sid" value="<?php print $ck_sid; ?>">
 <B><?php=$LDKeywordPrompt ?></B></font><p>
 <font size=3><INPUT type="text" name="keyword" size="14" maxlength="40" onfocus=this.select() value="<?php print $keyword ?>"></font>
-<INPUT type="submit" name="versand" value="<?php =$LDSEARCH ?>"></FORM>
+<INPUT type="submit" name="versand" value="<?php echo $LDSEARCH; ?>"></FORM>
 
 <p>
-<a href="startframe.php?sid=<?php print "$ck_sid&lang=$lang"; ?>"><img src="../img/<?php ="$lang/$lang" ?>_cancel.gif" width=103 height=24 border=0></a>
+<a href="startframe.php?sid=<?php print "$ck_sid&lang=$lang"; ?>"><img src="../img/<?php echo "$lang/$lang"; ?>_cancel.gif" width=103 height=24 border=0></a>
 <p>
 
 <?php
