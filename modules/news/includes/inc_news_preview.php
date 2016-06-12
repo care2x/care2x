@@ -14,7 +14,7 @@ $smarty->assign('sHeadlineItemTitle','');
 $smarty->assign('sNewsPreview','');
 $smarty->assign('sPreface','');
 $smarty->assign('sEditorLink','');
-
+$smarty->assign('sImgWidth','width="150"');
 if(isset($news[$j])){
 	# First test for record nr. + mime combination of image filename
 	# If not exists, try pic_file value + mime combination
