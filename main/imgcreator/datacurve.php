@@ -1,12 +1,12 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 require($root_path.'classes/datetimemanager/class.dateTimeManager.php');
 $dateshifter=new dateTimeManager();
 /*
 CARE2X Integrated Information System for Hospitals and Health Care Organizations and Services
-Copyright (C) 2002,2003,2004,2005  Elpidio Latorilla & Intellin.org	
+Copyright (C) 2002,2003,2004,2005  Elpidio Latorilla & Intellin.org
 GNU GPL. For details read file "copy_notice.txt".
 */
 
@@ -50,7 +50,7 @@ if(!isset($yr)||empty($yr)) $yr=date('Y');
 if(!extension_loaded('gd')) dl('php_gd.dll');
 
 if(!isset($db)||!$db) include($root_path.'include/core/inc_db_makelink.php');
-if($dblink_ok){	
+if($dblink_ok){
     $dbtable='care_encounter_measurement';
 	$start=date('Y-m-d',mktime(0,0,0,$mo,$dy,$yr));
 	$end=$dateshifter->shift_dates($start,-6,'d');
@@ -71,8 +71,8 @@ if($dblink_ok){
 		$ok=true;
 	}
 }
-  
-# Initialize general  dimensions  
+
+# Initialize general  dimensions
 $tabhi=135; # Height of graph chart in pixels
 $tablen=700; # Total width of graph chart in pixels
 $tabcols=$tablen/28; # Total number of vertical lines
@@ -83,7 +83,7 @@ header ('Content-type: image/PNG');
 $im=@ImageCreateFromPNG($root_path.'main/imgcreator/datacurve.png'); // Loads the ready made image (makes this routine faster)
 
 /**
-* The next set of codes create the graph chart on-the-fly 
+* The next set of codes create the graph chart on-the-fly
 * if the ready made image is not loaded successfully
 */
 if(!$im){
@@ -124,7 +124,7 @@ $tx1=0; $ty1=0;
 
 for($n=0,$xof=0;$n<7;$n++,$xof+=$xoffs)
 {
-	$date=$dateshifter->shift_dates($start,-($n),'d');	
+	$date=$dateshifter->shift_dates($start,-($n),'d');
 #**************** begin of curve tracing  Blood Pressure***************
 	if($bprows){
     	for($i=0;$i<$bprows;$i++)
@@ -132,7 +132,7 @@ for($n=0,$xof=0;$n<7;$n++,$xof+=$xoffs)
         	$bp=$bp_obj->FetchRow();
 			if($bp['msr_date']!=$date) continue;
         	if(empty($bp['msr_time'])||empty($bp['value'])) continue;
-        	$ox2=(($bp['msr_time'])*$xunit)+$xof; 
+        	$ox2=(($bp['msr_time'])*$xunit)+$xof;
 	    	$oy2=(($bp['value'])-70)*$yunit_bp;$oy2=134-$oy2;
         	ImageArc($im,$ox2,$oy2,4,4,0,360,$text_red);
         	if($ox1 || $oy1) ImageLine($im,$ox1,$oy1,$ox2,$oy2,$text_red);
@@ -147,7 +147,7 @@ for($n=0,$xof=0;$n<7;$n++,$xof+=$xoffs)
         	$bc=$temp_obj->FetchRow();
 			if($bc['msr_date']!=$date) continue;
         	if(empty($bc['msr_time'])||empty($bc['value'])) continue;
-        	$tx2=(($bc['msr_time'])*$xunit)+$xof; 
+        	$tx2=(($bc['msr_time'])*$xunit)+$xof;
 		    $ty2=(($bc['value'])-35)*$yunit_temp;$ty2=134-$ty2;
     	    ImageFilledRectangle($im,$tx2-2,$ty2-2,$tx2+1,$ty2+1,$text_blue);
         	if($tx1 || $ty1) ImageLine($im,$tx1,$ty1,$tx2,$ty2,$text_blue);

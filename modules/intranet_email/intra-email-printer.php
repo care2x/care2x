@@ -1,12 +1,12 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 /**
 * CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
 * GNU General Public License
 * Copyright 2002,2003,2004,2005 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -20,7 +20,7 @@ $dbtable='care_mail_private';
 
     /* Load the date formatter */
     include_once($root_path.'include/core/inc_date_format_functions.php');
-    
+
 		switch($folder)
 		{
 			case 'inbox':$sql="SELECT * FROM $dbtable WHERE  sender='$from'
@@ -35,8 +35,8 @@ $dbtable='care_mail_private';
 		}
 
 				if($ergebnis=$db->Execute($sql))
-				{ 
-					
+				{
+
 					if($rows=$ergebnis->RecordCount())
 					{
 						$content=$ergebnis->FetchRow();
@@ -46,14 +46,14 @@ $dbtable='care_mail_private';
 					{
 						$mailok=0;
 					}
-				}else { echo "$LDDbNoRead<br>$sql"; } 
+				}else { echo "$LDDbNoRead<br>$sql"; }
 ?>
 <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 3.0//EN" "html.dtd">
 <?php html_rtl($lang); ?>
 <HEAD>
 <?php echo setCharSet(); ?>
 
-<?php 
+<?php
 require($root_path.'include/core/inc_js_gethelp.php');
 require($root_path.'include/core/inc_css_a_hilitebu.php');
 ?>
@@ -89,7 +89,7 @@ require($root_path.'include/core/inc_css_a_hilitebu.php');
     <td><pre><?php echo $LDAttach; ?></pre></td>
     <td><pre></pre></td>
   </tr>
- -->  
+ -->
  <tr>
     <td><pre><?php echo $LDDate.':'.$LDTime; ?></pre></td>
     <td><pre><?php echo '<b>'.formatDate2Local($content['send_dt'],$date_format).' '.convertTimeToLocal(formatDate2Local($content['send_dt'],$date_format,0,1)).'</b>'; ?></pre></td>

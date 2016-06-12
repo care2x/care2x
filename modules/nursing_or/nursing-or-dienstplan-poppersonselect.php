@@ -1,12 +1,12 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 /**
 * CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
 * GNU General Public License
 * Copyright 2002,2003,2004,2005 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -15,7 +15,7 @@ define('NO_2LEVEL_CHK',1);
 require_once($root_path.'include/core/inc_front_chain_lang.php');
 
 require_once($root_path.'include/core/inc_date_format_functions.php');
-        
+
 require_once($root_path.'include/care_api_classes/class_personell.php');
 $pers_obj=new Personell;
 $nurses=&$pers_obj->getNursesOfDept($dept_nr);
@@ -39,7 +39,7 @@ function closethis()
 
 function addelem(elem,hid,last,first,b,nr)
 {
-	
+
 	eval("window.opener.document.forms[0].elements[elem].value=last+','+first;");
 	eval("window.opener.document.forms[0].elements[hid].value=nr;");
 
@@ -85,7 +85,7 @@ echo ' '.$LDOn.'<br>';
 */
  echo formatDate2Local($year.'-'.$month.'-'.($elemid+1),$date_format);
 
- echo '</font> '.$LDFullDay[$wkday]; 
+ echo '</font> '.$LDFullDay[$wkday];
 ?>
 </b>
 </font>

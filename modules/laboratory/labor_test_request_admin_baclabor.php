@@ -1,7 +1,7 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 //error_reporting(E_ALL);
 /**
 * CARE2X Integrated Hospital Information System version deployment 1.1 (mysql) 2004-01-11
@@ -16,7 +16,7 @@ require($root_path.'include/core/inc_environment_global.php');
 $lang_tables[] = 'departments.php';
 define('LANG_FILE','konsil.php');
 
-/* We need to differentiate from where the user is coming: 
+/* We need to differentiate from where the user is coming:
 *  $user_origin != lab ;  from patient charts folder
 *  $user_origin == lab ;  from the laboratory
 *  and set the user cookie name and break or return filename
@@ -33,14 +33,14 @@ if($user_origin=='lab'){
 	$breakfile=$root_path."modules/nursing/nursing-station-patientdaten.php".URL_APPEND."&edit=$edit&station=$station&pn=$pn";
 }
 ///* invoke the script lock*/
-require_once($root_path.'include/core/inc_front_chain_lang.php'); 
+require_once($root_path.'include/core/inc_front_chain_lang.php');
 ///* load variable elements */
 require_once('includes/inc_test_request_vars_baclabor.php');
 
 /* Load additional languge table */
-if(file_exists($root_path.'language/'.$lang.'/lang_'.$lang.'_konsil_baclabor.php')) 
+if(file_exists($root_path.'language/'.$lang.'/lang_'.$lang.'_konsil_baclabor.php'))
 	include_once($root_path.'language/'.$lang.'/lang_'.$lang.'_konsil_baclabor.php');
-else 
+else
 	include_once($root_path.'language/'.LANG_DEFAULT.'/lang_'.LANG_DEFAULT.'_konsil_baclabor.php');
 
 
@@ -60,7 +60,7 @@ $subtarget_sub=$subtarget . '_sub';
 
 /* Get the pending test requests */
 if(!isset($mode) || empty($mode)) {
-		
+
 	$sql="SELECT batch_nr,encounter_nr,send_date,dept_nr FROM care_test_request_".$db_request_table."
 				WHERE status='pending' ORDER BY  send_date DESC";
 	if($requests=$db->Execute($sql)){
@@ -84,7 +84,7 @@ if(!isset($mode) || empty($mode)) {
 
 /* Check for the patient number = $pn. If available get the patient's data */
 if($batchrows && $pn){
-		
+
 	include_once($root_path.'include/care_api_classes/class_encounter.php');
 	$enc_obj=new Encounter;
 	if( $enc_obj->loadEncounterData($pn)) {
@@ -108,7 +108,7 @@ if($batchrows && $pn){
 		$sql .= "INNER JOIN care_test_request_".$subtarget_sub." ON ";
 		$sql .= "( care_test_request_".$subtarget.".batch_nr = care_test_request_".$subtarget_sub.".batch_nr) ";
 		$sql .= "WHERE care_test_request_".$subtarget.".batch_nr='".$batch_nr."'";
-	    
+
 		if($ergebnis=$db->Execute($sql)){
 			if($editable_rows=$ergebnis->RecordCount()){
 				while ( !$ergebnis->EOF ) {
@@ -118,7 +118,7 @@ if($batchrows && $pn){
 					$ergebnis->MoveNext();
 				}
 
-				$edit_form=1;				
+				$edit_form=1;
 			}
 		}else{
 			echo "<p>$sql<p>$LDDbNoRead";
@@ -129,7 +129,7 @@ if($batchrows && $pn){
 	$sql .= "INNER JOIN care_test_findings_".$db_request_table_sub." ON ";
 	$sql .= "( care_test_findings_".$db_request_table.".batch_nr = care_test_findings_".$db_request_table_sub.".batch_nr) ";
 	$sql .= "WHERE care_test_findings_".$db_request_table.".batch_nr='".$batch_nr."' ";
-		
+
 	if($ergebnis=$db->Execute($sql)){
 		if($editable_rows=$ergebnis->RecordCount()){
 			while ( !$ergebnis->EOF ) {
@@ -140,7 +140,7 @@ if($batchrows && $pn){
 					$stored_findings=$ergebnis->GetRowAssoc($toUpper=false);
 					$ergebnis->MoveNext();
 			}
-			
+
 			if($stored_findings['status']=='done') $edit_findings=0; /* Inhibit editing of the findings */
 
 			$mode='update';
@@ -192,7 +192,7 @@ if($batchrows) $sTitle = $sTitle." (".$batch_nr.")";
 </style>
 
 <script language="javascript">
-<!-- 
+<!--
 
 <?php
 if($edit)
@@ -200,8 +200,8 @@ if($edit)
 ?>
 
 function chkForm(d)
-{ 
-   return true 
+{
+   return true
 }
 
 function loadM(fn)
@@ -210,7 +210,7 @@ function loadM(fn)
 	mBlank.src="../img/pink_border.gif";
 	mFilled=new Image();
 	mFilled.src="../img/filled_pink_block.gif";
-	
+
 	form_name=fn;
 }
 
@@ -218,14 +218,14 @@ function setM(m)
 {
     eval("marker=document.images."+m);
 	eval("element=document."+form_name+"."+m);
-	
+
     if(marker.src!=mFilled.src)
 	{
 	   marker.src=mFilled.src;
 	   element.value='1';
 	  // alert(element.name+element.value);
 	}
-	 else 
+	 else
 	 {
 	    marker.src=mBlank.src;
 		element.value='0';
@@ -251,7 +251,7 @@ function setThis(prep,elem,begin,end,step)
 function sendLater()
 {
    document.form_test_request.status.value="draft";
-   if(chkForm(document.form_test_request)) document.form_test_request.submit(); 
+   if(chkForm(document.form_test_request)) document.form_test_request.submit();
 }
 
 <?php
@@ -299,9 +299,9 @@ require('includes/inc_test_request_lister_fx.php');
 		</td>
 
 		<!--  Right frame containing the form -->
-		
+
 		<td>
-        
+
 		<!--<form name="form_test_request" method="post" action="<?php echo $thisfile ?>" onSubmit="return chkForm(this)">  -->
 
 		<!--<input type="image" <?php echo createLDImgSrc($root_path,'savedisc.gif','0','absmiddle') ?> title="<?php // echo $LDSaveEntry ?>">-->

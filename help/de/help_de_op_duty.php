@@ -1,5 +1,5 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
+error_reporting($ErrorLevel);
 ?>
 <html>
 
@@ -154,7 +154,7 @@ Wie dokumentiere ich die Arbeitsleistung im Dienst?</b></font>
 		<b>Schritt 2: </b>Gibt den Namen des Diensthabenden in das Feld <nobr>"<span style="background-color:yellow" >Name, Vorname <input type="text" name="d" size=20 maxlength=10> </span>"</nobr> ein.<br>
  <b>Schritt 3: </b>Gibt die Uhrzeit des Arbeitsbeginns in das Feld "<span style="background-color:yellow" > Von <input type="text" name="d" size=5 maxlength=5> </span>" ein.<br>
  <b>Schritt 4: </b>Gibt die Uhrzeit des Arbeitsende in das Feld "<span style="background-color:yellow" > Bis <input type="text" name="d" size=5 maxlength=5> </span>" ein.<p>
-	<ul> 
+	<ul>
 	<b>Tip: </b>Geben Sie entweder "j" oder "J" (bedeutet JETZT) in das Feld ein um die aktuelle Zeit automatisch zeigen zu lassen.<p>
 		</ul>
  <b>Schritt 5: </b>Gibt den OP Saal in das Feld "<span style="background-color:yellow" > OP Saal <input type="text" name="d" size=5 maxlength=5> </span>" ein.<br>

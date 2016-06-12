@@ -1,7 +1,7 @@
 <?php
-error_reporting ( E_COMPILE_ERROR | E_ERROR | E_CORE_ERROR );
 require ('./roots.php');
 require ($root_path . 'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 /**
  * CARE 2002 Integrated Hospital Information System beta 1.0.04 - 2003-03-31
  * GNU General Public License
@@ -31,7 +31,7 @@ echo setCharSet ();
 require ($root_path . 'include/core/inc_js_gethelp.php');
 require ($root_path . 'include/core/inc_css_a_hilitebu.php');
 ?><script language="javascript">
-<!-- 
+<!--
 function gethelp(x,s,x1,x2,x3)
 {
 	if (!x) x="";
@@ -93,11 +93,11 @@ if ($cfg ['dhtml'])
 		echo $cfg ['body_bgcolor'];
 		?> valign=top colspan=2>
 		<p><br>
-		
-		
+
+
 		<p>
-		
-		
+
+
 		<CENTER><font face="verdana,arial" size=3>
 <?php
 echo "$LDPresent $LDTime"?>

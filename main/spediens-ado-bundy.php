@@ -1,7 +1,7 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 /**
  * CARE2X Integrated Hospital Information System beta 2.0.0 - 2004-05-16
  * GNU General Public License
@@ -101,7 +101,7 @@ require($root_path.'include/core/inc_css_a_hilitebu.php');
 			<p><FONT face="Verdana,Helvetica,Arial" size=4> <img
 			<?php echo createComIcon($root_path,'icon_clock.gif','0') ?>> <?php echo $LDBundyMachine ?>
 			<p>
-			
+
 			</font> <FONT face="Verdana,Helvetica,Arial" size=3> <font size=1><a
 				href="spediens-ado-bundy.php?sid=<?php echo "$sid&lang=$lang&month=$month&year=$year" ?>&mondir=-1"><img
 				<?php echo createComIcon($root_path,'l-arrowgrnlrg.gif','0') ?>> <?php echo $LDPrevMonth ?></a></font>
@@ -119,7 +119,7 @@ require($root_path.'include/core/inc_css_a_hilitebu.php');
 	<td> '.$LDEntry.' </td>
 	<td> '.$LDExit.' </td>
 	<td> '.$LDRemarks.' </td>
-	</tr>';  
+	</tr>';
 			if($datafound)
 			{
 				while($persons=$pers_row->FetchRow())
@@ -144,10 +144,10 @@ require($root_path.'include/core/inc_css_a_hilitebu.php');
 			<a href="<?php echo $breakfile ?>"><img
 			<?php echo createLDImgSrc($root_path,'cancel.gif','0','middle') ?>
 				alt="<?php echo $LDCancel ?>"></a>
-			
+
 			</FONT>
 			<p>
-		
+
 		</ul>
 		</td>
 	</tr>

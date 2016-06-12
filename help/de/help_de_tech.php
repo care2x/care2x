@@ -1,5 +1,5 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
+error_reporting($ErrorLevel);
 ?>
 <html>
 
@@ -15,7 +15,7 @@ error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 <b>
 
 <?php
-print "Technische Unterstützung - ";	
+print "Technische Unterstützung - ";
 switch($src)
 	{
 		case "request": print "Reparatur anfordern";
@@ -91,14 +91,14 @@ Wie kann ich meine letzte Anfragen sehen und die Antwort von der Technik?</b></f
 
 <img <?php echo createComIcon('../','frage.gif','0') ?>> <font color="#990000"><b>
 Wie kann ich technische Berichte öffnen zum lesen?</b></font>
-<ul> 
+<ul>
 		<b>Achtung! </b>Technische Berichte die noch nicht gelesen bzw. nicht gedruckt wurden werden sofort aufgelistet.<p>
 <b>Schritt 1: </b>Klickt den  <img src="../img/upArrowGrnLrg.gif" border=0 width=16 height=16 align="absmiddle"> Knopf des Berichts den Sie lesen möchten. <br>
 </ul>
 <img <?php echo createComIcon('../','frage.gif','0') ?>> <font color="#990000"><b>
 Wie finde ich einen bestimmten Bericht?</b></font>
 <ul> <b>Schritt 1: </b>Gibt entweder eine vollständige Information oder deren erste Zeichen in das entsprechende Feld ein.<br>
-	<ul type=disc> 
+	<ul type=disc>
 	Wenn Sie einen Bericht suchen ...
 	<li>der ein bestimmter Techniker schrieb: gibt den Namen des Technikers in das Feld "<span style="background-color:yellow" > Techniker: <input type="text" name="t" size=11 maxlength=4 value="Name"> </span>" ein.<br>
 	<li>der in einer bestimmten Abteilung erledigt wurde: gibt den Namen der Abteilung in das Feld "<span style="background-color:yellow" > Abteilung: <input type="text" name="t" size=11 maxlength=4 value="Name"> </span>" ein.<br>

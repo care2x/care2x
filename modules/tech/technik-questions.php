@@ -1,12 +1,12 @@
 <?php
-//error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'/include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 /**
 * CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
 * GNU General Public License
 * Copyright 2002,2003,2004,2005 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -26,11 +26,11 @@ if(!isset($mode)) $mode='';
 
 if(!isset($inquirer)||empty($inquirer))
 {
-	if(isset($_GET['inquirer'])&&!empty($_GET['inquirer'])) 
+	if(isset($_GET['inquirer'])&&!empty($_GET['inquirer']))
 	{
 	    $inquirer=$_GET['inquirer'];
     }
-	elseif(isset($_POST['inquirer'])&&!empty($_POST['inquirer'])) 
+	elseif(isset($_POST['inquirer'])&&!empty($_POST['inquirer']))
 	{
 	    $inquirer=$_POST['inquirer'];
     }
@@ -44,10 +44,10 @@ $dbtable='care_tech_questions';
 
     /* Load the date formatter */
     include_once($root_path.'include/core/inc_date_format_functions.php');
-    
+
 
     if($mode=='save') {
-						$sql="INSERT INTO ".$dbtable." 
+						$sql="INSERT INTO ".$dbtable."
 						(	dept,
 							query,
 							inquirer,
@@ -61,14 +61,14 @@ $dbtable='care_tech_questions';
 							create_id,
 							create_time
 							 )
-						VALUES 
+						VALUES
 						(
 							'$dept',
 							'".htmlspecialchars($_POST['query'])."',
 							'$inquirer',
-							'".$_POST['tphone']."', 
-							'".$_POST['tdate']."', 
-							'".$_POST['ttime']."', 
+							'".$_POST['tphone']."',
+							'".$_POST['tdate']."',
+							'".$_POST['ttime']."',
 							'".date('YmdHis')."',
 							'0',
 							'pending',
@@ -94,14 +94,14 @@ $dbtable='care_tech_questions';
 									AND tdate='".$_GET['tdate']."'
 									AND ttime='".$_GET['ttime']."'
 									AND tid='".$_GET['tid']."'
-									LIMIT 0,10"; 
+									LIMIT 0,10";
 */        $sql="SELECT tdate,ttime,inquirer,query,answered,reply,ansby,astamp FROM $dbtable
 							 WHERE batch_nr='".$_GET['batch_nr']."'";
         if($result=$db->SelectLimit($sql,10)) {
-            $inhalt=$result->FetchRow();		
+            $inhalt=$result->FetchRow();
         } else {echo "<p>$sql $LDDbNoSave<br>"; };
     }
-			
+
     $sql="SELECT batch_nr,dept,tdate,ttime,inquirer,tid,query,answered FROM $dbtable WHERE inquirer='$inquirer'  ORDER BY tid DESC";
     if($ergebnis=$db->SelectLimit($sql,6)) {
         $rows = $ergebnis->RecordCount();
@@ -140,21 +140,21 @@ $dbtable='care_tech_questions';
 ?>
 
 <script language="javascript" >
-<!-- 
+<!--
 
 function checkform(d)
 {
-	if(d.query.value=="") 
+	if(d.query.value=="")
 		{	alert("<?php echo $LDAlertQuestion ?>");
 			d.query.focus();
 			return false;
 		}
-	if(d.inquirer.value=="") 
+	if(d.inquirer.value=="")
 		{	alert("<?php echo $LDAlertName ?>");
 			d.inquirer.focus();
 			return false;
 		}
-	if(d.dept.value=="") 
+	if(d.dept.value=="")
 		{	alert("<?php echo $LDAlertDeptOnly ?>");
 			d.dept.focus();
 			return false;
@@ -163,13 +163,13 @@ function checkform(d)
 }
 
 // -->
-</script> 
+</script>
 
 <style type="text/css" name="s2">
 td.vn { font-family:verdana,arial; color:#000088; font-size:10;background-color:#dedede}
 </style>
 
-<?php 
+<?php
 
 $sTemp = ob_get_contents();
 ob_end_clean();

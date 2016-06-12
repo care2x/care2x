@@ -1,7 +1,7 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 require($root_path.'language/en/lang_en_date_time.php');
 require($root_path.'include/core/inc_date_format_functions.php');
 
@@ -10,7 +10,7 @@ require($root_path.'include/core/inc_date_format_functions.php');
 
 
 //BLOCK PAYMENT IS WRITTEN BY ISRAEL PASCAL
-//ELCT ICT UNIT 
+//ELCT ICT UNIT
 //israel.pascal10@gmail.com, +255719709660, +255767809660
 
 
@@ -39,7 +39,7 @@ require($root_path.'include/core/inc_date_format_functions.php');
     </tr>
  </table>
 <p>&nbsp; </p>
-			 
+
 <form id="form1" name="form1" method="post" action="">
   <table width="596" border="0" align="center" bgcolor="#CCCCFF">
     <tr>
@@ -70,50 +70,50 @@ $trans_type  =   $_POST['trans_id'];
 
 
 switch($trans_type) {
-	 
+
    case  0: //cash
        $bill_type = 'billelem.insurance_id=0';
        $bill_type_drugs = 'b.insurance_id=0';
        $payment   = 'CASH';
        break;
-       
+
    case  1: //credit
        $bill_type = 'billelem.insurance_id>0';
        $bill_type_drugs = 'b.insurance_id>0';
        $payment   = 'CREDIT';
        break;
-       
-   case 2:  //all 
+
+   case 2:  //all
        $bill_type = 'billelem.insurance_id>=0';
        $bill_type_drugs = 'b.insurance_id>=0';
        $payment   = 'CASH and CREDIT';
        break;
-              
-        
- } 
+
+
+ }
 
 
 $selected_date_start        =@formatDate2STD($dfrom,$date_format);
-$selected_date_end          =@formatDate2STD($dto,$date_format); 
+$selected_date_end          =@formatDate2STD($dto,$date_format);
 $f_date_start               =strtotime($selected_date_start);
 $f_date_end                 =strtotime($selected_date_end);
-      
-                
-                               
-$day_start                 =date("d",$f_date_start); 
+
+
+
+$day_start                 =date("d",$f_date_start);
 $month_start               =date("n",$f_date_start);
 $year_start                =date("Y",$f_date_start);
-        
-$day_end                   =date("d",$f_date_end); 
+
+$day_end                   =date("d",$f_date_end);
 $month_end                 =date("n",$f_date_end);
 $year_end                  =date("Y",$f_date_end);
-        
-             
 
-	
+
+
+
 $start_timeframe           =mktime (0,0,0,$month_start, $day_start, $year_start);
 $end_timeframe             =mktime (23,59,59,$month_end, $day_end, $year_end);
-                      
+
 
 
 
@@ -130,23 +130,23 @@ exit;
 //START OF BLOCK PAYMENT
 //*******************************************NOT APPLICABLE FOR AICC HOSPITAL***************************************************************
 /*                                                                                                                                         *
-//SUM FOR REFERRAL                                                                                                                         *  
-$referral_query="SELECT description,SUM(total_price) AS total_referral FROM money_collection_temp                                          * 
+//SUM FOR REFERRAL                                                                                                                         *
+$referral_query="SELECT description,SUM(total_price) AS total_referral FROM money_collection_temp                                          *
                  WHERE description = 'cons-referral' AND purchasing_class='service' ";                                                     *
 $referral_query_result=$db->Execute($referral_query);                                                                                      *
 while($referral_rows=$referral_query_result->FetchRow()){                                                                                  *
      if(isset($referral_rows['total_referral'])){                                                                                          *
-      $total_referral=$referral_rows['total_referral'];                                                                                    * 
-      }else{                                                                                                                               * 
-       $total_referral=0;                                                                                                                  *  
-       }                                                                                                                                   * 
-}                                                                                                                                          * 
+      $total_referral=$referral_rows['total_referral'];                                                                                    *
+      }else{                                                                                                                               *
+       $total_referral=0;                                                                                                                  *
+       }                                                                                                                                   *
+}                                                                                                                                          *
                                                                                                                                            *
                                                                                                                                            *
 //SUM FOR SELF-REFERRAL                                                                                                                    *
 $self_referral_query="SELECT description, SUM(total_price) AS total_self_referral FROM money_collection_temp                               *
                       WHERE description='cons-self-referral' AND purchasing_class='service'";                                              *
-$self_referral_query_result=$db->Execute($self_referral_query);                                                                            *   
+$self_referral_query_result=$db->Execute($self_referral_query);                                                                            *
 while($self_referral_rows=$self_referral_query_result->FetchRow()){
      if(isset($self_referral_rows['total_self_referral'])){
        $total_self_referral=$self_referral_rows['total_self_referral'];
@@ -165,7 +165,7 @@ while($admission_query_rows=$admission_query_result->FetchRow()){
      }else{
           $total_admission=0;
       }
-}  
+}
 
 
 //SUM FOR FOREIGNER
@@ -190,10 +190,10 @@ while($fast_track_query_rows=$cons_fast_track_query_result->FetchRow()){
      }else{
           $total_fast_track=0;
       }
-} 
+}
 
 
- 
+
 
 
 //SUM FOR REVISIT WITHIN 7 DAYS
@@ -206,9 +206,9 @@ while($revisit_rows=$revisit_query_result->FetchRow()){
       }else{
       $total_revisit=0;
        }
-    
+
 }
-               
+
 //SUM PATIENT PARTIAL PAYMENT 10,000
 $partial_10000_query="SELECT description, SUM(total_price) AS total_partial_10000 FROM money_collection_temp
                 WHERE description='cons-Partial Payment-10000' AND purchasing_class='service'";
@@ -219,7 +219,7 @@ while($partial_10000_rows=$partial_10000_result->FetchRow()){
      }else{
          $total_partial_10000=0;
      }
-} 
+}
 
 
 //SUM PATIENT PARTIAL PAYMENT 12,000
@@ -232,7 +232,7 @@ while($partial_12000_rows=$partial_12000_result->FetchRow()){
      }else{
          $total_partial_12000=0;
      }
-} 
+}
 
 //SUM PATIENT PARTIAL PAYMENT 3,000
 $partial_3000_query="SELECT description, SUM(total_price) AS total_partial_3000 FROM money_collection_temp
@@ -244,7 +244,7 @@ while($partial_3000_rows=$partial_3000_result->FetchRow()){
      }else{
          $total_partial_3000=0;
      }
-} 
+}
 
 
 //SUM PATIENT PARTIAL PAYMENT 5,000
@@ -257,8 +257,8 @@ while($partial_5000_rows=$partial_5000_result->FetchRow()){
      }else{                                                                                                                                     *
          $total_partial_5000=0;                                                                                                                 *
      }                                                                                                                                          *
-}                                                                                                                                               * 
-*/                                                                                                                                              
+}                                                                                                                                               *
+*/
 //**********************************************END OF NOT APPLICABLE FOR AICC HOSPITAL**********************************************************
 //END OF BLOCK PAYMENT
 
@@ -421,21 +421,21 @@ while($lab_rows=$lab_query_result->FetchRow()){
       $lab_total=$lab_rows['total_lab'];
      }else{
         $lab_total=0;
-      
+
      }
-}            
-            
+}
+
 
 //RADIOLOGY
 $radio_query="SELECT description, SUM(total_price) AS total_radio FROM money_collection_temp WHERE purchasing_class='xray'";
 $radio_result=$db->Execute($radio_query);
 while($radio_rows=$radio_result->FetchRow()){
      if(isset($radio_rows['total_radio'])){
-      $radio_total=$radio_rows['total_radio']; 
+      $radio_total=$radio_rows['total_radio'];
      }else{
       $radio_total=0;
       }
-}             
+}
 
 
 //DRUGS
@@ -448,7 +448,7 @@ while($drugs_rows=$drugs_result->FetchRow()){
       $drugs_total=0;
      }
 }
- 
+
 
 //DENTAL
 $dental_query="SELECT description, SUM(total_price) AS total_dental FROM money_collection_temp WHERE purchasing_class='dental'";
@@ -469,7 +469,7 @@ while($bedgeneral_rows=$bedgeneral_result->FetchRow()){
     if(isset($bedgeneral_rows['total_bedgeneral'])){
      $total_bedgeneral=$bedgeneral_rows['total_bedgeneral'];
      }else{
-       $total_bedgeneral=0;  
+       $total_bedgeneral=0;
       }
 }
 
@@ -480,7 +480,7 @@ while($bedprivate_rows=$bedprivate_result->FetchRow()){
     if(isset($bedprivate_rows['total_bedprivate'])){
      $total_bedprivate=$bedprivate_rows['total_bedprivate'];
      }else{
-       $total_bedprivate=0;  
+       $total_bedprivate=0;
       }
 }
 
@@ -490,9 +490,9 @@ $minor_proc_result=$db->Execute($minor_proc_query);
 while($minor_proc_rows=$minor_proc_result->FetchRow()){
     if(isset($minor_proc_rows['total_minor_proc'])){
      $minor_proc_total=$minor_proc_rows['total_minor_proc'];
-       
+
     }else{
-     $minor_proc_total=0; 
+     $minor_proc_total=0;
      }
 }
 
@@ -502,9 +502,9 @@ $eye_surgery_result=$db->Execute($eye_surgery);
 while($eyesurgery_rows=$eye_surgery_result->FetchRow()){
     if(isset($eyesurgery_rows['total_eyesurgery'])){
      $eyesurgery_total=$eyesurgery_rows['total_eyesurgery'];
-       
+
     }else{
-     $eyesurgery_total=0; 
+     $eyesurgery_total=0;
      }
 }
 
@@ -551,7 +551,7 @@ while($physio_rows=$physio_result->FetchRow()){
       $physio_total=$physio_rows['total_physio'];
       }else{
       $physio_total=0;
-       }   
+       }
 }
 
 
@@ -561,21 +561,21 @@ while($physio_rows=$physio_result->FetchRow()){
 
 
  ?>
- 
- 
+
+
  <form id="form2" name="form2" method="post" action="">
  <table width="605" border="1" >
- 
- 
- 
-  
-  
+
+
+
+
+
   <tr valign="top" bgcolor="#CCCCCC"><td><b><font face="Verdana, Arial, Helvetica, sans-serif" size="2" color="#000000"> <?php echo  $payment.' INCOME:'; ?></font></b></td><td></td></tr>
-  
+
  <tr valign="top" bgcolor="#CCCCCC"><td>Start Date:<?php echo $dfrom;?></td><td>End Date:<?php echo $dto;?></td></tr>
- 
+
  <tr>
- 
+
    <!--  <td width="174" bgcolor="#CCCCFF">DATE</td> -->
     <td width="224" bgcolor="#CCCCCC">Item Description </td>
     <td width="185" bgcolor="#CCCCCC">Sub-Total </td>
@@ -585,16 +585,16 @@ while($physio_rows=$physio_result->FetchRow()){
 
 
 
-  
-  	
+
+
 /*
   echo '<tr><td width="224">REFERRAL</td><td width="185">'.number_format($total_referral,2).'</td></tr>';
   echo '<tr><td width="224">SELF REFERRAL</td><td width="185">'.number_format($total_self_referral,2).'</td></tr>';
-  echo '<tr><td width="224">ADMISSION</td><td width="185">'.number_format($total_admission,2).'</td></tr>'; 
+  echo '<tr><td width="224">ADMISSION</td><td width="185">'.number_format($total_admission,2).'</td></tr>';
   echo '<tr><td width="224">PARTIAL PAYMENT 10000</td><td width="185">'.number_format($total_partial_10000,2).'</td></tr>';
-  echo '<tr><td width="224">PARTIAL PAYMENT 12000</td><td width="185">'.number_format($total_partial_12000,2).'</td></tr>'; 
-  echo '<tr><td width="224">PARTIAL PAYMENT 5000</td><td width="185">'.number_format($total_partial_5000,2).'</td></tr>'; 
-  echo '<tr><td width="224">PARTIAL PAYMENT 3000</td><td width="185">'.number_format($total_partial_3000,2).'</td></tr>'; 
+  echo '<tr><td width="224">PARTIAL PAYMENT 12000</td><td width="185">'.number_format($total_partial_12000,2).'</td></tr>';
+  echo '<tr><td width="224">PARTIAL PAYMENT 5000</td><td width="185">'.number_format($total_partial_5000,2).'</td></tr>';
+  echo '<tr><td width="224">PARTIAL PAYMENT 3000</td><td width="185">'.number_format($total_partial_3000,2).'</td></tr>';
   echo '<tr><td width="224">FAST TRACK</td><td width="185">'.number_format($total_fast_track,2).'</td></tr>';
   echo '<tr><td width="224">FOREIGNER</td><td width="185">'.number_format($total_foreigner,2).'</td></tr>';
 */
@@ -609,16 +609,16 @@ echo '<tr><td width="224">LAST OFFICE</td><td width="185">'.number_format($total
 echo '<tr><td width="224">DRESSING</td><td width="185">'.number_format($total_dressing,2).'</td></tr>';
 echo '<tr><td width="224">LABORATORY</td><td width="185">'.number_format($lab_total,2).'</td></tr>';
 echo '<tr><td width="224">RADIOLOGY</td><td width="185">'.number_format($radio_total,2).'</td></tr>';
-echo '<tr><td width="224">DRUGS</td><td width="185">'.number_format($drugs_total,2).'</td></tr>';  
+echo '<tr><td width="224">DRUGS</td><td width="185">'.number_format($drugs_total,2).'</td></tr>';
 echo '<tr><td width="224">DENTAL</td><td width="185">'.number_format($total_dental,2).'</td></tr>';
 echo '<tr><td width="224">BED GENERAL</td><td width="185">'.number_format($total_bedgeneral,2).'</td></tr>';
 echo '<tr><td width="224">BED PRIVATE</td><td width="185">'.number_format($total_bedprivate,2).'</td></tr>';
 echo '<tr><td width="224">MAJOR PROCEDURE</td><td width="185">'.number_format($major_proc_total,2).'</td></tr>';
 echo '<tr><td width="224">MINOR PROCEDURE</td><td width="185">'.number_format($minor_proc_total,2).'</td></tr>';
 echo '<tr><td width="224">EYE SURGERY</td><td width="185">'.number_format($eyesurgery_total,2).'</td></tr>';
-echo '<tr><td width="224">PHYSIOTHERAPY</td><td width="185">'.number_format( $physio_total,2).'</td></tr>'; 
+echo '<tr><td width="224">PHYSIOTHERAPY</td><td width="185">'.number_format( $physio_total,2).'</td></tr>';
 echo '<tr><td width="224">SUPPLIES</td><td width="185">'.number_format($supplies_total,2).'</td></tr>';
-  
+
 //$c=$total_referral+$total_self_referral+$total_admission+$total_partial_10000+$total_partial_12000+$total_partial_5000+$total_partial_3000+$total_fast_track+$total_foreigner;
 $c=$total_specialist+$total_general+$total_RCH+$total_general_ipd+$total_specialist_ipd;
 
@@ -636,34 +636,34 @@ $g=$c+$o;
 
 
   ?>
-  
- 
+
+
    <table width="605" border="1" cellpadding="1" cellspacing="0" bordercolor="#999999">
         <tr>
-          <td width="224" rowspan="2" bgcolor="#FFFF00" > 
-            <b><font face="Verdana, Arial, Helvetica, sans-serif" size="2" color="#000000">Consultation:</font></b> <p>          
-            <b><font face="Verdana, Arial, Helvetica, sans-serif" size="2" color="#000000"> 
+          <td width="224" rowspan="2" bgcolor="#FFFF00" >
+            <b><font face="Verdana, Arial, Helvetica, sans-serif" size="2" color="#000000">Consultation:</font></b> <p>
+            <b><font face="Verdana, Arial, Helvetica, sans-serif" size="2" color="#000000">
           Other items/services: </font></b>          </td>
-              <td width="185"  height="30" bgcolor="#FFFF00"> 
+              <td width="185"  height="30" bgcolor="#FFFF00">
             <b> <font face="Verdana, Arial, Helvetica, sans-serif" size="2" color="#000000"><?php echo number_format($c,2); ?></font></b>          </td>
         </tr>
         <tr>
-          <td width="185"  height="30" bgcolor="#FFFF00"> 
+          <td width="185"  height="30" bgcolor="#FFFF00">
             <b> <font face="Verdana, Arial, Helvetica, sans-serif" size="2" color="#000000"><?php echo number_format($o,2); ?></font></b>          </td>
         </tr>
         <tr>
           <td bgcolor="#FFFF00" ><strong>Grand total TSH:</strong></td>
           <td  height="30" bgcolor="#FFFF00"><?php echo number_format($g,2); ?></td>
         </tr>
-   </table> 
+   </table>
    <p>
 </p>
    <p>
    </p>
-  
-  
-  
- 
+
+
+
+
    <table width="597" height="58" border="0">
      <tr>
        <td width="492">Prepared by CashierName:.................................................</td>
@@ -681,7 +681,7 @@ $g=$c+$o;
    <p>&nbsp;   </p>
    <p>
      <input type="button" name="print" value="PRINT" onclick="window.print()" />
-     
+
       </p>
 
  </form>

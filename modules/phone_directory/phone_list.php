@@ -1,10 +1,10 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require_once('./roots.php');
 require_once($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 /*
 CARE2X Integrated Information System Deployment 2.1 - 2004-10-02 for Hospitals and Health Care Organizations and Services
-Copyright (C) 2002,2003,2004,2005  Elpidio Latorilla & Intellin.org	
+Copyright (C) 2002,2003,2004,2005  Elpidio Latorilla & Intellin.org
 
 GNU GPL. For details read file "copy_notice.txt".
 */
@@ -42,7 +42,7 @@ if( $ergebnis=$db->Execute($sql)){
 <HEAD>
 <?php echo setCharSet(); ?>
 <TITLE></TITLE>
-<?php 
+<?php
 require($root_path.'include/core/inc_css_a_hilitebu.php');
 ?>
 </HEAD>
@@ -58,7 +58,7 @@ require($root_path.'include/core/inc_css_a_hilitebu.php');
 <table  border=0 cellpadding=0 cellspacing=0 width="100%">
 <tr>
 <td colspan=3><nobr>
-<?php 
+<?php
 if (!$edit) { echo '<a href="phone.php'.URL_APPEND.'"><img '.createLDImgSrc($root_path,'such-gray.gif','0').'';
 if($cfg['dhtml'])echo' class="fadeOut" ';
 echo '></a>'; } ?><img <?php echo createLDImgSrc($root_path,'phonedir-b.gif','0') ?>><?php if(!$edit) echo '<a href="phone_edit_pass.php'.URL_APPEND.'">';
@@ -90,60 +90,60 @@ if($rows){
 				{
 					$batchnum=$pagecount;
 					$datanum=(($batchnum-1)*$displaysize);
-				}else $datanum=0;	
+				}else $datanum=0;
 		}
 		 else	$datanum=(($batchnum-1)*$displaysize);
 
 		if($update) echo "<font color=maroon size=3>$LDUpdateOk</font>";
-		
+
         echo '<table  border=0 cellpadding=1 cellspacing=1>';
         echo "<tr nowrap >";
 		echo "<td colspan=";
 		if($currentuser=="") echo $colstop; else echo $colstop+1;
 		echo ">&nbsp;<b> $LDActualDir</b> ( $LDMaxItem: ".($linecount)." )</font> </td>";
-       	echo "</tr>"; 
+       	echo "</tr>";
         echo '<tr nowrap class="wardlisttitlerow">';
-		for($i=2;$i<$colstop;$i++) 
- 		{	
+		for($i=2;$i<$colstop;$i++)
+ 		{
  		    echo '<td nowrap>&nbsp;'.$LDExtFields[$i].'</td>';
          }
-		if ($edit) echo "<td>&nbsp;</td>";	
-		echo "</tr>"; 
+		if ($edit) echo "<td>&nbsp;</td>";
+		echo "</tr>";
 
-		$toggle=0; 
+		$toggle=0;
 		$datacount=0;
-		if ($linecount>1) $ergebnis->Move($datanum); 
+		if ($linecount>1) $ergebnis->Move($datanum);
 
 		/* List the entries */
-		
+
 		while (($zeile=$ergebnis->FetchRow())and($datacount<$displaysize))
-			{  
+			{
 					if($toggle) {echo "<tr nowrap class=\"wardlistrow2\">\n";$toggle=0;} else { echo "<tr  nowrap class=\"wardlistrow1\">\n";$toggle=1;};
 
 					$datacount++;
-	
-					for($i=2;$i<$colstop;$i++) 
+
+					for($i=2;$i<$colstop;$i++)
 					{
 					echo "<td nowrap>";
-					
+
 					  if (($update)&&($zeile[item]==$itemname)) echo "<FONT SIZE=1 color=red>";
 						  else echo "<FONT SIZE=1>";
 					echo '<nobr>&nbsp;';
-					
+
 					if($edit)
 					{
 					   if($i == ($colstop-2)) echo formatDate2Local($zeile[$i],$date_format);
 					     elseif($i==($colstop-1)) echo  convertTimeToLocal($zeile[$i]);
 						   else echo htmlspecialchars($zeile[$i]);
 					}
-					else 
+					else
 					{
 					     echo htmlspecialchars($zeile[$i]);
 					}
-					
+
 					echo "</td>\n";
-					
-					
+
+
 					}
 					if ($edit)
 					{
@@ -156,38 +156,38 @@ if($rows){
 					echo "</tr>\n";
    		    };
         echo "</table><br>\n";
-		
+
 		/* If entry more than one show the controls */
-		
+
 		if($pagecount>1)
-		 {  	
+		 {
 			if ($batchnum=="") $batchnum=1;
 			echo " $LDMoreInfo: &nbsp;&nbsp;\n";
 			if ($batchnum>1)
 			echo '<a href=phone_list.php'.URL_APPEND.'&pagecount='.$pagecount.'&linecount='.$linecount.'&batchnum='.($batchnum-1).'&displaysize='.$displaysize.'&edit='.$edit.'><font color=red ><img src="../../gui/img/common/default/l-arrowgrnlrg.gif" border=0></font></a> - ';
 			for($i=1;$i<=$pagecount;$i++)
-			{ 	
+			{
 				if ($i==$batchnum) echo "<b><font color=red >".$i."</font> - </b>"; else echo ' <a href=phone_list.php'.URL_APPEND.'&pagecount='.$pagecount.'&linecount='.$linecount.'&batchnum='.$i.'&displaysize='.$displaysize.'&edit='.$edit.'>'.$i.'</a> - ';
 			}
-	
+
 			if ($batchnum<$pagecount)	echo '<a href=phone_list.php'.URL_APPEND.'&pagecount='.$pagecount.'&linecount='.$linecount.'&batchnum='.($batchnum+1).'&displaysize='.$displaysize.'&edit='.$edit.'><font color=red ><img src="../../gui/img/common/default/bul_arrowgrnlrg.gif" border=0></font></a>';
 			echo "</FONT>\n";
-		
+
 		 }
 
 		//echo "<p>$LDMaxItem: ".($linecount)."</font>\n";
 		echo "<p><FORM method=post action=phone_list.php>
-				
+
 				<input type=hidden name=route value=validroute>
 				<input type=hidden name=remark value=fromlist>
 				<input type=hidden name=sid value=\"$sid\">
 				<input type=hidden name=lang value=\"$lang\">
 				<input type=hidden name=edit value=\"$edit\">
     				<input type=text name=displaysize value=".$displaysize." size=2> $LDRows ";
-					
-		echo '<INPUT type="image" src="../../gui/img/common/default/bul_arrowgrnlrg.gif"></font></FORM>';		
-     
-		//echo "<INPUT type=submit  value=\"$LDShow\".></font></FORM>";		
+
+		echo '<INPUT type="image" src="../../gui/img/common/default/bul_arrowgrnlrg.gif"></font></FORM>';
+
+		//echo "<INPUT type=submit  value=\"$LDShow\".></font></FORM>";
 }// end of if(rows)
 ?>
 
@@ -211,10 +211,10 @@ if($rows){
 </tr>
 <tr >
 <td  class="passborder" colspan=3><font size=1>
-&nbsp; 
+&nbsp;
 </td>
 </tr>
-</table>        
+</table>
 <p>
 <?php
 require($root_path.'include/core/inc_load_copyrite.php');

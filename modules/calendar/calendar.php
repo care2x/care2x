@@ -1,12 +1,12 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 /**
 * CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
 * GNU General Public License
 * Copyright 2002,2003,2004,2005 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -21,7 +21,7 @@ require_once($root_path.'include/core/inc_config_color.php');
 
 if($retpath=='home') $breakfile=$root_path.'main/startframe.php'.URL_APPEND;
 	else $breakfile=$root_path.'main/spediens.php'.URL_APPEND;
-	 
+
 $datum=strftime("%d.%m.%Y");
 $zeit=strftime("%H.%M");
 $toggler=0;
@@ -63,7 +63,7 @@ for($i=1;$i<=$maxdays;$i++)
 {
 	$daynumber[$n]=$i;$n++;
 }
-while ($n<35) 
+while ($n<35)
 {
 	$daynumber[$n]="";
 	$n++;
@@ -97,7 +97,7 @@ ob_start();
 ?>
 
 <script language="javascript" >
-<!-- 
+<!--
 var urlholder;
 
 function update()
@@ -117,16 +117,16 @@ function update()
 
 function cxjahr(offs)
 {
-	
+
 	var buf=document.direct.jahr.value;
 	if(offs<1) buf--; else buf++;
-	if(!isNaN(buf)) 
+	if(!isNaN(buf))
 	{
 	buf=parseInt(buf);
 	document.direct.jahr.value=buf;
 	}
 	else document.direct.jahr.select();
-} 
+}
 function optionwin(d,m,y)
 {
 	if (!d) d="";
@@ -152,7 +152,7 @@ ob_start();
 
 <ul>
 
-<?php 
+<?php
 echo '<table cellspacing=0 cellpadding=0 border=0>
 		<tr><td align=left>';
 echo '<a href="calendar.php'.URL_APPEND.'&pmonth=';
@@ -179,7 +179,7 @@ echo '</tr>';
 $j=0;
 for($x=0;$x<6;$x++)
 {	echo '<tr>';
-	
+
 		for($n=0;$n<6;$n++)
 		{
 			if($daynumber[$j].$pmonth.$pyear==date(jnY)) echo '<td bgcolor=orange>'; else echo '<td bgcolor=white>';
@@ -198,10 +198,10 @@ echo '</td></tr></table>';
 <br><FONT color=navy>
 
 <form name="direct" method=get onSubmit="return update()" >
-<b><?php echo $LDDirectDial ?>:</b>&nbsp;&nbsp;<?php echo $LDMonth ?> <select name="month" size="1"> 
+<b><?php echo $LDDirectDial ?>:</b>&nbsp;&nbsp;<?php echo $LDMonth ?> <select name="month" size="1">
 
 <?php for ($n=1;$n<sizeof($monat);$n++)
-{	
+{
 	echo '<option ';
 	if($n==$pmonth) echo 'selected';
 	echo'>'.$monat[$n].'</option>';

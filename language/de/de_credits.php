@@ -1,7 +1,7 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require_once('./roots.php');
 require_once($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 ?>
 <?php html_rtl($lang); ?>
 <head>
@@ -15,8 +15,8 @@ require_once($root_path.'include/core/inc_environment_global.php');
 <TABLE cellSpacing=0 cellPadding=0 border=0 width=100%>
         <TBODY>
         <TR>
-          <TD><IMG height=15 
-            src="../../gui/img/common/default/pixel.gif" 
+          <TD><IMG height=15
+            src="../../gui/img/common/default/pixel.gif"
             width=5 border=0></TD></TR>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
@@ -40,8 +40,8 @@ require_once($root_path.'include/core/inc_environment_global.php');
 <TABLE cellSpacing=0 cellPadding=0 border=0 width=100%>
         <TBODY>
         <TR>
-          <TD><IMG height=15 
-            src="../../gui/img/common/default/pixel.gif" 
+          <TD><IMG height=15
+            src="../../gui/img/common/default/pixel.gif"
             width=5 border=0></TD></TR>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
@@ -63,7 +63,7 @@ require_once($root_path.'include/core/inc_environment_global.php');
 			Stephan hilft bei der Korrektur und Verbesserung von PPT Pr�sentationen.
 			<P><a href="mailto:info@pfefferkorn-online.de"><u>Stephan  kann hier kontaktiert werden.</u></a>
 			</font>
-</TD></TR>	
+</TD></TR>
 </TBODY></TABLE>
 
 <hr>
@@ -80,7 +80,7 @@ require_once($root_path.'include/core/inc_environment_global.php');
 			Sven K�chel kann hier kontaktiert werden
 			<br><a href="mailto:sid61@users.sourceforge.net"><u>sid61(at)users.sourceforge.net</u></a>
 			</font>
-</TD></TR>	
+</TD></TR>
 </TBODY></TABLE>
 <hr>
 <TABLE cellSpacing=0 cellPadding=0 border=0 width=100%>
@@ -99,8 +99,8 @@ require_once($root_path.'include/core/inc_environment_global.php');
 <TABLE cellSpacing=0 cellPadding=0 border=0 width=100%>
         <TBODY>
         <TR>
-          <TD><IMG height=15 
-            src="../../gui/img/common/default/pixel.gif" 
+          <TD><IMG height=15
+            src="../../gui/img/common/default/pixel.gif"
             width=5 border=0></TD></TR>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
@@ -142,22 +142,22 @@ require_once($root_path.'include/core/inc_environment_global.php');
 			Beruf: Arzt, Zusatzausbildung Medizininformatik
 			<P>Dr. Wilfried G�dert kann hier kontaktiert werden
 			<br><a href="mailto:goedert@users.sourceforge.net"><u>goedert(at)users.sourceforge.net</u></a>
-</TD></TR>	
+</TD></TR>
 </TBODY></TABLE>
 
 <!-- <hr>
 <TABLE cellSpacing=0 cellPadding=0 border=0 width=100%>
-        <TBODY>       
+        <TBODY>
 		 <TR>
-          <TD><IMG height=15 
-            src="../../gui/img/common/default/pixel.gif" 
+          <TD><IMG height=15
+            src="../../gui/img/common/default/pixel.gif"
             width=5 border=0></TD></TR>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
 			<P><img src="../../uploads/photos/credits/giuseppe_scarpi.jpg"  border=0  width=135 align=right vspace=10>
 			<b>Die italienische Fassung von CARE 2X wurde von  Giuseppe Scarpi (IT) bearbeitet.</b>
 			<p>
-			Giuseppe Scarpi wurde vor 35 Jahren in Rom in Italien geboren. 
+			Giuseppe Scarpi wurde vor 35 Jahren in Rom in Italien geboren.
 			<p>Er ist Diplom Elektroengineur und hat schon bei mehreren biomedizinische Firmen gearbeitet wo er
 			einen besseren Einblick in das Zusammenspiel von Medizin und Informatik bekommen hat.
 			<br>
@@ -172,14 +172,14 @@ etwas nimmt, sollte man etwas in gleicher Proportion zur�ckgeben."</i>
 <TABLE cellSpacing=0 cellPadding=0 border=0 width=100%>
         <TBODY>
         <TR>
-          <TD><IMG height=15 
-            src="../../gui/img/common/default/pixel.gif" 
+          <TD><IMG height=15
+            src="../../gui/img/common/default/pixel.gif"
             width=5 border=0></TD></TR>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
             <P><img src="../../uploads/photos/credits/gabriele_cicala.jpg"  border=0  align=right vspace=10>
 			<b>Die italienische Fassung von www.care2x.com wurde von  Gabriele Cicala  (IT) bearbeitet.</b>
-			
+
 			<P><a href="mailto:gabcicala@tiscali.it"><u>Gabriele Cicala kann hier kontaktiert werden.</u></a>
 </TD></TR></TBODY></TABLE> -->
 
@@ -187,14 +187,14 @@ etwas nimmt, sollte man etwas in gleicher Proportion zur�ckgeben."</i>
 <TABLE cellSpacing=0 cellPadding=0 border=0 width=100%>
         <TBODY>
         <TR>
-          <TD><IMG height=15 
-            src="../../gui/img/common/default/pixel.gif" 
+          <TD><IMG height=15
+            src="../../gui/img/common/default/pixel.gif"
             width=5 border=0></TD></TR>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
             <P><img src="../../uploads/photos/credits/daniel_zilli.jpg"  border=0  align=right vspace=10>
 			<b>Die brazilianishe Fassung von CARE 2X und www.care2x.com wurde von  Daniel Zilli (PT-BR)  bearbeitet.</b>
-			
+
 			<P><a href="mailto:danielz@cco.matrix.com.br"><u>Daniel Zilli kann hier kontaktiert werden.</u></a>
 </TD></TR></TBODY></TABLE>
  -->

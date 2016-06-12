@@ -1,7 +1,7 @@
 <?php
- error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
  require('./roots.php');
  require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 
  define('LANG_FILE','nursing.php');
  define('NO_2LEVEL_CHK',1);
@@ -14,7 +14,7 @@
  $breakfile=$root_path.'main/startframe.php'.URL_APPEND;
 ///$db->debug=true;
  require_once($root_path.'include/care_api_classes/class_ward.php');
- // Load the wards info 
+ // Load the wards info
  $ward_obj=new Ward;
  $items='nr,ward_id,name, dept_nr';
  $ward_info=&$ward_obj->getAllWardsItemsObject($items, $_SESSION['department_nr']);
@@ -79,7 +79,7 @@ $aSubMenuItem = array('LDNursingStations' => $LDNursingStations." <img ".createC
 										'LDNews'  => "<a href=\"".$root_path."modules/news/newscolumns.php".URL_APPEND."&dept_nr=36\">$LDNews</a>"
 										);
 
-										
+
 $aSubMenuText = array('',
 										$LDQuickViewTxt,
 										$LDSearchPatientTxt,

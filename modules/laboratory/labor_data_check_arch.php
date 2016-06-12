@@ -1,12 +1,12 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 /**
 * CARE2X Integrated Hospital Information System Deployment 2.2 - 2006-07-10
 * GNU General Public License
 * Copyright 2002,2003,2004,2005,2006 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -22,19 +22,19 @@ $toggle=0;
 
 $lab_obj=new Lab();
 
-# Load the date formatter 
+# Load the date formatter
 require_once($root_path.'include/core/inc_date_format_functions.php');
-    
+
 $lab_results=&$lab_obj->createResultsList($encounter_nr);
 $linecount=$lab_obj->LastRecordCount();
-if (!$linecount) { 		  
-					
+if (!$linecount) {
+
 	switch($mode)
 	{
 		case 'list': header("location:pflege-station-patientdaten.php".URL_REDIRECT_APPEND."&station=$station&pn=$encounter_nr&nodoc=labor");break;
 		default: header("location:labor_datainput.php".URL_REDIRECT_APPEND."&encounter_nr=$encounter_nr&newid=1&mode=$mode");
 	}
-} 
+}
 ?>
 <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 3.0//EN" "html.dtd">
 <?php html_rtl($lang); ?>
@@ -45,7 +45,7 @@ if (!$linecount) {
 .va12_w{color:#ffffff}
 </style>
 
-<?php 
+<?php
 require($root_path.'include/core/inc_js_gethelp.php');
 require($root_path.'include/core/inc_css_a_hilitebu.php');
 ?>
@@ -69,16 +69,16 @@ require($root_path.'include/core/inc_css_a_hilitebu.php');
 <td valign=top><p><br>
 <ul>
 
-<?php 
+<?php
 if($linecount>1) echo "<p>$LDReportFoundMany";
 	else echo "<p>$LDReportFound";
 echo " <font color=red><b>$encounter_nr</b></font>.";
 if($linecount>1) echo "<br> $LDIfWantEditMany<p>";
 	else echo "<br> $LDIfWantEdit<p>";
 					//	$abuf=array(); $last=array();
-				
+
 					echo '<table border=0 cellpadding=3 cellspacing=1> <tr bgcolor="#ff0000">';
-					
+
 					/* Print the column descriptors */
 						echo'
 						<td class="va12_w"><b>'.$LDJobIdNr.'</b></td>
@@ -87,20 +87,20 @@ if($linecount>1) echo "<br> $LDIfWantEditMany<p>";
 					 <td class="va12_w">&nbsp;<b>'.$LDAt.'</b></td>
 					 <td class="va12_w">&nbsp;</td>
 					 </tr>';
-					 
+
                     /* Print the list of the stored test results */
 					while($zeile=$lab_results->FetchRow())
 					{
-						$abuf=explode('~',$zeile['encoder']);	
+						$abuf=explode('~',$zeile['encoder']);
 						$abuf=array_pop($abuf);
 						parse_str(trim($abuf),$last);
-						
+
 					    echo '<tr class=';
-						
+
 						if($toggle) { echo "wardlistrow2>"; $toggle=0;} else {echo "wardlistrow1>"; $toggle=1;};
-	
+
 	                    $fwd_url = 'labor_datainput.php'.URL_APPEND.'&encounter_nr='.$encounter_nr.'&job_id='.$zeile['job_id'].'&parameterselect='.$zeile['group_id'].'&mode='.$mode.'&update=1';
-	                     
+
 						     /* Print the job id or batch nr., test date and time */
 							echo'
 							<td>
@@ -114,9 +114,9 @@ if($linecount>1) echo "<br> $LDIfWantEditMany<p>";
 							<td>&nbsp;'.convertTimeToLocal($zeile['test_time']).'
 							</td>';
 						    echo'<td>&nbsp';
-						
+
 						    /* Create the link button */
-					        echo '<a href='.$fwd_url.'><img 
+					        echo '<a href='.$fwd_url.'><img
 										'.createComIcon($root_path,'bul_arrowgrnlrg.gif','0').' alt="'.$LDClk2Edit.'"></a>&nbsp;</td></tr>';
 
 					}
@@ -149,11 +149,11 @@ if($linecount>1) echo "<br> $LDIfWantEditMany<p>";
 </tr>
 <tr >
 <td bgcolor="#333399" colspan=3><font size=1>
-&nbsp; 
+&nbsp;
 </td>
 </tr>
 
-</table>        
+</table>
 <p>
 <?php
 require($root_path.'include/core/inc_load_copyrite.php');

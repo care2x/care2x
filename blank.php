@@ -1,5 +1,5 @@
 <?php
-//error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
+
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
 if(!isset($lang)||!$lang)
@@ -13,11 +13,11 @@ if(file_exists('language/'.$lang.'/lang_'.$lang.'_indexframe.php')) include('lan
 
 ?>
 <?php html_rtl($lang) ?>
-<?php 
+<?php
 
 include_once('include/core/inc_charset_fx.php');
 
-echo setCharSet(); 
+echo setCharSet();
 
 ?>
 <head>

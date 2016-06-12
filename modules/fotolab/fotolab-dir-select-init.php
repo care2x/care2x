@@ -1,7 +1,7 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 /**
  * CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
  * GNU General Public License
@@ -23,7 +23,7 @@ $breakfile="javascript:window.parent.location.replace('spediens.php?sid=$sid&lan
 <?php echo setCharSet(); ?>
 
 <script language="javascript">
-<!-- 
+<!--
 
 function chkform(d)
 {
@@ -84,9 +84,9 @@ require($root_path.'include/core/inc_css_a_hilitebu.php');
 		<p><input type="hidden" name="sid" value="<?php echo $sid ?>"> <input
 			type="hidden" name="lang" value="<?php echo $lang ?>"> <input
 			type="submit" value="<?php echo "$LDOK $LDContinue" ?>...">
-		
+
 		</form>
-		
+
 		</center>
 		</FONT></td>
 	</tr>

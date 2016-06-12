@@ -1,12 +1,12 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 /**
 * CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
 * GNU General Public License
 * Copyright 2002,2003,2004,2005 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -14,7 +14,7 @@ define('LANG_FILE','nursing.php');
 define('NO_2LEVEL_CHK',1);
 require_once($root_path.'include/core/inc_front_chain_lang.php');
 
-if(!$dept) 
+if(!$dept)
 	if($_COOKIE[ck_thispc_dept]) $dept=$_COOKIE[ck_thispc_dept];
 		else $dept='plop'; // set to default plop = plastic surgery op
 
@@ -52,7 +52,7 @@ for($i=1;$i<=$maxdays;$i++)
 {
 	$daynumber[$n]=$i;$n++;
 }
-while ($n<35) 
+while ($n<35)
 {
 	$daynumber[$n]="";
 	$n++;
@@ -87,7 +87,7 @@ while ($n<35)
 ?>
 
 <script language="javascript" >
-<!-- 
+<!--
 var urlholder;
 
 function update()
@@ -107,16 +107,16 @@ function update()
 
 function cxjahr(offs)
 {
-	
+
 	var buf=document.direct.jahr.value;
 	if(offs<1) buf--; else buf++;
-	if(!isNaN(buf)) 
+	if(!isNaN(buf))
 	{
 	buf=parseInt(buf);
 	document.direct.jahr.value=buf;
 	}
 	else document.direct.jahr.select();
-} 
+}
 
 // -->
 </script>
@@ -138,7 +138,7 @@ ob_start();
 <FONT  class="prompt">
 <?php echo $LDClkDate ?>
 </font><p>
-<?php 
+<?php
 echo '<table cellspacing=0 cellpadding=0 border=0>
 		<tr><td align=left>';
 echo '<a href="nursing-station-archiv.php'.URL_APPEND.'&pmonth=';
@@ -165,7 +165,7 @@ echo '</tr>';
 $j=0;
 for($x=0;$x<6;$x++)
 {	echo '<tr>';
-	
+
 		for($n=0;$n<6;$n++)
 		{
 			if($daynumber[$j].$pmonth.$pyear==date(jnY)) echo '
@@ -205,10 +205,10 @@ echo '</td></tr></table>';
 <br><FONT    SIZE=-1  FACE="Arial" color=navy>
 
 <form name="direct" method=post  onSubmit="return update()" >
-<b><?php echo $LDDirectSelect ?>:</b>&nbsp;&nbsp;<?php echo $LDMonth ?><select name="month" size="1"> 
+<b><?php echo $LDDirectSelect ?>:</b>&nbsp;&nbsp;<?php echo $LDMonth ?><select name="month" size="1">
 
 <?php for ($i=0,$n=1;$i<sizeof($monat);$i++,$n++)
-{	
+{
 	echo '<option ';
 	if($n==$pmonth) echo 'selected';
 	echo'>'.$monat[$i].'</option>';

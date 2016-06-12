@@ -1,8 +1,8 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 echo $pat_bez;
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 /**
 * CARE 2X Integrated Hospital Information System version deployment 1.1 (mysql) 2004-01-11
 * GNU General Public License
@@ -14,7 +14,7 @@ require($root_path.'include/core/inc_environment_global.php');
 
 # Default value for the maximum nr of rows per block displayed, define this to the value you wish
 # In normal cases this value is derived from the db table "care_config_global" using the "pagin_insurance_list_max_block_rows" element.
-define('MAX_BLOCK_ROWS',30); 
+define('MAX_BLOCK_ROWS',30);
 
 # Define to TRUE if you want to show the option to select  inclusion of the first name in universal searches
 # This would give the user a chance to shut the search for first names and makes the search faster, but the user has one element more to consider
@@ -107,7 +107,7 @@ if(empty($GLOBAL_CONFIG['pagin_person_search_max_block_rows'])) $pagen->setMaxCo
 
 
 if(isset($mode)&&($mode=='search'||$mode=='paginate')&&isset($searchkey)&&($searchkey)){
-	
+
 	include_once($root_path.'include/core/inc_date_format_functions.php');
 
 	if($mode=='paginate'){
@@ -115,23 +115,23 @@ if(isset($mode)&&($mode=='search'||$mode=='paginate')&&isset($searchkey)&&($sear
 	}else{
 		# convert * and ? to % and &
 		$searchkey=strtr($searchkey,'*?','%_');
-            
-		
+
+
 	   	$searchkey=trim($searchkey);
 		$suchwort=$searchkey;
-		
+
 		if(is_numeric($suchwort)) {
             $suchwort=(int) $suchwort;
 			$numeric=1;
 			if($suchwort<$GLOBAL_CONFIG['person_id_nr_adder']){
-				   $suchbuffer=(int) ($suchwort + $GLOBAL_CONFIG['person_id_nr_adder']) ; 
+				   $suchbuffer=(int) ($suchwort + $GLOBAL_CONFIG['person_id_nr_adder']) ;
 			}
-			
-			if(empty($oitem)) $oitem='pid';			
+
+			if(empty($oitem)) $oitem='pid';
 			if(empty($odir)) $odir='DESC'; # default, latest pid at top
-			
+
 			$sql2='	WHERE pid="'.$suchwort.'" OR pid = "'.$suchbuffer.'" ';
-			
+
 	    } else {
 			# Try to detect if searchkey is composite of first name + last name
 			if(stristr($searchkey,',')){
@@ -139,7 +139,7 @@ if(isset($mode)&&($mode=='search'||$mode=='paginate')&&isset($searchkey)&&($sear
 			}else{
 				$lastnamefirst=FALSE;
 			}
-			
+
 			$searchkey=strtr($searchkey,',',' ');
 			$cbuffer=explode(' ',$searchkey);
 
@@ -148,7 +148,7 @@ if(isset($mode)&&($mode=='search'||$mode=='paginate')&&isset($searchkey)&&($sear
 				$cbuffer[$x]=trim($cbuffer[$x]);
 				if($cbuffer[$x]!='') $comp[]=$cbuffer[$x];
 			}
-			
+
 			# Arrange the values, ln= lastname, fn=first name, bd = birthday
 			if($lastnamefirst){
 				$fn=$comp[1];
@@ -162,7 +162,7 @@ if(isset($mode)&&($mode=='search'||$mode=='paginate')&&isset($searchkey)&&($sear
 			# Check the size of the comp
 			if(sizeof($comp)>1){
 				$sql2='	WHERE (name_last LIKE "'.strtr($ln,'+',' ').'%" AND name_first LIKE "'.strtr($fn,'+',' ').'%") ';
-				if(!empty($bd)){ 
+				if(!empty($bd)){
 					$DOB=formatDate2STD($bd,$date_format);
 				echo $DOB;
 					if($DOB=='') {
@@ -171,10 +171,10 @@ if(isset($mode)&&($mode=='search'||$mode=='paginate')&&isset($searchkey)&&($sear
 						$sql2.=' AND date_birth = "'.$DOB.'" ';
 					}
 				}
-					
-				//if(empty($oitem)) $oitem='name_last';			
+
+				//if(empty($oitem)) $oitem='name_last';
 				//if(empty($odir)) $odir='ASC'; # default, ascending alphabetic
-		
+
 			}else{
 				# Check if * or %
 				if($suchwort=='%'||$suchwort=='%%'){
@@ -200,8 +200,8 @@ if(isset($mode)&&($mode=='search'||$mode=='paginate')&&isset($searchkey)&&($sear
 						$sql2='	WHERE date_birth = "'.$DOB.'"';
 					}
 				}
-									
-				//if(empty($oitem)) $oitem='name_last';			
+
+				//if(empty($oitem)) $oitem='name_last';
 				//if(empty($odir)) $odir='ASC'; # default, ascending alphabetic
 			}
 		 }
@@ -209,37 +209,37 @@ if(isset($mode)&&($mode=='search'||$mode=='paginate')&&isset($searchkey)&&($sear
 			# Save the query for pagination
 			$_SESSION['sess_searchkey']=$fromwhere;
 		}
-			 
+
 			//$sql2.=' AND status NOT IN ("void","hidden","deleted","inactive")  ORDER BY '.$oitem.' '.$odir;
 
 			# Set the sorting directive
 			if(isset($oitem)&&!empty($oitem)) $sql3 =" ORDER BY $oitem $odir";
-			
-						
+
+
 			//$sql='SELECT * FROM '.$dbtable.$sql2;
 
 			$sql='SELECT pid, name_last, name_first, date_birth, addr_zip, sex, death_date, status FROM '.$fromwhere.$sql3;
-			
+
 			if($ergebnis=$db->SelectLimit($sql,$pagen->MaxCount(),$pagen->BlockStartIndex()))
        		{
-				if ($linecount=$ergebnis->RecordCount()) 
-				{ 
+				if ($linecount=$ergebnis->RecordCount())
+				{
 					if(($linecount==1) && $numeric)
 					{
 						$zeile=$ergebnis->FetchRow();
 						header("location:patient_register_show.php?sid=".$sid."&lang=".$lang."&pid=".$zeile['pid']."&edit=1&status=".$status."&user_origin=".$user_origin."&noresize=1&mode=&target=search");
 						exit;
 					}
-					
+
 					$pagen->setTotalBlockCount($linecount);
-					
+
 					# If more than one count all available
 					if(isset($totalcount) && $totalcount){
 						$pagen->setTotalDataCount($totalcount);
 					}else{
 						# Count total available data
 						$sql='SELECT COUNT(pid) AS maxnr FROM '.$fromwhere;
-						
+
 						if($result=$db->Execute($sql)){
 							if ($result->RecordCount()) {
 								$rescount=$result->FetchRow();
@@ -252,12 +252,12 @@ if(isset($mode)&&($mode=='search'||$mode=='paginate')&&isset($searchkey)&&($sear
 					$pagen->setSortItem($oitem);
 					$pagen->setSortDirection($odir);
 				}
-				
+
 				if(defined('SHOW_SQLQUERY')&&SHOW_SQLQUERY) echo $sql;
-				
+
 			}
 			 else {echo "<p>".$sql."<p>$LDDbNoRead";};
-} else { 
+} else {
     $mode='';
 }
 ?>
@@ -267,24 +267,24 @@ if(isset($mode)&&($mode=='search'||$mode=='paginate')&&isset($searchkey)&&($sear
 <HEAD>
 <?php echo setCharSet(); ?>
  <TITLE></TITLE>
- 
+
 <?php
 require($root_path.'include/core/inc_js_gethelp.php');
 require($root_path.'include/core/inc_css_a_hilitebu.php');
 ?>
 </HEAD>
 
-<BODY topmargin=0 leftmargin=0 marginwidth=0 marginheight=0  onLoad="document.searchform.searchkey.select()" bgcolor=<?php echo $cfg['body_bgcolor']; 
+<BODY topmargin=0 leftmargin=0 marginwidth=0 marginheight=0  onLoad="document.searchform.searchkey.select()" bgcolor=<?php echo $cfg['body_bgcolor'];
  if (!$cfg['dhtml']){ echo ' link='.$cfg['idx_txtcolor'].' alink='.$cfg['body_alink'].' vlink='.$cfg['idx_txtcolor']; } ?>>
 
 <table width=100% border=0 cellspacing="0" cellpadding=0>
 
 <tr>
 <td bgcolor="<?php echo $cfg['top_bgcolor']; ?>">
-<FONT  COLOR="<?php echo $cfg['top_txtcolor']; ?>"  SIZE=+2  FACE="Arial"><STRONG> &nbsp;<?php echo "Patient auswählen";//$LDUploadDicom :: $LDSearch?></STRONG></FONT> 
+<FONT  COLOR="<?php echo $cfg['top_txtcolor']; ?>"  SIZE=+2  FACE="Arial"><STRONG> &nbsp;<?php echo "Patient auswählen";//$LDUploadDicom :: $LDSearch?></STRONG></FONT>
 </td>
 <td bgcolor="<?php echo $cfg['top_bgcolor']; ?>" align="right">
-<a href="javascript:gethelp('patient_search.php')"><img <?php echo createLDImgSrc($root_path,'hilfe-r.gif','0') ?>  <?php if($cfg['dhtml'])echo'class="fadeOut" >';?></a><a href="<?php 
+<a href="javascript:gethelp('patient_search.php')"><img <?php echo createLDImgSrc($root_path,'hilfe-r.gif','0') ?>  <?php if($cfg['dhtml'])echo'class="fadeOut" >';?></a><a href="<?php
 echo $breakfile; ?>"><img <?php echo createLDImgSrc($root_path,'close2.gif','0') ?> alt="<?php echo $LDCloseWin ?>"   <?php if($cfg['dhtml'])echo'class="fadeOut" >';?></a>
 </td>
 </tr>
@@ -301,7 +301,7 @@ echo $breakfile; ?>"><img <?php echo createLDImgSrc($root_path,'close2.gif','0')
 	   <?php
 
             include($root_path.'include/core/inc_patient_searchmask.php');
-       
+
 	   ?>
 </td>
      </tr>
@@ -322,92 +322,92 @@ $tbg= 'background="'.$root_path.'gui/img/common/'.$theme_com_icon.'/'.$bgimg.'"'
 
 if($mode=='search'||$mode=='paginate'){
 	if ($linecount) echo '<hr width=80% align=left>'.str_replace("~nr~",$totalcount,$LDSearchFound).' '.$LDShowing.' '.$pagen->BlockStartNr().' '.$LDTo.' '.$pagen->BlockEndNr().'.';
-		else echo str_replace('~nr~','0',$LDSearchFound); 
+		else echo str_replace('~nr~','0',$LDSearchFound);
 }
 
 if ($linecount){
 
 	$img_male=createComIcon($root_path,'spm.gif','0');
 	$img_female=createComIcon($root_path,'spf.gif','0');
- 
+
 	echo '<p>
-		<table border=0 cellpadding=2 cellspacing=1> 
-		
+		<table border=0 cellpadding=2 cellspacing=1>
+
 		<tr bgcolor="#66ee66" background="'.$root_path.'gui/img/common/default/tableHeaderbg.gif">';
 ?>
       <td <?php echo $tbg; ?>><FONT  SIZE=-1  FACE="Arial" color="#000066"><b>
-	  <?php 
-		echo $pagen->makeSortLink($LDRegistryNr,'pid',$oitem,$odir,$append); 
+	  <?php
+		echo $pagen->makeSortLink($LDRegistryNr,'pid',$oitem,$odir,$append);
 			 ?></b></td>
       <td <?php echo $tbg; ?>><FONT  SIZE=-1  FACE="Arial" color="#000066"><b>
-	  <?php 
-		echo $pagen->makeSortLink($LDSex,'sex',$oitem,$odir,$append); 
+	  <?php
+		echo $pagen->makeSortLink($LDSex,'sex',$oitem,$odir,$append);
 			 ?></b></td>
       <td <?php echo $tbg; ?>><FONT  SIZE=-1  FACE="Arial" color="#000066"><b>
-	  <?php 
-		echo $pagen->makeSortLink($LDLastName,'name_last',$oitem,$odir,$append); 
+	  <?php
+		echo $pagen->makeSortLink($LDLastName,'name_last',$oitem,$odir,$append);
 			 ?></b></td>
       <td <?php echo $tbg; ?>><FONT  SIZE=-1  FACE="Arial" color="#000066"><b>
-	  <?php 
-		echo $pagen->makeSortLink($LDFirstName,'name_first',$oitem,$odir,$append); 
+	  <?php
+		echo $pagen->makeSortLink($LDFirstName,'name_first',$oitem,$odir,$append);
 			 ?></b></td>
       <td <?php echo $tbg; ?>><FONT  SIZE=-1  FACE="Arial" color="#000066"><b>
-	  <?php 
-		echo $pagen->makeSortLink($LDBday,'date_birth',$oitem,$odir,$append); 
+	  <?php
+		echo $pagen->makeSortLink($LDBday,'date_birth',$oitem,$odir,$append);
 			 ?></b></td>
       <td <?php echo $tbg; ?>><FONT  SIZE=-1  FACE="Arial" color="#000066"><b>
-	  <?php 
-		 echo $pagen->makeSortLink($LDZipCode,'addr_zip',$oitem,$odir,$append); 
-		 	
+	  <?php
+		 echo $pagen->makeSortLink($LDZipCode,'addr_zip',$oitem,$odir,$append);
+
 		?></b></td>
       <td <?php echo $tbg; ?>><FONT  SIZE=-1  FACE="Arial" color="#000066"><b>&nbsp;&nbsp;<?php echo $LDOptions; ?></b></td>
-<?php						
+<?php
 				echo"</tr>";
 
 				while($zeile=$ergebnis->FetchRow())
 				{
-						
+
 					if($zeile['status']==''||$zeile['status']=='normal'){
 						echo "
 							<tr bgcolor=";
 						if($toggle) { echo "#efefef>"; $toggle=0;} else {echo "#ffffff>"; $toggle=1;};
 						echo '<td align="right"><font face=arial size=2>';
 						echo "&nbsp;".$zeile['pid'];
-                        echo "&nbsp;</td>";	
-						
+                        echo "&nbsp;</td>";
+
 						echo '<td>';
 						switch($zeile['sex']){
 							case 'f': echo '<img '.$img_female.'>'; break;
 							case 'm': echo '<img '.$img_male.'>'; break;
 							default: echo '&nbsp;'; break;
 						}
-						
+
                         echo '</td>
-						';	
+						';
 
 						echo"<td><font face=arial size=2>";
 						echo "&nbsp;".ucfirst($zeile['name_last']);
-                        echo "</td>";	
+                        echo "</td>";
 						echo"<td><font face=arial size=2>";
 						echo "&nbsp;".ucfirst($zeile['name_first']);
 						# If person is dead show a black cross
 						if($zeile['death_date']&&$zeile['death_date']!='0000-00-00') echo '&nbsp;<img '.createComIcon($root_path,'blackcross_sm.gif','0','absmiddle').'>';
-                        echo "</td>";	
+                        echo "</td>";
 						echo"<td><font face=arial size=2>";
 						echo "&nbsp;".formatDate2Local($zeile['date_birth'],$date_format);
-                        echo "</td>";	
+                        echo "</td>";
 						echo"<td><font face=arial size=2>";
 						echo "&nbsp;".$zeile['addr_zip'];
-                        echo "</td>";	
+                        echo "</td>";
 
 					    if($_COOKIE[$local_user.$sid]) echo '
 						<td><font face=arial size=2>&nbsp;';
 						$pname=$zeile['name_last'].", ".$zeile['name_first'];
 //						echo '<a href="test.php'.URL_APPEND.'&pid='.$zeile['pid'].'&mode=new">';
 						echo '<a href="#Modulname#_dbform.php'.URL_APPEND.'&pid='.$zeile['pid'].'&pname='.$pname.'">';
-						
+
 						echo '<img '.createLDImgSrc($root_path,'ok_small.gif','0').' alt="'.$LDTestThisPatient.'"></a>&nbsp;';
-							
+
                        if(!file_exists($root_path.'cache/barcodes/pn_'.$zeile['pid'].'.png'))
 	      		       {
 			               echo "<img src='".$root_path."classes/barcode/image.php?code=".$zeile['pid']."&style=68&type=I25&width=145&height=50&xres=2&font=5&label=2' border=0 width=0 height=0>";

@@ -1,11 +1,11 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 /*** CARE2X Integrated Hospital Information System Deployment 2.2 - 2006-07-10
 * GNU General Public License
 * Copyright 2002,2003,2004,2005,2006 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file 'copy_notice.txt' for the licence notice
 */
@@ -17,7 +17,7 @@ require($root_path.'include/core/inc_environment_global.php');
 */
 function getFiles($sDirPath = '', $sDiscString = '') {
 	$files = array();
-	
+
 	if (empty($sDirPath)) {
 		return FALSE;
 	} elseif (file_exists($sDirPath.'.')) {
@@ -27,7 +27,7 @@ function getFiles($sDirPath = '', $sDiscString = '') {
 				if (empty($sDiscString)){
 					$files[] = $filename;
 				} else {
-					if (stristr($filename, $sDiscString)) 
+					if (stristr($filename, $sDiscString))
 						$files[] = $filename;
 				}
 			}
@@ -35,8 +35,8 @@ function getFiles($sDirPath = '', $sDiscString = '') {
 		closedir($sDirPath.'.');
 		if (count($files) > 0)
 			return $files;
-	} 
-		
+	}
+
 	return FALSE;
 }
 
@@ -59,7 +59,7 @@ if($mode=='search'&&!empty($searchkey)){
 
 	# Load date formatter
 	include_once($root_path.'include/core/inc_date_format_functions.php');
-	
+
 	include_once($root_path.'include/care_api_classes/class_image.php');
 	$img_obj=new Image;
 	$result=$img_obj->DicomImages($searchkey);
@@ -126,7 +126,7 @@ $smarty->assign('sOnLoadJs','onLoad="document.srcform.searchkey.select();" onFoc
 </style>
 
 <script language="javascript">
-<!-- 
+<!--
 var urlholder;
 
 function popDicom(nr){
@@ -161,7 +161,7 @@ function popDicomSingle(pid, nr, fn){
 dicomwin<?php echo $sid ?>=window.open("dicom_launch_single.php<?php echo URL_REDIRECT_APPEND ?>&pop_only=1&saved=1&pid=" + pid + "&img_nr=" + nr + "&fn=" + fn,"dicomwin<?php echo $sid ?>","menubar=no,resizable=yes,scrollbars=yes, width=" + (w-15) + ", height=" + (h-60) );
 <?php if($cfg['dhtml']) echo '
 	window.dicomwin'.$sid.'.moveTo(0,0);'; ?>
-	
+
 }
 
 function chkform(d){
@@ -175,7 +175,7 @@ function chkform(d){
 </script>
 <script language="javascript" src="<?php echo $root_path; ?>js/dicom.js"></script>
 
-<?php 
+<?php
 
 $sTemp = ob_get_contents();
 
@@ -200,7 +200,7 @@ ob_start();
 <input type="hidden" name="mode" value="search">
 <input type="hidden" name="sid" value="<?php echo $sid ?>">
 <input type="hidden" name="lang" value="<?php echo $lang ?>">
-<input type="image" <?php echo createLDImgSrc($root_path,'searchlamp.gif','0','absmiddle') ?> alt="<?php echo $LDSearchPat ?>">                                                                                                   
+<input type="image" <?php echo createLDImgSrc($root_path,'searchlamp.gif','0','absmiddle') ?> alt="<?php echo $LDSearchPat ?>">
 </form>
 
 <p>
@@ -230,7 +230,7 @@ if(!$pop_only){
    <tr>
     <td colspan=11 bgcolor="#0000ff"></td>
   </tr>
-<?php 
+<?php
 if($mode=='search'&&$rows){
 	#
 	# Prepare the image icons
@@ -249,7 +249,7 @@ if($mode=='search'&&$rows){
 	$img_i=createComIcon($root_path,'i_bl.gif','0'); // Load |
 	$img_info=createComIcon($root_path,'info2.gif','0','absmiddle'); // Load the info
 	$img_empty=createComIcon($root_path,'p.gif','0'); // Load the empty image
-	
+
 	#
 	# Load the data in array
 	#
@@ -258,7 +258,7 @@ if($mode=='search'&&$rows){
 	while($pdata[$z]=$result->Fetchrow()){
 		$z++;
 	}
-	
+
 
 	for($i=0;$i<$z;$i++){
 		if($pdata[$i]['pid']!=$pdata[($i-1)]['pid']){
@@ -271,7 +271,7 @@ if($mode=='search'&&$rows){
 				<td class="v12">&nbsp;'.$pdata[$i]['name_first'].'&nbsp;</td>
 				<td class="v12">&nbsp;'.formatDate2Local($pdata[$i]['date_birth'],$date_format).'&nbsp;</td>
 				<td class="v12"><img ';
-			
+
 			if($rows==1){
 				echo $img_s;
 			}else{
@@ -308,7 +308,7 @@ if($mode=='search'&&$rows){
 				<tr>
 					<td colspan=11 bgcolor="#0000ff"><img '.$img_pix.' width=1 height=1></td>
 				</tr>';
-			
+
 			if ($files) {
 				foreach ($files as $file) {
 					echo '
@@ -318,14 +318,14 @@ if($mode=='search'&&$rows){
 						<td class="v12">&nbsp;</td>
 						<td class="v12">&nbsp;</td>
 						<td class="v12"><img ';
-					
+
 					if($rows==1){
 						echo $img_empty;
 					}else{
 						if($pdata[($i+1)]&&($pdata[$i]['pid']==$pdata[($i+1)]['pid'])) echo $img_i;
 							else echo $img_empty;
 					}
-					
+
 					echo '></td>
 						<td class="v12">&nbsp;</td>
 						<td class="v12">&nbsp;</td>
@@ -342,7 +342,7 @@ if($mode=='search'&&$rows){
 					</tr>';
 				}
 			}
-			
+
 			continue;
 		}
 		echo '
@@ -389,7 +389,7 @@ if($mode=='search'&&$rows){
 			<tr>
 				<td colspan=11 bgcolor="#0000ff"><img '.$img_pix.' width=1 height=1></td>
 			</tr>';
-		
+
 		if ($files) {
 			foreach ($files as $file) {
 				echo '
@@ -399,14 +399,14 @@ if($mode=='search'&&$rows){
 					<td class="v12">&nbsp;</td>
 					<td class="v12">&nbsp;</td>
 					<td class="v12"><img ';
-					
+
 					if($rows==1){
 						echo $img_empty;
 					}else{
 						if($pdata[($i+1)]&&($pdata[$i]['pid']==$pdata[($i+1)]['pid'])) echo $img_i;
 							else echo $img_empty;
 					}
-					
+
 					echo '></td>
 					<td class="v12">&nbsp;</td>
 					<td class="v12">&nbsp;</td>

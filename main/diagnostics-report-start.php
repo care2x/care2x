@@ -1,7 +1,7 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 define('LANG_FILE','konsil.php');
 
 /* Globalize the variables */
@@ -9,7 +9,7 @@ define('LANG_FILE','konsil.php');
 
 $rel_url="?sid=$sid&lang=$lang&edit=$edit&station=$station&pn=$pn&header=$header&user_origin=$user_origin";
 
-/* We need to differentiate from where the user is coming: 
+/* We need to differentiate from where the user is coming:
 *  $user_origin != lab ;  from patient charts folder
 *  $user_origin == lab ;  from the laboratory
 *  and set the user cookie name and break or return filename
@@ -19,7 +19,7 @@ $rel_url="?sid=$sid&lang=$lang&edit=$edit&station=$station&pn=$pn&header=$header
 if($user_origin=='lab')
 {
   $local_user='ck_lab_user';
-  $breakfile='labor.php?sid='.$sid.'&lang='.$lang; 
+  $breakfile='labor.php?sid='.$sid.'&lang='.$lang;
 }
 else
 {

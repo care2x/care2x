@@ -1,8 +1,8 @@
 <?php
 
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 
 $lang_tables=array('departments.php');
 define('LANG_FILE','stdpass.php');

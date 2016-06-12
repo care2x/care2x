@@ -2,14 +2,14 @@
 
 define('LAB_MAX_DAY_DISPLAY',7); # define the max number or days displayed at one time
 
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 /**
 * CARE2X Integrated Hospital Information System Deployment 2.2 - 2006-07-10
 * GNU General Public License
 * Copyright 2002,2003,2004,2005,2006 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -27,7 +27,7 @@ if($user_origin=='lab'||$user_origin=='lab_mgmt'){
   	$breakfile=$root_path.'modules/laboratory/labor_datalist_noedit.php'.URL_APPEND.'&pn='.$encounter_nr.'&user_origin='.$user_origin.'&edit='.$edit;
 }
 
-if(!$_COOKIE[$local_user.$sid]) {header("Location:".$root_path."language/".$lang."/lang_".$lang."_invalid-access-warning.php"); exit;}; 
+if(!$_COOKIE[$local_user.$sid]) {header("Location:".$root_path."language/".$lang."/lang_".$lang."_invalid-access-warning.php"); exit;};
 
 if(!$encounter_nr) header("location:".$root_path."modules/laboratory/labor_data_patient_such.php?sid=$sid&lang=$lang");
 require_once($root_path.'include/core/inc_config_color.php');
@@ -48,7 +48,7 @@ function dateDiff($dformat, $endDate, $beginDate){
 	$end_date=gregoriantojd($date_parts2[1], $date_parts2[2], $date_parts2[0]);
 	return $end_date - $start_date;
 }
-//gjergji 
+//gjergji
 //display the median values
 function medianValue($paramValue,$pName){
 	global $patient;
@@ -68,7 +68,7 @@ function medianValue($paramValue,$pName){
 			if($patient['sex']=='m')
 				if($pName['lo_bound']&&$pName['hi_bound']) $txt.=htmlspecialchars($pName['hi_bound'])."<p><br>".htmlspecialchars($pName['lo_bound']);
 			elseif($patient['sex']=='f')
-				if($pName['lo_bound_f']&&$pName['hi_bound_f']) $txt.=htmlspecialchars($pName['hi_bound_f'])."<p><br>".htmlspecialchars($pName['lo_bound_f']);	
+				if($pName['lo_bound_f']&&$pName['hi_bound_f']) $txt.=htmlspecialchars($pName['hi_bound_f'])."<p><br>".htmlspecialchars($pName['lo_bound_f']);
 			break;
 	}
 	return $txt;
@@ -97,12 +97,12 @@ function doGraph($paramValue,$pName,$valueBuff,$cols=1){
 				echo $txt.'<img src="'.$root_path.'main/imgcreator/labor-datacurve.php?sid='.$sid.'&lang='.$lang.'&cols='.$cols.'&lo='.$pName['lo_bound_f'].'&hi='.$pName['hi_bound_f'].'&d='.$valueBuff.'" border=0>';
 			break;
 	}
-	return $txt;	
+	return $txt;
 }
 
 if($nostat) $ret=$root_path."modules/laboratory/labor_data_patient_such.php?sid=$sid&lang=$lang&versand=1&keyword=$pn";
 	else $ret=$root_path."modules/nursing/nursing-station-patientdaten.php?sid=$sid&lang=$lang&station=$station&pn=$pn";
-	
+
 # Load the date formatter
 require_once($root_path.'include/core/inc_date_format_functions.php');
 
@@ -113,7 +113,7 @@ if($encounter=$enc_obj->getBasic4Data($encounter_nr)) {
 	$patient=$encounter->FetchRow();
 
 	$recs=&$lab_obj->getAllResults($encounter_nr);
-	
+
 	if ($rows=$lab_obj->LastRecordCount()){
 		# Merge the records to common date key
 		$records=array();
@@ -178,7 +178,7 @@ if($encounter=$enc_obj->getBasic4Data($encounter_nr)) {
 .j{font-family:verdana; font-size:12; color:#000000}
 </style>
 
-<?php 
+<?php
 
 $sTemp = ob_get_contents();
 ob_end_clean();
@@ -216,8 +216,8 @@ echo'
 	echo '
 	<td class="a12_b"><font color="#ffffff" width="100px">&nbsp;<b>'.formatDate2Local($v,$date_format).'<br> '.$x.'</b>&nbsp;</td>';
 	reset($tdate);
-	
-	
+
+
 	echo '</tr>';
 echo'
    <tr bgcolor="#ffddee" >
@@ -232,12 +232,12 @@ echo'
 
 	# Reset array
 	reset($ttime);
-	
+
 
 # Prepare the graph values
 $tparam=explode('~',$_POST['params']);
 //order the values
-$requestData=array();	
+$requestData=array();
 reset($records);
 $jIDArray = array();
 while (list($job_id,$paramgroupvalue)=each($records)) {
@@ -265,7 +265,7 @@ while (list($groupId,$paramEnc)=each($requestData)) {
 		echo "<td class=\"" . $class ."\">" . $pName['name'] . "</td>";
 		echo "<td class=\"" . $class ."\">" . medianValue($paramValue,$pName) . "</td>";
 		echo "<td class=\"" . $class ."\">" . $pName['msr_unit'] . "</td>";
-		for($i=0;$i<count($jIDArray);$i++) {		
+		for($i=0;$i<count($jIDArray);$i++) {
 			if(array_key_exists($jIDArray[$i],$encounterNr)) {
 				$valueBuff == '' ? ($valueBuff = $encounterNr[$jIDArray[$i]]) : ($valueBuff .= '~' . $encounterNr[$jIDArray[$i]]);
 				$ptrack++;
@@ -273,17 +273,17 @@ while (list($groupId,$paramEnc)=each($requestData)) {
 			} else {
 				$valueBuff == '' ? ($valueBuff = '0') : ($valueBuff .= '~'.'0');
 				$ptrack++;
-				$columns++;			
+				$columns++;
 			}
 		}
 		if($cols != $columns)
 			echo "<td align=\"right\" colspan=\"". ($cols - $columns) ."\" class=\"" . $class ."\">&nbsp;</td>";
 		echo "<td align=\"right\" colspan=\"". $columns ."\" class=\"" . $class ."\">";
-		echo doGraph($paramValue,$pName,$valueBuff,$columns)."</td>";	
+		echo doGraph($paramValue,$pName,$valueBuff,$columns)."</td>";
 		$valueBuff = '';
 		echo "</tr>";
-		$class=='wardlistrow1' ? $class='wardlistrow2' : $class='wardlistrow1';	
-		$columns=0;	
+		$class=='wardlistrow1' ? $class='wardlistrow2' : $class='wardlistrow1';
+		$columns=0;
 	}
 }
 echo '

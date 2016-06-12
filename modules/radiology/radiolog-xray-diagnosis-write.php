@@ -1,11 +1,11 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 /*** CARE2X Integrated Hospital Information System beta 2.0.1 - 2004-07-04
 * GNU General Public License
 * Copyright 2002,2003,2004,2005 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -27,8 +27,8 @@ $thisfile="radiolog-xray-diagnosis-write.php";
 <input type="reset" value="<?php echo $LDResetEntry ?>">
 <input type="button" value="<?php echo $LDCancel ?>" onClick="javascript:window.top.location.replace('radiolog-xray-javastart.php?sid=<?php echo "$sid&lang=$lang" ?>&mode=display1')"><br>
 <textarea name="diagnosis" cols=70 rows=20 wrap="physical">
-<?php 
-//$diagnosis=file("http://192.168.0.2/uploads/radiology/diagnosis/Thorax.txt"); 
+<?php
+//$diagnosis=file("http://192.168.0.2/uploads/radiology/diagnosis/Thorax.txt");
 //while(list($x,$v)=each($diagnosis)) echo $v;
 require($root_path.'global_conf/inc_remoteservers_conf.php');
 
@@ -40,7 +40,7 @@ if($disc_pix_mode) readfile($xray_diagnosis_localpath."thorax.txt");
 <input type="submit" value="<?php echo $LDSave ?>">
 <input type="reset" value="<?php echo $LDResetEntry ?>">
 <input type="button" value="<?php echo $LDCancel ?>" onClick="javascript:window.top.location.replace('radiolog-xray-javastart.php?sid=<?php echo "$sid&lang=$lang" ?>&mode=display1')">
-   
+
 </form>
 
 </body>

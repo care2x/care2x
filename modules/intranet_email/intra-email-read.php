@@ -1,12 +1,12 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 /**
 * CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
 * GNU General Public License
 * Copyright 2002,2003,2004,2005 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -23,7 +23,7 @@ $dbtable='care_mail_private';
 $linecount=0;
 $modetypes=array('sendmail','listmail');
 $breakfile="intra-email.php".URL_APPEND."&mode=listmail";
-		
+
 		switch($folder)
 		{
 			case 'inbox':$sql="SELECT * FROM $dbtable WHERE  sender='$from'
@@ -37,7 +37,7 @@ $breakfile="intra-email.php".URL_APPEND."&mode=listmail";
 																AND send_stamp='$s_stamp'"; break;
 		}
 				if($ergebnis=$db->Execute($sql))
-				{ 
+				{
 					if($ergebnis->RecordCount())
 					{
 						$content=$ergebnis->FetchRow();
@@ -46,8 +46,8 @@ $breakfile="intra-email.php".URL_APPEND."&mode=listmail";
 						{
 							$dbtable='care_mail_private_users';
 							$sql="SELECT $folder, lastcheck FROM $dbtable WHERE  email='".$_COOKIE[$local_user.$sid]."'";
-							if($ergebnis=$db->Execute($sql)) 
-							{			
+							if($ergebnis=$db->Execute($sql))
+							{
 								if($ergebnis->RecordCount())
 								{
 									$result=$ergebnis->FetchRow();
@@ -57,24 +57,24 @@ $breakfile="intra-email.php".URL_APPEND."&mode=listmail";
 										$buf="t=$s_stamp&r=$read&f=$from&s=$subj&d=$date&z=$size";
 										//echo "$buf<br>$inb[$i]<br>";
 										if(!strcmp($buf,trim($inb[$i])))
-											{	
+											{
 												$inb[$i]=str_replace('r=0','r=1',$inb[$i]);
 												$result[$folder]=implode('_',$inb);
-									
+
 												$sql="UPDATE $dbtable SET $folder='".$result[$folder]."', lastcheck='".$result[lastcheck]."'
 																		WHERE email='".$_COOKIE[$local_user.$sid]."'";
 								                $db->BeginTrans();
 								                $ok=$db->Execute($sql);
 								                if($ok){
-												    $db->CommitTrans(); 
-												} else { 
+												    $db->CommitTrans();
+												} else {
 												    $db->RollbackTrans();
-													echo "$LDDbNoUpdate<br>$sql"; 
-												} 
+													echo "$LDDbNoUpdate<br>$sql";
+												}
 											}
 									}
 								}
-							}else { echo "$LDDbNoRead<br>$sql"; } 
+							}else { echo "$LDDbNoRead<br>$sql"; }
 
 						}// end of if !read
 					} //end of if rows
@@ -82,8 +82,8 @@ $breakfile="intra-email.php".URL_APPEND."&mode=listmail";
 					{
 						$mailok=0;
 					}
-				}else { echo "$LDDbNoRead<br>$sql"; } 
-				
+				}else { echo "$LDDbNoRead<br>$sql"; }
+
 # Start Smarty templating here
  /**
  * LOAD Smarty
@@ -113,7 +113,7 @@ ob_start();
 ?>
 
 <script language="javascript" >
-<!-- 
+<!--
 
 function submitForm(r)
 {
@@ -131,9 +131,9 @@ function printer_v()
 	//window.location.href=urlholder
 	}
 // -->
-</script> 
+</script>
 
-<?php 
+<?php
 
 $sTemp = ob_get_contents();
 ob_end_clean();
@@ -171,7 +171,7 @@ echo '</a></font>';
 // ******************************** Read email ***************************************
 if(1)
 {
-echo '<ul><form name="mailform" action="intra-email.php" method="post">  
+echo '<ul><form name="mailform" action="intra-email.php" method="post">
 	<table border=0 cellspacing=1 cellpadding=3>
     <tr>
       <td bgcolor="#f9f9f9" align=right><FONT size=1 color="#000080">'.$LDFrom.':</td>
@@ -220,7 +220,7 @@ echo '
 
   switch($folder)
   {
-  	case 'inbox': if($_COOKIE[$local_user.$sid]!=$content['sender']) 
+  	case 'inbox': if($_COOKIE[$local_user.$sid]!=$content['sender'])
 							{ $inp=0; echo '<input type="button" value="'.$LDReply.'" onClick="submitForm(1)"> '; break; }
 								else echo '<input type="button" value="'.$LDBack.'" onClick="window.location.href=\'intra-email.php'.URL_REDIRECT_APPEND.'&mode=listmail&folder=inbox&l2h='.$l2h.'\'"> '; break;
   	case 'sent': if($_COOKIE[$local_user.$sid]!=$content['recipient'])
@@ -239,15 +239,15 @@ echo '
  echo '
 	<input type="button" value="'.$LDDelete.'" onClick="if(confirm(\''.$LDAskDeleteMail.'\')) window.location.href=\'intra-email-delete.php'.URL_REDIRECT_APPEND.'&maxrow=1&create=1&folder='.$folder.'&l2h='.$l2h.$buf.'\';">';
  echo '
-	 &nbsp; &nbsp; &nbsp; <a href="javascript:printer_v()" title="'.$LDClk4printer.'">'.$LDPrinterVersion.' <img '.createComIcon($root_path,'bul_arrowgrnsm.gif','0','bottom').'></a>	
-	
+	 &nbsp; &nbsp; &nbsp; <a href="javascript:printer_v()" title="'.$LDClk4printer.'">'.$LDPrinterVersion.' <img '.createComIcon($root_path,'bul_arrowgrnsm.gif','0','bottom').'></a>
+
   </form>
   </ul>
   ';
 }
- 
+
 ?>
-  
+
 
 <p>
 </td>

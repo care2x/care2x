@@ -1,12 +1,12 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 /**
 * CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
 * GNU General Public License
 * Copyright 2002,2003,2004,2005 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -31,7 +31,7 @@ function getMailNum($element_name,$username)
 {
 	global $db; // the db connection object created with ADODB
 	global $dbtable;
-	
+
     $sql="SELECT $element_name FROM $dbtable WHERE  email='".addslashes($username)."'";
 	if($ergebnis=$db->Execute($sql)) {
         if($ergebnis->RecordCount()) {
@@ -62,10 +62,10 @@ require_once($root_path.'include/core/inc_date_format_functions.php');
 
 
 
-if(in_array($mode,$modetypes)) 
+if(in_array($mode,$modetypes))
 {
     if(!isset($db) || !$db) include_once($root_path.'include/core/inc_db_makelink.php');
-    if($dblink_ok) {	
+    if($dblink_ok) {
 					// sendmail (save to db) module
 		switch($mode)
 		{
@@ -94,24 +94,24 @@ if(in_array($mode,$modetypes))
 							send_dt,
 							send_stamp,
 							uid
-							 ) 
+							 )
 						VALUES (
 							'$recipient',
 							'".$_COOKIE[$local_user.$sid]."',
 							'$REMOTE_ADDR',
-							'$cc', 
-							'$bcc', 
+							'$cc',
+							'$bcc',
 							'$subject',
 							'".htmlspecialchars($body_txt)."',
 							'',
-							'$ack', 
-							'".$_COOKIE[$local_user.$sid]."', 
-							'', 
-							'', 
-							'0', 
-							'', 
-							'', 
-							'1', 
+							'$ack',
+							'".$_COOKIE[$local_user.$sid]."',
+							'',
+							'',
+							'0',
+							'',
+							'',
+							'1',
 							'',
 							'".date('Y-m-d H:i:s')."',
 							'".date('Y-m-d H:i:s')."',
@@ -122,7 +122,7 @@ if(in_array($mode,$modetypes))
 						$db->BeginTrans();
 						$ok=$db->Execute($sql);
 						if($ok&&$db->CommitTrans())
-						{ 						
+						{
 							$saveok=true;
 							$sendok=1;
 						//	if($folder=="inbox") $folder="sent";
@@ -142,35 +142,35 @@ if(in_array($mode,$modetypes))
 																WHERE email='".$_COOKIE[$local_user.$sid]. "'";
 							    $db->BeginTrans();
 						        $ok=$db->Execute($sql);
-						        if($ok&&$db->CommitTrans()) { 
-								    //echo "$LDDbNoUpdate<br>$sql"; 
-						        }else { 
+						        if($ok&&$db->CommitTrans()) {
+								    //echo "$LDDbNoUpdate<br>$sql";
+						        }else {
 							        $db->RollbackTrans();
-						            echo "$LDDbNoSave<br>$sql"; 
-						        } 
-							}else { 
-								echo "$LDDbNoRead<br>$sql"; 
-							} 
-						}else { 
+						            echo "$LDDbNoSave<br>$sql";
+						        }
+							}else {
+								echo "$LDDbNoRead<br>$sql";
+							}
+						}else {
 							$db->RollbackTrans();
-						    echo "$LDDbNoSave<br>$sql"; 
-						} 
+						    echo "$LDDbNoSave<br>$sql";
+						}
 						break;
 			}// end of sendmail module
-			
+
 			case 'listmail':
 			{
 				// set dbtable to users
 				$dbtable='care_mail_private_users';
 				// get the last check timestamp
 				$sql="SELECT $folder, lastcheck FROM $dbtable WHERE email='".$_COOKIE[$local_user.$sid]."'";
-				
+
 				if($ergebnis=$db->Execute($sql))
-				{ 
+				{
 					if($ergebnis->RecordCount())
 					{
 					  $content=$ergebnis->FetchRow();
-					  
+
 					  if($folder=='inbox')
 					  {
 						// if last check time stamp found check for  new mails
@@ -182,11 +182,11 @@ if(in_array($mode,$modetypes))
 																	AND send_stamp > '".$content['lastcheck']."'";
 						//echo $sql;
 						if($ergebnis=$db->Execute($sql))
-							{ 
+							{
 								if($ergebnis->RecordCount())
 								{
-									$newmail=1;		
-									
+									$newmail=1;
+
 									while ($mails=$ergebnis->FetchRow())
 									{
 										if(strlen($mails['subject'])>30) $sub=substr($mails['subject'],0,30).'...';
@@ -195,63 +195,63 @@ if(in_array($mode,$modetypes))
 										if($content['inbox']=='') $content['inbox']=$buf;
 											else  $content[inbox].="_".$buf;
 									}
-									
+
 									$dbtable='care_mail_private_users';
-									
+
 									$sql="UPDATE $dbtable SET inbox='".$content['inbox']."', lastcheck ='".date('Y-m-d H:i:s')."' WHERE email='".$_COOKIE[$local_user.$sid]. "'";
 							        $db->BeginTrans();
 						            $ok=$db->Execute($sql);
 						            if($ok) {
 									    $db->CommitTrans();
-									} else { 
+									} else {
 									    $db->RollbackTrans();
                                         echo "$LDDbNoUpdate<br>$sql";
-									} 
+									}
 								}
-							}else { echo "$LDDbNoRead<br>$sql"; } 
+							}else { echo "$LDDbNoRead<br>$sql"; }
 				  		 } // end of if folder == inbox
 					}
 					else
 					{
-						// if last check data not available 
+						// if last check data not available
 						$userok=0;
 					}
 				}else {echo "$db_sqlquery_fail<p> $sql <p> $LDDbNoRead";};
-				
+
 				// get the number of filed mails in every folder
 				$dbtable='care_mail_private_users';
-				
-				if($folder!='inbox') 
+
+				if($folder!='inbox')
 				 {
                    $inbnum=getMailNum('inbox',$_COOKIE[$local_user.$sid]);
                 }
-				else 
-				{ 
+				else
+				{
 				   $newmails=0; $newmails=substr_count($content[inbox],'r=0');
 				 }
-				
-				if($folder!='sent') 
+
+				if($folder!='sent')
 				 {
 	                   $sentnum=getMailNum('sent',$_COOKIE[$local_user.$sid]);
 			     }
-				if($folder!='drafts') 
+				if($folder!='drafts')
 				 {
 	                   $drafnum=getMailNum('drafts',$_COOKIE[$local_user.$sid]);
 				}
-				if($folder!='trash') 
+				if($folder!='trash')
 				 {
 	                   $trasnum=getMailNum('trash',$_COOKIE[$local_user.$sid]);
 				}
 				break;
 			}// end of case listmail
-			
+
 		} // end of switch mode
 
 	if(($mode=='sendmail')||($mode=='compose'))
 			{
 				// set dbtable to users
 				$dbtable='care_mail_private_users';
-				
+
 				$sql="SELECT addr_quick FROM $dbtable WHERE  email='".$_COOKIE[$local_user.$sid]. "'";
 
 					if($ergebnis=$db->Execute($sql))
@@ -262,12 +262,12 @@ if(in_array($mode,$modetypes))
 							$qa=explode('; ',trim($content['addr_quick']));
 							//foreach($qa as $v) echo $v;
 						}
-					}else { echo "$LDDbNoRead<br>$sql"; } 
+					}else { echo "$LDDbNoRead<br>$sql"; }
 			} // end of if mode sendmail or compose
 	 if($reply)
 	 {
 	 	$dbtable='care_mail_private';
-		
+
 		if($reply<2)   $sql='SELECT subject, body '; else $sql='SELECT * ';
 
 		$sql.="FROM $dbtable WHERE  recipient='$recipient'
@@ -275,15 +275,15 @@ if(in_array($mode,$modetypes))
 																AND reply2='$reply2'
 																AND send_dt='$send_dt'
 																AND send_stamp='$send_stamp'";
-																
+
 				if($ergebnis=$db->Execute($sql))
-				{ 
+				{
 					if($ergebnis->RecordCount())
 					{
 						$content=$ergebnis->FetchRow();
-						
+
 						$subject=$content['subject'];
-						
+
 						switch($reply)
 						{
 							case 1:	if($reply2) $recipient=$reply2; else $recipient=$sender;
@@ -296,7 +296,7 @@ if(in_array($mode,$modetypes))
 										$subject=$content['subject'];
 										$body_txt=$content['body'];
 										break;
-							case 3:	$recipient=''; $subject=$content['subject']; 
+							case 3:	$recipient=''; $subject=$content['subject'];
 $body_txt="Forward>>
 Original Nachricht:
 An: $content[recipient]
@@ -312,11 +312,11 @@ $content[body]";
 										break;
 						}
 					}
-				}else { echo "$LDDbNoRead<br>$sql"; } 
+				}else { echo "$LDDbNoRead<br>$sql"; }
 				//echo $sql;
 	  } // end of if reply
 	}
-  		else { echo "$LDDbNoLink<br>$sql"; } 
+  		else { echo "$LDDbNoLink<br>$sql"; }
 } // end of if mode!=""
 
 # Start Smarty templating here
@@ -329,7 +329,7 @@ $content[body]";
 
  require_once($root_path.'gui/smarty_template/smarty_care.class.php');
  $smarty = new smarty_care('common');
- 
+
  # Prepare title
  $sTemp = "$LDIntraEmail - ";
 
@@ -356,7 +356,7 @@ $content[body]";
 
  # Window bar title
  $smarty->assign('title',$sTemp);
- 
+
  # Set body onLoad javascript
  if($mode=='compose') $smarty->assign('sOnLoadJs','onLoad="document.mailform.recipient.focus()"');
 
@@ -367,7 +367,7 @@ ob_start();
 ?>
 
 <script language="javascript" >
-<!-- 
+<!--
 var feld="recipient";
 
 <?php
@@ -384,7 +384,7 @@ function chkDelete(d,m)
 											break;
 										}
 							}
-	return false;		
+	return false;
 }
 
 function selectAll(s,m)
@@ -429,7 +429,7 @@ function chkCompose(d)
 }
 	function useadd(a)
 	{
-		if (feld=="subject") 
+		if (feld=="subject")
 		{	document.mailform.subject.focus();
 			return;
 		}
@@ -437,7 +437,7 @@ function chkCompose(d)
 			else eval("document.mailform."+feld+".value=document.mailform."+feld+".value + '; '+a");
 		eval("document.mailform."+feld+".focus()");
 	}
-	
+
 function showAll()
 {
 	url="intra-email-showaddr.php?sid=<?php echo "$sid&lang=$lang&mode=$mode&folder=$folder&l2h=$l2h" ?>";
@@ -451,7 +451,7 @@ function chgQuickAddr()
 }
 <?php endif; ?>
 // -->
-</script> 
+</script>
 
 <?php
 
@@ -473,15 +473,15 @@ ob_start();
   	else echo $LDInbox.' | ';
   if($mode!='compose') echo '<a href="intra-email.php'.URL_APPEND.'&mode=compose">'.$LDNewEmail.'</a> | ';
   	else echo $LDNewEmail.' | ';
-	echo '<a href="intra-email-addrbook.php'.URL_APPEND.'&mode='.$mode.'&folder='.$folder.'">'.$LDAddrBook.'</a> | 
-	<a href="javascript:gethelp(\'intramail.php\',\'mail\',\''.$mode.'\',\''.$folder.'\',\''.$sendok.'\')">'.$LDHelp.'</a>| 
+	echo '<a href="intra-email-addrbook.php'.URL_APPEND.'&mode='.$mode.'&folder='.$folder.'">'.$LDAddrBook.'</a> |
+	<a href="javascript:gethelp(\'intramail.php\',\'mail\',\''.$mode.'\',\''.$folder.'\',\''.$sendok.'\')">'.$LDHelp.'</a>|
 	<a href="intra-email-pass.php'.URL_APPEND.'">'.$LDLogout.'</a></b>
   <hr color=#000080>
    &nbsp; <FONT  color="#800000">'.$_COOKIE[$local_user.$sid].'<br>
 ';
-/*	echo '<a href="intra-email-addrbook.php'.URL_APPEND.'&mode='.$mode.'&folder='.$folder.'">'.$LDAddrBook.'</a> | 
-	<a href="intra-email-options.php'.URL_APPEND.'">'.$LDOptions.'</a> | 
-	<a href="javascript:gethelp(\'intramail.php\',\'mail\',\''.$mode.'\',\''.$folder.'\',\''.$sendok.'\')">'.$LDHelp.'</a>| 
+/*	echo '<a href="intra-email-addrbook.php'.URL_APPEND.'&mode='.$mode.'&folder='.$folder.'">'.$LDAddrBook.'</a> |
+	<a href="intra-email-options.php'.URL_APPEND.'">'.$LDOptions.'</a> |
+	<a href="javascript:gethelp(\'intramail.php\',\'mail\',\''.$mode.'\',\''.$folder.'\',\''.$sendok.'\')">'.$LDHelp.'</a>|
 	<a href="intra-email-pass.php'.URL_APPEND.'">'.$LDLogout.'</a></b>
   <hr color=#000080>
    &nbsp; <FONT  color="#800000">'.$_COOKIE[$local_user.$sid].'</font><br>
@@ -492,7 +492,7 @@ ob_start();
 if(($mode=='compose')||($mode=='sendmail'))
 {
 echo '<ul><form name="mailform" action="'.$thisfile.'" method="post" onSubmit="return chkCompose(this)">';
-	if(($mode=='sendmail')&&($sendok)) 
+	if(($mode=='sendmail')&&($sendok))
 	{
 
 		echo '<img '.createMascot($root_path,'mascot1_r.gif','0','bottom').'> <font class="prompt">';
@@ -501,7 +501,7 @@ echo '<ul><form name="mailform" action="'.$thisfile.'" method="post" onSubmit="r
 		 echo '</font>';
 	}
 echo '
-  
+
 <table border=0 cellspacing=1 cellpadding=3 width="80%" height="80%">
     <tr>
       <td bgcolor="#f3f3f3" align=right><FONT face="Verdana,Helvetica,Arial" size=2 color="#000080">'.$LDRecipient.':</td>
@@ -510,13 +510,13 @@ echo '
 	  echo '
           </td>
       <td   rowspan=6 bgcolor="#f3f3f3" valign=top>';
-	  if(!$sendok) 
+	  if(!$sendok)
 	  {
 	  	echo '
 	  			<FONT face="Verdana,Helvetica,Arial" size=2 color="#000080">
 	  							'.$LDQuickAddr.':</font><FONT face="Verdana,Helvetica,Arial" size=2><p>';
 						for($i=0;$i<sizeof($qa);$i++)
-						{	
+						{
 								echo '
 	  							 <a href="javascript:useadd(\''.$qa[$i].'\')" title="'.$LDInsertAddr.'" ><img '.createComIcon($root_path,'arrow-blu.gif','0','middle').'> '.$qa[$i].'</a><br>';
 						}
@@ -535,7 +535,7 @@ echo '
 	  {
 	  	echo '
 	  	<input type="checkbox" name="ack" value="1" ';
- 		if($ack) echo "checked"; 
+ 		if($ack) echo "checked";
  		echo '><FONT face="Verdana,Helvetica,Arial" size=1>'.$LDAskAck;
  		}
 	echo '
@@ -580,13 +580,13 @@ echo '
 			if($folder!="drafts") echo '
  			<input type="button" value="'.$LDSave2Draft.'"  onClick=save2draft()>';
  			echo '
- 	 			<input type="reset" value="'.$LDReset.'" align=right onClick=document.mailform.recipient.focus()>      
+ 	 			<input type="reset" value="'.$LDReset.'" align=right onClick=document.mailform.recipient.focus()>
 			   <br><textarea name="body_txt" cols=77 rows=14 wrap="physical">'.$body_txt.'</textarea><br>
          		<input type="submit" value="'.$LDSend.'">
 			 ';
 			if($folder!="drafts") echo '
  			<input type="button" value="'.$LDSave2Draft.'"  onClick=save2draft()>';
-			/*echo ' 
+			/*echo '
 		     <input type="reset" value="'.$LDReset.'"  onClick=document.mailform.recipient.focus()>';*/
 	}
 	else echo '<FONT face="Verdana,Helvetica,Arial" size=2 >'.nl2br($body_txt);
@@ -607,11 +607,11 @@ echo '
  if($mode=='listmail')
  { 	// prepare inbox for display
 	$arrlist=explode('_',$content[$folder]);
-	if(!$l2h) rsort($arrlist); else sort($arrlist); 
+	if(!$l2h) rsort($arrlist); else sort($arrlist);
 	reset($arrlist);
 	$maxrow=sizeof($arrlist);
 	if(($maxrow==1)&&($arrlist[0]=='')) $maxrow=0;
-	
+
 	/* Load common icons */
 	$img_closemail=createComIcon($root_path,'c-mail.gif','0');
 	$img_openmail=createComIcon($root_path,'o-mail.gif','0');
@@ -619,7 +619,7 @@ echo '
 	$img_openfolder=createComIcon($root_path,'of.gif','0');
 	$img_uparrow=createComIcon($root_path,'arw_up.gif','0');
 	$img_dwnarrow=createComIcon($root_path,'arw_down.gif','0');
-	
+
 	echo'
   <table border=0>
     <tr>
@@ -632,39 +632,39 @@ echo '
 	echo '<img '.$img_openfolder.'> <b>'.$LDInbox.' </b>';
 		else echo '<a href="'.$thisfile.URL_APPEND.'&mode=listmail&l2h='.$l2h.'"><img '.$img_closefolder.'> '.$LDInbox.'</a>';
 	echo '<font size=1 face=verdana,arial color="#0"> (';
-	if($folder=='inbox') echo $maxrow; else echo $inbnum; 
+	if($folder=='inbox') echo $maxrow; else echo $inbnum;
 		echo ')</font>';
-		
+
 	echo '<br>';
-	if($folder=='sent') 
+	if($folder=='sent')
 	echo '<img '.$img_openfolder.'> <b>'.$LDSent.'</b>';
 		else echo '<a href="'.$thisfile.URL_APPEND.'&mode=listmail&l2h='.$l2h.'&folder=sent"><img '.$img_closefolder.'> '.$LDSent.'</a>';
 	echo '<font size=1 face=verdana,arial color="#0"> (';
-	if($folder=='sent') echo $maxrow; else echo $sentnum; 
+	if($folder=='sent') echo $maxrow; else echo $sentnum;
 		echo ')</font>';
-		
+
 	echo '<br>';
 	if($folder=='drafts') echo '<img '.$img_openfolder.'> <b>'.$LDDrafts.'</b>';
 		else echo '<a href="'.$thisfile.URL_APPEND.'&mode=listmail&l2h='.$l2h.'&folder=drafts"><img '.$img_closefolder.'> '.$LDDrafts.'</a>';
 	echo '<font size=1 face=verdana,arial color="#0"> (';
-	if($folder=='drafts') echo $maxrow; else echo $drafnum; 
+	if($folder=='drafts') echo $maxrow; else echo $drafnum;
 		echo ')</font>';
-		
+
 	echo '<br>';
 	if($folder=='trash') echo '<img '.$img_openfolder.'> <b>'.$LDRecycle.'</b>';
 		else echo '<a href="'.$thisfile.URL_APPEND.'&mode=listmail&l2h='.$l2h.'&folder=trash"><img '.$img_closefolder.'> '.$LDRecycle.'</a>';
 	echo '<font size=1 face=verdana,arial color="#0"> (';
-	if($folder=='trash') echo $maxrow; else echo $trasnum; 
+	if($folder=='trash') echo $maxrow; else echo $trasnum;
 		echo ')</font>';
 /**
 * End of left nav bar for mailboxes
 */
 	echo '<br>
 	</td>
-      <td valign=top><img src="'.$root_path.'gui/img/common/default/pixel.gif" border=0 width=10 height=1>			
+      <td valign=top><img src="'.$root_path.'gui/img/common/default/pixel.gif" border=0 width=10 height=1>
 	</td>
       <td valign=top><FONT face="Verdana,Helvetica,Arial" size=2>		';
-	  
+
 if($maxrow)
 {
 	echo '<FONT face="Verdana,Helvetica,Arial" size=5 color="#0000f0"><b>';
@@ -677,7 +677,7 @@ if($maxrow)
 	}
 	echo '</font>
 		<form name="listform" action="intra-email-delete.php" method="post" onSubmit="return chkDelete(this,'.sizeof($arrlist).')">
-		<input type="submit" value="'.$LDDelete.'"> &nbsp;  &nbsp; 
+		<input type="submit" value="'.$LDDelete.'"> &nbsp;  &nbsp;
 		<br>	<table border=0 cellspacing=0 cellpadding=0>
     <tr ><td colspan=6 height=1><img src="'.$root_path.'gui/img/common/default/pixel.gif" border=0 height=4 width=1></td></tr>
 	 <tr bgcolor="#0060ae">
@@ -695,9 +695,9 @@ if($maxrow)
 	   width=12 height=20 border=0 align=absmiddle alt="'.$LDSortDate.'"> <font color="#ffffff"><b>'.$LDDate.' '.$LDTime.':</b></font></a></td>
        <td><FONT face="Verdana,Helvetica,Arial" size=2 color="#ffffff">&nbsp;&nbsp;<b>'.$LDSize.':</b>&nbsp;</td>
 	        </tr>';
-			
+
 	/* Create the mail list */
-			
+
 	for($i=0;$i<sizeof($arrlist);$i++)
 	   {
 	    parse_str(trim($arrlist[$i]),$minfo);
@@ -728,10 +728,10 @@ if($maxrow)
  	<input type="hidden" name="l2h" value="'.$l2h.'">
  	<input type="hidden" name="folder" value="'.$folder.'">
   <input type="submit" value="'.$LDDelete.'">
-	</form>	
+	</form>
 	';
 } // end of if maxrow
-else 
+else
 {
 	echo '<img '.createMascot($root_path,'mascot1_r.gif','0','middle').'>
 			<FONT class="prompt">';
@@ -747,14 +747,14 @@ else
    echo '  </td>
     </tr>
   </table>
-  
+
   ';
 }elseif($mode==''){
 	echo'<center>
-	<img '.createMascot($root_path,'mascot1_r.gif','0','middle').'> 
+	<img '.createMascot($root_path,'mascot1_r.gif','0','middle').'>
 	<FONT face="Verdana,Helvetica,Arial" size=3 color="#800000">
 	'.$LDWelcome.' '.$usr.'</font><p>
-	<FONT face="Verdana,Helvetica,Arial" size=2 > 
+	<FONT face="Verdana,Helvetica,Arial" size=2 >
 	<a href="'.$thisfile.URL_APPEND.'&mode=listmail">'.$LDNoteIntra.'</a>
 	</center>';
 }

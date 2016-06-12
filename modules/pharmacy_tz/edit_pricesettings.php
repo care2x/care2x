@@ -5,10 +5,10 @@
  * To change the template for this generated file go to
  * Window - Preferences - PHPeclipse - PHP - Code Templates
  */
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 require($root_path.'include/care_api_classes/class_tz_pharmacy.php');
 
 

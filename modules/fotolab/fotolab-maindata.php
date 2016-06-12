@@ -1,12 +1,12 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 /**
 * CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
 * GNU General Public License
 * Copyright 2002,2003,2004,2005 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -16,7 +16,7 @@ require_once($root_path.'include/core/inc_front_chain_lang.php');
 
 /* Load date formatter */
 require_once($root_path.'include/core/inc_date_format_functions.php');
-				
+
 
 if($mode=='search'){
 
@@ -24,7 +24,7 @@ $patnum=(int)$patnum;
 
 include($root_path.'include/care_api_classes/class_encounter.php');
 $enc_obj=new Encounter($patnum);
-	
+
 // get orig data
 $p_obj=&$enc_obj->getBasic4Data($patnum);
 if(is_object($p_obj)){
@@ -32,9 +32,9 @@ if(is_object($p_obj)){
 }else{
 	$pdata=array();
 }
-	
+
 /*	  		$dbtable='care_admission_patient';
-		 	$sql="SELECT encounter,name,vorname,gebdatum FROM $dbtable 
+		 	$sql="SELECT encounter,name,vorname,gebdatum FROM $dbtable
 					WHERE patnum LIKE '".addslashes($patnum)."'";
 			//echo $sql;
 			if($ergebnis=$db->Execute($sql))
@@ -50,7 +50,7 @@ if(is_object($p_obj)){
 					//echo $rows;
 				}
 				else $pdata=NULL;
-				//else echo "<p>".$sql."<p>Multiple entries found pls notify the edv."; 
+				//else echo "<p>".$sql."<p>Multiple entries found pls notify the edv.";
 			}
 				else { echo "$LDDbNoLink<br>$sql"; } */
 
@@ -69,7 +69,7 @@ if(is_object($p_obj)){
 <!-- Script Begin
 function setalldate(d)
 {
-	if(d) 
+	if(d)
 	{
 		for(n=0;n<document.maindata.maxpic.value;n++) eval("window.parent.SELECTFRAME.srcform.sdate"+n+".value=d");
 	}
@@ -86,7 +86,7 @@ function resetall()
 <?php require($root_path.'include/core/inc_checkdate_lang.php'); ?>
 //  Script End -->
 </script>
-<?php 
+<?php
 require($root_path.'include/core/inc_js_gethelp.php');
 require($root_path.'include/core/inc_css_a_hilitebu.php');
 ?>
@@ -123,7 +123,7 @@ require($root_path.'include/core/inc_css_a_hilitebu.php');
 	<?php echo $LDShotDate ?>:
 </td>
 <!--     <td><input type="text" name="shotdate" size=12 maxlength=12   onKeyUp="setDate(this);setalldate(window.document.maindata.shotdate.value);" onFocus=this.select()>
- -->   
+ -->
     <td><input type="text" name="shotdate" size=12 maxlength=12   onBlur="IsValidDate(this,'<?php echo $date_format ?>')"  onKeyUp="setDate(this,'<?php echo $date_format ?>','<?php echo $lang ?>')">
 	<a href="javascript:setalldate(window.document.maindata.shotdate.value)">
 <img <?php echo createComIcon($root_path,'preset-add.gif','0') ?> alt="<?php echo $LDSetShotDate ?>"></a></td>

@@ -1,12 +1,12 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require_once('./roots.php');
 require_once($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 /**
 * CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
 * GNU General Public License
 * Copyright 2002,2003,2004,2005 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -21,7 +21,7 @@ if(isset($groupopt)) {
 		                                break;
         case 'set_currency':  header('Location: cafenews-edit-price-currency-set.php'.URL_REDIRECT_APPEND);
 		                                break;
-	    default:                    header('Location: cafenews-edit-price.php'.URL_REDIRECT_APPEND.'&groupname='.$groupopt);break; 
+	    default:                    header('Location: cafenews-edit-price.php'.URL_REDIRECT_APPEND.'&groupname='.$groupopt);break;
     }
 }
 
@@ -35,7 +35,7 @@ $sql="SELECT article FROM $dbtable WHERE description='group'";
 if(defined('LANG_DEPENDENT') && (LANG_DEPENDENT==1)){
 	$sql.="' AND lang='".$lang."'";
 }
-			
+
 if($ergebnis=$db->Execute($sql)){
 	$rows=$ergebnis->RecordCount();
 }else{
@@ -109,7 +109,7 @@ function chkRadioButton(e){
 	{
 		$ginfo=$ergebnis->FetchRow();
 		echo '
-		<input type="radio" name="groupopt" value="'.$ginfo['article'].'"> 
+		<input type="radio" name="groupopt" value="'.$ginfo['article'].'">
 		<a href="#" onClick="document.selectform.groupopt['.$i.'].checked=true"> '.$ginfo['article'].'</a><br>';
 	}
 	echo '
@@ -125,8 +125,8 @@ function chkRadioButton(e){
 
     <td>&nbsp;</td>
     <td bgcolor="ccffff" colspan=2><p><br>
-		<input type="radio" name="groupopt" value="newgroup" <?php if (!$rows) echo "checked"; ?>> 
-		<a href="#" <?php 
+		<input type="radio" name="groupopt" value="newgroup" <?php if (!$rows) echo "checked"; ?>>
+		<a href="#" <?php
 			if(!$rows) $i=0;
 			echo 'onClick="document.selectform.groupopt['.$i.'].checked=true"';
 			?>><?php echo $LDCreateGroup ?></a><br><p>
@@ -138,8 +138,8 @@ function chkRadioButton(e){
   </tr>
     <td>&nbsp;</td>
     <td bgcolor="ccffff" colspan=2><p><br>
-		<input type="radio" name="groupopt" value="set_currency" <?php if (!$rows) echo "checked"; ?>> 
- 		<a href="#" <?php 
+		<input type="radio" name="groupopt" value="set_currency" <?php if (!$rows) echo "checked"; ?>>
+ 		<a href="#" <?php
 		if(!$rows) $i=1; else $i++;
 		echo 'onClick="document.selectform.groupopt['.$i.'].checked=true"';
 		?>><?php echo $LDSetCurrency ?></a>
@@ -157,7 +157,7 @@ function chkRadioButton(e){
 	<a href="<?php echo $breakfile ?>"><img <?php echo createLDImgSrc($root_path,'cancel.gif','0') ?>></a>
   </td>
   </tr>
-  
+
 </table>
 <input type="hidden" name="sid" value="<?php echo $sid ?>">
 <input type="hidden" name="lang" value="<?php echo $lang ?>">

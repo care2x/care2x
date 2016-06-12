@@ -1,16 +1,16 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 /**
 * CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
 * GNU General Public License
 * Copyright 2002,2003,2004,2005 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
-if (!$pn) {header("Location:".$root_path."language/".$lang."/lang_".$lang."_invalid-access-warning.php?mode=close"); exit;}; 
+if (!$pn) {header("Location:".$root_path."language/".$lang."/lang_".$lang."_invalid-access-warning.php?mode=close"); exit;};
 
 if(!isset($saveok)) $saveok=false;
 
@@ -24,7 +24,7 @@ require_once($root_path.'include/core/inc_front_chain_lang.php');
 require_once($root_path.'include/care_api_classes/class_drg.php');
 $DRG_obj= new DRG($pn,$dept_nr);
 
-if($saveok) { 
+if($saveok) {
 	switch($target){
 		case "drg_intern":
 							$openerfile="drg-ops-intern.php";
@@ -42,10 +42,10 @@ if($saveok) {
  window.opener.location.href='<?php echo "$openerfile?sid=$sid&lang=$lang&pn=$pn&opnr=$opnr&edit=$edit&ln=$ln&fn=$fn&bd=$bd&group_nr=$group_nr&dept_nr=$dept_nr&oprm=$oprm&y=$y&m=$m&d=$d&display=composite&newsave=1" ?>';
  window.close();
 </script>
-<?php 
+<?php
 
 	exit;
-} 
+}
 
 switch($target){
 	case 'drg_intern':
@@ -97,7 +97,7 @@ if($mode=='save')
   <script language="javascript" src="../js/showhide-div.js">
 </script>
   <script language="javascript">
-<!-- 
+<!--
 function pruf(d)
 {
 	if((d.keyword.value=="")||(d.keyword.value==" ")) return false;
@@ -122,11 +122,11 @@ function checkselect(d)
 }
 // -->
 </script>
- 
-  <?php 
+
+  <?php
 require($root_path.'include/core/inc_css_a_hilitebu.php');
 ?>
- 
+
 </HEAD>
 
 <BODY   onLoad="if(window.focus) window.focus();" bgcolor=<?php echo $cfg['body_bgcolor']; ?>
@@ -140,7 +140,7 @@ require($root_path.'include/core/inc_css_a_hilitebu.php');
 
 <form name="quicklist" onSubmit="return checkselect(this)" method="post">
 
-<table border=0 cellpadding=0 cellspacing=0 width='100%'> 
+<table border=0 cellpadding=0 cellspacing=0 width='100%'>
 <tr bgcolor="<?php echo $rowcolor ?>">
 <td width="20">
 <img <?php echo createComIcon($root_path,'delete2.gif','0') ?> alt="<?php echo $LDReset ?>" onClick="javascript:document.quicklist.reset()">
@@ -149,7 +149,7 @@ require($root_path.'include/core/inc_css_a_hilitebu.php');
 
 <td><font face=arial size=2 color=#ffffff>&nbsp;&nbsp;&nbsp;<b><?php echo $LDDescription ?></b>
 </td>
-		
+
 </tr>
 
 <?php
@@ -167,21 +167,21 @@ function drawdata(&$data)
 	echo '<input type="checkbox" name="sel'.$idx.'" value="'.$data['nr'].'">
 			<input type="hidden" name="'.$hidselector.$idx.'" value="'.$data['code_parent'].'">';
 	$idx++;
-	
+
 	echo '
 	</td>
 	<td><font face=arial size=2><nobr>';
-	echo $data['code'].'&nbsp;';		
+	echo $data['code'].'&nbsp;';
 	echo '&nbsp;</nobr></td><td>&nbsp;';
 	echo '<font face=arial size=2>';
-	echo $data['parent_desc'].':<b>'.$data['description'].'</b>&nbsp;';		
-				
+	echo $data['parent_desc'].':<b>'.$data['description'].'</b>&nbsp;';
+
 	echo '</td>';
 	echo '</tr>';
 }
 
-if ($linecount) { 
-	
+if ($linecount) {
+
 	$idx=0;
 	while($qlist=$qlist_obj->FetchRow()){
 		drawdata($qlist);
@@ -213,8 +213,8 @@ if ($linecount) {
 </form>
 <?php else : ?>
 <p>
-<img <?php echo createMascot($root_path,'mascot1_r.gif','0','bottom') ?> align="bottom"><?php echo $LDNoQuickList ?> 
-<a href="<?php echo "$searchfile?sid=$sid&lang=$lang&pn=$pn&opnr=$opnr&edit=$edit&ln=$ln&fn=$fn&bd=$bd&dept_nr=$dept_nr&oprm=$oprm&display=$display&target=$target" ?>"><u><?php echo $LDClick2Search ?></u></a> 
+<img <?php echo createMascot($root_path,'mascot1_r.gif','0','bottom') ?> align="bottom"><?php echo $LDNoQuickList ?>
+<a href="<?php echo "$searchfile?sid=$sid&lang=$lang&pn=$pn&opnr=$opnr&edit=$edit&ln=$ln&fn=$fn&bd=$bd&dept_nr=$dept_nr&oprm=$oprm&display=$display&target=$target" ?>"><u><?php echo $LDClick2Search ?></u></a>
 <p>
 <a href="javascript:window.close()"><img <?php echo createLDImgSrc($root_path,'close2.gif','0') ?>></a>
 <?php endif ?>

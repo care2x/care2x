@@ -1,7 +1,7 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 
 $lang_tables[]='prompt.php';
 define('LANG_FILE','products.php');
@@ -28,10 +28,10 @@ if(!isset($supplier_nr)||!$supplier_nr){
 if(!isset($idcare_supply) || !$idcare_supply) {
 
 	$dbtable='\'care_supply\'';
- 
+
 	//gjergji:16.01.2007
 	//bug with getting the max order_nr...patched for mysql 5.x
-	//don't know if it works on postgres :(	
+	//don't know if it works on postgres :(
 	//$sql="SELECT order_nr FROM $dbtable ORDER BY order_nr DESC";
 	//$sql="SELECT MAX(idcare_supply) AS idcare_supply FROM $dbtable";
 	$sql="SHOW TABLE STATUS FROM $dbname WHERE Name LIKE $dbtable";
@@ -43,11 +43,11 @@ if(!isset($idcare_supply) || !$idcare_supply) {
 			$idcare_supply=$content['Auto_increment'];
 		}else{
 			$idcare_supply=1;
-		} 
+		}
 	}else{
 		echo "$sql<br>$LDDbNoRead<br>";
 		exit;
-	} 
+	}
 }
 /**
  * LOAD Smarty

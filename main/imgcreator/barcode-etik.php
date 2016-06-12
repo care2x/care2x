@@ -1,7 +1,7 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 /*
  CARE2X Integrated Information System beta 2.0.1 - 2003-10-13 for Hospitals and Health Care Organizations and Services
  Copyright (C) 2002,2003,2004,2005  Elpidio Latorilla & Intellin.org
@@ -36,13 +36,13 @@ if($dblink_ok) {
 	// get orig data
 	//$dbtable='care_patient_encounter';
 	$sql="SELECT c1.name_last, c1.name_first, c1.date_birth, c1.sex, c1.civil_status, c1.phone_1_nr,
-		          c1.religion, c1.addr_str, c1.addr_str_nr, c1.addr_zip, c1.addr_citytown_nr, c1.contact_person, c1.blood_group,  
+		          c1.religion, c1.addr_str, c1.addr_str_nr, c1.addr_zip, c1.addr_citytown_nr, c1.contact_person, c1.blood_group,
 				  c2.*, ad.name
-				 FROM care_encounter as c2 
-				     LEFT JOIN care_person as c1 ON c1.pid=c2.pid 
+				 FROM care_encounter as c2
+				     LEFT JOIN care_person as c1 ON c1.pid=c2.pid
 					 LEFT JOIN care_address_citytown AS ad ON c1.addr_citytown_nr=ad.nr
 				         WHERE c2.encounter_nr='$en'";
-		
+
 	if($ergebnis=$db->Execute($sql))
 	{
 		if($ergebnis->RecordCount())
@@ -51,7 +51,7 @@ if($dblink_ok) {
 		}
 	}
 	// else {print "<p>$sql$LDDbNoRead"; exit;} /* Remove comment for debugging*/
-	 
+
 	include_once($root_path.'include/core/inc_date_format_functions.php');
 	//$date_format=getDateFormat($link,$DBLink_OK);
 
@@ -87,6 +87,6 @@ switch ($result['encounter_class_nr'])
 	default:    $full_en= $en + $GLOBAL_CONFIG['patient_inpatient_nr_adder'];
 	$result['encounter_class']=$LDStationary;
 }
-	
+
 include($root_path.'main/imgcreator/inc_etik.php');
 ?>

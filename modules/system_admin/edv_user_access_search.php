@@ -1,12 +1,12 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 /**
 * CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
 * GNU General Public License
 * Copyright 2002,2003,2004,2005 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -31,15 +31,15 @@ if(isset($mode) && ($mode=='search')) {
 
 	if(!isset($db) || !$db) include_once($root_path.'include/core/inc_db_makelink.php');
 
-    if(isset($dblink_ok) && $dblink_ok) {	
+    if(isset($dblink_ok) && $dblink_ok) {
 	    /* Load the date formatter */
         include_once($root_path.'include/core/inc_date_format_functions.php');
 
-	
+
 	    $sql='SELECT * FROM care_users WHERE exc <> 1 AND (login_id LIKE "'.addslashes($name).'%" OR name LIKE "'.addslashes($name).'%")';
-						
+
 	    if($ergebnis=$db->Execute($sql)) {
-		
+
 		    $rows=$ergebnis->RecordCount();
 		}
 	}
@@ -51,11 +51,11 @@ if(isset($mode) && ($mode=='search')) {
 <?php html_rtl($lang); ?>
 <HEAD>
 <?php echo setCharSet(); ?>
-<?php 
+<?php
 require($root_path.'include/core/inc_css_a_hilitebu.php');
 ?>
 <script language="javascript">
-<!-- 
+<!--
 
 function gethelp(x,s,x1,x2,x3)
 {
@@ -101,16 +101,16 @@ function gethelp(x,s,x1,x2,x3)
 		echo "
 					<td colspan=8><FONT SIZE=1  FACE=verdana,Arial color=\"#800000\"><b>$LDActualAccess</b></td>";
         echo "
-					</tr>"; 
+					</tr>";
         echo '
 					<tr bgcolor="#dfdfdf">';
 		for($i=0;$i<sizeof($LDAccessIndex);$i++)
 			echo "
 			<td><FONT    SIZE=1  FACE=verdana,Arial><b>".$LDAccessIndex[$i]."</b></td>";
-            echo "</tr>"; 
+            echo "</tr>";
 
 		while ($zeile=$ergebnis->FetchRow())
-		{  
+		{
 			if($zeile['exc']) continue;
 			 echo '
 						<tr  bgcolor="#efefef">';
@@ -126,9 +126,9 @@ function gethelp(x,s,x1,x2,x3)
 			echo "
 						</td>\n <td><FONT    SIZE=1  FACE=Arial>";
 			/* Display the permitted areas */
-			
+
 			$area=explode(' ',$zeile['permission']);
-			
+
 			for($j=0;$j<sizeof($area);$j++) echo $area_opt[$area[$j]].'<br>';
 
 			echo '</td>
@@ -177,13 +177,13 @@ function gethelp(x,s,x1,x2,x3)
 </ul>
 </td>
 </tr>
-</table>        
+</table>
 
 <p>
 
 </td>
 </tr>
-</table>        
+</table>
 <br>
 
 <FORM  method=get action="<?php echo $breakfile;?>" >

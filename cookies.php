@@ -1,15 +1,15 @@
-<?php 
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
+<?php
 require_once('./roots.php');
 require_once($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 require("language/$lang/lang_".$lang."_startframe.php"); ?>
 <html>
 <head>
-<?php 
+<?php
 
 include_once('include/core/inc_charset_fx.php');
 
-echo setCharSet(); 
+echo setCharSet();
 
 ?>
 <TITLE><?php echo $LDMainTitle ?></TITLE>
@@ -22,7 +22,7 @@ echo setCharSet();
 <p><br><p><br>
 <font color="#990000" size=4 face="verdana,arial">
 <?php echo $LDAlertNoCookie ?>
-<a href="<?php if($startframe) print "index.php?lang=$lang"; else print "index.php?lang=$lang&egal=1"; ?>" 
+<a href="<?php if($startframe) print "index.php?lang=$lang"; else print "index.php?lang=$lang&egal=1"; ?>"
 <?php if($startframe) print ' target="_top"'; ?>><font size=2><u> <?php echo $LDClkAfter ?></u></font></a>
 <BR>
 <p><br>

@@ -1,11 +1,11 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 /*
-CARE2X Integrated Information System  for Hospitals and Health Care Organizations and Services 
+CARE2X Integrated Information System  for Hospitals and Health Care Organizations and Services
 Deployment 2.1 - 2004-10-02
-Copyright (C) 2002,2003,2004,2005  Elpidio Latorilla & Intellin.org	
+Copyright (C) 2002,2003,2004,2005  Elpidio Latorilla & Intellin.org
 
 GNU GPL. For details read file "copy_notice.txt".
 */

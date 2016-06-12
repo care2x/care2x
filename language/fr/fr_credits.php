@@ -1,7 +1,7 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require_once('./roots.php');
 require_once($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 ?>
 <?php html_rtl($lang); ?>
 <head>
@@ -30,11 +30,11 @@ require_once($root_path.'include/core/inc_environment_global.php');
 			<b>Matej Hausenblas (FR)</b><br>La traduction française de CARE 2X était réalisée.
 			<p>
 			Matej Hausenblas est né à Prague, République Tchéque, en 1981.<p>
-Il est étudiant à l'université de maths-informatique-physique. Après quelques 
-années d'utilisation de Windows il a décidé jeter un coup d'oeil sur Linux, 
-comme un challenge considérable et après quelques temps il a décidé 
-participer à des projets d'Open Source afin d'améliorer ses savoir-faire et 
-également pour retourner quelque chose et enfin pour voir comment les choses 
+Il est étudiant à l'université de maths-informatique-physique. Après quelques
+années d'utilisation de Windows il a décidé jeter un coup d'oeil sur Linux,
+comme un challenge considérable et après quelques temps il a décidé
+participer à des projets d'Open Source afin d'améliorer ses savoir-faire et
+également pour retourner quelque chose et enfin pour voir comment les choses
 marchent dans une telle société.
 			<P><a href="mailto:matejh@users.sourceforge.net"><u>Matej Hausenblas peut être contacté ici..</u></a>
 </TD></TR></TBODY></TABLE>
@@ -43,8 +43,8 @@ marchent dans une telle société.
 <TABLE cellSpacing=0 cellPadding=0 border=0 width=100%>
         <TBODY>
         <TR>
-          <TD><IMG height=15 
-            src="../../gui/img/common/default/pixel.gif" 
+          <TD><IMG height=15
+            src="../../gui/img/common/default/pixel.gif"
             width=5 border=0></TD></TR>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
@@ -65,14 +65,14 @@ Il a décidé de joindre activement la source libre car:<br><i>"Un tel monde id�
 <TABLE cellSpacing=0 cellPadding=0 border=0 width=100%>
         <TBODY>
         <TR>
-          <TD><IMG height=15 
-            src="../../gui/img/common/default/pixel.gif" 
+          <TD><IMG height=15
+            src="../../gui/img/common/default/pixel.gif"
             width=5 border=0></TD></TR>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
             <P><img src="../../uploads/photos/credits/gabriele_cicala.jpg"  border=0  align=right vspace=10>
 			<b>La traduction italienne de CARE 2X et www.care2x.com était réalisée par Gabriele Cicala (IT).</b>
-			
+
 			<P><a href="mailto:gabcicala@tiscali.it"><u>Gabriele Cicala peut être contacté ici..</u></a>
 </TD></TR></TBODY></TABLE>
 
@@ -99,7 +99,7 @@ pour l`éducation de la science d`ordinateurs, les logiciels libres et distribut
         <tbody>
         <tr>
           <td vAlign=top><font face="verdana,arial" size=2>
-			<p><img src="../../uploads/photos/credits/lopo_l_almeida.jpg"  
+			<p><img src="../../uploads/photos/credits/lopo_l_almeida.jpg"
                                 width=135 height=170 border=0  align=right vspace=10>
 			<b>Lopo Lencastre de Almeida (PT)</b> est un des développeurs les plus actifs.
 			Quelques de ses contributions au projet sont:
@@ -124,14 +124,14 @@ pour l`éducation de la science d`ordinateurs, les logiciels libres et distribut
 <TABLE cellSpacing=0 cellPadding=0 border=0 width=100%>
         <TBODY>
         <TR>
-          <TD><IMG height=15 
-            src="../../gui/img/common/default/pixel.gif" 
+          <TD><IMG height=15
+            src="../../gui/img/common/default/pixel.gif"
             width=5 border=0></TD></TR>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>
             <P><img src="../../uploads/photos/credits/agus_mr.jpg"  border=0  align=right vspace=10>
 			<b>La traduction indonésienne de CARE 2X et www.care2x.com était réalisée par Agus Muhammad Ramdan (ID).</b>
-			
+
 			<P><a href="mailto:agusmr@mweb.co.id"><u>Agus M. Ramdan  peut être  contacté ici..</u></a>
 </TD></TR></TBODY></TABLE>
 
@@ -168,7 +168,7 @@ pour l`éducation de la science d`ordinateurs, les logiciels libres et distribut
         <TBODY>
         <TR>
           <TD><IMG height=15
-            src="../../gui/img/common/default/pixel.gif" 
+            src="../../gui/img/common/default/pixel.gif"
             width=5 border=0></TD></TR>
         <TR>
           <TD vAlign=top><font face="verdana,arial" size=2>

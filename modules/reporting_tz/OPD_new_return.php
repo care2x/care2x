@@ -1,7 +1,7 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 //require('con_db.php');
 //connect_db();
 #Load and create paginator object
@@ -39,12 +39,12 @@ if ($printout) {
 } else {
 	$start = mktime(0,0,0,$month, 1, $year);
 	$end = mktime(0,0,0,$month+1,1, $year);
-  
+
 	//$start_timeframe = mktime (0,0,0,$month, 1, $year);
 	//$end_timeframe = mktime (0,0,0,$month+1, 0, $year);
 	$startdate = date("Y-m-d ", $start);
 	$enddate = date("Y-m-d", $end);
-	
+
 }
 $debug=FALSE;
 ($debug)?$db->debug=TRUE:$db->debug=FALSE;

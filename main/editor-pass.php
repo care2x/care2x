@@ -1,7 +1,7 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 define('LANG_FILE','stdpass.php');
 define('NO_2LEVEL_CHK',1);
 require_once($root_path.'include/core/inc_front_chain_lang.php');
@@ -24,7 +24,7 @@ $userck="ck_editor_user";
 
 
 /**
-*   This is the traffic controller 
+*   This is the traffic controller
 *  All redirections must be coded here
 */
 switch($target)
@@ -54,19 +54,19 @@ switch($target)
 	case "patient_admission": $allowedarea[]="events";
 							break;
 }
-							
 
-$thisfile="editor-pass.php";							
+
+$thisfile="editor-pass.php";
 
 $passtag=0;
 
 //reset cookie;
 // reset all 2nd level lock cookies
-require($root_path.'include/core/inc_2level_reset.php'); 
+require($root_path.'include/core/inc_2level_reset.php');
 setcookie(ck_2level_sid.$sid,"");
 
 require($root_path.'include/core/inc_passcheck_internchk.php');
-if ($pass=='check') 	
+if ($pass=='check')
 	include($root_path.'include/core/inc_passcheck.php');
 
 $errbuf=strtr($lognote,"+"," ");
@@ -80,9 +80,9 @@ require($root_path.'include/core/inc_passcheck_head.php');
 
 <FONT  COLOR=<?php echo $cfg[top_txtcolor] ?>  SIZE=6  FACE="verdana"> <b><?php echo $title ?></b></font>
 
-<table width=100% border=0 cellpadding="0" cellspacing="0"> 
+<table width=100% border=0 cellpadding="0" cellspacing="0">
 
-<?php require($root_path.'include/core/inc_passcheck_mask.php') ?>  
+<?php require($root_path.'include/core/inc_passcheck_mask.php') ?>
 
 <p><br>
 
@@ -94,10 +94,10 @@ require($root_path.'include/core/inc_passcheck_head.php');
 
 <tr >
 <td bgcolor="#333399" colspan=3><font size=1>
-&nbsp; 
+&nbsp;
 </td>
 </tr>
-</table>        
+</table>
 <FONT    SIZE=2  FACE="Arial">
 
 <p>

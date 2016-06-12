@@ -1,10 +1,10 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
+error_reporting($ErrorLevel);
 ?>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 <font face="Verdana, Arial" size=3 color="#0000cc">
 <b>
-Stationsverwaltung 
+Stationsverwaltung
 <?php
 switch($src)
 {
@@ -24,8 +24,8 @@ switch($src)
 
 <b>Erschaffen</b>
 
-<ul>Um eine neue Station zu erschaffen klicken Sie diese Option an. 
-	</ul>	
+<ul>Um eine neue Station zu erschaffen klicken Sie diese Option an.
+	</ul>
 </ul>
 <b>Stationsprofil</b>
 <ul>Diese Option zeigt die Stationsprofil and andere relevante Information.
@@ -45,7 +45,7 @@ Zugangsberechtigung sind  nur innerhalb der Station berechtigt.
 <img <?php echo createComIcon('../','frage.gif','0') ?>> <font color="#990000"><b>
 Wie kann ich eine neue Station anlegen?</b>
 </font>
-<ul>       	
+<ul>
  	<b>Schritt 1: </b>Geben Sie den Namen der Station oder deren Abkürzung in das Feld "<span style="background-color:yellow" > Station: </span>" ein.<br>
  	<b>Schritt 2: </b>Wahlen Sie die Abteilung wo die Station angehört aus dem Feld "<span style="background-color:yellow" > Abteilung: </span>" aus.<br>
  	<b>Schritt 3: </b>Schreiben Sie die Beschreibun von der Station und andere relevante Information in das Feld  "<span style="background-color:yellow" > Beschreibung: </span>" ein.<br>
@@ -66,21 +66,21 @@ Kann ich die Anzahl der Betten in einem Zimmer einstellen?</b>
 <img <?php echo createComIcon('../','frage.gif','0') ?>> <font color="#990000"><b>
 Kann ich die Bettenmarkierung einstellen?</b>
 </font>
-<ul>       	
+<ul>
  	<b>Nein. </b>In dieser Version des Programms, die Bettenmarkierung  ist auf A, B, C, usw. eingestellt. Sie können sie nicht ändern.<br>
 	</ul>
 <b>Achtung!</b>
 <ul>Falls Sie abbrechen möchten den <img <?php echo createLDImgSrc('../','cancel.gif','0') ?>> anklicken.
 </ul>
 <?php endif;?>
-	
+
 <?php if($src=="show") : ?>
 	<?php if($x1=="1") : ?>
 
 <img <?php echo createComIcon('../','frage.gif','0') ?>> <font color="#990000"><b>
 Wie kann ich das Stationsprofil speichern?</b>
 </font>
-<ul>       	
+<ul>
  	<b>Schritt 1: </b>Klickt den <input type="button" value="Speichern"> Knopf an.<br>
 	</ul>
 <b>Achtung!</b>
@@ -120,7 +120,7 @@ Wozu schliesst man eine Station vorübergehend?</b>
 <img <?php echo createComIcon('../','frage.gif','0') ?>> <font color="#990000"><b>
 Wie wähle ich eine Station zum Anzeigen aus?</b>
 </font>
-<ul>       	
+<ul>
  	<b>Schritt 1: </b>Klicken Sie die Station in der Liste an dessen Profil Sie anzeigen möchten.<br>
 	</ul>
 <b>Achtung!</b>

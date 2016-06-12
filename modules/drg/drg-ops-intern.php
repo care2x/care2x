@@ -1,12 +1,12 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 /**
 * CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
 * GNU General Public License
 * Copyright 2002,2003,2004,2005 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -31,7 +31,7 @@ if(isset($mode) && $mode=='save_group'&&isset($group_nr) && $group_nr){
 
 $toggle=0;
 $thisfile=basename(__FILE__);
-          
+
 if(isset($mode) && $mode=='delete'&&$item){
 	$buf=$enc_obj->ungroupDiagnoses($group_nr);
 	$buf2=$enc_obj->ungroupProcedures($group_nr);
@@ -53,13 +53,13 @@ if($enc=&$enc_obj->getBasic4Data()){
 
 	# Check for non grouped entries
 	if($enc_obj->nongroupedDiagnosisExists()){
-		$non_grouped=true; 
+		$non_grouped=true;
 	}elseif($enc_obj->nongroupedProcedureExists()){
-		$non_grouped=true; 
+		$non_grouped=true;
 	}
 }
 
-# Preload the icon images 
+# Preload the icon images
 $img_delete=createComIcon($root_path,'delete2.gif','0','right',TRUE);
 ?>
 <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 3.0//EN" "html.dtd">
@@ -67,9 +67,9 @@ $img_delete=createComIcon($root_path,'delete2.gif','0','right',TRUE);
 <HEAD>
 <?php echo setCharSet(); ?>
  <TITLE></TITLE>
- 
+
   <script language="javascript">
-<!-- 
+<!--
 function pruf(d)
 {
 	if((d.keyword.value=="")||(d.keyword.value==" ")) return false;
@@ -150,8 +150,8 @@ function checkCreateNew(){
 }
 // -->
 </script>
- 
-<?php 
+
+<?php
 require($root_path.'include/core/inc_css_a_hilitebu.php');
 ?>
  <?php if($newsave) : ?>
@@ -162,15 +162,15 @@ require($root_path.'include/core/inc_css_a_hilitebu.php');
 <?php endif; ?>
 </HEAD>
 
-<BODY 
+<BODY
 <?php if($display=="composite") echo 'topmargin=0 marginheight=0 leftmargin=0 marginwidth=0';
 else  echo 'topmargin=2 marginheight=2';
-?> 
-onLoad="if(window.focus) window.focus();<?php if(isset($saveok) && $saveok) echo 'updateDisplay(\''.$group_nr.'\');'; ?>" bgcolor="<?php echo $cfg['body_bgcolor']; ?>" 
+?>
+onLoad="if(window.focus) window.focus();<?php if(isset($saveok) && $saveok) echo 'updateDisplay(\''.$group_nr.'\');'; ?>" bgcolor="<?php echo $cfg['body_bgcolor']; ?>"
 <?php if (!$cfg['dhtml']){ echo ' link='.$cfg['idx_txtcolor'].' alink='.$cfg['body_alink'].' vlink='.$cfg['idx_txtcolor']; } ?>>
 <form name="ops_intern" action="drg-ops-intern.php" method="post">
 <FONT    SIZE=2  FACE="verdana,Arial" >
-<?php 
+<?php
 if(isset($is_discharged) && $is_discharged){
 ?>
 <table border=0 cellspacing=0 cellpadding=1 width="100%">
@@ -182,9 +182,9 @@ if(isset($is_discharged) && $is_discharged){
 }
 
 //echo "$ln, $fn ".formatDate2Local($bd,$date_format)." - $pn";
-//if($opnr) echo" - OP# $opnr"; 
+//if($opnr) echo" - OP# $opnr";
 echo $encounter['name_last'].", ".$encounter['name_first']." ".formatDate2Local($encounter['date_birth'],$date_format)." - $pn";
-if($opnr) echo" - OP# $opnr - $dept_nr OP $oprm"; 
+if($opnr) echo" - OP# $opnr - $dept_nr OP $oprm";
 ?>
 <?php if($display!="composite") : ?>
 <a href="javascript:window.history.back()" ><img <?php echo createLDImgSrc($root_path,'back2.gif','0') ?> width=110 height=24 align="right"></a>
@@ -198,7 +198,7 @@ if($opnr) echo" - OP# $opnr - $dept_nr OP $oprm";
 <table border=0 width=100%>
   <tr>
     <td width=100% valign="top">
-	<table border=0 cellpadding=1 cellspacing=1 width=100%> 
+	<table border=0 cellpadding=1 cellspacing=1 width=100%>
 		<tr bgcolor="#990000">
  		<td align="center"><font size=2 color=#ffffff><b><?php echo $LDSelect ?></b></td>
  		<td width="15%"><font size=2 color=#ffffff><b><?php echo $LDOpsIntern ?></b></td>
@@ -208,19 +208,19 @@ if($opnr) echo" - OP# $opnr - $dept_nr OP $oprm";
    	</tr>
 
 <?php
-if(is_object($drg_rows)){ 
+if(is_object($drg_rows)){
 	$i=0;
 	while($drg=$drg_rows->FetchRow()){
-							
-						
+
+
 		echo '<tr class="';
-								
+
 		if($toggle) { echo 'wardlistrow2">'; $toggle=0;} else {echo 'wardlistrow1">'; $toggle=1;};
-								
+
 		echo '
 				<td align="center"><font size=2><input type="radio" name="grp_nr" onClick="javascript:showItems(this,\''.$drg['group_nr'].'\')" ';
 		if($group_nr==$drg['group_nr']) echo 'checked';
-		
+
 		echo '>
 				</td>
 				<td><font size=2>'.$drg['code'].'
@@ -243,7 +243,7 @@ if(is_object($drg_rows)){
 }
 if($non_grouped){
 		echo '<tr class="hilite">';
-								
+
 		//if($toggle) { echo '#efefef>'; $toggle=0;} else {echo '#ffffff>'; $toggle=1;};
 					echo '
 					<td align="center"><font size=2><input type="radio" name="grp_nr" onClick="javascript:showItems(this,\'0\')"';
@@ -265,7 +265,7 @@ if($non_grouped){
 ?>
 	</table>
 	</td>
-	<?php if($display!='composite') { ?>   
+	<?php if($display!='composite') { ?>
 	 <td valign="top" bgcolor="#990000"><font size=2 color=#ffffff>
 	<a href="javascript:window.history.back()" ><img <?php echo createLDImgSrc($root_path,'back2.gif','0') ?> width=110 height=24></a>
 	</td>

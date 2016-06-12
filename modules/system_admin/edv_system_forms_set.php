@@ -1,12 +1,12 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 /**
 * CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
 * GNU General Public License
 * Copyright 2002,2003,2004,2005 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -29,7 +29,7 @@ include_once($root_path.'include/care_api_classes/class_globalconfig.php');
 $gc=new GlobalConfig($GCONFIG);
 
 if(isset($mode)&&($mode=='save')&&!empty($max_items)){
-	
+
 	for($i=1;$i<=$max_items;$i++){
 		if(empty($_POST["value$i"])) $_POST["value$i"]='0';
 		//echo $_POST["index$i"].'==>'.$_POST["value$i"].'<br>';
@@ -81,7 +81,7 @@ ob_start();
 ?>
 <ul>
 <form method="post">
-<table border=0 cellspacing=1 cellpadding=2>  
+<table border=0 cellspacing=1 cellpadding=2>
 <tbody class="submenu">
   <tr class="wardlisttitlerow">
     <td><FONT  color="#000099"><b></b></td>
@@ -89,7 +89,7 @@ ob_start();
    <td><FONT  color="#000099"><b><?php echo $LDStatus; ?></b></td>
   </tr>
 
-<?php 
+<?php
 $i=1;
 while(list($x,$v)=each($GCONFIG))
 {
@@ -99,9 +99,9 @@ while(list($x,$v)=each($GCONFIG))
 	<td align="center"><input type="checkbox" name="value'.$i.'" value="1" ';
 	if($v) echo 'checked';
 	echo '><input type="hidden" name="index'.$i.'" value="'.$x.'">
-       </td>  
+       </td>
 	</tr>';
-	
+
 	$i++;
 }
 ?>

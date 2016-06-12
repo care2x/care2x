@@ -1,5 +1,5 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
+error_reporting($ErrorLevel);
 ?>
 <font face="Verdana, Arial" size=3 color="#0000cc">
 <b>Suchen nach einem Medocs Dokument</b></font>
@@ -8,12 +8,12 @@ error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 <?php if(($src=="?")||($x1=="0")) : ?>
 <b>Schritt 1</b>
 
-<ul>Geben Sie in das Feld "<span style="background-color:yellow" >Medocs Dokument von:</span>" entweder eine vollständige Information oder die erste Zeichen von der Fallnummer, oder dem Namen, oder Vornamen vom Patienten 
+<ul>Geben Sie in das Feld "<span style="background-color:yellow" >Medocs Dokument von:</span>" entweder eine vollständige Information oder die erste Zeichen von der Fallnummer, oder dem Namen, oder Vornamen vom Patienten
  ein.
 		<p>Beispiel 1: "21000012" oder "12".
 		<br>Beispiel 2: "Guerero" oder "gue".
 		<br>Beispiel 3: "Alfredo" oder "Alf".
-		
+
 </ul>
 <b>Schritt 2</b>
 <ul> Den <img <?php echo createLDImgSrc('../','searchlamp.gif','0') ?>> anklicken.<p>

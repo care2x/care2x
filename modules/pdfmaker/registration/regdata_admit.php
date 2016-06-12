@@ -1,5 +1,4 @@
 <?php
-error_reporting ( E_COMPILE_ERROR | E_ERROR | E_CORE_ERROR ) ;
 
 $report_textsize = 10 ;
 $report_titlesize = 10 ;
@@ -8,6 +7,7 @@ $report_authorsize = 10 ;
 
 require ('./roots.php') ;
 require ($root_path . 'include/core/inc_environment_global.php') ;
+error_reporting($ErrorLevel);
 /**
  * CARE 2X Integrated Hospital Information System version deployment 1.1 (mysql) 2004-01-11
  * GNU General Public License

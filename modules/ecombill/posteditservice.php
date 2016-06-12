@@ -1,5 +1,4 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 /**
  * eComBill 1.0.04 for Care2002 beta 1.0.04
  * (2003-04-30)
@@ -12,6 +11,7 @@ error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
  */
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 $local_user='aufnahme_user';
 require_once($root_path.'include/core/inc_front_chain_lang.php');
 require_once($root_path.'include/care_api_classes/class_core.php');
@@ -40,7 +40,7 @@ $j=1;
 while(strlen($itemcd)!=1) {
 	$itemcd=substr($itemcd,1);
 	$oneitem=substr($itemcd,0,strpos($itemcd,"#"));
-	 
+
 	$itemcd=strstr($itemcd,"#");
 	$eComBill->updateServiceItem($no[$j],$no1[$j],$no2[$j],$oneitem);
 	$j=$j+1;

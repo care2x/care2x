@@ -1,12 +1,12 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require_once('./roots.php');
 require_once($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 /**
 * CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
 * GNU General Public License
 * Copyright 2002,2003,2004,2005 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -38,18 +38,18 @@ $title=$_SESSION['sess_title'];
 <?php echo setCharSet(); ?>
 <title></title>
 <script language="javascript">
-<!-- 
+<!--
 function showpic(d)
 {
 	if(d.value) document.images.headpic.src=d.value;
 }
 
-<?php 
-# Load the javascript editor form checker 
+<?php
+# Load the javascript editor form checker
 require_once($root_path.'modules/news/includes/inc_js_editor_chkform.php');
 
 # Load the dates js values
-require($root_path.'include/core/inc_checkdate_lang.php'); 
+require($root_path.'include/core/inc_checkdate_lang.php');
 ?>
 <!--  Root path for the html WYSIWYG editor -->
 var _editor_url="<?php echo $root_path.'js/html_editor/'; ?>";
@@ -82,13 +82,13 @@ var _editor_url="<?php echo $root_path.'js/html_editor/'; ?>";
 	<input type="text" name="newstitle" size=50 maxlength=255><br>
 	<FONT color="#0000cc" size=3><b><?php echo $LDHeader ?>:</b><br>
 	<font size=1><?php echo $LDHeaderMaxNote ?><br>
-	
+
 	<textarea name="preface" cols=50 rows=5 wrap="physical" id="preface"></textarea><br>
-	
+
 	<FONT color="#0000cc" size=3><b><?php echo $LDNews ?>:</b></font><br>
-	
+
 	<textarea name="newsbody" cols=50 rows=14 wrap="physical" id="newsbody"></textarea><br>
-	
+
   	<FONT color="#0000cc" size=2><b><?php echo $LDPicFile ?>:</b><br>
 	<input type="file" name="pic" onChange="showpic(this)" ><br>
 <input type="button" value="<?php echo $LDPreviewPic ?>" onClick="showpic(document.selectform.pic)"><br>

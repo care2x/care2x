@@ -1,7 +1,7 @@
 <?php
-error_reporting ( E_COMPILE_ERROR | E_ERROR | E_CORE_ERROR );
 require ('./roots.php');
 require ($root_path . 'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 
 if (! extension_loaded ( 'gd' ))
 	dl ( 'php_gd.dll' );
@@ -27,7 +27,7 @@ include_once ($root_path . 'include/core/inc_date_format_functions.php');
 # Get location data
 $location = &$obj->EncounterLocationsInfo ( $en );
 
-# Localize date data   
+# Localize date data
 $result ['date_birth'] = @formatDate2Local ( $result ['date_birth'], $date_format );
 $result ['pdate'] = @formatDate2Local ( $result ['encounter_date'], $date_format );
 # Decode admission class
@@ -49,18 +49,18 @@ if ($child_img) {
 		$sql .= "WHERE care_test_request_" . $subtarget . ".batch_nr='" . $batch_nr . "'";
 		if ($ergebnis = $db->Execute ( $sql )) {
 			if ($editable_rows = $ergebnis->RecordCount ()) {
-				
+
 				$stored_request = $ergebnis->FetchRow ();
-				
+
 				while ( $ergebnis->MoveNext () ) {
 					if (isset ( $ergebnis->fields ['paramater_name'] )) {
 						$stored_param [$ergebnis->fields ['paramater_name']] = $ergebnis->fields ['parameter_value'];
 					}
-					// parse the material type 
+					// parse the material type
 					if (isset ( $ergebnis->fields ['material'] )) {
 						$stored_param [$ergebnis->fields ['material']] = $ergebnis->fields ['material'];
 					}
-					// parse the test type 
+					// parse the test type
 					if (isset ( $ergebnis->fields ['test_type'] )) {
 						$stored_param [$ergebnis->fields ['material']] = $ergebnis->fields ['material'];
 					}
@@ -68,7 +68,7 @@ if ($child_img) {
 			}
 		}
 	}
-	
+
 	if ($subtarget == 'baclabor') {
 		$sql = "SELECT * FROM care_test_request_" . $subtarget . " ";
 		$sql .= "INNER JOIN care_test_request_" . $subtarget . "_sub ON ";
@@ -76,7 +76,7 @@ if ($child_img) {
 		$sql .= "WHERE care_test_request_" . $subtarget . ".batch_nr='" . $batch_nr . "'";
 		if ($ergebnis = $db->Execute ( $sql )) {
 			if ($editable_rows = $ergebnis->RecordCount ()) {
-				
+
 			    while ( !$ergebnis->EOF ) {
 					$parsed_type[$ergebnis->fields['type_general']] = $ergebnis->fields['type_general'];
 					$parsed_resist_anaerob[$ergebnis->fields['resist_anaerob']] = $ergebnis->fields['resist_anaerob'];
@@ -87,14 +87,14 @@ if ($child_img) {
 				}
 			}
 		}
-	
+
 	}
 } // end of if($child_img)
 
 
 $addr = explode ( "\r\n", $result ['address'] );
 
-	
+
 # Load the image generation script based on the language
 include ($root_path . 'main/imgcreator/inc_label_single_large.php');
 ?>

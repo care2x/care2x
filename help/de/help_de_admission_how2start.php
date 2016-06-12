@@ -1,5 +1,5 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
+error_reporting($ErrorLevel);
 
 $foreword='
 <form action="#">
@@ -31,11 +31,11 @@ switch($x1)
 																				case "archiv": echo createLDImgSrc('../','arch-gray.gif'); break;
 																			}
 ?>> anklicken.
-		
+
 </ul>
 <b>Schritt 2</b>
 <?php endif; ?>
-<ul> Wenn sie sich vorher angemeldet haben und ein Zugangsrecht in dieser Funktion haben, wird 
+<ul> Wenn sie sich vorher angemeldet haben und ein Zugangsrecht in dieser Funktion haben, wird
 <?php switch($x1)
 	{
 		case "entry": echo 'das Formular zur Aufnahme von Patienten'; break;
@@ -46,7 +46,7 @@ switch($x1)
 		Ansonsten werden Sie nach Ihrem Benutzernamen und Passwort gefragt.<p>
 		Geben Sie Ihren Benutzernamen und Passwort ein und klicken Sie den <img <?php echo createLDImgSrc('../','continue.gif','0') ?>> an.<br>
 		Falls Sie abbrechen möchten, klicken Sie den <img <?php echo createLDImgSrc('../','cancel.gif','0') ?>> an.
-		
+
 </ul>
 
 

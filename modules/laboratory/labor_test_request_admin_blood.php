@@ -1,7 +1,7 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 /**
 * CARE2X Integrated Hospital Information System version deployment 1.1 (mysql) 2004-01-11
 * GNU General Public License
@@ -15,7 +15,7 @@ require($root_path.'include/core/inc_environment_global.php');
 $lang_tables=array('departments.php');
 define('LANG_FILE','konsil.php');
 
-/* We need to differentiate from where the user is coming: 
+/* We need to differentiate from where the user is coming:
 *  $user_origin != lab ;  from patient charts folder
 *  $user_origin == lab ;  from the laboratory
 *  and set the user cookie name and break or return filename
@@ -53,33 +53,33 @@ require_once($root_path.'include/care_api_classes/class_encounter.php');
 $enc_obj=new Encounter;
 
 /* Here begins the real work */
- 
+
 /* Load date formatter */
     include_once($root_path.'include/core/inc_date_format_functions.php');
-    
-	
+
+
 	/* Load editor functions */
-	   
+
 	 if(!isset($mode))   $mode='';
-		
+
 		  switch($mode)
 		  {
 		     case 'update':
-							      $sql="UPDATE care_test_request_blood SET 
-                                   status = 'received', blood_pb = '".htmlspecialchars($blood_pb)."', blood_rb = '".htmlspecialchars($blood_rb)."', blood_llrb = '".htmlspecialchars($blood_llrb)."', 
-								   blood_wrb = '".htmlspecialchars($blood_wrb)."',blood_prp = '".htmlspecialchars($blood_prp)."', blood_tc = '".htmlspecialchars($blood_tc)."', 
-								   blood_ffp = '".htmlspecialchars($blood_ffp)."', b_group_count = '".$b_group_count."', 
-								   b_group_price = '".$b_group_price."', a_subgroup_count = '".$a_subgroup_count."', a_subgroup_price = '".$a_subgroup_price."', 
-								   extra_factors_count = '".$extra_factors_count."', extra_factors_price = '".$extra_factors_price."', coombs_count = '".$coombs_count."', 
-								   coombs_price = '".$coombs_price."', ab_test_count = '".$ab_test_count."', ab_test_price = '".$ab_test_price."', 
-								   crosstest_count = '".$crosstest_count."', crosstest_price = '".$crosstest_price."', ab_diff_count = '".$ab_diff_count."', 
-								   ab_diff_price = '".$ab_diff_price."', x_test_1_code = '".$x_test_1_code."', x_test_1_name = '".htmlspecialchars($x_test_1_name)."', 
-								   x_test_1_count = '".$x_test_1_count."', x_test_1_price = '".$x_test_1_price."', x_test_2_code = '".$x_test_2_code."', 
-								   x_test_2_name = '".htmlspecialchars($x_test_2_name)."', x_test_2_count = '".$x_test_2_count."', x_test_2_price = '".$x_test_2_price."', 
-								   x_test_3_code = '".$x_test_3_code."', x_test_3_name = '".htmlspecialchars($x_test_3_name)."', x_test_3_count = '".$x_test_3_count."', 
-								   x_test_3_price = '".$x_test_3_price."', lab_stamp = '".$lab_stamp."', release_via = '".htmlspecialchars($release_via)."', 
+							      $sql="UPDATE care_test_request_blood SET
+                                   status = 'received', blood_pb = '".htmlspecialchars($blood_pb)."', blood_rb = '".htmlspecialchars($blood_rb)."', blood_llrb = '".htmlspecialchars($blood_llrb)."',
+								   blood_wrb = '".htmlspecialchars($blood_wrb)."',blood_prp = '".htmlspecialchars($blood_prp)."', blood_tc = '".htmlspecialchars($blood_tc)."',
+								   blood_ffp = '".htmlspecialchars($blood_ffp)."', b_group_count = '".$b_group_count."',
+								   b_group_price = '".$b_group_price."', a_subgroup_count = '".$a_subgroup_count."', a_subgroup_price = '".$a_subgroup_price."',
+								   extra_factors_count = '".$extra_factors_count."', extra_factors_price = '".$extra_factors_price."', coombs_count = '".$coombs_count."',
+								   coombs_price = '".$coombs_price."', ab_test_count = '".$ab_test_count."', ab_test_price = '".$ab_test_price."',
+								   crosstest_count = '".$crosstest_count."', crosstest_price = '".$crosstest_price."', ab_diff_count = '".$ab_diff_count."',
+								   ab_diff_price = '".$ab_diff_price."', x_test_1_code = '".$x_test_1_code."', x_test_1_name = '".htmlspecialchars($x_test_1_name)."',
+								   x_test_1_count = '".$x_test_1_count."', x_test_1_price = '".$x_test_1_price."', x_test_2_code = '".$x_test_2_code."',
+								   x_test_2_name = '".htmlspecialchars($x_test_2_name)."', x_test_2_count = '".$x_test_2_count."', x_test_2_price = '".$x_test_2_price."',
+								   x_test_3_code = '".$x_test_3_code."', x_test_3_name = '".htmlspecialchars($x_test_3_name)."', x_test_3_count = '".$x_test_3_count."',
+								   x_test_3_price = '".$x_test_3_price."', lab_stamp = '".$lab_stamp."', release_via = '".htmlspecialchars($release_via)."',
 								   receipt_ack = '".htmlspecialchars($receipt_ack)."', mainlog_nr = '".htmlspecialchars($mainlog_nr)."', lab_nr = '".htmlspecialchars($lab_nr)."'";
-							
+
 							$lab_date=formatDate2STD($lab_date,$date_format);
 							if(!empty($lab_date)){
 								$sql.=", lab_date = '".$lab_date."'";
@@ -93,73 +93,73 @@ $enc_obj=new Encounter;
 								   modify_id = '".$_SESSION['sess_user_name']."',
 									modify_time='".date('YmdHis')."'
 								  WHERE batch_nr = '".$batch_nr."'";
-								  
+
 							      if($ergebnis=$enc_obj->Transact($sql)){
 									//echo $sql;
 								     signalNewDiagnosticsReportEvent('','labor_test_request_printpop.php');
 									 header("location:".$thisfile."?sid=$sid&lang=$lang&edit=$edit&saved=update&pn=$pn&station=$station&user_origin=$user_origin&status=$status&target=$target&subtarget=$subtarget&batch_nr=$batch_nr&noresize=$noresize");
 									 exit;
 								  }else{
-								      echo "<p>$sql<p>$LDDbNoSave"; 
+								      echo "<p>$sql<p>$LDDbNoSave";
 								      $mode="";
 								   }
 								break; // end of case 'save'
-								
+
 		     					case 'done':
-							      $sql="UPDATE care_test_request_blood SET 
+							      $sql="UPDATE care_test_request_blood SET
 								  status = 'done',
 								  history = ".$enc_obj->ConcatHistory("Done ".date('Y-m-d H:i:s')." = ".$_SESSION['sess_user_name']."\n").",
 								   modify_id = '".$_SESSION['sess_user_name']."',
 									modify_time='".date('YmdHis')."'
 								  WHERE batch_nr = '".$batch_nr."'";
-								  
+
 							      if($ergebnis=$enc_obj->Transact($sql)){
 									//echo $sql;
 								  	// Load the visual signalling functions
 									include_once($root_path.'include/core/inc_visual_signalling_fx.php');
-									// Set the visual signal 
+									// Set the visual signal
 									setEventSignalColor($pn,SIGNAL_COLOR_BLOOD_REQUEST);
-									//echo "blood";									
+									//echo "blood";
 									 header("location:".$thisfile."?sid=$sid&lang=$lang&edit=$edit&saved=update&pn=$pn&station=$station&user_origin=$user_origin&status=$status&target=$target&subtarget=$subtarget&noresize=$noresize");
 									 exit;
 								  }else{
-								      echo "<p>$sql<p>$LDDbNoSave"; 
+								      echo "<p>$sql<p>$LDDbNoSave";
 								      $mode='';
 								   }
-								break; // end of case 'save'		  
+								break; // end of case 'save'
 		  }// end of switch($mode)
-  
+
           if(!$mode) /* Get the pending test requests */
 		  {
-		                $sql="SELECT batch_nr,encounter_nr,send_date,dept_nr FROM care_test_request_blood 
+		                $sql="SELECT batch_nr,encounter_nr,send_date,dept_nr FROM care_test_request_blood
 						         WHERE status='pending' OR status='received' ORDER BY  send_date DESC";
 		                if($requests=$db->Execute($sql))
        		            {
 				            $batchrows=$requests->RecordCount();
-	                        if($batchrows && (!isset($batch_nr) || !$batch_nr)) 
+	                        if($batchrows && (!isset($batch_nr) || !$batch_nr))
 					        {
 						       $test_request=$requests->FetchRow();
-							   
+
                                /* Check for the patietn number = $pn. If available get the patients data */
 		                       $pn=$test_request['encounter_nr'];
 						       $batch_nr=$test_request['batch_nr'];
 							}
 			             }
 			               else {echo "<p>$sql<p>$LDDbNoRead"; exit;}
-						 $mode='update';   
-		   }	
+						 $mode='update';
+		   }
 
-   
+
      /* Check for the patietn number = $pn. If available get the patients data */
      if($batchrows && $pn)
-	 {		
+	 {
 
 	    if( $enc_obj->loadEncounterData($pn)) {
-		
+
 			include_once($root_path.'include/care_api_classes/class_globalconfig.php');
 			$GLOBAL_CONFIG=array();
 			$glob_obj=new GlobalConfig($GLOBAL_CONFIG);
-			$glob_obj->getConfig('patient_%');	
+			$glob_obj->getConfig('patient_%');
 			switch ($enc_obj->EncounterClass())
 			{
 		    	case '1': $full_en = ($pn + $GLOBAL_CONFIG['patient_inpatient_nr_adder']);
@@ -167,21 +167,21 @@ $enc_obj=new Encounter;
 				case '2': $full_en = ($pn + $GLOBAL_CONFIG['patient_outpatient_nr_adder']);
 							break;
 				default: $full_en = ($pn + $GLOBAL_CONFIG['patient_inpatient_nr_adder']);
-			}						
+			}
 			$result=&$enc_obj->encounter;
 
 			if( $enc_obj->is_loaded){
 
 	            $sql="SELECT * FROM care_test_request_blood WHERE batch_nr='".$batch_nr."'";
-					
+
 	            if($ergebnis=$db->Execute($sql)){
 					if($editable_rows=$ergebnis->RecordCount()){
 						$stored_request=$ergebnis->FetchRow();
 						$edit_form=1;
 					}
 				}else{
-					echo "<p>$sql<p>$LDDbNoRead"; 
-				}					
+					echo "<p>$sql<p>$LDDbNoRead";
+				}
 			}
 		}else{
 			$mode='';
@@ -234,7 +234,7 @@ div.fa2_ml3 {font-family: arial; font-size: 12; margin-left: 3; }
 </style>
 
 <script language="javascript">
-<!-- 
+<!--
 
 function chkForm(d){
    return true
@@ -268,10 +268,10 @@ if($batchrows){
 
 <table border=0>
   <tr valign="top">
-  
+
 <!-- left frame for the request list -->
     <td>
-<?php 
+<?php
 
 /* The following routine creates the list of pending requests */
 require('includes/inc_test_request_lister_fx.php');
@@ -280,7 +280,7 @@ require('includes/inc_test_request_lister_fx.php');
 
 <!-- right frame for the form  -->
     <td>
-	
+
 <form name="form_test_request" method="post" action="<?php echo $thisfile ?>" onSubmit="return chkForm(this)">
 <a href="javascript:document.form_test_request.submit()"><img <?php echo createLDImgSrc($root_path,'savedisc.gif','0') ?> alt="<?php echo $LDSaveEntry ?>"></a>
 <a href="javascript:printOut()"><img <?php echo createLDImgSrc($root_path,'printout.gif','0') ?> alt="<?php echo $LDPrintOut ?>"></a>
@@ -293,8 +293,8 @@ if ($stored_request['release_via']!='' && $stored_request['mainlog_sign']!='' &&
 }
 ?>
 		<table   cellpadding=0 cellspacing=0 border=0 width=745>
-		
-	<!-- First row -->	
+
+	<!-- First row -->
         <tr bgcolor="<?php echo $bgc1 ?>" valign="top">
 		<!-- <td rowspan=3><img src="../img/de/de_blood_wardfill.gif" border=0 width=27 height=492 align="absmiddle"></td> -->
         <td rowspan=3><img src="<?php echo $root_path; ?>main/imgcreator/blood_lab_leftbar.php?sid=<?php echo $sid ?>&lang=<?php echo $lang ?>" border=0 width=27 height=492 align="absmiddle"></td>
@@ -306,25 +306,25 @@ if ($stored_request['release_via']!='' && $stored_request['mainlog_sign']!='' &&
       </td>
 		<td class=fva2_ml10><div   class=fva2_ml10><font size=3 color="#0000ff"><b><?php echo $LDRequestOf.$formtitle ?></b></font>
 		<br>
-		<?php 
-		 
+		<?php
+
 		 echo $LDWithMatchTest." ".$LDByBloodBank;
 		 echo '<br>'.$LDYes.'&nbsp;';
-		 
+
          printRadioButton('match_sample',1);
-		 
+
 		 echo '&nbsp;'.$LDNo.'&nbsp;';
-		
+
          printRadioButton('match_sample',0);
-		
+
         ?>
 	  </td>
     </tr>
-  
-		
+
+
 		<tr  valign="top" bgcolor="<?php echo $bgc1 ?>" >
         <td valign="bottom" align="right">
-		
+
 		<!-- Block for bloodgroup, Rh-factor, Kell  -->
 		<table border=0 cellspacing=0 cellpadding=2 bgcolor="#000000" width=100%>
         <tr>
@@ -346,8 +346,8 @@ if ($stored_request['release_via']!='' && $stored_request['mainlog_sign']!='' &&
 	      </td>
         </tr>
         </table>
-  
-		
+
+
 		</td>
          <td  bgcolor="<?php echo $bgc1 ?>" valign="top"><div class=fva2b_ml10>
 <?php
@@ -359,11 +359,11 @@ if($edit  || $read_form){
 		?>
     </div></td>
 	</tr>
-	
+
 	<!-- Second row -->
 		<tr  valign="top" bgcolor="<?php echo $bgc1 ?>" >
         <td>
-		
+
 		<!-- Block Specimen  -->
 		<table border=0 cellspacing=0 cellpadding=1 bgcolor="#000000" width=100% height=100%>
         <tr>
@@ -411,11 +411,11 @@ if($edit  || $read_form){
 	      </td>
         </tr>
         </table>
-  
-		
+
+
 		</td>
          <td  bgcolor="<?php echo $bgc1 ?>" >
-		 
+
 		 <!--  Block for diagnosis, doctors, -->
 		 <table border=0 cellspacing cellpadding=0>
      <tr>
@@ -452,7 +452,7 @@ if($edit  || $read_form){
    </table>
     </td>
 	</tr>
-	
+
 	<tr>
         <td bgcolor="#000000" colspan=3><img src="../gui/img/common/default/pixel_blk.gif" border=0 width=745 height=3 align="absmiddle"><br>
     </td>
@@ -460,9 +460,9 @@ if($edit  || $read_form){
 
 	<tr bgcolor="<?php echo $bgc1 ?>">
         <td bgcolor="#000000" valign="top" colspan=3>
-	
+
 	<!--  Table container for the lower part of the form  -->
-	
+
 	      <table border=0 cellspacing=1 width=100% height=100% align="left" cellpadding=0>
          <tr bgcolor="<?php echo $bgc1 ?>">
         <td  bgcolor="<?php echo $bgc1 ?>" rowspan=20 width=27>
@@ -497,16 +497,16 @@ if($edit  || $read_form){
          <tr bgcolor="<?php echo $bgc1 ?>" valign="top">
            <td colspan=4>&nbsp;<font size=2 face="verdana,arial"><b><?php echo $LDLabServices ?></b></font></td>
            <td colspan=4 rowspan=4 width=50%>&nbsp;<font size=1 face="arial"><?php echo $LDLabTimeStamp ?></font><br>
-		   &nbsp;<font size=2 face="verdana,arial"><?php 
+		   &nbsp;<font size=2 face="verdana,arial"><?php
 		   if($stored_request['lab_stamp'] && $stored_request['lab_stamp']!=DBF_NODATETIME) echo formatDate2Local($stored_request['lab_stamp'],$date_format).' '.convertTimeToLocal(formatDate2Local($stored_request['lab_stamp'],$date_format,0,1));
-		     else echo formatDate2Local(date('Y-m-d H:i:s'),$date_format).' '.convertTimeToLocal(formatDate2Local(date('Y-m-d H:i:s'),$date_format,0,1)); 
+		     else echo formatDate2Local(date('Y-m-d H:i:s'),$date_format).' '.convertTimeToLocal(formatDate2Local(date('Y-m-d H:i:s'),$date_format,0,1));
 			 ?></font>
 
-			 <input type="hidden" name="lab_stamp" value="<?php 
+			 <input type="hidden" name="lab_stamp" value="<?php
 		   if($stored_request['lab_stamp'] && $stored_request['lab_stamp']!=DBF_NODATETIME) echo $stored_request['lab_stamp'];
-		     else echo date('Y-m-d H:i:s'); 
+		     else echo date('Y-m-d H:i:s');
 			 ?>">
-    
+
 		   </td>
 
          </tr>
@@ -599,7 +599,7 @@ if($edit  || $read_form){
 					echo $calendar->show_calendar($calendar,$date_format,'lab_date',$stored_request['lab_date']); //#147
 					//end gjergji
 			?>
-		   </td>		   
+		   </td>
          </tr>
          <tr bgcolor="<?php echo $bgc1 ?>">
            <td><input type="text" name="x_test_3_code" size=4 maxlength=4 <?php  if($stored_request['x_test_3_code']) echo 'value="'.$stored_request['x_test_3_code'].'"'; ?>></td>
@@ -611,19 +611,19 @@ if($edit  || $read_form){
          </tr>
          <tr bgcolor="<?php echo $bgc1 ?>">
              <td colspan=3>&nbsp;<font size=1 face="arial"><?php echo $LDTotalAmount ?></td>
-           <td><input type="text" name="total_amount" size=7 maxlength=20 <?php   
+           <td><input type="text" name="total_amount" size=7 maxlength=20 <?php
 		   echo 'value="'.($stored_request['b_group_price']+$stored_request['a_subgroup_price']+$stored_request['extra_factors_price']+$stored_request['coombs_price']+$stored_request['ab_test_price']+$stored_request['crosstest_price']+$stored_request['ab_diff_price']+$stored_request['x_test_1_price']+$stored_request['x_test_2_price']+$stored_request['x_test_3_price']).'"'; ?>></td>
            <td colspan=2>&nbsp;<font size=1 face="arial"><?php echo $LDSignature ?></td>
            <td colspan=2>&nbsp;<font size=1 face="arial"><?php echo $LDSignature ?></td>
          </tr>
 
        </table>
-       
-	
+
+
 		</td>
   </tr>
 
-		</table>	
+		</table>
 <a href="javascript:document.form_test_request.submit()"><img <?php echo createLDImgSrc($root_path,'savedisc.gif','0') ?> alt="<?php echo $LDSaveEntry ?>"></a>
 <a href="javascript:printOut()"><img <?php echo createLDImgSrc($root_path,'printout.gif','0') ?> alt="<?php echo $LDPrintOut ?>"></a>
 <?php
@@ -633,13 +633,13 @@ if ($stored_request['release_via']!='' && $stored_request['mainlog_sign']!='' &&
 <a href="<?php echo $thisfile."?sid=".$sid."&lang=".$lang."&edit=".$edit."&mode=done&target=".$target."&subtarget=".$subtarget."&batch_nr=".$batch_nr."&pn=".$pn."&user_origin=".$user_origin."&noresize=".$noresize; ?>"><img <?php echo createLDImgSrc($root_path,'done.gif','0') ?> alt="<?php echo $LDDone ?>"></a>
 <?php
 }
-	
+
 
 require($root_path."modules/laboratory/includes/inc_test_request_hiddenvars.php");
 
-?>	
-</form>		
-	
+?>
+</form>
+
 </td>
 </tr>
 </table>

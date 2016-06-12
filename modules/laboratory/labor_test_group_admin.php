@@ -2,14 +2,14 @@
 
 define('ROW_MAX',15); # define here the maximum number of rows for displaying the groups
 
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 /**
 * CARE2X Integrated Hospital Information System Deployment 2.2 - 2006-07-10
 * GNU General Public License
 * Copyright 2002,2003,2004,2005,2006 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -70,7 +70,7 @@ $breakfile="labor.php".URL_APPEND;
 ?>
 
 <script language="javascript" name="j1">
-<!--        
+<!--
 
 function editGroup(nr){
 	urlholder="<?php echo $root_path ?>modules/laboratory/labor_test_group_edit.php?sid=<?php echo "$sid&lang=$lang" ?>&nr="+nr;
@@ -96,7 +96,7 @@ ob_end_clean();
 
 $smarty->append('JavaScript',$sTemp);
 
-$sTempNew = '<a href="javascript:newGroup()"><img '.createLDImgSrc($root_path,'newplan.gif','0').'></a>';	
+$sTempNew = '<a href="javascript:newGroup()"><img '.createLDImgSrc($root_path,'newplan.gif','0').'></a>';
 
 # Assign elements
 $smarty->assign('sGroupNew',$sTempNew);
@@ -122,30 +122,30 @@ if(is_object($tgroups)){
 		if($array_groups[$i]['status']=='hidden') {
 			echo '
 			<tr bgcolor="green">
-			<td ><nobr>&nbsp;';		
+			<td ><nobr>&nbsp;';
 		} elseif($array_groups[$i]['status']=='deleted') {
 			echo '
 			<tr bgcolor="red">
-			<td ><nobr>&nbsp;';	
+			<td ><nobr>&nbsp;';
 		} else {
 			echo '
 			<tr class="'.$bgc.'">
-			<td ><nobr>&nbsp;';	
+			<td ><nobr>&nbsp;';
 		}
-	
+
 		echo $array_groups[$i]['name'];
-		
+
 		echo '&nbsp;</nobr></td>';
-		
+
 		echo '
 				<td>
 				<a href="javascript:editGroup('.$array_groups[$i]['nr'].')"><img '.createLDImgSrc($root_path,'edit_sm.gif','0').'></a>
 				</td>';
 		echo '<td>';
-			if(isset($array_groups[$i-1]['nr'])) 
+			if(isset($array_groups[$i-1]['nr']))
 				echo '<a href="javascript:moveUp('.$array_groups[$i]['nr'].",".$array_groups[$i-1]['sort_nr'].','.$array_groups[$i-1]['nr'].','.$array_groups[$i]['sort_nr'].')"><img '.createLDImgSrc($root_path,'uparrow.png','0').'></a></td>';
 			else echo '&nbsp;</td>';
-		echo '<td>';			
+		echo '<td>';
 			if(isset($array_groups[$i+1]['nr']))
 				echo '<a href="javascript:moveUp('.$array_groups[$i]['nr'].",".$array_groups[$i+1]['sort_nr'].','.$array_groups[$i+1]['nr'].','.$array_groups[$i]['sort_nr'].')"><img '.createLDImgSrc($root_path,'downarrow.png','0').'></a></td>';
 			else echo "&nbsp;</td>" ;

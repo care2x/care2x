@@ -1,7 +1,7 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 define('LANG_FILE','stdpass.php');
 define('NO_2LEVEL_CHK',1);
 require_once($root_path.'include/core/inc_front_chain_lang.php');
@@ -22,7 +22,7 @@ switch($target)
 	case 'archiv':$fileforward.="archiv";
 						$lognote="archive";
 						break;
-	default:$fileforward.="entry"; 
+	default:$fileforward.="entry";
 				$target="entry";
 }*/
 
@@ -50,7 +50,7 @@ setcookie($userck.$sid,'');
 require($root_path.'include/core/inc_2level_reset.php'); setcookie(ck_2level_sid.$sid,"");
 
 require($root_path.'include/core/inc_passcheck_internchk.php');
-if ($pass=='check') 	
+if ($pass=='check')
 	include($root_path.'include/core/inc_passcheck.php');
 
 $errbuf="OP docs $target";
@@ -67,7 +67,7 @@ require($root_path.'include/core/inc_passcheck_head.php');
 <img <?php echo createComIcon($root_path,'swimring.gif','0','top') ?>>
 <FONT  COLOR="<?php echo $cfg[top_txtcolor] ?>"  SIZE=6  FACE="verdana"> <b><?php echo $LDOrDocu ?></b></font>
 
-<table width=100% border=0 cellpadding="0" cellspacing="0"> 
+<table width=100% border=0 cellpadding="0" cellspacing="0">
 <tr>
 
 <td colspan=3><?php if($target=="entry") echo '<img '.createLDImgSrc($root_path,'newdata-b.gif','0').'>';
@@ -79,10 +79,10 @@ require($root_path.'include/core/inc_passcheck_head.php');
 						?></td>
 </tr>
 
-<?php require($root_path.'include/core/inc_passcheck_mask.php') ?>  
+<?php require($root_path.'include/core/inc_passcheck_mask.php') ?>
 
 <p>
-<!-- 
+<!--
 <img <?php echo createComIcon($root_path,'varrow.gif','0') ?>> <a href="<?php echo $root_path; ?>main/ucons.php<?php echo URL_APPEND; ?>"><?php echo "$LDIntro2 $LDOrDocu" ?></a><br>
 <img <?php echo createComIcon($root_path,'varrow.gif','0') ?>> <a href="<?php echo $root_path; ?>main/ucons.php<?php echo URL_APPEND; ?>"><?php echo "$LDWhat2Do $LDOrDocu" ?></a><br> -->
 <!-- <HR> -->

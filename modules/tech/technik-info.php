@@ -1,12 +1,12 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'/include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 /**
 * CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
 * GNU General Public License
 * Copyright 2002,2003,2004,2005 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -26,7 +26,7 @@ $_SESSION['sess_file_return']=basename(__FILE__);
 <HEAD>
 <?php echo setCharSet(); ?>
  <script language="javascript" >
-<!-- 
+<!--
 
 function pruf(d)
 {
@@ -46,9 +46,9 @@ helpwin=window.open(urlholder,"helpwin","width=790,height=540,menubar=no,resizab
 }
 
 // -->
-</script> 
+</script>
 
-<?php 
+<?php
 require($root_path.'include/core/inc_js_gethelp.php');
 require($root_path.'include/core/inc_css_a_hilitebu.php');
 ?></HEAD>
@@ -80,7 +80,7 @@ require($root_path.'include/core/inc_css_a_hilitebu.php');
       <td colspan=2><input type="text" name="keyword" size=50 maxlength=50>
           </td>
     </tr>
-   
+
 
     <tr >
       <td ><input type="image" <?php echo createLDImgSrc($root_path,'searchlamp.gif','0') ?> >
@@ -125,7 +125,7 @@ require($root_path.'include/core/inc_load_copyrite.php');
 
 </td>
 </tr>
-</table>        
+</table>
 &nbsp;
 
 

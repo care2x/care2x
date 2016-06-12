@@ -1,14 +1,14 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 /**
-* eComBill 1.0.04 for Care2002 beta 1.0.04 
+* eComBill 1.0.04 for Care2002 beta 1.0.04
 * (2003-04-30)
-* adapted from eComBill beta 0.2 
-* developed by ecomscience.com http://www.ecomscience.com 
+* adapted from eComBill beta 0.2
+* developed by ecomscience.com http://www.ecomscience.com
 * GPL License
 */
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 //define('NO_CHAIN',1);
 define('LANG_FILE','billing.php');
 $local_user='aufnahme_user';
@@ -82,7 +82,7 @@ function check() {
 }
 
 </Script>
-<?php 
+<?php
 $sTemp = ob_get_contents();
 ob_end_clean();
 

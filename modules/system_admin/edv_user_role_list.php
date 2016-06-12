@@ -1,12 +1,12 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 /**
 * CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
 * GNU General Public License
 * Copyright 2002,2003,2004,2005 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -79,33 +79,33 @@ if ($remark=='itemdelete') echo '<img '.createMascot($root_path,'mascot1_r.gif',
 		echo "
 					<td colspan=8><FONT color=\"#800000\"><b>$LDActualAccessRoles</b></td>";
         echo "
-					</tr>"; 
+					</tr>";
         echo '
 					<tr class="wardlisttitlerow">';
 		for($i=0;$i<sizeof($LDRoleIndex);$i++)
 			echo "
 			<td><b>".$LDRoleIndex[$i]."</b></td>";
-            echo "</tr>"; 
+            echo "</tr>";
 
-		/* Load common icons */	
+		/* Load common icons */
 		$img_padlock=createComIcon($root_path,'padlock.gif','0');
 		$img_arrow=createComIcon($root_path,'arrow-gr.gif','0');
-			
-		while ($zeile=$ergebnis->FetchRow()) {  
+
+		while ($zeile=$ergebnis->FetchRow()) {
 			 echo "
 						<tr class=\"wardlistrow1\">\n";
 			echo "
 						<td>".$zeile['role_name']."</td>\n";
 			echo "
 						</td>\n <td>";
-			
+
 			/* Display the permitted areas */
 			$area=explode(' ',$zeile['permission']);
 			for($n=0;$n<sizeof($area);$n++) echo $area_opt[$area[$n]].'<br>';
             echo "
 					<td>
 					<a href=edv_user_role_edit.php?sid=$sid&lang=$lang&mode=edit&id=".$zeile['id']." title=\"$LDChange\"> $LDInitChange</a> \n
-					<a href=edv_user_role_delete.php?sid=$sid&lang=$lang&itemname=".$zeile['id']." title=\"$LDDelete\">	$LDInitDelete</a> 
+					<a href=edv_user_role_delete.php?sid=$sid&lang=$lang&itemname=".$zeile['id']." title=\"$LDDelete\">	$LDInitDelete</a>
 					</td>";
 			echo "</tr>";
         };

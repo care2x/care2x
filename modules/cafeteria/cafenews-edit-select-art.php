@@ -1,12 +1,12 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require_once('./roots.php');
 require_once($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 /**
 * CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
 * GNU General Public License
 * Copyright 2002,2003,2004,2005 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -20,7 +20,7 @@ $returnfile='cafenews-edit-select.php'.URL_APPEND;
 /* Set the new return file for the suceeding page */
 $_SESSION['sess_file_return']=basename(__FILE__);
 
-$title= (isset($title)&&!empty($title)) ? $title : $_SESSION['sess_title']; 
+$title= (isset($title)&&!empty($title)) ? $title : $_SESSION['sess_title'];
 ?>
 <?php html_rtl($lang); ?>
 <head>
@@ -58,13 +58,13 @@ function chkForm(d)
   </td>
     <td><img <?php echo createComIcon($root_path,'cafenews.jpg','0') ?>></td>
   </tr>
-  
+
       <td >
   </td>
     <td align=right >
  </td>
 
-  
+
   <tr>
     <td>
 	<a href="<?php echo $returnfile ?>"><img <?php echo createLDImgSrc($root_path,'back2.gif','0') ?>></a>

@@ -1,12 +1,12 @@
 <?php
-//error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require_once('./roots.php');
 require_once($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 /**
 * CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
 * GNU General Public License
 * Copyright 2002,2003,2004,2005 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -40,13 +40,13 @@ require('includes/inc_currency_set.php');
 <FONT  SIZE=8 COLOR="#cc6600" FACE="verdana,Arial">
 <a href="javascript:editcafe()"><img <?php echo createComIcon($root_path,'basket.gif','0') ?>></a> <b><?php echo $LDCafePrices ?></b></FONT>
 <hr>
-<?php 
+<?php
 /**
 * Create the GUI body
 */
-$bottomlink=$root_path.'modules/system_admin/edv-main-pass.php'.URL_APPEND.'&target=currency_admin'; 
+$bottomlink=$root_path.'modules/system_admin/edv-main-pass.php'.URL_APPEND.'&target=currency_admin';
 $bottomlink_txt=$LDClk2AddCurrency;
-require('includes/inc_currency_set_gui.php'); 
+require('includes/inc_currency_set_gui.php');
 ?>
 </body>
 </html>

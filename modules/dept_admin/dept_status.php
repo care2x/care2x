@@ -7,9 +7,9 @@
  * Author: Kurt Brauchli <kurt.brauchli@unibas.ch>
  */
 
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 
 # The following 2 lines are for the permission checking: EL - 2004-04-19
 $local_user='ck_edv_user';
@@ -25,7 +25,7 @@ require_once($root_path.'include/core/inc_front_chain_lang.php');
   # and added security
   #
   # This might need to be optimized ???
-  
+
   if(stristr(substr(PHP_VERSION,0,3),'4.0')){
       if( isset($_GET['status']) )
         $sql .= " status='".$_GET['status']."', ";

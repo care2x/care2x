@@ -1,12 +1,12 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 /**
 * CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
 * GNU General Public License
 * Copyright 2002,2003,2004,2005 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -24,15 +24,15 @@ if(isset($mode) && $mode=='save'){
 	// Save to user config table
 
 	$config_new['template_theme']=$gui_theme;
-	
+
 	include_once($root_path.'include/care_api_classes/class_userconfig.php');
-	
+
 	$user=new UserConfig;
 
 	if($user->getConfig($_COOKIE['ck_config'])){
 
 		$config=&$user->getConfigData();
-	
+
 		$config=array_merge($config,$config_new);
 
 		if($user->saveConfig($_COOKIE['ck_config'],$config)){
@@ -103,23 +103,23 @@ ob_start();
 <br>
 
 <form method="post">
-<?php if (isset($saved) && $saved) { 
-	echo '<img '.createMascot($root_path,'mascot1_r.gif','0','absmiddle').'>';	
+<?php if (isset($saved) && $saved) {
+	echo '<img '.createMascot($root_path,'mascot1_r.gif','0','absmiddle').'>';
 ?>
 <FONT class="prompt"><?php echo $LDChangeSaved ?></font><br>
 <?php } ?>
 
-<table border=0 cellspacing=1 cellpadding=2>  
+<table border=0 cellspacing=1 cellpadding=2>
 
   <tr >
     <td colspan=3>&nbsp;</td>
   </tr>
-  
+
   <tr class="wardlisttitlerow">
     <td><b></b></td>
     <td><b><?php echo $LDTheme; ?></b></td>
   </tr>
-  
+
 <?php
 
 $dirs=&$TP_obj->getTemplateList();
@@ -132,7 +132,7 @@ while(list($x,$v)=each($dirs)){
     <td><b><?php echo $v; ?></b></td>
   </tr>
 
-  
+
   <?php
 }
 ?>

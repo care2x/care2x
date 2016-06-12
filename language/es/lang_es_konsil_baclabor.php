@@ -6,8 +6,7 @@
  * Versión: CARE2X 2nd Generation Deployment 2.6.27
  * Fecha: 07.09.2006
  */
- 
-//error_reporting(E_ALL);
+
 $LDInitFindings='Hallazgos iniciales';
 $LDCurrentFindings='Hallazgos actuales';
 $LDFinalFindings='Hallazgo definitivo';
@@ -23,7 +22,7 @@ $LDBac_I='Patóg.I';
 $LDBac_II='Patóg.II';
 $LDBac_III='Patóg.III';
 $LDFungi='Hongo';
-$LDResistanceTestAnaerob='Prueba de resistencia anaerobio';				
+$LDResistanceTestAnaerob='Prueba de resistencia anaerobio';
 $LDResistanceTestAerob='Prueba de resistencia aerobio';
 $LDTestFindings='Resultados/Hallazgos de las pruebas';
 $LDMarkStreptocResistance='marcar resistencia a Streptococcus';
@@ -38,7 +37,7 @@ $LDSMR=array('S','M','R');
 $LDBAC=array('Patóg. I', 'Patóg. II', 'Patóg. III');
 
 /* Note: the following arrays use strict medical terminology.
-*  If you are not sure about their translation, please leave the 
+*  If you are not sure about their translation, please leave the
 *  english word untranslated
 */
 $lab_TestType = array('_lab_culture_aerob_' => 'C.aer.',
@@ -51,7 +50,7 @@ $lab_TestType = array('_lab_culture_aerob_' => 'C.aer.',
 								 '_lab_cooked_blood_1_' => 'Sangre cocida',
 								 '_lab_bacitracin_1_' => 'BACITRACINA',
 								 '_lab_campylocbacter_1_' => 'CAMPYBCTR',
-								 
+
                                  '_lab_culture_anaerob_' => 'C.ana',
 								 '_lab_subcult_anaerob_' => 'S.ana.',
 								 '_lab_subcult_anaerob_2_' => 'S.anaer.',
@@ -62,7 +61,7 @@ $lab_TestType = array('_lab_culture_aerob_' => 'C.aer.',
 								 '_lab_cooked_blood_2_' => 'Sangre cocida',
 								 '_lab_bacitracin_2_' => 'BACITRACINA',
 								 '_lab_campylocbacter_2_' => 'CAMPYBCTR',
-								 
+
 								 '_lab_culture_fungal_1_' => 'Cult.hongo',
 								 '_lab_culture_fungal_2_' => 'Cult.hongo',
 								 '_lab_bac_tube_1_' => 'Path.T.',
@@ -73,7 +72,7 @@ $lab_TestType = array('_lab_culture_aerob_' => 'C.aer.',
 								 '_lab_special_fungi_2_' => 'Hongo.esp',
 								 '_lab_candida_id_1_' => 'Candd-ID',
 								 '_lab_candida_id_2_' => 'Candd-ID',
-								 
+
 								 '_lab_culture_stool_' => 'Cult.heces',
 								 '_lab_culture_blood_' => 'Cult.sangr',
 								 '_lab_liquor_cult_vial' => 'KF.LCR (por confirmar término)',
@@ -84,7 +83,7 @@ $lab_TestType = array('_lab_culture_aerob_' => 'C.aer.',
 								 '_extra_3_' => ' ',
 								 '_lab_kligler_' => 'Kliglr',
 								 '_extra_4_' => ' ',
-							 
+
 								 '_lab_agglut_1x_1_' => 'Ag.1x',
 								 '_lab_agglut_1x_2_' => 'Ag.1x',
 								 '_lab_aggult_1x_3_' => 'Ag.1x',
@@ -95,7 +94,7 @@ $lab_TestType = array('_lab_culture_aerob_' => 'C.aer.',
 								 '_lab_agglut_dyspepsy_' => 'Ag.Dys.',
 								 '_lab_ehec_' => 'EHEC',
 								 '_lab_mobility_' => 'MOVILIDAD',
-								 
+
 								 '_lab_methylen_blue' => 'Azul metil',
 								 '_lab_acrid_orange_' => 'Acr.naranja.',
 								 '_lab_ziehl_neelsen_' => 'Ziel-Neel.',
@@ -106,7 +105,7 @@ $lab_TestType = array('_lab_culture_aerob_' => 'C.aer.',
 								 '_extra_6_' => ' ',
 								 '_extra_7_' => ' ',
 								 '_extra_8_' => ' ',
-								 
+
 								 '_lab_streptex_1_' => 'STPX.1',
 								 '_lab_plasma_coag_1_' => 'PK.1',
 								 '_lab_catalase_1_' => 'CTLS.1',
@@ -117,7 +116,7 @@ $lab_TestType = array('_lab_culture_aerob_' => 'C.aer.',
 								 '_lab_api_1_' => 'API 1',
 								 '_lab_api_anaerob_1_' => 'APIa.1',
 								 '_lab_gram_dye_1_' => 'Gram.1',
-								 
+
 								 '_lab_streptex_2_' => 'STPX.2',
 								 '_lab_plasma_coag_2_' => 'PK.2',
 								 '_lab_catalase_2_' => 'CTLS.2',
@@ -128,8 +127,8 @@ $lab_TestType = array('_lab_culture_aerob_' => 'C.aer.',
 								 '_lab_api_2_' => 'API 2',
 								 '_lab_api_anaerob_2_' => 'APIa.2',
 								 '_lab_gram_dye_2_' => 'Gram.2',
-								 
-								 
+
+
 								 '_lab_streptex_3_' => 'STPX.3',
 								 '_lab_plasma_coag_3_' => 'PK.3',
 								 '_lab_catalase_3_' => 'CTLS.3',
@@ -152,7 +151,7 @@ $lab_TestType = array('_lab_culture_aerob_' => 'C.aer.',
 								 '_lab_cooked_blood_1_' => 'Sangre cocida',
 								 '_lab_bacitracin_1_' => 'Bacitracina',
 								 '_lab_campylocbacter_1_' => 'Campylobacter',
-								 
+
                                  '_lab_culture_anaerob_' => 'Kultur anaerob',
 								 '_lab_subcult_anaerob_' => 'Subcultivo anaerob',
 								 '_lab_subcult_anaerob_2_' => 'Subcultivo anaerob',
@@ -163,7 +162,7 @@ $lab_TestType = array('_lab_culture_aerob_' => 'C.aer.',
 								 '_lab_cooked_blood_2_' => 'Sangre cocida',
 								 '_lab_bacitracin_2_' => 'Bacitracina',
 								 '_lab_campylocbacter_2_' => 'Subcultivo Campylo.',
-								 
+
 								 '_lab_culture_fungal_1_' => 'Cult.hongos',
 								 '_lab_culture_fungal_2_' => 'Cult.hongos',
 								 '_lab_bac_tube_1_' => 'Keimschlauch',
@@ -174,7 +173,7 @@ $lab_TestType = array('_lab_culture_aerob_' => 'C.aer.',
 								 '_lab_special_fungi_2_' => 'Hongo.especial',
 								 '_lab_candida_id_1_' => 'Candida-ID',
 								 '_lab_candida_id_2_' => 'Candida-ID',
-								 
+
 								 '_lab_culture_stool_' => 'Cult.heces',
 								 '_lab_culture_blood_' => 'Cult.sangre',
 								 '_lab_liquor_cult_vial' => 'Cult.Fco.LCR (por confirmar término)',
@@ -185,7 +184,7 @@ $lab_TestType = array('_lab_culture_aerob_' => 'C.aer.',
 								 '_extra_3_' => ' ',
 								 '_lab_kligler_' => 'Kligler',
 								 '_extra_4_' => ' ',
-							 
+
 								 '_lab_agglut_1x_1_' => 'Agglut.1x',
 								 '_lab_agglut_1x_2_' => 'Agglut.1x',
 								 '_lab_aggult_1x_3_' => 'Agglut.1x',
@@ -196,7 +195,7 @@ $lab_TestType = array('_lab_culture_aerob_' => 'C.aer.',
 								 '_lab_agglut_dyspepsy_' => 'Aggl.Dyspepsie',
 								 '_lab_ehec_' => 'EHEC',
 								 '_lab_mobility_' => 'Beweglichkeit',
-								 
+
 								 '_lab_methylen_blue' => 'Azul.metilen.',
 								 '_lab_acrid_orange_' => 'Acrid.orange',
 								 '_lab_ziehl_neelsen_' => 'Ziehl-Neelsen',
@@ -207,7 +206,7 @@ $lab_TestType = array('_lab_culture_aerob_' => 'C.aer.',
 								 '_extra_6_' => ' ',
 								 '_extra_7_' => ' ',
 								 '_extra_8_' => ' ',
-								 
+
 								 '_lab_streptex_1_' => 'Streptex 1',
 								 '_lab_plasma_coag_1_' => 'Plasmacoag.1',
 								 '_lab_catalase_1_' => 'Catalasa 1',
@@ -218,7 +217,7 @@ $lab_TestType = array('_lab_culture_aerob_' => 'C.aer.',
 								 '_lab_api_1_' => 'API 1',
 								 '_lab_api_anaerob_1_' => 'API aner.1',
 								 '_lab_gram_dye_1_' => 'Tinción Gram.1',
-								 
+
 								 '_lab_streptex_2_' => 'Streptex 2',
 								 '_lab_plasma_coag_2_' => 'Plasmacoag.2',
 								 '_lab_catalase_2_' => 'Catalasa 2',
@@ -229,8 +228,8 @@ $lab_TestType = array('_lab_culture_aerob_' => 'C.aer.',
 								 '_lab_api_2_' => 'API 2',
 								 '_lab_api_anaerob_2_' => 'API aner.2',
 								 '_lab_gram_dye_2_' => 'Tinción Gram.2',
-								 
-								 
+
+
 								 '_lab_streptex_3_' => 'Streptex 3',
 								 '_lab_plasma_coag_3_' => 'Plasmacoag.3',
 								 '_lab_catalase_3_' => 'Catalase 3',
@@ -243,18 +242,18 @@ $lab_TestType = array('_lab_culture_aerob_' => 'C.aer.',
 								 '_lab_gram_dye_3_' => 'Tinción Gram.3'
 								 );*/
 $lab_ResistANaerobAcro=array('PEN','AMO','AMC','MZL','PIC','IMI','CTX','CMP','TET','CLI','MTR','ERY','TEC','VAN','');
-									
+
 $lab_ResistAerobAcro=array('P','AMX','AMC','CC','MZ','PIP','GM','AN','CZ',
                                            'CXM','CRO','MER','OFX','SXT','U','AZ',
 										   'VA','NN','IPM','CTX','CAZ','FEP','TEC',
 										   'FF','25','E','OX','CIP','CFS','30','31','ßLac.');
-										   
+
 $lab_ResistAerobExtra=array('AB','MIC','NY','AC','KET','6','','',
                                             'C','NE','GM','D','OFX','K','','',
 											'C','NE','GM','D','OFX','K','','',
 											'C','NE','GM','D','OFX','K');
-					
-									  
+
+
 $lab_TestResultId_1=array('Staph.aureus', 'E.coli', 'enterob.aerogenes',
                                      'Staph.epiderm', 'E.coli hem.', 'Morganel.morganii',
 									 'Streptococc.', 'E.coli muc.', 'Haemophilus sp.',
@@ -290,8 +289,8 @@ $lab_TestResultId_1=array('Staph.aureus', 'E.coli', 'enterob.aerogenes',
 									 'selterner Bact.', 'Campylobacter', 'Salmonella enteritidis',
 									 'Acinetobacter Iwoffi', 'Hafnia alvei', 'Lactobacillus sp.',
 									 'Acinetobacter Baumannii', 'Serratia liquefaciens', 'Stenotrophomonas maltophilia');
-									 
-*/									 
+
+*/
 $lab_TestResultId_2 = array('Sin crecimiento luego de 48 horas', 'Crecim. tipo aerobios', 'Negativo para amebas en heces',
                                            'Sin crecimiento luego de 5 días', '', 'Negativo para Lamblia en heces',
 										   'Sin crecimiento luego de 9 días', 'Sin evidencia de Diplococ. gramneg.', 'Neg. para huevos de nematodos en heces',

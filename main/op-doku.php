@@ -1,7 +1,7 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 /**
  * CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
  * GNU General Public License
@@ -97,9 +97,9 @@ $smarty->assign('LDOrLogBookTxt',$LDOrLogBookTxt);
 $smarty->assign('LDOrLogBookMenu',
   		'<TABLE cellSpacing=1 cellPadding=5 width="100%" bgColor=#dddddd border=0>
 			<TR>
-				<TD bgColor=#ffffff><font face=arial,verdana size=2><nobr> 
+				<TD bgColor=#ffffff><font face=arial,verdana size=2><nobr>
 				 <A href="' . $root_path . 'modules/or_logbook/op-pflege-logbuch-pass.php' . URL_REDIRECT_APPEND.'&target=entry";>'.  $LDNewDocu .'</A>
-				 <A href="'. $root_path .'modules/or_logbook/op-pflege-logbuch-pass.php' .  URL_REDIRECT_APPEND . '&target=search";">' .  $LDSearch . '</A> 
+				 <A href="'. $root_path .'modules/or_logbook/op-pflege-logbuch-pass.php' .  URL_REDIRECT_APPEND . '&target=search";">' .  $LDSearch . '</A>
 				 <A href="'.  $root_path . 'modules/or_logbook/op-pflege-logbuch-pass.php' .  URL_REDIRECT_APPEND . '&target=archiv";">' .  $LDArchive . '</A>
 				</font></TD>
 			</TR>
@@ -112,9 +112,9 @@ $smarty->assign('LDDutyPlanTxt',$LDDutyPlanTxt);
 $smarty->assign('LDDutyPlanMenu',
   		  		'<TABLE cellSpacing=1 cellPadding=5 width="100%" bgColor=#dddddd border=0>
 				<TR>
-					<TD bgColor=#ffffff><font face=arial,verdana size=2> 
-					 <A href="'.$root_path.'modules/nursing_or/nursing-or-dienstplan.php'. URL_REDIRECT_APPEND.'&retpath=menu">'. $LDSee .'</A> 
-					 <A href="'.$root_path.'modules/nursing_or/nursing-or-main-pass.php'.URL_REDIRECT_APPEND.'&retpath=menu&target=dutyplan">'.$LDCreate . '/' . $LDUpdate .'</A> 
+					<TD bgColor=#ffffff><font face=arial,verdana size=2>
+					 <A href="'.$root_path.'modules/nursing_or/nursing-or-dienstplan.php'. URL_REDIRECT_APPEND.'&retpath=menu">'. $LDSee .'</A>
+					 <A href="'.$root_path.'modules/nursing_or/nursing-or-main-pass.php'.URL_REDIRECT_APPEND.'&retpath=menu&target=dutyplan">'.$LDCreate . '/' . $LDUpdate .'</A>
 					 <A href="'.$root_path.'modules/nursing_or/nursing-or-main-pass.php'. URL_REDIRECT_APPEND.'&target=setpersonal&retpath=menu">' . $LDCreatePersonList .'</A>
 					</font></TD>
 				</TR>

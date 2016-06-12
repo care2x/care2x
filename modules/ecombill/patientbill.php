@@ -1,14 +1,14 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 /**
-* eComBill 1.0.04 for Care2002 beta 1.0.04 
+* eComBill 1.0.04 for Care2002 beta 1.0.04
 * (2003-04-30)
-* adapted from eComBill beta 0.2 
-* developed by ecomscience.com http://www.ecomscience.com 
+* adapted from eComBill beta 0.2
+* developed by ecomscience.com http://www.ecomscience.com
 * GPL License
 */
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 define('NO_CHAIN',1);
 define('LANG_FILE','billing.php');
 
@@ -106,7 +106,7 @@ function finalbill() {
 
 //-->
 </script>
-<?php 
+<?php
 
 $sTemp = ob_get_contents();
 ob_end_clean();
@@ -115,7 +115,7 @@ $smarty->append('JavaScript',$sTemp);
 
 $smarty->assign('sFormTag','<form name="patientfrm"  method="POST" action="" >');
 
-$smarty->assign('sHiddenInputs','<input type="hidden" name="patientno" value="'. $patient_no .'">	
+$smarty->assign('sHiddenInputs','<input type="hidden" name="patientno" value="'. $patient_no .'">
 	<input type="hidden" name="lang" value="'. $lang .'">
 	<input type="hidden" name="sid" value="'. $sid .'">
 	<input type="hidden" name="full_en" value="'. $full_en .'">');
@@ -143,24 +143,24 @@ $aSubMenuText=array($LDSelectHospitalServicesTxt,
 					$LDGenerateFinalBillTxt,
 					$LDPatienthasclearedallthebillsTxT
 					);
-				
-					
+
+
 # Prepare the submenu item links indexed by their template tags
-$aSubMenuItem=array();					
+$aSubMenuItem=array();
 if(!$chkexists) {
 	$aSubMenuItem['LDSelectHospitalServices'] = '<a href="javascript:subHS()"">'.$LDSelectHospitalServices.'</a>';
 	$aSubMenuItem['LDSelectLaboratoryTests'] = '<a href="javascript:subLT()"">'.$LDSelectLaboratoryTests.'</a>';
 }
 
 if(!$chkexists && $billexists) {
-	$aSubMenuItem['LDViewBill'] = '<a href="javascript:subbill()"">'.$LDViewBill.'</a>';	
-	$aSubMenuItem['LDViewPayment'] = '<a href="javascript:subpayment()"">'.$LDViewPayment.'</a>';	
-	$aSubMenuItem['LDMakeNewPayment'] = '<a href="javascript:show()"">'.$LDMakeNewPayment.'</a>';	
-	$aSubMenuItem['LDGenerateFinalBill'] = '<a href="javascript:finalbill()"">'.$LDGenerateFinalBill.'</a>';	
+	$aSubMenuItem['LDViewBill'] = '<a href="javascript:subbill()"">'.$LDViewBill.'</a>';
+	$aSubMenuItem['LDViewPayment'] = '<a href="javascript:subpayment()"">'.$LDViewPayment.'</a>';
+	$aSubMenuItem['LDMakeNewPayment'] = '<a href="javascript:show()"">'.$LDMakeNewPayment.'</a>';
+	$aSubMenuItem['LDGenerateFinalBill'] = '<a href="javascript:finalbill()"">'.$LDGenerateFinalBill.'</a>';
 }
 
-if($chkexists>0) { 
-	$aSubMenuItem['LDPatienthasclearedallthebills'] = $LDPatienthasclearedallthebills;	
+if($chkexists>0) {
+	$aSubMenuItem['LDPatienthasclearedallthebills'] = $LDPatienthasclearedallthebills;
 }
 
 # Create the submenu rows

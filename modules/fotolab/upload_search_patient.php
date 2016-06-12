@@ -1,18 +1,18 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 /**
 * CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
 * GNU General Public License
 * Copyright 2002,2003,2004,2005 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
 # Default value for the maximum nr of rows per block displayed, define this to the value you wish
 # In normal cases this value is derived from the db table "care_config_global" using the "pagin_insurance_list_max_block_rows" element.
-define('MAX_BLOCK_ROWS',30); 
+define('MAX_BLOCK_ROWS',30);
 
 $lang_tables[]='actions.php';
 $lang_tables[]='search.php';
@@ -60,7 +60,7 @@ $glob_obj=new GlobalConfig($GLOBAL_CONFIG);
 $glob_obj->getConfig('pagin_patient_search_max_block_rows');
 if(empty($GLOBAL_CONFIG['pagin_patient_search_max_block_rows'])) $pagen->setMaxCount(MAX_BLOCK_ROWS); # Last resort, use the default defined at the start of this page
 	else $pagen->setMaxCount($GLOBAL_CONFIG['pagin_patient_search_max_block_rows']);
-	
+
 if(($mode=='search'||$mode=='paginate')&&!empty($searchkey)){
 	# Convert other wildcards
 	$searchkey=strtr($searchkey,'*?','%_');
@@ -117,10 +117,10 @@ if(($mode=='search'||$mode=='paginate')&&!empty($searchkey)){
 
  # target for close button
  $smarty->assign('sCloseTarget','target="_parent"');
- 
+
  # Window bar title
  $smarty->assign('sWindowTitle',$LDFotoLab);
- 
+
  # Body Onload js
  $smarty->assign('sOnLoadJs','onLoad="document.searchform.searchkey.select()"');
 
@@ -135,10 +135,10 @@ ob_start();
      <tr>
        <td>
 	   <?php
-	   
+
 	        $searchmask_bgcolor="#f3f3f3";
             include($root_path.'include/core/inc_patient_searchmask.php');
-       
+
 	   ?>
 	</td>
      </tr>
@@ -151,9 +151,9 @@ ob_start();
 <?php
 if($mode=='search'||$mode=='paginate'){
 	if ($linecount) echo str_replace("~nr~",$totalcount,$LDSearchFound).' '.$LDShowing.' '.$pagen->BlockStartNr().' '.$LDTo.' '.$pagen->BlockEndNr().'.';
-		else echo str_replace('~nr~','0',$LDSearchFound); 
-		  
-	if ($linecount) { 
+		else echo str_replace('~nr~','0',$LDSearchFound);
+
+	if ($linecount) {
 
 	# Load the common icons
 	$img_options=createComIcon($root_path,'l-arrowgrnlrg.gif','0','',TRUE);
@@ -164,7 +164,7 @@ if($mode=='search'||$mode=='paginate'){
 
 	echo '
 			<table border=0 cellpadding=2 cellspacing=1> <tr class="wardlisttitlerow">';
-			
+
 ?>
 
      <td><b>
@@ -179,12 +179,12 @@ if($mode=='search'||$mode=='paginate'){
 	  <?php echo $pagen->makeSortLink($LDBday,'date_birth',$oitem,$odir,$append);  ?></b></td>
 <!--       <td align='center'><b>
 	  <?php echo $pagen->makeSortLink($LDZipCode,'addr_zip',$oitem,$odir,$append); ?></b></td>
- -->	  
+ -->
     <td background="<?php echo createBgSkin($root_path,'tableHeaderbg.gif'); ?>" align=center><font color="#ffffff"><b><?php echo $LDSelect; ?></td>
 
 <?php
 
-					
+
 	echo"</tr>";
 
 					while($zeile=$encounter->FetchRow())
@@ -195,38 +195,38 @@ if($mode=='search'||$mode=='paginate'){
 						if($toggle) { echo "wardlistrow2>"; $toggle=0;} else {echo "wardlistrow1>"; $toggle=1;};
 						echo '<td>&nbsp;'.$ahref.$zeile['encounter_nr'];
                         echo '</a></td>
-						';	
+						';
 						echo '<td>';
 						switch($zeile['sex']){
 							case 'f': echo '<img '.$img_female.'>'; break;
 							case 'm': echo '<img '.$img_male.'>'; break;
 							default: echo '&nbsp;'; break;
 						}
-						
+
                         echo '</td>
-						';	
-						
+						';
+
 						echo"<td>";
 						echo "&nbsp;".$ahref.ucfirst($zeile['name_last']);
                         echo '</a></td>
-						';	
+						';
 						echo"<td>";
 						echo "&nbsp;".$ahref.ucfirst($zeile['name_first']);
                         echo '</a></td>
-						';	
+						';
 						echo"<td>";
 						echo "&nbsp;".formatDate2Local($zeile['date_birth'],$date_format);
-                        echo "</td>";	
+                        echo "</td>";
 /*						echo"<td>";
 						echo "&nbsp;".$zeile['addr_zip'];
-                        echo "</td>";	
+                        echo "</td>";
 */
 					    if($_COOKIE[$local_user.$sid]) echo '
 						<td>&nbsp;
 							<a href="fotolab-dir-select.php'.URL_APPEND.'&patnum='.$zeile['encounter_nr'].'&lastname='.strtr($zeile['name_last'],' ','+').'&firstname='.strtr($zeile['name_first'],' ','+').'&bday='.$zeile['date_birth'].'&maxpic='.$aux1.'">
 							<img '.$img_options.' alt="'.$LDSelect.'"></a>&nbsp;
 							</td>';
-						
+
 						echo '
 						</tr>';
 
@@ -236,7 +236,7 @@ if($mode=='search'||$mode=='paginate'){
 						<td align=right>'.$pagen->makeNextLink($LDNext,$append).'</td>
 						</tr>
 						</table>';
-						
+
 					if($linecount>$pagen->MaxCount())
 					{
 					    /* Set the appending nr for the searchform */

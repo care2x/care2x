@@ -1,12 +1,12 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require_once('./roots.php');
 require_once($root_path.'/include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 /**
 * CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
 * GNU General Public License
 * Copyright 2002,2003,2004,2005 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -55,21 +55,21 @@ if(($keyword)&&($keyword!=' ')) {
 <HEAD>
 <?php echo setCharSet(); ?>
  <TITLE></TITLE>
- 
+
 <script language="javascript">
-<!-- 
+<!--
 function pruf(d)
 {
 	if((d.keyword.value=="")||(d.keyword.value==" ")) return false;
 }
 // -->
 </script>
- 
-<?php 
+
+<?php
 require($root_path.'include/core/inc_js_gethelp.php');
 require($root_path.'include/core/inc_css_a_hilitebu.php');
 ?>
- 
+
 </HEAD>
 
 <BODY  onLoad="document.searchdata.keyword.select();document.searchdata.keyword.focus();" bgcolor=<?php echo $cfg['body_bgcolor']; ?>
@@ -97,7 +97,7 @@ require($root_path.'include/core/inc_css_a_hilitebu.php');
 <FORM action="phone.php" method="post" name="searchdata" onSubmit="return pruf(this)">
 
 <B><?php echo $LDKeywordPrompt ?></B></font><p>
-<font size=3><INPUT type="text" name="keyword" size="14" maxlength="40" onfocus=this.select() value="<?php echo $keyword ?>"></font> 
+<font size=3><INPUT type="text" name="keyword" size="14" maxlength="40" onfocus=this.select() value="<?php echo $keyword ?>"></font>
 <!-- <INPUT type="submit" name="versand" value="<?php echo $LDSEARCH ?>"> -->
 <INPUT type="image" <?php echo createLDImgSrc($root_path,'searchlamp.gif','0') ?>>
 <input type="hidden" name="sid" value="<?php echo $sid; ?>">
@@ -109,24 +109,24 @@ require($root_path.'include/core/inc_css_a_hilitebu.php');
 <p>
 
 <?php
-if ($linecount>0) { 
+if ($linecount>0) {
 
     echo "<hr width=80% align=left><p>".str_replace("~nr~",$linecount,$LDPhoneFound)."<p>";
     mysql_data_seek($ergebnis,0);
     echo '<table border=0 cellpadding=3 cellspacing=1>
 	<tr class="wardlisttitlerow">';
-	
+
     for($i=0;$i<sizeof($fieldname);$i++) {
 	    echo"<td>".$fieldname[$i]."</td>";
-		
+
 	 }
 					echo "</tr>";
 					while($zeile=$ergebnis->FetchRow())
 					{
 						echo "<tr class=";
 						if($toggle) { echo "wardlistrow2>"; $toggle=0;} else {echo "wardlistrow1>"; $toggle=1;};
-	
-						for($i=0;$i<$ergebnis->FieldCount();$i++) 
+
+						for($i=0;$i<$ergebnis->FieldCount();$i++)
 						{
 							echo"<td>";
 							if($zeile[$i]=="")echo "&nbsp;"; else echo $zeile[$i];
@@ -142,7 +142,7 @@ if ($linecount>0) {
 						<FORM action="phone.php" method="post" onSubmit="return pruf(this)" name="form2">
 
 						'.$LDKeywordPrompt.'</B><p>
-						<INPUT type="text" name="keyword" size="14" maxlength="25" value="'.$keyword.'"> 
+						<INPUT type="text" name="keyword" size="14" maxlength="25" value="'.$keyword.'">
 						<INPUT type="submit" name="versand" value="'.$LDSEARCH.'"></font>
 						<input type="hidden" name="sid" value="'.$sid.'">
 						<input type="hidden" name="lang" value="'.$lang.'">
@@ -151,7 +151,7 @@ if ($linecount>0) {
 						<FORM action="startframe.php" >
 						<input type="hidden" name="sid" value="'.$sid.'">
 						<input type="hidden" name="lang" value="'.$lang.'">
-      
+
 						<INPUT type="submit"  value="'.$LDCancel.'"></FORM>
 						<p>';
 					}
@@ -174,11 +174,11 @@ if ($linecount>0) {
 </tr>
 <tr >
 <td  class="passborder" colspan=3>
-&nbsp; 
+&nbsp;
 </td>
 </tr>
 
-</table>        
+</table>
 <p>
 <?php
 require($root_path.'include/core/inc_load_copyrite.php');

@@ -1,12 +1,12 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 /**
 * CARE2X Integrated Hospital Information System beta 2.0.1 - 2004-07-04
 * GNU General Public License
 * Copyright 2002,2003,2004,2005 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -37,7 +37,7 @@ require($root_path.'include/core/inc_2level_reset.php'); setcookie(ck_2level_sid
 
 require($root_path.'include/core/inc_passcheck_internchk.php');
 
-if ($pass=='check'){ 			
+if ($pass=='check'){
 	include($root_path.'include/core/inc_passcheck.php');
 }
 
@@ -57,19 +57,19 @@ $buf=$LDPharmacy.' :: '.$LDLogin;
 echo '
 <script language=javascript>
 <!--
- if (window.screen.width) 
+ if (window.screen.width)
  { if((window.screen.width)>1000) document.write(\'<img '.createComIcon($root_path,'smiley.gif','0','top').'><FONT  COLOR="'.$cfg['top_txtcolor'].'"  SIZE=6  FACE="verdana"> <b>'.$buf.'</b></font>\');}
  //-->
  </script>';
- 
+
  ?>
 
-  
-<table width=100% border=0 cellpadding="0" cellspacing="0"> 
-<?php 
+
+<table width=100% border=0 cellpadding="0" cellspacing="0">
+<?php
 $maskBorderColor='#66ee66';
-require($root_path.'include/core/inc_passcheck_mask.php') 
-?>  
+require($root_path.'include/core/inc_passcheck_mask.php')
+?>
 
 <p>
 <?php

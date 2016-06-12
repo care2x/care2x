@@ -93,7 +93,7 @@ function configNew(&$bn,&$bv,&$f,$i,&$uid)
 
   # We disable the error reporting, because Konqueror 3.0.3 causes a  runtime error output that stops the program.
   #  could be a bug in phpsniff .. hmmm?
-  $old_err_rep= error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
+  $old_err_rep= error_reporting($ErrorLevel);
 
   # Function rewritten by Thomas Wiedmann to use phpSniff class
 

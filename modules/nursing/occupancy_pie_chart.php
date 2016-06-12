@@ -1,6 +1,6 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
+error_reporting($ErrorLevel);
 /*
 * We do not need the entire environment here so we just load the variable globalizer routine
 */

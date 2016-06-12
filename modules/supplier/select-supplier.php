@@ -1,7 +1,7 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 
 $lang_tables=array('products.php');
 define('LANG_FILE','prompt.php');
@@ -58,14 +58,14 @@ $smarty->assign('LDPlsSelectDept',$LDPlsSelectSupplier);
 $toggler=0;
 
 while(list($x,$v)=each($dept)){
-		
+
 	$bold='';
 	$boldx='';
-	if ($toggler==0) { 
-			echo '<tr class="wardlistrow1">'; 
+	if ($toggler==0) {
+			echo '<tr class="wardlistrow1">';
 			$toggler=1;}
-	else { 
-			echo '<tr class="wardlistrow2">'; 
+	else {
+			echo '<tr class="wardlistrow2">';
 			$toggler=0;
 	}
 	echo '<td>&nbsp;'.$bold;

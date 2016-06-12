@@ -1,12 +1,12 @@
 <?php
-error_reporting ( E_COMPILE_ERROR | E_ERROR | E_CORE_ERROR ) ;
 require ('./roots.php') ;
 require ($root_path . 'include/core/inc_environment_global.php') ;
+error_reporting($ErrorLevel);
 /**
  * CARE2X Integrated Hospital Information System Deployment 2.2 - 2006-07-10
  * GNU General Public License
  * Copyright 2002,2003,2004,2005,2006 Elpidio Latorilla
- * elpidio@care2x.org, 
+ * elpidio@care2x.org,
  *
  * See the file "copy_notice.txt" for the licence notice
  */
@@ -28,11 +28,14 @@ $bgc1 = '#cde1ec' ;
 $edit = 1 ; /* Assume to edit first */
 
 $formtitle = $LDPathology ;
-$dept_nr = 8 ; // 8 = department nr. of pathology
+$dept_nr = 8 ; // 8 = department nr. of pathology
 
-//$db_request_table=$subtarget;$db_request_table = 'patho' ;
 
-//$db->debug=1;
+//$db_request_table=$subtarget;
+$db_request_table = 'patho' ;
+
+//$db->debug=1;
+
 
 require_once ($root_path . 'include/care_api_classes/class_encounter.php') ;
 $enc_obj = new Encounter ( ) ;
@@ -43,9 +46,9 @@ require_once ($root_path . 'include/core/inc_date_format_functions.php') ;
 
 /* Check for the patient number = $pn. If available get the patients data, otherwise set edit to 0 */
 if (isset ( $pn ) && $pn) {
-	
+
 	if ($enc_obj->loadEncounterData ( $pn )) {
-		
+
 		include_once ($root_path . 'include/care_api_classes/class_globalconfig.php') ;
 		$GLOBAL_CONFIG = array ( ) ;
 		$glob_obj = new GlobalConfig ( $GLOBAL_CONFIG ) ;
@@ -60,9 +63,9 @@ if (isset ( $pn ) && $pn) {
 			default :
 				$full_en = ($pn + $GLOBAL_CONFIG [ 'patient_inpatient_nr_adder' ]) ;
 		}
-		
+
 		$result = &$enc_obj->encounter ;
-		
+
 		$sql = "SELECT * FROM care_test_request_" . $subtarget . " WHERE batch_nr='$batch_nr'" ;
 		if ($ergebnis = $db->Execute ( $sql )) {
 			if ($editable_rows = $ergebnis->RecordCount ()) {
@@ -87,7 +90,7 @@ switch ( $mode) {
 					   material, macro,
 					   micro, findings, diagnosis,
 					   doctor_id, findings_date, findings_time,
-					   status, history, 
+					   status, history,
 					   create_id, create_time)
 					   VALUES
 					   (
@@ -96,21 +99,23 @@ switch ( $mode) {
 					   '" . addslashes ( htmlspecialchars ( $micro ) ) . "','" . addslashes ( htmlspecialchars ( $findings ) ) . "','" . addslashes ( htmlspecialchars ( $diagnosis ) ) . "',
 					   '" . addslashes ( $doctor_id ) . "', '" . formatDate2STD ( $findings_date, $date_format ) . "', '" . date ( 'H:i:s' ) . "',
 					   'initial', 'Create: " . date ( 'Y-m-d H:i:s' ) . " = " . $_SESSION [ 'sess_user_name' ] . "\n',
-						'" . $_SESSION [ 'sess_user_name' ] . "', 
+						'" . $_SESSION [ 'sess_user_name' ] . "',
 						'" . date ( 'YmdHis' ) . "'
 					   )" ;
-			
+
 			if ($ergebnis = $enc_obj->Transact ( $sql )) {
-				
+
 				signalNewDiagnosticsReportEvent ( $findings_date ) ;
-				//echo $sql;				header ( "location:$thisfile" . URL_REDIRECT_APPEND . "&edit=$edit&saved=insert&mode=edit&pn=$pn&station=$station&user_origin=$user_origin&status=$status&target=$target&subtarget=$subtarget&noresize=$noresize&batch_nr=$batch_nr&entry_date=$entry_date" ) ;
+				//echo $sql;
+				header ( "location:$thisfile" . URL_REDIRECT_APPEND . "&edit=$edit&saved=insert&mode=edit&pn=$pn&station=$station&user_origin=$user_origin&status=$status&target=$target&subtarget=$subtarget&noresize=$noresize&batch_nr=$batch_nr&entry_date=$entry_date" ) ;
 				exit () ;
 			} else {
 				echo "<p>$sql<p>$LDDbNoSave" ;
 				$mode = "" ;
 			}
-			break ; // end of case 'save'		}
-	
+			break ; // end of case 'save'
+		}
+
 	case 'update' :
 		{
 			$sql = "UPDATE care_test_findings_" . $db_request_table . " SET
@@ -123,10 +128,11 @@ switch ( $mode) {
 					   modify_id = '" . $_SESSION [ 'sess_user_name' ] . "',
 					   modify_time='" . date ( 'YmdHis' ) . "'
 					   WHERE batch_nr = '" . $batch_nr . "'" ;
-			
+
 			if ($ergebnis = $enc_obj->Transact ( $sql )) {
 				signalNewDiagnosticsReportEvent ( $findings_date ) ;
-				//echo $sql;				
+				//echo $sql;
+
 
 				header ( "location:$thisfile?sid=$sid&lang=$lang&edit=$edit&saved=insert&mode=edit&pn=$pn&station=$station&user_origin=$user_origin&status=$status&target=$target&subtarget=$subtarget&noresize=$noresize&batch_nr=$batch_nr&entry_date=$entry_date" ) ;
 				exit () ;
@@ -134,8 +140,9 @@ switch ( $mode) {
 				echo "<p>$sql<p>$LDDbNoSave" ;
 				$mode = "" ;
 			}
-			break ; // end of case 'save'		}
-	
+			break ; // end of case 'save'
+		}
+
 	case 'done' :
 		{
 			$sqlbuffer = " SET status='done',
@@ -143,16 +150,21 @@ switch ( $mode) {
 						   modify_id = '" . $_SESSION [ 'sess_user_name' ] . "',
 						   modify_time='" . date ( 'YmdHis' ) . "'
 						   WHERE batch_nr = '" . $batch_nr . "'" ;
-			
-			# Update the findings record first			
+
+			# Update the findings record first
+
 
 			if ($ergebnis = $enc_obj->Transact ( "UPDATE care_test_findings_" . $db_request_table . $sqlbuffer )) {
-				//echo $sql;				
-				# Then update the request record
+				//echo $sql;
+
+				# Then update the request record
+
 				if ($ergebnis = $enc_obj->Transact ( "UPDATE care_test_request_" . $db_request_table . $sqlbuffer )) {
-					// Load the visual signalling functions					include_once ($root_path . 'include/core/inc_visual_signalling_fx.php') ;
-					// Set the visual signal					setEventSignalColor ( $pn, SIGNAL_COLOR_DIAGNOSTICS_REPORT ) ;
-					
+					// Load the visual signalling functions
+					include_once ($root_path . 'include/core/inc_visual_signalling_fx.php') ;
+					// Set the visual signal
+					setEventSignalColor ( $pn, SIGNAL_COLOR_DIAGNOSTICS_REPORT ) ;
+
 					header ( "location:$thisfile?sid=$sid&lang=$lang&edit=$edit&saved=insert&mode=edit&pn=$pn&station=$station&user_origin=$user_origin&status=$status&target=$target&subtarget=$subtarget&noresize=$noresize&batch_nr=$batch_nr&entry_date=$entry_date" ) ;
 					exit () ;
 				} else {
@@ -163,60 +175,73 @@ switch ( $mode) {
 				echo "<p>$sql<p>$LDDbNoSave" ;
 				$mode = "save" ;
 			}
-			break ; // end of case 'save'		}
+			break ; // end of case 'save'
+		}
 	/* If mode is edit, get the stored test findings
 		*/
 	case 'edit' :
 		{
 			$sql = "SELECT * FROM care_test_findings_" . $db_request_table . " WHERE batch_nr='$batch_nr'" ;
-			
+
 			if ($ergebnis = $db->Execute ( $sql )) {
 				if ($editable_rows = $ergebnis->RecordCount ()) {
-					
+
 					$stored_findings = $ergebnis->FetchRow () ;
-					
+
 					if ($stored_findings [ 'status' ] == "done")
 						$edit = 0 ; /* Inhibit editing of the findings */
-					
+
 					$edit_form = 1 ;
-				
+
 				} else {
 					$mode = "save" ;
 				}
 			} else {
 				$mode = "save" ;
 			}
-			break ; ///* End of case 'edit': */		}
-	
+			break ; ///* End of case 'edit': */
+		}
+
 	default :
 		$mode = "" ;
 
-} // end of switch($mode)
+} // end of switch($mode)
+
 
 if ($edit)
 	$returnfile .= '&batch_nr=' . $batch_nr . '&pn=' . $pn . '&tracker=' . $tracker ;
-	
-# Prepare title$sTitle = $LDDiagnosticTest . " (" . $batch_nr . ")" ;
 
-# Start Smarty templating here/**
+# Prepare title
+$sTitle = $LDDiagnosticTest . " (" . $batch_nr . ")" ;
+
+# Start Smarty templating here
+/**
  * LOAD Smarty
  */
-# Note: it is advisable to load this after the inc_front_chain_lang.php so# that the smarty script can use the user configured template theme
+# Note: it is advisable to load this after the inc_front_chain_lang.php so
+# that the smarty script can use the user configured template theme
+
 
 require_once ($root_path . 'gui/smarty_template/smarty_care.class.php') ;
 $smarty = new smarty_care ( 'common' ) ;
 
-# Title in toolbar$smarty->assign ( 'sToolbarTitle', $sTitle ) ;
+# Title in toolbar
+$smarty->assign ( 'sToolbarTitle', $sTitle ) ;
 
-# href for help button$smarty->assign ( 'pbHelp', "javascript:gethelp('pending_patho_findings.php')" ) ;
+# href for help button
+$smarty->assign ( 'pbHelp', "javascript:gethelp('pending_patho_findings.php')" ) ;
 
-# href for return  button$smarty->assign ( 'pbBack', $returnfile ) ;
+# href for return  button
+$smarty->assign ( 'pbBack', $returnfile ) ;
 
-# href for close button$smarty->assign ( 'breakfile', $breakfile ) ;
+# href for close button
+$smarty->assign ( 'breakfile', $breakfile ) ;
 
-# Window bar title$smarty->assign ( 'sWindowTitle', $sTitle ) ;
+# Window bar title
+$smarty->assign ( 'sWindowTitle', $sTitle ) ;
 
-# collect extra javascript codeob_start () ;
+# collect extra javascript code
+ob_start () ;
 ?>
 
 <style type="text/css">
@@ -274,11 +299,11 @@ div.fa2_ml3 {
 </style>
 
 <script language="javascript">
-<!-- 
+<!--
 
 <?php
 /**
- *  Output the following function only when in edit mode 
+ *  Output the following function only when in edit mode
  */
 if ($edit) {
 	?>
@@ -300,7 +325,7 @@ function chkForm(d){
 		d.doctor_id.focus();
 		return false;
 	}
-	else 
+	else
 	{
 	   return true;
 	}
@@ -326,7 +351,7 @@ function printOut()
     findings_printout<?php
 				echo $sid ?>.print();
 }
-  
+
 <?php
 require ($root_path . 'include/core/inc_checkdate_lang.php') ;
 ?>
@@ -339,7 +364,8 @@ ob_end_clean () ;
 
 $smarty->append ( 'JavaScript', $sTemp ) ;
 
-# Buffer page output
+# Buffer page output
+
 
 ob_start () ;
 
@@ -360,15 +386,15 @@ if ($edit) {
 echo '<a href="javascript:printOut()"><img ' . createLDImgSrc ( $root_path, 'printout.gif', '0' ) . '></a>' ;
 
 if (isset ( $stored_findings [ 'status' ] ) && $stored_findings [ 'status' ] != 'done') {
-	
+
 	echo '
          <a href="' . $thisfile . '?sid=' . $sid . '&lang=' . $lang . '&edit=' . $edit . '&mode=done&target=' . $target . '&subtarget=' . $subtarget . '&batch_nr=' . $batch_nr . '&pn=' . $pn . '&user_origin=' . $user_origin . '&entry_date=' . $entry_date . '"><img ' . createLDImgSrc ( $root_path, 'done.gif', '0' ) . ' alt="' . $LDDone . '"></a>' ;
 }
 
 if ($edit) {
-	
+
 	include ($root_path . 'modules/laboratory/includes/inc_test_request_hiddenvars.php') ;
-	
+
 	echo '<input type="hidden" name="entry_date" value="' . $entry_date . '">
 	</form>' ;
 }
@@ -378,7 +404,8 @@ echo '</ul>' ;
 $sTemp = ob_get_contents () ;
 ob_end_clean () ;
 
-# Assign the page output to main frame template
+# Assign the page output to main frame template
+
 
 $smarty->assign ( 'sMainFrameBlockData', $sTemp ) ;
 

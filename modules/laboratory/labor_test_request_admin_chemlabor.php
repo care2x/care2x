@@ -1,7 +1,7 @@
 <?php
-error_reporting ( E_COMPILE_ERROR | E_ERROR | E_CORE_ERROR );
 require ('./roots.php');
 require ($root_path . 'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 /**
  * CARE2X Integrated Hospital Information System version deployment 1.1 (mysql) 2004-01-11
  * GNU General Public License
@@ -67,7 +67,7 @@ switch ($mode) {
 						modify_id = '" . $_SESSION ['sess_user_name'] . "',
 						modify_time = '" . date ( 'YmdHis' ) . "'
 				WHERE batch_nr = '" . $batch_nr . "'";
-		
+
 		if ($ergebnis = $enc_obj->Transact ( $sql )) {
 			include_once ('includes/inc_diagnostics_report_fx.php');
 			//echo $sql;
@@ -91,7 +91,7 @@ if (!$mode) {/* Get the pending test requests */
 	if ($requests = $db->Execute ( $sql )) {
 		/* If request is available, load the date format functions */
 		require_once ($root_path . 'include/core/inc_date_format_functions.php');
-		
+
 		$batchrows = $requests->RecordCount ();
 		if ($batchrows && (! isset ( $batch_nr ) || ! $batch_nr)) {
 			$test_request = $requests->FetchRow ();
@@ -108,9 +108,9 @@ if (!$mode) {/* Get the pending test requests */
 
 /* Check for the patietn number = $pn. If available get the patients data */
 if ($batchrows && $pn) {
-	
+
 	if ($enc_obj->loadEncounterData ( $pn )) {
-		
+
 		include_once ($root_path . 'include/care_api_classes/class_globalconfig.php');
 		$GLOBAL_CONFIG = array ();
 		$glob_obj = new GlobalConfig ( $GLOBAL_CONFIG );
@@ -125,9 +125,9 @@ if ($batchrows && $pn) {
 			default :
 				$full_en = ($pn + $GLOBAL_CONFIG ['patient_inpatient_nr_adder']);
 		}
-		
+
 		$result = &$enc_obj->encounter;
-		
+
 		$sql = "SELECT * FROM care_test_request_" . $subtarget . " ";
 		$sql .= "INNER JOIN care_test_request_" . $subtarget_sub . " ON ";
 		$sql .= "( care_test_request_" . $subtarget . ".batch_nr = care_test_request_" . $subtarget_sub . ".batch_nr) ";
@@ -153,7 +153,7 @@ if ($batchrows && $pn) {
 $sTitle = $LDPendingTestRequest;
 if ($batchrows)
 	$sTitle = $sTitle . " (" . $batch_nr . ")";
-	
+
 # Start Smarty templating here
 /**
  * LOAD Smarty
@@ -303,7 +303,7 @@ ob_start ();
 
 
 if ($batchrows) {
-	
+
 	?>
 
 <table border=0>
@@ -314,7 +314,7 @@ if ($batchrows) {
 	;
 	/* The following routine creates the list of pending requests */
 	require ('includes/inc_test_request_lister_fx.php');
-	
+
 	?>
 		</td>
 		<!-- right block for the form -->

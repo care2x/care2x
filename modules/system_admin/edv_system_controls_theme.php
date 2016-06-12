@@ -1,12 +1,12 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 /**
 * CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
 * GNU General Public License
 * Copyright 2002,2003,2004,2005 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -27,7 +27,7 @@ require_once($root_path.'include/care_api_classes/class_globalconfig.php');
 $gc=new GlobalConfig($GCONFIG);
 
 if(isset($mode)&&($mode=='save')&&!empty($max_items)){
-	
+
 	$gc->saveConfigItem('theme_control_buttons',$_POST['theme_control_buttons']);
 	header('location:'.$thisfile.URL_REDIRECT_APPEND.'&mode=0');
 	exit;
@@ -70,7 +70,7 @@ ob_start();
 
 <FONT  color="#000066" size=4><?php echo $LDControlButImg; ?></font>
 <form method="post">
-<table border=0 cellspacing=1 cellpadding=2>  
+<table border=0 cellspacing=1 cellpadding=2>
 
   <tr background="../../gui/img/common/default/tableHeaderbg3.gif">
     <td><FONT  color="#000099"><b></b></td>
@@ -78,7 +78,7 @@ ob_start();
    <td><FONT  color="#000099"><b><?php echo $LDStatus; ?></b></td>
   </tr>
 
-<?php 
+<?php
 	$gc->getConfig('theme_control_%');
 
   echo '<tr>
@@ -87,7 +87,7 @@ ob_start();
 	echo '
 	<td bgcolor="#e9e9e9" >
 	<select name="theme_control_buttons">';
-	
+
 	$tlist=explode(',',$GCONFIG['theme_control_theme_list']);
 	while(list($x,$v)=each($tlist)){
 		echo '<option value="'.$v.'"';
@@ -97,7 +97,7 @@ ob_start();
 		</option>';
 	}
 	echo '</select><input type="hidden" name="index'.$i.'" value="'.$x.'">
-       </td>  
+       </td>
 	</tr>';
 
 ?>
@@ -107,7 +107,7 @@ ob_start();
   <tr >
     <td colspan=3>&nbsp;</td>
   </tr>
-  
+
   <tr bgcolor="#e9e9e9" background="../../gui/img/common/default/tableHeaderbg3.gif">
     <td><FONT  color="#000099"><b></b></td>
     <td><FONT  color="#000099"><b><?php echo $LDTheme; ?></b></td>

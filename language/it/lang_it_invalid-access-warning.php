@@ -1,7 +1,7 @@
-<?php 
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
+<?php
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 require_once($root_path.'include/core/inc_img_fx.php');
 ?>
 <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 3.0//EN" "html.dtd">
@@ -44,7 +44,7 @@ il browser potrebbe non essere in grado di eseguire javascript, oppure i javascr
 disattivati. Dato che l'applicativo li usa, è necessario attivarli.
 <br>
 <img <?php echo createComIcon('../../','achtung.gif') ?>>
-In alcuni rari casi, possono esserci stati degli errori di trasferimento dati: in questo caso è 
+In alcuni rari casi, possono esserci stati degli errori di trasferimento dati: in questo caso è
 sufficiente premere il bottone "Ricarica" del browser.
 <p>
 </FONT>
@@ -52,7 +52,7 @@ sufficiente premere il bottone "Ricarica" del browser.
 </ul>
 </td>
 </tr>
-</table>        
+</table>
 <p>
 <?php
 require($root_path.'include/core/inc_load_copyrite.php');

@@ -2,14 +2,14 @@
 
 define('ROW_MAX',15); # define here the maximum number of rows for displaying the parameters
 
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 /**
 * CARE2X Integrated Hospital Information System Deployment 2.2 - 2006-07-10
 * GNU General Public License
 * Copyright 2002,2003,2004,2005,2006 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -31,7 +31,7 @@ $pitems=array('msr_unit','median','lo_bound','hi_bound','lo_critical','hi_critic
 
 # Load the date formatter */
 include_once($root_path.'include/core/inc_date_format_functions.php');
-    
+
 # Get the test test groups
 $tgroups=$lab_obj->TestActiveGroups();
 
@@ -70,7 +70,7 @@ $breakfile="labor.php".URL_APPEND;
 ?>
 
 <script language="javascript" name="j1">
-<!--        
+<!--
 function chkselect(d)
 {
  	if(d.parameterselect.value=="<?php echo $parameterselect ?>"){
@@ -99,7 +99,7 @@ ob_end_clean();
 
 $smarty->append('JavaScript',$sTemp);
 
-$sTempNew = '<a href="javascript:newParam()"><img '.createLDImgSrc($root_path,'newplan.gif','0').'></a>';	
+$sTempNew = '<a href="javascript:newParam()"><img '.createLDImgSrc($root_path,'newplan.gif','0').'></a>';
 $paramName = &$lab_obj->getGroupName($parameterselect);
 if(isset($paramName) && !empty($paramName)) {
 	$paramName = $paramName->fetchRow();
@@ -136,21 +136,21 @@ if(is_object($tparams)){
 	if($tp['status']=='hidden') {
 		echo '
 		<tr bgcolor="green">
-		<td ><nobr>&nbsp;';		
+		<td ><nobr>&nbsp;';
 	} elseif($tp['status']=='deleted') {
 		echo '
 		<tr bgcolor="red">
-		<td ><nobr>&nbsp;';	
+		<td ><nobr>&nbsp;';
 	} else {
 		echo '
 		<tr class="'.$bgc.'">
-		<td ><nobr>&nbsp;';	
+		<td ><nobr>&nbsp;';
 	}
 
-	
+
 	if(isset($parameters[$tp['id']])&&!empty($parameters[$tp['id']])) echo $parameters[$tp['id']];
 		else echo $tp['name'];
-	
+
 	echo '&nbsp;</nobr></td>';
 
 	while(list($x,$v)=each($pitems)){
@@ -165,7 +165,7 @@ if(is_object($tparams)){
 			</td>';
 	}
 	reset($pitems);
-	
+
 	echo '
 			<td>
 			<a href="javascript:editParam('.$tp['nr'].')"><img '.createLDImgSrc($root_path,'edit_sm.gif','0').'></a>

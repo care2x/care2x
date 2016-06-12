@@ -1,12 +1,12 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 
 define('LANG_FILE','or.php');
 define('NO_2LEVEL_CHK',1);
 require_once($root_path.'include/core/inc_front_chain_lang.php');
-if (!$internok&&!$_COOKIE['ck_op_pflegelogbuch_user'.$sid]) {header("Location:".$root_path."language/".$lang."/lang_".$lang."_invalid-access-warning.php"); exit;}; 
+if (!$internok&&!$_COOKIE['ck_op_pflegelogbuch_user'.$sid]) {header("Location:".$root_path."language/".$lang."/lang_".$lang."_invalid-access-warning.php"); exit;};
 
 $comdat="?sid=$sid&lang=$lang&enc_nr=$enc_nr&op_nr=$op_nr&dept_nr=$dept_nr&saal=$saal&pday=$pday&pmonth=$pmonth&pyear=$pyear";
 
@@ -22,7 +22,7 @@ function opentimewin(s)
 {
 	w=window.parent.screen.width;
 	h=window.parent.screen.height;
-	ww=550; 
+	ww=550;
 	wh=500;
 	if(s=="wait_time") t="op-pflege-graph-getwaittime.php";
 		else t="op-pflege-graph-getinfo.php";
@@ -43,7 +43,7 @@ function opentimewin(s)
 <BODY bgcolor=#cde1ec topmargin=0 leftmargin=0 marginwidth=0 marginheight=0 alink="navy" vlink="navy">
 
 
-<table cellpadding="0" cellspacing="0" border=0 width=100%> 
+<table cellpadding="0" cellspacing="0" border=0 width=100%>
 <tr>
 <td  align=right><font face=verdana,arial size=2><b><?php echo $LDTimes ?>:</b></td>
 </tr>

@@ -1,18 +1,18 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 /**
 * CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
 * GNU General Public License
 * Copyright 2002,2003,2004,2005 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
 
 # Default maximum values for the time out time
-$def_max_hours=0; 
+$def_max_hours=0;
 $def_max_mins=15; # 15 minutes
 $def_max_secs=59; # 59 seconds
 
@@ -37,11 +37,11 @@ if(isset($mode) && $mode=='save'){
 	if(!is_numeric($_POST['thours'])||$_POST['thours']>24) $_POST['thours']=0;
 	if(!is_numeric($_POST['tmins'])||$_POST['tmins']>59||$_POST['tmins']<1) $_POST['tmins']=$def_max_mins;
 	if(!is_numeric($_POST['tsecs'])||$_POST['tsecs']>59) $_POST['tsecs']=$def_max_tsecs;
-	
+
 	# combine the values to final format HoursMinsSecs
 	//$_POST['timeout_time']=$_POST['thours'].$_POST['tmins'].$_POST['tsecs'];
 	$_POST['timeout_time']=date('His',mktime($_POST['thours'],$_POST['tmins'],$_POST['tsecs'],1,1,1971));
-	
+
 	$filter='timeout_'; # The index filter
 
 	$numeric=FALSE; # Values are not strictly numeric
@@ -54,7 +54,7 @@ if(isset($mode) && $mode=='save'){
 	header("location:$thisfile".URL_REDIRECT_APPEND."&save_ok=1");
 	exit;
 # Else get current global data
-}else{ 
+}else{
 	$glob_obj->getConfig('timeout_%');
 	# Parse the time value to hours mins and secs
 	$buffer='000000'.$GLOBAL_CONFIG['timeout_time'];
@@ -105,13 +105,13 @@ echo $LDEnterInfo;
 <p>
 
 <form action="<?php echo $thisfile ?>" method="post" name="quickinfo">
-<table border=0 cellspacing=1 cellpadding=5>  
+<table border=0 cellspacing=1 cellpadding=5>
 <tr valign=top>
 	<td class="wardlisttitlerow" align="right"><FONT  color="#0000cc"><b><nobr><?php echo $LDTimeOutActive ?></nobr></b> </FONT></td>
 	<td class="wardlistrow1">
 		<input type="radio" name="timeout_inactive" value="0" <?php if(!$GLOBAL_CONFIG['timeout_inactive']) echo 'checked' ?>> <nobr><?php echo $LDYes ?>&nbsp;&nbsp;&nbsp;
 		<input type="radio" name="timeout_inactive" value="1" <?php if($GLOBAL_CONFIG['timeout_inactive']) echo 'checked' ?>> <?php echo $LDNo ?></nobr>
-	</td>  
+	</td>
 	<td class="wardlistrow2"><?php echo $LDTimeOutTxt ?></td>
 	</tr>
 <tr valign=top>
@@ -121,7 +121,7 @@ echo $LDEnterInfo;
  	<input type="text" name="tmins" size=2 maxlength=2 value=<?php echo $tmins ?>> <?php echo $LDMinutes ?>&nbsp;
 	<input type="text" name="tsecs" size=2 maxlength=2 value=<?php echo $tsecs ?>> <?php echo $LDSeconds ?></nobr>
 
-	</td>  
+	</td>
 	<td class="wardlistrow2"><?php echo $LDTimeOutTimeTxt ?></td>
 	</tr>
 </table>

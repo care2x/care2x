@@ -1,5 +1,5 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
+error_reporting($ErrorLevel);
 ?>
 <font face="Verdana, Arial" size=3 color="#0000cc">
 <b>Erstellen eines Medocs Dokuments</b></font>
@@ -19,21 +19,21 @@ error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 		lesen Sie den Strichcode mit dem Scanner ein. Überspringen Sie den Schritt 2.
 		</font>
 		</ul>
-		
+
 </ul>
 <b>Schritt 2</b>
 
 <ul> Den <input type="button" value="Suchen">  anklicken um die Suche zu starten.
-		
+
 </ul>
 <b>Alternativen zum Schritt 2</b>
 <ul> Sie können eine von folgenden tun:<br>
-		<Ul type="disc">		
+		<Ul type="disc">
 		<li>Den Name vom Patient in das Feld "Name:" eingeben <br>
 		<li>oder den Vornamen vom Patient in das Feld "Vorname:" eingeben <br>
 		</ul>
 		 anschliessend die  "Enter" Taste auf der Tastatur drücken.
-		
+
 </ul>
 <b>Schritt 3</b>
 <ul> Wenn die Suche ein einziges Ergebnis findet werden die Daten sofort gezeigt.<br>
@@ -57,8 +57,8 @@ error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 <b>Schritt 1</b>
 <?php endif;?>
 <?php if(($x1=="1")||($src=="?")) : ?>
-<ul> Wenn die Patientendaten eingeblendet sind können Sie folgendes tun: 
-		<Ul type="disc">		
+<ul> Wenn die Patientendaten eingeblendet sind können Sie folgendes tun:
+		<Ul type="disc">
     	<li>Zusatzangaben über die Krankenkasse bzw. Versicherung in das Feld "weitere Angaben:" eingeben,<br>
 		<li>den "<span style="background-color:yellow" ><input type="radio" name="n" value="a">Ja</span>" am  "Aufklärung" anklicken wenn der Patient eine Aufklärung erhalten hat,<br>
     	<li>den "<span style="background-color:yellow" ><input type="radio" name="n" value="a">Nein</span>" am  "Aufklärung" anklicken wenn der Patient KEINE Aufklärung erhalten hat,<br>
@@ -79,7 +79,7 @@ error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 <?php endif;?>
 <b>Achtung!</b>
 <ul> Falls Sie abbrechen möchten, den  <img <?php echo createLDImgSrc('../','cancel.gif','0') ?> > anklicken.
-		
+
 </ul>
 
 

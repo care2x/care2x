@@ -1,12 +1,12 @@
 <?php
-error_reporting ( E_COMPILE_ERROR | E_ERROR | E_CORE_ERROR );
 require ('./roots.php');
 require ($root_path . 'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 /**
  * CARE2X Integrated Hospital Information System Deployment 2.2 - 2006-07-10
  * GNU General Public License
  * Copyright 2002,2003,2004,2005,2006 Elpidio Latorilla
- * elpidio@care2x.org, 
+ * elpidio@care2x.org,
  *
  * See the file "copy_notice.txt" for the licence notice
  */
@@ -15,23 +15,23 @@ define ( 'LANG_FILE', 'konsil.php' );
 
 /* Globalize the variables */
 
-/* We need to differentiate from where the user is coming: 
+/* We need to differentiate from where the user is coming:
 *  $user_origin != lab ;  from patient charts folder
 *  $user_origin == lab ;  from the laboratory
 *  and set the user cookie name and break or return filename
 */
 switch ($user_origin) {
-	
+
 	case 'lab' :
 		$local_user = 'ck_lab_user';
 		$breakfile = $root_path . "modules/laboratory/labor.php" . URL_APPEND;
 		break;
-	
+
 	case 'patreg' :
 		$local_user = 'aufnahme_user';
 		$breakfile = 'javascript:window.close()';
 		break;
-	
+
 	default :
 		$local_user = 'ck_pflege_user';
 		$breakfile = $root_path . "modules/nursing/nursing-station-patientdaten.php" . URL_APPEND . "&edit=$edit&station=$station&pn=$pn";
@@ -49,12 +49,12 @@ switch ($subtarget) {
 		$bgc1 = "#cde1ec";
 		$formtitle = $LDPathology;
 		break;
-	
+
 	case 'radio' :
 		$bgc1 = "#ffffff";
 		$formtitle = $LDRadiology;
 		break;
-	
+
 	case "baclabor" :
 		$bgc1 = '#fff3f3';
 		$formtitle = $LDBacteriologicalLaboratory;
@@ -78,7 +78,7 @@ if (isset ( $pn ) && $pn) {
 	include_once ($root_path . 'include/care_api_classes/class_encounter.php');
 	$enc_obj = new Encounter ( );
 	if ($enc_obj->loadEncounterData ( $pn )) {
-		
+
 		include_once ($root_path . 'include/care_api_classes/class_globalconfig.php');
 		$GLOBAL_CONFIG = array ();
 		$glob_obj = new GlobalConfig ( $GLOBAL_CONFIG );
@@ -93,7 +93,7 @@ if (isset ( $pn ) && $pn) {
 			default :
 				$full_en = ($pn + $GLOBAL_CONFIG ['patient_inpatient_nr_adder']);
 		}
-		
+
 		$result = &$enc_obj->encounter;
 	}
 }
@@ -102,29 +102,29 @@ if (! isset ( $mode ) && $batch_nr && $pn)
 	$mode = "edit";
 
 switch ($mode) {
-	/* If mode is edit, get the stored test findings 
+	/* If mode is edit, get the stored test findings
 			*/
 	case 'edit' :
-		
+
 		if ($subtarget == 'baclabor') {
-			
+
 			$sql = "SELECT * FROM care_test_request_" . $db_request_table . " WHERE batch_nr='" . $batch_nr . "'";
-			
+
 			if ($ergebnis = $db->Execute ( $sql )) {
 				if ($editable_rows = $ergebnis->RecordCount ()) {
-					
+
 					$stored_request = $ergebnis->FetchRow ();
-					
+
 					parse_str ( $stored_request ['material'], $stored_material );
 					parse_str ( $stored_request ['test_type'], $stored_test_type );
-					
+
 					$edit_form = 1;
 					$read_form = 1;
-				
+
 				}
 			}
 		}
-		
+
 
 		if($subtarget == 'patho') {
 			$sql="SELECT * FROM care_test_findings_".$db_request_table." WHERE batch_nr='".$batch_nr."'";
@@ -132,7 +132,7 @@ switch ($mode) {
 			$sql = "SELECT * FROM care_test_findings_" . $db_request_table . " ";
 			$sql .= "INNER JOIN care_test_findings_" . $db_request_table_sub . " ON ";
 			$sql .= "( care_test_findings_" . $db_request_table . ".batch_nr = care_test_findings_" . $db_request_table_sub . ".batch_nr) ";
-			$sql .= "WHERE care_test_findings_" . $db_request_table . ".batch_nr='" . $batch_nr . "' ";			
+			$sql .= "WHERE care_test_findings_" . $db_request_table . ".batch_nr='" . $batch_nr . "' ";
 		}
 		if ($ergebnis = $db->Execute ( $sql )) {
 			if ($editable_rows = $ergebnis->RecordCount ()) {
@@ -144,25 +144,25 @@ switch ($mode) {
 						$parsed_findings[$ergebnis->fields['findings']] = $ergebnis->fields['findings'];
 						$stored_findings=$ergebnis->GetRowAssoc($toUpper=false);
 						$ergebnis->MoveNext();
-					}	
+					}
 				} else {
  					while ( !$ergebnis->EOF ) {
 						$stored_findings=$ergebnis->GetRowAssoc($toUpper=false);
 						$ergebnis->MoveNext();
-					}						
+					}
 				}
-				
+
 				if ($stored_findings ['status'] == "done")
 					$edit_findings = 0; /* Inhibit editing of the findings */
-				
+
 				$mode = 'update';
 				$edit_form = 1;
 				$read_form = 1;
 			}
 		}
-		
+
 		break; ///* End of case 'edit': */
-	
+
 
 	default :
 		$mode = "";
@@ -269,7 +269,7 @@ if ($show_print_button)
 	echo '<a href="javascript:window.print()"><img ' . createLDImgSrc ( $root_path, 'printout.gif', '0' ) . '></a><p>';
 
 /**
- *  Load the form 
+ *  Load the form
  */
 if ($subtarget == 'baclabor') {
 	echo '<img src="' . $root_path . 'main/imgcreator/barcode_label_single_large.php?sid=' . $sid . '&lang=' . $lang . '&fen=' . $full_en . '&en=' . $pn . '&batch_nr=' . $batch_nr . '&child_img=1&subtarget=' . $subtarget . '" >';

@@ -1,12 +1,12 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 /**
 * CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
 * GNU General Public License
 * Copyright 2002,2003,2004,2005 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -23,12 +23,12 @@ switch($retpath)
 {
 	case 'list': $breakfile='immunization_list.php'.URL_APPEND; break;
 	case 'search': $breakfile='immunization_search.php'.URL_APPEND; break;
-	default: $breakfile='immunization_manage.php'.URL_APPEND; 
+	default: $breakfile='immunization_manage.php'.URL_APPEND;
 }
 
 if(!isset($mode)){
 	$mode='';
-	$edit=true;		
+	$edit=true;
 }else{
 	switch($mode)
 	{
@@ -38,14 +38,14 @@ if(!isset($mode)){
 			/* Validate important data */
 			$_POST['name']=trim($_POST['name']);
 			if(!empty($_POST['name'])){
-				
+
 				# Check if insurance ID exists
 				//TODO : find how to use it..
 				if($immu_obj->ImmuExists($_POST['name'])){
 
 				# Notify
 					$mode='immu_exists';
-				
+
 				}else{
 					if($immu_obj->saveImmuInfoFromArray($_POST)){
 						$immu_save=$db->Insert_ID();
@@ -93,7 +93,7 @@ ob_start();
 ?>
 
 <script language="javascript">
-<!-- 
+<!--
 function check(d)
 {
 	if((d.type.value=="")){
@@ -134,13 +134,13 @@ ob_start();
 
  <ul>
 <?php
-if(!empty($mode)){ 
+if(!empty($mode)){
 ?>
 <table border=0>
   <tr>
     <td><img <?php echo createMascot($root_path,'mascot1_r.gif','0','bottom') ?>></td>
     <td valign="bottom"><br><font face="Verdana, Arial" size=3 color="#880000"><b>
-<?php 
+<?php
 	switch($mode)
 	{
 		case 'bad_data':
@@ -158,8 +158,8 @@ if(!empty($mode)){
 </td>
   </tr>
 </table>
-<?php 
-} 
+<?php
+}
 ?>
 <form action="<?php echo $thisfile; ?>" method="post" name="immunization" onSubmit="return check(this)">
 <font face="Verdana, Arial" size=-1><?php echo $LDEnterAllFields ?>
@@ -168,11 +168,11 @@ if(!empty($mode)){
     <td align=right class="adm_item"><font color=#ff0000><b>*</b></font><?php echo $LDImmuType ?>: </td>
     <td class="adm_input"><input type="text" name="type" size=50 maxlength=60 value="<?php echo $type ?>"><br>
 </td>
-  </tr> 
+  </tr>
   <tr>
     <td align=right class="adm_item"><font color=#ff0000><b>*</b></font><?php echo $LDImmuName ?>: </td>
     <td class="adm_input"><input type="text" name="name" size=50 maxlength=60 value="<?php echo $name ?>"><br></td>
-  </tr> 
+  </tr>
   <tr>
     <td align=right class="adm_item"><font color=#ff0000></font><?php echo $LDImmuPeriod ?>: </td>
     <td class="adm_input"><textarea name="period" cols=40 rows=4 wrap="physical"><?php echo $period ?></textarea></td>
@@ -208,7 +208,7 @@ if(!empty($mode)){
   <tr>
     <td><input type="image" <?php echo createLDImgSrc($root_path,'savedisc.gif','0'); ?>></td>
     <td  align=right><a href="<?php echo $breakfile ?>"><img <?php echo createLDImgSrc($root_path,'cancel.gif','0') ?> border="0"></a></td>
-  </tr>  
+  </tr>
 </table>
 <input type="hidden" name="sid" value="<?php echo $sid ?>">
 <input type="hidden" name="mode" value="save">

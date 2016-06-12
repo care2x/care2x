@@ -1,12 +1,12 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 /**
 * CARE2X Integrated Hospital Information System Deployment 2.2 - 2006-07-10
 * GNU General Public License
 * Copyright 2002,2003,2004,2005,2006 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -38,18 +38,18 @@ $enc_obj=new Encounter;
 /* Here begins the real work */
 
    require_once($root_path.'include/core/inc_date_format_functions.php');
-   
+
 
      /* Check for the patient number = $pn. If available get the patients data, otherwise set edit to 0 */
      if(isset($pn) && $pn)
-	 {		
+	 {
 
 	    if( $enc_obj->loadEncounterData($pn)) {
-		
+
 			include_once($root_path.'include/care_api_classes/class_globalconfig.php');
 			$GLOBAL_CONFIG=array();
 			$glob_obj=new GlobalConfig($GLOBAL_CONFIG);
-			$glob_obj->getConfig('patient_%');	
+			$glob_obj->getConfig('patient_%');
 			switch ($enc_obj->EncounterClass())
 			{
 		    	case '1': $full_en = ($pn + $GLOBAL_CONFIG['patient_inpatient_nr_adder']);
@@ -57,42 +57,42 @@ $enc_obj=new Encounter;
 				case '2': $full_en = ($pn + $GLOBAL_CONFIG['patient_outpatient_nr_adder']);
 							break;
 				default: $full_en = ($pn + $GLOBAL_CONFIG['patient_inpatient_nr_adder']);
-			}						
+			}
 
 			$result=&$enc_obj->encounter;
 		}
-	   else 
+	   else
 	   {
 	      $edit=0;
 		  $mode='';
 		  $pn='';
-	   }		
+	   }
      }
-	 
 
-	   
+
+
 	 if(!isset($mode) && $batch_nr && $pn)   $mode='edit';
-		
+
 		  switch($mode)
 		  {
 				     case 'save':
-							
-                                 $sql="INSERT INTO care_test_findings_".$db_request_table." 
+
+                                 $sql="INSERT INTO care_test_findings_".$db_request_table."
 								          (
-										   batch_nr, encounter_nr, dept_nr, 
+										   batch_nr, encounter_nr, dept_nr,
 										   findings, diagnosis,
-										   doctor_id, findings_date, findings_time, 
-										   status, 
+										   doctor_id, findings_date, findings_time,
+										   status,
 										   history,
 										  create_id,
 										  create_time
 										  )
 										   VALUES
 										   (
-										   '".$batch_nr."','".$pn."','".$dept_nr."', 
+										   '".$batch_nr."','".$pn."','".$dept_nr."',
 										   '".addslashes(htmlspecialchars($findings))."','".addslashes(htmlspecialchars($diagnosis))."',
 										   '".htmlspecialchars($doctor_id)."', '".formatDate2STD($findings_date,$date_format)."', '".date('H:i:s')."',
-										   'initial',  
+										   'initial',
 										   'Create: ".date('Y-m-d H:i:s')." = ".$_SESSION['sess_user_name']."\n',
 										  '".$_SESSION['sess_user_name']."',
 										  '".date('YmdHis')."'
@@ -106,22 +106,22 @@ $enc_obj=new Encounter;
 									 header("location:$thisfile?sid=$sid&lang=$lang&edit=$edit&saved=insert&mode=edit&pn=$pn&station=$station&user_origin=$user_origin&status=$status&target=$target&subtarget=$subtarget&noresize=$noresize&batch_nr=$batch_nr&entry_date=$entry_date");
 									 exit;
 								  }
-								  else 
+								  else
 								  {
-								     echo "<p>$sql<p>$LDDbNoSave"; 
+								     echo "<p>$sql<p>$LDDbNoSave";
 									 $mode='';
 								  }
-								
+
 								break; // end of case 'save'
-								
+
 		     case 'update':
-			 
-							      $sql="UPDATE care_test_findings_".$db_request_table."  SET 
-										   findings='".addslashes(htmlspecialchars($findings))."', 
+
+							      $sql="UPDATE care_test_findings_".$db_request_table."  SET
+										   findings='".addslashes(htmlspecialchars($findings))."',
 										   diagnosis='".addslashes(htmlspecialchars($diagnosis))."',
-										   doctor_id='".htmlspecialchars($doctor_id)."', 
+										   doctor_id='".htmlspecialchars($doctor_id)."',
 										   findings_date='".formatDate2STD($findings_date,$date_format)."',
-										   findings_time='".date('H:i:s')."', 
+										   findings_time='".date('H:i:s')."',
 										   history=".$enc_obj->ConcatHistory("Update: ".date('Y-m-d H:i:s')." = ".$_SESSION['sess_user_name']."\n").",
 										   modify_id = '".$_SESSION['sess_user_name']."',
 										   modify_time='".date('YmdHis')."'
@@ -136,25 +136,25 @@ $enc_obj=new Encounter;
 								  }
 								  else
 								   {
-								      echo "<p>$sql<p>$LDDbNoSave"; 
+								      echo "<p>$sql<p>$LDDbNoSave";
 								      $mode='';
 								   }
-								
+
 								break; // end of case 'save'
-								
+
 		     case 'done':
-			 
-							      $sql="UPDATE care_test_findings_".$db_request_table." SET 
+
+							      $sql="UPDATE care_test_findings_".$db_request_table." SET
 										   status='done',
 										   history=".$enc_obj->ConcatHistory("Done: ".date('Y-m-d H:i:s')." = ".$_SESSION['sess_user_name']."\n").",
 										   modify_id = '".$_SESSION['sess_user_name']."',
 										   modify_time='".date('YmdHis')."'
 										   WHERE batch_nr = '".$batch_nr."'";
-										  							
+
 							      if($ergebnis=$enc_obj->Transact($sql))
        							  {
 									//echo $sql;
-							          $sql="UPDATE care_test_request_".$db_request_table." SET 
+							          $sql="UPDATE care_test_request_".$db_request_table." SET
 										   status='done',
 										   history=".$enc_obj->ConcatHistory("Done: ".date('Y-m-d H:i:s')." = ".$_SESSION['sess_user_name']."\n").",
 										   modify_id = '".$_SESSION['sess_user_name']."',
@@ -165,27 +165,27 @@ $enc_obj=new Encounter;
        							      {
 								  		// Load the visual signalling functions
 										include_once($root_path.'include/core/inc_visual_signalling_fx.php');
-										// Set the visual signal 
-										setEventSignalColor($pn,SIGNAL_COLOR_DIAGNOSTICS_REPORT);									
+										// Set the visual signal
+										setEventSignalColor($pn,SIGNAL_COLOR_DIAGNOSTICS_REPORT);
 									     header("location:$thisfile?sid=$sid&lang=$lang&edit=$edit&saved=insert&mode=edit&pn=$pn&station=$station&user_origin=$user_origin&status=$status&target=$target&subtarget=$subtarget&noresize=$noresize&batch_nr=$batch_nr&entry_date=$entry_date");
 									     exit;
 								       }
 								       else
 								       {
-								          echo "<p>$sql<p>$LDDbNoSave"; 
+								          echo "<p>$sql<p>$LDDbNoSave";
 								          $mode='save';
-								        }								 
+								        }
 									}
 								  else
 								   {
-								      echo "<p>$sql<p>$LDDbNoSave"; 
+								      echo "<p>$sql<p>$LDDbNoSave";
 								      $mode='save';
 								   }
-								
+
 								break; // end of case 'save'
-								
-								
-	        /* If mode is edit, get the stored test findings 
+
+
+	        /* If mode is edit, get the stored test findings
 			*/
 			case 'edit':
 
@@ -207,14 +207,14 @@ $enc_obj=new Encounter;
 						 {
 						    $mode='save';
 						  }
-						 
+
 						 break; ///* End of case 'edit': */
-						 
+
 			 default:	$mode='';
-			 
+
 		  }// end of switch($mode)
 
-if($edit) $returnfile.='&batch_nr='.$batch_nr.'&pn='.$pn.'&tracker='.$tracker; 
+if($edit) $returnfile.='&batch_nr='.$batch_nr.'&pn='.$pn.'&tracker='.$tracker;
 
 # Start Smarty templating here
  /**
@@ -271,11 +271,11 @@ div.fa2_ml3 {font-family: arial; font-size: 12; margin-left: 3; }
 </style>
 
 <script language="javascript">
-<!-- 
+<!--
 
 <?php
 /**
-*  Output the following function only when in edit mode 
+*  Output the following function only when in edit mode
 */
 if ($edit)
 {
@@ -296,7 +296,7 @@ function chkForm(d){
 		d.doctor_id.focus();
 		return false;
 	}
-	else 
+	else
 	{
 	   return true;
 	}
@@ -348,7 +348,7 @@ if ($edit)
 }
 
 ?>
-  
+
 <a href="javascript:printOut()"><img <?php echo createLDImgSrc($root_path,'printout.gif','0') ?>></a>
 <?php
 if (isset($stored_findings['status']) && $stored_findings['status']!='done' )

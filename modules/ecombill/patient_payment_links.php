@@ -1,14 +1,14 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 /**
-* eComBill 1.0.04 for Care2002 beta 1.0.04 
+* eComBill 1.0.04 for Care2002 beta 1.0.04
 * (2003-04-30)
-* adapted from eComBill beta 0.2 
-* developed by ecomscience.com http://www.ecomscience.com 
+* adapted from eComBill beta 0.2
+* developed by ecomscience.com http://www.ecomscience.com
 * GPL License
 */
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 define('NO_CHAIN',1);
 define('LANG_FILE','billing.php');
 
@@ -57,18 +57,18 @@ if(is_object($chkfinalresult)) $chkexists=$chkfinalresult->RecordCount();
 ?>
 
 <Script language=Javascript>
-function show() {	
+function show() {
 	document.receiptlinks.action="patient_payment.php";
 	document.receiptlinks.submit();
 }
 
-function showreceipt(receiptid) {	
+function showreceipt(receiptid) {
 	document.receiptlinks.action="showpayment.php?receiptid="+receiptid;
 	document.receiptlinks.submit();
 }
 
 </script>
-<?php 
+<?php
 $sTemp = ob_get_contents();
 ob_end_clean();
 
@@ -87,14 +87,14 @@ $smarty->assign('pbCancel','<a href="'.$breakfile.'" ><img '.createLDImgSrc($roo
 $sListRows='';
 if($resultreceiptquery=$eComBill->listCurrentPayments($full_en)){
     if($resultreceiptquery->RecordCount()){
-    	while ($payment=$resultreceiptquery->FetchRow()){   
-    		$smarty->assign('itemNr',"<a href=javascript:showreceipt('".$payment['payment_receipt_no']."')>".$payment['payment_receipt_no']."</a>" ); 	
+    	while ($payment=$resultreceiptquery->FetchRow()){
+    		$smarty->assign('itemNr',"<a href=javascript:showreceipt('".$payment['payment_receipt_no']."')>".$payment['payment_receipt_no']."</a>" );
     		$smarty->assign('date', formatDate2Local($payment['payment_date'],$date_format));
-	
+
 		    ob_start();
 			$smarty->display('ecombill/bill_payment_line.tpl');
 			$sListRows = $sListRows.ob_get_contents();
-			ob_end_clean(); 
+			ob_end_clean();
 
     	}
 	}
@@ -103,11 +103,11 @@ if($resultreceiptquery=$eComBill->listCurrentPayments($full_en)){
 if(!$chkexists) {
 	$smarty->assign('itemNr', '<a href="javascript:show()">'. $LDMakeaNewPayment .'</a>');
 	$smarty->assign('date', '');
-	
+
 	ob_start();
 	$smarty->display('ecombill/bill_payment_line.tpl');
 	$sListRows = $sListRows.ob_get_contents();
-	ob_end_clean(); 
+	ob_end_clean();
 }
 
 $smarty->assign('ItemLine',$sListRows);

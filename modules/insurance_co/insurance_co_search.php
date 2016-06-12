@@ -1,24 +1,24 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 /**
 * CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
 * GNU General Public License
 * Copyright 2002,2003,2004,2005 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
 # Default value for the maximum nr of rows per block displayed, define this to the value you wish
 # In normal cases this value is derived from the db table "care_config_global" using the "pagin_insurance_list_max_block_rows" element.
-define('MAX_BLOCK_ROWS',30); 
+define('MAX_BLOCK_ROWS',30);
 
 $lang_tables[]='search.php';
 define('LANG_FILE','finance.php');
 $local_user='aufnahme_user';
 require_once($root_path.'include/core/inc_front_chain_lang.php');
-# Load the insurance object 
+# Load the insurance object
 require_once($root_path.'include/care_api_classes/class_insurance.php');
 $ins_obj=new Insurance;
 
@@ -52,11 +52,11 @@ $pagen->setMaxCount($GLOBAL_CONFIG['pagin_insurance_search_max_block_rows']);
 
 if(isset($mode)&&($mode=='search'||$mode=='paginate')&&!empty($searchkey)){
 
-	# Convert wildcards 
+	# Convert wildcards
 	$searchkey=strtr($searchkey,'*?','%_');
 	# Save the search keyword for eventual pagination routines
 	if($mode=='search') $_SESSION['sess_searchkey']=$searchkey;
-	
+
 	# Search for the firms
 	$firms=$ins_obj->searchLimitActiveFirm($searchkey,$GLOBAL_CONFIG['pagin_insurance_search_max_block_rows'],$pgx,$oitem,$odir);
 	//echo $ins_obj->getLastQuery();
@@ -75,7 +75,7 @@ if(isset($mode)&&($mode=='search'||$mode=='paginate')&&!empty($searchkey)){
 	$pagen->setSortItem($oitem);
 	$pagen->setSortDirection($odir);
 }
-	
+
 $bgc=$root_path.'gui/img/skin/default/tableHeaderbg3.gif';
 $bgc2='#eeeeee';
 
@@ -105,7 +105,7 @@ $entry_body_bgcolor='#ffffff';
 
  # Window bar title
  $smarty->assign('sWindowTitle',"$LDInsuranceCo :: $LDSearch");
- 
+
  # Body onLoad Javascript code
  $smarty->assign('sOnLoadJs','onLoad="document.searchform.searchkey.select()"');
 
@@ -123,9 +123,9 @@ ob_start();
 	<table border=0 cellpadding=10 bgcolor="<?php echo $entry_border_bgcolor ?>">
      <tr>
        <td>
-	   <?php 
+	   <?php
 	   		$searchprompt=$LDSearchPrompt;
-	    	include($root_path.'include/core/inc_searchmask.php'); 
+	    	include($root_path.'include/core/inc_searchmask.php');
 		?></td>
      </tr>
    </table>
@@ -134,7 +134,7 @@ ob_start();
 if(is_object($firms)){
 
 	if ($linecount) echo str_replace("~nr~",$totalcount,$LDSearchFound).' '.$LDShowing.' '.$pagen->BlockStartNr().' '.$LDTo.' '.$pagen->BlockEndNr().'.';
-		else echo str_replace('~nr~','0',$LDSearchFound); 
+		else echo str_replace('~nr~','0',$LDSearchFound);
 
 ?>
 <table border=0 cellpadding=2 cellspacing=1>
@@ -155,7 +155,7 @@ if(is_object($firms)){
 	  <?php echo $pagen->makeSortLink($LDEmailAddress,'addr_email',$oitem,$odir);  ?></b>
 	</td>
 
-  </tr> 
+  </tr>
 <?php
 	$toggle=0;
 	while($firm=$firms->FetchRow()){
@@ -170,7 +170,7 @@ if(is_object($firms)){
     <td><?php echo $firm['fax_main']; ?></td>
     <td><?php if($firm['addr_email']){ echo '<img '.createComIcon($root_path,'email.gif','0').'>'; ?> <a href="mailto:<?php echo $firm['addr_email']; ?>"><?php echo $firm['addr_email']; ?></a><?php } ?></td>
 </td>
-  </tr> 
+  </tr>
 <?php
 	}
 	echo '
@@ -181,7 +181,7 @@ if(is_object($firms)){
   </table>
 <?php
 }elseif($mode=='search'||$mode=='paginate'){
-	echo str_replace('~nr~','0',$LDSearchFound); 
+	echo str_replace('~nr~','0',$LDSearchFound);
 }
 ?>
 <p>

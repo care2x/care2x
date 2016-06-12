@@ -1,12 +1,12 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 /**
 * CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
 * GNU General Public License
 * Copyright 2002,2003,2004,2005 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -18,24 +18,24 @@ require_once($root_path.'include/core/inc_front_chain_lang.php');
 require_once($root_path.'global_conf/areas_allow.php');
 
 $allowedarea=&$allow_area['admit'];
-$append=URL_REDIRECT_APPEND; 
+$append=URL_REDIRECT_APPEND;
 switch($target)
 {
-	case 'person_reg':$fileforward='personell_register.php'.$append.'&origin=pass&target=personell_reg'; 
+	case 'person_reg':$fileforward='personell_register.php'.$append.'&origin=pass&target=personell_reg';
 						$lognote='Person register ok';
 						break;
-	case 'personell_reg':$fileforward='personell_register.php'.$append.'&origin=pass&target=person_reg'; 
+	case 'personell_reg':$fileforward='personell_register.php'.$append.'&origin=pass&target=person_reg';
 						$lognote='personell data entry ok';
 						break;
-	case 'personell_search':$fileforward='personell_search.php'.$append.'&fwd_nr='.$fwd_nr.'&origin=pass&target=personell_search'; 
+	case 'personell_search':$fileforward='personell_search.php'.$append.'&fwd_nr='.$fwd_nr.'&origin=pass&target=personell_search';
 						$lognote='Personell search  ok';
 						 break;
-	case 'personell_listall':$fileforward='personell_listall.php'.$append.'&origin=pass&target=personell_listall'; 
+	case 'personell_listall':$fileforward='personell_listall.php'.$append.'&origin=pass&target=personell_listall';
 						$lognote='Personell list all  ok';
 						 break;
 	default: $target='person_reg';
 				$lognote='Person register ok';
-				$fileforward='personell_register.php'.$append.'&fwd_nr='.$fwd_nr.'&origin=pass&target=personell_reg'; 
+				$fileforward='personell_register.php'.$append.'&fwd_nr='.$fwd_nr.'&origin=pass&target=personell_reg';
 }
 
 
@@ -50,7 +50,7 @@ require($root_path.'include/core/inc_2level_reset.php');
 setcookie(ck_2level_sid.$sid,'',0,'/');
 
 require($root_path.'include/core/inc_passcheck_internchk.php');
-if ($pass=='check') 	
+if ($pass=='check')
 	include($root_path.'include/core/inc_passcheck.php');
 
 $errbuf=$LDAdmission;
@@ -75,8 +75,8 @@ echo '
 
  ?>
 
-  
-<table width=100% border=0 cellpadding="0" cellspacing="0"> 
+
+<table width=100% border=0 cellpadding="0" cellspacing="0">
 <tr>
 <td colspan=3><?php if($target=="personell_reg") echo '<img '.createLDImgSrc($root_path,'add_employee_blue.gif','0').' alt="'.$LDAdmit.'">';
 								else{ echo'<a href="'.$thisfile.URL_APPEND.'&target=personell_reg"><img '.createLDImgSrc($root_path,'add_employee_gray.gif','0').' alt="'.$LDAdmit.'"'; if($cfg['dhtml'])echo'class="fadeOut" '; echo '></a>';}
@@ -90,7 +90,7 @@ echo '
 						?></td>
 </tr>
 
-<?php require($root_path.'include/core/inc_passcheck_mask.php') ?>  
+<?php require($root_path.'include/core/inc_passcheck_mask.php') ?>
 
 <p>
 <p>

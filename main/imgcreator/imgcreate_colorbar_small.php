@@ -1,10 +1,10 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 /*
 CARE2X Integrated Information System Deployment 2.1 - 2004-10-02 for Hospitals and Health Care Organizations and Services
-Copyright (C) 2002,2003,2004,2005  Elpidio Latorilla & Intellin.org	
+Copyright (C) 2002,2003,2004,2005  Elpidio Latorilla & Intellin.org
 
 GNU GPL. For details read file "copy_notice.txt".
 */
@@ -17,12 +17,12 @@ header ('Content-type: image/png');
 
 	    // get event signals
 	    $dbtable='care_encounter_event_signaller';
-		
+
 	    $sql="SELECT yellow, black, blue_pale, brown, pink,
 		                    yellow_pale, red, green_pale, violet,
-							blue, biege, orange 
+							blue, biege, orange
 					FROM $dbtable WHERE encounter_nr='$pn'";
-							
+
 	    if($ergebnis = @$db->Execute($sql))
        	{
 			if($rows = @$ergebnis->RecordCount())
@@ -30,21 +30,21 @@ header ('Content-type: image/png');
 				$result=$ergebnis->FetchRow();
 			}
 		}
-		
+
 		if (!isset($result['yellow'])) 	$result=array('yellow'=>0,'black'=>0,'blue_pale'=>0,'brown'=>0,'pink'=>0,'yellow_pale'=>0,'red'=>0,'green_pale'=>0,'violet'=>0,'blue'=>0,'biege'=>0,'orange'=>0);
 
 
 	 /* Dimensions of the small colorbar signaller*/
-	 $label_w=60; 
+	 $label_w=60;
 	 $label_h=18;
 	 $bot=$label_h-1;
 	 $ltop=$label_h-3;
-    // -- create label 
+    // -- create label
     $label=ImageCreate($label_w,$label_h);
     $white = ImageColorAllocate ($label, 255,255,255); //white bkgrnd
-	
-	
-	
+
+
+
     $yellow= ImageColorAllocate ($label, 255, 255, 0);
     $black = ImageColorAllocate ($label, 0, 0, 0);
     $blue_pale= ImageColorAllocate ($label, 0, 255, 255);
@@ -58,11 +58,11 @@ header ('Content-type: image/png');
 	$biege= ImageColorAllocate($label,244,231,210);
 	$orange= ImageColorAllocate($label,255,195,17);
 	//ImageFillToBorder($label,2,2,$egray,$ewhite);
-	
+
 	ImageFilledRectangle($label,0,0,119,14,$white);
 	ImageColorTransparent($label, $white); // set background as transparent
-	
-    
+
+
 	/* Draw the color bars */
 	if ($result['yellow'] == 2) ImageFilledRectangle($label,0,0,4,$bot,$yellow); else ImageFilledRectangle($label,0,$ltop,4,$bot,$yellow);
 	if ($result['black'] == 2) ImageFilledRectangle($label,5,0,9,$bot,$black); else ImageFilledRectangle($label,5,$ltop,9,$bot,$black);
@@ -78,10 +78,10 @@ header ('Content-type: image/png');
 	if ($result['orange'] == 2) ImageFilledRectangle($label,55,0,59,$bot,$orange); else ImageFilledRectangle($label,55,$ltop,59,$bot,$orange);
 
 	/* Draw the black horizontal bottom line */
-    ImageLine($label,0,$bot,59,$bot,$black);	
-	
+    ImageLine($label,0,$bot,59,$bot,$black);
+
     Imagepng($label);
-	
+
     ImageDestroy($label);
 
 ?>

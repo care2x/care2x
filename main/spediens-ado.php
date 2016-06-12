@@ -1,7 +1,7 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 /**
  * CARE2X Integrated Hospital Information System beta 2.0.0 - 2004-05-16
  * GNU General Public License
@@ -25,7 +25,7 @@ $breakfile="spediens.php?sid=".$sid."&lang=".$lang;
 <?php echo setCharSet(); ?>
 
 <script language="javascript">
-<!-- 
+<!--
 function gethelp(x,s,x1,x2,x3)
 {
 	if (!x) x="";
@@ -83,12 +83,12 @@ require($root_path.'include/core/inc_css_a_hilitebu.php');
 </form>
 ';
 				?>
-		
+
 		</ul>
 
 		</FONT>
 		<p>
-		
+
 		</td>
 	</tr>
 

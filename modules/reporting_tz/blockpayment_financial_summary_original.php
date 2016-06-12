@@ -1,7 +1,7 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 ?>
 <script language="javascript" src="../../js/datetimepicker.js"></script>
 <table width=100% border=0 cellspacing=0 height=100%>
@@ -22,7 +22,7 @@ require($root_path.'include/core/inc_environment_global.php');
     </tr>
  </table>
 <p>&nbsp; </p>
-			 
+
 <form id="form1" name="form1" method="post" action="">
   <table width="596" border="0" align="center" bgcolor="#CCCCFF">
     <tr>
@@ -38,7 +38,7 @@ require($root_path.'include/core/inc_environment_global.php');
 <?php
 $dfrom       =   $_POST['dfrom'];
 $dto         =   $_POST['dto'];
-//if(empty($datefrom) || empty($dto)) echo 'Please Enter Date Range';  
+//if(empty($datefrom) || empty($dto)) echo 'Please Enter Date Range';
 
 $dfrom_timestamp =  strtotime($dfrom);
 $dto_timestamp   =  strtotime($dto);
@@ -63,12 +63,12 @@ if(!$sql_temp_date_range_result){
  //$dto minus one day
  $newdateto = strtotime('-1 day', strtotime($dto));
  $newdateto = date('j-m-Y',$newdateto);
- 
+
   ?>
  <tr><td>Start Date:<?php echo $dfrom;?></td><td>End Date:<?php echo $newdateto;?></td></tr>
- 
+
  <tr>
- 
+
    <!--  <td width="174" bgcolor="#CCCCFF">DATE</td> -->
     <td width="224" bgcolor="#CCCCFF">Item Description </td>
     <td width="185" bgcolor="#CCCCFF">Sub-Total </td>
@@ -77,19 +77,19 @@ if(!$sql_temp_date_range_result){
 //PUT DATA IN THE LOOP READY TO DISPLAY
 
   while($rows= $sql_temp_date_range_result->FetchRow()){
-  	
+
 
   echo '<tr><td width="224">'.$rows['description'].'</td></br>';
   echo '<td width="185">'.number_format($rows['total'],2).'</td><br></tr>';
-  
-   
-  
+
+
+
   }
-  
-    
+
+
   ?>
-  
-  
+
+
   <?php
   //SUM TOTAL OF ALL BLOCK PAYMENT
   $sql = "SELECT SUM(price) AS grand_total FROM block_temp WHERE date_change BETWEEN $dfrom_timestamp AND $dto_timestamp ";
@@ -97,24 +97,24 @@ if(!$sql_temp_date_range_result){
   while($r=$sql_result->FetchRow()){
   	$sum = $r['grand_total'];
   	$formatted_sum = number_format($sum, 2);
-  	
-  	 
+
+
   	}
   ?>
-  
- 
-   
-  
-  
-  
-  
-   
+
+
+
+
+
+
+
+
 </table>
 <table width="605" height="25" border="0" bgcolor="#CCCCFF">
   <tr>
     <td width="224"><strong>Sum</strong></td>
     <td width="185"><?php echo $formatted_sum; ?></td>
-    
+
   </tr>
 </table>
 <input type="button" name="print" value="PRINT" onclick="window.print()" />

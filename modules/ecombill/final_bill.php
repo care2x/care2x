@@ -1,14 +1,14 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 /**
-* eComBill 1.0.04 for Care2002 beta 1.0.04 
+* eComBill 1.0.04 for Care2002 beta 1.0.04
 * (2003-04-30)
-* adapted from eComBill beta 0.2 
-* developed by ecomscience.com http://www.ecomscience.com 
+* adapted from eComBill beta 0.2
+* developed by ecomscience.com http://www.ecomscience.com
 * GPL License
 */
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 define('LANG_FILE','billing.php');
 $local_user='aufnahme_user';
 require_once($root_path.'include/core/inc_front_chain_lang.php');
@@ -19,19 +19,19 @@ $eComBill = new eComBill;
 $Encounter = new Encounter;
 
 $Encounter->loadEncounterData($patientno);
-	
+
 $breakfile='patientbill.php'.URL_APPEND.'&patientno='.$patientno.'&full_en='.$full_en;
 $returnfile='patientbill.php'.URL_APPEND.'&patientno='.$patientno.'&full_en='.$full_en;
 
 $presdate=date("Y-m-d");
-    
+
 //-----------------------------------------------------------
 $chkpendbillres = $eComBill->listBillsByEncounter($patientno);
 if(is_object($chkpendbillres))
 	$chkcnt=$chkpendbillres->RecordCount();
-           
+
 if($chkcnt>0)    {
-	html_rtl($lang); 
+	html_rtl($lang);
 	echo "<table border=0 width=101% bgcolor=#99ccff>";
 	echo "<tr>";
 	echo "<td width=101%><font color=#330066 size=+3 face=Arial><strong>" . $LDBilling . "</strong></font></td>";
@@ -42,10 +42,10 @@ if($chkcnt>0)    {
 	echo "<form>";
 	echo "<center><input type=button name=back value=Back onclick=javascript:history.back(1)></center>";
 	echo "</form>";
-	echo "</HTML>";    	
+	echo "</HTML>";
 	exit;
 }
-    
+
     //-----------------------------------------------------------
 
 //$sql="SELECT final_bill_no FROM care_billing_final ORDER BY final_bill_no DESC LIMIT 1";
@@ -135,7 +135,7 @@ if(is_object($totalpaymentresult)){
 	}
 //-->
 </SCRIPT>
-<?php 
+<?php
 $sTemp = ob_get_contents();
 ob_end_clean();
 

@@ -1,18 +1,18 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 /**
 * CARE2X Integrated Hospital Information System Deployment 2.2 - 2006-07-10
 * GNU General Public License
 * Copyright 2002,2003,2004,2005,2006 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
 # Default value for the maximum nr of rows per block displayed, define this to the value you wish
 # In normal cases this value is derived from the db table "care_config_global" using the "pagin_insurance_list_max_block_rows" element.
-define('MAX_BLOCK_ROWS',30); 
+define('MAX_BLOCK_ROWS',30);
 
 $lang_tables[]='search.php';
 $lang_tables[]='actions.php';
@@ -169,10 +169,10 @@ $smarty->assign('sOnLoadJs','onLoad="document.searchform.searchkey.select()"');
      <tr>
        <td>
 	   <?php
-	   
+
 	        $searchmask_bgcolor="#f3f3f3";
             include('includes/inc_test_request_searchmask.php');
-       
+
 	   ?>
 </td>
      </tr>
@@ -185,8 +185,8 @@ $smarty->assign('sOnLoadJs','onLoad="document.searchform.searchkey.select()"');
 <?php
 //echo $mode;
 if ($linecount) echo '<hr width=80% align=left>'.str_replace("~nr~",$totalcount,$LDSearchFound).' '.$LDShowing.' '.$pagen->BlockStartNr().' '.$LDTo.' '.$pagen->BlockEndNr().'.';
-		else echo str_replace('~nr~','0',$LDSearchFound); 
-if ($enc_obj->record_count) { 
+		else echo str_replace('~nr~','0',$LDSearchFound);
+if ($enc_obj->record_count) {
 	# Preload  common icon images
 	$img_male=createComIcon($root_path,'spm.gif','0','',TRUE);
 	$img_female=createComIcon($root_path,'spf.gif','0','',TRUE);
@@ -195,8 +195,8 @@ if ($enc_obj->record_count) {
 	$tbg= 'class="adm_list_titlebar"';
 
 ?>
-				<table border=0 cellpadding=2 cellspacing=1> 
-				<tr bgcolor="#abcdef">				
+				<table border=0 cellpadding=2 cellspacing=1>
+				<tr bgcolor="#abcdef">
 
      <td <?php echo $tbg; ?>><b>
 	  <?php echo $pagen->makeSortLink($LDCaseNr,'encounter_nr',$oitem,$odir,$append);  ?></b></td>
@@ -222,34 +222,34 @@ if ($enc_obj->record_count) {
 						if($toggle) { echo '"wardlistrow1">'; $toggle=0;} else {echo '"wardlistrow2">'; $toggle=1;};
 						echo"<td>";
 						echo "&nbsp;".$full_en;
-                        echo '&nbsp;</td><td>';	
+                        echo '&nbsp;</td><td>';
 
 						switch($row['sex']){
 							case 'f': echo '<img '.$img_female.'>'; break;
 							case 'm': echo '<img '.$img_male.'>'; break;
 							default: echo '&nbsp;'; break;
-						}	
-						
+						}
+
 						echo'</td><td>';
 						echo "&nbsp;".ucfirst($row['name_last']);
-                        echo "</td>";	
+                        echo "</td>";
 						echo"<td>";
 						echo "&nbsp;".ucfirst($row['name_first']);
-                        echo "</td>";	
+                        echo "</td>";
 						echo"<td>";
 						echo "&nbsp;".formatDate2Local($row['date_birth'],$date_format);
-                        echo "</td>";	
+                        echo "</td>";
 						echo"<td>";
 						echo "&nbsp;".$row['addr_zip'];
-                        echo "</td>";	
+                        echo "</td>";
 
 					    if($_COOKIE[$local_user.$sid]) echo '
 						<td>&nbsp;';
 						echo "
 							<a href=\"".$root_path."modules/nursing/nursing-station-patientdaten-doconsil-".$target.".php".URL_APPEND."&pn=".$row['encounter_nr']."&edit=1&status=".$status."&target=".$target."&user_origin=".$user_origin."&noresize=1&mode=\">";
-						echo '	
+						echo '
 							<img '.createLDImgSrc($root_path,'ok_small.gif','0').' alt="'.$LDTestThisPatient.'"></a>&nbsp;';
-							
+
                        if(!file_exists($root_path."cache/barcodes/en_".$full_en.".png"))
 	      		       {
 			               echo "<img src='".$root_path."classes/barcode/image.php?code=".$full_en."&style=68&type=I25&width=180&height=50&xres=2&font=5&label=2&form_file=en' border=0 width=0 height=0>";
@@ -257,7 +257,7 @@ if ($enc_obj->record_count) {
 						echo '</td></tr>';
 
 					}
-					
+
 					echo '
 						<tr><td colspan=6>'.$pagen->makePrevLink($LDPrevious,$append).'</td>
 						<td align=right>'.$pagen->makeNextLink($LDNext,$append).'</td>
@@ -270,10 +270,10 @@ if ($enc_obj->record_count) {
      <tr>
        <td>
 	   <?php
-	   
+
 	        $searchform_count=2;
             include('includes/inc_test_request_searchmask.php');
-       
+
 	   ?>
 </td>
      </tr>
@@ -288,7 +288,7 @@ if ($enc_obj->record_count) {
 <p>
 </td>
 </tr>
-</table>        
+</table>
 </ul>
 <p>
 <?php

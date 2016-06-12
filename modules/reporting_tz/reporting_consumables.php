@@ -1,7 +1,7 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 $lang_tables[]='date_time.php';
 $lang_tables[]='reporting.php';
 require($root_path.'include/core/inc_front_chain_lang.php');
@@ -24,30 +24,30 @@ require_once('include/core/inc_timeframe.php');
  $debug=FALSE;
 $PRINTOUT=FALSE;
 $category='supplies';
-if (empty($_GET['printout'])) { 
-	
+if (empty($_GET['printout'])) {
+
 			if ($debug) echo "no time value is set, we´re using now the current month<br>";
 			$day=date("d",time());
 			$month=date("n",time());
 			$year=date("Y",time());
 			$start_timeframe = mktime (0,0,0,$month, $day, $year);
-			$end_timeframe = mktime (0,0,0,$month, $day, $year);			
+			$end_timeframe = mktime (0,0,0,$month, $day, $year);
 			$admission = $_POST['admission_id'];
 			$bill_type = $_POST['bill_type'];
-			
+
 			if(isset($selected_date)&&!empty($selected_date)) $selected_date=@formatDate2STD($selected_date,$date_format);
-			
-			$f_date = strtotime($selected_date);       
-			$day = date("d",$f_date); 
+
+			$f_date = strtotime($selected_date);
+			$day = date("d",$f_date);
 			$month = date("n",$f_date);
 			$year = date("Y",$f_date);
-			
-			
+
+
 			$start_timeframe =  mktime (0,0,0,$month, $day, $year);
 			$end_timeframe =   mktime (0,0,0,$month, $day, $year);
 			$admission = $_POST['admission_id'];
 			$bill_type = $_POST['bill_type'];
-	
+
 } else  {
 	$PRINTOUT=TRUE;
 } // end of if (empty($_GET['printout']))

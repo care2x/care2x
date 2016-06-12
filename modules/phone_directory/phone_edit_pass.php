@@ -1,10 +1,10 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require_once('./roots.php');
 require_once($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 /*
 CARE2X Integrated Information System Deployment 2.1 - 2004-10-02 for Hospitals and Health Care Organizations and Services
-Copyright (C) 2002,2003,2004,2005  Elpidio Latorilla & Intellin.org	
+Copyright (C) 2002,2003,2004,2005  Elpidio Latorilla & Intellin.org
 
 GNU GPL. For details read file "copy_notice.txt".
 */
@@ -28,7 +28,7 @@ $userck='phonedir_user';
 //reset cookie;
 // reset all 2nd level lock cookies
 setcookie($userck.$sid,'');
-require($root_path.'include/core/inc_2level_reset.php'); 
+require($root_path.'include/core/inc_2level_reset.php');
 setcookie('ck_2level_sid'.$sid,'');
 
 require($root_path.'include/core/inc_passcheck_internchk.php');
@@ -47,16 +47,16 @@ require($root_path.'include/core/inc_passcheck_head.php');
 <img <?php echo createComIcon($root_path,'phone.gif','0') ?>>
 <FONT  COLOR="<?php echo $cfg[top_txtcolor] ?>"  SIZE=6  FACE="verdana"> <b><?php echo "$LDPhoneDir $LDNewData" ?></b></font>
 
-<table width=100% border=0 cellpadding="0" cellspacing="0"> 
+<table width=100% border=0 cellpadding="0" cellspacing="0">
 <tr>
 <td colspan=3><a href="phone.php<?php echo URL_APPEND; ?>"><img <?php echo createLDImgSrc($root_path,'such-gray.gif','0') ?> <?php if($cfg['dhtml'])echo'class="fadeOut" >';?></a><a href="phone_list.php<?php echo URL_APPEND; ?>"><img <?php echo createLDImgSrc($root_path,'phonedir-gray.gif','0') ?> <?php if($cfg['dhtml'])echo'class="fadeOut" >';?></a><img <?php echo createLDImgSrc($root_path,'newdata-b.gif','0') ?>></td>
 </tr>
 
-<?php require($root_path.'include/core/inc_passcheck_mask.php') ?>  
- 
+<?php require($root_path.'include/core/inc_passcheck_mask.php') ?>
+
 <?php
 if(file_exists($root_path.'language/$lang/lang_'.$lang.'_phone.php')) include($root_path."/language/$lang/lang_".$lang."_phone.php");
-  else include($root_path."language/en/lang_en_phone.php");?>     
+  else include($root_path."language/en/lang_en_phone.php");?>
 
 <p>
 <img <?php echo createComIcon($root_path,'frage.gif','0') ?>> <a href="javascript:gethelp('phone_how2start.php','newphone','search')"><?php echo $LDHow2SearchPhone ?></a><br>

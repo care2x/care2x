@@ -1,12 +1,12 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 /**
 * CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
 * GNU General Public License
 * Copyright 2002,2003,2004,2005 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -21,7 +21,7 @@ $datum=date('Y-m-d');
 $zeit=date('H:m:s');
 $toggler=0;
 
-// init sql dbase 
+// init sql dbase
 
 $dbtable='care_admission_patient';
 
@@ -37,7 +37,7 @@ if(isset($mode) && $mode=='search'&&!empty($searchkey)){
 	include_once($root_path.'include/care_api_classes/class_globalconfig.php');
 	$GLOBAL_CONFIG=array();
 	$glob_obj=new GlobalConfig($GLOBAL_CONFIG);
-	$glob_obj->getConfig('patient_%');	
+	$glob_obj->getConfig('patient_%');
 }
 
 # Start Smarty templating here
@@ -65,7 +65,7 @@ if(isset($mode) && $mode=='search'&&!empty($searchkey)){
 
  # Window bar title
  $smarty->assign('title',"$LDAssignOcc $s");
- 
+
  # Hide Copyright footer
  $smarty->assign('bHideCopyright',TRUE);
 
@@ -75,7 +75,7 @@ if(isset($mode) && $mode=='search'&&!empty($searchkey)){
 ?>
 
 <script language="javascript">
-<!-- 
+<!--
 var urlholder;
 
 function initwindow(){
@@ -99,7 +99,7 @@ function belegen(anum){
 	          window.opener.location.replace(urlholder);
 	          window.close();
 }
-	
+
 function pruf(d){
 		if (d.searchkey.value=="") return false;
 }
@@ -108,7 +108,7 @@ function pruf(d){
 
 // -->
 </script>
-<?php 
+<?php
 
 $sTemp = ob_get_contents();
 
@@ -130,13 +130,13 @@ ob_start();
 <a href="javascript:belegen('lock')" title="<?php echo $LDClk2LockBed ?>"><img <?php echo createComIcon($root_path,'delete2.gif','0','absmiddle',TRUE) ?> alt="<?php echo $LDClk2LockBed ?>"> <?php echo $LDLockThisBed ?></a>
 <p>
  <ul>
- 
+
  <form action="nursing-station-bettbelegen.php" method="post" name="psearch" onSubmit="return pruf(this)">
  <div class="prompt"><?php echo $LDSearchPatient; ?></div>
  <table border=0 cellspacing=0 cellpadding=1>
    <tr>
      <td bgcolor=#0>
-	 
+
 	 <table border=0 bgcolor=#ffffcc cellspacing=0 cellpadding=10>
 		<tr>
 		    <td colspan=2><font face=verdana,arial size=2><?php echo $LDSearchPrompt ?></td>
@@ -150,11 +150,11 @@ ob_start();
 			<td> <a href="javascript:window.close()"><img <?php echo createLDImgSrc($root_path,'cancel.gif','0') ?>></a></td>
 		</tr>
 	</table>
-	
+
 	</td>
    </tr>
  </table>
-  
+
  <input type="hidden" name="sid" value="<?php echo $sid; ?>">
  <input type="hidden" name="lang" value="<?php echo $lang; ?>">
  <input type="hidden" name="tb" value="<?php echo $tb; ?>">
@@ -166,8 +166,8 @@ ob_start();
  <input type="hidden" name="py" value="<?php echo $py; ?>">
  <input type="hidden" name="pm" value="<?php echo $pm; ?>">
  <input type="hidden" name="pd" value="<?php echo $pd; ?>">
- <input type="hidden" name="d" value="<?php echo $d; ?>">                                                      
- <input type="hidden" name="wnr" value="<?php echo $wnr; ?>">                                                      
+ <input type="hidden" name="d" value="<?php echo $d; ?>">
+ <input type="hidden" name="wnr" value="<?php echo $wnr; ?>">
  <input type="hidden" name="mode" value="search">
   <p>
 </FONT>
@@ -188,12 +188,12 @@ ob_start();
 function f_checkBedOccupancy(){
 
   global $link, $s, $py, $pm, $pd, $LDDbNoLink, $ergebnis, $new_zeile, $linecount, $lang;
-  
+
   $sql="SELECT bed_patient FROM care_nursing_station_patients WHERE station='".$s."' AND s_date='".$py."-".$pm."-".$pd."' AND lang='".$lang."'";
   if($result=$db->Execute($sql))
   {
   	$rows=$result->RecordCount();
-    if($rows==1) 
+    if($rows==1)
 	{
 	   $bed_occ=$result->FetchRow();
 	     $pat_count=0;
@@ -209,39 +209,39 @@ function f_checkBedOccupancy(){
 	       return $pat_count;
 	 }
 	  elseif($rows>1) die ($LDErrorDuplicateBed);
-        else 
+        else
 		{
 		  while($new_zeile[]=$ergebnis->FetchRow())
 				 $pat_count++;
 		  return $pat_count;
 		}
   }
-  else 
+  else
   {
     echo $LDDbNoLink."<p>";
 	return 0;
   }
 }
-	
+
 /**
 * Here begins the search routine
 */
 
 
 if($mode=='search'){
-	if(!$enc_obj->record_count) $linecount=0; 
+	if(!$enc_obj->record_count) $linecount=0;
 		else $linecount=$enc_obj->record_count;
-		
+
 	echo '<p>'.str_replace("~nr~",$linecount,$LDSearchFound).'<p>';
-		  
-	if ($linecount) { 
+
+	if ($linecount) {
 
 	/* Load the common icons */
 	$img_options=createLDImgSrc($root_path,'ok_small.gif','0');
 
 	echo '
 			<table border=0 cellpadding=2 cellspacing=1> <tr bgcolor="#0000aa" background="'.createBgSkin($root_path,'tableHeaderbg.gif').'">';
-			
+
 ?>
 
     <td><font face=arial size=2 color="#ffffff"><b><?php echo $LDCaseNr; ?></b></td>
@@ -251,7 +251,7 @@ if($mode=='search'){
     <td><font face=arial size=2 color="#ffffff"><b><?php echo $LDOptions; ?></td>
 
 <?php
-			
+
 					echo"</tr>";
 
 					while($row=$admission->FetchRow())
@@ -263,22 +263,22 @@ if($mode=='search'){
 						echo"<td><font face=arial size=2>";
                         echo '&nbsp;'.$full_en;
 						if($row['encounter_class_nr']=='amb') echo ' <img '.createComIcon($root_path,'redflag.gif','0','',TRUE).'> <font size=1 color="red">'.$LDAmbulant.'</font>';
-                        echo "</td>";	
+                        echo "</td>";
 						echo"<td><font face=arial size=2>";
 						echo "&nbsp;".ucfirst($row['name_last']);
-                        echo "</td>";	
+                        echo "</td>";
 						echo"<td><font face=arial size=2>";
 						echo "&nbsp;".ucfirst($row['name_first']);
-                        echo "</td>";	
+                        echo "</td>";
 						echo"<td><font face=arial size=2>";
 						echo "&nbsp;".formatDate2Local($row['date_birth'],$date_format);
-                        echo "</td>";	
+                        echo "</td>";
 
 					    if($_COOKIE[$local_user.$sid]) echo '
 						<td><font face=arial size=2>&nbsp;
 							<a href="javascript:belegen(\''.$row['encounter_nr'].'\')">
 							<img '.$img_options.' alt="'.$LDShowData.'"></a>&nbsp;';
-							
+
                        if(!file_exists($root_path.'cache/barcodes/en_'.$full_en.'.png'))
 	      		       {
 			               echo "<img src='".$root_path."classes/barcode/image.php?code=".$full_en."&style=68&type=I25&width=180&height=50&xres=2&font=5&label=2&form_file=en' border=0 width=0 height=0>";
@@ -290,7 +290,7 @@ if($mode=='search'){
 						</table>
 						<script language='javascript'>
 						window.resizeTo(700,600);</script>";
-					
+
 	} // end of if($linecount)
 	 	else  echo "<hr><ul><img ".createMascot($root_path,'mascot1_r.gif','0','absmiddle')."><font face=arial size=2>".$LDNoFound."<br>\r\n";
 }
@@ -299,7 +299,7 @@ if($mode=='search'){
 
 </td>
 </tr>
-</table>        
+</table>
 
 <?php
 

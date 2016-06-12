@@ -1,5 +1,5 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
+error_reporting($ErrorLevel);
 
 $foreword='
 <form action="#">
@@ -31,11 +31,11 @@ switch($x1)
 																				case "archiv": print '_arch-gray.gif'; break;
 																			}
 ?>" border="0"> düðmesini týklayýnýz.
-		
+
 </ul>
 <b>Adým 2</b>
 <?php endif ?>
-<ul> Eðer daha önce giriþ yaptý iseniz ve bu fonksiyona eriþim hakkýnýz var ise 
+<ul> Eðer daha önce giriþ yaptý iseniz ve bu fonksiyona eriþim hakkýnýz var ise
 <?php switch($x1)
 	{
 		case "entry": print 'ilk belge formu'; break;
@@ -46,7 +46,7 @@ switch($x1)
 		Giriþ yapmadý iseniz, kullanýcý adý ve þifreniz sorulur.. <p>
 		Kullanýcý adý ve þifrenizi girip  <img <?php echo createLDImgSrc('../','continue.gif','0') ?>> düðmesini týklayýnýz.<p>
 		Ýptal etmeye karar verir iseniz <img <?php echo createLDImgSrc('../','cancel.gif','0') ?>> düðmesini týklayýnýz.
-		
+
 </ul>
 
 

@@ -1,12 +1,12 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require_once('./roots.php');
 require_once($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 /**
 * CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
 * GNU General Public License
 * Copyright 2002,2003,2004,2005 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -36,21 +36,21 @@ if(!isset($_SESSION['sess_file_break']) || empty($_SESSION['sess_file_break'])) 
 if(isset($dept_nr) && $dept_nr) $_SESSION['sess_dept_nr']=$dept_nr;
 	elseif(!$_SESSION['sess_dept_nr']) $_SESSION['sess_dept_nr']=1; # Headline news
 # Filter title, if no supplied, use session stored title
-$title= (empty($title)) ? $_SESSION['sess_title'] : $title ; 
-   
+$title= (empty($title)) ? $_SESSION['sess_title'] : $title ;
+
 $lognote="$title+editor";
-$userck="ck_editor_user";					
+$userck="ck_editor_user";
 
 //$fileforward=$_SESSION['sess_file_editor'].URL_REDIRECT_APPEND;
 //$breakfile=$_SESSION['sess_file_break'].$URL_APPEND;
 
-$thisfile=basename(__FILE__);							
+$thisfile=basename(__FILE__);
 
 $passtag=0;
 
 //reset cookie;
 # reset all 2nd level lock cookies
-require($root_path.'include/core/inc_2level_reset.php'); 
+require($root_path.'include/core/inc_2level_reset.php');
 setcookie('ck_2level_sid'.$sid,"");
 
 # Check if the user is logged in globally
@@ -69,9 +69,9 @@ require($root_path.'include/core/inc_passcheck_head.php');
 
 <FONT  COLOR=<?php echo $cfg['top_txtcolor'] ?>  SIZE=6  FACE="verdana"> <b><?php echo $title; ?></b></font>
 
-<table width=100% border=0 cellpadding="0" cellspacing="0"> 
+<table width=100% border=0 cellpadding="0" cellspacing="0">
 
-<?php require($root_path.'include/core/inc_passcheck_mask.php'); ?>  
+<?php require($root_path.'include/core/inc_passcheck_mask.php'); ?>
 
 <p><br>
 
@@ -83,12 +83,12 @@ require($root_path.'include/core/inc_passcheck_head.php');
 
 <tr >
 <td bgcolor="#333399" colspan=3><font size=1>
-&nbsp; 
+&nbsp;
 </td>
 </tr>
-</table>        
+</table>
 <FONT    SIZE=2  FACE="Arial">
-<!-- 
+<!--
 <p>
 <img <?php echo createComIcon($root_path,'varrow.gif','0') ?>> <a href="<?php echo $root_path; ?>main/ucons.php<?php echo URL_APPEND; ?>"><?php echo $LDIntroTo." ".$title ?></a><br>
 <img <?php echo createComIcon($root_path,'varrow.gif','0') ?>> <a href="<?php echo $root_path; ?>main/ucons.php<?php echo URL_APPEND; ?>"><?php echo $LDWhatTo." ".$title ?>?</a><br>

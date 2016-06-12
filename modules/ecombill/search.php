@@ -1,10 +1,10 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 define('NO_CHAIN',1);
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 
-# Define to true to echo the sql query, for debugging 
+# Define to true to echo the sql query, for debugging
 define('SHOW_SQLQUERY',FALSE);
 
 $lang_tables[]='search.php';
@@ -33,9 +33,9 @@ if(!isset($mode)) $mode='';
 # Initialize page´s control variables
 if($mode=='paginate'){
 	$searchkey=$_SESSION['sess_searchkey'];
-	
+
 	# Check the sort item
-	if($oitem=='encounter_nr') $oprep='enc'; 
+	if($oitem=='encounter_nr') $oprep='enc';
 		else $oprep='reg';
 }else{
 	# Reset paginator variables
@@ -78,17 +78,17 @@ if(($mode=='search'||$mode=='paginate')&&!empty($searchkey)){
 
 	$sqlselect="SELECT enc.encounter_nr,enc.encounter_class_nr, enc.is_discharged,  reg.name_last, reg.name_first, reg.date_birth, reg.addr_zip, reg.sex";
 	$sqlfrom ="	FROM care_encounter as enc,care_person as reg ";
-	$sqlwhere2= " AND enc.pid=reg.pid  
-				AND enc.is_discharged NOT IN (1) 
+	$sqlwhere2= " AND enc.pid=reg.pid
+				AND enc.is_discharged NOT IN (1)
 				AND enc.status  IN ('','normal')";
 	$orderby = " ORDER BY $oprep.$oitem $odir";
-		
+
 	if(is_numeric($suchwort)){
 		$suchwort=(int) $suchwort;
 		$numeric=1;
 		$sqlwhere1=" WHERE enc.encounter_nr='$suchwort' ";
 	}else{
-		$sqlwhere1="WHERE (reg.name_last $sql_LIKE '".addslashes($suchwort)."%' 
+		$sqlwhere1="WHERE (reg.name_last $sql_LIKE '".addslashes($suchwort)."%'
 							OR reg.name_first $sql_LIKE '".addslashes($suchwort)."%'";
 		// Try converting the keyword to a proper date format
 		$DOB=formatDate2STD($suchwort,$date_format);
@@ -162,13 +162,13 @@ if(($mode=='search'||$mode=='paginate')&&!empty($searchkey)){
 		</tr>
 	</table>
 	<p> <a href='<?php echo 'billingmenu.php'.URL_APPEND.'&target=search">'; ?>'><img <?php echo createLDImgSrc($root_path,'cancel.gif','0') ?> /></a>
-	<p> 
+	<p>
 		<?php
 if($mode=='search'||$mode=='paginate'){
 	if ($linecount) echo str_replace("~nr~",$totalcount,$LDSearchFound).' '.$LDShowing.' '.$pagen->BlockStartNr().' '.$LDTo.' '.$pagen->BlockEndNr().'.';
-		else echo str_replace('~nr~','0',$LDSearchFound); 
-		  
-	if ($linecount) { 
+		else echo str_replace('~nr~','0',$LDSearchFound);
+
+	if ($linecount) {
 
 	# Load the common icons
 	$img_options=createComIcon($root_path,'dollarsign.gif','0','',TRUE);
@@ -178,7 +178,7 @@ if($mode=='search'||$mode=='paginate'){
 	$tbg= 'background="'.$root_path.'gui/img/common/'.$theme_com_icon.'/'.$bgimg.'"';
 
 	echo '<table border=0 cellpadding=2 cellspacing=1> <tr bgcolor="#0000aa" background="'.createBgSkin($root_path,'tableHeaderbg.gif').'">';
-			
+
 ?>
 	<td <?php echo $tbg; ?>><FONT  SIZE=-1  FACE="Arial" color="#ffffff"><b> <?php echo $pagen->makeSortLink($LDCaseNr,'encounter_nr',$oitem,$odir,$append);  ?></b></td>
 	<td <?php echo $tbg; ?>><FONT  SIZE=-1  FACE="Arial" color="#ffffff"><b> <?php echo $pagen->makeSortLink($LDSex,'sex',$oitem,$odir,$append);  ?></b></td>
@@ -206,7 +206,7 @@ if($mode=='search'||$mode=='paginate'){
 			default: echo '&nbsp;'; break;
 		}
 		echo '</td>
-						';	
+						';
 
 		echo"<td><font face=arial size=2>";
 		echo "&nbsp;".ucfirst($zeile['name_last']);
@@ -226,7 +226,7 @@ if($mode=='search'||$mode=='paginate'){
 		<td><font face=arial size=2>&nbsp;
 			<a href="patientbill.php'.URL_APPEND.'&patnum='.$zeile['encounter_nr'].'&update=1&mode='.$mode.'&full_en='.$full_en.'">
 			<img '.$img_options.' alt="Bill this patient"></a>&nbsp;';
-			
+
 		if(!file_exists($root_path.'cache/barcodes/en_'.$full_en.'.png')) {
 			echo "<img src='".$root_path."classes/barcode/image.php?code=".$full_en."&style=68&type=I25&width=180&height=50&xres=2&font=5&label=2&form_file=en' border=0 width=0 height=0>";
 		}

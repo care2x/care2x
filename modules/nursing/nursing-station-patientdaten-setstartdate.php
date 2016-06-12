@@ -1,12 +1,12 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 /**
 * CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
 * GNU General Public License
 * Copyright 2002,2003,2004,2005 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -36,7 +36,7 @@ $yr=date(Y);
 <TITLE><?php echo $title ?></TITLE>
 
 <script language="javascript">
-<!-- 
+<!--
 
 
  function parentrefresh(d)
@@ -55,13 +55,13 @@ div.box { border: double; border-width: thin; width: 100%; border-color: black; 
 </style>
 
 </HEAD>
-<BODY  bgcolor="#dfdfdf" TEXT="#000000" LINK="#0000FF" VLINK="#800080" 
+<BODY  bgcolor="#dfdfdf" TEXT="#000000" LINK="#0000FF" VLINK="#800080"
 onLoad="<?php if($saved) echo "parentrefresh();"; ?>if (window.focus) window.focus(); window.focus();" >
 
 <font face=verdana,arial size=3 color=maroon>
 
-<?php 
-	echo "$LDShowCurveDate <br><b>$title</b>";	
+<?php
+	echo "$LDShowCurveDate <br><b>$title</b>";
 ?>
 
 </font>
@@ -83,7 +83,7 @@ onLoad="<?php if($saved) echo "parentrefresh();"; ?>if (window.focus) window.foc
 		{
 			echo '
         		<option value="'.$i.'" ';
-		 	if($dy==$i) echo "selected"; 
+		 	if($dy==$i) echo "selected";
 		 	echo '> '.$i.'</option>';
 		 }
 	?>
@@ -94,7 +94,7 @@ onLoad="<?php if($saved) echo "parentrefresh();"; ?>if (window.focus) window.foc
 		{
 			echo '
         		<option value="'.$i.'" ';
-		 	if($mo==$i) echo "selected"; 
+		 	if($mo==$i) echo "selected";
 		 	echo '> '.$monat[$i-1].'</option>';
 		 }
 	?>
@@ -106,7 +106,7 @@ onLoad="<?php if($saved) echo "parentrefresh();"; ?>if (window.focus) window.foc
 		{
 			echo '
         		<option value="'.$i.'" ';
-		 	if($yr==$i) echo "selected"; 
+		 	if($yr==$i) echo "selected";
 		 	echo '> '.$i.'</option>';
 		 }
 	?>

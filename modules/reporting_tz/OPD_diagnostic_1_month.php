@@ -1,7 +1,7 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 #Load and create paginator object
 require_once($root_path.'include/care_api_classes/class_tz_reporting.php');
 /**
@@ -21,7 +21,7 @@ if ($_GET['printout']) {
 	$end = mktime (0,0,0,$month+1, 1, $year);
 	//$start_no_stamp   =date("Y-m-d",$start);
 	//$end_no_stamp     =date("Y-m-d",$end);
-	
+
 }
 $lang_tables[]='reporting.php';
 $lang_tables[]='date_time.php';

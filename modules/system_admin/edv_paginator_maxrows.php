@@ -1,12 +1,12 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 /**
 * CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
 * GNU General Public License
 * Copyright 2002,2003,2004,2005 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -28,7 +28,7 @@ if(isset($mode) && $mode=='save'){
 	header("location:$thisfile".URL_REDIRECT_APPEND."&save_ok=1");
 	exit;
 # Else get current global data
-}else{ 
+}else{
 	$glob_obj->getConfig('pagin_%');
 }
 
@@ -69,51 +69,51 @@ echo $LDEnterMaxRows;
 ?></font><p>
 
 <form action="<?php echo $thisfile ?>" method="post" name="quickinfo">
-<table border=0 cellspacing=1 cellpadding=5>  
+<table border=0 cellspacing=1 cellpadding=5>
 <tr>
 	<td class="adm_item"><FONT  color="#0000cc"><?php echo "<b>$LDAddressList</b><br><font color=#000000>$LDAddressListTxt</font><br>" ?></FONT></td>
 	<td class="adm_input"><input type="text" name="pagin_address_list_max_block_rows" size=2 maxlength=2 value="<?php echo $GLOBAL_CONFIG['pagin_address_list_max_block_rows'] ?>">
-      </td>  
+      </td>
 	</tr>
 <tr>
 	<td class="adm_item"><FONT  color="#0000cc"><?php echo "<b>$LDAddressSearch</b><br><font color=#000000>$LDAddressSearchTxt</font><br>" ?></FONT></td>
 	<td class="adm_input"><input type="text" name="pagin_address_search_max_block_rows" size=2 maxlength=2 value="<?php echo $GLOBAL_CONFIG['pagin_address_search_max_block_rows'] ?>">
-      </td>  
+      </td>
 	</tr>
 <tr>
 	<td class="adm_item"><FONT  color="#0000cc"><?php echo "<b>$LDInsuranceList</b><br><font color=#000000>$LDInsuranceListTxt</font><br>" ?></FONT></td>
 	<td class="adm_input"><input type="text" name="pagin_insurance_list_max_block_rows" size=2 maxlength=2 value="<?php echo $GLOBAL_CONFIG['pagin_insurance_list_max_block_rows'] ?>">
-      </td>  
+      </td>
 	</tr>
 <tr>
 	<td class="adm_item"><FONT  color="#0000cc"><?php echo "<b>$LDInsuranceSearch</b><br><font color=#000000>$LDInsuranceSearchTxt</font><br>" ?></FONT></td>
 	<td class="adm_input"><input type="text" name="pagin_insurance_search_max_block_rows" size=2 maxlength=2 value="<?php echo $GLOBAL_CONFIG['pagin_insurance_search_max_block_rows'] ?>">
-      </td>  
+      </td>
 	</tr>
 <tr>
 	<td class="adm_item"><FONT  color="#0000cc"><?php echo "<b>$LDPersonnelList</b><br><font color=#000000>$LDPersonnelListTxt</font><br>" ?></FONT></td>
 	<td class="adm_input"><input type="text" name="pagin_personell_list_max_block_rows" size=2 maxlength=2 value="<?php echo $GLOBAL_CONFIG['pagin_personell_list_max_block_rows'] ?>">
-      </td>  
+      </td>
 	</tr>
 <tr>
 	<td class="adm_item"><FONT  color="#0000cc"><?php echo "<b>$LDPersonnelSearch</b><br><font color=#000000>$LDPersonnelSearchTxt</font><br>" ?></FONT></td>
 	<td class="adm_input"><input type="text" name="pagin_personell_search_max_block_rows" size=2 maxlength=2 value="<?php echo $GLOBAL_CONFIG['pagin_personell_search_max_block_rows'] ?>">
-      </td>  
+      </td>
 	</tr>
 <tr>
 	<td class="adm_item"><FONT  color="#0000cc"><?php echo "<b>$LDPersonSearch</b><br><font color=#000000>$LDPersonSearchTxt</font><br>" ?></FONT></td>
 	<td class="adm_input"><input type="text" name="pagin_person_search_max_block_rows" size=2 maxlength=2 value="<?php echo $GLOBAL_CONFIG['pagin_person_search_max_block_rows'] ?>">
-      </td>  
+      </td>
 	</tr>
 <tr>
 	<td class="adm_item"><FONT  color="#0000cc"><?php echo "<b>$LDPatientSearch</b><br><font color=#000000>$LDPatientSearchTxt</font><br>" ?></FONT></td>
 	<td class="adm_input"><input type="text" name="pagin_patient_search_max_block_rows" size=2 maxlength=2 value="<?php echo $GLOBAL_CONFIG['pagin_patient_search_max_block_rows'] ?>">
-      </td>  
+      </td>
 	</tr>
 <tr>
 	<td class="adm_item"><FONT  color="#0000cc"><?php echo "<b>$LDORPatientSearch</b><br><font color=#000000>$LDORPatientSearchTxt</font><br>" ?></FONT></td>
 	<td class="adm_input"><input type="text" name="pagin_or_patient_search_max_block_rows" size=2 maxlength=2 value="<?php echo $GLOBAL_CONFIG['pagin_or_patient_search_max_block_rows'] ?>">
-      </td>  
+      </td>
 	</tr>
 </table>
 <p>

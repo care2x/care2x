@@ -1,12 +1,12 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 /**
 * CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
 * GNU General Public License
 * Copyright 2002,2003,2004,2005 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -39,7 +39,7 @@ require($root_path.'modules/cafeteria/includes/inc_currency_set.php');
 
 # href for return button
  $smarty->assign('pbBack',$returnfile);
- 
+
  # href for help button
  $smarty->assign('pbHelp',"javascript:gethelp('currency_set.php')");
 
@@ -58,7 +58,7 @@ require($root_path.'modules/cafeteria/includes/inc_currency_set.php');
 ob_start();
 
 #  Define to create the edit links on the table and create the GUI body
-define('SET_EDIT',1); 
+define('SET_EDIT',1);
 
 $bottomlink='edv_system_format_currency_add.php'.URL_APPEND.'&from=set';
 $bottomlink_txt=$LDClk2AddCurrency;

@@ -1,7 +1,7 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require_once('./roots.php');
 require_once($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 
 define('LANG_FILE','stdpass.php');
 define('NO_2LEVEL_CHK',1);
@@ -14,7 +14,7 @@ $fileforward='radiolog-xray-diagnosis-write.php?sid='.$sid.'&lang='.$lang;
 
 if($retpath=='read_diagnosis') $breakfile='radiolog-xray-diagnosis.php?sid='.$sid.'&lang='.$lang;
  	else $breakfile="javascript:window.top.location.replace('radiolog-xray-javastart.php?sid=$sid&lang=$lang&mode=display1')";
-	
+
 $thisfile=basename(__FILE__);
 
 $userck='ck_radio_user';
@@ -24,7 +24,7 @@ setcookie($userck.$sid,'');
 require($root_path.'include/core/inc_2level_reset.php'); setcookie(ck_2level_sid.$sid,'');
 
 require($root_path.'include/core/inc_passcheck_internchk.php');
-if ($pass=='check') 	
+if ($pass=='check')
 	include($root_path.'include/core/inc_passcheck.php');
 ?>
 
@@ -35,8 +35,8 @@ if ($pass=='check')
 
 </HEAD>
 
-<BODY  <?php if (!$nofocus) echo 'onLoad="document.passwindow.userid.focus()"'; echo  ' bgcolor='.$cfg['body_bgcolor']; 
- if (!$cfg['dhtml']){ echo ' link='.$cfg['body_txtcolor'].' alink='.$cfg['body_alink'].' vlink='.$cfg['body_txtcolor']; } 
+<BODY  <?php if (!$nofocus) echo 'onLoad="document.passwindow.userid.focus()"'; echo  ' bgcolor='.$cfg['body_bgcolor'];
+ if (!$cfg['dhtml']){ echo ' link='.$cfg['body_txtcolor'].' alink='.$cfg['body_alink'].' vlink='.$cfg['body_txtcolor']; }
 ?>>
 
 
@@ -44,7 +44,7 @@ if ($pass=='check')
 <center>
 
 <FORM action="<?php echo $thisfile; ?>" method="post" name="passwindow">
-<?php if ((($userid!=NULL)||($keyword!=NULL))&&($passtag!=NULL)) 
+<?php if ((($userid!=NULL)||($keyword!=NULL))&&($passtag!=NULL))
 {
 echo '<FONT  COLOR="red"  SIZE=+2  FACE="Arial"><STRONG>';
 
@@ -54,7 +54,7 @@ switch($passtag)
 {
 case 1:$errbuf=$errbuf.$LDWrongEntry; echo '<img '.createLDImgSrc($root_path,'cat-fe.gif','0').' align=left>';break;
 case 2:$errbuf=$errbuf.$LDNoAuth; echo '<img '.createLDImgSrc($root_path,'cat-noacc.gif','0').' align=left>';break;
-default:$errbuf=$errbuf.$LDAuthLocked; echo '<img '.createLDImgSrc($root_path,'cat-sperr.gif','0').' align=left>'; 
+default:$errbuf=$errbuf.$LDAuthLocked; echo '<img '.createLDImgSrc($root_path,'cat-sperr.gif','0').' align=left>';
 }
 
 //logentry($userid,"PW ($keyword)","$REMOTE_ADDR $errbuf",$thisfile,$fileforward);
@@ -89,7 +89,7 @@ echo '</STRONG></FONT>';
 <nobr><?php echo $LDUserPrompt ?>:</nobr><br></font>
 <INPUT type="text" name="userid" size="14" maxlength="25"> <p>
 <font face="Arial,Verdana"  color="#000000" size=-1><nobr><?php echo $LDPwPrompt ?>:</font><br>
-<INPUT type="password" name="keyword" size="14" maxlength="25"> 
+<INPUT type="password" name="keyword" size="14" maxlength="25">
 <input type="hidden" name="pass" value="check">
 <input type="hidden" name="sid" value="<?php echo $sid; ?>">
 <input type="hidden" name="lang" value="<?php echo $lang; ?>">
@@ -105,7 +105,7 @@ echo '</STRONG></FONT>';
 </table>
 </td>
 </tr>
-</table>        
+</table>
 </FORM>
 <p><br>
 

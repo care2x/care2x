@@ -1,7 +1,7 @@
-<?php 
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
+<?php
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 $lang_tables[]='actions.php';
 $lang_tables[]='prompt.php';
 define('LANG_FILE','radio.php');
@@ -36,7 +36,7 @@ if(isset($nr) && $nr){
    <tr>
      <td>
 	&nbsp;<p>
-	 <font face=arial size=2>	
+	 <font face=arial size=2>
 	 <?php echo nl2br($img_notes) ?>
 	  </td>
    </tr>

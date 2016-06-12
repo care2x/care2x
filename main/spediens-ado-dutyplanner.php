@@ -1,7 +1,7 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 /**
  * CARE2X Integrated Hospital Information System beta 2.0.0 - 2004-05-16
  * GNU General Public License
@@ -100,7 +100,7 @@ require($root_path.'include/core/inc_css_a_hilitebu.php');
 		<FONT face="Verdana,Helvetica,Arial" size=4> <img
 		<?php echo createComIcon($root_path,'icon_pencil.gif','0') ?>> <?php echo $LDDutyPlanner ?>
 		<p>
-		
+
 		</font> <FONT face="Verdana,Helvetica,Arial" size=3> <font size=1><a
 			href="spediens-ado-dutyplanner.php?sid=<?php echo "$sid&lang=$lang&month=$month&year=$year" ?>&mondir=-1"><img
 			<?php echo createComIcon($root_path,'l-arrowgrnlrg.gif','0') ?>> <?php echo $LDPrevMonth ?></a></font>
@@ -217,7 +217,7 @@ require($root_path.'include/core/inc_css_a_hilitebu.php');
 		<a href="<?php echo $breakfile ?>"><img
 		<?php echo createLDImgSrc($root_path,'cancel.gif','0','middle') ?>
 			alt="<?php echo $LDCancel ?>"></a>
-		
+
 		</FONT>
 		<p></td>
 	</tr>

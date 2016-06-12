@@ -1,10 +1,10 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 # Default value for the maximum nr of rows per block displayed, define this to the value you wish
 # In normal cases this value is derived from the db table "care_config_global" using the "pagin_insurance_list_max_block_rows" element.
-define('MAX_BLOCK_ROWS',30); 
+define('MAX_BLOCK_ROWS',30);
 
 $lang_tables[]='search.php';
 define('LANG_FILE','immunization.php');
@@ -86,9 +86,9 @@ ob_start();
 
 <ul>
 
-<?php 
+<?php
 if(is_object($immu)){
-	
+
 	if ($linecount) echo str_replace("~nr~",$totalcount,$LDSearchFound).' '.$LDShowing.' '.$pagen->BlockStartNr().' '.$LDTo.' '.$pagen->BlockEndNr().'.';
 		else echo str_replace('~nr~','0',$LDSearchFound);
 
@@ -110,7 +110,7 @@ if(is_object($immu)){
       <td><b>
 	  <?php echo $pagen->makeSortLink($LDImmuMedicine,'medicine',$oitem,$odir);  ?></b>
 	</td>
-  </tr> 
+  </tr>
 <?php
 	$toggle=0;
 	while($immuns=$immu->FetchRow()){
@@ -125,7 +125,7 @@ if(is_object($immu)){
     <td><?php echo $immuns['tolerance']; ?></td>
     <td><?php echo $immuns['medicine']; ?></td>
 </td>
-  </tr> 
+  </tr>
 <?php
 	}
 	echo '

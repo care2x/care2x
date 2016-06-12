@@ -1,12 +1,12 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 /**
 * CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
 * GNU General Public License
 * Copyright 2002,2003,2004,2005 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -50,7 +50,7 @@ $_SESSION['sess_user_origin']='pharma';
 
  # Window bar title
  $smarty->assign('title',$LDPharmacy);
- 
+
  # Add the bot onLoad code
 
  if(isset($stb) && $stb) $smarty->assign('sOnLoadJs','onLoad="startbot()"');
@@ -66,7 +66,7 @@ function closewin()
 {
 	location.href='startframe.php?sid=<?php echo "$sid&lang=$lang";?>';
 }
-<?php 
+<?php
 
 if($stb)
 echo '
@@ -81,7 +81,7 @@ function startbot()
 </script>
 
 <?php
-	
+
 	$sTemp = ob_get_contents();
 ob_end_clean();
 

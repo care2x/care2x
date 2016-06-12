@@ -1,34 +1,34 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 define('LANG_FILE','or.php');
 $local_user='ck_op_pflegelogbuch_user';
 require_once($root_path.'include/core/inc_front_chain_lang.php');
-# Create the personell object 
+# Create the personell object
 require_once($root_path.'include/care_api_classes/class_personell.php');
 $pers_obj=new Personell;
 
 $title=$LDOpPersonElements[$winid];
 switch($winid)
 {
-	case 'operator': 
+	case 'operator':
 							$stitle='O';
 							break;
-	case 'assist': 
+	case 'assist':
 							$stitle='A';
 							break;
-	case 'scrub': 
+	case 'scrub':
 							$stitle='I';
 							break;
-	case 'rotating': 
+	case 'rotating':
 							$stitle='O';
 							break;
-	case 'ana': 
+	case 'ana':
 							$element='an_doctor';
 							//$maxelement=10;
 							break;
-	default:{header('Location:'.$root_path.'/language/'.$lang.'/lang_'.$lang.'_invalid-access-warning.php'); exit;}; 
+	default:{header('Location:'.$root_path.'/language/'.$lang.'/lang_'.$lang.'_invalid-access-warning.php'); exit;};
 }
 
 $thisfile=basename(__FILE__);
@@ -44,7 +44,7 @@ $search=$pers_obj->searchPersonellBasicInfo($inputdata);
 <TITLE><?php echo $title ?></TITLE>
 
 <script language="javascript">
-<!-- 
+<!--
   function resetinput(){
 	document.infoform.reset();
 	}
@@ -83,14 +83,14 @@ div.box { border: double; border-width: thin; width: 100%; border-color: black; 
 </style>
 
 </HEAD>
-<BODY   bgcolor="#cde1ec" TEXT="#000000" LINK="#0000FF" VLINK="#800080" topmargin=2 marginheight=2 
+<BODY   bgcolor="#cde1ec" TEXT="#000000" LINK="#0000FF" VLINK="#800080" topmargin=2 marginheight=2
 onLoad="<?php if($saved) echo "parentrefresh();"; ?>if (window.focus) window.focus(); window.focus();document.infoform.inputdata.focus();" >
 <a href="javascript:gethelp()"><img <?php echo createLDImgSrc($root_path,'hilfe-r.gif','0') ?> alt="<?php echo $LDHelp ?>" align="right"></a>
 
 <form name="infoform" action="op-pflege-log-getpersonell.php" method="post" onSubmit="return pruf(this)">
 <img <?php echo createComIcon($root_path,'magnify.gif','0','absmiddle'); ?>><font face=verdana,arial size=5 color=maroon>
 <b>
-<?php 
+<?php
 	echo str_replace("~tagword~",$title,$LDSearchPerson)."...";
 	//echo $tage[$dyidx]." ($dy".".".$mo.".".$yr.")</font>";
 ?>
@@ -107,22 +107,22 @@ onLoad="<?php if($saved) echo "parentrefresh();"; ?>if (window.focus) window.foc
  <tr>
     <td align=center bgcolor="#ffffff" class="v13_n" >
 <?php echo $LDLastName ?>
-	</td> 
+	</td>
     <td align=center bgcolor="#ffffff" class="v13_n" >
 <?php echo $LDName ?>
 
-	</td> 
+	</td>
     <td align=center bgcolor="#ffffff"  class="v13_n" >
 <?php echo $LDJobId ?>
 
-	</td> 
+	</td>
     <td align=center bgcolor="#ffffff"   class="v13_n" >
 <?php echo "$LDOr $LDFunction" ?>
-	</td> 
+	</td>
     <td align=center bgcolor="#ffffff"   class="v13_n" >
 
-	</td> 
-  </tr>	
+	</td>
+  </tr>
 
 <?php if($pers_obj->record_count) : ?>
 
@@ -133,13 +133,13 @@ onLoad="<?php if($saved) echo "parentrefresh();"; ?>if (window.focus) window.foc
 	  		<tr bgcolor="#ffffff">
     			<td class="v13" >
 				&nbsp;<a href="javascript:savedata(\''.$result[name_last].'\',\''.$result[name_first].'\',document.infoform.f'.$counter.',\''.$result[job_function_title].'\')" title="'.str_replace("~tagword~",$title,$LDUseData).'">'.$result[name_last].'</a>
-				</td> 
+				</td>
     			<td   class="v13" >
 				&nbsp;<a href="javascript:savedata(\''.$result[name_last].'\',\''.$result[name_first].'\',document.infoform.f'.$counter.',\''.$result[job_function_title].'\')" title="'.str_replace("~tagword~",$title,$LDUseData).'">'.$result[name_first].'</a>
-				</td> 
+				</td>
     			<td class="v13" >
 				&nbsp;'.$result[job_function_title].'
-				</td> 
+				</td>
     			<td   class="v13" >
 				<select name="f'.$counter.'">';
 				for($i=1;$i<=($entrycount);$i++)
@@ -151,13 +151,13 @@ onLoad="<?php if($saved) echo "parentrefresh();"; ?>if (window.focus) window.foc
 				}
     			echo '
 				</select>
-    
-				</td> 
+
+				</td>
     			<td   class="v13" >
 				&nbsp;<a href="javascript:savedata(\''.$result[name_last].'\',\''.$result[name_first].'\',document.infoform.f'.$counter.',\''.$result[job_function_title].'\')"><img '.createComIcon($root_path,'uparrowgrnlrg.gif','0').' align=absmiddle>
 				'.str_replace("~tagword~",$title,$LDUseData).'..</a>
-				</td> 
-    			
+				</td>
+
   				</tr>';
 				$counter++;
 		}
@@ -166,7 +166,7 @@ onLoad="<?php if($saved) echo "parentrefresh();"; ?>if (window.focus) window.foc
 <?php else : ?>
   <tr>
     <td bgcolor="#ffffff"  colspan=5 align=center>
-	
+
 	<table border=0>
    <tr>
      <td><img <?php echo createMascot($root_path,'mascot1_r.gif','0','bottom'); ?>> </td>
@@ -175,12 +175,12 @@ onLoad="<?php if($saved) echo "parentrefresh();"; ?>if (window.focus) window.foc
 	</td>
    </tr>
  </table>
- 
-	
-	
-	</td> 
 
-  </tr>	
+
+
+	</td>
+
+  </tr>
 <?php endif ?>
 
 
@@ -196,7 +196,7 @@ onLoad="<?php if($saved) echo "parentrefresh();"; ?>if (window.focus) window.foc
 			 </td>
 
 		  </tr>
-	 
+
 		  </table>
 </td>
   </tr>

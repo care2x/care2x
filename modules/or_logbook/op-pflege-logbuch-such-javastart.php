@@ -1,12 +1,13 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
+error_reporting($ErrorLevel);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 /**
 * CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
 * GNU General Public License
 * Copyright 2002,2003,2004,2005 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -41,7 +42,7 @@ function makelogbuch()
 	logbuchwin<?php echo $sid ?>=window.open("op-pflege-logbuch-xtsuch-start.php?sid=<?php echo "$sid&lang=$lang&dept_nr=$dept_nr";?>&user=<?php echo str_replace(" ","+",$op_pflegelogbuch_user);?>","logbuchwin<?php echo $sid ?>","menubar=no,resizable=yes,scrollbars=yes, width=" + (w-15) + ", height=" + (h-60));
 	window.logbuchwin<?php echo $sid ?>.moveTo(0,0);
 	window.location.replace('<?php if($retpath=="calendar_opt") echo $root_path."calendar/calendar-options.php?sid=$sid&lang=$lang&day=$pday&month=$pmonth&year=$pyear"; else echo  $root_path."main/op-doku.php?sid=".$sid."&lang=".$lang;?>&forcestation=1&nofocus=1');
-	
+
 }
 </script>
 

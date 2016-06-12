@@ -1,5 +1,4 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 /**
  * eComBill 1.0.04 for Care2002 beta 1.0.04
  * (2003-04-30)
@@ -9,6 +8,7 @@ error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
  */
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 define('NO_CHAIN',1);
 define('LANG_FILE','billing.php');
 require_once($root_path.'include/core/inc_front_chain_lang.php');
@@ -57,13 +57,13 @@ $returnfile='patient_payment_links.php'.URL_APPEND.'&patientno='.$patientno.'&fu
 ?>
 <SCRIPT language="JavaScript">
 <!--
-	function submitform() {		
+	function submitform() {
 		document.confirmpayment.action = "postpayment.php";
 		document.confirmpayment.submit();
 	}
 //-->
 </SCRIPT>
-<?php 
+<?php
 $sTemp = ob_get_contents();
 ob_end_clean();
 
@@ -98,14 +98,14 @@ $smarty->assign('LDAmount', $LDAmount);
 $smarty->assign('LDPaymentList', TRUE);
 
 if($payment->fields['payment_cash_amount']!=0)  {
-	$smarty->assign('LDModeofPaymentData', $LDCash);	
-	$smarty->assign('LDAmountData', $payment->fields['payment_cash_amount']);	
+	$smarty->assign('LDModeofPaymentData', $LDCash);
+	$smarty->assign('LDAmountData', $payment->fields['payment_cash_amount']);
 } else if($payment->fields['payment_creditcard_amount'] !=0) {
-	$smarty->assign('LDModeofPaymentData', $LDCreditCard);	
-	$smarty->assign('LDAmountData', $payment->fields['payment_creditcard_no'] . '<br>' . $payment->fields['payment_creditcard_amount']);		
+	$smarty->assign('LDModeofPaymentData', $LDCreditCard);
+	$smarty->assign('LDAmountData', $payment->fields['payment_creditcard_no'] . '<br>' . $payment->fields['payment_creditcard_amount']);
 } else if($payment->fields['payment_cheque_amount'] !=0) {
-	$smarty->assign('LDModeofPaymentData', $LDCheck . ' / ' . $LDCheckNumber);	
-	$smarty->assign('LDAmountData', $payment->fields['payment_cheque_no'] . '<br>' . $payment->fields['payment_cheque_amount']);		
+	$smarty->assign('LDModeofPaymentData', $LDCheck . ' / ' . $LDCheckNumber);
+	$smarty->assign('LDAmountData', $payment->fields['payment_cheque_no'] . '<br>' . $payment->fields['payment_cheque_amount']);
 }
 
 

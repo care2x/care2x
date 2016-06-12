@@ -4,10 +4,10 @@ if($_GET['substore']) {
 	header("location: pharmacy_tz.php?substore=$_GET[substore]");
 }
 */
-error_reporting(E_ALL);
 require('./roots.php');
 
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting(E_ALL);
 /**
 * CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
 * GNU General Public License
@@ -119,13 +119,13 @@ while($r=$substore_result->FetchRow()){
       <option value=""></option>
       <?php
       while(list($x,$v)=each($data['subtore'])){
-       
+
          ?>
        <option value="<?php echo $v['loccode'];?>"><?php echo $v['locationname'];?></option>
        <?php
-      } 
+      }
       ?>
-       
+
       </select>
 </td>
       <td width="19" bgcolor="#CCCCCC" scope="col"><img src="../../gui/img/common/default/l-arrowgrnlrg.gif"></td>

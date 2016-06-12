@@ -1,10 +1,10 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 
 require('./roots.php');
 $local_user='aufnahme_user';
 define('NO_CHAIN',1);
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 include_once($root_path."classes/fpdf/fpdf.php");
 include_once($root_path."classes/PHPJasperXML/PHPJasperXML.inc");
 
@@ -28,8 +28,8 @@ $oldbd['bill_item_unit_cost'] = intval($oldbd['bill_item_unit_cost']);
 $insurance_nr = $Encounter->encounter['insurance_nr'];
 if($Encounter->encounter['insurance_class_nr'] == 2 && $Encounter->encounter['admit_type'] == 1) {
 	$moneyToWords = 'zero';
-} else { 
-	$moneyToWords = int_to_words($oldbd['bill_item_unit_cost']);	
+} else {
+	$moneyToWords = int_to_words($oldbd['bill_item_unit_cost']);
 }
 
 $hospitalname = substr($glob_obj->getConfigValue('main_info_address') , 0, 30);
@@ -38,8 +38,8 @@ $xml = simplexml_load_file("printouts/.your-xml-file.jrxml");
 
 $PHPJasperXML = new PHPJasperXML();
 $PHPJasperXML->setImagePath ($root_path . "modules/ecombill/printouts");
-$PHPJasperXML->arrayParameter = array("billno"=>$receiptid, 
-									  "encounterid"=>$patientno, 
+$PHPJasperXML->arrayParameter = array("billno"=>$receiptid,
+									  "encounterid"=>$patientno,
 									  "moneywords" => $moneyToWords,
 									  "hospitalname" => $hospitalname,
 									  "insurance_nr" => $insurance_nr);

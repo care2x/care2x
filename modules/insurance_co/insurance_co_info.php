@@ -1,12 +1,12 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 /**
 * CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
 * GNU General Public License
 * Copyright 2002,2003,2004,2005 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -21,7 +21,7 @@ switch($retpath)
 {
 	case 'list': $breakfile='insurance_co_list.php'.URL_APPEND; break;
 	case 'search': $breakfile='insurance_co_search.php'.URL_APPEND; break;
-	default: $breakfile='insurance_co_manage.php'.URL_APPEND; 
+	default: $breakfile='insurance_co_manage.php'.URL_APPEND;
 }
 
 if(isset($firm_id) && $firm_id&&($row=$ins_obj->getFirmInfo($firm_id))){
@@ -64,27 +64,27 @@ ob_start();
 
  <ul>
 <?php
-if(isset($save_ok) && $save_ok){ 
+if(isset($save_ok) && $save_ok){
 ?>
 <img <?php echo createMascot($root_path,'mascot1_r.gif','0','absmiddle') ?>><font class="prompt">
 <b>
-<?php 
+<?php
  	echo $LDFirmInfoSaved;
 ?>
 </b></font>
-<?php 
-} 
+<?php
+}
 ?>
 <table border=0 cellpadding=4 >
   <tr>
     <td align=right class="adm_item"></font><?php echo $LDInsuranceCoID ?>: </td>
     <td class="adm_input"><?php echo $firm['firm_id'] ?><br>
 </td>
-  </tr> 
+  </tr>
   <tr>
     <td align=right class="adm_item"></font><?php echo $LDInsuranceCoName ?>: </td>
     <td class="adm_input"><?php echo $firm['name'] ?><br></td>
-  </tr> 
+  </tr>
   <tr>
     <td align=right class="adm_item"><font color=#ff0000></font><?php echo $LDAddress ?>: </td>
     <td class="adm_input"><?php echo nl2br($firm['addr']); ?></td>

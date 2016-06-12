@@ -1,7 +1,7 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 define('LANG_FILE','stdpass.php');
 define('NO_2LEVEL_CHK',1);
 require_once($root_path.'include/core/inc_front_chain_lang.php');
@@ -24,7 +24,7 @@ setcookie($userck.$sid,'');
 require($root_path.'include/core/inc_2level_reset.php'); setcookie('ck_2level_sid'.$sid,'',0,'/');
 
 require($root_path.'include/core/inc_passcheck_internchk.php');
-if ($pass=='check') 	
+if ($pass=='check')
 	include($root_path.'include/core/inc_passcheck.php');
 
 $errbuf=$LDNursingManage;
@@ -40,11 +40,11 @@ require($root_path.'include/core/inc_passcheck_head.php');
 <img <?php echo createComIcon($root_path,'monitor2.gif','0','absmiddle') ?>>
 <FONT  COLOR=<?php echo $cfg[top_txtcolor] ?>  SIZE=6  FACE="verdana"> <b><?php echo $LDNursingManage ?></b></font>
 
-<table width=100% border=0 cellpadding="0" cellspacing="0"> 
+<table width=100% border=0 cellpadding="0" cellspacing="0">
 
-<?php require($root_path.'include/core/inc_passcheck_mask.php') ?>  
+<?php require($root_path.'include/core/inc_passcheck_mask.php') ?>
 
-<p><!-- 
+<p><!--
 <img <?php echo createComIcon($root_path,'varrow.gif','0') ?>> <a href="<?php echo $root_path; ?>main/ucons.php<?php echo URL_APPEND; ?>"><?php echo "$LDIntro2 $LDNursingManage" ?></a><br>
 <img <?php echo createComIcon($root_path,'varrow.gif','0') ?>> <a href="<?php echo $root_path; ?>main/ucons.php<?php echo URL_APPEND; ?>"><?php echo "$LDWhat2Do $LDNursingManage" ?></a><br>
  --><HR>

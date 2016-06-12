@@ -1,12 +1,12 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 /**
 * CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
 * GNU General Public License
 * Copyright 2002,2003,2004,2005 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -38,23 +38,23 @@ $forwardfile="location:nursing-station.php".URL_REDIRECT_APPEND.$fileappend;
 require_once($root_path.'include/care_api_classes/class_ward.php');
 $ward_obj= new Ward;
 
-if(isset($mode)&&($mode=='transferbed'||$mode=='transferward')){	
-	
+if(isset($mode)&&($mode=='transferbed'||$mode=='transferward')){
+
 	$date=date('Y-m-d');
 	$time=date('H:i:s');
-	
+
 	# Determine the reason for temporary discharge
 	if($mode=='transferward'){
 		$dis_type=4; # transfer of ward
 	}else{
 		$dis_type=6; # transfer of bed
 	}
-	
+
 	# First, discharge the patient from the current assignment
-	if($ward_obj->DischargeFromWard($pn,$dis_type,$date,$time)){ 
-	
+	if($ward_obj->DischargeFromWard($pn,$dis_type,$date,$time)){
+
 		switch($mode){
-  			case 'transferbed' : 
+  			case 'transferbed' :
 			{
 				# Assign to ward,room and bed
 				if($ward_obj->AdmitInWard($pn,$ward_nr,$rm,$bd)){
@@ -62,10 +62,10 @@ if(isset($mode)&&($mode=='transferbed'||$mode=='transferward')){
 					$ward_obj->setAdmittedInWard($pn,$ward_nr,$rm,$bd);
 					header($forwardfile);
 					exit;
-				}	
+				}
 				break;
 			}
-			case 'transferward': 
+			case 'transferward':
 			{
 				if($ward_obj->ReplaceWard($pn,$trwd)){
 					header($forwardfile);
@@ -98,7 +98,7 @@ td.vn { font-family:verdana,arial; color:#000088; font-size:10}
 </style>
 </HEAD>
 
-<BODY bgcolor=<?php echo $cfg['body_bgcolor']; ?> topmargin=0 leftmargin=0 marginwidth=0 marginheight=0 
+<BODY bgcolor=<?php echo $cfg['body_bgcolor']; ?> topmargin=0 leftmargin=0 marginwidth=0 marginheight=0
 <?php if (!$cfg['dhtml']){ echo 'link='.$cfg['idx_txtcolor'].' alink='.$cfg['body_alink'].' vlink='.$cfg['idx_txtcolor']; } ?>>
 
 <table border=0>

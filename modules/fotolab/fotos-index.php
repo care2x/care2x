@@ -1,12 +1,12 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 /**
 * CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
 * GNU General Public License
 * Copyright 2002,2003,2004,2005 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -118,7 +118,7 @@ if(is_object($encounter)){
 		echo '<br><a href="'.$root_path.'main/pop_reg_pic.php'.URL_APPEND.'&pid='.$encounter->PID().'&fn='.$fn.'" target="FOTOS_PREVIEW" title="'.$LDClk2Preview.'">
 	 		<img src="';
 		echo $root_path.'main/imgcreator/thumbnail.php?mx=80&my=100&imgfile=uploads/photos/registration/'.$fn;
-				
+
 		echo '" border=0></a>';
 
 	}
@@ -133,7 +133,7 @@ if(is_object($encounter)){
 <td>
 <nobr>
 
-<?php 
+<?php
 
 echo "<b>$LDPhotos";
 if(is_object($all_image)) echo " ".$all_image->RecordCount()." $LDPicShots";
@@ -144,11 +144,11 @@ if(is_object($all_image)){
 	while($image=$all_image->FetchRow()){
 
 		if(file_exists($final_path.$image['nr'].'.'.$image['mime_type'])){
-	
+
 			echo '<tr>
      		<td class="a12_w">'.formatDate2Local($image['shot_date'],$date_format);
 			echo ' <font color=red size="1">Foto '.$image['shot_nr'].'</font>';
- 
+
      		echo '</td>
 	 		<td class="a12_gry"><a href="javascript:preview(\''.$image['nr'].'\')" title="'.$LDClk2Preview.'">
 	 		<img src="';

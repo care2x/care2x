@@ -1,8 +1,8 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 define('NO_CHAIN',1);
 $lang_tables[]='billing.php';
 define('LANG_FILE','aufnahme.php');
@@ -20,7 +20,7 @@ $presdatetime=date("Y-m-d H:i:s");
 
 $breakfile='patient_payment.php'.URL_APPEND.'&patientno='.$patientno.'&full_en='.$full_en;
 $returnfile='patient_payment.php'.URL_APPEND.'&patientno='.$patientno.'&full_en='.$full_en;
-	
+
 # Start Smarty templating here
  /**
  * LOAD Smarty
@@ -53,13 +53,13 @@ $returnfile='patient_payment.php'.URL_APPEND.'&patientno='.$patientno.'&full_en=
 ?>
 <SCRIPT language="JavaScript">
 <!--
-	function submitform() {		
+	function submitform() {
 		document.confirmpayment.action = "postpayment.php";
 		document.confirmpayment.submit();
 	}
 //-->
 </SCRIPT>
-<?php 
+<?php
 $sTemp = ob_get_contents();
 ob_end_clean();
 
@@ -111,14 +111,14 @@ $smarty->assign('pbSubmit','<a href="javascript:submitform();"><input type="imag
 $smarty->assign('pbCancel','<a href="'.$breakfile.'" ><img '.createLDImgSrc($root_path,'close2.gif','0','middle').' title="'.$LDCancel.'" align="middle"></a>');
 
 if(strstr(getenv('QUERY_STRING'),"mode1")!="") {
-	$smarty->assign('LDSelecttheModeofCurrentPayment', $LDModeofPayment);	
+	$smarty->assign('LDSelecttheModeofCurrentPayment', $LDModeofPayment);
 	$smarty->assign('PaymentCash', TRUE);
 	$smarty->assign('LDCash', $LDCash);
-	$smarty->assign('cashAmount', $amtcash);	
+	$smarty->assign('cashAmount', $amtcash);
 } else if(strstr(getenv('QUERY_STRING'),"mode2")!="") {
-	
+
 	$smarty->assign('PaymentCreditCard', TRUE);
-	$smarty->assign('LDSelecttheModeofCurrentPayment', $LDModeofPayment);	
+	$smarty->assign('LDSelecttheModeofCurrentPayment', $LDModeofPayment);
 	$smarty->assign('LDCreditCard', $LDCreditCard);
 	$smarty->assign('LDCardNumber', $LDCardNumber);
 	$smarty->assign('LDCardNumberData', $cdno);
@@ -128,7 +128,7 @@ if(strstr(getenv('QUERY_STRING'),"mode1")!="") {
 	$smarty->assign('amtcc', $amtcc);
 } else if(strstr(getenv('QUERY_STRING'),"mode3")!="") {
 	$smarty->assign('PaymentCheck', TRUE);
-	$smarty->assign('LDSelecttheModeofCurrentPayment', $LDModeofPayment);	
+	$smarty->assign('LDSelecttheModeofCurrentPayment', $LDModeofPayment);
 	$smarty->assign('LDCheck', $LDCheck);
 	$smarty->assign('LDCheckNumber', $LDCheckNumber);
 	$smarty->assign('LDCheckNumberData', $chkno);
@@ -140,7 +140,7 @@ if(strstr(getenv('QUERY_STRING'),"mode1")!="") {
 
 
 $smarty->assign('sHiddenInputs','<input type="hidden" name="patientno" value="'. $patientno .'">
-								<input type="hidden" name="hidden" value="C6#C7#C8#"> 
+								<input type="hidden" name="hidden" value="C6#C7#C8#">
 								<input type="hidden" name="receipt_no" value="'. $receipt_no .'">
 								<input type="hidden" name="lang" value="'. $lang .'">
 								<input type="hidden" name="sid" value="'. $sid .'">

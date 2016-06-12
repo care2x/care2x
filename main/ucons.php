@@ -1,12 +1,12 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 /**
 * CARE 2002 Integrated Hospital Information System beta 2.0.1 - 30.11.2003
 * GNU General Public License
 * Copyright 2002 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 *
@@ -17,9 +17,9 @@ if(!isset($lang))
     elseif (isset($_POST['lang'])) $lang=$_POST['lang'];
 	  elseif(isset($_COOKIE['ck_lang'])) $lang=$_COOKIE['ck_lang'];
 	    else $lang="en";
-		
-require_once($root_path.'include/core/inc_charset_fx.php');	
-require_once($root_path.'include/core/inc_img_fx.php');	
+
+require_once($root_path.'include/core/inc_charset_fx.php');
+require_once($root_path.'include/core/inc_img_fx.php');
 ?>
 <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 3.0//EN" "html.dtd">
 <?php html_rtl($lang); ?>
@@ -30,7 +30,7 @@ require_once($root_path.'include/core/inc_img_fx.php');
 <P><br>
 <img <?php echo createMascot($root_path,'mascot1_r.gif','0','left') ?>>
 <font face=verdana,arial size=5 color=maroon>
-<?php 
+<?php
 switch($lang)
 {
 	case "de": echo '... wird noch weiter ausgebaut.'; break;

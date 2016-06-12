@@ -1,12 +1,12 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 /**
 * CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
 * GNU General Public License
 * Copyright 2002,2003,2004,2005 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -37,17 +37,17 @@ $breakfile="nursing.php".URL_APPEND;
 
  # Window bar title
  $smarty->assign('sWindowTitle',$LDNursingManage);
- 
+
  # Assign submenu items
  $smarty->assign('LDProfile',$LDProfile);
  $smarty->assign('sCreate',"<a href=\"nursing-station-new.php".URL_APPEND."&mw=1&station=$ck_thispc_station&name=$ck_thispc_dept\"><b>$LDCreate</b></a>");
  $smarty->assign('LDNewStation',$LDNewStation);
- 
+
  if ($ck_thispc_station) $mode="show";
  $smarty->assign('sShowStationData',"<a href=\"nursing-station-info.php".URL_APPEND."&mode=$mode&station=$ck_thispc_station\"><b>$LDShowStationData</b></a>");
 
  $smarty->assign('LDShowStationDataTxt',$LDShowStationDataTxt);
- 
+
  $smarty->assign('sCancel','<a href="'.$breakfile.'"><img '.createLDImgSrc($root_path,'cancel.gif','0').' border="0"></a>');
 /*
 # Buffer page output

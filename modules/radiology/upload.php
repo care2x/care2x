@@ -1,17 +1,17 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 /**
 * CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
 * GNU General Public License
 * Copyright 2002,2003,2004,2005 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
 
-define('FILE_DISCRIM','.dcm'); # define here the file discrimator string 
+define('FILE_DISCRIM','.dcm'); # define here the file discrimator string
 
 $thisfile=basename(__FILE__);
 
@@ -29,7 +29,7 @@ $img=new Image();
 if(!isset($mode)){
 	$mode='new';
 } elseif(($mode=='create'||$mode=='update') && $maxpic) {
-		
+
 		# makedir lock flags
 		$persd=true;
 		$imgd=true;
@@ -54,7 +54,7 @@ if(!isset($mode)){
 									'history'=>"Upload ".date('Y-m-d H:i:s')." ".$_SESSION['sess_user_name']."\n",
 									'create_id'=>$_SESSION['sess_user_name'],
 									'create_time'=>date('YmdHis'));
-				
+
 				# Save data into the database
 				if($notyetsaved){
 					if($oid=$img->saveImgDiagnosticData($data)){
@@ -69,25 +69,25 @@ if(!isset($mode)){
 				}
 				if(!$notyetsaved&&$picnr){
 			   		//$picfilename[$i]=$picnr.'.'.$picext;
-					
+
 					# Compose the prepend number
 					# This will be prepended to filename eg. => 1003_angio.dcm
 					# to simplify sorting of the filenames according to order of upload
 					$prep=1000+$icount;
-					
+
 					$picfilename=$prep.'_'.$_FILES[$picfile]['name'];
-					
+
 		      		//echo $_FILES[$picfile]['name'].' <img '.createComIcon($root_path,'fwd.gif','0','absmiddle').'> ';
 					# Echo for debugging
 					//echo $picfilename.'<br>';
-					
-					# Compose the PID nr subdir					
+
+					# Compose the PID nr subdir
 					if($persd){
 						$persondir=$root_path.$dicom_img_localpath.$pid;
-					
+
 			      		if(!is_dir($persondir)){
 							# if $d directory not exist create it with CHMOD 777
-							mkdir($persondir,0777); 
+							mkdir($persondir,0777);
 							# Copy the trap files to this new directory
 							copy($root_path.$dicom_img_localpath.'donotremove/index.htm',$persondir.'/index.htm');
 							//echo $root_path.$dicom_img_localpath.'donotremove/index.htm'.$persondir.'/index.htm'.'<br>';
@@ -97,12 +97,12 @@ if(!isset($mode)){
 							$persd=false;
 						}
 					}
-					# Compose the img nr  subdir					
+					# Compose the img nr  subdir
 					if($imgd){
 						$imgdir=$persondir."/$picnr";
 				      	if(!is_dir($imgdir)){
 							# if $d directory not exist create it with CHMOD 777
-							mkdir($imgdir,0777); 
+							mkdir($imgdir,0777);
 							# Copy the trap files to this new directory
 							copy($root_path.$dicom_img_localpath.'donotremove/donotremove/index.htm',$imgdir.'/index.htm');
 							//echo $root_path.$dicom_img_localpath.'donotremove/donotremove/index.htm'.$imgdir.'/index.htm'.'<br>';
@@ -110,11 +110,11 @@ if(!isset($mode)){
 							//echo $root_path.$dicom_img_localpath.'donotremove/donotremove/index.php'.$imgdir.'/index.php'.'<br>';
 							# Lock make dir
 						}
-					}				
-					
+					}
+
 					$imgd=false;
 					# Store to the newly created directory
-					$dir_path=$imgdir.'/';										
+					$dir_path=$imgdir.'/';
 
 					# Save the uploaded image
 					if($img->saveUploadedImage($_FILES[$picfile],$dir_path,$picfilename)){

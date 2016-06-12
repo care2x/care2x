@@ -1,5 +1,5 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
+error_reporting($ErrorLevel);
 ?>
 <font face="Verdana, Arial" size=3 color="#0000cc">
 <b>Dienstplan - Ärzte</b></font>

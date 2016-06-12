@@ -1,5 +1,4 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 /**
  * eComBill 1.0.04 for Care2002 beta 1.0.04
  * (2003-04-30)
@@ -9,6 +8,7 @@ error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
  */
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 require($root_path.'include/care_api_classes/class_ecombill.php');
 $eComBill = new eComBill;
 
@@ -66,7 +66,7 @@ $returnfile='select_services.php'.URL_APPEND.'&patientno='.$patientno.'&full_en=
 	}
 //-->
 </script>
-<?php 
+<?php
 $sTemp = ob_get_contents();
 ob_end_clean();
 $smarty->append('JavaScript',$sTemp);
@@ -106,7 +106,7 @@ while(strlen($qrystr)!=1) {
 	$smarty->assign('itemName',$item['item_description']);
 	$smarty->assign('itemCode',$item['item_code']);
 	$smarty->assign('itemPrice',$item['item_unit_cost']);
-	$smarty->assign('quantity',$no[$selectunit]);	
+	$smarty->assign('quantity',$no[$selectunit]);
 
 	$noOfunits=$noOfunits.$no[$selectunit]."#";
 	$labcode=$labcode."#".$item['item_code'];
@@ -114,7 +114,7 @@ while(strlen($qrystr)!=1) {
 	ob_start();
 	$smarty->display('ecombill/bill_items_line.tpl');
 	$sListRows = $sListRows.ob_get_contents();
-	ob_end_clean();	
+	ob_end_clean();
 }
 
 $itemcode=$itemcode1;

@@ -1,7 +1,7 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 /**
 * CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
 * GNU General Public License
@@ -65,8 +65,8 @@ if ($mode=="done" && isset($pn) && isset($prescription_date)) {
           SET status = 'done',taken='1',sub_store='".$_SESSION['substore']."',issuer='".$_SESSION['sess_user_name']."'
           WHERE encounter_nr = ".$pn."
                 AND prescribe_date = '".$prescription_date."'";
- 
-          
+
+
  $sql3="SELECT nr FROM care_encounter_prescription WHERE encounter_nr=".$pn." AND prescribe_date = '".$prescription_date."'";
        ($debug) ? $db->debug=TRUE : $db->debug=FALSE;
       $result_nr=$db -> Execute ($sql3);
@@ -76,7 +76,7 @@ if ($mode=="done" && isset($pn) && isset($prescription_date)) {
      }
       while(list($x,$v)=each($data['nr'])){
       $sql4="UPDATE care_tz_billing_archive_elem SET sub_store='".$_SESSION['substore']."' WHERE prescriptions_nr='".$v['nr']."'";
-      $db->Execute($sql4); 
+      $db->Execute($sql4);
       }
 
 //echo $sql;

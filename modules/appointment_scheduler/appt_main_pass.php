@@ -1,12 +1,12 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 /**
 * CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
 * GNU General Public License
 * Copyright 2002,2003,2004,2005 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -51,15 +51,15 @@ require($root_path.'include/core/inc_passcheck_head.php');
 
 <P>
 <?php
-$buf=$LDAppointments; 
+$buf=$LDAppointments;
 if($dept) $buf.=' <nobr>:: '.$dept.'</nobr>';
 echo '
 <img '.createComIcon($root_path,'clockpaper.gif','0','top').'><FONT  COLOR="'.$cfg['top_txtcolor'].'"  SIZE=6  FACE="verdana"> <b>'.$buf.'</b></font>';
  ?>
-  
-<table width=100% border=0 cellpadding="0" cellspacing="0"> 
 
-<?php require($root_path.'include/core/inc_passcheck_mask.php') ?>  
+<table width=100% border=0 cellpadding="0" cellspacing="0">
+
+<?php require($root_path.'include/core/inc_passcheck_mask.php') ?>
 
 <p>
 <?php

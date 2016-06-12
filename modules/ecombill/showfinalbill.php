@@ -1,14 +1,14 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 /**
-* eComBill 1.0.04 for Care2002 beta 1.0.04 
+* eComBill 1.0.04 for Care2002 beta 1.0.04
 * (2003-04-30)
-* adapted from eComBill beta 0.2 
-* developed by ecomscience.com http://www.ecomscience.com 
+* adapted from eComBill beta 0.2
+* developed by ecomscience.com http://www.ecomscience.com
 * GPL License
 */
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 $local_user='aufnahme_user';
 require_once($root_path.'include/core/inc_front_chain_lang.php');
 require_once($root_path.'include/core/inc_date_format_functions.php');
@@ -29,7 +29,7 @@ if(is_object($finshowresult)) $final=$finshowresult->FetchRow();
 
 
 $breakfile='patient_bill_links.php'.URL_APPEND.'&patientno='.$patientno.'&full_en='.$full_en;
-    
+
 ?>
 <?php html_rtl($lang); ?>
 <head>
@@ -116,7 +116,7 @@ $breakfile='patient_bill_links.php'.URL_APPEND.'&patientno='.$patientno.'&full_e
 					            $discamt=$final['final_discount'];
 					            $tbamt=$final['final_total_bill_amount'];
 					            $discamt=($discamt/100)*$tbamt;
-					            $discamt=$tbamt-$discamt;            
+					            $discamt=$tbamt-$discamt;
 				            ?>
 							<tr>
 								<td width="75%" valign="middle" align="left" height="18"><?php echo $LDAmountAfterDiscount; ?></td>

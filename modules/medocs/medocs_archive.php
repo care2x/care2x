@@ -1,12 +1,12 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 /**
 * CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
 * GNU General Public License
 * Copyright 2002,2003,2004,2005 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -22,7 +22,7 @@ function Cond($item,$k){
 		 else $where=$buf;
 	}
 }
-	
+
 function fCond($item,$k){
 	global $orwhere,$tab,$_POST;
 	if(empty($_POST[$item])) return false;
@@ -47,7 +47,7 @@ if (isset($mode) && ($mode=='search'))
 {
     if(!isset($db) || !$db) include_once($root_path.'include/core/inc_db_makelink.php');
     if($dblink_ok) {
-	
+
 	$select="SELECT p.name_last,p.name_first,p.date_birth,e.encounter_nr,e.encounter_class_nr,e.is_discharged,e.encounter_date FROM ";
 
 	 $where='';
@@ -61,14 +61,14 @@ if (isset($mode) && ($mode=='search'))
 	array_walk($earray,'Cond');
 	$farray=array('sc_care_class_nr','sc_room_class_nr','sc_att_dr_class_nr');
 	array_walk($farray,'fCond');
-	
+
 	if(!empty($orwhere)) {
 		if(empty($where)) $where='('.$orwhere.')';
 		    else $where.=' AND ('.$orwhere.') ';
 	}
-	
-	
-	
+
+
+
 	if($name_last||$name_first||$date_birth||$sex){
 		if($encounter_nr||$encounter_class_nr||$current_ward_nr||$referrer_diagnosis||$referrer_dr||$referrer_recom_therapy||$referrer_notes||$insurance_class_nr){
 			if($sc_care_class_nr||$sc_room_class_nr||$sc_att_dr_class_nr){
@@ -82,7 +82,7 @@ if (isset($mode) && ($mode=='search'))
 			$from=" care_person AS p, care_encounter AS e";
 			$where.=" AND p.pid=e.pid";
 		}
-				
+
 	}else{
 		if($encounter_nr||$encounter_class_nr||$current_ward_nr||$referrer_diagnosis||$referrer_dr||$referrer_recom_therapy||$referrer_notes||$insurance_class_nr){
 			if($sc_care_class_nr||$sc_room_class_nr||$sc_att_dr_class_nr){
@@ -99,16 +99,16 @@ if (isset($mode) && ($mode=='search'))
 			}
 		}
 	}
-	
+
 	if(!empty($where)) {
 
 		$sql=$select.$from.' WHERE '.$where.' ORDER by e.create_time DESC';
-		if($ergebnis=$db->Execute($sql)) {			
-  			$rows=$ergebnis->RecordCount();			
-			
-			if(AUTOSHOW_ONERESULT){					
+		if($ergebnis=$db->Execute($sql)) {
+  			$rows=$ergebnis->RecordCount();
+
+			if(AUTOSHOW_ONERESULT){
 	        	if($rows==1){
-		      	 //// If result is single item, display the data immediately 
+		      	 //// If result is single item, display the data immediately
 			   	$result=$ergebnis->FetchRow();
 			   	header("Location:aufnahme_daten_zeigen.php".URL_REDIRECT_APPEND."&target=archiv&origin=archiv&encounter_nr=".$result['encounter_nr']);
 			   	exit;
@@ -116,9 +116,9 @@ if (isset($mode) && ($mode=='search'))
 			}
 		}else { echo $sql; $rows=0;}
 	}
-					
+
   }
-  else 
+  else
   { echo "$LDDbNoLink<br>"; }
 
 }
@@ -146,7 +146,7 @@ if(!AUTOSHOW_ONERESULT) {
 	$items='nr,name';
 	$ward_info=&$ward_obj->getAllWardsItemsObject($items);
 	/* Create new person's insurance object */
-	$insurance_obj=new Insurance;	 
+	$insurance_obj=new Insurance;
 	/* Get the insurance classes */
 	$insurance_classes=&$insurance_obj->getInsuranceClassInfoObject($root_path.'include/care_api_classes/class_nr,name,LD_var');
 		/* Get all encounter classes */
@@ -163,7 +163,7 @@ if(!AUTOSHOW_ONERESULT) {
 	if(!$GLOBAL_CONFIG['patient_service_att_dr_hide']){
 		/* Get the attending doctor service classes */
 		$att_dr_service=$encounter_obj->AllAttDrServiceClassesObject();
-	}			
+	}
 }
 
 

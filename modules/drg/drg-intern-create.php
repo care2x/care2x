@@ -1,12 +1,12 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 /**
 * CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
 * GNU General Public License
 * Copyright 2002,2003,2004,2005 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -14,7 +14,7 @@ define('LANG_FILE','drg.php');
 
 require_once('drg_inc_local_user.php');
 
-if (!$pn) {header("Location:".$root_path."language/".$lang."/lang_".$lang."_invalid-access-warning.php?mode=close"); exit;}; 
+if (!$pn) {header("Location:".$root_path."language/".$lang."/lang_".$lang."_invalid-access-warning.php?mode=close"); exit;};
 
 require_once($root_path.'include/core/inc_front_chain_lang.php');
 
@@ -43,7 +43,7 @@ if(isset($mode)){
 	$_POST['create_time']=date('YmdHis');
 
 	switch($mode){
-	
+
 		case 'save':
 		{
 			$DRG_obj->useInternalDRGCodes(); // Set the core variables
@@ -86,7 +86,7 @@ if($saveok&&$mode=='linkgroup'){
     window.close();
    </script>
  <?php
-	exit; 
+	exit;
 }
 ?>
 <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 3.0//EN" "html.dtd">
@@ -97,7 +97,7 @@ if($saveok&&$mode=='linkgroup'){
   <script language="javascript" src="../js/showhide-div.js">
 </script>
   <script language="javascript">
-<!-- 
+<!--
 function checkform(d)
 {
 	if(d.code.value==""){
@@ -114,11 +114,11 @@ function checkform(d)
 }
 // -->
 </script>
- 
-  <?php 
+
+  <?php
 require($root_path.'include/core/inc_css_a_hilitebu.php');
 ?>
- 
+
 </HEAD>
 
 <BODY   onLoad="if(window.focus) window.focus();" bgcolor="<?php echo $cfg['body_bgcolor']; ?>"
@@ -145,14 +145,14 @@ if($saveok){
 	# Resolve sub-group radio button value to text
 	if($sub_level) $TP_radio_value=$LDYes;
 		else $TP_radio_value=$LDNo;
-	
+
 	if($non_grouped){
 		# Create the submit button
 		$TP_submit_src=$LDUseToGroupItems;
 	}else{
 		$TP_submit_src=$LDAddGroupEncounter;
 	}
-	
+
 	# Load the template
 	$tp=&$tp_obj->load('drg/tp_drg_group_create_show.htm');
 }else{
@@ -177,7 +177,7 @@ eval("echo $tp;");
 <input type="hidden" name="oprm" value="<?php echo $oprm; ?>">
 <input type="hidden" name="display" value="<?php echo $display; ?>">
 <input type="hidden" name="target" value="<?php echo $target; ?>">
- 
+
 </form>
 
 </ul>

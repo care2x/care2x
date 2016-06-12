@@ -1,12 +1,12 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 /**
 * CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
 * GNU General Public License
 * Copyright 2002,2003,2004,2005 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -34,7 +34,7 @@ if(!isset($mode)){
 	}else{
 		$_POST['date']=@formatDate2STD($_POST['date'],$date_format);
 	}
-	
+
 	# Prune the aux_notes  data to max 255
 		$_POST['aux_notes']=substr($_POST['aux_notes'],0,255);
 
@@ -70,25 +70,25 @@ $enc_class=$enc_obj->EncounterClass();
 	else $_SESSION['sess_full_en']=$GLOBAL_CONFIG['patient_inpatient_nr_adder']+$encounter_nr;
 */
 $_SESSION['sess_full_en']=$encounter_nr;
-	
+
 if(empty($encounter_nr)&&!empty($_SESSION['sess_en'])){
 	$encounter_nr=$_SESSION['sess_en'];
 }elseif($encounter_nr) {
 	$_SESSION['sess_en']=$encounter_nr;
 }
-	
-if($mode=='show') 
+
+if($mode=='show')
 {
 	$sql="SELECT e.encounter_nr,e.is_discharged,nd.nr, nd.notes AS diagnosis,nd.short_notes, nd.date,nd.personell_nr,nd.personell_name, nt.notes AS therapy
 		FROM 	care_encounter AS e,
 					care_encounter_notes AS nd
 					LEFT JOIN care_encounter_notes AS nt ON nt.ref_notes_nr=nd.nr
 		WHERE  e.encounter_nr=".$encounter_nr."
-			AND e.encounter_nr=nd.encounter_nr 
+			AND e.encounter_nr=nd.encounter_nr
 			AND nd.type_nr=12
 			ORDER BY nd.create_time DESC";
 
-		/* 12 = text_diagnosis type of notes 
+		/* 12 = text_diagnosis type of notes
 		*  13 = text_therapy type of notes
 		*/
 	if($result=$db->Execute($sql)){
@@ -108,8 +108,8 @@ if($mode=='show')
 	}
 }elseif(($mode=='details')&&!empty($nr)){
 	$sql="SELECT nd.notes AS diagnosis,
-						nd.short_notes, 
-						nd.aux_notes, 
+						nd.short_notes,
+						nd.aux_notes,
 						nd.date,
 						nd.personell_nr,
 						nd.personell_name,
@@ -125,9 +125,9 @@ if($mode=='show')
 }
 
 $subtitle=$LDMedocs;
-	
+
 $buffer=str_replace('~tag~',$title.' '.$name_last,$LDNoRecordFor);
-$norecordyet=str_replace('~obj~',strtolower($subtitle),$buffer); 
+$norecordyet=str_replace('~obj~',strtolower($subtitle),$buffer);
 $_SESSION['sess_file_return']=$thisfile;
 
 # Set break file

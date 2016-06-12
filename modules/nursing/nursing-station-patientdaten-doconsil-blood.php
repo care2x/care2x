@@ -1,7 +1,7 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 /**
 * CARE2X Integrated Hospital Information System version deployment 1.1 (mysql) 2004-01-11
 * GNU General Public License
@@ -16,7 +16,7 @@ $lang_tables[]='departments.php';
 define('LANG_FILE','konsil.php');
 
 
-/* We need to differentiate from where the user is coming: 
+/* We need to differentiate from where the user is coming:
 *  $user_origin != lab ;  from patient charts folder
 *  $user_origin == lab ;  from the laboratory
 *  and set the user cookie name and break or return filename
@@ -38,12 +38,12 @@ $thisfile=basename(__FILE__);
 
 //$db->debug=1;
 
-$bgc1='#99ffcc'; 
+$bgc1='#99ffcc';
 
 $db_request_table='blood';
 
 $formtitle=$LDBloodBank;
-define('_BATCH_NR_INIT_',40000000); 
+define('_BATCH_NR_INIT_',40000000);
 /*
 *  The following are  batch nr inits for each type of test request
 *   chemlabor = 10000000; patho = 20000000; baclabor = 30000000; blood = 40000000; generic = 50000000;
@@ -59,11 +59,11 @@ $enc_obj=new Encounter;
 	if(isset($pn) && $pn){
 
 	    if( $enc_obj->loadEncounterData($pn)) {
-/*		
+/*
 			include_once($root_path.'include/care_api_classes/class_globalconfig.php');
 			$GLOBAL_CONFIG=array();
 			$glob_obj=new GlobalConfig($GLOBAL_CONFIG);
-			$glob_obj->getConfig('patient_%');	
+			$glob_obj->getConfig('patient_%');
 			switch ($enc_obj->EncounterClass())
 			{
 		    	case '1': $full_en = ($pn + $GLOBAL_CONFIG['patient_inpatient_nr_adder']);
@@ -71,35 +71,35 @@ $enc_obj=new Encounter;
 				case '2': $full_en = ($pn + $GLOBAL_CONFIG['patient_outpatient_nr_adder']);
 							break;
 				default: $full_en = ($pn + $GLOBAL_CONFIG['patient_inpatient_nr_adder']);
-			}		
-*/			$full_en=$pn;				
+			}
+*/			$full_en=$pn;
 			$result=&$enc_obj->encounter;
 		}else{
 			$edit=0;
 			$mode='';
 			$pn='';
-		}		
+		}
 	}
-	   
+
 	 if(!isset($mode))   $mode='';
-		
+
 		  switch($mode)
 		  {
 				     case 'save':
-							
-                                 $sql="INSERT INTO care_test_request_".$db_request_table." 
-                                           (batch_nr, encounter_nr,  dept_nr, 
-										   blood_group, rh_factor, kell, date_protoc_nr, 
-										   pure_blood, red_blood, leukoless_blood, 
-										   washed_blood, prp_blood, thrombo_con, 
-										   ffp_plasma, transfusion_dev, match_sample, 
-										   transfusion_date, diagnosis, notes, send_date, 
-										   doctor, phone_nr, status, 
+
+                                 $sql="INSERT INTO care_test_request_".$db_request_table."
+                                           (batch_nr, encounter_nr,  dept_nr,
+										   blood_group, rh_factor, kell, date_protoc_nr,
+										   pure_blood, red_blood, leukoless_blood,
+										   washed_blood, prp_blood, thrombo_con,
+										   ffp_plasma, transfusion_dev, match_sample,
+										   transfusion_date, diagnosis, notes, send_date,
+										   doctor, phone_nr, status,
 										   history,
 										   create_id, create_time)
-										   VALUES 
+										   VALUES
 										   (
-										   '".$batch_nr."','".$pn."','".$dept_nr."', 
+										   '".$batch_nr."','".$pn."','".$dept_nr."',
 										   '".$blood_group."','".$rh_factor."','".$kell."','".htmlspecialchars($date_protoc_nr)."',
 										   '".$pure_blood."','".$red_blood."','".$leukoless_blood."',
 										   '".$washed_blood."','".$prp_blood."','".$thrombo_con."',
@@ -110,81 +110,81 @@ $enc_obj=new Encounter;
 										   '".$_SESSION['sess_user_name']."',
 										   '".date('YmdHis')."'
 										   )";
-										   
+
 							      if($ergebnis=$enc_obj->Transact($sql))
        							  {
 								  	// Load the visual signalling functions
 									include_once($root_path.'include/core/inc_visual_signalling_fx.php');
-									// Set the visual signal 
-									setEventSignalColor($pn,SIGNAL_COLOR_DIAGNOSTICS_REQUEST);									
+									// Set the visual signal
+									setEventSignalColor($pn,SIGNAL_COLOR_DIAGNOSTICS_REQUEST);
 									//echo $sql;
 									 header("location:".$root_path."modules/laboratory/labor_test_request_aftersave.php?sid=".$sid."&lang=".$lang."&edit=".$edit."&saved=insert&pn=".$pn."&station=".$station."&user_origin=".$user_origin."&status=".$status."&target=".$target."&noresize=".$noresize."&batch_nr=".$batch_nr);
 									 exit;
 								  }
-								  else 
+								  else
 								  {
-								     echo "<p>$sql<p>$LDDbNoSave"; 
+								     echo "<p>$sql<p>$LDDbNoSave";
 									 $mode="";
 								  }
-								
+
 								break; // end of case 'save'
-								
+
 		     case 'update':
-			 
-							      $sql="UPDATE care_test_request_".$db_request_table." SET 
-										   batch_nr='".$batch_nr."', 
-										   encounter_nr='".$pn."', 
-										   dept_nr='".$dept_nr."', 
-										   blood_group='".$blood_group."', 
-										   rh_factor='".$rh_factor."', 
-										   kell='".$kell."', 
-										   date_protoc_nr='".htmlspecialchars($date_protoc_nr)."', 
-										   pure_blood='".$pure_blood."', 
-										   red_blood='".$red_blood."', 
-										   leukoless_blood='".$leukoless_blood."', 
-										   washed_blood='".$washed_blood."', 
-										   prp_blood='".$prp_blood."', 
-										   thrombo_con='".$thrombo_con."', 
-										   ffp_plasma='".$ffp_plasma."', 
-										   transfusion_dev='".$transfusion_dev."', 
-										   match_sample='".$match_sample."', 
-										   transfusion_date='".formatDate2STD($transfusion_date,$date_format)."', 
-										   diagnosis='".htmlspecialchars($diagnosis)."', 
-										   notes='".htmlspecialchars($notes)."', 
-										   send_date='".formatDate2STD($send_date,$date_format)."', 
-										   doctor='".$doctor."', 
-										   phone_nr='".$phone_nr."', 
-										   status='".$status."', 
+
+							      $sql="UPDATE care_test_request_".$db_request_table." SET
+										   batch_nr='".$batch_nr."',
+										   encounter_nr='".$pn."',
+										   dept_nr='".$dept_nr."',
+										   blood_group='".$blood_group."',
+										   rh_factor='".$rh_factor."',
+										   kell='".$kell."',
+										   date_protoc_nr='".htmlspecialchars($date_protoc_nr)."',
+										   pure_blood='".$pure_blood."',
+										   red_blood='".$red_blood."',
+										   leukoless_blood='".$leukoless_blood."',
+										   washed_blood='".$washed_blood."',
+										   prp_blood='".$prp_blood."',
+										   thrombo_con='".$thrombo_con."',
+										   ffp_plasma='".$ffp_plasma."',
+										   transfusion_dev='".$transfusion_dev."',
+										   match_sample='".$match_sample."',
+										   transfusion_date='".formatDate2STD($transfusion_date,$date_format)."',
+										   diagnosis='".htmlspecialchars($diagnosis)."',
+										   notes='".htmlspecialchars($notes)."',
+										   send_date='".formatDate2STD($send_date,$date_format)."',
+										   doctor='".$doctor."',
+										   phone_nr='".$phone_nr."',
+										   status='".$status."',
 										   history=".$enc_obj->ConcatHistory("Update: ".date('Y-m-d H:i:s')." = ".$_SESSION['sess_user_name']."\n").",
 										   modify_id='".$_COOKIE[$local_user.$sid]."',
 										   modify_time='".date('YmdHis')."'
                                            WHERE batch_nr = '".$batch_nr."'";
-									  							
+
 							      if($ergebnis=$enc_obj->Transact($sql))
        							  {
 								  	// Load the visual signalling functions
 									include_once($root_path.'include/core/inc_visual_signalling_fx.php');
-									// Set the visual signal 
-									setEventSignalColor($pn,SIGNAL_COLOR_DIAGNOSTICS_REQUEST);									
+									// Set the visual signal
+									setEventSignalColor($pn,SIGNAL_COLOR_DIAGNOSTICS_REQUEST);
 									//echo $sql;
 									 header("location:".$root_path."modules/laboratory/labor_test_request_aftersave.php?sid=".$sid."&lang=".$lang."&edit=".$edit."&saved=update&pn=".$pn."&station=".$station."&user_origin=".$user_origin."&status=".$status."&target=".$target."&batch_nr=".$batch_nr."&noresize=".$noresize);
 									 exit;
 								  }
 								  else
 								   {
-								      echo "<p>$sql<p>$LDDbNoSave"; 
+								      echo "<p>$sql<p>$LDDbNoSave";
 								      $mode="";
 								   }
-								
+
 								break; // end of case 'save'
-								
-								
+
+
 	        /* If mode is edit, get the stored test request when its status is either "pending" or "draft"
 			*  otherwise it is not editable anymore which happens when the lab has already processed the request,
-			*  or when it is discarded, hidden, locked, or otherwise. 
+			*  or when it is discarded, hidden, locked, or otherwise.
 			*/
 			case 'edit':
-			
+
 		                $sql="SELECT * FROM care_test_request_".$db_request_table." WHERE batch_nr='".$batch_nr."' AND (status='pending' OR status='draft')";
 		                if($ergebnis=$db->Execute($sql))
        		            {
@@ -194,13 +194,13 @@ $enc_obj=new Encounter;
 							   $edit_form=1;
 					         }
 			             }
-						 
+
 						 break; ///* End of case 'edit': */
-			
+
 			 default: $mode="";
-						   
+
 		  }// end of switch($mode)
-  
+
           if(!$mode) /* Get a new batch number */
 		  {
 		                $sql="SELECT batch_nr FROM care_test_request_".$db_request_table." ORDER BY batch_nr DESC";
@@ -219,7 +219,7 @@ $enc_obj=new Encounter;
 					          }
 			             }
 			               else {echo "<p>$sql<p>$LDDbNoRead"; exit;}
-						 $mode="save";   
+						 $mode="save";
 		   }
 
 # Start the smarty templating
@@ -284,15 +284,15 @@ div.fa2_ml3 {font-family: arial; font-size: 12; margin-left: 3; }
 </style>
 
 <script language="javascript">
-<!-- 
+<!--
 function chkForm(d){
-	
+
 	if((d.match_sample.value=1) && (d.blood_group.value=='?') ) {
 		alert("<?php echo $LDPlsEnterBloodGroup ?>");
 		d.blood_group.focus();
-		return false;		
+		return false;
 	}
-	
+
    if((d.blood_group.value=='')||(d.blood_group.value==' '))
 	{
 		alert("<?php echo $LDPlsEnterBloodGroup ?>");
@@ -321,13 +321,13 @@ function chkForm(d){
 		alert("<?php echo $LDPlsEnterTransfusionDate ?>");
 		d.transfusion_date.focus();
 		return false;
-	}   
+	}
 	else if((d.send_date.value=='')||(d.send_date.value==' '))
 	{
 		alert("<?php echo $LDPlsEnterDate ?>");
 		d.send_date.focus();
 		return false;
-	}   
+	}
 	else if((d.doctor.value=='')||(d.doctor.value==' '))
 	{
 		alert("<?php echo $LDPlsEnterDoctorName ?>");
@@ -340,7 +340,7 @@ function chkForm(d){
 function sendLater()
 {
    document.form_test_request.status.value="draft";
-   if(chkForm(document.form_test_request)) document.form_test_request.submit(); 
+   if(chkForm(document.form_test_request)) document.form_test_request.submit();
 }
 
 function printOut()
@@ -367,9 +367,9 @@ ob_start();
 ?>
 </HEAD>
 
-<BODY bgcolor=<?php echo $cfg['body_bgcolor']; ?> 
-onLoad="if (window.focus) window.focus(); 
-<?php if($pn=="") echo "document.searchform.searchkey.focus();" ?>" 
+<BODY bgcolor=<?php echo $cfg['body_bgcolor']; ?>
+onLoad="if (window.focus) window.focus();
+<?php if($pn=="") echo "document.searchform.searchkey.focus();" ?>"
 topmargin=0 leftmargin=0 marginwidth=0 marginheight=0
 <?php if (!$cfg['dhtml']){ echo 'link='.$cfg['idx_txtcolor'].' alink='.$cfg['body_alink'].' vlink='.$cfg['idx_txtcolor']; } ?>>
 
@@ -377,12 +377,12 @@ topmargin=0 leftmargin=0 marginwidth=0 marginheight=0
 {
 ?>
 
-<script>	
+<script>
       window.moveTo(0,0);
 	 window.resizeTo(1000,740);
 </script>
 
-<?php 
+<?php
 }
 ?>
 
@@ -392,17 +392,17 @@ topmargin=0 leftmargin=0 marginwidth=0 marginheight=0
 
 if($edit){
 ?>
-<form name="form_test_request" method="post" action="<?php echo $thisfile ?>" onSubmit="return chkForm(this)"> 
+<form name="form_test_request" method="post" action="<?php echo $thisfile ?>" onSubmit="return chkForm(this)">
 <?php
 
-	# If in edit mode display the control buttons 
+	# If in edit mode display the control buttons
 	$controls_table_width=700;
 
 	include($root_path.'modules/laboratory/includes/inc_test_request_controls.php');
 
 }elseif(!$read_form && !$no_proc_assist){
 
-	# Else if not in edit mode and no patient nr. available, show the search prompt 
+	# Else if not in edit mode and no patient nr. available, show the search prompt
 ?>
 <table border=0>
   <tr>
@@ -415,7 +415,7 @@ if($edit){
 }
 ?>
 		<table   cellpadding=0 cellspacing=0 border=0 width=745>
-		
+
 		<!-- First row -->
         <tr bgcolor="<?php echo $bgc1 ?>">
 		<!-- <td rowspan=3><img src="../img/de/de_blood_wardfill.gif" border=0 width=27 height=492 align="absmiddle"></td> -->
@@ -428,8 +428,8 @@ if($edit){
       </td>
 		<td class=fva2_ml10><div   class=fva2_ml10><font size=3 color="#0000ff"><b><?php  echo $LDTestRequestFor.$LDTestType[$target];  ?></b></font>
 		<br>
-		<?php 
-		 
+		<?php
+
 		 echo $LDWithMatchTest.' '.$LDByBloodBank;
 		 echo '<br>'.$LDYes.'<input type="radio" name="match_sample" value=1 ';
 		 if(($edit_form || $read_form) && $stored_request['match_sample']) echo "checked";
@@ -440,11 +440,11 @@ if($edit){
         ?>
 	  </td>
     </tr>
-  
-		
+
+
 		<tr  valign="top" bgcolor="<?php echo $bgc1 ?>" >
         <td valign="bottom" align="right">
-		
+
 		<!-- Block for bloodgroup, Rh-factor, Kell  -->
 		<table border=0 cellspacing=0 cellpadding=2 bgcolor="#000000" width=100%>
         <tr>
@@ -472,7 +472,7 @@ if($edit){
 					  <option value="?">?</option>
 					  <option value="k+">k+</option>
 					  <option value="k-">k-</option>
-				  </select>			   
+				  </select>
 				  </td>
               </tr>
               <tr class=fva0_ml10>
@@ -482,8 +482,8 @@ if($edit){
 	      </td>
         </tr>
         </table>
-  
-		
+
+
 		</td>
          <td  bgcolor="<?php echo $bgc1 ?>" valign="top"><div class=fva2b_ml10>
 <?php
@@ -497,11 +497,11 @@ if($edit){
 ?>
     </div></td>
 	</tr>
-	
+
 	<!-- Second row -->
 		<tr  valign="top" bgcolor="<?php echo $bgc1 ?>" >
         <td>
-		
+
 		<!-- Block Specimen  -->
 		<table border=0 cellspacing=0 cellpadding=1 bgcolor="#000000" width=100% height=100%>
         <tr>
@@ -549,11 +549,11 @@ if($edit){
 	      </td>
         </tr>
         </table>
-  
-		
+
+
 		</td>
          <td  bgcolor="<?php echo $bgc1 ?>" >
-		 
+
 		 <!--  Block for diagnosis, doctors, -->
 		 <table border=0 cellspacing cellpadding=0>
      <tr>
@@ -568,7 +568,7 @@ if($edit){
 				$calendar = new DHTML_Calendar('../../js/jscalendar/', $lang, 'calendar-system', true);
 				$calendar->load_files();
 	  			echo $calendar->show_calendar($calendar,$date_format,'transfusion_date',$stored_request['transfusion_date']);
-				//end : gjergji  
+				//end : gjergji
  			?>
 	   </td>
      </tr>
@@ -587,8 +587,8 @@ if($edit){
  			<?php
 				//gjergji : new calendar
 	  			echo $calendar->show_calendar($calendar,$date_format,'send_date',$stored_request['send_date']);
-				//end : gjergji  
- 			?> 		
+				//end : gjergji
+ 			?>
 		</td>
      </tr>
      <tr>
@@ -605,18 +605,18 @@ if($edit){
    </table>
     </td>
 	</tr>
-	
+
 <!--  Black divider line  -->
 	<tr bgcolor="<?php echo $bgc1 ?>">
         <td  colspan=3 bgcolor="#000000"><img src="<?php echo $root_path ?>gui/img/common/default/pixel_blk.gif" border=0 width=745 height=4 align="absmiddle"></td>
-	</tr>	
-	
+	</tr>
+
 <!--  Block for bottom part of the form -->
 	<tr bgcolor="#000000">
         <td colspan=3>
 
 	<!--  Table container for the lower part of the form  -->
-	
+
 	      <table border=0 cellspacing=1 width=100% height=100% align="left" cellpadding=0>
          <tr bgcolor="<?php echo $bgc1 ?>">
         <td  bgcolor="<?php echo $bgc1 ?>" rowspan=20 width=27>
@@ -744,8 +744,8 @@ if($edit){
          </tr>
 
        </table>
-		
-		
+
+
 		</td>
   </tr>
 

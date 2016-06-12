@@ -1,12 +1,12 @@
 <?php
-//error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'/include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 /**
 * CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
 * GNU General Public License
 * Copyright 2002,2003,2004,2005 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -30,18 +30,18 @@ require_once($root_path.'include/core/inc_date_format_functions.php');
 if(isset($mode)&&($mode=='search'))
 {
 	if(isset($dept)&&empty($dept)&&isset($tech)&&empty($tech)&&isset($sdate)&&empty($sdate)&&isset($edate)&&empty($edate))  $mode='';
-	
+
 	if(isset($edate) && $edate)
 	{
   	    $edate=@formatDate2STD($edate,$date_format);
 	}
-	
+
 	if(isset($sdate) && $sdate)
 	{
 	     $sdate=@formatDate2STD($sdate,$date_format);
 	}
-		
-		
+
+
 	if(!isset($ofset)||!$ofset) $ofset=0;
 	if(!isset($nrows)||!$nrows) $nrows=20;
 }
@@ -53,9 +53,9 @@ $dbtable='care_tech_repair_done';
 if($mode=='search') {
 
 	$sql='SELECT * FROM '.$dbtable.' WHERE ';
-	
+
 	if($tech) $sql.=" reporter LIKE '$tech%' ";
-	
+
 	if($dept)
 	{
 		if($tech) $sql.=" AND dept LIKE '$dept%' "; else $sql.=" dept LIKE '$dept%' ";
@@ -84,7 +84,7 @@ if($mode=='search') {
 if($ergebnis=$db->Execute($sql)){
 	$linecount=$ergebnis->RecordCount();
 }else{
-	echo "<p>".$sql."$LDDbNoRead<br>"; 
+	echo "<p>".$sql."$LDDbNoRead<br>";
 }
 
 # Start Smarty templating here
@@ -119,7 +119,7 @@ ob_start();
 ?>
 
 <script language="javascript" >
-<!-- 
+<!--
 function show_order(d,D,t,r,i)
 {
 	urlholder="technik-report-showcontent.php<?php echo URL_REDIRECT_APPEND; ?>&dept="+d+"&tdate="+D+"&ttime="+t+"&reporter="+r+"&tid="+i;
@@ -130,7 +130,7 @@ function show_order(d,D,t,r,i)
 <?php require($root_path.'include/core/inc_checkdate_lang.php'); ?>
 
 // -->
-</script> 
+</script>
 <?php
 //gjergji : new calendar
 require_once ('../../js/jscalendar/calendar.php');
@@ -167,12 +167,12 @@ ob_start();
     </tr>
     <tr bgcolor=#ffffdd>
       <td align=right><?php echo "$LDDate $LDFrom" ?>:</td>
-      <td>	
+      <td>
 			  <?php   //gjergji : new calendar
-					  echo $calendar->show_calendar($calendar,$date_format,'sdate'); 
+					  echo $calendar->show_calendar($calendar,$date_format,'sdate');
 					  echo $calendar->show_calendar($calendar,$date_format,'edate');
 					  //end : gjergji
-			  ?>			
+			  ?>
          </td>
     </tr>
 
@@ -185,22 +185,22 @@ ob_start();
   <input type="hidden" name="lang" value="<?php echo $lang ?>">
     <input type="hidden" name="mode" value="search">
     </form>
-  
-  
+
+
 <hr width=80% align=left>
 <?php if($linecount>0)
 {
 	echo '
-			
+
 			<p> ';
 			if ($linecount>1) echo $LDReportListMany; else echo $LDReportList;
 		if($mode!="")
 		{
-			if ($linecount>1) echo $LDLikeSearchMany; else echo $LDLikeSearch; 
+			if ($linecount>1) echo $LDLikeSearchMany; else echo $LDLikeSearch;
 		}
 		else
-		{ 
-			if ($linecount>1) echo $LDNotReadMany; else echo $LDNotRead; 
+		{
+			if ($linecount>1) echo $LDNotReadMany; else echo $LDNotRead;
 		}
 			echo "<br>$LDClk2Read<br></font><p>";
 
@@ -213,10 +213,10 @@ ob_start();
 		echo '
 				<td  class="wardlisttitlerow">'.$bcatindex[$i].'</td>';
 		echo '
-				</tr>';	
+				</tr>';
 
 		$i=$ofset+1;
-		
+
 		/* Load the common icons */
 		$img_uparrow=createComIcon($root_path,'uparrowgrnlrg.gif','0');
 
@@ -251,15 +251,15 @@ ob_start();
               					<input type="hidden" name="such_dept" value="'.$such_dept.'">
               					<input type="hidden" name="ofset" value="'.($ofset-$nrows).'">
                    				<input type="hidden" name="nrows" value="'.$nrows.'">
-                       			<input type="hidden" name="sid" value="'.$sid.'">           
-                       			<input type="hidden" name="lang" value="'.$lang.'">           
+                       			<input type="hidden" name="sid" value="'.$sid.'">
+                       			<input type="hidden" name="lang" value="'.$lang.'">
 								<input type="submit" value="&lt;&lt; Prapa">
 								</form>';
 		echo "</td><td align=right>";
-		
+
 		if(!isset($nrows)) $nrows=0;
-		
-		if($linecount==$nrows) 
+
+		if($linecount==$nrows)
 						echo '<form name=forward action='.$thisfile.' method=post>
 								<input type="hidden" name="keyword" value="'.$keyword.'">
 								<input type="hidden" name="mode" value="search">
@@ -268,14 +268,14 @@ ob_start();
                    				<input type="hidden" name="such_prio" value="'.$such_prio.'">
         						<input type="hidden" name="ofset" value="'.($ofset+$nrows).'">
               					<input type="hidden" name="nrows" value="'.$nrows.'">
-                       			<input type="hidden" name="lang" value="'.$lang.'">           
-                   				<input type="hidden" name="sid" value="'.$sid.'">     
+                       			<input type="hidden" name="lang" value="'.$lang.'">
+                   				<input type="hidden" name="sid" value="'.$sid.'">
 								<input type="submit" value="Weiter &gt;&gt;">
 								</form>';
 		echo '
 			</td>
-			</tr>	
-			</table>';                            
+			</tr>
+			</table>';
 }
 else
 {
@@ -287,11 +287,11 @@ if($ofset) echo '	<form name=back action='.$thisfile.' method=post>
               					<input type="hidden" name="such_dept" value="'.$such_dept.'">
               					<input type="hidden" name="ofset" value="'.($ofset-$nrows).'">
                    				<input type="hidden" name="nrows" value="'.$nrows.'">
-                       			<input type="hidden" name="sid" value="'.$sid.'">           
-                       			<input type="hidden" name="lang" value="'.$lang.'">           
+                       			<input type="hidden" name="sid" value="'.$sid.'">
+                       			<input type="hidden" name="lang" value="'.$lang.'">
 								<input type="submit" value="&lt;&lt; Prapa">
 								</form>';
-							
+
 if($mode=='search') echo '
 	<table border=0>
    <tr>
@@ -299,8 +299,8 @@ if($mode=='search') echo '
      <td class="warnprompt">'.$LDNoFound.'</td>
    </tr>
  </table>';
- 
-	
+
+
 }
 
 ?>

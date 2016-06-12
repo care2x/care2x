@@ -1,16 +1,16 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 # Default value for the maximum nr of rows per block displayed, define this to the value you wish
 # In normal cases this value is derived from the db table "care_config_global" using the "pagin_insurance_list_max_block_rows" element.
-define('MAX_BLOCK_ROWS',30); 
+define('MAX_BLOCK_ROWS',30);
 
 $lang_tables[]='search.php';
 define('LANG_FILE','immunization.php');
 $local_user='aufnahme_user';
 require_once($root_path.'include/core/inc_front_chain_lang.php');
-# Load the insurance object 
+# Load the insurance object
 require_once($root_path.'include/care_api_classes/class_immunization.php');
 $immu_obj=new Immunization();
 
@@ -44,11 +44,11 @@ $pagen->setMaxCount($GLOBAL_CONFIG['pagin_insurance_search_max_block_rows']);
 
 if(isset($mode)&&($mode=='search'||$mode=='paginate')&&!empty($searchkey)){
 
-	# Convert wildcards 
+	# Convert wildcards
 	$searchkey=strtr($searchkey,'*?','%_');
 	# Save the search keyword for eventual pagination routines
 	if($mode=='search') $_SESSION['sess_searchkey']=$searchkey;
-	
+
 	# Search for the firms
 	$immu=$immu_obj->searchLimitActiveImmu($searchkey,$GLOBAL_CONFIG['pagin_insurance_search_max_block_rows'],$pgx,$oitem,$odir);
 	//echo $ins_obj->getLastQuery();
@@ -67,7 +67,7 @@ if(isset($mode)&&($mode=='search'||$mode=='paginate')&&!empty($searchkey)){
 	$pagen->setSortItem($oitem);
 	$pagen->setSortDirection($odir);
 }
-	
+
 $bgc=$root_path.'gui/img/skin/default/tableHeaderbg3.gif';
 $bgc2='#eeeeee';
 
@@ -97,7 +97,7 @@ $entry_body_bgcolor='#ffffff';
 
  # Window bar title
  $smarty->assign('sWindowTitle',"$LDImmunization :: $LDSearch");
- 
+
  # Body onLoad Javascript code
  $smarty->assign('sOnLoadJs','onLoad="document.searchform.searchkey.select()"');
 
@@ -115,9 +115,9 @@ ob_start();
 	<table border=0 cellpadding=10 bgcolor="<?php echo $entry_border_bgcolor ?>">
      <tr>
        <td>
-	   <?php 
+	   <?php
 	   		$searchprompt=$LDSearchPrompt;
-	    	include($root_path.'include/core/inc_searchmask.php'); 
+	    	include($root_path.'include/core/inc_searchmask.php');
 		?></td>
      </tr>
    </table>
@@ -126,7 +126,7 @@ ob_start();
 if(is_object($immu)){
 
 	if ($linecount) echo str_replace("~nr~",$totalcount,$LDSearchFound).' '.$LDShowing.' '.$pagen->BlockStartNr().' '.$LDTo.' '.$pagen->BlockEndNr().'.';
-		else echo str_replace('~nr~','0',$LDSearchFound); 
+		else echo str_replace('~nr~','0',$LDSearchFound);
 
 ?>
 <table border=0 cellpadding=2 cellspacing=1>
@@ -146,7 +146,7 @@ if(is_object($immu)){
       <td><b>
 	  <?php echo $pagen->makeSortLink($LDImmuMedicine,'medicine',$oitem,$odir);  ?></b>
 	</td>
-  </tr> 
+  </tr>
 <?php
 	$toggle=0;
 	while($immuns=$immu->FetchRow()){
@@ -161,7 +161,7 @@ if(is_object($immu)){
     <td><?php echo $immuns['tolerance']; ?></td>
     <td><?php echo $immuns['medicine']; ?></td>
 </td>
-  </tr> 
+  </tr>
 <?php
 	}
 	echo '
@@ -172,7 +172,7 @@ if(is_object($immu)){
   </table>
 <?php
 }elseif($mode=='search'||$mode=='paginate'){
-	echo str_replace('~nr~','0',$LDSearchFound); 
+	echo str_replace('~nr~','0',$LDSearchFound);
 }
 ?>
 <p>

@@ -1,7 +1,7 @@
-<?php 
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
+<?php
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 $lang_tables[]='actions.php';
 $lang_tables[]='prompt.php';
 define('LANG_FILE','radio.php');
@@ -49,7 +49,7 @@ window.opener.location.reload();
    <tr>
      <td>
 	&nbsp;<p>
-	 <font face=arial size=3>	
+	 <font face=arial size=3>
 	 <input type="radio" name="viewer" value="nagoyatech" <?php if($_SESSION['sess_dicom_viewer']=='nagoyatech') echo 'checked' ?>> <?php echo $LDNagoyaTechInst  ?>
 	 	 <font size=1> ><a href="http://mars.elcom.nitech.ac.jp/dicom/index-e.html" target="_blank"><?php echo $LDPlsReadThis ?></a><</font> <br>
 		 <br>

@@ -1,12 +1,12 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 /**
 * CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
 * GNU General Public License
 * Copyright 2002,2003,2004,2005 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -25,7 +25,7 @@ $breakfile='apotheke.php'.URL_APPEND;
 $lognote="$LDYellowList $title ok";
 
 // reset all 2nd level lock cookies
-require($root_path.'include/core/inc_2level_reset.php'); 
+require($root_path.'include/core/inc_2level_reset.php');
 setcookie('ck_2level_sid'.$sid,'',0,'/');
 
 require($root_path.'include/core/inc_passcheck_internchk.php');
@@ -36,8 +36,8 @@ $minimal=1;
 require($root_path.'include/core/inc_passcheck_head.php');
 ?>
 
-<BODY  <?php if (!$nofocus) echo 'onLoad="document.passwindow.userid.focus()"'; echo  ' bgcolor='.$cfg['body_bgcolor']; 
- if (!$cfg['dhtml']){ echo ' link='.$cfg['body_txtcolor'].' alink='.$cfg['body_alink'].' vlink='.$cfg['body_txtcolor']; } 
+<BODY  <?php if (!$nofocus) echo 'onLoad="document.passwindow.userid.focus()"'; echo  ' bgcolor='.$cfg['body_bgcolor'];
+ if (!$cfg['dhtml']){ echo ' link='.$cfg['body_txtcolor'].' alink='.$cfg['body_alink'].' vlink='.$cfg['body_txtcolor']; }
 ?>>
 
 <p>
@@ -46,9 +46,9 @@ require($root_path.'include/core/inc_passcheck_head.php');
 <P>
 <FONT  COLOR="<?php echo $cfg[top_txtcolor] ?>"  SIZE=5  FACE="verdana"> <b><?php echo $LDYellowList ?></b></font>
 <p>
-<table width=100% border=0 cellpadding="0" cellspacing="0"> 
+<table width=100% border=0 cellpadding="0" cellspacing="0">
 
-<?php require($root_path.'include/core/inc_passcheck_mask.php') ?>  
+<?php require($root_path.'include/core/inc_passcheck_mask.php') ?>
 
 <p>
 <!-- <img <?php echo createComIcon($root_path,'varrow.gif','0') ?>> <a href="<?php echo $root_path; ?>main/ucons.php<?php echo URL_APPEND; ?>"><?php echo "$LDIntro2 $LDPharmacy $title " ?></a><br>

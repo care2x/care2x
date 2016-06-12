@@ -1,7 +1,7 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 
 define('LANG_FILE','specials.php');
 define('NO_2LEVEL_CHK',1);
@@ -31,26 +31,26 @@ function show()
 	document.images.pic1.src=cam1.src;
 	document.images.pic2.src=cam2.src;
 	document.images.pic3.src=cam3.src;
-	document.images.pic4.src=cam4.src;	
+	document.images.pic4.src=cam4.src;
 	//setTimeout("show()",5000);
 }
 
 function changeCamera(obj, c)
 {
    eval("cam" + c + ".src='<?php echo $cam_http_1 ?>" + obj.value + "';" );
-   
+
    show();
 }
 
 </script>
 </HEAD>
 <BODY bgcolor="#000000" marginwidth="0" marginheight="0" topmargin="0" leftmargin="0" onLoad="setInterval('show()',3000)">
-	
+
 <form>
 <table border=0>
   <tr>
     <td><iframe src ="http://prova:prova@192.168.11.158/view/index.shtml" width="800px" height="800px">
- 
+
 
 </td>
     <td><img src="<?php echo $cam_http_2 ?>cam_002.jpg" border=0 width=320 height=240 name="pic2"><br>

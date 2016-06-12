@@ -1,10 +1,9 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 /**
-* eComBill 1.0.04 for Care2002 beta 1.0.04 
+* eComBill 1.0.04 for Care2002 beta 1.0.04
 * (2003-04-30)
-* adapted from eComBill beta 0.2 
-* developed by ecomscience.com http://www.ecomscience.com 
+* adapted from eComBill beta 0.2
+* developed by ecomscience.com http://www.ecomscience.com
 * GPL License
 *
 *  Daniel Hinostroza: originally was: $TP_item_name=$NameLT; changed to: $TP_item_name=$NameHS;
@@ -14,6 +13,7 @@ error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 */
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 
 //define('NO_CHAIN',1);
 define('LANG_FILE','billing.php');
@@ -65,23 +65,23 @@ function check() {
 	LP=document.hos.LabPrice.value;
 	DC=document.hos.Discount.value;
 	if(LTN=="") {
-		alert("<?php echo $LDalertNameHospitalService; ?>"); 
+		alert("<?php echo $LDalertNameHospitalService; ?>");
 		return false;
 	} else if(TC=="") {
 		alert("<?php echo $LDalertEnterServiceCodeNo; ?>");
-		return false; 
+		return false;
 	} else if(LP=="") {
 		alert("<?php echo $LDalertEnterPriceperUnit; ?>");
-		return false; 
+		return false;
 	} else if(DC=="") {
 		alert("<?php echo $LDalertEnterDiscountallowed; ?>");
-		return false; 
+		return false;
 	} else if(isNaN(LP)) {
 		alert("<?php echo $LDalertEnterNumericValueforPrice; ?>");
-		return false; 
+		return false;
 	} else if(isNaN(DC)) {
 		alert("<?php echo $LDalertEnterNumericValueforDiscount; ?>");
-		return false; 
+		return false;
 	} else {
 		document.hos.action="post_service_entry.php?type=HS";
 		document.hos.submit();
@@ -90,7 +90,7 @@ function check() {
 
 //-->
 </Script>
-<?php 
+<?php
 $sTemp = ob_get_contents();
 ob_end_clean();
 

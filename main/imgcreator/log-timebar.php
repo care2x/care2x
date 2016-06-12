@@ -1,10 +1,10 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 /*
 CARE2X Integrated Information System for Hospitals and Health Care Organizations and Services
-Copyright (C) 2002,2003,2004,2005  Elpidio Latorilla & Intellin.org	
+Copyright (C) 2002,2003,2004,2005  Elpidio Latorilla & Intellin.org
 
 GNU GPL. For details read file "copy_notice.txt".
 */
@@ -29,18 +29,18 @@ $red =ImageColorAllocate ($im, 255, 0, 0);
 
 /* Establish db connection */
 if(!isset($db)||!$db) include($root_path.'include/core/inc_db_makelink.php');
-if($dblink_ok){	
-	$sql="SELECT entry_out,cut_close,wait_time,bandage_time,repos_time FROM care_encounter_op 
-			WHERE encounter_nr='$enc_nr' 
-			AND dept_nr='$dept_nr' 
-			AND op_room='$saal' 
+if($dblink_ok){
+	$sql="SELECT entry_out,cut_close,wait_time,bandage_time,repos_time FROM care_encounter_op
+			WHERE encounter_nr='$enc_nr'
+			AND dept_nr='$dept_nr'
+			AND op_room='$saal'
 			AND op_nr='$op_nr'";
 	if($ergebnis=$db->Execute($sql)){
 		$rows=$ergebnis->RecordCount();
 		if($rows==1){
 			$result=$ergebnis->FetchRow();
 		}
-	}else{exit;} 
+	}else{exit;}
 }else{exit;}
 
 $x=$tabcols/2;
@@ -52,7 +52,7 @@ for($i=$tabrows;$i<$tabhi;$i+=$tabrows)
 {
 	ImageLine($im,0,$i,$tablen-1,$i,$text_color);
 
-	for ($n=$mincols;$n<=$tablen;$n+=$mincols) 	
+	for ($n=$mincols;$n<=$tablen;$n+=$mincols)
 	{
 		if($lock<12)
 		{
@@ -64,7 +64,7 @@ for($i=$tabrows;$i<$tabhi;$i+=$tabrows)
 	$h+=$tabrows;
 }
 
-for ($h=$tabrows*2;$h<=$tabhi;$h+=$tabrows)	
+for ($h=$tabrows*2;$h<=$tabhi;$h+=$tabrows)
 ImageLine($im,($tabcols/4),$h-($tabrows*0.50),($tabcols/4),$h-1,$text_color);
 
 for($i=$tabcols,$j=1;$i<=$tablen;$i+=$tabcols,$j++)
@@ -77,7 +77,7 @@ for($i=$tabcols,$j=1;$i<=$tablen;$i+=$tabcols,$j++)
  // * uncomment the following line to use ttf font and comment the default line
  // *******************************************************************
 
- // ImageTTFText ($im, 12, 0,$i-7, 10, $red, "arial.ttf",$j);  
+ // ImageTTFText ($im, 12, 0,$i-7, 10, $red, "arial.ttf",$j);
 
  // ******************************************************************
  // * the following code is the default - uses system fonts
@@ -110,7 +110,7 @@ for($i=0,$j=1;$i<sizeof($element);$i++,$j++)
       parse_str($datarray[$n],$dat);
 
       if((!$dat['s']&&!$dat['e'])) continue;
-	  
+
       if($dat['s']!=NULL)
       {
   	        $dat['s']=(float) $dat['s'];
@@ -119,7 +119,7 @@ for($i=0,$j=1;$i<sizeof($element);$i++,$j++)
   	        $buff= (int) (($dat['s']-$buf)*100);
   	        $buff=$buf+($buff/60);
   	        //print $buff."<p> dats";
-			
+
 			// *******************************************************************
             // * the following code is for ttf fonts use only for php machines with ttf support
             // * uncomment the following line to use ttf font and comment the default line
@@ -133,17 +133,17 @@ for($i=0,$j=1;$i<sizeof($element);$i++,$j++)
             // ******************************************************************
   	        ImageString($im,1,($buff*$tabcols),($tabrows*$j+1),strtr($dat['s'],'.',':'),$black);
       }
-	  
+
   	  if($dat['e']!=NULL)
       {
   	        $dat['e']=(float) $dat['e'];
-			
+
 			// *******************************************************************
 			// * uncomment the following line if you want to display midnight as 24.00
 			// *******************************************************************
-			
+
   	        //if($dat['e']==0) $dat['e']=24.00;
-			
+
   	        $buf2=(int) trim($dat['e']);
   	        $buff2= (int) (($dat['e']-$buf2)*100);
   	        $buff2=$buf2+($buff2/60);
@@ -162,7 +162,7 @@ for($i=0,$j=1;$i<sizeof($element);$i++,$j++)
 
   	        ImageString($im,1,($buff2*$tabcols),($tabrows*$j+1),strtr($dat['e'],'.',':'),$black);
       }
-	  
+
  	  if(($buff<$buff2)||($dat['e']==NULL))
  	  {
   	        if(($dat['s']!=NULL)&&($dat['e']!=NULL)) ImageFilledRectangle($im,($buff*$tabcols),($tabrows*(0.65+$j)),($buff2*$tabcols),($tabrows*(0.85+$j)),$red);

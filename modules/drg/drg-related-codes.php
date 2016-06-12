@@ -1,12 +1,12 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 /**
 * CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
 * GNU General Public License
 * Copyright 2002,2003,2004,2005 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -15,7 +15,7 @@ define('LANG_FILE','drg.php');
 require_once('drg_inc_local_user.php');
 
 require_once($root_path.'include/core/inc_front_chain_lang.php');
-if (!isset($pn)||!$pn) {header("Location:".$root_path."language/".$lang."/lang_".$lang."_invalid-access-warning.php?mode=close"); exit;}; 
+if (!isset($pn)||!$pn) {header("Location:".$root_path."language/".$lang."/lang_".$lang."_invalid-access-warning.php?mode=close"); exit;};
 //$db->debug=true;
 if($saveok) { ?>
 
@@ -25,7 +25,7 @@ if($saveok) { ?>
 </script>
 
 <?php
-	
+
 	exit;
 }
 
@@ -46,15 +46,15 @@ if($mode=='save')
 	$itemselector='icd';
 	$hidselector='icd_px';
 	$lastindex=$last_icd_index;
-	
-	$noheader=true; # Disable the redirect 
+
+	$noheader=true; # Disable the redirect
 	include('includes/inc_drg_entry_save.php');
 	# Save the related procedure codes
 	# Clean first not needed data
 	unset($qlist);
 	if(isset($data)) unset($data);
 	$linebuf='';
-	
+
 	$noheader=false; # Enable the redirect
 	$target='ops301';
 	$element='ops_code';
@@ -91,7 +91,7 @@ if($enc=&$DRG_obj->getBasic4Data()){
  <TITLE><?php echo "$LDPossibleCodes" ?></TITLE>
 <script language="javascript" src="../js/showhide-div.js"></script>
 <script language="javascript">
-<!-- 
+<!--
 function subsearch(k)
 {
 	//window.location.href='drg-icd10-search.php?sid=<?php echo "sid=$sid&lang=$lang&pn=$pn&opnr=$opnr&ln=$ln&fn=$fn&bd=$bd&dept_nr=$dept_nr&oprm=$oprm&display=$display" ?>&keyword='+k;
@@ -123,11 +123,11 @@ function getRelatedCodes(mc)
 }
 // -->
 </script>
- 
-  <?php 
+
+  <?php
 require($root_path.'include/core/inc_css_a_hilitebu.php');
 ?>
- 
+
 </HEAD>
 
 <BODY marginheight=2 marginwidth=2 leftmargin=2 topmargin=2  onLoad="if(window.focus) window.focus();" bgcolor=<?php echo $cfg['body_bgcolor']; ?>
@@ -135,7 +135,7 @@ require($root_path.'include/core/inc_css_a_hilitebu.php');
 <a href="javascript:window.close()"><img <?php echo createLDImgSrc($root_path,'close2.gif','0') ?> align="right"></a>
 <FONT    SIZE=2  FACE="verdana,Arial" >
 
-<?php 
+<?php
 //echo "$ln, $fn ".formatDate2Local($bd,$date_format)." - $pn";
 echo $encounter['name_last'].", ".$encounter['name_first']." ".formatDate2Local($encounter['date_birth'],$date_format)." - $pn";
 if($opnr) echo" - OP# $opnr - $dept_nr OP $oprm";
@@ -151,8 +151,8 @@ if($opnr) echo" - OP# $opnr - $dept_nr OP $oprm";
 
 <form name="quicklist" onSubmit="return checkselect(this)" method="post">
 
-<table border=0 cellpadding=0 cellspacing=0 width='100%'> 
-<?php 
+<table border=0 cellpadding=0 cellspacing=0 width='100%'>
+<?php
 
 function drawdata(&$data)
 {
@@ -161,27 +161,27 @@ function drawdata(&$data)
 
 	echo '
 	<tr bgcolor=';
-						
+
 	if($toggle) { echo '#efefef>';} else {echo '#ffffff>'; };
 	$toggle=!$toggle;
 	echo '
 	<td>';
-	
+
 	echo '<input type="checkbox" name="'.$selector.$idx.'" value="'.$data['code'].'">
 	<input type="hidden" name="'.$hidselector.$idx.'" value="'.$data['code_parent'].'">
 	';
-	
+
 	$idx++;
-						
+
 	echo '
 	</td>
 	<td><font face=arial size=2><nobr>';
 	echo $data['code'].'&nbsp;';
-			
+
 	echo '&nbsp;</nobr></td><td>&nbsp;';
 	echo '<font face=arial size=2>';
-	echo $data['parent_desc'].':<b> '.$data['description'].'</b>&nbsp;';		
-						
+	echo $data['parent_desc'].':<b> '.$data['description'].'</b>&nbsp;';
+
 	echo '</td>';
 	echo '
 	</tr>';
@@ -203,13 +203,13 @@ if(is_object($diag_obj)){
 
 <td colspan=7><font face=arial size=2 color=#ffffff>&nbsp;&nbsp;&nbsp;<b><?php echo $LDDescription ?></b>
 </td>
-		
+
 </tr>
 <?php
 $selector='icd';
 $hidselector='icd_px';
 $diag_exists=true;
-		
+
 	while($diagnosis=$diag_obj->FetchRow()){
 		drawdata($diagnosis);
 	}
@@ -218,7 +218,7 @@ $diag_exists=true;
 }
 ?>
 <input type="hidden" name="last_icd_index" value="<?php echo $idx ?>">
-<?php 
+<?php
 
 $idx=0;
 
@@ -236,7 +236,7 @@ if(is_object($proc_obj)){
 
 <td colspan=7><font face=arial size=2 color=#ffffff>&nbsp;&nbsp;&nbsp;<b><?php echo $LDDescription ?></b>
 </td>
-		
+
 </tr>
 <?php
 
@@ -244,7 +244,7 @@ $selector='ops';
 $hidselector='ops_px';
 
 /* Draw the procedure codes */
-	
+
 	while($procedure=$proc_obj->FetchRow()){
 		drawdata($procedure);
 	}
@@ -278,7 +278,7 @@ $hidselector='ops_px';
 </form>
 <?php else : ?>
 <p>
-<img <?php echo createMascot($root_path,'mascot1_r.gif','0','bottom') ?> align="bottom"><?php echo $LDNoQuickList ?> 
+<img <?php echo createMascot($root_path,'mascot1_r.gif','0','bottom') ?> align="bottom"><?php echo $LDNoQuickList ?>
 <p>
 <a href="javascript:window.close()"><img <?php echo createLDImgSrc($root_path,'close2.gif','0') ?>></a>
 <?php endif ?>

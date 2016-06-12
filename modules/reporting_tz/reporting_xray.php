@@ -1,7 +1,7 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 //require('con_db.php');
 //connect_db();
 #Load and create paginator object
@@ -70,4 +70,4 @@ if ($db_ptr1) {
 
 
 require_once('gui/gui_reporting_xray.php');
-?> 
+?>

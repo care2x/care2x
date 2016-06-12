@@ -1,7 +1,7 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 define('LANG_FILE','or.php');
 $local_user='ck_op_pflegelogbuch_user';
 require_once($root_path.'include/core/inc_front_chain_lang.php');
@@ -10,9 +10,9 @@ $globdata="sid=$sid&lang=$lang&op_nr=$op_nr&dept_nr=$dept_nr&saal=$saal&enc_nr=$
 
 if(($mode=='force_add') && $containername&&$pcs){
 	if(!isset($db)||!$db) include($root_path.'include/core/inc_db_makelink.php');
-	if($dblink_ok){	
+	if($dblink_ok){
 	  	$dbtable='care_encounter_op';
-		$sql="SELECT container_codedlist FROM $dbtable 
+		$sql="SELECT container_codedlist FROM $dbtable
 					WHERE dept_nr='$dept_nr'
 					AND op_room='$saal'
 					AND op_nr='$op_nr'
@@ -28,12 +28,12 @@ if(($mode=='force_add') && $containername&&$pcs){
 						//echo $sql."<br>";
 						//echo $rows;
 			}
-					//else echo "<p>".$sql."<p>Multiple entries found pls notify the edv."; 
+					//else echo "<p>".$sql."<p>Multiple entries found pls notify the edv.";
 		}
-		else { echo "$LDDbNoRead<br>$sql"; } 
+		else { echo "$LDDbNoRead<br>$sql"; }
 
 		$newmat="b=?$bestellnum&a=?$containernum&n=$containername&i=$industrynum&c=$pcs\r\n";
-		
+
 						if(($matrows==1)&&($matlist[0]!=""))
 						{
 							$matlist[0]=$matlist[0]."~".$newmat;
@@ -44,9 +44,9 @@ if(($mode=='force_add') && $containername&&$pcs){
 							$matlist[0]=$newmat;
 							$item_idx=0;
 						}
-						
+
 						$matlist[0]=strtr($matlist[0]," ","+");
-						
+
 						$dbtable='care_encounter_op';
 						$sql="UPDATE $dbtable SET container_codedlist='$matlist[0]'
 								WHERE dept_nr='$dept_nr'
@@ -59,12 +59,12 @@ if(($mode=='force_add') && $containername&&$pcs){
 						{
   							header("location:op-logbuch-container-list.php?$globdata&item_idx=$item_idx&chg=1");
 							exit;
-						}	else { echo "$LDDbNoSave<br>$sql"; } 
-						
+						}	else { echo "$LDDbNoSave<br>$sql"; }
+
 						//echo $sql."<br>";
 						//echo $rows;
 	}
-  	else { echo "$LDDbNoLink<br>"; } 
+  	else { echo "$LDDbNoLink<br>"; }
 }
 
 ?>
@@ -78,7 +78,7 @@ if(($mode=='force_add') && $containername&&$pcs){
 </style>
 
 <script language="javascript">
-<!-- 
+<!--
 
 function popinfo(b)
 {

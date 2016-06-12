@@ -1,7 +1,7 @@
 <?php
-error_reporting(E_COMPILE_ERROR | E_ERROR | E_CORE_ERROR);
 require('./roots.php');
 require($root_path . 'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 //require($root_path . 'include/core/inc_front_chain_lang.php');
 //require($root_path . 'language/en/lang_en_reporting.php');
 require($root_path . 'language/en/lang_en_date_time.php');
@@ -25,9 +25,9 @@ if ($printout) {
    $date_from_timestamp = strtotime(str_replace('/', '-', $_GET['start'].' '.'00:00:00'));
    $date_to_timestamp   = strtotime(str_replace('/', '-', $_GET['end'].' '.'23:59:59'));
    $insurance_type=$_GET['insurance_type'];
-   
-   
-  
+
+
+
 
 }
 

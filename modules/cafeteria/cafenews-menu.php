@@ -1,12 +1,12 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require_once('./roots.php');
 require_once($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 /**
 * CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
 * GNU General Public License
 * Copyright 2002,2003,2004,2005 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -21,13 +21,13 @@ if(!$week) $week=1;
  $day=date("j");
  $month=date("n");
  $year=date("Y");
- 
-if(!$mday) 
+
+if(!$mday)
 {
 	$mday=$day;
 	$mmonth=$month;
 	$myear=$year;
-} 
+}
 //echo $daytag.$day.$month.$year."<p>";
 
  if(($daytag!=1)||($week!=1))
@@ -135,20 +135,20 @@ function editcafe()
     <td colspan=7 bgcolor="#ccffff">
 	<FONT  SIZE=3 COLOR="#0000cc"><?php echo $LDNextWeek ?>
 </font>
-</td>  
+</td>
      <td colspan=7 bgcolor="#ccffff">
 	<FONT  SIZE=3 COLOR="#0000cc"><?php echo $LD3rdWeek ?>
 </font>
-</td> 
+</td>
 </tr>
 <tr bgcolor="#ccffff">
-  
+
 <?php for ($i=0,$acttag=$day,$dyidx=$daytag-1;$i<21;$i++,$acttag++,$dyidx++)
 	{
 	$spot=0; if($dyidx==7) $dyidx=0;
 	aligndate($acttag,$month,$year);
 	if ($mday.$mmonth.$myear==$acttag.$month.$year) 	$spot=1;
-	echo ' 
+	echo '
     <td class="v18_b" ';
 	if ($spot)  echo ' bgcolor="yellow">';
 		else echo ' bgcolor="#ccffff">';
@@ -175,11 +175,11 @@ function editcafe()
 <table border=0 cellspacing=0 cellpadding=10>
   <tr bgcolor="#ccffff" >
     <td colspan=3><b><?php echo $LDMenu ?></b><p>
-<?php echo nl2br($content[menu]) ?>	
+<?php echo nl2br($content[menu]) ?>
  </td>
   </tr>
 
- <tr>    
+ <tr>
  <td colspan=3><p><br>
 <a href="<?php echo $returnfile ?>"><img <?php echo createComIcon($root_path,'l-arrowgrnlrg.gif','0') ?>> <?php echo $LDBack2CafeNews ?></a></td>
   </tr>

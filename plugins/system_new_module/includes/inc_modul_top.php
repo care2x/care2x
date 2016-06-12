@@ -1,8 +1,8 @@
 <?php
 //error_reporting unterdrückt Warnmeldungen für fehlende Variablen,....
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 /**
 * CARE 2X Integrated Hospital Information System version deployment 1.1 (mysql) 2004-01-11
 * GNU General Public License
@@ -47,8 +47,8 @@ $_SESSION['sess_user_origin']='it';
 $_SESSION['sess_path_referer']=$top_dir.basename(__FILE__);
 ?>
 
-<!-- dieses muss vor dem head integriert werden, stellt bei arabisch das Menü nach rechts, 
+<!-- dieses muss vor dem head integriert werden, stellt bei arabisch das Menü nach rechts,
 text wird von re nach links gesetzt -->
-<?php 
-html_rtl($lang); 
+<?php
+html_rtl($lang);
 ?>

@@ -1,7 +1,7 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 
 $lang_tables[]='date_time.php';
 $lang_tables[]='reporting.php';
@@ -37,7 +37,7 @@ if (empty($_GET['printout'])) {
 			if ($debug) echo "Getting an new time range...<br>";
 			$start_timeframe = mktime (0,0,0,$_POST['month'], 1, $_POST['year']);
 			$end_timeframe = mktime (0,0,0,$_POST['month']+1, 0, $_POST['year']);
-			$admission =  $_POST['admission_id'];			
+			$admission =  $_POST['admission_id'];
 			$pricelist = $_POST['pricelist_no'];
 
 	} // end of if (empty($_POST['month']) && empty($_POST['year']))

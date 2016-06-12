@@ -10,10 +10,10 @@
  * See the file "copy_notice.txt" for the licence notice
 */
 
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 require_once($root_path.'include/care_api_classes/class_core.php');
 
 $coreobj = new core;

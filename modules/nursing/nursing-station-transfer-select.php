@@ -1,12 +1,12 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 /**
 * CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
 * GNU General Public License
 * Copyright 2002,2003,2004,2005 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -16,7 +16,7 @@ $local_user='ck_pflege_user';
 require_once($root_path.'include/core/inc_front_chain_lang.php');
 
 require_once($root_path.'include/care_api_classes/class_ward.php');
-## Load all wards info 
+## Load all wards info
 $ward_obj=new Ward;
 $items='nr,ward_id,name';
 $ward_info=&$ward_obj->getAllWardsItemsObject($items);
@@ -60,7 +60,7 @@ $ward_count=$ward_obj->LastRecordCount();
 ?>
 
 <script language="javascript">
-<!-- 
+<!--
 var urlholder;
 
 function TransferWard(wd){
@@ -97,7 +97,7 @@ ob_start();
 </table>
 
  <table border=0 cellpadding=4 cellspacing=1 width=100%>
-	<form method="post" name="transbed" action="nursing-station-assignwaiting.php"> 
+	<form method="post" name="transbed" action="nursing-station-assignwaiting.php">
 	<tr>
     <td colspan=2 bgcolor="#f6f6f6"><?php 	echo $LDTransferToBed.' ('.$station.')'; ?></td>
     <td bgcolor="#f6f6f6">
@@ -112,7 +112,7 @@ ob_start();
 
 	</td>
   </tr>
-</form>  
+</form>
 <tr>
     <td colspan=3>&nbsp;</td>
   </tr>

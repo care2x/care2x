@@ -7,9 +7,9 @@
  */
 
 
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 
 $lang_tables[]='date_time.php';
 $lang_tables[]='reporting.php';
@@ -94,11 +94,11 @@ $db->Execute($sql);
 
 //$sql="Select * from care_test_findings_chemlab where encounter_nr=2006500443";
 
-$sql="Select nr,paramater_name as serial_value, parameter_value as add_value ,UNIX_TIMESTAMP(care_test_findings_chemlabor_sub.create_time) as date 
+$sql="Select nr,paramater_name as serial_value, parameter_value as add_value ,UNIX_TIMESTAMP(care_test_findings_chemlabor_sub.create_time) as date
 from care_test_findings_chemlabor_sub INNER JOIN care_tz_laboratory_param
-ON care_test_findings_chemlabor_sub.paramater_name = care_tz_laboratory_param.id 
-WHERE UNIX_TIMESTAMP(care_test_findings_chemlabor_sub.create_time) >=$start_timeframe 
-AND UNIX_TIMESTAMP(care_test_findings_chemlabor_sub.create_time) <= '$end_timeframe' 
+ON care_test_findings_chemlabor_sub.paramater_name = care_tz_laboratory_param.id
+WHERE UNIX_TIMESTAMP(care_test_findings_chemlabor_sub.create_time) >=$start_timeframe
+AND UNIX_TIMESTAMP(care_test_findings_chemlabor_sub.create_time) <= '$end_timeframe'
 ORDER BY care_test_findings_chemlabor_sub.create_time DESC";
 
 //echo $sql;
@@ -114,7 +114,7 @@ while (list($u,$v)=each($row)){
 	$nr = $v['nr'];
 	$a = $v['serial_value'];
 	$b = $v['add_value'];
-	
+
 			if (strpos($a,'+')===0)
 			$sql="INSERT INTO tmp_laboratory_tests (TestID,is_positive, date) VALUES (".$nr.",1,".$v['date'].")";
 		else
@@ -122,9 +122,9 @@ while (list($u,$v)=each($row)){
 		$db->Execute($sql);
 
 //echo $sql;
-	
+
 		if ($debug) echo date("F j, Y, g:i a", $v['date'])."<br>";
-	
+
 		//echo (strpos($av,'check'))."<br>";
 		if (strpos($a,'check')===0)
 			$sql="update tmp_laboratory_tests set is_positive=1 where TestID=$nr AND date='$v[date]'";
@@ -145,12 +145,12 @@ $number_of_columns = $db_row[0];
 //echo "Amount of available tests: ".$db_row[0];
 
 function Display_TestGroupSelectItems($group_id) {
-	global $db; 
+	global $db;
 	$sql ="SELECT DISTINCT GroupID, GroupName, FullTestName FROM tmp_laboratory WHERE  GroupID=-1  ORDER BY GroupID";
-	$db_obj=$db->Execute($sql); 
-	
+	$db_obj=$db->Execute($sql);
+
 		echo "<option value=''></option>";
-	$row = $db_obj->GetArray();	
+	$row = $db_obj->GetArray();
 	while (list($u,$v)=each($row)) {
 
 		if ($group_id == $v['GroupName'])
@@ -163,10 +163,10 @@ function Display_TestGroupSelectItems($group_id) {
 
 
 function DisplayLaboratoryTableHead($group_id) {
-	global $db;   
+	global $db;
 	global $PRINTOUT;
 	// Table definition will be organized by the variable $table_head from here:
-	$table_head = "<tr>\n";   
+	$table_head = "<tr>\n";
 	if ($PRINTOUT)
 		$table_head .= "<td>&nbsp;</td>\n";
 	else
@@ -174,7 +174,7 @@ function DisplayLaboratoryTableHead($group_id) {
 
 	// Line of all groups
 	$sql_groups = "SELECT count(GroupID) as colspan, GroupID,FullTestName FROM tmp_laboratory WHERE GroupID='".$group_id."' GROUP BY GroupID";
-	$db_prt = $db->Execute($sql_groups); 
+	$db_prt = $db->Execute($sql_groups);
 	$db_array = $db_prt->GetArray();
 
 	while (list($u,$v)=each($db_array)) {
@@ -185,15 +185,15 @@ function DisplayLaboratoryTableHead($group_id) {
 		$table_head .= "<td>day</td>\n";
 	else
 		$table_head .= "<td bgcolor=\"#CC9933\">Date</td>\n";
-	$sql_tests = "SELECT TestID, TestName, FullTestName FROM tmp_laboratory WHERE GroupID='".$group_id."'"; 
-	$db_prt=$db->Execute($sql_tests); 
+	$sql_tests = "SELECT TestID, TestName, FullTestName FROM tmp_laboratory WHERE GroupID='".$group_id."'";
+	$db_prt=$db->Execute($sql_tests);
 	$db_row=$db_prt->GetArray();
 	while (list($u,$v)=each($db_row)) {
 		if (empty($v['FullTestName']))
 			$testname=$v['TestName'];
 		else
 			$testname=$v['FullTestName'];
-		
+
 		if ($PRINTOUT)
 			$table_head .= "<td id=\"".$v['TestID']."\">".$testname."</td>\n" ;
 		else
@@ -307,7 +307,7 @@ function DisplayLaboratoryTestSummary($group_id, $start_time_frame, $end_time_fr
 		else
 			$table .= "<td bgcolor=\"#ffffaa\">".date("j/m/Y",_get_requested_day($start_time_frame, $day-1))."</td>\n";
 
-		$sql = "SELECT TestID FROM tmp_laboratory WHERE GroupID='".$group_id."'";  
+		$sql = "SELECT TestID FROM tmp_laboratory WHERE GroupID='".$group_id."'";
 
 		$db_ptr=$db->Execute($sql);
 		$arr_ret = $db_ptr -> GetArray();
@@ -346,7 +346,7 @@ function DisplayResultRow($group_id, $start_time_frame, $end_time_frame) {
 
 	$table.="<tr>\n";
 	$table .= "<td bgcolor=\"#CC9933\" align = \"center\"><strong>&sum;</strong></td>\n";
-	$sql = "SELECT TestID FROM tmp_laboratory WHERE GroupID='".$group_id."'";  
+	$sql = "SELECT TestID FROM tmp_laboratory WHERE GroupID='".$group_id."'";
 	$db_ptr=$db->Execute($sql);
 	$arr_ret = $db_ptr -> GetArray();
 	while (list($u,$v)=each($arr_ret)) {

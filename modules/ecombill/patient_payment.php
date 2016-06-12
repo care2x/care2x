@@ -1,5 +1,4 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 /**
  * eComBill 1.0.04 for Care2002 beta 1.0.8
  * (2003-04-30)
@@ -8,6 +7,7 @@ error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
  */
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 
 //define('NO_CHAIN',1);
 define('LANG_FILE','billing.php');
@@ -99,19 +99,19 @@ function submitform() {
 		var counter;
 		str=document.payment.hidden.value;
 		querystr = "confirmpayment.php?";
-	
+
 		counter = 1;
-		for(i=0;i<document.payment.elements.length;i++) {	
+		for(i=0;i<document.payment.elements.length;i++) {
 			temp = str.indexOf("#");
 			if(document.payment.elements[i].type=="checkbox") {
 				tempstr = str.substring(0,temp);
-				str=str.substring(temp+1,str.length);					
+				str=str.substring(temp+1,str.length);
 				if(document.payment.elements[i].checked == true)
 					querystr=querystr+"mode"+counter+"="+tempstr+"&";
-				counter = counter + 1;					
-			}		
+				counter = counter + 1;
+			}
 		}
-		
+
 		if(querystr == "confirmpayment.php?") {
 			alert("<?php echo $LDalertPleaseSelectatleastOneModeofPayment; ?>");
 		} else {
@@ -122,7 +122,7 @@ function submitform() {
 }
 //-->
 </SCRIPT>
-<?php 
+<?php
 $sTemp = ob_get_contents();
 ob_end_clean();
 
@@ -183,7 +183,7 @@ $smarty->assign('pbSubmit','<a href="javascript:submitform();"><input type="imag
 $smarty->assign('pbCancel','<a href="'.$breakfile.'" ><img '.createLDImgSrc($root_path,'close2.gif','0','middle').' title="'.$LDCancel.'" align="middle"></a>');
 
 $smarty->assign('sHiddenInputs','<input type="hidden" name="patientno" value="'. $patientno .'">
-								<input type="hidden" name="hidden" value="C6#C7#C8#"> 
+								<input type="hidden" name="hidden" value="C6#C7#C8#">
 								<input type="hidden" name="receipt_no" value="'. $receipt_no .'">
 								<input type="hidden" name="lang" value="'. $lang .'">
 								<input type="hidden" name="sid" value="'. $sid .'">

@@ -1,7 +1,7 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 
 # Define to TRUE if you want to echo the actions
 # Note: might be useless in case of large number of persons.
@@ -39,10 +39,10 @@ $sql1="select date_reg, name_first,name_last,date_birth,blood_group,addr_str,add
 
 if($pool=$db->Execute($sql1)){
 	if($poolcount=$pool->RecordCount()){
-		
+
 		if($max<$inmax) $inmax=$max;
 		if($poolcount<$inmax) $inmax=$poolcount;
-		
+
 		# Loop to create the new values
 		for($x=0,$n=0;$x<$inmax;$x++,$n++){
 			# get a first random value
@@ -61,7 +61,7 @@ if($pool=$db->Execute($sql1)){
 			$pool->Move($rd2);
 			# Fetch this row
 			$person2=$pool->FetchRow();
-			
+
 			# Check if date registration is usable, default to today
 			if($person1['date_reg']=='0000-00-00 00:00:00'){
 				if($person2['date_reg']=='0000-00-00 00:00:00'){
@@ -72,7 +72,7 @@ if($pool=$db->Execute($sql1)){
 			}else{
 				$date_reg=$person1['date_reg'];
 			}
-			
+
 			# generate random blood group
 			$rd3=rand(1,4);
 			switch($rd3){
@@ -80,7 +80,7 @@ if($pool=$db->Execute($sql1)){
 				case 2: $blood_group='B';break;
 				case 3: $blood_group='O';break;
 				default : $blood_group='AB';
-			}		
+			}
 			# generate random civil status
 			$rd4=rand(1,5);
 			switch($rd4){
@@ -89,9 +89,9 @@ if($pool=$db->Execute($sql1)){
 				case 3: $civil_status='divorced';break;
 				case 1: $civil_status='widowed';break;
 				default : $civil_status='separated';
-			}		
+			}
 			# Create combined person
-			$sql2="insert into care_person 
+			$sql2="insert into care_person
 						(date_reg,
 						name_first,
 						name_last,
@@ -109,8 +109,8 @@ if($pool=$db->Execute($sql1)){
 						modify_id,
 						modify_time,
 						create_id,
-						create_time) 
-						values 
+						create_time)
+						values
 						('".$date_reg."',
 						'".$person2['name_first']."',
 						'".$person1['name_last']."',
@@ -129,16 +129,16 @@ if($pool=$db->Execute($sql1)){
 						'".date('YmdHis')."',
 						'generator',
 						'".date('YmdHis')."')";
-			
+
 			# for debugging
 			if(defined('ECHO_ACTION')&&ECHO_ACTION){
 				echo "<p>random 1: $rd1, random 2: $rd2<p>";
 				echo $person1['name_first'].' '.$person1['name_last'].' '.$person1['date_birth'].'<br>';
 				echo $person2['name_first'].' '.$person2['name_last'].' '.$person2['date_birth'].'<br>';
-			
+
 				//echo "<br>$sql2";
 			}
-			
+
 			# Insert the new person in the table
 			# Comment out the following line if you want to simulate the generation without saving into the table
 

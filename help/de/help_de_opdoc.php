@@ -1,9 +1,9 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
+error_reporting($ErrorLevel);
 ?>
 <font face="Verdana, Arial" size=3 color="#0000cc">
 <b>
-OP Dokumentation - 
+OP Dokumentation -
 <?php
 if($src=="create")
 {
@@ -63,13 +63,13 @@ if($src=="arch")
 <img <?php echo createComIcon('../','frage.gif','0') ?>> <font color="#990000"><b>
 Wie bearbeite bzw. aktualisiere ich das Dokument?</b>
 </font>
-<ul>       	
+<ul>
  	<b>Schritt 1: </b>Klickt den <input type="button" value="Aktualisieren bzw. ändern"> Knopf an um in den Bearbeitungsmodus zu gehen.<br>
 	</ul>
 <img <?php echo createComIcon('../','frage.gif','0') ?>> <font color="#990000"><b>
 Wie erstelle ich ein neues Dokument?</b>
 </font>
-<ul>       	
+<ul>
  	<b>Schritt 1: </b>Klickt den <input type="button" value="Neues OP Dokument starten"> Knopf an um ein neues Eingabeformular anzulegen.<br>
 	</ul>
 <b>Achtung!</b>
@@ -83,12 +83,12 @@ Wie erstelle ich ein neues Dokument?</b>
 <img <?php echo createComIcon('../','frage.gif','0') ?>> <font color="#990000"><b>
 Wie bearbeite bzw. aktualisiere ich das Dokument?</b>
 </font>
-<ul>       	
- 	<b>Schritt 1: </b>Wenn das Dokument im Bearbeitungsmodus ist können Sie die Daten ändern, ergänzen, löschen, oder neu eingeben.<br> 
- 	<b>Schritt 2: </b>Um das Dokument zu speichern, klickt den <img <?php echo createLDImgSrc('../','savedisc.gif','0') ?>> Knopf an .<br>  
+<ul>
+ 	<b>Schritt 1: </b>Wenn das Dokument im Bearbeitungsmodus ist können Sie die Daten ändern, ergänzen, löschen, oder neu eingeben.<br>
+ 	<b>Schritt 2: </b>Um das Dokument zu speichern, klickt den <img <?php echo createLDImgSrc('../','savedisc.gif','0') ?>> Knopf an .<br>
 	</ul>
-<img <?php echo createComIcon('../','warn.gif','0','absmiddle') ?>> <font color="#990000"><b> Achtung!</b></font> 
-<ul>       	
+<img <?php echo createComIcon('../','warn.gif','0','absmiddle') ?>> <font color="#990000"><b> Achtung!</b></font>
+<ul>
  Wenn Sie abbrechen möchten klickt den <img <?php echo createLDImgSrc('../','close2.gif','0') ?>> Knopf an.
 </ul>
 <?php endif;?>
@@ -96,17 +96,17 @@ Wie bearbeite bzw. aktualisiere ich das Dokument?</b>
 <img <?php echo createComIcon('../','frage.gif','0') ?>> <font color="#990000"><b>
 Wie erstelle ich ein neues Dokument?</b>
 </font>
-<ul>       	
- 	<b>Schritt 1: </b>Suche zuerst den Patient. Gibt in das Feld <nobr>"<span style="background-color:yellow" > Matchcode Name <input type="text" name="m" size=20 maxlength=20> </span>"</nobr> 
+<ul>
+ 	<b>Schritt 1: </b>Suche zuerst den Patient. Gibt in das Feld <nobr>"<span style="background-color:yellow" > Matchcode Name <input type="text" name="m" size=20 maxlength=20> </span>"</nobr>
 	entweder eine vollständige Information oder die erste Zeichen von dem Namen oder Vornamen vom Patient ein.<br>
- 	<b>Schritt 2: </b>Klickt den <img <?php echo createLDImgSrc('../','searchlamp.gif','0') ?>> Knopf an um die Suche nach dem Patient zu starten.<p> 
-<ul>       	
- 	<b>Achtung! </b>Wenn die Suche ein Ergebnis liefert werden die Grunddaten vom Patient sofort in die entsprechende Felder eingeblendet.<p> 
- 	<b>Achtung! </b>Wenn die Suche mehrere Ergebnisse liefert wird eine Liste gezeigt. Clickt den Namen vom Patient an um ihn auszuwählen.<p> 
+ 	<b>Schritt 2: </b>Klickt den <img <?php echo createLDImgSrc('../','searchlamp.gif','0') ?>> Knopf an um die Suche nach dem Patient zu starten.<p>
+<ul>
+ 	<b>Achtung! </b>Wenn die Suche ein Ergebnis liefert werden die Grunddaten vom Patient sofort in die entsprechende Felder eingeblendet.<p>
+ 	<b>Achtung! </b>Wenn die Suche mehrere Ergebnisse liefert wird eine Liste gezeigt. Clickt den Namen vom Patient an um ihn auszuwählen.<p>
 	</ul>
  	<b>Schritt 3: </b>Wenn die Grunddaten vom Patient gezeigt ist können Sie weitere op relevante Information in die entsprechende Eingabefelder
-	eingeben.<br> 
- 	<b>Schritt 4: </b>Um das Dokument zu speichern, klickt den <img <?php echo createLDImgSrc('../','savedisc.gif','0') ?>> Knopf an .<br> 
+	eingeben.<br>
+ 	<b>Schritt 4: </b>Um das Dokument zu speichern, klickt den <img <?php echo createLDImgSrc('../','savedisc.gif','0') ?>> Knopf an .<br>
 	</ul>
 	<?php endif;?>
 <?php endif;?>
@@ -120,38 +120,38 @@ Wie erstelle ich ein neues Dokument?</b>
 <img <?php echo createComIcon('../','frage.gif','0') ?>> <font color="#990000"><b>
 Wie finde ich ein Dokument von einem Patient?</b>
 </font>
-<ul>       	
- 	<b>Schritt 1: </b>Gibt in das Feld "<span style="background-color:yellow" > Suchbegriff: z.B. Name oder Vorname <input type="text" name="m" size=20 maxlength=20> </span>" 
+<ul>
+ 	<b>Schritt 1: </b>Gibt in das Feld "<span style="background-color:yellow" > Suchbegriff: z.B. Name oder Vorname <input type="text" name="m" size=20 maxlength=20> </span>"
 	entweder eine vollständige Information oder die erste Zeichen von dem Namen oder Vornamen vom Patient ein.<br>
- 	<b>Schritt 2: </b>Klickt den <img <?php echo createLDImgSrc('../','searchlamp.gif','0') ?>> Knopf an um die Suche nach dem Patient zu starten.<p> 
-<ul>       	
- 	<b>Achtung! </b>Wenn die Suche ein Ergebnis liefert werden die Grunddaten vom Patient sofort in die entsprechende Felder eingeblendet.<p> 
- 	<b>Achtung! </b>Wenn die Suche mehrere Ergebnisse liefert wird eine Liste gezeigt. Clickt den Namen vom Patient, oder das OP Datum, oder die OP Nummer an um ihn auszuwählen.<p> 
+ 	<b>Schritt 2: </b>Klickt den <img <?php echo createLDImgSrc('../','searchlamp.gif','0') ?>> Knopf an um die Suche nach dem Patient zu starten.<p>
+<ul>
+ 	<b>Achtung! </b>Wenn die Suche ein Ergebnis liefert werden die Grunddaten vom Patient sofort in die entsprechende Felder eingeblendet.<p>
+ 	<b>Achtung! </b>Wenn die Suche mehrere Ergebnisse liefert wird eine Liste gezeigt. Clickt den Namen vom Patient, oder das OP Datum, oder die OP Nummer an um ihn auszuwählen.<p>
 	</ul>
 </ul>
-<img <?php echo createComIcon('../','warn.gif','0','absmiddle') ?>> <font color="#990000"><b> Achtung!</b></font> 
-<ul>       	
+<img <?php echo createComIcon('../','warn.gif','0','absmiddle') ?>> <font color="#990000"><b> Achtung!</b></font>
+<ul>
  Wenn Sie abbrechen möchten klickt den <img <?php echo createLDImgSrc('../','close2.gif','0') ?>> Knopf an.
 </ul>
 	<?php endif;?>
 <?php if(($x1=="match")&&($x2>0)) : ?>
-	
+
 <img <?php echo createComIcon('../','frage.gif','0') ?>> <font color="#990000"><b>
 Wie wähle ich ein bestimmtes Dokument zum lesen aus?</b>
 </font>
-<ul>       	
- 	<b>Achtung! </b> Clickt den Namen vom Patient, oder das OP Datum, oder die OP Nummer an um ihn auszuwählen.<p> 
+<ul>
+ 	<b>Achtung! </b> Clickt den Namen vom Patient, oder das OP Datum, oder die OP Nummer an um ihn auszuwählen.<p>
 </ul>
 <img <?php echo createComIcon('../','frage.gif','0') ?>> <font color="#990000"><b>
 Wie suche ich weiter?</b>
 </font>
-<ul>       	
- 	<b>Schritt 1: </b>Gibt in das Feld "<span style="background-color:yellow" > Suchbegriff: z.B. Name oder Vorname <input type="text" name="m" size=20 maxlength=20> </span>" 
+<ul>
+ 	<b>Schritt 1: </b>Gibt in das Feld "<span style="background-color:yellow" > Suchbegriff: z.B. Name oder Vorname <input type="text" name="m" size=20 maxlength=20> </span>"
 	entweder eine vollständige Information oder die erste Zeichen von dem Namen oder Vornamen vom Patient ein.<br>
- 	<b>Schritt 2: </b>Klickt den <img <?php echo createLDImgSrc('../','searchlamp.gif','0') ?>> Knopf an um die Suche nach dem Patient zu starten.<p> 
+ 	<b>Schritt 2: </b>Klickt den <img <?php echo createLDImgSrc('../','searchlamp.gif','0') ?>> Knopf an um die Suche nach dem Patient zu starten.<p>
 </ul>
-<img <?php echo createComIcon('../','warn.gif','0','absmiddle') ?>> <font color="#990000"><b> Achtung!</b></font> 
-<ul>       	
+<img <?php echo createComIcon('../','warn.gif','0','absmiddle') ?>> <font color="#990000"><b> Achtung!</b></font>
+<ul>
  Wenn Sie abbrechen möchten klickt den <img <?php echo createLDImgSrc('../','close2.gif','0') ?>> Knopf an.
 </ul>
 	<?php endif;?>
@@ -160,19 +160,19 @@ Wie suche ich weiter?</b>
 <img <?php echo createComIcon('../','frage.gif','0') ?>> <font color="#990000"><b>
 Wie bearbeite bzw. aktualisiere ich das Dokument?</b>
 </font>
-<ul>       	
+<ul>
  	<b>Schritt 1: </b>Klickt den <input type="button" value="Aktualisieren bzw. ändern"> Knopf an um in den Bearbeitungsmodus zu gehen.<br>
 	</ul>
 <img <?php echo createComIcon('../','frage.gif','0') ?>> <font color="#990000"><b>
 Wie suche ich weiter?</b>
 </font>
-<ul>       	
- 	<b>Schritt 1: </b>Gibt in das Feld "<span style="background-color:yellow" > Suchbegriff: z.B. Name oder Vorname <input type="text" name="m" size=20 maxlength=20> </span>" 
+<ul>
+ 	<b>Schritt 1: </b>Gibt in das Feld "<span style="background-color:yellow" > Suchbegriff: z.B. Name oder Vorname <input type="text" name="m" size=20 maxlength=20> </span>"
 	entweder eine vollständige Information oder die erste Zeichen von dem Namen oder Vornamen vom Patient ein.<br>
- 	<b>Schritt 2: </b>Klickt den <img <?php echo createLDImgSrc('../','searchlamp.gif','0') ?>> Knopf an um die Suche nach dem Patient zu starten.<p> 
+ 	<b>Schritt 2: </b>Klickt den <img <?php echo createLDImgSrc('../','searchlamp.gif','0') ?>> Knopf an um die Suche nach dem Patient zu starten.<p>
 </ul>
-<img <?php echo createComIcon('../','warn.gif','0','absmiddle') ?>> <font color="#990000"><b> Achtung!</b></font> 
-<ul>       	
+<img <?php echo createComIcon('../','warn.gif','0','absmiddle') ?>> <font color="#990000"><b> Achtung!</b></font>
+<ul>
  Wenn Sie abbrechen möchten klickt den <img <?php echo createLDImgSrc('../','close2.gif','0') ?>> Knopf an.
 </ul>
 
@@ -181,7 +181,7 @@ Wie suche ich weiter?</b>
 
 <?php if($src=="arch") : ?>
 	<?php if(($x1=="dummy")||($x1=="?")||($x1=="")) : ?>
-<img <?php echo createComIcon('../','frage.gif','0') ?>> 
+<img <?php echo createComIcon('../','frage.gif','0') ?>>
 <font color="#990000"><b>Wie kann ich alle OP Dokumente von einem OP Datum auflisten lassen?</b></font>
 <ul> <b>Schritt 1: </b>Gibt das OP Datum in das Feld "<span style="background-color:yellow" > OP Datum: </span>" ein. <br>
 		<ul><font size=1 color="#000099">
@@ -205,25 +205,25 @@ Wie suche ich weiter?</b>
 		</ul><b>Schritt 2: </b>Lassen Sie die andere Eingabefelder leer.<br>
 		<b>Schritt 3: </b>Klickt den <img <?php echo createLDImgSrc('../','searchlamp.gif','0') ?>>  Knopf an um die Suche zu starten.<br>
 </ul>
-<img <?php echo createComIcon('../','frage.gif','0') ?>> 
+<img <?php echo createComIcon('../','frage.gif','0') ?>>
 <font color="#990000"><b>Wie kann ich alle OP Dokumente auflisten die von einem Operateur erstellt wurden?</b></font>
 <ul> <b>Schritt 1: </b>Gibt den Namen des Operateurs in das Feld "<span style="background-color:yellow" > Operateur: </span>" ein. <br>
 		<b>Schritt 2: </b>Lassen Sie die andere Eingabefelder leer.<br>
 		<b>Schritt 3: </b>Klickt den <img <?php echo createLDImgSrc('../','searchlamp.gif','0') ?>>  Knopf an um die Suche zu starten.<br>
 </ul>
-<img <?php echo createComIcon('../','frage.gif','0') ?>> 
+<img <?php echo createComIcon('../','frage.gif','0') ?>>
 <font color="#990000"><b>Wie kann ich alle OP Dokumente von ambulanten Patienten auflisten?</b></font>
 <ul> <b>Schritt 1: </b>Klickt den Radiobutton "<span style="background-color:yellow" >Ambulant <input type="radio" name="r" value="1"></span>" ein. <br>
 		<b>Schritt 2: </b>Lassen Sie die andere Eingabefelder leer.<br>
 		<b>Schritt 3: </b>Klickt den <img <?php echo createLDImgSrc('../','searchlamp.gif','0') ?>>  Knopf an um die Suche zu starten.<br>
 </ul>
-<img <?php echo createComIcon('../','frage.gif','0') ?>> 
+<img <?php echo createComIcon('../','frage.gif','0') ?>>
 <font color="#990000"><b>Wie kann ich alle OP Dokumente von stationären Patienten auflisten?</b></font>
 <ul> <b>Schritt 1: </b>Klickt den Radiobutton "<span style="background-color:yellow" >Stationär <input type="radio" name="r" value="1"></span>" ein. <br>
 		<b>Schritt 2: </b>Lassen Sie die andere Eingabefelder leer.<br>
 		<b>Schritt 3: </b>Klickt den <img <?php echo createLDImgSrc('../','searchlamp.gif','0') ?>>  Knopf an um die Suche zu starten.<br>
 </ul>
-<img <?php echo createComIcon('../','frage.gif','0') ?>> 
+<img <?php echo createComIcon('../','frage.gif','0') ?>>
 <font color="#990000"><b>Wie kann ich alle OP Dokumente von allgemein versicherten Patienten auflisten?</b></font>
 <ul> <b>Schritt 1: </b>Klickt den Radiobutton "<span style="background-color:yellow" >Kasse <input type="radio" name="r" value="1"></span>" ein. <br>
 		<b>Schritt 2: </b>Lassen Sie die andere Eingabefelder leer.<br>
@@ -254,7 +254,7 @@ Wie suche ich weiter?</b>
 		<b>Schritt 3: </b>Klickt den <img <?php echo createLDImgSrc('../','searchlamp.gif','0') ?>>  Knopf an um die Suche zu starten.<br>
 </ul>
 
-<img <?php echo createComIcon('../','frage.gif','0') ?>> 
+<img <?php echo createComIcon('../','frage.gif','0') ?>>
 <font color="#990000"><b>Wie kann ich alle OP Dokumente mit bestimmter Klassifikation auflisten?</b></font>
 <ul> <b>Schritt 1: </b>Gibt die Klassifikationsnummer in das entsprechende Eingabefeld ein. <br>
 		<ul><font size=2 color="#000099" >
@@ -280,28 +280,28 @@ Wenn die Suche ein einziges Ergebnis findet werden die Daten sofort gezeigt.<br>
 		Um das Dokument zu öffnen klickt den nebenstehenden <img <?php echo createComIcon('../','r_arrowgrnsm.gif','0') ?>> Knopf, oder
 		den Namen, oder den Vornamen, oder das OP Datum, oder die OP Nummer an.</nobr>.
 </ul>
-<img <?php echo createComIcon('../','warn.gif','0','absmiddle') ?>> <font color="#990000"><b> Achtung!</b></font> 
-<ul>       	
+<img <?php echo createComIcon('../','warn.gif','0','absmiddle') ?>> <font color="#990000"><b> Achtung!</b></font>
+<ul>
  Wenn Sie abbrechen möchten klickt den <img <?php echo createLDImgSrc('../','close2.gif','0') ?>> Knopf an.
 </ul>
 	<?php endif;?>
 <?php if(($x1=="search")&&($x2>0)) : ?>
 
-	
+
 <img <?php echo createComIcon('../','frage.gif','0') ?>> <font color="#990000"><b>
 Wie wähle ich ein bestimmtes Dokument zum lesen aus?</b>
 </font>
-<ul>       	
- 	<b>Achtung! </b> Clickt den Namen vom Patient, oder das OP Datum, oder die OP Nummer an um ihn auszuwählen.<p> 
+<ul>
+ 	<b>Achtung! </b> Clickt den Namen vom Patient, oder das OP Datum, oder die OP Nummer an um ihn auszuwählen.<p>
 </ul>
 <img <?php echo createComIcon('../','frage.gif','0') ?>> <font color="#990000"><b>
 Wie suche ich weiter?</b>
 </font>
-<ul>       	
- 	<b>Schritt 1: </b>Klickt den <input type="button" value="Neue Suche im Archiv"> Knopf an um in die Eingabefelder des Archivs zurück zu gehen.<p> 
+<ul>
+ 	<b>Schritt 1: </b>Klickt den <input type="button" value="Neue Suche im Archiv"> Knopf an um in die Eingabefelder des Archivs zurück zu gehen.<p>
 </ul>
-<img <?php echo createComIcon('../','warn.gif','0','absmiddle') ?>> <font color="#990000"><b> Achtung!</b></font> 
-<ul>       	
+<img <?php echo createComIcon('../','warn.gif','0','absmiddle') ?>> <font color="#990000"><b> Achtung!</b></font>
+<ul>
  Wenn Sie abbrechen möchten klickt den <img <?php echo createLDImgSrc('../','close2.gif','0') ?>> Knopf an.
 </ul>
 	<?php endif;?>
@@ -310,17 +310,17 @@ Wie suche ich weiter?</b>
 <img <?php echo createComIcon('../','frage.gif','0') ?>> <font color="#990000"><b>
 Wie bearbeite bzw. aktualisiere ich das Dokument?</b>
 </font>
-<ul>       	
+<ul>
  	<b>Schritt 1: </b>Klickt den <input type="button" value="Aktualisieren bzw. ändern"> Knopf an um in den Bearbeitungsmodus zu gehen.<br>
 	</ul>
 <img <?php echo createComIcon('../','frage.gif','0') ?>> <font color="#990000"><b>
 Wie suche ich weiter?</b>
 </font>
-<ul>       	
- 	<b>Schritt 1: </b>Klickt den <input type="button" value="Neue Suche im Archiv"> Knopf an um in die Eingabefelder des Archivs zurück zu gehen.<p> 
+<ul>
+ 	<b>Schritt 1: </b>Klickt den <input type="button" value="Neue Suche im Archiv"> Knopf an um in die Eingabefelder des Archivs zurück zu gehen.<p>
 </ul>
-<img <?php echo createComIcon('../','warn.gif','0','absmiddle') ?>> <font color="#990000"><b> Achtung!</b></font> 
-<ul>       	
+<img <?php echo createComIcon('../','warn.gif','0','absmiddle') ?>> <font color="#990000"><b> Achtung!</b></font>
+<ul>
  Wenn Sie abbrechen möchten klickt den <img <?php echo createLDImgSrc('../','close2.gif','0') ?>> Knopf an.
 </ul>
 

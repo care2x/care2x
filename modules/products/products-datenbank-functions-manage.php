@@ -1,7 +1,7 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 
 define('LANG_FILE','products.php');
 $local_user='ck_prod_db_user';
@@ -17,7 +17,7 @@ if(!isset($cat)) $cat="";
 if(!isset($linecount)) $linecount="";
 switch($cat)
 {
-	case "pharma":	
+	case "pharma":
 							$title=$LDPharmacy;
 							$breakfile=$root_path."modules/pharmacy/apotheke-datenbank-functions.php".URL_APPEND."&userck=$userck";
 							$imgpath=$root_path."uplodas/pharma/img/";
@@ -27,7 +27,7 @@ switch($cat)
 							$breakfile=$root_path."modules/med_depot/medlager-datenbank-functions.php".URL_APPEND."&userck=$userck";
 							$imgpath=$root_path."uplodas/med_depot/img/";
 							break;
-	default:  {header("Location:".$root_path."language/".$lang."/lang_".$lang."_invalid-access-warning.php"); exit;}; 
+	default:  {header("Location:".$root_path."language/".$lang."/lang_".$lang."_invalid-access-warning.php"); exit;};
 
 }
 
@@ -141,7 +141,7 @@ ob_start();
 			</td>
 		 </tr>
 	</table>
-		
+
 	<input type="hidden" name="sid" value="<?php echo $sid?>">
 	<input type="hidden" name="lang" value="<?php echo $lang?>">
 	<input type="hidden" name="cat" value="<?php echo $cat?>">
@@ -173,7 +173,7 @@ $bShowThisForm = TRUE;
 require("includes/inc_products_search_result_mod.php");
 
 if($linecount==1){
-	//<input type="hidden" name="picfilename" value="'.$zeile[picfile].'"> 
+	//<input type="hidden" name="picfilename" value="'.$zeile[picfile].'">
 
 	echo '
 	<input type="hidden" name="encoder" value="'.strtr($_COOKIE[$local_user.$sid]," ","+").'">
@@ -196,7 +196,7 @@ if($linecount==1){
  	 <input type="hidden" name="ref_indusnum" value="'.$zeile[industrynum].'">
  	 <input type="hidden" name="ref_artname" value="'.$zeile[artikelname].'">
  	 ';
-	}else{ 
+	}else{
 		echo'
  	 <input type="hidden" name="ref_bnum" value="'.$ref_bnum.'">
 	  <input type="hidden" name="ref_artnum" value="'.$ref_artnum.'">
@@ -204,7 +204,7 @@ if($linecount==1){
  	 <input type="hidden" name="ref_artname" value="'.$ref_artname.'">
 	  ';
 	}
-	
+
 	if($update&&(!$saveok)){
 		echo'
  		<input type="hidden" name="mode" value="save">

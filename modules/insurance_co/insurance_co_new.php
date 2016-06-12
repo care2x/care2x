@@ -1,12 +1,12 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 /**
 * CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
 * GNU General Public License
 * Copyright 2002,2003,2004,2005 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -23,12 +23,12 @@ switch($retpath)
 {
 	case 'list': $breakfile='insurance_co_list.php'.URL_APPEND; break;
 	case 'search': $breakfile='insurance_co_search.php'.URL_APPEND; break;
-	default: $breakfile='insurance_co_manage.php'.URL_APPEND; 
+	default: $breakfile='insurance_co_manage.php'.URL_APPEND;
 }
 
 if(!isset($mode)){
 	$mode='';
-	$edit=true;		
+	$edit=true;
 }else{
 	switch($mode)
 	{
@@ -39,13 +39,13 @@ if(!isset($mode)){
 			$_POST['firm_id']=trim($_POST['firm_id']);
 			$_POST['name']=trim($_POST['name']);
 			if(!(empty($_POST['firm_id'])||empty($_POST['name']))){
-				
+
 				# Check if insurance ID exists
 				if($ins_obj->FirmIDExists($_POST['firm_id'])){
 
 				# Notify
 					$mode='firm_exists';
-				
+
 				}else{
 					if($ins_obj->saveFirmInfoFromArray($_POST)){
     					header("location:insurance_co_info.php?sid=$sid&lang=$lang&firm_id=$firm_id&mode=show&save_ok=1&retpath=$retpath");
@@ -91,7 +91,7 @@ ob_start();
 ?>
 
 <script language="javascript">
-<!-- 
+<!--
 function check(d)
 {
 	if((d.firm_id.value=="")){
@@ -132,13 +132,13 @@ ob_start();
 
  <ul>
 <?php
-if(!empty($mode)){ 
+if(!empty($mode)){
 ?>
 <table border=0>
   <tr>
     <td><img <?php echo createMascot($root_path,'mascot1_r.gif','0','bottom') ?>></td>
     <td valign="bottom"><br><font face="Verdana, Arial" size=3 color="#880000"><b>
-<?php 
+<?php
 	switch($mode)
 	{
 		case 'bad_data':
@@ -156,8 +156,8 @@ if(!empty($mode)){
 </td>
   </tr>
 </table>
-<?php 
-} 
+<?php
+}
 ?>
 <form action="<?php echo $thisfile; ?>" method="post" name="insurance_co" onSubmit="return check(this)">
 <font face="Verdana, Arial" size=-1><?php echo $LDEnterAllFields ?>
@@ -166,11 +166,11 @@ if(!empty($mode)){
     <td align=right class="adm_item"><font color=#ff0000><b>*</b></font><?php echo $LDInsuranceCoID ?>: </td>
     <td class="adm_input"><input type="text" name="firm_id" size=50 maxlength=60 value="<?php echo $firm_id ?>"><br>
 </td>
-  </tr> 
+  </tr>
   <tr>
     <td align=right class="adm_item"><font color=#ff0000><b>*</b></font><?php echo $LDInsuranceCoName ?>: </td>
     <td class="adm_input"><input type="text" name="name" size=50 maxlength=60 value="<?php echo $name ?>"><br></td>
-  </tr> 
+  </tr>
   <tr>
     <td align=right class="adm_item"><font color=#ff0000></font><?php echo $LDAddress ?>: </td>
     <td class="adm_input"><textarea name="addr" cols=40 rows=4 wrap="physical"><?php echo $addr ?></textarea></td>

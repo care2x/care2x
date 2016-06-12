@@ -1,11 +1,11 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 /*** CARE2X Integrated Hospital Information System beta 2.0.1 - 2004-07-04
 * GNU General Public License
 * Copyright 2002,2003,2004,2005 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -18,19 +18,19 @@ $thisfile=basename(__FILE__);
 if($mode=='search'&&!empty($sk)){
 
 	if(!isset($db) || !$db) include_once($root_path.'include/core/inc_db_makelink.php');
-	if($dblink_ok) {	
+	if($dblink_ok) {
 		/* Load date formatter */
 		include_once($root_path.'include/core/inc_date_format_functions.php');
 	}else { echo "$LDDbNoLink<br>"; }
-	
+
 	include_once($root_path.'include/care_api_classes/class_encounter.php');
 	$enc_obj=new Encounter;
 	$result=$enc_obj->searchEncounterBasicInfo($sk);
-	
+
 	include_once($root_path.'include/care_api_classes/class_globalconfig.php');
 	$GLOBAL_CONFIG=array();
 	$glob_obj=new GlobalConfig($GLOBAL_CONFIG);
-	$glob_obj->getConfig('patient_%');	
+	$glob_obj->getConfig('patient_%');
 }
 
 ?>
@@ -43,7 +43,7 @@ if($mode=='search'&&!empty($sk)){
 </style>
 
 <script language="javascript">
-<!-- 
+<!--
 
 function demopreview(x)
 {
@@ -74,7 +74,7 @@ function hilite_bg(x)
    <tr>
     <td colspan=7 bgcolor="#0000ff"></td>
   </tr>
-<?php 
+<?php
 if($mode=='search'&&$enc_obj->record_count)
 {
 	$i=0;
@@ -92,7 +92,7 @@ if($mode=='search'&&$enc_obj->record_count)
 		case '2': echo ($pdata['encounter_nr'] + $GLOBAL_CONFIG['patient_outpatient_nr_adder']);
 	  				break;
 		default: echo ($pdata['encounter_nr'] + $GLOBAL_CONFIG['patient_inpatient_nr_adder']);
-	}						
+	}
 	echo '&nbsp;</td>
     <td class="v12">&nbsp;'.$pdata['name_last'].'&nbsp;</td>
     <td class="v12">&nbsp;'.$pdata['name_first'].'&nbsp;</td>

@@ -1,12 +1,12 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 /**
 * CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
 * GNU General Public License
 * Copyright 2002,2003,2004,2005 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -36,7 +36,7 @@ require($root_path.'global_conf/inc_remoteservers_conf.php');
 include_once($root_path.'include/core/inc_date_format_functions.php');
 
 if($disc_pix_mode){
-	$final_path="$root_path$fotoserver_localpath$pn/"; 
+	$final_path="$root_path$fotoserver_localpath$pn/";
 }else{
 	$final_path="$fotoserver_http$pn/";
 }
@@ -57,7 +57,7 @@ if(isset($pn) && $pn){
 			exit;
 		}
 	}
-	
+
 	if($img_data=$img_obj->getImageData($nr)){
 		$image=$img_data->FetchRow();
 		$sImgFileName = $image['nr'].'.'.$image['mime_type'];
@@ -69,7 +69,7 @@ if(isset($pn) && $pn){
 <?php html_rtl($lang); ?>
 <head>
 <script language="javascript">
-<!-- 
+<!--
 
 function check(d) {
 	if(d.notes.value=="") return false;
@@ -82,8 +82,8 @@ function check(d) {
 <body topmargin=0 marginheight=0>
 <form name="picnotes" method="post" onSubmit="return check(this)">
 <?php //echo $LDPreview ?>
-<?php 
-	
+<?php
+
 if(file_exists($picsource)){
 	#
 	# If java applet class exists, show link
@@ -150,7 +150,7 @@ if(isset($bShowImageJApplet) && $bShowImageJApplet){
 ?>
 
 <img src="<?php	echo $picsource; ?>" <?php if($preview_size) echo 'width="'.$preview_size.'"'; else echo $wh; ?> border=0  name="preview"
-<?php 
+<?php
 
 	}elseif(($toggle_pic&&!$preview_size)||(!$toggle_pic&&$preview_size)){
 ?>
@@ -164,7 +164,7 @@ if(isset($bShowImageJApplet) && $bShowImageJApplet){
 
 	if($toggle_pic){
 ?>
- alt="<?php if($preview_size) echo $LDTogglePreviewOrig; else echo $LDToggleOrigPreview; ?>" 
+ alt="<?php if($preview_size) echo $LDTogglePreviewOrig; else echo $LDToggleOrigPreview; ?>"
   title="<?php  if($preview_size) echo $LDTogglePreviewOrig; else echo $LDToggleOrigPreview; ?>"
 <?php
 	}

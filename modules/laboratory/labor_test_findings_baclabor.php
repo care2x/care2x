@@ -1,12 +1,12 @@
 <?php
-error_reporting ( E_COMPILE_ERROR | E_ERROR | E_CORE_ERROR );
 require ('./roots.php');
 require ($root_path . 'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 /**
  * CARE2X Integrated Hospital Information System Deployment 2.2 - 2006-07-10
  * GNU General Public License
  * Copyright 2002,2003,2004,2005,2006 Elpidio Latorilla
- * elpidio@care2x.org, 
+ * elpidio@care2x.org,
  *
  * See the file "copy_notice.txt" for the licence notice
  */
@@ -38,8 +38,10 @@ $edit = 0; /* Assume to not edit first */
 $read_form = 1;
 $edit_findings = 1;
 
-//$konsil="patho";$formtitle = $LDBacteriologicalLaboratory;
-$dept_nr = 25; // 25 = department nr. of bacteriological lab$db_request_table = $subtarget;
+//$konsil="patho";
+$formtitle = $LDBacteriologicalLaboratory;
+$dept_nr = 25; // 25 = department nr. of bacteriological lab
+$db_request_table = $subtarget;
 $db_request_table_sub = $subtarget . "_sub";
 
 require_once ($root_path . 'include/care_api_classes/class_encounter.php');
@@ -55,9 +57,9 @@ $bac_obj_sub->useBacLabFindingsSubTable ();
 require_once ($root_path . 'include/core/inc_date_format_functions.php');
 /* Check for the patient number = $pn. If available get the patients data, otherwise set edit to 0 */
 if (isset ( $pn ) && $pn) {
-	
+
 	if ($enc_obj->loadEncounterData ( $pn )) {
-		
+
 		include_once ($root_path . 'include/care_api_classes/class_globalconfig.php');
 		$GLOBAL_CONFIG = array ();
 		$glob_obj = new GlobalConfig ( $GLOBAL_CONFIG );
@@ -72,7 +74,7 @@ if (isset ( $pn ) && $pn) {
 			default :
 				$full_en = ($pn + $GLOBAL_CONFIG ['patient_inpatient_nr_adder']);
 		}
-		
+
 		$result = &$enc_obj->encounter;
 	} else {
 		$edit = 0;
@@ -87,26 +89,26 @@ if (! isset ( $mode ) && $batch_nr && $pn)
 if ($mode == 'save' || $mode == 'update') {
 	/* Process the variables */
 	$type_general = &processFindings ( $lab_TestType, 0 );
-	
+
 	$resist_ana_1 = &processFindings ( $lab_ResistANaerob_1, 1 );
 	$resist_ana_2 = &processFindings ( $lab_ResistANaerob_2, 1 );
 	$resist_ana_3 = &processFindings ( $lab_ResistANaerob_3, 1 );
-	
+
 	$resist_anaerob = $resist_ana_1 . '&' . $resist_ana_2 . '&' . $resist_ana_3;
-	
+
 	$resist_a_1 = &processFindings ( $lab_ResistAerob_1, 1 );
 	$resist_a_2 = &processFindings ( $lab_ResistAerob_2, 1 );
 	$resist_a_3 = &processFindings ( $lab_ResistAerob_3, 1 );
 	$resist_a_x = &processFindings ( $lab_ResistAerobExtra_1, 1 );
 	$resist_a_x2 = &processFindings ( $lab_ResistAerobExtra_2, 1 );
 	$resist_a_x3 = &processFindings ( $lab_ResistAerobExtra_3, 1 );
-	
+
 	$resist_aerob = $resist_a_1 . '&' . $resist_a_2 . '&' . $resist_a_3 . '&' . $resist_a_x . '&' . $resist_a_x2 . '&' . $resist_a_x3;
-	
+
 	$findings_1 = &processFindings ( $lab_TestResult_1, 1 );
 	$findings_2 = &processFindings ( $lab_TestResult_2, 1 );
 	$findings_3 = &processFindings ( $lab_TestResult_3, 1 );
-	
+
 	$findings = $findings_1 . '&' . $findings_2 . '&' . $findings_3;
 }
 switch ($mode) {
@@ -182,7 +184,7 @@ switch ($mode) {
 			//findings
 			$singleParamFindings = explode ( "&", $findings );
 			foreach ( $singleParamFindings as $key => $value ) {
-				$tmpTest = explode ( "=", $value ); 
+				$tmpTest = explode ( "=", $value );
 				if($tmpTest[0] != '' ) {
 					$singleParamF ['batch_nr'] = $batch_nr;
 					$singleParamF ['encounter_nr'] = $pn;
@@ -206,11 +208,12 @@ switch ($mode) {
 			echo "<p>$sql<p>$LDDbNoSave";
 			$mode = "";
 		}
-		
-		break; // end of case 'save'	
+
+		break; // end of case 'save'
+
 
 	case 'update' :
-			
+
 		$data ['batch_nr'] = $batch_nr;
 		$data ['encounter_nr'] = $pn;
 		$data ['room_nr'] = $room_nr;
@@ -253,7 +256,7 @@ switch ($mode) {
 			$singleParamResistAnaerob = explode ( "&", $resist_anaerob );
 			foreach ( $singleParamResistAnaerob as $key => $value ) {
 				$tmpTest = explode ( "=", $value );
-				if($tmpTest[0] != '' ) {			
+				if($tmpTest[0] != '' ) {
 					$singleParamRA ['batch_nr'] = $batch_nr;
 					$singleParamRA ['encounter_nr'] = $pn;
 					$singleParamRA ['resist_anaerob'] = $tmpTest[0];
@@ -269,8 +272,8 @@ switch ($mode) {
 			//resist aerob
 			$singleParamResistAerob = explode ( "&", $resist_aerob );
 			foreach ( $singleParamResistAerob as $key => $value ) {
-				$tmpTest = explode ( "=", $value );	
-				if($tmpTest[0] != '' ) {		
+				$tmpTest = explode ( "=", $value );
+				if($tmpTest[0] != '' ) {
 					$singleParamRAE ['batch_nr'] = $batch_nr;
 					$singleParamRAE ['encounter_nr'] = $pn;
 					$singleParamRAE ['resist_aerob'] = $tmpTest[0];
@@ -287,8 +290,8 @@ switch ($mode) {
 			//findings
 			$singleParamFindings = explode ( "&", $findings );
 			foreach ( $singleParamFindings as $key => $value ) {
-				$tmpTest = explode ( "=", $value );	
-				if($tmpTest[0] != '' ) {	
+				$tmpTest = explode ( "=", $value );
+				if($tmpTest[0] != '' ) {
 					$singleParamF ['batch_nr'] = $batch_nr;
 					$singleParamF ['encounter_nr'] = $pn;
 					$singleParamF ['findings'] = $tmpTest[0];
@@ -310,8 +313,9 @@ switch ($mode) {
 			echo "<p>$sql<p>$LDDbNoSave";
 			$mode = "";
 		}
-		
-		break; // end of case 'save'	
+
+		break; // end of case 'save'
+
 
 	case 'done' :
 		$data['status'] = 'done';
@@ -320,16 +324,18 @@ switch ($mode) {
 		$data['modify_time'] =  date ( 'YmdHis' );
 		$bac_obj->setDataArray ( $data );
 		$bac_obj->setWhereCond ( " batch_nr=$batch_nr" );
-		if ($bac_obj->updateDataFromInternalArray ( $batch_nr )) {	
+		if ($bac_obj->updateDataFromInternalArray ( $batch_nr )) {
 			$bac_obj_sub->setDataArray ( $data );
-			$bac_obj_sub->setWhereCond ( " batch_nr=$batch_nr" );		
+			$bac_obj_sub->setWhereCond ( " batch_nr=$batch_nr" );
 			if ($bac_obj_sub->updateDataFromInternalArray ( $batch_nr )) {
 				$bac_obj->useBacLabRequestTable();
-				$bac_obj->setDataArray($data);	
+				$bac_obj->setDataArray($data);
 				$bac_obj->setWhereCond ( " batch_nr=$batch_nr" );
 				$bac_obj->updateDataFromInternalArray ( $batch_nr );
-				// Load the visual signalling functions				include_once ($root_path . 'include/core/inc_visual_signalling_fx.php');
-				// Set the visual signal 				setEventSignalColor ( $pn, SIGNAL_COLOR_DIAGNOSTICS_REPORT );
+				// Load the visual signalling functions
+				include_once ($root_path . 'include/core/inc_visual_signalling_fx.php');
+				// Set the visual signal
+				setEventSignalColor ( $pn, SIGNAL_COLOR_DIAGNOSTICS_REPORT );
 				header ( "location:$thisfile?sid=$sid&lang=$lang&edit=$edit&saved=insert&mode=edit_findings&pn=$pn&station=$station&user_origin=$user_origin&status=$status&target=$target&subtarget=$subtarget&noresize=$noresize&batch_nr=$batch_nr&entry_date=$entry_date" );
 				exit ();
 			} else {
@@ -340,12 +346,13 @@ switch ($mode) {
 			echo "<p>$sql<p>$LDDbNoSave";
 			$mode = 'save';
 		}
-		
-		break; // end of case 'save'	
+
+		break; // end of case 'save'
+
 
 	/* If mode is edit, get the stored test findings */
 	case 'edit_findings' :
-		
+
 	    $sql  = "SELECT * FROM care_test_findings_".$db_request_table." ";
 		$sql .= "INNER JOIN care_test_findings_".$db_request_table_sub." ON ";
 		$sql .= "( care_test_findings_".$db_request_table.".batch_nr = care_test_findings_".$db_request_table_sub.".batch_nr) ";
@@ -360,11 +367,11 @@ switch ($mode) {
 					$parsed_findings[$ergebnis->fields['findings']] = $ergebnis->fields['findings'];
 					$stored_findings=$ergebnis->GetRowAssoc($toUpper=false);
 					$ergebnis->MoveNext();
-				}					
-		
+				}
+
 				if ($stored_findings ['status'] == "done")
 					$edit_findings = 0; /* Inhibit editing of the findings */
-				
+
 				$mode = 'update';
 				$edit_form = 1;
 			} else {
@@ -373,13 +380,15 @@ switch ($mode) {
 		} else {
 			$mode = 'save';
 		}
-		
-		break; ///* End of case 'edit': */	
+
+		break; ///* End of case 'edit': */
+
 
 	default :
 		$mode = '';
 
-} // end of switch($mode)
+} // end of switch($mode)
+
 
 /* Get the stored request for displayint only*/
 $sql  = "SELECT * FROM care_test_request_".$db_request_table." ";
@@ -394,10 +403,10 @@ if ($ergebnis = $db->Execute ( $sql )) {
 			$stored_test_type[$ergebnis->fields['test_type']] = $ergebnis->fields['test_type'];
 			$stored_request=$ergebnis->GetRowAssoc($toUpper=false);
 			$ergebnis->MoveNext();
-		}			
+		}
 		if ($stored_request ['status'] == 'done')
 			$edit = 0; /* Inhibit editing of the findings */
-		
+
 		$edit_form = 1;
 	} else {
 		$mode = 'save';
@@ -408,30 +417,40 @@ if ($ergebnis = $db->Execute ( $sql )) {
 	echo $sql;
 }
 
-# Start Smarty templating here/**
+# Start Smarty templating here
+/**
  * LOAD Smarty
  */
 
-# Note: it is advisable to load this after the inc_front_chain_lang.php so# that the smarty script can use the user configured template theme
+# Note: it is advisable to load this after the inc_front_chain_lang.php so
+# that the smarty script can use the user configured template theme
+
 
 require_once ($root_path . 'gui/smarty_template/smarty_care.class.php');
 $smarty = new smarty_care ( 'common' );
 
-# Title in toolbar$smarty->assign ( 'sToolbarTitle', "$LDDiagnosticTest (#$batch_nr)" );
+# Title in toolbar
+$smarty->assign ( 'sToolbarTitle', "$LDDiagnosticTest (#$batch_nr)" );
 
-# href for help button$smarty->assign ( 'pbHelp', "javascript:gethelp('pending_baclabor_findings.php')" );
+# href for help button
+$smarty->assign ( 'pbHelp', "javascript:gethelp('pending_baclabor_findings.php')" );
 
-# hide return  button$smarty->assign ( 'pbBack', $returnfile );
+# hide return  button
+$smarty->assign ( 'pbBack', $returnfile );
 
-# href for close button$smarty->assign ( 'breakfile', $breakfile );
+# href for close button
+$smarty->assign ( 'breakfile', $breakfile );
 
-# Window bar title$smarty->assign ( 'sWindowTitle', "$LDDiagnosticTest (#$batch_nr)" );
+# Window bar title
+$smarty->assign ( 'sWindowTitle', "$LDDiagnosticTest (#$batch_nr)" );
 
-# Prepare Body onLoad javascript code$sTemp = 'onLoad="if (window.focus) window.focus(); loadM(\'form_test_request\');"';
+# Prepare Body onLoad javascript code
+$sTemp = 'onLoad="if (window.focus) window.focus(); loadM(\'form_test_request\');"';
 
 $smarty->assign ( 'sOnLoadJs', $sTemp );
 
-# collect extra javascript codeob_start ();
+# collect extra javascript code
+ob_start ();
 ?>
 
 <style type="text/css">
@@ -447,7 +466,7 @@ $smarty->assign ( 'sOnLoadJs', $sTemp );
 </style>
 
 <script language="javascript">
-<!-- 
+<!--
 function chkForm(d){
 
    if((d.entry_nr.value=='')||(d.entry_nr.value==' '))
@@ -472,7 +491,7 @@ function loadM(fn)
 	mBlank.src="b.gif";
 	mFilled=new Image();
 	mFilled.src="f.gif";
-	
+
 	form_name=fn;
 }
 
@@ -480,14 +499,14 @@ function setM(m)
 {
     eval("marker=document.images."+m);
 	eval("element=document."+form_name+"."+m);
-	
+
     if(marker.src!=mFilled.src)
 	{
 	   marker.src=mFilled.src;
 	   element.value='1';
 	  // alert(element.name+element.value);
 	}
-	 else 
+	 else
 	 {
 	    marker.src=mBlank.src;
 		element.value='0';
@@ -527,7 +546,7 @@ function printOut()
     findings_printout<?php
 				echo $sid?>.print();
 }
-   
+
 <?php
 require ($root_path . 'include/core/inc_checkdate_lang.php');
 ?>
@@ -540,7 +559,8 @@ ob_end_clean ();
 
 $smarty->append ( 'JavaScript', $sTemp );
 
-# Buffer page output
+# Buffer page output
+
 
 ob_start ();
 
@@ -561,7 +581,7 @@ if ($edit_findings) {
 	echo createLDImgSrc ( $root_path, 'savedisc.gif', '0' )?>>
 <?php
 }
-?>  
+?>
  <a href="javascript:printOut()"><img
 	<?php
 	echo createLDImgSrc ( $root_path, 'printout.gif', '0' )?>></a>
@@ -583,7 +603,7 @@ require ('includes/inc_test_findings_form_baclabor.php');
 if ($edit_findings) {
 	/* Load the common hidden post vars */
 	require ($root_path . "modules/laboratory/includes/inc_test_request_hiddenvars.php");
-	
+
 	?>
 <input type="hidden" name="entry_date"
 	value="<?php
@@ -598,7 +618,7 @@ if ($edit_findings) {
 	echo createLDImgSrc ( $root_path, 'savedisc.gif', '0' )?>>
 <?php
 }
-?>    
+?>
          <a href="javascript:printOut()"><img
 	<?php
 	echo createLDImgSrc ( $root_path, 'printout.gif', '0' )?>></a>
@@ -616,7 +636,8 @@ if ($edit_findings)
 $sTemp = ob_get_contents ();
 ob_end_clean ();
 
-# Assign the page output to main frame template
+# Assign the page output to main frame template
+
 
 $smarty->assign ( 'sMainFrameBlockData', $sTemp );
 

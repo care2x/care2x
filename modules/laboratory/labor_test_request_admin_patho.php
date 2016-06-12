@@ -1,7 +1,7 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 /**
 * CARE2X Integrated Hospital Information System version deployment 1.1 (mysql) 2004-01-11
 * GNU General Public License
@@ -15,14 +15,14 @@ require($root_path.'include/core/inc_environment_global.php');
 $lang_tables[] = 'departments.php';
 define('LANG_FILE','konsil.php');
 
-/* We need to differentiate from where the user is coming: 
+/* We need to differentiate from where the user is coming:
 *  $user_origin != lab ;  from patient charts folder
 *  $user_origin == lab ;  from the laboratory
 *  and set the user cookie name and break or return filename
 */
 if($user_origin=='lab'){
 	$local_user='ck_lab_user';
-	$breakfile="labor.php?sid=".$sid."&lang=".$lang; 
+	$breakfile="labor.php?sid=".$sid."&lang=".$lang;
 }elseif($user_origin=='amb'){
 	$local_user='ck_lab_user';
 	$breakfile=$root_path.'modules/ambulatory/ambulatory.php'.URL_APPEND;
@@ -57,15 +57,15 @@ $db_request_table=$subtarget;
 /* Here begins the real work */
 /* Establish db connection */
 if(!isset($db)||!$db) include($root_path.'include/core/inc_db_makelink.php');
-if($dblink_ok) {	
+if($dblink_ok) {
 
      require_once($root_path.'include/core/inc_date_format_functions.php');
-      
+
 	 if(!isset($mode))   $mode='';
-		
+
 		  switch($mode) {
 		     case 'update':
-							      $sql="UPDATE care_test_request_".$db_request_table." SET 
+							      $sql="UPDATE care_test_request_".$db_request_table." SET
                                           entry_date='".formatDate2STD($entry_date,$date_format)."',
 										  journal_nr='".$journal_nr."',
 										  blocks_nr='".$blocks_nr."',
@@ -79,54 +79,54 @@ if($dblink_ok) {
 							      if($ergebnis=$db->Execute($sql))
        							  {
 									//echo $sql;
-									
+
 									 header("location:".$thisfile.URL_REDIRECT_APPEND."&edit=$edit&saved=update&pn=$pn&station=$station&user_origin=$user_origin&status=$status&target=$target&subtarget=$subtarget&batch_nr=$batch_nr&noresize=$noresize");
 									 exit;
 								  }
 								  else
 								   {
-								      echo "<p>$sql<p>$LDDbNoSave"; 
+								      echo "<p>$sql<p>$LDDbNoSave";
 								      $mode="";
 								   }
 								break; // end of case 'save'
-			
+
 			 default: $mode="";
-						   
+
 		  }// end of switch($mode)
-  
+
           if(!$mode) /* Get the pending test requests */
 		  {
-		                $sql="SELECT batch_nr,encounter_nr,send_date,dept_nr FROM care_test_request_".$subtarget." 
+		                $sql="SELECT batch_nr,encounter_nr,send_date,dept_nr FROM care_test_request_".$subtarget."
 						         WHERE (status='pending' OR status='') ORDER BY  send_date DESC";
 		                if($requests=$db->Execute($sql))
        		            {
-						
+
 				            $batchrows=$requests->RecordCount();
-	                        if($batchrows && (!isset($batch_nr) || !$batch_nr)) 
+	                        if($batchrows && (!isset($batch_nr) || !$batch_nr))
 					        {
 						       $test_request=$requests->FetchRow();
-							   
+
                                /* Check for the patietn number = $pn. If available get the patients data */
 		                       $pn=$test_request['encounter_nr'];
 						       $batch_nr=$test_request['batch_nr'];
 							}
 			             }
 			               else {echo "<p>$sql<p>$LDDbNoRead"; exit;}
-						 $mode='update';   
-		   }	
-		       
-	   
+						 $mode='update';
+		   }
+
+
      /* Check for the patietn number = $pn. If available get the patients data */
      if($batchrows && $pn)
-	 {		
+	 {
 		include_once($root_path.'include/care_api_classes/class_encounter.php');
 		$enc_obj=new Encounter;
 	    if( $enc_obj->loadEncounterData($pn)) {
-		
+
 			include_once($root_path.'include/care_api_classes/class_globalconfig.php');
 			$GLOBAL_CONFIG=array();
 			$glob_obj=new GlobalConfig($GLOBAL_CONFIG);
-			$glob_obj->getConfig('patient_%');	
+			$glob_obj->getConfig('patient_%');
 			switch ($enc_obj->EncounterClass())
 			{
 		    	case '1': $full_en = ($pn + $GLOBAL_CONFIG['patient_inpatient_nr_adder']);
@@ -134,7 +134,7 @@ if($dblink_ok) {
 				case '2': $full_en = ($pn + $GLOBAL_CONFIG['patient_outpatient_nr_adder']);
 							break;
 				default: $full_en = ($pn + $GLOBAL_CONFIG['patient_inpatient_nr_adder']);
-			}						
+			}
 
 			$result=&$enc_obj->encounter;
 
@@ -145,12 +145,12 @@ if($dblink_ok) {
 					$edit_form=1;
 				}
             }else{
-				echo "<p>$sql<p>$LDDbNoRead"; 
-			}	
-		}					   
+				echo "<p>$sql<p>$LDDbNoRead";
+			}
+		}
 	}
 }else{
-	echo "$LDDbNoLink<br>$sql<br>"; 
+	echo "$LDDbNoLink<br>$sql<br>";
 }
 
 # Prepare title
@@ -252,10 +252,10 @@ div.fa2_ml3 {
 </style>
 
 <script language="javascript">
-<!-- 
+<!--
 
 function chkForm(d)
-{ 
+{
 /*  if(d.journal_nr.value=="" && d.blocks_nr.value=="" && d.deep_cuts.value=="" && d.special_dye.value=="" && d.immune_histochem.value=="" && d.hormone_receptors.value=="" && d.specials.value=="" ) return false;
 */
     if(d.journal_nr.value=="") return false;
@@ -293,7 +293,7 @@ if($batchrows){
 		<!-- left frame for the requests list -->
 		<td>
 
-<?php 
+<?php
 
 /* The following routine creates the list of pending requests */
 require('includes/inc_test_request_lister_fx.php');
@@ -313,10 +313,10 @@ require('includes/inc_test_request_lister_fx.php');
 			<?php echo createLDImgSrc($root_path,'printout.gif','0','absmiddle') ?>
 			alt="<?php echo $LDPrintOut ?>"></a> <!--   Control button enter findings   -->
 <?php
-if($stored_request['entry_date'] && $stored_request['entry_date'] != DBF_NODATE)	
+if($stored_request['entry_date'] && $stored_request['entry_date'] != DBF_NODATE)
 {
-?>	
-		
+?>
+
         <a
 			href="<?php echo 'labor_test_findings_'.$subtarget.'.php?sid='.$sid.'&lang='.$lang.'&batch_nr='.$batch_nr.'&pn='.$pn.'&entry_date='.$stored_request['entry_date'].'&target='.$target.'&subtarget='.$subtarget.'&user_origin='.$user_origin.'&tracker='.$tracker; ?>"><img
 			<?php echo createLDImgSrc($root_path,'enter_result.gif','0','absmiddle') ?>
@@ -347,8 +347,8 @@ if($stored_request['entry_date'] && $stored_request['entry_date'] != DBF_NODATE)
 <?php
 if($stored_request['entry_date'] && $stored_request['entry_date'] != DBF_NODATE)
 {
-?>	
-		
+?>
+
         <a
 			href="<?php echo 'labor_test_findings_'.$subtarget.'.php?sid='.$sid.'&lang='.$lang.'&batch_nr='.$batch_nr.'&pn='.$pn.'&entry_date='.$stored_request['entry_date'].'&target='.$target.'&subtarget='.$subtarget.'&user_origin='.$user_origin.'&tracker='.$tracker; ?>"><img
 			<?php echo createLDImgSrc($root_path,'enter_result.gif','0','absmiddle') ?>

@@ -1,7 +1,7 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 define('LANG_FILE','nursing.php');
 define('NO_2LEVEL_CHK',1);
 require_once($root_path.'include/core/inc_front_chain_lang.php');
@@ -30,7 +30,7 @@ require_once($root_path.'include/core/inc_front_chain_lang.php');
 
  # Window bar title
  $smarty->assign('sWindowTitle',"$LDPatDataFolder $station");
- 
+
 $sTemp= '<ul><p><br>
 	<center><FONT class="warnprompt"><p><br>
 	<img '.createMascot($root_path,'mascot1_r.gif','0','absmiddle').'> &nbsp;
@@ -40,8 +40,8 @@ $sTemp= '<ul><p><br>
  	<input type="hidden" name="lang" value="'.$lang.'">
 <input type="hidden" name="pn" value="'.$pn.'">
 <input type="hidden" name="edit" value="'.$edit.'">
- <input type="hidden" name="station" value="'.$station.'">  
- <input type="hidden" name="nodoc" value="">  
+ <input type="hidden" name="station" value="'.$station.'">
+ <input type="hidden" name="nodoc" value="">
  <input type="submit" value=" OK ">
      </form>
 	</center>

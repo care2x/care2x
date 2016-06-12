@@ -1,8 +1,8 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 define('LANG_FILE','edp.php');
 $local_user='ck_edv_user';
 require_once($root_path.'include/core/inc_front_chain_lang.php');
+error_reporting($ErrorLevel);
 
 require_once($root_path.'include/core/inc_config_color.php');
 
@@ -21,11 +21,11 @@ $breakfile="edv.php?sid=".$sid."&lang=".$lang;
 <?php html_rtl($lang); ?>
 	<HEAD>
 <?php echo setCharSet(); ?>
-<?php 
+<?php
 require($root_path.'include/core/inc_css_a_hilitebu.php');
 ?>
 <script language="javascript">
-<!-- 
+<!--
 
 function gethelp(x,s,x1,x2,x3)
 {
@@ -59,7 +59,7 @@ $erroruser=0;
 $errorpass=0;
 $errorbereich=0;
 
-// get date and time 
+// get date and time
 
 $curdate=date('Y-m-d');
 $curtime=date('H:i:s');
@@ -67,14 +67,14 @@ $curtime=date('H:i:s');
 /* Establish db connection */
 if(!isset($db)||!$db) include($root_path.'include/core/inc_db_makelink.php');
 if($dblink_ok)
-{	
+{
 
     if ($mode=='save')
  	{
 	//remove spaces
 	$username=trim(strtr($username,"+"," "));
 	$userid=trim($userid);
-	$pass=trim($pass);	
+	$pass=trim($pass);
 
 	// start checking input data for errors
 	if ($username==""){ $error=1; $errorname=1;};
@@ -84,35 +84,35 @@ if($dblink_ok)
 		($bereich4=="")and($bereich5=="")and($bereich6=="")and($bereich7==""))
 		{ $error=1; $errorbereich=1;};
 
-	if($error==0) 
-	{	
+	if($error==0)
+	{
 		echo "<table bgcolor=#dddddd border=1 cellpadding=10 cellspacing=1>
 				<tr>
 				<td colspan=3><FONT    SIZE=-1  FACE=Arial>";
-				
+
 				//include('../include/core/inc_db_makelink.php');
-	
-						$sql='UPDATE care_users SET  
-								login_id="'.$userid.'", 
-								password="'.$pass.'", 
-								area1="'.$bereich1.'", 
-								area2="'.$bereich2.'", 
-								area3="'.$bereich3.'", 
-								area4="'.$bereich4.'", 
-								area5="'.$bereich5.'", 
-								area6="'.$bereich6.'", 
-								area7="'.$bereich7.'", 
-								area8="'.$bereich8.'", 
-								area9="'.$bereich9.'", 
-								area10="'.$bereich10.'", 
-								s_date="'.$curdate.'", 
+
+						$sql='UPDATE care_users SET
+								login_id="'.$userid.'",
+								password="'.$pass.'",
+								area1="'.$bereich1.'",
+								area2="'.$bereich2.'",
+								area3="'.$bereich3.'",
+								area4="'.$bereich4.'",
+								area5="'.$bereich5.'",
+								area6="'.$bereich6.'",
+								area7="'.$bereich7.'",
+								area8="'.$bereich8.'",
+								area9="'.$bereich9.'",
+								area10="'.$bereich10.'",
+								s_date="'.$curdate.'",
 								s_time="'.$curtime.'",
-								modify_id="'.$_COOKIE[$local_user.$sid].'"  
+								modify_id="'.$_COOKIE[$local_user.$sid].'"
 							WHERE name="'.$username.'"';
 
 						if($db->Execute($sql))
-						{ 
-						echo mysql_affected_rows()." $LDDataSaved <p>"; 
+						{
+						echo mysql_affected_rows()." $LDDataSaved <p>";
 						echo $LDAccessIndex[0].": ".$username."<br>";
 						echo $LDAccessIndex[1].": ".$userid."<br>";
 						echo $LDAccessIndex[2].": ".$pass."<br>";
@@ -129,7 +129,7 @@ if($dblink_ok)
 						if($bereich10!="") echo "$LDArea  10: ".$bereich10."<br>";
 
 						}
-							else { echo "$LDDbNoSave<br>$sql"; } 
+							else { echo "$LDDbNoSave<br>$sql"; }
 
 		echo '</td>
 				</tr>
@@ -174,11 +174,11 @@ if($dblink_ok)
 								$bereich9=$zeile['area9'];
 								$bereich10=$zeile['area10'];
 								}
-							};	
+							};
 	}
 }
-  else { echo "$LDDbNoLink<br>$sql"; } 
- 
+  else { echo "$LDDbNoLink<br>$sql"; }
+
 ?>
 
 
@@ -201,7 +201,7 @@ echo "<FONT  COLOR=red  SIZE=+1  FACE=Arial>$LDInputError<p>";
 <td>
 
 <FONT    SIZE=-1  FACE="Arial" color=#000080>
-<?php echo $LDName ?>: 
+<?php echo $LDName ?>:
 <font color=#800000>
 <br>
 <?php
@@ -212,7 +212,7 @@ echo "<FONT  COLOR=red  SIZE=+1  FACE=Arial>$LDInputError<p>";
 <br>
 </td>
 <td><FONT    SIZE=-1  FACE="Arial" color=#000080>
-<?php if ($erroruser) {echo "<font color=red > <b>$LDUserId</b>";} 
+<?php if ($erroruser) {echo "<font color=red > <b>$LDUserId</b>";}
 else { echo $LDUserId;} ?>
 <br>
 <input type=text name=userid
@@ -220,7 +220,7 @@ else { echo $LDUserId;} ?>
 ><br>
 </td>
 <td><FONT    SIZE=-1  FACE="Arial" color=#000080>
-<?php if ($errorpass) {echo "<font color=red > <b>$LDPassword</b>";} 
+<?php if ($errorpass) {echo "<font color=red > <b>$LDPassword</b>";}
 else { echo $LDPassword;} ?>
 <br>
 <input type=text name=pass
@@ -230,7 +230,7 @@ else { echo $LDPassword;} ?>
 </tr>
 <tr bgcolor="#dddddd">
 <td  colspan=3><FONT    SIZE=-1  FACE="Arial"  color=#000080>
-<?php if ($errorbereich) {echo "<font color=red > <b>$LDAllowedArea</b> </font>";} 
+<?php if ($errorbereich) {echo "<font color=red > <b>$LDAllowedArea</b> </font>";}
 else { echo $LDAllowedArea;} ?>
 </td>
 </tr>
@@ -294,8 +294,8 @@ else { echo $LDAllowedArea;} ?>
 <td  valign="top"><FONT    SIZE=1  FACE="verdana,Arial">
 <font color=#000080 size=2><?php echo $LDAllowedArea ?>:</font><p>
 <font size=2>
-<?php 
-/** 
+<?php
+/**
 * The following line calls the function contained in core/inc_accessplan_areas_functions.php
 */
 printAccessAreas();
@@ -335,7 +335,7 @@ printAccessAreas();
 <p>
 </td>
 </tr>
-</table>        
+</table>
 <p>
 
 <?php

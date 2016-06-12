@@ -1,12 +1,12 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 /**
 * CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
 * GNU General Public License
 * Copyright 2002,2003,2004,2005 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -33,10 +33,10 @@ if(isset($mode) && ($mode=='search')) {
 
 	if(!isset($db) || !$db) include_once($root_path.'include/core/inc_db_makelink.php');
 
-    if(isset($dblink_ok) && $dblink_ok) {	
+    if(isset($dblink_ok) && $dblink_ok) {
 	    /* Load the date formatter */
         include_once($root_path.'include/core/inc_date_format_functions.php');
-	    $sql='SELECT * FROM care_user_roles WHERE role_name LIKE "'.$name.'%" ';					
+	    $sql='SELECT * FROM care_user_roles WHERE role_name LIKE "'.$name.'%" ';
 	    if($ergebnis=$db->Execute($sql)) {
 		    $rows=$ergebnis->RecordCount();
 		}
@@ -49,11 +49,11 @@ if(isset($mode) && ($mode=='search')) {
 <?php html_rtl($lang); ?>
 <HEAD>
 <?php echo setCharSet(); ?>
-<?php 
+<?php
 require($root_path.'include/core/inc_css_a_hilitebu.php');
 ?>
 <script language="javascript">
-<!-- 
+<!--
 
 function gethelp(x,s,x1,x2,x3)
 {
@@ -99,30 +99,30 @@ function gethelp(x,s,x1,x2,x3)
 		echo "
 					<td colspan=8><FONT SIZE=1  FACE=verdana,Arial color=\"#800000\"><b>$LDActualAccessRoles</b></td>";
         echo "
-					</tr>"; 
+					</tr>";
         echo '
 					<tr bgcolor="#dfdfdf">';
 		for($i=0;$i<sizeof($LDRoleIndex);$i++)
 			echo "
 			<td><FONT    SIZE=1  FACE=verdana,Arial><b>".$LDRoleIndex[$i]."</b></td>";
-            echo "</tr>"; 
+            echo "</tr>";
 
-		while ($zeile=$ergebnis->FetchRow()) {  
+		while ($zeile=$ergebnis->FetchRow()) {
 			 echo '
 						<tr  bgcolor="#efefef">';
 			echo "
 						<td><FONT    SIZE=1  FACE=Arial>".$zeile['role_name']."</td>\n";
-	
+
 			echo "
 						</td>\n <td><FONT    SIZE=1  FACE=Arial>";
 			/* Display the permitted areas */
-			
+
 			$area=explode(' ',$zeile['permission']);
 			for($j=0;$j<sizeof($area);$j++) echo $area_opt[$area[$j]].'<br>';
             echo "
 					<td>
 					<a href=edv_user_role_edit.php?sid=$sid&lang=$lang&mode=edit&id=".$zeile['id']." title=\"$LDChange\"> $LDInitChange</a> \n
-					<a href=edv_user_role_delete.php?sid=$sid&lang=$lang&itemname=".$zeile['id']." title=\"$LDDelete\">	$LDInitDelete</a> 
+					<a href=edv_user_role_delete.php?sid=$sid&lang=$lang&itemname=".$zeile['id']." title=\"$LDDelete\">	$LDInitDelete</a>
 					</td>";
 			echo "</tr>";
         };
@@ -159,13 +159,13 @@ function gethelp(x,s,x1,x2,x3)
 </ul>
 </td>
 </tr>
-</table>        
+</table>
 
 <p>
 
 </td>
 </tr>
-</table>        
+</table>
 <br>
 
 <FORM  method=get action="<?php echo $breakfile;?>" >

@@ -1,7 +1,7 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 define('LANG_FILE','or.php');
 define("NO_CHAIN",1);
 require_once($root_path.'include/core/inc_front_chain_lang.php');
@@ -96,18 +96,18 @@ function s(h,m,x)
 	window.location.href="opfclic.php?<?php echo "sid=$sid&lang=$lang" ?>&time="+h+"."+m+"&group="+group;
 }
 </script>
- 
+
 </HEAD>
 
-<BODY  topmargin=0 leftmargin=0 marginwidth=0 marginheight=0 bgcolor=#cde1ec alink="navy" vlink="navy" 
+<BODY  topmargin=0 leftmargin=0 marginwidth=0 marginheight=0 bgcolor=#cde1ec alink="navy" vlink="navy"
 onLoad="
 <?php
-if($resetmainput) echo 'refreshparent();'; 
+if($resetmainput) echo 'refreshparent();';
 	if($scrolltab) echo 'scroll2input(\''.$scrolltab.'\');setTimeout(\'scroll2time()\',30000);';
 	 else echo 'scroll2time();';
 ?>setInterval('scroll2time()',900000);">
 
-<table cellpadding="0" cellspacing="0" border=0 width=100%> 
+<table cellpadding="0" cellspacing="0" border=0 width=100%>
 <tr>
 <td >
 <map name="timebar">

@@ -1,7 +1,7 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 
 # Switch to the selected dicom viewer module
 switch($_SESSION['sess_dicom_viewer']){
@@ -14,13 +14,13 @@ switch($_SESSION['sess_dicom_viewer']){
 /*** CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
 * GNU General Public License
 * Copyright 2002,2003,2004,2005 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file 'copy_notice.txt' for the licence notice
 */
 define('TMPSIZE_IN_MEM',9); # The number of files loaded in memory at once
 define('NUM_EQUALS_TMPSIZE',0); # 1 = actual nr. of files equals tmpsize in mem, 0 = the value of TMPSIZE_IN_MEM is used
-define('FILE_DISCRIM','.dcm'); # define here the file discrimator string 
+define('FILE_DISCRIM','.dcm'); # define here the file discrimator string
 define('LANG_FILE','actions.php');
 //define('LANG_FILE','radio.php');
 //define('NO_2LEVEL_CHK',1);
@@ -65,7 +65,7 @@ if($nogo||!$NUM){
 <?php echo $LDDicomViewer ?>
 </TITLE>
 </HEAD>
-<BODY   topmargin=0 leftmargin=0  marginwidth=0 marginheight=0 ><font face="Verdana, Arial" size=1><?php 
+<BODY   topmargin=0 leftmargin=0  marginwidth=0 marginheight=0 ><font face="Verdana, Arial" size=1><?php
 if(isset($pop_only) && $pop_only){
 ?>
 <a href="javascript:window.close()"><font size=1>&nbsp;>> <?php echo $LDClose ?> <<</font></a>
@@ -109,6 +109,6 @@ if($NUM){
 }
 ?>
 
-</APPLET>  
+</APPLET>
 </BODY>
-</HTML> 
+</HTML>

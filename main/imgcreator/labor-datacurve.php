@@ -1,10 +1,10 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 /*
 CARE2X Integrated Information System for Hospitals and Health Care Organizations and Services
-Copyright (C) 2002,2003,2004,2005  Elpidio Latorilla & Intellin.org        
+Copyright (C) 2002,2003,2004,2005  Elpidio Latorilla & Intellin.org
 
 GNU GPL. For details read file "copy_notice.txt".
 */
@@ -82,14 +82,14 @@ if($lo){
                 }else{
                         $y1=20;
                         $y2=80;
-                }        
+                }
         }else{
                 $y1=0;
                 if($ooRange){
                         $y2=100-(100*($lo-$nTmin)/($nTmax-$nTmin));
                 }else{
                 	$y2=80;
-                }        
+                }
         }
 }else{
         if($hi){
@@ -145,7 +145,7 @@ for($i=0;$i<sizeof($data);$i++){
                 $ox=$ox+$tabcols;
                  continue;
         }
-                        
+
         if(is_numeric($dybuf)){
 
                 $dybuf=$range*($dybuf-$nlo)/($nhi-$nlo) + $yofset;
@@ -168,7 +168,7 @@ for($i=0;$i<sizeof($data);$i++){
 
                 # shrinking plotting area by 4 pixels at the bottom
                 if($dybuf<=0) $dybuf=1; else $dybuf = $dybuf*($tabhi-4)/$tabhi;
-                
+
                 # put label at the bottom if dybuf is close to top of chart
                 if($dybuf<15) $tfy=3; else $tfy=$dybuf-13;
 
@@ -178,7 +178,7 @@ for($i=0;$i<sizeof($data);$i++){
         }
         $ox1=$ox;$oy1=$dybuf;
         //$xlb=$ox2;$ylb=$oy2;
-        $ox+=$tabcols; 
+        $ox+=$tabcols;
 }
 
 header ('Content-type: image/PNG');

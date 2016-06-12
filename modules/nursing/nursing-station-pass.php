@@ -1,13 +1,12 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
-//error_reporting(E_WARNING);
+error_reporting($ErrorLevel);
 /**
 * CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
 * GNU General Public License
 * Copyright 2002,2003,2004,2005 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -39,11 +38,11 @@ $userck='ck_pflege_user';
 //reset cookie;
 // reset all 2nd level lock cookies
 setcookie($userck.$sid,'');
-require($root_path.'include/core/inc_2level_reset.php'); 
+require($root_path.'include/core/inc_2level_reset.php');
 setcookie('ck_2level_sid'.$sid,'',0,'/');
 
 require($root_path.'include/core/inc_passcheck_internchk.php');
-if ($pass=='check') 	
+if ($pass=='check')
 	include($root_path.'include/core/inc_passcheck.php');
 
 $errbuf="$LDNursingStation $station";
@@ -62,9 +61,9 @@ require($root_path.'include/core/inc_passcheck_head.php');
 <img <?php echo createComIcon($root_path,'wheelchair.gif','0','top') ?>>
 <FONT  COLOR="<?php echo $cfg[top_txtcolor] ?>"  SIZE=6  FACE="verdana"> <b><?php echo "$LDNursingStation ".stripslashes($station); ?></b></font>
 
-<table width=100% border=0 cellpadding="0" cellspacing="0"> 
+<table width=100% border=0 cellpadding="0" cellspacing="0">
 
-<?php require($root_path.'include/core/inc_passcheck_mask.php') ?>  
+<?php require($root_path.'include/core/inc_passcheck_mask.php') ?>
 
 <?php
 require($root_path.'include/core/inc_load_copyrite.php');

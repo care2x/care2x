@@ -1,26 +1,26 @@
 <?php
- error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
  require('./roots.php');
  require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
  /**
  * CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
  * GNU General Public License
  * Copyright 2002,2003,2004,2005 Elpidio Latorilla
- * elpidio@care2x.org, 
+ * elpidio@care2x.org,
  *
  * See the file "copy_notice.txt" for the licence notice
  */
  define('USE_PIE_CHART',1); // define to 1 if pie chart is preferred as display, define to 0 if tiny person icons
- define('PIE_CHART_USED_COLOR','red'); // define the color of the used bed portion of the graph 
+ define('PIE_CHART_USED_COLOR','red'); // define the color of the used bed portion of the graph
 
- $lang_tables=array('date_time.php'); 
+ $lang_tables=array('date_time.php');
  define('LANG_FILE','nursing.php');
  define('NO_2LEVEL_CHK',1);
  require_once($root_path.'include/core/inc_front_chain_lang.php');
 
  $breakfile='nursing.php'.URL_APPEND;
  $thisfile=basename(__FILE__);
- 
+
  $today = date('Y-m-d');
 
  // Let us make some interface for calendar class
@@ -49,12 +49,12 @@ $dbtable='care_ward';
 
   /* Load date formatter */
   include_once($root_path.'include/core/inc_date_format_functions.php');
-	
+
 	# Get the wards´ info
-    $sql="SELECT nr,ward_id,name,room_nr_start,room_nr_end	
+    $sql="SELECT nr,ward_id,name,room_nr_start,room_nr_end
 				FROM $dbtable
-				WHERE is_temp_closed IN ('',0) 
-							AND status NOT IN ('hide','delete','void','inactive') 
+				WHERE is_temp_closed IN ('',0)
+							AND status NOT IN ('hide','delete','void','inactive')
 							AND date_create<='$s_date' ";
     //gjergji - show only info on my departement
 	if(isset($_SESSION['department_nr']) && !empty($_SESSION['department_nr']) ) {
@@ -116,13 +116,13 @@ $dbtable='care_ward';
  $smarty->assign('aufnahme_user',$aufnahme_user);
 
  $smarty->assign('sToolbarTitle',$LDNursing );
- $smarty->assign('Subtitle',$LDQuickView ); // Nursing-Subtitle (header_toblock.tpl)  
+ $smarty->assign('Subtitle',$LDQuickView ); // Nursing-Subtitle (header_toblock.tpl)
 
  # Added for the common header top block
  $smarty->assign('pbHelp','javascript:gethelp(\'nursing_how2search.php\',\'\','.$rows.',\'quick\',\'\')');
 
  /*generate the calendar */
- include($root_path.'classes/calendar_jl/class.calendar.php'); 
+ include($root_path.'classes/calendar_jl/class.calendar.php');
  /** CREATE CALENDAR OBJECT **/
  $Calendar = new Calendar;
  $Calendar->deactivateFutureDay();
@@ -147,27 +147,27 @@ $dbtable='care_ward';
  * wards count
  */
  $img_mangr=createComIcon($root_path,'man-gr.gif','0'); // needed in column title
- if($rows) {  
-  
+ if($rows) {
+
   /* Load the common icons */
   $img_mans_gr=createComIcon($root_path,'mans-gr.gif','0','absmiddle');
   $img_mans_red=createComIcon($root_path,'mans-red.gif','0','absmiddle');
   $img_statbel=createComIcon($root_path,'statbel2.gif','0','absmiddle');
-  
+
 
   $randombett=0;
   $randommaxbett=0;
   $frei=0;
-  
+
   // srand(time());
-  
+
   $sWardrows = "";
 
   while ($result=$wards->FetchRow())
   {
-    
+
    $maxbed=$result['room_nr_end']-$result['room_nr_start'];
-    
+
    $roomrow=$rooms->FetchRow();
    $bedrow=$occbed->FetchRow();
    $freebeds=$roomrow['maxbed']-$bedrow['maxoccbed'];
@@ -182,11 +182,11 @@ $dbtable='care_ward';
 	$toggler=1;
 	$sStatListClass='wardlistrow1';
    } else {
-    //$bgc='dfdfdf'; 
+    //$bgc='dfdfdf';
 	$toggler=0;
 	$sStatListClass='wardlistrow2';
    }
-  
+
    /**
    * collect the hole ward block into $sWardrows
    */
@@ -243,8 +243,8 @@ $dbtable='care_ward';
 
    $sWardrows = $sWardrows . ob_get_contents();
    ob_end_clean();
-   
-  
+
+
   } // end While
  } // if ($rows)
 
@@ -262,7 +262,7 @@ $dbtable='care_ward';
  $smarty->assign('LDBedNr',$LDBedNr);
  $smarty->assign('LDOptions',$LDOptions);
 
- $smarty->assign('WardRows',$sWardrows); 
+ $smarty->assign('WardRows',$sWardrows);
 
 // $smarty->assign('maxbed',$roomrow['maxbed']);
 // $smarty->assign('LINKstatbel','javascript:statbel(\'1\',\''.$result['nr'].'\',\''.$result['ward_id'].'\')' );
@@ -273,9 +273,9 @@ $dbtable='care_ward';
  * IF ($is_today)
  */
  $smarty->assign('is_today',$is_today);
- $smarty->assign('gifBul_arrowgrnlrg',createComIcon($root_path,'bul_arrowgrnlrg.gif','0','absmiddle') );  
+ $smarty->assign('gifBul_arrowgrnlrg',createComIcon($root_path,'bul_arrowgrnlrg.gif','0','absmiddle') );
  $smarty->assign('gifMascot1_r',createMascot($root_path,'mascot1_r.gif','0','absmiddle') );
- $smarty->assign('LDNoOcc',$LDNoOcc); 
+ $smarty->assign('LDNoOcc',$LDNoOcc);
  $smarty->assign('LDClk2Archive',$LDClk2Archive);
 
  /**
@@ -293,7 +293,7 @@ $dbtable='care_ward';
  $smarty->assign('iWardCount',$rows);
 
  # Assign quick view template to the mainframe block
- 
+
  $smarty->assign('sMainBlockIncludeFile','nursing/nursing-schnellansicht.tpl');
 
  /**

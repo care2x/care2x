@@ -1,5 +1,5 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
+error_reporting($ErrorLevel);
 ?>
 <font face="Verdana, Arial" size=3 color="#0000cc">
 <b><?php echo "$x3 - $x2" ?></b></font>
@@ -54,11 +54,11 @@ Jede Farbe in dieser Farbbalken (wenn gesetzt) signalisiert das Vorhandensein ei
 </ul>
 <img <?php echo createComIcon('../','frage.gif','0') ?>>
  <font color="#990000"><b>Was bedeutet dieses Symbol <img <?php echo createComIcon('../','patdata.gif','0') ?>> ? </b></font>
-<ul> <b>Achtung! </b>Dies ist die Patientenmappe. Um die Patientenmappe zu öffnen klicken Sie dieses Symbol an. 
+<ul> <b>Achtung! </b>Dies ist die Patientenmappe. Um die Patientenmappe zu öffnen klicken Sie dieses Symbol an.
 			Ein kleines Fenster öffnet sich. Das Fenster zeigt die Basisdaten des Patienten, sein Foto (wenn vorhanden), und andere Optionen.
 			<br>
 </ul>
-<img <?php echo createComIcon('../','frage.gif','0') ?>> 
+<img <?php echo createComIcon('../','frage.gif','0') ?>>
 <font color="#990000"><b>Was bedeutet dieses Symbol <img <?php echo createComIcon('../','bubble2.gif','0') ?>> ? </b></font>
 <ul> <b>Achtung! </b>Dies ist das Vermerk. Wenn es angeklickt wird öffnet sich ein kleines Fenster mit einem Eingabefeld für Vermerke oder Notizen über den Patient.<br>
 			Das normal Symbol <img <?php echo createComIcon('../','bubble2.gif','0') ?>> bedeutet daß es noch kein Vermerk beinhaltet. Um ein Vermerk zu schreiben klickt dieses Symbol an.<br>
@@ -124,7 +124,7 @@ Wie sperre ich ein Bett??</b></font>
 		<b>Schritt 2: </b>Klickt den&nbsp;<button>OK</button> an wenn Sie nach einer Bestätigung gefragt werden.<br>
 </ul>
   <b>Achtung! </b> Falls Sie abbrechen möchten den <img <?php echo createLDImgSrc('../','cancel.gif','0') ?>> anklicken.</ul>
-  
+
 <?php elseif($src=="remarks") : ?>
 <img <?php echo createComIcon('../','frage.gif','0') ?>> <font color="#990000"><b>
 Wie schreibe ich Vermerke bzw Notizen über den Patient?</b></font>
@@ -164,7 +164,7 @@ Ich habe versucht ohne Ergebnis den <input type="button" value="Entlassen"> Knop
 
 <?php endif;?>
 <?php if(($src!="assign")&&($src!="remarks")&&($src!="discharge")) : ?>
-<img <?php echo createComIcon('../','frage.gif','0') ?>> 
+<img <?php echo createComIcon('../','frage.gif','0') ?>>
 <font color="#990000"><b>Was bedeutet dies "<span style="background-color:yellow" > <img <?php echo createComIcon('../','delete2.gif','0','absmiddle') ?>> <font color="#0000ff">Gesperrt</font> </span>" ? </b></font>
 <ul> <b>Achtung! </b>Dies bedeutet "Dieses Bett ist gesperrt". Um die Sperre aufzuheben klickt den "<span style="background-color:yellow" ><font color="#0000ff">Gesperrt</font></span>" an und klickt den&nbsp;<button>OK</button>
 			wenn Sie nach einer Bestätigung gefragt werden.<p>

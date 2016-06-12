@@ -1,7 +1,7 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 //require('con_db.php');
 //connect_db();
 #Load and create paginator object
@@ -39,8 +39,8 @@ $debug=FALSE;
 		  // Last day of requested month
 		//echo $startdate = gmdate("Y-m-d H:i:s", $start_timeframe);
 		//echo $enddate = gmdate("Y-m-d H:i:s", $end_timeframe);
-		
-			
+
+
 
 $tmp_table = $rep_obj->SetReportingTable("care_encounter");
 
@@ -48,15 +48,15 @@ $tmp_table2 = $rep_obj->SetReportingLink_OPDAdmission($tmp_table,"pid","encounte
 
 $sql_d ="DROP TEMPORARY TABLE IF EXISTS `tmp_ward`";
 $db->Execute($sql_d);
-		
-$sql_tmp_ward = "CREATE TEMPORARY TABLE tmp_ward  (SELECT nr,ward_id,name,is_temp_closed,status FROM care_ward)"; 
+
+$sql_tmp_ward = "CREATE TEMPORARY TABLE tmp_ward  (SELECT nr,ward_id,name,is_temp_closed,status FROM care_ward)";
 $db->Execute($sql_tmp_ward);
 
 $sql_e ="DROP TEMPORARY TABLE IF EXISTS `tmp_table`";
 $db->Execute($sql_e);
-		
-$sql_tmp_enc = "CREATE TEMPORARY TABLE tmp_table  (SELECT encounter_nr,current_ward_nr,discharge_date FROM care_encounter 
-WHERE UNIX_TIMESTAMP(discharge_date) >= '$start' AND UNIX_TIMESTAMP(discharge_date) <= '$end')";  
+
+$sql_tmp_enc = "CREATE TEMPORARY TABLE tmp_table  (SELECT encounter_nr,current_ward_nr,discharge_date FROM care_encounter
+WHERE UNIX_TIMESTAMP(discharge_date) >= '$start' AND UNIX_TIMESTAMP(discharge_date) <= '$end')";
 $db->Execute($sql_tmp_enc);
 
 

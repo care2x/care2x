@@ -1,12 +1,12 @@
 <?php
-//error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'/include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 /**
 * CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
 * GNU General Public License
 * Copyright 2002,2003,2004,2005 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -29,7 +29,7 @@ if(isset($job)&&!empty($job)) {
 
     $dbtable='care_tech_repair_job';
 
-        $sql="INSERT INTO ".$dbtable." 
+        $sql="INSERT INTO ".$dbtable."
 						(	dept,
 							job,
 							reporter,
@@ -45,15 +45,15 @@ if(isset($job)&&!empty($job)) {
 							create_id,
 							create_time
 							 )
-						VALUES 
+						VALUES
 						(
 							'".htmlspecialchars($dept)."',
 							'".htmlspecialchars($job)."',
 							'".htmlspecialchars($reporter)."',
-							'".htmlspecialchars($id)."', 
+							'".htmlspecialchars($id)."',
 							'".htmlspecialchars($tphone)."',
-							'$tdate', 
-							'$ttime', 
+							'$tdate',
+							'$ttime',
 							'".date('YmdHis')."',
 							'0',
 							'".date('Ymd')."',
@@ -62,14 +62,14 @@ if(isset($job)&&!empty($job)) {
 							'".$_SESSION['sess_user_name']."',
 							'".date('YmdHis')."'
 							)";
-							
+
         $db->BeginTrans();
         $ok=$db->Execute($sql);
         if($ok && $db->CommitTrans()) {
             header("Location: technik-reparatur-empfang.php".URL_REDIRECT_APPEND."&repair=ask&dept=$dept&reporter=$reporter&tdate=$tdate&ttime=$ttime"); exit;
         } else {
             $db->RollbackTrans();
-            echo "<p>".$sql."$LDDbNoSave<br>"; 
+            echo "<p>".$sql."$LDDbNoSave<br>";
         };
 }
 
@@ -109,22 +109,22 @@ if(isset($job)&&!empty($job)) {
 <!--
 function checkform(d)
 {
-	if(d.dept.selectedIndex==-1) 
+	if(d.dept.selectedIndex==-1)
 		{	alert("<?php echo $LDAlertDept ?>");
 		    d.dept.focus();
 			return false;
 		}
-	if(d.reporter.value=="") 
+	if(d.reporter.value=="")
 		{	alert("<?php echo $LDAlertName ?>");
 		    d.reporter.focus();
 			return false;
 		}
-	if(d.id.value=="") 
+	if(d.id.value=="")
 		{	alert("<?php echo $LDAlertPNr ?>");
 		    d.id.focus();
 			return false;
 		}
-	if(d.job.value=="") 
+	if(d.job.value=="")
 		{	alert("<?php echo $LDPlsDescribe ?>");
 		    d.job.focus();
 			return false;
@@ -132,10 +132,10 @@ function checkform(d)
 	return true;
 }
 // -->
-</script> 
+</script>
 
-<?php 
-	
+<?php
+
 $sTemp = ob_get_contents();
 ob_end_clean();
 

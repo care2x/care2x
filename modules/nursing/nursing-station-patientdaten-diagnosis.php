@@ -1,26 +1,26 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 /**
 * CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
 * GNU General Public License
 * Copyright 2002,2003,2004,2005 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
 define('LANG_FILE','nursing.php');
 $local_user='ck_pflege_user';
 require_once($root_path.'include/core/inc_front_chain_lang.php');
-if($edit&&!$_COOKIE[$local_user.$sid]) {header("Location:../language/".$lang."/lang_".$lang."_invalid-access-warning.php"); exit;}; 
+if($edit&&!$_COOKIE[$local_user.$sid]) {header("Location:../language/".$lang."/lang_".$lang."_invalid-access-warning.php"); exit;};
 require_once($root_path.'include/core/inc_config_color.php'); // load color preferences
 
 $thisfile='nursing-station-patientdaten-diagnosis.php';
 $breakfile="nursing-station-patientdaten.php?sid=$sid&lang=$lang&station=$station&pn=$pn&edit=$edit";
 
-$bgc1='#fefefe'; 
-	
+$bgc1='#fefefe';
+
 $abtname=get_meta_tags($root_path."global_conf/$lang/konsil_tag_dept.pid");
 
 if($dept)
@@ -42,20 +42,20 @@ else
 		$deptname=$v;
 		reset($abtname);
 	}
-	else 
+	else
 	{
 		header($breakfile);
 		exit;
 	}
 }
-	
+
 /* Establish db connection */
 if(!isset($db)||!$db) include($root_path.'include/core/inc_db_makelink.php');
 if($dblink_ok)
-	{	
-	
+	{
+
 		$dbtable='care_admission_patient';
-		
+
 		// get orig data
 		$sql="SELECT * FROM $dbtable WHERE patnum='$pn' ";
 		if($ergebnis=$db->Execute($sql))
@@ -68,11 +68,11 @@ if($dblink_ok)
 			}
 			else
 			{echo "<p>$sql$LDDbNoRead";exit;}
-			
+
 		$dbtable='care_nursing_station_patients_diagnostics_report';
-		
+
 		$sql="SELECT * FROM $dbtable WHERE patnum='$pn'";
-		
+
 		if($ergebnis=$db->Execute($sql))
        		{
 				$rows=0;
@@ -86,9 +86,9 @@ if($dblink_ok)
 			else{echo "<p>$sql$LDDbNoRead";exit;}
 
        include_once($root_path.'include/core/inc_date_format_functions.php');
-       
+
 	}
-	else 
+	else
 		{ echo "$LDDbNoLink<br>$sql<br>"; }
 ?>
 
@@ -114,14 +114,14 @@ div.fa2_ml3 {font-family: arial; font-size: 12; margin-left: 3; }
 </style>
 
 <script language="javascript">
-<!-- 
+<!--
   var urlholder;
   var focusflag=0;
   var formsaved=0;
-  
+
 function pruf(d){
 	if(((d.dateput.value)&&(d.timeput.value)&&(d.berichtput.value)&&(d.author.value))||((d.dateput2.value)&&(d.berichtput2.value)&&(d.author2.value))) return true;
-	else 
+	else
 	{
 		alert("<?php echo $LDAlertIncomplete ?>");
 		return false;
@@ -144,7 +144,7 @@ function resetinput(){
 function select_this(formtag){
 		document.berichtform.elements[formtag].select();
 	}
-	
+
 function getinfo(patientID){
 	urlholder="nursing-station.php?<?php echo "sid=$sid&lang=$lang" ?>&route=validroute&patient=" + patientID + "&user=<?php echo $_COOKIE[$local_user.$sid].'"' ?>;
 	patientwin=window.open(urlholder,patientID,"width=600,height=400,menubar=no,resizable=yes,scrollbars=yes");
@@ -172,13 +172,13 @@ function gethelp(x,s,x1,x2,x3)
 </script>
 </HEAD>
 
-<BODY bgcolor=<?php echo $cfg['body_bgcolor']; ?> 
-onLoad="if (window.focus) window.focus(); 
-<?php if(($mode=='save')||($saved)) echo ";window.location.href='#bottom';document.berichtform.berichtput.focus()"; ?>"  
-topmargin=0 leftmargin=0 marginwidth=0 marginheight=0 
+<BODY bgcolor=<?php echo $cfg['body_bgcolor']; ?>
+onLoad="if (window.focus) window.focus();
+<?php if(($mode=='save')||($saved)) echo ";window.location.href='#bottom';document.berichtform.berichtput.focus()"; ?>"
+topmargin=0 leftmargin=0 marginwidth=0 marginheight=0
 <?php if (!$cfg['dhtml']){ echo 'link='.$cfg['idx_txtcolor'].' alink='.$cfg['body_alink'].' vlink='.$cfg['idx_txtcolor']; } ?>>
 
-<script>	
+<script>
 window.moveTo(0,0);
 	 window.resizeTo(1000,740);
 </script>
@@ -203,7 +203,7 @@ window.moveTo(0,0);
 
 
 </tr>
-</table>        
+</table>
 <p>
 
 <?php

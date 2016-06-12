@@ -1,5 +1,5 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
+error_reporting($ErrorLevel);
 
 $foreword='
 <form action="#">
@@ -31,11 +31,11 @@ switch($x1)
 																				case "archiv": print '_arch-gray.gif'; break;
 																			}
 ?>" border="0">.
-		
+
 </ul>
 <b>Passo 2</b>
 <?php endif;?>
-<ul> Se você estiver logado e com direito de acesso para esta função, o 
+<ul> Se você estiver logado e com direito de acesso para esta função, o
 <?php switch($x1)
 	{
 		case "entry": print 'formulário para o documento inicial'; break;
@@ -46,7 +46,7 @@ switch($x1)
 		De outro modo, se você não estiver logado, será necessário você entrar com seu usuário e senha. <p>
 		Entre seu usuário e senha e clique no botão <img <?php echo createLDImgSrc('../','continue.gif','0') ?>>.<p>
 		Se você decidir cancelar clique no botão <img <?php echo createLDImgSrc('../','cancel.gif','0') ?>>.
-		
+
 </ul>
 
 

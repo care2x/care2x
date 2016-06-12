@@ -1,8 +1,7 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
-//error_reporting(E_ALL);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 /**
 * CARE2X Integrated Hospital Information System version deployment 1.1 (mysql) 2004-01-11
 * GNU General Public License
@@ -22,13 +21,13 @@ require($root_path.'include/core/inc_environment_global.php');
 function prepareTestElements()
 {
     global $_POST, $paramlist, $sday, $sample_time;
-	
+
 	/* Prepare the parameters
 	*  Check the first char of the POST_VARS. Concatenate all POST vars with
 	*  the content having "_" as the first character , then save it to  "parameters"
 	*/
 	$paramlist='';
-					   
+
 	while(list($x,$v)=each($_POST)){
     	if((substr($x,0,1)=='_')&&($_POST[$x]==1)){
 	    	if($paramlist==''){
@@ -38,7 +37,7 @@ function prepareTestElements()
 			}
 		}
 	}
-								
+
 	/* If the paramlist is not empty then the user had set a test parameter,
 	*  go ahead and prepare the other data for saving
 	*  otherwise, the user sent a form without setting any test parameter.
@@ -55,11 +54,11 @@ function prepareTestElements()
 			}
 		}
 		if(!$tmin) $tmin=0;
-							
+
 		/* Prepare the sampling ten hours */
 		if($_POST['hrs_20']) $th=20;
 			elseif($_POST['hrs_10']) $th=10;
-								
+
 		/* Prepare the sampling one hours */
 		for($i=0;$i<10;$i++){
 			$h1s='hrs_'.$i;
@@ -69,7 +68,7 @@ function prepareTestElements()
 			}
 		}
 		if(!$to) $to=0;
-								
+
 		/* Prepare the weekday */
 		for($i=0;$i<7;$i++){
 			$tday="day_".$i;
@@ -78,10 +77,10 @@ function prepareTestElements()
 				break;
 			}
 		}
-								
+
 		/* Finalize sampling time in TIME format */
 		$sample_time=($th+$to).":".$tmin.":00";
-								
+
 		return 1;
 	}else{
 		return 0;
@@ -126,7 +125,7 @@ define('_BATCH_NR_INIT_',10000000);
 *  The following are  batch nr inits for each type of test request
 *   chemlabor = 10000000; patho = 20000000; baclabor = 30000000; blood = 40000000; generic = 50000000;
 */
-						
+
 /* Here begins the real work */
 include_once($root_path.'include/care_api_classes/class_lab.php');
 $lab_obj = new Lab;
@@ -135,19 +134,19 @@ $lab_obj = new Lab;
 if(isset($pn) && $pn) {
     include_once($root_path.'include/care_api_classes/class_encounter.php');
 	$enc_obj=new Encounter;
-	
+
 	if($enc_obj->loadEncounterData($pn)){
 		$edit=true;
 		$full_en=$pn;
 		$_SESSION['sess_en']=$pn;
 		$_SESSION['sess_full_en']=$full_en;
-		
+
 		include_once($root_path.'include/care_api_classes/class_diagnostics.php');
 		$diag_obj=new Diagnostics;
 		$diag_obj->useChemLabRequestTable();
 		$diag_obj_sub = new Diagnostics;
 		$diag_obj_sub->useChemLabRequestSubTable();
-		
+
 	}else{
     	$edit=0;
 	  	$mode='';
@@ -156,7 +155,7 @@ if(isset($pn) && $pn) {
 }
 
 	if(!isset($mode)) $mode='';
-	
+
 	switch($mode){
 		case 'save':
 				  if(prepareTestElements())  {
@@ -179,7 +178,7 @@ if(isset($pn) && $pn) {
 					$data['create_time']='NULL';
 					$diag_obj->setDataArray($data);
 				    if($diag_obj->insertDataFromInternalArray()){
-				    	
+
 				    	//sub values management
 				    	//$diag_obj->useChemLabRequestSubTable();
 				    	$singleParam = explode("&",$paramlist);
@@ -192,7 +191,7 @@ if(isset($pn) && $pn) {
 					    	$diag_obj_sub->setDataArray($parsedParamList);
 					    	$diag_obj_sub->insertDataFromInternalArray();
 				    	}
-				    	
+
 					  	// Load the visual signalling functions
 						include_once($root_path.'include/core/inc_visual_signalling_fx.php');
 						// Set the visual signal
@@ -205,9 +204,9 @@ if(isset($pn) && $pn) {
 						 $mode='';
 					}
 	            } //end of prepareTestElements()
-					
+
 				break; // end of case 'save'
-							
+
 			case 'update':
 				if(prepareTestElements()){
 					$data['room_nr']=$room_nr;
@@ -239,7 +238,7 @@ if(isset($pn) && $pn) {
 				    		$parsedParamList['parameter_value']=$tmpParam[1];
 					    	$diag_obj_sub->setDataArray($parsedParamList);
 					    	$diag_obj_sub->insertDataFromInternalArray();
-				    	}						
+				    	}
 						// Load the visual signalling functions
 						include_once($root_path.'include/core/inc_visual_signalling_fx.php');
 						// Set the visual signal
@@ -251,10 +250,10 @@ if(isset($pn) && $pn) {
 						$mode="";
 					}
 				} //end of prepareTestElements()
-				
+
 				break; // end of case 'update'
-								
-								
+
+
 	        /* If mode is edit, get the stored test request when its status is either "pending" or "draft"
 			*  otherwise it is not editable anymore which happens when the lab has already processed the request,
 			*  or when it is discarded, hidden, locked, or otherwise.
@@ -264,7 +263,7 @@ if(isset($pn) && $pn) {
 			case 'edit':
 						//echo $batch_nr;
 		    //$sql="SELECT * FROM care_test_request_".$db_request_table."  WHERE batch_nr='".$batch_nr."' AND (status='pending' OR status='draft' OR status='')";
-		    
+
 		    $sql  = "SELECT * FROM care_test_request_".$db_request_table." ";
 			$sql .= "INNER JOIN care_test_request_".$db_request_table_sub." ON ";
 			$sql .= "( care_test_request_".$db_request_table.".batch_nr = care_test_request_".$db_request_table_sub.".batch_nr) ";
@@ -277,16 +276,16 @@ if(isset($pn) && $pn) {
 									$stored_param[$ergebnis->fields['paramater_name']] = $ergebnis->fields['parameter_value'];
 									$stored_request=$ergebnis->GetRowAssoc($toUpper=false);
 									$ergebnis->MoveNext();
-								}				            	
+								}
 							    $edit_form=1;
 					         }
 			             }
 						 break; ///* End of case 'edit': */
-			
+
 			 default: $mode="";
-						   
+
 		  }// end of switch($mode)
-  
+
           if(!$mode) /* Get a new batch number */
 		  {
 		                $sql="SELECT batch_nr FROM care_test_request_".$db_request_table."  ORDER BY batch_nr DESC";
@@ -368,7 +367,7 @@ function loadM(fn){
 	mBlank.src="b.gif";
 	mFilled=new Image();
 	mFilled.src="f.gif";
-	
+
 	form_name=fn;
 }
 
@@ -391,7 +390,7 @@ function setM(m){
 	element = document.forms[form_name][m];
     //eval("marker=document.images."+m);
 	//eval("element=document."+form_name+"."+m);
-	
+
     if(marker.src!=mFilled.src)	{
 	   marker.src=mFilled.src;
 	   element.value='1';
@@ -461,11 +460,11 @@ if($edit){
 	?>
 	<form name="form_test_request" method="post" action="<?php echo $thisfile ?>">
 	<?php
-	
+
 	/* If in edit mode display the control buttons */
-	
+
 	$controls_table_width=745;
-	
+
 	require($root_path.'modules/laboratory/includes/inc_test_request_controls.php');
 
 }elseif(!$read_form && !$no_proc_assist){
@@ -482,20 +481,20 @@ if($edit){
 <?php
 }
 ?>
-   
+
 
 <!-- outermost table for the form -->
 <table border=0 cellpadding=1 cellspacing=0 bgcolor="#606060">
   <tr>
     <td>
-	
+
 	<!-- table for the form simulating the border -->
 	<table border=0 cellspacing=0 cellpadding=0 bgcolor="white">
    <tr>
      <td>
-	 
+
 	 <!-- Here begins the table for the form  -->
-	 
+
 		<table   cellpadding=0 cellspacing=0 border=0 width=745>
 	<tr  valign="top">
 
@@ -546,12 +545,12 @@ if($edit){
 
    <tr align="center">
    <?php
- 
+
     if(($edit_form||$read_form))  $day_names=(int)$stored_request['sample_weekday'];
       else   $day_names=(int)date('w');
-	  
+
     if(!$day_names) $day_names=7;
-	
+
 	for($i=1;$i<8;$i++)
 	{
 	   echo 	'
@@ -573,7 +572,7 @@ if($edit){
 	}
 	/* Divide line */
 	echo  ' <td bgcolor= "#990000"><img src="p.gif" width=1 height=1></td>';
-	
+
    if(($edit_form||$read_form) && $stored_request['sample_time'])
    {
       list($hour,$quarter_mins)=explode(":",$stored_request['sample_time']);
@@ -584,7 +583,7 @@ if($edit){
 	{
 	  $quarter_mins=(int)date('i');
 	}
-	 
+
    if($quarter_mins>44)
    {
      $quarter_mins=45;
@@ -600,7 +599,7 @@ if($edit){
    else $quarter_mins=0;
 
 	/* For the 10's */
-	
+
       echo 	'<td>';
       if($edit) echo '<a href="javascript:setThis(\'min_\',\'15\',15,46,15)">';
 	  if($quarter_mins==15)
@@ -617,7 +616,7 @@ if($edit){
 	   if($edit) echo '</a><input type="hidden" name="min_15" value="'.$v.'">';
 	   echo '</td>';
 
-	   
+
 	/* For the 30's */
 
 	   echo 	'<td>';
@@ -636,7 +635,7 @@ if($edit){
 	   echo ' border=0 width=18 height=6 id="min_30">';
 	   if($edit) echo '</a><input type="hidden" name="min_30" value="'.$v.'">';
 	   echo '</td>';
-	   
+
 	/* For the 45's */
 
 	   echo 	'<td>';
@@ -667,7 +666,7 @@ if($edit){
       <tr align="center">
    <td ><font size=1 face="arial" color= "purple"></td>
    <?php
-   
+
    $hour_tens=0;
    $hour_ones=0;
 
@@ -675,7 +674,7 @@ if($edit){
 	{
        $hour=(int)date('H');
 	}
-	
+
    if($hour>19)
    {
      $hour_tens=20;
@@ -727,7 +726,7 @@ if($edit){
    <td colspan=8><font size=1 face="arial" color= "purple"></td>
 
    </tr>
-   
+
    <tr align="center">
    <?php
 	for($i=0;$i<7;$i++)
@@ -741,7 +740,7 @@ if($edit){
    </tr>
    <tr>
 	<?php
-   
+
 	for($i=0;$i<7;$i++)
 	{
 	   echo 	'
@@ -811,7 +810,7 @@ if($edit){
 			{
 			   echo '<img src="b.gif"';
 			}
-			
+
 			echo ' border=0 width=18 height=6 id="urgent">';
 			if($edit) echo '</a><input type="hidden" name="urgent" value="'.$stored_request['urgent'].'">';
 			'</td>';
@@ -829,7 +828,7 @@ if($edit){
 		 <table border=0 cellpadding=10 bgcolor="#ee6666">
      <tr>
        <td>
-   
+
 <?php
 
       if($edit)
@@ -869,10 +868,10 @@ for($n=0;$n<8;$n++)
 	?>
    </tr>
 
-   
+
    <tr>
 	<?php
-	
+
 	for($i=0;$i<10;$i++)
 	{
 	   echo 	'<td>';
@@ -889,16 +888,16 @@ for($n=0;$n<8;$n++)
   <tr>
     <td colspan=10 align="right">
 	<?php
-    
+
 	/* Barcode for the batch nr */
-	
+
 		    echo '<font size=1 color="#990000" face="verdana,arial">'.$batch_nr.'</font>&nbsp;&nbsp;<br>';
     /**
 	*  The barcode image is first searched in the cache. If present, it will be displayed.
 	*  Otherwise an image will be generated, stored in the cache and displayed.
 	*/
 	$in_cache=1;
-	
+
 	if(!file_exists('../cache/barcodes/form_'.$batch_nr.'.png'))
 	{
           echo "<img src='".$root_path."classes/barcode/image.php?code=".$batch_nr."&style=68&type=I25&width=145&height=40&xres=2&font=5&label=1&form_file=1' border=0 width=0 height=0>";
@@ -910,7 +909,7 @@ for($n=0;$n<8;$n++)
 	}
 
     if($in_cache)   echo '<img src="'.$root_path.'cache/barcodes/form_'.$batch_nr.'.png"  border=0>';
-	
+
 	/* Prepare the narrow batch nr barcode for specimen labels */
 	if(!file_exists('../cache/barcodes/lab_'.$batch_nr.'.png'))
 	{
@@ -940,11 +939,11 @@ for($n=0;$n<8;$n++)
     </td>
 
 	</tr>
-	
+
 	</table>
-	
+
 <!--  The test parameters begin  -->
-	
+
 <table border=0 cellpadding=0 cellspacing=0 width=745 id=table_param bgcolor="<?php echo $bgc1 ?>">
  <?php
 
@@ -964,9 +963,9 @@ for($i=0;$i<=$max_row;$i++) {
 							<a href="javascript:setM(\''.$LD_Elements[$j][$i]['id'].'\')">';
 						} else {
 							echo '<input type="hidden" name="'.$LD_Elements[$j][$i]['id'].'" value="0">
-							<a href="javascript:setM(\''.$LD_Elements[$j][$i]['id'].'\')">';							
+							<a href="javascript:setM(\''.$LD_Elements[$j][$i]['id'].'\')">';
 						}
-					}				
+					}
 					if( isset($stored_param[$LD_Elements[$j][$i]['id']]) && !empty($stored_param[$LD_Elements[$j][$i]['id']])) {
 						echo '<img src="f.gif" border=0 width=18 height=6 id="'.$LD_Elements[$j][$i]['id'].'">';
 					} else {
@@ -1005,11 +1004,11 @@ ob_end_flush();
   </tr>
 
 </table><!-- End of the main table holding the form -->
- 
+
  	 </td>
    </tr>
  </table><!-- End of table simulating the border -->
- 
+
 	</td>
   </tr>
 </table><!--  End of the outermost table bordering the form -->

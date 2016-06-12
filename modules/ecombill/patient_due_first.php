@@ -1,16 +1,16 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 /**
-* eComBill 1.0.04 for Care2002 beta 1.0.04 
+* eComBill 1.0.04 for Care2002 beta 1.0.04
 * (2003-04-30)
-* adapted from eComBill beta 0.2 
-* developed by ecomscience.com http://www.ecomscience.com 
+* adapted from eComBill beta 0.2
+* developed by ecomscience.com http://www.ecomscience.com
 * GPL License
 *
 * 19.Oct.2003 Daniel Hinostroza: Switch language implemented, but... What is the translation of outstanding?
 */
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 define('NO_CHAIN',1);
 
 define('LANG_FILE','billing.php');
@@ -115,15 +115,15 @@ $itemcnt1=$cntLT+$cntHS;
 		return false;
 	}
 
-	
+
 	function savebill() {
 		document.patientbill.action="patientbill_printsave.php";
 		document.patientbill.submit();
 	}
-	
+
 //-->
 </script>
-<?php 
+<?php
 $sTemp = ob_get_contents();
 ob_end_clean();
 
@@ -178,7 +178,7 @@ $smarty->assign('LDItemType', $LDItemType);
 if($billid == "currentbill") {
 	$smarty->assign('pbSubmit','<a href="javascript:savebill();"><input type="image"  '.createLDImgSrc($root_path,'savedisc.gif','0','middle').'></a>');
 } else {
-	$smarty->assign('pbSubmit','<a href="#" onclick=" return popitup(' .$patientno . ' , \'' .$receiptid . '\' );"><input type="image"  '.createLDImgSrc($root_path,'printout.gif','0','middle').'></a>');  
+	$smarty->assign('pbSubmit','<a href="#" onclick=" return popitup(' .$patientno . ' , \'' .$receiptid . '\' );"><input type="image"  '.createLDImgSrc($root_path,'printout.gif','0','middle').'></a>');
 }
 
 $smarty->assign('pbCancel','<a href="'.$breakfile.'" ><img '.createLDImgSrc($root_path,'close2.gif','0','middle').' title="'.$LDCancel.'" align="middle"></a>');
@@ -188,50 +188,50 @@ $sListRows='';
 if($billid == "currentbill") {
 	$resultlabquery->MoveFirst();
 	$HStotal=0;$LTtotal=0;
-	
+
 	for($i=0;$i<$itemcnt1;$i++) {
-		
+
 		$labres = $resultlabquery->FetchRow();
 		$resultlbqry1=$eComBill->listServiceItemsByCode($labres['bill_item_code']);
 		if(is_object($resultlbqry1)) $lb1=$resultlbqry1->FetchRow();
 
 		$nounits=$labres['bill_item_units'];
-		$cpu=$labres['bill_item_unit_cost'];		
+		$cpu=$labres['bill_item_unit_cost'];
 		$totcost=$cpu*$nounits;
 		$type=$lb1['item_type'];
-				
+
 		$smarty->assign('DescriptionData', $lb1['item_description']);
 		$smarty->assign('CostPerUnitData', $labres['bill_item_unit_cost']);
 		$smarty->assign('UnitsData', $labres['bill_item_units']);
 		$smarty->assign('TotalCostData', $totcost);
 
-		if($type=="HS") { 
+		if($type=="HS") {
 			$smarty->assign('ItemTypeData', $LDMedicalServices);
-		} else if($type=="LT") { 
-			$smarty->assign('ItemTypeData', $LDLaboratoryTests); 
+		} else if($type=="LT") {
+			$smarty->assign('ItemTypeData', $LDLaboratoryTests);
 		}
 
-		if($lb1['item_type']=="HS") { $HStotal=$HStotal+($labres['bill_item_unit_cost'])*($labres['bill_item_units']); }  
+		if($lb1['item_type']=="HS") { $HStotal=$HStotal+($labres['bill_item_unit_cost'])*($labres['bill_item_units']); }
 		if($lb1['item_type']=="LT") { $LTtotal=$LTtotal+($labres['bill_item_unit_cost'])*($labres['bill_item_units']); }
-		
+
 		ob_start();
 		$smarty->display('ecombill/bill_payment_header_line.tpl');
 		$sListRows = $sListRows.ob_get_contents();
-		ob_end_clean(); 		
+		ob_end_clean();
 
 	}
 
 	$total=$HStotal+$LTtotal;
 	$smarty->assign('ItemLine',$sListRows);
 
-//bill payed, so print it	
+//bill payed, so print it
 } else {
 
 	$oldbilltotal=0;
 
 	$oldbdqueryresult=$eComBill->checkBillByBillId($billid);
 	if(is_object($oldbdqueryresult)) $billitemcount=$oldbdqueryresult->RecordCount();
-	
+
 	for ($obc=0;$obc<$billitemcount;$obc++) {
 
 		$oldbd=$oldbdqueryresult->FetchRow();
@@ -244,23 +244,23 @@ if($billid == "currentbill") {
 		$smarty->assign('UnitsData', $oldbd['bill_item_units']);
 		$smarty->assign('TotalCostData', $totcost);
 
-		if($it['item_type']=="HS") { 
+		if($it['item_type']=="HS") {
 			$smarty->assign('ItemTypeData', $LDMedicalServices);
-		} else if($it['item_type']=="LT") { 
-			$smarty->assign('ItemTypeData', $LDLaboratoryTests); 
+		} else if($it['item_type']=="LT") {
+			$smarty->assign('ItemTypeData', $LDLaboratoryTests);
 		}
 
-		if($lb1['item_type']=="HS") { $HStotal=$HStotal+($labres['bill_item_unit_cost'])*($labres['bill_item_units']); }  
+		if($lb1['item_type']=="HS") { $HStotal=$HStotal+($labres['bill_item_unit_cost'])*($labres['bill_item_units']); }
 		if($lb1['item_type']=="LT") { $LTtotal=$LTtotal+($labres['bill_item_unit_cost'])*($labres['bill_item_units']); }
-		
+
 		ob_start();
 		$smarty->display('ecombill/bill_payment_header_line.tpl');
 		$sListRows = $sListRows.ob_get_contents();
-		ob_end_clean(); 		
-		
+		ob_end_clean();
+
 		$oldbilltotal=$oldbilltotal+$oldbd['bill_item_amount'];
 	}
-	
+
 	$smarty->assign('ItemLine',$sListRows);
 }
 
@@ -298,7 +298,7 @@ $smarty->assign('LDTotalBillAmount',$LDTotalBillAmount);
 if($billid=="currentbill") { $LDTotalBillAmountData = $total; } else { $LDTotalBillAmountData = $oldbilltotal; }
 $smarty->assign('LDTotalBillAmountData',$LDTotalBillAmountData);
 $smarty->assign('LDOutstandingAmount',$LDOutstandingAmount);
-if($billid == "currentbill") $LDOutstandingAmountData  = $outstanding; else $LDOutstandingAmountData = $oldbilloutstanding; 
+if($billid == "currentbill") $LDOutstandingAmountData  = $outstanding; else $LDOutstandingAmountData = $oldbilloutstanding;
 if($LDOutstandingAmountData < 0) $LDOutstandingAmountData = 0; else $LDOutstandingAmountData = $outstanding;
 $smarty->assign('LDOutstandingAmountData',$LDOutstandingAmountData);
 $smarty->assign('LDAmountDue',$LDAmountDue);

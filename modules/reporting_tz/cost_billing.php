@@ -12,9 +12,9 @@
 		 */
 
 
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 
 define('LANG_FILE','dental.php');
 define('NO_2LEVEL_CHK',1);

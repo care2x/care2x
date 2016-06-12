@@ -1,11 +1,11 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 /*** CARE2X Integrated Hospital Information System beta 2.0.1 - 2004-07-04
 * GNU General Public License
 * Copyright 2002,2003,2004,2005 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file 'copy_notice.txt' for the licence notice
 */
@@ -30,16 +30,16 @@ include_once($root_path.'include/core/inc_date_format_functions.php');
  <style type="text/css" name="s2">
 .indx{ font-family:verdana,arial; color:#ffffff; font-size:12; background-color:#6666ff}
 </style>
- 
+
 <script language="javascript">
-<!-- 
+<!--
 
 function startsrc(f)
 {
 	window.parent.FILELISTFRAME.location.replace('radiolog-xray-pat-list.php?sid=<?php echo "$sid&lang=$lang" ?>&mode=search&sk='+f.searchkey.value);
 	window.parent.PREVIEWFRAME.location.replace('blank.htm');
 	window.parent.DIAGNOSISFRAME.location.replace('blank.htm');
-	
+
 	return false;
 }
 
@@ -53,12 +53,12 @@ if(d.searchkey.value) startsrc(d);
 
 // -->
 </script>
-<?php 
+<?php
 require($root_path.'include/core/inc_js_gethelp.php');
 require($root_path.'include/core/inc_css_a_hilitebu.php');
 ?></HEAD>
 
-<BODY  topmargin=0 leftmargin=0  marginwidth=0 marginheight=0 bgcolor=silver onLoad="document.srcform.searchkey.select();" onFocus="document.srcform.searchkey.select();" 
+<BODY  topmargin=0 leftmargin=0  marginwidth=0 marginheight=0 bgcolor=silver onLoad="document.srcform.searchkey.select();" onFocus="document.srcform.searchkey.select();"
 <?php if (!$cfg['dhtml']){ echo 'link='.$cfg['body_txtcolor'].' alink='.$cfg['body_alink'].' vlink='.$cfg['body_txtcolor']; } ?>>
 
 <table width=100% border=0 cellspacing=0 height=100%>
@@ -86,7 +86,7 @@ require($root_path.'include/core/inc_css_a_hilitebu.php');
 <input type="hidden" name="sid" value="<?php echo $sid ?>">
 <input type="hidden" name="lang" value="<?php echo $lang ?>">
 <input type="image" <?php echo createLDImgSrc($root_path,'searchlamp.gif','0','absmiddle') ?> alt="<?php echo $LDSearchPat ?>">
-                                                                                                     
+
 </form>
 
 
@@ -98,7 +98,7 @@ require($root_path.'include/core/inc_css_a_hilitebu.php');
 </tr>
 
 
-</table>        
+</table>
 &nbsp;
 
 </BODY>

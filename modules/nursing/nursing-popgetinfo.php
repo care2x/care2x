@@ -1,12 +1,12 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 /**
 * CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
 * GNU General Public License
 * Copyright 2002,2003,2004,2005 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -57,20 +57,20 @@ $charts_obj= new Charts;
 		$_POST['personell_name']=$_SESSION['sess_user_name'];
 		if($charts_obj->saveChartNotesFromArray($_POST,$notes_type_nr)){
     	  	// Load the visual signalling functions
-    		include_once($root_path.'include/core/inc_visual_signalling_fx.php');	
-			// Set the visual signal 
+    		include_once($root_path.'include/core/inc_visual_signalling_fx.php');
+			// Set the visual signal
 			setEventSignalColor($pn,SIGNAL_COLOR_ANTICOAG);
 			header("location:$thisfile?sid=$sid&lang=$lang&edit=$edit&saved=1&pn=$pn&station=$station&winid=$winid&yr=$yr&mo=$mo&dy=$dy&dystart=$dystart&dyname=$dyname");
 		}
 	}else{// end of if(mode==save)
- 	
+
 		$count=0;
-		$chartnotes=$charts_obj->getChartNotes($pn,$notes_type_nr);		
+		$chartnotes=$charts_obj->getChartNotes($pn,$notes_type_nr);
 		if(is_object($chartnotes)){
 			$count=$chartnotes->RecordCount();
 			include_once($root_path.'modules/news/includes/inc_editor_fx.php');
 			include_once($root_path.'include/core/inc_date_format_functions.php');
-		}	
+		}
 	}
 
 ?>
@@ -85,7 +85,7 @@ require($root_path.'include/core/inc_css_a_hilitebu.php');
 
 ?>
 <script language="javascript">
-<!-- 
+<!--
   function resetinput(){
 	document.infoform.reset();
 	}
@@ -97,7 +97,7 @@ require($root_path.'include/core/inc_css_a_hilitebu.php');
  function parentrefresh(){
 	window.opener.location.href="nursing-station-patientdaten-kurve.php?sid=<?php echo "$sid&lang=$lang&edit=$edit&station=$station&pn=$pn&tag=$dystart&monat=$mo&jahr=$yr&tagname=$dyname" ?>&nofocus=1";
 	}
-	
+
 function sethilite(d){
 	d.focus();
 	d.value=d.value+"*";
@@ -116,14 +116,14 @@ div.box { border: double; border-width: thin; width: 100%; border-color: black; 
 </style>
 
 </HEAD>
-<BODY  bgcolor="#99ccff" TEXT="#000000" LINK="#0000FF" VLINK="#800080" topmargin="0" marginheight="0" 
+<BODY  bgcolor="#99ccff" TEXT="#000000" LINK="#0000FF" VLINK="#800080" topmargin="0" marginheight="0"
 onLoad="<?php if($saved) echo "parentrefresh();"; ?>if (window.focus) window.focus(); window.focus();document.infoform.notes.focus();" >
 
 <table border=0 width="100%">
   <tr>
     <td><b><font face=verdana,arial size=5 color=maroon>
-<?php 
-	echo $title; 
+<?php
+	echo $title;
 ?>
 	</font></b>
 	</td>
@@ -156,8 +156,8 @@ if($count){
 
   <tr  bgcolor="<?php echo $bgc; ?>"  valign="top">
     <td><FONT SIZE=-1  FACE="Arial" color="#000033">
-	<?php 
-		if(!empty($row['notes'])) echo deactivateHotHtml(nl2br($row['notes'])); 
+	<?php
+		if(!empty($row['notes'])) echo deactivateHotHtml(nl2br($row['notes']));
 		if(!empty($row['short_notes'])) echo '[ '.deactivateHotHtml($row['short_notes']).' ]';
 	?>
 	</td>

@@ -1,15 +1,14 @@
 <?php
 define ( 'ROW_MAX', 15 ) ; # define here the maximum number of rows for displaying the parameters
 
-
-error_reporting ( E_COMPILE_ERROR | E_ERROR | E_CORE_ERROR ) ;
 require ('./roots.php') ;
 require ($root_path . 'include/core/inc_environment_global.php') ;
+error_reporting($ErrorLevel);
 /**
  * CARE2X Integrated Hospital Information System Deployment 2.2 - 2006-07-10
  * GNU General Public License
  * Copyright 2002,2003,2004,2005,2006 Elpidio Latorilla
- * elpidio@care2x.org, 
+ * elpidio@care2x.org,
  *
  * See the file "copy_notice.txt" for the licence notice
  */
@@ -31,7 +30,7 @@ include_once ($root_path . 'include/core/inc_date_format_functions.php') ;
 
 if (isset ( $mode ) && ! empty ( $mode )) {
 	if ($mode == 'save') {
-		# Save the nr	
+		# Save the nr
 		if (empty ( $_POST [ 'status' ] ))
 			$_POST [ 'status' ] = ' ' ;
 		$_POST [ 'modify_id' ] = $_SESSION [ 'sess_user_name' ] ;
@@ -42,7 +41,7 @@ if (isset ( $mode ) && ! empty ( $mode )) {
 		# Point to the data array
 		//print_r($_POST);
 		$lab_obj->setDataArray ( $_POST ) ;
-		
+
 		if ($lab_obj->updateDataFromInternalArray ( $_POST [ 'nr' ] )) {
 			?>
 
@@ -59,9 +58,9 @@ if (isset ( $mode ) && ! empty ( $mode )) {
 			echo $lab_obj->getLastQuery () ;
 		# end of if(mode==save)
 	}
-	# begin mode new 	
+	# begin mode new
 	if ($mode == 'savenew') {
-		# Save the nr	
+		# Save the nr
 		if (empty ( $_POST [ 'status' ] ))
 			$_POST [ 'status' ] = ' ' ;
 		$_POST [ 'modify_id' ] = $_SESSION [ 'sess_user_name' ] ;
@@ -74,7 +73,7 @@ if (isset ( $mode ) && ! empty ( $mode )) {
 		# Point to the data array
 		$lab_obj->setDataArray ( $_POST ) ;
 		if ($lab_obj->insertDataFromInternalArray ()) {
-			
+
 			?>
 
 <script language="JavaScript">
@@ -88,7 +87,7 @@ if (isset ( $mode ) && ! empty ( $mode )) {
 			exit () ;
 		} else
 			echo $lab_obj->getLastQuery () ;
-		# end of if(mode==new)		
+		# end of if(mode==new)
 	}
 }
 //gjergji : i get the groups here...
@@ -107,7 +106,7 @@ echo setCharSet () ;
  <TITLE>Konfigurimi i Grupeve</TITLE>
 
 <script language="javascript" name="j1">
-<!--        
+<!--
 function editGroup(nr)
 {
 	urlholder="labor_test_group_edit?sid=<?php
@@ -152,7 +151,7 @@ require ($root_path . 'include/core/inc_css_a_hilitebu.php') ;
 
 <BODY topmargin=0 leftmargin=0 marginwidth=0 marginheight=0
 	<?php
-	
+
 	if (! $cfg [ 'dhtml' ]) {
 		echo 'link=' . $cfg [ 'body_txtcolor' ] . ' alink=' . $cfg [ 'body_alink' ] . ' vlink=' . $cfg [ 'body_txtcolor' ] ;
 	}
@@ -214,7 +213,7 @@ echo $tg [ 'name' ] ;
 <?php
 
 $toggle = 0 ;
-echo '<table border="0" cellpadding=2 cellspacing=1>	
+echo '<table border="0" cellpadding=2 cellspacing=1>
 	<tr><td  class="a12_b" bgcolor="#fefefe">&nbsp;' . $LDGroup . '</td>
 			<td bgcolor="' . $bgc . '"  class="a12_b"><input type="text" name="name" size=15 maxlength=15 value="' . $tg [ 'name' ] . '">&nbsp;
 			</td></tr>
@@ -260,7 +259,7 @@ if ($mode == 'new') {
 <input type="image"
 					<?php
 					echo createLDImgSrc ( $root_path, 'savedisc.gif', '0' ) ?>>
-				
+
 				</td>
 			</tr>
 
@@ -270,7 +269,7 @@ if ($mode == 'new') {
 
 		</FONT>
 		<p>
-		
+
 		</td>
 
 	</tr>

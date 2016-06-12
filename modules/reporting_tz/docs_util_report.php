@@ -1,8 +1,7 @@
 <?php
-
-error_reporting(E_COMPILE_ERROR | E_ERROR | E_CORE_ERROR);
 require('./roots.php');
 require($root_path . 'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 //require($root_path . 'include/core/inc_front_chain_lang.php');
 //require($root_path . 'language/en/lang_en_reporting.php');
 require($root_path . 'language/en/lang_en_date_time.php');
@@ -49,10 +48,10 @@ $debug = FALSE;
 
 //Get the doctors list and the number of patients they have attended.
 
-$docs_patients = "SELECT name, doctor, sum(attend) AS no_of_patients 
+$docs_patients = "SELECT name, doctor, sum(attend) AS no_of_patients
                   FROM care_tz_hospital_doctor_history, care_users
                   WHERE care_tz_hospital_doctor_history.doctor = care_users.login_id
-                  AND date >= '$startdate' AND date <= '$enddate' 
+                  AND date >= '$startdate' AND date <= '$enddate'
                   GROUP BY doctor ORDER BY name asc";
 $db_docs_patients = $db->Execute($docs_patients);
 

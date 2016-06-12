@@ -1,7 +1,7 @@
 <?php
- error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
  require('./roots.php');
  require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
  /**
  * CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
  * GNU General Public License
@@ -26,7 +26,7 @@
  //Create ward object
  require_once($root_path.'include/care_api_classes/class_ward.php');
  $ward_obj= new Ward;
- 
+
  // Let us make some interface for calendar class
  if($from=='arch'){
 	 if($pday=='') $pday=date('d');
@@ -95,12 +95,12 @@
   $sqlSnippet.=" WHERE  w.is_temp_closed IN('',0) AND w.status NOT IN ($ward_obj->dead_stat)   AND w.date_create<='$s_date' ";
   $sqlSnippet.=" AND ce.status NOT IN ('discharged')";
   $sqlSnippet.=" AND l.status NOT IN ('discharged','closed',$ward_obj->dead_stat)";
-  
+
   //put it together
-  $sql="(SELECT 0 AS maxoccbed,nr AS ward_nr 
-  	FROM care_ward 
+  $sql="(SELECT 0 AS maxoccbed,nr AS ward_nr
+  	FROM care_ward
   	WHERE
-  	  is_temp_closed IN ('',0) 
+  	  is_temp_closed IN ('',0)
   	  AND status NOT IN ($ward_obj->dead_stat)
   	  AND date_create<='$s_date'
   	  AND nr NOT IN (SELECT distinct w.nr AS ward_nr ";

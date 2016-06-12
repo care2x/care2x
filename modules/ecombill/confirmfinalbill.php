@@ -1,5 +1,4 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 /**
  * eComBill 1.0.04 for Care2002 beta 1.0.04
  * (2003-04-30)
@@ -9,6 +8,7 @@ error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
  */
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 define('LANG_FILE','billing.php');
 define('NO_CHAIN',1);
 require_once($root_path.'include/core/inc_front_chain_lang.php');
@@ -67,7 +67,7 @@ $returnfile='final_bill.php'.URL_APPEND.'&patientno='.$patientno.'&full_en='.$fu
 	}
 //-->
 </SCRIPT>
-<?php 
+<?php
 $sTemp = ob_get_contents();
 ob_end_clean();
 

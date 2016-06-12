@@ -1,12 +1,12 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'/include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 /**
 * CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
 * GNU General Public License
 * Copyright 2002,2003,2004,2005 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -18,7 +18,7 @@ $dbtable='care_tech_repair_job';
 
     /* Load the date formatter */
     include_once($root_path.'include/core/inc_date_format_functions.php');
-    	
+
     /* Load editor functions for time format converter */
 
     $sql='SELECT * FROM '.$dbtable.' WHERE archive=0  ORDER BY tid DESC';
@@ -37,13 +37,13 @@ $dbtable='care_tech_repair_job';
 function goactive()
 	{
 <?php
-if ($nofocus=='') echo "	
+if ($nofocus=='') echo "
  	if(window.focus) window.focus();
  	";
 ?>
 	window.resizeTo(800,600);
 	}
-	
+
 function show_order(d,o,s,t)
 {
 	url="technik-repabot-print.php<?php echo URL_REDIRECT_APPEND; ?>&dept="+d+"&tdate="+o+"&ttime="+s+"&tid="+t;
@@ -74,7 +74,7 @@ if($rows)
 		echo '
 				<td><font face=Verdana,Arial size=2 color="#000080">'.$reportindex[$i].'</td>';
 		echo '
-				</tr>';	
+				</tr>';
 
 		$i=$rows;
 
@@ -88,13 +88,13 @@ if($rows)
 						<img '.createComIcon($root_path,'uparrowgrnlrg.gif','0').' alt="'.$LDShowReport.'"></a></td>
 				<td ><font face=Verdana,Arial size=2>'.strtoupper($content['dept']).'</td>
 				<td><font face=Verdana,Arial size=2>';
-				
+
 			echo formatDate2Local($content['tdate'],$date_format);
-			
+
 			echo '</td>
 				 <td><font face=Verdana,Arial size=2>'.convertTimeToLocal(str_replace('24','00',$content['ttime'])).'</td>
 				<td align="center">';
-				
+
 			if($content['seen'])
 				{
 					 echo '<img '.createComIcon($root_path,'check2.gif','0').' alt="OK">';
@@ -111,7 +111,7 @@ if($rows)
 			</td></tr></table>
 			</center>';
 	}
-	else 
+	else
 	{
  	echo '<center><img '.createMascot($root_path,'mascot2_r.gif','0','middle').'>
 			<font face="Verdana, Arial" size=3 color=#ff0000>
@@ -122,13 +122,13 @@ if($rows)
 			<input type="hidden" name="lang" value="'.$lang.'">
 			<input type="submit" value="'.$LDShowRequest.'">
     		</form>
-			</center>'; 
+			</center>';
 	}
-	
+
 
 }
-else if($showlist) 
-	{	
+else if($showlist)
+	{
 		$showlist=0;
 		echo '
 				<script language=javascript>

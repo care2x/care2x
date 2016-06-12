@@ -1,14 +1,14 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 
 
 #Load and create paginator object
 require_once($root_path.'include/care_api_classes/class_tz_reporting.php');
 /**
  * getting summary of OPD...
-*/ 
+*/
 $rep_obj = new selianreport();
 
 $lang_tables[]='reporting.php';
@@ -28,7 +28,7 @@ if ($printout) {
 
 $tmp_tbl_admissions=$rep_obj->SetReportingLink_Admissions("care_encounter","pid","encounter_date","care_person","pid",$start,$end,"2");
 
-		
+
 $arr_reg = $rep_obj->Get_Visits_Count();
 $arr_new = $rep_obj->Get_FirstTime_Reg_Count();
 $arr_newreg = $rep_obj->Get_New_Reg_Count();

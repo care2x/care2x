@@ -1,12 +1,12 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'/include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 /**
 * CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
 * GNU General Public License
 * Copyright 2002,2003,2004,2005 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -58,15 +58,15 @@ $smarty->assign('sButton','<img '.createComIcon($root_path,'varrow.gif','0').'>'
 
 $smarty->assign('LDAck',$LDAck);
 $smarty->assign('sMascotImg','<img '.createMascot($root_path,'mascot1_r.gif','0','bottom').' align=left>');
-$smarty->assign('LDThanksSir',$LDThanksSir); 
-$smarty->assign('reporter',$reporter); 
-$smarty->assign('LDYour',$LDYour); 
+$smarty->assign('LDThanksSir',$LDThanksSir);
+$smarty->assign('reporter',$reporter);
+$smarty->assign('LDYour',$LDYour);
 $smarty->assign('target',$target);
-$smarty->assign('LDReceived',$LDReceived); 
-$smarty->assign('sDate',@formatDate2Local($tdate,$date_format)); 
+$smarty->assign('LDReceived',$LDReceived);
+$smarty->assign('sDate',@formatDate2Local($tdate,$date_format));
 $smarty->assign('LDAt',$LDAt);
 $smarty->assign('sTime',@convertTimeToLocal($ttime));
-$smarty->assign('LDAtTech',$LDAtTech); 
+$smarty->assign('LDAtTech',$LDAtTech);
 
 $smarty->assign('pbOK','<FORM action="'.$returnfile.'" >
 <input type="hidden" name="sid" value="'.$sid.'">

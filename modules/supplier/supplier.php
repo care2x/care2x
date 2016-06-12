@@ -1,7 +1,7 @@
 <?php
-//error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 
 define('LANG_FILE','products.php');
 $local_user='ck_supplier_db_user';
@@ -52,7 +52,7 @@ if($mode=='save') include('includes/inc_supplier_db_save_mod.php');
 ob_start();
 
 	 # Load the javascript code
-	 require('includes/inc_js_products.php'); 
+	 require('includes/inc_js_products.php');
 
 	$sTemp = ob_get_contents();
 ob_end_clean();
@@ -69,7 +69,7 @@ if($error=="supplier_exists"){
 	$smarty->assign('LDOrderNrExists',$LDOrderNrExists);
 }
 
-if($update&&(!$updateok)&&($mode=='save')) 
+if($update&&(!$updateok)&&($mode=='save'))
 	$smarty->assign('sNoSave',$LDDataNoSaved.'<a href="supplier.php'.URL_APPEND.'&cat='.$cat.'"><u>'.$LDClk2EnterNewSupplier.'</u></a>');
 
  $smarty->assign('sFormStart','<form ENCTYPE="multipart/form-data" action="'.$thisfile.'" method="post" name="inputform" onSubmit="return prufform(this)">');
@@ -132,18 +132,18 @@ $sTemp='';
   <input type="hidden" name="tstamp" value="<?php echo  str_replace("_",".",date(H_i))?>">
   <input type="hidden" name="lockflag" value="<?php echo  $lockflag?>">
   <input type="hidden" name="update" value="<?php if($saveok) echo "1"; else echo $update;?>">
-<?php 
+<?php
 
 $sTemp = ob_get_contents();
 ob_end_clean();
 
 if($saveok){
-	
+
 	$smarty->assign('sNewSupplier',"<a href=\"".$thisfile.URL_APPEND."&cat=$cat&userck=$userck&update=0\">$LDNewSupplier</a>");
-	
+
 	# Show update button
 	$smarty->assign('sUpdateButton','<input type="image" '.createLDImgSrc($root_path,'update.gif','0').'>');
-	
+
 	$sBreakImg ='close2.gif';
 
 }else{

@@ -1,12 +1,12 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 /**
 * CARE2X Integrated Hospital Information System Deployment 2.2 - 2006-07-10
 * GNU General Public License
 * Copyright 2002,2003,2004,2005,2006 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -26,7 +26,7 @@ require($root_path.'include/core/inc_2level_reset.php');
 <?php echo setCharSet(); ?>
 
 <script language="javascript" >
-<!-- 
+<!--
 function closewin()
 {
 	location.href='startframe.php?sid=<?php echo "$sid&lang=$lang";?>';
@@ -39,9 +39,9 @@ function gethelp(x,s,x1,x2,x3)
 	window.helpwin.moveTo(0,0);
 }
 // -->
-</script> 
- 
-<?php 
+</script>
+
+<?php
 require($root_path.'include/core/inc_js_gethelp.php');
 require($root_path.'include/core/inc_css_a_hilitebu.php');
 ?><SCRIPT language="JavaScript" src="../js/sublinker-nd.js">
@@ -49,7 +49,7 @@ require($root_path.'include/core/inc_css_a_hilitebu.php');
 
 </HEAD>
 
-<BODY topmargin=0 leftmargin=0 marginwidth=0 marginheight=0  
+<BODY topmargin=0 leftmargin=0 marginwidth=0 marginheight=0
 <?php if (!$cfg['dhtml']){ echo 'link='.$cfg['body_txtcolor'].' alink='.$cfg['body_alink'].' vlink='.$cfg['body_txtcolor']; } ?>>
 
 <table width=100% border=0 height=100% cellpadding="0" cellspacing="0" >
@@ -81,8 +81,8 @@ require($root_path.'include/core/inc_css_a_hilitebu.php');
 require($root_path.'include/core/inc_load_copyrite.php');?>
 </td>
 </tr>
-</table>        
+</table>
 &nbsp;
-</FONT>			
+</FONT>
 </BODY>
 </HTML>

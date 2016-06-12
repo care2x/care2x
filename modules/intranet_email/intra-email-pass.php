@@ -1,12 +1,12 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 /**
 * CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
 * GNU General Public License
 * Copyright 2002,2003,2004,2005 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -39,7 +39,7 @@ if($mode!='')
 			{
 				$sql="SELECT * FROM $dbtable WHERE email='$username@$dept'";
 				if($ergebnis=$db->Execute($sql))
-				{ 
+				{
 					if($ergebnis->RecordCount())
 					{
 						$content=$ergebnis->FetchRow();
@@ -48,25 +48,25 @@ if($mode!='')
 						    /**
 						    * Init crypt to use 2nd level key and encrypt the sid.
 						    * Store to cookie the "$ck_2level_sid.$sid"
-							* There is no need to call another include of the inc_init_crypt.php since it is already included at the start 
+							* There is no need to call another include of the inc_init_crypt.php since it is already included at the start
 							* of the script that called this script.
 							*/
     						$enc_2level = new Crypt_HCEMD5($key_2level, makeRand());
 							$ciphersid=$enc_2level->encodeMimeSelfRand($sid);
 							setcookie(ck_2level_sid.$sid,$ciphersid);
 							setcookie('ck_intra_email_user'.$sid,$content[email]);
-							header("location:$forwardfile"); 
+							header("location:$forwardfile");
 							exit;
 						} else $onError=$LDErrorLogin;
 					}
 					else
 					{
-						// if last check data not available 
+						// if last check data not available
 						$newuser=1;
 					}
 				}else { echo "$LDDbNoRead<br>$sql"; }
 			}// end of if password...
-			
+
 		if($mode=='register')
 		{
             /**
@@ -76,17 +76,17 @@ if($mode!='')
 			if(!isset($pw1)) $pw1='';
 			if(!isset($pw2)) $pw2='';
 			if(!isset($name)) $name='';
-			
+
 			$sql="SELECT * FROM $dbtable WHERE email='$addr@$dept'";
 			if($ergebnis=$db->Execute($sql))
-			{ 
+			{
 				if($ergebnis->RecordCount())
 				{
 					$addr='';
 				}
 				   else $nameError='';
 			}
-		
+
 			if($nameError=='')
 			{
 			  //check the input data
@@ -97,31 +97,31 @@ if($mode!='')
 				else{
 						if($pw1==$pw2)
 						{
-						$sql="INSERT INTO $dbtable 
+						$sql="INSERT INTO $dbtable
 										( 	user_name,
 											email,
 											alias,
-											pw 
+											pw
 										)
 										VALUES
 										(	'$name',
 											'$addr@$dept',
 											'$alias',
 											'".md5($pw1)."'
-										)";			
-/*								$sql="INSERT INTO $dbtable 
+										)";
+/*								$sql="INSERT INTO $dbtable
 										( 	user_name,
 											email,
 											alias,
-											pw 
+											pw
 										)
 										VALUES
 										(	'$name',
 											'$addr@$dept',
 											'$alias',
 											'".crypt($pw1)."'
-										)";			
-*/							
+										)";
+*/
 							$db->BeginTrans();
 							$ok=$db->Execute($sql);
 							if($ok&&$db->CommitTrans())
@@ -129,14 +129,14 @@ if($mode!='')
 								setcookie('ck_intra_email_user'.$sid,$addr.'@'.$dept);
 								header("location:intra-email.php".URL_REDIRECT_APPEND."&usr=$name");
 								exit;
-							} 
-							else	 
-							 { 
+							}
+							else
+							 {
 							     $db->RollbackTrans();
-							      echo "$LDDbNoSave<br>$sql"; 
-							  } 				
-						}else 
-							{ 
+							      echo "$LDDbNoSave<br>$sql";
+							  }
+						}else
+							{
 							   $regError=$LDErrorPassword;
 							}
 					  }
@@ -181,7 +181,7 @@ if($regError) $smarty->assign('sOnLoadJs','onLoad="document.regform.pw1.focus()"
 # Collect extra javascript code
 
 $sTemp = '<script language="javascript" >
-<!-- 
+<!--
 
 function pruf(d){
 	pw=d.password;
@@ -226,17 +226,17 @@ ob_start();
     <tr bgcolor=#ffffdd>
       <td align=right><FONT face="Verdana,Helvetica,Arial" size=2><b><?php echo $LDUrEmailAddr ?>:</b></td>
       <td><input type="text" name="username" size=20 maxlength=40 value="<?php echo  $username ?>"><FONT face="Verdana,Helvetica,Arial" size=2 color=#0000ff>@<select name="dept" size=1>
-<?php 
-   
+<?php
+
      while(list($x,$v)=each($LDEmailDomains))
 	 {
 		 echo '
 		<option value="'.$v.'"';
-		if (stristr($dept,$x)) echo 'selected'; 
+		if (stristr($dept,$x)) echo 'selected';
 		echo '>'.$v.'</option>';
 	}
 	reset($LDEmailDomains);
-?>                                                   
+?>
          </select>
 		  </td>
     </tr>
@@ -247,27 +247,27 @@ ob_start();
     </tr>
 
     <tr >
-   
+
 	 <td align="right" colspan=2><input type="image" <?php echo createLDImgSrc($root_path,'login.gif','0'); ?>>
     </td>
-    
+
     </tr>
   </table>
   <input type="hidden" name="sid" value="<?php echo $sid ?>">
   <input type="hidden" name="lang" value="<?php echo $lang ?>">
   <input type="hidden" name="mode" value="access">
-  </form> 
-  
+  </form>
+
 <?php if($newuser) : ?>
 <HR>
 <table border=0>
   <tr>
     <td><img <?php echo createMascot($root_path,'mascot1_r.gif','0','bottom') ?>></td>
     <td><FONT face="Verdana,Helvetica,Arial" size=2 color="#990000">
-<?php 
+<?php
 if ($regError) echo $regError;
     elseif($nameError) echo $nameError;
-	  else echo $LDNotRegUser; 
+	  else echo $LDNotRegUser;
 ?>
   </td>
   </tr>
@@ -284,12 +284,12 @@ if ($regError) echo $regError;
     <td><FONT face="Verdana,Helvetica,Arial" size=2><input type="text" name="addr" size=25 maxlength=40 value="<?php echo $addr ?>"></td>
     <td><FONT face="Verdana,Helvetica,Arial" size=2 color="#800000"><b>@</b>
 		<select name="dept" size=1>
-<?php 
+<?php
      while(list($x,$v)=each($LDEmailDomains))
 	 {
 		 echo '
 		<option value="'.$v.'"';
-		if (stristr($dept,$x)) echo "selected"; 
+		if (stristr($dept,$x)) echo "selected";
 		echo '>'.$v.'</option>';
 	}
 ?>
@@ -317,7 +317,7 @@ if ($regError) echo $regError;
 <input type="hidden" name="lang" value="<?php echo $lang ?>">
 <input type="hidden" name="mode" value="register">
 </form>
- 
+
 
 <?php endif ?>
 <?php if (!$newuser)echo '

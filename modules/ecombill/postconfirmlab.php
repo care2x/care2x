@@ -1,5 +1,4 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 /**
  * eComBill 1.0.04 for Care2002 beta 1.0.04
  * (2003-04-30)
@@ -13,6 +12,7 @@ error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 define('NO_CHAIN',1);
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 $local_user='aufnahme_user';
 require_once($root_path.'include/core/inc_front_chain_lang.php');
 require_once($root_path.'include/care_api_classes/class_core.php');
@@ -37,7 +37,7 @@ $cnt=1;
 $resultchkpatqry = $eComBill->getBilledItemsByEncounter($patientno);
 if(is_object($resultchkpatqry)) $chkcnt=$resultchkpatqry->RecordCount();
 $totalBillAmount = 0;
-$doQuery = FALSE; 
+$doQuery = FALSE;
 while(strlen($labcod) !=1) {
 	$flag=0;
 	$labcod=substr($labcod,1);

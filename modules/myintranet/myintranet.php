@@ -1,12 +1,12 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 /**
 * CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
 * GNU General Public License
 * Copyright 2002,2003,2004,2005 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -23,16 +23,16 @@ $breakfile=$root_path.'main/spediens.php'.URL_APPEND;
 <?php echo setCharSet(); ?>
 
  <script language="javascript" >
-<!-- 
+<!--
 // -->
-</script> 
+</script>
 
-<?php 
+<?php
 require($root_path.'include/core/inc_js_gethelp.php');
 require($root_path.'include/core/inc_css_a_hilitebu.php');
 ?></HEAD>
 
-<BODY topmargin=0 leftmargin=0 marginwidth=0 marginheight=0 
+<BODY topmargin=0 leftmargin=0 marginwidth=0 marginheight=0
 <?php if (!$cfg['dhtml']){ echo 'link='.$cfg['body_txtcolor'].' alink='.$cfg['body_alink'].' vlink='.$cfg['body_txtcolor']; } ?>>
 
 <table width=100% border=0 height=100% cellpadding="0" cellspacing="0">
@@ -50,72 +50,72 @@ require($root_path.'include/core/inc_css_a_hilitebu.php');
         <TBODY>
         <TR>
           <TD>
-            <TABLE cellSpacing=1 cellPadding=3  bgColor=#999999 
+            <TABLE cellSpacing=1 cellPadding=3  bgColor=#999999
             border=0>
               <TBODY>
               <TR bgColor=#eeeeee><td align=center><img <?php echo createComIcon($root_path,'settings_tree.gif','0') ?>></td>
-                <TD vAlign=top width=150><FONT 
+                <TD vAlign=top width=150><FONT
                   face="Verdana,Helvetica,Arial" size=2><B><nobr>
 				 <a href="ucons.php?sid=<?php echo "$sid&lang=$lang" ?>"><?php echo $LDMyPersonalPlanner ?></a>
 				  </nobr></B></FONT></TD>
-                <TD><FONT face="Verdana,Helvetica,Arial" 
+                <TD><FONT face="Verdana,Helvetica,Arial"
                   size=2><?php echo $LDMyPersonalPlannerTxt ?></FONT></TD>
               <TR bgColor=#dddddd height=1>
-                <TD colSpan=3><IMG height=1 
-                  src="../../gui/img/common/default/pixel.gif" 
+                <TD colSpan=3><IMG height=1
+                  src="../../gui/img/common/default/pixel.gif"
                   width=5></TD></TR>
               <TR bgColor=#eeeeee> <td align=center><img <?php echo createComIcon($root_path,'sitemap_animator.gif','0') ?>></td>
-                <TD vAlign=top width=150><FONT 
+                <TD vAlign=top width=150><FONT
                   face="Verdana,Helvetica,Arial" size=2><B><nobr>
 				<a href="ucons.php?sid=<?php echo "$sid&lang=$lang" ?>&mode=repabot"><?php echo $LDMyOrganizer ?></a></nobr>
 				  </B></FONT></TD>
-                <TD><FONT face="Verdana,Helvetica,Arial" 
+                <TD><FONT face="Verdana,Helvetica,Arial"
                   size=2><nobr><?php echo $LDMyOrganizerTxt ?></nobr></FONT></TD></TR>
               <TR bgColor=#dddddd height=1>
-                <TD colSpan=3><IMG height=1 
-                  src="../../gui/img/common/default/pixel.gif" 
+                <TD colSpan=3><IMG height=1
+                  src="../../gui/img/common/default/pixel.gif"
                   width=5></TD></TR>
               <TR bgColor=#eeeeee><td align=center><img <?php echo createComIcon($root_path,'icn_rad.gif','0') ?>></td>
-                <TD vAlign=top width=150><FONT 
-                  face="Verdana,Helvetica,Arial" size=2><B> 
+                <TD vAlign=top width=150><FONT
+                  face="Verdana,Helvetica,Arial" size=2><B>
    				<a href="ucons.php?sid=<?php echo "$sid&lang=$lang" ?>"><?php echo $LDMyOffRequester ?></a></B></FONT></TD>
-                <TD><FONT face="Verdana,Helvetica,Arial" 
+                <TD><FONT face="Verdana,Helvetica,Arial"
                   size=2><nobr><?php echo $LDMyOffRequesterTxt ?></nobr></FONT></TD></TR>
-              
+
               <TR bgColor=#dddddd height=1>
-                <TD colSpan=3><IMG height=1 
-                  src="../../gui/img/common/default/pixel.gif" 
+                <TD colSpan=3><IMG height=1
+                  src="../../gui/img/common/default/pixel.gif"
                   width=5></TD></TR>
-				  
+
                <TR bgColor=#eeeeee> <td align=center><img <?php echo createComIcon($root_path,'eyeglass.gif','0') ?>></td>
-                <TD vAlign=top width=150><FONT 
+                <TD vAlign=top width=150><FONT
                   face="Verdana,Helvetica,Arial" size=2><B><nobr>
 				<a href="ucons.php?sid=<?php echo "$sid&lang=$lang" ?>"><?php echo $LDMyDiary ?></a></nobr>
 				  </B></FONT></TD>
-                <TD><FONT face="Verdana,Helvetica,Arial" 
+                <TD><FONT face="Verdana,Helvetica,Arial"
                   size=2><nobr><?php echo $LDMyDiaryTxt ?></nobr></FONT></TD></TR>
               <TR bgColor=#dddddd height=1>
-                <TD colSpan=3><IMG height=1 
-                  src="../../gui/img/common/default/pixel.gif" 
+                <TD colSpan=3><IMG height=1
+                  src="../../gui/img/common/default/pixel.gif"
                   width=5></TD></TR>
-				  
+
              <TR bgColor=#eeeeee><td align=center><img <?php echo createComIcon($root_path,'discussions.gif','0') ?>></td>
-                <TD vAlign=top width=150><FONT 
+                <TD vAlign=top width=150><FONT
                   face="Verdana,Helvetica,Arial" size=2><B>
 				<a href="ucons.php?sid=<?php echo "$sid&lang=$lang" ?>"><nobr><?php echo $LDMyCalendar ?></nobr></a>
 				  </B></FONT></TD>
-                <TD><FONT face="Verdana,Helvetica,Arial" 
+                <TD><FONT face="Verdana,Helvetica,Arial"
                   size=2><?php echo $LDMyCalendarTxt ?></FONT></TD></TR>
               <TR bgColor=#dddddd height=1>
-                <TD colSpan=3><IMG height=1 
-                  src="../../gui/img/common/default/pixel.gif" 
+                <TD colSpan=3><IMG height=1
+                  src="../../gui/img/common/default/pixel.gif"
                   width=5></TD></TR>
                <TR bgColor=#eeeeee> <td align=center><img <?php echo createComIcon($root_path,'sitemap_animator.gif','0') ?>></td>
-                <TD vAlign=top width=150><FONT 
+                <TD vAlign=top width=150><FONT
                   face="Verdana,Helvetica,Arial" size=2><B><nobr>
 				<a href="ucons.php?sid=<?php echo "$sid&lang=$lang" ?>&mode=fragebot"><?php echo $LDMyMemo ?></a></nobr>
 				  </B></FONT></TD>
-                <TD><FONT face="Verdana,Helvetica,Arial" 
+                <TD><FONT face="Verdana,Helvetica,Arial"
                   size=2><nobr><?php echo $LDMyMemoTxt ?></nobr></FONT></TD></TR>
 		</TBODY>
 		</TABLE>
@@ -139,7 +139,7 @@ require($root_path.'include/core/inc_load_copyrite.php');
 ?>
 </td>
 </tr>
-</table>        
+</table>
 &nbsp;
 
 

@@ -1,7 +1,7 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 //require('con_db.php');
 //connect_db();
 #Load and create paginator object
@@ -41,8 +41,8 @@ $debug=FALSE;
 		  // Last day of requested month
 		//echo $startdate = gmdate("Y-m-d H:i:s", $start_timeframe);
 		//echo $enddate = gmdate("Y-m-d H:i:s", $end_timeframe);
-		
-			
+
+
 
 $tmp_table = $rep_obj->SetReportingTable("care_icd10_en");
 $tmp_table1 = $rep_obj->SetReportingTable("care_tz_mtuha_cat_key");
@@ -53,10 +53,10 @@ $tmp_table3 = $rep_obj->SetReportingTable("care_tz_diagnosis");
 //$tmp_table2 = $rep_obj->SetReportingLink_OPDAdmission($tmp_table,"pid","encounter_date","care_person","pid","date_reg");
 
 $tmp_tbl_OPD_diagnostic = $rep_obj -> SetReportingLink('care_person','pid', 'care_tz_diagnosis','PID');
-	
+
 	// get the Diagnostic-Codes, Diagnostic-full-name and total out of this table:
 	//$sql = "SELECT ICD_10_code, ICD_10_description
-		 //  FROM $tmp_table where ICD_10_code in('A88.8','A00.9','A03.9','A75.0','B05','G00.9','A20.9','Z20.3','A82.9','A01.0','A95.9')		
+		 //  FROM $tmp_table where ICD_10_code in('A88.8','A00.9','A03.9','A75.0','B05','G00.9','A20.9','Z20.3','A82.9','A01.0','A95.9')
 			//	";
   //$sql = "SELECT  $tmp_table1.cat_id AS category, $tmp_table2.description AS description FROM  $tmp_table1, $tmp_table2,$tmp_tbl_OPD_diagnostic WHERE $tmp_tbl_OPD_diagnostic.icd_10_code = $tmp_table1.icd10_key AND $tmp_table.cat_id = $tmp_table1.cat_id GROUP BY $tmp_table2.cat_id";
 $sql="SELECT care_tz_mtuha_cat.cat_id AS category, care_tz_mtuha_cat.description AS description FROM care_tz_diagnosis, care_tz_mtuha_cat_key, care_tz_mtuha_cat WHERE care_tz_diagnosis.icd_10_code = care_tz_mtuha_cat_key.icd10_key AND care_tz_mtuha_cat.cat_id = care_tz_mtuha_cat_key.cat_id AND timestamp>='$start' and timestamp<='$end' GROUP BY care_tz_mtuha_cat_key.cat_id";

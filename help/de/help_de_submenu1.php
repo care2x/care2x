@@ -1,5 +1,5 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
+error_reporting($ErrorLevel);
 ?>
 <html>
 
@@ -15,7 +15,7 @@ error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 <?php echo $src ?>
 <p><font color="#990000">Was ist das hier?</font></b><p>
 <font face="Verdana, Arial" size=2>
-Dies ist ein typisches Untermenu. Das Untermenu is in drei Spalten geteilt. 
+Dies ist ein typisches Untermenu. Das Untermenu is in drei Spalten geteilt.
 <ul>
 <li><b>Spalte 1</b> : "Icons" oder graphische Symbole. Die grapische Symbole in dieser Spalte können nicht angeklickt werden.<p>
 <li><b>Spalte 2</b> : Optionen. Diese Optionen können angeklickt werden. Sie führen zu weiteren Funktionen, Informationen, oder Optionen.<p>

@@ -1,12 +1,12 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 /**
 * CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
 * GNU General Public License
 * Copyright 2002,2003,2004,2005 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -24,15 +24,15 @@ if(isset($mode) && $mode=='save'){
 	// Save to user config table
 
 	$config_new['mascot']=$mascot;
-	
+
 	include_once($root_path.'include/care_api_classes/class_userconfig.php');
-	
+
 	$user=new UserConfig;
 
 	if($user->getConfig($_COOKIE['ck_config'])){
 
 		$config=&$user->getConfigData();
-	
+
 		$config=array_merge($config,$config_new);
 
 		if($user->saveConfig($_COOKIE['ck_config'],$config)){
@@ -85,42 +85,42 @@ ob_start();
 <br>
 
 <form method="post">
-<?php if (isset($saved) && $saved) { 
-	echo '<img '.createMascot($root_path,'mascot1_r.gif','0','absmiddle').'>';	
+<?php if (isset($saved) && $saved) {
+	echo '<img '.createMascot($root_path,'mascot1_r.gif','0','absmiddle').'>';
 ?>
 <FONT  class="prompt"><?php echo $LDChangeSaved ?></font><br>
 <?php } ?>
 
-<table border=0 cellspacing=1 cellpadding=2>  
+<table border=0 cellspacing=1 cellpadding=2>
 
   <tr >
     <td colspan=3>&nbsp;</td>
   </tr>
-  
+
   <tr class="wardlisttitlerow">
     <td><b></b></td>
     <td><b><?php echo $LDMascot; ?></b></td>
    <td><b><?php echo $LDSampleMascot; ?></b></td>
   </tr>
-  
+
 <?php
 
 $handle=opendir($root_path.'gui/img/mascot/.');  // Modify this path if you have placed the mascot directories somewhere else
 $dirs=array();
-while (false!==($theme = readdir($handle))) { 
+while (false!==($theme = readdir($handle))) {
     if ($theme != '.' && $theme != '..') {
 		if(is_dir($root_path.'gui/img/mascot/'.$theme)&&file_exists($root_path.'gui/img/mascot/'.$theme.'/tags.php')){
-			@include($root_path.'gui/img/mascot/'.$theme.'/tags.php');			
-/*			
+			@include($root_path.'gui/img/mascot/'.$theme.'/tags.php');
+/*
 			if($theme==$mascot_theme) $dirs[$mascot_theme]=$mascot_name;
-*/		
+*/
 			$dirs[$theme]=$mascot_name;
 		}
-	} 
+	}
 }
 
 
-@asort($dirs,SORT_STRING); // sort the array 
+@asort($dirs,SORT_STRING); // sort the array
 while(list($x,$v)=each($dirs)){
 ?>
   <tr class="submenu">
@@ -133,7 +133,7 @@ while(list($x,$v)=each($dirs)){
    			<img src="<?php echo $root_path; ?>gui/img/mascot/<?php echo $x; ?>/mascot2_r.gif" border=0></td>
   </tr>
 
-  
+
   <?php
 }
 ?>

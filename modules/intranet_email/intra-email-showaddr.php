@@ -1,12 +1,12 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 /**
 * CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
 * GNU General Public License
 * Copyright 2002,2003,2004,2005 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -49,12 +49,12 @@ if($ergebnis=$db->Execute($sql))
  <TITLE><?php echo "$LDIntraEmail - $LDAddrBook" ?></TITLE>
 
  <script language="javascript" >
-<!-- 
+<!--
 function applyAddr()
 {
 	var v;
 	d=document.addrlist;
-	odm=window.opener.document.mailform; 
+	odm=window.opener.document.mailform;
 	for(i=0;i<d.maxrow.value;i++)
 	{
 		eval("v=d.sel"+i)
@@ -87,15 +87,15 @@ function resit(d)
 
 
 // -->
-</script> 
+</script>
 
-<?php 
+<?php
 require($root_path.'include/core/inc_js_gethelp.php');
 require($root_path.'include/core/inc_css_a_hilitebu.php');
 ?></HEAD>
 
-<BODY bgcolor=<?php echo $cfg['body_bgcolor']; ?> topmargin=0 leftmargin=0 marginwidth=0 marginheight=0 onLoad="if (window.focus) window.focus()" 
-<?php 
+<BODY bgcolor=<?php echo $cfg['body_bgcolor']; ?> topmargin=0 leftmargin=0 marginwidth=0 marginheight=0 onLoad="if (window.focus) window.focus()"
+<?php
  if (!$cfg['dhtml']){ echo ' link='.$cfg['body_txtcolor'].' alink='.$cfg['body_alink'].' vlink='.$cfg['body_txtcolor']; } ?>>
 <?php echo $test ?>
 <?php //foreach($argv as $v) echo "$v "; ?>
@@ -105,22 +105,22 @@ require($root_path.'include/core/inc_css_a_hilitebu.php');
 <FONT  COLOR="<?php echo $cfg['top_txtcolor']; ?>"  SIZE=+2  FACE="Arial"><STRONG>&nbsp;<?php echo "$LDIntraEmail - $LDAddrBook" ?></STRONG></FONT></td>
 </tr>
 
-</table>   
+</table>
 
 <FONT face="Verdana,Helvetica,Arial" size=2>
 
  <?php
- 
+
 echo '
 	<font color="#800000">&nbsp;'.$_COOKIE[$local_user.$sid].'</font>';
 // ******************************** show address book***************************************
 
  	$arrlist=explode("_",strtolower($content[addr_book]));
-	if($l2h) rsort($arrlist); else sort($arrlist); 
+	if($l2h) rsort($arrlist); else sort($arrlist);
 	reset($arrlist);
 	$maxrow=sizeof($arrlist);
 	if(($maxrow==1)&&($arrlist[0]=="")) $maxrow=0;
-	
+
  	echo '</b>
 		<form name="addrlist" action="intra-email-addrbook.php" method="post"  onSubmit="return chkDelete(this,'.sizeof($arrlist).')">
 	';
@@ -179,7 +179,7 @@ echo '
  	<input type="hidden" name="l2h" value="'.$l2h.'">
  	<input type="hidden" name="folder" value="'.$folder.'">
 	<input type="hidden" name="mode" value="'.$mode.'">
- </form>	
+ </form>
 	';
 
 ?>

@@ -1,12 +1,12 @@
 <?php
-error_reporting ( E_COMPILE_ERROR | E_ERROR | E_CORE_ERROR );
 require ('./roots.php');
 require ($root_path . 'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 /**
 * CARE2X Integrated Hospital Information System Deployment 2.2 - 2006-07-10
 * GNU General Public License
 * Copyright 2002,2003,2004,2005,2006 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -105,7 +105,7 @@ ob_start ();
 
 <ul>
 	<p><br>
-	
+
 <form action="<?php echo $thisfile?>" method="get" name="suchform" onSubmit="return pruf(this)">
 
 	<table border=0 cellspacing=2 cellpadding=3>
@@ -131,12 +131,12 @@ ob_start ();
 		</tr>
 	</table>
 
-	<input type="hidden" name="sid" value="<?php echo $sid?>"> 
-	<input type="hidden" name="lang" value="<?php echo $lang?>"> 
-	<input type="hidden" name="cat" value="<?php echo $cat?>"> 
-	<input type="hidden" name="userck" value="<?php echo $userck?>"> 
+	<input type="hidden" name="sid" value="<?php echo $sid?>">
+	<input type="hidden" name="lang" value="<?php echo $lang?>">
+	<input type="hidden" name="cat" value="<?php echo $cat?>">
+	<input type="hidden" name="userck" value="<?php echo $userck?>">
 	<input type="hidden" name="mode" value="search">
-	
+
 </form>
 
 	<hr>
@@ -148,9 +148,9 @@ require ("includes/inc_products_search_result_mod.php");
 ?>
 
 <form action="<?php echo $breakfile?>" method="post">
-	<input type="hidden" name="sid" value="<?php echo $sid?>"> 
-	<input type="hidden" name="lang" value="<?php echo $lang?>"> 
-	<input type="hidden" name="userck" value="<?php echo $userck?>"> 
+	<input type="hidden" name="sid" value="<?php echo $sid?>">
+	<input type="hidden" name="lang" value="<?php echo $lang?>">
+	<input type="hidden" name="userck" value="<?php echo $userck?>">
 	<input type="image" <?php echo createLDImgSrc ( $root_path, 'cancel.gif', '0' )?> border=0 width=103 height=24 alt="<?php echo $LDBack2Menu?>">
 </form>
 <?php

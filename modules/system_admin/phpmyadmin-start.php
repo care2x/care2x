@@ -1,12 +1,12 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 /**
 * CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
 * GNU General Public License
 * Copyright 2002,2003,2004,2005 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -33,7 +33,7 @@ switch($dbtype){
 		<?php require($root_path.'include/core/inc_css_a_hilitebu.php'); ?>
 	</head>
 	<body>
-	   &nbsp;      
+	   &nbsp;
 	   <p></p>
 		<font class="prompt">
 		<center>
@@ -42,7 +42,7 @@ switch($dbtype){
 			<input type="hidden" name="lang" value="<?php echo $lang ?>">
 			<input type="hidden" name="sid" value="<?php echo $sid; ?>">
 			<input type="submit" value="<?php echo $LDContinue ?>">
-		</form><p> 
+		</form><p>
 		<form action="edv.php" method="post">
 			<input type="hidden" name="lang" value="<?php echo $lang ?>">
 			<input type="hidden" name="sid" value="<?php echo $sid; ?>">

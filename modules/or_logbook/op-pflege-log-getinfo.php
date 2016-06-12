@@ -1,7 +1,7 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 define('LANG_FILE','or.php');
 $local_user='ck_op_pflegelogbuch_user';
 require_once($root_path.'include/core/inc_front_chain_lang.php');
@@ -14,19 +14,19 @@ $title=$LDOpPersonElements[$winid];
 
 switch($winid)
 {
-	case 'operator': 
+	case 'operator':
 							$element='operator';
 							//$maxelement=10;
 							$quickid='doctor';
 							$quicklist=$pers_obj->getDoctorsOfDept($dept_nr);
 							break;
-	case 'assist': 
+	case 'assist':
 							$element='assistant';
 							//$maxelement=10;
 							$quickid='doctor';
 							$quicklist=$pers_obj->getDoctorsOfDept($dept_nr);
 							break;
-	case 'scrub': 
+	case 'scrub':
 							$element='scrub_nurse';
 							//$maxelement=10;
 							$quickid='nurse';
@@ -44,7 +44,7 @@ switch($winid)
 							$quickid='doctor';
 							$quicklist=$pers_obj->getDoctorsOfDept(42); // 42 = anesthesiology department
 							break;
-	default:{header('Location:'.$root_path.'language/'.$lang.'/lang_'.$lang.'_invalid-access-warning.php'); exit;}; 
+	default:{header('Location:'.$root_path.'language/'.$lang.'/lang_'.$lang.'_invalid-access-warning.php'); exit;};
 }
 
 if($pers_obj->record_count) $quickexist=true;
@@ -53,7 +53,7 @@ $thisfile=basename(__FILE__);
 
 /* Establish db connection */
 if(!isset($db)||!$db) include($root_path.'include/core/inc_db_makelink.php');
-if($dblink_ok){	
+if($dblink_ok){
 	// get data if exists
 	$dbtable='care_encounter_op';
 	$sql="SELECT $element,encoding FROM $dbtable
@@ -71,17 +71,17 @@ if($dblink_ok){
 		}
 	}else{
 		echo "$LDDbNoRead<br>";
-	} 
-				
+	}
+
 		if($mode=='save')
 		{
 					$dbtable='care_encounter_op';
 
-					//$encoder=$ck_op_pflegelogbuch_user; 
-		
+					//$encoder=$ck_op_pflegelogbuch_user;
+
 					if($fileexist)
 						{
-										
+
 							// $dbuf=htmlspecialchars($dbuf);
 							$result[encoding].=" ~e=".$encoder."&d=".date("d.m.Y")."&t=".date("H.i")."&a=".$element;
 							if($delitem!="")
@@ -107,13 +107,13 @@ if($dblink_ok){
 					 						AND dept_nr='$dept_nr'
 					 						AND op_nr='$op_nr'
 					 						AND op_room='$saal'";
-											
+
 							if($ergebnis=$db->Execute($sql))
        							{
 									//echo $sql." new update <br>";
 									$saveok=1;
 								}
-								else { echo "$LDDbNoSave<br>"; } 
+								else { echo "$LDDbNoSave<br>"; }
 						} // else create new entry
 						else
 						{
@@ -128,9 +128,9 @@ if($dblink_ok){
 								if($rows)
 								{
 									mysql_data_seek($ergebnis,0);
-									$result=$ergebnis->FetchRow();		
+									$result=$ergebnis->FetchRow();
 									$dbtable='care_encounter_op';
-									$sql="INSERT INTO $dbtable 
+									$sql="INSERT INTO $dbtable
 										(
 										year,
 										dept_nr,
@@ -162,20 +162,20 @@ if($dblink_ok){
 										//echo $sql." new insert <br>";
 										$saveok=1;
 									}
-									else { echo "$LDDbNoSave<br>"; } 
+									else { echo "$LDDbNoSave<br>"; }
 								 } // end of if rows
 							} // end of if ergebnis
-								else { echo "$LDDbNoRead<br>"; } 
+								else { echo "$LDDbNoRead<br>"; }
 						}//end of else
 					if($saveok)
 						{
-						
+
 							header("location:$thisfile?sid=$sid&lang=$lang&mode=saveok&winid=$winid&enc_nr=$enc_nr&dept_nr=$dept_nr&saal=$saal&pyear=$pyear&pmonth=$pmonth&pday=$pday&op_nr=$op_nr");
 						}
 				}// end of if(mode==save)
 			else $saved=0;
 }
-  else { echo "$LDDbNoLink<br>"; } 
+  else { echo "$LDDbNoLink<br>"; }
 
 
 ?>
@@ -186,7 +186,7 @@ if($dblink_ok){
 <TITLE><?php echo $title ?></TITLE>
 
 <script language="javascript">
-<!-- 
+<!--
   function resetinput(){
 	document.infoform.reset();
 	}
@@ -241,16 +241,16 @@ div.box { border: double; border-width: thin; width: 100%; border-color: black; 
 </style>
 
 </HEAD>
-<BODY   bgcolor="#cde1ec" TEXT="#000000" LINK="#0000FF" VLINK="#800080"  topmargin=2 marginheight=2 
+<BODY   bgcolor="#cde1ec" TEXT="#000000" LINK="#0000FF" VLINK="#800080"  topmargin=2 marginheight=2
 onLoad="<?php if($mode=="saveok") echo "refreshparent();window.focus();"; ?>if (window.focus) window.focus();
 				window.focus();document.infoform.inputdata.focus();" >
 <a href="javascript:gethelp('oplog.php','person','<?php echo $winid ?>')"><img <?php echo createLDImgSrc($root_path,'hilfe-r.gif','0') ?> alt="<?php echo $LDHelp ?>" align="right"></a>
 <form name="infoform" action="op-pflege-log-getpersonell.php" method="post" onSubmit="return pruf(this)">
-				
+
 <font face=verdana,arial size=5 color=maroon>
 <b>
-<?php 
-	echo $title.'<br><font size=4>';	
+<?php
+	echo $title.'<br><font size=4>';
 ?>
 </b>
 </font>
@@ -266,24 +266,24 @@ onLoad="<?php if($mode=="saveok") echo "refreshparent();window.focus();"; ?>if (
     <td align=center bgcolor="#ffffff">
 	</td>     <td align=center bgcolor="#ffffff" width="20%">
 <!-- <?php echo "$LDLastName, $LDName" ?>
- -->	</td> 
+ -->	</td>
     <td align=center bgcolor="#ffffff">
 <?php echo $LDFunction ?>
-	</td> 
+	</td>
 
     <td align=center bgcolor="#ffffff">
 <?php echo $LDFrom ?>:
-	</td> 
+	</td>
 
     <td align=center bgcolor="#ffffff" >
 <?php echo $LDTo ?>:
-	</td> 
+	</td>
     <td bgcolor="#ffffff">
 &nbsp;<?php echo $LDExtraInfo ?>:
-	</td> 
-  </tr>	
+	</td>
+  </tr>
 
-<?php if($result[$element]!="") 
+<?php if($result[$element]!="")
 {
 	//echo $result[$element];
 	$dbuf=explode("~",trim($result[$element]));
@@ -298,30 +298,30 @@ onLoad="<?php if($mode=="saveok") echo "refreshparent();window.focus();"; ?>if (
 	  		<tr bgcolor="#ffffff">
     			<td   class="v13" >
 				&nbsp;<a href="javascript:delete_item(\''.$i.'\')"><img '.createComIcon($root_path,'delete2.gif','0').' alt="'.$LDDeleteEntry.'"></a>
-				</td> 
+				</td>
     			<td   class="v13" >
 				&nbsp;'.$elems[n].'
-				</td> 
+				</td>
     			<td class="v13" >
 				&nbsp;'.$title.' '.$elems[x].'
-				</td> 
+				</td>
     			<td class="v13" >
 				&nbsp;'.$elems[s].'<input type="text" name="ab" size=5 maxlength=5 value="">
-				</td> 
+				</td>
     			<td class="v13" >
 				&nbsp;'.$elems[e].'<input type="text" name="bis" size=5 maxlength=5 value="">
-				</td> 
+				</td>
     			<td class="v13" >
 				&nbsp;'.$elem[x].'<input type="text" name="x_info" size=30 maxlength=5 value="">
-				</td> 
+				</td>
   				</tr>';
 		}
 }
  else
- 
+
  {
  echo '
-  <tr>'; 
+  <tr>';
 for($i=0;$i<6;$i++)
 echo '
     <td align=center bgcolor="#ffffff" align=center  class="v13" >
@@ -344,7 +344,7 @@ echo'
 			 </td>
 
 		  </tr>
-	 
+
 		  </table>
 </td>
   </tr>
@@ -378,22 +378,22 @@ echo'
  <tr>
     <td align=center bgcolor="#ffffff" class="v13_n" >
 <!-- <?php echo $LDLastName ?>
-	</td> 
+	</td>
     <td align=center bgcolor="#ffffff" class="v13_n" >
 <?php echo $LDName ?> -->
 
-	</td> 
+	</td>
     <td align=center bgcolor="#ffffff"  class="v13_n" >
 <?php echo $LDJobId ?>
 
-	</td> 
+	</td>
     <td align=center bgcolor="#ffffff"   class="v13_n" >
 <?php echo "$LDOr $LDFunction" ?>
-	</td> 
+	</td>
     <td align=center bgcolor="#ffffff"   class="v13_n" >
 
-	</td> 
-  </tr>	
+	</td>
+  </tr>
 
 
 <?php 	$counter=0;
@@ -410,7 +410,7 @@ echo'
 			echo '
     			<td class="v13" >
 				&nbsp;'.$qlist['job_function_title'].'
-				</td> 
+				</td>
     			<td   class="v13" >
 				<select name="f'.$counter.'">';
 				if(!$entrycount) $entrycount=1;
@@ -423,13 +423,13 @@ echo'
 				}
     			echo '
 				</select>
-    
-				</td> 
+
+				</td>
     			<td   class="v13" >
 				&nbsp;<a href="javascript:savedata(\''.$qlist[name_last].'\',\''.$qlist[name_first].'\',document.quickselect.f'.$counter.',\''.$qlist['job_function_title'].'\')"><img '.createComIcon($root_path,'uparrowgrnlrg.gif','0').' align=absmiddle>
 				'.str_replace("~tagword~",$title,$LDUseData).'..</a>
-				</td> 
-    			
+				</td>
+
   				</tr>';
 				$counter++;
 		}

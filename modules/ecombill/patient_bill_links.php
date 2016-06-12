@@ -1,14 +1,14 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 /**
-* eComBill 1.0.04 for Care2002 beta 1.0.04 
+* eComBill 1.0.04 for Care2002 beta 1.0.04
 * (2003-04-30)
-* adapted from eComBill beta 0.2 
-* developed by ecomscience.com http://www.ecomscience.com 
+* adapted from eComBill beta 0.2
+* developed by ecomscience.com http://www.ecomscience.com
 * GPL License
 */
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 
 define('NO_CHAIN',1);
 define('LANG_FILE','billing.php');
@@ -53,16 +53,16 @@ $returnfile='patientbill.php'.URL_APPEND.'&patientno='.$patientno.'&full_en='.$f
  ob_start();
 ?>
 <Script language=Javascript>
-function showbill(billid) {	
+function showbill(billid) {
 	document.billlinks.action="patient_due_first.php?billid="+billid;
 	document.billlinks.submit();
 }
-function showfinalbill() {	
+function showfinalbill() {
 	document.billlinks.action="showfinalbill.php";
 	document.billlinks.submit();
 }
 </script>
-<?php 
+<?php
 $sTemp = ob_get_contents();
 ob_end_clean();
 
@@ -81,43 +81,43 @@ $smarty->assign('pbCancel','<a href="'.$breakfile.'" ><img '.createLDImgSrc($roo
 $sListRows='';
 $billqueryresult = $eComBill->listCurrentBills($patientno);
 if(is_object($billqueryresult)) {
-	while ($result=$billqueryresult->FetchRow()) { 
-	    $smarty->assign('itemNr',"<a href=javascript:showbill('".$result['bill_bill_no']."')>".$result['bill_bill_no']."</a>" ); 	
+	while ($result=$billqueryresult->FetchRow()) {
+	    $smarty->assign('itemNr',"<a href=javascript:showbill('".$result['bill_bill_no']."')>".$result['bill_bill_no']."</a>" );
 	    $smarty->assign('date', formatDate2Local($result['bill_date_time'],$date_format));
-	
+
 	    ob_start();
 		$smarty->display('ecombill/bill_payment_line.tpl');
 		$sListRows = $sListRows.ob_get_contents();
-		ob_end_clean(); 
+		ob_end_clean();
 	}
 }
 
 //$chkfinalresult = $eComBill->checkFinalBillExist($patientno);
 $chkfinalresult = $eComBill->listBillsByEncounter($patientno);
-$finaldate = '';   
+$finaldate = '';
 $finalno = '';
 if(is_object($chkfinalresult)) {
 
-	$chkexists = $chkfinalresult->RecordCount();	
+	$chkexists = $chkfinalresult->RecordCount();
 	if($chkexists == 0) {
 		$result=$chkfinalresult->FetchRow();
 		$finaldate=$result['final_date'];
 		$finalno=$result['final_bill_no'];
-		
+
 		$smarty->assign('itemNr', '<a href=javascript:showfinalbill()>'. $LDFinalBill .'</a>');
 		$smarty->assign('date', formatDate2Local($result['final_date'],$date_format));
 
 	} else {
 		$smarty->assign('itemNr', '<a href=javascript:showbill(\'currentbill\')>'.$LDCurrentBill.'</a>');
 		$smarty->assign('date', formatDate2Local(date("Y-m-d"),$date_format));
-	}	
+	}
 
 	ob_start();
 	$smarty->display('ecombill/bill_payment_line.tpl');
 	$sListRows = $sListRows.ob_get_contents();
-	ob_end_clean(); 
+	ob_end_clean();
 }
- 
+
 $smarty->assign('ItemLine',$sListRows);
 
 $smarty->assign('sFormTag','<form name="billlinks" method="POST">');

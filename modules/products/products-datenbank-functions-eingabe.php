@@ -1,7 +1,7 @@
 <?php
-//error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 define('LANG_FILE','products.php');
 $local_user='ck_prod_db_user';
 require_once($root_path.'include/core/inc_front_chain_lang.php');
@@ -35,7 +35,7 @@ if (empty($mode)) {
 }
 
 switch($cat) {
-	case "pharma":	
+	case "pharma":
 					$title=$LDPharmacy;
 					$breakfile=$root_path."modules/pharmacy/apotheke-datenbank-functions.php".URL_APPEND."&userck=$userck";
 					$imgpath=$root_path."uplodas/pharma/img/";
@@ -45,7 +45,7 @@ switch($cat) {
 					$breakfile=$root_path."modules/med_depot/medlager-datenbank-functions.php".URL_APPEND."&userck=$userck";
 					$imgpath=$root_path."uplodas/med_depot/img/";
 					break;
-	default:  {header("Location:".$root_path."language/".$lang."/lang_".$lang."_invalid-access-warning.php"); exit;}; 
+	default:  {header("Location:".$root_path."language/".$lang."/lang_".$lang."_invalid-access-warning.php"); exit;};
 }
 
 
@@ -155,7 +155,7 @@ if ($saveok){
 	$smarty->assign('sPcsProOrderInput',$proorder.'<input type="hidden" name="proorder" value="'.$proorder.'">');
 	$smarty->assign('sIndustrialNrInput',$artnum.'<input type="hidden" name="artnum" value="'.$artnum.'">');
 	$smarty->assign('sLicenseNrInput',$indusnum.'<input type="hidden" name="indusnum" value="'.$indusnum.'">');
-	$smarty->assign('sMinPiecesInput',$minpcs.'<input type="hidden" name="minpcs" value="'.$minpcs.'">');	
+	$smarty->assign('sMinPiecesInput',$minpcs.'<input type="hidden" name="minpcs" value="'.$minpcs.'">');
 	$smarty->assign('sPicFileInput',$picfilename.'<input type="hidden" name="bild" value="'.$picfilename.'">');
 }else{
 	$smarty->assign('sArticleNameInput','<input type="text" name="artname" value="'.$artname.'" size=40 maxlength=40>');
@@ -170,7 +170,7 @@ if ($saveok){
 	$smarty->assign('sPcsProOrderInput','<input type="text" name="proorder" value="'.$proorder.'" size=20 maxlength=40>');
 	$smarty->assign('sIndustrialNrInput','<input type="text" name="artnum" value="'.$artnum.'" size=20 maxlength=20>');
 	$smarty->assign('sLicenseNrInput','<input type="text" name="indusnum" value="'.$indusnum.'" size=20 maxlength=20>');
-	$smarty->assign('sMinPiecesInput','<input type="text" name="minpcs" value="'.$minpcs.'" size=20 maxlength=20>');	
+	$smarty->assign('sMinPiecesInput','<input type="text" name="minpcs" value="'.$minpcs.'" size=20 maxlength=20>');
 	$smarty->assign('sPicFileInput','<input type="file" name="bild" onChange="getfilepath(this)">');
 
 	$smarty->assign('LDReset','<input type="reset" value="'.$LDReset.'" onClick="document.inputform.bestellnum.focus()" >');
@@ -195,7 +195,7 @@ $sTemp='';
   <input type="hidden" name="lockflag" value="<?php echo  $lockflag?>">
   <input type="hidden" name="update" value="<?php if($saveok) echo "1"; else echo $update;?>">
   <INPUT TYPE="hidden" name="MAX_FILE_SIZE" value="2000000">
-<?php 
+<?php
 
 $sTemp = ob_get_contents();
 ob_end_clean();
@@ -203,14 +203,14 @@ ob_end_clean();
 # Append more hidden inputs acc. to mode
 
 if($update){
-	if($mode!="save"){ 
+	if($mode!="save"){
 		$sTemp = $sTemp.'
 	  <input type="hidden" name="ref_bnum" value="'.$bestellnum.'">
 	  <input type="hidden" name="ref_artnum" value="'.$artnum.'">
  	 <input type="hidden" name="ref_indusnum" value="'.$indusnum.'">
  	 <input type="hidden" name="ref_artname" value="'.$artname.'">
  	 ';
-	}else{ 
+	}else{
 		$sTemp = $sTemp.'
  	 <input type="hidden" name="ref_bnum" value="'.$ref_bnum.'">
 	  <input type="hidden" name="ref_artnum" value="'.$ref_artnum.'">
@@ -221,12 +221,12 @@ if($update){
 }
 
 if($saveok){
-	
+
 	$smarty->assign('sNewProduct',"<a href=\"".$thisfile.URL_APPEND."&cat=$cat&userck=$userck&update=0\">$LDNewProduct</a>");
-	
+
 	# Show update button
 	$smarty->assign('sUpdateButton','<input type="image" '.createLDImgSrc($root_path,'update.gif','0').'>');
-	
+
 	$sBreakImg ='close2.gif';
 
 }else{

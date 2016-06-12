@@ -1,7 +1,7 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 /**
 * CARE2X Integrated Hospital Information System version deployment 1.1 (mysql) 2004-01-11
 * GNU General Public License
@@ -13,7 +13,7 @@ require($root_path.'include/core/inc_environment_global.php');
 define('LANG_FILE','nursing.php');
 $local_user='ck_pflege_user';
 require_once($root_path.'include/core/inc_front_chain_lang.php');
-if($edit&&!$_COOKIE[$local_user.$sid]) {header('Location:'.$root_path.'language/'.$lang.'/lang_'.$lang.'_invalid-access-warning.php'); exit;}; 
+if($edit&&!$_COOKIE[$local_user.$sid]) {header('Location:'.$root_path.'language/'.$lang.'/lang_'.$lang.'_invalid-access-warning.php'); exit;};
 
 $thisfile='nursing-station-patientdaten-todo.php';
 $breakfile="nursing-station-patientdaten.php?sid=$sid&lang=$lang&station=$station&pn=$pn&edit=$edit";
@@ -144,14 +144,14 @@ div.fa2_ml3 {font-size: 12; margin-left: 3; }
 </style>
 
 <script language="javascript">
-<!-- 
+<!--
   var urlholder;
   var focusflag=0;
   var formsaved=0;
-  
+
 function pruf(d){
 	if(((d.dateput.value)&&(d.timeput.value)&&(d.berichtput.value)&&(d.author.value))||((d.dateput2.value)&&(d.berichtput2.value)&&(d.author2.value))) return true;
-	else 
+	else
 	{
 		alert("<?php echo $LDAlertIncomplete ?>");
 		return false;
@@ -174,7 +174,7 @@ function resetinput(){
 function select_this(formtag){
 		document.berichtform.elements[formtag].select();
 	}
-	
+
 function getinfo(patientID){
 	urlholder="nursing-station.php?<?php echo "sid=$sid&lang=$lang" ?>&route=validroute&patient=" + patientID + "&user=<?php echo $_COOKIE[$local_user.$sid].'"' ?>;
 	patientwin=window.open(urlholder,patientID,"width=600,height=400,menubar=no,resizable=yes,scrollbars=yes");
@@ -189,8 +189,8 @@ function endhilite(d){
 	d.value=d.value+"~~";
 	d.focus();
 	}
-<?php 
-require($root_path.'include/core/inc_checkdate_lang.php'); 
+<?php
+require($root_path.'include/core/inc_checkdate_lang.php');
 ?>
 
 //-->
@@ -223,7 +223,7 @@ ob_start();
 		'.$station.'&nbsp;'.$result[kasse].' '.$result[kassename].'</div>';*/
 
 echo '<img src="'.$root_path.'main/imgcreator/barcode_label_single_large.php?sid='.$sid.'&lang='.$lang.'&fen='.$full_en.'&en='.$pn.'" width=282 height=178>';
-		
+
 ?>
 </td>
 <td colspan=3 bgcolor="#ffcccc"><div class=fva2_ml10>
@@ -241,20 +241,20 @@ echo '<font size="6"  >'.$LDDocsPrescription.' <p><font size=2>'.$LDPage.' 1/1
 echo '	<tr bgcolor="#ffcccc">
 		<td colspan=4><div class=fva2_ml10><font color="#000099"><b>'.$LDDocsPrescription.'</b></div></td>
 		<td colspan=3><div class=fva2_ml10><font color="#000099"><b>'.$LDQueries.'</b></div></td>
-		</tr>';	
+		</tr>';
 
 echo '	<tr bgcolor="#ffcccc">
 		<td><div class=fva2_ml3><b>'.$LDDate.'</b></div></td><td><div class=fva2_ml3><b>'.$LDClockTime.'</b></div></td><td><div class=fva2_ml3>&nbsp;</div></td><td><div class=fva2_ml3><b>'.$LDSignature.'</b></div></td>
 		<td><div class=fva2_ml3><b>'.$LDDate.'</b></div></td><td><div class=fva2_ml3>&nbsp;</div></td><td><div class=fva2_ml3><b>'.$LDSignature.'</b></div></td>
-		</tr>';	
-		
+		</tr>';
+
 if(is_object($dd_report)) $cnt=$dd_report->RecordCount();
 	else $cnt=15;
 $buf=array();
 if($cnt){
 	if($cnt<15) $cnt=15;
 	for ($i=0;$i<$cnt;$i++){
-		
+
 		if(is_object($dd_report)) $buf=$dd_report->FetchRow();
 		if($buf['type_nr']==18){
 			if($buf['ref_notes_nr']) continue;
@@ -269,9 +269,9 @@ if($cnt){
 			$buf['eff_aux_notes']=$buf['aux_notes'];
 			$buf['aux_notes']='';
 		}
-		echo '	
+		echo '
 		<tr bgcolor="#ffcccc">';
-			//  Column for the nursing report		
+			//  Column for the nursing report
 			echo '
 			<td><div class=fa2_ml3>';
 			if($buf['date']) echo formatDate2Local($buf['date'],$date_format);
@@ -281,7 +281,7 @@ if($cnt){
 			</td>
 			<td><div class=fva2_ml3><i>';
 			if(stristr($buf['aux_notes'],'warn')) echo '<img '.createComIcon($root_path,'warn.gif','0','absmiddle',TRUE).'> ';
-			$strbuf=str_replace('~~','</span>',stripcslashes(nl2br($buf['notes'])));	
+			$strbuf=str_replace('~~','</span>',stripcslashes(nl2br($buf['notes'])));
 			echo str_replace('~','<span style="background:yellow">',$strbuf).'</i></div>
 			</td>
 			<td>
@@ -296,16 +296,16 @@ if($cnt){
 				</td>
 				<td><div class=fva2_ml3><i>';
 				if(stristr($buf['eff_aux_notes'],'warn')) echo '<img '.createComIcon($root_path,'warn.gif','0','absmiddle',TRUE).'> ';
-				$strbuf=str_replace('~~','</span>',stripcslashes(nl2br($buf['eff_notes'])));	
+				$strbuf=str_replace('~~','</span>',stripcslashes(nl2br($buf['eff_notes'])));
 				echo str_replace('~','<span style="background:yellow">',$strbuf).'</i></div>
 				</td>
 				<td>
 				<div class=fa2_ml3>'.$buf['eff_personell_name'].'</div>
 				</td>';
-		echo'</tr>';	
+		echo'</tr>';
 	}
 }
-		
+
 ?>
 <?php if($edit) : ?>
 		<tr>
@@ -317,7 +317,7 @@ if($cnt){
 		<input type=text size="8" name="dateput" onKeyUp=setDate(this) onFocus=this.select() value="<?php if(!$saved) echo $dateput; ?>"><br>
 		<a href="javascript:document.berichtform.dateput.value='h';setDate(document.berichtform.dateput);"><img <?php echo createComIcon($root_path,'arrow-t.gif','0') ?> alt="<?php echo $LDInsertDate ?>"></a>
 		</td>
- -->		
+ -->
         <td valign="top"><?php echo $LDDate ?>:<br>
 		<?php
 		//gjergji : new calendar
@@ -325,13 +325,13 @@ if($cnt){
 		$calendar = new DHTML_Calendar('../../js/jscalendar/', $lang, 'calendar-system', true);
 		$calendar->load_files();
 		//end : gjergji
-		
+
 		echo $calendar->show_calendar($calendar,$date_format,'dateput');
 		//end gjergji
 		?></font>
 
 <!-- 		<a href="javascript:document.berichtform.dateput.value='h';setDate(document.berichtform.dateput);"><img <?php echo createComIcon($root_path,'arrow-t.gif','0') ?> alt="<?php echo $LDInsertDate ?>"></a>
- -->		
+ -->
          </td>
 		<td valign="top"><?php echo $LDClockTime ?>:<br>
 		<input type=text size="4" name="timeput"  value="<?php echo date('H:i'); ?>"  onKeyUp=setTime(this,'<?php echo $lang ?>') onFocus=this.select()><br>
@@ -348,7 +348,7 @@ if($cnt){
 <!-- 		<td valign="top"><?php echo $LDDate ?>:<br><input type=text size="8" name="dateput2" value="<?php if(!$saved) echo $dateput2; ?>" onKeyUp="setDate(this)" onFocus="this.select()"><br>
 		<a href="javascript:document.berichtform.dateput2.value='h';setDate(document.berichtform.dateput2);"><img <?php echo createComIcon($root_path,'arrow-t.gif','0') ?> alt="<?php echo $LDInsertDate ?>"></a>
 		</td>
- -->		
+ -->
 		<td valign="top"><?php echo $LDDate ?>:<br>
 		<?php
 		//gjergji : new calendar
@@ -358,7 +358,7 @@ if($cnt){
 </font>
 
 <!-- 		<a href="javascript:document.berichtform.dateput2.value='h';setDate(document.berichtform.dateput2);"><img <?php echo createComIcon($root_path,'arrow-t.gif','0') ?> alt="<?php echo $LDInsertDate ?>"></a>
- -->		
+ -->
         </td>
 		<td><?php echo $LDQueries ?>:<br>&nbsp;<textarea rows="4" cols="25"  name="berichtput2"><?php if(!$saved) echo $berichtput2; ?></textarea><br>
 		<input type="checkbox" name="warn2" <?php if((!$saved)&&($warn2)) echo "checked"; ?> value="warn"> <img <?php echo createComIcon($root_path,'warn.gif','0','top',TRUE) ?>>

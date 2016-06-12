@@ -1,12 +1,12 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 /**
 * CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
 * GNU General Public License
 * Copyright 2002,2003,2004,2005 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -26,13 +26,13 @@ if(isset($mode) && $mode=='save'){
 	$config_new['css']=$css;
 
 	include_once($root_path.'include/care_api_classes/class_userconfig.php');
-	
+
 	$user=new UserConfig;
 
 	if($user->getConfig($_COOKIE['ck_config'])){
 
 		$config=&$user->getConfigData();
-	
+
 		$config=array_merge($config,$config_new);
 
 		if($user->saveConfig($_COOKIE['ck_config'],$config)){
@@ -82,8 +82,8 @@ if(isset($mode) && $mode=='save'){
 <br>
 
 <form method="post">
-<?php if (isset($saved) && $saved) { 
-	echo '<img '.createMascot($root_path,'mascot1_r.gif','0','absmiddle').'>';	
+<?php if (isset($saved) && $saved) {
+	echo '<img '.createMascot($root_path,'mascot1_r.gif','0','absmiddle').'>';
 ?>
 <div class="prompt"><?php echo $LDChangeSaved ?></div><br>
 <?php } ?>
@@ -93,26 +93,26 @@ if(isset($mode) && $mode=='save'){
   <tr >
     <td colspan=4>&nbsp;</td>
   </tr>
-  
+
   <tr class="adm_list_titlebar">
     <td></td>
     <td><?php echo $LDTheme; ?></td>
    <td><?php echo $LDDescription; ?></td>
   	<td><?php echo $LDScreenshot; ?></td>
   </tr>
-  
+
 <?php
 
 $filepath=$root_path.'gui/css/themes/';
 
 $handle=opendir($filepath.'.');  // Modify this path if you have placed the mascot directories somewhere else
 $dirs=array();
-while (false!==($theme = readdir($handle))) { 
+while (false!==($theme = readdir($handle))) {
     if ($theme != '.' && $theme != '..') {
 		if(is_dir($filepath.$theme)&&file_exists($filepath.$theme.'/tags.php')){
 			@include($filepath.$theme.'/tags.php');
 ?>
-  
+
 	<tr class="submenu">
 		<td>&nbsp;<input type="radio" name="css" value="<?php echo $sCssFileLocation; ?>" <?php if($cfg['css'] == $sCssFileLocation) echo 'checked';?>></td>
 		<td>&nbsp;<b><?php echo $sCssThemeName; ?></b></td>
@@ -123,7 +123,7 @@ while (false!==($theme = readdir($handle))) {
  <?php
 
 		}
-	} 
+	}
 }
 
 ?>

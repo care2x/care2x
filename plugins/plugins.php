@@ -1,7 +1,7 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 /**
 * CARE2X Integrated Hospital Information System beta 2.0.0 - 2004-05-16
 * GNU General Public License
@@ -47,7 +47,7 @@ require($root_path.'include/core/inc_2level_reset.php');
  $smarty->assign('title',$LDPlugins);
 
  # Buffer page output
- 
+
  ob_start();
 
 	$handle=opendir('./');
@@ -55,7 +55,7 @@ require($root_path.'include/core/inc_2level_reset.php');
  	while (FALSE!==($file = readdir($handle))) {
 
      	if ($file != "." && $file != ".." && is_dir($file)){
-			
+
 			include("$file/tags.php");
 			if($cfg['icons'] != 'no_icon'){
 				if(empty($sPluginIconSmall)) $sImgSrc=createComIcon($root_path,'templates.gif','0');
@@ -69,7 +69,7 @@ require($root_path.'include/core/inc_2level_reset.php');
 			}else{
 				$count++;
 			}
-			
+
 			if($cfg['icons'] != 'no_icon') $smarty->assign('sIconImg','<img '.$sImgSrc.'>');
 			$smarty->assign('sSubMenuItem','<a href="'.$sPluginStartLocator.'">'.$sPluginName.'</a>');
 			$smarty->assign('sSubMenuText',$sPluginDescription);

@@ -1,7 +1,7 @@
 <?php
-//error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 /**
 * CARE2X Integrated Hospital Information System version deployment 1.1 (mysql) 2004-01-11
 * GNU General Public License
@@ -30,17 +30,17 @@ if(!isset($mode)) $mode='';
 
 //$db->debug=1;
 
-if(($mode=='search')and($searchkey)){	
+if(($mode=='search')and($searchkey)){
 	/* Load global config */
 	$suchwort=trim($searchkey);
-	
+
 	if(is_numeric($suchwort)){
 		$suchbuffer=(int) $suchwort;
 		$numeric=1;
 	}else{
 		$suchbuffer=$suchwort;
 	}
-			
+
 /*	$sql="SELECT ps.nr, ps.is_discharged, p.name_last, p.name_first, p.date_birth,u.login_id
 		          FROM care_person as p, care_personell as ps
 				  	LEFT JOIN care_users AS u ON u.personell_nr=ps.nr ";
@@ -53,8 +53,8 @@ if(($mode=='search')and($searchkey)){
 	$sql = "SELECT u.* FROM care_users AS u WHERE u.name LIKE '".addslashes($suchwort)."%' OR u.name LIKE '%".addslashes($suchwort)."' ORDER BY u.name ";
 
 	if($ergebnis=$db->Execute($sql)){
-			
-		if ($linecount=$ergebnis->RecordCount()){ 
+
+		if ($linecount=$ergebnis->RecordCount()){
 			if(($linecount==1) && $numeric){
 				$zeile=$ergebnis->FetchRow();
 				if(!empty($zeile['login_id'])){
@@ -100,7 +100,7 @@ if(($mode=='search')and($searchkey)){
  $smarty->assign('sOnLoadJs','onLoad="document.searchform.searchkey.select()"');
 
  # Buffer page output
- 
+
  ob_start();
 
 ?>
@@ -113,7 +113,7 @@ if(($mode=='search')and($searchkey)){
 	   <?php
 
             include($root_path.'include/core/inc_patient_searchmask.php');
-       
+
 	   ?>
 		</td>
 	</tr>
@@ -130,8 +130,8 @@ if($mode=='search'){
 	if(!$linecount) $linecount=0;
 
 	echo '<hr width=80% align=left><p>'.str_replace("~nr~",$linecount,$LDSearchFound).'<p>';
-		  
-	if ($linecount) { 
+
+	if ($linecount) {
 
 		/* Load the common icons & images */
 		$img_options=createLDImgSrc($root_path,'ok_small.gif','0');
@@ -178,7 +178,7 @@ if($mode=='search'){
 			echo "&nbsp;".ucfirst($zeile['name']);
 			echo "</td>";
 //gjergji
-//changed to search only the users table			
+//changed to search only the users table
 /*			echo"<td>";
 			echo "&nbsp;".ucfirst($zeile['name_first']);
 			echo "</td>";*/

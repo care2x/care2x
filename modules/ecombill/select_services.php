@@ -1,14 +1,14 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 /**
-* eComBill 1.0.04 for Care2002 beta 1.0.04 
+* eComBill 1.0.04 for Care2002 beta 1.0.04
 * (2003-04-30)
-* adapted from eComBill beta 0.2 
-* developed by ecomscience.com http://www.ecomscience.com 
+* adapted from eComBill beta 0.2
+* developed by ecomscience.com http://www.ecomscience.com
 * GPL License
 */
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 
 define('NO_CHAIN',1);
 define('LANG_FILE','billing.php');
@@ -65,21 +65,21 @@ function submitform() {
 	querystr = "confirmLabtests.php?";
 
 	counter = 1;
-	for (i=0;i<document.selectlab.elements.length;i++) {	
+	for (i=0;i<document.selectlab.elements.length;i++) {
 		temp = str.indexOf("#");
 		if(document.selectlab.elements[i].type=="checkbox") {
 			tempstr = str.substring(0,temp);
-			str=str.substring(temp+1,str.length);					
+			str=str.substring(temp+1,str.length);
 			if(document.selectlab.elements[i].checked == true) 	querystr=querystr+"itemcode"+counter+"="+tempstr+"&";
-			counter = counter + 1;					
-		}		
+			counter = counter + 1;
+		}
 	}
 	document.selectlab.action = querystr;
 	document.selectlab.submit();
 }
 //-->
 </SCRIPT>
-<?php 
+<?php
 $sTemp = ob_get_contents();
 ob_end_clean();
 
@@ -115,11 +115,11 @@ if($cntLT){
 		$itemcode=$item['item_code'];
 		$itemcode1=$itemcode1.$itemcode;
 		$itemcode1=$itemcode1."#";
-	
+
 		ob_start();
 		$smarty->display('ecombill/bill_items_line.tpl');
 		$sListRows = $sListRows.ob_get_contents();
-		ob_end_clean();		
+		ob_end_clean();
 	}
 }
 $itemcode=$itemcode1;

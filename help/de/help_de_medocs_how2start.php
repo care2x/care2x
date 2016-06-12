@@ -1,5 +1,5 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
+error_reporting($ErrorLevel);
 ?>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
 <form action="#">
@@ -25,8 +25,8 @@ switch($x1)
 
 <?php if($src!=$x1) : ?>
 <b>Schritt 1</b>
-<ul> Den <img 
-<?php 
+<ul> Den <img
+<?php
 switch($x1)
    {
      case "entry": echo  createLDImgSrc('../','newdata-gray.gif'); break;
@@ -34,7 +34,7 @@ switch($x1)
 	 case "archiv": echo createLDImgSrc('../','arch-gray.gif'); break;
   }
 ?>> anklicken.
-		
+
 </ul>
 <b>Schritt 2</b>
 <?php endif; ?>
@@ -49,7 +49,7 @@ switch($x1)
 		Ansonsten werden Sie nach Ihrem Benutzernamen und Passwort gefragt.<p>
 		Geben Sie Ihren Benutzernamen und Passwort ein und klicken Sie den <img <?php echo createLDImgSrc('../','continue.gif','0') ?>> an.<br>
 		Falls Sie abbrechen möchten, klicken Sie den <img <?php echo createLDImgSrc('../','cancel.gif','0') ?>> an.
-		
+
 </ul>
 
 

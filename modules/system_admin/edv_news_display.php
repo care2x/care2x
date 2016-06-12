@@ -1,12 +1,12 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 /**
 * CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
 * GNU General Public License
 * Copyright 2002,2003,2004,2005 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -60,14 +60,14 @@ if(isset($mode) && $mode=='save'){
 		if(!is_numeric($_POST['news_normal_display_width'])) $_POST['news_normal_display_width']=NEWS_DISPLAY_WIDTH;
 	}
 	if(!is_numeric($_POST['news_normal_preview_maxlen'])) $_POST['news_normal_preview_maxlen']=NEWS_PREVIEW_MAXLEN;
-	
+
 	# Save the configuration
 	$glob_obj->saveConfigArray($_POST,$filter,$numeric,'',$addslash);
 	# Loop back to self to get the newly stored values
 	header("location:$thisfile".URL_REDIRECT_APPEND."&save_ok=1");
 	exit;
 # Else get current global data
-}else{ 
+}else{
 	$glob_obj->getConfig('news_%');
 }
 
@@ -152,7 +152,7 @@ echo $LDEnterInfo;
 <br>
 <?php echo $LDNoteDefault ?>
 <form action="<?php echo $thisfile ?>" method="post" name="newsdisplay">
-<table border=0 cellspacing=1 cellpadding=5>  
+<table border=0 cellspacing=1 cellpadding=5>
 <tr>
 	<td class="wardlisttitlerow" align="right"><FONT  color="#0000cc"><b><?php echo $LDTitleFontSize ?></b> </FONT></td>
 	<td class="submenu">
@@ -165,27 +165,27 @@ echo $LDEnterInfo;
       	<option value="6" <?php if($GLOBAL_CONFIG['news_headline_title_font_size']==6) echo 'selected'; ?>> 6</option>
       	<option value="7" <?php if($GLOBAL_CONFIG['news_headline_title_font_size']==7) echo 'selected'; ?>> 7</option>
       </select>
-      
-	  
-	  </td>  
+
+
+	  </td>
 	</tr>
 <tr>
 	<td class="wardlisttitlerow" align="right"><FONT  color="#0000cc"><b><?php echo $LDTitleFont ?></b> </FONT></td>
 	<td class="submenu"><input type="text" name="news_headline_title_font_face" size=40 maxlength=100 value="<?php echo $GLOBAL_CONFIG['news_headline_title_font_face'] ?>">
-      </td>  
+      </td>
 	</tr>
 <tr>
 	<td class="wardlisttitlerow" align="right"><FONT  color="#0000cc"><b><?php echo $LDTitleFontColor ?></b> </FONT></td>
 	<td class="submenu"><input type="text" name="news_headline_title_font_color" size=40 maxlength=10 value="<?php echo $GLOBAL_CONFIG['news_headline_title_font_color'] ?>">
      <a href="javascript:TCP.popup(document.forms['newsdisplay'].elements['news_headline_title_font_color'],'','<?php echo $root_path; ?>js/tigra_colorpicker/')"><img width="18" height="18" border="0" alt="<?php echo $LDClkPickColor ?>"  title="<?php echo $LDClkPickColor ?>" <?php echo createComIcon($root_path,'colorcube_s.gif','0'); ?>></a>
-	  </td>  
+	  </td>
 	</tr>
 <tr>
 	<td class="wardlisttitlerow" align="right"><FONT  color="#0000cc"><b><?php echo $LDTitleFontBold ?></b> </FONT></td>
 	<td class="submenu">
-		<input type="radio" name="news_headline_title_font_bold" value="1" <?php  if($GLOBAL_CONFIG['news_headline_title_font_bold']) echo 'checked'; ?>><?php echo $LDBold ?> 
+		<input type="radio" name="news_headline_title_font_bold" value="1" <?php  if($GLOBAL_CONFIG['news_headline_title_font_bold']) echo 'checked'; ?>><?php echo $LDBold ?>
 		<input type="radio" name="news_headline_title_font_bold" value="0" <?php  if(!$GLOBAL_CONFIG['news_headline_title_font_bold']) echo 'checked'; ?>><?php echo $LDNormal ?>
-      </td>  
+      </td>
 	</tr>
 <tr>
 	<td class="wardlisttitlerow" align="right"><FONT  color="#0000cc"><b><?php echo $LDPrefaceFontSize ?></b> </FONT></td>
@@ -200,30 +200,30 @@ echo $LDEnterInfo;
       	<option value="7" <?php if($GLOBAL_CONFIG['news_headline_preface_font_size']==7) echo 'selected'; ?>> 7</option>
       </select>
 
-      </td>  
+      </td>
 	</tr>
 <tr>
 	<td class="wardlisttitlerow" align="right"><FONT  color="#0000cc"><b><?php echo $LDPrefaceFont ?></b> </FONT></td>
 	<td class="submenu"><input type="text" name="news_headline_preface_font_face" size=40 maxlength=40 value="<?php echo $GLOBAL_CONFIG['news_headline_preface_font_face'] ?>">
-      </td>  
+      </td>
 	</tr>
 <tr>
 	<td class="wardlisttitlerow" align="right"><FONT  color="#0000cc"><b><?php echo $LDPrefaceFontColor ?></b> </FONT></td>
 	<td class="submenu"><input type="text" name="news_headline_preface_font_color" size=40 maxlength=40 value="<?php echo $GLOBAL_CONFIG['news_headline_preface_font_color'] ?>">
      <a href="javascript:TCP.popup(document.forms['newsdisplay'].elements['news_headline_preface_font_color'],'','<?php echo $root_path; ?>js/tigra_colorpicker/')"><img width="18" height="18" border="0" alt="<?php echo $LDClkPickColor ?>"  title="<?php echo $LDClkPickColor ?>" <?php echo createComIcon($root_path,'colorcube_s.gif','0'); ?>></a>
-      </td>  
+      </td>
 	</tr>
 <tr>
 	<td class="wardlisttitlerow" align="right"><FONT  color="#0000cc"><b><?php echo $LDPrefaceFontBold ?></b> </FONT></td>
 	<td class="submenu">
-		<input type="radio" name="news_headline_preface_font_bold" value="1" <?php  if($GLOBAL_CONFIG['news_headline_preface_font_bold']) echo 'checked'; ?>><?php echo $LDBold ?> 
+		<input type="radio" name="news_headline_preface_font_bold" value="1" <?php  if($GLOBAL_CONFIG['news_headline_preface_font_bold']) echo 'checked'; ?>><?php echo $LDBold ?>
 		<input type="radio" name="news_headline_preface_font_bold" value="0" <?php  if(!$GLOBAL_CONFIG['news_headline_preface_font_bold']) echo 'checked'; ?>><?php echo $LDNormal ?>
-      </td>  
+      </td>
 	</tr>
 <tr>
 	<td class="wardlisttitlerow" align="right"><FONT  color="#0000cc"><b><?php echo $LDBodyFontSize ?></b> </FONT></td>
 	<td class="submenu">
-	  
+
 		 <select name="news_headline_body_font_size">
       	<option value="1" <?php if($GLOBAL_CONFIG['news_headline_body_font_size']==1) echo 'selected'; ?>> 1</option>
       	<option value="2" <?php if($GLOBAL_CONFIG['news_headline_body_font_size']==2) echo 'selected'; ?>> 2</option>
@@ -233,33 +233,33 @@ echo $LDEnterInfo;
       	<option value="6" <?php if($GLOBAL_CONFIG['news_headline_body_font_size']==6) echo 'selected'; ?>> 6</option>
       	<option value="7" <?php if($GLOBAL_CONFIG['news_headline_body_font_size']==7) echo 'selected'; ?>> 7</option>
       </select>
-	  </td>  
+	  </td>
 	</tr>
 <tr>
 	<td class="wardlisttitlerow" align="right"><FONT  color="#0000cc"><b><?php echo $LDBodyFont ?></b> </FONT></td>
 	<td class="submenu"><input type="text" name="news_headline_body_font_face" size=40 maxlength=60 value="<?php echo $GLOBAL_CONFIG['news_headline_body_font_face'] ?>">
-      </td>  
+      </td>
 	</tr>
 <tr>
 	<td class="wardlisttitlerow" align="right"><FONT  color="#0000cc"><b><?php echo $LDBodyFontColor ?></b> </FONT></td>
 	<td class="submenu"><input type="text" name="news_headline_body_font_color" size=40 maxlength=60 value="<?php echo $GLOBAL_CONFIG['news_headline_body_font_color'] ?>">
      <a href="javascript:TCP.popup(document.forms['newsdisplay'].elements['news_headline_body_font_color'],'','<?php echo $root_path; ?>js/tigra_colorpicker/')"><img width="18" height="18" border="0" alt="<?php echo $LDClkPickColor ?>"  title="<?php echo $LDClkPickColor ?>" <?php echo createComIcon($root_path,'colorcube_s.gif','0'); ?>></a>
-      </td>  
+      </td>
 	</tr>
 <tr>
 	<td class="wardlisttitlerow" align="right"><FONT  color="#0000cc"><b><?php echo $LDPreviewMaxlen ?></b> </FONT></td>
 	<td class="submenu"><input type="text" name="news_normal_preview_maxlen" size=40 maxlength=60 value="<?php echo $GLOBAL_CONFIG['news_normal_preview_maxlen'] ?>">
-      </td>  
+      </td>
 	</tr>
 <tr>
 	<td class="wardlisttitlerow" align="right"><FONT  color="#0000cc"><b><?php echo $LDDisplayWidth ?></b> </FONT></td>
 	<td class="submenu"><input type="text" name="news_normal_display_width" size=40 maxlength=60 value="<?php echo $GLOBAL_CONFIG['news_normal_display_width'] ?>">
-      </td>  
+      </td>
 	</tr>
 <tr>
 	<td class="submenu" align="right">&nbsp;</td>
 	<td class="submenu"><input type="button" value="<?php echo $LDUseDefault ?>" onClick="useDefault()">
-      </td>  
+      </td>
 	</tr>
 </table>
 <p>

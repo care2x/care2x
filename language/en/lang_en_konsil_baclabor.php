@@ -1,5 +1,4 @@
 <?php
-//error_reporting(E_ALL);
 $LDInitFindings='Initial findings';
 $LDCurrentFindings='Current findings';
 $LDFinalFindings='Final find';
@@ -16,7 +15,7 @@ $LDBac_I='Patho.I';
 $LDBac_II='Patho.II';
 $LDBac_III='Patho.III';
 $LDFungi='Fungi';
-$LDResistanceTestAnaerob='Resistance test Anaerobe';				
+$LDResistanceTestAnaerob='Resistance test Anaerobe';
 $LDResistanceTestAerob='Resistance test Aerobe';
 $LDTestFindings='Test results / Findings';
 $LDMarkStreptocResistance='mark by streptococcus resistance';
@@ -35,7 +34,7 @@ $LDBAC[1]='Patho.II';
 $LDBAC[2]='Patho.III';
 
 /* Note: the following arrays use strict medical terminology.
-*  If you are not sure about their translation, please leave the 
+*  If you are not sure about their translation, please leave the
 *  english word untranslated
 */
 //TODO : move on a configuration interface
@@ -145,7 +144,7 @@ $lab_ResistANaerobAcro[11]='ERY';
 $lab_ResistANaerobAcro[12]='TEC';
 $lab_ResistANaerobAcro[13]='VAN';
 $lab_ResistANaerobAcro[14]='';
-									
+
 $lab_ResistAerobAcro[0]='P';
 $lab_ResistAerobAcro[1]='AMX';
 $lab_ResistAerobAcro[2]='AMC';
@@ -178,7 +177,7 @@ $lab_ResistAerobAcro[28]='CFS';
 $lab_ResistAerobAcro[29]='30';
 $lab_ResistAerobAcro[30]='31';
 $lab_ResistAerobAcro[31]='&#223;Lac.';
-										   
+
 $lab_ResistAerobExtra[0]='AB';
 $lab_ResistAerobExtra[1]='MIC';
 $lab_ResistAerobExtra[2]='NY';

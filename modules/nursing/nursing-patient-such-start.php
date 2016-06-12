@@ -1,12 +1,12 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 /**
 * CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
 * GNU General Public License
 * Copyright 2002,2003,2004,2005 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -43,14 +43,14 @@ if($mode=='such'||$mode=='paginate')
 		$oitem='';
 		$odir='';
 	}
-	
+
 	# convert * and ? to % and &
 	$searchkey=strtr($searchkey,'*?','%_');
 
 	#Load and create paginator object
 	include_once($root_path.'include/care_api_classes/class_paginator.php');
 	$pagen=new Paginator($pgx,$thisfile,$_SESSION['sess_searchkey'],$root_path);
-	
+
 	$GLOBAL_CONFIG=array();
 	include_once($root_path.'include/care_api_classes/class_globalconfig.php');
 	$glob_obj=new GlobalConfig($GLOBAL_CONFIG);
@@ -59,14 +59,14 @@ if($mode=='such'||$mode=='paginate')
 	$glob_obj->getConfig('pagin_patient_search_max_block_rows');
 	if(empty($GLOBAL_CONFIG['pagin_patient_search_max_block_rows'])) $pagen->setMaxCount(MAX_BLOCK_ROWS); # Last resort, use the default defined at the start of this page
 		else $pagen->setMaxCount($GLOBAL_CONFIG['pagin_patient_search_max_block_rows']);
-	
+
 	# Work around
 	//$searchkey=$searchkey;
 	$srcword=trim($searchkey);
 	//prepare the seach word detect several types
 	if(is_numeric($srcword)){
 		$usenum=true;
-		
+
 		if($srcword>$GLOBAL_CONFIG['patient_inpatient_nr_adder']){
 			$cond.="e.encounter_nr $sql_LIKE '%".(int)substr($srcword,2)."'"; // set the offset here
 		}else{
@@ -84,9 +84,9 @@ if($mode=='such'||$mode=='paginate')
 			$cond.="p.name_last $sql_LIKE '".$wx[$i]."%' OR p.name_first $sql_LIKE '".$wx[$i]."%' OR p.date_birth $sql_LIKE '".$wx[$i]."%'";
 		}
 		$cond="($cond)";
-		
+
 	}
-	
+
 	$cond.=" AND l.encounter_nr=e.encounter_nr";
 	//gjergji - hide patient info of other departements
 	if(isset($_SESSION['department_nr']) && $_SESSION['department_nr'] != '0' ) {
@@ -99,7 +99,7 @@ if($mode=='such'||$mode=='paginate')
 		$cond .= " ) "	;
 	}
 	if(!$arch) $cond.=" AND e.is_discharged IN ('',0) AND p.pid=e.pid ";
-	
+
 	$gbuf="l.location_nr,p.name_last, p.name_first,p.date_birth,
 					e.encounter_nr, e.encounter_class_nr,e.in_ward,
 					w.name,w.roomprefix,
@@ -110,11 +110,11 @@ if($mode=='such'||$mode=='paginate')
 		//else $cond.=" AND p.pid=e.pid GROUP BY $gbuf";
 //	if($usenum) $cond.=' GROUP BY r.location_nr';
 //		else $cond.=' AND p.pid=e.pid GROUP BY r.location_nr';
-	
+
 	//$db->debug=1;
 
 	if(!isset($db)||!$db)include($root_path.'include/core/inc_db_makelink.php');
-	if($dblink_ok){			
+	if($dblink_ok){
 		$sqlselect="SELECT r.location_nr AS room_nr, p.name_last, p.name_first,p.date_birth,
 					e.encounter_nr, e.encounter_class_nr,e.in_ward,
 					w.name AS ward_name,w.roomprefix,
@@ -126,10 +126,10 @@ if($mode=='such'||$mode=='paginate')
 			$sqlfrom=" FROM $tb_person as p LEFT JOIN $tb_encounter AS e ON p.pid=e.pid";
 		}
 		$sqlfrom.=" LEFT JOIN $tb_location AS l ON l.encounter_nr=e.encounter_nr AND l.type_nr=2
-					LEFT JOIN $tb_location AS r ON r.encounter_nr=l.encounter_nr AND r.type_nr=4 AND r.group_nr=l.location_nr 
+					LEFT JOIN $tb_location AS r ON r.encounter_nr=l.encounter_nr AND r.type_nr=4 AND r.group_nr=l.location_nr
 					LEFT JOIN $tb_ward AS w ON w.nr=l.location_nr
 					WHERE $cond";
-		
+
 		if(!empty($oitem)){
 
 			#Filter the sort item
@@ -177,7 +177,7 @@ if($mode=='such'||$mode=='paginate')
 			}
 */
 					$pagen->setTotalBlockCount($rows);
-					
+
 					# If more than one count all available
 					if(isset($totalcount) && $totalcount){
 						$pagen->setTotalDataCount($totalcount);
@@ -195,8 +195,8 @@ if($mode=='such'||$mode=='paginate')
 					$pagen->setSortItem($oitem);
 					$pagen->setSortDirection($odir);
 
-		}else{echo "$sql<br>$LDDbNoRead";} 
-	}else { echo "$LDDbNoLink<br>"; } 
+		}else{echo "$sql<br>$LDDbNoRead";}
+	}else { echo "$LDDbNoLink<br>"; }
 }
 
 # Start Smarty templating here
@@ -218,7 +218,7 @@ if($mode=='such'||$mode=='paginate')
 
  # href for close button
  $smarty->assign('breakfile',$breakfile);
- 
+
  # OnLoad Javascript code
  $smarty->assign('sOnLoadJs','onLoad="if (window.focus) window.focus(); document.suchlogbuch.searchkey.select();"');
 
@@ -231,7 +231,7 @@ if($mode=='such'||$mode=='paginate')
 ?>
 
 <script language="javascript">
-<!-- 
+<!--
 var urlholder;
 
   function gotoWard(ward_nr,st,y,m,d){
@@ -244,7 +244,7 @@ var urlholder;
 					h=600;';
 ?>
 	winspecs="menubar=no,resizable=yes,scrollbars=yes,width=" + (w-15) + ", height=" + (h-60);
-	
+
 	urlholder="nursing-station-pass.php?rt=pflege&sid=<?php echo "$sid&lang=$lang"; ?>&pday="+d+"&pmonth="+m+"&pyear="+y+"&edit=1&retpath=search_patient&ward_nr="+ward_nr+"&station="+st;
 	window.location.href=urlholder;
 }
@@ -266,9 +266,9 @@ ob_start();
 
 <ul>
 
-<?php 
+<?php
 
-if($rows){ 
+if($rows){
 
 ?>
 	<table border=0>
@@ -357,13 +357,13 @@ if($rows){
 		</tr>
 
 <?php
-	
+
 	$toggle=0;
 	while($result=$ergebnis->FetchRow()){
 
 /*	if($result['encounter_class_nr']==2) $full_enr=$result['encounter_nr']+$GLOBAL_CONFIG['patient_outpatient_nr_adder'];
 		else  $full_enr=$result['encounter_nr']+$GLOBAL_CONFIG['patient_inpatient_nr_adder'];
-*/		
+*/
 		$full_enr=$result['encounter_nr'];
 	echo'
 		<tr ';
@@ -371,18 +371,18 @@ if($rows){
   		echo "bgcolor=#efefef";
 		$toggle=0;
 	}else{
-		echo "bgcolor=#ffffff"; 
+		echo "bgcolor=#ffffff";
 		$toggle=1;
 	}
-	
+
 	if($result['in_ward']) $result['ward_date']=date('Y-m-d');
-	
+
 	list($pyear,$pmonth,$pday)=explode('-',$result['ward_date']);
-  
+
 	//$buf="nursing-station.php".URL_APPEND."&station=".$result['ward_name']."&ward_nr=".$result['ward_nr'];
 	//$buf="nursing-station.php".URL_APPEND."&ward_nr=".$result['ward_nr']."&pyear=$pyear&pmonth=$pmonth&pday=$pday";
 	$buf="javascript:gotoWard('".$result['ward_nr']."','".addslashes($result['ward_name'])."','$pyear','$pmonth','$pday')";
-  
+
   echo '>';
 /*  echo '
     <td>&nbsp; &nbsp;<a href="'.$buf.'" title="'.$LDClk2Show.'">';
@@ -402,7 +402,7 @@ if($rows){
 	echo '
     <td>&nbsp; &nbsp;'.$full_enr.'&nbsp;</td>';
 	}
-	
+
 	echo '
     <td>&nbsp; &nbsp;<a href="'.$buf.'" title="'.$LDClk2Show.'">'.$result['ward_name'].'</a>&nbsp;</td>
     <td>&nbsp; &nbsp;';
@@ -417,7 +417,7 @@ if($rows){
   <td colspan=8 height=1><img '.createComIcon($root_path,'pixel.gif','0','absmiddle').'></td>
   </tr>';
   }
-	
+
 	echo '
 		<tr><td colspan=7>'.$pagen->makePrevLink($LDPrevious,$append).'</td>
 		<td align=right>'.$pagen->makeNextLink($LDNext,$append).'</td>
@@ -426,14 +426,14 @@ if($rows){
 </table>
 <p>
 <hr>
-<?php 
+<?php
 }else{
-	if($mode=='such') echo str_replace('~nr~','0',$LDSearchFound); 
+	if($mode=='such') echo str_replace('~nr~','0',$LDSearchFound);
 }
 ?>
 
 <?php echo $LDSearchPrompt ?>
-	
+
 <form action="nursing-patient-such-start.php" method="get" name="suchlogbuch" >
 <table border=0 cellspacing=0 cellpadding=1 bgcolor="#999999">
 	<tr>

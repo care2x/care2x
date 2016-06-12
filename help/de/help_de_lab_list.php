@@ -1,5 +1,5 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
+error_reporting($ErrorLevel);
 ?>
 <font face="Verdana, Arial" size=3 color="#0000cc">
 <b><?php echo "Labor - $x3" ?></b></font>
@@ -10,7 +10,7 @@ error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 <img <?php echo createComIcon('../','frage.gif','0') ?>> <font color="#990000"><b>
 Wie lasse ich die graphische Kurvendarstellung der Labortestwerte zeigen?</b>
 </font>
-<ul>      
+<ul>
  	<b>Schritt 1: </b>Klickt den Checkbox <input type="checkbox" name="s" value="s" checked> des Testparameters.<br>
 		<b>Schritt 2: </b>Wenn Sie mehrere Testparameter gleichzeitig darstellen lassen möchten, klickt ihre entsprechende Checkboxen an<br>
 		<b>Schritt 3: </b>Klickt das Symbol <img src="../img/chart.gif" width=16 height=17 border=0> um die graphische Kurvendarstellung zu zeigen.<br>
@@ -18,14 +18,14 @@ Wie lasse ich die graphische Kurvendarstellung der Labortestwerte zeigen?</b>
 <img <?php echo createComIcon('../','frage.gif','0') ?>> <font color="#990000"><b>
 Ich möchte alle Parameter für die graphische Darstellung auswählen. Gibt es dafür eine schnelle Methode?</b>
 </font>
-<ul>      
+<ul>
 		<b>Ja!</b><br>
 		<b>Schritt 1: </b>Klickt den <img <?php echo createComIcon('../','dwnarrowgrnlrg.gif','0') ?> border=0> Knopf an um alle Parameter gleichzeitig auszuwählen.<br>
 </ul>
 <img <?php echo createComIcon('../','frage.gif','0') ?>> <font color="#990000"><b>
 Wie kann ich die Auswahl rücksetzen?</b>
 </font>
-<ul>      
+<ul>
 		<b>Schritt 1: </b>Klickt den <img <?php echo createComIcon('../','dwnarrowgrnlrg.gif','0') ?> border=0> Knopf noch einmal.<br>
 </ul>
 <?php endif; ?>

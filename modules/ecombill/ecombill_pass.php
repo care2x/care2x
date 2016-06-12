@@ -1,7 +1,7 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 
 define('LANG_FILE','stdpass.php');
 define('NO_2LEVEL_CHK',1);
@@ -22,7 +22,7 @@ $userck='aufnahme_user';
 //reset cookie;
 // reset all 2nd level lock cookies
 setcookie($userck.$sid,'');
-require($root_path.'include/core/inc_2level_reset.php'); 
+require($root_path.'include/core/inc_2level_reset.php');
 setcookie('ck_2level_sid'.$sid,'',0,'/');
 
 require($root_path.'include/core/inc_passcheck_internchk.php');
@@ -34,9 +34,9 @@ require($root_path.'include/core/inc_passcheck_head.php');
 ?>
 <BODY  onLoad="document.passwindow.userid.focus();" bgcolor=<?php echo $cfg['body_bgcolor']; ?>
 <?php if (!$cfg['dhtml']){ echo ' link='.$cfg['idx_txtcolor'].' alink='.$cfg['body_alink'].' vlink='.$cfg['idx_txtcolor']; } ?>>
-<P> 
-<img <?php echo createComIcon($root_path,'billing.jpg','0','absmiddle') ?> /> 
-<FONT  COLOR=<?php echo $cfg[top_txtcolor] ?>  SIZE=6  FACE="verdana"> 
+<P>
+<img <?php echo createComIcon($root_path,'billing.jpg','0','absmiddle') ?> />
+<FONT  COLOR=<?php echo $cfg[top_txtcolor] ?>  SIZE=6  FACE="verdana">
 <b> <?php echo $LDBilling ?> </b>
 </font>
 <table width=100% border=0 cellpadding="0" cellspacing="0">

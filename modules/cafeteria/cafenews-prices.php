@@ -1,12 +1,12 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require_once('./roots.php');
 require_once($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 /**
 * CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
 * GNU General Public License
 * Copyright 2002,2003,2004,2005 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -70,10 +70,10 @@ function editcafe()
   <tr bgcolor="ccffff" >
     <td><b><?php echo $LDProdName ?></b></td>
     <td align=right>&nbsp;
-	</td>    
+	</td>
 	 <td>&nbsp;<b><?php echo $LDPrice." ".$currency_short." ".$currency_long ?></b></td>
   </tr>
-  <?php 
+  <?php
 
 for($i=0;$i<$rows;$i++)
 {
@@ -109,7 +109,7 @@ echo '
 	</td>
   </tr>
 </table>
-<?php endif; ?> 
+<?php endif; ?>
 
  <p><br><a href="<?php echo $returnfile ?>"><img <?php echo createComIcon($root_path,'l-arrowgrnlrg.gif','0') ?> align=absmiddle> <?php echo $LDBack2CafeNews ?></a>
 </body>

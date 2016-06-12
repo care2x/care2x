@@ -1,12 +1,12 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'/include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 /**
 * CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
 * GNU General Public License
 * Copyright 2002,2003,2004,2005 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -25,8 +25,8 @@ if(isset($job)&&!empty($job)){
 
     if(!isset($db) || !$db) include_once($root_path.'include/core/inc_db_makelink.php');
     if($dblink_ok) {
-			
-        $sql="INSERT INTO ".$dbtable." 
+
+        $sql="INSERT INTO ".$dbtable."
 						(	dept,
 							job,
 							job_id,
@@ -48,8 +48,8 @@ if(isset($job)&&!empty($job)){
 							'".htmlspecialchars($_POST['job'])."',
 							'".htmlspecialchars($_POST['job_id'])."',
 							'".htmlspecialchars($_POST['reporter'])."',
-							'".htmlspecialchars($_POST['id'])."', 
-							'".$_POST['tdate']."', 
+							'".htmlspecialchars($_POST['id'])."',
+							'".$_POST['tdate']."',
 							'".$_POST['ttime']."',
 							'".date('YmdHis')."',
 							0,
@@ -108,25 +108,25 @@ if(isset($job)&&!empty($job)){
  <TITLE> OP </TITLE>
 
  <script language="javascript" >
-<!-- 
+<!--
 
 function checkform(d)
 {
-	if(d.dept.selectedIndex==-1) 
+	if(d.dept.selectedIndex==-1)
 		{	alert("<?php echo $LDAlertDept ?>");
 			return false;
 		}
-	if(d.reporter.value=="") 
+	if(d.reporter.value=="")
 		{	alert("<?php echo $LDAlertName ?>");
 			d.reporter.focus();
 			return false;
 		}
-	if(d.id.value=="") 
+	if(d.id.value=="")
 		{	alert("<?php echo $LDAlertPNr ?>");
 			d.id.focus();
 			return false;
 		}
-	if(d.job.value=="") 
+	if(d.job.value=="")
 		{	alert("<?php echo $LDPlsDescribe ?>");
 			d.job.focus();
 			return false;
@@ -135,9 +135,9 @@ function checkform(d)
 }
 
 // -->
-</script> 
+</script>
 
-<?php 
+<?php
 $sTemp = ob_get_contents();
 ob_end_clean();
 

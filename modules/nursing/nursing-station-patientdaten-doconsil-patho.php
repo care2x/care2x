@@ -1,7 +1,7 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 /**
 * CARE2X Integrated Hospital Information System version deployment 1.1 (mysql) 2004-01-11
 * GNU General Public License
@@ -33,7 +33,7 @@ require_once($root_path.'include/core/inc_front_chain_lang.php');
 
 $thisfile='nursing-station-patientdaten-doconsil-patho.php';
 
-$bgc1='#cde1ec'; 
+$bgc1='#cde1ec';
 //$konsil="patho";
 $formtitle=$LDPathology;
 
@@ -46,7 +46,7 @@ define('_BATCH_NR_INIT_',20000000);
 *  The following are  batch nr inits for each type of test request
 *   chemlabor = 10000000; patho = 20000000; baclabor = 30000000; blood = 40000000; generic = 50000000;
 */
-						
+
 /* Here begins the real work */
 
 require_once($root_path.'include/core/inc_date_format_functions.php');
@@ -56,7 +56,7 @@ $enc_obj=new Encounter;
 
      /* Check for the patient number = $pn. If available get the patients data, otherwise set edit to 0 */
      if(isset($pn) && $pn)
-	 {		
+	 {
 
 	    if( $enc_obj->loadEncounterData($pn)) {
 			$full_en=$pn;
@@ -67,36 +67,36 @@ $enc_obj=new Encounter;
 	      	$edit=0;
 		  	$mode='';
 		  	$pn='';
-	   	}		
+	   	}
 	}
 
-	   
+
 	 if(!isset($mode))   $mode='';
-		
+
 		  switch($mode)
 		  {
 				     case 'save':
-							
-                                 $sql="INSERT INTO care_test_request_".$db_request_table." 
+
+                                 $sql="INSERT INTO care_test_request_".$db_request_table."
 								          (
-										   batch_nr, encounter_nr, dept_nr, quick_cut, 
-										   qc_phone, quick_diagnosis, qd_phone, material_type, 
-										   material_desc, localization, clinical_note, extra_note, 
-										   repeat_note, gyn_last_period, gyn_period_type, 
-										   gyn_gravida, gyn_menopause_since, 
-										   gyn_hysterectomy, gyn_contraceptive, 
-										   gyn_iud, gyn_hormone_therapy, 
+										   batch_nr, encounter_nr, dept_nr, quick_cut,
+										   qc_phone, quick_diagnosis, qd_phone, material_type,
+										   material_desc, localization, clinical_note, extra_note,
+										   repeat_note, gyn_last_period, gyn_period_type,
+										   gyn_gravida, gyn_menopause_since,
+										   gyn_hysterectomy, gyn_contraceptive,
+										   gyn_iud, gyn_hormone_therapy,
 										   doctor_sign, op_date, send_date,
 										   status, history, create_id, create_time)
-										   VALUES 
+										   VALUES
 										   (
-										   '".$batch_nr."','".$pn."','".$dept_nr."', '".$quick_cut."', 
-										   '".$qc_phone."', '".$quick_diagnosis."', '".$qd_phone."', '".$material_type."', 
-										   '".addslashes(htmlspecialchars($material_desc))."', '".addslashes(htmlspecialchars($localization))."', '".addslashes(htmlspecialchars($clinical_note))."', '".addslashes(htmlspecialchars($extra_note))."', 
-										   '".addslashes(htmlspecialchars($repeat_note))."', '".addslashes($gyn_last_period)."', '".addslashes($gyn_period_type)."', 
-										   '".addslashes($gyn_gravida)."', '".addslashes($gyn_menopause_since)."', 
-										   '".addslashes($gyn_hysterectomy)."', '".addslashes($gyn_contraceptive)."', 
-										   '".addslashes($gyn_iud)."', '".addslashes($gyn_hormone_therapy)."', 
+										   '".$batch_nr."','".$pn."','".$dept_nr."', '".$quick_cut."',
+										   '".$qc_phone."', '".$quick_diagnosis."', '".$qd_phone."', '".$material_type."',
+										   '".addslashes(htmlspecialchars($material_desc))."', '".addslashes(htmlspecialchars($localization))."', '".addslashes(htmlspecialchars($clinical_note))."', '".addslashes(htmlspecialchars($extra_note))."',
+										   '".addslashes(htmlspecialchars($repeat_note))."', '".addslashes($gyn_last_period)."', '".addslashes($gyn_period_type)."',
+										   '".addslashes($gyn_gravida)."', '".addslashes($gyn_menopause_since)."',
+										   '".addslashes($gyn_hysterectomy)."', '".addslashes($gyn_contraceptive)."',
+										   '".addslashes($gyn_iud)."', '".addslashes($gyn_hormone_therapy)."',
 										   '".addslashes($doctor_sign)."', '".formatDate2STD($op_date,$date_format)."', '".date('Y-m-d H:i:s')."',
 										   '".$status."',
 										   'Create: ".date('Y-m-d H:i:s')." = ".$_SESSION['sess_user_name']."\n',
@@ -109,97 +109,97 @@ $enc_obj=new Encounter;
 									//echo $sql;
 								  	// Load the visual signalling functions
 									include_once($root_path.'include/core/inc_visual_signalling_fx.php');
-									// Set the visual signal 
-									setEventSignalColor($pn,SIGNAL_COLOR_DIAGNOSTICS_REQUEST);									
-									
+									// Set the visual signal
+									setEventSignalColor($pn,SIGNAL_COLOR_DIAGNOSTICS_REQUEST);
+
 									 header("location:".$root_path."modules/laboratory/labor_test_request_aftersave.php".URL_REDIRECT_APPEND."&edit=$edit&saved=insert&pn=$pn&station=$station&user_origin=$user_origin&status=$status&target=$target&noresize=$noresize&batch_nr=$batch_nr");
 									 exit;
 								  }
-								  else 
+								  else
 								  {
-								     echo "<p>$sql<p>$LDDbNoSave"; 
+								     echo "<p>$sql<p>$LDDbNoSave";
 									 $mode="";
 								  }
-								
+
 								break; // end of case 'save'
-								
+
 		     case 'update':
-			 
-							      $sql="UPDATE care_test_request_".$db_request_table." SET 
-								          dept_nr = '".$dept_nr."', 
-										  quick_cut = '".$quick_cut."', 
-										  qc_phone = '".$qc_phone."', 
+
+							      $sql="UPDATE care_test_request_".$db_request_table." SET
+								          dept_nr = '".$dept_nr."',
+										  quick_cut = '".$quick_cut."',
+										  qc_phone = '".$qc_phone."',
 										  quick_diagnosis = '".$quick_diagnosis."',
-										  qd_phone = '".$qd_phone."', 
+										  qd_phone = '".$qd_phone."',
 										  material_type = '".$material_type."',
-										  material_desc = '".htmlspecialchars($material_desc)."', 
+										  material_desc = '".htmlspecialchars($material_desc)."',
 										  localization = '".htmlspecialchars($localization)."',
-										  clinical_note = '".htmlspecialchars($clinical_note)."', 
-										  extra_note = '".htmlspecialchars($extra_note)."', 
+										  clinical_note = '".htmlspecialchars($clinical_note)."',
+										  extra_note = '".htmlspecialchars($extra_note)."',
 										  repeat_note = '".htmlspecialchars($repeat_note)."',
-										  gyn_last_period = '".htmlspecialchars($gyn_last_period)."', 
-										  gyn_period_type = '".htmlspecialchars($gyn_period_type)."', 
+										  gyn_last_period = '".htmlspecialchars($gyn_last_period)."',
+										  gyn_period_type = '".htmlspecialchars($gyn_period_type)."',
 										  gyn_gravida = '".htmlspecialchars($gyn_gravida)."',
-										  gyn_menopause_since = '".htmlspecialchars($gyn_menopause_since)."', 
+										  gyn_menopause_since = '".htmlspecialchars($gyn_menopause_since)."',
 										  gyn_hysterectomy = '".htmlspecialchars($gyn_hysterectomy)."',
-										  gyn_contraceptive = '".htmlspecialchars($gyn_contraceptive)."', 
-										  gyn_iud = '".htmlspecialchars($gyn_iud)."', 
+										  gyn_contraceptive = '".htmlspecialchars($gyn_contraceptive)."',
+										  gyn_iud = '".htmlspecialchars($gyn_iud)."',
 										  gyn_hormone_therapy = '".htmlspecialchars($gyn_hormone_therapy)."',
-										  doctor_sign = '".htmlspecialchars($doctor_sign)."', 
+										  doctor_sign = '".htmlspecialchars($doctor_sign)."',
 										  op_date = '".formatDate2STD($op_date,$date_format)."',
-										  status = '".$status."', 
+										  status = '".$status."',
 										  history = ".$enc_obj->ConcatHistory("Update: ".date('Y-m-d H:i:s')." = ".$_SESSION['sess_user_name']."\n").",
 										  modify_id = '".$_SESSION['sess_user_name']."',
 										  modify_time='".date('YmdHis')."'
 										   WHERE batch_nr = '".$batch_nr."'";
-										  							
+
 							      if($ergebnis=$enc_obj->Transact($sql))
        							  {
 									//echo $sql;
 								  	// Load the visual signalling functions
 									include_once($root_path.'include/core/inc_visual_signalling_fx.php');
-									// Set the visual signal 
-									setEventSignalColor($pn,SIGNAL_COLOR_DIAGNOSTICS_REQUEST);									
-									
+									// Set the visual signal
+									setEventSignalColor($pn,SIGNAL_COLOR_DIAGNOSTICS_REQUEST);
+
 									 header("location:".$root_path."modules/laboratory/labor_test_request_aftersave.php".URL_REDIRECT_APPEND."&edit=$edit&saved=update&pn=$pn&station=$station&user_origin=$user_origin&status=$status&target=$target&batch_nr=$batch_nr&noresize=$noresize");
 									 exit;
 								  }
 								  else
 								   {
-								      echo "<p>$sql<p>$LDDbNoSave"; 
+								      echo "<p>$sql<p>$LDDbNoSave";
 								      $mode="";
 								   }
-								
+
 								break; // end of case 'save'
-								
-								
+
+
 	        /* If mode is edit, get the stored test request when its status is either "pending" or "draft"
 			*  otherwise it is not editable anymore which happens when the lab has already processed the request,
-			*  or when it is discarded, hidden, locked, or otherwise. 
+			*  or when it is discarded, hidden, locked, or otherwise.
 			*
 			*  If the "parameter" element is not empty, parse it to the $stored_param variable
 			*/
 			case 'edit':
-			
+
 		                $sql="SELECT * FROM care_test_request_".$db_request_table." WHERE batch_nr='".$batch_nr."' AND (status='pending' OR status='draft' OR status='')";
 		                if($ergebnis=$db->Execute($sql))
        		            {
 				            if($editable_rows=$ergebnis->RecordCount())
 					        {
-							
+
      					       $stored_request=$ergebnis->FetchRow();
-							   
+
 							   $edit_form=1;
 
 					         }
 			             }
-						 
+
 						 break; ///* End of case 'edit': */
-			
+
 			 default: $mode='';
-						   
+
 		  }// end of switch($mode)
-  
+
           if(!$mode) /* Get a new batch number */
 		  {
 		                $sql="SELECT batch_nr FROM care_test_request_".$db_request_table." ORDER BY batch_nr DESC";
@@ -283,7 +283,7 @@ function chkForm(d){
 	        {
 	            d.qc_phone.value='';
 	        }
-	 
+
     if((d.quick_diagnosis.checked)&&(d.qd_phone.value==''))
 	{
 		alert("<?php echo $LDAlertQuickDiagnosis."\\n".$LDPlsEnterPhone ?>");
@@ -294,14 +294,14 @@ function chkForm(d){
 	        {
 	            d.qd_phone.value='';
 	        }
-	
+
    if((d.op_date.value=='')||(d.op_date.value==' '))
 	{
 		alert("<?php echo $LDPlsEnterOpDate ?>");
 		d.op_date.focus();
 		return false;
 	}
-	
+
     if((d.doctor_sign.value=='')||(d.doctor_sign.value==' '))
 	{
 		alert("<?php echo $LDPlsEnterDoctorName ?>");
@@ -313,7 +313,7 @@ function chkForm(d){
 function sendLater()
 {
    document.form_test_request.status.value="draft";
-   if(chkForm(document.form_test_request)) document.form_test_request.submit(); 
+   if(chkForm(document.form_test_request)) document.form_test_request.submit();
 }
 
 function printOut()
@@ -358,7 +358,7 @@ if($edit){
 ?>
 		<form name="form_test_request" method="post" action="<?php echo $thisfile ?>" onSubmit="return chkForm(this)">
 <?php
-	
+
 	/* If in edit mode display the control buttons */
 	$controls_table_width=700;
 
@@ -407,33 +407,33 @@ if($edit){
 
  $smarty->assign('LDSpeedCut',$LDSpeedCut);
  $smarty->assign('LDRelayResult',$LDRelayResult);
- 
+
  $tpbuffer= '';
  if($mode=="edit") $tpbuffer.=$stored_request['qc_phone'];
  $smarty->assign('input_qc_phone',$tpbuffer);
 
  $smarty->assign('batch_nr',$batch_nr);
  $smarty->assign('gifBatchBarcode',"<img src='".$root_path."classes/barcode/image.php?code=$batch_nr&style=68&type=I25&width=145&height=40&xres=2&font=5' border=0>");
- 
+
  $tpbuffer='<input type="checkbox" name="quick_diagnosis" value="1"';
  if($mode=="edit" && $stored_request['quick_diagnosis']) $tpbuffer.=' checked';
  $smarty->assign('input_quick_diagnosis',$tpbuffer.'>');
 
  $smarty->assign('LDSpeedTest',$LDSpeedTest);
  $smarty->assign('LDRelayResult',$LDRelayResult);
- 
+
  $tpbuffer='';
  if($mode=="edit") $tpbuffer.=$stored_request['qd_phone'];
  $smarty->assign('input_qd_phone',$tpbuffer);
 
  $smarty->assign('LDSpecialNotice',$LDSpecialNotice);
  $smarty->assign('LDMatType',$LDMatType);
- 
+
  $tpbuffer='<input type="radio" name="material_type" value="pe"';
  if($mode=="edit" && $stored_request['material_type']=="pe") $tpbuffer.= "checked";
  $smarty->assign('input_material_type_pe',$tpbuffer.'>');
  $smarty->assign('LDPE',$LDPE);
- 
+
  $tpbuffer='<input type="radio" name="material_type" value="op_specimen"';
  if($mode=="edit" && $stored_request['material_type']=="op_specimen") $tpbuffer.=" checked";
  $smarty->assign('input_material_type_op_specimen',$tpbuffer.'>');
@@ -443,7 +443,7 @@ if($edit){
  if($mode=="edit" && $stored_request['material_type']=="shave") $tpbuffer.= " checked";
  $smarty->assign('input_material_type_shave',$tpbuffer.'>');
  $smarty->assign('LDShave',$LDShave);
- 
+
  $tpbuffer='<input type="radio" name="material_type" value="cytology"';
  if($mode=="edit" && $stored_request['material_type']=="cytology") $tpbuffer.= " checked";
  $smarty->assign('input_material_type_cytology',$tpbuffer.'>');
@@ -509,14 +509,14 @@ if($edit){
  $smarty->assign('val_gyn_contraceptive',$tpbuffer);
 
  $smarty->assign('LDOpDate',$LDOpDate);
- 
+
 	//gjergji : new calendar
 	require_once ('../../js/jscalendar/calendar.php');
 	$calendar = new DHTML_Calendar('../../js/jscalendar/', $lang, 'calendar-system', true);
 	$calendar->load_files();
 	$smarty->assign('inputOpDate',$calendar->show_calendar($calendar,$date_format,'op_date',$stored_request['op_date']));
 	//end : gjergji
-	
+
   $smarty->assign('LDDoctor',$LDDoctor);
   $smarty->assign('LDDept',$LDDept);
   if($mode=="edit") $smarty->assign('val_doctor_sign',stripslashes($stored_request['doctor_sign']));

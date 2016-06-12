@@ -4,7 +4,7 @@
  *
  */
 error_reporting(E_ALL && ~E_NOTICE);
-error_reporting(-1);
+//error_reporting(-1);
 
 define('INSTALLER_PATH', realpath(dirname(__FILE__)));
 define('INSTALLER_API', true);

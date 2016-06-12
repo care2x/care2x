@@ -1,19 +1,19 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 /**
 * CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
 * GNU General Public License
 * Copyright 2002,2003,2004,2005 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
 
 # Default value for the maximum nr of rows per block displayed, define this to the value you wish
 # In normal cases this value is derived from the db table "care_config_global" using the "pagin_insurance_list_max_block_rows" element.
-define('MAX_BLOCK_ROWS',30); 
+define('MAX_BLOCK_ROWS',30);
 
 $lang_tables=array('personell.php');
 define('LANG_FILE','aufnahme.php');
@@ -50,39 +50,39 @@ if(empty($GLOBAL_CONFIG['pagin_personell_list_max_block_rows'])) $pagen->setMaxC
 	else $pagen->setMaxCount($GLOBAL_CONFIG['pagin_personell_list_max_block_rows']);
 
 
-if(empty($oitem)) $oitem='name_last';			
+if(empty($oitem)) $oitem='name_last';
 if(empty($odir)) $odir='ASC'; # default, ascending alphabetic
 # Set the sort parameters
 $pagen->setSortItem($oitem);
 $pagen->setSortDirection($odir);
 
 $toggle=0;
-		
+
 $sql='SELECT ps.pid, ps.nr, ps.is_discharged, p.name_last, p.name_first, p.date_birth, p.addr_zip, p.sex, p.photo_filename';
-			  
+
 $sql2= " FROM care_personell as ps,care_person as p WHERE  ps.is_discharged IN ('',0)  AND ps.pid=p.pid";
 
 $sql3=" ORDER BY p.$oitem $odir";
 
-			  
+
 if($ergebnis=$db->SelectLimit($sql.$sql2.$sql3,$pagen->MaxCount(),$pagen->BlockStartIndex())){
-	if ($linecount=$ergebnis->RecordCount()){ 
+	if ($linecount=$ergebnis->RecordCount()){
 		if(($linecount==1) && $numeric){
 			$zeile=$ergebnis->FetchRow();
 			header("location:personell_register_show.php".URL_REDIRECT_APPEND."&from=such&target=personell_listall&personell_nr=".$zeile['nr']."&sem=".(!$zeile['is_discharged']));
 			exit;
 		}
 	}
-	
+
 	$pagen->setTotalBlockCount($linecount);
-					
+
 	# If more than one count all available
 	if(isset($totalcount) && $totalcount){
 		$pagen->setTotalDataCount($totalcount);
 	}else{
 		# Count total available data
 		$sql="SELECT COUNT(p.pid) AS count $sql2";
-			
+
 		if($result=$db->Execute($sql)){
 			if ($result->RecordCount()) {
 				$rescount=$result->FetchRow();
@@ -132,7 +132,7 @@ ob_start();
 <?php
 
 $target='personell_listall';
- include('./gui_bridge/default/gui_tabs_personell_reg.php') 
+ include('./gui_bridge/default/gui_tabs_personell_reg.php')
 
 ?>
 
@@ -142,9 +142,9 @@ $target='personell_listall';
 <?php
 
 if ($linecount) echo str_replace("~nr~",$totalcount,$LDSearchFound).' '.$LDShowing.' '.$pagen->BlockStartNr().' '.$LDTo.' '.$pagen->BlockEndNr().'.';
-	else echo str_replace('~nr~','0',$LDSearchFound); 
-		  
-	if ($linecount) { 
+	else echo str_replace('~nr~','0',$LDSearchFound);
+
+	if ($linecount) {
 
 	# Load the common icons
 	$img_options=createComIcon($root_path,'statbel2.gif','0');
@@ -156,37 +156,37 @@ if ($linecount) echo str_replace("~nr~",$totalcount,$LDSearchFound).' '.$LDShowi
 
 ?>
       <td><b>
-	  <?php 
+	  <?php
 	  	if($oitem=='pid') $flag=TRUE;
-			else $flag=FALSE; 
-		echo $pagen->SortLink($LDPersonellNr,'pid',$odir,$flag); 
+			else $flag=FALSE;
+		echo $pagen->SortLink($LDPersonellNr,'pid',$odir,$flag);
 			 ?></b></td>
       <td><b>
-	  <?php 
+	  <?php
 	  	if($oitem=='sex') $flag=TRUE;
-			else $flag=FALSE; 
-		echo $pagen->SortLink($LDSex,'sex',$odir,$flag); 
+			else $flag=FALSE;
+		echo $pagen->SortLink($LDSex,'sex',$odir,$flag);
 			 ?></b></td>
       <td><b>
-	  <?php 
+	  <?php
 	  	if($oitem=='name_last') $flag=TRUE;
-			else $flag=FALSE; 
-		echo $pagen->SortLink($LDLastName,'name_last',$odir,$flag); 
+			else $flag=FALSE;
+		echo $pagen->SortLink($LDLastName,'name_last',$odir,$flag);
 			 ?></b></td>
       <td><b>
-	  <?php 
+	  <?php
 	  	if($oitem=='name_first') $flag=TRUE;
-			else $flag=FALSE; 
-		echo $pagen->SortLink($LDFirstName,'name_first',$odir,$flag); 
+			else $flag=FALSE;
+		echo $pagen->SortLink($LDFirstName,'name_first',$odir,$flag);
 			 ?></b></td>
       <td><b>
-	  <?php 
+	  <?php
 	  	if($oitem=='date_birth') $flag=TRUE;
-			else $flag=FALSE; 
-		echo $pagen->SortLink($LDBday,'date_birth',$odir,$flag); 
+			else $flag=FALSE;
+		echo $pagen->SortLink($LDBday,'date_birth',$odir,$flag);
 			 ?></b></td>
       <td><b>
-	  <?php 
+	  <?php
 	  	if($oitem=='addr_zip') $flag=TRUE;
 			else $flag=FALSE;
 		 echo $pagen->SortLink($LDZipCode,'addr_zip',$odir,$flag);

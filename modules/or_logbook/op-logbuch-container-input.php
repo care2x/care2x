@@ -1,7 +1,7 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 define('LANG_FILE','or.php');
 $local_user='ck_op_pflegelogbuch_user';
 require_once($root_path.'include/core/inc_front_chain_lang.php');
@@ -11,7 +11,7 @@ require_once($root_path.'include/core/inc_front_chain_lang.php');
 <?php echo setCharSet(); ?>
 
 <script language="javascript">
-<!-- 
+<!--
 
 function sendnum(d)
 {

@@ -1,14 +1,14 @@
 <?php
 
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 //$db->debug = true;
 /**
 * CARE2X Integrated Hospital Information System Deployment 2.2 - 2006-07-10
 * GNU General Public License
 * Copyright 2002,2003,2004,2005,2006 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -54,7 +54,7 @@ function checkParamValue($paramValue,$pName) {
 			}else{
 				$txt.=htmlspecialchars($paramValue);
 			}
-			break;	
+			break;
 	case $dobDiff > 5040 :
 		if($patient['sex']=='m')
 			if($pName['hi_bound']&&$paramValue>$pName['hi_bound']){
@@ -63,15 +63,15 @@ function checkParamValue($paramValue,$pName) {
 				$txt.='<img '.createComIcon($root_path,'arrow_red_dwn_sm.gif','0','',TRUE).'> <font color="red">'.htmlspecialchars($paramValue).'</font>';
 			}else{
 				$txt.=htmlspecialchars($paramValue);
-			}	
-		elseif($patient['sex']=='f')	
+			}
+		elseif($patient['sex']=='f')
 			if($pName['hi_bound_f']&&$paramValue>$pName['hi_bound_f']){
 				$txt.='<img '.createComIcon($root_path,'arrow_red_up_sm.gif','0','',TRUE).'> <font color="red">'.htmlspecialchars($paramValue).'</font>';
 			}elseif($paramValue<$pName['lo_bound_f']){
 				$txt.='<img '.createComIcon($root_path,'arrow_red_dwn_sm.gif','0','',TRUE).'> <font color="red">'.htmlspecialchars($paramValue).'</font>';
 			}else{
 				$txt.=htmlspecialchars($paramValue);
-			}																				
+			}
 			break;
 	}
 	return $txt;
@@ -91,7 +91,7 @@ if($user_origin=='lab'||$user_origin=='lab_mgmt'){
   	$breakfile=$root_path.'modules/nursing/nursing-station-patientdaten.php'.URL_APPEND.'&pn='.$pn.'&edit='.$edit;
 	$encounter_nr=$pn;
 }
-if(!$_COOKIE[$local_user.$sid]) {header("Location:".$root_path."language/".$lang."/lang_".$lang."_invalid-access-warning.php"); exit;}; 
+if(!$_COOKIE[$local_user.$sid]) {header("Location:".$root_path."language/".$lang."/lang_".$lang."_invalid-access-warning.php"); exit;};
 
 if(!$encounter_nr) header("location:".$root_path."modules/laboratory/labor_data_patient_such.php?sid=$sid&lang=$lang");
 
@@ -108,7 +108,7 @@ $cache='';
 
 if($nostat) $ret=$root_path."modules/laboratory/labor_data_patient_such.php?sid=$sid&lang=$lang&versand=1&keyword=$encounter_nr";
 	else $ret=$root_path."modules/nursing/nursing-station-patientdaten.php?sid=$sid&lang=$lang&station=$station&pn=$encounter_nr";
-	
+
 # Load the date formatter */
 require_once($root_path.'include/core/inc_date_format_functions.php');
 
@@ -119,7 +119,7 @@ if($encounter=&$enc_obj->getBasic4Data($encounter_nr)) {
 	$patient=$encounter->FetchRow();
 
 	$recs=&$lab_obj->getAllResults($encounter_nr);
-	
+
 	if ($rows=$lab_obj->LastRecordCount()){
 
 		# Check if the lab result was recently modified
@@ -135,7 +135,7 @@ if($encounter=&$enc_obj->getBasic4Data($encounter_nr)) {
 				$tmp = array($buffer['paramater_name'] => $buffer['parameter_value']);
 				$records[$buffer['job_id']][] = $tmp;
 				$tdate[$buffer['job_id']]=&$buffer['test_date'];
-				$ttime[$buffer['job_id']]=&$buffer['test_time'];		
+				$ttime[$buffer['job_id']]=&$buffer['test_time'];
 			}
 		}
 	}else{
@@ -193,17 +193,17 @@ function selectall(){
 	d=document.labdata;
 	var t=d.ptk.value;
 	if(t == 1){
-		if(toggle==true){ 
+		if(toggle==true){
 			d.tk.checked=true;
 		}
 	}else{
 		for(i = 0; i<t; i++){
 			if(toggle==true && d.tk[i]){
-				d.tk[i].checked=true; 
+				d.tk[i].checked=true;
 			}
 		}
 	}
-	if(toggle==false){ 
+	if(toggle==false){
 		d.reset();
 	}
 	toggle=(!toggle);
@@ -218,15 +218,15 @@ function prep2submit(){
 		if(t==1) {
 			n=d.tk;
 			v=d.tk.value;
-		}else if( d.tk[i]){ 
+		}else if( d.tk[i]){
 			n=d.tk[i];
 			v=d.tk[i].value;
 		}
 		if(n.checked==true && d.tk[i]){
 			if(j){
 				d.params.value=d.params.value +"~"+v;
-			}else if( d.tk[i]){ 
-				d.params.value=v;	
+			}else if( d.tk[i]){
+				d.params.value=v;
 				j=1;
 			}
 		 }
@@ -254,15 +254,15 @@ function remove(s, t) {
 
 var skipme = '';
 function wichOne(nr) {
-	
+
 	if( document.getElementById(nr).checked == true ) {
 		if( skipme == '' ) skipme = nr;
 		else skipme += "-"+nr;
-	} else if ( document.getElementById(nr).checked == false ) 
+	} else if ( document.getElementById(nr).checked == false )
 		skipme = remove(skipme,nr);
 }
-	
-	
+
+
 function openReport() {
 	enc = <?php echo $encounter_nr ?>;
 	userId = '<?php echo $_SESSION['sess_user_name']; ?>';
@@ -272,7 +272,7 @@ function openReport() {
 //  Script End -->
 </script>
 
-<?php 
+<?php
 
 $sTemp = ob_get_contents();
 ob_end_clean();
@@ -318,7 +318,7 @@ if(empty($cache)){
 		$cache.= '
 		<td class="a12_b"><font color="#ffffff">&nbsp;<b>'.formatDate2Local($v,$date_format).'<br>'.$x.'</b>&nbsp;<br><input type="checkbox" name="skipme[]" value="'.$x.'" id="'.$x.'" onclick="wichOne(this.id);"></td>';
 	}
-	
+
 	$cache.= '
 		<td>&nbsp;<a href="javascript:prep2submit()"><img '.createComIcon($root_path,'chart.gif','0','absmiddle',TRUE).' alt="'.$LDClk2Graph.'"></td></a></td></tr>
 		<tr bgcolor="#ffddee" >
@@ -334,7 +334,7 @@ if(empty($cache)){
 		<td class="a12_b"><font color="#0000cc">&nbsp;<b>'.convertTimeToLocal($v).'</b> '.$LDOClock.'&nbsp;</td>';
 	}
 
-	
+
 	$cache.= '
 		<td>&nbsp;<a href="javascript:selectall()"><img '.createComIcon($root_path,'dwnarrowgrnlrg.gif','0','absmiddle',TRUE).' alt="'.$LDClk2SelectAll.'"></a>
 		</tr>';
@@ -352,7 +352,7 @@ while (list($job_id,$paramgroupvalue)=each($records)) {
 				$requestData[$ext][$paramgroup][$job_id] = $paramvalue;
 			}
 		}
-}	
+}
 
 //display the values
 $class='wardlistrow1';
@@ -367,8 +367,8 @@ while (list($groupId,$paramEnc)=each($requestData)) {
 		$cache .=  "<td class=\"" . $class ."\">" . $pName['name'] . "</td>";
 		$cache .=  "<td class=\"" . $class ."\">" . $pName['median'] . "</td>";
 		$cache .=  "<td class=\"" . $class ."\">" . $pName['msr_unit'] . "</td>";
-		for($i=0;$i<count($jIDArray);$i++) {			
-			if(array_key_exists($jIDArray[$i],$encounterNr)) {	
+		for($i=0;$i<count($jIDArray);$i++) {
+			if(array_key_exists($jIDArray[$i],$encounterNr)) {
 				$cache .= "<td align=\"right\" class=\"" . $class ."\">";
 				$cache .= checkParamValue($encounterNr[$jIDArray[$i]],$pName);
 				$cache .= "</td>";
@@ -381,8 +381,8 @@ while (list($groupId,$paramEnc)=each($requestData)) {
 			}
 		}
 		$cache .= "<td align=\"right\" colspan=\"". ($cols-$columns+1) ."\" class=\"" . $class ."\"><input type=\"checkbox\" name=tk value=\"" . $pName['id'] . "\"></td></tr>";
-		$class=='wardlistrow1' ? $class='wardlistrow2' : $class='wardlistrow1';	
-		$columns=0;	
+		$class=='wardlistrow1' ? $class='wardlistrow2' : $class='wardlistrow1';
+		$columns=0;
 	}
 }
 //end:gjergji

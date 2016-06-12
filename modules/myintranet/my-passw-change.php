@@ -1,12 +1,12 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 /**
 * CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
 * GNU General Public License
 * Copyright 2002,2003,2004,2005 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -22,7 +22,7 @@ if($n==$n2)
 {
 	$screenall=1;
 	$fileforward="my-passw-change-update.php?sid=$sid&lang=$lang&userid=$userid&n=$n";
-	if ($pass=='check') 	
+	if ($pass=='check')
 		include($root_path.'include/core/inc_passcheck.php');
 }
 else $n_error=1;
@@ -72,7 +72,7 @@ function pruf(d)
 }
 
 </script>
- 
+
 <?php
 
 $sTemp = ob_get_contents();
@@ -99,7 +99,7 @@ ob_start();
 	<img <?php echo createMascot($root_path,'mascot1_r.gif','0','bottom') ?> align="absmiddle"><b><?php echo $LDPWChanged ?></b></font>
 <?php else : ?>
 
-<?php if (($pass=='check') && $passtag) 
+<?php if (($pass=='check') && $passtag)
 {
 echo '<FONT  class="warnprompt">';
 
@@ -165,7 +165,7 @@ echo '</FONT><p>';
 </tr>
 </table>
 </form>
-<?php endif; ?>   
+<?php endif; ?>
 
 <p>
 

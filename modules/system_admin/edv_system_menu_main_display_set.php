@@ -1,12 +1,12 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 /**
 * CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
 * GNU General Public License
 * Copyright 2002,2003,2004,2005 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -29,7 +29,7 @@ require_once($root_path.'include/care_api_classes/class_globalconfig.php');
 $gc=new GlobalConfig($GLOBALCONFIG);
 
 if(isset($mode)&&($mode=='save')){
-	
+
 
 /*	$db->Execute("REPLACE INTO care_config_global (type,value) VALUES ('gui_frame_left_nav_resize','$bg_resize')";
 
@@ -39,14 +39,14 @@ if(isset($mode)&&($mode=='save')){
 	if(!empty($bg_color)){
 		$db->Execute("REPLACE INTO care_config_global (type,value) VALUES ('gui_frame_left_nav_border','$bg_border')";
 	}
-*/	
+*/
 	//echo $bg_resize; exit;
 	$gc->saveConfigItem('gui_frame_left_nav_border',$bg_border);
 	$gc->saveConfigItem('gui_frame_left_nav_width',$bg_width);
 	$gc->saveConfigItem('gui_frame_left_nav_bdcolor',$bg_bdcolor);
 	$gc->saveConfigItem('language_single',$multilang);
 	$gc->saveConfigItem('language_default',$deflang);
-		
+
 header('location:'.$thisfile.URL_REDIRECT_APPEND.'&mode=0');
 	exit;
 }
@@ -90,12 +90,12 @@ ob_start();
 ?>
 <br>
 <form>
-<table border=0 cellspacing=1 cellpadding=2>  
+<table border=0 cellspacing=1 cellpadding=2>
 <tbody class="submenu">
   <tr>
     <td><FONT  color="#000099" FACE="verdana,arial" size=2></td>
     <td class="wardlisttitlerow"><FONT  color="#000099" FACE="verdana,arial" size=2><b><?php echo $LDFrameResizable; ?></b></td>
-    <td>	<input type="radio" name="bg_border" value="1" <?php if($GLOBALCONFIG['gui_frame_left_nav_border']) echo 'checked'; ?>> <?php echo $LDYes; ?> 	<input type="radio" name="bg_border" value="0" 
+    <td>	<input type="radio" name="bg_border" value="1" <?php if($GLOBALCONFIG['gui_frame_left_nav_border']) echo 'checked'; ?>> <?php echo $LDYes; ?> 	<input type="radio" name="bg_border" value="0"
 	<?php if(!$GLOBALCONFIG['gui_frame_left_nav_border']) echo 'checked'; ?>> <?php echo $LDNo; ?>
         </td>
   </tr>
@@ -112,7 +112,7 @@ ob_start();
   <tr>
     <td><FONT  color="#000099" FACE="verdana,arial" size=2></td>
     <td class="wardlisttitlerow"><FONT  color="#000099" FACE="verdana,arial" size=2><b><?php echo $LDAllowMultiLang; ?></b></td>
-    <td>	<input type="radio" name="multilang" value="0" <?php if(!$GLOBALCONFIG['language_single']) echo 'checked'; ?>> <?php echo $LDYes; ?> 	<input type="radio" name="multilang" value="1" 
+    <td>	<input type="radio" name="multilang" value="0" <?php if(!$GLOBALCONFIG['language_single']) echo 'checked'; ?>> <?php echo $LDYes; ?> 	<input type="radio" name="multilang" value="1"
 	<?php if($GLOBALCONFIG['language_single']) echo 'checked'; ?>> <?php echo $LDNo; ?>
         </td>
   </tr>
@@ -127,7 +127,7 @@ $lang_obj=new Language;
 $langselect= &$lang_obj->createSelectForm($GLOBALCONFIG['language_default']);
 echo $langselect;
 ?>
-			
+
         </select>
         </td>
   </tr>

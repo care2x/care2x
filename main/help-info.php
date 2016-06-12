@@ -1,12 +1,12 @@
-<?php 
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
+<?php
 require_once('./roots.php');
 require_once($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 /**
 * CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
 * GNU General Public License
 * Copyright 2002,2003,2004,2005 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -23,20 +23,20 @@ require_once($root_path.'include/core/inc_front_chain_lang.php');
 </head>
 <body onLoad="if (window.focus) window.focus()">
 
-<?php 
+<?php
 # Resolve the help file to include
 if($helpidx=='') {
 	if(file_exists('../help/'.$lang.'/help_'.$lang.'_main.php')){
 		include('../help/'.$lang.'/help_'.$lang.'_main.php');
 	}else{
 		include('../help/en/help_en_main.php');
-	}  
+	}
 }else{
 	if(file_exists('../help/'.$lang.'/help_'.$lang.'_'.$helpidx)){
 		include('../help/'.$lang.'/help_'.$lang.'_'.$helpidx);
 	}else{
 	     if(file_exists('../help/en/help_en_'.$helpidx)) include('../help/en/help_en_'.$helpidx);
-             else include('../help/en/help_en_main.php');  
+             else include('../help/en/help_en_main.php');
 	}
 }
 ?>

@@ -1,19 +1,19 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 /**
 * CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
 * GNU General Public License
 * Copyright 2002,2003,2004,2005 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
 
 # Default value for the maximum nr of rows per block displayed, define this to the value you wish
 # In normal cases this value is derived from the db table "care_config_global" using the "pagin_insurance_list_max_block_rows" element.
-define('MAX_BLOCK_ROWS',30); 
+define('MAX_BLOCK_ROWS',30);
 
 $lang_tables[]='search.php';
 define('LANG_FILE','aufnahme.php');
@@ -56,7 +56,7 @@ if(($mode=='search'||$mode=='paginate')&&($searchkey))
 	$searchkey=strtr($searchkey,'*?','%_');
 	# Save the search keyword for eventual pagination routines
 	if($mode=='search') $_SESSION['sess_searchkey']=$searchkey;
-	
+
 		include_once($root_path.'include/care_api_classes/class_globalconfig.php');
         $glob_obj=new GlobalConfig($GLOBAL_CONFIG);
         $glob_obj->getConfig('patient_%');
@@ -74,14 +74,14 @@ if(($mode=='search'||$mode=='paginate')&&($searchkey))
 				//if($suchwort < $patient_inpatient_nr_adder) $suchbuffer=$suchwort+$patient_inpatient_nr_adder; else $suchbuffer=$suchwort;
 				$suchbuffer=$suchwort;
 			}
-			
+
 			$sql='SELECT enc.encounter_nr,
-								enc.encounter_class_nr, 
+								enc.encounter_class_nr,
 								enc.is_discharged,
 								reg.pid,
-								reg.name_last, 
-								reg.name_first, 
-								reg.date_birth, 
+								reg.name_last,
+								reg.name_first,
+								reg.date_birth,
 								reg.sex,
 								reg.death_date';
 			$dbtable ='
@@ -92,7 +92,7 @@ if(($mode=='search'||$mode=='paginate')&&($searchkey))
 			if($numeric) $sql2.=" enc.encounter_nr $sql_LIKE '".addslashes($suchbuffer)."'";
 				else $sql2.= "( reg.name_last $sql_LIKE '".addslashes($suchwort)."%'
 			              OR reg.name_first $sql_LIKE '".addslashes($suchwort)."%')";
-			
+
 			$sql2.="  AND enc.pid=reg.pid
 					  AND enc.encounter_status<>'cancelled'
 					  AND  enc.is_discharged IN ('',0)
@@ -101,36 +101,36 @@ if(($mode=='search'||$mode=='paginate')&&($searchkey))
 /*			$sql2= '
 			          WHERE
 					  (
-			               reg.name_last LIKE "'.addslashes($suchwort).'%" 
+			               reg.name_last LIKE "'.addslashes($suchwort).'%"
 			              OR reg.name_first LIKE "'.addslashes($suchwort).'%"
 			              OR reg.date_birth LIKE "'.@formatDate2STD($suchwort,$date_format).'%"
 			              OR enc.encounter_nr LIKE "'.addslashes($suchbuffer).'"
 					  )
-					  AND enc.pid=reg.pid  
+					  AND enc.pid=reg.pid
 					  AND enc.encounter_status<>"cancelled"
 					  AND NOT enc.is_discharged
 					  AND (enc.in_ward OR enc.in_dept)
 					  AND enc.status NOT IN ("void","hidden","deleted","inactive")
 			          ORDER BY ';
-*/					  
+*/
 		if($oitem=='encounter_nr') $sql3 =" ORDER BY enc.$oitem $odir";
 			else $sql3=" ORDER BY reg.$oitem $odir";
-				
+
 		//echo $sql.$dbtable.$sql2;
-			  
+
 		if($ergebnis=$db->SelectLimit($sql.$dbtable.$sql2.$sql3,$pagen->MaxCount(),$pagen->BlockStartIndex())){
-				
+
 				if ($linecount=$ergebnis->RecordCount())
-				{ 
+				{
 					if(($linecount==1) && $numeric&&$mode=='search')
 					{
 						$zeile=$ergebnis->FetchRow();
 						header("location:aufnahme_daten_zeigen.php".URL_REDIRECT_APPEND."&from=such&target=search&pid=".$zeile['pid']."&encounter_nr=".$zeile['encounter_nr']."&sem=".(!$zeile['is_discharged']));
 						exit;
 					}
-					
+
 					$pagen->setTotalBlockCount($linecount);
-					
+
 					# If more than one count all available
 					if(isset($totalcount) && $totalcount){
 						$pagen->setTotalDataCount($totalcount);
@@ -220,11 +220,11 @@ ob_start();
 
 <?php
 if($mode=='search'||$mode=='paginate'){
-	
+
 	if ($linecount) echo '<hr width=80% align=left>'.str_replace("~nr~",$totalcount,$LDSearchFound).' '.$LDShowing.' '.$pagen->BlockStartNr().' '.$LDTo.' '.$pagen->BlockEndNr().'.';
-		else echo str_replace('~nr~','0',$LDSearchFound); 
-		  
-	if ($linecount) { 
+		else echo str_replace('~nr~','0',$LDSearchFound);
+
+	if ($linecount) {
 
 		# Load the common icons
 		$img_options=createComIcon($root_path,'statbel2.gif','0');
@@ -236,7 +236,7 @@ if($mode=='search'||$mode=='paginate'){
 		echo '
 			<table border=0 cellpadding=2 cellspacing=1>
 			<tr class="adm_list_titlebar">';
-			
+
 ?>
      <td><b>
 	  <?php echo $pagen->makeSortLink($LDCaseNr,'encounter_nr',$oitem,$odir,$append);  ?></b></td>
@@ -263,34 +263,34 @@ if($mode=='search'||$mode=='paginate'){
 						echo"<td>";
                         echo '&nbsp;'.$full_en;
 						if($zeile['encounter_class_nr']==2) echo ' <img '.createComIcon($root_path,'redflag.gif').'> <font size=1 color="red">'.$LDAmbulant.'</font>';
-                        echo "</td><td>";	
+                        echo "</td><td>";
 
 						switch($zeile['sex']){
 							case 'f': echo '<img '.$img_female.'>'; break;
 							case 'm': echo '<img '.$img_male.'>'; break;
 							default: echo '&nbsp;'; break;
-						}	
-						
+						}
+
 						echo"</td><td>";
 						echo "&nbsp;".ucfirst($zeile['name_last']);
-                        echo "</td>";	
+                        echo "</td>";
 						echo"<td>";
 						echo "&nbsp;".ucfirst($zeile['name_first']);
 
 						# If person is dead show a black cross
 						if($zeile['death_date']&&$zeile['death_date']!=$dbf_nodate) echo '&nbsp;<img '.createComIcon($root_path,'blackcross_sm.gif','0','absmiddle').'>';
-						
-						
-                        echo "</td>";	
+
+
+                        echo "</td>";
 						echo"<td>";
 						echo "&nbsp;".formatDate2Local($zeile['date_birth'],$date_format);
-                        echo "</td>";	
+                        echo "</td>";
 
 					    if($_COOKIE[$local_user.$sid]) echo '
 						<td>&nbsp;
 							<a href=show_medocs.php'.URL_APPEND.'&from=such&pid='.$zeile['pid'].'&encounter_nr='.$zeile['encounter_nr'].'&target=entry>
 							<img '.$img_options.' alt="'.$LDShowData.'"></a>&nbsp;';
-							
+
                        if(!file_exists($root_path.'cache/barcodes/en_'.$full_en.'.png'))
 	      		       {
 			               echo "<img src='".$root_path."classes/barcode/image.php?code=".$full_en."&style=68&type=I25&width=180&height=50&xres=2&font=5&label=2&form_file=en' border=0 width=0 height=0>";
@@ -318,7 +318,7 @@ if($mode=='search'||$mode=='paginate'){
 		</td>
      </tr>
    </table>
-  
+
 </ul>
 <?php
 					}

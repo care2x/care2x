@@ -1,12 +1,12 @@
 <?php
-error_reporting(E_COMPILE_ERROR|E_ERROR|E_CORE_ERROR);
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 /**
 * CARE2X Integrated Hospital Information System Deployment 2.1 - 2004-10-02
 * GNU General Public License
 * Copyright 2002,2003,2004,2005 Elpidio Latorilla
-* elpidio@care2x.org, 
+* elpidio@care2x.org,
 *
 * See the file "copy_notice.txt" for the licence notice
 */
@@ -25,7 +25,7 @@ $breakfile='intra-email.php.'.URL_APPEND.'&mode=listmail';
 <?php echo setCharSet(); ?>
 
  <script language="javascript" >
-<!-- 
+<!--
 
 function submitForm(r)
 {
@@ -43,16 +43,16 @@ function echoer_v()
 	//window.location.href=urlholder
 	}
 // -->
-</script> 
+</script>
 
-<?php 
+<?php
 require_once($root_path.'include/core/inc_js_gethelp.php');
 require($root_path.'include/core/inc_css_a_hilitebu.php');
 ?>
 
 </HEAD>
 
-<BODY topmargin=0 leftmargin=0 marginwidth=0 marginheight=0 
+<BODY topmargin=0 leftmargin=0 marginwidth=0 marginheight=0
 <?php if (!$cfg['dhtml']){ echo 'link='.$cfg['body_txtcolor'].' alink='.$cfg['body_alink'].' vlink='.$cfg['body_txtcolor']; } ?>>
 <?php echo $test ?>
 <?php //foreach($argv as $v) echo "$v "; ?>
@@ -69,27 +69,27 @@ require($root_path.'include/core/inc_css_a_hilitebu.php');
 <?php
  echo '
 <FONT face="Verdana,Helvetica,Arial" size=2>
-  &nbsp; <b><a href="intra-email.php'.URL_APPEND.'&mode=listmail">'.$LDInbox.'</a> | 
-  <a href="intra-email.php'.URL_APPEND.'&mode=compose">'.$LDNewEmail.'</a> | 
-  <a href="intra-email-addrbook.php'.URL_APPEND.'&mode='.$mode.'&folder='.$folder.'">'.$LDAddrBook.'</a> | 
-  <a href="javascript:gethelp()">'.$LDHelp.'</a>| 
+  &nbsp; <b><a href="intra-email.php'.URL_APPEND.'&mode=listmail">'.$LDInbox.'</a> |
+  <a href="intra-email.php'.URL_APPEND.'&mode=compose">'.$LDNewEmail.'</a> |
+  <a href="intra-email-addrbook.php'.URL_APPEND.'&mode='.$mode.'&folder='.$folder.'">'.$LDAddrBook.'</a> |
+  <a href="javascript:gethelp()">'.$LDHelp.'</a>|
   <a href="intra-email-pass.php'.URL_APPEND.'">'.$LDLogout.'</a></b>
   <hr color=#000080>
    &nbsp; <FONT  color="#800000">'.$_COOKIE[$local_user.$sid].'</font>
    ';
 /* echo '
 <FONT face="Verdana,Helvetica,Arial" size=2>
-  &nbsp; <b><a href="intra-email.php'.URL_APPEND.'&mode=listmail">'.$LDInbox.'</a> | 
-  <a href="intra-email.php'.URL_APPEND.'&mode=compose">'.$LDNewEmail.'</a> | 
-  <a href="intra-email-addrbook.php'.URL_APPEND.'&mode='.$mode.'&folder='.$folder.'">'.$LDAddrBook.'</a> | '.$LDOptions.' | 
-  <a href="javascript:gethelp()">'.$LDHelp.'</a>| 
+  &nbsp; <b><a href="intra-email.php'.URL_APPEND.'&mode=listmail">'.$LDInbox.'</a> |
+  <a href="intra-email.php'.URL_APPEND.'&mode=compose">'.$LDNewEmail.'</a> |
+  <a href="intra-email-addrbook.php'.URL_APPEND.'&mode='.$mode.'&folder='.$folder.'">'.$LDAddrBook.'</a> | '.$LDOptions.' |
+  <a href="javascript:gethelp()">'.$LDHelp.'</a>|
   <a href="intra-email-pass.php'.URL_APPEND.'">'.$LDLogout.'</a></b>
   <hr color=#000080>
    &nbsp; <FONT  color="#800000">'.$_COOKIE[$local_user.$sid].'</font>
    ';
-*/   
+*/
 // ******************************** Read email ***************************************
- 
+
 ?>
   <p>
   <table border=0 cellpadding=5 >
@@ -118,7 +118,7 @@ require($root_path.'include/core/inc_css_a_hilitebu.php');
 			&nbsp;<?php echo $LDSignatureTxt ?></td>
     </tr>
   </table>
-  
+
 </FONT>
 <p>
 </td>
@@ -130,7 +130,7 @@ require($root_path.'include/core/inc_load_copyrite.php');
 ?>
 </td>
 </tr>
-</table>        
+</table>
 &nbsp;
 </FONT>
 </BODY>

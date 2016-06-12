@@ -1,8 +1,8 @@
 <?php
 
-error_reporting(E_COMPILE_ERROR | E_ERROR | E_CORE_ERROR);
 require('./roots.php');
 require($root_path . 'include/core/inc_environment_global.php');
+error_reporting($ErrorLevel);
 //require($root_path . 'include/core/inc_front_chain_lang.php');
 //require($root_path . 'language/en/lang_en_reporting.php');
 require($root_path . 'language/en/lang_en_date_time.php');
@@ -46,10 +46,10 @@ $doc_name = $doc_name_res[0];
 
 //Get the patients attended by doctor
 
-$doc_patients_list = "SELECT DISTINCT date, patients 
+$doc_patients_list = "SELECT DISTINCT date, patients
                   FROM care_tz_hospital_doctor_history
                   WHERE care_tz_hospital_doctor_history.doctor = '$doctor'
-                  AND date >= '$startdate' AND date <= '$enddate' 
+                  AND date >= '$startdate' AND date <= '$enddate'
                   ORDER BY date asc";
 $db_doc_patients_list = $db->Execute($doc_patients_list);
 
@@ -69,7 +69,7 @@ while ($row_patients_list = $db_doc_patients_list->FetchRow()) {
 }
 
 //Get the patient details using the encounter number
-$patients_qry = "SELECT care_person.pid, care_person.selian_pid, care_person.name_first, care_person.name_2, care_person.name_last, 
+$patients_qry = "SELECT care_person.pid, care_person.selian_pid, care_person.name_first, care_person.name_2, care_person.name_last,
                  care_person.sex, care_encounter.encounter_nr, care_encounter.encounter_date, care_encounter_notes.notes
                  FROM care_person , care_encounter LEFT OUTER JOIN care_encounter_notes
                  ON care_encounter.encounter_nr = care_encounter_notes.encounter_nr
