@@ -61,7 +61,7 @@ m.config.useCookies=false;
 	$j = 1;
 while ( $menu = $result1->FetchRow () ) {
 		if (stristr ( 'LDLogin', $menu ['LD_var'] )) {
-			if ($_COOKIE ['ck_login_logged' . $sid] == 'true') {
+			if (isset($_COOKIE ['ck_login_logged' . $sid]) and $_COOKIE ['ck_login_logged' . $sid] == 'true') {
 				$menu ['url'] = 'main/logout_confirm.php';
 				$menu ['LD_var'] = 'LDLogout';
 			}
@@ -98,7 +98,11 @@ while ( $menu = $result1->FetchRow () ) {
 		}
 		if ($menu ['s_ebene'] < $my_ebene) {
 			//if ($p_alt[$menu['s_ebene']]=='') $p_alt[$menu['s_ebene']]=0;
-			$p_akt = $p_alt [$menu ['s_ebene']];
+			if (isset($p_alt [$menu ['s_ebene']])) {
+				$p_akt = $p_alt [$menu ['s_ebene']];
+			} else {
+				$p_akt = 0;
+			}
 			$my_ebene = $menu ['s_ebene'];
 		}
 		if ($menu ['s_ebene'] > $my_ebene) {
@@ -107,7 +111,7 @@ while ( $menu = $result1->FetchRow () ) {
 			$my_ebene = $menu ['s_ebene'];
 		}
 
-		if ($e == $e_alt) {
+/*		if ($e == $e_alt) {
 			$i = $in [$e_alt];
 			$in [$e + 1] = $pos;
 		}
@@ -119,7 +123,7 @@ while ( $menu = $result1->FetchRow () ) {
 			$i = $in [$e];
 			$in [$e + 1] = $pos;
 		}
-
+*/
 		if ($p_akt == '')
 			$p_akt = 0;
 		$erg = "m.add($j,$p_akt,'$my_menu_item','javascript:runModul(\'$my_menu_call\')','','','$my_menu_img','$my_menu_open_img');";

@@ -12,10 +12,10 @@ error_reporting($ErrorLevel);
 * See the file "copy_notice.txt" for the licence notice
 */
 define('LANG_FILE','indexframe.php');
-define(NO_CHAIN,1);
+define('NO_CHAIN',1);
 
 # Set here the window title
-$wintitle='Menu - SIIS';
+$wintitle='Menu - Care2x';
 
 require_once($root_path.'include/core/inc_front_chain_lang.php');
 
@@ -35,7 +35,7 @@ if(file_exists($root_path.'language/'.$lang.'/lang_'.$lang.'_indexframe.php')){
 
 // echo $_COOKIE['ck_config']; // for debugging only
 
-if(($mask==2)&&!$nonewmask){
+if(isset($mask) and ($mask==2)&&!$nonewmask){
 	header ("location: indexframe2.php?sid=$sid&lang=$lang&boot=$boot&cookie=$cookie");
 	exit;
 }
