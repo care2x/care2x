@@ -16,6 +16,7 @@ if($_COOKIE["ck_login_logged".$sid]) $breakfile = $root_path."main/startframe.ph
 
  require_once($root_path.'gui/smarty_template/smarty_care.class.php');
  $smarty = new smarty_care('common');
+ require_once($root_path.'include/core/inc_default_smarty_values.php');
 if (!isset($rows)) {
 	$rows=0;
 	$smarty->assign('bShowNoRecord',true);
@@ -26,18 +27,12 @@ if($parent_admit) $sTitleNr= ($_SESSION['sess_full_en']);
 	else $sTitleNr = ($_SESSION['sess_full_pid']);
 
 # Title in the toolbar
- $smarty->assign('Name',"");
  $smarty->assign('sWindowTitle',"$page_title ($sTitleNr)");
  $smarty->assign('sToolbarTitle',"$page_title ($sTitleNr)");
-$smarty->assign('bHideTitleBar',FALSE);
  # href for help button
  $smarty->assign('pbHelp',"javascript:gethelp('submenu1.php','$LDPatientRegister')");
 $smarty->assign('sTitleImage','<img '.createComIcon($root_path,'calendar.gif','0').'>');
  $smarty->assign('breakfile',$breakfile);
-$smarty->assign('Subtitle','' );
-$smarty->assign('pbAux1', '');
-$smarty->assign('pbAux2', '');
-$smarty->assign('sCloseTarget','target="_parent"');
  # Window bar title
  $smarty->assign('title',"$page_title ( $sTitleNr)");
 
@@ -262,10 +257,8 @@ $smarty->assign('sAdmitLink','');
 $smarty->assign('sSearchLink','');
 $smarty->assign('sArchiveLink','');
 
-$smarty->assign('sWarnText','' );
 
 $smarty->assign('sMainBlockIncludeFile','registration_admission/common_option.tpl');
-$smarty->assign('sMainFrameBlockData',"");
 
 $smarty->display('common/mainframe.tpl');
 

@@ -228,17 +228,13 @@ if(isset($mode)&&($mode=='search'||$mode=='paginate')&&isset($searchkey)&&($sear
 
  require_once($root_path.'gui/smarty_template/smarty_care.class.php');
  $smarty = new smarty_care('common');
+ require_once($root_path.'include/core/inc_default_smarty_values.php');
 
 # Title in the toolbar
  //$smarty->assign('sToolbarTitle',$LDPatientSearch);
  $smarty->assign('sTitleImage','<img '.createComIcon($root_path,'search_glass.gif','0').'>');
 
- $smarty->assign('Subtitle','' );
- $smarty->assign('sSubTitle','' );
- $smarty->assign('pbAux1', '');
- $smarty->assign('pbAux2', '');
  $smarty->assign('sPretext', '');
- $smarty->assign('sCloseTarget','target="_parent"');
  $smarty->assign('sToolbarTitle',"$LDAdmission :: $LDSearch");
 
  $smarty->assign('breakfile',$breakfile);
@@ -254,9 +250,6 @@ if(isset($mode)&&($mode=='search'||$mode=='paginate')&&isset($searchkey)&&($sear
 
  # Hide the return button
  $smarty->assign('pbBack',FALSE);
-
- $smarty->assign('sWarnText','');
- $smarty->assign('sMainDataBlock','');
 
 #
 # Load the tabs
@@ -292,7 +285,6 @@ $sTemp = $sTemp.'" onSubmit="return chkSearch(this)"';
 if(isset($search_script) && $search_script!='') $sTemp = $sTemp.' action="'.$search_script.'"';
 $smarty->assign('sFormParams',$sTemp);
 $smarty->assign('searchprompt',$searchprompt);
-$smarty->assign('bHideTitleBar',FALSE);
 
 #
 # Prepare the hidden inputs
@@ -420,7 +412,6 @@ $smarty->assign('sPostText','<a href="aufnahme_list.php'.URL_APPEND.'">'.$LDAdmW
 $smarty->assign('sMainIncludeFile','registration_admission/admit_search_main.tpl');
 
 $smarty->assign('sMainBlockIncludeFile','registration_admission/admit_plain.tpl');
-$smarty->assign('sMainFrameBlockData',"");
 
 $smarty->display('common/mainframe.tpl');
 

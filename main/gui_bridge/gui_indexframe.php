@@ -141,7 +141,7 @@ $depts=$dept->getAllActive();
 $sTemp = '';
 if($depts&&is_array($depts)) {
      while(list($x,$v)=each($depts))
-    	 if(is_array($_SESSION['department_nr']) and in_array($v['nr'],$_SESSION['department_nr']))
+    	 if(isset($_SESSION['department_nr']) and is_array($_SESSION['department_nr']) and in_array($v['nr'],$_SESSION['department_nr']))
     		 if(isset(${$v['LD_var']}) && ${$v['LD_var']}) $sTemp = $sTemp .  ${$v['LD_var']} . '<br>';
     			 else $sTemp = $sTemp . $v['name_formal'] . '<br>';
 

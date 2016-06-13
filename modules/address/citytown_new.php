@@ -76,7 +76,8 @@ if(!isset($mode)){
 
  require_once($root_path.'gui/smarty_template/smarty_care.class.php');
  $smarty = new smarty_care('system_admin');
-$smarty->assign('sOnLoadJs','');
+ require_once($root_path.'include/core/inc_default_smarty_values.php');
+ $smarty->assign('sOnLoadJs','');
 
 # Title in toolbar
  $smarty->assign('sToolbarTitle',"$LDAddress :: $LDNewCityTown");
@@ -86,13 +87,10 @@ $smarty->assign('sOnLoadJs','');
 
  # href for close button
  $smarty->assign('breakfile',$breakfile);
-  $smarty->assign('Name','');
 
  # Window bar title
  $smarty->assign('sWindowTitle',"$LDAddress :: $LDNewCityTown");
-$smarty->assign('bHideTitleBar',FALSE);
-$smarty->assign('sTitleImage','<img '.createComIcon($root_path,'address_book2.gif','0').'>');
-$smarty->assign('Subtitle','' );
+ $smarty->assign('sTitleImage','<img '.createComIcon($root_path,'address_book2.gif','0').'>');
 
 # Coller Javascript code
 
@@ -230,9 +228,6 @@ if (!isset($info_url)) $info_url='';
 
 $sTemp = ob_get_contents();
 ob_end_clean();
-$smarty->assign('pbAux1', '');
-$smarty->assign('pbAux2', '');
-$smarty->assign('sCloseTarget','target="_parent"');
 
 # Assign page output to the mainframe template
 $smarty->assign('sMainBlockIncludeFile',"");

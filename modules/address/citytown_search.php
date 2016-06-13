@@ -90,6 +90,7 @@ $entry_body_bgcolor='#ffffff';
 
  require_once($root_path.'gui/smarty_template/smarty_care.class.php');
  $smarty = new smarty_care('system_admin');
+ require_once($root_path.'include/core/inc_default_smarty_values.php');
 
 # Title in toolbar
  $smarty->assign('sToolbarTitle',"$LDAddress :: $LDSearch");
@@ -102,10 +103,7 @@ $entry_body_bgcolor='#ffffff';
 
  # Window bar title
  $smarty->assign('sWindowTitle',"$LDAddress :: $LDSearch");
-  $smarty->assign('Name','');
-$smarty->assign('bHideTitleBar',FALSE);
 $smarty->assign('sTitleImage','<img '.createComIcon($root_path,'address_book2.gif','0').'>');
-$smarty->assign('Subtitle','' );
 
  # Body onload js
  $smarty->assign('sOnLoadJs','onLoad="document.searchform.searchkey.select()"');
@@ -211,9 +209,6 @@ $sTemp = ob_get_contents();
 ob_end_clean();
 
 # Assign page output to the mainframe template
-$smarty->assign('pbAux1', '');
-$smarty->assign('pbAux2', '');
-$smarty->assign('sCloseTarget','target="_parent"');
 $smarty->assign('sMainBlockIncludeFile',"");
 
 $smarty->assign('sMainFrameBlockData',$sTemp);

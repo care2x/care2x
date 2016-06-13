@@ -29,11 +29,11 @@ if($_COOKIE["ck_login_logged".$sid]) $breakfilen = $root_path."main/startframe.p
 
  require_once($root_path.'gui/smarty_template/smarty_care.class.php');
  $smarty = new smarty_care('common');
-$smarty->assign('bHideTitleBar',FALSE);
+ require_once($root_path.'include/core/inc_default_smarty_values.php');
+
 # Title in the toolbar
  $smarty->assign('sToolbarTitle',"$page_title ($sTitleNr)");
 $smarty->assign('sWindowTitle',"$page_title ($sTitleNr)");
- $smarty->assign('Name',"");
 $smarty->assign('sTitleImage','<img '.createComIcon($root_path,'notepad.gif','0').'>');
 
  $smarty->assign('breakfile',$breakfile);
@@ -49,12 +49,7 @@ $smarty->assign('sTitleImage','<img '.createComIcon($root_path,'notepad.gif','0'
 
  # href for the return button
  $smarty->assign('pbBack',$returnfile.URL_APPEND.$retbuf.'&target='.$target.'&mode=show&type_nr='.$type_nr);
- $smarty->assign('pbAux1', '');
- $smarty->assign('pbAux2', '');
- $smarty->assign('sCloseTarget','target="_parent"');
-$smarty->assign('Subtitle','' );
 $smarty->assign('bShowTabs',False);
- $smarty->assign('sWarnText','');
 
 /**
 * Helper function to generate rows
@@ -528,7 +523,6 @@ $smarty->assign('sArchiveLink','');
 $smarty->assign('pbCancel','<a href="'.$returnfile.URL_APPEND.$buf.'&target='.$target.'&mode=show&type_nr='.$type_nr.'"><img '.createLDImgSrc($root_path,'cancel.gif','0').' alt="'.$LDCancelClose.'"></a>');
 
 $smarty->assign('sMainBlockIncludeFile','registration_admission/common_report.tpl');
-$smarty->assign('sMainFrameBlockData',"");
 
 $smarty->display('common/mainframe.tpl');
 

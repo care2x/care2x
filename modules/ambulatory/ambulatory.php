@@ -32,14 +32,12 @@ else
 
  require_once($root_path.'gui/smarty_template/smarty_care.class.php');
  $smarty = new smarty_care('common');
+ require_once($root_path.'include/core/inc_default_smarty_values.php');
 
 # Title in toolbar
  $smarty->assign('sToolbarTitle',$LDAmbulatory);
-  $smarty->assign('Name','');
-$smarty->assign('bHideTitleBar',FALSE);
-$smarty->assign('sTitleImage','<img '.createComIcon($root_path,'authors.gif','0').'>');
-$smarty->assign('Subtitle','' );
-$smarty->assign('sOnLoadJs','');
+ $smarty->assign('sTitleImage','<img '.createComIcon($root_path,'authors.gif','0').'>');
+ $smarty->assign('sOnLoadJs','');
  # href for help button
  $smarty->assign('pbHelp',"javascript:gethelp('submenu1.php','$LDAmbulatory')");
 
@@ -280,12 +278,8 @@ if(!isset($_SESSION['department_nr']) || $_SESSION['department_nr'] == '') {
 	$smarty->assign('sBottomRightSubMenu',$sTemp);
 
 # Assign the submenu to the mainframe center block
-$smarty->assign('pbAux1', '');
-$smarty->assign('pbAux2', '');
-$smarty->assign('sCloseTarget','target="_parent"');
-$smarty->assign('sMainBlockIncludeFile',"");
+ $smarty->assign('sMainBlockIncludeFile',"");
  $smarty->assign('sMainBlockIncludeFile','ambulatory/submenu_ambulatory.tpl');
- $smarty->assign('sMainFrameBlockData','');
 
  /**
  * show Template

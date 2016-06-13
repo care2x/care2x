@@ -119,13 +119,12 @@ $img_female=createComIcon($root_path,'spf.gif','0','',TRUE);
 
  require_once($root_path.'gui/smarty_template/smarty_care.class.php');
  $smarty = new smarty_care('common');
+ require_once($root_path.'include/core/inc_default_smarty_values.php');
 $smarty->assign('sOnLoadJs','onLoad=""');
-$smarty->assign('bHideTitleBar',FALSE);
 $smarty->assign('sTitleImage','<img '.createComIcon($root_path,'calendar.gif','0').'>');
 # Toolbar title
 
  $smarty->assign('sToolbarTitle',$LDAppointments);
-$smarty->assign('Subtitle','' );
 # href for the  button
  $smarty->assign('pbHelp',"javascript:gethelp('appointment_show.php')");
 
@@ -133,9 +132,6 @@ $smarty->assign('Subtitle','' );
 
  # Window bar title
  $smarty->assign('title',$LDAppointments);
-$smarty->assign('pbAux1', '');
-$smarty->assign('pbAux2', '');
-$smarty->assign('sCloseTarget','target="_parent"');
  # Collect extra javascript code
 
  ob_start();
@@ -229,7 +225,6 @@ $smarty->assign('sMainBlockIncludeFile','appointment/appt_list.tpl');
  /**
  * show Template
  */
-$smarty->assign('sMainFrameBlockData',"");
 $smarty->display('common/mainframe.tpl');
 
  ?>

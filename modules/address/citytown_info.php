@@ -40,8 +40,8 @@ if(isset($nr) && $nr&&($row=$address_obj->getCityTownInfo($nr))){
 
  require_once($root_path.'gui/smarty_template/smarty_care.class.php');
  $smarty = new smarty_care('system_admin');
-$smarty->assign('sOnLoadJs','');
-  $smarty->assign('Name','');
+ require_once($root_path.'include/core/inc_default_smarty_values.php');
+ $smarty->assign('sOnLoadJs','');
 
 # Title in toolbar
  $smarty->assign('sToolbarTitle',"$LDCityTown :: $LDData");
@@ -54,9 +54,7 @@ $smarty->assign('sOnLoadJs','');
 
  # Window bar title
  $smarty->assign('sWindowTitle',"$LDCityTown :: $LDData");
-$smarty->assign('bHideTitleBar',FALSE);
 $smarty->assign('sTitleImage','<img '.createComIcon($root_path,'address_book2.gif','0').'>');
-$smarty->assign('Subtitle','' );
 
 
 # Buffer page output
@@ -134,9 +132,6 @@ $sTemp = ob_get_contents();
 ob_end_clean();
 
 # Assign page output to the mainframe template
-$smarty->assign('pbAux1', '');
-$smarty->assign('pbAux2', '');
-$smarty->assign('sCloseTarget','target="_parent"');
 $smarty->assign('sMainBlockIncludeFile',"");
 
 $smarty->assign('sMainFrameBlockData',$sTemp);

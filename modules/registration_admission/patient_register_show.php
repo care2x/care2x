@@ -62,19 +62,13 @@ $death_date = $person->DeathDate();
 
  require_once($root_path.'gui/smarty_template/smarty_care.class.php');
  $smarty = new smarty_care('common');
+ require_once($root_path.'include/core/inc_default_smarty_values.php');
 
 # Title in the toolbar
  $smarty->assign('sToolbarTitle',$LDPatientRegister);
-$smarty->assign('bHideTitleBar',FALSE);
 $smarty->assign('sTitleImage','<img '.createComIcon($root_path,'pers_tree.gif','0').'>');
-$smarty->assign('Subtitle','' );
  # href for help button
  $smarty->assign('pbHelp',"javascript:gethelp('submenu1.php','$LDPatientRegister')");
-$smarty->assign('pbAux1', '');
-$smarty->assign('pbAux2', '');
-$smarty->assign('sCloseTarget','target="_parent"');
-$smarty->assign('sSubTitle','' );
-$smarty->assign('sWarnText','' );
  $smarty->assign('breakfile',$breakfile);
 
  # Window bar title
@@ -178,7 +172,6 @@ $smarty->assign('pbShowAdmData','');
 
 # Assign the page template to mainframe block
 $smarty->assign('sMainBlockIncludeFile','registration_admission/reg_show.tpl');
-$smarty->assign('sMainFrameBlockData',"");
 
 # Show main frame
 $smarty->display('common/mainframe.tpl');

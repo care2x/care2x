@@ -46,20 +46,13 @@ $target='entry';
 
  require_once($root_path.'gui/smarty_template/smarty_care.class.php');
  $smarty = new smarty_care('common');
-
+ require_once($root_path.'include/core/inc_default_smarty_values.php');
 # Title in the toolbar
-$smarty->assign('bHideTitleBar',FALSE);
  $smarty->assign('sToolbarTitle',$LDPatientRegister);
-$smarty->assign('sTitleImage','<img '.createComIcon($root_path,'pers_tree.gif','0').'>');
-$smarty->assign('Subtitle','' );
+ $smarty->assign('sTitleImage','<img '.createComIcon($root_path,'pers_tree.gif','0').'>');
  # href for help button
  $smarty->assign('pbHelp',"javascript:gethelp('submenu1.php','$LDPatientRegister')");
-$smarty->assign('pbAux1', '');
-$smarty->assign('pbAux2', '');
-$smarty->assign('sCloseTarget','target="_parent"');
  $smarty->assign('breakfile',$breakfile);
-$smarty->assign('sSubTitle','' );
-$smarty->assign('sWarnText','' );
  # Window bar title
  $smarty->assign('title',$LDPatientRegister);
 
@@ -97,7 +90,6 @@ else $sCancel.='aufnahme_pass.php';
 $sCancel.=URL_APPEND.'><img '.createLDImgSrc($root_path,'cancel.gif','0').' alt="'.$LDCancelClose.'"></a>';
 
 $smarty->assign('pbCancel',$sCancel);
-$smarty->assign('sMainFrameBlockData',"");
 $smarty->assign('sMainBlockIncludeFile','registration_admission/reg_input.tpl');
 
 $smarty->display('common/mainframe.tpl');

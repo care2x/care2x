@@ -25,12 +25,11 @@ $breakfile=$root_path."main/spediens.php".URL_APPEND;
 
  require_once($root_path.'gui/smarty_template/smarty_care.class.php');
  $smarty = new smarty_care('system_admin');
+ require_once($root_path.'include/core/inc_default_smarty_values.php');
 $smarty->assign('sOnLoadJs','');
 # Title in toolbar
  $smarty->assign('sToolbarTitle',"$LDAddress :: $LDManager");
-$smarty->assign('bHideTitleBar',FALSE);
 $smarty->assign('sTitleImage','<img '.createComIcon($root_path,'address_book2.gif','0').'>');
-$smarty->assign('Subtitle','' );
  # href for help button
  $smarty->assign('pbHelp',"javascript:gethelp('address_manage.php')");
 
@@ -39,7 +38,6 @@ $smarty->assign('Subtitle','' );
 
  # Window bar title
  $smarty->assign('sWindowTitle',"$LDAddress :: $LDManager");
-  $smarty->assign('Name','');
 $smarty->assign('sMainBlockIncludeFile',"");
 # Buffer page output
 
@@ -75,9 +73,6 @@ ob_start();
 </ul>
 
 <?php
-$smarty->assign('pbAux1', '');
-$smarty->assign('pbAux2', '');
-$smarty->assign('sCloseTarget','target="_parent"');
 $sTemp = ob_get_contents();
 ob_end_clean();
 

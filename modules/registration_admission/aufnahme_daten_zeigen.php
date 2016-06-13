@@ -179,9 +179,11 @@ require_once($root_path.'include/core/inc_photo_filename_resolve.php');
 
  require_once($root_path.'gui/smarty_template/smarty_care.class.php');
  $smarty = new smarty_care('common');
+ require_once($root_path.'include/core/inc_default_smarty_values.php');
+
 $smarty->assign('error',FALSE);
 $smarty->assign('sWindowTitle',$LDPatientData.' ('.$encounter_nr.')');
- $smarty->assign('Name',"");
+
 # Title in the toolbar
  $smarty->assign('sToolbarTitle',$LDPatientData.' ('.$encounter_nr.')');
 
@@ -199,15 +201,9 @@ $smarty->assign('sWindowTitle',$LDPatientData.' ('.$encounter_nr.')');
  # Hide the return button
  $smarty->assign('pbBack',FALSE);
 
-$smarty->assign('bHideTitleBar',FALSE);
 $smarty->assign('sTitleImage','<img '.createComIcon($root_path,'pers_tree.gif','0').'>');
 $smarty->assign('sOnLoadJs','onLoad="if(window.focus) window.focus();document.searchform.searchkey.select();"');
-$smarty->assign('Subtitle','' );
- $smarty->assign('sSubTitle','' );
- $smarty->assign('pbAux1', '');
- $smarty->assign('pbAux2', '');
- $smarty->assign('sCloseTarget','target="_parent"');
- $smarty->assign('sWarnText','');
+
 $smarty->assign('bSetAsForm',FALSE);
  # Collect extra javascript
 
@@ -539,7 +535,6 @@ $smarty->assign('sErrorHidInputs','');
 $smarty->assign('sUpdateHidInputs','');
 $smarty->assign('sNewDataForm','');
 
-$smarty->assign('sMainFrameBlockData',"");
 ob_start();
 
 	require('./gui_bridge/default/gui_patient_encounter_showdata_options.php');
