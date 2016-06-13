@@ -1,6 +1,6 @@
 <?php
 
-require('./roots.php');*/
+require('./roots.php');
 
 /**
  *  File: calendar.php | (c) dynarch.com 2004
