@@ -163,7 +163,7 @@ class Department extends Core {
 	* @access public
 	* @return mixed boolean or adodb record object or assoc array
 	*/
-	function getAllActive($dept_nr) {
+	function getAllActive() {
 		return $this->_getalldata("is_inactive='0'");
 	}
 	/**
