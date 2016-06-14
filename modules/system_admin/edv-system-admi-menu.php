@@ -187,7 +187,7 @@ require($root_path.'include/core/inc_css_a_hilitebu.php');
  -->
   </tr>
   <tr>
-	<td bgcolor="#e9e9e9"><FONT  color="#0000cc" FACE="verdana,arial" size=2><b><?php echo 'XML-RPC Interface'; ?></b> </FONT></td>
+	<td bgcolor="#e9e9e9"><FONT  color="#0000cc" FACE="verdana,arial" size=2><b><?php echo 'KwaMoja ERP Interface'; ?></b> </FONT></td>
   </tr>
   <tr>
  	<td bgcolor="#ffffff"><FONT  color="#0000cc" FACE="verdana,arial" size=2>&nbsp;&nbsp;&nbsp;<img <?php echo createComIcon($root_path,'redpfeil.gif','0','absmiddle') ?>>

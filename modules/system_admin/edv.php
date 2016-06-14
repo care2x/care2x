@@ -40,6 +40,7 @@ $_SESSION['sess_path_referer']=$top_dir.basename(__FILE__);
 
  # Create a helper smarty object without reinitializing the GUI
  $smarty2 = new smarty_care('common', FALSE);
+ require_once($root_path.'include/core/inc_default_smarty_values.php');
 
  # Title in the title bar
  $smarty->assign('sToolbarTitle',$LDEDP);
@@ -55,7 +56,7 @@ $_SESSION['sess_path_referer']=$top_dir.basename(__FILE__);
 
  # Window bar title
  $smarty->assign('title',$LDEDP);
-
+$smarty->assign('sTitleImage','<img '.createComIcon($root_path,'padlock.gif','0').'>');
  # Prepare the submenu icons
 
  $aSubMenuIcon=array(createComIcon($root_path,'lockfolder.gif','0'),
@@ -81,7 +82,7 @@ $iRunner = 0;
 while(list($x,$v)=each($aSubMenuItem)){
 	$sTemp='';
 	ob_start();
-		if($cfg['icons'] != 'no_icon') $smarty2->assign('sIconImg','<img '.$aSubMenuIcon[$iRunner].'>');
+		if(!isset($cfg['icons']) or $cfg['icons'] != 'no_icon') $smarty2->assign('sIconImg','<img '.$aSubMenuIcon[$iRunner].'>');
 		$smarty2->assign('sSubMenuItem',$v);
 		$smarty2->assign('sSubMenuText',$aSubMenuText[$iRunner]);
 		$smarty2->display('common/submenu_row.tpl');

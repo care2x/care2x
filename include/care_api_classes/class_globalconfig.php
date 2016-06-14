@@ -69,7 +69,7 @@ class GlobalConfig  extends Core{
 	    if(empty($type)||!$type) {
 		    $this->condition='1';
 		} else {
-		    $this->condition="type $sql_LIKE '$type'";
+		    $this->condition="type $sql_LIKE '%$type%'";
 		}
 		if($this->result=$db->Execute("SELECT type,value FROM $this->tb WHERE $this->condition")) {
             if ($this->result->RecordCount()) {

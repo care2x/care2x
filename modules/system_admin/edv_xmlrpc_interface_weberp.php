@@ -3,40 +3,49 @@ require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
 require_once($root_path.'include/care_api_classes/class_globalconfig.php');
 $glob_obj=new GlobalConfig($GLOBAL_CONFIG);
-
+$glob_obj->getConfig();
 
 global $db;
 $debug=false;
 ($debug) ? $db->debug=true : $db->debug=FALSE;
 
-if(isset($_REQUEST['change']) and $_REQUEST['change'] == true)
+if(isset($_REQUEST['change']) and isset($GLOBAL_CONFIG['kwamoja_database']))
 {
-	$sql = 'UPDATE care_config_global SET `value` = \''.$_REQUEST['is_transmit_to_weberp_enable'].'\', `modify_time` = NOW() WHERE CONVERT(`care_config_global`.`type` USING utf8) = \'is_transmit_to_weberp_enable\' LIMIT 1;';
+	$sql = "UPDATE care_config_global SET `value` = '" . $_REQUEST['kwamoja_database'] . "',
+										  `modify_time` = NOW()
+										 WHERE CONVERT(`care_config_global`.`type` USING utf8) = 'kwamoja_database' LIMIT 1";
 	$db->Execute($sql);
-	$sql = 'UPDATE care_config_global SET `value` = \''.$_REQUEST['ServerURL'].'\', `modify_time` = NOW() WHERE CONVERT(`care_config_global`.`type` USING utf8) = \'xml-rpc_server\' LIMIT 1;';
+	$glob_obj->getConfig();
+} elseif(isset($_REQUEST['change'])) {
+	$sql = "INSERT INTO care_config_global (`type`,
+											`value`,
+											`notes`,
+											`status`,
+											`history`,
+											`modify_id`,
+											`modify_time`,
+											`create_id`,
+											`create_time`
+										) VALUES (
+											'kwamoja_database',
+											'" . $_REQUEST['kwamoja_database'] . "',
+											NULL,
+											'',
+											'',
+											'',
+											NOW(),
+											'',
+											'0000-00-00 00:00:00'
+										)";
 	$db->Execute($sql);
+	$glob_obj->getConfig();
 }
-
-$glob_obj->getConfig('is%');
-if($GLOBAL_CONFIG['is_transmit_to_weberp_enable'] == "")
-{
-	$sql = 'INSERT INTO care_config_global (`type`, `value`, `notes`, `status`, `history`, `modify_id`, `modify_time`, `create_id`, `create_time`) VALUES (\'is_transmit_to_weberp_enable\', \'0\', NULL, \'\', \'\', \'\', NOW(), \'\', \'0000-00-00 00:00:00\');';
-	$db->Execute($sql);
-}
-
-$glob_obj->getConfig('xml%');
-if($GLOBAL_CONFIG['xml-rpc_server'] == "")
-{
-	$sql = "INSERT INTO care_config_global (`type`, `value`, `notes`, `status`, `history`, `modify_id`, `modify_time`, `create_id`, `create_time`) VALUES ('xml-rpc_server', '', NULL, '', '', '', NOW(), '', '0000-00-00 00:00:00')";
-	$db->Execute($sql);
-}
-
 
 ?>
 
 <HTML>
 <HEAD>
- <TITLE>Generally Management - </TITLE>
+ <TITLE>KwaMoja ERP Interface Configuration - </TITLE>
  <meta name="Description" content="Hospital and Healthcare Integrated Information System - CARE2x">
 <meta name="Author" content="Elpidio Latorilla">
 <meta name="Generator" content="various: Quanta, AceHTML 4 Freeware, NuSphere, PHP Coder">
@@ -86,7 +95,7 @@ function popPic(pid,nm){
 			 <table cellspacing="0"  class="titlebar" border=0>
  <tr valign=top  class="titlebar" >
   <td bgcolor="#99ccff" width="100%" >
-    &nbsp;&nbsp;<font color="#330066">XML-RPC Interface Configuration</font>
+    &nbsp;&nbsp;<font color="#330066">KwaMoja ERP Interface Configuration</font>
        </td>
   <td bgcolor="#99ccff" align=right><a
    href="edv_generally_management.php?sid=<?php echo $sid."&lang=".$lang;?>73&ntid=false"><img src="../../gui/img/control/blue_aqua/en/en_back2.gif" border=0 width="76" height="21" alt="" style="filter:alpha(opacity=70)" onMouseover="hilite(this,1)" onMouseOut="hilite(this,0)" ></a><a
@@ -97,33 +106,38 @@ function popPic(pid,nm){
  </table>
 
  <br><br>
+ <?php
+ $sql = "SHOW DATABASES";
+ $Result=$db->Execute($sql);
+ while ($Database=$Result->FetchRow()) {
+	$sql = "SHOW TABLES IN " . $Database[0] . " LIKE '%stockmaster%'";
+	$TableResult = $db->Execute($sql);
+	$Tables=$TableResult->FetchRow();
+	if ($Tables[0] == 'stockmaster')
+		$AllDatabases[] = $Database[0];
+ }
+
+ ?>
  <form  method="post" name="form">
 <table border=0 cellspacing=1 cellpadding=5>
 <tr>
-	<td class="adm_item" align="left"><FONT  color="#0000cc"><b><?php echo 'Enable the XML-RPC Interface to KwaMoja'; ?></b></FONT></td>
+	<td class="adm_item" align="left"><FONT  color="#0000cc"><b><?php echo 'Select the KwaMoja-Medical database to use'; ?></b></FONT></td>
 	<td  align="left">
 
-	<select name="is_transmit_to_weberp_enable">
+	<select name="kwamoja_database">
 	<?php
-	if($GLOBAL_CONFIG['is_transmit_to_weberp_enable']==1)
-	{
-		echo '<option value="1" selected>Yes</option>';
-		echo '<option value="0">No</option>';
-	}
-	else
-	{
-		echo '<option value="1">Yes</option>';
-		echo '<option value="0" selected>No</option>';
+	echo '<option name=""></option>';
+	foreach ($AllDatabases as $db_name) {
+		if($GLOBAL_CONFIG['kwamoja_database']==$db_name) {
+			echo '<option selected="selected" name="' . $db_name . '">' . $db_name . '</option>';
+		} else {
+			echo '<option name="' . $db_name . '">' . $db_name . '</option>';
+		}
 	}
 	?>
 	</select>
 	</td>
 	</tr>
-	<tr>
-	<td class="adm_item" align="left"><FONT  color="#0000cc"><b><?php echo 'Full URL of the KwaMoja XML-RPC server'; ?></b></FONT></td>
-	<td><input type="text" name="ServerURL" size="70" value="<?php echo $GLOBAL_CONFIG['xml-rpc_server']; ?>" /></td>
-	</tr>
-	<tr>
 		<td colspan="2" align="middle">
 	<input type="hidden" name="change" value="true">
 	<input type="submit" value="Change">
