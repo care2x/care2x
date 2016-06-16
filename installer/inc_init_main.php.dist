@@ -37,7 +37,7 @@ $timezone = 'TIMEZONE';
 date_default_timezone_set($timezone);
 
 //For production server
-$ErrorLevel = E_ALL && ~E_NOTICE && ~E_WARNING;
+$ErrorLevel = E_ALL && ~E_NOTICE && ~E_WARNING && ~E_DEPRECATED;
 
 //For development
 //$ErrorLevel = -1;
