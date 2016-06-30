@@ -159,10 +159,11 @@ if ($mode != '') {
 
 require_once ($root_path . 'gui/smarty_template/smarty_care.class.php') ;
 $smarty = new smarty_care ( 'system_admin' ) ;
+require_once($root_path.'include/core/inc_default_smarty_values.php');
 
 # Title in toolbar
 $smarty->assign ( 'sToolbarTitle', $LDManageAccess ) ;
-
+$smarty->assign('sTitleImage','<img '.createComIcon($root_path,'padlock.gif','0').'>');
 # href for return button
 $smarty->assign ( 'pbBack', $returnfile ) ;
 
@@ -346,7 +347,11 @@ if ($edit)
 <td colspan="2"><b> <?php echo $LDDept ?> : </b><br>
 <?php
 while(list($x,$dept)=each($deptarray)){
-	$actualDept = unserialize($user['dept_nr']);
+	if (isset($user)) {
+		$actualDept = unserialize($user['dept_nr']);
+	} else {
+		$actualDept = array();
+	}
 	$subDepts = $dept_obj->getAllSubDepts($dept['nr']);
 ?>
    	<input type="checkbox" name="dept_nr[]" id="<?php echo $dept['nr'] ?>" value="<?php echo $dept['nr']?>" <?php if( in_array($dept['nr'],$actualDept)) echo 'checked' ?>>
@@ -374,6 +379,9 @@ while(list($x,$dept)=each($deptarray)){
 <input type="hidden" name="sid" value="<?php echo $sid ; ?>">
 <input type="hidden" name="lang" value="<?php echo $lang ; ?>">
 <?php
+	if (!is_array($roles)) {
+		$roles = array();
+	}
 	reset($roles);
 	echo '<input type="hidden" name="selected_role" id="selected_role"';
     $found = false;
