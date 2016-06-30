@@ -46,7 +46,7 @@ $area_opt=array(
 						   'title7' => $title7,
 						   '_a_1_medocswrite' =>  $_a_1_medocswrite,
 						   '_a_2_medocsread' =>  $_a_2_medocsread,
-						   
+
 							/* Group start*/
 						   'title8' => $title8,
 						  '_a_1_pharmadbadmin' =>  $_a_1_pharmadbadmin,
@@ -60,8 +60,7 @@ $area_opt=array(
 						  '_a_2_meddepotreception' =>  $_a_2_meddepotreception,
 						  '_a_3_meddepotorder' =>  $_a_3_meddepotorder,
 						  '_a_4_meddepotread' =>  $_a_4_meddepotread,
-						  '_a_5_meddeporsupplier' => $_a_5_meddepotsupplier,
-						  
+
 							/* Group start*/
 						   'title_docs' => $title_docs,
 						  '_a_1_doctorsdutyplanwrite' =>  $_a_1_doctorsdutyplanwrite,
@@ -71,7 +70,7 @@ $area_opt=array(
 						   'title_foto' => $title_foto,
 						  '_a_1_photowrite' =>  $_a_1_photowrite,
 						  '_a_2_photoread' =>  $_a_2_photoread,
-						  
+
 							/* Group start*/
 						   'title_tech' => $title_tech,
 						  '_a_1_techreception' =>  $_a_1_techreception,

@@ -50,7 +50,7 @@ $role =  new Access();
 
 require_once($root_path.'include/care_api_classes/class_department.php');
 $dept=new Department;
-$depts=&$dept->getAllActive();
+$depts=$dept->getAllActive();
 
 # Start Smarty templating here
  /**
@@ -65,7 +65,7 @@ $depts=&$dept->getAllActive();
  require_once($root_path.'include/core/inc_default_smarty_values.php');
  # Title in toolbar
  $smarty->assign('sToolbarTitle',$LDListActual);
-
+ $smarty->assign('sTitleImage','<img '.createComIcon($root_path,'padlock.gif','0').'>');
  # href for return button
  $smarty->assign('pbBack',$returnfile);
 
@@ -88,7 +88,7 @@ ob_start();
 <script type="text/javascript" src="../../js/scriptaculous/src/builder.js"></script>
 <?php
 
-if ($remark=='itemdelete') echo '<img '.createMascot($root_path,'mascot1_r.gif','0','absmiddle').'><font class="warnprompt"> '.$LDAccessDeleted.'<br>'.$LDFfActualAccess.' </font><p>';
+if (isset($remark) and $remark=='itemdelete') echo '<img '.createMascot($root_path,'mascot1_r.gif','0','absmiddle').'><font class="warnprompt"> '.$LDAccessDeleted.'<br>'.$LDFfActualAccess.' </font><p>';
 
         echo '
 				<table border=0 class="frame" cellpadding=0 cellspacing=0>
