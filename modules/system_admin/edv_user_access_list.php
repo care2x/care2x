@@ -176,7 +176,7 @@ if (isset($remark) and $remark=='itemdelete') echo '<img '.createMascot($root_pa
 
 <p>
 
-<FORM method="post" action="<?php if($ck_edvzugang_src=="listpass") echo "edv-accessplan-list-pass.php"; else echo "edv_user_access_edit.php"; ?>" >
+<FORM method="post" action="<?php if(isset($ck_edvzugang_src) and $ck_edvzugang_src=="listpass") echo "edv_user_access_list.php"; else echo "edv_user_access_edit.php"; ?>" >
 	<input type=hidden name="sid" value="<?php echo $sid; ?>">
 	<input type=hidden name="lang" value="<?php echo $lang; ?>">
 	<input type=hidden name="remark" value="fromlist">
