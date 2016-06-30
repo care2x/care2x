@@ -46,7 +46,7 @@ if($ergebnis=$db->Execute($sql)) {
 	$rows=$ergebnis->RecordCount();
 }
 require_once($root_path.'include/care_api_classes/class_access.php');
-$role =  Access();
+$role =  new Access();
 
 require_once($root_path.'include/care_api_classes/class_department.php');
 $dept=new Department;
@@ -61,8 +61,9 @@ $depts=&$dept->getAllActive();
 
  require_once($root_path.'gui/smarty_template/smarty_care.class.php');
  $smarty = new smarty_care('system_admin');
-
-# Title in toolbar
+ $smarty = new smarty_care('common');
+ require_once($root_path.'include/core/inc_default_smarty_values.php');
+ # Title in toolbar
  $smarty->assign('sToolbarTitle',$LDListActual);
 
  # href for return button
