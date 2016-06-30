@@ -27,9 +27,11 @@ $_SESSION['sess_file_return']=basename(__FILE__);
 
  require_once($root_path.'gui/smarty_template/smarty_care.class.php');
  $smarty = new smarty_care('common');
+ require_once($root_path.'include/core/inc_default_smarty_values.php');
 
 # Title in toolbar
  $smarty->assign('sToolbarTitle',"$LDEDP $LDSystemAdmin");
+ $smarty->assign('sTitleImage','<img '.createComIcon($root_path,'padlock.gif','0').'>');
 
  # href for help button
  $smarty->assign('pbHelp',"javascript:gethelp('system_admin.php')");
@@ -62,7 +64,7 @@ $sTemp = ob_get_contents();
 # Assign the data  to the main frame template
 
  $smarty->assign('sMainFrameBlockData',$sTemp);
-
+ $smarty->assign('sMainBlockIncludeFile',"");
  /**
  * show Template
  */
