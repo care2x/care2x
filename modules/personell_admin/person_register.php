@@ -70,7 +70,7 @@ require('./gui_bridge/default/gui_tabs_personell_reg.php');
 
 require_once($root_path.'include/care_api_classes/class_gui_input_person.php');
 
-$inperson =  GuiInputPerson;
+$inperson =  new GuiInputPerson();
 
 $inperson->setPID($pid);
 //$inperson->pretext = $sTemp;

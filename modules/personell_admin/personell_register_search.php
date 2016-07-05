@@ -90,7 +90,7 @@ if(isset($origin) && $origin=='pass')
 
 require_once($root_path.'include/care_api_classes/class_gui_search_person.php');
 
-$psearch =  GuiSearchPerson;
+$psearch =  new GuiSearchPerson();
 
 $psearch->setTargetFile('person_register_show.php');
 
