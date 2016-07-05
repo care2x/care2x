@@ -1,7 +1,7 @@
 <?php
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
-error_reporting($ErrorLevel);
+error_reporting(-1);
 /**
 * CARE2X Integrated Hospital Information System Deployment 2.2 - 2006-07-10
 * GNU General Public License
@@ -47,13 +47,34 @@ $userck='ck_lab_user';
 # If target is generic, Filter the cheblab, patho, bactlab,bloodbank and radiology tests
 if($target=='generic'){
 	switch($subtarget){
-		case 8 : $target='admin'; $subtarget='patho';break; # 8 = pathology
-		case 19: $target='admin'; $subtarget='radio'; break; # 19 = radiology
-		case 22: $target='admin'; $subtarget='chemlabor'; break; # 22 = central lab
-		case 23: $target='admin'; $subtarget='chemlabor'; break; # 23 = serological lab
-		case 24: $target='admin'; $subtarget='chemlabor'; break; # 24 = chemical lab
-		case 25: $target='admin'; $subtarget='baclabor'; break; # 25 = bacteriological lab
-		case 41: $target='admin'; $subtarget='blood';  break; # 41 = blood bank
+		case 8 :
+            $target='admin';
+            $subtarget='patho';
+            break; # 8 = pathology
+		case 19:
+            $target='admin';
+            $subtarget='radio';
+            break; # 19 = radiology
+		case 22:
+            $target='admin';
+            $subtarget='chemlabor';
+            break; # 22 = central lab
+		case 23:
+            $target='admin';
+            $subtarget='chemlabor';
+            break; # 23 = serological lab
+		case 24:
+            $target='admin';
+            $subtarget='chemlabor';
+            break; # 24 = chemical lab
+		case 25:
+            $target='admin';
+            $subtarget='baclabor';
+            break; # 25 = bacteriological lab
+		case 41:
+            $target='admin';
+            $subtarget='blood';
+            break; # 41 = blood bank
 	}
 }
 
