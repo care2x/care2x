@@ -22,7 +22,7 @@ require_once($root_path.'include/care_api_classes/class_core.php');
  */
 require ($root_path . 'include/core/inc_accessplan_areas_functions.php') ;
 require_once($root_path.'include/care_api_classes/class_access.php');
-$role =  Access();
+$role = new Access();
 
 $breakfile = 'edv-system-admi-welcome.php' . URL_APPEND ;
 $returnfile = $_SESSION [ 'sess_file_return' ] . URL_APPEND ;
@@ -137,10 +137,11 @@ if ($mode != '') {
 
 require_once ($root_path . 'gui/smarty_template/smarty_care.class.php') ;
 $smarty = new smarty_care ( 'system_admin' ) ;
+require_once($root_path.'include/core/inc_default_smarty_values.php');
 
 # Title in toolbar
 $smarty->assign ( 'sToolbarTitle', $LDManageAccess ) ;
-
+$smarty->assign('sTitleImage','<img '.createComIcon($root_path,'padlock.gif','0').'>');
 # href for return button
 $smarty->assign ( 'pbBack', $returnfile ) ;
 
@@ -191,7 +192,7 @@ if (($mode != '' || $error) && $mode != 'edit') {
 <FONT class="prompt">
 
 <?php
-if (($mode == "") and ($remark != 'fromlist')) {
+if (($mode == "") and (isset($remark) and $remark != 'fromlist')) {
 	$gtime = date ( 'H.i' ) ;
 	if ($gtime < '9.00')
 		echo $LDGoodMorning ;
@@ -233,7 +234,7 @@ if ($mode == 'data_saved' || $edit) {
 				<tr bgcolor="#dddddd">
 					<td><input type=hidden name=route value=validroute>
 						<?php
-						if ($errorname) {
+						if (isset($errorname)) {
 							echo "<font color=red > <b>$LDRole</b> : " ;
 						} else {
 							echo $LDRole . " : " ;
@@ -269,9 +270,9 @@ if ($mode == 'data_saved' || $edit) {
 <td  colspan=3>
 <?php
 if ($errorbereich) {
-	echo "<font color=red > <b>$LDAllowedAreaRole</b> </font>" ;
+	echo "<font color=red > <b>$LDAllowedArea</b> </font>" ;
 } else {
-	echo $LDAllowedAreaRole ;
+	echo $LDAllowedArea ;
 }
 ?>
 </td>
