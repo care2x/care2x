@@ -67,11 +67,11 @@ if($search&&!empty($keyword)){
 
 	#Load and create paginator object
 	include_once($root_path.'include/care_api_classes/class_paginator.php');
-	$pagen= Paginator($pgx,$thisfile,$_SESSION['sess_searchkey'],$root_path);
+	$pagen= new Paginator($pgx,$thisfile,$_SESSION['sess_searchkey'],$root_path);
 
 	$GLOBAL_CONFIG=array();
 	include_once($root_path.'include/care_api_classes/class_globalconfig.php');
-	$glob_obj=new GlobalConfig($GLOBAL_CONFIG);
+	$glob_obj= new GlobalConfig($GLOBAL_CONFIG);
 	# Get the max nr of rows from global config
 	$glob_obj->getConfig('pagin_patient_search_max_block_rows');
 	if(empty($GLOBAL_CONFIG['pagin_patient_search_max_block_rows'])) $pagen->setMaxCount(MAX_BLOCK_ROWS); # Last resort, use the default defined at the start of this page
