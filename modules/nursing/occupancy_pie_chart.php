@@ -1,5 +1,6 @@
 <?php
 require('./roots.php');
+require($root_path.'include/core/inc_environment_global.php');
 error_reporting($ErrorLevel);
 /*
 * We do not need the entire environment here so we just load the variable globalizer routine
