@@ -315,6 +315,7 @@ $LDNoFound='Search found no patient.';
 
 $LDNoWardsYet='There are no nursing wards yet.';
 $LDClk2CreateWard='To create a ward, please click here.';
+$LDClk2CreateAnotherWard='Click here to create another ward.';
 /* 2002-10-12 EL */
 $LDToCreateNewList='To create a new list';
 $LD_ddpMMpyyyy='dd.mm.yyyy';
