@@ -42,9 +42,9 @@ require($root_path.'include/core/inc_2level_reset.php');
 setcookie('ck_2level_sid'.$sid,'',0,'/');
 
 require($root_path.'include/core/inc_passcheck_internchk.php');
-if ($pass=='check')
+if ($pass=='check'){
 	include($root_path.'include/core/inc_passcheck.php');
-
+}
 $errbuf="$LDNursingStation $station";
 
 //$minimal=0;

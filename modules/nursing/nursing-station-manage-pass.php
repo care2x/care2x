@@ -17,7 +17,6 @@ $breakfile="nursing.php?sid=".$sid."&lang=".$lang;
 $lognote="$LDNursingManage ok";
 
 $userck="ck_pflege_user";
-
 //reset cookie;
 // reset all 2nd level lock cookies
 setcookie($userck.$sid,'');
