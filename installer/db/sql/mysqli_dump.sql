@@ -4788,7 +4788,7 @@ INSERT INTO care_config_user VALUES ('default', 'a:19:{s:4:"mask";s:1:"1";s:11:"
 INSERT INTO care_currency VALUES (1, 'S$', 'SG Dollar', 'Singapore Dollar (ISO = SGD)', 'main', '', 20100905190000, 'Ap Muthu', 20100905180000);
 INSERT INTO care_currency VALUES (2, '$', 'US Dollar', 'US Dollar (ISO = USD)', '', '', 20100905190000, 'Ap Muthu', 20100905180000);
 INSERT INTO care_currency VALUES (2, '€', 'Euro', 'European currency (ISO = EUR)', '', 'Elpidio Latorilla', 20030802190637, '', 20021126200534);
-INSERT INTO care_currency VALUES (3, '€', 'Pound', 'GB British Pound (ISO = GBP)', '', '', 20030213173107, '', 20020816230349);
+INSERT INTO care_currency VALUES (3, '£', 'Pound', 'GB British Pound (ISO = GBP)', '', '', 20030213173107, '', 20020816230349);
 INSERT INTO care_currency VALUES (4, 'R', 'Rand', 'South African Rand (ISO = ZAR)', '', '', 20030802190637, 'Elpidio Latorilla', 20020817171805);
 INSERT INTO care_currency VALUES (5, 'Rs', 'Rupees', 'Indian Rupees (ISO = INR)', '', '', 20030213173059, 'Elpidio Latorilla', 20020920234306);
 
