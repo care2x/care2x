@@ -20,13 +20,13 @@ require_once($root_path.'include/care_api_classes/class_oproom.php');
 //$breakfile='dept_manage.php'.URL_APPEND;
 $breakfile=$root_path.'modules/system_admin/edv-system-admi-welcome.php'.URL_APPEND	;
 
-if($pday=='') $pday=date('d');
-if($pmonth=='') $pmonth=date('m');
-if($pyear=='') $pyear=date('Y');
+if(!isset($pday) or $pday=='') $pday=date('d');
+if(!isset($pmonth) or $pmonth=='') $pmonth=date('m');
+if(!isset($pyear) or $pyear=='') $pyear=date('Y');
 $t_date=$pday.'.'.$pmonth.'.'.$pyear;
 
 # Create the OR object
-$OR_obj= OPRoom;
+$OR_obj= new OPRoom;
 # Get all OR
 $OR_rooms=$OR_obj->AllORInfo();
 # Get the number or returned ORs
@@ -41,6 +41,7 @@ $rows=$OR_obj->LastRecordCount();
 
  require_once($root_path.'gui/smarty_template/smarty_care.class.php');
  $smarty = new smarty_care('common');
+ require_once($root_path.'include/core/inc_default_smarty_values.php');
 
 # Title in toolbar
  $smarty->assign('sToolbarTitle',"$LDOR :: $LDListConfig");
@@ -53,6 +54,7 @@ $rows=$OR_obj->LastRecordCount();
 
  # Window bar title
  $smarty->assign('sWindowTitle',"$LDOR :: $LDListConfig");
+ $smarty->assign('sTitleImage','<img '.createComIcon($root_path,'new_group.gif','0').'>');
 
 # Buffer page output
 ob_start();

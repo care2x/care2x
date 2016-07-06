@@ -28,7 +28,7 @@ This notice also applies to other scripts which are integral to the functioning 
 A copy of this notice is also available as file named copy_notice.txt under the top level directory.
 */
 //error_reporting(-1);
-error_reporting(E_ALL);
+
 define('FROM_ROOT',1);
 
 if(!isset($mask)) $mask=false;
@@ -39,7 +39,7 @@ if(!isset($sid)) $sid='';
 
 require('./roots.php');
 require('./include/core/inc_environment_global.php');
-
+error_reporting($ErrorLevel);
 //$db->debug=FALSE;
 
 # Register global session variables
@@ -90,7 +90,7 @@ function configNew(&$bn,&$bv,&$f,$i,&$uid)
 {
   global $HTTP_USER_AGENT;
   global $REMOTE_ADDR;
-
+  global $ErrorLevel;
   # We disable the error reporting, because Konqueror 3.0.3 causes a  runtime error output that stops the program.
   #  could be a bug in phpsniff .. hmmm?
   $old_err_rep= error_reporting($ErrorLevel);

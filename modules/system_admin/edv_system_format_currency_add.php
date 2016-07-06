@@ -15,15 +15,23 @@ $local_user='ck_edv_user';
 require_once($root_path.'include/core/inc_front_chain_lang.php');
 
 require_once($root_path.'include/care_api_classes/class_core.php');
-$core= Core();
+$core= new Core();
 
 $breakfile='edv-system-admi-welcome.php'.URL_APPEND.'&target=currency_admin';
 $thisfile='edv_system_format_currency_add.php';
-if($from=='set') $returnfile='edv_system_format_currency_set.php'.URL_APPEND.'&from=add';
+if(isset($from) and $from=='set') $returnfile='edv_system_format_currency_set.php'.URL_APPEND.'&from=add';
  else $returnfile=$breakfile;
 
 $dbtable='care_currency';
 //$db->debug=1;
+
+if (!isset($mode)) {
+	$mode = '';
+}
+
+if (!isset($item_no)) {
+	$item_no = '';
+}
 
 if(($mode=='save') && $short_name&&$long_name&&$info){
 
@@ -136,16 +144,18 @@ if(($mode=='edit') && $item_no)
 
  require_once($root_path.'gui/smarty_template/smarty_care.class.php');
  $smarty = new smarty_care('system_admin');
+ require_once($root_path.'include/core/inc_default_smarty_values.php');
 
 # Title in toolbar
  $smarty->assign('sToolbarTitle',$LDCurrencyAdmin);
+ require_once($root_path.'include/core/inc_default_smarty_values.php');
 
 # href for return button
  $smarty->assign('pbBack',$returnfile);
 
  # href for help button
  $smarty->assign('pbHelp',"javascript:gethelp('currency_add.php')");
-
+ $smarty->assign('sTitleImage','<img '.createComIcon($root_path,'currency.png','0').'>');
  # href for close button
  $smarty->assign('breakfile',$breakfile);
 
@@ -158,7 +168,7 @@ if(($mode=='edit') && $item_no)
  # Buffer page output
  ob_start();
 
-if($info_exist)
+if(isset($info_exist))
 {
 ?>
 <font color="#990000" size=4 face="verdana,arial">
@@ -178,6 +188,15 @@ if($info_exist)
 <?php
 if(($mode=='save') && $new_currency_ok) echo '<img '.createMascot($root_path,'mascot1_r.gif','0','absmiddle').'> '.$saved_msg.'<p>';
 if($item_no) echo $LDPlsEnterUpdate; else echo $LDPlsAddCurrency;
+if (!isset($short_name)) {
+	$short_name = '';
+}
+if (!isset($long_name)) {
+	$long_name = '';
+}
+if (!isset($info)) {
+	$info = '';
+}
 ?>
 </font>
 <p>

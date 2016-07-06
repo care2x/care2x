@@ -46,11 +46,11 @@ if($ergebnis=$db->Execute($sql)) {
 	$rows=$ergebnis->RecordCount();
 }
 require_once($root_path.'include/care_api_classes/class_access.php');
-$role =  Access();
+$role =  new Access();
 
 require_once($root_path.'include/care_api_classes/class_department.php');
 $dept=new Department;
-$depts=&$dept->getAllActive();
+$depts=$dept->getAllActive();
 
 # Start Smarty templating here
  /**
@@ -61,10 +61,11 @@ $depts=&$dept->getAllActive();
 
  require_once($root_path.'gui/smarty_template/smarty_care.class.php');
  $smarty = new smarty_care('system_admin');
-
-# Title in toolbar
+ $smarty = new smarty_care('common');
+ require_once($root_path.'include/core/inc_default_smarty_values.php');
+ # Title in toolbar
  $smarty->assign('sToolbarTitle',$LDListActual);
-
+ $smarty->assign('sTitleImage','<img '.createComIcon($root_path,'padlock.gif','0').'>');
  # href for return button
  $smarty->assign('pbBack',$returnfile);
 
@@ -87,7 +88,7 @@ ob_start();
 <script type="text/javascript" src="../../js/scriptaculous/src/builder.js"></script>
 <?php
 
-if ($remark=='itemdelete') echo '<img '.createMascot($root_path,'mascot1_r.gif','0','absmiddle').'><font class="warnprompt"> '.$LDAccessDeleted.'<br>'.$LDFfActualAccess.' </font><p>';
+if (isset($remark) and $remark=='itemdelete') echo '<img '.createMascot($root_path,'mascot1_r.gif','0','absmiddle').'><font class="warnprompt"> '.$LDAccessDeleted.'<br>'.$LDFfActualAccess.' </font><p>';
 
         echo '
 				<table border=0 class="frame" cellpadding=0 cellspacing=0>
@@ -175,7 +176,7 @@ if ($remark=='itemdelete') echo '<img '.createMascot($root_path,'mascot1_r.gif',
 
 <p>
 
-<FORM method="post" action="<?php if($ck_edvzugang_src=="listpass") echo "edv-accessplan-list-pass.php"; else echo "edv_user_access_edit.php"; ?>" >
+<FORM method="post" action="<?php if(isset($ck_edvzugang_src) and $ck_edvzugang_src=="listpass") echo "edv_user_access_list.php"; else echo "edv_user_access_edit.php"; ?>" >
 	<input type=hidden name="sid" value="<?php echo $sid; ?>">
 	<input type=hidden name="lang" value="<?php echo $lang; ?>">
 	<input type=hidden name="remark" value="fromlist">

@@ -29,11 +29,11 @@ $breakfile=$root_path.'modules/system_admin/edv-system-admi-welcome.php'.URL_APP
 
 if(!isset($mode)) $mode='';
 # Create department object
-$dept_obj= Department;
+$dept_obj= new Department;
 # Create the OR object
-$OR_obj=  OPRoom;
+$OR_obj= new  OPRoom;
 # Create the ward object
-$ward_obj= Ward;
+$ward_obj= new Ward;
 
 //$db->debug=1;
 
@@ -155,9 +155,11 @@ if($mode=='select') $sTitle = $sTitle.$LDUpdate;
 
  require_once($root_path.'gui/smarty_template/smarty_care.class.php');
  $smarty = new smarty_care('system_admin');
+ require_once($root_path.'include/core/inc_default_smarty_values.php');
 
 # Title in toolbar
  $smarty->assign('sToolbarTitle',$sTitle);
+ $smarty->assign('sTitleImage','<img '.createComIcon($root_path,'new_group.gif','0').'>');
 
  # href for help button
  $smarty->assign('pbHelp',"javascript:gethelp('or_create.php')");
@@ -217,6 +219,10 @@ $sTemp = ob_get_contents();
 ob_end_clean();
 
 $smarty->append('JavaScript',$sTemp);
+
+if (!isset($info)) {
+	$info = '';
+}
 
 # Buffer page output
 
@@ -352,7 +358,7 @@ echo $LDEnterInfo;
 
   <tr>
     <td align=right bgColor="#eeeeee"><?php echo $LDTempClosed ?>: </td>
-    <td bgColor="#f9f9f9"><input type="radio" name="is_temp_closed" value="0" <?php if(!$is_temp_closed) echo 'checked'; ?>> <?php echo $LDNo ?> <input type="radio" name="is_temp_closed" value="1" <?php if($is_temp_closed) echo 'checked'; ?>> <?php echo $LDYes ?>
+    <td bgColor="#f9f9f9"><input type="radio" name="is_temp_closed" value="0" <?php if(!isset($is_temp_closed)) echo 'checked'; ?>> <?php echo $LDNo ?> <input type="radio" name="is_temp_closed" value="1" <?php if(isset($is_temp_closed)) echo 'checked'; ?>> <?php echo $LDYes ?>
 </td>
   </tr>
 

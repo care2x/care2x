@@ -11,5 +11,6 @@ $smarty->assign('Name',"");
 $smarty->assign('sSubTitle','' );
 $smarty->assign('sMainDataBlock','');
 $smarty->assign('sOnLoadJs','');
+$smarty->assign('sMainBlockIncludeFile',"");
 
 ?>

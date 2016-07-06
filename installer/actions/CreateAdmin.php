@@ -2,25 +2,25 @@
 /*
  * CreateAdmin Class
  *
- * This action creates Administrator user account.  
+ * This action creates Administrator user account.
  */
 class CreateAdmin extends SQLAction {
-    
+
     var $admin_user;
 
     var $admin_pass;
-    
+
    /* function CreateAdmin($params) {
         parent::SQLAction($params);
-        
+
         $this->interactive = false;
         $this->grouping = false;
     }*/
-    
+
     /*
      * This function needs to be overriden in the implementing class
      * and should return either TRUE or FALSE.
-     * 
+     *
      * @var $params array Array of parameters needed for the specific implementation
      */
     function perform() {
@@ -38,7 +38,7 @@ class CreateAdmin extends SQLAction {
         if ($db === FALSE)
             return $this->result;
 
-        $sql = "INSERT INTO care_users (name, login_id, password, permission, exc, modify_id, create_id) VALUES ('admin', '".$this->admin_user."', '".md5($this->admin_pass)."', 'System_Admin', 1, 'auto-installer', 'auto-installer')";
+        $sql = "INSERT INTO care_users (name, login_id, password, permission, exc, dept_nr, history, modify_id, create_id) VALUES ('admin', '".$this->admin_user."', '".md5($this->admin_pass)."', 'System_Admin', 1, '', '', 'auto-installer', 'auto-installer')";
 
         @$ok = $db->Execute($sql);
         if ($ok) {
@@ -50,10 +50,10 @@ class CreateAdmin extends SQLAction {
             $this->result_message = "Cannot create Administrator user: ".$db->ErrorMsg();
             $this->loop = 2;
         }
-        
+
         return $this->result;
     }
-        
+
     function prepareParameters() {
         if ($this->prepareDBParameters() === FALSE)
             return FALSE;
@@ -80,6 +80,6 @@ class CreateAdmin extends SQLAction {
             return FALSE;
         }
     }
-    
+
 }
 ?>
