@@ -79,7 +79,7 @@ if(empty($encounter_nr)&&!empty($_SESSION['sess_en'])){
 
 if($mode=='show')
 {
-	$sql="SELECT e.encounter_nr,e.is_discharged,nd.nr, nd.notes AS diagnosis,nd.short_notes, nd.date,nd.personell_nr,nd.personell_name, nt.notes AS therapy
+	$sql="SELECT e.encounter_nr,e.is_discharged,nd.nr, nd.notes AS diagnosis,nd.short_notes, nd.date,nd.staff_nr,nd.staff_name, nt.notes AS therapy
 		FROM 	care_encounter AS e,
 					care_encounter_notes AS nd
 					LEFT JOIN care_encounter_notes AS nt ON nt.ref_notes_nr=nd.nr
