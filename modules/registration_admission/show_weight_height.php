@@ -19,7 +19,7 @@ if(!isset($hc_unit_nr)||!$hc_unit_nr) $hc_unit_nr=7; # set your default unit of 
 $thisfile=basename(__FILE__);
 
 require_once($root_path.'include/care_api_classes/class_measurement.php');
-$obj=new Measurement;
+$obj = new Measurement();
 $unit_types=$obj->getUnits();
 # Prepare unit ids in array
 $unit_ids=array();
@@ -93,17 +93,16 @@ if($mode=='show'){
 			AND e.encounter_nr=m.encounter_nr
 			AND (m.msr_type_nr=6 OR m.msr_type_nr=7 OR m.msr_type_nr=9)
 		ORDER BY m.msr_date DESC";
-
 	if($result=$db->Execute($sql)){
 		if($rows=$result->RecordCount()){
 			while($msr_row=$result->FetchRow()){
 				# group the elements
-				$msr_comp[$msr_row['create_time']]['encounter_nr']=$msr_row['encounter_nr'];
-				$msr_comp[$msr_row['create_time']]['msr_date']    =$msr_row['msr_date'];
-				$msr_comp[$msr_row['create_time']]['msr_time']    =$msr_row['msr_time'];
-				$msr_comp[$msr_row['create_time']]['msr_type_nr'] =$msr_row['msr_type_nr'];
+				$msr_comp[$msr_row['create_time']]['encounter_nr']= $msr_row['encounter_nr'];
+				$msr_comp[$msr_row['create_time']]['msr_date']    = $msr_row['msr_date'];
+				$msr_comp[$msr_row['create_time']]['msr_time']    = $msr_row['msr_time'];
+				$msr_comp[$msr_row['create_time']][$msr_row['msr_type_nr']] = $msr_row['value'];                
 			}
-		}
+		}        
 	}
 }
 # set your default unit of msrmnt type, default 6 = kilogram
