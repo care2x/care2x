@@ -339,6 +339,7 @@ $LDNoFound='La búsqueda no halló al paciente.';
 
 $LDNoWardsYet='Todavía no existen estaciones de enfermería.';
 $LDClk2CreateWard='Para crear una estación/planta, por favor dé clic aquí.';
+$LDClk2CreateAnotherWard='Para crear another estación/plant, clic aquí.';
 /* 2002-10-12 EL */
 $LDToCreateNewList='Para crear una lista nueva';
 $LD_ddpMMpyyyy='dd.mm.aaaa';

@@ -313,7 +313,7 @@ $LDNoFound='Die Suche hat leider keinen Patient gefunden.';
 
 $LDNoWardsYet='Noch keine Pflegestation vorhanden.';
 $LDClk2CreateWard='Bitte hier anklicken um eine Pflegestation anzulegen.';
-
+$LDClk2CreateAnotherWard='Click here to create another ward.';
 /* 2002-10-12 EL */
 $LDToCreateNewList='Um eine Liste anzulegen';
 $LD_ddpMMpyyyy='TT.MM.JJJJ';
