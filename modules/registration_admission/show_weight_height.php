@@ -96,11 +96,15 @@ if($mode=='show'){
 	if($result=$db->Execute($sql)){
 		if($rows=$result->RecordCount()){
 			while($msr_row=$result->FetchRow()){
-				# group the elements
+                # group the elements
 				$msr_comp[$msr_row['create_time']]['encounter_nr']= $msr_row['encounter_nr'];
 				$msr_comp[$msr_row['create_time']]['msr_date']    = $msr_row['msr_date'];
 				$msr_comp[$msr_row['create_time']]['msr_time']    = $msr_row['msr_time'];
-				$msr_comp[$msr_row['create_time']][$msr_row['msr_type_nr']] = $msr_row['value'];                
+				$msr_comp[$msr_row['create_time']][$msr_row['msr_type_nr']] = array(
+                    'msr_type_nr' => $msr_row['msr_type_nr'],
+                    'value' => $msr_row['value'],
+                    'unit_nr' => $msr_row['unit_nr'],
+                );                
 			}
 		}        
 	}
