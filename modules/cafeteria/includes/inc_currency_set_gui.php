@@ -33,6 +33,17 @@ echo $LDPlsSelectCurrency;
 
 while($currency=$ergebnis->FetchRow())
 {
+	 if($GLOBAL_CONFIG['kwamoja_database']!='') {
+		 $DefaultSQL = "SELECT currencydefault FROM " . $GLOBAL_CONFIG['kwamoja_database'] . ".companies";
+		 $DefaultResult=$db->Execute($DefaultSQL);
+		 $DefaultCurrencyRow=$DefaultResult->FetchRow();
+		 if ($currency['item_no']==$DefaultCurrencyRow['currencydefault']) {
+			 $currency['status']='main';
+		 } else {
+			 $currency['status']='';
+		 }
+	 }
+
   echo '<tr>
     <td bgcolor="#e9e9e9"><input type="radio" name="new_main_item" value="'.$currency['item_no'].'"';
   if($currency['status']=='main')
@@ -41,7 +52,7 @@ while($currency=$ergebnis->FetchRow())
 	$old_main_item=$currency['item_no'];
   }
   echo '></td>
-	<td bgcolor="#e9e9e9"><b>'.$currency['short_name'].'</b> </FONT></td>
+	<td bgcolor="#e9e9e9"><b>'.utf8_encode($currency['short_name']).'</b> </FONT></td>
 	<td bgcolor="#e9e9e9"><b>'.$currency['long_name'].'</b> </FONT></td>
 	<td bgcolor="#f9f9f9">'.$currency['info'].'<br></td>
 	<td bgcolor="#e9e9e9"><FONT ';
