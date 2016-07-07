@@ -17,6 +17,11 @@ require_once($root_path.'include/core/inc_front_chain_lang.php');
 require_once($root_path.'include/care_api_classes/class_core.php');
 $core= new Core();
 
+include_once($root_path.'include/care_api_classes/class_globalconfig.php');
+$GLOBAL_CONFIG=array();
+$glob_obj=new GlobalConfig($GLOBAL_CONFIG);
+$glob_obj->getConfig('kwamoja%');
+
 $breakfile='edv-system-admi-welcome.php'.URL_APPEND.'&target=currency_admin';
 $thisfile='edv_system_format_currency_add.php';
 if(isset($from) and $from=='set') $returnfile='edv_system_format_currency_set.php'.URL_APPEND.'&from=add';
@@ -36,12 +41,22 @@ if (!isset($item_no)) {
 if(($mode=='save') && $short_name&&$long_name&&$info){
 
     if($item_no){
-	   $sql="UPDATE $dbtable SET short_name='$short_name',
+		if($GLOBAL_CONFIG['kwamoja_database']=='') {
+			$sql="UPDATE $dbtable SET short_name='$short_name',
 	                                               long_name='$long_name',
 							info='$info',
 							modify_id='".$_SESSION['sess_user_name']."',
 							modify_time='".date('YmdHis')."'
 							WHERE item_no='$item_no'";
+		} else {
+			$sql = "UPDATE  " . $GLOBAL_CONFIG['kwamoja_database'] . ".currencies
+			 currabrev AS item_no,
+					symbol AS short_name,
+					currabrev AS long_name,
+					CONCAT(currency,' (ISO=',currabrev,')') AS info
+					FROM " . $GLOBAL_CONFIG['kwamoja_database'] . ".currencies
+					WHERE currabrev='" . $item_no . "'";
+		}
 	   if($ergebnis=$core->Transact($sql))
        {
 		 if($db->Affected_Rows())
@@ -117,7 +132,16 @@ if(($mode=='save') && $short_name&&$long_name&&$info){
 if(($mode=='edit') && $item_no)
 {
 
-    $sql="SELECT short_name,long_name,info FROM care_currency WHERE item_no='$item_no'";
+	if($GLOBAL_CONFIG['kwamoja_database']=='') {
+		$sql="SELECT short_name,long_name,info FROM care_currency WHERE item_no='$item_no'";
+	} else {
+		$sql = "SELECT currabrev AS item_no,
+					symbol AS short_name,
+					currabrev AS long_name,
+					CONCAT(currency,' (ISO=',currabrev,')') AS info
+					FROM " . $GLOBAL_CONFIG['kwamoja_database'] . ".currencies
+					WHERE currabrev='" . $item_no . "'";
+	}
 	if($ergebnis=$db->Execute($sql))
 	{
 	  if($ergebnis->RecordCount())
@@ -205,7 +229,7 @@ if (!isset($info)) {
 <table border=0 cellspacing=1 cellpadding=5>
 <tr>
 	<td bgcolor="#e9e9e9" align="right"><FONT  color="#0000cc"><b><?php echo $LDCurrencyShortName ?></b> </FONT></td>
-	<td bgcolor="#f9f9f9"><input type="text" name="short_name" size=10 maxlength=40 value="<?php echo $short_name ?>">
+	<td bgcolor="#f9f9f9"><input type="text" name="short_name" size=10 maxlength=40 value="<?php echo utf8_encode($short_name) ?>">
       </td>
 	</tr>
 <tr>
