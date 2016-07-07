@@ -21,7 +21,7 @@ $thisfile=basename(__FILE__);
 $breakfile='nursing-station-info.php?sid='.$sid.'&lang='.$lang;
 /* Load the ward object */
 require_once($root_path.'include/care_api_classes/class_ward.php');
-$ward_obj=new Ward($ward_nr);
+$ward_obj = new Ward($ward_nr);
 
 //$db->debug=1;
 
@@ -54,7 +54,7 @@ if(isset($mode) && $mode=='save_beds'){
 		//gjergji : commented it out for the changing of the magament
 		//header("location:nursing-station.php".URL_REDIRECT_APPEND."&edit=1&ward_nr=$ward_nr&retpath=ward_mng");
 		header("location:nursing-station-info.php".URL_REDIRECT_APPEND."&edit=0&mode=show&ward_id=$station&ward_nr=$ward_nr");
-		//end : gjergji
+        //end : gjergji
 		exit;
 	}else{
 		echo $ward_obj->getLastQuery();

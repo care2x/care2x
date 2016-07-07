@@ -5,7 +5,7 @@
 {{*            :  "input.." alias for a <INPUT> .. </INPUT> element *}}
 {{*            :  "val.." alias for a value attribute of an <INPUT> .. </INPUT> element *}}
 
-{{config_load file=test.conf section="setup"}}
+{{config_load file="test.conf" section="setup"}}
 
 {{include file="common/header.tpl" title=""}}
 

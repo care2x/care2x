@@ -334,7 +334,7 @@ $LDNoFound='Nessun paziente trovato.';
 
 $LDNoWardsYet='Non ci sono ancora Reparti.';
 $LDClk2CreateWard='Per crearne una, selezionare qui.';
-
+$LDClk2CreateAnotherWard='Per creare una stanza, fare click qui.';
 /* 2002-10-12 EL */
 $LDToCreateNewList='Per creare una nuova lista';
 $LD_ddpMMpyyyy='gg.mm.aaaa';

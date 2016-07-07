@@ -46,9 +46,9 @@ error_reporting($ErrorLevel);
   while($stations=$ward_info->FetchRow()) {
    $sWardInfo = $sWardInfo.'<tr><td><a href="'.strtr('nursing-station-pass.php'.URL_APPEND.'&rt=pflege&edit=1&station='.$stations['ward_id'].'&location_id='.$stations['ward_id'].'&ward_nr='.$stations['nr'].'&dept_nr='.$stations['dept_nr'],' ',' ').'"><div class="wardname"><li>'.strtoupper($stations['ward_id']).'&nbsp;</div></a> ';
    $sWardInfo = $sWardInfo."\n";
-   $sWardInfo = $sWardInfo.'</td><td>'.$stations['name'].'</td></tr>';
+   $sWardInfo = $sWardInfo.'</td><td>'.$stations['name'].'</td></tr>';   
   }
-
+  $sWardInfo = $sWardInfo.'<tr><td colspan="3" <img '.createComIcon($root_path,'redpfeil.gif','0','absmiddle').'> <a href="nursing-station-manage-pass.php'.URL_APPEND.'">'.$LDClk2CreateAnotherWard.'</a></td></tr>';
  } else {
   $sWardInfo = $LDNoWardsYet.'<br><img '.createComIcon($root_path,'redpfeil.gif','0','absmiddle').'> <a href="nursing-station-manage-pass.php'.URL_APPEND.'">'.$LDClk2CreateWard.'</a>';
  }

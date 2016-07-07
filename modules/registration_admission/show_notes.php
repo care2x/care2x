@@ -33,7 +33,7 @@ if(isset($current_encounter) && $current_encounter) {
 $page_title.=" :: $LDNotes $LDAndSym $LDReports";
 
 if($parent_admit){
-	$sql="SELECT n.nr,n.notes,n.short_notes, n.encounter_nr,n.date,n.sstaff_nr,n.staff_name,e.encounter_class_nr
+	$sql="SELECT n.nr,n.notes,n.short_notes, n.encounter_nr,n.date,n.staff_nr,n.staff_name,e.encounter_class_nr
 		FROM care_encounter AS e,
 			care_person AS p,
 			care_encounter_notes AS n

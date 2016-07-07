@@ -35,10 +35,10 @@ define('NO_2LEVEL_CHK',1);
 require_once($root_path.'include/core/inc_front_chain_lang.php');
 /* Load the ward object */
 require_once($root_path.'include/care_api_classes/class_ward.php');
-$ward=new Ward;
+$ward = new Ward();
 /* Load the dept object */
 require_once($root_path.'include/care_api_classes/class_department.php');
-$dept=new Department;
+$dept = new Department();
 
 $breakfile='nursing-station-manage.php'.URL_APPEND;
 
@@ -50,25 +50,26 @@ $t_date=$pday.'.'.$pmonth.'.'.$pyear;
 if($mode){
 	$dbtable='care_ward';
 
-	if(!isset($db)||!$db) include($root_path.'include/core/inc_db_makelink.php');
+	if(!isset($db)||!$db) {
+        include($root_path.'include/core/inc_db_makelink.php');
+    }
 	if($dblink_ok){
-		switch($mode)
-		{
+		switch($mode){
 			case 'create':
 			//$db->debug=1;
 				/* check if ward already exists */
-								if(!$ward->IDExists($ward_id)){
-									if($ergebnis=$ward->saveWard($_POST)){
-										if($dbtype=='mysql'){
-											$ward_nr=$db->Insert_ID();
-										}else{
-											$ward_nr=$ward->postgre_Insert_ID($dbtable,'nr',$db->Insert_ID());
-										}
-										header("location:nursing-station-new-createbeds.php?sid=$sid&lang=$lang&ward_nr=$ward_nr");
-										exit;
-									}else{echo "$sql<br>$LDDbNoSave";}
-								}else{ $ward_exists=true;}
-								break;
+                if(!$ward->IDExists($ward_id)){
+                    if($ergebnis=$ward->saveWard($_POST)){
+                        if($dbtype=='mysql'){
+                            $ward_nr=$db->Insert_ID();
+                        }else{
+                            $ward_nr=$ward->postgre_Insert_ID($dbtable,'nr',$db->Insert_ID());
+                        }
+                        header("location:nursing-station-new-createbeds.php?sid=$sid&lang=$lang&ward_nr=$ward_nr");
+                        exit;
+                    }else{echo "$sql<br>$LDDbNoSave";}
+                }else{ $ward_exists=true;}
+                break;
 		}// end of switch
 	}else{echo "$LDDbNoLink<br>";}
 }else{
@@ -117,13 +118,11 @@ div.pcont{ margin-left: 3; }
 
 function check(d)
 {
-	if((d.description.value=="")||(d.dept_nr.value=="")||(d.ward_id=="")||(d.roomprefix.value==""))
-	{
+	if((d.description.value=="")||(d.dept_nr.value=="")||(d.ward_id.value=="")||(d.roomprefix.value=="")){
 		alert("<?php echo $LDAlertIncomplete ?>");
 		return false;
 	}
-	if(parseInt(d.room_nr_start.value)>=parseInt(d.room_nr_end.value))
-	{
+	if(parseInt(d.room_nr_start.value)>=parseInt(d.room_nr_end.value)){
 		alert("<?php echo $LDAlertRoomNr ?>");
 		return false;
 	}

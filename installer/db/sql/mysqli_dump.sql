@@ -2529,6 +2529,50 @@ CREATE TABLE IF NOT EXISTS `care_person_other_number` (
 -- Dumping data for table `care_person_other_number`
 --
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `care_personell`
+--
+
+DROP TABLE IF EXISTS `care_personell`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `care_personell` (
+  `nr` int(11) NOT NULL AUTO_INCREMENT,
+  `short_id` varchar(10) DEFAULT NULL,
+  `pid` int(11) NOT NULL DEFAULT '0',
+  `job_type_nr` int(11) NOT NULL DEFAULT '0',
+  `job_function_title` smallint(60) NOT NULL,
+  `date_join` date DEFAULT NULL,
+  `date_exit` date DEFAULT NULL,
+  `contract_class` varchar(35) NOT NULL DEFAULT '0',
+  `contract_start` date DEFAULT NULL,
+  `contract_end` date DEFAULT NULL,
+  `is_discharged` tinyint(1) NOT NULL DEFAULT '0',
+  `pay_class` varchar(25) NOT NULL DEFAULT '',
+  `pay_class_sub` varchar(25) NOT NULL DEFAULT '',
+  `local_premium_id` varchar(5) NOT NULL DEFAULT '',
+  `tax_account_nr` varchar(60) NOT NULL DEFAULT '',
+  `ir_code` varchar(25) NOT NULL DEFAULT '',
+  `nr_workday` tinyint(1) NOT NULL DEFAULT '0',
+  `nr_weekhour` float(10,2) NOT NULL DEFAULT '0.00',
+  `nr_vacation_day` tinyint(2) NOT NULL DEFAULT '0',
+  `multiple_employer` tinyint(1) NOT NULL DEFAULT '0',
+  `nr_dependent` tinyint(2) unsigned NOT NULL DEFAULT '0',
+  `status` varchar(25) NOT NULL DEFAULT '',
+  `history` text NOT NULL,
+  `modify_id` varchar(35) NOT NULL DEFAULT '',
+  `modify_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `create_id` varchar(35) NOT NULL DEFAULT '',
+  `create_time` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  PRIMARY KEY (`nr`,`pid`,`job_type_nr`),
+  KEY `pid` (`pid`)
+) ENGINE=MyISAM AUTO_INCREMENT=100031 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `care_personell`
+--
 
 -- --------------------------------------------------------
 
@@ -4744,7 +4788,7 @@ INSERT INTO care_config_user VALUES ('default', 'a:19:{s:4:"mask";s:1:"1";s:11:"
 INSERT INTO care_currency VALUES (1, 'S$', 'SG Dollar', 'Singapore Dollar (ISO = SGD)', 'main', '', 20100905190000, 'Ap Muthu', 20100905180000);
 INSERT INTO care_currency VALUES (2, '$', 'US Dollar', 'US Dollar (ISO = USD)', '', '', 20100905190000, 'Ap Muthu', 20100905180000);
 INSERT INTO care_currency VALUES (2, '€', 'Euro', 'European currency (ISO = EUR)', '', 'Elpidio Latorilla', 20030802190637, '', 20021126200534);
-INSERT INTO care_currency VALUES (3, '€', 'Pound', 'GB British Pound (ISO = GBP)', '', '', 20030213173107, '', 20020816230349);
+INSERT INTO care_currency VALUES (3, '£', 'Pound', 'GB British Pound (ISO = GBP)', '', '', 20030213173107, '', 20020816230349);
 INSERT INTO care_currency VALUES (4, 'R', 'Rand', 'South African Rand (ISO = ZAR)', '', '', 20030802190637, 'Elpidio Latorilla', 20020817171805);
 INSERT INTO care_currency VALUES (5, 'Rs', 'Rupees', 'Indian Rupees (ISO = INR)', '', '', 20030213173059, 'Elpidio Latorilla', 20020920234306);
 
