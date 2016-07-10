@@ -377,13 +377,13 @@ class GuiInputPerson {
 			} // end of if(!$error)
 		}elseif(!empty($this->pid)){
 			 # Get the person�s data
-			if($data_obj=&$person_obj->getAllInfoObject()){
+			if($data_obj=$person_obj->getAllInfoObject()){
 
 				$zeile=$data_obj->FetchRow();
 				extract($zeile);
 
 				# Get the related insurance data
-				$p_insurance=&$pinsure_obj->getPersonInsuranceObject($pid);
+				$p_insurance=$pinsure_obj->getPersonInsuranceObject($pid);
 				if($p_insurance==FALSE) {
 					$insurance_show=TRUE;
 				} else {

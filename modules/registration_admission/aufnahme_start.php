@@ -62,7 +62,7 @@ $dbtable='care_encounter'; // The table of admission data
 /* Create new person's insurance object */
 $pinsure_obj=new PersonInsurance($pid);
 /* Get the insurance classes */
-$insurance_classes=&$pinsure_obj->getInsuranceClassInfoObject('class_nr,name,LD_var AS "LD_var"');
+$insurance_classes=$pinsure_obj->getInsuranceClassInfoObject('class_nr,name,LD_var AS "LD_var"');
 
 /* Create new person object */
 $person_obj=new Person($pid);
@@ -112,7 +112,7 @@ if($pid!='' || $encounter_nr!=''){
 		}
 
 		/* Get the related insurance data */
-		$p_insurance=&$pinsure_obj->getPersonInsuranceObject($pid);
+		$p_insurance=$pinsure_obj->getPersonInsuranceObject($pid);
 		if($p_insurance==false) {
 			$insurance_show=true;
 		} else {
@@ -348,7 +348,7 @@ if($pid!='' || $encounter_nr!=''){
 	}
 
 	$person_obj->setPID($pid);
-	if($data=&$person_obj->BasicDataArray($pid)){
+	if($data=$person_obj->BasicDataArray($pid)){
 		//while(list($x,$v)=each($data))	${$x}=$v;
 		extract($data);
 	}
@@ -366,7 +366,11 @@ include_once($root_path.'include/core/inc_patient_encounter_type.php');
 if($encounter_nr) $headframe_title = "$headframe_title $headframe_append ";
 
 # Prepare onLoad JS code
-if(!$encounter_nr && !$pid) $sOnLoadJs ='onLoad="if(document.searchform.searchkey.focus) document.searchform.searchkey.focus();"';
+if(!$encounter_nr && !$pid) {
+	$sOnLoadJs ='onLoad="if(document.searchform.searchkey.focus) document.searchform.searchkey.focus();"';
+} else {
+	$sOnLoadJs ='';
+}
 
 
 # Start Smarty templating here
@@ -378,10 +382,12 @@ if(!$encounter_nr && !$pid) $sOnLoadJs ='onLoad="if(document.searchform.searchke
 
 require_once($root_path.'gui/smarty_template/smarty_care.class.php');
 $smarty = new smarty_care('common');
+require_once($root_path.'include/core/inc_default_smarty_values.php');
 
 # Title in the toolbar
+$smarty->assign('sWindowTitle',$headframe_title);
 $smarty->assign('sToolbarTitle',$headframe_title);
-
+$smarty->assign('sTitleImage','<img '.createComIcon($root_path,'patdata.gif','0').'>');
 # href for help button
 $smarty->assign('pbHelp',"javascript:gethelp('admission_how2new.php')");
 
@@ -732,7 +738,7 @@ if(!isset($pid) || !$pid){
 		while($result=$insurance_classes->FetchRow()) {
 
 			$sTemp = $sTemp.'<input name="insurance_class_nr" type="radio"  value="'.$result['class_nr'].'" ';
-			if($insurance_class_nr==$result['class_nr']) $sTemp = $sTemp.'checked';
+			if(isset($insurance_class_nr) and $insurance_class_nr==$result['class_nr']) $sTemp = $sTemp.'checked';
 			$sTemp = $sTemp.'>';
 
 			$LD=$result['LD_var'];

@@ -55,6 +55,7 @@ $target='entry';
  $smarty->assign('breakfile',$breakfile);
  # Window bar title
  $smarty->assign('title',$LDPatientRegister);
+ $smarty->assign('sWindowTitle',$LDPatientRegister);
 
  $smarty->assign('sOnLoadJs',"if (window.focus) window.focus();");
 

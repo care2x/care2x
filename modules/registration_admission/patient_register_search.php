@@ -18,6 +18,9 @@ require($root_path.'include/core/inc_front_chain_lang.php');
 
 if(empty($target)) $target='search';
 
+if (!isset($origin)) {
+	$origin='';
+}
 switch($origin)
 {
     case 'archive': $breakfile='patient_register_archive.php';
@@ -40,11 +43,12 @@ $thisfile=basename(__FILE__);
 
  require_once($root_path.'gui/smarty_template/smarty_care.class.php');
  $smarty = new smarty_care('common');
-
+ require_once($root_path.'include/core/inc_default_smarty_values.php');
 # Added for the common header top block
 
+ $smarty->assign('sWindowTitle',$LDPatientRegister." - ".$LDSearch);
  $smarty->assign('sToolbarTitle',$LDPatientRegister." - ".$LDSearch);
-
+ $smarty->assign('sTitleImage','<img '.createComIcon($root_path,'search_glass.gif','0').'>');
  # Added for the common header top block
  $smarty->assign('pbHelp',"javascript:gethelp('submenu1.php','$LDPatientRegister." - ".$LDSearch')");
 

@@ -963,13 +963,37 @@ class Person extends Core {
 
 			# Arrange the values, ln= lastname, fn=first name, bd = birthday
 			if($lastnamefirst){
-				$fn=$comp[1];
-				$ln=$comp[0];
-				$bd=$comp[2];
+				if (isset($comp[1])) {
+					$fn=$comp[1];
+				} else {
+					$fn='';
+				}
+				if (isset($comp[0])) {
+					$ln=$comp[0];
+				} else {
+					$ln='';
+				}
+				if (isset($comp[2])) {
+					$bd=$comp[2];
+				} else {
+					$bd='';
+				}
 			}else{
-				$fn=$comp[0];
-				$ln=$comp[1];
-				$bd=$comp[2];
+				if (isset($comp[0])) {
+					$fn=$comp[0];
+				} else {
+					$fn='';
+				}
+				if (isset($comp[1])) {
+					$ln=$comp[1];
+				} else {
+					$ln='';
+				}
+				if (isset($comp[2])) {
+					$bd=$comp[2];
+				} else {
+					$bd='';
+				}
 			}
 			# Check the size of the comp
 			if(sizeof($comp)>1){
@@ -1015,7 +1039,11 @@ class Person extends Core {
 		//$this->buffer=$fromwhere;
 		//$sql2.=' AND status NOT IN ("void","hidden","deleted","inactive")  ORDER BY '.$oitem.' '.$odir;
 		# Set the sorting directive
-		if(isset($oitem)&&!empty($oitem)) $sql3 =" ORDER BY $oitem $odir";
+		if(isset($oitem)&&!empty($oitem)) {
+			$sql3 =" ORDER BY $oitem $odir";
+		} else {
+			$sql3 =" ";
+		}
 
 		$this->sql='SELECT pid, name_last, name_first, date_birth, addr_zip, sex, death_date, status FROM '.$this->buffer.$sql3;
 

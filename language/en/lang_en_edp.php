@@ -102,6 +102,7 @@ $LDAllowedArea='Allowed areas are:';
 $LDActualAccess='Actual access permissions';
 $LDAccessDeleted='The access permission was deleted successfully.';
 $LDFfActualAccess='Following are the actual access permissions.';
+$LDEnterAllFields='Please fill up all fields marked with <font color="red"><b>*</b></font>';
 
 $LDAccessIndex[0]='Name';
 $LDAccessIndex[1]='Login';
@@ -361,6 +362,7 @@ $LDCreateEditRoles='Create Role';
 $LDWelcome='Wellcome';
 $LDNursingManage='Wards administration';
 $LDRole = 'Role';
+$LDRoles = 'Roles';
 $LDRoleStartsWith='Role starts with';
 $LDNewRole='New Role';
 
