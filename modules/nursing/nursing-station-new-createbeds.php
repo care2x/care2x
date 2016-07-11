@@ -61,13 +61,14 @@ if(isset($mode) && $mode=='save_beds'){
 	}
 }else{
 	/* Get the ward's data */
-	$ward=&$ward_obj->getWardInfo($ward_nr);
+	$ward=$ward_obj->getWardInfo($ward_nr);
+	$mode='';
+	$edit='';
 }
 ?>
 <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 3.0//EN" "html.dtd">
 <?php html_rtl($lang); ?>
 <HEAD>
-<?php echo setCharSet(); ?>
 
 <script language="javascript">
 <!--
@@ -93,6 +94,7 @@ function checkForm(f){
 }
 // -->
 </script>
+<?php echo setCharSet(); ?>
 
 <?php
 require($root_path.'include/core/inc_js_gethelp.php');
@@ -119,15 +121,16 @@ div.pcont{ margin-left: 3; }
 <td bgcolor="<?php echo $cfg['top_bgcolor']; ?>" height="10">
 <FONT  COLOR="<?php echo $cfg['top_txtcolor']; ?>"  SIZE=+2  FACE="Arial"><STRONG> &nbsp; <?php echo "$LDNursing $LDStation - $LDProfile" ?></STRONG></FONT></td>
 <td bgcolor="<?php echo $cfg['top_bgcolor']; ?>" height="10" align=right>
-<?php if($cfg['dhtml'])echo'<a href="javascript:window.history.back()"><img '.createLDImgSrc($root_path,'back2.gif','0').'  class="fadeOut" >';?></a><a href="javascript:gethelp('nursing_ward_mng.php','<?php echo $mode ?>','<?php echo $edit ?>')"><img <?php echo createLDImgSrc($root_path,'hilfe-r.gif','0') ?>  <?php if($cfg['dhtml'])echo'class="fadeOut" >';?></a><a href="<?php echo $breakfile;?>"><img <?php echo createLDImgSrc($root_path,'close2.gif','0') ?> alt="<?php echo $LDCloseAlt ?>"  <?php if($cfg['dhtml'])echo'class="fadeOut" >';?></a></td>
+<?php
+if($cfg['dhtml'])echo'<a href="javascript:window.history.back()"><img '.createLDImgSrc($root_path,'back2.gif','0').'  class="fadeOut" >';?></a><a href="javascript:gethelp('nursing_ward_mng.php','<?php echo $mode ?>','<?php echo $edit ?>')"><img <?php echo createLDImgSrc($root_path,'hilfe-r.gif','0') ?>  <?php if($cfg['dhtml'])echo'class="fadeOut" >';?></a><a href="<?php echo $breakfile;?>"><img <?php echo createLDImgSrc($root_path,'close2.gif','0') ?> alt="<?php echo $LDCloseAlt ?>"  <?php if($cfg['dhtml'])echo'class="fadeOut" >';?></a></td>
 </tr>
 <tr valign=top >
 <td bgcolor=<?php echo $cfg['body_bgcolor']; ?> valign=top colspan=2>
  <ul>
 <?php if(is_array($ward)) { ?>
 <p><br>
-<?php
 
+<?php
 $room_nr=$ward['room_nr_end']-$ward['room_nr_start'];
 
 $bgc=$root_path.'gui/img/skin/default/tableHeaderbg3.gif';

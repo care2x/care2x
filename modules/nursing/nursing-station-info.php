@@ -31,8 +31,8 @@ $rows=0;
 
 		case 'show':
 		{
-			if($ward=&$ward_obj->getWardInfo($ward_nr)){
-				$rooms=&$ward_obj->getAllActiveRoomsInfo();
+			if($ward=$ward_obj->getWardInfo($ward_nr)){
+				$rooms=$ward_obj->getAllActiveRoomsInfo();
 				$rows=true;
 				extract($ward);
 				// Get all medical departments
@@ -128,10 +128,12 @@ $rows=0;
 
  require_once($root_path.'gui/smarty_template/smarty_care.class.php');
  $smarty = new smarty_care('nursing');
+ require_once($root_path.'include/core/inc_default_smarty_values.php');
 
 # Added for the common header top block
 
  $smarty->assign('sToolbarTitle',"$LDNursing $LDStation - $LDProfile");
+ $smarty->assign('sTitleImage','<img '.createComIcon($root_path,'patdata.gif','0').'>');
 
  $smarty->assign('pbHelp',"javascript:gethelp('nursing_ward_mng.php','$mode','$edit')");
 
