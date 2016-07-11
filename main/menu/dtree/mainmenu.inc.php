@@ -179,11 +179,11 @@ while ( $menu = $result1->FetchRow () ) {
 
 				while ( $stat = $res_stat->FetchRow () ) {
 					$st_name = $stat ['name'];
-					$st_nr = $stat ['nr'];
+					$st_ward_nr = $stat ['nr'];
 					$st_ward_id = $stat ['ward_id'];
 					$st_dept = $stat ['dept_nr'];
 
-					$erg = "m.add($j,$i_stat,'$st_name','javascript:runModul(\'../modules/nursing/nursing-station-pass.php" . URL_APPEND . "&rt=pflege&edit=1&station=$st_ward_id&location_id=$st_ward_nr&ward_nr=$st_nr\')','','','../gui/img/common/default/blue_bullet.gif');";
+					$erg = "m.add($j,$i_stat,'$st_name','javascript:runModul(\'../modules/nursing/nursing-station-pass.php" . URL_APPEND . "&rt=pflege&edit=1&station=$st_ward_id&location_id=$st_ward_nr&ward_nr=$st_ward_nr\')','','','../gui/img/common/default/blue_bullet.gif');";
 					$j += 1;
 
 					echo "\n$erg\n";
