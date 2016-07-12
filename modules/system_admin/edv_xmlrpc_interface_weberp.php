@@ -110,10 +110,10 @@ function popPic(pid,nm){
  $sql = "SHOW DATABASES";
  $Result=$db->Execute($sql);
  while ($Database=$Result->FetchRow()) {
-	$sql = "SHOW TABLES IN " . $Database[0] . " LIKE '%stockmaster%'";
+	$sql = "SHOW TABLES IN " . $Database[0] . " LIKE '%insurance%'";
 	$TableResult = $db->Execute($sql);
 	$Tables=$TableResult->FetchRow();
-	if ($Tables[0] == 'stockmaster')
+	if ($Tables[0] == 'insuranceco')
 		$AllDatabases[] = $Database[0];
  }
 

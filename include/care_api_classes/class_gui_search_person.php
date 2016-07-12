@@ -149,10 +149,14 @@ class GuiSearchPerson {
 
 	function display($skey=''){
 		global 	$db, $searchkey, $root_path,  $firstname_too, $_POST, $_GET,
-				$sid, $lang, $mode,$totalcount, $pgx, $odir, $oitem, $_SESSION,
+				$sid, $lang, $mode,$totalcount, $pgx, $odir, $oitem, $_SESSION,$theme_com_icon,
 				$dbf_nodate,  $user_origin, $parent_admit, $status, $target, $origin;
 
-		$this->thisfile = $filename;
+		if (isset($filename)) {
+			$this->thisfile = $filename;
+		} else {
+			$this->filename='';
+		}
 		$this->searchkey = $skey;
 		$this->mode = $mode;
 
@@ -298,8 +302,13 @@ class GuiSearchPerson {
 		$this->smarty = new smarty_care('common',FALSE);
 
 		# Output any existing text before the search block
-		if(!empty($this->pretext)) $this->smarty->assign('sPretext',$this->pretext);
-
+		if(!empty($this->pretext)) {
+			$this->smarty->assign('sPretext',$this->pretext);
+		} else {
+			$this->smarty->assign('sPretext','');
+		}
+		$this->smarty->assign('LDSearchFound','');
+		$this->smarty->assign('sPostText','');
 		# Show tips and tricks link and the javascript
 		if($this->showtips){
 			ob_start();
@@ -339,7 +348,7 @@ class GuiSearchPerson {
 		# Prepare the form params
 		#
 		$sTemp = 'method="post" name="searchform';
-		if($searchform_count) $sTemp = $sTemp."_".$searchform_count;
+		if(isset($searchform_count)) $sTemp = $sTemp."_".$searchform_count;
 		$sTemp = $sTemp.'" onSubmit="return chkSearch(this)"';
 		 if(isset($search_script) && $search_script!='') $sTemp = $sTemp.' action="'.$search_script.'"';
 		$this->smarty->assign('sFormParams',$sTemp);
@@ -361,6 +370,12 @@ class GuiSearchPerson {
 		#
 		# Prepare the hidden inputs
 		#
+		if (!isset($noresize)) $noresize='';
+		if (!isset($user_origin)) $user_origin='';
+		if (!isset($origin)) $origin='';
+		if (!isset($retpath)) $retpath='';
+		if (!isset($aux1)) $aux1='';
+		if (!isset($ipath)) $ipath='';
 		$this->smarty->assign('sHiddenInputs','<input type="image" '.createLDImgSrc($root_path,'searchlamp.gif','0','absmiddle').'>
 				<input type="hidden" name="sid" value="'.$sid.'">
 				<input type="hidden" name="lang" value="'.$lang.'">
@@ -391,9 +406,10 @@ class GuiSearchPerson {
 				else $this->smarty->assign('LDSearchFound',str_replace('~nr~','0',$LDSearchFound));
 		}
 
-		if ($linecount){
+		if (isset($linecount)){
 
 			$this->smarty->assign('bShowResult',TRUE);
+			$this->smarty->assign('sHiddenBarcode',TRUE);
 
 			$img_male=createComIcon($root_path,'spm.gif','0');
 			$img_female=createComIcon($root_path,'spf.gif','0');
@@ -404,6 +420,7 @@ class GuiSearchPerson {
 			$this->smarty->assign('LDFirstName',$pagen->makeSortLink($LDFirstName,'name_first',$oitem,$odir,$this->targetappend));
 			$this->smarty->assign('LDBday',$pagen->makeSortLink($LDBday,'date_birth',$oitem,$odir,$this->targetappend));
 			$this->smarty->assign('LDZipCode',$pagen->makeSortLink($LDZipCode,'addr_zip',$oitem,$odir,$this->targetappend));
+
 			if(!empty($this->targetfile)){
 				$this->smarty->assign('LDOptions',$LDOptions);
 			}
@@ -464,6 +481,8 @@ class GuiSearchPerson {
 
 			$this->smarty->assign('sPreviousPage',$pagen->makePrevLink($LDPrevious,$this->targetappend));
 			$this->smarty->assign('sNextPage',$pagen->makeNextLink($LDNext,$this->targetappend));
+		} else {
+			$this->smarty->assign('bShowResult',FALSE);
 		}
 		#
 		# Add eventual appending text block

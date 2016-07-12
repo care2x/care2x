@@ -12,7 +12,7 @@ error_reporting($ErrorLevel);
 */
 
 define('SHOW_DOC_2',1);  # Define to 1 to  show the 2nd doctor-on-duty
-define('DOC_CHANGE_TIME','7.30'); # Define the time when the doc-on-duty will change in 24 hours H.M format (eg. 3 PM = 15.00, 12 PM = 0.00)
+//define('DOC_CHANGE_TIME','7.30'); # Define the time when the doc-on-duty will change in 24 hours H.M format (eg. 3 PM = 15.00, 12 PM = 0.00)
 
 $lang_tables[]='ambulatory.php';
 $lang_tables[]='prompt.php';
@@ -64,7 +64,7 @@ if(($mode=='')||($mode=='fresh')){
 	$enc_obj= new Encounter;
 
 	# Get all outpatients for this dept
-	$opat_obj=&$enc_obj->OutPatientsBasic($dept_nr);
+	$opat_obj=$enc_obj->OutPatientsBasic($dept_nr);
 	//echo $enc_obj->getLastQuery();
 	$rows=$enc_obj->LastRecordCount();
 	# If dept name is empty, fetch by location nr
@@ -81,7 +81,7 @@ if(($mode=='')||($mode=='fresh')){
 
 		# Create the waiting outpatients� list
 		$dnr=(isset($w_waitlist) && $w_waitlist) ? 0 : $dept_nr;
-		$waitlist=&$enc_obj->createWaitingOutpatientList($dnr);
+		$waitlist=$enc_obj->createWaitingOutpatientList($dnr);
 		$waitlist_count=$enc_obj->LastRecordCount();
 		//echo $waitlist_count.'<p>'.$enc_obj->getLastQuery();
 
@@ -95,9 +95,12 @@ if(($mode=='')||($mode=='fresh')){
 		$pers_obj=new Personell;
 
 		if($result=$pers_obj->getDOCDutyplan($dept_nr,$pyear,$pmonth,$elem)){
-			$duty1=&unserialize($result['duty_1_pnr']);
+			$duty1=unserialize($result['duty_1_pnr']);
 			if(SHOW_DOC_2) $duty2=&unserialize($result['duty_2_pnr']);
 					//echo $sql."<br>";
+		} else {
+			$duty1 = array();
+			$duty2 = array();
 		}
 		//echo $pers_obj->getLastQuery();
 		# Adjust the day index. This is necessary since change of duty usually happens early morning  not midnight
@@ -123,7 +126,7 @@ if(($mode=='')||($mode=='fresh')){
 
  require_once($root_path.'gui/smarty_template/smarty_care.class.php');
  $smarty = new smarty_care('nursing');
-
+ require_once($root_path.'include/core/inc_default_smarty_values.php');
 # Title in toolbar
  $smarty->assign('sToolbarTitle', $dept." :: $LDOutpatientClinic (".formatDate2Local($s_date,$date_format,'','',$null='').")");
 

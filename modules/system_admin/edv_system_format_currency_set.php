@@ -15,10 +15,15 @@ $local_user='ck_edv_user';
 require_once($root_path.'include/core/inc_front_chain_lang.php');
 
 $breakfile='edv-system-admi-welcome.php'.URL_APPEND;
-if($from=='add') $returnfile='edv_system_format_currency_add.php'.URL_APPEND.'&from=set';
+if(isset($from) and $from=='add') $returnfile='edv_system_format_currency_add.php'.URL_APPEND.'&from=set';
   else $returnfile=$breakfile;
 $thisfile='edv_system_format_currency_set.php';
 $editfile='edv_system_format_currency_add.php'.URL_REDIRECT_APPEND.'&mode=edit&from=set&item_no=';
+
+include_once($root_path.'include/care_api_classes/class_globalconfig.php');
+$GLOBAL_CONFIG=array();
+$glob_obj=new GlobalConfig($GLOBAL_CONFIG);
+$glob_obj->getConfig('kwamoja%');
 
 # Load the db routine
 
@@ -33,6 +38,7 @@ require($root_path.'modules/cafeteria/includes/inc_currency_set.php');
 
  require_once($root_path.'gui/smarty_template/smarty_care.class.php');
  $smarty = new smarty_care('system_admin');
+ require_once($root_path.'include/core/inc_default_smarty_values.php');
 
 # Title in toolbar
  $smarty->assign('sToolbarTitle',$LDCurrencyAdmin);
@@ -48,6 +54,7 @@ require($root_path.'modules/cafeteria/includes/inc_currency_set.php');
 
  # Window bar title
  $smarty->assign('sWindowTitle',$LDCurrencyAdmin);
+ $smarty->assign('sTitleImage','<img '.createComIcon($root_path,'currency.png','0').'>');
 
  if($rows) {
  	$smarty->append('JavaScript','<script language="javascript" src="'.$root_path.'js/check_currency_same_item.js"></script>');

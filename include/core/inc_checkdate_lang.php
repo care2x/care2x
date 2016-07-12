@@ -1,4 +1,5 @@
 <?php
+require_once($root_path.'language/en/lang_en_date_time.php');
 if(file_exists($root_path."language/$lang/lang_".$lang."_checkdate.php")) include_once($root_path."language/$lang/lang_".$lang."_checkdate.php");
  else include_once($root_path."language/en/lang_en_checkdate.php");
 ?>

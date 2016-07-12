@@ -267,6 +267,16 @@ class Ward extends Encounter {
 			} else {return false; }
 		} else {return false; }
 	}
+
+	function getWardNrFromID($ward_id) {
+		global $db;
+		$this->sql="SELECT nr FROM $this->tb_ward WHERE ward_id='$ward_id'";
+		if($this->result=$db->Execute($this->sql)) {
+            if($Row=$this->result->FetchRow()) {
+				 return $Row['nr'];
+			} else {return false; }
+		} else {return false; }
+	}
 	/**
 	* Returns ward occupants (inpatients) information.
 	*

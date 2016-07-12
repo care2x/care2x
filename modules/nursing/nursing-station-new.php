@@ -60,8 +60,10 @@ if($mode){
 				/* check if ward already exists */
                 if(!$ward->IDExists($ward_id)){
                     if($ergebnis=$ward->saveWard($_POST)){
-                        if($dbtype=='mysql'){
-                            $ward_nr=$db->Insert_ID();
+                        if($dbtype=='mysqli'){
+                            // $ward_nr=$db->Insert_ID();
+                            $ward_nr=$ward->getWardNrFromID($ward_id);
+                            echo $ward_nr;
                         }else{
                             $ward_nr=$ward->postgre_Insert_ID($dbtable,'nr',$db->Insert_ID());
                         }
@@ -85,7 +87,7 @@ if($mode){
 
  require_once($root_path.'gui/smarty_template/smarty_care.class.php');
  $smarty = new smarty_care('nursing');
-
+ require_once($root_path.'include/core/inc_default_smarty_values.php');
 # Added for the common header top block
 
  $smarty->assign('sToolbarTitle',"$LDCreate::$LDNewStation");
@@ -97,6 +99,7 @@ if($mode){
 
  # Window bar title
  $smarty->assign('sWindowTitle',"$LDCreate::$LDNewStation");
+ $smarty->assign('sTitleImage','<img '.createComIcon($root_path,'patdata.gif','0').'>');
 
 # Buffer page output
 
@@ -142,6 +145,9 @@ $smarty->append('JavaScript',$sTemp);
 if($rows){
 	$smarty->assign('sMascotImg','<img '.createMascot($root_path,'mascot1_r.gif','0','bottom').' align="absmiddle">');
 	$smarty->assign('sStationExists',str_replace("~station~",strtoupper($station),$LDStationExists));
+} else {
+	$smarty->assign('sMascotImg','');
+	$smarty->assign('sStationExists','');
 }
 
 $smarty->assign('LDEnterAllFields',$LDEnterAllFields);
