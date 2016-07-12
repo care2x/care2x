@@ -44,18 +44,9 @@ function cancelEnc(){
 //-->
 </script>
 <?php
-# Let us detect if data entry is allowed
-	//echo $enc_status['is_disharged'].'<p>'. $enc_status['encounter_status'].'<p>d= '. $enc_status['in_dept'].'<p>w= '. $enc_status['in_ward'];
-/*	if($enc_status['is_disharged']){
-		if(stristr('cancelled',$enc_status['encounter_status'])){
-			$data_entry=false;
-		}
-	}elseif(!$enc_status['encounter_status']||stristr('cancelled',$enc_status['encounter_status'])){
-		if(!$enc_status['in_ward']&&!$enc_status['in_dept']) $data_entry=false;
-	}
-*/
+// Let us detect if data entry is allowed
+
 if(!$is_discharged&&!$enc_status['in_ward']&&!$enc_status['in_dept']&&(!$enc_status['encounter_status']||stristr('cancelled',$enc_status['encounter_status']))){
-//if(!$enc_status['is_discharged']&&!$enc_status['in_ward']&&!$enc_status['in_dept']&&(!$enc_status['encounter_status']||stristr('cancelled',$enc_status['encounter_status']))){
 	$data_entry=false;
 }else{
 	$data_entry=true;

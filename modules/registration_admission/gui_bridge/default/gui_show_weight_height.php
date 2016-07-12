@@ -29,20 +29,32 @@ while(list($x,$row)=each($msr_comp)){
     <td><?php echo strtr($row['msr_time'],'.',':'); ?></td>
     <td>
 	<?php 
-		if($row[6]['notes']) echo '<a href="javascript:popNotes(\''.$row[6]['notes'].'\')" title="'.$row[6]['notes'].'">'.$row[6]['value'].'</a>';
-			else echo $row[6]['value']; 
+    if($row[6]['notes']) {
+        echo '<a href="javascript:popNotes(\''.$row[6]['notes'].'\')" title="'.$row[6]['notes'].'">'.$row[6]['value'].'</a>';
+    }
+    else {
+        echo $row[6]['value'];
+    }
 	?></td>
      <td><FONT SIZE=1 ><?php echo $unit_ids[$row[6]['unit_nr']]; ?></td>
     <td>
 	<?php 
-		if($row[7]['notes']) echo '<a href="javascript:popNotes(\''.$row[7]['notes'].'\')" title="'.$row[7]['notes'].'">'.$row[7]['value'].'</a>';
-			else echo $row[7]['value']; 
+    if($row[7]['notes']){
+        echo '<a href="javascript:popNotes(\''.$row[7]['notes'].'\')" title="'.$row[7]['notes'].'">'.$row[7]['value'].'</a>';
+    }
+    else {
+        echo $row[7]['value'];
+    }
 	?></td>
      <td><FONT SIZE=1 ><?php echo $unit_ids[$row[7]['unit_nr']]; ?></td>
     <td>
 	<?php 
-		if($row[9]['notes']) echo '<a href="javascript:popNotes(\''.$row[9]['notes'].'\')" title="'.$row[9]['notes'].'">'.$row[9]['value'].'</a>';
-			else echo $row[9]['value']; 
+    if($row[9]['notes']) {
+        echo '<a href="javascript:popNotes(\''.$row[9]['notes'].'\')" title="'.$row[9]['notes'].'">'.$row[9]['value'].'</a>';
+    }
+    else{
+        echo $row[9]['value'];
+    }
 	?></td>
      <td><FONT SIZE=1 ><?php echo $unit_ids[$row[9]['unit_nr']]; ?></td>
    <td><?php echo $row['encounter_nr']; ?></td>
