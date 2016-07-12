@@ -250,6 +250,7 @@
 				</tr>
 
 				<!-- The insurance class  -->
+			{{if $LDBillingClass}}
 				<tr>
 					<td class="adm_item">
 						{{$LDBillType}}:
@@ -261,7 +262,7 @@
 
 				<tr>
 					<td class="adm_item">
-						{{$LDInsuranceNr}}:
+						{{$LDInsuranceNr}}
 					</td>
 					<td colspan=2 class="adm_input">
 						{{$insurance_nr}}
@@ -269,12 +270,13 @@
 				</tr>
 				<tr>
 					<td class="adm_item">
-						{{$LDInsuranceCo}}:
+						{{$LDInsuranceCo}}
 					</td>
 					<td colspan=2 class="adm_input">
 						{{$insurance_firm_name}}
 					</td>
 				</tr>
+			{{/if}}
 			{{if $LDCareServiceClass}}
 				<tr>
 					<td class="adm_item">

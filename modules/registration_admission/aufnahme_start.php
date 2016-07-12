@@ -28,6 +28,11 @@ require_once($root_path.'include/care_api_classes/class_globalconfig.php');
 require_once($root_path.'include/care_api_classes/class_ecombill.php');
 require_once($root_path.'include/care_api_classes/class_personell.php');
 
+include_once($root_path.'include/care_api_classes/class_globalconfig.php');
+$GLOBAL_CONFIG=array();
+$glob_obj=new GlobalConfig($GLOBAL_CONFIG);
+$glob_obj->getConfig('kwamoja%');
+
 //gjergji
 $current_dept_nr = $_SESSION['department_nr'];
 //end: gjergji
@@ -690,7 +695,7 @@ if(!isset($pid) || !$pid){
 					break;
 				}
 			}else{
-				$sTemp = $sTemp.'<input name="encounter_class_nr" onClick="resolveLoc()" type="radio"  value="'.$result['class_nr'].'" ';
+				$sTemp = $sTemp.'<input name="encounter_class_nr" disabled onClick="resolveLoc()" type="radio"  value="'.$result['class_nr'].'" ';
 				if($encounter_class_nr==$result['class_nr']) $sTemp = $sTemp.'checked';
 				$sTemp = $sTemp.'>';
 
@@ -733,8 +738,9 @@ if(!isset($pid) || !$pid){
 		# If no encounter nr or outpatient, show clinic/department info, 2 = outpatient
 		if ($encounter_class_nr == 2) $smarty->assign('LDDepartment',"<font color=red>$LDDepartment</font>");
 		else $smarty->assign('LDDepartment',"$LDDepartment");
+		$smarty->assign('LDWard','');
 		$sTemp = '';
-		if($in_dept){
+		if(isset($in_dept)){
 			while($deptrow=$all_meds->FetchRow()){
 				if(isset($current_dept_nr)&&($current_dept_nr==$deptrow['nr'])){
 					$sTemp = $sTemp.$deptrow['name_formal'];
@@ -774,36 +780,47 @@ if(!isset($pid) || !$pid){
 	$smarty->assign('LDSpecials',$LDSpecials);
 	$smarty->assign('referrer_notes','<input name="referrer_notes" type="text" size="60" value="'.$referrer_notes.'">');
 
-	if (isset($errorinsclass)) $smarty->assign('LDBillType',"<font color=red>$LDBillType</font>");
-	else  $smarty->assign('LDBillType',$LDBillType);
+	if($GLOBAL_CONFIG['kwamoja_database']!='') {
+		$smarty->assign('LDBillingClass',True);
+		if (isset($errorinsclass)) $smarty->assign('LDBillType',"<font color=red>$LDBillType</font>");
+		else  $smarty->assign('LDBillType',$LDBillType);
 
-	$sTemp = '';
-	if(is_object($insurance_classes)){
-		while($result=$insurance_classes->FetchRow()) {
+		$sTemp = '';
+		if(is_object($insurance_classes)){
+			while($result=$insurance_classes->FetchRow()) {
 
-			$sTemp = $sTemp.'<input name="insurance_class_nr" type="radio"  value="'.$result['class_nr'].'" ';
-			if(isset($insurance_class_nr) and $insurance_class_nr==$result['class_nr']) $sTemp = $sTemp.'checked';
-			$sTemp = $sTemp.'>';
+				$sTemp = $sTemp.'<input name="insurance_class_nr" type="radio"  value="'.$result['class_nr'].'" ';
+				if(isset($insurance_class_nr) and $insurance_class_nr==$result['class_nr']) $sTemp = $sTemp.'checked';
+				$sTemp = $sTemp.'>';
 
-			$LD=$result['LD_var'];
-			if(isset(${$LD})&&!empty(${$LD})) $sTemp = $sTemp.${$LD};
-			else $sTemp = $sTemp.$result['name'];
+				$LD=$result['LD_var'];
+				if(isset(${$LD})&&!empty(${$LD})) $sTemp = $sTemp.${$LD};
+				else $sTemp = $sTemp.$result['name'];
+			}
 		}
+		$smarty->assign('sBillTypeInput',$sTemp);
+		$sTemp = '';
+		if (isset($error_ins_nr)) $smarty->assign('LDInsuranceNr',"<font color=red>$LDInsuranceNr</font>");
+		else  $smarty->assign('LDInsuranceNr',$LDInsuranceNr);
+		if(isset($insurance_nr) && $insurance_nr) $sTemp = $insurance_nr;
+		$smarty->assign('insurance_nr','<input name="insurance_nr" type="text" size="60" value="'.$sTemp.'">');
+
+		$sTemp = '';
+		if(isset($insurance_firm_name)) $sTemp = $insurance_firm_name;
+		if (isset($error_ins_co)) $smarty->assign('LDInsuranceCo',"<font color=red>$LDInsuranceCo</font>");
+		else $smarty->assign('LDInsuranceCo',$LDInsuranceCo);
+
+		$sBuffer ="<a href=\"javascript:popSearchWin('insurance','aufnahmeform.insurance_firm_id','aufnahmeform.insurance_firm_name')\"><img ".createComIcon($root_path,'l-arrowgrnlrg.gif','0','',TRUE)."></a>";
+		$smarty->assign('insurance_firm_name','<input name="insurance_firm_name" type="text" size="60" value="'.$sTemp.'">'.$sBuffer);
+	} else {
+		$smarty->assign('LDBillingClass',False);
+		$smarty->assign('LDBillType','');
+		$smarty->assign('sBillTypeInput','');
+		$smarty->assign('LDInsuranceNr','');
+		$smarty->assign('insurance_nr','');
+		$smarty->assign('LDInsuranceCo','');
+		$smarty->assign('insurance_firm_name','');
 	}
-	$smarty->assign('sBillTypeInput',$sTemp);
-	$sTemp = '';
-	if (isset($error_ins_nr)) $smarty->assign('LDInsuranceNr',"<font color=red>$LDInsuranceNr</font>");
-	else  $smarty->assign('LDInsuranceNr',$LDInsuranceNr);
-	if(isset($insurance_nr) && $insurance_nr) $sTemp = $insurance_nr;
-	$smarty->assign('insurance_nr','<input name="insurance_nr" type="text" size="60" value="'.$sTemp.'">');
-
-	$sTemp = '';
-	if(isset($insurance_firm_name)) $sTemp = $insurance_firm_name;
-	if (isset($error_ins_co)) $smarty->assign('LDInsuranceCo',"<font color=red>$LDInsuranceCo</font>");
-	else $smarty->assign('LDInsuranceCo',$LDInsuranceCo);
-
-	$sBuffer ="<a href=\"javascript:popSearchWin('insurance','aufnahmeform.insurance_firm_id','aufnahmeform.insurance_firm_name')\"><img ".createComIcon($root_path,'l-arrowgrnlrg.gif','0','',TRUE)."></a>";
-	$smarty->assign('insurance_firm_name','<input name="insurance_firm_name" type="text" size="60" value="'.$sTemp.'">'.$sBuffer);
 
 	if (!$GLOBAL_CONFIG['patient_service_care_hide']&& is_object($care_service)){
 		$smarty->assign('LDCareServiceClass',$LDCareServiceClass);

@@ -22,7 +22,7 @@ class dateTimeManager {
     var $shift_amount = null;		// This is the amount to shift, backwards
     								// if you need forwards use a negative number
     var $shift_unit = null;			// This is what you are shifting
-	
+
 	var $fulldatetime=false; // 2003-04-20 Modified by Elpidio Latorilla for Care2002  to return either full datetime or date only, default is date only
 
 
@@ -30,10 +30,10 @@ class dateTimeManager {
 /*    function dateTimeManager() // modified by Elpidio Latorilla 2003-04-20
     {
 		// Needs a constructor?
-		
+
     }
 */
-    function dateTimeManager($retformat=false)
+    function __construct($retformat=false)
     {
 		// constructor
 		$this->fulldatetime=$retformat;
@@ -89,7 +89,7 @@ class dateTimeManager {
 			$newdate = mktime (date('H'),date('i'),date('s')-$shift_amount,date('m'),date('d'), date('Y'));
 			//$newdate = date("Y-m-d H:i:s", $newdate); // modified by Elpidio Latorilla 2003-04-20
 		}
-		
+
 		//return $newdate;// modified by Elpidio Latorilla 2003-04-20
 
 		if($this->fulldatetime) {

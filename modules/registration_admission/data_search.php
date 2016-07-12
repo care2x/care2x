@@ -24,9 +24,13 @@ $local_user = 'aufnahme_user';
 require_once ($root_path . 'include/core/inc_front_chain_lang.php');
 require_once ($root_path . 'include/core/inc_date_format_functions.php');
 require_once ($root_path . 'classes/datetimemanager/class.dateTimeManager.php');
+include_once($root_path.'include/care_api_classes/class_globalconfig.php');
+$GLOBAL_CONFIG=array();
+$glob_obj=new GlobalConfig($GLOBAL_CONFIG);
+$glob_obj->getConfig('kwamoja%');
 
 # Create time manager object
-$datetime_obj =  dateTimeManager ( );
+$datetime_obj = new dateTimeManager ( );
 
 $thisfile = basename ( __FILE__ );
 $searchmask_bgcolor = "#f3f3f3";
@@ -57,12 +61,16 @@ $formname = 'aufnahmeform';
 if (isset ( $target )) {
 	switch ($target) {
 		case 'insurance' :
-			$sql = "SELECT name AS \"insurance_firm_name.value\", firm_id AS \"insurance_firm_id.value\", use_frequency FROM care_insurance_firm";
-			if ($mode == 'search') {
-				$sql .= " WHERE name $sql_LIKE '$searchkey%' OR firm_id $sql_LIKE '$searchkey%'";
+			if($GLOBAL_CONFIG['kwamoja_database']=='') {
+				$sql = "SELECT name AS \"insurance_firm_name.value\", firm_id AS \"insurance_firm_id.value\", use_frequency FROM care_insurance_firm";
+				if ($mode == 'search') {
+					$sql .= " WHERE name $sql_LIKE '$searchkey%' OR firm_id $sql_LIKE '$searchkey%'";
+				} else {
+					$sql .= " ORDER BY use_frequency DESC";
+					$limitselect = TRUE;
+				}
 			} else {
-				$sql .= " ORDER BY use_frequency DESC";
-				$limitselect = TRUE;
+				$sql = "SELECT name AS \"insurance_firm_name.value\", id AS \"insurance_firm_id.value\", \"\" AS use_frequency FROM " . $GLOBAL_CONFIG['kwamoja_database'] . ".insuranceco LIMIT 10";
 			}
 			$title = $LDSearch . ' :: ' . $LDInsuranceCo;
 			$itemname = $LDInsuranceCo;
@@ -203,6 +211,7 @@ if ($linecount) {
 						<td><font face=arial size=2 color="#336633">&nbsp;</td>';
 
 	echo "</tr>";
+	$toggle=1;
 	$sql_value_without_key = array_values ( $sql_value );
 	for($i = 0; $i < sizeof ( $sql_value ); $i ++) {
 		if (($mode != 'search') && ($count == $quicklistmaxnr))

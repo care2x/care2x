@@ -420,6 +420,8 @@ $LDNoAddress='No City defined yet. Please go to the main menu and<br>click Speci
 # 2010-09-16
 $LDAdmitShowTypeInput ='Triage Code';
 
+$LDTestThisPatient='Test this patient';
+
 # 2010-09-18 GJ/APM
 $sAdmitTriageWhite = 'White';
 $sAdmitTriageGreen = 'Green';

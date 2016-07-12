@@ -85,7 +85,7 @@ $USERCONFIG=array();
 */
 
 require_once('./classes/phpSniff/phpSniff.class.php'); # Sniffer for PHP
-
+$_SESSION['department_nr']=array();
 function configNew(&$bn,&$bv,&$f,$i,&$uid)
 {
   global $HTTP_USER_AGENT;
