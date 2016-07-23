@@ -247,6 +247,7 @@ class Person extends Core {
 	* @return boolean
 	*/
     function insertDataFromArray(&$array) {
+		global $root_path, $db;
 		$x='';
 		$v='';
 		$index='';
@@ -258,9 +259,95 @@ class Person extends Core {
 		}
 		$index=substr_replace($index,'',(strlen($index))-1);
 		$values=substr_replace($values,'',(strlen($values))-1);
-
 		$this->sql="INSERT INTO $this->tb_person ($index) VALUES ($values)";
-		return $this->Transact();
+		$this->Transact();
+		require_once($root_path.'include/care_api_classes/class_globalconfig.php');
+		$glob_obj=new GlobalConfig($GLOBAL_CONFIG);
+		$glob_obj->getConfig();
+		/* Fetch the pid */
+		$DataArray['name_last'] = $array['name_last'];
+		$DataArray['name_first'] = $array['name_first'];
+		$DataArray['date_birth'] = $array['date_birth'];
+		$DataArray['sex'] = $array['sex'];
+		$PIDResult = $this->PIDbyData($DataArray);
+		$PIDArray = $PIDResult->FetchRow();
+		$this->pid = $PIDArray['pid'];
+		if($GLOBAL_CONFIG['kwamoja_database'] != '') {
+			/* Insert into the KwaMoja database */
+			/* Get the city/town name */
+			$CitySQL = "SELECT name FROM care_address_citytown WHERE nr='" . $array['addr_citytown_nr'] . "'";
+			$CityResult = $db->Execute($CitySQL);
+			$CityRow = $CityResult->FetchRow();
+
+			/* Get the default currency code */
+			$DefaultCurrencySQL = "SELECT currencydefault FROM " . $GLOBAL_CONFIG['kwamoja_database'] . ".companies";
+			$DefaultCurrencyResult = $db->Execute($DefaultCurrencySQL);
+			$DefaultCurrencyRow = $DefaultCurrencyResult->FetchRow();
+
+			/* Get the default price list */
+			$DefaultPriceListSQL = "SELECT confvalue
+									FROM " . $GLOBAL_CONFIG['kwamoja_database'] . ".config
+									WHERE confname='DefaultPriceList'";
+			$DefaultPriceListResult = $db->Execute($DefaultPriceListSQL);
+			$DefaultPriceListRow = $DefaultPriceListResult->FetchRow();
+			$KwaMojaInsertPatientSQL = "INSERT INTO " . $GLOBAL_CONFIG['kwamoja_database'] . ".debtorsmaster (
+											debtorno,
+											name,
+											address1,
+											address2,
+											address3,
+											currcode,
+											salestype,
+											clientsince,
+											paymentterms,
+											holdreason,
+											typeid,
+											gender
+										) VALUES (
+											'" . $PIDArray['pid'] . "',
+											'" . $array['name_first'] . ' ' . $array['name_last'] . "',
+											'" . $array['addr_str_nr'] . ' ' . $array['addr_str'] . "',
+											'" . $CityRow['name'] . "',
+											'" . $array['addr_zip'] . "',
+											'" . $DefaultCurrencyRow['currencydefault'] . "',
+											'" . $DefaultPriceListRow['confvalue'] . "',
+											CURRENT_DATE,
+											'" . $GLOBAL_CONFIG['kwamoja_default_terms'] . "',
+											'" . $GLOBAL_CONFIG['kwamoja_default_reason'] . "',
+											'" . $GLOBAL_CONFIG['kwamoja_default_debtor_type'] . "',
+											'" . $array['sex'] . "'
+										)";
+			$Result = $db->Execute($KwaMojaInsertPatientSQL);
+			if ($Result) {
+				/* As this is a new customer being created we need
+				 * to create a default branch for it. This is always
+				 * called CASH
+				 */
+				 $KwaMojaInsertBranchSQL = "INSERT INTO " . $GLOBAL_CONFIG['kwamoja_database'] . ".custbranch (
+												branchcode,
+												debtorno,
+												brname,
+												area,
+												salesman,
+												defaultlocation,
+												defaultshipvia,
+												taxgroupid,
+												phoneno
+											) VALUES (
+												'CASH',
+												'" . $PIDArray['pid'] . "',
+												'CASH - " . $array['name_first'] . ' ' . $array['name_last'] . "',
+												'" . $GLOBAL_CONFIG['kwamoja_default_area'] . "',
+												'" . $GLOBAL_CONFIG['kwamoja_default_salesman'] . "',
+												'" . $GLOBAL_CONFIG['kwamoja_default_location'] . "',
+												'" . $GLOBAL_CONFIG['kwamoja_default_shipper'] . "',
+												'" . $GLOBAL_CONFIG['kwamoja_default_tax_group'] . "',
+												'" . $PhoneNumber . "'
+											)";
+				$Result = $db->Execute($KwaMojaInsertBranchSQL);
+			}
+		}
+		return true;
 	}
 	/**
 	* Inserts the data from the internal buffer array into the care_person table.

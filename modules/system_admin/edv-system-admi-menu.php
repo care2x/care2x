@@ -213,6 +213,14 @@ require($root_path.'include/core/inc_css_a_hilitebu.php');
 <!--  	<td bgcolor="#e9e9e9"><FONT  color="#0000cc" FACE="verdana,arial" size=2><b><a href="phpmyadmin-start.php?sid=<?php echo $sid."&lang=".$lang ?>"><?php echo $LDMySQLManage ?></a></b> </FONT></td>
  -->
   </tr>
+  <tr>
+ 	<td bgcolor="#ffffff"><FONT  color="#0000cc" FACE="verdana,arial" size=2>&nbsp;&nbsp;&nbsp;<img <?php echo createComIcon($root_path,'redpfeil.gif','0','absmiddle') ?>>
+	<a href="edv_kwamoja_default_configs.php?sid=<?php echo $sid."&lang=".$lang ?>" target="SYSADMIN_WFRAME"><?php  echo 'KwaMoja Default Configuration Items';?>
+	</a></FONT><br>
+	</td>
+<!--  	<td bgcolor="#e9e9e9"><FONT  color="#0000cc" FACE="verdana,arial" size=2><b><a href="phpmyadmin-start.php?sid=<?php echo $sid."&lang=".$lang ?>"><?php echo $LDMySQLManage ?></a></b> </FONT></td>
+ -->
+  </tr>
 
 <!--
   <tr>

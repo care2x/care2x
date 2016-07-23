@@ -267,7 +267,6 @@ if($pid!='' || $encounter_nr!=''){
 
 
 					$encounter_obj->setDataArray($_POST);
-
 					if($encounter_obj->insertDataFromInternalArray()) {
 						/* Get last insert id */
 						if($dbtype=='mysqli') {

@@ -147,8 +147,9 @@ CREATE TABLE IF NOT EXISTS `care_billing_bill` (
 
 CREATE TABLE IF NOT EXISTS `care_billing_bill_item` (
   `bill_item_id` int(11) NOT NULL auto_increment,
+  `pid` INT(10) NOT NULL DEFAULT 0,
   `bill_item_encounter_nr` int(10) unsigned NOT NULL default '0',
-  `bill_item_code` varchar(5) collate latin1_general_ci default NULL,
+  `bill_item_code` varchar(20) collate latin1_general_ci default NULL,
   `bill_item_unit_cost` float(10,2) default '0.00',
   `bill_item_units` tinyint(4) default NULL,
   `bill_item_amount` float(10,2) default NULL,

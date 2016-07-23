@@ -26,7 +26,6 @@ $admissionfile='aufnahme_start.php'.URL_APPEND;
 
 # Resolve PID
 if((!isset($pid)||!$pid) && $_SESSION['sess_pid']) $pid=$_SESSION['sess_pid'];
-
 # Save session data
 $_SESSION['sess_path_referer']=$top_dir.$thisfile;
 $_SESSION['sess_file_return']=$thisfile;
@@ -65,6 +64,7 @@ $death_date = $person->DeathDate();
  require_once($root_path.'include/core/inc_default_smarty_values.php');
 
 # Title in the toolbar
+ $smarty->assign('sWindowTitle',$LDPatientRegister);
  $smarty->assign('sToolbarTitle',$LDPatientRegister);
 $smarty->assign('sTitleImage','<img '.createComIcon($root_path,'pers_tree.gif','0').'>');
  # href for help button
