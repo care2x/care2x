@@ -34,6 +34,7 @@ if(isset($_SESSION['sess_user_origin'])) $_SESSION['sess_user_origin']='';
 
  require_once($root_path.'gui/smarty_template/smarty_care.class.php');
  $smarty = new smarty_care('common');
+ require_once($root_path.'include/core/inc_default_smarty_values.php');
 
  # Create a helper smarty object without reinitializing the GUI
  $smarty2 = new smarty_care('common', FALSE);
@@ -46,6 +47,8 @@ if(isset($_SESSION['sess_user_origin'])) $_SESSION['sess_user_origin']='';
  $smarty->assign('pbHelp',"javascript:gethelp('submenu1.php','$LDDoctors')");
 
  $smarty->assign('breakfile',$breakfile);
+ $smarty->assign('sTitleImage','<img '.createComIcon($root_path,'employee.gif','0').'>');
+ $smarty->assign('sWindowTitle',$LDDoctors);
 
  # Window bar title
  $smarty->assign('title',$LDDoctors);
@@ -82,8 +85,12 @@ while(list($x,$v)=each($aSubMenuItem)){
 	$sTemp='';
 	ob_start();
 		if (isset($cfg['icons'])) {
-			if($cfg['icons'] != 'no_icon') $smarty2->assign('sIconImg','<img '.$aSubMenuIcon[$iRunner].'>');
-		}
+			if($cfg['icons'] != 'no_icon') {
+				$smarty2->assign('sIconImg','<img '.$aSubMenuIcon[$iRunner].'>');
+			}
+		} else {
+				$smarty2->assign('sIconImg','<img '.createComIcon($root_path,'employee.gif','0').'>');
+			}
 		$smarty2->assign('sSubMenuItem',$v);
 		$smarty2->assign('sSubMenuText',$aSubMenuText[$iRunner]);
 		$smarty2->display('common/submenu_row.tpl');
