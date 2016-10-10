@@ -504,7 +504,7 @@ class Personell extends Core {
 			while(list($x,$v)=each($d)){
 				$dept_list.=','.$v['nr'];
 			}
-
+			$buffer=array();
 			$sql="SELECT dept_nr FROM $this->tb_dpoc WHERE role_nr=$role_nr AND dept_nr IN ($dept_list) AND year='$year' AND month='$month'";
 
 	    	if ($this->result=$db->Execute($sql)) {
@@ -515,7 +515,7 @@ class Personell extends Core {
 					}
 					return $buffer;
 				} else {
-					return FALSE;
+					return array();
 				}
 			}else {
 		   	 return FALSE;

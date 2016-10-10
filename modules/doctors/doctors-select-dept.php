@@ -10,6 +10,8 @@ error_reporting($ErrorLevel);
 *
 * See the file "copy_notice.txt" for the licence notice
 */
+if (!isset($nr)) $nr='';
+if (!isset($target)) $target='';
 $lang_tables[]='departments.php';
 define('LANG_FILE','doctors.php');
 if($_SESSION['sess_user_origin']=='personell_admin'){
@@ -34,14 +36,14 @@ switch($retpath)
 }
 */
 
-$pday=date(j);
-$pmonth=date(n);
-$pyear=date(Y);
+$pday=date('j');
+$pmonth=date('n');
+$pyear=date('Y');
 $abtarr=array();
 $abtname=array();
 $datum=date("d.m.Y");
 
-if(!$hilitedept&&$dept_nr) $hilitedept=$dept_nr;
+if(!isset($hilitedept) && isset($dept_nr)) $hilitedept=$dept_nr; else $hilitedept='';
 
 # Load the department list with oncall doctors
 require_once($root_path.'include/care_api_classes/class_department.php');
@@ -67,6 +69,7 @@ switch($target){
 
  require_once($root_path.'gui/smarty_template/smarty_care.class.php');
  $smarty = new smarty_care('common');
+ require_once($root_path.'include/core/inc_default_smarty_values.php');
 
 # Title in toolbar
  $smarty->assign('sToolbarTitle',$title);
@@ -82,6 +85,7 @@ switch($target){
 
  # Window bar title
  $smarty->assign('sWindowTitle',$title);
+ $smarty->assign('sTitleImage','<img '.createComIcon($root_path,'employee.gif','0').'>');
 
 $smarty->assign('sMascotImg','<img '.createMascot($root_path,'mascot1_r.gif','0','bottom').' align="absmiddle">');
 $smarty->assign('LDPlsSelectDept',$LDPlsSelectDept);

@@ -473,7 +473,7 @@ class Core {
 	* @param boolean Signals the type of the data contained in the param $data.  FALSE=nonbinary data, TRUE=binary
 	* @return boolean
 	*/
-	function saveDBCache($id,&$data,$bin=FALSE){
+	function saveDBCache($id,$data,$bin=FALSE){
 		if($bin) $elem='cbinary';
 			else $elem='ctext';
 		$this->sql="INSERT INTO care_cache (id,$elem,tstamp) VALUES ('$id','$data','".date('YmdHis')."')";

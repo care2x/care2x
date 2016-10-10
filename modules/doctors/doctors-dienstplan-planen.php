@@ -40,7 +40,7 @@ if ($pyear=='') $pyear=date('Y');
 if(!isset($db)||!$db) include($root_path.'include/core/inc_db_makelink.php');
 if($dblink_ok)
 	{
-		if($mode=='save')
+		if(isset($mode) and $mode=='save')
 		{
 
 					$arr_1_txt=array();
@@ -116,12 +116,17 @@ if($dblink_ok)
 		 }// end of if(mode==save)
 		 else
 		 {
-		 	if($dutyplan=&$pers_obj->getDOCDutyplan($dept_nr,$pyear,$pmonth)){
+		 	if($dutyplan=$pers_obj->getDOCDutyplan($dept_nr,$pyear,$pmonth)){
 
 				$aelems=unserialize($dutyplan['duty_1_txt']);
 				$relems=unserialize($dutyplan['duty_2_txt']);
 				$a_pnr=unserialize($dutyplan['duty_1_pnr']);
 				$r_pnr=unserialize($dutyplan['duty_2_pnr']);
+			} else {
+				$aelems=array();
+				$relems=array();
+				$a_pnr=array();
+				$r_pnr=array();
 			}
 	 	}
 }
@@ -163,12 +168,13 @@ function makefwdpath($path,$dpt,$mo,$yr,$saved)
 
  require_once($root_path.'gui/smarty_template/smarty_care.class.php');
  $smarty = new smarty_care('common');
+ require_once($root_path.'include/core/inc_default_smarty_values.php');
 
 # Title in toolbar
  $smarty->assign('sToolbarTitle',$sTitle);
 
  # href for help button
- $smarty->assign('pbHelp',"javascript:gethelp('docs_dutyplan_edit.php','$mode','$rows')");
+ $smarty->assign('pbHelp',"javascript:gethelp('docs_dutyplan_edit.php','','')");
 
 # href for return button
  $smarty->assign('pbBack','javascript:history.back();killchild();');
@@ -181,6 +187,7 @@ function makefwdpath($path,$dpt,$mo,$yr,$saved)
 
  # Window bar title
  $smarty->assign('sWindowTitle',$sTitle);
+ $smarty->assign('sTitleImage','<img '.createComIcon($root_path,'calendar.gif','0').'>');
 
  # Collect extra javascript
 
@@ -299,18 +306,26 @@ for ($i=1,$n=0,$wd=$firstday;$i<=$maxdays;$i++,$n++,$wd++)
 	$smarty->assign('iDayNr',$i);
 	$smarty->assign('LDShortDay',$LDShortDay[$wd]);
 
-	if ($aelems['a'.$n]=="") $smarty->assign('sIcon1','<img '.createComIcon($root_path,'warn.gif','0').'>');
+	if (!isset($aelems['a'.$n]) or $aelems['a'.$n]=="") $smarty->assign('sIcon1','<img '.createComIcon($root_path,'warn.gif','0').'>');
 		else $smarty->assign('sIcon1','<img '.createComIcon($root_path,'mans-gr.gif','0').'>');
-	$smarty->assign('sInput1','<input type="hidden" name="ha'.$n.'" value="'.$a_pnr['ha'.$n].'">
-		<input type="text" name="a'.$n.'" size="15" onFocus=this.select() value="'.$aelems['a'.$n].'">');
+	if (isset($a_pnr['ha'.$n])){
+		 $smarty->assign('sInput1','<input type="hidden" name="ha'.$n.'" value="'.$a_pnr['ha'.$n].'">
+			<input type="text" name="a'.$n.'" size="15" onFocus=this.select() value="'.$aelems['a'.$n].'">');
+	} else {
+		 $smarty->assign('sInput1','');
+	}
 
 	$smarty->assign('sPopWin1','<a href="javascript:popselect(\''.$n.'\',\'a\')">
 	<button onclick="javascript:popselect(\''.$n.'\',\'a\')"><img '.createComIcon($root_path,'patdata.gif','0').' alt="'.$LDClk2Plan.'"></button></a>');
 
-	if ($relems['r'.$n]=="") $smarty->assign('sIcon2','<img '.createComIcon($root_path,'warn.gif','0').'>');
+	if (!isset($relems['a'.$n]) or $relems['r'.$n]=="") $smarty->assign('sIcon2','<img '.createComIcon($root_path,'warn.gif','0').'>');
 		else $smarty->assign('sIcon2','<img '.createComIcon($root_path,'mans-red.gif','0').'>');
-	$smarty->assign('sInput2','<input type="hidden" name="hr'.$n.'" value="'.$r_pnr['hr'.$n].'">
-	<input type="text" size="15" name="r'.$n.'" onFocus=this.select() value="'.$relems['r'.$n].'">');
+	if (isset($r_pnr['hr'.$n])) {
+		$smarty->assign('sInput2','<input type="hidden" name="hr'.$n.'" value="'.$r_pnr['hr'.$n].'"><input type="text" size="15" name="r'.$n.'" onFocus=this.select() value="'.$relems['r'.$n].'">');
+	} else {
+		$smarty->assign('sInput2','<input type="text" size="15" name="r'.$n.'" onFocus=this.select() value="">');
+	}
+
 
 	$smarty->assign('sPopWin2','<a href="javascript:popselect(\''.$n.'\',\'r\')">
 	<button onclick="javascript:popselect(\''.$n.'\',\'r\')"><img '.createComIcon($root_path,'patdata.gif','0').' alt="'.$LDClk2Plan.'"></button></a>');

@@ -34,16 +34,20 @@ switch($retpath)
 
 $thisfile=basename(__FILE__);
 
-$pday=date(j);
-$pmonth=date(n);
-$pyear=date(Y);
+$pday=date('j');
+$pmonth=date('n');
+$pyear=date('Y');
 $abtarr=array();
 $abtname=array();
 $datum=date("d.m.Y");
 
-if(!$hilitedept)
+if(!isset($hilitedept))
 {
-	if($dept_nr) $hilitedept=$dept_nr;
+	if(isset($dept_nr)) {
+		$hilitedept=$dept_nr;
+	} else {
+		$hilitedept = '';
+	}
 }
 
 #
@@ -73,8 +77,12 @@ if(date('H.i')<DOC_CHANGE_TIME){
 
 
 if($force_no_cache || (!$force_no_cache && !$is_cached)){
-	if(!$hilitedept){
-		if($dept_nr) $hilitedept=$dept_nr;
+	if(!isset($hilitedept)){
+		if($dept_nr) {
+			$hilitedept=$dept_nr;
+		} else {
+			$hilitedept = '';
+		}
 	}
 	# Load the department list with oncall doctors
 	include_once($root_path.'include/care_api_classes/class_department.php');
@@ -82,7 +90,7 @@ if($force_no_cache || (!$force_no_cache && !$is_cached)){
 	$dept_DOC=$dept_obj->getAllActiveWithDOC();
 	include_once($root_path.'include/care_api_classes/class_personell.php');
 	$pers_obj=new Personell;
-	$quicklist=&$pers_obj->getDOCQuicklist($dept_DOC,$pyear,$pmonth);
+	$quicklist=$pers_obj->getDOCQuicklist($dept_DOC,$pyear,$pmonth);
 }
 
 # Start Smarty templating here
@@ -95,6 +103,7 @@ if($force_no_cache || (!$force_no_cache && !$is_cached)){
 
  require_once($root_path.'gui/smarty_template/smarty_care.class.php');
  $smarty = new smarty_care('common');
+ require_once($root_path.'include/core/inc_default_smarty_values.php');
 
 # Title in toolbar
  $smarty->assign('sToolbarTitle',$LDDocsOnDuty);
@@ -110,6 +119,7 @@ if($force_no_cache || (!$force_no_cache && !$is_cached)){
 
  # Window bar title
  $smarty->assign('sWindowTitle',$LDDocsOnDuty);
+ $smarty->assign('sTitleImage','<img '.createComIcon($root_path,'employee.gif','0').'>');
 
  # Collect extra javascript
 
@@ -174,7 +184,6 @@ if(!$force_no_cache&&$is_cached){
 	$temp_out='';
 
 	while(list($x,$v)=each($dept_DOC)){
-
 	if(in_array($v['nr'],$quicklist)){
 		if($dutyplan=$pers_obj->getDOCDutyplan($v['nr'],$pyear,$pmonth)){
 
@@ -182,8 +191,16 @@ if(!$force_no_cache&&$is_cached){
 			$r=unserialize($dutyplan['duty_2_txt']);
 			$ha=unserialize($dutyplan['duty_1_pnr']);
 			$hr=unserialize($dutyplan['duty_2_pnr']);
-			if($ha['ha'.($plan_day-1)]) $DOC_1=$pers_obj->getPersonellInfo($ha['ha'.($plan_day-1)]);
-			if($hr['hr'.($plan_day-1)]) $DOC_2=$pers_obj->getPersonellInfo($hr['hr'.($plan_day-1)]);
+			if(isset($ha['ha'.($plan_day-1)])) {
+				$DOC_1=$pers_obj->getPersonellInfo($ha['ha'.($plan_day-1)]);
+			} else {
+				$DOC_1 = array();
+			}
+			if(isset($hr['hr'.($plan_day-1)])) {
+				$DOC_2=$pers_obj->getPersonellInfo($hr['hr'.($plan_day-1)]);
+			} else {
+				$DOC_2=array();
+			}
 		}
 
 	}else{
@@ -193,6 +210,8 @@ if(!$force_no_cache&&$is_cached){
 		if(isset($hr)) unset($hr);
 		if(isset($DOC_1)) unset($DOC_1);
 		if(isset($DOC_2)) unset($DOC_2);
+		$a = array();
+		$r = array();
 	}
 
 
@@ -216,10 +235,10 @@ if(!$force_no_cache&&$is_cached){
 
 	//if ($aelems[l]!="") echo $aelems[l].', ';
 	//echo $aelems[f].'</b></a></td>';
-	if(in_array($v['nr'],$quicklist) && $DOC_1['name_last']){$temp_out.='<a href="javascript:popinfo(\''.$ha['ha'.(date('d')-1)].'\',\''.$v['nr'].'\')" title="Klik per me shume info."><b>'.$DOC_1['name_last'].', '.$DOC_1['name_first'].'</b></a>'; }
+	if(in_array($v['nr'],$quicklist) && isset($DOC_1['name_last'])){$temp_out.='<a href="javascript:popinfo(\''.$ha['ha'.(date('d')-1)].'\',\''.$v['nr'].'\')" title="Klik per me shume info."><b>'.$DOC_1['name_last'].', '.$DOC_1['name_first'].'</b></a>'; }
 	$temp_out.='</td>
 	<td>';
-	if ($a['a'.(date('d')-1)]!='')
+	if (isset($a['a'.(date('d')-1)]))
 	{
 		$temp_out.=' <font color=red> '.$DOC_1['funk1'].'</font>';
 		if($DOC_1['inphone1']) $temp_out.=' / '.$DOC_1['inphone1'];
@@ -227,10 +246,10 @@ if(!$force_no_cache&&$is_cached){
 	$temp_out.='&nbsp;</td><td >
 	<img '.createComIcon($root_path,'mans-red.gif','0','',TRUE).'>&nbsp;';
 
-	if(in_array($v['nr'],$quicklist) && $DOC_2['name_last']){$temp_out.='<a href="javascript:popinfo(\''.$hr['hr'.(date('d')-1)].'\',\''.$v['nr'].'\')" title="Klik per me shume info."><b>'.$DOC_2['name_last'].', '.$DOC_2['name_first'].'</b></a>';}
+	if(in_array($v['nr'],$quicklist) && isset($DOC_2['name_last'])){$temp_out.='<a href="javascript:popinfo(\''.$hr['hr'.(date('d')-1)].'\',\''.$v['nr'].'\')" title="Klik per me shume info."><b>'.$DOC_2['name_last'].', '.$DOC_2['name_first'].'</b></a>';}
 	$temp_out.='</td>
 	<td>';
-	if ($r['r'.(date('d')-1)]!='')
+	if (isset($r['r'.(date('d')-1)]))
 	{
 		$temp_out.=' <font color=red> '.$DOC_2['funk1'].'</font>';
 		if($DOC_2['inphone1']) $temp_out.=' / '.$DOC_2['inphone1'];

@@ -15,11 +15,11 @@ define('LANG_FILE','doctors.php');
 define('NO_2LEVEL_CHK',1);
 require_once($root_path.'include/core/inc_front_chain_lang.php');
 ///$db->debug=true;
-setcookie(username,"");
-setcookie(ck_plan,"1");
-if($dept=="") $dept="plast";
-if($pmonth=="") $pmonth=date('n');
-if($pyear=="") $pyear=date('Y');
+setcookie('username',"");
+setcookie('ck_plan',"1");
+if(!isset($dept) or $dept=="") $dept="plast";
+if(!isset($pmonth) or $pmonth=="") $pmonth=date('n');
+if(!isset($pyear) or $pyear=="") $pyear=date('Y');
 $thisfile=basename(__FILE__);
 
 require_once($root_path.'include/care_api_classes/class_department.php');
@@ -28,7 +28,7 @@ $dept_obj->preloadDept($dept_nr);
 
 require_once($root_path.'include/care_api_classes/class_personell.php');
 $pers_obj=new Personell;
-$dutyplan=&$pers_obj->getDOCDutyplan($dept_nr,$pyear,$pmonth);
+$dutyplan=$pers_obj->getDOCDutyplan($dept_nr,$pyear,$pmonth);
 
 
 $firstday=date("w",mktime(0,0,0,$pmonth,1,$pyear));
@@ -58,18 +58,20 @@ switch($retpath)
 
  require_once($root_path.'gui/smarty_template/smarty_care.class.php');
  $smarty = new smarty_care('common');
+ require_once($root_path.'include/core/inc_default_smarty_values.php');
 
 # Title in toolbar
  $smarty->assign('sToolbarTitle',$sTitle);
 
  # href for help button
- $smarty->assign('pbHelp',"javascript:gethelp('docs_dutyplan.php','show','$rows')");
+ $smarty->assign('pbHelp',"javascript:gethelp('docs_dutyplan.php','show','')");
 
  # href for close button
  $smarty->assign('breakfile',$rettarget);
 
  # Window bar title
  $smarty->assign('sWindowTitle',$sTitle);
+ $smarty->assign('sTitleImage','<img '.createComIcon($root_path,'calendar.gif','0').'>');
 
  # Collect extra javascript
 
@@ -159,11 +161,19 @@ for ($i=1,$n=0,$wd=$firstday;$i<=$maxdays;$i++,$n++,$wd++){
 	echo $LDShortDay[$wd].'
 	</td>
 	<td height=5 '.$backcolor.'>';
-	echo '&nbsp;<a href="javascript:popinfo(\''.$a_pnr['ha'.$n].'\')">'.$aelems['a'.$n].'</a>
-	</td>
+	if (isset($a_pnr['ha'.$n])) {
+		echo '&nbsp;<a href="javascript:popinfo(\''.$a_pnr['ha'.$n].'\')">'.$aelems['a'.$n].'</a>';
+	} else {
+		echo '&nbsp;';
+	}
+	echo '</td>
 	<td height=5 '.$backcolor.'>';
-	echo '&nbsp;<a href="javascript:popinfo(\''.$r_pnr['hr'.$n].'\')">'.$relems['r'.$n].'</a>
-	</td>
+	if (isset($r_pnr['hr'.$n])) {
+		echo '&nbsp;<a href="javascript:popinfo(\''.$r_pnr['hr'.$n].'\')">'.$relems['r'.$n].'</a>';
+	} else {
+		echo '&nbsp;';
+	}
+	echo '</td>
 	</tr>';
 	if ($wd==6)  $wd=-1;
 }
