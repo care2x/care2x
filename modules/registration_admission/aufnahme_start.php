@@ -163,9 +163,8 @@ if($pid!='' || $encounter_nr!=''){
 				}
 
 				//end : gjergji
-
 				$encoder=trim($encoder);
-				if($encoder=='') $encoder=$_SESSION['sess_user_name'];
+				/*if($encoder=='') $encoder=$_SESSION['sess_user_name'];
 
 				$referrer_diagnosis=trim($referrer_diagnosis);
 				if ($referrer_diagnosis=='') { $errordiagnose=1; $error=1; $errornum++; };
@@ -180,7 +179,7 @@ if($pid!='' || $encounter_nr!=''){
 				if ($referrer_notes=='') { $errorbesonder=1; $error=1; $errornum++;};
 
 				$encounter_class_nr=trim($encounter_class_nr);
-				if ($encounter_class_nr=='') { $errorstatus=1; $error=1; $errornum++;};
+				if ($encounter_class_nr=='') { $errorstatus=1; $error=1; $errornum++;};*/
 
 				if($insurance_show) {
 					if(trim($insurance_nr) &&  trim($insurance_firm_name)=='') { $error_ins_co=1; $error=1; $errornum++;}
@@ -224,7 +223,6 @@ if($pid!='' || $encounter_nr!=''){
 					if(isset($_POST['pid'])) unset($_POST['pid']);
 
 					$encounter_obj->setDataArray($_POST);
-
 					if($encounter_obj->updateEncounterFromInternalArray($encounter_nr)) {
 						/* Save the service classes */
 						if(!$GLOBAL_CONFIG['patient_service_care_hide']){
@@ -535,7 +533,7 @@ if(!isset($pid) || !$pid){
 	$smarty->assign('bSetAsForm',TRUE);
 	$smarty->assign('LDPlsSelectPatientFirst',False);
 
-	if($error){
+	if($error > 0){
 		$smarty->assign('error',TRUE);
 		$smarty->assign('sMascotImg','<img '.createMascot($root_path,'mascot1_r.gif','0','bottom').' align="absmiddle">');
 
@@ -544,6 +542,7 @@ if(!isset($pid) || !$pid){
 	}
 
 	$smarty->assign('LDCaseNr',$LDCaseNr);
+	$smarty->assign('thisfile',$thisfile);
 	if(isset($encounter_nr) && $encounter_nr) 	$smarty->assign('encounter_nr',$encounter_nr);
 	else  $smarty->assign('encounter_nr','<font color="red">'.$LDNotYetAdmitted.'</font>');
 
@@ -694,7 +693,7 @@ if(!isset($pid) || !$pid){
 					break;
 				}
 			}else{
-				$sTemp = $sTemp.'<input name="encounter_class_nr" disabled onClick="resolveLoc()" type="radio"  value="'.$result['class_nr'].'" ';
+				$sTemp = $sTemp.'<input name="encounter_class_nr" onClick="resolveLoc()" type="radio"  value="'.$result['class_nr'].'" ';
 				if($encounter_class_nr==$result['class_nr']) $sTemp = $sTemp.'checked';
 				$sTemp = $sTemp.'>';
 
@@ -780,7 +779,8 @@ if(!isset($pid) || !$pid){
 	$smarty->assign('referrer_notes','<input name="referrer_notes" type="text" size="60" value="'.$referrer_notes.'">');
 
 	if($GLOBAL_CONFIG['kwamoja_database']!='') {
-		$smarty->assign('LDBillingClass',True);
+		$smarty->assign('LDBillingClass',False);
+		$smarty->assign('LDInsuranceCompany',True);
 		if (isset($errorinsclass)) $smarty->assign('LDBillType',"<font color=red>$LDBillType</font>");
 		else  $smarty->assign('LDBillType',$LDBillType);
 
@@ -813,6 +813,7 @@ if(!isset($pid) || !$pid){
 		$smarty->assign('insurance_firm_name','<input name="insurance_firm_name" type="text" size="60" value="'.$sTemp.'">'.$sBuffer);
 	} else {
 		$smarty->assign('LDBillingClass',False);
+		$smarty->assign('LDInsuranceCompany',False);
 		$smarty->assign('LDBillType','');
 		$smarty->assign('sBillTypeInput','');
 		$smarty->assign('LDInsuranceNr','');

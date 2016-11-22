@@ -259,7 +259,8 @@
 						{{$sBillTypeInput}}
 					</td>
 				</tr>
-
+			{{/if}}
+			{{if $LDInsuranceCompany}}
 				<tr>
 					<td class="adm_item">
 						{{$LDInsuranceNr}}
