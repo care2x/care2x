@@ -25,7 +25,7 @@ $GLOBAL_CONFIG;
 $glob_obj=new GlobalConfig($GLOBAL_CONFIG);
 $glob_obj->getConfig('patient_%');
 
-if($mode=='such'||$mode=='paginate')
+if(isset($mode) and ($mode=='such'||$mode=='paginate'))
 {
 	$tb_person='care_person';
 	$tb_encounter='care_encounter';
@@ -209,6 +209,7 @@ if($mode=='such'||$mode=='paginate')
 
  require_once($root_path.'gui/smarty_template/smarty_care.class.php');
  $smarty = new smarty_care('nursing');
+ require_once($root_path.'include/core/inc_default_smarty_values.php');
 
 # Title in toolbar
  $smarty->assign('sToolbarTitle', "$LDNursing - $LDSearchPatient");
@@ -224,7 +225,8 @@ if($mode=='such'||$mode=='paginate')
 
  # Window bar title
  $smarty->assign('title',"$LDNursing - $LDSearchPatient");
-
+ $smarty->assign('sTitleImage','<img '.createComIcon($root_path,'search_glass.gif','0').'>');
+ $smarty->assign('sWindowTitle',"$LDNursing - $LDSearchPatient");
  # Collect extra javascript code
 
  ob_start();
@@ -268,7 +270,7 @@ ob_start();
 
 <?php
 
-if($rows){
+if(isset($rows)){
 
 ?>
 	<table border=0>
@@ -428,7 +430,7 @@ if($rows){
 <hr>
 <?php
 }else{
-	if($mode=='such') echo str_replace('~nr~','0',$LDSearchFound);
+	if(isset($mode) and $mode=='such') echo str_replace('~nr~','0',$LDSearchFound);
 }
 ?>
 
@@ -441,12 +443,12 @@ if($rows){
 			<table border=0 cellspacing=0 cellpadding=5 bgcolor="#eeeeee">
 			<tr>
 				<td class="prompt"><?php echo $LDSrcKeyword ?>:<br>
-					<input type="text" name="searchkey" size=40 maxlength=100 value="<?php if ($srcword!='') echo $srcword; ?>">
+					<input type="text" name="searchkey" size=40 maxlength=100 value="<?php if (isset($srcword) and $srcword!='') echo $srcword; ?>">
 					<input type="hidden" name="sid" value="<?php echo $sid; ?>">
 					<input type="hidden" name="lang" value="<?php echo $lang; ?>">
 					<input type="hidden" name="mode" value="such"><br>
 					<font size=2>
-					<input type="checkbox" name="arch" value="1" <?php if($arch) echo "checked"; ?>> <?php echo $LDSearchArchive ?>
+					<input type="checkbox" name="arch" value="1" <?php if(isset($arch)) echo "checked"; ?>> <?php echo $LDSearchArchive ?>
 					</font>
 				</td>
 			</tr>

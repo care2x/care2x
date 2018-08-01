@@ -14,8 +14,8 @@ define('LANG_FILE','nursing.php');
 define('NO_2LEVEL_CHK',1);
 require_once($root_path.'include/core/inc_front_chain_lang.php');
 
-if(!$dept)
-	if($_COOKIE[ck_thispc_dept]) $dept=$_COOKIE[ck_thispc_dept];
+if(!isset($dept))
+	if(isset($_COOKIE['ck_thispc_dept'])) $dept=$_COOKIE['ck_thispc_dept'];
 		else $dept='plop'; // set to default plop = plastic surgery op
 
 $breakfile="nursing.php".URL_APPEND;
@@ -67,6 +67,7 @@ while ($n<35)
 
  require_once($root_path.'gui/smarty_template/smarty_care.class.php');
  $smarty = new smarty_care('nursing');
+ require_once($root_path.'include/core/inc_default_smarty_values.php');
 
 # Added for the common header top block
 
@@ -79,6 +80,7 @@ while ($n<35)
 
  # Window bar title
  $smarty->assign('sWindowTitle',"$LDNursingStations - $LDArchive");
+ $smarty->assign('sTitleImage','<img '.createComIcon($root_path,'nurse.gif','0').'>');
 
  /**
  * collect JavaScript for Smarty
@@ -168,31 +170,33 @@ for($x=0;$x<6;$x++)
 
 		for($n=0;$n<6;$n++)
 		{
-			if($daynumber[$j].$pmonth.$pyear==date(jnY)) echo '
+			if ($j<cal_days_in_month(CAL_GREGORIAN, $pmonth, $pyear)+4) {
+			if($daynumber[$j].$pmonth.$pyear==date('jnY')) echo '
 			  <td bgcolor=orange>';
 			   else echo '
 			   <td bgcolor=white>';
 			if($daynumber[$j]<10) $dn="0".$daynumber[$j]; else $dn=$daynumber[$j];
 			if($pmonth<10) $mn="0".$pmonth; else $mn=$pmonth;
 			echo '<FONT face="times new roman"   SIZE=5 ';
-			if($pyear.$mn.$dn>date(Ymd))  echo 'color="#dfdfdf"'; else echo 'color="#000088"';
+			if($pyear.$mn.$dn>date('Ymd'))  echo 'color="#dfdfdf"'; else echo 'color="#000088"';
 			echo '><b>&nbsp;';
-			if($pyear.$mn.$dn<=date(Ymd))  echo '
+			if($pyear.$mn.$dn<=date('Ymd'))  echo '
 			  <a href="nursing-fastview.php'.URL_APPEND.'&from=arch&dept='.$dept.'&edit=0&pday='.$dn.'&pmonth='.$mn.'&pyear='.$pyear.'">';
 			echo $daynumber[$j];
-			if($pyear.$mn.$dn<=date(Ymd))  echo '</a>';
+			if($pyear.$mn.$dn<=date('Ymd'))  echo '</a>';
 			echo '</b></td>'; $j++;
+			}
 		}
-	if($daynumber[$j].$pmonth.$pyear==date(jnY)) echo '<td bgcolor=orange>'; else echo '<td bgcolor=white>';
+	if($daynumber[$j].$pmonth.$pyear==date('jnY')) echo '<td bgcolor=orange>'; else echo '<td bgcolor=white>';
 	if($daynumber[$j]<10) $dn="0".$daynumber[$j]; else $dn=$daynumber[$j];
 	if($pmonth<10) $mn="0".$pmonth; else $mn=$pmonth;
 	echo '
 	  <FONT  face="times new roman"   SIZE=5 ';
-	if($pyear.$mn.$dn>date(Ymd))  echo 'color="#dfdfdf"'; else echo 'color="#ff0000"';
+	if($pyear.$mn.$dn>date('Ymd'))  echo 'color="#dfdfdf"'; else echo 'color="#ff0000"';
 	echo '><b>&nbsp;';
-	if($pyear.$mn.$dn<=date(Ymd))  echo '<a href="nursing-fastview.php'.URL_APPEND.'&from=arch&dept='.$dept.'&edit=0&pday='.$dn.'&pmonth='.$mn.'&pyear='.$pyear.'">';
+	if($pyear.$mn.$dn<=date('Ymd'))  echo '<a href="nursing-fastview.php'.URL_APPEND.'&from=arch&dept='.$dept.'&edit=0&pday='.$dn.'&pmonth='.$mn.'&pyear='.$pyear.'">';
 	echo $daynumber[$j];
-	if($pyear.$mn.$dn<=date(Ymd))  echo '</a>';
+	if($pyear.$mn.$dn<=date('Ymd'))  echo '</a>';
 	echo '</b></td>'; 	$j++;
 	echo '</tr>';
 	if($daynumber[$j]=="") break;

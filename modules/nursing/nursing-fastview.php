@@ -24,7 +24,7 @@ error_reporting($ErrorLevel);
  $today = date('Y-m-d');
 
  // Let us make some interface for calendar class
- if($from=='arch'){
+ if(isset($from) and $from=='arch'){
 	 if($pday=='') $pday=date('d');
 	 if($pmonth=='') $pmonth=date('m');
 	 if($pyear=='') $pyear=date('Y');
@@ -32,9 +32,9 @@ error_reporting($ErrorLevel);
 	 $currMonth=$pmonth;
 	 $currYear=$pyear;
  } else {
-	 if($currDay=='') $currDay=date('d');
-	 if($currMonth=='') $currMonth=date('m');
-	 if($currYear=='') $currYear=date('Y');
+	 if(!isset($currDay) or $currDay=='') $currDay=date('d');
+	 if(!isset($currMonth) or $currMonth=='') $currMonth=date('m');
+	 if(!isset($currYear) or $currYear=='') $currYear=date('Y');
 	 $pday=$currDay;
 	 $pmonth=$currMonth;
 	 $pyear=$currYear;
@@ -110,13 +110,20 @@ $dbtable='care_ward';
  # that the smarty script can use the user configured template theme
  require_once($root_path.'gui/smarty_template/smarty_care.class.php');
  $smarty = new smarty_care('nursing');
+ require_once($root_path.'include/core/inc_default_smarty_values.php');
 
   $sTemp = $sid.'&lang='.$lang.'&pday='.$pday.'&pmonth='.$pmonth.'&pyear='.$pyear;
  $smarty->assign('SID_Parameter',$sTemp);
- $smarty->assign('aufnahme_user',$aufnahme_user);
+ if (isset($aufnahme_user)) {
+	$smarty->assign('aufnahme_user',$aufnahme_user);
+} else {
+	$smarty->assign('aufnahme_user','');
+}
 
  $smarty->assign('sToolbarTitle',$LDNursing );
  $smarty->assign('Subtitle',$LDQuickView ); // Nursing-Subtitle (header_toblock.tpl)
+ $smarty->assign('sTitleImage','<img '.createComIcon($root_path,'nurse.gif','0').'>');
+ $smarty->assign('sWindowTitle',$LDNursing.' - '.$LDQuickView);
 
  # Added for the common header top block
  $smarty->assign('pbHelp','javascript:gethelp(\'nursing_how2search.php\',\'\','.$rows.',\'quick\',\'\')');
@@ -177,12 +184,12 @@ $dbtable='care_ward';
 	}else{
 		$frei=0;
 	}
-   if ($toggler==0) {
-    //$bgc='ffffcc';
+   if (isset($toggler) and $toggler==0) {
+    $bgc='ffffcc';
 	$toggler=1;
 	$sStatListClass='wardlistrow1';
    } else {
-    //$bgc='dfdfdf';
+    $bgc='dfdfdf';
 	$toggler=0;
 	$sStatListClass='wardlistrow2';
    }
@@ -281,7 +288,11 @@ $dbtable='care_ward';
  /**
  * IF ($from == "arch")
  */
- $smarty->assign('from',$from);
+ if (isset($from)) {
+	$smarty->assign('from',$from);
+} else {
+	$smarty->assign('from', '');
+}
  $smarty->assign('LINKArchiv','nursing-station-archiv.php'.URL_APPEND.'&pyear='.$pyear.'&pmonth='.$pmonth);
  $smarty->assign('pbBack2',createLDImgSrc($root_path,'back2.gif','0') );
  /* ELSE */

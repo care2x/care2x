@@ -13,8 +13,9 @@ error_reporting($ErrorLevel);
 ///$db->debug=1;
 
 define('SHOW_DOC_2',1);  # Define to 1 to  show the 2nd doctor-on-duty
-define('DOC_CHANGE_TIME','7.30'); # Define the time when the doc-on-duty will change in 24 hours H.M format (eg. 3 PM = 15.00, 12 PM = 0.00)
-
+if (!defined('DOC_CHANGE_TIME')) {
+	define('DOC_CHANGE_TIME','7.30'); # Define the time when the doc-on-duty will change in 24 hours H.M format (eg. 3 PM = 15.00, 12 PM = 0.00)
+}
 $lang_tables[]='prompt.php';
 define('LANG_FILE','nursing.php');
 //define('NO_2LEVEL_CHK',1);
@@ -61,8 +62,8 @@ require_once($root_path.'include/core/inc_date_format_functions.php');
 require_once($root_path.'global_conf/inc_remoteservers_conf.php');
 
 if(($mode=='')||($mode=='fresh')){
-	if($ward_info=&$ward_obj->getWardInfo($ward_nr)){
-		$room_obj=&$ward_obj->getRoomInfo($ward_nr,$ward_info['room_nr_start'],$ward_info['room_nr_end']);
+	if($ward_info=$ward_obj->getWardInfo($ward_nr)){
+		$room_obj=$ward_obj->getRoomInfo($ward_nr,$ward_info['room_nr_start'],$ward_info['room_nr_end']);
 		if(is_object($room_obj)) {
 			$room_ok=true;
 		}else{
@@ -71,8 +72,8 @@ if(($mode=='')||($mode=='fresh')){
 		# Get the number of beds
 		$nr_beds=$ward_obj->countBeds($ward_nr);
 		# Get ward patients
-		if($is_today) $patients_obj=&$ward_obj->getDayWardOccupants($ward_nr);
-			else $patients_obj=&$ward_obj->getDayWardOccupants($ward_nr,$s_date);
+		if($is_today) $patients_obj=$ward_obj->getDayWardOccupants($ward_nr);
+			else $patients_obj=$ward_obj->getDayWardOccupants($ward_nr,$s_date);
 
 		//echo $ward_obj->getLastQuery();
 		//echo $ward_obj->LastRecordCount();
@@ -86,6 +87,7 @@ if(($mode=='')||($mode=='fresh')){
 			$occup='ja';
 		}else{
 			$patients_ok=false;
+			$occup='no';
 		}
 
 		$ward_ok=true;
@@ -114,10 +116,10 @@ if(($mode=='')||($mode=='fresh')){
 		$offset_day=$pday-1;
 		# Consider the early morning hours to belong to the past day
 		if(date('H.i')<DOC_CHANGE_TIME) $offset_day--;
-		if($pnr1=$duty1['ha'.$offset_day]){
+		if(isset($duty1['ha'.$offset_day]) and $pnr1=$duty1['ha'.$offset_day]){
 			$person1=&$pers_obj->getPersonellInfo($pnr1);
 		}
-		if(SHOW_DOC_2 && ($pnr2=$duty2['hr'.$offset_day])){
+		if(isset($duty2['hr'.$offset_day]) and SHOW_DOC_2 && ($pnr2=$duty2['hr'.$offset_day])){
 			$person2=&$pers_obj->getPersonellInfo($pnr2);
 		}
 		#### End of routine to fetch doctors on duty
@@ -155,9 +157,10 @@ if(($mode=='')||($mode=='fresh')){
 
  require_once($root_path.'gui/smarty_template/smarty_care.class.php');
  $smarty = new smarty_care('nursing');
+ require_once($root_path.'include/core/inc_default_smarty_values.php');
 
 # Title in toolbar
- $smarty->assign('sToolbarTitle', "$LDStation  ".$ward_info['name']." $LDOccupancy (".formatDate2Local($s_date,$date_format,'','',$null='').")");
+ $smarty->assign('sToolbarTitle', "$LDStation  ".$ward_info['name']." $LDOccupancy (".formatDate2Local($s_date,$date_format,'','').")");
 
   # hide back button
  $smarty->assign('pbBack',FALSE);
@@ -169,7 +172,7 @@ if(($mode=='')||($mode=='fresh')){
  $smarty->assign('breakfile',$breakfile);
 
  # Window bar title
- $smarty->assign('sWindowTitle',"$LDStation  ".$ward_info['name']." $LDOccupancy (".formatDate2Local($s_date,$date_format,'','',$null='').")");
+ $smarty->assign('sWindowTitle',"$LDStation  ".$ward_info['name']." $LDOccupancy (".formatDate2Local($s_date,$date_format,'','').")");
 
  # Collect extra javascript code
 
@@ -337,6 +340,7 @@ if($ward_ok){
 	# Start here, create the occupancy list
 	# Assign the column  names
 
+	$smarty->assign('sOnePixel','');
 	$smarty->assign('LDRoom',$LDRoom);
 	$smarty->assign('LDBed',$LDPatListElements[1]);
 	$smarty->assign('LDFamilyName',$LDLastName);
@@ -399,11 +403,11 @@ if($ward_ok){
 			$sAend='';
 			$sFamNameBuffer='';
 			$sNameBuffer='';
-
+			$bed = array();
 			if($patients_ok){
 
 				if(isset($patient[$i][$j])){
-			 		$bed=&$patient[$i][$j];
+			 		$bed=$patient[$i][$j];
     			 	$is_patient=true;
 				 	# Increase occupied bed nr
 				 	$occ_beds++;
@@ -427,7 +431,7 @@ if($ward_ok){
 			}
 
 			# Check if bed is locked
-			if(stristr($room_info['closed_beds'],$j.'/')){
+			if(isset($room_info['closed_beds']) and stristr($room_info['closed_beds'],$j.'/')){
 				$bed_locked=true;
 				$lock_beds++;
 				# Consider locked bed as occupied so increase occupied bed counter
@@ -437,7 +441,7 @@ if($ward_ok){
 			}
 
 			# If patient and edit show small color bars
-			if($is_patient&&$edit){
+			if(isset($is_patient) && isset($edit)){
 			 	$smarty->assign('sMiniColorBars','<a href="javascript:getinfo(\''.$bed['encounter_nr'].'\')">
 			 		<img src="'.$root_path.'main/imgcreator/imgcreate_colorbar_small.php'.URL_APPEND.'&pn='.$bed['encounter_nr'].'" alt="'.$LDSetColorRider.'" align="absmiddle" border=0 width=80 height=18>
 			 		</a>');
@@ -454,7 +458,7 @@ if($ward_ok){
 			$smarty->assign('sBed',$j);
 
 			# If patient, show images by sex
-			if($is_patient){
+			if(isset($is_patient)){
 				$sBuffer = '<a href="javascript:popPic(\''.$bed['pid'].'\')">';
 				switch(strtolower($bed['sex'])){
 					case 'f':
@@ -491,7 +495,7 @@ if($ward_ok){
 				}
 			}
 
-			if($is_patient&&($bed['encounter_nr']!="")){
+			if(isset($is_patient) && ($bed['encounter_nr']!="")){
 
 				$smarty->assign('sTitle',ucfirst($bed['title']));
 
@@ -522,19 +526,23 @@ if($ward_ok){
 				$smarty->assign('sName',$sAstart.$sNameBuffer.$sAend);
 			}
 
-			if($bed['date_birth']){
+			if(isset($bed['date_birth'])){
 
 				if(isset($sg) && $sg) $smarty->assign('sBirthDate',str_ireplace($sg,"<font color=#ff0000><b>".ucfirst($sg)."</b></font>",formatDate2Local($bed['date_birth'],$date_format)));
 					else $smarty->assign('sBirthDate',formatDate2Local($bed['date_birth'],$date_format));
 			}
 
-			if ($bed['encounter_nr']) $smarty->assign('sPatNr',$bed['encounter_nr']);
+			if (isset($bed['encounter_nr'])) $smarty->assign('sPatNr',$bed['encounter_nr']);
 
 			$sBuffer = '';
-			if($bed['insurance_class_nr']!=2) $sBuffer = $sBuffer.'<font color="#ff0000">';
+			if(isset($bed['insurance_class_nr']) and $bed['insurance_class_nr']!=2) $sBuffer = $sBuffer.'<font color="#ff0000">';
 
-			if(isset(${$bed['insurance_LDvar']})&&!empty(${$bed['insurance_LDvar']}))  $sBuffer = $sBuffer.${$bed['insurance_LDvar']};
-				else  $sBuffer = $sBuffer.$bed['insurance_name'];
+			if (isset($bed['insurance_LDvar'])) {
+				if(isset(${$bed['insurance_LDvar']})&&!empty(${$bed['insurance_LDvar']}))  $sBuffer = $sBuffer.${$bed['insurance_LDvar']};
+					else  $sBuffer = $sBuffer.$bed['insurance_name'];
+			} else {
+				$sBuffer = '';
+			}
 
 			$smarty->assign('sInsuranceType',$sBuffer);
 
@@ -582,7 +590,11 @@ if($ward_ok){
 
 	# Prepare the stations quick info data
 	# Occupancy in percent
-	$occ_percent=ceil(($occ_beds/$nr_beds)*100);
+	if ($nr_beds != 0) {
+		$occ_percent=ceil(($occ_beds/$nr_beds)*100);
+	} else {
+		$occ_percent=0;
+	}
 	# Nr of vacant beds
 	$vac_beds=$nr_beds-$occ_beds;
 
