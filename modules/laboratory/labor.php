@@ -28,7 +28,7 @@ require($root_path.'include/core/inc_2level_reset.php');
 
  require_once($root_path.'gui/smarty_template/smarty_care.class.php');
  $smarty = new smarty_care('common');
-
+ require_once($root_path.'include/core/inc_default_smarty_values.php');
  # Module title in the toolbar
 
  $smarty->assign('sToolbarTitle',$LDLab);
@@ -40,7 +40,8 @@ require($root_path.'include/core/inc_2level_reset.php');
 
  # Window bar title
  $smarty->assign('title',$LDLab);
-
+ $smarty->assign('sWindowTitle',$LDLab);
+ $smarty->assign('sTitleImage','<img '.createComIcon($root_path,'micros.gif','0').'>');
  # Medical lab submenu block
 
  $smarty->assign('LDMedLab',$LDMedLab);

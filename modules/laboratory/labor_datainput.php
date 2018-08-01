@@ -16,7 +16,7 @@ define('LANG_FILE','lab.php');
 $local_user='ck_lab_user';
 require_once($root_path.'include/core/inc_front_chain_lang.php');
 //$db->debug=1;
-
+if (!isset($job_id)) $job_id='';
 if(!$encounter_nr) {
 	header('Location:'.$root_path.'language/'.$lang.'/lang_'.$lang.'_invalid-access-warning.php');
 	exit;
@@ -30,7 +30,7 @@ require_once($root_path.'include/care_api_classes/class_encounter.php');
 $encounter=new Encounter($encounter_nr);
 
 $enc_obj=new Encounter($encounter_nr);
-if($encounter =&$enc_obj->getBasic4Data($encounter_nr)){
+if($encounter =$enc_obj->getBasic4Data($encounter_nr)){
 	$patient = $encounter->FetchRow();
 }
 
@@ -42,7 +42,7 @@ $lab_obj = new Lab($encounter_nr);
 $lab_obj_sub = new Lab($encounter_nr, true);
 $batch_nr = '';
 //to avoid reinserting allready done analysis
-if($result=&$lab_obj->getResult($job_id,$parameterselect)){
+if($result=$lab_obj->getTestResult($job_id,$parameterselect)){
 	while($row=$result->FetchRow()) {
 		$batch_nr = $row['batch_nr'];
 		$pdata[$row['paramater_name']] = $row['parameter_value'];
@@ -153,6 +153,7 @@ if( isset($mode) && $mode=='save' ){
 		include_once($root_path.'include/core/inc_visual_signalling_fx.php');
 		# Set the visual signal
 		setEventSignalColor($encounter_nr,SIGNAL_COLOR_DIAGNOSTICS_REPORT);
+		echo "location:$thisfile?sid=$sid&lang=$lang&saved=1&batch_nr=$batch_nr&encounter_nr=$encounter_nr&job_id=$job_id&parameterselect=$parameterselect&allow_update=1&user_origin=$user_origin";
 		header("location:$thisfile?sid=$sid&lang=$lang&saved=1&batch_nr=$batch_nr&encounter_nr=$encounter_nr&job_id=$job_id&parameterselect=$parameterselect&allow_update=1&user_origin=$user_origin");
 		exit;
 	}
@@ -162,13 +163,13 @@ if( isset($mode) && $mode=='save' ){
 
 	# If previously saved, get the values
 	if($saved){
-		if($result=&$lab_obj->getBatchResult($batch_nr)){
+		if($result=$lab_obj->getBatchResult($batch_nr)){
 			while($row=$result->FetchRow()) {
 				$pdata[$row['paramater_name']] = $row['parameter_value'];
 			}
 		}
 	}else{
-		if($result=&$lab_obj->getResult($job_id,$parameterselect)){
+		if($result=$lab_obj->getTestResult($job_id,$parameterselect)){
 			while($row=$result->FetchRow()) {
 				$pdata[$row['paramater_name']] = $row['parameter_value'];
 			}
@@ -179,10 +180,10 @@ if( isset($mode) && $mode=='save' ){
 	}
 
 	# Get the test test groups
-	$tgroups=&$lab_obj->TestActiveGroups();
+	$tgroups=$lab_obj->TestActiveGroups();
 	# Get the test parameter values
 	//gjergji : take all the params for this group...
-	$tparams=&$lab_obj->TestParams();
+	$tparams=$lab_obj->TestParams();
 
 	# Set the return file
 	if(isset($job_id) && $job_id){
@@ -211,7 +212,7 @@ else $sTitle= "$LDNew $LDLabReport";
 
 require_once($root_path.'gui/smarty_template/smarty_care.class.php');
 $smarty = new smarty_care('common');
-
+ require_once($root_path.'include/core/inc_default_smarty_values.php');
 # Title in toolbar
 $smarty->assign('sToolbarTitle',$sTitle);
 

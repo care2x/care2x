@@ -79,9 +79,9 @@ if($search&&!empty($keyword)){
 
 	if($editmode){
 		# Search
-		$encounter=&$lab_obj->searchLimitEncounterBasicInfo($keyword,$pagen->MaxCount(),$pgx,$oitem,$odir);
+		$encounter=$lab_obj->searchLimitEncounterBasicInfo($keyword,$pagen->MaxCount(),$pgx,$oitem,$odir);
 	}else{
-		$encounter=&$lab_obj->searchLimitEncounterLabResults($keyword,$pagen->MaxCount(),$pgx,$oitem,$odir);
+		$encounter=$lab_obj->searchLimitEncounterLabResults($keyword,$pagen->MaxCount(),$pgx,$oitem,$odir);
 		# Get the number of results found
 	}
 	//echo $lab_obj->getLastQuery()."<p>";
