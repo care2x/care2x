@@ -8,8 +8,8 @@
 //class piechart extends chart
 class piechart // modified by ELpidio Latorilla
 {
-	// Modified by Elpidio latorilla 2003-04-23 
-	// Moved the elements of class chart.class.php inside the this class 
+	// Modified by Elpidio latorilla 2003-04-23
+	// Moved the elements of class chart.class.php inside the this class
 	// to avoid loading the chart.class.php
 	var $elements; //the input values
 	var $elemetnames; //the name of the input values
@@ -37,7 +37,7 @@ class piechart // modified by ELpidio Latorilla
         'cornsilk'      => array(255, 248, 220),
         'crimson'       => array(220, 20, 60),
         'cyan'          => array(0, 255, 255),
-        'darkblue'      => array(0, 0, 13), 
+        'darkblue'      => array(0, 0, 13),
         'darkcyan'      => array(0, 139, 139),
         'darkgoldenrod' => array(184, 134, 11),
         'darkgray'      => array(169, 169, 169),
@@ -158,23 +158,7 @@ class piechart // modified by ELpidio Latorilla
         'yellowgreen' => array(154,205,50)
     );
 
-	function calculate()
-	{
-		$sum=array_sum($this->elements);
-		foreach ($this->elements as $value) 
-		{
-			$i++;
-			$this->fractions[$i]=$value/$sum;
-		}
-	}
-
-	// Beginn of the original class prior to modifications by elpidio latorilla
-	var $radius;
-	var $final;
-	var $bgcolor=array();
-	
-	
-	function piechart($r,$na,$el,$co)
+	function __construct($r,$na,$el,$co)
 	{
 		$this->radius=$r;
 		$this->elementnames=$na;
@@ -182,11 +166,32 @@ class piechart // modified by ELpidio Latorilla
 		$this->colors=$co;
 		$this->createimage();
 	}
+
+	function calculate()
+	{
+		$i=0;
+		$sum=array_sum($this->elements);
+		foreach ($this->elements as $value)
+		{
+			if ($sum != 0) {
+				$this->fractions[$i]=$value/$sum;
+			} else {
+				$this->fractions[$i]=0;
+			}
+			$i++;
+		}
+	}
+
+	// Beginn of the original class prior to modifications by elpidio latorilla
+	var $radius;
+	var $final;
+	var $bgcolor=array();
+
 	function createimage()
 	{
 		$this->calculate();
 		$r=$this->radius;
-		//$image=imagecreate($r*3,$r*2); // Modified by Elpidio Latorilla 2003-04-23 
+		//$image=imagecreate($r*3,$r*2); // Modified by Elpidio Latorilla 2003-04-23
 		$image=imagecreate($r*2,$r*2);
 		$white=imagecolorallocate($image,255,255,255);
 		$black=imagecolorallocate($image,0,0,0);
@@ -197,6 +202,7 @@ class piechart // modified by ELpidio Latorilla
 		}
 		imagearc($image,$r,$r,$r*2-1,$r*2-1,0,360,$black);
 		imagefill($image,$r,$r,$fillcolor[0]);
+		$degree=0;
 		for ($j=0;$j<count($this->elements);$j++)
 		//for ($j=0;$j<1;$j++)
 		{
@@ -205,20 +211,20 @@ class piechart // modified by ELpidio Latorilla
 				imageline($image,$r,$r,$r+$r*cos($degree*pi()/180),$r+$r*sin($degree*pi()/180),$black);
 				imagefill($image,$r+15*cos(($degree+5)*pi()/180),$r+15*sin(($degree+5)*pi()/180),$fillcolor[$j]);
 			}
-			
-			// Modified by Elpidio Latorilla 2003-04-23 
+
+			// Modified by Elpidio Latorilla 2003-04-23
 			//imagefilledrectangle($image,2.1*$r,.7*$r+($r/15)*$j,2.12*$r+($r/25),.7*$r+5+($r/15)*$j,$fillcolor[$j]);
 			//imagestring($image,0,2.13*$r+$r/20,.71*$r+($r/15)*$j-2,$this->elements[$j]."-".$this->elementnames[$j],$black);
-		}	
+		}
 			$this->final=$image;
 	}
 	function draw()
-	{		// Modified by Elpidio Latorilla 2003-04-23 
+	{		// Modified by Elpidio Latorilla 2003-04-23
 			//imagejpeg($this->final);
 			imagepng($this->final);
 	}
 	function out($filename,$quality)
-	{		// Modified by Elpidio Latorilla 2003-04-23 
+	{		// Modified by Elpidio Latorilla 2003-04-23
 			//imagejpeg($this->final,$filename,$quality);
 			imagepng($this->final,$filename,$quality);
 	}
