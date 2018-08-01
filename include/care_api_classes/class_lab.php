@@ -256,7 +256,7 @@ class Lab extends Encounter {
 	* @param int Encounter number
 	* @return mixed adodb record object or boolean
 	*/
-	function getResult($job_id,$grp_id,$enc_nr=''){
+	function getTestResult($job_id,$grp_id,$enc_nr=''){
 		global $db;
 		if(!$this->internResolveEncounterNr($enc_nr)) return FALSE;
 		$this->sql  = "SELECT * FROM $this->tb_find_chemlab INNER JOIN $this->tb_find_chemlab_sub ";
