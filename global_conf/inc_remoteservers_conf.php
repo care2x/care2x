@@ -1,24 +1,24 @@
 <?php
-# 
+#
 # Main domain or ip address
 # for example, default is "localhost"
 #
 //$main_domain="192.168.0.9";
 
-# 
-# main ip addres of foto server 
+#
+# main ip addres of foto server
 # for example , default is "localhost"
 #
-//$fotoserver_ip="192.168.0.9";
+$fotoserver_ip="localhost";
 
 #
 # Http protocol, either http or https for ssl layer. Default is http (normal).
 #
-$httprotocol='http';
+$httprotocol='https';
 
 # Source mode of photos and images
 # Set to 0 if fotos come via ftp server, set to 1 if fotos come from local  drive directory, default is 1
-$disc_pix_mode=1; 
+$disc_pix_mode=1;
 
 #
 # FTP username and password for remote files and webcam images
