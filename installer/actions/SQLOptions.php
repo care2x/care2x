@@ -39,6 +39,7 @@ class SQLOptions extends SQLFile {
 		}
 		$sql_commands = array();
 		$file = $this->file;
+		$file='/home/tim/code/care2x/installer/db/sql/mysqli_dump.sql';
 		if(!empty($file) && !is_readable($file)){
                 	$this->result = INSTALLER_ACTION_FAIL;
                         $this->result_message = "Could not read file sql $file.";

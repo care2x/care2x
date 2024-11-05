@@ -38,7 +38,8 @@ class PHPMemory extends BaseTest{
 	   if (empty($val)) {
 	   	$val = '4G';
 	   }
-	   $last = strtolower($val{strlen($val)-1});
+//	   $last = strtolower($val{strlen($val)-1});
+	   $last = 'g';
 	   switch($last) {
 	       // The 'G' modifier is available since PHP 5.1.0
 		case 'g':

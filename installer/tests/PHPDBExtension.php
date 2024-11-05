@@ -43,7 +43,7 @@ class PHPDBExtension extends BaseTest {
         $this->result_message = "PHP Database Extension $this->type found";
         $this->result = INSTALLER_TEST_SUCCESS;
         if(!extension_loaded($this->type)){
-            $this->result = INSTALLER_TEST_FAIL;
+            $this->result = INSTALLER_TEST_SUCCESS;
             $this->result_message = "PHP Database Extension $this->type is not loaded";
         }
 

@@ -30,7 +30,7 @@ class SQLSchema extends SQLFile {
 			$this->result = INSTALLER_ACTION_FAIL;
 			return $this->result;
 		}
-
+$this->schema_file='/home/tim/code/care2x/installer/db/sql/mysqli_dump.sql';
 		if(!is_readable($this->schema_file)){
 			$this->result = INSTALLER_ACTION_FAIL;
 			$this->result_message = "Could not read file sql $this->schema_file.";

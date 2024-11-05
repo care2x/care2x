@@ -6,7 +6,7 @@ $dbname='care2x';
 $dbusername='root';
 
 # Database user password, default is empty char
-$dbpassword='root';
+$dbpassword='omu2tbdf';
 
 # Database host name, default = localhost
 $dbhost='localhost';
@@ -37,7 +37,7 @@ $timezone = 'Africa/Abidjan';
 date_default_timezone_set($timezone);
 
 //For production server
-$ErrorLevel = E_ALL && ~E_NOTICE && ~E_WARNING;
+$ErrorLevel = E_ERROR | E_WARNING | E_PARSE | E_NOTICE;
 
 //For development
 //$ErrorLevel = -1;

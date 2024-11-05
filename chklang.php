@@ -27,7 +27,7 @@ $lang_path = 'language/';
  *    - the '|' character (it means 'OR');
  *    - the full language name.
  * 3. The second values associated to the key is the name of the file to load
- *    without the 'inc.php' extension. 
+ *    without the 'inc.php' extension.
  *
  * Beware that the sorting order (first values associated to keys by
  * alphabetical reverse order in the array) is important: 'zh-tw' (chinese
@@ -86,7 +86,8 @@ if (!defined('__PMA_LANG_DETECT__')) {
         global $lang;
 
         reset($available_languages);
-        while (list($key, $value) = each($available_languages)) {
+//        while (list($key, $value) = each($available_languages)) {
+		foreach ($available_languages as list($key, $value)) {
             // $envType =  1 for the 'HTTP_ACCEPT_LANGUAGE' environment variable,
             //             2 for the 'HTTP_USER_AGENT' one
            if (($envType == 1 && preg_match('/^(' . $value[0] . ')(;q=[0-9]\\.[0-9])?$/i', $str))
@@ -96,7 +97,7 @@ if (!defined('__PMA_LANG_DETECT__')) {
             }
         }
     } // end of the 'pmcLangDetect()' function
-	
+
 
 } // end if
 
@@ -122,7 +123,7 @@ if (!isset($lang)) {
  * Do the work!
  */
 // Lang forced
-if (!empty($cfgLang)) { 
+if (!empty($cfgLang)) {
     $lang = $cfgLang;
 }
 
@@ -138,7 +139,7 @@ if (empty($lang) && !empty($HTTP_ACCEPT_LANGUAGE)) {
     $accepted    = explode(',', $HTTP_ACCEPT_LANGUAGE);
     $acceptedCnt = count($accepted);
     reset($accepted);
-    for ($i = 0; $i < $acceptedCnt && empty($lang); $i++) { 
+    for ($i = 0; $i < $acceptedCnt && empty($lang); $i++) {
       pmaLangDetect($accepted[$i], 1);
     }
 }
@@ -149,7 +150,8 @@ if (empty($lang) && !empty($HTTP_USER_AGENT)) {
 
 // 3. Didn't catch any valid lang : we use the default settings
 if (empty($lang)) {
-    $lang = $cfgDefaultLang;
+//    $lang = $cfgDefaultLang;
+    $lang = 'en';
 }
 
 /**
@@ -164,5 +166,5 @@ if((!file_exists($lang_file))&&(!file_exists('../'.$lang_file))){
 
 // save language to cookie
 //setcookie("ck_lang".$sid,$lang);
-	
+
 ?>

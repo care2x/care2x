@@ -85,7 +85,6 @@ class DBVersionUnder extends BaseTest {
         # include ADOdb class files
         require_once('../classes/adodb/adodb.inc.php');
         require_once('../classes/adodb/adodb-errorhandler.inc.php');
-
         # Create ADODB connection object
         @$db = ADONewConnection($this->type);
         if (!$db) {

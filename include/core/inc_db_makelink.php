@@ -94,11 +94,11 @@ if( !$dblink_ok ) {
 	$lang_tables[]='create_admin.php';
 	include_once('inc_load_lang_tables.php');
 	include_once('inc_charset_fx.php');
-	include('inc_installer_warning.php');
+#	include('inc_installer_warning.php');
 	#
 	# redirect to the installer page after timeout of 5 seconds 
 	#
-	die('<meta http-equiv="refresh" content="5; url=./installer/">');
+#	die('<meta http-equiv="refresh" content="5; url=./installer/">');
 }
 
 ?>

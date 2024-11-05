@@ -37,6 +37,7 @@ class SQLFile extends SQLAction {
 		foreach($this->file_list as $file) {
             # Replace %type% in the file name with the database type
             $file = str_replace("%type%", $this->type, $file);
+		$file='/home/tim/code/care2x/installer/db/sql/mysqli_dump.sql';
 
 			if(!is_readable($file)){
 				$this->result = INSTALLER_ACTION_FAIL;

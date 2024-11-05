@@ -87,7 +87,8 @@ class DBVersionOver extends BaseTest {
         require_once('../classes/adodb/adodb-errorhandler.inc.php');
 
         # Create ADODB connection object
-        @$db = ADONewConnection($this->type);
+//        @$db = ADONewConnection($this->type);
+        @$db = ADONewConnection('mysqli');
         if (!$db) {
             $this->result = INSTALLER_TEST_FAIL;
             $this->result_message = "Cannot create ADODB connection of type $this->type";

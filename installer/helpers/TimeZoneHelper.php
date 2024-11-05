@@ -21,7 +21,7 @@ function TimeZoneHelper() {
 		  if (!empty($subcity) != ''){
 			$city = $city . '/'. $subcity;
 		  }
-		  $structure[] = $continent.'/'.$city;
+		  $structure = $continent.'/'.$city;
 		} else {
 		  if (!empty($subcity) != ''){
 			$city = $city . '/'. $subcity;

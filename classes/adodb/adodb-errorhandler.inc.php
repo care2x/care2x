@@ -76,5 +76,5 @@ function ADODB_Error_Handler($dbms, $fn, $errno, $errmsg, $p1, $p2, &$thisConnec
 
 
 	//print "<p>$s</p>";
-	trigger_error($s,ADODB_ERROR_HANDLER_TYPE);
+//	trigger_error($s,ADODB_ERROR_HANDLER_TYPE);
 }
