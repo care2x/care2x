@@ -130,11 +130,12 @@ class Core {
 	function _RecordExists($cond=''){
 		global $db;
 		if(empty($cond)) return FALSE;
-		if($this->result=$db->Execute("SELECT create_time FROM $this->coretable WHERE $cond")){
-			if($this->result->RecordCount()){
-				return TRUE;
-			}else{return FALSE;}
-		}else{return FALSE;}
+		try {
+			$pdo = Database::pdo();
+			$stmt = $pdo->prepare("SELECT create_time FROM $this->coretable WHERE $cond");
+			$stmt->execute();
+			return $stmt->fetch() ? TRUE : FALSE;
+		} catch(Throwable $e){ return FALSE; }
 	}
 	/**
 	* Sets the internal sql query variable to the sql query.
@@ -174,16 +175,21 @@ class Core {
 	function Transact($sql='') {
 		global $db;
 		if(!empty($sql)) $this->sql=$sql;
-		$db->BeginTrans();
-		$this->ok=$db->Execute($this->sql);
-		$this->last_insert=$db->Insert_ID();;
-		if($this->ok) {
-			$db->CommitTrans();
-			return TRUE;
-		} else {
-			$db->RollbackTrans();
+		// PDO transaction replacement
+		try {
+			$pdo = Database::pdo();
+			$pdo->beginTransaction();
+			$stmt = $pdo->prepare($this->sql);
+			$this->ok = $stmt->execute();
+			$this->last_insert = $pdo->lastInsertId();
+			if($this->ok) { $pdo->commit(); return TRUE; } else { $pdo->rollBack(); return FALSE; }
+		} catch(Throwable $e){
+			if(isset($pdo) && $pdo->inTransaction()) $pdo->rollBack();
 			return FALSE;
 		}
+		if($this->ok) {
+			$db->CommitTrans();
+
 	}
 	/**
 	* Filters the data array intended for saving, removing the key-value pairs that do not correspond to the table's field names.
