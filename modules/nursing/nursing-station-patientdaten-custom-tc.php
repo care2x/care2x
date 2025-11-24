@@ -64,22 +64,17 @@ if($dblink_ok)
 			//$indatetime_time=$_POST['indatetime_time'].':00';
 			$indatetime_time="00:00:00";
 
-			$q="update care_encounter_custom_tc set
-
-			indatetime='".$indatetime_date." ".$indatetime_time."',
-
-			`time` = '".$_POST['turntime']."',
-			`position` = '".$_POST['pos']."',
-						createid='".$_SESSION['sess_login_userid']."'
-
-			where nr = '".$editid."'
-
-			";
-			//echo $q;
-			mysql_query($q);
-			echo mysql_error();
-
-			if (mysql_affected_rows()>0) {$saved=true;}
+			// PDO update
+			$updateSql = "UPDATE care_encounter_custom_tc SET indatetime = :indatetime, `time` = :turntime, `position` = :position, createid = :createid WHERE nr = :nr";
+			$stmt = Database::pdo()->prepare($updateSql);
+			$stmt->execute([
+				':indatetime' => $indatetime_date." ".$indatetime_time,
+				':turntime' => $_POST['turntime'],
+				':position' => $_POST['pos'],
+				':createid' => $_SESSION['sess_login_userid'],
+				':nr' => $editid
+			]);
+			if ($stmt->rowCount() > 0) { $saved = true; }
 
 		}else{
 
@@ -94,22 +89,17 @@ if($dblink_ok)
 			// first, check if this date has been added before
 
 
-			$q="insert into care_encounter_custom_tc (
-
-				encounter_nr,createid,indatetime,time,position
-				) values (
-				'".$pn."',
-				'".$_SESSION['sess_login_userid']."',
-				'".$indatetime_date." ".$indatetime_time."',
-				'".$_POST['turntime']."',
-				'".$_POST['pos']."'
-				)";
-
-				mysql_query($q);
-
-				echo mysql_error();
-
-				if (mysql_insert_id()>0) {$saved=true;}
+			// PDO insert
+			$insertSql = "INSERT INTO care_encounter_custom_tc (encounter_nr, createid, indatetime, time, position) VALUES (:encounter_nr, :createid, :indatetime, :time, :position)";
+			$stmt = Database::pdo()->prepare($insertSql);
+			$stmt->execute([
+				':encounter_nr' => $pn,
+				':createid' => $_SESSION['sess_login_userid'],
+				':indatetime' => $indatetime_date." ".$indatetime_time,
+				':time' => $_POST['turntime'],
+				':position' => $_POST['pos']
+			]);
+			if (Database::pdo()->lastInsertId()) { $saved = true; }
 
 
 			//echo $q;
@@ -333,7 +323,7 @@ function EditRecord(id,rec) {
 
 // now, loop through all records and then show a column representing each day
 
-$res=mysql_query("select * from care_encounter_custom_tc where encounter_nr = '".$pn."' order by DATE(indatetime),time");
+$res=Database::query("SELECT * FROM care_encounter_custom_tc WHERE encounter_nr = :pn ORDER BY DATE(indatetime), time",[':pn'=>$pn]);
 
 while ($resd=mysql_fetch_assoc($res)) {
 

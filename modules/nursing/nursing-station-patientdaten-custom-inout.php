@@ -66,29 +66,25 @@ if($dblink_ok)
 			$indatetime_date=formatDate2STD($indatetime_date,$date_format);
 			$indatetime_time=$_POST['indatetime_time'].':00';
 
-			$q="update care_encounter_custom_inout set
-
-			indatetime='".$indatetime_date." ".$indatetime_time."',
-			createid='".$_SESSION['sess_login_userid']."',
-			pint='".$pint."',
-			solution='".$solution."',
-			solutionamount='".$solutionamount."',
-			initial='".$initial."',
-			oralfluid='".$oralfluid."',
-			oralfluidamount='".$oralfluidamount."',
-			urinetime='".$urinetime."',
-			urineamount='".$urineamount."',
-			rta='".$rta."',
-			drain='".$drain."'
-
-			where nr = '".$editid."'
-
-			";
-			//echo $q;
-			mysql_query($q);
-			echo mysql_error();
-
-			if (mysql_affected_rows()>0) {$saved=true;}
+			// PDO update
+			$updateSql = "UPDATE care_encounter_custom_inout SET indatetime = :indatetime, createid = :createid, pint = :pint, solution = :solution, solutionamount = :solutionamount, initial = :initial, oralfluid = :oralfluid, oralfluidamount = :oralfluidamount, urinetime = :urinetime, urineamount = :urineamount, rta = :rta, drain = :drain WHERE nr = :nr";
+			$stmt = Database::pdo()->prepare($updateSql);
+			$stmt->execute([
+				':indatetime' => $indatetime_date." ".$indatetime_time,
+				':createid' => $_SESSION['sess_login_userid'],
+				':pint' => $pint,
+				':solution' => $solution,
+				':solutionamount' => $solutionamount,
+				':initial' => $initial,
+				':oralfluid' => $oralfluid,
+				':oralfluidamount' => $oralfluidamount,
+				':urinetime' => $urinetime,
+				':urineamount' => $urineamount,
+				':rta' => $rta,
+				':drain' => $drain,
+				':nr' => $editid
+			]);
+			if ($stmt->rowCount() > 0) { $saved = true; }
 
 		}else{
 
@@ -99,26 +95,25 @@ if($dblink_ok)
 			// Prepare  the date
 			$indatetime_date=formatDate2STD($indatetime_date,$date_format);
 			$indatetime_time=$_POST['indatetime_time'].':00';
-			$q="insert into care_encounter_custom_inout (encounter_nr,createid,indatetime,pint,solution,solutionamount,initial,oralfluid,oralfluidamount,urinetime,urineamount,rta,drain) values (
-				'".$pn."',
-				'".$_SESSION['sess_login_userid']."',
-				'".$indatetime_date." ".$indatetime_time."',
-				'".$pint."',
-				'".$solution."',
-				'".$solutionamount."',
-				'".$initial."',
-				'".$oralfluid."',
-				'".$oralfluidamount."',
-				'".$urinetime."',
-				'".$urineamount."',
-				'".$rta."',
-				'".$drain."'
-				)";
-			//echo $q;
-			mysql_query($q);
-			echo mysql_error();
-
-			if (mysql_insert_id()>0) {$saved=true;}
+			// PDO insert
+			$insertSql = "INSERT INTO care_encounter_custom_inout (encounter_nr, createid, indatetime, pint, solution, solutionamount, initial, oralfluid, oralfluidamount, urinetime, urineamount, rta, drain) VALUES (:encounter_nr, :createid, :indatetime, :pint, :solution, :solutionamount, :initial, :oralfluid, :oralfluidamount, :urinetime, :urineamount, :rta, :drain)";
+			$stmt = Database::pdo()->prepare($insertSql);
+			$stmt->execute([
+				':encounter_nr' => $pn,
+				':createid' => $_SESSION['sess_login_userid'],
+				':indatetime' => $indatetime_date." ".$indatetime_time,
+				':pint' => $pint,
+				':solution' => $solution,
+				':solutionamount' => $solutionamount,
+				':initial' => $initial,
+				':oralfluid' => $oralfluid,
+				':oralfluidamount' => $oralfluidamount,
+				':urinetime' => $urinetime,
+				':urineamount' => $urineamount,
+				':rta' => $rta,
+				':drain' => $drain
+			]);
+			if (Database::pdo()->lastInsertId()) { $saved = true; }
 
 		} // insert of new record
 
@@ -360,7 +355,7 @@ echo '	<tr bgcolor="#99ccff">
 
 		<?php
 
-$res=mysql_query("select * from care_encounter_custom_inout where encounter_nr = '".$pn."'");
+$res=Database::query("SELECT * FROM care_encounter_custom_inout WHERE encounter_nr = :pn",[':pn'=>$pn]);
 
 $rows=0;
 

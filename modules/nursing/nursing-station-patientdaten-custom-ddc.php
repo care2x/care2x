@@ -66,24 +66,20 @@ if($dblink_ok)
 			$indatetime_date=formatDate2STD($indatetime_date,$date_format);
 			$indatetime_time=$_POST['indatetime_time'].':00';
 
-			$q="update care_encounter_custom_ddc set
-
-			indatetime='".$indatetime_date." ".$indatetime_time."',
-			createid='".$_SESSION['sess_login_userid']."',
-			urinesugar='".$urinesugar."',
-			acetone='".$acetone."',
-			bloodsugar='".$bloodsugar."',
-			tablets='".mysql_escape_string(stripslashes($tablets))."',
-			insulin='".$insulin."'
-
-			where nr = '".$editid."'
-
-			";
-			//echo $q;
-			mysql_query($q);
-			echo mysql_error();
-
-			if (mysql_affected_rows()>0) {$saved=true;}
+			// PDO update
+			$updateSql = "UPDATE care_encounter_custom_ddc SET indatetime = :indatetime, createid = :createid, urinesugar = :urinesugar, acetone = :acetone, bloodsugar = :bloodsugar, tablets = :tablets, insulin = :insulin WHERE nr = :nr";
+			$stmt = Database::pdo()->prepare($updateSql);
+			$stmt->execute([
+				':indatetime' => $indatetime_date." ".$indatetime_time,
+				':createid' => $_SESSION['sess_login_userid'],
+				':urinesugar' => $urinesugar,
+				':acetone' => $acetone,
+				':bloodsugar' => $bloodsugar,
+				':tablets' => stripslashes($tablets),
+				':insulin' => $insulin,
+				':nr' => $editid
+			]);
+			if ($stmt->rowCount() > 0) { $saved = true; }
 
 		}else{
 
@@ -94,21 +90,20 @@ if($dblink_ok)
 			// Prepare  the date
 			$indatetime_date=formatDate2STD($indatetime_date,$date_format);
 			$indatetime_time=$_POST['indatetime_time'].':00';
-			$q="insert into care_encounter_custom_ddc (encounter_nr,createid,indatetime,urinesugar,acetone,bloodsugar,tablets,insulin) values (
-				'".$pn."',
-				'".$_SESSION['sess_login_userid']."',
-				'".$indatetime_date." ".$indatetime_time."',
-				'".$urinesugar."',
-				'".$acetone."',
-				'".$bloodsugar."',
-				'".mysql_escape_string(stripslashes($tablets))."',
-				'".$insulin."'
-				)";
-			//echo $q;
-			mysql_query($q);
-			echo mysql_error();
-
-			if (mysql_insert_id()>0) {$saved=true;}
+			// PDO insert
+			$insertSql = "INSERT INTO care_encounter_custom_ddc (encounter_nr, createid, indatetime, urinesugar, acetone, bloodsugar, tablets, insulin) VALUES (:encounter_nr, :createid, :indatetime, :urinesugar, :acetone, :bloodsugar, :tablets, :insulin)";
+			$stmt = Database::pdo()->prepare($insertSql);
+			$stmt->execute([
+				':encounter_nr' => $pn,
+				':createid' => $_SESSION['sess_login_userid'],
+				':indatetime' => $indatetime_date." ".$indatetime_time,
+				':urinesugar' => $urinesugar,
+				':acetone' => $acetone,
+				':bloodsugar' => $bloodsugar,
+				':tablets' => stripslashes($tablets),
+				':insulin' => $insulin
+			]);
+			if (Database::pdo()->lastInsertId()) { $saved = true; }
 
 		} // insert of new record
 
@@ -320,7 +315,7 @@ echo '	<tr bgcolor="#99ccff">
 
 		<?php
 
-$res=mysql_query("select * from care_encounter_custom_ddc where encounter_nr = '".$pn."' order by indatetime asc");
+$res=Database::query("SELECT * FROM care_encounter_custom_ddc WHERE encounter_nr = :pn ORDER BY indatetime ASC",[':pn'=>$pn]);
 
 $rows=0;
 

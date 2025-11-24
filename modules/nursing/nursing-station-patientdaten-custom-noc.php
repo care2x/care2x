@@ -63,21 +63,18 @@ if($dblink_ok)
 				$indatetime_date=formatDate2STD($indatetime_date,$date_format);
 				$indatetime_time=$_POST['indatetime_time'].':00';
 
-				$q="update care_encounter_custom_noc set
-
-				indatetime='".$indatetime_date." ".$indatetime_time."',
-				createid='".$_SESSION['sess_login_userid']."',
-				verbal='".$verbal."',
-				moton='".$moton."',
-				eyes='".$eyes."'
-				where nr = '".$editid."'
-
-				";
-				//echo $q;
-				mysql_query($q);
-				echo mysql_error();
-
-				if (mysql_affected_rows()>0) {$saved=true;}
+				// PDO update
+				$updateSql = "UPDATE care_encounter_custom_noc SET indatetime = :indatetime, createid = :createid, verbal = :verbal, moton = :moton, eyes = :eyes WHERE nr = :nr";
+				$stmt = Database::pdo()->prepare($updateSql);
+				$stmt->execute([
+					':indatetime' => $indatetime_date." ".$indatetime_time,
+					':createid' => $_SESSION['sess_login_userid'],
+					':verbal' => $verbal,
+					':moton' => $moton,
+					':eyes' => $eyes,
+					':nr' => $editid
+				]);
+				if ($stmt->rowCount() > 0) { $saved = true; }
 
 			}else{
 
@@ -88,19 +85,18 @@ if($dblink_ok)
 				// Prepare  the date
 				$indatetime_date=formatDate2STD($indatetime_date,$date_format);
 				$indatetime_time=$_POST['indatetime_time'].':00';
-				$q="insert into care_encounter_custom_noc (encounter_nr,createid,indatetime,verbal,moton,eyes) values (
-					'".$pn."',
-					'".$_SESSION['sess_login_userid']."',
-					'".$indatetime_date." ".$indatetime_time."',
-					'".$verbal."',
-					'".$moton."',
-					'".$eyes."'
-					)";
-				//echo $q;
-				mysql_query($q);
-				echo mysql_error();
-
-				if (mysql_insert_id()>0) {$saved=true;}
+				// PDO insert
+				$insertSql = "INSERT INTO care_encounter_custom_noc (encounter_nr, createid, indatetime, verbal, moton, eyes) VALUES (:encounter_nr, :createid, :indatetime, :verbal, :moton, :eyes)";
+				$stmt = Database::pdo()->prepare($insertSql);
+				$stmt->execute([
+					':encounter_nr' => $pn,
+					':createid' => $_SESSION['sess_login_userid'],
+					':indatetime' => $indatetime_date." ".$indatetime_time,
+					':verbal' => $verbal,
+					':moton' => $moton,
+					':eyes' => $eyes
+				]);
+				if (Database::pdo()->lastInsertId()) { $saved = true; }
 
 			} // insert of new record
 
@@ -307,7 +303,7 @@ echo '<font size="7">'.$NOC_title.' <p><font size=2>';
 		$row_eyes_st.="<tr bgcolor='#99ccff'><td><b><u>".$LDScoreTotal."</u></b></td><td align=right><b><span id='score_total'></span></b></td>";
 
 
-$res=mysql_query("select * from care_encounter_custom_noc where encounter_nr = '".$pn."'");
+$res=Database::query("SELECT * FROM care_encounter_custom_noc WHERE encounter_nr = :pn",[':pn'=>$pn]);
 
 $rows=0;
 
