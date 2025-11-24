@@ -77,11 +77,21 @@ $dblink_ok=0;
 # Set dbtype to mysql if not set or empty
 if(!isset($dbtype)||empty($dbtype)) $dbtype='mysql';
 
-# ADODB connection
-require_once($root_path.'classes/adodb/adodb.inc.php');
-$db = ADONewConnection($dbtype);
+// Initialize PDO first
+require_once(__DIR__.'/Database.php');
+try {
+    Database::init($dbhost,$dbname,$dbusername,$dbpassword);
+    $dblink_ok = 1; // PDO ok
+} catch (Throwable $e) {
+    $dblink_ok = 0;
+}
 
-$dblink_ok = $db->Connect($dbhost,$dbusername,$dbpassword,$dbname);
+// Fallback to legacy ADODB during migration if PDO failed
+if(!$dblink_ok){
+    require_once($root_path.'classes/adodb/adodb.inc.php');
+    $db = ADONewConnection($dbtype);
+    $dblink_ok = $db->Connect($dbhost,$dbusername,$dbpassword,$dbname);
+}
 
 #
 # If there is no connection than call the installation procedure..
