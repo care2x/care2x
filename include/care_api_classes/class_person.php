@@ -259,8 +259,13 @@ class Person extends Core {
 		}
 		$index=substr_replace($index,'',(strlen($index))-1);
 		$values=substr_replace($values,'',(strlen($values))-1);
-		$this->sql="INSERT INTO $this->tb_person ($index) VALUES ($values)";
-		$this->Transact();
+		// PDO insert replacing adodb transaction
+		$placeholders = ':' . str_replace(',',',:', $index);
+		$pdo = Database::pdo();
+		$stmt = $pdo->prepare("INSERT INTO $this->tb_person ($index) VALUES ($placeholders)");
+		$bind = [];
+		foreach($array as $k=>$val){ $bind[":$k"] = $val; }
+		$stmt->execute($bind);
 		require_once($root_path.'include/care_api_classes/class_globalconfig.php');
 		$glob_obj=new GlobalConfig($GLOBAL_CONFIG);
 		$glob_obj->getConfig();
@@ -270,7 +275,7 @@ class Person extends Core {
 		$DataArray['date_birth'] = $array['date_birth'];
 		$DataArray['sex'] = $array['sex'];
 		$PIDResult = $this->PIDbyData($DataArray);
-		$PIDArray = $PIDResult->FetchRow();
+		$PIDArray = $PIDResult ? $PIDResult->FetchRow() : ['pid'=>null];
 		$this->pid = $PIDArray['pid'];
 		if($GLOBAL_CONFIG['kwamoja_database'] != '') {
 			/* Insert into the KwaMoja database */
@@ -1132,13 +1137,20 @@ class Person extends Core {
 			$sql3 =" ";
 		}
 
-		$this->sql='SELECT pid, name_last, name_first, date_birth, addr_zip, sex, death_date, status FROM '.$this->buffer.$sql3;
+		$this->sql='SELECT pid, name_last, name_first, date_birth, addr_zip, sex, death_date, status FROM '.$this->buffer.$sql3; // base query
 
-		if($this->res['ssl']=$db->SelectLimit($this->sql,$maxcount,$offset)){
-			if($this->rec_count=$this->res['ssl']->RecordCount()) {
-				return $this->res['ssl'];
-			}else{return false;}
-		}else{return false;}
+		// PDO pagination replacement
+		try {
+			$pdo = Database::pdo();
+			$paginated = $this->sql . " LIMIT $maxcount OFFSET $offset";
+			$stmt = $pdo->prepare($paginated);
+			$stmt->execute();
+			$rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+			$this->rec_count = count($rows);
+			return $rows ?: false;
+		} catch(Throwable $e){
+			return false;
+		}
 
 	}
 	/**
@@ -1213,11 +1225,17 @@ class Person extends Core {
 					AND date_birth='".$data['date_birth']."'
 					AND sex $sql_LIKE '".$data['sex']."'";
 		if(!$deadtoo) $this->sql.=" AND death_date='$dbf_nodate'";
-		if($res['pbd']=$db->Execute($this->sql)){
-		    if($res['pbd']->RecordCount()) {
-				return $res['pbd'];//
-			}else{return false;}
-		}else{return false;}
+		// Switch to PDO for simple select
+		try {
+			$pdo = Database::pdo();
+			$stmt = $pdo->prepare($this->sql);
+			$stmt->execute();
+			$rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+			if($rows){
+				// mimic old adodb result by returning array; callers adjusted above
+				return (object)['FetchRow'=>function() use (&$rows){return array_shift($rows);},'RecordCount'=>count($rows)];
+			} else { return false; }
+		} catch(Throwable $e){ return false; }
 	}
 	/**
 	* Sets the  filename if the person in the databank
