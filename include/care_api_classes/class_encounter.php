@@ -1260,7 +1260,12 @@ class Encounter extends Notes {
 		else
 			$this->sql="UPDATE $this->tb_enc SET history= (history || '\nView ".date('Y-m-d H:i:s')." = $encoder') WHERE encounter_nr=$this->enc_nr";
 		*/
-		$this->sql="UPDATE $this->tb_enc SET history= ".$this->ConcatHistory("\nView ".date('Y-m-d H:i:s')." = $encoder")." WHERE encounter_nr=$this->enc_nr";
+		// PDO view history update
+		$pdo = Database::pdo();
+		$this->sql="UPDATE $this->tb_enc SET history= ".$this->ConcatHistory("\nView ".date('Y-m-d H:i:s')." = $encoder")." WHERE encounter_nr=:enr";
+		$stmt=$pdo->prepare("UPDATE $this->tb_enc SET history= ".$this->ConcatHistory("\nView ".date('Y-m-d H:i:s')." = $encoder")." WHERE encounter_nr=:enr");
+		$stmt->execute([':enr'=>$this->enc_nr]);
+		return true;
 
         return $this->Transact($this->sql);
         /*
@@ -1742,7 +1747,11 @@ class Encounter extends Notes {
 		$data.=",history=".$this->ConcatHistory("\n$act ".date('Y-m- H:i:s')." ".$_SESSION['sess_user_name']).", ";
 		$data.="	modify_id='".$_SESSION['sess_user_name']."',
 				modify_time='".date('YmdHis')."'";
-		$this->sql="UPDATE $this->tb_enc SET $data WHERE encounter_nr=$enr";
+		// PDO refactor
+		$pdo = Database::pdo();
+		$stmt = $pdo->prepare("UPDATE $this->tb_enc SET $data WHERE encounter_nr = :enr");
+		$stmt->execute([':enr'=>$enr]);
+		return true;
 		return $this->Transact($this->sql);
 	}
 	/**
@@ -1909,7 +1918,9 @@ class Encounter extends Notes {
 		global $_SESSION;
 		if(!$this->internResolveEncounterNr($enc_nr)) return FALSE;
 		if(empty($by)) $by=$_SESSION['sess_user_name'];
-		$this->sql="UPDATE $this->tb_enc SET encounter_status='cancelled',status='void',is_discharged=1,
+		// PDO cancel encounter update
+		$pdo = Database::pdo();
+		$this->sql="UPDATE $this->tb_enc SET encounter_status='cancelled',status='void',is_discharged=1,";
 						history=".$this->ConcatHistory("Cancelled ".date('Y-m- H:i:s')." by $by, logged-user ".$_SESSION['sess_user_name']."\n").",
 						modify_id='".$_SESSION['sess_user_name']."',
 						modify_time='".date('YmdHis')."'
@@ -1937,7 +1948,11 @@ class Encounter extends Notes {
 	*/
 	function setIsDischarged($enr,$date,$time){
 		//$this->sql="UPDATE $this->tb_enc SET is_discharged=1, discharge_date='$date',discharge_time='$time', current_ward_nr=0,current_room_nr=0,current_dept_nr=0,current_firm_nr=0,in_ward=0 WHERE encounter_nr=$enr AND NOT is_discharged";
-		$this->sql="UPDATE $this->tb_enc SET is_discharged=1, discharge_date='$date',discharge_time='$time', in_ward=0,in_dept=0 WHERE encounter_nr=$enr AND is_discharged IN ('',0)";
+		// PDO discharge update
+		$pdo = Database::pdo();
+		$stmt = $pdo->prepare("UPDATE $this->tb_enc SET is_discharged=1, discharge_date=:dd, discharge_time=:dt, in_ward=0, in_dept=0 WHERE encounter_nr=:enr AND is_discharged IN ('',0)");
+		$stmt->execute([':dd'=>$date,':dt'=>$time,':enr'=>$enr]);
+		return true;
 		//if($this->Transact($this->sql)) return true; else echo $this->sql;
 		return $this->Transact($this->sql);
 	}
