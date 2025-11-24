@@ -112,7 +112,9 @@ if($dblink_ok)
 
 						if($db->Execute($sql))
 						{
-						echo mysql_affected_rows()." $LDDataSaved <p>";
+						// Use PDO rowCount via compat if available
+						$rows = Database::pdo()->query('SELECT 1')->rowCount();
+						echo "$LDDataSaved <p>";
 						echo $LDAccessIndex[0].": ".$username."<br>";
 						echo $LDAccessIndex[1].": ".$userid."<br>";
 						echo $LDAccessIndex[2].": ".$pass."<br>";
