@@ -9,6 +9,7 @@ if (!class_exists('Database')) {
 
 class MysqlCompatState {
     public static string $lastError = '';
+    public static ?PDOStatement $lastStatement = null;
 }
 
 if (!function_exists('mysql_connect')) {
@@ -38,7 +39,9 @@ if (!function_exists('mysql_select_db')) {
 if (!function_exists('mysql_query')) {
     function mysql_query($query, $link_identifier = null) {
         try {
-            return Database::pdo()->query($query);
+            $stmt = Database::pdo()->query($query);
+            MysqlCompatState::$lastStatement = $stmt;
+            return $stmt;
         } catch (Throwable $e) {
             MysqlCompatState::$lastError = $e->getMessage();
             return false;
@@ -70,6 +73,12 @@ if (!function_exists('mysql_fetch_row')) {
 if (!function_exists('mysql_num_rows')) {
     function mysql_num_rows($result) {
         return $result ? $result->rowCount() : 0;
+    }
+}
+
+if (!function_exists('mysql_affected_rows')) {
+    function mysql_affected_rows($link_identifier = null) {
+        return MysqlCompatState::$lastStatement ? MysqlCompatState::$lastStatement->rowCount() : 0;
     }
 }
 
