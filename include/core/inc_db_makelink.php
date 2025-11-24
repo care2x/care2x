@@ -81,6 +81,7 @@ if(!isset($dbtype)||empty($dbtype)) $dbtype='mysql';
 require_once(__DIR__.'/Database.php');
 try {
     Database::init($dbhost,$dbname,$dbusername,$dbpassword);
+    require_once(__DIR__.'/mysql_compat.php'); // load mysql_* shim for legacy code
     $dblink_ok = 1; // PDO ok
 } catch (Throwable $e) {
     $dblink_ok = 0;
