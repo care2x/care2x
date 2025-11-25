@@ -91,7 +91,7 @@ try {
 
 // Fallback to legacy ADODB during migration if PDO failed
 if(!$dblink_ok){
-    require_once($root_path.'classes/adodb/adodb.inc.php');
+    require_once($root_path.'vendor/adodb/adodb-php/adodb.inc.php');
     $db = ADONewConnection($dbtype);
     $dblink_ok = $db->Connect($dbhost,$dbusername,$dbpassword,$dbname);
 }

@@ -2,7 +2,8 @@
   "name": "care2x/care2x",
   "type": "project",
   "require": {
-    "donatj/phpuseragentparser": "^1.8"
+    "donatj/phpuseragentparser": "^1.8",
+    "adodb/adodb-php": "^5.22"
   },
   "autoload": {
     "psr-4": {
