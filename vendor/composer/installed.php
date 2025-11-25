@@ -1,0 +1,41 @@
+<?php return array(
+    'root' => array(
+        'name' => 'care2x/care2x',
+        'pretty_version' => 'dev-master',
+        'version' => 'dev-master',
+        'reference' => 'c1b366a65a8b71a55870760d8975bfb12c6a6241',
+        'type' => 'project',
+        'install_path' => __DIR__ . '/../../',
+        'aliases' => array(),
+        'dev' => true,
+    ),
+    'versions' => array(
+        'adodb/adodb-php' => array(
+            'pretty_version' => 'v5.22.11',
+            'version' => '5.22.11.0',
+            'reference' => 'a741375176f48b084ca9a110c112323fc7101b75',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../adodb/adodb-php',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'care2x/care2x' => array(
+            'pretty_version' => 'dev-master',
+            'version' => 'dev-master',
+            'reference' => 'c1b366a65a8b71a55870760d8975bfb12c6a6241',
+            'type' => 'project',
+            'install_path' => __DIR__ . '/../../',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'donatj/phpuseragentparser' => array(
+            'pretty_version' => 'v1.11.0',
+            'version' => '1.11.0.0',
+            'reference' => 'c98541c5198bb75564d7db4a8971773bc848361e',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../donatj/phpuseragentparser',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+    ),
+);
