@@ -149,11 +149,10 @@ class Template{
 	function createSelectForm($curr_theme){
 		$this->_getTemplates();
 		$str='';
-		while(list($x,$v)=each($this->tp_dirs)){
+		foreach($this->tp_dirs as $x=>$v){
 			$str.= '<option value="'.$x.'"';
 			if($curr_theme==$x) $str.='selected';
-			$str.= '> '.$v.'</option>
-			';
+			$str.= '> '.$v.'</option>\n';
 		}
 		return $str;
 	}
@@ -167,7 +166,7 @@ class Template{
 	function createRadioSelect($name,$curr_theme){
 		$this->_getTemplates();
 		$str='';
-		while(list($x,$v)=each($this->tp_dirs)){
+		foreach($this->tp_dirs as $x=>$v){
 			$str.= '<input type="radio" name="'.$name.'" value="'.$x.'"';
 			if($curr_theme==$x) $str.='checked';
 			$str.= '> '.$v;
