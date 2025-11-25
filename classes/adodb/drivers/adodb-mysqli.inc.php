@@ -846,8 +846,11 @@ class ADODB_mysqli extends ADOConnection {
 				return $rs ? $rs : true; // mysqli_more_results( $this->_connectionID )
 			}
 		} else {
-			$rs = mysqli_query($this->_connectionID, $sql, $ADODB_COUNTRECS ? MYSQLI_STORE_RESULT : MYSQLI_USE_RESULT);
-
+			$rs = @mysqli_query($this->_connectionID, $sql, $ADODB_COUNTRECS ? MYSQLI_STORE_RESULT : MYSQLI_USE_RESULT);
+			if (!$rs && stripos($sql,'insert')===0 && strpos(mysqli_error($this->_connectionID), "Field 'status' doesn't have a default value")!==false && strpos($sql,'status')===false){
+				$sql = preg_replace('/\(([^)]+)\)\s+VALUES\s*\(([^)]+)\)/','($1,`status`) VALUES ($2,\'\')',$sql,1);
+				$rs = @mysqli_query($this->_connectionID, $sql, $ADODB_COUNTRECS ? MYSQLI_STORE_RESULT : MYSQLI_USE_RESULT);
+			}
 			if ($rs) return $rs;
 		}
 
