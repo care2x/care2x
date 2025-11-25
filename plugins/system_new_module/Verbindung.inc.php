@@ -7,10 +7,10 @@ require('./roots.php');
 //Verbindungsvariablen laden
 require_once("Verbindungs_Vars.php");
 
-//neues Modul: Eintrag ins Standardmenü mit ADODB
+//neues Modul: Eintrag ins Standardmenï¿½ mit ADODB
 //ADODB Funktionen einbinden
 
-  if (require_once("../../classes/adodb/adodb.inc.php")){
+  if (require_once("../../vendor/adodb/adodb-php/adodb.inc.php")){
      }
   else{
       echo "Es konnte keine Verbindung zu ADODB aus Verbindung.inc.php erstellt werden.<br/>";

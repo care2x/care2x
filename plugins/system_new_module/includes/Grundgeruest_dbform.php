@@ -1,5 +1,5 @@
 <?php
-/*** Grundgerüst zum Darstellen einer Tabelle mit dbForm ***/
+/*** Grundgerï¿½st zum Darstellen einer Tabelle mit dbForm ***/
 
 $host="localhost";
 $user="root";
@@ -16,5 +16,5 @@ include_once("./dbForm/dbForm.inc");
 
 //include ADODB
 include_once("./adodb/adodb.inc.php");
-//include_once($root_path."classes/adodb/adodb.inc.php");
+//include_once($root_path."vendor/adodb/adodb-php/adodb.inc.php");
 ?>

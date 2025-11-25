@@ -1,9 +1,9 @@
 <?php
 
 # include ADOdb class files
-require_once(APP_PATH.'/classes/adodb/adodb.inc.php');
-require_once(APP_PATH.'/classes/adodb/adodb-errorhandler.inc.php');
-require_once(APP_PATH.'/classes/adodb/adodb-xmlschema.inc.php');
+require_once(APP_PATH.'/vendor/adodb/adodb-php/adodb.inc.php');
+require_once(APP_PATH.'/vendor/adodb/adodb-php/adodb-errorhandler.inc.php');
+require_once(APP_PATH.'/vendor/adodb/adodb-php/adodb-xmlschema.inc.php');
 
 /*
  * SQLAction Class

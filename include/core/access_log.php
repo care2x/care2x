@@ -1,6 +1,6 @@
 <?php
 require_once('inc_init_main.php');
-require_once($root_path.'classes/adodb/adodb.inc.php');
+require_once($root_path.'vendor/adodb/adodb-php/adodb.inc.php');
 require_once($root_path.'classes/adodb/adodb-errorpear.inc.php');
 require_once($root_path.'classes/adodb/adodb-pager.inc.php');
 

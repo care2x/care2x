@@ -21,9 +21,9 @@ include_once("../../../dbForm/dbForm.inc");
 
 //include ADODB
 include_once("../../../adodb/adodb.inc.php");
-//include_once($root_path."classes/adodb/adodb.inc.php");
+//include_once($root_path."vendor/adodb/adodb-php/adodb.inc.php");
 
-//Ende des Grundgerüsts
+//Ende des Grundgerï¿½sts
 
 $conn = &ADONewConnection("mysql");
 //$conn->debug = true;
@@ -34,7 +34,7 @@ $ADODB_FETCH_MODE = ADODB_FETCH_ASSOC;
 //To create a form for the person table
 $dbForm = new dbForm($tabellentitel, $conn, $tab_name);
 
-//We now need to set the search field. x Felder können nach select angegeben werden
+//We now need to set the search field. x Felder kï¿½nnen nach select angegeben werden
 $dbForm->setSearchField($suchfeld, "select $suchfeld, name from $tab_name");
 
 $dbForm->processForm();
