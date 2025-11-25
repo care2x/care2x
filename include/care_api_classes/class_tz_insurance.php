@@ -768,7 +768,7 @@ class Insurance_tz extends Core {
     ($debug) ? $db->debug=TRUE : $db->debug=FALSE;
     $temparray = $dataarray;
     //if($debug) var_dump($dataarray);
-    while(list($x,$v) = each($dataarray))
+    foreach($dataarray as $x=>$v)
     {
     	//if($debug) echo '<br>('.$x.') ';
     	if(strstr($x,"this_"))
