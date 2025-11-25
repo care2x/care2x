@@ -27,7 +27,7 @@ if($src=="time")
 						break;
 	case "cut_close": print "tempi di taglio e sutura";
 						break;
-	case "wait_time": print "tempi di inattività (attesa)";
+	case "wait_time": print "tempi di inattivitï¿½ (attesa)";
 						break;
 	case "bandage_time": print "tempi di fasciatura";
 						break;
@@ -88,15 +88,15 @@ if($src=="arch")
 Come fare a inserire <?php $person ?> tramite la lista di selezione rapida?</b>
 </font>
 <ul>       	
- 	<b>Nota: </b>Se si è già scelto <?php $person ?>, il nome apparirà nella lista di selezione rapida.<p>
- 	<b>1: </b>Controllare se la funzione nel riquadro" Funzioni di sala op. " è correttamente impostata:
+ 	<b>Nota: </b>Se si ï¿½ giï¿½ scelto <?php $person ?>, il nome apparirï¿½ nella lista di selezione rapida.<p>
+ 	<b>1: </b>Controllare se la funzione nel riquadro" Funzioni di sala op. " ï¿½ correttamente impostata:
  	in caso contrario, scegliere quella giusta.<br>
  	<b>2: </b>Selezionare il nome o il cognome di <?php $person ?>, oppure
 	<nobr>"<span style="background-color:yellow" > <img <?php echo createComIcon('../','uparrowgrnlrg.gif','0') ?>> Assegna questa persona come <?php $person ?>... </span>"</nobr> link.
-	Il chirurgo sarà automaticamente aggiunto alla lista delle "voci correnti".<p>
+	Il chirurgo sarï¿½ automaticamente aggiunto alla lista delle "voci correnti".<p>
 </ul>
 <img <?php echo createComIcon('../','frage.gif','0') ?>> <font color="#990000"><b>
-<?php ucfirst($person) ?> non è nella lista di selezione rapida: come faccio a inserirla?</b>
+<?php ucfirst($person) ?> non ï¿½ nella lista di selezione rapida: come faccio a inserirla?</b>
 </font>
 <ul>       	
  	<b>1: </b>Inserire il nome o il cognome di <?php $person ?>> (bastano poche lettere) nel campo "<span style="background-color:yellow" > Ricerca nuovo <?php substr($person,3) ?>... </span>".<br>
@@ -114,7 +114,7 @@ Come fare a inserire <?php $person ?> tramite la lista di selezione rapida?</b>
 <img <?php echo createComIcon('../','frage.gif','0') ?>> 
 <font color="#990000"><b> Ho finito. Come faccio a tornare al registro?</b></font> 
 <ul>       	
- 	<b>1: </b>Premere il bottone <img <?php echo createLDImgSrc('../','close2.gif','0') ?> align="absmiddle"> che apparirà dopo aver scelto <?php $person ?>.<br>
+ 	<b>1: </b>Premere il bottone <img <?php echo createLDImgSrc('../','close2.gif','0') ?> align="absmiddle"> che apparirï¿½ dopo aver scelto <?php $person ?>.<br>
  
 </ul>
 <img <?php echo createComIcon('../','warn.gif','0','absmiddle') ?>> <font color="#990000"><b> Nota:</b></font> 
@@ -133,7 +133,7 @@ Come fare a registrare i tempi di ingresso ed uscita?</b>
 <ul>       	
  	<b>Nota: </b>Inserire "a" oppure "A" (come Adesso) nel campo per inserire automaticamente l'ora attuale.
 </ul><br>
- 	<b>Nota: </b>E' possibile inserire più di un tempo di ingresso ed uscita prima di salvare.<p>
+ 	<b>Nota: </b>E' possibile inserire piï¿½ di un tempo di ingresso ed uscita prima di salvare.<p>
 </ul>
 	<?php } ?>
 	<?php if($x1=="cut_close") { ?>
@@ -146,13 +146,13 @@ Come fare a registrare tempi di taglio e sutura?</b>
 <ul>       	
  	<b>Nota: </b>Inserire "a" oppure "A" (come Adesso) nel campo per inserire automaticamente l'ora attuale.
 </ul><br>
- 	<b>Nota: </b>E' possibile inserire più tempi di taglio e sutura prima di salvare.<p>
+ 	<b>Nota: </b>E' possibile inserire piï¿½ tempi di taglio e sutura prima di salvare.<p>
 </ul>
 
 	<?php } ?>
 	<?php if($x1=="wait_time") { ?>
 <img <?php echo createComIcon('../','frage.gif','0') ?>> <font color="#990000"><b>
-Come fare a registrare tempi di inattività (attesa)?</b>
+Come fare a registrare tempi di inattivitï¿½ (attesa)?</b>
 </font>
 <ul>       	
  	<b>1: </b>Inserire il tempo iniziale nel campo "<span style="background-color:yellow" > da: <input type="text" name="d" size=5 maxlength=5> </span>" nella prima colonna.<br>
@@ -161,7 +161,7 @@ Come fare a registrare tempi di inattività (attesa)?</b>
  	<b>Nota: </b>Inserire "a" oppure "A" (come Adesso) nel campo per inserire automaticamente l'ora attuale.
 </ul><br>
  	<b>3: </b>Scegliere la motivazione dal riquadro di selezione nella terza colonna (Motivo).<p>
- 	<b>Nota: </b>E' possibile inserire più tempi iniziali/finali e motivazioni prima di salvare.<p>
+ 	<b>Nota: </b>E' possibile inserire piï¿½ tempi iniziali/finali e motivazioni prima di salvare.<p>
 </ul>
 	<?php } ?>
 	<?php if($x1=="bandage_time") { ?>
@@ -174,7 +174,7 @@ Come fare a registrare tempi di fasciatura?</b>
 <ul>       	
  	<b>Nota: </b>Inserire "a" oppure "A" (come Adesso) nel campo per inserire automaticamente l'ora attuale.
 </ul><br>
- 	<b>Nota: </b>E' possibile inserire più tempi iniziali e finali prima di salvare.<p>
+ 	<b>Nota: </b>E' possibile inserire piï¿½ tempi iniziali e finali prima di salvare.<p>
 </ul>
 	<?php } ?>
 	<?php if($x1=="repos_time") { ?>
@@ -187,7 +187,7 @@ Come fare a registrare tempi di riposizionamento?</b>
 <ul>       	
  	<b>Nota: </b>Inserire "a" oppure "A" (come Adesso) nel campo per inserire automaticamente l'ora attuale.
 </ul><br>
- 	<b>Nota: </b>E' possibile inserire più tempi iniziali e finali prima di salvare.<p>
+ 	<b>Nota: </b>E' possibile inserire piï¿½ tempi iniziali e finali prima di salvare.<p>
 </ul>
 	<?php } ?>
 	<img <?php echo createComIcon('../','frage.gif','0') ?>> <font color="#990000"><b>
@@ -201,7 +201,7 @@ Come fare a salvare le informazioni?</b>
 <font color="#990000"><b> Desidero cancellare alcune voci ma il bottone "Annulla" non funziona. Che devo fare?</b></font> 
 <ul>       	
  	<b>Nota: </b>Il bottone "Annulla" cancella solo le voci non ancora salvate. Per cancellare voci
-	già salvate, seguire queste istruzioni:<p>
+	giï¿½ salvate, seguire queste istruzioni:<p>
  	<b>1: </b>Selezionare la voce da cancellare.<br>
  	<b>2: </b>Cancellare il tempo manualmente con i tasti "Del" e "Backspace".<br>
  	<b>3: </b>Premere il bottone <img <?php echo createLDImgSrc('../','savedisc.gif','0') ?>> per salvare le modifiche.<br>
@@ -225,7 +225,7 @@ Come fare ad: aprire la cartella dati di un paziente?</b>
 </font>
 <ul>       	
  	<b>1: </b>Premere il bottone <img <?php echo createComIcon('../','info3.gif','0') ?>> a sinistra del codice paziente.<br>
- 	<b>2: </b>Apparirà la cartella dei dati paziente.<br>
+ 	<b>2: </b>Apparirï¿½ la cartella dei dati paziente.<br>
 </ul>
 <img <?php echo createComIcon('../','frage.gif','0') ?>> <font color="#990000"><b>
 Come fare a: selezionare un altro dipartimento e/o sala operatoria?</b>
@@ -236,7 +236,7 @@ Come fare a: selezionare un altro dipartimento e/o sala operatoria?</b>
 				<?php
 					$Or2Dept=get_meta_tags("../global_conf/resolve_or2ordept.pid");
 					$opabt=get_meta_tags("../global_conf/$lang/op_tag_dept.pid");
-					foreach( as =>)
+					foreach($opabt as $x=>$v)
 					{
 						if($x=="anaesth") continue;
 						print'
@@ -249,7 +249,7 @@ Come fare a: selezionare un altro dipartimento e/o sala operatoria?</b>
 <br>
  	<b>2: </b>Scegliere la sala operatoria dal riquadro di selezione <select name="saal" size=1 >
 				<?php
-					foreach( as =>)
+					foreach($Or2Dept as $x=>$v)
 					{
 						print'
 					<option value="'.$x.'"';
@@ -286,9 +286,9 @@ Come fare a registrare il materiale usato durante l'operazione?</b>
  	<b>2: </b>Premere il bottone <input type="button" value="OK"> o premere "enter" per cercare il prodotto.<p> 
 <ul>       	
  	<b>Nota: </b>Se la ricerca trova un solo risultato, le informazioni saranno inserite immediatamente nel documento.<p> 
- 	<b>Nota: </b>Se invece ci sono più risultati, apparirà un elenco. Premere il bottone <img <?php echo createComIcon('../','bul_arrowgrnlrg.gif','0') ?>> il codice articolo, o il nome per aggiungerlo al documento.<p> 
+ 	<b>Nota: </b>Se invece ci sono piï¿½ risultati, apparirï¿½ un elenco. Premere il bottone <img <?php echo createComIcon('../','bul_arrowgrnlrg.gif','0') ?>> il codice articolo, o il nome per aggiungerlo al documento.<p> 
 	</ul>
- 	<b>3: </b>Se necessario, è possibile modificare il campo "<span style="background-color:yellow" > pezzi </span>" per l'articolo.<p> 
+ 	<b>3: </b>Se necessario, ï¿½ possibile modificare il campo "<span style="background-color:yellow" > pezzi </span>" per l'articolo.<p> 
 <ul>       	
  	<b>Nota: </b>Una volta modificato il campo "pezzi", appariranno i bottoni "Salva" e "Annulla".<p> 
 	</ul>
@@ -301,7 +301,7 @@ Come fare a: rimuovere un articolo dalla lista?</b>
  	<b>1: </b>Selezionare l'icona <img src="../img/cancellare2.gif" border=0 align="absmiddle"> corrispondente all'articolo.<br> 
 </ul>
 <img <?php echo createComIcon('../','frage.gif','0') ?>> <font color="#990000"><b>
-L'articolo non è presente. E' possibile inserirlo manualmente?</b>
+L'articolo non ï¿½ presente. E' possibile inserirlo manualmente?</b>
 </font>
 <ul> 
  	<b>1: </b>Selezionare il link "<span style="background-color:yellow" > <img <?php echo createComIcon('../','accessrights.gif','0') ?>> Selezionare qui per inserire l'articolo a mano. </span>".<br> 
@@ -335,7 +335,7 @@ Come fare a: creare un nuovo registro per un'operazione?</b>
  	<b>2: </b>Premere il bottone <input type="button" value="Ricerca pazienti">  per attivare la ricerca for the patient.<p> 
 <ul>       	
  	<b>Nota: </b>Se la ricerca trova un solo risultato, i dati fondamentali del paziente saranno subito inseriti nei campi appropriati.<p> 
- 	<b>Nota: </b>Se invece ci sono più risultati, apparirà un elenco. Selezionare il cognome o il nome del paziente desiderato.<p> 
+ 	<b>Nota: </b>Se invece ci sono piï¿½ risultati, apparirï¿½ un elenco. Selezionare il cognome o il nome del paziente desiderato.<p> 
 	</ul>
  	<b>3: </b>Selezionare di nuovo <img <?php echo createLDImgSrc('../','hilfe-r.gif','0') ?>> per altre istruzioni.<p> 
 
@@ -353,7 +353,7 @@ Come fare a: inserire informazioni sul chirurgo?</b>
 </font>
 <ul>       	
  	<b>1: </b>Selezionare "<span style="background-color:yellow" > Chirurgo </span>".<br>
- 	<b>2: </b>Apparirà una finestrella con le informazioni richieste.<br>
+ 	<b>2: </b>Apparirï¿½ una finestrella con le informazioni richieste.<br>
  	<b>3: </b>Seguire le istruzioni nella finestra o selezionare il tasto "Aiuto" nella finestra per altre istruzioni. <br>
 	</ul>
 <img <?php echo createComIcon('../','frage.gif','0') ?>> <font color="#990000"><b>
@@ -361,7 +361,7 @@ Come fare a: inserire informazioni sull'aiuto chirurgo?</b>
 </font>
 <ul>       	
  	<b>1: </b>Selezionare "<span style="background-color:yellow" > Aiuto </span>".<br>
- 	<b>2: </b>Apparirà una finestrella con le informazioni richieste.<br>
+ 	<b>2: </b>Apparirï¿½ una finestrella con le informazioni richieste.<br>
  	<b>3: </b>Seguire le istruzioni nella finestra o selezionare il tasto "Aiuto" nella finestra per altre istruzioni. <br>
 	</ul>
 <img <?php echo createComIcon('../','frage.gif','0') ?>> <font color="#990000"><b>
@@ -369,7 +369,7 @@ Come fare a: inserire informazioni sull'assistente sterile?</b>
 </font>
 <ul>       	
  	<b>1: </b>Selezionare il link "<span style="background-color:yellow" > Assistente sterile </span>".<br>
- 	<b>2: </b>Apparirà una finestrella con le informazioni richieste.<br>
+ 	<b>2: </b>Apparirï¿½ una finestrella con le informazioni richieste.<br>
  	<b>3: </b>Seguire le istruzioni nella finestra o selezionare il tasto "Aiuto" nella finestra per altre istruzioni.<br>
 	</ul>
 <img <?php echo createComIcon('../','frage.gif','0') ?>> <font color="#990000"><b>
@@ -377,7 +377,7 @@ Come fare a: inserire informazioni sull'assistente non sterile?</b>
 </font>
 <ul>       	
  	<b>1: </b>Selezionare il link "<span style="background-color:yellow" > Assistente non sterile </span>".<br>
- 	<b>2: </b>Apparirà una finestrella con le informazioni richieste.<br>
+ 	<b>2: </b>Apparirï¿½ una finestrella con le informazioni richieste.<br>
  	<b>3: </b>Seguire le istruzioni nella finestra o selezionare il tasto "Aiuto" nella finestra per altre istruzioni.<br>
 	</ul>
 <img <?php echo createComIcon('../','frage.gif','0') ?>> <font color="#990000"><b>
@@ -404,7 +404,7 @@ Come inserire informazioni sull'anestesista</b>
 </font>
 <ul>       	
  	<b>1: </b>selezionare il link "<span style="background-color:yellow" > Anestesista </span>".<br>
- 	<b>2: </b>Apparirà una finestrella in cui inserire le informazioni.<br>
+ 	<b>2: </b>Apparirï¿½ una finestrella in cui inserire le informazioni.<br>
  	<b>3: </b>Seguire le istruzioni nella finestra o premere il bottone "Help" per ricevere aiuto. <br>
 	</ul>
 <img <?php echo createComIcon('../','frage.gif','0') ?>> <font color="#990000"><b>
@@ -417,7 +417,7 @@ Come inserire tempi di inizio, taglio, sutura e fine direttamente nei campi corr
  	<b>Tempo di fine: </b>Inserire il tempo nel campo "<span style="background-color:yellow" > Uscita: <input type="text" name="t" size=5 maxlength=5> </span>".<br>
 	</ul>
 <img <?php echo createComIcon('../','frage.gif','0') ?>> <font color="#990000"><b>
-Come inserire più tempi in una volta sola</b>
+Come inserire piï¿½ tempi in una volta sola</b>
 </font>
 <ul> <b>1: </b><p>    	
  	<b>Tempi di inizio/fine: </b>
@@ -430,7 +430,7 @@ Come inserire più tempi in una volta sola</b>
  	selezionare "<span style="background-color:yellow" > fasciatura/ingessatura <img <?php echo createComIcon('../','bul_arrowgrnsm.gif','0','absmiddle') ?>> </span>" nell'angolo in basso a sinistra.<p>
  	<b>Tempi di riposizionamento: </b>
  	selezionare "<span style="background-color:yellow" > riposizionamento <img <?php echo createComIcon('../','bul_arrowgrnsm.gif','0','absmiddle') ?>> </span>" nell'angolo in basso a sinistra.<p>
- 	<b>2: </b>Apparirà una finestralla in cui inserire il tempo impiegato. <br>
+ 	<b>2: </b>Apparirï¿½ una finestralla in cui inserire il tempo impiegato. <br>
  	<b>3: </b>Seguire le istruzioni o selezionare "Help" per ottenere altre informazioni. <br>
 	</ul>
 <img <?php echo createComIcon('../','frage.gif','0') ?>> <font color="#990000"><b>
@@ -438,7 +438,7 @@ Come inserire un tempo nel diagramma grafico dei tempi</b>
 </font>
 <ul> <b>1: </b>Posizionarsi con il mouse sul punto nella scala dei tempi corrispondente al tipo desiderato (es. Fasciatura/ingessatura).<br>
  	<b>2: </b>Selezionare l'orario sulla scala dei tempi.<p>
-<b>Nota:</b> Il primo campo sarà il tempo iniziale, il secondo quello finale, il terzo sarà il successivo tempo iniziale e così via
+<b>Nota:</b> Il primo campo sarï¿½ il tempo iniziale, il secondo quello finale, il terzo sarï¿½ il successivo tempo iniziale e cosï¿½ via
 	</ul>
 <img <?php echo createComIcon('../','frage.gif','0') ?>> <font color="#990000"><b>
 Come inserire informazioni sulla terapia o l'operazione</b>
@@ -481,7 +481,7 @@ Come fare a: cercare i documenti di un certo paziente?</b>
  	<b>2: </b>Premere il bottone <img <?php echo createLDImgSrc('../','searchlamp.gif','0') ?>> per iniziare la ricerca sul paziente.<p> 
 <ul>       	
  	<b>Nota: </b>Se la ricerca identifica un solo risultato, i documenti del paziente saranno visualizzati subito.<p> 
- 	<b>Nota: </b>Se la ricerca identifica più risultati, apparirà un elenco. 
+ 	<b>Nota: </b>Se la ricerca identifica piï¿½ risultati, apparirï¿½ un elenco. 
 	Selezionare il cognome del paziente per visualizzare i suoi documenti.<p> 
 	</ul>
 </ul>
@@ -501,7 +501,7 @@ Come fare a: selezionare uno specifico documento da visualizzare?</b>
 Come fare a: aggiornare o modificare il registro visualizzato?</b>
 </font>
 <ul>       	
- 	<b>1: </b>Selezionare <img src="../img/update3.gif" border=0> posto sotto la data dell'operazione nella colonna più a sinistra per passare al modo modifica.<br>
+ 	<b>1: </b>Selezionare <img src="../img/update3.gif" border=0> posto sotto la data dell'operazione nella colonna piï¿½ a sinistra per passare al modo modifica.<br>
  	<b>2: </b>Una volta in modo modifica, selezionare il tasto "Aiuto" per altre istruzioni.<p> 
 	</ul>
 <img <?php echo createComIcon('../','frage.gif','0') ?>> <font color="#990000"><b>
@@ -509,7 +509,7 @@ Come fare a: aprire la cartella dati di un paziente?</b>
 </font>
 <ul>       	
  	<b>1: </b>Selezionare <img src="../img/info2.gif" border=0> a sinistra del codice paziente.<br>
- 	<b>2: </b>Apparirà la cartella dei dati paziente. Selezionare il tasto "Aiuto" nella finestra per altre istruzioni.<p> 
+ 	<b>2: </b>Apparirï¿½ la cartella dei dati paziente. Selezionare il tasto "Aiuto" nella finestra per altre istruzioni.<p> 
 	</ul>
 
 <?php endif;?>
@@ -550,13 +550,13 @@ Selezionare "Ricerca" per passare al modo ricerca.</ul>
                                                                                                                                          	<option > Esempio 2</option>
                                                                                                                                          </select>
                                                                                                                                           </span>".</nobr> <br>La sala operatoria
-	sarà aggiornata automaticamente.<br>																																		  
+	sarï¿½ aggiornata automaticamente.<br>																																		  
 	<b>2: </b>Oppure scegliere la sala operatoria nel riquadro di selezione <nobr>"<span style="background-color:yellow" > <select name="o">
                                                                                                                                          	<option > Sala 1</option>
                                                                                                                                          	<option > Sala 2</option>
                                                                                                                                          </select>
                                                                                                                                           </span>".</nobr> <br>Il dipartimento
-	sarà aggiornato automaticamente.<br>																																		  																																		  
+	sarï¿½ aggiornato automaticamente.<br>																																		  																																		  
 		<b>3: </b>Premere il bottone <input type="button" value="Cambia">  per passare al nuovo dipartimento o sala operatoria.<br>
 </ul>
 <?php if(($x3!="")) : ?>
@@ -564,7 +564,7 @@ Selezionare "Ricerca" per passare al modo ricerca.</ul>
 Come fare a: aggiornare o modificare il registro visualizzato?</b>
 </font>
 <ul>       	
- 	<b>1: </b>Selezionare <img src="../img/update3.gif" border=0> posto sotto la data dell'operazione nella colonna più a sinistra per passare al modo modifica.<br>
+ 	<b>1: </b>Selezionare <img src="../img/update3.gif" border=0> posto sotto la data dell'operazione nella colonna piï¿½ a sinistra per passare al modo modifica.<br>
  	<b>2: </b>Una volta in modo modifica, selezionare il tasto "Aiuto" per altre istruzioni.<p> 
 	</ul>
 <img <?php echo createComIcon('../','frage.gif','0') ?>> <font color="#990000"><b>
@@ -572,7 +572,7 @@ Come fare a: aprire la cartella dati di un paziente?</b>
 </font>
 <ul>       	
  	<b>1: </b>Selezionare <img src="../img/info2.gif" border=0> a sinistra del codice paziente.<br>
- 	<b>2: </b>Apparirà la cartella dei dati paziente. Selezionare il tasto "Aiuto" nella finestra per altre istruzioni.<p> 
+ 	<b>2: </b>Apparirï¿½ la cartella dei dati paziente. Selezionare il tasto "Aiuto" nella finestra per altre istruzioni.<p> 
 	</ul>
 	<?php endif;?>
 <img <?php echo createComIcon('../','warn.gif','0','absmiddle') ?>> <font color="#990000"><b> Nota:</b></font> 

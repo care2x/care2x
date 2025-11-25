@@ -261,7 +261,7 @@ How to change to other department and/or operating room?</b>
 $Or2Dept=get_meta_tags("../global_conf/resolve_or2ordept.pid");
 					$opabt=get_meta_tags("../global_conf/$lang/op_tag_dept.pid");
 
-					foreach( as =>)
+					foreach($opabt as $x=>$v)
 					{
 						if($x=="anaesth") continue;
 						print'
@@ -275,7 +275,7 @@ $Or2Dept=get_meta_tags("../global_conf/resolve_or2ordept.pid");
 <br>
  	<b>Step 2: </b>Select the operating room from the selection box <select name="saal" size=1 >
 				<?php
-foreach( as =>)
+foreach($Or2Dept as $x=>$v)
 					{
 						print'
 					<option value="'.$x.'"';

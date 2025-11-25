@@ -12,9 +12,9 @@ if($src=="create")
 						break;
 	case "get": print  "";
 						break;
-	case "logmain": print "Editar um registro documentado de uma operação";
+	case "logmain": print "Editar um registro documentado de uma operaï¿½ï¿½o";
 						break;
-	default: print "Registrar uma nova operação";	
+	default: print "Registrar uma nova operaï¿½ï¿½o";	
 	}
 }
 if($src=="time")
@@ -22,7 +22,7 @@ if($src=="time")
 	print "Documentando ";
 	switch($x1)
 	{
-	case "entry_out": print "tempos de entrada e saída";
+	case "entry_out": print "tempos de entrada e saï¿½da";
 						break;
 	case "cut_close": print "tempos de corte e sutura";
 						break;
@@ -30,7 +30,7 @@ if($src=="time")
 						break;
 	case "bandage_time": print "tempos de engessamento";
 						break;
-	case "repos_time": print "tempos de reposição";
+	case "repos_time": print "tempos de reposiï¿½ï¿½o";
 	}
 }
 if($src=="person")
@@ -38,9 +38,9 @@ if($src=="person")
 	print "Documentando ";
 	switch($x1)
 	{
-	case "operator":$person="um cirurgião"; 
+	case "operator":$person="um cirurgiï¿½o"; 
 						break;
-	case "assist":$person="um assistente cirurgião"; 
+	case "assist":$person="um assistente cirurgiï¿½o"; 
 						break;
 	case "scrub": $person="um enfermeiro scrub";
 						break;
@@ -56,11 +56,11 @@ if($src=="search")
 	{
 	case "search": print "Selecionando um documento particular";
 						break;
-	case "": print "Pesqusiar um documento de registro de operação";
+	case "": print "Pesqusiar um documento de registro de operaï¿½ï¿½o";
 						break;
-	case "get": print  "Documento registro de operação de paciente";
+	case "get": print  "Documento registro de operaï¿½ï¿½o de paciente";
 						break;
-	case "fresh": print "Pesquisar um documento registro de operação";
+	case "fresh": print "Pesquisar um documento registro de operaï¿½ï¿½o";
 	}
 }
 if($src=="arch")
@@ -84,55 +84,55 @@ if($src=="arch")
 <form action="#" >
 <?php if($src=="person") : ?>
 <img <?php echo createComIcon('../','frage.gif','0') ?>> <font color="#990000"><b>
-Como inserir <?php echo $person ?> através da lista de seleção rápida?</b>
+Como inserir <?php echo $person ?> atravï¿½s da lista de seleï¿½ï¿½o rï¿½pida?</b>
 </font>
 <ul>       	
- 	<b>Nota: </b>Se <?php echo $person ?> foi selecionada emuma operação prévia, seu nome será listado na lista de seleção rápida.<p>
- 	<b>Passo 1: </b>Primeiro verifique se sua função está corretamente selecionada na caixa de seleção " Função Centro Cirúrgico ". Se não, selecione sua his correct Função Centro Cirúrgico correta.<br>
- 	<b>Passo 2: </b>Clique no nome de família, ou primeiro nome da <?php echo $person ?> ou o  
+ 	<b>Nota: </b>Se <?php echo $person ?> foi selecionada emuma operaï¿½ï¿½o prï¿½via, seu nome serï¿½ listado na lista de seleï¿½ï¿½o rï¿½pida.<p>
+ 	<b>Passo 1: </b>Primeiro verifique se sua funï¿½ï¿½o estï¿½ corretamente selecionada na caixa de seleï¿½ï¿½o " Funï¿½ï¿½o Centro Cirï¿½rgico ". Se nï¿½o, selecione sua his correct Funï¿½ï¿½o Centro Cirï¿½rgico correta.<br>
+ 	<b>Passo 2: </b>Clique no nome de famï¿½lia, ou primeiro nome da <?php echo $person ?> ou o  
 	<nobr>"<span style="background-color:yellow" > <img <?php echo createComIcon('../','uparrowgrnlrg.gif','0') ?>> Insira esta pessoa como <?php echo $person ?>... </span>"</nobr> link.
-	O cirurgião será automaticamente adicionado na lista de "entradas correntes" .<p>
+	O cirurgiï¿½o serï¿½ automaticamente adicionado na lista de "entradas correntes" .<p>
 </ul>
 <img <?php echo createComIcon('../','frage.gif','0') ?>> <font color="#990000"><b>
-<?php echo ucfirst($person) ?> não aparece na lista de seleção rápida. Como inserir <?php echo $person ?>?</b>
+<?php echo ucfirst($person) ?> nï¿½o aparece na lista de seleï¿½ï¿½o rï¿½pida. Como inserir <?php echo $person ?>?</b>
 </font>
 <ul>       	
- 	<b>Passo 1: </b>Insira uma informação completa ou as primeiras letras do nome da família ou primeiro nome da <?php echo $person ?> no campo "<span style="background-color:yellow" > Pesquise uma nova <?php echo substr($person,2) ?>... </span>".<br>
- 	<b>Passo 2: </b>Clique no botão <input type="button" value="OK"> para iniciar pesquisando por <?php echo $person ?>.<br>
- 	<b>Passo 3: </b>A pesquisa irá listar os resultados. Clique no nome da família, ou primeiro nome, ou no <nobr>"<span style="background-color:yellow" > <img <?php echo createComIcon('../','uparrowgrnlrg.gif','0') ?>> Insira esta pessoa como  <?php echo $person ?>... </span>"</nobr> link correspondente a <?php echo $person ?> que você quiser documentar.
+ 	<b>Passo 1: </b>Insira uma informaï¿½ï¿½o completa ou as primeiras letras do nome da famï¿½lia ou primeiro nome da <?php echo $person ?> no campo "<span style="background-color:yellow" > Pesquise uma nova <?php echo substr($person,2) ?>... </span>".<br>
+ 	<b>Passo 2: </b>Clique no botï¿½o <input type="button" value="OK"> para iniciar pesquisando por <?php echo $person ?>.<br>
+ 	<b>Passo 3: </b>A pesquisa irï¿½ listar os resultados. Clique no nome da famï¿½lia, ou primeiro nome, ou no <nobr>"<span style="background-color:yellow" > <img <?php echo createComIcon('../','uparrowgrnlrg.gif','0') ?>> Insira esta pessoa como  <?php echo $person ?>... </span>"</nobr> link correspondente a <?php echo $person ?> que vocï¿½ quiser documentar.
 </ul>
 
 
 <img <?php echo createComIcon('../','frage.gif','0') ?>> 
 <font color="#990000"><b> Como deletar uma <?php echo $person ?> da lista?</b></font> 
 <ul>       	
- 	<b>Passo 1: </b>Clique no ícone <img <?php echo createComIcon('../','delete2.gif','0','absmiddle') ?>> à direita do nome da pessoa.<br>
+ 	<b>Passo 1: </b>Clique no ï¿½cone <img <?php echo createComIcon('../','delete2.gif','0','absmiddle') ?>> ï¿½ direita do nome da pessoa.<br>
  
 </ul>
 <img <?php echo createComIcon('../','frage.gif','0') ?>> 
 <font color="#990000"><b> Finalizei. Como voltar para o livro de registros?</b></font> 
 <ul>       	
- 	<b>Passo 1: </b>Clique no botão<img <?php echo createLDImgSrc('../','close2.gif','0') ?> align="absmiddle"> que irá aparecer após você ter selecionado <?php echo $person ?>.<br>
+ 	<b>Passo 1: </b>Clique no botï¿½o<img <?php echo createLDImgSrc('../','close2.gif','0') ?> align="absmiddle"> que irï¿½ aparecer apï¿½s vocï¿½ ter selecionado <?php echo $person ?>.<br>
  
 </ul>
 <img <?php echo createComIcon('../','warn.gif','0','absmiddle') ?>> <font color="#990000"><b> Nota:</b></font> 
 <ul>       	
- Se você decidir cancelar clique no botão<img <?php echo createLDImgSrc('../','cancel.gif','0') ?>>.
+ Se vocï¿½ decidir cancelar clique no botï¿½o<img <?php echo createLDImgSrc('../','cancel.gif','0') ?>>.
 </ul>
 <?php endif;?>
 
 <?php if($src=="time") : ?>
 	<?php if($x1=="entry_out") : ?>
 <img <?php echo createComIcon('../','frage.gif','0') ?>> <font color="#990000"><b>
-Como documentar os tempos de entrada e saída?</b>
+Como documentar os tempos de entrada e saï¿½da?</b>
 </font>
 <ul>       	
  	<b>Passo 1: </b>Insira o tempo de entrada no campo "<span style="background-color:yellow" > de: <input type="text" name="d" size=5 maxlength=5> </span>" na coluna da esquerda.<br>
- 	<b>Passo 2: </b>Insira o tempo de saída no campo "<span style="background-color:yellow" > até: <input type="text" name="d" size=5 maxlength=5> </span>" na coluna da direita.<p>
+ 	<b>Passo 2: </b>Insira o tempo de saï¿½da no campo "<span style="background-color:yellow" > atï¿½: <input type="text" name="d" size=5 maxlength=5> </span>" na coluna da direita.<p>
 <ul>       	
  	<b>Dica: </b>Insira "n" ou "N" (significando "agora") no campo de entrada para automaticamente inserir o tempo corrente.
 </ul><br>
- 	<b>Nota: </b>Você pode inserir diversos tempos de entrada e saída todos de uma vez antes de salvar a informação.<p>
+ 	<b>Nota: </b>Vocï¿½ pode inserir diversos tempos de entrada e saï¿½da todos de uma vez antes de salvar a informaï¿½ï¿½o.<p>
 </ul>
 
 	<?php endif;?>
@@ -142,11 +142,11 @@ Como documentar tempos de corte e sutura?</b>
 </font>
 <ul>       	
  	<b>Passo 1: </b>Insira o tempo de corte no campo "<span style="background-color:yellow" > de: <input type="text" name="d" size=5 maxlength=5> </span>" na coluna da esquerda.<br>
- 	<b>Passo 2: </b>Insira o tempo de sutura no campo "<span style="background-color:yellow" > até: <input type="text" name="d" size=5 maxlength=5> </span>"  na coluna da direita.<p>
+ 	<b>Passo 2: </b>Insira o tempo de sutura no campo "<span style="background-color:yellow" > atï¿½: <input type="text" name="d" size=5 maxlength=5> </span>"  na coluna da direita.<p>
 <ul>       	
  	<b>Dica: </b>Insira "n" ou "N" (significando agora) no campo de entrada para automaticamente insirir o tempo corrente.
 </ul><br>
- 	<b>Nota: </b>Você pode inserir diversos tempos de corte e sutura todos juntos antes de salvar a informação.<p>
+ 	<b>Nota: </b>Vocï¿½ pode inserir diversos tempos de corte e sutura todos juntos antes de salvar a informaï¿½ï¿½o.<p>
 </ul>
 
 	<?php endif;?>
@@ -155,13 +155,13 @@ Como documentar tempos de corte e sutura?</b>
 Como documentar tempo de espera (aguardando)?</b>
 </font>
 <ul>       	
- 	<b>Passo 1: </b>Insira o tempo de início no campo "<span style="background-color:yellow" > de: <input type="text" name="d" size=5 maxlength=5> </span>" na coluna da esquerda.<br>
- 	<b>Passo 2: </b>Insira o tempo de fim no campo "<span style="background-color:yellow" > até: <input type="text" name="d" size=5 maxlength=5> </span>" na coluna da direita.<p>
+ 	<b>Passo 1: </b>Insira o tempo de inï¿½cio no campo "<span style="background-color:yellow" > de: <input type="text" name="d" size=5 maxlength=5> </span>" na coluna da esquerda.<br>
+ 	<b>Passo 2: </b>Insira o tempo de fim no campo "<span style="background-color:yellow" > atï¿½: <input type="text" name="d" size=5 maxlength=5> </span>" na coluna da direita.<p>
 <ul>       	
  	<b>Tip: </b>Insira "n" ou "N" (significando agora) no campo de entrada para automaticamente insirir o tempo corrente.
 </ul><br>
- 	<b>Passo 3: </b>Selecione a razão na caixa de seleção na terceira coluna (Razão) column.<p>
- 	<b>Nota: </b>Você pode inserir diversos tempos de início e fim e razões todos juntos antes de salvar a informação.<p>
+ 	<b>Passo 3: </b>Selecione a razï¿½o na caixa de seleï¿½ï¿½o na terceira coluna (Razï¿½o) column.<p>
+ 	<b>Nota: </b>Vocï¿½ pode inserir diversos tempos de inï¿½cio e fim e razï¿½es todos juntos antes de salvar a informaï¿½ï¿½o.<p>
 </ul>
 
 	<?php endif;?>
@@ -170,49 +170,49 @@ Como documentar tempo de espera (aguardando)?</b>
 Como documentar tempos de engessamento?</b>
 </font>
 <ul>       	
- 	<b>Passo 1: </b>Insira o tempo de início no campo "<span style="background-color:yellow" > de: <input type="text" name="d" size=5 maxlength=5> </span>" na coluna da esquerda.<br>
- 	<b>Passo 2: </b>Insira o tempo de fim no campo "<span style="background-color:yellow" > até: <input type="text" name="d" size=5 maxlength=5> </span>" na coluna da direita.<p>
+ 	<b>Passo 1: </b>Insira o tempo de inï¿½cio no campo "<span style="background-color:yellow" > de: <input type="text" name="d" size=5 maxlength=5> </span>" na coluna da esquerda.<br>
+ 	<b>Passo 2: </b>Insira o tempo de fim no campo "<span style="background-color:yellow" > atï¿½: <input type="text" name="d" size=5 maxlength=5> </span>" na coluna da direita.<p>
 <ul>       	
  	<b>Tip: </b>Insira "n" ou "N" (significando agora) no campo de entrada para automaticamente insirir o tempo corrente.
 </ul><br>
- 	<b>Note: </b>Você pode inserir diversos tempos de início e fim e razões todos juntos antes de salvar a informação.<p>
+ 	<b>Note: </b>Vocï¿½ pode inserir diversos tempos de inï¿½cio e fim e razï¿½es todos juntos antes de salvar a informaï¿½ï¿½o.<p>
 </ul>
 
 	<?php endif;?>
 	<?php if($x1=="repos_time") : ?>
 <img <?php echo createComIcon('../','frage.gif','0') ?>> <font color="#990000"><b>
-Como documentar tempos de reposição?</b>
+Como documentar tempos de reposiï¿½ï¿½o?</b>
 </font>
 <ul>       	
- 	<b>Passo 1: </b>Insira o tempo de início no campo "<span style="background-color:yellow" > from: <input type="text" name="d" size=5 maxlength=5> </span>" na coluna da esquerda.<br>
+ 	<b>Passo 1: </b>Insira o tempo de inï¿½cio no campo "<span style="background-color:yellow" > from: <input type="text" name="d" size=5 maxlength=5> </span>" na coluna da esquerda.<br>
  	<b>Passo 2: </b>Insira o tempo de fim no campo "<span style="background-color:yellow" > to: <input type="text" name="d" size=5 maxlength=5> </span>" na coluna da direita.<p>
 <ul>       	
  	<b>Tip: </b>Insira "n" ou "N" (significando agora) no campo de entrada para automaticamente insirir o tempo corrente.
 </ul><br>
- 	<b>Note: </b>Você pode inserir diversos tempos de início e fim e razões todos juntos antes de salvar a informação.<p>
+ 	<b>Note: </b>Vocï¿½ pode inserir diversos tempos de inï¿½cio e fim e razï¿½es todos juntos antes de salvar a informaï¿½ï¿½o.<p>
 </ul>
 
 	<?php endif;?>
 	<img <?php echo createComIcon('../','frage.gif','0') ?>> <font color="#990000"><b>
-Como salvar a informação?</b>
+Como salvar a informaï¿½ï¿½o?</b>
 </font>
 <ul>       	
- 	<b>Passo 1: </b>Clique no botão<img <?php echo createLDImgSrc('../','savedisc.gif','0') ?>> para salvar a informação<br>
- 	<b>Passo 2: </b>Se você terminou, clique no botão <img <?php echo createLDImgSrc('../','close2.gif','0') ?>> para fechar a janela e voltar ao livro de registros.<br>
+ 	<b>Passo 1: </b>Clique no botï¿½o<img <?php echo createLDImgSrc('../','savedisc.gif','0') ?>> para salvar a informaï¿½ï¿½o<br>
+ 	<b>Passo 2: </b>Se vocï¿½ terminou, clique no botï¿½o <img <?php echo createLDImgSrc('../','close2.gif','0') ?>> para fechar a janela e voltar ao livro de registros.<br>
 </ul>
 <img <?php echo createComIcon('../','frage.gif','0') ?>> 
-<font color="#990000"><b> Desejo deletar as entradas, mas clicando no botão "Reseta dados" nada parece acontecer. O que devo fazer?</b></font> 
+<font color="#990000"><b> Desejo deletar as entradas, mas clicando no botï¿½o "Reseta dados" nada parece acontecer. O que devo fazer?</b></font> 
 <ul>       	
- 	<b>Nota: </b>Clicando no botão  "Reseta dados" irá apenas apagar as entradas que ainda não foram salvas. Se você desejar deletar entradas
-	que foram salvas previamente, siga estas instruções:<p>
- 	<b>Passo 1: </b>Clique no campo de entrada do tempo que você quer deletar.<br>
+ 	<b>Nota: </b>Clicando no botï¿½o  "Reseta dados" irï¿½ apenas apagar as entradas que ainda nï¿½o foram salvas. Se vocï¿½ desejar deletar entradas
+	que foram salvas previamente, siga estas instruï¿½ï¿½es:<p>
+ 	<b>Passo 1: </b>Clique no campo de entrada do tempo que vocï¿½ quer deletar.<br>
  	<b>Passo 2: </b>Delete o tempo manualmente usando as teclas "Del" ou "Backspace" do teclado.<br>
- 	<b>Passo 3: </b>Clique no botão<img <?php echo createLDImgSrc('../','savedisc.gif','0') ?>> para salvar as mudanças.<br>
+ 	<b>Passo 3: </b>Clique no botï¿½o<img <?php echo createLDImgSrc('../','savedisc.gif','0') ?>> para salvar as mudanï¿½as.<br>
  
 </ul>
 <img <?php echo createComIcon('../','warn.gif','0','absmiddle') ?>> <font color="#990000"><b> Note:</b></font> 
 <ul>       	
- Se você decidir cancelar clique no botão<img <?php echo createLDImgSrc('../','cancel.gif','0') ?>>.
+ Se vocï¿½ decidir cancelar clique no botï¿½o<img <?php echo createLDImgSrc('../','cancel.gif','0') ?>>.
 </ul>
 <?php endif;?>
 
@@ -220,30 +220,30 @@ Como salvar a informação?</b>
 <?php if($src=="create") : ?>
 	<?php if($x1=="logmain") : ?>
 <img <?php echo createComIcon('../','frage.gif','0') ?>> <font color="#990000"><b>
-Como editar uma entrada de registro de operação?</b>
+Como editar uma entrada de registro de operaï¿½ï¿½o?</b>
 </font>
 <ul>       	
- 	<b>Passo 1: </b>Clique no botão<img <?php echo createComIcon('../','dwnarrowgrnlrg.gif','0') ?>> correspondente ao registro de entrada do paciente.<br>
- 	<b>Passo 2: </b>A entrada de registro do paciente será copiada para o quadro editor. Agora você pode editar a entrada seguindo as instruções para documentar um operação.<br>
+ 	<b>Passo 1: </b>Clique no botï¿½o<img <?php echo createComIcon('../','dwnarrowgrnlrg.gif','0') ?>> correspondente ao registro de entrada do paciente.<br>
+ 	<b>Passo 2: </b>A entrada de registro do paciente serï¿½ copiada para o quadro editor. Agora vocï¿½ pode editar a entrada seguindo as instruï¿½ï¿½es para documentar um operaï¿½ï¿½o.<br>
 </ul>
 <img <?php echo createComIcon('../','frage.gif','0') ?>> <font color="#990000"><b>
 Como abrir a pasta de dados do paciente?</b>
 </font>
 <ul>       	
- 	<b>Passo 1: </b>Clique no botão<img <?php echo createComIcon('../','info3.gif','0') ?>> à esquerda do númenro do paciente.<br>
- 	<b>Passo 2: </b>A pasta de dados do paciente irá aparecer.<br>
+ 	<b>Passo 1: </b>Clique no botï¿½o<img <?php echo createComIcon('../','info3.gif','0') ?>> ï¿½ esquerda do nï¿½menro do paciente.<br>
+ 	<b>Passo 2: </b>A pasta de dados do paciente irï¿½ aparecer.<br>
 </ul>
 <img <?php echo createComIcon('../','frage.gif','0') ?>> <font color="#990000"><b>
-Como mudar para outro departamento e/ou Centro Cirúrgico?</b>
+Como mudar para outro departamento e/ou Centro Cirï¿½rgico?</b>
 </font>
 <ul>       	
- 	<b>Passo 1: </b>Selecione o departmento da caixa de seleção 
+ 	<b>Passo 1: </b>Selecione o departmento da caixa de seleï¿½ï¿½o 
 				<select name="dept" size=1>
 				<?php
 $Or2Dept=get_meta_tags("../global_conf/resolve_or2ordept.pid");
 					$opabt=get_meta_tags("../global_conf/$lang/op_tag_dept.pid");
 
-					foreach( as =>)
+					foreach($opabt as $x=>$v)
 					{
 						if($x=="anaesth") continue;
 						print'
@@ -255,9 +255,9 @@ $Or2Dept=get_meta_tags("../global_conf/resolve_or2ordept.pid");
 					
 				</select>.
 <br>
- 	<b>Passo 2: </b>Selecione o Centro Cirúrgico da caixa de seleção <select name="saal" size=1 >
+ 	<b>Passo 2: </b>Selecione o Centro Cirï¿½rgico da caixa de seleï¿½ï¿½o <select name="saal" size=1 >
 				<?php
-foreach( as =>)
+foreach($Or2Dept as $x=>$v)
 					{
 						print'
 					<option value="'.$x.'"';
@@ -267,16 +267,16 @@ foreach( as =>)
 				?>
 				</select>.
 <br>
- 	<b>Passo 3: </b>Clique no botão<input type="button" value="Change"> para mudar para outro departamento e/ou centro cirúrgico.<br>
+ 	<b>Passo 3: </b>Clique no botï¿½o<input type="button" value="Change"> para mudar para outro departamento e/ou centro cirï¿½rgico.<br>
 </ul>
 <img <?php echo createComIcon('../','frage.gif','0') ?>> <font color="#990000"><b>
-Como exibir os registros de entrada de um  dia que não está sendo exibido?</b>
+Como exibir os registros de entrada de um  dia que nï¿½o estï¿½ sendo exibido?</b>
 </font>
 <ul>       	
  	<b>Passo 1: </b>Para exibir os registros de entrada de dia(s) anterior(es), clique no link "<span style="background-color:yellow" > Dia anterior </span>" no canto esquerdo superior da tabela.<br>
 	Clique as many times as needed until the log entries of the desired day is displayed.<br>
  	<b>Passo 2: </b>Para exibir os registros de entrada do(s) dia(s) seguinte(s) , clique no link "<span style="background-color:yellow" > Next day </span>" no canto direito superior da tabela.<br>
-	Clique tantas vezes quantas forem necessárias até que os registros de entrada dos dias desejados sejam exibidos.<br>
+	Clique tantas vezes quantas forem necessï¿½rias atï¿½ que os registros de entrada dos dias desejados sejam exibidos.<br>
 </ul>
 
 <hr>
@@ -285,43 +285,43 @@ Como exibir os registros de entrada de um  dia que não está sendo exibido?</b>
 	
 	<?php if($x2=="material") : ?>
 <img <?php echo createComIcon('../','frage.gif','0') ?>> <font color="#990000"><b>
-Como documentar um material usado para a operação?</b>
+Como documentar um material usado para a operaï¿½ï¿½o?</b>
 </font>
 <ul>       	
- 	<b>Passo 1: </b>Digite o númenro do artifo do material no campo "<span style="background-color:yellow" > Num. Artigo: </span>" .<p>
+ 	<b>Passo 1: </b>Digite o nï¿½menro do artifo do material no campo "<span style="background-color:yellow" > Num. Artigo: </span>" .<p>
 	<b>Formas alternativas: </b>
 	<ul type=disc>  	
-	<li>Insira uma informação completa ou as primeiras letras no nome do material, descrução do produto, genérico, númenro de licença, ou númenro do pedido no campo "<span style="background-color:yellow" > Num. artigo: </span>" .
-	<li>Scaneie o código de barras do artigo com o scaner.
+	<li>Insira uma informaï¿½ï¿½o completa ou as primeiras letras no nome do material, descruï¿½ï¿½o do produto, genï¿½rico, nï¿½menro de licenï¿½a, ou nï¿½menro do pedido no campo "<span style="background-color:yellow" > Num. artigo: </span>" .
+	<li>Scaneie o cï¿½digo de barras do artigo com o scaner.
 	</ul><br> 
- 	<b>Passo 2: </b>Clique no botão <input type="button" value="OK"> ou pressione o botão "Inserir" no teclado para pesquisar o produto.<p> 
+ 	<b>Passo 2: </b>Clique no botï¿½o <input type="button" value="OK"> ou pressione o botï¿½o "Inserir" no teclado para pesquisar o produto.<p> 
 <ul>       	
- 	<b>Nota: </b>Se a pesquisa encontrar um resultado, a informação do material será imediatamente exibida no documento.<p> 
- 	<b>Nota: </b>Se a pesquisa encontrar diversos resultados, uma lista será exibida. Clique no botão <img <?php echo createComIcon('../','bul_arrowgrnlrg.gif','0') ?>> ou no númenro do artigo, ou no nome do artigo para adicionar ao documento.<p> 
+ 	<b>Nota: </b>Se a pesquisa encontrar um resultado, a informaï¿½ï¿½o do material serï¿½ imediatamente exibida no documento.<p> 
+ 	<b>Nota: </b>Se a pesquisa encontrar diversos resultados, uma lista serï¿½ exibida. Clique no botï¿½o <img <?php echo createComIcon('../','bul_arrowgrnlrg.gif','0') ?>> ou no nï¿½menro do artigo, ou no nome do artigo para adicionar ao documento.<p> 
 	</ul>
- 	<b>Passo 3: </b>Se o artigo está adicionado ao documento, você pode mudar a entrada no campo "<span style="background-color:yellow" > Num.Peças.</span>" caso necessário.<p> 
+ 	<b>Passo 3: </b>Se o artigo estï¿½ adicionado ao documento, vocï¿½ pode mudar a entrada no campo "<span style="background-color:yellow" > Num.Peï¿½as.</span>" caso necessï¿½rio.<p> 
 <ul>       	
- 	<b>Nota: </b>Uma vez que você mudar a entrada no campo "Num.Peças", os botões "Salvar" e "Reseta dado" irão aparecer.<p> 
+ 	<b>Nota: </b>Uma vez que vocï¿½ mudar a entrada no campo "Num.Peï¿½as", os botï¿½es "Salvar" e "Reseta dado" irï¿½o aparecer.<p> 
 	</ul>
- 	<b>Passo 4: </b>Se você mudou a entrada no campo "Num.Peças", clique no botão <img <?php echo createLDImgSrc('../','savedisc.gif','0') ?>> para salvar as mudanças.<p> 
+ 	<b>Passo 4: </b>Se vocï¿½ mudou a entrada no campo "Num.Peï¿½as", clique no botï¿½o <img <?php echo createLDImgSrc('../','savedisc.gif','0') ?>> para salvar as mudanï¿½as.<p> 
 </ul>
 <img <?php echo createComIcon('../','frage.gif','0') ?>> <font color="#990000"><b>
 Como remover um artigo da lista?</b>
 </font>
 <ul> 
- 	<b>Passo 1: </b>Clique no ícone <img <?php echo createComIcon('../','delete2.gif','0','absmiddle') ?>> correspondente ao artigo.<br> 
+ 	<b>Passo 1: </b>Clique no ï¿½cone <img <?php echo createComIcon('../','delete2.gif','0','absmiddle') ?>> correspondente ao artigo.<br> 
 </ul>
 <img <?php echo createComIcon('../','frage.gif','0') ?>> <font color="#990000"><b>
-O artigo não foi encotrado. Como inserir manualmente (forçando)uma informação de um artigo?</b>
+O artigo nï¿½o foi encotrado. Como inserir manualmente (forï¿½ando)uma informaï¿½ï¿½o de um artigo?</b>
 </font>
 <ul> 
  	<b>Passo 1: </b>Clique no link "<span style="background-color:yellow" > <img <?php echo createComIcon('../','accessrights.gif','0') ?>> Para inserir o artigo manualmente, clique aqui. </span>" .<br> 
- 	<b>Passo 2: </b>Manualmente insira a informação do artigo nos campos correspondentes.<p> 
- 	<b>Passo 3: </b>Clique no botão<img <?php echo createLDImgSrc('../','savedisc.gif','0') ?>> para adicionar a informação do artigo no documento<p> 
+ 	<b>Passo 2: </b>Manualmente insira a informaï¿½ï¿½o do artigo nos campos correspondentes.<p> 
+ 	<b>Passo 3: </b>Clique no botï¿½o<img <?php echo createLDImgSrc('../','savedisc.gif','0') ?>> para adicionar a informaï¿½ï¿½o do artigo no documento<p> 
 </ul>
 <img <?php echo createComIcon('../','warn.gif','0','absmiddle') ?>> <font color="#990000"><b> Note:</b></font> 
 <ul>       	
- Se você decidir cancelar, clique no botão <img <?php echo createLDImgSrc('../','cancel.gif','0') ?>>.
+ Se vocï¿½ decidir cancelar, clique no botï¿½o <img <?php echo createLDImgSrc('../','cancel.gif','0') ?>>.
 </ul>
 <img <?php echo createComIcon('../','frage.gif','0') ?>> <font color="#990000"><b>
 Como exibir o livro de registros principal novamente?</b>
@@ -334,65 +334,65 @@ Como exibir o livro de registros principal novamente?</b>
 
 	<?php if(($x1=="")||($x1=="fresh")) : ?>
 <img <?php echo createComIcon('../','frage.gif','0') ?>> <font color="#990000"><b>
-Como iniciar um registro de documento para uma operação?</b>
+Como iniciar um registro de documento para uma operaï¿½ï¿½o?</b>
 </font>
 <ul>       	
- 	<b>Passo 1: </b>Primeiro encontre o paciente. Digite o númenro do paciente no campo "<span style="background-color:yellow" > Num. do Paciente: </span>" .<p>
+ 	<b>Passo 1: </b>Primeiro encontre o paciente. Digite o nï¿½menro do paciente no campo "<span style="background-color:yellow" > Num. do Paciente: </span>" .<p>
 	<b>Modos alternativos: </b>
 	<ul type=disc>  	
-	<li>Insira uma informação completa ou as primeiras letras do nome de família, ou primeiro nome do paciente no campo "<span style="background-color:yellow" > Nome de Família, Primeiro nome </span>" .
-	<li>Insira uma data completa ou os primeiros dígitos da data de nascimento do paciente no campo "<span style="background-color:yellow" > Data de nascimento </span>" .
+	<li>Insira uma informaï¿½ï¿½o completa ou as primeiras letras do nome de famï¿½lia, ou primeiro nome do paciente no campo "<span style="background-color:yellow" > Nome de Famï¿½lia, Primeiro nome </span>" .
+	<li>Insira uma data completa ou os primeiros dï¿½gitos da data de nascimento do paciente no campo "<span style="background-color:yellow" > Data de nascimento </span>" .
 	</ul>
- 	<b>Passo 2: </b>Clique no botão <input type="button" value="Search patient"> para iniciar a pesquisa pelo paciente.<p> 
+ 	<b>Passo 2: </b>Clique no botï¿½o <input type="button" value="Search patient"> para iniciar a pesquisa pelo paciente.<p> 
 <ul>       	
- 	<b>Nota: </b>Se a pesquisa encontrar um resultado, os dados básicos do paciente serão inseridos imediatamente nos seus campos correspondentes.<p> 
- 	<b>Nota: </b>Se a pesquisa encontrar diversos resultados, uma lista será exibida. Clique no nome de família do paciente, ou primeiro nome para seleciona-lo para documentação.<p> 
+ 	<b>Nota: </b>Se a pesquisa encontrar um resultado, os dados bï¿½sicos do paciente serï¿½o inseridos imediatamente nos seus campos correspondentes.<p> 
+ 	<b>Nota: </b>Se a pesquisa encontrar diversos resultados, uma lista serï¿½ exibida. Clique no nome de famï¿½lia do paciente, ou primeiro nome para seleciona-lo para documentaï¿½ï¿½o.<p> 
 	</ul>
- 	<b>Passo 3: </b>Clique no botão <img <?php echo createLDImgSrc('../','hilfe-r.gif','0') ?>> novamente para maiores instruções.<p> 
+ 	<b>Passo 3: </b>Clique no botï¿½o <img <?php echo createLDImgSrc('../','hilfe-r.gif','0') ?>> novamente para maiores instruï¿½ï¿½es.<p> 
 
 </ul>
 
 	<?php else : ?>
 <img <?php echo createComIcon('../','frage.gif','0') ?>> <font color="#990000"><b>
-Como inserir o diagnosticos para a operação?</b>
+Como inserir o diagnosticos para a operaï¿½ï¿½o?</b>
 </font>
 <ul>       	
- 	<b>Passo 1: </b>Digite o diagnóstico no campo "<span style="background-color:yellow" > Diagnóstico: </span>" .<br>
+ 	<b>Passo 1: </b>Digite o diagnï¿½stico no campo "<span style="background-color:yellow" > Diagnï¿½stico: </span>" .<br>
 	</ul>
 <img <?php echo createComIcon('../','frage.gif','0') ?>> <font color="#990000"><b>
-Como inserir a informação do cirurgião?</b>
+Como inserir a informaï¿½ï¿½o do cirurgiï¿½o?</b>
 </font>
 <ul>       	
- 	<b>Passo 1: </b>Clique no link "<span style="background-color:yellow" > Cirurgião </span>" .<br>
- 	<b>Passo 2: </b>Uma janela pop-up para inserção de informações de cirurgiões irá aparecer. <br>
- 	<b>Passo 3: </b>Siga as instruções na janela ou clique no botão "Ajuda" dentro da janela para maiores informações de ajuda. <br>
+ 	<b>Passo 1: </b>Clique no link "<span style="background-color:yellow" > Cirurgiï¿½o </span>" .<br>
+ 	<b>Passo 2: </b>Uma janela pop-up para inserï¿½ï¿½o de informaï¿½ï¿½es de cirurgiï¿½es irï¿½ aparecer. <br>
+ 	<b>Passo 3: </b>Siga as instruï¿½ï¿½es na janela ou clique no botï¿½o "Ajuda" dentro da janela para maiores informaï¿½ï¿½es de ajuda. <br>
 	</ul>
 <img <?php echo createComIcon('../','frage.gif','0') ?>> <font color="#990000"><b>
-Como inserir as informações do assistente do cirurgião?</b>
+Como inserir as informaï¿½ï¿½es do assistente do cirurgiï¿½o?</b>
 </font>
 <ul>       	
  	<b>Passo 1: </b>Clique no link "<span style="background-color:yellow" > Assistente </span>" .<br>
- 	<b>Passo 2: </b>Uma janela pop-up para inserção de informações de assistentes de cirurgiões irá aparecer. <br>
- 	<b>Passo 3: </b>Siga as instruções na janela ou clique no botão "Ajuda" dentro da janela para maiores informações de ajuda. <br>
+ 	<b>Passo 2: </b>Uma janela pop-up para inserï¿½ï¿½o de informaï¿½ï¿½es de assistentes de cirurgiï¿½es irï¿½ aparecer. <br>
+ 	<b>Passo 3: </b>Siga as instruï¿½ï¿½es na janela ou clique no botï¿½o "Ajuda" dentro da janela para maiores informaï¿½ï¿½es de ajuda. <br>
 	</ul>
 <img <?php echo createComIcon('../','frage.gif','0') ?>> <font color="#990000"><b>
-Como insirir informações de enfermeiros instrumentistas?</b>
+Como insirir informaï¿½ï¿½es de enfermeiros instrumentistas?</b>
 </font>
 <ul>       	
  	<b>Passo 1: </b>Clique no link "<span style="background-color:yellow" > Enfermeiro instrumentista </span>" .<br>
- 	<b>Passo 2: </b>Uma janela pop-up para inserção de informações de enfermeiro instrumentista irá aparecer. <br>
- 	<b>Passo 3: </b>Siga as instruções na janela ou clique no botão "Ajuda" dentro da janela para maiores informações de ajuda. <br>
+ 	<b>Passo 2: </b>Uma janela pop-up para inserï¿½ï¿½o de informaï¿½ï¿½es de enfermeiro instrumentista irï¿½ aparecer. <br>
+ 	<b>Passo 3: </b>Siga as instruï¿½ï¿½es na janela ou clique no botï¿½o "Ajuda" dentro da janela para maiores informaï¿½ï¿½es de ajuda. <br>
 	</ul>
 <img <?php echo createComIcon('../','frage.gif','0') ?>> <font color="#990000"><b>
-Como inserir informações de enfermeiros rotativos?</b>
+Como inserir informaï¿½ï¿½es de enfermeiros rotativos?</b>
 </font>
 <ul>       	
  	<b>Passo 1: </b>Clique no link "<span style="background-color:yellow" > Enfermeiros rotativos</span>" .<br>
- 	<b>Passo 2: </b>Uma janela pop-up para inserção de informações de enfermeiros rotativos irá aparecer. <br>
- 	<b>Passo 3: </b>Siga as instruções na janela ou clique no botão "Ajuda" dentro da janela para maiores informações de ajuda. <br>
+ 	<b>Passo 2: </b>Uma janela pop-up para inserï¿½ï¿½o de informaï¿½ï¿½es de enfermeiros rotativos irï¿½ aparecer. <br>
+ 	<b>Passo 3: </b>Siga as instruï¿½ï¿½es na janela ou clique no botï¿½o "Ajuda" dentro da janela para maiores informaï¿½ï¿½es de ajuda. <br>
 	</ul>
 <img <?php echo createComIcon('../','frage.gif','0') ?>> <font color="#990000"><b>
-Como inserir o tipo de anestesia usado para a operação?</b>
+Como inserir o tipo de anestesia usado para a operaï¿½ï¿½o?</b>
 </font>
 <ul>       	
  	<b>Passo 1: </b>Selecione o tipo de anestesia no campo "<span style="background-color:yellow" > Anestesia <select name="a">
@@ -407,34 +407,34 @@ Como inserir o tipo de anestesia usado para a operação?</b>
 	<ul type=disc>       	
  	<li><b>ITA: </b>Anestesia Intra-traqueal<br>
  	<li><b>LA: </b>Anestesia local<br>
- 	<li><b>AS: </b>Sedação analgésica<br>
- 	<li><b>DS: </b>Equivalente à AS<br>
+ 	<li><b>AS: </b>Sedaï¿½ï¿½o analgï¿½sica<br>
+ 	<li><b>DS: </b>Equivalente ï¿½ AS<br>
  	<li><b>Plexus: </b>Anestesia Local Nervus plexus<br>
 	</ul>
 	</ul>
 <img <?php echo createComIcon('../','frage.gif','0') ?>> <font color="#990000"><b>
-Como inserir a informação do Anestesiologista ?</b>
+Como inserir a informaï¿½ï¿½o do Anestesiologista ?</b>
 </font>
 <ul>       	
  	<b>Passo 1: </b>Clique no link "<span style="background-color:yellow" > Anestesiologista </span>" .<br>
- 	<b>Passo 2: </b>Uma janela pop-up para inserção de informações de Anestesiologistas irá aparecer. <br>
- 	<b>Passo 3: </b>Siga as instruções na janela ou clique no botão "Ajuda" dentro da janela para maiores informações de ajuda. <br>
+ 	<b>Passo 2: </b>Uma janela pop-up para inserï¿½ï¿½o de informaï¿½ï¿½es de Anestesiologistas irï¿½ aparecer. <br>
+ 	<b>Passo 3: </b>Siga as instruï¿½ï¿½es na janela ou clique no botï¿½o "Ajuda" dentro da janela para maiores informaï¿½ï¿½es de ajuda. <br>
 	</ul>
 <img <?php echo createComIcon('../','frage.gif','0') ?>> <font color="#990000"><b>
-Como inserir tempos de entrada, corte, sutura e saída diretamente dos seus campos correspondentes?</b>
+Como inserir tempos de entrada, corte, sutura e saï¿½da diretamente dos seus campos correspondentes?</b>
 </font>
 <ul>       	
  	<b>Tempo de entrada: </b>Insira o tempo no campo  "<span style="background-color:yellow" > Entrada:<input type="text" name="t" size=5 maxlength=5> </span>" .<br>
  	<b>Tempo de corte: </b>Insira o tempo no campo"<span style="background-color:yellow" > Corte: <input type="text" name="t" size=5 maxlength=5> </span>" .<br>
  	<b>Tempo de sutura: </b>Insira o tempo no campo"<span style="background-color:yellow" > Sutura: <input type="text" name="t" size=5 maxlength=5> </span>" .<br>
- 	<b>Tempo de saída: </b>Insira o tempo no campo"<span style="background-color:yellow" > Saída: <input type="text" name="t" size=5 maxlength=5> </span>" .<br>
+ 	<b>Tempo de saï¿½da: </b>Insira o tempo no campo"<span style="background-color:yellow" > Saï¿½da: <input type="text" name="t" size=5 maxlength=5> </span>" .<br>
 	</ul>
 <img <?php echo createComIcon('../','frage.gif','0') ?>> <font color="#990000"><b>
-Como insirir diversas informações de tempo todas de uma vez?</b>
+Como insirir diversas informaï¿½ï¿½es de tempo todas de uma vez?</b>
 </font>
 <ul> <b>Passo 1: </b><p>    	
- 	<b>Tempo de Entrada/Saída: </b>
- 	Clique no link "<span style="background-color:yellow" > Entrada/Saída <img <?php echo createComIcon('../','bul_arrowgrnsm.gif','0','absmiddle') ?>> </span>" situado no canto inferior esquerdo.<p>
+ 	<b>Tempo de Entrada/Saï¿½da: </b>
+ 	Clique no link "<span style="background-color:yellow" > Entrada/Saï¿½da <img <?php echo createComIcon('../','bul_arrowgrnsm.gif','0','absmiddle') ?>> </span>" situado no canto inferior esquerdo.<p>
  	<b>Cut/Suture time:</b>
  	Clique no link"<span style="background-color:yellow" > Corte/Sutura <img <?php echo createComIcon('../','bul_arrowgrnsm.gif','0','absmiddle') ?>> </span>" situado no canto inferior esquerdo.<p>
  	<b>Idle time: </b>
@@ -442,28 +442,28 @@ Como insirir diversas informações de tempo todas de uma vez?</b>
  	<b>Plaster/Cast time:</b>
  	Clique no link"<span style="background-color:yellow" > Engessamento <img <?php echo createComIcon('../','bul_arrowgrnsm.gif','0','absmiddle') ?>> </span>" situado no canto inferior esquerdo.<p>
  	<b>Reposition time: </b>
- 	Clique no link"<span style="background-color:yellow" > Reposição <img <?php echo createComIcon('../','bul_arrowgrnsm.gif','0','absmiddle') ?>> </span>" situado no canto inferior esquerdo.<p>
- 	<b>Passo 2: </b>Uma janela pop-up para inserir informações de tempo irá aparecer. <br>
- 	<b>Passo 3: </b>Siga as instruções da janela ou clique no botão "Ajuda" para maiores instruções. <br>
+ 	Clique no link"<span style="background-color:yellow" > Reposiï¿½ï¿½o <img <?php echo createComIcon('../','bul_arrowgrnsm.gif','0','absmiddle') ?>> </span>" situado no canto inferior esquerdo.<p>
+ 	<b>Passo 2: </b>Uma janela pop-up para inserir informaï¿½ï¿½es de tempo irï¿½ aparecer. <br>
+ 	<b>Passo 3: </b>Siga as instruï¿½ï¿½es da janela ou clique no botï¿½o "Ajuda" para maiores instruï¿½ï¿½es. <br>
 	</ul>
 
 	</ul>
 <img <?php echo createComIcon('../','frage.gif','0') ?>> <font color="#990000"><b>
-Como Iiserir informações de tempo na carta de tempo gráfica?</b>
+Como Iiserir informaï¿½ï¿½es de tempo na carta de tempo grï¿½fica?</b>
 </font>
-<ul> <b>Passo 1: </b>Mova o ponteiro do mouse para o tempo escolhido na escala de tempo correspondente à informação de tempo (eg. Engessamento).<br>
+<ul> <b>Passo 1: </b>Mova o ponteiro do mouse para o tempo escolhido na escala de tempo correspondente ï¿½ informaï¿½ï¿½o de tempo (eg. Engessamento).<br>
  	<b>Passo 2: </b>Clique na escala de tempo correspondente ao tempo escolhido.<p>
-<b>Nota:</b> As primeiras entradas serão as de tempo de início, as segundas serão de tempo de fim, as terceiras entradas serão do segundo tempo de início, etc.
+<b>Nota:</b> As primeiras entradas serï¿½o as de tempo de inï¿½cio, as segundas serï¿½o de tempo de fim, as terceiras entradas serï¿½o do segundo tempo de inï¿½cio, etc.
 	</ul>
 
 <img <?php echo createComIcon('../','frage.gif','0') ?>> <font color="#990000"><b>
-Como inserir a informação de terapia ou operação?</b>
+Como inserir a informaï¿½ï¿½o de terapia ou operaï¿½ï¿½o?</b>
 </font>
 <ul>       	
- 	<b>Passo 1: </b>Digite a terapia ou operação no campo "<span style="background-color:yellow" > Terapia/Operação: </span>" .<br>
+ 	<b>Passo 1: </b>Digite a terapia ou operaï¿½ï¿½o no campo "<span style="background-color:yellow" > Terapia/Operaï¿½ï¿½o: </span>" .<br>
 	</ul>
 <img <?php echo createComIcon('../','frage.gif','0') ?>> <font color="#990000"><b>
-Como inserir resultados, observações, noticias extras?</b>
+Como inserir resultados, observaï¿½ï¿½es, noticias extras?</b>
 </font>
 <ul>       	
  	<b>Passo 1: </b>Digite no campo "<span style="background-color:yellow" > Resultados: </span>" .<br>
@@ -472,18 +472,18 @@ Como inserir resultados, observações, noticias extras?</b>
 Como salvar o documento de registro?</b>
 </font>
 <ul>       	
- 	<b>Passo 1: </b>Clique no botão<img <?php echo createLDImgSrc('../','savedisc.gif','0') ?>><br>
+ 	<b>Passo 1: </b>Clique no botï¿½o<img <?php echo createLDImgSrc('../','savedisc.gif','0') ?>><br>
 	</ul>
 <img <?php echo createComIcon('../','frage.gif','0') ?>> <font color="#990000"><b>
 Como iniciar um novo registro de documento?</b>
 </font>
 <ul>       	
- 	<b>Passo 1: </b>Clique no botão<img <?php echo createLDImgSrc('../','newpat2.gif','0') ?>><br>
- 	<b>Passo 2: </b>Clique no botão<img <?php echo createLDImgSrc('../','hilfe-r.gif','0') ?>> novamente para mais instruções de ajuda.<br>
+ 	<b>Passo 1: </b>Clique no botï¿½o<img <?php echo createLDImgSrc('../','newpat2.gif','0') ?>><br>
+ 	<b>Passo 2: </b>Clique no botï¿½o<img <?php echo createLDImgSrc('../','hilfe-r.gif','0') ?>> novamente para mais instruï¿½ï¿½es de ajuda.<br>
 	</ul>
 	
 <b>Nota</b>
-<ul> Se você decidir fechar, clique no botão<img <?php echo createLDImgSrc('../','close2.gif','0') ?>>.
+<ul> Se vocï¿½ decidir fechar, clique no botï¿½o<img <?php echo createLDImgSrc('../','close2.gif','0') ?>>.
 </ul>
 	<?php endif;?>
 
@@ -499,13 +499,13 @@ Como iniciar um novo registro de documento?</b>
 Como pesquisar por um documento de um paciente em particular?</b>
 </font>
 <ul>       	
- 	<b>Passo 1: </b>Insira uma informação completa ou as primeiras letras do nome de família do paciente, 
+ 	<b>Passo 1: </b>Insira uma informaï¿½ï¿½o completa ou as primeiras letras do nome de famï¿½lia do paciente, 
 	ou o primeiro nome, ou data de nascimento no campo "<span style="background-color:yellow" > Palavra-chave: <input type="text" name="m" size=20 maxlength=20> </span>" . <br>
- 	<b>Passo 2: </b>Clique no botão<input type="button" value="Pesquisa"> para iniciar a pesquisa pelo documento do paciente.<p> 
+ 	<b>Passo 2: </b>Clique no botï¿½o<input type="button" value="Pesquisa"> para iniciar a pesquisa pelo documento do paciente.<p> 
 <ul>       	
- 	<b>Nota: </b>Se a pesquisa encontrar um resultado que coincide com a palavra-chave, o(s) documento(s) do paciente serão exibidos imediatamente.<p> 
- 	<b>Nota: </b>Se a pesquisa encontrar apenas uma aproximação, uma lista será exibida. 
-	Clique no nome de família do paciente para exibir seus documentos.<p> 
+ 	<b>Nota: </b>Se a pesquisa encontrar um resultado que coincide com a palavra-chave, o(s) documento(s) do paciente serï¿½o exibidos imediatamente.<p> 
+ 	<b>Nota: </b>Se a pesquisa encontrar apenas uma aproximaï¿½ï¿½o, uma lista serï¿½ exibida. 
+	Clique no nome de famï¿½lia do paciente para exibir seus documentos.<p> 
 	</ul>
 </ul>
 	<?php endif;?>
@@ -515,7 +515,7 @@ Como pesquisar por um documento de um paciente em particular?</b>
 Como selecionar um documento particular para exibir?</b>
 </font>
 <ul>       	
- 	<b>Nota: </b> Clique no nome de família do paciente para exibir seus documentos.<p> 
+ 	<b>Nota: </b> Clique no nome de famï¿½lia do paciente para exibir seus documentos.<p> 
 </ul>
 
 	<?php endif;?>
@@ -525,15 +525,15 @@ Como selecionar um documento particular para exibir?</b>
 Como atualziar ou editar um registro de documento exibido?</b>
 </font>
 <ul>       	
- 	<b>Passo 1: </b>Clique no botão <img src="../img/update3.gif" border=0> situado abaixo da data de operação na coluna da esquerda para trocar para o modo de edição.<br>
- 	<b>Passo 2: </b>No modo de edição, clique no botão "Ajuda" se você necessita mais instruções na edição do documento.<p> 
+ 	<b>Passo 1: </b>Clique no botï¿½o <img src="../img/update3.gif" border=0> situado abaixo da data de operaï¿½ï¿½o na coluna da esquerda para trocar para o modo de ediï¿½ï¿½o.<br>
+ 	<b>Passo 2: </b>No modo de ediï¿½ï¿½o, clique no botï¿½o "Ajuda" se vocï¿½ necessita mais instruï¿½ï¿½es na ediï¿½ï¿½o do documento.<p> 
 	</ul>
 <img <?php echo createComIcon('../','frage.gif','0') ?>> <font color="#990000"><b>
 Como abrir a pasta de dados do paciente?</b>
 </font>
 <ul>       	
- 	<b>Passo 1: </b>Clique no botão <img src="../img/info2.gif" border=0> na esquerda do número do paciente.<br>
- 	<b>Passo 2: </b>A pasta de dados do paciente irá aparecer. Clique no botão "Ajuda" na janela se você necessita mais instruções.<p> 
+ 	<b>Passo 1: </b>Clique no botï¿½o <img src="../img/info2.gif" border=0> na esquerda do nï¿½mero do paciente.<br>
+ 	<b>Passo 2: </b>A pasta de dados do paciente irï¿½ aparecer. Clique no botï¿½o "Ajuda" na janela se vocï¿½ necessita mais instruï¿½ï¿½es.<p> 
 	</ul>
 
 <?php endif;?>
@@ -541,26 +541,26 @@ Como abrir a pasta de dados do paciente?</b>
 Como continuar pesquisando?</b>
 </font>
 <ul>       	
- 	<b>Passo 1: </b>Insira uma informação completa ou as primeiras letras do nome de família do paciente, 
+ 	<b>Passo 1: </b>Insira uma informaï¿½ï¿½o completa ou as primeiras letras do nome de famï¿½lia do paciente, 
 	ou o primeiro nome, ou data de nascimento no campo "<span style="background-color:yellow" > Keyword: <input type="text" name="m" size=20 maxlength=20> </span>" . <br>
- 	<b>Passo 2: </b>Clique no botão<input type="button" value="Search"> para iniciar a pesquisa pelos documentos do paciente.<p> 
+ 	<b>Passo 2: </b>Clique no botï¿½o<input type="button" value="Search"> para iniciar a pesquisa pelos documentos do paciente.<p> 
 </ul>
 <img <?php echo createComIcon('../','warn.gif','0','absmiddle') ?>> <font color="#990000"><b> Note:</b></font> 
 <ul>       	
- Se você decidir fechar clique no botão<img <?php echo createLDImgSrc('../','close2.gif','0') ?>>.
+ Se vocï¿½ decidir fechar clique no botï¿½o<img <?php echo createLDImgSrc('../','close2.gif','0') ?>>.
 </ul>
 <?php endif;?>
 
 <?php if($src=="arch") : ?>
 	<?php if($x2=="1") : ?>
-<img <?php echo createComIcon('../','warn.gif','0','absmiddle') ?>> <font color="#990000"><b> Nota: últimas entradas de registro</b></font> 
-<ul>  Cada vez que você trocar de arquivo, as últimas operações registradas serão exibidas imediatamente.
+<img <?php echo createComIcon('../','warn.gif','0','absmiddle') ?>> <font color="#990000"><b> Nota: ï¿½ltimas entradas de registro</b></font> 
+<ul>  Cada vez que vocï¿½ trocar de arquivo, as ï¿½ltimas operaï¿½ï¿½es registradas serï¿½o exibidas imediatamente.
 </ul>
 	<?php endif;?>
 	<?php if(($x3=="")&&($x1!="0")) : ?>
-<img <?php echo createComIcon('../','warn.gif','0','absmiddle') ?>> <font color="#990000"><b> Nenhuma operação feita neste dia.</b></font> 
+<img <?php echo createComIcon('../','warn.gif','0','absmiddle') ?>> <font color="#990000"><b> Nenhuma operaï¿½ï¿½o feita neste dia.</b></font> 
 <ul>       	
-Clique em "Opções" para abrir a caixa de opções.<br>
+Clique em "Opï¿½ï¿½es" para abrir a caixa de opï¿½ï¿½es.<br>
 Clique em "Pesquisa" para trocar para o modo de pesquisa.</ul>
 	
 	<?php endif;?>
@@ -571,23 +571,23 @@ Clique em "Pesquisa" para trocar para o modo de pesquisa.</ul>
 <img <?php echo createComIcon('../','frage.gif','0') ?>> 
 <font color="#990000"><b>Desejo ver os registros de entradas arquivados de outro dia.</b></font>
 <ul> <b>Para exibir o dia anterior: </b>Clique no link "<span style="background-color:yellow" > Dia anterior </span>" na coluna esquerda superior. 
-				Clique neste link tantas vezes forem necessárias até o dia desejado ser exibido.<p>
+				Clique neste link tantas vezes forem necessï¿½rias atï¿½ o dia desejado ser exibido.<p>
  <b>Para exibir o dia seguinte: </b>Clique no link "<span style="background-color:yellow" > Dia seguinte </span>" na coluna direita superior. 
-				Clique neste link tantas vezes forem necessárias até o dia desejado ser exibido.<br>		
+				Clique neste link tantas vezes forem necessï¿½rias atï¿½ o dia desejado ser exibido.<br>		
 </ul>
 <img <?php echo createComIcon('../','frage.gif','0') ?>> 
-<font color="#990000"><b>Desejo ver os registros de entrada arquivados de outros departamentos ou centros cirúrgicos.</b></font>
-<ul> <b>Passo 1: </b>Selecione o departmento na caixa de seleção <nobr>"<span style="background-color:yellow" > Mude o departamento ou centro cirúrgico <select name="o">
+<font color="#990000"><b>Desejo ver os registros de entrada arquivados de outros departamentos ou centros cirï¿½rgicos.</b></font>
+<ul> <b>Passo 1: </b>Selecione o departmento na caixa de seleï¿½ï¿½o <nobr>"<span style="background-color:yellow" > Mude o departamento ou centro cirï¿½rgico <select name="o">
                                                                                                                                          	<option > Departmento exemplo 1</option>
                                                                                                                                          	<option > Departmento exemplo 2</option>
                                                                                                                                          </select>
                                                                                                                                           </span>".</nobr> <br>																  
-	<b>Passo 2: </b>Ou selecione o centro cirúrgico na caixa de seleção <nobr>"<span style="background-color:yellow" > <select name="o">
-                                                                                                                                         	<option > Centro cirúrgico exemplo 1</option>
-                                                                                                                                         	<option > Centro cirúrgico exemplo 2</option>
+	<b>Passo 2: </b>Ou selecione o centro cirï¿½rgico na caixa de seleï¿½ï¿½o <nobr>"<span style="background-color:yellow" > <select name="o">
+                                                                                                                                         	<option > Centro cirï¿½rgico exemplo 1</option>
+                                                                                                                                         	<option > Centro cirï¿½rgico exemplo 2</option>
                                                                                                                                          </select>
                                                                                                                                           </span>".</nobr> <br> 						  																																		  
-		<b>Passo 3: </b>Clique no botão<input type="button" value="Change">  para mudar para o novo departmento ou centro cirúrgico.<br>
+		<b>Passo 3: </b>Clique no botï¿½o<input type="button" value="Change">  para mudar para o novo departmento ou centro cirï¿½rgico.<br>
 </ul>
 <?php if(($x3!="")) : ?>
 
@@ -595,21 +595,21 @@ Clique em "Pesquisa" para trocar para o modo de pesquisa.</ul>
 Como atualizar ou editar um registro de documento exibido?</b>
 </font>
 <ul>       	
- 	<b>Passo 1: </b>Clique no botão <img src="../img/update3.gif" border=0> situado abaixo da data da operação na coluna da esquerda para trocar para o modo de edição.<br>
- 	<b>Passo 2: </b>No modo de edição, clique no botão "Ajuda" se você necessita mais instruções na edição do documento.<p> 
+ 	<b>Passo 1: </b>Clique no botï¿½o <img src="../img/update3.gif" border=0> situado abaixo da data da operaï¿½ï¿½o na coluna da esquerda para trocar para o modo de ediï¿½ï¿½o.<br>
+ 	<b>Passo 2: </b>No modo de ediï¿½ï¿½o, clique no botï¿½o "Ajuda" se vocï¿½ necessita mais instruï¿½ï¿½es na ediï¿½ï¿½o do documento.<p> 
 	</ul>
 <img <?php echo createComIcon('../','frage.gif','0') ?>> <font color="#990000"><b>
 Como abrir a pasta de dados do paciente?</b>
 </font>
 <ul>       	
- 	<b>Passo 1: </b>Clique no botão <img src="../img/info2.gif" border=0> na esquerda do númenro do paciente.<br>
- 	<b>Passo 2: </b>A pasta de dados do paciente irá abrir. Clique no botão "Ajuda" na janela se você necessita mais instruções.<p> 
+ 	<b>Passo 1: </b>Clique no botï¿½o <img src="../img/info2.gif" border=0> na esquerda do nï¿½menro do paciente.<br>
+ 	<b>Passo 2: </b>A pasta de dados do paciente irï¿½ abrir. Clique no botï¿½o "Ajuda" na janela se vocï¿½ necessita mais instruï¿½ï¿½es.<p> 
 	</ul>
 	<?php endif;?>
 	
 <img <?php echo createComIcon('../','warn.gif','0','absmiddle') ?>> <font color="#990000"><b> Note:</b></font> 
 <ul>       	
- Se você decidir cancelar clique no botão <img <?php echo createLDImgSrc('../','cancel.gif','0') ?>>.
+ Se vocï¿½ decidir cancelar clique no botï¿½o <img <?php echo createLDImgSrc('../','cancel.gif','0') ?>>.
 </ul>
 
 

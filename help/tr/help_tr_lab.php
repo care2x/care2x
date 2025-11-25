@@ -1,20 +1,20 @@
 <font face="Verdana, Arial" size=3 color="#0000cc">
 <b>
-Biyokimya Laboratuvarý - 
+Biyokimya Laboratuvarï¿½ - 
 <?php
 if($src=="create")
 {
 	switch($x1)
 	{
-	case "": print "Yeni kütük belgesine baþla";
+	case "": print "Yeni kï¿½tï¿½k belgesine baï¿½la";
 						break;
-	case "fresh": print "Yeni kütük belgesine baþla";
+	case "fresh": print "Yeni kï¿½tï¿½k belgesine baï¿½la";
 						break;
 	case "get": print  "";
 						break;
-	case "logmain": print "Belgeli bir ameliyatýn kütük girdilerini düzenle";
+	case "logmain": print "Belgeli bir ameliyatï¿½n kï¿½tï¿½k girdilerini dï¿½zenle";
 						break;
-	default: print "Yeni bir ameliyat kütüðü";	
+	default: print "Yeni bir ameliyat kï¿½tï¿½ï¿½ï¿½";	
 	}
 }
 if($src=="time")
@@ -22,15 +22,15 @@ if($src=="time")
 	print "Belgelendiriliyor ";
 	switch($x1)
 	{
-	case "entry_out": print "giriþ ve çýkýþ süresi";
+	case "entry_out": print "giriï¿½ ve ï¿½ï¿½kï¿½ï¿½ sï¿½resi";
 						break;
-	case "cut_close": print "kesi ve sütür süresi";
+	case "cut_close": print "kesi ve sï¿½tï¿½r sï¿½resi";
 						break;
-	case "wait_time": print "boþ (bekleme) süresi";
+	case "wait_time": print "boï¿½ (bekleme) sï¿½resi";
 						break;
-	case "bandage_time": print "alçý-bandaj süresi";
+	case "bandage_time": print "alï¿½ï¿½-bandaj sï¿½resi";
 						break;
-	case "repos_time": print "repozisyon süresi";
+	case "repos_time": print "repozisyon sï¿½resi";
 	}
 }
 if($src=="person")
@@ -42,58 +42,58 @@ if($src=="person")
 						break;
 	case "assist":$person="bir asistan cerrah"; 
 						break;
-	case "scrub": $person="bir ameliyat hemþiresi";
+	case "scrub": $person="bir ameliyat hemï¿½iresi";
 						break;
-	case "rotating":$person="bir meydancý hemþire"; 
+	case "rotating":$person="bir meydancï¿½ hemï¿½ire"; 
 						break;
-	case "ana": $person="bir anestezi uzmaný";
+	case "ana": $person="bir anestezi uzmanï¿½";
 	}
 	print $person;
 }
 if($src=="search")
 {
-	print "Bir hastayý ara";	
+	print "Bir hastayï¿½ ara";	
 /*	switch($x1)
 	{
-	case "search": print "Belirli bir belgeyi seçme";
+	case "search": print "Belirli bir belgeyi seï¿½me";
 						break;
 	case "": 
 						break;
-	case "get": print  "Hastanýn ameliyat kütük belgesi";
+	case "get": print  "Hastanï¿½n ameliyat kï¿½tï¿½k belgesi";
 						break;
-	case "fresh": print "Bir hastanýn ameliyat kütük belgesini arama";
+	case "fresh": print "Bir hastanï¿½n ameliyat kï¿½tï¿½k belgesini arama";
 	}
 */}
 if($src=="arch")
 {
-	print "Arþiv";	
+	print "Arï¿½iv";	
 	/*switch($x1)
 	{
-	case "dummy": print "Arþiv";
+	case "dummy": print "Arï¿½iv";
 						break;
-	case "": print "Arþiv";
+	case "": print "Arï¿½iv";
 						break;
-	case "?": print "Arþiv";
+	case "?": print "Arï¿½iv";
 						break;
-	case "search": print  "Arþiv arama sonuçlarýnýn listesi";
+	case "search": print  "Arï¿½iv arama sonuï¿½larï¿½nï¿½n listesi";
 						break;
-	case "select": print "Hastanýn belgesi";
+	case "select": print "Hastanï¿½n belgesi";
 	}*/
 }
 if($src=="input")
 {
-	print "Tetkik sonuçlarýný girme";	
+	print "Tetkik sonuï¿½larï¿½nï¿½ girme";	
 	/*switch($x1)
 	{
-	case "dummy": print "Arþiv";
+	case "dummy": print "Arï¿½iv";
 						break;
-	case "": print "Arþiv";
+	case "": print "Arï¿½iv";
 						break;
-	case "?": print "Arþiv";
+	case "?": print "Arï¿½iv";
 						break;
-	case "search": print  "Arþiv arama sonuçlarýnýn listesi ";
+	case "search": print  "Arï¿½iv arama sonuï¿½larï¿½nï¿½n listesi ";
 						break;
-	case "select": print "Hastanýn belgesi";
+	case "select": print "Hastanï¿½n belgesi";
 	}*/
 }
  ?></b></font>
@@ -101,137 +101,137 @@ if($src=="input")
 <form action="#" >
 <?php if($src=="person") : ?>
 <img <?php echo createComIcon('../','frage.gif','0') ?>> <font color="#990000"><b>
-Hýzlý seçim listesi <?php echo $person ?> yolu ile nasýl girilirt?</b>
+Hï¿½zlï¿½ seï¿½im listesi <?php echo $person ?> yolu ile nasï¿½l girilirt?</b>
 </font>
 <ul>       	
- 	<b>Uyarý: </b>Eðer kiþinin ismi önceki bir iþlemde seçildi ise <?php echo $person ?> ismi hýzlý listede görünür.<p>
- 	<b>Adým 1: </b>Önce iþlevinin "Ameliyathane iþlevi" seçim kutusunda doðru olarak seçilip seçilmediðini kontrol ediniz, seçilmemiþ ise kiþinin ameliyathane iþlevini doðru olarak seçiniz.<br>
- 	<b>Adým 2: </b> <?php echo $person ?>'ýn soyadýný, veya adýný, veya <nobr>"<span style="background-color:yellow" > <img <?php echo createComIcon('../','uparrowgrnlrg.gif','0') ?>> bu kiþiyi <?php echo $person ?>... </span>"</nobr> olarak kaydet baðlantýsýný týklayýnýz.
-	Cerrah otomatik olarak "güncel kayýtlar"  listesine eklenecektir.<p>
+ 	<b>Uyarï¿½: </b>Eï¿½er kiï¿½inin ismi ï¿½nceki bir iï¿½lemde seï¿½ildi ise <?php echo $person ?> ismi hï¿½zlï¿½ listede gï¿½rï¿½nï¿½r.<p>
+ 	<b>Adï¿½m 1: </b>ï¿½nce iï¿½levinin "Ameliyathane iï¿½levi" seï¿½im kutusunda doï¿½ru olarak seï¿½ilip seï¿½ilmediï¿½ini kontrol ediniz, seï¿½ilmemiï¿½ ise kiï¿½inin ameliyathane iï¿½levini doï¿½ru olarak seï¿½iniz.<br>
+ 	<b>Adï¿½m 2: </b> <?php echo $person ?>'ï¿½n soyadï¿½nï¿½, veya adï¿½nï¿½, veya <nobr>"<span style="background-color:yellow" > <img <?php echo createComIcon('../','uparrowgrnlrg.gif','0') ?>> bu kiï¿½iyi <?php echo $person ?>... </span>"</nobr> olarak kaydet baï¿½lantï¿½sï¿½nï¿½ tï¿½klayï¿½nï¿½z.
+	Cerrah otomatik olarak "gï¿½ncel kayï¿½tlar"  listesine eklenecektir.<p>
 </ul>
 <img <?php echo createComIcon('../','frage.gif','0') ?>> <font color="#990000"><b>
-<?php echo ucfirst($person) ?> hýzlý seçim listesinde görülmüyor. <?php echo $person ?>'yi nasýl kaydetmeli?</b>
+<?php echo ucfirst($person) ?> hï¿½zlï¿½ seï¿½im listesinde gï¿½rï¿½lmï¿½yor. <?php echo $person ?>'yi nasï¿½l kaydetmeli?</b>
 </font>
 <ul>       	
- 	<b>Adým 1: </b><?php echo $person ?>'in soyad ad bilgilerinin ya tamamýný ya da bir kýsmýný  "<span style="background-color:yellow" > Yeni ara <?php echo substr($person,2) ?>... </span>" alanýna giriniz.<br>
- 	<b>Adým 2: </b> <input type="button" value="Tamam"> düðmesini týklayarak  <?php echo $person ?>'yi aramaya baþlayýnýz.<br>
- 	<b>Adým 3: </b>Arama sonuçlarý listeler. Belgelendirmek istediðiniz <?php echo $person ?> 'in  ilgili  soyad, ad, veya <nobr>"<span style="background-color:yellow" > <img <?php echo createComIcon('../','uparrowgrnlrg.gif','0') ?>> Bu kiþiyi olarak kaydet <?php echo $person ?>... </span>"</nobr> baðlantýsýna týklayýnýz. 
+ 	<b>Adï¿½m 1: </b><?php echo $person ?>'in soyad ad bilgilerinin ya tamamï¿½nï¿½ ya da bir kï¿½smï¿½nï¿½  "<span style="background-color:yellow" > Yeni ara <?php echo substr($person,2) ?>... </span>" alanï¿½na giriniz.<br>
+ 	<b>Adï¿½m 2: </b> <input type="button" value="Tamam"> dï¿½ï¿½mesini tï¿½klayarak  <?php echo $person ?>'yi aramaya baï¿½layï¿½nï¿½z.<br>
+ 	<b>Adï¿½m 3: </b>Arama sonuï¿½larï¿½ listeler. Belgelendirmek istediï¿½iniz <?php echo $person ?> 'in  ilgili  soyad, ad, veya <nobr>"<span style="background-color:yellow" > <img <?php echo createComIcon('../','uparrowgrnlrg.gif','0') ?>> Bu kiï¿½iyi olarak kaydet <?php echo $person ?>... </span>"</nobr> baï¿½lantï¿½sï¿½na tï¿½klayï¿½nï¿½z. 
 </ul>
 
 
 <img <?php echo createComIcon('../','frage.gif','0') ?>> 
-<font color="#990000"><b> Listeden  <?php echo $person ?> nasýl silinir?</b></font> 
+<font color="#990000"><b> Listeden  <?php echo $person ?> nasï¿½l silinir?</b></font> 
 <ul>       	
- 	<b>Adým 1: </b>Kiþinin isminin saðýndaki  <img <?php echo createComIcon('../','delete2.gif','0','absmiddle') ?>> simgesini týklayýnýz.<br>
+ 	<b>Adï¿½m 1: </b>Kiï¿½inin isminin saï¿½ï¿½ndaki  <img <?php echo createComIcon('../','delete2.gif','0','absmiddle') ?>> simgesini tï¿½klayï¿½nï¿½z.<br>
  
 </ul>
 <img <?php echo createComIcon('../','frage.gif','0') ?>> 
-<font color="#990000"><b> Ýþim bitti. Kütük kaydýna nasýl geri giderim?</b></font> 
+<font color="#990000"><b> ï¿½ï¿½im bitti. Kï¿½tï¿½k kaydï¿½na nasï¿½l geri giderim?</b></font> 
 <ul>       	
- 	<b>Adým 1: </b> <?php echo $person ?>'yi seçtikten sonra görünen <img <?php echo createLDImgSrc('../','close2.gif','0') ?> align="absmiddle"> düðmesini týklayýnýz.<br>
+ 	<b>Adï¿½m 1: </b> <?php echo $person ?>'yi seï¿½tikten sonra gï¿½rï¿½nen <img <?php echo createLDImgSrc('../','close2.gif','0') ?> align="absmiddle"> dï¿½ï¿½mesini tï¿½klayï¿½nï¿½z.<br>
  
 </ul>
-<img <?php echo createComIcon('../','warn.gif','0','absmiddle') ?>> <font color="#990000"><b> Uyarý:</b></font> 
+<img <?php echo createComIcon('../','warn.gif','0','absmiddle') ?>> <font color="#990000"><b> Uyarï¿½:</b></font> 
 <ul>       	
- Ýptal etmeye karar verir iseniz  <img <?php echo createLDImgSrc('../','cancel.gif','0') ?>> düðmesini týklayýnýz.
+ ï¿½ptal etmeye karar verir iseniz  <img <?php echo createLDImgSrc('../','cancel.gif','0') ?>> dï¿½ï¿½mesini tï¿½klayï¿½nï¿½z.
 </ul>
 <?php endif ?>
 
 <?php if($src=="time") : ?>
 	<?php if($x1=="entry_out") : ?>
 <img <?php echo createComIcon('../','frage.gif','0') ?>> <font color="#990000"><b>
-Giriþ ve çýkýþ zamanlarý nasýl belgelendirilir?</b>
+Giriï¿½ ve ï¿½ï¿½kï¿½ï¿½ zamanlarï¿½ nasï¿½l belgelendirilir?</b>
 </font>
 <ul>       	
- 	<b>Adým 1: </b>Giriþ saatini sol sütundaki "<span style="background-color:yellow" > giriþ saati: <input type="text" name="d" size=5 maxlength=5> </span>" alanýna giriniz.<br>
- 	<b>Adým 2: </b>Çýkýþ saatini sað sütundaki "<span style="background-color:yellow" > çýkýþ saati: <input type="text" name="d" size=5 maxlength=5> </span>" alanýna giriniz.<p>
+ 	<b>Adï¿½m 1: </b>Giriï¿½ saatini sol sï¿½tundaki "<span style="background-color:yellow" > giriï¿½ saati: <input type="text" name="d" size=5 maxlength=5> </span>" alanï¿½na giriniz.<br>
+ 	<b>Adï¿½m 2: </b>ï¿½ï¿½kï¿½ï¿½ saatini saï¿½ sï¿½tundaki "<span style="background-color:yellow" > ï¿½ï¿½kï¿½ï¿½ saati: <input type="text" name="d" size=5 maxlength=5> </span>" alanï¿½na giriniz.<p>
 <ul>       	
- 	<b>Ýpucu: </b>Giriþ alanýna þu aný otomatik olarak girmek için  "n" veya "N" (Now=Þimdi anlamýnda) giriniz.
+ 	<b>ï¿½pucu: </b>Giriï¿½ alanï¿½na ï¿½u anï¿½ otomatik olarak girmek iï¿½in  "n" veya "N" (Now=ï¿½imdi anlamï¿½nda) giriniz.
 </ul><br>
- 	<b>Uyarý: </b>Bilgiyi kayýt etmeden önce birkaç giriþ ve çýkýþ zamanýný ayný anda kayýt edebilirsiniz.<p>
+ 	<b>Uyarï¿½: </b>Bilgiyi kayï¿½t etmeden ï¿½nce birkaï¿½ giriï¿½ ve ï¿½ï¿½kï¿½ï¿½ zamanï¿½nï¿½ aynï¿½ anda kayï¿½t edebilirsiniz.<p>
 </ul>
 
 	<?php endif ?>
 	<?php if($x1=="cut_close") : ?>
 <img <?php echo createComIcon('../','frage.gif','0') ?>> <font color="#990000"><b>
-Kesi ve sütür süreleri nasýl belgelendirilir?</b>
+Kesi ve sï¿½tï¿½r sï¿½releri nasï¿½l belgelendirilir?</b>
 </font>
 <ul>       	
- 	<b>Adým 1: </b>Kesi yapýldýðý aný sol sütundaki "<span style="background-color:yellow" > baþlama saati: <input type="text" name="d" size=5 maxlength=5> </span>" alanýna giriniz.<br>
- 	<b>Adým 2: </b>Sütür anýný sað sütundaki "<span style="background-color:yellow" > bitiþ saati: <input type="text" name="d" size=5 maxlength=5> </span>" alanýna giriniz.<p>
+ 	<b>Adï¿½m 1: </b>Kesi yapï¿½ldï¿½ï¿½ï¿½ anï¿½ sol sï¿½tundaki "<span style="background-color:yellow" > baï¿½lama saati: <input type="text" name="d" size=5 maxlength=5> </span>" alanï¿½na giriniz.<br>
+ 	<b>Adï¿½m 2: </b>Sï¿½tï¿½r anï¿½nï¿½ saï¿½ sï¿½tundaki "<span style="background-color:yellow" > bitiï¿½ saati: <input type="text" name="d" size=5 maxlength=5> </span>" alanï¿½na giriniz.<p>
 <ul>       	
- 	<b>Ýpucu: </b>Giriþ alanýna þu aný otomatik olarak girmek için  "n" veya "N" (Now=Þimdi anlamýnda) giriniz.
+ 	<b>ï¿½pucu: </b>Giriï¿½ alanï¿½na ï¿½u anï¿½ otomatik olarak girmek iï¿½in  "n" veya "N" (Now=ï¿½imdi anlamï¿½nda) giriniz.
 </ul><br>
-	<b>Uyarý: </b>Bilgiyi kayýt etmeden önce birkaç kesi ve sütür zamanýný ayný anda kayýt edebilirsiniz.<p>
+	<b>Uyarï¿½: </b>Bilgiyi kayï¿½t etmeden ï¿½nce birkaï¿½ kesi ve sï¿½tï¿½r zamanï¿½nï¿½ aynï¿½ anda kayï¿½t edebilirsiniz.<p>
 </ul>
  	
 	<?php endif ?>
 	<?php if($x1=="wait_time") : ?>
 <img <?php echo createComIcon('../','frage.gif','0') ?>> <font color="#990000"><b>
-Boþ (bekleme) süresi nasýl belgelendirilir?</b>
+Boï¿½ (bekleme) sï¿½resi nasï¿½l belgelendirilir?</b>
 </font>
 <ul>       	
- 	<b>Adým 1: </b>Baþladýðý zamaný ilk sütundaki "<span style="background-color:yellow" > baþlama saati: <input type="text" name="d" size=5 maxlength=5> </span>" alanýna giriniz.<br>
- 	<b>Adým 2: </b>Bittiði zamaný ikinci sütundaki "<span style="background-color:yellow" > bitme saati: <input type="text" name="d" size=5 maxlength=5> </span>" alanýna giriniz.<p>
+ 	<b>Adï¿½m 1: </b>Baï¿½ladï¿½ï¿½ï¿½ zamanï¿½ ilk sï¿½tundaki "<span style="background-color:yellow" > baï¿½lama saati: <input type="text" name="d" size=5 maxlength=5> </span>" alanï¿½na giriniz.<br>
+ 	<b>Adï¿½m 2: </b>Bittiï¿½i zamanï¿½ ikinci sï¿½tundaki "<span style="background-color:yellow" > bitme saati: <input type="text" name="d" size=5 maxlength=5> </span>" alanï¿½na giriniz.<p>
 <ul>       	
- 	<b>Ýpucu: </b>Giriþ alanýna þu aný otomatik olarak girmek için  "n" veya "N" (Now=Þimdi anlamýnda) giriniz.
+ 	<b>ï¿½pucu: </b>Giriï¿½ alanï¿½na ï¿½u anï¿½ otomatik olarak girmek iï¿½in  "n" veya "N" (Now=ï¿½imdi anlamï¿½nda) giriniz.
 </ul><br>
-	<b>Adým 3: </b>Üçüncü (sebep) sütunundan sebebi seçiniz.<p>
+	<b>Adï¿½m 3: </b>ï¿½ï¿½ï¿½ncï¿½ (sebep) sï¿½tunundan sebebi seï¿½iniz.<p>
  	
- 	<b>Uyarý: </b>Bilgiyi kayýt etmeden önce birkaç baþlama ve bitme saatini ve sebeplerini ayný anda kayýt edebilirsiniz.<p>
+ 	<b>Uyarï¿½: </b>Bilgiyi kayï¿½t etmeden ï¿½nce birkaï¿½ baï¿½lama ve bitme saatini ve sebeplerini aynï¿½ anda kayï¿½t edebilirsiniz.<p>
 </ul>
  
 	<?php endif ?>
 	<?php if($x1=="bandage_time") : ?>
 <img <?php echo createComIcon('../','frage.gif','0') ?>> <font color="#990000"><b>
-Alçý ve pansuman süreleri nasýl belgelendirilir?</b>
+Alï¿½ï¿½ ve pansuman sï¿½releri nasï¿½l belgelendirilir?</b>
 </font>
 <ul>     
-	<b>Adým 1: </b>Baþladýðý zamaný sol sütundaki "<span style="background-color:yellow" > baþlama saati: <input type="text" name="d" size=5 maxlength=5> </span>" alanýna giriniz.<br>
- 	<b>Adým 2: </b>Bittiði zamaný sað sütundaki "<span style="background-color:yellow" > bitme saati: <input type="text" name="d" size=5 maxlength=5> </span>" alanýna giriniz.<p>
+	<b>Adï¿½m 1: </b>Baï¿½ladï¿½ï¿½ï¿½ zamanï¿½ sol sï¿½tundaki "<span style="background-color:yellow" > baï¿½lama saati: <input type="text" name="d" size=5 maxlength=5> </span>" alanï¿½na giriniz.<br>
+ 	<b>Adï¿½m 2: </b>Bittiï¿½i zamanï¿½ saï¿½ sï¿½tundaki "<span style="background-color:yellow" > bitme saati: <input type="text" name="d" size=5 maxlength=5> </span>" alanï¿½na giriniz.<p>
 <ul>       	
- 	<b>Ýpucu: </b>Giriþ alanýna þu aný otomatik olarak girmek için  "n" veya "N" (Now=Þimdi anlamýnda) giriniz.
+ 	<b>ï¿½pucu: </b>Giriï¿½ alanï¿½na ï¿½u anï¿½ otomatik olarak girmek iï¿½in  "n" veya "N" (Now=ï¿½imdi anlamï¿½nda) giriniz.
 </ul><br>
 	
- 	<b>Uyarý: </b>Bilgiyi kayýt etmeden önce birkaç baþlama ve bitme saatini ayný anda kayýt edebilirsiniz.<p>  	
+ 	<b>Uyarï¿½: </b>Bilgiyi kayï¿½t etmeden ï¿½nce birkaï¿½ baï¿½lama ve bitme saatini aynï¿½ anda kayï¿½t edebilirsiniz.<p>  	
  	
 </ul>
 
 	<?php endif ?>
 	<?php if($x1=="repos_time") : ?>
 <img <?php echo createComIcon('../','frage.gif','0') ?>> <font color="#990000"><b>
-Repozisyon süresi nasýl belgelendirilir?</b>
+Repozisyon sï¿½resi nasï¿½l belgelendirilir?</b>
 </font>
 <ul>       	
- 	<b>Adým 1: </b>Baþladýðý zamaný sol sütundaki "<span style="background-color:yellow" > baþlama saati: <input type="text" name="d" size=5 maxlength=5> </span>" alanýna giriniz.<br>
- 	<b>Adým 2: </b>Bittiði zamaný sað sütundaki "<span style="background-color:yellow" > bitme saati: <input type="text" name="d" size=5 maxlength=5> </span>" alanýna giriniz.<p>
+ 	<b>Adï¿½m 1: </b>Baï¿½ladï¿½ï¿½ï¿½ zamanï¿½ sol sï¿½tundaki "<span style="background-color:yellow" > baï¿½lama saati: <input type="text" name="d" size=5 maxlength=5> </span>" alanï¿½na giriniz.<br>
+ 	<b>Adï¿½m 2: </b>Bittiï¿½i zamanï¿½ saï¿½ sï¿½tundaki "<span style="background-color:yellow" > bitme saati: <input type="text" name="d" size=5 maxlength=5> </span>" alanï¿½na giriniz.<p>
 <ul>       	
- 	<b>Ýpucu: </b>Giriþ alanýna þu aný otomatik olarak girmek için  "n" veya "N" (Now=Þimdi anlamýnda) giriniz.
+ 	<b>ï¿½pucu: </b>Giriï¿½ alanï¿½na ï¿½u anï¿½ otomatik olarak girmek iï¿½in  "n" veya "N" (Now=ï¿½imdi anlamï¿½nda) giriniz.
 </ul><br>
- 	<b>Uyarý: </b>Bilgiyi kayýt etmeden önce birkaç baþlama ve bitme saatini ayný anda kayýt edebilirsiniz.<p>  	
+ 	<b>Uyarï¿½: </b>Bilgiyi kayï¿½t etmeden ï¿½nce birkaï¿½ baï¿½lama ve bitme saatini aynï¿½ anda kayï¿½t edebilirsiniz.<p>  	
  	
 </ul>
 
 	<?php endif ?>
 	<img <?php echo createComIcon('../','frage.gif','0') ?>> <font color="#990000"><b>
-Bilgi nasýl kayýt edilir?</b>
+Bilgi nasï¿½l kayï¿½t edilir?</b>
 </font>
 <ul>       	
- 	<b>Adým 1: </b>Bilgiyi kaydetmek için  <img <?php echo createLDImgSrc('../','savedisc.gif','0') ?>> düðmesini týklayýnýz<br>
- 	<b>Adým 2: </b>Ýþiniz bitti ise, pencereyi kapatýp kayýt kütüðü sayfasýna geri dönmek için  <img <?php echo createLDImgSrc('../','close2.gif','0') ?>> düðmesini týklayýnýz.<br>
+ 	<b>Adï¿½m 1: </b>Bilgiyi kaydetmek iï¿½in  <img <?php echo createLDImgSrc('../','savedisc.gif','0') ?>> dï¿½ï¿½mesini tï¿½klayï¿½nï¿½z<br>
+ 	<b>Adï¿½m 2: </b>ï¿½ï¿½iniz bitti ise, pencereyi kapatï¿½p kayï¿½t kï¿½tï¿½ï¿½ï¿½ sayfasï¿½na geri dï¿½nmek iï¿½in  <img <?php echo createLDImgSrc('../','close2.gif','0') ?>> dï¿½ï¿½mesini tï¿½klayï¿½nï¿½z.<br>
 </ul>
 <img <?php echo createComIcon('../','frage.gif','0') ?>> 
-<font color="#990000"><b> Girilenleri silmek istiyorum ama "Yeni baþtan" düðmesi çalýþmýyor gibi görünüyor. Ne yapmalýyým?</b></font> 
+<font color="#990000"><b> Girilenleri silmek istiyorum ama "Yeni baï¿½tan" dï¿½ï¿½mesi ï¿½alï¿½ï¿½mï¿½yor gibi gï¿½rï¿½nï¿½yor. Ne yapmalï¿½yï¿½m?</b></font> 
 <ul>       	
- 	<b>Uyarý: </b>"Yeni baþtan" düðmesi týklanýnca sadece henüz kayýt edilmemiþ girdiler silinir. Eðer daha önceden kayýt edilmiþ girdileri silmek isterseniz, þu yönergeyi izleyiniz:<p>
- 	<b>Adým 1: </b>Silmek istediðiniz zamanýn giriþ alanýný týklayýnýz.<br>
- 	<b>Adým 2: </b>Zamaný klavyeden el ile  "Del" veya "Backspace" tuþlarýný kullanarak siliniz.<br>
- 	<b>Adým 3: </b>Deðiþiklikleri kayýt etmek için <img <?php echo createLDImgSrc('../','savedisc.gif','0') ?>> düðmesini týklayýnýz.<br>
+ 	<b>Uyarï¿½: </b>"Yeni baï¿½tan" dï¿½ï¿½mesi tï¿½klanï¿½nca sadece henï¿½z kayï¿½t edilmemiï¿½ girdiler silinir. Eï¿½er daha ï¿½nceden kayï¿½t edilmiï¿½ girdileri silmek isterseniz, ï¿½u yï¿½nergeyi izleyiniz:<p>
+ 	<b>Adï¿½m 1: </b>Silmek istediï¿½iniz zamanï¿½n giriï¿½ alanï¿½nï¿½ tï¿½klayï¿½nï¿½z.<br>
+ 	<b>Adï¿½m 2: </b>Zamanï¿½ klavyeden el ile  "Del" veya "Backspace" tuï¿½larï¿½nï¿½ kullanarak siliniz.<br>
+ 	<b>Adï¿½m 3: </b>Deï¿½iï¿½iklikleri kayï¿½t etmek iï¿½in <img <?php echo createLDImgSrc('../','savedisc.gif','0') ?>> dï¿½ï¿½mesini tï¿½klayï¿½nï¿½z.<br>
  
 </ul>
-<img <?php echo createComIcon('../','warn.gif','0','absmiddle') ?>> <font color="#990000"><b> Uyarý:</b></font> 
+<img <?php echo createComIcon('../','warn.gif','0','absmiddle') ?>> <font color="#990000"><b> Uyarï¿½:</b></font> 
 <ul>       	
- Ýptal etmeye karar verir iseniz <img <?php echo createLDImgSrc('../','cancel.gif','0') ?>> düðmesini týklayýnýz.
+ ï¿½ptal etmeye karar verir iseniz <img <?php echo createLDImgSrc('../','cancel.gif','0') ?>> dï¿½ï¿½mesini tï¿½klayï¿½nï¿½z.
 </ul>
 <?php endif ?>
 
@@ -239,63 +239,63 @@ Bilgi nasýl kayýt edilir?</b>
 <?php if($src=="create") : ?>
 	<?php if($x1=="logmain") : ?>
 <img <?php echo createComIcon('../','frage.gif','0') ?>> <font color="#990000"><b>
-Bir ameliyatýn kütük kaydý nasýl düzenlenir?</b>
+Bir ameliyatï¿½n kï¿½tï¿½k kaydï¿½ nasï¿½l dï¿½zenlenir?</b>
 </font>
 <ul>       	
- 	<b>Adým 1: </b>Hastanýn kütük kaydý ile ilgili <img src="../img/update3.gif" width=15 height=14 border=0> düðmesini týklayýnýz.<br>
- 	<b>Adým 2: </b>Hastanýn kütük kayýtlarý bir düzenleyici penceresinde açýlýr. Kayýtlarý burada bir ameliyatý belgelendirme yönergelerini izleyerek düzenleyebilirsiniz.<br>
+ 	<b>Adï¿½m 1: </b>Hastanï¿½n kï¿½tï¿½k kaydï¿½ ile ilgili <img src="../img/update3.gif" width=15 height=14 border=0> dï¿½ï¿½mesini tï¿½klayï¿½nï¿½z.<br>
+ 	<b>Adï¿½m 2: </b>Hastanï¿½n kï¿½tï¿½k kayï¿½tlarï¿½ bir dï¿½zenleyici penceresinde aï¿½ï¿½lï¿½r. Kayï¿½tlarï¿½ burada bir ameliyatï¿½ belgelendirme yï¿½nergelerini izleyerek dï¿½zenleyebilirsiniz.<br>
 </ul>
 <img <?php echo createComIcon('../','frage.gif','0') ?>> <font color="#990000"><b>
-Bir hastanýn belgeler klasörü nasýl açýlýr?</b>
+Bir hastanï¿½n belgeler klasï¿½rï¿½ nasï¿½l aï¿½ï¿½lï¿½r?</b>
 </font>
 <ul>       	
- 	<b>Adým 1: </b>Hastanýn numarasýnýn solundaki  <img <?php echo createComIcon('../','info3.gif','0') ?>> düðmesini týklayýnýz.<br>
- 	<b>Adým 2: </b>Hastanýn belgeler klasörü yeni bir pencerede açýlýr.<br>
+ 	<b>Adï¿½m 1: </b>Hastanï¿½n numarasï¿½nï¿½n solundaki  <img <?php echo createComIcon('../','info3.gif','0') ?>> dï¿½ï¿½mesini tï¿½klayï¿½nï¿½z.<br>
+ 	<b>Adï¿½m 2: </b>Hastanï¿½n belgeler klasï¿½rï¿½ yeni bir pencerede aï¿½ï¿½lï¿½r.<br>
 </ul>
 <img <?php echo createComIcon('../','frage.gif','0') ?>> <font color="#990000"><b>
-Baþka bir bölüm ve/veya ameliyathaneye nasýl deðiþtirilir?</b>
+Baï¿½ka bir bï¿½lï¿½m ve/veya ameliyathaneye nasï¿½l deï¿½iï¿½tirilir?</b>
 </font>
 <ul>       	
- 	<b>Adým 1: </b>Seçim kutusundan bölümü seçiniz 
+ 	<b>Adï¿½m 1: </b>Seï¿½im kutusundan bï¿½lï¿½mï¿½ seï¿½iniz 
 				<select name="dept" size=1>
 				<?php
 $Or2Dept=get_meta_tags("../global_conf/resolve_or2ordept.pid");
 					$opabt=get_meta_tags("../global_conf/$lang/op_tag_dept.pid");
 
-					foreach( as =>)
+					foreach($opabt as $x=>$v)
 					{
 						if($x=="anaesth") continue;
 						print'
 					<option value="'.$x.'"';
-						if ($dept==$x) print " seçildi";
+						if ($dept==$x) print " seï¿½ildi";
 						print '> '.$v.'</option>';
 					}
 				?>
 					
 				</select>.
 <br>
- 	<b>Adým 2: </b>Seçim kutusundan ameliyathaneyi seçiniz <select name="saal" size=1 >
+ 	<b>Adï¿½m 2: </b>Seï¿½im kutusundan ameliyathaneyi seï¿½iniz <select name="saal" size=1 >
 				<?php
-foreach( as =>)
+foreach($Or2Dept as $x=>$v)
 					{
 						print'
 					<option value="'.$x.'"';
-						if ($saal==$x) print " seçildi";
+						if ($saal==$x) print " seï¿½ildi";
 						print '> '.$x.'</option>';
 					}
 				?>
 				</select>.
 <br>
- 	<b>Adým 3: </b>Diðer bölüm ve/veya ameliyathaneye deðiþtirmek için <input type="button" value="Change"> düðmesini týklayýnýz.<br>
+ 	<b>Adï¿½m 3: </b>Diï¿½er bï¿½lï¿½m ve/veya ameliyathaneye deï¿½iï¿½tirmek iï¿½in <input type="button" value="Change"> dï¿½ï¿½mesini tï¿½klayï¿½nï¿½z.<br>
 </ul>
 <img <?php echo createComIcon('../','frage.gif','0') ?>> <font color="#990000"><b>
-Þu anda görüntülenenin dýþýnda belirli bir güne ait kütük kayýtlarý nasýl görüntülenir?</b>
+ï¿½u anda gï¿½rï¿½ntï¿½lenenin dï¿½ï¿½ï¿½nda belirli bir gï¿½ne ait kï¿½tï¿½k kayï¿½tlarï¿½ nasï¿½l gï¿½rï¿½ntï¿½lenir?</b>
 </font>
 <ul>       	
- 	<b>Adým 1: </b>Daha önceki günlerin kütük kayýtlarýný görüntülemek için, tablonun sol üst köþesindeki  "<span style="background-color:yellow" > Önceki gün </span>" baðlantýsýný týklayýnýz.<br>
-	Ýstediðiniz günün kütük girdileri görüntülenene deðin ne kadar gerekirse o kadar týklayýnýz.<br>
- 	<b>Adým 2: </b>Sonraki günlerin kütük girdilerini görüntülemek için tablonun sað üst köþesindeki  "<span style="background-color:yellow" > Sonraki gün </span>" baðlantýsýný týklayýnýz.<br>
-	Ýstediðiniz günün kaydýna ulaþana deðin ne kadar gerekir ise o kadar týklayýnýz .<br>
+ 	<b>Adï¿½m 1: </b>Daha ï¿½nceki gï¿½nlerin kï¿½tï¿½k kayï¿½tlarï¿½nï¿½ gï¿½rï¿½ntï¿½lemek iï¿½in, tablonun sol ï¿½st kï¿½ï¿½esindeki  "<span style="background-color:yellow" > ï¿½nceki gï¿½n </span>" baï¿½lantï¿½sï¿½nï¿½ tï¿½klayï¿½nï¿½z.<br>
+	ï¿½stediï¿½iniz gï¿½nï¿½n kï¿½tï¿½k girdileri gï¿½rï¿½ntï¿½lenene deï¿½in ne kadar gerekirse o kadar tï¿½klayï¿½nï¿½z.<br>
+ 	<b>Adï¿½m 2: </b>Sonraki gï¿½nlerin kï¿½tï¿½k girdilerini gï¿½rï¿½ntï¿½lemek iï¿½in tablonun saï¿½ ï¿½st kï¿½ï¿½esindeki  "<span style="background-color:yellow" > Sonraki gï¿½n </span>" baï¿½lantï¿½sï¿½nï¿½ tï¿½klayï¿½nï¿½z.<br>
+	ï¿½stediï¿½iniz gï¿½nï¿½n kaydï¿½na ulaï¿½ana deï¿½in ne kadar gerekir ise o kadar tï¿½klayï¿½nï¿½z .<br>
 </ul>
 
 <hr>
@@ -304,120 +304,120 @@ foreach( as =>)
 	
 	<?php if($x2=="material") : ?>
 <img <?php echo createComIcon('../','frage.gif','0') ?>> <font color="#990000"><b>
-Ameliyat için kullanýlmýþ bir malzeme nasýl belgelendirilir?</b>
+Ameliyat iï¿½in kullanï¿½lmï¿½ï¿½ bir malzeme nasï¿½l belgelendirilir?</b>
 </font>
 <ul>       	
- 	<b>Adým 1: </b>Malzemenin kalem numarasýný "<span style="background-color:yellow" > Kalem numarasý: </span>" alanýna yazýnýz.<p>
-	<b>Diðer yollar: </b>
+ 	<b>Adï¿½m 1: </b>Malzemenin kalem numarasï¿½nï¿½ "<span style="background-color:yellow" > Kalem numarasï¿½: </span>" alanï¿½na yazï¿½nï¿½z.<p>
+	<b>Diï¿½er yollar: </b>
 	<ul type=disc>  	
-	<li>Bir malzemenin ismi, ürün tanýmý, jenerik, lisans numarasý veya sipariþ numarasý bilgisinin tamamýný veya bir kýsmýný  "<span style="background-color:yellow" > Kalem numarasý: </span>" alanýna giriniz.
+	<li>Bir malzemenin ismi, ï¿½rï¿½n tanï¿½mï¿½, jenerik, lisans numarasï¿½ veya sipariï¿½ numarasï¿½ bilgisinin tamamï¿½nï¿½ veya bir kï¿½smï¿½nï¿½  "<span style="background-color:yellow" > Kalem numarasï¿½: </span>" alanï¿½na giriniz.
 	<li>Barkod okuyucu ile malzemenin barkodunu okutturunuz.
 	</ul><br> 
- 	<b>Adým 2: </b>Ürünü aramak için ya  <input type="button" value="Tamam"> düðmesini týklatýnýz veya klavyeden entere basýnýz.<p> 
+ 	<b>Adï¿½m 2: </b>ï¿½rï¿½nï¿½ aramak iï¿½in ya  <input type="button" value="Tamam"> dï¿½ï¿½mesini tï¿½klatï¿½nï¿½z veya klavyeden entere basï¿½nï¿½z.<p> 
 <ul>       	
- 	<b>Uyarý: </b>Eðer arama bir tek sonuç bulur ise, aramanýn sonucu doðrudan belgeye eklenir.<p> 
- 	<b>Uyarý: </b>Eðer arama birkaç sonuç bulur ise , bir liste görüntülenir. Malzemeyi belgeye eklemek için, malzeme kaleminin  kaleminin numarasýna, malzemenin ismine veya  <img <?php echo createComIcon('../','bul_arrowgrnlrg.gif','0') ?>> düðmesine týklayýnýz.<p> 
+ 	<b>Uyarï¿½: </b>Eï¿½er arama bir tek sonuï¿½ bulur ise, aramanï¿½n sonucu doï¿½rudan belgeye eklenir.<p> 
+ 	<b>Uyarï¿½: </b>Eï¿½er arama birkaï¿½ sonuï¿½ bulur ise , bir liste gï¿½rï¿½ntï¿½lenir. Malzemeyi belgeye eklemek iï¿½in, malzeme kaleminin  kaleminin numarasï¿½na, malzemenin ismine veya  <img <?php echo createComIcon('../','bul_arrowgrnlrg.gif','0') ?>> dï¿½ï¿½mesine tï¿½klayï¿½nï¿½z.<p> 
 	</ul>
- 	<b>Adým 3: </b>Malzeme listeye eklendi ise, gerekirse girilenleri  "<span style="background-color:yellow" > parça sayýsý</span>" alanýndan deðiþtirebilirsiniz.<p> 
+ 	<b>Adï¿½m 3: </b>Malzeme listeye eklendi ise, gerekirse girilenleri  "<span style="background-color:yellow" > parï¿½a sayï¿½sï¿½</span>" alanï¿½ndan deï¿½iï¿½tirebilirsiniz.<p> 
 <ul>       	
- 	<b>Uyarý: </b>"parça sayýsý" alanýndaki bilgiyi deðiþtirdiðinizde "Kaydet" ve "Yeni baþtan" düðmeleri görüntülenir.<p> 
+ 	<b>Uyarï¿½: </b>"parï¿½a sayï¿½sï¿½" alanï¿½ndaki bilgiyi deï¿½iï¿½tirdiï¿½inizde "Kaydet" ve "Yeni baï¿½tan" dï¿½ï¿½meleri gï¿½rï¿½ntï¿½lenir.<p> 
 	</ul>
- 	<b>Adým 4: </b>"parça sayýsý" alanýndaki bilgiyi deðiþtirdi iseniz, deðiþiklikleri kaydetmek için <img <?php echo createLDImgSrc('../','savedisc.gif','0') ?>> düðmesini týklayýnýz.<p> 
+ 	<b>Adï¿½m 4: </b>"parï¿½a sayï¿½sï¿½" alanï¿½ndaki bilgiyi deï¿½iï¿½tirdi iseniz, deï¿½iï¿½iklikleri kaydetmek iï¿½in <img <?php echo createLDImgSrc('../','savedisc.gif','0') ?>> dï¿½ï¿½mesini tï¿½klayï¿½nï¿½z.<p> 
 </ul>
 <img <?php echo createComIcon('../','frage.gif','0') ?>> <font color="#990000"><b>
-Listeden bir malzeme nasýl çýkarýlýr?</b>
+Listeden bir malzeme nasï¿½l ï¿½ï¿½karï¿½lï¿½r?</b>
 </font>
 <ul> 
- 	<b>Adým 1: </b>Malzemenin ilgili <img <?php echo createComIcon('../','delete2.gif','0','absmiddle') ?>> düðmesine týklayýnýz.<br> 
+ 	<b>Adï¿½m 1: </b>Malzemenin ilgili <img <?php echo createComIcon('../','delete2.gif','0','absmiddle') ?>> dï¿½ï¿½mesine tï¿½klayï¿½nï¿½z.<br> 
 </ul>
 <img <?php echo createComIcon('../','frage.gif','0') ?>> <font color="#990000"><b>
-Malzeme bulunmadý. Bilgisi nasýl el ile (zorla) girilir?</b>
+Malzeme bulunmadï¿½. Bilgisi nasï¿½l el ile (zorla) girilir?</b>
 </font>
 <ul> 
- 	<b>Adým 1: </b> "<span style="background-color:yellow" > <img <?php echo createComIcon('../','accessrights.gif','0') ?>> Malzemeyi el ile girmek için, burayý týklayýnýz. </span>" baðlantýsýný týklayýnýz.<br> 
- 	<b>Adým 2: </b>Malzemenin bilgisini ilgili alanlara el ile giriniz.<p> 
- 	<b>Adým 3: </b>Malzemenin bilgisini belgeye eklemek için <img <?php echo createLDImgSrc('../','savedisc.gif','0') ?>> düðmesini týklayýnýz.<p> 
+ 	<b>Adï¿½m 1: </b> "<span style="background-color:yellow" > <img <?php echo createComIcon('../','accessrights.gif','0') ?>> Malzemeyi el ile girmek iï¿½in, burayï¿½ tï¿½klayï¿½nï¿½z. </span>" baï¿½lantï¿½sï¿½nï¿½ tï¿½klayï¿½nï¿½z.<br> 
+ 	<b>Adï¿½m 2: </b>Malzemenin bilgisini ilgili alanlara el ile giriniz.<p> 
+ 	<b>Adï¿½m 3: </b>Malzemenin bilgisini belgeye eklemek iï¿½in <img <?php echo createLDImgSrc('../','savedisc.gif','0') ?>> dï¿½ï¿½mesini tï¿½klayï¿½nï¿½z.<p> 
 </ul>
-<img <?php echo createComIcon('../','warn.gif','0','absmiddle') ?>> <font color="#990000"><b> Uyarý:</b></font> 
+<img <?php echo createComIcon('../','warn.gif','0','absmiddle') ?>> <font color="#990000"><b> Uyarï¿½:</b></font> 
 <ul>       	
- Ýptal etmeye karar verir iseniz <img <?php echo createLDImgSrc('../','cancel.gif','0') ?>> düðmesini týklayýnýz.
+ ï¿½ptal etmeye karar verir iseniz <img <?php echo createLDImgSrc('../','cancel.gif','0') ?>> dï¿½ï¿½mesini tï¿½klayï¿½nï¿½z.
 </ul>
 <img <?php echo createComIcon('../','frage.gif','0') ?>> <font color="#990000"><b>
-Ana kayýt kütüðü geri tekrar nasýl görüntülenir?</b>
+Ana kayï¿½t kï¿½tï¿½ï¿½ï¿½ geri tekrar nasï¿½l gï¿½rï¿½ntï¿½lenir?</b>
 </font>
 <ul> 
- 	<b>Adým 1: </b> "<span style="background-color:yellow" > <img <?php echo createComIcon('../','manfldr.gif','0') ?>> Kayýt kütüðünü göster. </span>" baðlantýsýný týklayýnýz.<br> 
+ 	<b>Adï¿½m 1: </b> "<span style="background-color:yellow" > <img <?php echo createComIcon('../','manfldr.gif','0') ?>> Kayï¿½t kï¿½tï¿½ï¿½ï¿½nï¿½ gï¿½ster. </span>" baï¿½lantï¿½sï¿½nï¿½ tï¿½klayï¿½nï¿½z.<br> 
 </ul>
 <hr>
 	<?php endif ?>
 
 	<?php if(($x1=="")||($x1=="fresh")) : ?>
 <img <?php echo createComIcon('../','frage.gif','0') ?>> <font color="#990000"><b>
-Bir ameliyatý kütük belgesine nasýl baþlanýr?</b>
+Bir ameliyatï¿½ kï¿½tï¿½k belgesine nasï¿½l baï¿½lanï¿½r?</b>
 </font>
 <ul>       	
- 	<b>Adým 1: </b>Önce hastayý bulunuz. Hastanýn numarasýný "<span style="background-color:yellow" > Hasta no: </span>" alanýna yazýnýz.<p>
-	<b>Diðer seçenekler: </b>
+ 	<b>Adï¿½m 1: </b>ï¿½nce hastayï¿½ bulunuz. Hastanï¿½n numarasï¿½nï¿½ "<span style="background-color:yellow" > Hasta no: </span>" alanï¿½na yazï¿½nï¿½z.<p>
+	<b>Diï¿½er seï¿½enekler: </b>
 	<ul type=disc>  	
-	<li>Hastanýn soyad veya adýnýn tamamýný ya da birkaç harfini  "<span style="background-color:yellow" > Soyad, Ad </span>" alanýna giriniz .
-	<li>Hastanýn doðum tarihinin tamamýný ya da ilk birkaç rakamýný "<span style="background-color:yellow" > Doðum tarihi </span>" alanýna giriniz.
+	<li>Hastanï¿½n soyad veya adï¿½nï¿½n tamamï¿½nï¿½ ya da birkaï¿½ harfini  "<span style="background-color:yellow" > Soyad, Ad </span>" alanï¿½na giriniz .
+	<li>Hastanï¿½n doï¿½um tarihinin tamamï¿½nï¿½ ya da ilk birkaï¿½ rakamï¿½nï¿½ "<span style="background-color:yellow" > Doï¿½um tarihi </span>" alanï¿½na giriniz.
 	</ul>
- 	<b>Adým 2: </b>Hastayý aramaya baþlamak için  <input type="button" value="Hastayý ara"> düðmesini týklayýnýz.<p> 
+ 	<b>Adï¿½m 2: </b>Hastayï¿½ aramaya baï¿½lamak iï¿½in  <input type="button" value="Hastayï¿½ ara"> dï¿½ï¿½mesini tï¿½klayï¿½nï¿½z.<p> 
 <ul>       	
- 	<b>Uyarý: </b>Arama bir sonuç bulur ise, hastanýn temel bilgileri hemen ilgili alanlara girilmiþ görüntülenir.<p> 
- 	<b>Uyarý: </b>Arama birkaç sonuç bulur ise,  bir liste görüntülenir. Belgelendirmek üzere hastayý seçmek için hastanýn soyad veya adýna týklayýnýz.<p> 
+ 	<b>Uyarï¿½: </b>Arama bir sonuï¿½ bulur ise, hastanï¿½n temel bilgileri hemen ilgili alanlara girilmiï¿½ gï¿½rï¿½ntï¿½lenir.<p> 
+ 	<b>Uyarï¿½: </b>Arama birkaï¿½ sonuï¿½ bulur ise,  bir liste gï¿½rï¿½ntï¿½lenir. Belgelendirmek ï¿½zere hastayï¿½ seï¿½mek iï¿½in hastanï¿½n soyad veya adï¿½na tï¿½klayï¿½nï¿½z.<p> 
 	</ul>
- 	<b>Adým 3: </b>Daha fazla bilgi için <img <?php echo createLDImgSrc('../','hilfe-r.gif','0') ?>> düðmesini týklayýnýz.<p> 
+ 	<b>Adï¿½m 3: </b>Daha fazla bilgi iï¿½in <img <?php echo createLDImgSrc('../','hilfe-r.gif','0') ?>> dï¿½ï¿½mesini tï¿½klayï¿½nï¿½z.<p> 
 
 </ul>
 
 	<?php else : ?>
 <img <?php echo createComIcon('../','frage.gif','0') ?>> <font color="#990000"><b>
-Ameliyat için taný nasýl girilir?</b>
+Ameliyat iï¿½in tanï¿½ nasï¿½l girilir?</b>
 </font>
 <ul>       	
- 	<b>Adým 1: </b>Tanýyý  "<span style="background-color:yellow" > Taný: </span>" alanýna yazýnýz.<br>
+ 	<b>Adï¿½m 1: </b>Tanï¿½yï¿½  "<span style="background-color:yellow" > Tanï¿½: </span>" alanï¿½na yazï¿½nï¿½z.<br>
 	</ul>
 <img <?php echo createComIcon('../','frage.gif','0') ?>> <font color="#990000"><b>
-Cerrah bilgisi nasýl girilir?</b>
+Cerrah bilgisi nasï¿½l girilir?</b>
 </font>
 <ul>       	
- 	<b>Adým 1: </b> "<span style="background-color:yellow" > Cerrah </span>" baðlantýsýný týklayýnýz.<br>
- 	<b>Adým 2: </b>Cerrah bilgisi için bir pencere açýlýr. <br>
- 	<b>Adým 3: </b>Pencere içindeki bilgileri izleyiniz ya da daha fazla bilgi için pencere içerisindeki "Yardým" düðmesini týklayýnýz. <br>
+ 	<b>Adï¿½m 1: </b> "<span style="background-color:yellow" > Cerrah </span>" baï¿½lantï¿½sï¿½nï¿½ tï¿½klayï¿½nï¿½z.<br>
+ 	<b>Adï¿½m 2: </b>Cerrah bilgisi iï¿½in bir pencere aï¿½ï¿½lï¿½r. <br>
+ 	<b>Adï¿½m 3: </b>Pencere iï¿½indeki bilgileri izleyiniz ya da daha fazla bilgi iï¿½in pencere iï¿½erisindeki "Yardï¿½m" dï¿½ï¿½mesini tï¿½klayï¿½nï¿½z. <br>
 	</ul>
 <img <?php echo createComIcon('../','frage.gif','0') ?>> <font color="#990000"><b>
-Asistan cerrah bilgisi nasýl girilir?</b>
+Asistan cerrah bilgisi nasï¿½l girilir?</b>
 </font>
 <ul>       	
- 	<b>Adým 1: </b>"<span style="background-color:yellow" > Asistan </span>" baðlantýsýný týklayýnýz.<br>
- 	<b>Adým 2: </b>Asistan cerrah bilgisini girmek için bir pencere açýlýr. <br>
- 	<b>Adým 3: </b>Penceredeki bilgileri izleyiniz ya da daha fazla bilgi için pencere içerisindeki "Yardým" düðmesini týklayýnýz. <br>
+ 	<b>Adï¿½m 1: </b>"<span style="background-color:yellow" > Asistan </span>" baï¿½lantï¿½sï¿½nï¿½ tï¿½klayï¿½nï¿½z.<br>
+ 	<b>Adï¿½m 2: </b>Asistan cerrah bilgisini girmek iï¿½in bir pencere aï¿½ï¿½lï¿½r. <br>
+ 	<b>Adï¿½m 3: </b>Penceredeki bilgileri izleyiniz ya da daha fazla bilgi iï¿½in pencere iï¿½erisindeki "Yardï¿½m" dï¿½ï¿½mesini tï¿½klayï¿½nï¿½z. <br>
 	</ul>
 <img <?php echo createComIcon('../','frage.gif','0') ?>> <font color="#990000"><b>
-Ameliyat hemþiresi bilgisi nasýl girilir?</b>
+Ameliyat hemï¿½iresi bilgisi nasï¿½l girilir?</b>
 </font>
 <ul>       	
  	
-	<b>Adým 1: </b>"<span style="background-color:yellow" > Ameliyat hemþiresi </span>" baðlantýsýný týklayýnýz.<br>
- 	<b>Adým 2: </b>Ameliyat hemþiresi bilgisini girmek için bir pencere açýlýr. <br>
- 	<b>Adým 3: </b>Penceredeki bilgileri izleyiniz ya da daha fazla bilgi için pencere içerisindeki "Yardým" düðmesini týklayýnýz. <br>
+	<b>Adï¿½m 1: </b>"<span style="background-color:yellow" > Ameliyat hemï¿½iresi </span>" baï¿½lantï¿½sï¿½nï¿½ tï¿½klayï¿½nï¿½z.<br>
+ 	<b>Adï¿½m 2: </b>Ameliyat hemï¿½iresi bilgisini girmek iï¿½in bir pencere aï¿½ï¿½lï¿½r. <br>
+ 	<b>Adï¿½m 3: </b>Penceredeki bilgileri izleyiniz ya da daha fazla bilgi iï¿½in pencere iï¿½erisindeki "Yardï¿½m" dï¿½ï¿½mesini tï¿½klayï¿½nï¿½z. <br>
 	</ul>
 
 <img <?php echo createComIcon('../','frage.gif','0') ?>> <font color="#990000"><b>
-Yardýmcý hemþire bilgisi nasýl girilir?</b>
+Yardï¿½mcï¿½ hemï¿½ire bilgisi nasï¿½l girilir?</b>
 </font>
 <ul>       	
  	
-	<b>Adým 1: </b>"<span style="background-color:yellow" > Yardýmcý hemþire </span>" baðlantýsýný týklayýnýz.<br>
- 	<b>Adým 2: </b>Yardýmcý hemþire bilgisini girmek için bir pencere açýlýr. <br>
- 	<b>Adým 3: </b>Penceredeki bilgileri izleyiniz ya da daha fazla bilgi için pencere içerisindeki "Yardým" düðmesini týklayýnýz. <br>
+	<b>Adï¿½m 1: </b>"<span style="background-color:yellow" > Yardï¿½mcï¿½ hemï¿½ire </span>" baï¿½lantï¿½sï¿½nï¿½ tï¿½klayï¿½nï¿½z.<br>
+ 	<b>Adï¿½m 2: </b>Yardï¿½mcï¿½ hemï¿½ire bilgisini girmek iï¿½in bir pencere aï¿½ï¿½lï¿½r. <br>
+ 	<b>Adï¿½m 3: </b>Penceredeki bilgileri izleyiniz ya da daha fazla bilgi iï¿½in pencere iï¿½erisindeki "Yardï¿½m" dï¿½ï¿½mesini tï¿½klayï¿½nï¿½z. <br>
 	</ul>
 <img <?php echo createComIcon('../','frage.gif','0') ?>> <font color="#990000"><b>
-Ameliyatta kullanýlan anestezi tipi nasýl girilir?</b>
+Ameliyatta kullanï¿½lan anestezi tipi nasï¿½l girilir?</b>
 </font>
 <ul>       	
- 	<b>Adým 1: </b>Anestezi tipini "<span style="background-color:yellow" > Anestezi <select name="a">
+ 	<b>Adï¿½m 1: </b>Anestezi tipini "<span style="background-color:yellow" > Anestezi <select name="a">
                                                                      	<option > ITA</option>
                                                                      	<option > Plexus</option>
                                                                      	<option > ITA-Jet</option>
@@ -425,7 +425,7 @@ Ameliyatta kullanýlan anestezi tipi nasýl girilir?</b>
                                                                      	<option > LA</option>
                                                                      	<option > DS</option>
                                                                      	<option > AS</option>
-                                                                     </select> </span>" alanýndan seçiniz.<p>
+                                                                     </select> </span>" alanï¿½ndan seï¿½iniz.<p>
 	<ul type=disc>       	
  	<li><b>ITA: </b>Intra-tracheal anesthesia<br>
  	<li><b>LA: </b>Local anesthesia<br>
@@ -435,77 +435,77 @@ Ameliyatta kullanýlan anestezi tipi nasýl girilir?</b>
 	</ul>
 	</ul>
 <img <?php echo createComIcon('../','frage.gif','0') ?>> <font color="#990000"><b>
-Anestezist bilgisi nasýl girilir?</b>
+Anestezist bilgisi nasï¿½l girilir?</b>
 </font>
 <ul>       	
- 	<b>Adým 1: </b>"<span style="background-color:yellow" > Anestezist </span>" baðlantýsýný týklayýnýz.<br>
- 	<b>Adým 2: </b>Anestezist bilgisini girmek için bir pencere açýlýr. <br>
- 	<b>Adým 3: </b>Penceredeki bilgileri izleyiniz ya da daha fazla bilgi için pencere içerisindeki "Yardým" düðmesini týklayýnýz. <br>
+ 	<b>Adï¿½m 1: </b>"<span style="background-color:yellow" > Anestezist </span>" baï¿½lantï¿½sï¿½nï¿½ tï¿½klayï¿½nï¿½z.<br>
+ 	<b>Adï¿½m 2: </b>Anestezist bilgisini girmek iï¿½in bir pencere aï¿½ï¿½lï¿½r. <br>
+ 	<b>Adï¿½m 3: </b>Penceredeki bilgileri izleyiniz ya da daha fazla bilgi iï¿½in pencere iï¿½erisindeki "Yardï¿½m" dï¿½ï¿½mesini tï¿½klayï¿½nï¿½z. <br>
 	</ul>
 <img <?php echo createComIcon('../','frage.gif','0') ?>> <font color="#990000"><b>
-Ameliyata giriþ, kesi, sütür ve çýkýþ zamanlarý ilgili alanlarýndan doðrudan nasýl girilir?</b>
+Ameliyata giriï¿½, kesi, sï¿½tï¿½r ve ï¿½ï¿½kï¿½ï¿½ zamanlarï¿½ ilgili alanlarï¿½ndan doï¿½rudan nasï¿½l girilir?</b>
 </font>
 <ul>       	
- 	<b>Giriþ zamaný: </b>Zamaný "<span style="background-color:yellow" > Giriþ:<input type="text" name="t" size=5 maxlength=5> </span>" alanýna yazýnýz.<br>
- 	<b>Kesi zamaný: </b>Zamaný "<span style="background-color:yellow" > Kesi: <input type="text" name="t" size=5 maxlength=5> </span>" alanýna yazýnýz.<br>
- 	<b>Sütür zamaný: </b>Zamaný "<span style="background-color:yellow" > Sütür: <input type="text" name="t" size=5 maxlength=5> </span>" alanýna yazýnýz.<br>
- 	<b>Çýkýþ zamaný: </b>Zamaný "<span style="background-color:yellow" > Çýkýþ: <input type="text" name="t" size=5 maxlength=5> </span>" alanýna yazýnýz.<br>
+ 	<b>Giriï¿½ zamanï¿½: </b>Zamanï¿½ "<span style="background-color:yellow" > Giriï¿½:<input type="text" name="t" size=5 maxlength=5> </span>" alanï¿½na yazï¿½nï¿½z.<br>
+ 	<b>Kesi zamanï¿½: </b>Zamanï¿½ "<span style="background-color:yellow" > Kesi: <input type="text" name="t" size=5 maxlength=5> </span>" alanï¿½na yazï¿½nï¿½z.<br>
+ 	<b>Sï¿½tï¿½r zamanï¿½: </b>Zamanï¿½ "<span style="background-color:yellow" > Sï¿½tï¿½r: <input type="text" name="t" size=5 maxlength=5> </span>" alanï¿½na yazï¿½nï¿½z.<br>
+ 	<b>ï¿½ï¿½kï¿½ï¿½ zamanï¿½: </b>Zamanï¿½ "<span style="background-color:yellow" > ï¿½ï¿½kï¿½ï¿½: <input type="text" name="t" size=5 maxlength=5> </span>" alanï¿½na yazï¿½nï¿½z.<br>
 	</ul>
 <img <?php echo createComIcon('../','frage.gif','0') ?>> <font color="#990000"><b>
-Birkaç zaman bilgisi hepsi birden nasýl girilir?</b>
+Birkaï¿½ zaman bilgisi hepsi birden nasï¿½l girilir?</b>
 </font>
-<ul> <b>Adým 1: </b><p>    	
- 	<b>Giriþ/Çýkýþ zamaný: </b>
- 	Sol alt köþedeki  "<span style="background-color:yellow" > Giriþ/Çýkýþ <img <?php echo createComIcon('../','bul_arrowgrnsm.gif','0','absmiddle') ?>> </span>" baðlantýsýný týklayýnýz.<p>
- 	<b>Kesi/Sütür zamaný:</b>
- 	Sol alt köþedeki  "<span style="background-color:yellow" > Kesi/Sütür <img <?php echo createComIcon('../','bul_arrowgrnsm.gif','0','absmiddle') ?>> </span>" baðlantýsýný týklayýnýz.<p>
- 	<b>Boþ zaman: </b>
- 	Sol alt köþedeki "<span style="background-color:yellow" > Boþ zaman <img <?php echo createComIcon('../','bul_arrowgrnsm.gif','0','absmiddle') ?>> </span>" baðlantýsýný týklayýnýz.<p>
- 	<b>Alçý/Atel zamaný:</b>
- 	Sol alt köþedeki "<span style="background-color:yellow" > Alçý/Atel <img <?php echo createComIcon('../','bul_arrowgrnsm.gif','0','absmiddle') ?>> </span>" baðlantýsýný týklayýnýz.<p>
- 	<b>Repozisyon zamaný: </b>
- 	Sol alt köþedeki "<span style="background-color:yellow" > Repozisyon <img <?php echo createComIcon('../','bul_arrowgrnsm.gif','0','absmiddle') ?>> </span>" baðlantýsýný týklayýnýz.<p>
- 	<b>Adým 2: </b>Bilgi girmek için bir pencere açýlýr. <br>
- 	<b>Adým 3: </b>Penceredeki bilgileri izleyiniz ya da daha fazla bilgi için pencere içerisindeki "Yardým" düðmesini týklayýnýz. <br>
+<ul> <b>Adï¿½m 1: </b><p>    	
+ 	<b>Giriï¿½/ï¿½ï¿½kï¿½ï¿½ zamanï¿½: </b>
+ 	Sol alt kï¿½ï¿½edeki  "<span style="background-color:yellow" > Giriï¿½/ï¿½ï¿½kï¿½ï¿½ <img <?php echo createComIcon('../','bul_arrowgrnsm.gif','0','absmiddle') ?>> </span>" baï¿½lantï¿½sï¿½nï¿½ tï¿½klayï¿½nï¿½z.<p>
+ 	<b>Kesi/Sï¿½tï¿½r zamanï¿½:</b>
+ 	Sol alt kï¿½ï¿½edeki  "<span style="background-color:yellow" > Kesi/Sï¿½tï¿½r <img <?php echo createComIcon('../','bul_arrowgrnsm.gif','0','absmiddle') ?>> </span>" baï¿½lantï¿½sï¿½nï¿½ tï¿½klayï¿½nï¿½z.<p>
+ 	<b>Boï¿½ zaman: </b>
+ 	Sol alt kï¿½ï¿½edeki "<span style="background-color:yellow" > Boï¿½ zaman <img <?php echo createComIcon('../','bul_arrowgrnsm.gif','0','absmiddle') ?>> </span>" baï¿½lantï¿½sï¿½nï¿½ tï¿½klayï¿½nï¿½z.<p>
+ 	<b>Alï¿½ï¿½/Atel zamanï¿½:</b>
+ 	Sol alt kï¿½ï¿½edeki "<span style="background-color:yellow" > Alï¿½ï¿½/Atel <img <?php echo createComIcon('../','bul_arrowgrnsm.gif','0','absmiddle') ?>> </span>" baï¿½lantï¿½sï¿½nï¿½ tï¿½klayï¿½nï¿½z.<p>
+ 	<b>Repozisyon zamanï¿½: </b>
+ 	Sol alt kï¿½ï¿½edeki "<span style="background-color:yellow" > Repozisyon <img <?php echo createComIcon('../','bul_arrowgrnsm.gif','0','absmiddle') ?>> </span>" baï¿½lantï¿½sï¿½nï¿½ tï¿½klayï¿½nï¿½z.<p>
+ 	<b>Adï¿½m 2: </b>Bilgi girmek iï¿½in bir pencere aï¿½ï¿½lï¿½r. <br>
+ 	<b>Adï¿½m 3: </b>Penceredeki bilgileri izleyiniz ya da daha fazla bilgi iï¿½in pencere iï¿½erisindeki "Yardï¿½m" dï¿½ï¿½mesini tï¿½klayï¿½nï¿½z. <br>
 	</ul>
 
 
 <img <?php echo createComIcon('../','frage.gif','0') ?>> <font color="#990000"><b>
-Grafik zaman çizelgesine nasýl bilgi girilir?</b>
+Grafik zaman ï¿½izelgesine nasï¿½l bilgi girilir?</b>
 </font>
-<ul> <b>Adým 1: </b>Fare iþaretçisini zaman cetvelinde ilgili zaman bilgisine (örneðin Alçý/Atel) karþýlýk gelen zaman bilgisine getiriniz.<br>
- 	<b>Adým 2: </b>Seçilen zamandaki zaman cetveline týklayýnýz.<p>
-<b>Uyarý:</b> Ýlk deðer baþlangýç zamaný, ikinci deðer bitiþ zamaný, üçüncü deðer ikinci baþlangýç zamaný vs. olur.
+<ul> <b>Adï¿½m 1: </b>Fare iï¿½aretï¿½isini zaman cetvelinde ilgili zaman bilgisine (ï¿½rneï¿½in Alï¿½ï¿½/Atel) karï¿½ï¿½lï¿½k gelen zaman bilgisine getiriniz.<br>
+ 	<b>Adï¿½m 2: </b>Seï¿½ilen zamandaki zaman cetveline tï¿½klayï¿½nï¿½z.<p>
+<b>Uyarï¿½:</b> ï¿½lk deï¿½er baï¿½langï¿½ï¿½ zamanï¿½, ikinci deï¿½er bitiï¿½ zamanï¿½, ï¿½ï¿½ï¿½ncï¿½ deï¿½er ikinci baï¿½langï¿½ï¿½ zamanï¿½ vs. olur.
 	</ul>
 
 <img <?php echo createComIcon('../','frage.gif','0') ?>> <font color="#990000"><b>
-Tedavi veya operasyon bilgisi nasýl girilir?</b>
+Tedavi veya operasyon bilgisi nasï¿½l girilir?</b>
 </font>
 <ul>       	
- 	<b>Adým 1: </b>Tedavi veya operasyonu "<span style="background-color:yellow" > Tedavi/Operasyon: </span>" alanýna yazýnýz.<br>
+ 	<b>Adï¿½m 1: </b>Tedavi veya operasyonu "<span style="background-color:yellow" > Tedavi/Operasyon: </span>" alanï¿½na yazï¿½nï¿½z.<br>
 	</ul>
 <img <?php echo createComIcon('../','frage.gif','0') ?>> <font color="#990000"><b>
-Sonuçlar, gözlem ve ek notlar nasýl girilir?</b>
+Sonuï¿½lar, gï¿½zlem ve ek notlar nasï¿½l girilir?</b>
 </font>
 <ul>       	
- 	<b>Adým 1: </b>Bunlarý "<span style="background-color:yellow" > Sonuçlar: </span>" alanýna yazýnýz.<br>
+ 	<b>Adï¿½m 1: </b>Bunlarï¿½ "<span style="background-color:yellow" > Sonuï¿½lar: </span>" alanï¿½na yazï¿½nï¿½z.<br>
 	</ul>
 <img <?php echo createComIcon('../','frage.gif','0') ?>> <font color="#990000"><b>
-Kütük belgesi nasýl kayýt edilir?</b>
+Kï¿½tï¿½k belgesi nasï¿½l kayï¿½t edilir?</b>
 </font>
 <ul>       	
- 	<b>Adým 1: </b> <img <?php echo createLDImgSrc('../','savedisc.gif','0') ?>> düðmesini týklayýnýz.<br>
+ 	<b>Adï¿½m 1: </b> <img <?php echo createLDImgSrc('../','savedisc.gif','0') ?>> dï¿½ï¿½mesini tï¿½klayï¿½nï¿½z.<br>
 	</ul>
 <img <?php echo createComIcon('../','frage.gif','0') ?>> <font color="#990000"><b>
-Yeni bir kütük belgesine nasýl baþlanýr?</b>
+Yeni bir kï¿½tï¿½k belgesine nasï¿½l baï¿½lanï¿½r?</b>
 </font>
 <ul>       	
- 	<b>Adým 1: </b> <img <?php echo createLDImgSrc('../','newpat2.gif','0') ?>> düðmesini týklayýnýz.<br>
- 	<b>Adým 2: </b>Daha fazla bilgi için <img <?php echo createLDImgSrc('../','hilfe-r.gif','0') ?>> düðmesini tekrar týklayýnýz.<br>
+ 	<b>Adï¿½m 1: </b> <img <?php echo createLDImgSrc('../','newpat2.gif','0') ?>> dï¿½ï¿½mesini tï¿½klayï¿½nï¿½z.<br>
+ 	<b>Adï¿½m 2: </b>Daha fazla bilgi iï¿½in <img <?php echo createLDImgSrc('../','hilfe-r.gif','0') ?>> dï¿½ï¿½mesini tekrar tï¿½klayï¿½nï¿½z.<br>
 	</ul>
 	
-<b>Uyarý</b>
-<ul> Kapatmaya karar verir iseniz <img <?php echo createLDImgSrc('../','close2.gif','0') ?>> düðmesini týklayýnýz.
+<b>Uyarï¿½</b>
+<ul> Kapatmaya karar verir iseniz <img <?php echo createLDImgSrc('../','close2.gif','0') ?>> dï¿½ï¿½mesini tï¿½klayï¿½nï¿½z.
 </ul>
 	<?php endif ?>
 
@@ -517,49 +517,49 @@ Yeni bir kütük belgesine nasýl baþlanýr?</b>
 <?php if(($x2!="")&&($x2!="0")) : ?>
 	
 <img <?php echo createComIcon('../','frage.gif','0') ?>> <font color="#990000"><b>
-Raporunu <?php if($x1=="edit") print "düzenlemek"; else print "görmek"; ?> istediðim belirli bir hasta nasýl seçilir?</b>
+Raporunu <?php if($x1=="edit") print "dï¿½zenlemek"; else print "gï¿½rmek"; ?> istediï¿½im belirli bir hasta nasï¿½l seï¿½ilir?</b>
 </font>
 <ul>       	
- 	<b>Adým 1: </b>Raporunu <?php if($x1=="edit") print "düzenlemek"; else print "görmek"; ?> istediðiniz hastanýn ilgili &nbsp;<button><img <?php echo createComIcon('../','update2.gif','0') ?>> <font size=1>Lab raporu</font></button> düðmesini týklayýnýz.<p> 
+ 	<b>Adï¿½m 1: </b>Raporunu <?php if($x1=="edit") print "dï¿½zenlemek"; else print "gï¿½rmek"; ?> istediï¿½iniz hastanï¿½n ilgili &nbsp;<button><img <?php echo createComIcon('../','update2.gif','0') ?>> <font size=1>Lab raporu</font></button> dï¿½ï¿½mesini tï¿½klayï¿½nï¿½z.<p> 
 </ul>
 <img <?php echo createComIcon('../','frage.gif','0') ?>> <font color="#990000"><b>
-Aramaya nasýl devam edilir?</b>
+Aramaya nasï¿½l devam edilir?</b>
 </font>
 	<?php endif ?>
 	<?php if(($x2=="")||($x2=="0")) : ?>
 <img <?php echo createComIcon('../','frage.gif','0') ?>> <font color="#990000"><b>
-Bir hasta nasýl aranýr?</b>
+Bir hasta nasï¿½l aranï¿½r?</b>
 </font>
 	<?php endif ?>
 	
 	<ul>       	
- 	<b>Adým 1: </b>Bir hastanýn soyad, veya  ad, veya  doðum tarihi bilgisinin ya tamamýný veya birkaç harfini  "<span style="background-color:yellow" > Aranacak anahtar sözcüðü giriniz. <input type="text" name="m" size=20 maxlength=20> </span>" alanýna yazýnýz. <br>
- 	<b>Adým 2: </b>Hastayý aramaya baþlamak için <img <?php echo createLDImgSrc('../','searchlamp.gif','0') ?>> düðmesini týklayýnýz.<p> 
+ 	<b>Adï¿½m 1: </b>Bir hastanï¿½n soyad, veya  ad, veya  doï¿½um tarihi bilgisinin ya tamamï¿½nï¿½ veya birkaï¿½ harfini  "<span style="background-color:yellow" > Aranacak anahtar sï¿½zcï¿½ï¿½ï¿½ giriniz. <input type="text" name="m" size=20 maxlength=20> </span>" alanï¿½na yazï¿½nï¿½z. <br>
+ 	<b>Adï¿½m 2: </b>Hastayï¿½ aramaya baï¿½lamak iï¿½in <img <?php echo createLDImgSrc('../','searchlamp.gif','0') ?>> dï¿½ï¿½mesini tï¿½klayï¿½nï¿½z.<p> 
 <ul>       	
- 	<b>Uyarý: </b>Arama bir sonuç verir ise, bir liste görüntülenir. <p>
+ 	<b>Uyarï¿½: </b>Arama bir sonuï¿½ verir ise, bir liste gï¿½rï¿½ntï¿½lenir. <p>
 	</ul>
 	<?php if(($x2=="")||($x2=="0")) : ?>
- 	<b>Adým 3: </b>Laboratuvar raporunu  <?php if($x1=="edit") print "düzenlemek"; else print "görmek"; ?> istediðiniz hastanýn &nbsp;<button><img <?php echo createComIcon('../','update2.gif','0') ?>> <font size=1>Lab raporu</font></button> düðmesini týklayýnýz.<p> 
+ 	<b>Adï¿½m 3: </b>Laboratuvar raporunu  <?php if($x1=="edit") print "dï¿½zenlemek"; else print "gï¿½rmek"; ?> istediï¿½iniz hastanï¿½n &nbsp;<button><img <?php echo createComIcon('../','update2.gif','0') ?>> <font size=1>Lab raporu</font></button> dï¿½ï¿½mesini tï¿½klayï¿½nï¿½z.<p> 
 	<?php endif ?>
 </ul>
 
-<img <?php echo createComIcon('../','warn.gif','0','absmiddle') ?>> <font color="#990000"><b> Uyarý: </b></font> 
+<img <?php echo createComIcon('../','warn.gif','0','absmiddle') ?>> <font color="#990000"><b> Uyarï¿½: </b></font> 
 <ul>       	
- Ýptal etmeye karar verir iseniz <img <?php echo createLDImgSrc('../','cancel.gif','0') ?>> düðmesini týklayýnýz.
+ ï¿½ptal etmeye karar verir iseniz <img <?php echo createLDImgSrc('../','cancel.gif','0') ?>> dï¿½ï¿½mesini tï¿½klayï¿½nï¿½z.
 </ul>
 <?php endif ?>
 
 <?php if($src=="arch") : ?>
 	<?php if($x2=="1") : ?>
-<img <?php echo createComIcon('../','warn.gif','0','absmiddle') ?>> <font color="#990000"><b> Uyarý: Son kütük kayýdý (kayýtlarý) </b></font> 
-<ul>  Arþive her girdiðinizde son kaydedilen ameliyatlar derhal görüntülenir.
+<img <?php echo createComIcon('../','warn.gif','0','absmiddle') ?>> <font color="#990000"><b> Uyarï¿½: Son kï¿½tï¿½k kayï¿½dï¿½ (kayï¿½tlarï¿½) </b></font> 
+<ul>  Arï¿½ive her girdiï¿½inizde son kaydedilen ameliyatlar derhal gï¿½rï¿½ntï¿½lenir.
 </ul>
 	<?php endif ?>
 	<?php if(($x3=="")&&($x1!="0")) : ?>
-<img <?php echo createComIcon('../','warn.gif','0','absmiddle') ?>> <font color="#990000"><b> Bu gün hiç ameliyat yapýlmadý. </b></font> 
+<img <?php echo createComIcon('../','warn.gif','0','absmiddle') ?>> <font color="#990000"><b> Bu gï¿½n hiï¿½ ameliyat yapï¿½lmadï¿½. </b></font> 
 <ul>       	
-Seçenek kutusunu açmak için "Seçenekler" i týklayýnýz.<br>
-Arama moduna geçmek için "Ara" yý týklayýnýz.</ul>
+Seï¿½enek kutusunu aï¿½mak iï¿½in "Seï¿½enekler" i tï¿½klayï¿½nï¿½z.<br>
+Arama moduna geï¿½mek iï¿½in "Ara" yï¿½ tï¿½klayï¿½nï¿½z.</ul>
 	
 	<?php endif ?>
 	
@@ -567,49 +567,49 @@ Arama moduna geçmek için "Ara" yý týklayýnýz.</ul>
 
 
 <img <?php echo createComIcon('../','frage.gif','0') ?>> 
-<font color="#990000"><b>Bir baþka günün arþivli kütük bilgilerini görmek istiyorum.</b></font>
-<ul> <b>Önceki günü göstermek için: </b>Sol üst sütundaki  "<span style="background-color:yellow" > Önceki gün </span>" baðlantýsýný týklayýnýz. 
-				Ýstenilen gün görüntüleninceye kadar ne kadar gerekir ise o kadar týklayýnýz.<p>
- <b>Sonraki günü göstermek için: </b>Sað üsr sütundaki "<span style="background-color:yellow" > Sonraki gün </span>" baðlantýsýný týklayýnýz. 
-				Ýstenilen gün görüntüleninceye kadar bu baðlantýya týklamaya devam ediniz.<br>		
+<font color="#990000"><b>Bir baï¿½ka gï¿½nï¿½n arï¿½ivli kï¿½tï¿½k bilgilerini gï¿½rmek istiyorum.</b></font>
+<ul> <b>ï¿½nceki gï¿½nï¿½ gï¿½stermek iï¿½in: </b>Sol ï¿½st sï¿½tundaki  "<span style="background-color:yellow" > ï¿½nceki gï¿½n </span>" baï¿½lantï¿½sï¿½nï¿½ tï¿½klayï¿½nï¿½z. 
+				ï¿½stenilen gï¿½n gï¿½rï¿½ntï¿½leninceye kadar ne kadar gerekir ise o kadar tï¿½klayï¿½nï¿½z.<p>
+ <b>Sonraki gï¿½nï¿½ gï¿½stermek iï¿½in: </b>Saï¿½ ï¿½sr sï¿½tundaki "<span style="background-color:yellow" > Sonraki gï¿½n </span>" baï¿½lantï¿½sï¿½nï¿½ tï¿½klayï¿½nï¿½z. 
+				ï¿½stenilen gï¿½n gï¿½rï¿½ntï¿½leninceye kadar bu baï¿½lantï¿½ya tï¿½klamaya devam ediniz.<br>		
 </ul>
 <img <?php echo createComIcon('../','frage.gif','0') ?>> 
-<font color="#990000"><b>Bir baþka ameliyathane veya bölümün kütük bilgilerini görmek istiyorum.</b></font>
-<ul> <b>Adým 1: </b>Seçenek kutusundan bölümü seçiniz <nobr>"<span style="background-color:yellow" > Bölüm veya ameliyathaneye geçiniz <select name="o">
-                                                                                                                                         	<option > Örnek bölüm 1</option>
-                                                                                                                                         	<option > Örnek bölüm 2</option>
+<font color="#990000"><b>Bir baï¿½ka ameliyathane veya bï¿½lï¿½mï¿½n kï¿½tï¿½k bilgilerini gï¿½rmek istiyorum.</b></font>
+<ul> <b>Adï¿½m 1: </b>Seï¿½enek kutusundan bï¿½lï¿½mï¿½ seï¿½iniz <nobr>"<span style="background-color:yellow" > Bï¿½lï¿½m veya ameliyathaneye geï¿½iniz <select name="o">
+                                                                                                                                         	<option > ï¿½rnek bï¿½lï¿½m 1</option>
+                                                                                                                                         	<option > ï¿½rnek bï¿½lï¿½m 2</option>
                                                                                                                                          </select>
-                                                                                                                                          </span>".</nobr> <br>Ön seçimli ameliyathane otomatik olarak
-		düzenlenir.<br>																																		  
-	<b>Adým 2: </b>Veya ameliyathaneyi seçim kutusundan seçiniz <nobr>"<span style="background-color:yellow" > <select name="o">
-                                                                                                                                         	<option > Örnek ameliyathane 1</option>
-                                                                                                                                         	<option > Örnek ameliyathane 2</option>
+                                                                                                                                          </span>".</nobr> <br>ï¿½n seï¿½imli ameliyathane otomatik olarak
+		dï¿½zenlenir.<br>																																		  
+	<b>Adï¿½m 2: </b>Veya ameliyathaneyi seï¿½im kutusundan seï¿½iniz <nobr>"<span style="background-color:yellow" > <select name="o">
+                                                                                                                                         	<option > ï¿½rnek ameliyathane 1</option>
+                                                                                                                                         	<option > ï¿½rnek ameliyathane 2</option>
                                                                                                                                          </select>
-                                                                                                                                          </span>".</nobr> <br> Ýlgili bölüm ameliyathaneleri
-		otomatik olarak düzenlenir.<br>																																		  																																		  
-		<b>Adým 3: </b>Yeni bölüm veya ameliyathaneye geçmek için  <input type="button" value="Deðiþtir">  düðmesini týklayýnýz.<br>
+                                                                                                                                          </span>".</nobr> <br> ï¿½lgili bï¿½lï¿½m ameliyathaneleri
+		otomatik olarak dï¿½zenlenir.<br>																																		  																																		  
+		<b>Adï¿½m 3: </b>Yeni bï¿½lï¿½m veya ameliyathaneye geï¿½mek iï¿½in  <input type="button" value="Deï¿½iï¿½tir">  dï¿½ï¿½mesini tï¿½klayï¿½nï¿½z.<br>
 </ul>
 <?php if(($x3!="")) : ?>
 
 <img <?php echo createComIcon('../','frage.gif','0') ?>> <font color="#990000"><b>
-Görüntülenen bir kütük belgesi nasýl düzenlenir veya güncellenir?</b>
+Gï¿½rï¿½ntï¿½lenen bir kï¿½tï¿½k belgesi nasï¿½l dï¿½zenlenir veya gï¿½ncellenir?</b>
 </font>
 <ul>       	
- 	<b>Adým 1: </b>Düzenleme moduna geçmek için en sol sütundaki ameliyat tarihinin altýndaki  <img src="../img/update3.gif" border=0> düðmesini týklayýnýz.<br>
- 	<b>Adým 2: </b>Düzenleme modunda iken belgeyi düzenlemede daha fazla yardýma gereksiniminiz olur ise "Yardým" düðmesini týklayýnýz.<p> 
+ 	<b>Adï¿½m 1: </b>Dï¿½zenleme moduna geï¿½mek iï¿½in en sol sï¿½tundaki ameliyat tarihinin altï¿½ndaki  <img src="../img/update3.gif" border=0> dï¿½ï¿½mesini tï¿½klayï¿½nï¿½z.<br>
+ 	<b>Adï¿½m 2: </b>Dï¿½zenleme modunda iken belgeyi dï¿½zenlemede daha fazla yardï¿½ma gereksiniminiz olur ise "Yardï¿½m" dï¿½ï¿½mesini tï¿½klayï¿½nï¿½z.<p> 
 	</ul>
 <img <?php echo createComIcon('../','frage.gif','0') ?>> <font color="#990000"><b>
-Hastanýn veri klasörü nasýl açýlýr?</b>
+Hastanï¿½n veri klasï¿½rï¿½ nasï¿½l aï¿½ï¿½lï¿½r?</b>
 </font>
 <ul>       	
- 	<b>Adým 1: </b>Hasta numarasýnýn solundaki  <img src="../img/info2.gif" border=0> düðmesini týklayýnýz.<br>
- 	<b>Adým 2: </b>Hastanýn veri klasörü açýlýr. Daha fazla bilgiye gereksiniminiz olur ise açýlan penceredeki "Yardým" düðmesini týklayýnýz.<p> 
+ 	<b>Adï¿½m 1: </b>Hasta numarasï¿½nï¿½n solundaki  <img src="../img/info2.gif" border=0> dï¿½ï¿½mesini tï¿½klayï¿½nï¿½z.<br>
+ 	<b>Adï¿½m 2: </b>Hastanï¿½n veri klasï¿½rï¿½ aï¿½ï¿½lï¿½r. Daha fazla bilgiye gereksiniminiz olur ise aï¿½ï¿½lan penceredeki "Yardï¿½m" dï¿½ï¿½mesini tï¿½klayï¿½nï¿½z.<p> 
 	</ul>
 	<?php endif ?>
 	
-<img <?php echo createComIcon('../','warn.gif','0','absmiddle') ?>> <font color="#990000"><b> Uyarý:</b></font> 
+<img <?php echo createComIcon('../','warn.gif','0','absmiddle') ?>> <font color="#990000"><b> Uyarï¿½:</b></font> 
 <ul>       	
- Ýptal etmeye karar verir iseniz <img <?php echo createLDImgSrc('../','cancel.gif','0') ?>> düðmesini týklayýnýz.
+ ï¿½ptal etmeye karar verir iseniz <img <?php echo createLDImgSrc('../','cancel.gif','0') ?>> dï¿½ï¿½mesini tï¿½klayï¿½nï¿½z.
 </ul>
 
 
@@ -618,95 +618,95 @@ Hastanýn veri klasörü nasýl açýlýr?</b>
 <?php if($src=="input") : ?>
 	<?php if($x1=="main") : ?>
 <img <?php echo createComIcon('../','frage.gif','0') ?>> <font color="#990000"><b>
-Sonuç deðerleri nasýl girilir?</b>
+Sonuï¿½ deï¿½erleri nasï¿½l girilir?</b>
 </font>
 <ul>       	
 		<?php if($x2=="") 
 			print '
- 			<b>Adým 1: </b>Küme numarasýný "<span style="background-color:yellow" > Küme no: </span>" alanýna giriniz.<br>	
- 			<b>Adým 2: </b>Gerekir ise muayene tarihini "<span style="background-color:yellow" > Muayene tarihi </span>" alanýna giriniz.<br>	';
+ 			<b>Adï¿½m 1: </b>Kï¿½me numarasï¿½nï¿½ "<span style="background-color:yellow" > Kï¿½me no: </span>" alanï¿½na giriniz.<br>	
+ 			<b>Adï¿½m 2: </b>Gerekir ise muayene tarihini "<span style="background-color:yellow" > Muayene tarihi </span>" alanï¿½na giriniz.<br>	';
 	
 		?>
 
 	
- 	<b>Adým	<?php if($x2=="") 
+ 	<b>Adï¿½m	<?php if($x2=="") 
 			print "3"; else print "1";
-		?>:</b> Deðerleri ilgili parametre alanlarýna giriniz.<br>	
- 	<b>Adým <?php if($x2=="") 
+		?>:</b> Deï¿½erleri ilgili parametre alanlarï¿½na giriniz.<br>	
+ 	<b>Adï¿½m <?php if($x2=="") 
 			print "4"; else print "2";
-		?>: </b> Deðerleri kayýt etmek için <img <?php echo createLDImgSrc('../','savedisc.gif','0') ?>> düðmesini týklayýnýz.<p> 
- 	<b>Uyarý: </b>Deðerleri kaydettikten sonra kapatmak ister iseniz,<br>  <img <?php echo createLDImgSrc('../','close2.gif','0') ?>> düðmesini týklayýnýz.<br> 
+		?>: </b> Deï¿½erleri kayï¿½t etmek iï¿½in <img <?php echo createLDImgSrc('../','savedisc.gif','0') ?>> dï¿½ï¿½mesini tï¿½klayï¿½nï¿½z.<p> 
+ 	<b>Uyarï¿½: </b>Deï¿½erleri kaydettikten sonra kapatmak ister iseniz,<br>  <img <?php echo createLDImgSrc('../','close2.gif','0') ?>> dï¿½ï¿½mesini tï¿½klayï¿½nï¿½z.<br> 
 </ul>
 	<?php endif ?>
 <?php if($x1=="few") : ?>
 	
 <img <?php echo createComIcon('../','frage.gif','0') ?>> <font color="#990000"><b>
-Yalnýzca birkaç deðer girmem gerekiyor! Nasýl yapýlýr?</b>
+Yalnï¿½zca birkaï¿½ deï¿½er girmem gerekiyor! Nasï¿½l yapï¿½lï¿½r?</b>
 </font>
 <ul>       	
- 	<b>Adým 1: </b>Deðerleri illgili parametre alanlarýna giriniz.<br> 
- 	<b>Adým 2: </b>Parametre deðerlerini kayýt etmek için <img <?php echo createLDImgSrc('../','savedisc.gif','0') ?>> düðmesini týklayýnýz.<p> 
- 	<b>Uyarý: </b>Parametre deðerlerini girmeyi bitirdi iseniz ve kapatmak istiyor iseniz <img <?php echo createLDImgSrc('../','close2.gif','0') ?>> düðmesini týklayýnýz.<br> 
+ 	<b>Adï¿½m 1: </b>Deï¿½erleri illgili parametre alanlarï¿½na giriniz.<br> 
+ 	<b>Adï¿½m 2: </b>Parametre deï¿½erlerini kayï¿½t etmek iï¿½in <img <?php echo createLDImgSrc('../','savedisc.gif','0') ?>> dï¿½ï¿½mesini tï¿½klayï¿½nï¿½z.<p> 
+ 	<b>Uyarï¿½: </b>Parametre deï¿½erlerini girmeyi bitirdi iseniz ve kapatmak istiyor iseniz <img <?php echo createLDImgSrc('../','close2.gif','0') ?>> dï¿½ï¿½mesini tï¿½klayï¿½nï¿½z.<br> 
 </ul>
 	<?php endif ?>
 	<?php if($x1=="param") : ?>
 	
 <img <?php echo createComIcon('../','frage.gif','0') ?>> <font color="#990000"><b>
-Ýstediðim parametre görüntülenmiyor! Doðru parametre grubuna nasýl geçerim?</b>
+ï¿½stediï¿½im parametre gï¿½rï¿½ntï¿½lenmiyor! Doï¿½ru parametre grubuna nasï¿½l geï¿½erim?</b>
 </font>
 <ul>       	
- 	<b>Adým 1: </b>Doðru parametre grubunu <nobr>"<span style="background-color:yellow" > Parametre grubunu seçiniz <select name="s">
-     <option value="Sample parameter"> Örnek parametre</option> </select> </span>"</nobr> seçim kutusundan seçiniz.<p> 
- 	<b>Adým 2: </b>Seçilen parametre grubuna geçmek için <img <?php echo createLDImgSrc('../','auswahl2.gif','0') ?>> düðmesini týklayýnýz.<p> 
+ 	<b>Adï¿½m 1: </b>Doï¿½ru parametre grubunu <nobr>"<span style="background-color:yellow" > Parametre grubunu seï¿½iniz <select name="s">
+     <option value="Sample parameter"> ï¿½rnek parametre</option> </select> </span>"</nobr> seï¿½im kutusundan seï¿½iniz.<p> 
+ 	<b>Adï¿½m 2: </b>Seï¿½ilen parametre grubuna geï¿½mek iï¿½in <img <?php echo createLDImgSrc('../','auswahl2.gif','0') ?>> dï¿½ï¿½mesini tï¿½klayï¿½nï¿½z.<p> 
 </ul>
 	<?php endif ?>
 	<?php if($x1=="save") : ?>
 	
 <img <?php echo createComIcon('../','frage.gif','0') ?>> <font color="#990000"><b>
-Deðerleri nasýl kayýt etmeliyim?</b>
+Deï¿½erleri nasï¿½l kayï¿½t etmeliyim?</b>
 </font>
 <ul>       	
- 	<b>Adým 1: </b>Parametre deðerlerini kayýt etmek için <img <?php echo createLDImgSrc('../','savedisc.gif','0') ?>> düðmesini týklayýnýz.<p> 
- 	<b>Uyarý: </b>Deðerleri kaydettikten sonra kapatmak için,<br>  <img <?php echo createLDImgSrc('../','close2.gif','0') ?>> düðmesini týklayýnýz.<br> 
+ 	<b>Adï¿½m 1: </b>Parametre deï¿½erlerini kayï¿½t etmek iï¿½in <img <?php echo createLDImgSrc('../','savedisc.gif','0') ?>> dï¿½ï¿½mesini tï¿½klayï¿½nï¿½z.<p> 
+ 	<b>Uyarï¿½: </b>Deï¿½erleri kaydettikten sonra kapatmak iï¿½in,<br>  <img <?php echo createLDImgSrc('../','close2.gif','0') ?>> dï¿½ï¿½mesini tï¿½klayï¿½nï¿½z.<br> 
 </ul>
 	<?php endif ?>
 	<?php if($x1=="correct") : ?>
 	
 <img <?php echo createComIcon('../','frage.gif','0') ?>> <font color="#990000"><b>
-Yanlýþ bir deðer kayýt ettim. Nasýl düzeltirim?</b>
+Yanlï¿½ï¿½ bir deï¿½er kayï¿½t ettim. Nasï¿½l dï¿½zeltirim?</b>
 </font>
 <ul>       	
- 	<b>Adým 1: </b>Doðru deðeri ilgili parametre alanýna giriniz.<br> 
- 	<b>Adým 2: </b>Doðru deðeri kayýt etmek için <img <?php echo createLDImgSrc('../','savedisc.gif','0') ?>> düðmesini týklayýnýz.<p> 
- 	<b>Uyarý: </b>Deðerleri kaydettikten sonra kapatmak için,<br>  <img <?php echo createLDImgSrc('../','close2.gif','0') ?>> düðmesini týklayýnýz.<br>
+ 	<b>Adï¿½m 1: </b>Doï¿½ru deï¿½eri ilgili parametre alanï¿½na giriniz.<br> 
+ 	<b>Adï¿½m 2: </b>Doï¿½ru deï¿½eri kayï¿½t etmek iï¿½in <img <?php echo createLDImgSrc('../','savedisc.gif','0') ?>> dï¿½ï¿½mesini tï¿½klayï¿½nï¿½z.<p> 
+ 	<b>Uyarï¿½: </b>Deï¿½erleri kaydettikten sonra kapatmak iï¿½in,<br>  <img <?php echo createLDImgSrc('../','close2.gif','0') ?>> dï¿½ï¿½mesini tï¿½klayï¿½nï¿½z.<br>
 </ul>
 	<?php endif ?>
 	<?php if($x1=="note") : ?>
 	
 <img <?php echo createComIcon('../','frage.gif','0') ?>> <font color="#990000"><b>
-Bir deðer yerine bir not girmek istiyorum. Nasýl yapýlýr?</b>
+Bir deï¿½er yerine bir not girmek istiyorum. Nasï¿½l yapï¿½lï¿½r?</b>
 </font>
 <ul>       	
- 	<b>Adým 1: </b>Ýlgili parametre alanýna yalnýzca notu yazýnýz.<br> 
- 	<b>Adým 2: </b>Notu kaydetmek için <img <?php echo createLDImgSrc('../','savedisc.gif','0') ?>> düðmesini týklayýnýz.<p> 
- 	<b>Uyarý: </b>Kaydettikten sonra kapatmak için,<br>  <img <?php echo createLDImgSrc('../','close2.gif','0') ?>> düðmesini týklayýnýz.<br>
+ 	<b>Adï¿½m 1: </b>ï¿½lgili parametre alanï¿½na yalnï¿½zca notu yazï¿½nï¿½z.<br> 
+ 	<b>Adï¿½m 2: </b>Notu kaydetmek iï¿½in <img <?php echo createLDImgSrc('../','savedisc.gif','0') ?>> dï¿½ï¿½mesini tï¿½klayï¿½nï¿½z.<p> 
+ 	<b>Uyarï¿½: </b>Kaydettikten sonra kapatmak iï¿½in,<br>  <img <?php echo createLDImgSrc('../','close2.gif','0') ?>> dï¿½ï¿½mesini tï¿½klayï¿½nï¿½z.<br>
 </ul>
 	<?php endif ?>
 	<?php if($x1=="done") : ?>
 	
 <img <?php echo createComIcon('../','frage.gif','0') ?>> <font color="#990000"><b>
-Ýþ bitti. Þimdi ne var?</b>
+ï¿½ï¿½ bitti. ï¿½imdi ne var?</b>
 </font>
 <ul>       	
- 	<b>Adým 1: </b>Tüm deðerleri kayýt etmek için <img <?php echo createLDImgSrc('../','savedisc.gif','0') ?>> düðmesini týklayýnýz.<p> 
- 	<b>Uyarý: </b> <img <?php echo createLDImgSrc('../','close2.gif','0') ?>> düðmesini týklayýnýz.<br> 
+ 	<b>Adï¿½m 1: </b>Tï¿½m deï¿½erleri kayï¿½t etmek iï¿½in <img <?php echo createLDImgSrc('../','savedisc.gif','0') ?>> dï¿½ï¿½mesini tï¿½klayï¿½nï¿½z.<p> 
+ 	<b>Uyarï¿½: </b> <img <?php echo createLDImgSrc('../','close2.gif','0') ?>> dï¿½ï¿½mesini tï¿½klayï¿½nï¿½z.<br> 
 </ul>
 	<?php endif ?>
 	
 
-<img <?php echo createComIcon('../','warn.gif','0','absmiddle') ?>> <font color="#990000"><b> Uyarý:</b></font> 
+<img <?php echo createComIcon('../','warn.gif','0','absmiddle') ?>> <font color="#990000"><b> Uyarï¿½:</b></font> 
 <ul>       	
- Ýptal etmeye karar verir iseniz <img <?php echo createLDImgSrc('../','cancel.gif','0') ?>> düðmesini týklayýnýz.
+ ï¿½ptal etmeye karar verir iseniz <img <?php echo createLDImgSrc('../','cancel.gif','0') ?>> dï¿½ï¿½mesini tï¿½klayï¿½nï¿½z.
 </ul>
 <?php endif ?>
 </form>
