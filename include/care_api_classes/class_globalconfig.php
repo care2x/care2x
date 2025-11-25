@@ -139,7 +139,7 @@ class GlobalConfig  extends Core{
 
 		if(!is_array($data_array)||empty($filter)) return FALSE;
 
-		while(list($x,$v)=each($data_array)){
+		foreach($data_array as $x=>$v){
 			# If index name fits in filter save the value
 			if(stristr($x,$filter)){
 				if($numeric&&(empty($v)||!is_numeric($v))){

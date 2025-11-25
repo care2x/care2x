@@ -136,7 +136,7 @@ class Ward extends Encounter {
 	    //gjergji - show only info on my departement
 		if(isset($dept_nr) && !empty($dept_nr) ) {
 			$this->sql.=" AND ( ";
-			while (list($key, $val) = each($dept_nr)) {
+			foreach ($dept_nr as $key=>$val) {
 				$tmp .= "dept_nr = " . $val . " OR ";
 			}
 			$this->sql .= substr($tmp,0,-4) ;
