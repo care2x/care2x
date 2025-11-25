@@ -253,7 +253,7 @@ class Person extends Core {
 		$index='';
 		$values='';
 		if(!is_array($array)) return false;
-		while(list($x,$v)=each($array)) {
+		foreach($array as $x=>$v) {
 		    $index.="$x,";
 		    $values.="'$v',";
 		}
@@ -377,7 +377,7 @@ class Person extends Core {
 
 		if(!is_array($array)) return false;
 		if(empty($item_nr)||!is_numeric($item_nr)) return false;
-		while(list($x,$v)=each($array)) {
+		foreach($array as $x=>$v) {
 			if(stristr($v,'concat')||stristr($v,'null')) $sql.="$x= $v,";
 		    	else $sql.="$x='$v',";
 		}
