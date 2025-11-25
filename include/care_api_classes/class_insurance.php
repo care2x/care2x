@@ -540,7 +540,7 @@ class PersonInsurance extends Insurance {
 		$v='';
 		$sql='';
 		if(!is_array($array)||empty($item_nr)||!is_numeric($item_nr)) return FALSE;
-		foreach( as =>) {
+		foreach($array as $x=>$v) {
 		    $sql.="$x='$v',";
 		}
 		$sql=substr_replace($sql,'',(strlen($sql))-1);
