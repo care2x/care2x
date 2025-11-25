@@ -118,7 +118,7 @@ if($src=="input")
     <p>. </blockquote>
   <p><font size="2" face="Verdana, Arial, Helvetica, sans-serif"><img <?php echo createComIcon('../','frage.gif','0') ?>> 
     <font color="#990000"><b> <?php echo ucfirst($person) ?> No aparece en la 
-    lista de vista rápida, �Como agregar <?php echo $person ?>?</b> </font></font> 
+    lista de vista rápida, �Como agregar <?php echo $person ?>?</b> </font></font> 
   </p>
   <blockquote>
     <p><font size="2" face="Verdana, Arial, Helvetica, sans-serif"><b>Paso 1: 
@@ -135,7 +135,7 @@ if($src=="input")
       a la<?php echo $person ?> que desea documentar. </font> </p>
   </blockquote>
   <p><font size="2" face="Verdana, Arial, Helvetica, sans-serif"><img <?php echo createComIcon('../','frage.gif','0') ?>> 
-    <font color="#990000"><b>�Como borrar a<?php echo $person ?> de la lista?</b></font></font> 
+    <font color="#990000"><b>�Como borrar a<?php echo $person ?> de la lista?</b></font></font> 
   </p>
   <blockquote>
     <p><font size="2" face="Verdana, Arial, Helvetica, sans-serif"><b>Paso 1: 
@@ -144,7 +144,7 @@ if($src=="input")
       </font> </p>
   </blockquote>
   <p><font size="2" face="Verdana, Arial, Helvetica, sans-serif"><img <?php echo createComIcon('../','frage.gif','0') ?>> 
-    <font color="#990000"><b> Ya terminé. �Como regreso a la bitácora?</b></font></font> 
+    <font color="#990000"><b> Ya terminé. �Como regreso a la bitácora?</b></font></font> 
   </p>
   <blockquote>
     <p><font size="2" face="Verdana, Arial, Helvetica, sans-serif"><b>Paso 1: 
@@ -164,7 +164,7 @@ if($src=="input")
     <?php if($src=="time") : ?>
     <?php if($x1=="entry_out") : ?>
     <img <?php echo createComIcon('../','frage.gif','0') ?>> 
-    <font color="#990000"><b>�Como ducumentar la hora de entrada y salida ?</b> 
+    <font color="#990000"><b>�Como ducumentar la hora de entrada y salida ?</b> 
     </font></font> </p>
   <blockquote>
     <p><font size="2" face="Verdana, Arial, Helvetica, sans-serif"><b>Paso 1: 
@@ -190,7 +190,7 @@ if($src=="input")
     <?php endif;?>
     <?php if($x1=="cut_close") : ?>
     <img <?php echo createComIcon('../','frage.gif','0') ?>> 
-    <font color="#990000"><b>�Como documentar la hora de corte y sutura?</b> </font></font> 
+    <font color="#990000"><b>�Como documentar la hora de corte y sutura?</b> </font></font> 
   <blockquote>
     <p><font size="2" face="Verdana, Arial, Helvetica, sans-serif"><b>Paso 1: 
       </b>Escriba la hora de corte en el campo "<span style="background-color:yellow" > 
@@ -215,7 +215,7 @@ if($src=="input")
     <?php endif;?>
     <?php if($x1=="wait_time") : ?>
     <img <?php echo createComIcon('../','frage.gif','0') ?>> 
-    <font color="#990000"><b>�Como documentar tiempos de espera (tiempo muerto)?</b> 
+    <font color="#990000"><b>�Como documentar tiempos de espera (tiempo muerto)?</b> 
     </font></font> 
   <blockquote>
     <p><font size="2" face="Verdana, Arial, Helvetica, sans-serif"><b>Paso 1: 
@@ -241,7 +241,7 @@ if($src=="input")
     <?php endif;?>
     <?php if($x1=="bandage_time") : ?>
     <img <?php echo createComIcon('../','frage.gif','0') ?>> 
-    <font color="#990000"><b>�Como documentar tiempos de vendaje?</b> </font></font> 
+    <font color="#990000"><b>�Como documentar tiempos de vendaje?</b> </font></font> 
   </p>
   <blockquote>
     <p><font size="2" face="Verdana, Arial, Helvetica, sans-serif"><b>Paso 1: 
@@ -261,7 +261,7 @@ if($src=="input")
     <?php endif;?>
     <?php if($x1=="repos_time") : ?>
     <img <?php echo createComIcon('../','frage.gif','0') ?>> 
-    <font color="#990000"><b>�Como documentar tiempos de reposición?</b> 
+    <font color="#990000"><b>�Como documentar tiempos de reposición?</b> 
     </font></font> 
   <blockquote>
     <p><font size="2" face="Verdana, Arial, Helvetica, sans-serif"><b>Paso 1: 
@@ -291,7 +291,7 @@ if($src=="input")
   </blockquote>
   <p><font size="2" face="Verdana, Arial, Helvetica, sans-serif"><img <?php echo createComIcon('../','frage.gif','0') ?>> 
     <font color="#990000"><b> Quiero borrar las entradas haciendo clic en el botón 
-    "Borrar datos" pero no funciona. �Que debería hacer?</b></font></font> </p>
+    "Borrar datos" pero no funciona. �Que debería hacer?</b></font></font> </p>
   <blockquote>
     <p><font size="2" face="Verdana, Arial, Helvetica, sans-serif"><b>Nota: </b>Haciendo 
       clic en el botón &quot;Borrar datos&quot; solo borrará los 
@@ -315,7 +315,7 @@ if($src=="input")
     <?php if($src=="create") : ?>
     <?php if($x1=="logmain") : ?>
     <img <?php echo createComIcon('../','frage.gif','0') ?>> 
-    <font color="#990000"><b>�Como editar una entrada de registro de operación?</b> 
+    <font color="#990000"><b>�Como editar una entrada de registro de operación?</b> 
     </font></font> </p>
   <blockquote>
     <p><font size="2" face="Verdana, Arial, Helvetica, sans-serif"><b>Paso 1: 
@@ -327,7 +327,7 @@ if($src=="input")
       </font> </p>
   </blockquote>
   <p><font size="2" face="Verdana, Arial, Helvetica, sans-serif"><img <?php echo createComIcon('../','frage.gif','0') ?>> 
-    <font color="#990000"><b> �Como abrir el folder de datos del paciente?</b> 
+    <font color="#990000"><b> �Como abrir el folder de datos del paciente?</b> 
     </font></font> </p>
   <blockquote>
     <p><font size="2" face="Verdana, Arial, Helvetica, sans-serif"><b>Paso 1: 
@@ -338,7 +338,7 @@ if($src=="input")
   </blockquote>
   <p><font size="2" face="Verdana, Arial, Helvetica, sans-serif"><br>
     <img <?php echo createComIcon('../','frage.gif','0') ?>> 
-    <font color="#990000"><b> �Como hacer un cambio a otro departamento o quirófano?</b> 
+    <font color="#990000"><b> �Como hacer un cambio a otro departamento o quirófano?</b> 
     </font></font> </p>
   <ul>
     <font size="2" face="Verdana, Arial, Helvetica, sans-serif"><b>Paso 1: </b>Seleccione 
@@ -348,7 +348,7 @@ if($src=="input")
 $Or2Dept=get_meta_tags("../global_conf/resolve_or2ordept.pid");
 					$opabt=get_meta_tags("../global_conf/$lang/op_tag_dept.pid");
 
-					foreach( as =>)
+					foreach($opabt as $x=>$v)
 					{
 						if($x=="anaesth") continue;
 						print'
@@ -362,7 +362,7 @@ $Or2Dept=get_meta_tags("../global_conf/resolve_or2ordept.pid");
     <b>Paso 2: </b>Seleccione el quirófano en la caja 
     <select name="saal" size=1 >
       <?php
-foreach( as =>)
+foreach($Or2Dept as $x=>$v)
 					{
 						print'
 					<option value="'.$x.'"';
@@ -475,7 +475,7 @@ foreach( as =>)
     </font> 
   </ul>
   <font size="2" face="Verdana, Arial, Helvetica, sans-serif"><img <?php echo createComIcon('../','frage.gif','0') ?>> 
-  <font color="#990000"><b> �Como desplegar la bitácora principal de nuevo?</b> 
+  <font color="#990000"><b> �Como desplegar la bitácora principal de nuevo?</b> 
   </font></font> 
   <ul>
     <font size="2" face="Verdana, Arial, Helvetica, sans-serif"><b>Paso 1: </b>Dé 
@@ -526,7 +526,7 @@ foreach( as =>)
   <p> <font size="2" face="Verdana, Arial, Helvetica, sans-serif"> 
     <?php else : ?>
     <img <?php echo createComIcon('../','frage.gif','0') ?>> 
-    <font color="#990000"><b>�Como ingresar el diagnostico para la operción?</b> 
+    <font color="#990000"><b>�Como ingresar el diagnostico para la operción?</b> 
     </font></font> 
   <ul>
     <font size="2" face="Verdana, Arial, Helvetica, sans-serif"><b>Paso 1: </b>Escriba 
@@ -675,7 +675,7 @@ foreach( as =>)
       </font> 
   </ul>
   <font size="2" face="Verdana, Arial, Helvetica, sans-serif"> <img <?php echo createComIcon('../','frage.gif','0') ?>> 
-  <font color="#990000"><b> �Como ingresar la información en la tabla gráfica?</b> 
+  <font color="#990000"><b> �Como ingresar la información en la tabla gráfica?</b> 
   </font></font> 
   <ul>
     <font size="2" face="Verdana, Arial, Helvetica, sans-serif"><b>Paso 1: </b>Mueva 
@@ -688,7 +688,7 @@ foreach( as =>)
       la tercera será la segunda hora de inicio, etc.. </font> 
   </ul>
   <font size="2" face="Verdana, Arial, Helvetica, sans-serif"><img <?php echo createComIcon('../','frage.gif','0') ?>> 
-  <font color="#990000"><b> �Como ingresar la información de terapia o cirugía?</b> 
+  <font color="#990000"><b> �Como ingresar la información de terapia o cirugía?</b> 
   </font></font> 
   <ul>
     <font size="2" face="Verdana, Arial, Helvetica, sans-serif"><b>Paso 1: </b>Escriba 
@@ -697,7 +697,7 @@ foreach( as =>)
     </font> 
   </ul>
   <font size="2" face="Verdana, Arial, Helvetica, sans-serif"><img <?php echo createComIcon('../','frage.gif','0') ?>> 
-  <font color="#990000"><b> �Como ingresar resultados, observaciones y notas extra?</b> 
+  <font color="#990000"><b> �Como ingresar resultados, observaciones y notas extra?</b> 
   </font></font> 
   <ul>
     <font size="2" face="Verdana, Arial, Helvetica, sans-serif"><b>Paso 1: </b>Escriba 
