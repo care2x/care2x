@@ -1920,11 +1920,8 @@ class Encounter extends Notes {
 		if(empty($by)) $by=$_SESSION['sess_user_name'];
 		// PDO cancel encounter update
 		$pdo = Database::pdo();
-		$this->sql="UPDATE $this->tb_enc SET encounter_status='cancelled',status='void',is_discharged=1,";
-						history=".$this->ConcatHistory("Cancelled ".date('Y-m- H:i:s')." by $by, logged-user ".$_SESSION['sess_user_name']."\n").",
-						modify_id='".$_SESSION['sess_user_name']."',
-						modify_time='".date('YmdHis')."'
-						WHERE encounter_nr=$this->enc_nr AND encounter_status IN ('','0','allow_cancel')";
+		$historyFragment = $this->ConcatHistory("Cancelled ".date('Y-m-d H:i:s')." by $by, logged-user ".$_SESSION['sess_user_name']."\n");
+		$this->sql="UPDATE $this->tb_enc SET encounter_status='cancelled',status='void',is_discharged=1,history=$historyFragment,modify_id='".$_SESSION['sess_user_name']."',modify_time='".date('YmdHis')."' WHERE encounter_nr=$this->enc_nr AND encounter_status IN ('','0','allow_cancel')";
 		return $this->Transact($this->sql);
 	}
 	/**
