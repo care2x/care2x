@@ -272,7 +272,7 @@ class News extends Core {
 		/* Now set the sql query for article # 5 or the achived news */
         $this->sql="SELECT nr,title,preface,author,publish_date,submit_date FROM $this->tb WHERE dept_nr=".$dept_nr;
 
-	   while(list($x,$v)=each($this->headnrs)) {
+	   foreach($this->headnrs as $x=>$v) {
             $this->sql.=' AND nr<>'.$v;
         }
 

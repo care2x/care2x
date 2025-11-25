@@ -499,9 +499,9 @@ class Personell extends Core {
 		if(!$role_nr||!$year||!$month){
 			return FALSE;
 		}else{
-			list($x,$v)=each($d);
-			$dept_list=$v['nr'];
-			while(list($x,$v)=each($d)){
+			$first = reset($d);
+			$dept_list = $first['nr'];
+			foreach($d as $x=>$v){
 				$dept_list.=','.$v['nr'];
 			}
 			$buffer=array();
@@ -510,7 +510,7 @@ class Personell extends Core {
 	    	if ($this->result=$db->Execute($sql)) {
 		    	if ($this->record_count=$this->result->RecordCount()) {
 					$row=$this->result->GetArray();
-					while(list($x,$v)=each($row)) {
+					foreach($row as $x=>$v) {
 						$buffer[]=$v['dept_nr'];
 					}
 					return $buffer;

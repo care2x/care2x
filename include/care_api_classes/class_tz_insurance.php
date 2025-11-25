@@ -942,7 +942,7 @@ class Insurance_tz extends Core {
 			<td colspan="2" align="center" width="50">'.$LDOptions.'</td>
     </tr>';
 
-    while(list($x,$v) = each($this->insurance_array)) {
+    foreach($this->insurance_array as $x=>$v) {
       // Do we have to show also the hidden companies?
 
       if ($SHOWALL==1) {
@@ -1073,7 +1073,7 @@ class Insurance_tz extends Core {
     ';
     $total=0;
     $overdrawnsum=0;
-    while(list($x,$v) = each($this->contractmembers))
+    foreach($this->contractmembers as $x=>$v)
     {
     	$result = $person_obj->getAllInfoObject($v['PID']);
 	    $person = $result->FetchRow();
