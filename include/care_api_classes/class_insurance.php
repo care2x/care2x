@@ -560,7 +560,7 @@ class PersonInsurance extends Insurance {
 		$index='';
 		$values='';
 		if(!is_array($array)) return FALSE;
-		foreach( as =>) {
+		foreach($array as $x=>$v) {
 		    $index.="$x,";
 		    $values.="'$v',";
 		}
