@@ -188,8 +188,8 @@ class Core {
 			return FALSE;
 		}
 		if($this->ok) {
-			$db->CommitTrans();
-
+			// Legacy ADODB commit removed; PDO handled above
+		}
 	}
 	/**
 	* Filters the data array intended for saving, removing the key-value pairs that do not correspond to the table's field names.
