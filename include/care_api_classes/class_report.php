@@ -44,7 +44,7 @@ class report extends core {
   * The fieldnames must be named seperated by commatas within the common SQL syntax. This private method will serve it.
   */
   function _SetColumnNamesAsString($tbl_name,$arr_fields) {
-    while (list($index,$column)=each($arr_fields))
+    foreach ($arr_fields as $index=>$column)
       if ($index>=0)
         //$result_str.=$tbl_name.".".$column." AS ".$column.$index.",";
         $result_str.=$column.",";
@@ -74,7 +74,7 @@ class report extends core {
     while ($row=$rs_ptr->FetchRow()) {
       reset($arr_forbidden_fields);
       $INSERT_FIELD=TRUE;
-      while (list($i,$v) = each($arr_forbidden_fields))
+      foreach ($arr_forbidden_fields as $i=>$v)
         if ($v==$row['Type'])
           $INSERT_FIELD=FALSE;
       if ($INSERT_FIELD)
@@ -110,8 +110,8 @@ class report extends core {
 	    if (!$this->_isTemporaryTable($tb2))
 	      $arr_field2 = $this->_DropOutNotAllowedFields($tbl2, $arr_field2);
 
-	    while (list($i2,$v2)=each($arr_field2)) {
-	      while (list($i1,$v1)=each($arr_field1)) {
+	    foreach ($arr_field2 as $i2=>$v2) {
+	      foreach ($arr_field1 as $i1=>$v1) {
 	        if (strtolower($v1)==strtolower($v2)) {
 	          $arr_field1[$i1]=$tbl1.".".$v1." AS ".$tbl1."_".$v1;
 	          $arr_field2[$i2]=$tbl2.".".$v2." AS ".$tbl2."_".$v2;
@@ -214,7 +214,7 @@ class report extends core {
       $rs_ptr = $db->Execute($this->sql);
       $res_array = $rs_ptr->GetArray();
       $f[-1]=''; //init
-      while (list ($i,$v)=each($res_array)) {
+      foreach ($res_array as $i=>$v) {
         array_push($f,$v['Field']);
       }
       return $f;
