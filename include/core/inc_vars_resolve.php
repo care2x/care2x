@@ -54,7 +54,7 @@ if(empty($reg_glob_ini)||(!$reg_glob_ini)) {
 
 	//if(sizeof($_GET))
 	if(sizeof($global_vars=importGlobalVariable('get'))) {
-		//while(list($x,$v)=each($_GET))
+		//foreach( as =>)
 		foreach($global_vars as $x=>$v) {
 			${$x}=$v;
 		}
@@ -65,7 +65,7 @@ if(empty($reg_glob_ini)||(!$reg_glob_ini)) {
 
 	//if(sizeof($_POST))
 	if(sizeof($global_vars=importGlobalVariable('post'))) {
-		//while(list($x,$v)=each($_POST))
+		//foreach( as =>)
 		foreach($global_vars as $x=>$v) {
 			${$x}=$v;
 		}
@@ -77,7 +77,7 @@ if(empty($reg_glob_ini)||(!$reg_glob_ini)) {
 
 	//if(sizeof($_COOKIE))
 	if(sizeof($global_vars=importGlobalVariable('cookie'))) {
-		//while(list($x,$v)=each($_COOKIE))
+		//foreach( as =>)
 		foreach($global_vars as $x=>$v) {
 			${$x}=$v;
 		}
@@ -92,7 +92,7 @@ if(empty($reg_glob_ini)||(!$reg_glob_ini)) {
 
 	//if(sizeof($_SERVER))
 	if(sizeof($global_vars=importGlobalVariable('server'))) {
-		//while(list($x,$v)=each($_SERVER))
+		//foreach( as =>)
 		foreach($global_vars as $x=>$v) {
 			${$x}=$v;
 		}
@@ -106,8 +106,8 @@ if(empty($reg_glob_ini)||(!$reg_glob_ini)) {
 	/* Process SESSION vars */
 	/*  if(sizeof($global_vars=&importGlobalVariable('session')))
 	 {
-	 //while(list($x,$v)=each($_SERVER))
-	 while(list($x,$v)=each($global_vars))
+	 //foreach( as =>)
+	 foreach( as =>)
 	 {
 		${$x}=$v;
 		}

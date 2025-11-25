@@ -124,7 +124,7 @@ ob_start();
 
 $dirs=&$TP_obj->getTemplateList();
 
-while(list($x,$v)=each($dirs)){
+foreach( as =>){
 ?>
   <tr class="submenu">
     <td> <input type="radio" name="gui_theme" value="<?php echo $x; ?>" <?php	if($template_theme==$x) echo 'checked';	?>>

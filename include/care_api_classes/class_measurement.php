@@ -93,8 +93,8 @@ class Measurement extends Core {
 	* Example:
 	* <code>
 	* $types=$obj->getAllMsrTypes();
-	* while(list($x,$v)=each($types)){
-	*    while(list($z,$y)=each($y)){
+	* foreach( as =>){
+	*    foreach( as =>){
 	*        echo $y['name']; # prints the name
 	*    }
 	* }

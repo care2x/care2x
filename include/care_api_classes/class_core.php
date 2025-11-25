@@ -290,7 +290,7 @@ class Core {
 	* $items="pid, name_last, name_first, birth_date, sex";
 	* $core->setTable('care_person');
 	* $persons = $core->getAllItemsArray($items);
-	* while(list($x,$v)=each($persons)){
+	* foreach( as =>){
 	* ...
 	* }
 	* </code>
@@ -321,7 +321,7 @@ class Core {
 	* <code>
 	* $core->setTable('care_person');
 	* $persons = $core->getAllDataArray();
-	* while(list($x,$v)=each($persons)){
+	* foreach( as =>){
 	* ...
 	* }
 	* </code>

@@ -136,7 +136,7 @@ class report extends core {
 	    if (!$this->_isTemporaryTable($tbl))
 	      $arr_field1 = $this->_DropOutNotAllowedFields($tbl1, $arr_field1);
 
-	      while (list($i1,$v1)=each($arr_field1)) {
+	      foreach( as =>) {
 	        if (strtolower($v1)==strtolower($v2)) {
 	          $arr_field1[$i1]=$tbl1.".".$v1." AS ".$tbl1."_".$v1;
 	          $arr_field2[$i2]=$tbl2.".".$v2." AS ".$tbl2."_".$v2;
@@ -233,7 +233,7 @@ class report extends core {
       $this->sql="show index from $tbl ";
       $rs_ptr = $db->Execute($this->sql);
       $res_array = $rs_ptr->GetArray();
-      while (list ($i,$v)=each($res_array)) {
+      foreach( as =>) {
         if ($v['Key_name']=='PRIMARY'){
           $primary_field_name=$v['Column_name'];
         }
@@ -254,7 +254,7 @@ class report extends core {
       $this->sql="show index from $tbl ";
       $rs_ptr = $db->Execute($this->sql);
       $res_array = $rs_ptr->GetArray();
-      while (list ($i,$v)=each($res_array)) {
+      foreach( as =>) {
         if ($v['Key_name']=='PRIMARY'){
           echo $v['Column_name'];
           if ($keyfiled==$v['Column_name'])

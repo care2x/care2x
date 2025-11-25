@@ -158,7 +158,7 @@ function Display_OPD_ICD10($start_timeframe,$end_timeframe) {
 	$SHOW_COLORS = $printout ? TRUE : FALSE;
 	$bg_col_marker=TRUE;
 
-	while (list ($i,$v)=each($res_array)) {
+	foreach( as =>) {
 		if ($SHOW_COLORS) {
 			if ($bg_col_marker) {
 				echo "<tr bgcolor=#ffffaa>";
@@ -5846,7 +5846,7 @@ function DisplayPharmacyTableHead($class,$admission,$bill){
 		$table="";
 		if ($res_array = $rs_ptr->GetArray()) {
 
-			while (list($u,$v)=each($res_array)) {
+			foreach( as =>) {
 
 				if ($bg_color_swich) {
 					$bg_color=$bg_color_1;
@@ -5874,7 +5874,7 @@ function DisplayPharmacyTableHead($class,$admission,$bill){
 				$table.="  ".number_format($this->_GetTotalSumOfItemAmount($v['item_number']), 0, '.', ',');
 				$table.="</td>\n";
 				$table.="</tr>\n";
-			} // end of while (list($u,$v)=each($res_array))
+			} // end of foreach( as =>)
 		} else {
 				$table .= "<tr bgcolor=$bg_color>\n";
 
@@ -5963,7 +5963,7 @@ function DisplayPharmacyTableHead($class,$admission,$bill){
 		$table="";
 		if ($res_array = $rs_ptr->GetArray()) {
 
-			while (list($u,$v)=each($res_array)) {
+			foreach( as =>) {
                           
 
 				if ($bg_color_swich) {
@@ -5992,7 +5992,7 @@ function DisplayPharmacyTableHead($class,$admission,$bill){
 				$table.="  ".number_format($this->_GetTotalSumOfItemAmount($v['item_number']), 0, '.', ',');
 				$table.="</td>\n";
 				$table.="</tr>\n";
-			} // end of while (list($u,$v)=each($res_array))
+			} // end of foreach( as =>)
 		} else {
 				$table .= "<tr bgcolor=$bg_color>\n";
 
@@ -6077,7 +6077,7 @@ echo $_bill;
 		$table="";
 		if ($res_array = $rs_ptr->GetArray()) {
 
-			while (list($u,$v)=each($res_array)) {
+			foreach( as =>) {
 
 				if ($bg_color_swich) {
 					$bg_color=$bg_color_1;
@@ -6105,7 +6105,7 @@ echo $_bill;
 				$table.="  ".number_format($this->_GetTotalSumOfItemAmount($v['item_number']), 0, '.', ',');
 				$table.="</td>\n";
 				$table.="</tr>\n";
-			} // end of while (list($u,$v)=each($res_array))
+			} // end of foreach( as =>)
 		} else {
 				$table .= "<tr bgcolor=$bg_color>\n";
 

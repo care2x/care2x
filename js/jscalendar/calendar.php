@@ -140,7 +140,7 @@ class DHTML_Calendar {
     function _make_js_hash($array) {
         $jstr = '';
         reset($array);
-        while (list($key, $val) = each($array)) {
+        foreach( as =>) {
             if (is_bool($val))
                 $val = $val ? 'true' : 'false';
             else if (!is_numeric($val))
@@ -154,7 +154,7 @@ class DHTML_Calendar {
     function _make_html_attr($array) {
         $attrstr = '';
         reset($array);
-        while (list($key, $val) = each($array)) {
+        foreach( as =>) {
             $attrstr .= $key . '="' . $val . '" ';
         }
         return $attrstr;

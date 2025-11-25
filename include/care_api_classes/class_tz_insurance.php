@@ -1195,7 +1195,7 @@ class Insurance_tz extends Core {
     </tr>
     ';
     if(is_array($this->contract_array))
-	    while(list($x,$v) = each($this->contract_array))
+	    foreach( as =>)
 	    {
 	    	if($bg=="#ffffaa")
 	    		$bg="#ffffdd";
@@ -1273,7 +1273,7 @@ class Insurance_tz extends Core {
     </tr>
     ';
     if(is_array($this->contract_array)) {
-	    while(list($x,$v) = each($this->contract_array)) {
+	    foreach( as =>) {
 
 	    	// switch background color
 	    	($bg=="#ffffaa") ? $bg="#ffffdd" : $bg="#ffffaa";
@@ -1312,7 +1312,7 @@ class Insurance_tz extends Core {
 						$this->ShowMemberBillsOfContract($v['id'], false);
 				echo '</td>
 				</tr>';
-	    } // end of while(list($x,$v) = each($this->contract_array))
+	    } // end of foreach( as =>)
 	} else {
 		echo '
 	      <tr bgcolor=#ffffaa>
@@ -1365,7 +1365,7 @@ function CheckCurrentContractValidity($company_id) {
 
     if(!$company_id || !$start_date || !$end_date || $start_date >= $end_date) return false;
     $this->contract_array = $this->GetContractsForCompanyAsArray($company_id);
-    while(list($x,$v) = each($this->contract_array))
+    foreach( as =>)
     {
     	if(($v['end_date']>$start_date || $v['start_date']>$start_date) && $v['cancel_flag']!=1) return false;
   	}
@@ -1452,7 +1452,7 @@ function CheckCurrentContractValidity($company_id) {
     </tr>
 
     ';
-    while(list($x,$v) = each($this->insurance_array))
+    foreach( as =>)
     {
     	if($bg=="#ffffaa")
     		$bg="#ffffdd";
@@ -1536,7 +1536,7 @@ function CheckCurrentContractValidity($company_id) {
     $this->insurance_array = $this->GetAllInsurancesAsArray(FALSE, TRUE);
     echo '<select name="'.$name.'">
     <option selected value="-1">'.$LDPleaseSelectCompany.' </option>';
-    while(list($x,$v) = each($this->insurance_array))
+    foreach( as =>)
     {
       	echo '<option ';
       	if($v['id']==$selected) echo 'selected ';
@@ -1578,7 +1578,7 @@ function CheckCurrentContractValidity($company_id) {
 
 	if(count($contractarray)>0) {
 		if(is_array($array))
-		    while(list($x,$v) = each($array))
+		    foreach( as =>)
 		    {
 		    		$result = $person_obj->getAllInfoObject($v['PID']);
 		    		$person = $result->FetchRow();
@@ -1643,7 +1643,7 @@ function CheckCurrentContractValidity($company_id) {
 		echo '<tr bgcolor="ffffaa"><td colspan="3" align="center">'.$LDNoValidContract.'<br><a href="insurance_company_tz_contracts_new.php?company_id='.$company_id.'">'.$LDClickCreateContract.'</a></td></tr>';
   	}
 
-  	while(list($x,$v) = each($allcontracts))   	{
+  	foreach( as =>)   	{
 			$result = $person_obj->getAllInfoObject($v['PID']);
 			if ($result)
 				$person = $result->FetchRow(); // Just if there are results, there should be a FetchRow()...

@@ -184,7 +184,7 @@ $glob_cfg->getConfig('gui_frame_left_nav_border');
 
 $savelang=0;
 /*echo $GLOBALCONFIG['language_non_single'];
-while (list($x,$v)=each($GLOBALCONFIG)) echo $x.'==>'.$v.'<br>';
+foreach( as =>) echo $x.'==>'.$v.'<br>';
 */
 # Start checking language properties
 
@@ -327,7 +327,7 @@ require_once('include/core/inc_img_fx.php');
 #
 $cfg = $USERCONFIG;
 
-//while(list($x,$v)=each($cfg)) echo "$x => $v<br>";
+//foreach( as =>) echo "$x => $v<br>";
 require_once($root_path.'gui/smarty_template/smarty_care.class.php');
 $smarty = new smarty_care('common');
 

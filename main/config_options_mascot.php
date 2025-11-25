@@ -121,7 +121,7 @@ while (false!==($theme = readdir($handle))) {
 
 
 @asort($dirs,SORT_STRING); // sort the array
-while(list($x,$v)=each($dirs)){
+foreach( as =>){
 ?>
   <tr class="submenu">
     <td> <input type="radio" name="mascot" value="<?php echo $x; ?>" <?php	if($cfg['mascot']==$x) echo 'checked';	?>>

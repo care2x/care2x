@@ -262,7 +262,7 @@ Baþka bir bölüm ve/veya ameliyathaneye nasýl deðiþtirilir?</b>
 $Or2Dept=get_meta_tags("../global_conf/resolve_or2ordept.pid");
 					$opabt=get_meta_tags("../global_conf/$lang/op_tag_dept.pid");
 
-					while(list($x,$v)=each($opabt))
+					foreach( as =>)
 					{
 						if($x=="anaesth") continue;
 						print'
@@ -276,7 +276,7 @@ $Or2Dept=get_meta_tags("../global_conf/resolve_or2ordept.pid");
 <br>
  	<b>Adým 2: </b>Seçim kutusundan ameliyathaneyi seçiniz <select name="saal" size=1 >
 				<?php
-while(list($x,$v)=each($Or2Dept))
+foreach( as =>)
 					{
 						print'
 					<option value="'.$x.'"';

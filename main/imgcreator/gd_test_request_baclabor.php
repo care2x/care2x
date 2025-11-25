@@ -221,7 +221,7 @@ $mark_v_offset=1; /* Vertical offset of the marking blocks */
 	/* Create the material  elements */
 	
 	$sy=($top_border+($vdiv*2));
-	while(list($x,$v)=each($LDBacLabMaterialType))
+	foreach( as =>)
 	{
 	    $sx=$left_border;
 	
@@ -256,7 +256,7 @@ $mark_v_offset=1; /* Vertical offset of the marking blocks */
 	/* Create the test type  elements */
 	
 	$sy=($top_border+($vdiv*2));
-	while(list($x,$v)=each($LDBacLabTestType))
+	foreach( as =>)
 	{
 	    $sx=$left_border+($hdiv*5);
 	
@@ -453,7 +453,7 @@ $mark_v_offset=1; /* Vertical offset of the marking blocks */
      $tr_tracker=0;
     $sx=$left_border;
 	$sy+=$vdiv;
-   	while(list($x,$v)=each($lab_TestType))
+   	foreach( as =>)
 	{
 
 	   if($parsed_type[$x])
@@ -509,7 +509,7 @@ $mark_v_offset=1; /* Vertical offset of the marking blocks */
 	doWriteTop('R');
 	
 	/* First column - anaerobes */
-	   	while(list($x,$v)=each($lab_ResistANaerobAcro))
+	   	foreach( as =>)
 	{
 	   $sx=$left_border+($hdiv*34);
 	   
@@ -542,7 +542,7 @@ $mark_v_offset=1; /* Vertical offset of the marking blocks */
 	 $sx+=$hdiv;
 	doWriteTop('R');
 	
-	   	while(list($x,$v)=each($lab_ResistANaerobAcro))
+	   	foreach( as =>)
 	{
 	   $sx=$left_border+($hdiv*36);
 	      
@@ -572,7 +572,7 @@ $mark_v_offset=1; /* Vertical offset of the marking blocks */
 	 $sx+=$hdiv;
 	doWriteTop('R');
 	
-	   	while(list($x,$v)=each($lab_ResistANaerobAcro))
+	   	foreach( as =>)
 	{
 	   $sx=$left_border+($hdiv*38);
 	      
@@ -651,7 +651,7 @@ $mark_v_offset=1; /* Vertical offset of the marking blocks */
 	
 	$sx=$left_border+($hdiv*27);
 	
-   	while(list($x,$v)=each($lab_ResistAerobAcro))
+   	foreach( as =>)
 	{
 	
 	   $sy+=$vdiv;
@@ -682,7 +682,7 @@ $mark_v_offset=1; /* Vertical offset of the marking blocks */
    /* 2nd column*/
 	$sx=$left_border+($hdiv*30);
 	$sy-=($vdiv*32);
-   	while(list($x,$v)=each($lab_ResistAerobAcro))
+   	foreach( as =>)
 	{
 	
 	   $sy+=$vdiv;
@@ -712,7 +712,7 @@ $mark_v_offset=1; /* Vertical offset of the marking blocks */
 	   /* 3rd column*/
 	$sx=$left_border+($hdiv*33);
 	$sy-=($vdiv*32);
-   	while(list($x,$v)=each($lab_ResistAerobAcro))
+   	foreach( as =>)
 	{
 	
 	   $sy+=$vdiv;
@@ -745,7 +745,7 @@ $mark_v_offset=1; /* Vertical offset of the marking blocks */
    $tr_tracker=0;
    $rx_tracker=0;
    
-   	while(list($x,$v)=each($lab_ResistAerobExtra))
+   	foreach( as =>)
 	{
 	   $sx=$left_border+($hdiv*37);
 	   $sy+=$vdiv;
@@ -907,7 +907,7 @@ $mark_v_offset=1; /* Vertical offset of the marking blocks */
 	$sx=$left_border;
 	$tr_tracker=0;
 	
-	while(list($x,$v)=each($lab_TestResultId_1))
+	foreach( as =>)
 	{
 
 
@@ -949,7 +949,7 @@ $mark_v_offset=1; /* Vertical offset of the marking blocks */
 	$sy+=$vdiv;
 	$sx=$left_border;
 	
-   	while(list($x,$v)=each($lab_TestResultId_2))
+   	foreach( as =>)
 	{
 	       list($x2,$v2)=each($lab_TestResult_2);
 	       if($parsed_findings[$v2])

@@ -86,7 +86,7 @@ if (!defined('__PMA_LANG_DETECT__')) {
         global $lang;
 
         reset($available_languages);
-//        while (list($key, $value) = each($available_languages)) {
+//        foreach( as =>) {
 		foreach ($available_languages as list($key, $value)) {
             // $envType =  1 for the 'HTTP_ACCEPT_LANGUAGE' environment variable,
             //             2 for the 'HTTP_USER_AGENT' one

@@ -540,7 +540,7 @@ class PersonInsurance extends Insurance {
 		$v='';
 		$sql='';
 		if(!is_array($array)||empty($item_nr)||!is_numeric($item_nr)) return FALSE;
-		while(list($x,$v)=each($array)) {
+		foreach( as =>) {
 		    $sql.="$x='$v',";
 		}
 		$sql=substr_replace($sql,'',(strlen($sql))-1);
@@ -560,7 +560,7 @@ class PersonInsurance extends Insurance {
 		$index='';
 		$values='';
 		if(!is_array($array)) return FALSE;
-		while(list($x,$v)=each($array)) {
+		foreach( as =>) {
 		    $index.="$x,";
 		    $values.="'$v',";
 		}

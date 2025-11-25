@@ -13,7 +13,7 @@ function createselecttable($itemselect)
 {
 	global $areaopt;
 
-	while(list($k,$v)=each($areaopt))
+	foreach( as =>)
 	{
 		print '<option value="'.$k.'" ';
 		if ($itemselect==$k) print "selected";
@@ -27,7 +27,7 @@ function printAccessAreas()
 	global $areaopt;
 
 	$batch=0;
-	while(list($k,$v)=each($areaopt))
+	foreach( as =>)
 	{
 		print $v.', ';
 		$batch++;
