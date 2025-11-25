@@ -8,12 +8,30 @@ class AdodbPdoShim {
             $ok = $stmt->execute();
         } catch (PDOException $e) {
             // Auto add NULL status/history if missing for legacy inserts without those fields
-            if (strpos($e->getMessage(), "Field 'status' doesn't have a default value") !== false &&
-                preg_match('/^\s*INSERT/i',$sql) && strpos($sql,'status')===false) {
-                // naive patch: inject status='' before closing ) VALUES
-                $sql = preg_replace('/\(([^)]+)\)\s+VALUES\s*\(([^)]+)\)/','($1,`status`) VALUES ($2,\'\')',$sql,1);
-                $stmt = $this->pdo->prepare($sql);
-                $ok = $stmt->execute();
+            if (preg_match('/^\s*INSERT/i',$sql)) {
+                $msg = $e->getMessage();
+                $patch = false;
+                if (strpos($msg, "Field 'status' doesn't have a default value") !== false && strpos($sql,'status')===false) {
+                    $sql = preg_replace('/\(([^)]+)\)\s+VALUES\s*\(([^)]+)\)/','($1,`status`) VALUES ($2,\'\')',$sql,1);
+                    $patch = true;
+                }
+                if (strpos($msg, "Field 'modify_id' doesn't have a default value") !== false && strpos($sql,'modify_id')===false) {
+                    $sql = preg_replace('/\(([^)]+)\)\s+VALUES\s*\(([^)]+)\)/','($1,`modify_id`) VALUES ($2,\'system\')',$sql,1);
+                    $patch = true;
+                }
+                if (strpos($msg, "Field 'history' doesn't have a default value") !== false && strpos($sql,'history')===false) {
+                    $sql = preg_replace('/\(([^)]+)\)\s+VALUES\s*\(([^)]+)\)/','($1,`history`) VALUES ($2,\'auto\')',$sql,1);
+                    $patch = true;
+                }
+                if($patch){
+                    $stmt = $this->pdo->prepare($sql);
+                    $ok = $stmt->execute();
+                } else {
+                    throw $e;
+                }
+            } else {
+                throw $e;
+            }
             } else {
                 throw $e;
             }
