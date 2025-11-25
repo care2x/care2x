@@ -1494,7 +1494,7 @@ function CheckCurrentContractValidity($company_id) {
 
 	$this->Plan_id = $this->GetPlanForPID($this->pid);
 
-    while(list($x,$v) = each($this->insurancetype_array))
+    foreach($this->insurancetype_array as $x=>$v)
     {
     	if($v['is_disabled']==0) {
 	      	echo '<option ';
