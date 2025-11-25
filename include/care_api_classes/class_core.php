@@ -201,12 +201,11 @@ class Core {
 		$v='';
 		reset($this->ref_array);
 		reset($this->data_array);
-		while(list($x,$v)=each($this->ref_array)) {
-			// Gjergj Sheldija :
-			// deleted && ($this->data_array[$v]!='') gives me errors when var value == 0
-			if(isset($this->data_array[$v]) ) {
-				$this->buffer_array[$v]=$this->data_array[$v];
-				if($v=='create_time' && $this->data_array['create_time']!='') $this->buffer_array[$v] = date('YmdHis');
+		foreach($this->ref_array as $v){
+			// deleted && ($this->data_array[$v]!='') gives errors when var value == 0
+			if(array_key_exists($v, $this->data_array)) {
+				$this->buffer_array[$v] = $this->data_array[$v];
+				if($v==='create_time' && !empty($this->data_array['create_time'])) $this->buffer_array[$v] = date('YmdHis');
 			}
 		}
 		# Reset the source array index to start
@@ -356,7 +355,7 @@ class Core {
 		if($dbtype=='postgres7'||$dbtype=='postgres') $concatfx='||';
 			else $concatfx='concat';
 		if(!is_array($array)){ return FALSE;}
-		while(list($x,$v)=each($array)) {
+		foreach($array as $x=>$v) {
 			# use backquoting for mysql and no-quoting for other dbs
 			if ($dbtype=='mysqli') $index.="`$x`,";
 				else $index.="$x,";
@@ -391,7 +390,7 @@ class Core {
 			else $concatfx='concat';
 		if(empty($array)) return FALSE;
 		if(empty($item_nr)||($isnum&&!is_numeric($item_nr))) return FALSE;
-		while(list($x,$v)=each($array)) {
+		foreach($array as $x=>$v) {
 			# use backquoting for mysql and no-quoting for other dbs.
 			if ($dbtype=='mysqli') $elems.="`$x`=";
 				else $elems.="$x=";
