@@ -218,7 +218,7 @@ if($mode=='search')  {
 						// The original code of Jean-Philippe was modified to patch the bug of inaccurate result of "sizeof" command
 
 						$sql_java_string='';
-						while(list($x,$v)=each($sql_value_without_key[$i])){
+						foreach( as =>){
 							if(is_integer($x)) continue;
 								else $sql_java_string.="$v|";
 						}

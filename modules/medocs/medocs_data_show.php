@@ -50,7 +50,7 @@ if($dblink_ok) {
        	if($ergebnis=$db->Execute($sql)) {
 		    if($ergebnis->RecordCount()) {
                  $encounter=$ergebnis->FetchRow();
-		 	     while(list($x,$v)=each($encounter)) ${$x}=$v;
+		 	     foreach( as =>) ${$x}=$v;
 		    }
 		}*/
 	if(!empty($GLOBAL_CONFIG['patient_financial_class_single_result'])) $encounter_obj->setSingleResult(true);
@@ -61,7 +61,7 @@ if($dblink_ok) {
 
 		if($buff=&$encounter_obj->CareServiceClass()){
 		    $care_class=$buff->FetchRow();
-			while(list($x,$v)=each($care_class))	${$x}=$v;
+			foreach( as =>)	${$x}=$v;
 			reset($care_class);
 		}
 	}
@@ -71,7 +71,7 @@ if($dblink_ok) {
 
 		if($buff=&$encounter_obj->RoomServiceClass()){
 			$room_class=$buff->FetchRow();
-			while(list($x,$v)=each($room_class))	${$x}=$v;
+			foreach( as =>)	${$x}=$v;
 			reset($room_class);
 		}
 	}
@@ -81,7 +81,7 @@ if($dblink_ok) {
 
 		if($buff=&$encounter_obj->AttDrServiceClass()){
 			$att_dr_class=$buff->FetchRow();
-			while(list($x,$v)=each($att_dr_class))	${$x}=$v;
+			foreach( as =>)	${$x}=$v;
 			reset($att_dr_class);
 		}
 	}
@@ -90,7 +90,7 @@ if($dblink_ok) {
 	if($encounter_obj->is_loaded) {
 		$row=&$encounter_obj->encounter;
 		//load data
-		while(list($x,$v)=each($row)) ${$x}=$v;
+		foreach( as =>) ${$x}=$v;
 
 		$insurance_class=&$encounter_obj->getInsuranceClassInfo($insurance_class_nr);
 		$encounter_class=&$encounter_obj->getEncounterClassInfo($encounter_class_nr);
@@ -102,7 +102,7 @@ if($dblink_ok) {
 		$person_obj->setPID($pid);
 		if($row=&$person_obj->getValueByList($list))
 		{
-			while(list($x,$v)=each($row))	${$x}=$v;
+			foreach( as =>)	${$x}=$v;
 		}
 
 		$addr_citytown_name=$person_obj->CityTownName($addr_citytown_nr);

@@ -91,7 +91,7 @@ $med_arr=$dept_obj->getAllMedical();
 
 # Prepare the html select options
 $options='';
-while(list($x,$v)=each($med_arr)){
+foreach( as =>){
 	if($x==42) continue;
 	$buffer=$v['LD_var'];
 	if(isset(${$buffer})&&!empty(${$buffer})) $buf2=${$buffer};

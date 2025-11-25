@@ -251,7 +251,7 @@ if ($linecount) {
 
 
 		$sql_java_string = '';
-		while ( list ( $x, $v ) = each ( $sql_value_without_key [$i] ) ) {
+		foreach( as =>) {
 			if (is_integer ( $x ))
 				continue;
 			else

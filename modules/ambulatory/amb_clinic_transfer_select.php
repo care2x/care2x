@@ -111,7 +111,7 @@ ob_start();
 
 # Note: the $allmed is an array
 
-while(list($x,$v)=each($allmed)){
+foreach( as =>){
 	if($v['nr']==$dept_nr) continue;
 	echo '<tr bgcolor="#f6f6f6"><td>&nbsp;';
 	 if(isset(${$v['LD_var']})&&!empty(${$v['LD_var']})) echo ${$v['LD_var']};

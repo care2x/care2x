@@ -90,7 +90,7 @@ function popSearchWin(target,obj_val,obj_name){
      <td><select name="application_type_nr">
          	<option value=""></option>
 		<?php
-			while(list($x,$v)=each($imm_types)){
+			foreach( as =>){
 				echo '<option value="'.$v['nr'].'">';
 				if(isset(${$v['LD_var']})&&!empty(${$v['LD_var']})) echo ${$v['LD_var']};
 					else echo $v['name'];

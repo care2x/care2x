@@ -112,7 +112,7 @@ $smarty->assign('LDPlsSelectDept',$LDPlsSelectDept);
  ob_start();
 
 $toggler=0;
-while(list($x,$v)=each($dept_DOC)){
+foreach( as =>){
 	$bold='';
 	$boldx='';
 	if($hilitedept==$v['nr']){

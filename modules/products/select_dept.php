@@ -93,7 +93,7 @@ elseif($cat=='pharma')
 
 $toggler=0;
 
-while(list($x,$v)=each($dept)){
+foreach( as =>){
 
 	$bold='';
 	$boldx='';

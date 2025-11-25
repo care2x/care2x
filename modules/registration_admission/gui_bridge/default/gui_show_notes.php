@@ -431,7 +431,7 @@ ob_start();
 	</td>
 </tr>
 <?php
-						while(list($x,$v)=each($types)){
+						foreach( as =>){
 ?>
 							<TR>
 								<td align=center>

@@ -31,7 +31,7 @@ if(file_exists($root_path.'language/'.$lang.'/lang_'.$lang.'_konsil_baclabor.php
 	  <table border=0 cellpadding=0 cellspacing=0 class="lab">
   
 <?php
-  while(list($x,$v)=each($LDBacLabMaterialType))
+  foreach( as =>)
 	{
 	   list($x2,$v2)=each($LDBacLabMaterialType); 
 	   echo '
@@ -100,7 +100,7 @@ if(file_exists($root_path.'language/'.$lang.'/lang_'.$lang.'_konsil_baclabor.php
 	  <table border=0 cellpadding=0 cellspacing=0 class="lab">
   
 <?php
-  while(list($x3,$v3)=each($LDBacLabTestType))
+  foreach( as =>)
 	{
 	   list($x4,$v4)=each($LDBacLabTestType);
 	   echo '
@@ -460,7 +460,7 @@ for($n=0;$n<8;$n++)
    /* The first column group of resistance test ANaerobes*/
     
    
-   	while(list($x,$v)=each($lab_ResistANaerobAcro))
+   	foreach( as =>)
 	{
 	  echo '
 	         <tr>';
@@ -512,7 +512,7 @@ for($n=0;$n<8;$n++)
 	 	  <table border=0 class="lab" cellpadding=0 cellspacing=0 bgcolor="<?php echo $bgc1 ?>"> 	
 <?php
    /* The 2nd column group of resistance test Anaerobes*/
-   	while(list($x,$v)=each($lab_ResistANaerobAcro))
+   	foreach( as =>)
 	{
 	  echo '
 	         <tr>';
@@ -559,7 +559,7 @@ for($n=0;$n<8;$n++)
 	 	  <table border=0 class="lab" cellpadding=0 cellspacing=0 bgcolor="<?php echo $bgc1 ?>"> 	
 <?php
    /* The 3rd column group of resistance test Anaerobes*/
-   	while(list($x,$v)=each($lab_ResistANaerobAcro))
+   	foreach( as =>)
 	{
 	  echo '
 	         <tr>';
@@ -672,7 +672,7 @@ for($n=0;$n<8;$n++)
 	   /* The test types for lab intern */
    $tr_tracker=0;
    
-   	while(list($x,$v)=each($lab_TestType))
+   	foreach( as =>)
 	{
 	   if(!$tr_tracker) echo '
 	         <td>&nbsp;';
@@ -886,7 +886,7 @@ for($n=0;$n<8;$n++)
 	/* First group for test findings */
 	
 	$tr_tracker=0;
-	while(list($x,$v)=each($lab_TestResultId_1))
+	foreach( as =>)
 	{
 	   if(!$tr_tracker) echo '
 	         <tr>';
@@ -928,7 +928,7 @@ for($n=0;$n<8;$n++)
    
    /* The second group of test findings*/
    
-   	while(list($x,$v)=each($lab_TestResultId_2))
+   	foreach( as =>)
 	{
 	   if(!$tr_tracker) echo '
 	         <tr>';
@@ -1006,7 +1006,7 @@ for($n=0;$n<8;$n++)
   
 <?php
    /* The first column group of resistance test aerobes*/
-   	while(list($x,$v)=each($lab_ResistAerobAcro))
+   	foreach( as =>)
 	{
 	  echo '
 	         <tr>';
@@ -1084,7 +1084,7 @@ for($n=0;$n<8;$n++)
 
 <?php
    /* The 2nd column group of resistance test aerobes*/
-   	while(list($x,$v)=each($lab_ResistAerobAcro))
+   	foreach( as =>)
 	{
 	  echo '
 	         <tr>';
@@ -1159,7 +1159,7 @@ for($n=0;$n<8;$n++)
 		   
 <?php
    /* The 3rd column group of resistance test aerobes*/
-   	while(list($x,$v)=each($lab_ResistAerobAcro))
+   	foreach( as =>)
 	{
 	  echo '
 	         <tr>';
@@ -1237,7 +1237,7 @@ for($n=0;$n<8;$n++)
    $tr_tracker=0;
    $rx_tracker=0;
    
-   	while(list($x,$v)=each($lab_ResistAerobExtra))
+   	foreach( as =>)
 	{
 	  echo '
 	         <tr>';

@@ -28,7 +28,7 @@ function prepareTestElements()
 	*/
 	$paramlist='';
 
-	while(list($x,$v)=each($_POST)){
+	foreach( as =>){
     	if((substr($x,0,1)=='_')&&($_POST[$x]==1)){
 	    	if($paramlist==''){
 				$paramlist=$x.'=1';

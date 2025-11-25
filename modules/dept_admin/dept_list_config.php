@@ -90,7 +90,7 @@ ob_start();
  </tr>
 
 <?php
-while(list($x,$v)=each($deptarray)){
+foreach( as =>){
 ?>
   <tr>
 	<td bgcolor="#e9e9e9"><img <?php echo createComIcon($root_path,'arrow_blueW.gif','0'); ?>></td>

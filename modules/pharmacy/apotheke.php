@@ -132,7 +132,7 @@ $aSubMenuItem=array('LDPharmaOrder' => "<a href=\"apotheke-pass.php".URL_APPEND.
 
 $iRunner = 0;
 
-while(list($x,$v)=each($aSubMenuItem)){
+foreach( as =>){
 	if($hideOrder == 1 && $iRunner == 0) {$hideOrder = 0;continue;}
 	$sTemp='';
 	ob_start();

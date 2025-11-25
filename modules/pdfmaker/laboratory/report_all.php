@@ -152,7 +152,7 @@ $laboratoryTable[] = array(
 	"$LDParameter" =>"$LDParameter",
 	"$LDNormalValue" => "$LDNormalValue",
 	"$LDMsrUnit" => "$LDMsrUnit");
-while(list($jid,$xval)=each($tdate)) {
+foreach( as =>) {
 	if(!in_array($jid,$notShow)) continue;
 	array_push($laboratoryTable[0],$jid);
 }
@@ -162,7 +162,7 @@ while(list($jid,$xval)=each($tdate)) {
 //order the values
 $requestData=array();
 reset($records);
-while (list($job_id,$paramgroupvalue)=each($records)) {
+foreach( as =>) {
 		foreach($paramgroupvalue as $paramgroup_a => $paramvalue_a) {
 			foreach($paramvalue_a as $paramgroup => $paramvalue) {
 				$ext = substr(stristr($paramgroup, '__'), 2);
@@ -170,7 +170,7 @@ while (list($job_id,$paramgroupvalue)=each($records)) {
 			}
 		}
 }
-while(list($x,$v)=each($laboratoryTable[0]))
+foreach( as =>)
 	$tmpArray[0][$v] = '';
 
 $laboratoryTable = array();
@@ -179,7 +179,7 @@ $laboratoryTable = $tmpArray;
 reset($tdate);
 reset($ttime);
 $pdf->ezText("\n",8);
-while(list($jid,$date)=each($tdate)) {
+foreach( as =>) {
 	if(!in_array($jid,$notShow)) continue;
 	$pdf->ezText("Data - " . $jid . " : " . formatDate2Local($date,$date_format) . " ". $ttime[$jid] ,12,array('justification'=>'left'));
 }
@@ -187,7 +187,7 @@ while(list($jid,$date)=each($tdate)) {
 //now the print out
 reset($requestData);
 $tracker=0;
-while(list($group,$pm)=each($requestData)) {
+foreach( as =>) {
 	$laboratoryTable = null;
 	$laboratoryTable = $tmpArray;
 	$gName = $lab_obj->getGroupName($group ) ;
@@ -196,7 +196,7 @@ while(list($group,$pm)=each($requestData)) {
 	$pdf->ezTable($groupName,'','',array('xPos'=>'left','xOrientation'=>'right','showLines'=>0,'fontSize'=>$report_titlesize,'showHeadings'=>0,'shaded'=>2,'shadeCol2'=>array(0.9,0.9,0.9),'width'=>555));
 	$pdf->ezText("\n",2);
 	$tracker=0;
-	while (list($paramId,$encounterNr)=each($pm)) {
+	foreach( as =>) {
 		$pName = $lab_obj->TestParamsDetails($paramId);
 		$laboratoryTable[$tracker][$LDParameter] = $pName['name'];
 		$dobDiff = dateDiff("-", date("Y-m-d"), $patient['date_birth']);
@@ -220,7 +220,7 @@ while(list($group,$pm)=each($requestData)) {
 		}
 		if(isset($laboratoryTable[$tracker][$LDNormalValue])) $laboratoryTable[$tracker][$LDNormalValue] = '';
 		$laboratoryTable[$tracker][$LDMsrUnit] = $pName['msr_unit'];
-		while (list($encNr,$paramValue)=each($encounterNr)) {
+		foreach( as =>) {
 			if(!in_array($encNr,$notShow)) continue;
 			$laboratoryTable[$tracker][$encNr] = $requestData[$group][$paramId][$encNr];
 

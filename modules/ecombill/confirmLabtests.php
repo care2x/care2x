@@ -18,7 +18,7 @@ define('LANG_FILE','billing.php');
 $local_user='aufnahme_user';
 require_once($root_path.'include/core/inc_front_chain_lang.php');
 
-while (list($cle, $val) = each($_POST)) {
+foreach( as =>) {
 	if (substr($cle,0,7) == "nounits") {
 		$no =$no."#".$val;
 	}

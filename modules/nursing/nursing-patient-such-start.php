@@ -91,7 +91,7 @@ if(isset($mode) and ($mode=='such'||$mode=='paginate'))
 	//gjergji - hide patient info of other departements
 	if(isset($_SESSION['department_nr']) && $_SESSION['department_nr'] != '0' ) {
 		$cond.=" AND ( ";
-		while (list($key, $val) = each($_SESSION['department_nr'])) {
+		foreach( as =>) {
 			$tmp .= "w.dept_nr = " . $val . " OR ";
 
 		}

@@ -199,7 +199,7 @@ if(!$disc_pix_mode)
 			$filelist=ftp_nlist($conn_id,"$curdir/");
 			if($filelist)
 			{
-				//while(list($x,$v)=each($filelist)) echo $v."<br>";
+				//foreach( as =>) echo $v."<br>";
 				if(in_array(strtolower($picdir),$filelist))
 			 	{
 					if(ftp_chdir($conn_id,"$picdir/"))	$cdok=1;

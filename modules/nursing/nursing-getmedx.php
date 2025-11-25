@@ -581,7 +581,7 @@ if($count){
 					    <td><FONT SIZE=-1  FACE="Arial">
 					    <?php
 			    			reset($app_types);
-			    			while(list($x,$v)=each($app_types)){
+			    			foreach( as =>){
 								if( $row['application_type_nr'] == $v['nr'] ) {
 									if(isset(${$v['LD_var']})&&!empty(${$v['LD_var']})) echo ${$v['LD_var']};
 										else echo $v['name'];
@@ -676,7 +676,7 @@ if($count){
         <option value=""></option>
         <?php
 			reset($app_types);
-			while(list($x,$v)=each($app_types)){
+			foreach( as =>){
 				echo '<option value="'.$v['nr'].'">';
 				if(isset(${$v['LD_var']})&&!empty(${$v['LD_var']})) echo ${$v['LD_var']};
 					else echo $v['name'];

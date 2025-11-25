@@ -55,7 +55,7 @@ function chkform(d) {
      <td><select name="prescription_type_nr">
          	<option value=""></option>
 		<?php
-			while(list($x,$v)=each($pres_types)){
+			foreach( as =>){
 				echo '<option value="'.$v['nr'].'">';
 				if(isset(${$v['LD_var']})&&!empty(${$v['LD_var']})) echo ${$v['LD_var']};
 					else echo $v['name'];
@@ -84,7 +84,7 @@ function chkform(d) {
      <td><select name="application_type_nr">
          	<option value=""></option>
 		<?php
-			while(list($x,$v)=each($app_types)){
+			foreach( as =>){
 				echo '<option value="'.$v['nr'].'">';
 				if(isset(${$v['LD_var']})&&!empty(${$v['LD_var']})) echo ${$v['LD_var']};
 					else echo $v['name'];

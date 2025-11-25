@@ -23,7 +23,7 @@ $obj = new Measurement();
 $unit_types=$obj->getUnits();
 # Prepare unit ids in array
 $unit_ids=array();
-while(list($x,$v)=each($unit_types)){
+foreach( as =>){
 	$unit_ids[$v['nr']]=$v['id'];
 }
 reset($unit_types);

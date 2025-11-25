@@ -212,7 +212,7 @@ echo'
 	</td>
 	<td  class="j"><font color="#ffffff">&nbsp;<b>'.$LDNormalValue.'</b>&nbsp;</td>
 	<td  class="j"><font color="#ffffff">&nbsp;<b>'.$LDMsrUnit.'</b>&nbsp;</td>';
-	while(list($x,$v)=each($tdatePrint))
+	foreach( as =>)
 	echo '
 	<td class="a12_b"><font color="#ffffff" width="100px">&nbsp;<b>'.formatDate2Local($v,$date_format).'<br> '.$x.'</b>&nbsp;</td>';
 	reset($tdate);
@@ -226,7 +226,7 @@ echo'
 	 <td class="j"><font color="#ffffff">&nbsp;</td>';
 
 
-	while(list($x,$v)=each($ttime))
+	foreach( as =>)
 	echo '
 	<td class="a12_b" width="100px"><font color="#0000cc">&nbsp;<b>'.convertTimeToLocal($v).'</b> '.$LDOClock.'&nbsp;</td>';
 
@@ -240,7 +240,7 @@ $tparam=explode('~',$_POST['params']);
 $requestData=array();
 reset($records);
 $jIDArray = array();
-while (list($job_id,$paramgroupvalue)=each($records)) {
+foreach( as =>) {
 		$jIDArray[] = $job_id;
 		foreach($paramgroupvalue as $paramgroup_a => $paramvalue_a) {
 			foreach($paramvalue_a as $paramgroup => $paramvalue) {
@@ -255,11 +255,11 @@ $class='wardlistrow1';
 $columns=0;
 $ptrack=0;
 $temp = '';
-while (list($groupId,$paramEnc)=each($requestData)) {
+foreach( as =>) {
 	$valueBuff = '';
 	$gName = $lab_obj->getGroupName($groupId) ;
 	echo "<tr><td  class=\"va12_n\" colspan=\"".($cols + 3)."\"><b>" .$gName->fields['name'] . "</b></td></tr>";
-	while (list($paramId,$encounterNr)=each($paramEnc)) {
+	foreach( as =>) {
 		$pName = $lab_obj->TestParamsDetails($paramId);
 		echo "<tr>";
 		echo "<td class=\"" . $class ."\">" . $pName['name'] . "</td>";

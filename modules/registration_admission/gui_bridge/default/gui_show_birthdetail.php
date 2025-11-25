@@ -4,7 +4,7 @@ if($rows){
 	# Get the field names
 	$fields=&$obj->coreFieldNames();
 
-	while(list($z,$x)=each($fields)){
+	foreach( as =>){
 		if($x=='status') break;
 		if(empty($birth[$x])||stristr('nr,encounter_nr,delivery_date,pid',$x)) continue;
 ?>

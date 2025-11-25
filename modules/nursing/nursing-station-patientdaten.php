@@ -538,7 +538,7 @@ function rx(){
 			name="konsiltyp" size="1" onChange=makekonsil(this.value)>
 			<option value="">'.$LDChkUpRequests.'</option>';
 
-			while(list($x,$v)=each($ChkUpOptions))
+			foreach( as =>)
 			echo'
 			<option value="'.$x.'">'.$v.'</option>';
 			echo '
@@ -550,7 +550,7 @@ function rx(){
 			echo '<table cellpadding=3><tr><td><select name="konsiltyp" size="1" onChange=makekonsil(this.value)>
 			<option value="">'.$LDChkUpRequests.'</option>';
 
-			while(list($x,$v)=each($medical_depts)){
+			foreach( as =>){
 				$subDepts = $dept_obj->getAllSubDepts($v['nr']);
 				echo'<option value="'.$v['nr'].'~'.$v['id'].'">';
 				$buffer=$v['LD_var'];
@@ -559,7 +559,7 @@ function rx(){
 				echo '</option>';
 			    //added subdepts
 				if($subDepts) {
-			    		while (list($y,$sDept) = each($subDepts)) {
+			    		foreach( as =>) {
             				echo'<option value="'.$sDept['nr'].'~'.$sDept['id'].'">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<sup>L</sup>&nbsp;';
             				$buffer=$sDept['LD_var'];
             				if(isset(${$buffer})&&!empty(${$buffer})) echo ${$buffer};

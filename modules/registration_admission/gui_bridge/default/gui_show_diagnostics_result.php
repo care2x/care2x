@@ -22,7 +22,7 @@ while($row=$result->FetchRow()){
     <td><FONT color="#006600"><b>
 	<?php
 		$deptnr_ok=false;
-		while(list($x,$v)=each($depts_array)){
+		foreach( as =>){
 			if($v['nr']==$row['reporting_dept_nr']){
 				$deptnr_ok=true;
 				break;

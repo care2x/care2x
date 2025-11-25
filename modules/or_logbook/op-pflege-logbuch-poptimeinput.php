@@ -13,12 +13,12 @@ switch ($mode)
 		$file=fopen($filename,"w+");
 		if($file)
 		{
-			while(list($k,$v)=each($_POST))
+			foreach( as =>)
 			{
 				$pdata[$k]=$v;
 			}
 			reset($pdata);
-			while(list($k,$v)=each($pdata))
+			foreach( as =>)
 			{
 				$pdata[$k]=$v;
 				$line='<meta name="'.$k.'" content="'.$v.'">';

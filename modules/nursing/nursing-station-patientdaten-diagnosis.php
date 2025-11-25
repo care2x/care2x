@@ -25,7 +25,7 @@ $abtname=get_meta_tags($root_path."global_conf/$lang/konsil_tag_dept.pid");
 
 if($dept)
 {
-	while(list($x,$v)=each($abtname))
+	foreach( as =>)
 	{
 		if($dept==$x)
 		{

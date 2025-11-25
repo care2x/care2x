@@ -214,7 +214,7 @@ if(empty($pregnancy['blood_loss_unit'])) $pregnancy['blood_loss_unit']='ml';
 $TP_BLOSS_OPTIONS='';
 # Load the volume units
 $unit=&$msr->VolumeUnits();
-while(list($x,$v)=each($unit)){
+foreach( as =>){
 	$TP_BLOSS_OPTIONS.='<option value="'.$v['id'].'" ';
 	if($pregnancy['blood_loss_unit']==$v['id']) $TP_BLOSS_OPTIONS.='selected';
 	$TP_BLOSS_OPTIONS.='>'.$v['id'];

@@ -171,7 +171,7 @@ if(!$force_no_cache&&$is_cached){
 	# Start generating the NOC list
 	$temp_out='';
 
-	while(list($x,$v)=each($dept_OC)){
+	foreach( as =>){
 
 	if(in_array($v['nr'],$quicklist)){
 		if($dutyplan=$pers_obj->getNOCDutyplan($v['nr'],$pyear,$pmonth)){

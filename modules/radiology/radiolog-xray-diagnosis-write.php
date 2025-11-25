@@ -29,7 +29,7 @@ $thisfile="radiolog-xray-diagnosis-write.php";
 <textarea name="diagnosis" cols=70 rows=20 wrap="physical">
 <?php
 //$diagnosis=file("http://192.168.0.2/uploads/radiology/diagnosis/Thorax.txt");
-//while(list($x,$v)=each($diagnosis)) echo $v;
+//foreach( as =>) echo $v;
 require($root_path.'global_conf/inc_remoteservers_conf.php');
 
 if($disc_pix_mode) readfile($xray_diagnosis_localpath."thorax.txt");

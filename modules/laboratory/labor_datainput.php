@@ -58,7 +58,7 @@ if( isset($mode) && $mode=='save' ){
 	$nbuf=array();
 	//Prepare parameter values
 	//gjergji
-	while (list($z,$y)=each($_POST)) {
+	foreach( as =>) {
 		if($result_tests = $lab_obj->GetTestsToDo($job_id))
 		while($row_tests = $result_tests->FetchRow()) {
 			if ($z == $row_tests['paramater_name'] ) {
@@ -370,14 +370,14 @@ reset($requestData);
 //#169
 //display them
 $collimit=0;
-while(list($group,$pm)=each($requestData)) {
+foreach( as =>) {
 	$gName = $lab_obj->getGroupName($group ) ;
 	echo '
 	<tr>';
 	echo '<td colspan="'.COL_MAX.'" bgcolor="#ffffee" class="a10_a"><b>';
 	echo $gName->fields['name'];
 	echo '</b></td></tr><tr>';
-	while(list($pId,$not)=each($pm)) {
+	foreach( as =>) {
 		$pName = $lab_obj->TestParamsDetails($pId);
 		echo '<td bgcolor="#ffffee" class="a10_b"><b>';
 		echo $pName['name'] . '</b></td>';

@@ -289,7 +289,7 @@ if($mode=='show'){
 
 		$i=1;
 
-		while(list($x,$v)=each($files)){
+		foreach( as =>){
 
 			echo'
 		 		<tr>

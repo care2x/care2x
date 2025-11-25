@@ -857,7 +857,7 @@ if($datafound)
  {
 	echo '
 	<font  size=1 color="#3f3f3f">';
-		while(list($x,$v)=each($cbuf)) echo "$v<p>";
+		foreach( as =>) echo "$v<p>";
 }
 ?>
 
@@ -872,7 +872,7 @@ if($datafound)
 
 	/* Print anesthesia types */
 
-	 while(list($x,$v)=each($LDAnaTypes))
+	 foreach( as =>)
 	 {
 		 echo '
 		<option value="'.$x.'"';

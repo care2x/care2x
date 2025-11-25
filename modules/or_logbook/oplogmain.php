@@ -144,7 +144,7 @@ echo '
 				<!-- <select name="dept_nr" size=1 onChange="syncDept(this,document.chgdept.saal)"> -->
 				<select name="dept_nr" size=1>
 				<?php
-                   while(list($x,$v)=each($surgery_arr))
+                   foreach( as =>)
 					{
 						if($x==42) continue;
 						echo'
@@ -203,7 +203,7 @@ echo '
 if($datafound){
 echo '
 <tr bgcolor="#f9f9f9" >';
-while(list($x,$v)=each($LDOpMainElements))
+foreach( as =>)
 	echo '
 		<td><font face="verdana,arial" size="1"><b>&nbsp;'.$v.'</b></td>';
 

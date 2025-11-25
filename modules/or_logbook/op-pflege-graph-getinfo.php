@@ -406,7 +406,7 @@ onLoad="<?php if($saved)
 <?php
 	$cbuf="sd=$yr$mo$dy&rd=$dy.$mo.$yr";
 	$arr=explode("_",$result[$element]);
-		while(list($x,$v)=each($arr))
+		foreach( as =>)
 		{
 			if(stristr($v,$cbuf))
 			{

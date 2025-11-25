@@ -84,7 +84,7 @@ function chkform(d) {
      <td><FONT SIZE=-1  FACE="Arial">
 	 <select name="wt_unit_nr">
 		<?php
-			while(list($x,$v)=each($unit_types)){
+			foreach( as =>){
 				echo '<option value="'.$v['nr'].'"';
 				if($v['nr']==$wt_unit_nr) echo 'selected';
 				echo '>';
@@ -106,7 +106,7 @@ function chkform(d) {
      <td><FONT SIZE=-1  FACE="Arial">
 	 <select name="ht_unit_nr">
 		<?php
-			while(list($x,$v)=each($unit_types)){
+			foreach( as =>){
 				echo '<option value="'.$v['nr'].'"';
 				if($v['nr']==$ht_unit_nr) echo 'selected';
 				echo '>';
@@ -128,7 +128,7 @@ function chkform(d) {
      <td><FONT SIZE=-1  FACE="Arial">
 	 	 <select name="hc_unit_nr">
 		<?php
-			while(list($x,$v)=each($unit_types)){
+			foreach( as =>){
 				echo '<option value="'.$v['nr'].'"';
 				if($v['nr']==$hc_unit_nr) echo 'selected';
 				echo '>';

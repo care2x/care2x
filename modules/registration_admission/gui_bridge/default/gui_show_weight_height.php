@@ -19,7 +19,7 @@ function popNotes(d){
 
 <?php
 $toggle=0;
-while(list($x,$row)=each($msr_comp)){
+foreach( as =>){
 	if($toggle) $bgc='#f3f3f3';
 		else $bgc='#fefefe';
 	$toggle=!$toggle;

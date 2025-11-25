@@ -183,7 +183,7 @@ if(!$force_no_cache&&$is_cached){
 
 	$temp_out='';
 
-	while(list($x,$v)=each($dept_DOC)){
+	foreach( as =>){
 	if(in_array($v['nr'],$quicklist)){
 		if($dutyplan=$pers_obj->getDOCDutyplan($v['nr'],$pyear,$pmonth)){
 

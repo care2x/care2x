@@ -96,7 +96,7 @@ if(empty($encounter['photo_filename'])){
 		# Get the report data
 		$notes=$enc_obj->getEncounterNotes($recnr);
 
-		while(list($x,$v)=each($types)){
+		foreach( as =>){
 
 			extract($v);
 

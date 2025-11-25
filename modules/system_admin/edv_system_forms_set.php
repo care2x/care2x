@@ -91,7 +91,7 @@ ob_start();
 
 <?php
 $i=1;
-while(list($x,$v)=each($GCONFIG))
+foreach( as =>)
 {
   echo '<tr>
 	<td><img '.createComIcon($root_path,'post_discussion.gif','0').'></td>

@@ -228,7 +228,7 @@ ob_start();
       <td><input type="text" name="username" size=20 maxlength=40 value="<?php echo  $username ?>"><FONT face="Verdana,Helvetica,Arial" size=2 color=#0000ff>@<select name="dept" size=1>
 <?php
 
-     while(list($x,$v)=each($LDEmailDomains))
+     foreach( as =>)
 	 {
 		 echo '
 		<option value="'.$v.'"';
@@ -285,7 +285,7 @@ if ($regError) echo $regError;
     <td><FONT face="Verdana,Helvetica,Arial" size=2 color="#800000"><b>@</b>
 		<select name="dept" size=1>
 <?php
-     while(list($x,$v)=each($LDEmailDomains))
+     foreach( as =>)
 	 {
 		 echo '
 		<option value="'.$v.'"';

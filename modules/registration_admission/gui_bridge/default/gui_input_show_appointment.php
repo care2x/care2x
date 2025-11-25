@@ -64,7 +64,7 @@ if($bPastDateError) echo '<font class="warnprompt">'.$LDInvalidDate.' '.$LDNoPas
 		if (!isset($to_dept_nr)) {
 			$to_dept_nr = 0;
 		}
-		while(list($x,$v)=each($deptarray)){
+		foreach( as =>){
 			echo '
 				<option value="'.$v['nr'].'" ';
 			if($v['nr']==$to_dept_nr) echo 'selected';

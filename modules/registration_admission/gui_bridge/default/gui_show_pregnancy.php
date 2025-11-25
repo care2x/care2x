@@ -42,7 +42,7 @@ if($rows){
 <?php
 		}
 
-		while(list($z,$x)=each($fields)){
+		foreach( as =>){
 			if($x=='status') break;
 			if($x=='nr'||$x=='encounter_nr'||empty($pregbuf[$show_preg_enc][$x])) continue;
 ?>
@@ -83,7 +83,7 @@ if($rows){
 				case 'child_encounter_nr':
 					if($pregbuf[$show_preg_enc][$x]){
 						$buf=explode(' ',$pregbuf[$show_preg_enc][$x]);
-						while(list($q,$r)=each($buf)){
+						foreach( as =>){
 							 echo'<a href="aufnahme_daten_zeigen.php'.URL_APPEND.'&encounter_nr='.$r.'&origin=admit&target='.$target.'">'.$r.'</a> ';
 						}
 					}
@@ -152,7 +152,7 @@ if($rows){
     <td <?php echo $tbg; ?>><FONT color="#000066"><?php echo $LDNrOfFetus; ?></td>
   </tr>
 <?php
-		while(list($x,$v)=each($pregbuf)){
+		foreach( as =>){
 			# Do not list this encounter´s pregnancy in the admission module
 			if($x==$show_preg_enc) continue;
 ?>

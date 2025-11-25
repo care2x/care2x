@@ -28,7 +28,7 @@ while($row=$result->FetchRow()){
     <td><FONT SIZE=-1  FACE="Arial"><?php
     			//gjergji
     			reset($app_types);
-    			while(list($x,$v)=each($app_types)){
+    			foreach( as =>){
 					if( $row['application_type_nr'] == $v['nr'] ) {
 						if(isset(${$v['LD_var']})&&!empty(${$v['LD_var']})) echo ${$v['LD_var']};
 							else echo $v['name'];
@@ -48,7 +48,7 @@ while($row=$result->FetchRow()){
     <td><FONT SIZE=-1  FACE="Arial"><?php
     			//gjergji
     			reset($pres_types);
-    			while(list($x,$v)=each($pres_types)){
+    			foreach( as =>){
     				if( $row['prescription_type_nr'] == $v['nr'] ) {
 						if(isset(${$v['LD_var']})&&!empty(${$v['LD_var']})) echo ${$v['LD_var']};
 							else echo $v['name'];

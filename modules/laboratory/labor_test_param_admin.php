@@ -153,7 +153,7 @@ if(is_object($tparams)){
 
 	echo '&nbsp;</nobr></td>';
 
-	while(list($x,$v)=each($pitems)){
+	foreach( as =>){
 		echo '
 			<td>';
 		if($x){

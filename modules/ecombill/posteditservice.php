@@ -19,7 +19,7 @@ require($root_path.'include/care_api_classes/class_ecombill.php');
 $core=new Core;
 $eComBill=new eComBill;
 
-while (list($cle, $val) = each($_POST)) {
+foreach( as =>) {
 	if (substr($cle,0,6) == "itemnm") {
 		$no =$no."#".$val;
 	}

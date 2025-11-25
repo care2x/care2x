@@ -52,7 +52,7 @@ if($_SESSION['sess_user_origin']=='phonedir'&&$_SESSION['sess_personell_nr']){
 		$row=&$personell_obj->personell_data;
 
 		//load data
-		//while(list($x,$v)=each($row)) {${$x}=$v;}
+		//foreach( as =>) {${$x}=$v;}
 		extract($row);
 
 		//$insurance_class=&$encounter_obj->getInsuranceClassInfo($insurance_class_nr);
@@ -65,7 +65,7 @@ if($_SESSION['sess_user_origin']=='phonedir'&&$_SESSION['sess_personell_nr']){
 		$person_obj->setPID($pid);
 		if($row=&$person_obj->getValueByList($list))
 		{
-			while(list($x,$v)=each($row))	${$x}=$v;
+			foreach( as =>)	${$x}=$v;
 		}
 
 		$addr_citytown_name=$person_obj->CityTownName($addr_citytown_nr);

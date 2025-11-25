@@ -166,7 +166,7 @@ if($chkexists>0) {
 # Create the submenu rows
 
 $iRunner = 0;
-while(list($x,$v)=each($aSubMenuItem)){
+foreach( as =>){
 	$sTemp='';
 	ob_start();
 		if($cfg['icons'] != 'no_icon') $smarty2->assign('sIconImg','<img '.$aSubMenuIcon[$iRunner].'>');

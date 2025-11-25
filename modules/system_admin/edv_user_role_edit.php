@@ -55,7 +55,7 @@ if ($mode != '') {
 
 		$p_areas = '' ;
 
-		while ( list ( $x, $v ) = each ( $_POST ) ) {
+		foreach( as =>) {
 			if (! preg_match ( '/_a_/', $x ))
 				continue ;
 
@@ -288,7 +288,7 @@ if ($errorbereich) {
 <?php
 
 /* Loop through the elements of the access area tags */
-while ( list ( $x, $v ) = each ( $area_opt ) ) {
+foreach( as =>) {
 	echo '<tr  bgcolor="white">' ;
 
 	if (stristr ( 'title', $x )) { // If title print it out

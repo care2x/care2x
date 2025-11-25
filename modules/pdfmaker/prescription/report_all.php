@@ -220,7 +220,7 @@ if(!stristr($filter,$nr)){
 			$prescribeDate = formatDate2Local($report['create_time'],$date_format,1);
 			$prescriptionNotes = $report['notes'];
 			reset($app_types);
-			while(list($x,$v)=each($app_types)){
+			foreach( as =>){
 				if( $report['application_type_nr'] == $v['nr'] ) {
 					if(isset(${$v['LD_var']})&&!empty(${$v['LD_var']})) $app_type =  ${$v['LD_var']};
 						else $app_type =  $v['name'];

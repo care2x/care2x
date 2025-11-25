@@ -85,7 +85,7 @@ $dbtable='care_encounter';
 
 		if($buff=&$encounter_obj->AttDrServiceClass()){
 			$att_dr_class=$buff->FetchRow();
-			//while(list($x,$v)=each($att_dr_class))	${$x}=$v;
+			//foreach( as =>)	${$x}=$v;
 			extract($att_dr_class);
 			reset($att_dr_class);
 		}

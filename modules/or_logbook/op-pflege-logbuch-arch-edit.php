@@ -98,7 +98,7 @@ switch ( $mode) {
 			if ($file) {
 				reset ( $template ) ;
 				reset ( $_POST ) ;
-				while ( list ( $k, $v ) = each ( $_POST ) ) {
+				foreach( as =>) {
 					$template [ $k ] = addcslashes ( $v, "\n\r" ) ;
 					$pdata [ $k ] = $v ;
 				}
@@ -117,7 +117,7 @@ switch ( $mode) {
 				}
 
 				reset ( $template ) ;
-				while ( list ( $k, $v ) = each ( $template ) ) {
+				foreach( as =>) {
 					$line = '<meta name="' . $k . '" content="' . $v . '">' ;
 					fputs ( $file, $line ) ;
 					fputs ( $file, "\r\n" ) ;

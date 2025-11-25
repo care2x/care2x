@@ -84,7 +84,7 @@ if ($mode != '') {
 
 /*		$p_areas = '' ;
 
-		while ( list ( $x, $v ) = each ( $_POST ) ) {
+		foreach( as =>) {
 			if (! ereg ( '_a_', $x ))
 				continue ;
 
@@ -346,7 +346,7 @@ if ($edit)
 <td valign="top"><b> <?php echo $LDRole ?> : </b>
    	<select name="permission">
 		<?php
-		while ( list( $x, $v ) = each( $roles ) ) {
+		foreach( as =>) {
 			?>
 		   	<option value="<?php echo $v['permission'] ?>" onclick="document.getElementById('selected_role').value = <?php echo $v['id'] ?>;"<?php
 		   		if ($v['id'] ==  $user['user_role'] ) echo ' selected' ?>>
@@ -361,7 +361,7 @@ if ($edit)
 </td>
 <td colspan="2"><b> <?php echo $LDDept ?> : </b><br>
 <?php
-while(list($x,$dept)=each($deptarray)){
+foreach( as =>){
 	$actualDept = unserialize($user['dept_nr']);
 	$subDepts = $dept_obj->getAllSubDepts($dept['nr']);
 ?>
@@ -371,7 +371,7 @@ while(list($x,$dept)=each($deptarray)){
 		if(isset(${$dept['LD_var']})&&!empty(${$dept['LD_var']})) echo ${$dept['LD_var']} . '</label><br>';
 				else echo $dept['name_formal'] . '</label><br>';
 		if($subDepts) {
-			while (list($y,$sDept) = each($subDepts)) {
+			foreach( as =>) {
 			?>
 			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<sup>L</sup>&nbsp;
 				<label>
@@ -397,7 +397,7 @@ while(list($x,$dept)=each($deptarray)){
 	reset($roles);
 	echo '<input type="hidden" name="selected_role" id="selected_role"';
     $found = false;
-	while ( list( $x, $v ) = each( $roles ) ) {
+	foreach( as =>) {
     	if ($v['id'] ==  $user['user_role'] ) {
     		echo ' value="'.$v['id'].'">';
     		$found = true;

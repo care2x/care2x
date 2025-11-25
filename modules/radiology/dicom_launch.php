@@ -101,7 +101,7 @@ if(isset($pop_only) && $pop_only){
 <?php
 if($NUM){
 	$z=0;
-	while(list($x,$v)=each($files)){
+	foreach( as =>){
 		echo '<PARAM NAME = "imgURL'.$z.'" VALUE = "'.$dicom_img_http.$dicom['pid'].'/'.$img_nr.'/'.$v.'">
 		';
 		$z++;

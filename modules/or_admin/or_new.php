@@ -318,7 +318,7 @@ echo $LDEnterInfo;
 		<option value=""> </option>';
 	<?php
 
-		while(list($x,$v)=each($wardsarray)){
+		foreach( as =>){
 			echo '
 				<option value="'.$v['nr'].'" ';
 			if($v['nr']==$ward_nr) echo 'selected';
@@ -341,7 +341,7 @@ echo $LDEnterInfo;
     <td bgColor="#f9f9f9"><select name="dept_nr">
 	<option value=""> </option>';
 	<?php
-		while(list($x,$v)=each($deptarray)){
+		foreach( as =>){
 			echo '
 				<option value="'.$v['nr'].'" ';
 			if($v['nr']==$dept_nr) echo 'selected';

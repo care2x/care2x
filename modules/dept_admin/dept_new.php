@@ -145,7 +145,7 @@ if(!empty($mode)&&!$inputerror){
 		{
 			# Get department´s information
 			$dept=$dept_obj->getDeptAllInfo($dept_nr);
-			//while(list($x,$v)=each($dept)) ${$x}=$v;
+			//foreach( as =>) ${$x}=$v;
 			extract($dept);
 
 			# Get departments phone info
@@ -274,7 +274,7 @@ ob_start();
     <td class=pblock><select name="type">
 	<?php
 
-		while(list($x,$v)=each($depttypes)){
+		foreach( as =>){
 			echo '
 				<option value="'.$v['nr'].'" ';
 			if($v['nr']==$type) echo 'selected';
@@ -307,7 +307,7 @@ ob_start();
 	<option value=""> </option>';
 	<?php
 
-		while(list($x,$v)=each($deptarray)){
+		foreach( as =>){
 			echo '
 				<option value="'.$v['nr'].'" ';
 			if($v['nr']==$parent_dept_nr) echo 'selected';
@@ -447,7 +447,7 @@ ob_start();
 	<option value=""> </option>';
 	<?php
 
-		while(list($x,$v)=each($pharmaarray)){
+		foreach( as =>){
 			echo '
 				<option value="'.$v['nr'].'" ';
 			if($v['nr']==$pharma_dept_nr) echo 'selected';

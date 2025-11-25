@@ -7,7 +7,7 @@ $globobj=new GlobalConfig($GLOBALCONFIG);
 $USERCONFIG=$userobj->getConfig($user_id);
 $globobj->getConfig('news_%');
 
-while(list($x,$v)=each($GLOBALCONFIG)) {
+foreach($GLOBALCONFIG as $x=>$v) {
     ${$x}=($USERCONFIG[$x]) ? $USERCONFIG[$x] : $GLOBALCONFIG[$x];
 }
 

@@ -123,7 +123,7 @@ if(!$is_discharged){
 	<select name="dept_nr">
 	<option value=""></option>
 	<?php
-		while(list($x,$v)=each($dept_med)){
+		foreach( as =>){
 			echo '<option value="'.$v['nr'].'" ';
 			if($v['nr']==$dept_nr) echo 'selected';
 			echo '>';

@@ -59,7 +59,7 @@ $dbtable='care_ward';
     //gjergji - show only info on my departement
 	if(isset($_SESSION['department_nr']) && !empty($_SESSION['department_nr']) ) {
 		$sql.=" AND ( ";
-		while (list($key, $val) = each($_SESSION['department_nr'])) {
+		foreach( as =>) {
 			$tmp .= "dept_nr = " . $val . " OR ";
 
 		}

@@ -177,7 +177,7 @@ $sTemp = '<select name="dept_nr">
 			<option value=""> </option>';
 
 if($depts&&is_array($depts)){
-	while(list($x,$v)=each($depts)){
+	foreach( as =>){
 		$sTemp = $sTemp.'
 		<option value="'.$v['nr'].'"';
 		if($v['nr']==$dept_nr) $sTemp = $sTemp.' selected';

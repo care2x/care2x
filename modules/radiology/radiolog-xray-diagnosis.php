@@ -26,7 +26,7 @@ require($root_path.'global_conf/inc_remoteservers_conf.php');
 if($disc_pix_mode) $diagnosis=file($xray_diagnosis_localpath."thorax.txt");
 	else $diagnosis=file($xray_diagnosis_server_http."thorax.txt");
 
-while(list($x,$v)=each($diagnosis))
+foreach( as =>)
 echo nl2br($v);
 
 ?><p>

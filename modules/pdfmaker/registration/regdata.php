@@ -48,7 +48,7 @@ if($person_obj->preloadPersonInfo($pid)){
 		} elseif ($p_insurance->RecordCount()==1){
 			$buffer= $p_insurance->FetchRow();
 			extract($buffer);
-			//while(list($x,$v)=each($buffer)) {${$x}=$v; }
+			//foreach( as =>) {${$x}=$v; }
 			$insurance_show=true;
 	        # Get insurace firm name
 			$insurance_firm_name=$insurance_obj->getFirmName($insurance_firm_id);

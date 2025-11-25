@@ -89,7 +89,7 @@ function goDept(t) {
 $TP_SELECT_BLOCK='<select name="dept_nr" size="1"><option value=""></option>';
 
 if(!isset($_SESSION['department_nr']) || $_SESSION['department_nr'] == '') {
-    while(list($x,$v)=each($medical_depts)){
+    foreach( as =>){
     	$subDepts = $dept_obj->getAllSubDepts($v['nr']);
     	$TP_SELECT_BLOCK.='<option value="'.$v['nr'].'" >';
     	$buffer=$v['LD_var'];
@@ -98,7 +98,7 @@ if(!isset($_SESSION['department_nr']) || $_SESSION['department_nr'] == '') {
     	$TP_SELECT_BLOCK.='</option>';
     	//add the subdept
     	if($subDepts) {
-			while (list($y,$sDept) = each($subDepts)) {
+			foreach( as =>) {
             	$TP_SELECT_BLOCK.='<option value="'.$sDept['nr'].'" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<sup>L</sup>&nbsp;';
             	$buffer=$sDept['LD_var'];
             	if(isset(${$buffer})&&!empty(${$buffer})) $TP_SELECT_BLOCK.=${$buffer};
@@ -107,7 +107,7 @@ if(!isset($_SESSION['department_nr']) || $_SESSION['department_nr'] == '') {
 		}
     }
 } else {
-    while(list($x,$v)=each($medical_depts)){
+    foreach( as =>){
     	if(in_array($v['nr'],$_SESSION['department_nr']))  {
         	$TP_SELECT_BLOCK.='<option value="'.$v['nr'].'" selected >';
         	$buffer=$v['LD_var'];
@@ -124,7 +124,7 @@ $TP_SELECT_BLOCK.='</select>';
 $TP_HIDDENS='';
 reset($medical_depts);
 if(!isset($_SESSION['department_nr']) || $_SESSION['department_nr'] == '') {
-	while(list($x,$v)=each($medical_depts)){
+	foreach( as =>){
 		$subDepts = $dept_obj->getAllSubDepts($v['nr']);
 		$buffer=$v['LD_var'];
 		if(isset(${$buffer})&&!empty(${$buffer})) $dname=${$buffer};
@@ -132,7 +132,7 @@ if(!isset($_SESSION['department_nr']) || $_SESSION['department_nr'] == '') {
 		$TP_HIDDENS.='
 		<input type="hidden" name="dname'.$v['nr'].'" value="'.$dname.'">';
 	    	if($subDepts) {
-				while (list($y,$sDept) = each($subDepts)) {
+				foreach( as =>) {
 					$buffer=$sDept['LD_var'];
 					if(isset(${$buffer})&&!empty(${$buffer})) $dname=${$buffer};
 					else $dname= $sDept['name_formal'];
@@ -142,7 +142,7 @@ if(!isset($_SESSION['department_nr']) || $_SESSION['department_nr'] == '') {
 			}
 	}
 } else {
-	while(list($x,$v)=each($medical_depts)){
+	foreach( as =>){
 		$buffer=$v['LD_var'];
 		if(isset(${$buffer})&&!empty(${$buffer})) $dname=${$buffer};
 			else $dname= $v['name_formal'];

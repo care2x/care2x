@@ -68,7 +68,7 @@ if(!isset($mode)){
 		$appt_row=$obj->getAppointment($nr);
 		if(is_array($appt_row)){
 			extract($appt_row);
-			//while(list($x,$v)=each($appt_row)) ${$x}=$v;
+			//foreach( as =>) ${$x}=$v;
 		}
 	}elseif($mode=='appt_cancel'&&!empty($nr)){
 			$_POST['history']=$obj->ConcatHistory("Cancel: ".date('Y-m-d H:i:s')." : ".$_SESSION['sess_user_name']."\n");

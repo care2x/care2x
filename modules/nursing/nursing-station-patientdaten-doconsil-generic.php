@@ -378,7 +378,7 @@ elseif(!$read_form && !$no_proc_assist)
 <?php
 
 
-			while(list($x,$v)=each($medical_depts)){
+			foreach( as =>){
 				$subDepts = $dept_obj->getAllSubDepts($v['nr']);
 				echo'<option value="'.$v['nr'].'"';
 				if($v['nr']==$dept_nr) echo ' selected>';
@@ -389,7 +389,7 @@ elseif(!$read_form && !$no_proc_assist)
 				echo '</option>';
 			    //added subdepts
 				if($subDepts) {
-			    		while (list($y,$sDept) = each($subDepts)) {
+			    		foreach( as =>) {
             				echo'<option value="'.$sDept['nr'].'"';
             				if($sDept['nr']==$dept_nr) echo ' selected>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<sup>L</sup>&nbsp;';
             					else echo '>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<sup>L</sup>&nbsp;';
@@ -401,7 +401,7 @@ elseif(!$read_form && !$no_proc_assist)
 			    }
 			}
 
-/*		 while(list($x,$v)=each($abtname))
+/*		 foreach( as =>)
 		 {
 		    echo '
 			<option value="'.$x.'" ';

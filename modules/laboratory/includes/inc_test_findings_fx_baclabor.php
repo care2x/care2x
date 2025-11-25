@@ -15,7 +15,7 @@ function processFindings(&$indx,$offset=0)
     
    if($offset)
    {
-      while(list($x,$v)=each($indx))
+      foreach( as =>)
 	  {	
 	    if(isset($_POST[$v]) && $_POST[$v])
 		{
@@ -26,7 +26,7 @@ function processFindings(&$indx,$offset=0)
 	}
 	else
 	{
-      while(list($x,$v)=each($indx))
+      foreach( as =>)
 	  {	
 	    if(isset($_POST[$x]) && $_POST[$x])
 		{

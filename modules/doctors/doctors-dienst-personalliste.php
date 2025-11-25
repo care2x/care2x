@@ -412,7 +412,7 @@ if($mode=='search'||$mode=='paginate'){
 <?php echo $LDChgDept ?>
 <select name="dept_nr" >
 <?php
-while(list($x,$v)=each($dept_list))
+foreach( as =>)
 	{
 		echo '
 		<option value="'.$v['nr'].'" ';

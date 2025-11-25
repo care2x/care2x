@@ -309,7 +309,7 @@ if($thisday!=$today) echo '
 					<nobr>'.$LDNextDay.' &gt;&gt;</a></td></tr>';
 echo '
 		<tr bgcolor="#f9f9f9" >';
-	while(list($x,$v)=each($LDOpMainElements))
+	foreach( as =>)
 	{
 		echo '
 		<td class="wardlisttitlerow">'.$v.'</td>';
@@ -522,7 +522,7 @@ echo '
 <?php echo $LDChangeDept ?><br>
 				<select name="dept_nr" size=1>
 				<?php
-                   while(list($x,$v)=each($surgery_arr))
+                   foreach( as =>)
 					{
 						if($x==42) continue;
 						echo'

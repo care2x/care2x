@@ -311,7 +311,7 @@ if((($mode=='get')||($datafound)) && $rows){
 		';
 	echo '
 		<tr class="wardlisttitlerow">';
-	while(list($x,$v)=each($LDOpMainElements))
+	foreach( as =>)
 	{
 		echo '
 		<td>'.$v.'</td>';

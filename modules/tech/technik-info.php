@@ -95,7 +95,7 @@ require($root_path.'include/core/inc_css_a_hilitebu.php');
 <hr>
 
 <?php
-while(list($x,$v)=each($LDInfoCat))
+foreach( as =>)
 	echo "$v<br>";
 ?>
 <p>

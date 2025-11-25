@@ -38,7 +38,7 @@ if (file_exists($path))
 			//save to file
 			if($file=fopen($path,"w+"))
 			{
-				while(list($x,$v)=each($statdata))
+				foreach( as =>)
 				{
 					$line='<meta name="'.$x.'" content="'.$v.'">';
 					fwrite($file,$line."\r\n");
@@ -159,7 +159,7 @@ echo '</tr>';
 /*
 if($cfg['bname']=="netscape")
 {
-	while(list($x,$v)=each($statdata))
+	foreach( as =>)
 	{
 		if($v=="") $statdata[$x]="test";
 	}

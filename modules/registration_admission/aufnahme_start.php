@@ -351,7 +351,7 @@ if($pid!='' || $encounter_nr!=''){
 
 	$person_obj->setPID($pid);
 	if($data=$person_obj->BasicDataArray($pid)){
-		//while(list($x,$v)=each($data))	${$x}=$v;
+		//foreach( as =>)	${$x}=$v;
 		extract($data);
 	}
 

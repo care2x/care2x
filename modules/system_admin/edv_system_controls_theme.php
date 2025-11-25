@@ -89,7 +89,7 @@ ob_start();
 	<select name="theme_control_buttons">';
 
 	$tlist=explode(',',$GCONFIG['theme_control_theme_list']);
-	while(list($x,$v)=each($tlist)){
+	foreach( as =>){
 		echo '<option value="'.$v.'"';
 		if($GCONFIG['theme_control_buttons']==$v) echo ' selected';
 		echo '>
@@ -115,7 +115,7 @@ ob_start();
   </tr>
 <?php
 reset($tlist);
-while(list($x,$v)=each($tlist)){
+foreach( as =>){
 ?>
   <tr  bgcolor="#e9e9e9" >
     <td><FONT  color="#000099"><b></b></td>
