@@ -1,0 +1,12 @@
+{
+  "name": "care2x/care2x",
+  "type": "project",
+  "require": {
+    "donatj/phpuseragentparser": "^1.8"
+  },
+  "autoload": {
+    "psr-4": {
+      "Care2x\\": "include/"
+    }
+  }
+}

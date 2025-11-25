@@ -84,7 +84,7 @@ $USERCONFIG=array();
 ****************************************************************************
 */
 
-require_once('./classes/phpSniff/phpSniff.class.php'); # Sniffer for PHP
+require_once('./include/core/BrowserDetector.php'); # Replaced phpSniff with lightweight parser
 $_SESSION['department_nr']=array();
 function configNew(&$bn,&$bv,&$f,$i,&$uid)
 {
@@ -95,7 +95,7 @@ function configNew(&$bn,&$bv,&$f,$i,&$uid)
   #  could be a bug in phpsniff .. hmmm?
   $old_err_rep= error_reporting($ErrorLevel);
 
-  # Function rewritten by Thomas Wiedmann to use phpSniff class
+  # Function adapted to use BrowserDetector (donatj/phpuseragentparser)
 
   # initialize some vars
   if(!isset($UA)) $UA = '';
@@ -107,12 +107,12 @@ function configNew(&$bn,&$bv,&$f,$i,&$uid)
   //$timer->start('main');
   //$timer->start('client1');
   $sniffer_settings = array('check_cookies'=>$cc,'default_language'=>$dl,'allow_masquerading'=>$am);
-  $client = new phpSniff($UA,$sniffer_settings);
+  $client = new BrowserDetector();
 
-  # get phpSniff result
-  $i=$client->get_property('ip');
-  $bv=$client->get_property('version');
-  $bn=$client->get_property('browser');
+  # get browser result
+  $i=$_SERVER['REMOTE_ADDR'] ?? '';
+  $bv=$client->version();
+  $bn=$client->browser();
 
   # translate some browsernames for "Care2x"
   if ($bn == 'moz') { $bn='mozilla';}
