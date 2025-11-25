@@ -113,50 +113,50 @@ if($src=="input")
       no, seleccione su funci&oacute;n correcta.<br>
       <b>Paso 2: </b>Haga clic en el apellido o nombre de <?php echo $person ?>, 
       o en el enlace <nobr>"<span style="background-color:yellow" > <img <?php echo createComIcon('../','uparrowgrnlrg.gif','0') ?>> 
-      Ingresar esta persona como<?php echo $person ?>... </span>"</nobr>. y será 
-      automáticamente agregado a la lista actual. </font> 
+      Ingresar esta persona como<?php echo $person ?>... </span>"</nobr>. y serï¿½ 
+      automï¿½ticamente agregado a la lista actual. </font> 
     <p>. </blockquote>
   <p><font size="2" face="Verdana, Arial, Helvetica, sans-serif"><img <?php echo createComIcon('../','frage.gif','0') ?>> 
     <font color="#990000"><b> <?php echo ucfirst($person) ?> No aparece en la 
-    lista de vista rápida, ¿Como agregar <?php echo $person ?>?</b> </font></font> 
+    lista de vista rï¿½pida, ï¿½Como agregar <?php echo $person ?>?</b> </font></font> 
   </p>
   <blockquote>
     <p><font size="2" face="Verdana, Arial, Helvetica, sans-serif"><b>Paso 1: 
-      </b>Escriba ya sea la información completa o las primeras letras del apellido,o 
+      </b>Escriba ya sea la informaciï¿½n completa o las primeras letras del apellido,o 
       nombbre de <?php echo $person ?> en el campo"<span style="background-color:yellow" > 
       Buscar una nueva <?php echo substr($person,2) ?>... </span>".<br>
-      <b>Paso 2: </b>Dé clic al bot&oacute;n 
+      <b>Paso 2: </b>Dï¿½ clic al bot&oacute;n 
       <input name="button" type="button" value="OK">
       para buscar a <?php echo $person ?>.<br>
-      <b>Paso 3: </b>El resultado será una lista. Dé clic al nombre o apellido, 
+      <b>Paso 3: </b>El resultado serï¿½ una lista. Dï¿½ clic al nombre o apellido, 
       o al enlace <nobr>"<span style="background-color:yellow" > <img <?php echo createComIcon('../','uparrowgrnlrg.gif','0') ?>> 
       Agregar como<?php echo $person ?>... </span>"</nobr></font></p>
     <p><font size="2" face="Verdana, Arial, Helvetica, sans-serif"> correspondiente 
       a la<?php echo $person ?> que desea documentar. </font> </p>
   </blockquote>
   <p><font size="2" face="Verdana, Arial, Helvetica, sans-serif"><img <?php echo createComIcon('../','frage.gif','0') ?>> 
-    <font color="#990000"><b>¿Como borrar a<?php echo $person ?> de la lista?</b></font></font> 
+    <font color="#990000"><b>ï¿½Como borrar a<?php echo $person ?> de la lista?</b></font></font> 
   </p>
   <blockquote>
     <p><font size="2" face="Verdana, Arial, Helvetica, sans-serif"><b>Paso 1: 
-      </b>Dé clic al icono <img <?php echo createComIcon('../','delete2.gif','0','absmiddle') ?>> 
+      </b>Dï¿½ clic al icono <img <?php echo createComIcon('../','delete2.gif','0','absmiddle') ?>> 
       a la derecha del nombre.<br>
       </font> </p>
   </blockquote>
   <p><font size="2" face="Verdana, Arial, Helvetica, sans-serif"><img <?php echo createComIcon('../','frage.gif','0') ?>> 
-    <font color="#990000"><b> Ya terminé. ¿Como regreso a la bitácora?</b></font></font> 
+    <font color="#990000"><b> Ya terminï¿½. ï¿½Como regreso a la bitï¿½cora?</b></font></font> 
   </p>
   <blockquote>
     <p><font size="2" face="Verdana, Arial, Helvetica, sans-serif"><b>Paso 1: 
-      </b>Dé clic en el botón <img <?php echo createLDImgSrc('../','close2.gif','0') ?> align="absmiddle"> 
-      Que aparecerá despues de haber seleccionado <?php echo $person ?>.<br>
+      </b>Dï¿½ clic en el botï¿½n <img <?php echo createLDImgSrc('../','close2.gif','0') ?> align="absmiddle"> 
+      Que aparecerï¿½ despues de haber seleccionado <?php echo $person ?>.<br>
       </font> </p>
   </blockquote>
   <p><font size="2" face="Verdana, Arial, Helvetica, sans-serif"><img <?php echo createComIcon('../','warn.gif','0','absmiddle') ?>> 
     <font color="#990000"><b> Nota:</b></font></font> </p>
   <blockquote>
     <p><font size="2" face="Verdana, Arial, Helvetica, sans-serif"> Si usted decide 
-      cerrar esta ventana dé clic al botón<img <?php echo createLDImgSrc('../','cancel.gif','0') ?>>. 
+      cerrar esta ventana dï¿½ clic al botï¿½n<img <?php echo createLDImgSrc('../','cancel.gif','0') ?>>. 
       </font> </p>
   </blockquote>
   <p><font size="2" face="Verdana, Arial, Helvetica, sans-serif"> 
@@ -164,7 +164,7 @@ if($src=="input")
     <?php if($src=="time") : ?>
     <?php if($x1=="entry_out") : ?>
     <img <?php echo createComIcon('../','frage.gif','0') ?>> 
-    <font color="#990000"><b>¿Como ducumentar la hora de entrada y salida ?</b> 
+    <font color="#990000"><b>ï¿½Como ducumentar la hora de entrada y salida ?</b> 
     </font></font> </p>
   <blockquote>
     <p><font size="2" face="Verdana, Arial, Helvetica, sans-serif"><b>Paso 1: 
@@ -184,13 +184,13 @@ if($src=="input")
     </blockquote>
     <p><font size="2" face="Verdana, Arial, Helvetica, sans-serif"><br>
       <b>Nota: </b>Usted puede ingresar varias horas de entrada y salida antes 
-      de salvar la información. </font> </p>
+      de salvar la informaciï¿½n. </font> </p>
   </blockquote>
   <p> <font size="2" face="Verdana, Arial, Helvetica, sans-serif"> 
     <?php endif;?>
     <?php if($x1=="cut_close") : ?>
     <img <?php echo createComIcon('../','frage.gif','0') ?>> 
-    <font color="#990000"><b>¿Como documentar la hora de corte y sutura?</b> </font></font> 
+    <font color="#990000"><b>ï¿½Como documentar la hora de corte y sutura?</b> </font></font> 
   <blockquote>
     <p><font size="2" face="Verdana, Arial, Helvetica, sans-serif"><b>Paso 1: 
       </b>Escriba la hora de corte en el campo "<span style="background-color:yellow" > 
@@ -209,13 +209,13 @@ if($src=="input")
     </blockquote>
     <p><font size="2" face="Verdana, Arial, Helvetica, sans-serif"><br>
       <b>Nota: </b>Usted puede ingresar varias horas de corte y sutura antes de 
-      salvar la información</font> </p>
+      salvar la informaciï¿½n</font> </p>
   </blockquote>
   <p> <font size="2" face="Verdana, Arial, Helvetica, sans-serif"> 
     <?php endif;?>
     <?php if($x1=="wait_time") : ?>
     <img <?php echo createComIcon('../','frage.gif','0') ?>> 
-    <font color="#990000"><b>¿Como documentar tiempos de espera (tiempo muerto)?</b> 
+    <font color="#990000"><b>ï¿½Como documentar tiempos de espera (tiempo muerto)?</b> 
     </font></font> 
   <blockquote>
     <p><font size="2" face="Verdana, Arial, Helvetica, sans-serif"><b>Paso 1: 
@@ -231,17 +231,17 @@ if($src=="input")
       <p><font size="2" face="Verdana, Arial, Helvetica, sans-serif"><b>Tip: </b>Escriba 
         "n" o "N" (significa Now) en el campo para que aparezca autom&aacute;ticamente 
         la hora actual. <br>
-        <b>Paso 3: </b>Selecciona la razón en la tercera columna. column. </font> 
+        <b>Paso 3: </b>Selecciona la razï¿½n en la tercera columna. column. </font> 
       </p>
       <p> <font size="2" face="Verdana, Arial, Helvetica, sans-serif"><b>Nota: 
-        </b>Usted puede ingresar varias horas antes de salvar la información. 
+        </b>Usted puede ingresar varias horas antes de salvar la informaciï¿½n. 
         </font> </blockquote>
     <p>. </blockquote>
   <p><font size="2" face="Verdana, Arial, Helvetica, sans-serif"> 
     <?php endif;?>
     <?php if($x1=="bandage_time") : ?>
     <img <?php echo createComIcon('../','frage.gif','0') ?>> 
-    <font color="#990000"><b>¿Como documentar tiempos de vendaje?</b> </font></font> 
+    <font color="#990000"><b>ï¿½Como documentar tiempos de vendaje?</b> </font></font> 
   </p>
   <blockquote>
     <p><font size="2" face="Verdana, Arial, Helvetica, sans-serif"><b>Paso 1: 
@@ -255,13 +255,13 @@ if($src=="input")
     <p> <font size="2" face="Verdana, Arial, Helvetica, sans-serif"><b>Tip: </b>Escriba 
       "n" o "N" (significa Now) en el campo para que aparezca autom&aacute;ticamente 
       la hora actual. <br>
-      <b>Nota: </b>Usted puede ingresar varias horas antes de salvar la información. 
+      <b>Nota: </b>Usted puede ingresar varias horas antes de salvar la informaciï¿½n. 
       </font> </blockquote>
   <p> <font size="2" face="Verdana, Arial, Helvetica, sans-serif"> 
     <?php endif;?>
     <?php if($x1=="repos_time") : ?>
     <img <?php echo createComIcon('../','frage.gif','0') ?>> 
-    <font color="#990000"><b>¿Como documentar tiempos de reposici&oacute;n?</b> 
+    <font color="#990000"><b>ï¿½Como documentar tiempos de reposici&oacute;n?</b> 
     </font></font> 
   <blockquote>
     <p><font size="2" face="Verdana, Arial, Helvetica, sans-serif"><b>Paso 1: 
@@ -275,7 +275,7 @@ if($src=="input")
     <p> <font size="2" face="Verdana, Arial, Helvetica, sans-serif"><b>Tip: </b>Escriba 
       "n" o "N" (significa Now) en el campo para que aparezca autom&aacute;ticamente 
       la hora actual. <br>
-      <b>Nota: </b>Usted puede ingresar varias horas antes de salvar la información. 
+      <b>Nota: </b>Usted puede ingresar varias horas antes de salvar la informaciï¿½n. 
       </font> </blockquote>
   <p> <font size="2" face="Verdana, Arial, Helvetica, sans-serif"> 
     <?php endif;?>
@@ -283,31 +283,31 @@ if($src=="input")
     <font color="#990000"><b>&iquest;Como salvar la informaci&oacute;n?</b> </font></font> 
   <blockquote>
     <p><font size="2" face="Verdana, Arial, Helvetica, sans-serif"><b>Paso 1: 
-      </b>Dé clic en el botón <img <?php echo createLDImgSrc('../','savedisc.gif','0') ?>> 
+      </b>Dï¿½ clic en el botï¿½n <img <?php echo createLDImgSrc('../','savedisc.gif','0') ?>> 
       para salvar la informaci&oacute;n<br>
       <b>Paso 2: </b>Si ya termin&oacute;, d&eacute; clic en el bot&oacute;n<img <?php echo createLDImgSrc('../','close2.gif','0') ?>> 
       para cerrar la ventana y regeresar a bit&aacute;cora.<br>
       </font> </p>
   </blockquote>
   <p><font size="2" face="Verdana, Arial, Helvetica, sans-serif"><img <?php echo createComIcon('../','frage.gif','0') ?>> 
-    <font color="#990000"><b> Quiero borrar las entradas haciendo clic en el botón 
-    "Borrar datos" pero no funciona. ¿Que debería hacer?</b></font></font> </p>
+    <font color="#990000"><b> Quiero borrar las entradas haciendo clic en el botï¿½n 
+    "Borrar datos" pero no funciona. ï¿½Que deberï¿½a hacer?</b></font></font> </p>
   <blockquote>
     <p><font size="2" face="Verdana, Arial, Helvetica, sans-serif"><b>Nota: </b>Haciendo 
       clic en el bot&oacute;n &quot;Borrar datos&quot; solo borrar&aacute; los 
       datos que no han sido salvados. Si desea borrar las entradas previamente 
       salvadas, siga estas instrucciones: </font> </p>
     <p> <font size="2" face="Verdana, Arial, Helvetica, sans-serif"><b>Paso 1: 
-      </b>Dé clic al campo de entrada de la hora que desee borrar.<br>
+      </b>Dï¿½ clic al campo de entrada de la hora que desee borrar.<br>
       <b>Paso 2: </b>Borre la hora manualmente usando las teclas "Borrar" "Del" 
       o &quot;Retroceso&quot; "Backspace" de su teclado.<br>
-      <b>Paso 3: </b>Dé clic en el botón <img <?php echo createLDImgSrc('../','savedisc.gif','0') ?>> 
+      <b>Paso 3: </b>Dï¿½ clic en el botï¿½n <img <?php echo createLDImgSrc('../','savedisc.gif','0') ?>> 
       para salvar los cambios.</font> </blockquote>
   <p><font size="2" face="Verdana, Arial, Helvetica, sans-serif"><img <?php echo createComIcon('../','warn.gif','0','absmiddle') ?>> 
     <font color="#990000"><b> Nota:</b></font></font> </p>
   <blockquote>
     <p><font size="2" face="Verdana, Arial, Helvetica, sans-serif"> Si usted decide 
-      cerrar esta ventana dé clic al botón<img <?php echo createLDImgSrc('../','cancel.gif','0') ?>>. 
+      cerrar esta ventana dï¿½ clic al botï¿½n<img <?php echo createLDImgSrc('../','cancel.gif','0') ?>>. 
       </font> </p>
   </blockquote>
   <p><font size="2" face="Verdana, Arial, Helvetica, sans-serif"> 
@@ -315,30 +315,30 @@ if($src=="input")
     <?php if($src=="create") : ?>
     <?php if($x1=="logmain") : ?>
     <img <?php echo createComIcon('../','frage.gif','0') ?>> 
-    <font color="#990000"><b>¿Como editar una entrada de registro de operación?</b> 
+    <font color="#990000"><b>ï¿½Como editar una entrada de registro de operaciï¿½n?</b> 
     </font></font> </p>
   <blockquote>
     <p><font size="2" face="Verdana, Arial, Helvetica, sans-serif"><b>Paso 1: 
-      </b>Dé clic en el botón <img src="../img/update3.gif" width=15 height=14 border=0> 
+      </b>Dï¿½ clic en el botï¿½n <img src="../img/update3.gif" width=15 height=14 border=0> 
       correspondiente a la entrada de registro del paciente.<br>
-      <b>Paso 2: </b>La entrada de registro del paciente será copiada al marco 
-      de edición. Ahora podrá editarla siguiendo las instrucciones para documentar 
-      una operación. <br>
+      <b>Paso 2: </b>La entrada de registro del paciente serï¿½ copiada al marco 
+      de ediciï¿½n. Ahora podrï¿½ editarla siguiendo las instrucciones para documentar 
+      una operaciï¿½n. <br>
       </font> </p>
   </blockquote>
   <p><font size="2" face="Verdana, Arial, Helvetica, sans-serif"><img <?php echo createComIcon('../','frage.gif','0') ?>> 
-    <font color="#990000"><b> ¿Como abrir el folder de datos del paciente?</b> 
+    <font color="#990000"><b> ï¿½Como abrir el folder de datos del paciente?</b> 
     </font></font> </p>
   <blockquote>
     <p><font size="2" face="Verdana, Arial, Helvetica, sans-serif"><b>Paso 1: 
-      </b>Dé clic en el botón <img <?php echo createComIcon('../','info3.gif','0') ?>> 
+      </b>Dï¿½ clic en el botï¿½n <img <?php echo createComIcon('../','info3.gif','0') ?>> 
       a la izquierda del n&uacute;mero de identificaci&oacute;n del paciente.<br>
       <b>Paso 2: </b>Y emerger&aacute; el folder de datos del paciente.</font> 
     </p>
   </blockquote>
   <p><font size="2" face="Verdana, Arial, Helvetica, sans-serif"><br>
     <img <?php echo createComIcon('../','frage.gif','0') ?>> 
-    <font color="#990000"><b> ¿Como hacer un cambio a otro departamento o quirófano?</b> 
+    <font color="#990000"><b> ï¿½Como hacer un cambio a otro departamento o quirï¿½fano?</b> 
     </font></font> </p>
   <ul>
     <font size="2" face="Verdana, Arial, Helvetica, sans-serif"><b>Paso 1: </b>Seleccione 
@@ -348,7 +348,7 @@ if($src=="input")
 $Or2Dept=get_meta_tags("../global_conf/resolve_or2ordept.pid");
 					$opabt=get_meta_tags("../global_conf/$lang/op_tag_dept.pid");
 
-					foreach( as =>)
+					foreach($opabt as $x=>$v)
 					{
 						if($x=="anaesth") continue;
 						print'
@@ -362,7 +362,7 @@ $Or2Dept=get_meta_tags("../global_conf/resolve_or2ordept.pid");
     <b>Paso 2: </b>Seleccione el quir&oacute;fano en la caja 
     <select name="saal" size=1 >
       <?php
-foreach( as =>)
+foreach($Or2Dept as $x=>$v)
 					{
 						print'
 					<option value="'.$x.'"';
@@ -372,9 +372,9 @@ foreach( as =>)
 				?>
     </select>
     . <br>
-    <b>Paso 3: </b>Dé clic en el botón 
+    <b>Paso 3: </b>Dï¿½ clic en el botï¿½n 
     <input name="button2" type="button" value="Cambiar">
-    para cambiar a otro departamento y/o quirófano.<br>
+    para cambiar a otro departamento y/o quirï¿½fano.<br>
     </font> 
   </ul>
   <font size="2" face="Verdana, Arial, Helvetica, sans-serif"><img <?php echo createComIcon('../','frage.gif','0') ?>> 
@@ -382,14 +382,14 @@ foreach( as =>)
   dia diferente del actualmente mostrado?</b> </font></font> 
   <ul>
     <font size="2" face="Verdana, Arial, Helvetica, sans-serif"><b>Paso 1: </b>Para 
-    mostrar los registros de días previos, haga clic en el enlace "<span style="background-color:yellow" > 
+    mostrar los registros de dï¿½as previos, haga clic en el enlace "<span style="background-color:yellow" > 
     D&iacute;a Anterior</span>" en la esquina superior izquierda de la tabla.<br>
-    Haga clic las veces que sea necesario hasta que se muestre el día deseado. 
+    Haga clic las veces que sea necesario hasta que se muestre el dï¿½a deseado. 
     <br>
-    <b>Paso 2: </b>Para mostrar los registros de días siguientes, haga clic en 
+    <b>Paso 2: </b>Para mostrar los registros de dï¿½as siguientes, haga clic en 
     el enlace ""<span style="background-color:yellow" > Dia Siguiente</span>" 
     en la esquina superior derecha de la tabla.<br>
-    Haga clic las veces que sea necesario hasta que se muestre el día deseado. 
+    Haga clic las veces que sea necesario hasta que se muestre el dï¿½a deseado. 
     </font> 
   </ul>
   <font size="2" face="Verdana, Arial, Helvetica, sans-serif"><br>
@@ -403,52 +403,52 @@ foreach( as =>)
   </font></font> 
   <ul>
     <font size="2" face="Verdana, Arial, Helvetica, sans-serif"><b>Paso 1: </b>Escriba 
-    el número de artículo en el campo "<span style="background-color:yellow" > 
+    el nï¿½mero de artï¿½culo en el campo "<span style="background-color:yellow" > 
     Num. Articulo: </span>". </font> 
     <p> <font size="2" face="Verdana, Arial, Helvetica, sans-serif"><b>Alternativas: 
       </b> </font> 
     <ul type=disc>
       <li><font size="2" face="Verdana, Arial, Helvetica, sans-serif">Escriba 
-        el nombre o las primeras letras del material, descripción,nombre genérico, 
-        o número de orden en el campo "<span style="background-color:yellow" >Num. 
+        el nombre o las primeras letras del material, descripciï¿½n,nombre genï¿½rico, 
+        o nï¿½mero de orden en el campo "<span style="background-color:yellow" >Num. 
         Articulo: </span>". </font> 
       <li><font size="2" face="Verdana, Arial, Helvetica, sans-serif">Escanee 
-        el código de barras del artículo. </font> 
+        el cï¿½digo de barras del artï¿½culo. </font> 
     </ul>
     <font size="2" face="Verdana, Arial, Helvetica, sans-serif"><br>
-    <b>Paso 2: </b>Dé clic al bot&oacute;n 
+    <b>Paso 2: </b>Dï¿½ clic al bot&oacute;n 
     <input name="button3" type="button" value="OK">
     o pulse la tecla "enter"de su teclado para buscar el producto. </font> 
     <ul>
       <font size="2" face="Verdana, Arial, Helvetica, sans-serif"><b>Nota: </b>Si 
-      la búsqueda encontró algún resultado la información del material será agregada 
+      la bï¿½squeda encontrï¿½ algï¿½n resultado la informaciï¿½n del material serï¿½ agregada 
       inmediatamente al documento.<br>
-      <b>Nota: </b>Si la búsqueda encuentra varios resultados, aparecerá un listado. 
+      <b>Nota: </b>Si la bï¿½squeda encuentra varios resultados, aparecerï¿½ un listado. 
       Haga clic en el bot&oacute;n <img <?php echo createComIcon('../','bul_arrowgrnlrg.gif','0') ?>> 
       o el nombre o n&uacute;mero de art&iacute;culo par agregarlo al documento. 
       </font> 
       <p>. 
     </ul>
     <font size="2" face="Verdana, Arial, Helvetica, sans-serif"><b>Paso 3: </b>Si 
-    el artículo es agregado al documento, puede cambiar la cantidad en el campo 
+    el artï¿½culo es agregado al documento, puede cambiar la cantidad en el campo 
     "<span style="background-color:yellow" > no.Pcs.</span>" de ser necesario. 
     </font> 
     <p>. 
     <ul>
       <font size="2" face="Verdana, Arial, Helvetica, sans-serif"><b>Nota: </b>Una 
-      vez que haya cambiado el número de piezas, aparecerán los botones "Salvar" 
+      vez que haya cambiado el nï¿½mero de piezas, aparecerï¿½n los botones "Salvar" 
       y "Restablecer". </font> 
       <p>. 
     </ul>
     <font size="2" face="Verdana, Arial, Helvetica, sans-serif"><b>Paso 4: </b>Si 
-    ha cambiado la cantidad en el campo"no.Pcs.", dé clic al botón<img <?php echo createLDImgSrc('../','savedisc.gif','0') ?>> 
+    ha cambiado la cantidad en el campo"no.Pcs.", dï¿½ clic al botï¿½n<img <?php echo createLDImgSrc('../','savedisc.gif','0') ?>> 
     para salvar los cambios. </font> 
   </ul>
   <p> <font size="2" face="Verdana, Arial, Helvetica, sans-serif"><img <?php echo createComIcon('../','frage.gif','0') ?>> 
-    <font color="#990000"><b>&iquest;Como quitar un artículo de la lista?</b> 
+    <font color="#990000"><b>&iquest;Como quitar un artï¿½culo de la lista?</b> 
     </font></font> 
   <ul>
-    <font size="2" face="Verdana, Arial, Helvetica, sans-serif"><b>Paso 1: </b>Dé 
+    <font size="2" face="Verdana, Arial, Helvetica, sans-serif"><b>Paso 1: </b>Dï¿½ 
     clic al icono <img <?php echo createComIcon('../','delete2.gif','0','absmiddle') ?>> 
     correspondiente al art&iacute;culo.<br>
     </font> 
@@ -457,13 +457,13 @@ foreach( as =>)
   <font color="#990000"><b> No se encontr&oacute; el art&iacute;culo. &iquest;Como 
   forzar manualmente el ingresoenter de un art&iacute;culo?</b> </font></font> 
   <ul>
-    <font size="2" face="Verdana, Arial, Helvetica, sans-serif"><b>Paso 1: </b>Dé 
+    <font size="2" face="Verdana, Arial, Helvetica, sans-serif"><b>Paso 1: </b>Dï¿½ 
     clic al enlace"<span style="background-color:yellow" > <img <?php echo createComIcon('../','accessrights.gif','0') ?>> 
-    De clic aquí para ingresar manualmente un artículo.</span>"<br>
-    <b>Paso 2: </b>Ingrese manualmente la información del artículo en los campos 
+    De clic aquï¿½ para ingresar manualmente un artï¿½culo.</span>"<br>
+    <b>Paso 2: </b>Ingrese manualmente la informaciï¿½n del artï¿½culo en los campos 
     correspondientes. </font> 
     <p> <font size="2" face="Verdana, Arial, Helvetica, sans-serif"><b>Paso 3: 
-      </b>Dé clic en el botón <img <?php echo createLDImgSrc('../','savedisc.gif','0') ?>> 
+      </b>Dï¿½ clic en el botï¿½n <img <?php echo createLDImgSrc('../','savedisc.gif','0') ?>> 
       para agregar la informaci&oacute;n al documento. </font> 
     <p>. 
   </ul>
@@ -471,14 +471,14 @@ foreach( as =>)
   <font color="#990000"><b> Nota:</b></font></font> 
   <ul>
     <font size="2" face="Verdana, Arial, Helvetica, sans-serif"> Si usted decide 
-    cerrar esta ventana dé clic al botón<img <?php echo createLDImgSrc('../','cancel.gif','0') ?>>. 
+    cerrar esta ventana dï¿½ clic al botï¿½n<img <?php echo createLDImgSrc('../','cancel.gif','0') ?>>. 
     </font> 
   </ul>
   <font size="2" face="Verdana, Arial, Helvetica, sans-serif"><img <?php echo createComIcon('../','frage.gif','0') ?>> 
-  <font color="#990000"><b> ¿Como desplegar la bitácora principal de nuevo?</b> 
+  <font color="#990000"><b> ï¿½Como desplegar la bitï¿½cora principal de nuevo?</b> 
   </font></font> 
   <ul>
-    <font size="2" face="Verdana, Arial, Helvetica, sans-serif"><b>Paso 1: </b>Dé 
+    <font size="2" face="Verdana, Arial, Helvetica, sans-serif"><b>Paso 1: </b>Dï¿½ 
     clic al enlace "<span style="background-color:yellow" > <img <?php echo createComIcon('../','manfldr.gif','0') ?>> 
     Mostrar la bit&aacute;cora. </span>".</font> 
   </ul>
@@ -487,11 +487,11 @@ foreach( as =>)
   <?php endif;?>
   <?php if(($x1=="")||($x1=="fresh")) : ?>
   <img <?php echo createComIcon('../','frage.gif','0') ?>> 
-  <font color="#990000"><b>&iquest;Cómo empezar un documento de registro para 
+  <font color="#990000"><b>&iquest;Cï¿½mo empezar un documento de registro para 
   una operaci&oacute;n?</b> </font></font> 
   <ul>
     <font size="2" face="Verdana, Arial, Helvetica, sans-serif"><b>Paso 1: </b>Primero 
-    encuentre al paciente. Escriba el Número de identificación del paciente en 
+    encuentre al paciente. Escriba el Nï¿½mero de identificaciï¿½n del paciente en 
     el campo"<span style="background-color:yellow" > No. Paciente: </span>" . 
     </font> 
     <p> <font size="2" face="Verdana, Arial, Helvetica, sans-serif"><b>Alternativas: 
@@ -505,28 +505,28 @@ foreach( as =>)
         paciente en el campo"<span style="background-color:yellow" > Fecha de 
         nacimiento</span>". </font> 
     </ul>
-    <font size="2" face="Verdana, Arial, Helvetica, sans-serif"><b>Paso 2: </b>Dé 
+    <font size="2" face="Verdana, Arial, Helvetica, sans-serif"><b>Paso 2: </b>Dï¿½ 
     clic al bot&oacute;n 
     <input name="button4" type="button" value="Buscar">
     para iniciar la b&uacute;squeda del paciente. </font> 
     <p>. 
     <ul>
       <font size="2" face="Verdana, Arial, Helvetica, sans-serif"><b>Nota: </b>Si 
-      la búsqueda encontró un resultado la información b&aacute;sica del paciente 
-      será agregada inmediatamente en los campos correspondientes.. </font> 
+      la bï¿½squeda encontrï¿½ un resultado la informaciï¿½n b&aacute;sica del paciente 
+      serï¿½ agregada inmediatamente en los campos correspondientes.. </font> 
       <p> <font size="2" face="Verdana, Arial, Helvetica, sans-serif"><b>Nota: 
-        </b>Si la búsqueda encuentra varios resultados, aparecerá un listado. 
+        </b>Si la bï¿½squeda encuentra varios resultados, aparecerï¿½ un listado. 
         Haga clic en el nombre o apellido para agregarlo al documento. </font> 
       <p>. 
     </ul>
-    <font size="2" face="Verdana, Arial, Helvetica, sans-serif"><b>Paso 3: </b>Dé 
+    <font size="2" face="Verdana, Arial, Helvetica, sans-serif"><b>Paso 3: </b>Dï¿½ 
     clic al bot&oacute;n <img <?php echo createLDImgSrc('../','hilfe-r.gif','0') ?>> 
     de nuevo para mayores instrucciones. </font> 
   </ul>
   <p> <font size="2" face="Verdana, Arial, Helvetica, sans-serif"> 
     <?php else : ?>
     <img <?php echo createComIcon('../','frage.gif','0') ?>> 
-    <font color="#990000"><b>¿Como ingresar el diagnostico para la operción?</b> 
+    <font color="#990000"><b>ï¿½Como ingresar el diagnostico para la operciï¿½n?</b> 
     </font></font> 
   <ul>
     <font size="2" face="Verdana, Arial, Helvetica, sans-serif"><b>Paso 1: </b>Escriba 
@@ -538,10 +538,10 @@ foreach( as =>)
   <font color="#990000"><b> &iquest;Como ingresar la informaci&oacute;n del cirujano?</b> 
   </font></font> 
   <ul>
-    <font size="2" face="Verdana, Arial, Helvetica, sans-serif"><b>Paso 1: </b>Dé 
+    <font size="2" face="Verdana, Arial, Helvetica, sans-serif"><b>Paso 1: </b>Dï¿½ 
     clic al enlace "<span style="background-color:yellow" > Cirujano</span>".<br>
-    <b>Paso 2: </b>Aparecer&aacute; una ventana para agregar la información. <br>
-    <b>Paso 3: </b>Siga las instrucciones de la ventana o haga clic en el botón 
+    <b>Paso 2: </b>Aparecer&aacute; una ventana para agregar la informaciï¿½n. <br>
+    <b>Paso 3: </b>Siga las instrucciones de la ventana o haga clic en el botï¿½n 
     &quot;Ayuda&quot; para instrucciones extra.. <br>
     </font> 
   </ul>
@@ -549,10 +549,10 @@ foreach( as =>)
   </font><font color="#990000" size="2" face="Verdana, Arial, Helvetica, sans-serif"><b>&iquest;Como 
   ingresar la informaci&oacute;n del asistente del cirujano?</b></font> 
   <ul>
-    <font size="2" face="Verdana, Arial, Helvetica, sans-serif"><b>Paso 1: </b>Dé 
+    <font size="2" face="Verdana, Arial, Helvetica, sans-serif"><b>Paso 1: </b>Dï¿½ 
     clic al enlace "<span style="background-color:yellow" > Asistente</span>".<br>
-    <b>Paso 2: </b>Aparecer&aacute; una ventana para agregar la información. <br>
-    <b>Paso 3: </b>Siga las instrucciones de la ventana o haga clic en el botón 
+    <b>Paso 2: </b>Aparecer&aacute; una ventana para agregar la informaciï¿½n. <br>
+    <b>Paso 3: </b>Siga las instrucciones de la ventana o haga clic en el botï¿½n 
     &quot;Ayuda&quot; para instrucciones extra.<br>
     </font> 
   </ul>
@@ -560,20 +560,20 @@ foreach( as =>)
   <font color="#990000"><b> &iquest;Como ingresar la informaci&oacute;n de la 
   enfermera instrumentista?</b></font></font> 
   <ul>
-    <font size="2" face="Verdana, Arial, Helvetica, sans-serif"><b>Paso 1: </b>Dé 
+    <font size="2" face="Verdana, Arial, Helvetica, sans-serif"><b>Paso 1: </b>Dï¿½ 
     clic al enlace "<span style="background-color:yellow" > Enfermera instrumentista</span>".<br>
-    <b>Paso 2: </b>Aparecer&aacute; una ventana para agregar la información. <br>
-    <b>Paso 3: </b>Siga las instrucciones de la ventana o haga clic en el botón 
+    <b>Paso 2: </b>Aparecer&aacute; una ventana para agregar la informaciï¿½n. <br>
+    <b>Paso 3: </b>Siga las instrucciones de la ventana o haga clic en el botï¿½n 
     &quot;Ayuda&quot; para instrucciones extra.<br>
     </font> 
   </ul>
   <font size="2" face="Verdana, Arial, Helvetica, sans-serif"><img <?php echo createComIcon('../','frage.gif','0') ?>><font color="#990000"><b>&iquest;Como 
   ingresar la informaci&oacute;n de la enfermera rotatoria?</b></font></font> 
   <ul>
-    <font size="2" face="Verdana, Arial, Helvetica, sans-serif"><b>Paso 1: </b>Dé 
+    <font size="2" face="Verdana, Arial, Helvetica, sans-serif"><b>Paso 1: </b>Dï¿½ 
     clic al enlace "<span style="background-color:yellow" > Enfermera rotatoria</span>".<br>
-    <b>Paso 2: </b>Aparecer&aacute; una ventana para agregar la información. <br>
-    <b>Paso 3: </b>Siga las instrucciones de la ventana o haga clic en el botón 
+    <b>Paso 2: </b>Aparecer&aacute; una ventana para agregar la informaciï¿½n. <br>
+    <b>Paso 3: </b>Siga las instrucciones de la ventana o haga clic en el botï¿½n 
     &quot;Ayuda&quot; para instrucciones extra.<br>
     </font> 
   </ul>
@@ -612,10 +612,10 @@ foreach( as =>)
   <font size="2" face="Verdana, Arial, Helvetica, sans-serif"><img <?php echo createComIcon('../','frage.gif','0') ?>> 
   <font color="#990000"><b> &iquest;Como ingresar la informaci&oacute;n del Anestesi&oacute;logo?</b></font></font> 
   <ul>
-    <font size="2" face="Verdana, Arial, Helvetica, sans-serif"><b>Paso 1: </b>Dé 
+    <font size="2" face="Verdana, Arial, Helvetica, sans-serif"><b>Paso 1: </b>Dï¿½ 
     clic al enlace "<span style="background-color:yellow" > Anestesi&oacute;logo</span>".<br>
-    <b>Paso 2: </b>Aparecer&aacute; una ventana para agregar la información. <br>
-    <b>Paso 3: </b>Siga las instrucciones de la ventana o haga clic en el botón 
+    <b>Paso 2: </b>Aparecer&aacute; una ventana para agregar la informaciï¿½n. <br>
+    <b>Paso 3: </b>Siga las instrucciones de la ventana o haga clic en el botï¿½n 
     &quot;Ayuda&quot; para instrucciones extra.<br>
     </font> 
   </ul>
@@ -648,34 +648,34 @@ foreach( as =>)
     <font size="2" face="Verdana, Arial, Helvetica, sans-serif"><b>Paso 1: </b> 
     </font> 
     <p> <font size="2" face="Verdana, Arial, Helvetica, sans-serif"><b>Hora de 
-      Entrada/Salida: </b> Dé clic al enlace "<span style="background-color:yellow" > 
+      Entrada/Salida: </b> Dï¿½ clic al enlace "<span style="background-color:yellow" > 
       Ingreso/salida<img <?php echo createComIcon('../','bul_arrowgrnsm.gif','0','absmiddle') ?>> 
       </span>" situada en la esquina inferior izquierda. </font> 
     <p> <font size="2" face="Verdana, Arial, Helvetica, sans-serif"><b>Hora de 
-      Corte/Sutura:</b> Dé clic al enlace ""<span style="background-color:yellow" > 
+      Corte/Sutura:</b> Dï¿½ clic al enlace ""<span style="background-color:yellow" > 
       Corte/Sutura<img <?php echo createComIcon('../','bul_arrowgrnsm.gif','0','absmiddle') ?>> 
       </span>" situada en la esquina inferior izquierda. </font> 
     <p> <font size="2" face="Verdana, Arial, Helvetica, sans-serif"><b>Tiempo 
-      muerto: </b> Dé clic al enlace ""<span style="background-color:yellow" > 
+      muerto: </b> Dï¿½ clic al enlace ""<span style="background-color:yellow" > 
       tiempo de espera <img <?php echo createComIcon('../','bul_arrowgrnsm.gif','0','absmiddle') ?>> 
       </span>" situada en la esquina inferior izquierda. </font> 
     <p> <font size="2" face="Verdana, Arial, Helvetica, sans-serif"><b>Tiempo 
-      de Enyesado/Vendajes:</b> Dé clic al enlace "<span style="background-color:yellow" >Vendajes 
+      de Enyesado/Vendajes:</b> Dï¿½ clic al enlace "<span style="background-color:yellow" >Vendajes 
       <img <?php echo createComIcon('../','bul_arrowgrnsm.gif','0','absmiddle') ?>> 
       </span>" situada en la esquina inferior izquierda. </font> 
     <p> <font size="2" face="Verdana, Arial, Helvetica, sans-serif"><b>Tiempo 
-      de Reposici&oacute;n: </b> Dé clic al enlace "<span style="background-color:yellow" > 
+      de Reposici&oacute;n: </b> Dï¿½ clic al enlace "<span style="background-color:yellow" > 
       Reposicion <img <?php echo createComIcon('../','bul_arrowgrnsm.gif','0','absmiddle') ?>> 
       </span>" situada en la esquina inferior izquierda. </font> 
     <p> <font size="2" face="Verdana, Arial, Helvetica, sans-serif"><b>Paso 2: 
-      </b>Aparecer&aacute; una ventana para agregar la información. <br>
-      <b>Paso 3: </b>Siga las instrucciones de la ventana o haga clic en el botón 
+      </b>Aparecer&aacute; una ventana para agregar la informaciï¿½n. <br>
+      <b>Paso 3: </b>Siga las instrucciones de la ventana o haga clic en el botï¿½n 
       &quot;Ayuda&quot; para instrucciones extra.<br>
       <br>
       </font> 
   </ul>
   <font size="2" face="Verdana, Arial, Helvetica, sans-serif"> <img <?php echo createComIcon('../','frage.gif','0') ?>> 
-  <font color="#990000"><b> ¿Como ingresar la informaci&oacute;n en la tabla gr&aacute;fica?</b> 
+  <font color="#990000"><b> ï¿½Como ingresar la informaci&oacute;n en la tabla gr&aacute;fica?</b> 
   </font></font> 
   <ul>
     <font size="2" face="Verdana, Arial, Helvetica, sans-serif"><b>Paso 1: </b>Mueva 
@@ -684,20 +684,20 @@ foreach( as =>)
     <b>Paso 2: </b>Haga clic en la escala de tiempo correspondiente a la hora 
     elegida. </font> 
     <p> <font size="2" face="Verdana, Arial, Helvetica, sans-serif"><b>Nota:</b> 
-      La primera entrada será la hora de inicio, la segunda será la hora de terminar, 
-      la tercera será la segunda hora de inicio, etc.. </font> 
+      La primera entrada serï¿½ la hora de inicio, la segunda serï¿½ la hora de terminar, 
+      la tercera serï¿½ la segunda hora de inicio, etc.. </font> 
   </ul>
   <font size="2" face="Verdana, Arial, Helvetica, sans-serif"><img <?php echo createComIcon('../','frage.gif','0') ?>> 
-  <font color="#990000"><b> ¿Como ingresar la información de terapia o cirugía?</b> 
+  <font color="#990000"><b> ï¿½Como ingresar la informaciï¿½n de terapia o cirugï¿½a?</b> 
   </font></font> 
   <ul>
     <font size="2" face="Verdana, Arial, Helvetica, sans-serif"><b>Paso 1: </b>Escriba 
-    la terapia u operación en el campo "<span style="background-color:yellow" > 
+    la terapia u operaciï¿½n en el campo "<span style="background-color:yellow" > 
     Terapia/Operaci&oacute;n: </span>" .<br>
     </font> 
   </ul>
   <font size="2" face="Verdana, Arial, Helvetica, sans-serif"><img <?php echo createComIcon('../','frage.gif','0') ?>> 
-  <font color="#990000"><b> ¿Como ingresar resultados, observaciones y notas extra?</b> 
+  <font color="#990000"><b> ï¿½Como ingresar resultados, observaciones y notas extra?</b> 
   </font></font> 
   <ul>
     <font size="2" face="Verdana, Arial, Helvetica, sans-serif"><b>Paso 1: </b>Escriba 
@@ -708,24 +708,24 @@ foreach( as =>)
   <font color="#990000"><b> &iquest;Como salvar el registro del documento?</b> 
   </font></font> 
   <ul>
-    <font size="2" face="Verdana, Arial, Helvetica, sans-serif"><b>Paso 1: </b>Dé 
-    clic en el botón <img <?php echo createLDImgSrc('../','savedisc.gif','0') ?>><br>
+    <font size="2" face="Verdana, Arial, Helvetica, sans-serif"><b>Paso 1: </b>Dï¿½ 
+    clic en el botï¿½n <img <?php echo createLDImgSrc('../','savedisc.gif','0') ?>><br>
     </font> 
   </ul>
   <font size="2" face="Verdana, Arial, Helvetica, sans-serif"><img <?php echo createComIcon('../','frage.gif','0') ?>> 
-  <font color="#990000"><b> &iquest;Cómo empezar un nuevo registro de documento?</b> 
+  <font color="#990000"><b> &iquest;Cï¿½mo empezar un nuevo registro de documento?</b> 
   </font></font> 
   <ul>
-    <font size="2" face="Verdana, Arial, Helvetica, sans-serif"><b>Paso 1: </b>Dé 
-    clic en el botón <img <?php echo createLDImgSrc('../','newpat2.gif','0') ?>><br>
-    <b>Paso 2: </b>Dé clic de nuevo en el botón <img <?php echo createLDImgSrc('../','hilfe-r.gif','0') ?>> 
+    <font size="2" face="Verdana, Arial, Helvetica, sans-serif"><b>Paso 1: </b>Dï¿½ 
+    clic en el botï¿½n <img <?php echo createLDImgSrc('../','newpat2.gif','0') ?>><br>
+    <b>Paso 2: </b>Dï¿½ clic de nuevo en el botï¿½n <img <?php echo createLDImgSrc('../','hilfe-r.gif','0') ?>> 
     para m&aacute;s instrucciones.<br>
     </font> 
   </ul>
   <font size="2" face="Verdana, Arial, Helvetica, sans-serif"><b>Nota</b> </font> 
   <ul>
     <font size="2" face="Verdana, Arial, Helvetica, sans-serif"> Si usted decide 
-    cerrar dé clic al botón<img <?php echo createLDImgSrc('../','close2.gif','0') ?>>. 
+    cerrar dï¿½ clic al botï¿½n<img <?php echo createLDImgSrc('../','close2.gif','0') ?>>. 
     </font> 
   </ul>
   <font size="2" face="Verdana, Arial, Helvetica, sans-serif"> 
@@ -739,7 +739,7 @@ foreach( as =>)
   <?php if($x1=="edit") print "edit"; else print "see"; ?>
   ?</b> </font></font> 
   <ul>
-    <font size="2" face="Verdana, Arial, Helvetica, sans-serif"><b>Paso 1: </b>Dé 
+    <font size="2" face="Verdana, Arial, Helvetica, sans-serif"><b>Paso 1: </b>Dï¿½ 
     clic al bot&oacute;n<img <?php echo createComIcon('../','update2.gif','0') ?>> 
     reporte de laboratorio correspondiente al paciente que desea para 
     <?php if($x1=="edit") print "edit"; else print "see"; ?>
@@ -758,20 +758,20 @@ foreach( as =>)
   </font> 
   <ul>
     <p><font size="2" face="Verdana, Arial, Helvetica, sans-serif"><b>Paso 1: 
-      </b>Escriba ya sea la información completa o la primeras letras del nombre 
+      </b>Escriba ya sea la informaciï¿½n completa o la primeras letras del nombre 
       o apellido del paciente o la fecha de nacimiento en el campo &quot;<span style="background-color:yellow" > 
       Palabra clave: 
       <input type="text" name="m2" size=20 maxlength=20>
       </span>". <br>
-      <b>Paso 2: </b>Dé clic en el botón 
+      <b>Paso 2: </b>Dï¿½ clic en el botï¿½n 
       <input name="button5" type="button" value="Buscar">
       para iniciar la b&uacute;squeda del documento del paciente.</font> <font size="2" face="Verdana, Arial, Helvetica, sans-serif"><br>
       <b><br>
-      </b> <b>Nota: </b>Si la b&uacute;squeda da resultados, aparecerá un listado. 
+      </b> <b>Nota: </b>Si la b&uacute;squeda da resultados, aparecerï¿½ un listado. 
       </font></p>
     <p> <font size="2" face="Verdana, Arial, Helvetica, sans-serif"> 
       <?php if(($x2=="")||($x2=="0")) : ?>
-      <b>Paso 3: </b>Dé clic al button&nbsp;<img <?php echo createComIcon('../','update2.gif','0') ?>> 
+      <b>Paso 3: </b>Dï¿½ clic al button&nbsp;<img <?php echo createComIcon('../','update2.gif','0') ?>> 
       reporte de laboratorio correspondiente al paciente que desea para 
       <?php if($x1=="edit") print "edit"; else print "see"; ?>
       . </font> 
@@ -781,7 +781,7 @@ foreach( as =>)
   </ul>
   <p><font size="2" face="Verdana, Arial, Helvetica, sans-serif"><img <?php echo createComIcon('../','warn.gif','0','absmiddle') ?>> 
     <font color="#990000"><b> Nota:</b></font>Si usted decide cerrar esta ventana 
-    dé clic al botón<img <?php echo createLDImgSrc('../','cancel.gif','0') ?>>. 
+    dï¿½ clic al botï¿½n<img <?php echo createLDImgSrc('../','cancel.gif','0') ?>>. 
     <?php endif;?>
     </font></p>
   <p> <font size="2" face="Verdana, Arial, Helvetica, sans-serif"> 
@@ -801,9 +801,9 @@ foreach( as =>)
   <img <?php echo createComIcon('../','warn.gif','0','absmiddle') ?>> 
   <font color="#990000"><b>No hay operaciones para este dia.</b></font></font> 
   <ul>
-    <font size="2" face="Verdana, Arial, Helvetica, sans-serif"> Dé clic al bot&oacute;n 
+    <font size="2" face="Verdana, Arial, Helvetica, sans-serif"> Dï¿½ clic al bot&oacute;n 
     "Opciones" to open the option box.<br>
-    Dé clic al bot&oacute;n "Buscar" para cambiar a modo de b&uacute;squeda. </font> 
+    Dï¿½ clic al bot&oacute;n "Buscar" para cambiar a modo de b&uacute;squeda. </font> 
   </ul>
   <font size="2" face="Verdana, Arial, Helvetica, sans-serif"> 
   <?php endif;?>
@@ -813,12 +813,12 @@ foreach( as =>)
     <font size="2" face="Verdana, Arial, Helvetica, sans-serif"><b>Para mostrar 
     d&iacute;as previos: </b>Haga clic en el enlace "<span style="background-color:yellow" > 
     D&iacute;a Anterior</span>" en la esquina superior izquierda de la tabla.<br>
-    Haga clic las veces que sea necesario hasta que se muestre el día deseado. 
+    Haga clic las veces que sea necesario hasta que se muestre el dï¿½a deseado. 
     </font> 
     <p> <font size="2" face="Verdana, Arial, Helvetica, sans-serif"><b>Para mostrar 
       d&iacute;as siguientes: </b>Haga clic en el enlace ""<span style="background-color:yellow" > 
       Dia Siguiente</span>" en la esquina superior derecha de la tabla.<br>
-      Haga clic las veces que sea necesario hasta que se muestre el día deseado. 
+      Haga clic las veces que sea necesario hasta que se muestre el dï¿½a deseado. 
       <br>
       </font> 
   </ul>
@@ -842,7 +842,7 @@ foreach( as =>)
     </select>
     </span>".</nobr> <br>
     Se ajustar&aacute; autom&aacute;ticamente.<br>
-    <b>Paso 3: </b>Dé clic en el botón 
+    <b>Paso 3: </b>Dï¿½ clic en el botï¿½n 
     <input name="button6" type="button" value="Cambiar">
     para cambiar a un nuevo quir&oacute;fano o departamento.</font> 
   </ul>
@@ -852,7 +852,7 @@ foreach( as =>)
   <font color="#990000"><b>&iquest;Como actualizar o editar el documento que est&aacute; 
   viendo?</b> </font></font> 
   <ul>
-    <font size="2" face="Verdana, Arial, Helvetica, sans-serif"><b>Paso 1: </b>Dé 
+    <font size="2" face="Verdana, Arial, Helvetica, sans-serif"><b>Paso 1: </b>Dï¿½ 
     clic al bot&oacute;n <img src="../img/update3.gif" border=0> situado junto 
     a la fecha de operaci&oacute;n en la columna de la izquierda para cambiar 
     al modo de edici&oacute;n.<br>
@@ -863,10 +863,10 @@ foreach( as =>)
     <font color="#990000"><b> &iquest;Como abrir la carpeta de datos del paciente?</b> 
     </font></font> 
   <ul>
-    <font size="2" face="Verdana, Arial, Helvetica, sans-serif"><b>Paso 1: </b>Dé 
+    <font size="2" face="Verdana, Arial, Helvetica, sans-serif"><b>Paso 1: </b>Dï¿½ 
     clic al bot&oacute;n <img src="../img/info2.gif" border=0> a la izquierda 
     del n&uacute;mero de paciente.<br>
-    <b>Paso 2: </b>Se abrir&aacute; la carpeta de datos del paciente. Dé clic 
+    <b>Paso 2: </b>Se abrir&aacute; la carpeta de datos del paciente. Dï¿½ clic 
     al bot&oacute;n de &quot;Ayuda&quot; para m&aacute;s instrucciones. </font> 
   </ul>
   <p> <font size="2" face="Verdana, Arial, Helvetica, sans-serif"> 
@@ -875,7 +875,7 @@ foreach( as =>)
     <font color="#990000"><b> Nota:</b></font></font> 
   <ul>
     <font size="2" face="Verdana, Arial, Helvetica, sans-serif"> Si usted decide 
-    cerrar esta ventana dé clic al botón<img <?php echo createLDImgSrc('../','cancel.gif','0') ?>>. 
+    cerrar esta ventana dï¿½ clic al botï¿½n<img <?php echo createLDImgSrc('../','cancel.gif','0') ?>>. 
     </font> 
   </ul>
   <font size="2" face="Verdana, Arial, Helvetica, sans-serif"> 
@@ -902,10 +902,10 @@ foreach( as =>)
     <?php if($x2=="") 
 			print "4"; else print "2";
 		?>
-    : </b> Dé clic en el botón <img <?php echo createLDImgSrc('../','savedisc.gif','0') ?>> 
+    : </b> Dï¿½ clic en el botï¿½n <img <?php echo createLDImgSrc('../','savedisc.gif','0') ?>> 
     para salvar los valores. </font> 
     <p> <font size="2" face="Verdana, Arial, Helvetica, sans-serif"><b>Nota: </b>Si 
-      desea cerrar despues de salvar los valores, dé clic al botón<img <?php echo createLDImgSrc('../','close2.gif','0') ?>>.<br>
+      desea cerrar despues de salvar los valores, dï¿½ clic al botï¿½n<img <?php echo createLDImgSrc('../','close2.gif','0') ?>>.<br>
       </font> 
   </ul>
   <font size="2" face="Verdana, Arial, Helvetica, sans-serif"> 
@@ -917,10 +917,10 @@ foreach( as =>)
   <ul>
     <font size="2" face="Verdana, Arial, Helvetica, sans-serif"><b>Paso 1: </b>Solo 
     ingrese los valores disponibles en sus campos correspondientes.<br>
-    <b>Paso 2: </b>Dé clic en el botón <img <?php echo createLDImgSrc('../','savedisc.gif','0') ?>> 
+    <b>Paso 2: </b>Dï¿½ clic en el botï¿½n <img <?php echo createLDImgSrc('../','savedisc.gif','0') ?>> 
     para salvar los valores. </font> 
     <p> <font size="2" face="Verdana, Arial, Helvetica, sans-serif"><b>Nota: </b>Si 
-      desea cerrar despues de salvar los valores, dé clic al botón<img <?php echo createLDImgSrc('../','close2.gif','0') ?>>. 
+      desea cerrar despues de salvar los valores, dï¿½ clic al botï¿½n<img <?php echo createLDImgSrc('../','close2.gif','0') ?>>. 
       </font><font size="2" face="Verdana, Arial, Helvetica, sans-serif">.<br>
       </font> 
   </ul>
@@ -939,7 +939,7 @@ foreach( as =>)
     </select>
     </span>"</nobr> . </font> 
     <p> <font size="2" face="Verdana, Arial, Helvetica, sans-serif"><b>Paso 2: 
-      </b>Dé clic en el botón <img <?php echo createLDImgSrc('../','auswahl2.gif','0') ?>> 
+      </b>Dï¿½ clic en el botï¿½n <img <?php echo createLDImgSrc('../','auswahl2.gif','0') ?>> 
       para cambiar al grupo seleccionado.</font> 
     <p>. 
   </ul>
@@ -949,11 +949,11 @@ foreach( as =>)
   <img <?php echo createComIcon('../','frage.gif','0') ?>> 
   <font color="#990000"><b> &iquest;C&oacute;mo debo guardar los valores?</b></font></font> 
   <ul>
-    <font size="2" face="Verdana, Arial, Helvetica, sans-serif"><b>Paso 1: </b>Dé 
-    clic en el botón <img <?php echo createLDImgSrc('../','savedisc.gif','0') ?>> 
+    <font size="2" face="Verdana, Arial, Helvetica, sans-serif"><b>Paso 1: </b>Dï¿½ 
+    clic en el botï¿½n <img <?php echo createLDImgSrc('../','savedisc.gif','0') ?>> 
     para salvar los valores. </font> 
     <p> <font size="2" face="Verdana, Arial, Helvetica, sans-serif"><b>Nota: </b>Si 
-      desea cerrar despues de salvar los valores, dé clic al botón<img <?php echo createLDImgSrc('../','close2.gif','0') ?>>. 
+      desea cerrar despues de salvar los valores, dï¿½ clic al botï¿½n<img <?php echo createLDImgSrc('../','close2.gif','0') ?>>. 
       <br>
       </font> 
   </ul>
@@ -966,10 +966,10 @@ foreach( as =>)
   <ul>
     <font size="2" face="Verdana, Arial, Helvetica, sans-serif"><b>Paso 1: </b>Solo 
     ingrese los valores correctos en sus campos correspondientes.<br>
-    <b>Paso 1: </b>Dé clic en el botón <img <?php echo createLDImgSrc('../','savedisc.gif','0') ?>> 
+    <b>Paso 1: </b>Dï¿½ clic en el botï¿½n <img <?php echo createLDImgSrc('../','savedisc.gif','0') ?>> 
     para salvar los valores. </font> 
     <p> <font size="2" face="Verdana, Arial, Helvetica, sans-serif"><b>Nota: </b>Si 
-      desea cerrar despues de salvar los valores, dé clic al botón<img <?php echo createLDImgSrc('../','close2.gif','0') ?>>. 
+      desea cerrar despues de salvar los valores, dï¿½ clic al botï¿½n<img <?php echo createLDImgSrc('../','close2.gif','0') ?>>. 
       </font><font size="2" face="Verdana, Arial, Helvetica, sans-serif"><br>
       </font> 
   </ul>
@@ -982,10 +982,10 @@ foreach( as =>)
   <ul>
     <font size="2" face="Verdana, Arial, Helvetica, sans-serif"><b>Paso 1: </b>Solo 
     escriba la nota en el campo correspondiente.<br>
-    <b>Paso 1: </b>Dé clic en el botón <img <?php echo createLDImgSrc('../','savedisc.gif','0') ?>> 
+    <b>Paso 1: </b>Dï¿½ clic en el botï¿½n <img <?php echo createLDImgSrc('../','savedisc.gif','0') ?>> 
     para salvar la nota. </font> 
     <p> <font size="2" face="Verdana, Arial, Helvetica, sans-serif"><b>Nota: </b>Si 
-      desea cerrar despues de salvar los valores, dé clic al botón<img <?php echo createLDImgSrc('../','close2.gif','0') ?>>. 
+      desea cerrar despues de salvar los valores, dï¿½ clic al botï¿½n<img <?php echo createLDImgSrc('../','close2.gif','0') ?>>. 
       </font> 
     <p>.</p>
   </ul>
@@ -995,11 +995,11 @@ foreach( as =>)
   <img <?php echo createComIcon('../','frage.gif','0') ?>> 
   <font color="#990000"><b> Ya lo hice. &iquest;Que sigue?</b> </font></font> 
   <ul>
-    <font size="2" face="Verdana, Arial, Helvetica, sans-serif"><b>Paso 1: </b>Dé 
-    clic en el botón <img <?php echo createLDImgSrc('../','savedisc.gif','0') ?>> 
+    <font size="2" face="Verdana, Arial, Helvetica, sans-serif"><b>Paso 1: </b>Dï¿½ 
+    clic en el botï¿½n <img <?php echo createLDImgSrc('../','savedisc.gif','0') ?>> 
     para salvar todos los valores. </font> 
     <p> <font size="2" face="Verdana, Arial, Helvetica, sans-serif"><b>Nota: </b>Si 
-      desea cerrar despues de salvar los valores, dé clic al botón<img <?php echo createLDImgSrc('../','close2.gif','0') ?>>. 
+      desea cerrar despues de salvar los valores, dï¿½ clic al botï¿½n<img <?php echo createLDImgSrc('../','close2.gif','0') ?>>. 
       </font><font size="2" face="Verdana, Arial, Helvetica, sans-serif"><br>
       </font> 
   </ul>
@@ -1009,7 +1009,7 @@ foreach( as =>)
   <font color="#990000"><b> Nota:</b></font></font> 
   <ul>
     <font size="2" face="Verdana, Arial, Helvetica, sans-serif"> Si usted decide 
-    cerrar esta ventana dé clic al botón<img <?php echo createLDImgSrc('../','cancel.gif','0') ?>>. 
+    cerrar esta ventana dï¿½ clic al botï¿½n<img <?php echo createLDImgSrc('../','cancel.gif','0') ?>>. 
     </font> 
   </ul>
   <?php endif;?>
