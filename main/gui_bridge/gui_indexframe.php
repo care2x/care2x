@@ -140,7 +140,7 @@ $dept=new Department;
 $depts=$dept->getAllActive();
 $sTemp = '';
 if($depts&&is_array($depts)) {
-     foreach( as =>)
+     foreach($depts as $x=>$v)
     	 if(isset($_SESSION['department_nr']) and is_array($_SESSION['department_nr']) and in_array($v['nr'],$_SESSION['department_nr']))
     		 if(isset(${$v['LD_var']}) && ${$v['LD_var']}) $sTemp = $sTemp .  ${$v['LD_var']} . '<br>';
     			 else $sTemp = $sTemp . $v['name_formal'] . '<br>';
@@ -157,7 +157,7 @@ $items='nr,ward_id,name, dept_nr'; // set the items to be fetched
 $ward_info=$ward_obj->getAllWardsItemsArray($items);
 $sTemp = '';
 if($ward_info&&is_array($ward_info)){
-     foreach( as =>){
+     foreach($ward_info as $x=>$v){
     	 if(in_array($v['dept_nr'],$_SESSION['department_nr']))
     		$sTemp = $sTemp . $v['name'] . '<br>';
     }
