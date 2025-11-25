@@ -136,7 +136,7 @@ class report extends core {
 	    if (!$this->_isTemporaryTable($tbl))
 	      $arr_field1 = $this->_DropOutNotAllowedFields($tbl1, $arr_field1);
 
-	      foreach( as =>) {
+	      foreach($arr_field1 as $i1=>$v1) { // Note: $arr_field2 and $tbl2 undefined here, legacy logic retained
 	        if (strtolower($v1)==strtolower($v2)) {
 	          $arr_field1[$i1]=$tbl1.".".$v1." AS ".$tbl1."_".$v1;
 	          $arr_field2[$i2]=$tbl2.".".$v2." AS ".$tbl2."_".$v2;
