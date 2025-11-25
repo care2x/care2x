@@ -216,7 +216,7 @@ class Person extends Core {
 		$v='';
 		$this->data_array=NULL;
 		if(!isset($_POST['create_time'])||empty($_POST['create_time'])) $_POST['create_time']=date('YmdHis');
-		foreach( as =>) {
+		foreach($this->elems_array as $x=>$v) {
 	    	if(isset($_POST[$v])&&!empty($_POST[$v])) $this->data_array[$v]=$_POST[$v];
 	    }
     }
