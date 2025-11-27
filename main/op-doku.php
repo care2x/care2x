@@ -16,7 +16,7 @@ require_once($root_path.'include/core/inc_front_chain_lang.php');
 
 $thisfile=basename(__FILE__);
 
-setcookie(firstentry,''); // The cookie "firsentry" is used for switching the cat image
+setcookie('firstentry',''); // The cookie "firstentry" is used for switching the cat image
 
 /* Check the start script as break destination*/
 if (!empty($_SESSION['sess_path_referer'])&&($_SESSION['sess_path_referer']!=$top_dir.$thisfile)){

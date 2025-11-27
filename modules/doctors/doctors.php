@@ -81,7 +81,7 @@ $aSubMenuItem=array('LDQViewTxt' => '<a href="doctors-shift-fastview.php'.URL_AP
 
 $iRunner = 0;
 
-foreach( as =>){
+foreach($aSubMenuItem as $x => $v){
 	$sTemp='';
 	ob_start();
 		if (isset($cfg['icons'])) {

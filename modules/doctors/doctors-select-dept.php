@@ -95,7 +95,7 @@ $smarty->assign('LDPlsSelectDept',$LDPlsSelectDept);
 
 $toggler=0;
 
-foreach( as =>){
+foreach($dept_DOC as $x => $v){
 
 	$bold='';
 	$boldx='';

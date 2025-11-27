@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.40, created on 2024-11-04 19:50:50
+/* Smarty version 3.1.40, created on 2025-11-27 18:06:21
   from '/home/tim/code/care2x/gui/smarty_template/templates/default/news/headline_newslist.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.40',
-  'unifunc' => 'content_6729259a230a84_52693662',
+  'unifunc' => 'content_6928931d8ae3a3_60643009',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:news/headline_titleblock.tpl' => 1,
   ),
 ),false)) {
-function content_6729259a230a84_52693662 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6928931d8ae3a3_60643009 (Smarty_Internal_Template $_smarty_tpl) {
 ?><table width=100<?php echo '%>';?>
 
 	<tr>

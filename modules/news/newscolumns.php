@@ -191,13 +191,12 @@ if($rows) {
 
 		while($artikel=$news_archive->FetchRow()){
 
-			echo '<tr bgcolor="#ffffff">
-				<td><a href="#"><a href="'.$readerpath.'&nr='.$artikel['nr'].'&news_type=headline"> '.$artikel['title'].'</a></td>
-				<td><a href="'.$readerpath.'&nr='.$artikel['nr'].'&news_type=headline"><img '.createComIcon($root_path,'info.gif','0','',TRUE).' alt="'.$LDClk2Read.'"></a></td>
-				<td> '.$artikel['author'].'</td>
-				<td><nobr> '.formatDate2Local($artikel['publish_date'],$date_format,1).'
-				</td>
-				</tr>';
+			echo '<tr bgcolor="#ffffff">'
+				.'<td><a href="'.$readerpath.'&nr='.$artikel['nr'].'&news_type=headline">'.$artikel['title'].'</a></td>'
+				.'<td><a href="'.$readerpath.'&nr='.$artikel['nr'].'&news_type=headline"><img '.createComIcon($root_path,'info.gif','0','',TRUE).' alt="'.$LDClk2Read.'"></a></td>'
+				.'<td>'.$artikel['author'].'</td>'
+				.'<td><nobr>'.formatDate2Local($artikel['publish_date'],$date_format,1).'</nobr></td>'
+				.'</tr>';
 			echo "\r\n";
 		}
 

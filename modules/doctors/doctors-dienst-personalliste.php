@@ -245,7 +245,7 @@ if(is_object($doctors) && $doctors->RecordCount()){
 		}
 	?></nobr></td>
     <td  class="v13" colspan=3><nobr>&nbsp;<?php echo $row['name_last']; ?></nobr></td>
-    <td  class="v13" colspan=2><nobr><fon >&nbsp;<?php echo $row['name_first']; ?></nobr></td>
+    <td  class="v13" colspan=2><nobr><font >&nbsp;<?php echo $row['name_first']; ?></nobr></td>
 <!--     <td  class="v13" colspan=2><font>&nbsp;<?php echo formatDate2Local($row['date_birth'],$date_format); ?></td>
  -->    <td  class="v13" colspan=2><nobr>&nbsp;<?php echo $row['job_function_title']; ?></nobr></td>
     <td  class="v13" colspan=2>&nbsp;<?php echo '
@@ -412,7 +412,7 @@ if($mode=='search'||$mode=='paginate'){
 <?php echo $LDChgDept ?>
 <select name="dept_nr" >
 <?php
-foreach( as =>)
+foreach($dept_list as $x => $v)
 	{
 		echo '
 		<option value="'.$v['nr'].'" ';

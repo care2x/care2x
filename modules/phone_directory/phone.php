@@ -72,11 +72,11 @@ require($root_path.'include/core/inc_css_a_hilitebu.php');
 
 </HEAD>
 
-<BODY  onLoad="document.searchdata.keyword.select();document.searchdata.keyword.focus();" bgcolor=<?php echo $cfg['body_bgcolor']; ?>
+<BODY  onLoad="document.searchdata.keyword.select();document.searchdata.keyword.focus();" bgcolor="<?php echo $cfg['body_bgcolor']; ?>"
 <?php if (!$cfg['dhtml']){ echo ' link='.$cfg['idx_txtcolor'].' alink='.$cfg['body_alink'].' vlink='.$cfg['idx_txtcolor']; } ?>>
 
 <img <?php echo createComIcon($root_path,'phone.gif','0','absmiddle') ?>>
-<FONT  COLOR="<?php echo $cfg[top_txtcolor] ?>"  SIZE=6 > <b><?php echo "$LDPhoneDir $LDSearch" ?></b></font>
+<FONT  COLOR="<?php echo $cfg['top_txtcolor'] ?>"  SIZE=6 > <b><?php echo "$LDPhoneDir $LDSearch" ?></b></font>
 <table width=100% border=0 cellpadding="0" cellspacing="0">
 <tr>
 <td colspan=3><img <?php echo createLDImgSrc($root_path,'such-b.gif','0') ?>><a href="phone_list.php<?php echo URL_APPEND; ?>"><img <?php echo createLDImgSrc($root_path,'phonedir-gray.gif','0') ?> <?php if($cfg['dhtml'])echo'class="fadeOut" >';?></a><a href="phone_edit_pass.php<?php echo URL_APPEND; ?>"><img <?php echo createLDImgSrc($root_path,'newdata-gray.gif','0') ?> <?php if($cfg['dhtml'])echo'class="fadeOut" >';?></a></td>
@@ -112,7 +112,7 @@ require($root_path.'include/core/inc_css_a_hilitebu.php');
 if ($linecount>0) {
 
     echo "<hr width=80% align=left><p>".str_replace("~nr~",$linecount,$LDPhoneFound)."<p>";
-    mysql_data_seek($ergebnis,0);
+    if(method_exists($ergebnis,'Move')) { $ergebnis->Move(0); }
     echo '<table border=0 cellpadding=3 cellspacing=1>
 	<tr class="wardlisttitlerow">';
 

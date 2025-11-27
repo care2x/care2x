@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.40, created on 2024-11-04 19:50:50
+/* Smarty version 3.1.40, created on 2025-11-27 18:06:21
   from '/home/tim/code/care2x/gui/smarty_template/templates/default/news/headline_newslist_item.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.40',
-  'unifunc' => 'content_6729259a20ea61_74285338',
+  'unifunc' => 'content_6928931d71ba57_35287094',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6729259a20ea61_74285338 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6928931d71ba57_35287094 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <img <?php echo $_smarty_tpl->tpl_vars['sHeadlineImg']->value;?>
  align="left" border=0 hspace=10 <?php echo $_smarty_tpl->tpl_vars['sImgWidth']->value;?>

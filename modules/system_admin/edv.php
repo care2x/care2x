@@ -79,7 +79,7 @@ $aSubMenuItem=array('LDQViewTxt' => '<a href="edv-main-pass.php'.URL_APPEND.'&ta
 
 $iRunner = 0;
 
-foreach( as =>){
+foreach($aSubMenuItem as $x => $v){
 	$sTemp='';
 	ob_start();
 		if(!isset($cfg['icons']) or $cfg['icons'] != 'no_icon') $smarty2->assign('sIconImg','<img '.$aSubMenuIcon[$iRunner].'>');

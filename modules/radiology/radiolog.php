@@ -118,7 +118,7 @@ $aSubMenuItem=array('LDTestRequestRadio' => "<a href=\"".$root_path."modules/lab
 
 $iRunner = 0;
 
-foreach( as =>){
+foreach($aSubMenuItem as $x => $v){
 	$sTemp='';
 	ob_start();
 		if($cfg['icons'] != 'no_icon') $smarty2->assign('sIconImg','<img '.$aSubMenuIcon[$iRunner].'>');

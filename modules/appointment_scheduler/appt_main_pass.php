@@ -34,7 +34,7 @@ $userck='aufnahme_user';
 //reset cookie;
 // reset all 2nd level lock cookies
 setcookie($userck.$sid,'',0,'/');
-require($root_path.'include/core/inc_2level_reset.php'); setcookie(ck_2level_sid.$sid,'',0,'/');
+require($root_path.'include/core/inc_2level_reset.php'); setcookie('ck_2level_sid'.$sid,'',0,'/');
 
 require($root_path.'include/core/inc_passcheck_internchk.php');
 if ($pass=='check') include($root_path.'include/core/inc_passcheck.php');
@@ -44,7 +44,7 @@ $errbuf=$LDAppointments;
 require($root_path.'include/core/inc_passcheck_head.php');
 ?>
 
-<BODY  onLoad="document.passwindow.userid.focus();" bgcolor=<?php echo $cfg['body_bgcolor']; ?>
+<BODY  onLoad="document.passwindow.userid.focus();" bgcolor="<?php echo $cfg['body_bgcolor']; ?>"
 <?php if (!$cfg['dhtml']){ echo ' link='.$cfg['idx_txtcolor'].' alink='.$cfg['body_alink'].' vlink='.$cfg['idx_txtcolor']; } ?>>
 
 <FONT    SIZE=-1  FACE="Arial">

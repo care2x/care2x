@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.40, created on 2024-11-04 22:22:48
+/* Smarty version 3.1.40, created on 2025-11-27 18:06:30
   from '/home/tim/code/care2x/gui/smarty_template/templates/default/appointment/appt_list.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.40',
-  'unifunc' => 'content_6729493810b380_52542596',
+  'unifunc' => 'content_6928932676f229_53269165',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6729493810b380_52542596 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6928932676f229_53269165 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 <table width=100% border=0 cellpadding="0" cellspacing=0>
 	<tbody>

@@ -115,7 +115,7 @@ $aSubMenuItem=array('LDPlugins' => '<a href="'.$root_path.'plugins/plugins.php'.
 
 $iRunner = 0;
 
-foreach( as =>){
+foreach($aSubMenuItem as $x => $v){
 	$sTemp='';
 	ob_start();
 		if (isset($cfg['icons'])) {

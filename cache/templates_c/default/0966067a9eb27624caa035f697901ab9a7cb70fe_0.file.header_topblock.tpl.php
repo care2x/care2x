@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.40, created on 2024-11-04 19:51:04
+/* Smarty version 3.1.40, created on 2025-11-27 18:06:26
   from '/home/tim/code/care2x/gui/smarty_template/templates/default/common/header_topblock.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.40',
-  'unifunc' => 'content_672925a8a72a05_78553730',
+  'unifunc' => 'content_692893225696c9_82007034',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_672925a8a72a05_78553730 (Smarty_Internal_Template $_smarty_tpl) {
+function content_692893225696c9_82007034 (Smarty_Internal_Template $_smarty_tpl) {
 ?> <table cellspacing="0"  class="titlebar" border=0>
  <tr valign=top  class="titlebar" >
   <td bgcolor="<?php echo $_smarty_tpl->tpl_vars['top_bgcolor']->value;?>

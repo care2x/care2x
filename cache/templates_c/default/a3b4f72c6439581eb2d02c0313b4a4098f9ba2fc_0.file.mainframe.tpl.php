@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.40, created on 2024-11-04 19:50:50
+/* Smarty version 3.1.40, created on 2025-11-27 18:06:21
   from '/home/tim/code/care2x/gui/smarty_template/templates/default/common/mainframe.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.40',
-  'unifunc' => 'content_6729259a222424_53046128',
+  'unifunc' => 'content_6928931d78d127_02475027',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:common/header_topblock.tpl' => 1,
   ),
 ),false)) {
-function content_6729259a222424_53046128 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6928931d78d127_02475027 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:common/header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 

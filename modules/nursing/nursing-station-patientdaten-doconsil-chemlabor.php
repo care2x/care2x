@@ -28,8 +28,8 @@ function prepareTestElements()
 	*/
 	$paramlist='';
 
-	foreach( as =>){
-    	if((substr($x,0,1)=='_')&&($_POST[$x]==1)){
+	foreach($_POST as $x => $val){
+    	if((substr($x,0,1)=='_') && ($val==1)){
 	    	if($paramlist==''){
 				$paramlist=$x.'=1';
 			}else{
@@ -56,8 +56,9 @@ function prepareTestElements()
 		if(!$tmin) $tmin=0;
 
 		/* Prepare the sampling ten hours */
-		if($_POST['hrs_20']) $th=20;
-			elseif($_POST['hrs_10']) $th=10;
+		$th=0;
+		if(!empty($_POST['hrs_20'])) $th=20;
+		elseif(!empty($_POST['hrs_10'])) $th=10;
 
 		/* Prepare the sampling one hours */
 		for($i=0;$i<10;$i++){

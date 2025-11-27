@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.40, created on 2024-11-04 19:50:50
+/* Smarty version 3.1.40, created on 2025-11-27 18:06:21
   from '/home/tim/code/care2x/gui/smarty_template/templates/default/news/headline_titleblock.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.40',
-  'unifunc' => 'content_6729259a2323c5_41776216',
+  'unifunc' => 'content_6928931d8e6566_54958436',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6729259a2323c5_41776216 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6928931d8e6566_54958436 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 			<!--    The title text bouding box   -->
 			<table border=0 bgcolor=#cfcfcf cellpadding=1 cellspacing=0 width="100%">

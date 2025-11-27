@@ -117,7 +117,7 @@ $aSubMenuItem=array('LDPharmaOrder' => "<a href=\"medlager-pass.php".URL_APPEND.
 
 $iRunner = 0;
 
-foreach( as =>){
+foreach($aSubMenuItem as $x => $v){
 	if($hideOrder == 1 && $iRunner == 0) {$hideOrder = 0;continue;}
 	$sTemp='';
 	ob_start();

@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 3.1.40, created on 2024-11-04 19:53:25
+/* Smarty version 3.1.40, created on 2025-11-27 18:06:26
   from '/home/tim/code/care2x/gui/smarty_template/templates/default/registration_admission/reg_input.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.40',
-  'unifunc' => 'content_67292635dafdb6_14994849',
+  'unifunc' => 'content_6928932256e283_05041572',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:registration_admission/reg_tabs.tpl' => 1,
   ),
 ),false)) {
-function content_67292635dafdb6_14994849 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6928932256e283_05041572 (Smarty_Internal_Template $_smarty_tpl) {
 ?><table width="100%" cellspacing="0" cellpadding="0">
   <tbody>
     <tr>

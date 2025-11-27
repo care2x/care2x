@@ -50,7 +50,7 @@ $thisfile=basename(__FILE__);
  $smarty->assign('sToolbarTitle',$LDPatientRegister." - ".$LDSearch);
  $smarty->assign('sTitleImage','<img '.createComIcon($root_path,'search_glass.gif','0').'>');
  # Added for the common header top block
- $smarty->assign('pbHelp',"javascript:gethelp('submenu1.php','$LDPatientRegister." - ".$LDSearch')");
+ $smarty->assign('pbHelp',"javascript:gethelp('submenu1.php','".$LDPatientRegister." - ".$LDSearch."')");
 
  $smarty->assign('breakfile',$breakfile);
 
@@ -118,7 +118,7 @@ if(isset($origin) && $origin=='pass')
 ?>
 <form action="patient_register.php" method=post>
 <input type=submit value="<?php echo $LDNewForm ?>">
-<input type=hidden name="sid" value=<?php echo $sid; ?>>
+<input type=hidden name="sid" value="<?php echo $sid; ?>">
 <input type=hidden name="lang" value="<?php echo $lang; ?>">
 </form>
 <?php

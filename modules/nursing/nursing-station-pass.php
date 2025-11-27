@@ -51,7 +51,7 @@ $errbuf="$LDNursingStation $station";
 
 require($root_path.'include/core/inc_passcheck_head.php');
 ?>
-<BODY  onLoad="document.passwindow.userid.focus();" bgcolor=<?php echo $cfg['body_bgcolor']; ?>
+<BODY  onLoad="document.passwindow.userid.focus();" bgcolor="<?php echo $cfg['body_bgcolor']; ?>"
 <?php if (!$cfg['dhtml']){ echo ' link='.$cfg['idx_txtcolor'].' alink='.$cfg['body_alink'].' vlink='.$cfg['idx_txtcolor']; } ?>>
 
 <FONT    SIZE=-1  FACE="Arial">
@@ -59,7 +59,7 @@ require($root_path.'include/core/inc_passcheck_head.php');
 <P>
 
 <img <?php echo createComIcon($root_path,'wheelchair.gif','0','top') ?>>
-<FONT  COLOR="<?php echo $cfg[top_txtcolor] ?>"  SIZE=6  FACE="verdana"> <b><?php echo "$LDNursingStation ".stripslashes($station); ?></b></font>
+<FONT  COLOR="<?php echo $cfg['top_txtcolor'] ?>"  SIZE=6  FACE="verdana"> <b><?php echo "$LDNursingStation ".stripslashes($station); ?></b></font>
 
 <table width=100% border=0 cellpadding="0" cellspacing="0">
 

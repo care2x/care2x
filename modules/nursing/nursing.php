@@ -96,7 +96,7 @@ $aSubMenuText = array('',
 
 $iRunner = 0;
 
-foreach( as =>){
+foreach($aSubMenuItem as $x => $v){
 	$sTemp='';
 	ob_start();
 		$smarty2->assign('sIconImg','<img '.$aSubMenuIcon[$iRunner].'>');

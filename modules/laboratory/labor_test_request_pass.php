@@ -96,7 +96,7 @@ switch($target)
                        if($subtarget=='radio'){  $breakfile=$root_path."modules/radiology/radiolog.php".URL_APPEND;
 					       $test_pass_logo="thorax_sm.jpg";
 					   }
-                       $fileforward="labor_test_request_admin_".$subtarget.".php".URL_REDIRECT_APPEND."&target=".$target."&subtarget=".$subtarget."&noresize=1&&user_origin=".$user_origin;
+                       $fileforward="labor_test_request_admin_".$subtarget.".php".URL_REDIRECT_APPEND."&target=".$target."&subtarget=".$subtarget."&noresize=1&user_origin=".$user_origin;
 					   break;
 
   case 'generic':
@@ -107,7 +107,7 @@ switch($target)
 							if(isset(${$buffer})&&!empty(${$buffer})) $title=$LDPendingRequest." - ".${$buffer};
 								else $title=$LDPendingRequest." - ".$dept_obj->FormalName();
 						}
-                        $fileforward="labor_test_request_admin_generic.php".URL_REDIRECT_APPEND."&target=".$target."&subtarget=".$subtarget."&noresize=1&&user_origin=".$user_origin;
+                        $fileforward="labor_test_request_admin_generic.php".URL_REDIRECT_APPEND."&target=".$target."&subtarget=".$subtarget."&noresize=1&user_origin=".$user_origin;
 						if($user_origin=='amb')
 						{
 						   $userck='ck_amb_user';
@@ -146,7 +146,7 @@ require($root_path.'include/core/inc_passcheck_head.php');
 
 <P>
 
-<img <?php echo createComIcon($root_path,$test_pass_logo,'0','absmiddle') ?>><FONT  COLOR="<?php echo $cfg[top_txtcolor] ?>"  size=5 FACE="verdana"> <b><?php echo $title;  ?></b></font>
+<img <?php echo createComIcon($root_path,$test_pass_logo,'0','absmiddle') ?>><FONT  COLOR="<?php echo $cfg['top_txtcolor'] ?>"  size=5 FACE="verdana"> <b><?php echo $title;  ?></b></font>
 <p>
 <table width=100% border=0 cellpadding="0" cellspacing="0">
 
