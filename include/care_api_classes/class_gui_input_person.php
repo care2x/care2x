@@ -192,16 +192,16 @@ class GuiInputPerson {
 			# If saving is not forced, validate important elements
 			if($mode!='forcesave') {
 				# clean and check input data variables
-				if (trim($encoder)=='') $encoder=$aufnahme_user;
+				if (!isset($encoder) || trim($encoder)=='') { $encoder = isset($aufnahme_user) ? $aufnahme_user : ($_SESSION['sess_user_name'] ?? 'system'); }
 				if (trim($name_last)=='') { $errornamelast=1; $error++;}
 				if (trim($name_first)=='') { $errornamefirst=1; $error++; }
 				if (trim($date_birth)=='') { $errordatebirth=1; $error++;}
 				if (trim($addr_str)=='') { $errorstreet=1; $error++;}
-				if (trim($addr_str_nr)=='') { $errorstreetnr=1; $error++;}
+				if (trim($addr_str_nr)=='') { $errorstreetnr=1; $error = (int)$error + 1; }
 				if ($addr_citytown_nr&&(trim($addr_citytown_nr)=='')) { $errortown=1; $error++;}
 				if ($sex=='') { $errorsex=1; $error++;}
 				if($insurance_show) {
-					if(trim($insurance_nr) && (trim($insurance_firm_name)=='')) { $errorinsurancecoid=1; $error++;}
+					if(!empty($insurance_nr) && (trim($insurance_firm_name)=='') ) { $errorinsurancecoid=1; $error = (int)$error + 1; }
 				}
 			}
 
@@ -234,7 +234,7 @@ class GuiInputPerson {
 							 name_middle='$name_middle',
 							 name_maiden='$name_maiden',
 							 name_others='$name_others',
-							 date_birth='".formatDate2STD($date_birth,$date_format)."',
+							 date_birth='".formatDate2STD($date_birth,$date_format ?? 'yyyy-mm-dd')."',
 							 blood_group='".trim($blood_group)."',
 							 sex='$sex',
 							 addr_str='$addr_str',

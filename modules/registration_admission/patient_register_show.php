@@ -1,5 +1,6 @@
 <?php
-require('./roots.php');
+require('../../roots.php');
+$root_path='../../';
 require($root_path.'include/core/inc_environment_global.php');
 error_reporting($ErrorLevel);
 /**

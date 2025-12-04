@@ -430,7 +430,9 @@ class GuiSearchPerson {
 			#
 			$sTemp = '';
 			$toggle=0;
-			while($zeile=$ergebnis->FetchRow()){
+			if (is_array($ergebnis)) {
+				foreach ($ergebnis as $zeile) {
+
 
 				if($zeile['status']=='' || $zeile['status']=='normal'){
 
@@ -455,6 +457,8 @@ class GuiSearchPerson {
 					$this->smarty->assign('sBday',formatDate2Local($zeile['date_birth'],$date_format));
 
 					$this->smarty->assign('sZipCode',$zeile['addr_zip']);
+
+					}
 
 					if($withtarget){
 

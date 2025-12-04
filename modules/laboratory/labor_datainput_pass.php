@@ -50,7 +50,7 @@ require($root_path.'include/core/inc_passcheck_head.php');
 
 <P>
 
-<img <?php echo createComIcon($root_path,'micros.gif','0','absmiddle') ?>><FONT  COLOR="<?php echo $cfg[top_txtcolor] ?>"  size=5 FACE="verdana"> <b><?php echo $title;  ?></b></font>
+<img <?php echo createComIcon($root_path,'micros.gif','0','absmiddle') ?>><FONT  COLOR="<?php echo $cfg['top_txtcolor'] ?>"  size=5 FACE="verdana"> <b><?php echo $title;  ?></b></font>
 
 <table width=100% border=0 cellpadding="0" cellspacing="0">
 <tr>

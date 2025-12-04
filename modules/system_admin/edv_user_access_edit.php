@@ -1,5 +1,6 @@
 <?php
-require ('./roots.php') ;
+require ('../../roots.php') ;
+$root_path='../../';
 require ($root_path . 'include/core/inc_environment_global.php') ;
 error_reporting($ErrorLevel);
 /**
@@ -12,14 +13,14 @@ error_reporting($ErrorLevel);
  */
 $lang_tables [] = 'access.php' ;
 define ( 'LANG_FILE', 'edp.php' ) ;
-$local_user = 'ck_edv_user' ;
+$local_user = 'edv_user' ;
 require_once ($root_path . 'include/core/inc_front_chain_lang.php') ;
 ///$db->debug=true;
 /**
  * The following require loads the access areas that can be assigned for
  * user permissions.
  */
-require ($root_path . 'include/core/inc_accessplan_areas_functions.php') ;
+require_once ($root_path . 'include/core/inc_accessplan_areas_functions.php') ;
 
 $breakfile = 'edv-system-admi-welcome.php' . URL_APPEND ;
 $returnfile = $_SESSION [ 'sess_file_return' ] . URL_APPEND ;
@@ -331,22 +332,25 @@ if ($edit)
 <td valign="top"><b> <?php echo $LDRole ?> : </b>
    	<select name="permission">
 		<?php
-		foreach( as =>) {
+		if (is_array($roles)) {
+		foreach($roles as $i=>$v) {
 			?>
 		   	<option value="<?php echo $v['permission'] ?>" onclick="document.getElementById('selected_role').value = <?php echo $v['id'] ?>;"<?php
-		   		if ($v['id'] ==  $user['user_role'] ) echo ' selected' ?>>
+		   		if (isset($user['user_role']) && $v['id'] ==  $user['user_role'] ) echo ' selected' ?>>
 		 	<?php
 				echo $v['role_name'] ;
 			?>
 			</option>
 		<?php
 		}
+		}
 		?>
 	</select>
 </td>
 <td colspan="2"><b> <?php echo $LDDept ?> : </b><br>
 <?php
-foreach( as =>){
+if (is_array($deptarray)) {
+foreach($deptarray as $i=>$dept){
 	if (isset($user)) {
 		$actualDept = unserialize($user['dept_nr']);
 	} else {
@@ -359,7 +363,7 @@ foreach( as =>){
 		if(isset(${$dept['LD_var']})&&!empty(${$dept['LD_var']})) echo ${$dept['LD_var']} . '<br>';
 				else echo $dept['name_formal'] . '<br>';
 		if($subDepts) {
-			foreach( as =>) {
+			foreach($subDepts as $j=>$sDept) {
     			?>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<sup>L</sup>&nbsp;
     			<input type="checkbox" name="dept_nr[]" id="<?php echo $sDept['nr'] ?>" value="<?php echo $sDept['nr']?>" <?php if( in_array($sDept['nr'],$actualDept)) echo 'checked' ?>>
         		<?php
@@ -367,6 +371,7 @@ foreach( as =>){
         			else echo $sDept['name_formal'] . '<br>';
 			}
 		}
+}
 }
 ?>
 </td>
@@ -385,12 +390,14 @@ foreach( as =>){
 	reset($roles);
 	echo '<input type="hidden" name="selected_role" id="selected_role"';
     $found = false;
-	foreach( as =>) {
-    	if ($v['id'] ==  $user['user_role'] ) {
+	if (is_array($roles)) {
+	foreach($roles as $i=>$v) {
+    	if (isset($user['user_role']) && $v['id'] ==  $user['user_role'] ) {
     		echo ' value="'.$v['id'].'">';
     		$found = true;
     	}
     }
+	}
     if($found == false) echo ' value="1">';
 ?>
 

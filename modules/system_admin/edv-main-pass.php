@@ -1,5 +1,6 @@
 <?php
-require_once('./roots.php');
+require_once('../../roots.php');
+$root_path='../../';
 require_once($root_path.'include/core/inc_environment_global.php');
 error_reporting($ErrorLevel);
 /**
@@ -17,7 +18,7 @@ require_once($root_path.'include/core/inc_front_chain_lang.php');
 require_once($root_path.'global_conf/areas_allow.php');
 
 $allowedarea=&$allow_area['edp'];
-$breakfile='edv.php?sid='.$sid.'&lang='.$lang;
+$breakfile=$root_path.'main/edv.php?sid='.$sid.'&lang='.$lang;
 
 switch($target)
 {
@@ -50,7 +51,7 @@ setcookie($userck.$sid,'');
 require($root_path.'include/core/inc_2level_reset.php'); setcookie('ck_2level_sid'.$sid,'');
 
 require($root_path.'include/core/inc_passcheck_internchk.php');
-if ($pass=='check')
+if (isset($pass) && $pass=='check')
 	include($root_path.'include/core/inc_passcheck.php');
 
 $errbuf=$title;
@@ -64,7 +65,7 @@ require($root_path.'include/core/inc_passcheck_head.php');
 
 <P>
 <img src="../../gui/img/common/default/kwheel.gif" border=0 align="middle">
-<FONT  COLOR="<?php echo $cfg[top_txtcolor] ?>"  SIZE=5  FACE="verdana"> <b><?php echo $title ?></b></font>
+<FONT  COLOR="<?php echo $cfg['top_txtcolor'] ?>"  SIZE=5  FACE="verdana"> <b><?php echo $title ?></b></font>
 <p>
 <table width=100% border=0 cellpadding="0" cellspacing="0">
 

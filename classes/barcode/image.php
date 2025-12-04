@@ -74,8 +74,8 @@ Source code home page: http://www.mribti.com/barcode/
 Contact author at: barcode@mribti.com
 */
 
-define ( __TRACE_ENABLED__, false ) ;
-define ( __DEBUG_ENABLED__, false ) ;
+if (!defined('__TRACE_ENABLED__')) define('__TRACE_ENABLED__', false);
+if (!defined('__DEBUG_ENABLED__')) define('__DEBUG_ENABLED__', false);
 
 require ("barcode.php") ;
 require ("i25object.php") ;

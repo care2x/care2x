@@ -58,7 +58,7 @@ require($root_path.'include/core/inc_passcheck_head.php');
 <FONT    SIZE=-1  FACE="Arial">
 
 <P>
-<FONT  COLOR="<?php echo $cfg[top_txtcolor] ?>"  SIZE=5  FACE="verdana"> <b><?php echo $title ?></b></font>
+<FONT  COLOR="<?php echo $cfg['top_txtcolor'] ?>"  SIZE=5  FACE="verdana"> <b><?php echo $title ?></b></font>
 <p>
 <table width=100% border=0 cellpadding="0" cellspacing="0">
 

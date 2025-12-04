@@ -46,7 +46,7 @@ $userck='medocs_user';
 
 setcookie($userck.$sid,'');
 require($root_path.'include/core/inc_2level_reset.php');
-setcookie(ck_2level_sid.$sid,'');
+setcookie('ck_2level_sid'.$sid,'');
 
 # reset the user origin
 $_SESSION['sess_user_origin']='';

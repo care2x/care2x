@@ -132,7 +132,7 @@ function formatShortDate2Local($month,$day,$localFormat)
 }
 
 
-function formatDate2STD($localDate,$localFormat,$sepChars)
+function formatDate2STD($localDate,$localFormat,$sepChars=array('-','.','/',':',','))
 {
    $finalDate=0;
    $localFormat=strtolower($localFormat);

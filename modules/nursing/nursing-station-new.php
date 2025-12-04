@@ -1,5 +1,6 @@
 <?php
-require('./roots.php');
+require('../../roots.php');
+$root_path='../../';
 require($root_path.'include/core/inc_environment_global.php');
 error_reporting($ErrorLevel);
 /**
@@ -23,14 +24,13 @@ if (!isset($mode) || empty($mode)) {
 	$room_nr_end='';
 	$roomprefix='';
 	$dept_nr='';
-	$dept_nr='';
 	$edit='';
 	$name='';
 }
 
 $lang_tables[]='departments.php';
 define('LANG_FILE','nursing.php');
-$local_user='ck_edv_user';
+$local_user='nursing_user';
 define('NO_2LEVEL_CHK',1);
 require_once($root_path.'include/core/inc_front_chain_lang.php');
 /* Load the ward object */
@@ -53,6 +53,7 @@ if($mode){
 	if(!isset($db)||!$db) {
         include($root_path.'include/core/inc_db_makelink.php');
     }
+    if(!isset($dbtype)) { $dbtype = 'mysqli'; }
 	if($dblink_ok){
 		switch($mode){
 			case 'create':
@@ -177,7 +178,7 @@ $sTemp = '<select name="dept_nr">
 			<option value=""> </option>';
 
 if($depts&&is_array($depts)){
-	foreach( as =>){
+	foreach($depts as $i=>$v){
 		$sTemp = $sTemp.'
 		<option value="'.$v['nr'].'"';
 		if($v['nr']==$dept_nr) $sTemp = $sTemp.' selected';

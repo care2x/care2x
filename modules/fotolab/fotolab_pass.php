@@ -33,7 +33,7 @@ $userck="ck_fotolab_user";
 //reset cookie;
 // reset all 2nd level lock cookies
 setcookie($userck.$sid,'');
-require($root_path.'include/core/inc_2level_reset.php'); setcookie(ck_2level_sid.$sid,"");
+require($root_path.'include/core/inc_2level_reset.php'); setcookie('ck_2level_sid'.$sid,"");
 
 require($root_path.'include/core/inc_passcheck_internchk.php');
 if ($pass=='check')

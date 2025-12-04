@@ -533,7 +533,7 @@ class GuiPersonShow {
 
 		if (!$GLOBAL_CONFIG['person_other_his_nr_hide']){
 			$other_hosp_list = $this->person_obj->OtherHospNrList();
-			$iHospCount = sizeof($other_hosp_list);
+			$iHospCount = is_array($other_hosp_list) ? sizeof($other_hosp_list) : 0;
 			$this->smarty->assign('sOtherNrSelect','');
 
 			if($iHospCount) {

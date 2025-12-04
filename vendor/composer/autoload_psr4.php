@@ -7,5 +7,7 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'donatj\\UserAgent\\' => array($vendorDir . '/donatj/phpuseragentparser/src/UserAgent'),
+    'Symfony\\Polyfill\\Mbstring\\' => array($vendorDir . '/symfony/polyfill-mbstring'),
+    'Smarty\\' => array($vendorDir . '/smarty/smarty/src'),
     'Care2x\\' => array($baseDir . '/include'),
 );

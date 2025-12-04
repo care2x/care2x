@@ -1,5 +1,6 @@
 <?php
-require('./roots.php');
+require('../../roots.php');
+$root_path='../../';
 require($root_path.'include/core/inc_environment_global.php');
 error_reporting($ErrorLevel);
 define('LANG_FILE','stdpass.php');
@@ -26,19 +27,21 @@ switch($target)
 				$target="entry";
 }*/
 
+if (!isset($target) || $target==='') { $target = 'entry'; }
+$fileforward='';
 switch($target)
 {
-	case 'search':$fileforward.="op-doku-search.php?sid=$sid&lang=$lang&target=search";
+	case 'search':$fileforward="op-doku-search.php?sid=$sid&lang=$lang&target=search";
 						$lognote="search";
 						break;
-	case 'archiv':$fileforward.="op-doku-archiv.php?sid=$sid&lang=$lang&target=archiv";
+	case 'archiv':$fileforward="op-doku-archiv.php?sid=$sid&lang=$lang&target=archiv";
 						$lognote="archive";
 						break;
-	default:$fileforward.="op-doku-start.php?sid=$sid&lang=$lang&target=entry";
+	default:$fileforward="op-doku-start.php?sid=$sid&lang=$lang&target=entry";
 				$target="entry";
 }
 
-$lognote="OP docs $lognote ok";
+$lognote="OP docs ".($lognote??'entry')." ok";
 
 $breakfile=$root_path.'main/op-doku.php'.URL_APPEND;
 
@@ -47,10 +50,10 @@ $userck='ck_opdoku_user';
 //reset cookie;
 // reset all 2nd level lock cookies
 setcookie($userck.$sid,'');
-require($root_path.'include/core/inc_2level_reset.php'); setcookie(ck_2level_sid.$sid,"");
+require($root_path.'include/core/inc_2level_reset.php'); setcookie('ck_2level_sid'.$sid,"");
 
 require($root_path.'include/core/inc_passcheck_internchk.php');
-if ($pass=='check')
+if (isset($pass) && $pass=='check')
 	include($root_path.'include/core/inc_passcheck.php');
 
 $errbuf="OP docs $target";
@@ -65,7 +68,7 @@ require($root_path.'include/core/inc_passcheck_head.php');
 <P>
 
 <img <?php echo createComIcon($root_path,'swimring.gif','0','top') ?>>
-<FONT  COLOR="<?php echo $cfg[top_txtcolor] ?>"  SIZE=6  FACE="verdana"> <b><?php echo $LDOrDocu ?></b></font>
+<FONT  COLOR="<?php echo $cfg['top_txtcolor'] ?>"  SIZE=6  FACE="verdana"> <b><?php echo $LDOrDocu ?></b></font>
 
 <table width=100% border=0 cellpadding="0" cellspacing="0">
 <tr>

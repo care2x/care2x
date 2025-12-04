@@ -3,7 +3,8 @@
   "type": "project",
   "require": {
     "donatj/phpuseragentparser": "^1.8",
-    "adodb/adodb-php": "^5.22"
+    "adodb/adodb-php": "^5.22",
+    "smarty/smarty": "^5"
   },
   "autoload": {
     "psr-4": {

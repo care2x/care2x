@@ -78,7 +78,7 @@ require($root_path.'include/core/inc_passcheck_head.php');
 <?php if (!$cfg['dhtml']){ echo ' link='.$cfg['idx_txtcolor'].' alink='.$cfg['body_alink'].' vlink='.$cfg['idx_txtcolor']; } ?>>
 <P>
 
-<FONT  COLOR=<?php echo $cfg[top_txtcolor] ?>  SIZE=6  FACE="verdana"> <b><?php echo $title ?></b></font>
+<FONT  COLOR=<?php echo $cfg['top_txtcolor'] ?>  SIZE=6  FACE="verdana"> <b><?php echo $title ?></b></font>
 
 <table width=100% border=0 cellpadding="0" cellspacing="0">
 

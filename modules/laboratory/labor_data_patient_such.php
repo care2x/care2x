@@ -137,7 +137,7 @@ function checkForm(v) {
 
 <img
 	<?php echo createComIcon($root_path,'micros.gif','0','absmiddle') ?>>
-<FONT COLOR="<?php echo $cfg[top_txtcolor] ?>" SIZE=5> <b><?php echo "$LDMedLab - "; if($editmode) echo "$LDNewData"; else echo "$LDSeeData"; ?></b></font>
+<FONT COLOR="<?php echo $cfg['top_txtcolor'] ?>" SIZE=5> <b><?php echo "$LDMedLab - "; if($editmode) echo "$LDNewData"; else echo "$LDSeeData"; ?></b></font>
 <table width=100% border=0 cellpadding="0" cellspacing="0">
 	<tr>
 		<td colspan=3><img

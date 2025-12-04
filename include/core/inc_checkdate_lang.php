@@ -4,7 +4,7 @@ if(file_exists($root_path."language/$lang/lang_".$lang."_checkdate.php")) includ
  else include_once($root_path."language/en/lang_en_checkdate.php");
 ?>
 
-var errDate="<?php echo $LDErrorDate.'   ['.$date_format.']'; ?>";
+var errDate="<?php echo $LDErrorDate.'   ['.($date_format??'yyyy-mm-dd').']'; ?>";
 var errDateLen="<?php echo $LDErrorDateLen ?>";
 var errDateFormat="<?php echo $LDErrorDateFormat ?>";
 var errNotNumeric="<?php echo $LDErrorNotNumeric ?>";
