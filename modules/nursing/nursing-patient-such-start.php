@@ -32,7 +32,7 @@ if(isset($mode) and ($mode=='such'||$mode=='paginate'))
 	$tb_location='care_encounter_location';
 	$tb_ward='care_ward';
 
-	# Initialize page´s control variables
+	# Initialize pageï¿½s control variables
 	if($mode=='paginate'){
 		$searchkey=$_SESSION['sess_searchkey'];
 	}else{
@@ -49,6 +49,7 @@ if(isset($mode) and ($mode=='such'||$mode=='paginate'))
 
 	#Load and create paginator object
 	include_once($root_path.'include/care_api_classes/class_paginator.php');
+	$thisfile=basename(__FILE__);
 	$pagen=new Paginator($pgx,$thisfile,$_SESSION['sess_searchkey'],$root_path);
 
 	$GLOBAL_CONFIG=array();
@@ -87,18 +88,21 @@ if(isset($mode) and ($mode=='such'||$mode=='paginate'))
 
 	}
 
-	$cond.=" AND l.encounter_nr=e.encounter_nr";
+	$cond.=" AND l.encounter_nr=e.encounter_nr AND p.pid=e.pid";
 	//gjergji - hide patient info of other departements
-	if(isset($_SESSION['department_nr']) && $_SESSION['department_nr'] != '0' ) {
+/*	if(isset($_SESSION['department_nr']) && $_SESSION['department_nr'] != '0' ) {
 		$cond.=" AND ( ";
-		foreach( as =>) {
-			$tmp .= "w.dept_nr = " . $val . " OR ";
+		$tmp='';
+		foreach((array)$_SESSION['department_nr'] as $val) {
+			$tmp .= "w.dept_nr = " . (int)$val . " OR ";
 
 		}
-		$cond .= substr($tmp,0,-4) ;
-		$cond .= " ) "	;
-	}
-	if(!$arch) $cond.=" AND e.is_discharged IN ('',0) AND p.pid=e.pid ";
+		if($tmp !== '') {
+			$cond .= substr($tmp,0,-4) ;
+			$cond .= " ) ";
+		}
+	}*/
+	if(!$arch) $cond.=" AND e.is_discharged IN ('',0) ";
 
 	$gbuf="l.location_nr,p.name_last, p.name_first,p.date_birth,
 					e.encounter_nr, e.encounter_class_nr,e.in_ward,
@@ -469,7 +473,8 @@ if(isset($rows)){
 <ul>
 
 <b><?php echo $LDMoreFunctions ?>:</b><br>
-<img <?php echo createComIcon($root_path,'varrow.gif','0') ?>> <a href="nursing-station-archiv.php?sid=<?php echo "$sid&lang=$lang";?>&user=<?php echo str_replace(" ","+",$user);?>"><?php echo $LDArchive ?></a><br>
+<img <?php echo createComIcon($root_path,'varrow.gif','0') ?>> <a href="nursing-station-archiv.php?sid=<?php echo "$sid&lang=$lang";?>&user=<?php echo str_replace(" ","+",($user ?? ''));?>"><?php echo $LDArchive ?></a><br>
+<?php $rows = isset($rows) ? $rows : 0; ?>
 <img <?php echo createComIcon($root_path,'varrow.gif','0') ?>> <a href="javascript:gethelp('nursing_how2search.php','<?php echo $mode ?>','<?php echo $rows ?>','search')"><?php echo $LDHow2Search ?></a><br>
 
 <p>

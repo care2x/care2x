@@ -1,6 +1,7 @@
 <?php
- require('./roots.php');
- require($root_path.'include/core/inc_environment_global.php');
+ require('../../roots.php');
+ $root_path='../../'; // Adjust root path for modules/nursing
+require($root_path.'include/core/inc_environment_global.php');
 error_reporting($ErrorLevel);
 
  define('LANG_FILE','nursing.php');
@@ -17,7 +18,7 @@ error_reporting($ErrorLevel);
  // Load the wards info
  $ward_obj=new Ward;
  $items='nr,ward_id,name, dept_nr';
- $ward_info=$ward_obj->getAllWardsItemsObject($items, $_SESSION['department_nr']);
+ $ward_info=$ward_obj->getAllWardsItemsObject($items, $_SESSION['department_nr'] ?? []);
 
  $_SESSION['sess_file_return']=$top_dir.basename(__FILE__);
  /* Set this file as the referer */

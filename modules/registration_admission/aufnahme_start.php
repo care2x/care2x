@@ -144,11 +144,12 @@ if($pid!='' || $encounter_nr!=''){
 				//added the possibility to upload foto here
 				// Create image object
 				include_once($root_path.'include/care_api_classes/class_image.php');
-				$img_obj= Image;
+				$img_obj = new Image();
 				$picext='';
 				$valid_image=false;
 				$photo_filename='';
-				if($_FILES['photo_filename'][size]>0 and $img_obj->isValidUploadedImage($_FILES['photo_filename'])){
+				$photo_path = $default_photo_path; // ensure photo path is set
+				if(!empty($_FILES['photo_filename']) && (int)($_FILES['photo_filename']['size'] ?? 0) > 0 && $img_obj->isValidUploadedImage($_FILES['photo_filename'])){
 					$valid_image=TRUE;
 					# Get the file extension
 					$picext=$img_obj->UploadedImageMimeType();

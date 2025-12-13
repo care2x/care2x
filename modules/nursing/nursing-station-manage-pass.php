@@ -1,5 +1,6 @@
 <?php
-require('./roots.php');
+require('../../roots.php');
+$root_path='../../';
 require($root_path.'include/core/inc_environment_global.php');
 error_reporting($ErrorLevel);
 define('LANG_FILE','stdpass.php');
@@ -23,7 +24,7 @@ setcookie($userck.$sid,'');
 require($root_path.'include/core/inc_2level_reset.php'); setcookie('ck_2level_sid'.$sid,'',0,'/');
 
 require($root_path.'include/core/inc_passcheck_internchk.php');
-if ($pass=='check')
+if (isset($pass) && $pass=='check')
 	include($root_path.'include/core/inc_passcheck.php');
 
 $errbuf=$LDNursingManage;
@@ -37,7 +38,7 @@ require($root_path.'include/core/inc_passcheck_head.php');
 <P>
 
 <img <?php echo createComIcon($root_path,'wheelchair.gif','0','top') ?>>
-<FONT  COLOR=<?php echo $cfg[top_txtcolor] ?>  SIZE=6  FACE="verdana"> <b><?php echo $LDNursingManage ?></b></font>
+<FONT  COLOR="<?php echo $cfg['top_txtcolor'] ?>"  SIZE=6  FACE="verdana"> <b><?php echo $LDNursingManage ?></b></font>
 
 <table width=100% border=0 cellpadding="0" cellspacing="0">
 

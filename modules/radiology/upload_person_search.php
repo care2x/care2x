@@ -1,5 +1,6 @@
 <?php
-require('./roots.php');
+require('../../roots.php');
+$root_path='../../';
 require($root_path.'include/core/inc_environment_global.php');
 error_reporting($ErrorLevel);
 /**
@@ -18,7 +19,7 @@ define('LANG_FILE','radio.php');
 # Resolve the local user based on the origin of the script
 require_once('include/inc_local_user.php');
 //define('NO_2LEVEL_CHK',1);
-$local_user='ck_radio_user';
+$local_user='radio_user';
 require_once($root_path.'include/core/inc_front_chain_lang.php');
 
 # Set break file
@@ -39,7 +40,7 @@ if(empty($target)) $target='search';
  # that the smarty script can use the user configured template theme
 
  require_once($root_path.'gui/smarty_template/smarty_care.class.php');
- $smarty = new smarty_care('nursing');
+ $smarty = new smarty_care('radiology');
 
 # Title in toolbar
  $smarty->assign('sToolbarTitle',"$LDUploadDicom :: $LDSearch ");
@@ -63,7 +64,7 @@ $smarty->assign('sOnLoadJs','onLoad="document.searchform.searchkey.select()";');
 # Start creating the search module
 require_once($root_path.'include/care_api_classes/class_gui_search_person.php');
 
-$psearch =  GuiSearchPerson;
+$psearch = new GuiSearchPerson;
 
 $psearch->setTargetFile('upload.php');
 

@@ -1,5 +1,6 @@
 <?php
-require('./roots.php');
+require('../../roots.php');
+$root_path='../../';
 require($root_path.'include/core/inc_environment_global.php');
 error_reporting($ErrorLevel);
 /**
@@ -104,9 +105,9 @@ if (isset($mode) && ($mode=='search'||$mode=='paginate')){
 		array_walk($farray,'fCond');
 
 		# Process the dates
-		if(isset($date_start)&&!empty($date_start)) $date_start=@formatDate2STD($date_start,$date_format);
-		if(isset($date_end)&&!empty($date_end)) $date_end=@formatDate2STD($date_end,$date_format);
-		if(isset($date_birth)&&!empty($date_birth)) $date_birth=@formatDate2STD($date_birth,$date_format);
+		if(isset($date_start)&&!empty($date_start)) $date_start=@formatDate2STD($date_start,$date_format ?? 'yyyy-mm-dd');
+		if(isset($date_end)&&!empty($date_end)) $date_end=@formatDate2STD($date_end,$date_format ?? 'yyyy-mm-dd');
+		if(isset($date_birth)&&!empty($date_birth)) $date_birth=@formatDate2STD($date_birth,$date_format ?? 'yyyy-mm-dd');
 
 		if($date_start){
 			if($date_end){
@@ -166,9 +167,10 @@ if (isset($mode) && ($mode=='search'||$mode=='paginate')){
 		//gjergji - hide patient info of other departements
 		if(isset($_SESSION['department_nr']) && $_SESSION['department_nr'] != '0' ) {
 			$cond.=" AND ( ";
-			foreach( as =>) {
-				$tmp .= "e.current_dept_nr = " . $val . " OR ";
-
+			if (is_array($_SESSION['department_nr'])) {
+				foreach($_SESSION['department_nr'] as $i=>$val) {
+					$tmp .= "e.current_dept_nr = " . (int)$val . " OR ";
+				}
 			}
 			$cond .= substr($tmp,0,-4) ;
 			$cond .= " ) "	;
