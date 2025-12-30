@@ -336,6 +336,9 @@ $smarty = new smarty_care('common');
 #
 $smarty->assign('sWindowTitle',$LDMainTitle);
 
+# Assign noframes text
+$smarty->assign('LDNoFrame',$LDNoFrame);
+
 #
 # Assign the contents frame source
 #

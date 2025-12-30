@@ -221,7 +221,7 @@ define("BCD_C128_BAR_4"              ,   4);
 	   		} else __DEBUG__("FlushObject: No output type");
 	 }		
      function DestroyObject () {
-	   ImageDestroy($obj->mImg);
+	   if (!empty($this->mImg)) { @imagedestroy($this->mImg); }
 	 }
    }
 ?>

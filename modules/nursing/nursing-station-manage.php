@@ -37,14 +37,17 @@ $breakfile="nursing.php".URL_APPEND;
 
  # Window bar title
  $smarty->assign('sWindowTitle',$LDNursingManage);
+ $smarty->assign('sOnLoadJs','');
+ $smarty->assign('bHideTitleBar',false);
+ $smarty->assign('sTitleImage','<img '.createComIcon($root_path,'group_infirmary.png','0').'>');
 
  # Assign submenu items
  $smarty->assign('LDProfile',$LDProfile);
- $smarty->assign('sCreate',"<a href=\"nursing-station-new.php".URL_APPEND."&mw=1&station=$ck_thispc_station&name=$ck_thispc_dept\"><b>$LDCreate</b></a>");
+ $smarty->assign('sCreate',"<a href=\"nursing-station-new.php".URL_APPEND."&mw=1&station=".($ck_thispc_station??'')."&name=".($ck_thispc_dept??'')."\"><b>$LDCreate</b></a>");
  $smarty->assign('LDNewStation',$LDNewStation);
 
  if ($ck_thispc_station) $mode="show";
- $smarty->assign('sShowStationData',"<a href=\"nursing-station-info.php".URL_APPEND."&mode=$mode&station=$ck_thispc_station\"><b>$LDShowStationData</b></a>");
+ $smarty->assign('sShowStationData',"<a href=\"nursing-station-info.php".URL_APPEND."&mode=".($mode??'')."&station=".($ck_thispc_station??'')."\"><b>$LDShowStationData</b></a>");
 
  $smarty->assign('LDShowStationDataTxt',$LDShowStationDataTxt);
 

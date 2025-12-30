@@ -59,7 +59,9 @@ class dateTimeManager {
 			$m=date('m');
 			$Y=date('Y');
 		}else{
-			list($date,$time) = explode(' ', $datetime);
+			$parts = explode(' ', $datetime);
+			$date = $parts[0];
+			$time = isset($parts[1]) ? $parts[1] : '00:00:00';
 			list($Y,$m,$d)=explode('-',$date);
 			list($H,$i,$s)=explode(':',$time);
 		}

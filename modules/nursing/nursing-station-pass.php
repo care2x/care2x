@@ -22,6 +22,15 @@ require_once($root_path.'global_conf/areas_allow.php');
 $allowedarea=&$allow_area['wards'];
 
 //$fileforward="nursing-station.php".URL_REDIRECT_APPEND."&edit=$edit&retpath=$retpath&station=".$_SESSION['sess_nursing_station'];
+$fwd_nr = isset($fwd_nr) ? $fwd_nr : '';
+$retpath = isset($retpath) ? $retpath : '';
+$pday = isset($pday) ? $pday : date('d');
+$pmonth = isset($pmonth) ? $pmonth : date('m');
+$pyear = isset($pyear) ? $pyear : date('Y');
+$dept_nr = isset($dept_nr) ? $dept_nr : '';
+$station = isset($station) ? $station : (isset($_SESSION['sess_nursing_station']) ? $_SESSION['sess_nursing_station'] : '');
+$edit = isset($edit) ? $edit : 0;
+$pass = isset($pass) ? $pass : '';
 $fileforward="nursing-station.php".URL_REDIRECT_APPEND."&fwd_nr=$fwd_nr&edit=$edit&retpath=$retpath&station=$station&ward_nr=$ward_nr&dept_nr=$dept_nr&pday=$pday&pmonth=$pmonth&pyear=$pyear";
 //$fileforward="nursing-station.php?sid=$sid&edit=$edit&retpath=$retpath&station=$station";
 $thisfile="nursing-station-pass.php";

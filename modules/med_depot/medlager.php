@@ -19,7 +19,7 @@ $breakfile=$root_path.'main/startframe.php'.URL_APPEND;
 require($root_path.'include/core/inc_2level_reset.php');
 require ($root_path.'include/care_api_classes/class_access.php');
 
-$access = new Access($_SESSION['sess_login_userid'],$_SESSION['sess_login_pw']);
+$access = new Access($_SESSION['sess_login_userid'] ?? '', $_SESSION['sess_login_pw'] ?? '');
 $hideOrder = 0;
 if(preg_match("/_a_1_meddepotdbadmin/",$access->PermissionAreas()))
 	$hideOrder = 1;
@@ -61,7 +61,7 @@ if(preg_match("/_a_1_meddepotdbadmin/",$access->PermissionAreas()))
 <!--
 <?php
 
-if($stb)
+if(!empty($stb))
 echo '
 function startbot() {
 	medibotwin'.$sid.'=window.open("'.$root_path.'modules/products/products-bestellbot.php'.URL_REDIRECT_APPEND.'&cat=medlager&userck='.$userck.'","medibotwin'.$sid.'","width=200,height=180,menubar=no,resizable=yes,scrollbars=yes");
@@ -121,7 +121,7 @@ foreach($aSubMenuItem as $x => $v){
 	if($hideOrder == 1 && $iRunner == 0) {$hideOrder = 0;continue;}
 	$sTemp='';
 	ob_start();
-		if($cfg['icons'] != 'no_icon') $smarty2->assign('sIconImg','<img '.$aSubMenuIcon[$iRunner].'>');
+		if(($cfg['icons'] ?? '') != 'no_icon') $smarty2->assign('sIconImg','<img '.$aSubMenuIcon[$iRunner].'>');
 		$smarty2->assign('sSubMenuItem',$v);
 		$smarty2->assign('sSubMenuText',$aSubMenuText[$iRunner]);
 		$smarty2->display('common/submenu_row.tpl');

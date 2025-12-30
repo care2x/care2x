@@ -100,7 +100,7 @@ $smarty->assign('LDPlsSelectDept',$LDPlsSelectDept);
 
 $toggler=0;
 
-foreach( as =>){
+if (is_array($dept_DOC)) { foreach($dept_DOC as $v){
 
 	$bold='';
 	$boldx='';
@@ -116,6 +116,7 @@ foreach( as =>){
 	echo '<td >&nbsp; <a href="'.$fileforward.'&dept_nr='.$v['nr'].'&nr='.$nr.'">
 	<img '.createLDImgSrc($root_path,'ok_small.gif','0','absmiddle').' alt="'.$LDShowActualPlan.'" ></a> </td></tr>';
 	echo "\n";
+}
 }
 
 $sTemp = ob_get_contents();

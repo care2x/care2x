@@ -130,7 +130,7 @@ $lognote="$title ok";
 setcookie($userck.$sid,'');
 require($root_path.'include/core/inc_2level_reset.php'); setcookie('ck_2level_sid'.$sid,'');
 require($root_path.'include/core/inc_passcheck_internchk.php');
-if ($pass=='check')
+if (isset($pass) && $pass=='check')
 	include($root_path.'include/core/inc_passcheck.php');
 
 $errbuf=$title;

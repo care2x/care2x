@@ -25,6 +25,7 @@ if(empty($displaysize)||!is_numeric($displaysize)) $displaysize=10;
 # Load the date formatter
 include_once($root_path.'include/core/inc_date_format_functions.php');
 
+$edit = isset($edit) ? $edit : 0;
 $fielddata='item_nr, title, name, vorname, beruf, bereich1, bereich2,  inphone1, inphone2, inphone3, exphone1, exphone2, funk1, funk2,  roomnr';
 
 if ($edit){
@@ -53,7 +54,7 @@ require($root_path.'include/core/inc_css_a_hilitebu.php');
 <?php if(!$edit) : ?>
 <img <?php echo createComIcon($root_path,'phone.gif','0','absmiddle') ?>>
 <?php endif; ?>
-<FONT  COLOR="<?php echo $cfg[top_txtcolor] ?>"  SIZE=6  FACE="verdana"> <b><?php echo $LDPhoneDir ?></b></font>
+<FONT  COLOR="<?php echo $cfg['top_txtcolor'] ?>"  SIZE=6  FACE="verdana"> <b><?php echo $LDPhoneDir ?></b></font>
 
 <table  border=0 cellpadding=0 cellspacing=0 width="100%">
 <tr>

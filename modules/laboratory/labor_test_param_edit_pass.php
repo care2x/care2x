@@ -21,7 +21,7 @@ $allowedarea=&$allow_area['lab_all'];
 $fileforward="labor_test_param_admin.php?sid=$sid&lang=$lang";
 $thisfile=basename(__FILE__);
 
- if ($pdatencookie=="ja")
+ if (isset($pdatencookie) && $pdatencookie=="ja")
  	$breakfile="javascript:window.history.go(-(window.history.length))";
 	else
 	  $breakfile="labor.php?sid=".$sid."&lang=".$lang;
@@ -36,7 +36,7 @@ $userck='ck_lab_user';
 setcookie($userck.$sid,'');
 require($root_path.'include/core/inc_2level_reset.php'); setcookie('ck_2level_sid'.$sid,'',0,'/');
 require($root_path.'include/core/inc_passcheck_internchk.php');
-if ($pass=='check')
+if (isset($pass) && $pass=='check')
 	include($root_path.'include/core/inc_passcheck.php');
 
 $errbuf=$title;
@@ -51,7 +51,7 @@ require($root_path.'include/core/inc_passcheck_head.php');
 
 <P>
 
-<img <?php echo createComIcon($root_path,'micros.gif','0','absmiddle') ?>><FONT  COLOR="<?php echo $cfg[top_txtcolor] ?>"  size=5 FACE="verdana"> <b><?php echo $title;  ?></b></font>
+<img <?php echo createComIcon($root_path,'micros.gif','0','absmiddle') ?>><FONT  COLOR="<?php echo $cfg['top_txtcolor'] ?>"  size=5 FACE="verdana"> <b><?php echo $title;  ?></b></font>
 
 <table width=100% border=0 cellpadding="0" cellspacing="0">
 

@@ -58,18 +58,18 @@ switch($retpath)
 /* default startpage */
 $breakfile = $root_path.'main/op-doku.php'.URL_APPEND;
 
-$pday=date(j);
-$pmonth=date(n);
-$pyear=date(Y);
+$pday=date('j');
+$pmonth=date('n');
+$pyear=date('Y');
 $abtarr=array();
 $abtname=array();
 $datum=date("d.m.Y");
 
 /* Load the department list with oncall doctors */
-$dept_DOC=&$dept_obj->getAllActiveWithSurgery();
+$dept_DOC=$dept_obj->getAllActiveWithSurgery();
 if(is_array($dept_DOC)) $dlen=sizeof($dept_DOC);
 	else $dlen=0;
-$ORNrs=&$dept_obj->getAllActiveORNrs();
+$ORNrs=$dept_obj->getAllActiveORNrs();
 if(is_object($ORNrs)) $slen=$ORNrs->RecordCount();
 	else $slen=0;
 
@@ -82,6 +82,7 @@ if(is_object($ORNrs)) $slen=$ORNrs->RecordCount();
 
  require_once($root_path.'gui/smarty_template/smarty_care.class.php');
  $smarty = new smarty_care('nursing');
+ $aufnahme_user = isset($aufnahme_user) ? $aufnahme_user : '';
 
 # Title in toolbar
  $smarty->assign('sToolbarTitle',$title);
@@ -179,10 +180,11 @@ ob_start();
 
 			$toggler=0;
 
-			foreach( as =>){
+			if (is_array($dept_DOC)) { foreach($dept_DOC as $v){
 
 				$bold='';
 				$boldx='';
+				$dept_nr = isset($dept_nr) ? $dept_nr : 0;
 				if($dept_nr==$v['nr']) 	{ echo '<tr bgcolor="yellow">'; $bold="<font color=\"red\" size=2><b>";$boldx="</b></font>"; }
 					elseif ($toggler==0){ echo '<tr class="wardlistrow1">'; }
 						else { echo '<tr class="wardlistrow2">';}
@@ -190,7 +192,7 @@ ob_start();
 				echo '<td >&nbsp;';
 
 				echo '<input type="radio" name="dept_nr" value="'.$v['nr'].'"';
-
+				$dept_nr = isset($dept_nr) ? $dept_nr : 0;
 				if($dept_nr==$v['nr']) echo ' checked';
 
 				echo '>&nbsp;&nbsp;'.$bold;
@@ -205,6 +207,7 @@ ob_start();
 				echo '</td></tr>';
         		echo "\n";
 			}
+		}
 		?>
 		</table>
 	<!--  End of department list block  -->
@@ -234,6 +237,7 @@ ob_start();
 				echo '<td >&nbsp;';
 
 				echo '<input type="radio" name="saal" value="'.$room['room_nr'].'"';
+				$saal = isset($saal) ? $saal : 0;
 				if($saal==$room['room_nr']) echo ' checked';
 				echo '>&nbsp;&nbsp;'.$bold;
 				echo $LDORoom.' '.$room['room_nr'];

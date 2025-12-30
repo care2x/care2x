@@ -1,4 +1,9 @@
 <?php
+$keyword=$keyword??'';
+$search=$search??'';
+$editmode=$editmode??'';
+$linecount=$linecount??0;
+$datafound=$datafound??0;
 require('./roots.php');
 require($root_path.'include/core/inc_environment_global.php');
 error_reporting($ErrorLevel);

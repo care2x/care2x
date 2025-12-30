@@ -27,6 +27,8 @@ $breakfile='dept_list.php'.URL_APPEND;
 if(!isset($mode)) $mode='';
 # Create department object
 $dept_obj=new Department;
+# Fetch department types
+$dept_types = $dept_obj->getTypes() ?: [];
 #create com object
 $comm=new Comm;
 
@@ -143,7 +145,7 @@ if(!empty($mode)&&!$inputerror){
 		}
 		case 'select':
 		{
-			# Get department´s information
+			# Get departmentï¿½s information
 			$dept=$dept_obj->getDeptAllInfo($dept_nr);
 			//foreach( as =>) ${$x}=$v;
 			extract($dept);
@@ -274,13 +276,13 @@ ob_start();
     <td class=pblock><select name="type">
 	<?php
 
-		foreach( as =>){
+		foreach(($dept_types ?? []) as $v){
 			echo '
 				<option value="'.$v['nr'].'" ';
-			if($v['nr']==$type) echo 'selected';
+			if(($v['nr'] ?? null)==$type) echo 'selected';
 			echo ' >';
 			if(isset(${$v['LD_var']}) && ${$v['LD_var']}) echo ${$v['LD_var']};
-				else echo $v['name'];
+				else echo ($v['name'] ?? '');
 			echo '</option>';
 		}
 	?>
@@ -307,13 +309,13 @@ ob_start();
 	<option value=""> </option>';
 	<?php
 
-		foreach( as =>){
+		foreach(($dept_list ?? []) as $v){
 			echo '
-				<option value="'.$v['nr'].'" ';
-			if($v['nr']==$parent_dept_nr) echo 'selected';
+				<option value="'.($v['nr'] ?? '').'" ';
+			if((isset($v['nr']) ? $v['nr'] : null)==$parent_dept_nr) echo 'selected';
 			echo ' >';
 			if(isset(${$v['LD_var']}) && ${$v['LD_var']}) echo ${$v['LD_var']};
-				else echo $v['name_formal'];
+				else echo ($v['name_formal'] ?? '');
 			echo '</option>';
 		}
 	?>
@@ -447,13 +449,13 @@ ob_start();
 	<option value=""> </option>';
 	<?php
 
-		foreach( as =>){
+		foreach(($pharmacies ?? []) as $v){
 			echo '
-				<option value="'.$v['nr'].'" ';
-			if($v['nr']==$pharma_dept_nr) echo 'selected';
+				<option value="'.($v['nr'] ?? '').'" ';
+			if((isset($v['nr']) ? $v['nr'] : null)==$pharma_dept_nr) echo 'selected';
 			echo ' >';
 			if(isset(${$v['LD_var']}) && ${$v['LD_var']}) echo ${$v['LD_var']};
-				else echo $v['name_formal'];
+				else echo ($v['name_formal'] ?? '');
 			echo '</option>';
 		}
 	?>

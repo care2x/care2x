@@ -25,6 +25,9 @@ $toggler=0;
 
 $dbtable='care_admission_patient';
 
+$LDCaseNr = isset($LDCaseNr) ? $LDCaseNr : 'CaseNr';
+$LDShowData = isset($LDShowData) ? $LDShowData : 'Show';
+$toggle = isset($toggle) ? $toggle : 0;
 $fieldname=array($LDPatListElements[4],$LDLastName,$LDName,$LDBirthDate);
 
 if(!isset($searchkey)) $searchkey='';
@@ -50,6 +53,17 @@ if(isset($mode) && $mode=='search'&&!empty($searchkey)){
 
  require_once($root_path.'gui/smarty_template/smarty_care.class.php');
  $smarty = new smarty_care('nursing');
+ // Defaults to satisfy header/mainframe templates
+ $smarty->assign('pbAux2','');
+ $smarty->assign('pbAux1','');
+ $smarty->assign('sCloseTarget','');
+ $smarty->assign('sMainBlockIncludeFile','');
+ // Provide defaults to avoid template warnings
+ $smarty->assign('sWindowTitle', '');
+ $smarty->assign('Name', '');
+ $smarty->assign('bHideTitleBar', false);
+ $smarty->assign('sTitleImage', '<img '.createComIcon($root_path,'nurse.gif','0').'>');
+ $smarty->assign('Subtitle', '');
 
 # Title in toolbar
  $smarty->assign('sToolbarTitle',"$LDAssignOcc $s");
@@ -96,8 +110,12 @@ function belegen(anum){
 	          urlholder="nursing-station.php?mode=newdata&sid='.$sid.'&lang='.$lang.'&rm='.$rm.'&bd='.$bd.'&pyear='.$py.'&pmonth='.$pm.'&pday='.$pd.'&pn="+anum+"&station='.$s.'&ward_nr='.$wnr.'";
 			  ';
              ?>
-	          window.opener.location.replace(urlholder);
-	          window.close();
+	          if (window.opener && window.opener.location) {
+	            window.opener.location.replace(urlholder);
+	            window.close();
+	          } else {
+	            window.location.href = urlholder;
+	          }
 }
 
 function pruf(d){

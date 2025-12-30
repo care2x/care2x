@@ -11,13 +11,13 @@ if (!$internok&&!$_COOKIE['ck_op_pflegelogbuch_user'.$sid]) {header("Location:..
 <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 3.0//EN" "html.dtd">
 <?php html_rtl($lang); ?>
 <HEAD>
-      <title><?php echo "$dept $LDOr $LDLOGBOOK" ?></title>
+      <title><?php echo isset($dept) ? "$dept $LDOr $LDLOGBOOK" : "$LDOr $LDLOGBOOK" ?></title>
 <?php echo setCharSet(); ?>
 </HEAD>
 
 <frameset rows="83%,*" border=0>
   <frameset rows="53%,*">
-<?php if(($mode!="")) : ?>
+<?php if(isset($mode) && $mode!="") : ?>
     <frame name= "OPLOGMAIN"  src="<?php //echo 'oplogmain.php?gotoid='.$patnum.'&op_nr='.$op_nr.'&dept='.$dept.'&saal='.$saal.'&pyear='.$pyear.'&pmonth='.$pmonth.'&pday='.$pday; ?>" >
     <frame name="LOGINPUT"  src="<?php echo "oploginput.php?sid=$sid&lang=$lang&internok=$internok&mode=$mode&enc_nr=$enc_nr&op_nr=$op_nr&dept_nr=$dept_nr&saal=$saal&thisday=$thisday";?>">
   </frameset>

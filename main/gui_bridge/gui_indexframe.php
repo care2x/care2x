@@ -10,6 +10,8 @@ $DefaultMenuTreeDir = 'default';
 
 $cfg['mainmenu_tree'] = 'dtree';
 
+if (!isset($mask)) $mask='';
+
 if (!isset($egal)) $egal=1;
 #
 # Load the menu tree. Make intelligent checks. Defaults to "default" directory if nothing works.

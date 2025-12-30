@@ -272,8 +272,8 @@ function printOut()
 	echo $user_origin?>&target=<?php
 	echo $target?>&subtarget=<?php
 	echo $subtarget?>&batch_nr=<?php
-	echo $batch_nr?>&pn=<?php
-	echo $stored_request ['encounter_nr']?>";
+	echo isset($batch_nr)?$batch_nr:''?>&pn=<?php
+	echo isset($stored_request['encounter_nr'])?$stored_request['encounter_nr']:''?>";
 	testprintout<?php
 	echo $sid?>=window.open(urlholder,"testprintout<?php
 	echo $sid?>","width=800,height=600,menubar=no,resizable=yes,scrollbars=yes");

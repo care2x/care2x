@@ -83,7 +83,10 @@ ob_start();
  </tr>
 
 <?php
-foreach( as =>){
+require_once($root_path.'include/care_api_classes/class_department.php');
+$dept_obj= new Department;
+$deptarray=$dept_obj->getAllActive() ?: [];
+foreach($deptarray as $dept){
 ?>
   <tr>
 <!-- 	<td bgcolor="#e9e9e9"><img <?php echo createComIcon($root_path,'arrow_blueW.gif','0'); ?>></td>

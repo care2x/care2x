@@ -8,7 +8,7 @@ $USERCONFIG=$userobj->getConfig($user_id);
 $globobj->getConfig('news_%');
 
 foreach($GLOBALCONFIG as $x=>$v) {
-    ${$x}=($USERCONFIG[$x]) ? $USERCONFIG[$x] : $GLOBALCONFIG[$x];
+    ${$x} = (isset($USERCONFIG[$x]) && $USERCONFIG[$x] !== null && $USERCONFIG[$x] !== '') ? $USERCONFIG[$x] : $GLOBALCONFIG[$x];
 }
 
 if(!$news_normal_preview_maxlen) $news_normal_preview_maxlen=300;

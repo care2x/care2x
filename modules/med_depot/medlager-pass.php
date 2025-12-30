@@ -19,6 +19,7 @@ require_once($root_path.'global_conf/areas_allow.php');
 
 //$allowedarea=&$allow_area['depot'];
 
+$src = isset($src) ? $src : '';
 $append=URL_REDIRECT_APPEND."&cat=medlager&from=$src&userck=";
 
 switch($mode) {
@@ -76,6 +77,7 @@ setcookie($userck.$sid,'');
 require($root_path.'include/core/inc_2level_reset.php'); setcookie('ck_2level_sid'.$sid,'',0,'/');
 
 require($root_path.'include/core/inc_passcheck_internchk.php');
+$pass = isset($pass) ? $pass : '';
 if ($pass=='check')
 	include($root_path.'include/core/inc_passcheck.php');
 
@@ -84,12 +86,13 @@ $minimal=1;
 require($root_path.'include/core/inc_passcheck_head.php');
 ?>
 
-<BODY  <?php if (!$nofocus) echo 'onLoad="document.passwindow.userid.select()"'; echo  ' bgcolor='.$cfg['body_bgcolor'];?>>
+<?php $nofocus = isset($nofocus) ? $nofocus : 0; ?>
+<BODY  <?php if (!$nofocus) echo 'onLoad="document.passwindow.userid.select()"'; echo  ' bgcolor='.($cfg['body_bgcolor'] ?? '#ffffff');?>>
 
 <p>
 <FONT    SIZE=-1  FACE="Arial">
 <img src="../../gui/img/common/default/soft.png" border=0 width=64 height=64 align="middle">
-<FONT  COLOR="<?php echo $cfg[top_txtcolor] ?>"  SIZE=5  FACE="verdana"> <b><?php echo "$LDMedDepot :: $title" ?></b></font>
+<FONT  COLOR="<?php echo $cfg['top_txtcolor'] ?? '#000000' ?>"  SIZE=5  FACE="verdana"> <b><?php echo "$LDMedDepot :: $title" ?></b></font>
 <p>
 <table width=100% border=0 cellpadding="0" cellspacing="0">
 

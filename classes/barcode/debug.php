@@ -25,16 +25,16 @@ Source code home page: http://www.mribti.com/barcode/
 Contact author at: barcode@mribti.com
 */
 
-define(__DEBUG_HOST__, "localhost");
-define(__DEBUG_PORT__, "9999");
+define('__DEBUG_HOST__', 'localhost');
+define('__DEBUG_PORT__', 9999);
 
-define(__TRACE_HOST__, "localhost");
-define(__TRACE_PORT__, "9999");
+define('__TRACE_HOST__', 'localhost');
+define('__TRACE_PORT__', 9999);
 
-define(__TIMEOUT__, 3);
+define('__TIMEOUT__', 3);
 						   
 function __TRACE__ ($str) {
-if (__TRACE_ENABLED__) {
+if (defined('__TRACE_ENABLED__') && __TRACE_ENABLED__) {
 	$errno  = 0;
 	$errstr = "no error";
 	
@@ -49,11 +49,11 @@ if (__TRACE_ENABLED__) {
 }	
 	
 function __DEBUG__ ($str) {
-if (__DEBUG_ENABLED__) {
+if (defined('__DEBUG_ENABLED__') && __DEBUG_ENABLED__) {
 	$errno  = 0;
 	$errstr = "no error";
 	
-	$fp = @fsockopen(__DEBUG_HOST__, __DEGUB_PORT__, $errno, $errstr, __TIMEOUT__);
+	$fp = @fsockopen(__DEBUG_HOST__, __DEBUG_PORT__, $errno, $errstr, __TIMEOUT__);
 	
 	if ($fp)
 	{

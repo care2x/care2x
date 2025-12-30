@@ -41,8 +41,9 @@ if($_SESSION['sess_user_origin']=='personell_admin'){
 require_once($root_path.'include/core/inc_front_chain_lang.php');
 
 # Check for the department nr., else show department selector
-if(!isset($dept_nr)||!$dept_nr){
-	if($cfg['thispc_dept_nr']){
+$dept_nr = isset($dept_nr) ? $dept_nr : 0;
+if(!$dept_nr){
+	if(isset($cfg['thispc_dept_nr']) && $cfg['thispc_dept_nr']){
 		$dept_nr=$cfg['thispc_dept_nr'];
 	}else{
 		header('Location:nursing-or-select-dept.php'.URL_REDIRECT_APPEND.'&target=plist&retpath='.$retpath);
@@ -440,8 +441,8 @@ if($mode=='search'||$mode=='paginate'){
 <?php echo $LDChgDept ?>
 <select name="dept_nr" >
 <?php
-foreach( as =>)
-	{
+if (is_array($dept_list)) {
+	foreach($dept_list as $v){
 		echo '
 		<option value="'.$v['nr'].'" ';
 		if($dept_nr==$v['nr']) echo 'selected';
@@ -449,7 +450,9 @@ foreach( as =>)
 		if(isset(${$v['LD_var']}) && ${$v['LD_var']}) echo ${$v['LD_var']};
 			else echo $v['name_formal'];
 		echo '</option>';
-	}?>
+	}
+}
+?>
 </select>
 <input type="hidden" name="sid" value="<?php echo $sid ?>">
 <input type="hidden" name="lang" value="<?php echo $lang ?>">

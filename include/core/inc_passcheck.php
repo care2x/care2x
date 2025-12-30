@@ -62,8 +62,7 @@ if($ergebnis=$db->Execute($sql))
 			{
 				if(empty($zeile['name'])) $zeile['name']=' ';
 
-				if($passtag) $success = 0;
-				else $success = 1;
+				$success = !empty($passtag) ? 0 : 1;
 				$logs->writeline(date('Y-m-d').'/'.date('H:i'),$_SERVER['REMOTE_ADDR'],$lognote,$userid,$zeile['name'],'',$thisfile,$fileforward,$success);
 				/**
 					* Init crypt to use 2nd level key and encrypt the sid.

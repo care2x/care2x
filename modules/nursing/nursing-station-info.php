@@ -18,6 +18,7 @@ require_once($root_path.'include/core/inc_front_chain_lang.php');
 $thisfile=basename(__FILE__);
 /* Load the ward object */
 require_once($root_path.'include/care_api_classes/class_ward.php');
+$ward_nr = $ward_nr ?? '';
 $ward_obj=new Ward($ward_nr);
 
 $rows=0;
@@ -97,7 +98,8 @@ $rows=0;
 
 		default:
 		{
-			if($wards=&$ward_obj->getAllActiveWards()){
+			$wards=$ward_obj->getAllActiveWards();
+if($wards){
 				# Count wards
 				$rows=$wards->RecordCount();
 
@@ -330,7 +332,7 @@ if($rows==1) {
 		$buf='nursing-station-info.php'.URL_APPEND.'&mode=show&station='.$result['name'].'&ward_nr='.$result['nr'];
 		echo '
 	<tr class="'.$trc.'">
-    <td>&nbsp;<a href="'.$buf.'"><img '.createComIcon($root_path,'bul_arrowgrnsm.gif','0','absmiddle').'>&nbsp;&nbsp;<font face="Verdana, Arial" size=2>'.strtoupper($result[station]).'</a></td>
+    <td>&nbsp;<a href="'.$buf.'"><img '.createComIcon($root_path,'bul_arrowgrnsm.gif','0','absmiddle').'>&nbsp;&nbsp;<font face="Verdana, Arial" size=2>'.strtoupper($result['station']).'</a></td>
 	<td><a href="'.$buf.'">'.ucfirst($result['name']).'</a> &nbsp;</td>
 	<td>&nbsp;<a href="'.$buf.'">'.ucfirst($result['ward_id']).'</a> &nbsp;</td>
 	<td>'.ucfirst($result['description']).'&nbsp;</td>

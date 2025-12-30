@@ -16,7 +16,7 @@ $local_user='ck_edv_user';
 require_once($root_path.'include/core/inc_front_chain_lang.php');
 
 $breakfile='edv-system-admi-welcome.php'.URL_APPEND;
-if($from=='add') $returnfile='edv_system_format_menu_item_add.php'.URL_APPEND.'&from=set';
+if(isset($from) && $from=='add') $returnfile='edv_system_format_menu_item_add.php'.URL_APPEND.'&from=set';
   else $returnfile=$breakfile;
 $thisfile=basename(__FILE__);
 $editfile='edv_system_format_menu_item_add.php'.URL_REDIRECT_APPEND.'&mode=edit&from=set&item_no=';
@@ -79,7 +79,7 @@ $gc->getConfig('language_%');
  # Window bar title
  $smarty->assign('sWindowTitle',$LDMainMenu);
 
- if($rows) {
+ if(isset($rows) && $rows) {
  	$smarty->append('JavaScript','<script language="javascript" src="'.$root_path.'js/check_menu_item_same_item.js"></script>');
 }
 
@@ -124,7 +124,7 @@ ob_start();
 <?php
 require($root_path.'include/care_api_classes/class_language.php');
 $lang_obj=new Language;
-$langselect= &$lang_obj->createSelectForm($GLOBALCONFIG['language_default']);
+$langselect= $lang_obj->createSelectForm($GLOBALCONFIG['language_default']);
 echo $langselect;
 ?>
 

@@ -25,9 +25,9 @@ $tshifter = new dateTimeManager;
 # Set default date to today
 if(!isset($thisday)) $thisday=date('Y-m-d');
 # Shift time back 1 day
-$yesday = $tshifter->shift_dates($thisday, '1', 'd');
+$yesday = $tshifter->shift_dates($thisday, -1, 'd');
 # Shift time forward 1 day
-$tomorow = $tshifter->shift_dates($thisday, '-1', 'd');
+$tomorow = $tshifter->shift_dates($thisday, 1, 'd');
 # Todays date
 $today=date('Y-m-d');
 
@@ -39,16 +39,16 @@ $template=array();
 # Default is op room #1
 if(!isset($saal)||empty($saal)) $saal=1;
 # Set first entry flag
-setcookie(firstentry,'1');
+setcookie('firstentry','1');
 
 require_once($root_path.'include/care_api_classes/class_department.php');
 $dept_obj=new Department;
 # Preload the deparment info
 $dept_obj->preloadDept($dept_nr);
 # Get list of all the OR room numbers
-$ORNrs=&$dept_obj->getAllActiveORNrs();
+$ORNrs=$dept_obj->getAllActiveORNrs();
 
-$surgery_arr=&$dept_obj->getAllActiveWithSurgery();
+$surgery_arr=$dept_obj->getAllActiveWithSurgery();
 
 # Load the date formatter
 require_once($root_path.'include/core/inc_date_format_functions.php');
@@ -90,7 +90,7 @@ if($ergebnis=$db->Execute($sql)){
 	return true;
 }
 function getinfo(pid,pdata){
-	urlholder="<?php echo $root_path; ?>modules/nursing/nursing-station-patientdaten.php<?php echo URL_REDIRECT_APPEND; ?>&pn="+pid+"&patient=" + pdata + "&dept_nr=<?php echo "$dept_nr&pday=$pday&pmonth=$pmonth&pyear=$pyear&op_shortcut=".$_COOKIE['ck_op_pflegelogbuch_user'.$sid]; ?>";
+	urlholder="<?php echo $root_path; ?>modules/nursing/nursing-station-patientdaten.php<?php echo URL_REDIRECT_APPEND; ?>&pn="+pid+"&patient=" + pdata + "&dept_nr=<?php echo "$dept_nr&pday=".(isset($pday)?$pday:'')."&pmonth=".(isset($pmonth)?$pmonth:'')."&pyear=".(isset($pyear)?$pyear:'')."&op_shortcut=".(isset($_COOKIE['ck_op_pflegelogbuch_user'.$sid])?$_COOKIE['ck_op_pflegelogbuch_user'.$sid]:''); ?>";
 	patientwin=window.open(urlholder,pid,"width=700,height=450,menubar=no,resizable=yes,scrollbars=yes");
 	}
  function initall(){
@@ -103,7 +103,7 @@ function getinfo(pid,pdata){
 require($root_path.'include/core/inc_js_gethelp.php');
 require($root_path.'include/core/inc_css_a_hilitebu.php');
 ?>
- <?php if(!$datafound) { ?>
+ <?php $datafound = isset($datafound) ? $datafound : false; if(!$datafound) { ?>
 <script language="javascript" src="<?php echo $root_path; ?>js/showhide-div.js"></script>
 <?php } ?>
 </HEAD>
@@ -114,7 +114,7 @@ onLoad="window.location.replace('#<?php if ($gotoid) echo $gotoid; else echo 'bo
 <CENTER>
 <?php
 
-$opabt=get_meta_tags($root_path.'global_conf/'.$lang.'/op_tag_dept.pid');
+$opabt=@get_meta_tags($root_path.'global_conf/'.$lang.'/op_tag_dept.pid');
 
 
 echo '
@@ -144,7 +144,8 @@ echo '
 				<!-- <select name="dept_nr" size=1 onChange="syncDept(this,document.chgdept.saal)"> -->
 				<select name="dept_nr" size=1>
 				<?php
-                   foreach( as =>)
+                   $depts = isset($depts) && is_array($depts) ? $depts : array();
+if (is_array($depts)) { foreach($depts as $x => $v)
 					{
 						if($x==42) continue;
 						echo'
@@ -156,6 +157,7 @@ echo '
 							else echo $v['name_formal'];
 						echo '</option>';
 					}
+				}
 				?>
 
 				</select>
@@ -203,7 +205,7 @@ echo '
 if($datafound){
 echo '
 <tr bgcolor="#f9f9f9" >';
-foreach( as =>)
+if (isset($columns) && is_array($columns)) foreach($columns as $v)
 	echo '
 		<td><font face="verdana,arial" size="1"><b>&nbsp;'.$v.'</b></td>';
 

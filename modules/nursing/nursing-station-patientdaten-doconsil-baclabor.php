@@ -15,8 +15,8 @@ function prepareTestParameters($param_type){
 
 	$paramlist="";
 
-	foreach( as =>)	{
-		if(substr_count($x,$param_type) && ($_POST[$x]==1))		{
+	foreach($_POST as $x => $v)	{
+		if(substr_count($x,$param_type) && ($v==1))		{
 			if($paramlist=="") $paramlist=$x."=1";
 				else $paramlist.="&".$x."=1";
 		}
@@ -475,7 +475,7 @@ if($edit){
 
 
 <?php
-  foreach( as =>)
+  foreach($LDBacLabTestType as $x => $v)
 	{
 	   list($x2,$v2)=each($LDBacLabMaterialType);
 	   echo '
@@ -546,7 +546,7 @@ if($edit){
 	  <table border=0 cellpadding=0 cellspacing=0 class="lab">
 
 <?php
-  foreach( as =>)
+  foreach($LDBacLabMaterialType as $x3 => $v3)
 	{
 	   list($x4,$v4)=each($LDBacLabTestType);
 	   echo '

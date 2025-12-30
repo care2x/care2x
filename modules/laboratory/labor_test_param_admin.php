@@ -100,7 +100,7 @@ ob_end_clean();
 $smarty->append('JavaScript',$sTemp);
 
 $sTempNew = '<a href="javascript:newParam()"><img '.createLDImgSrc($root_path,'newplan.gif','0').'></a>';
-$paramName = &$lab_obj->getGroupName($parameterselect);
+$paramName = $lab_obj->getGroupName($parameterselect);
 if(isset($paramName) && !empty($paramName)) {
 	$paramName = $paramName->fetchRow();
 }
@@ -153,7 +153,7 @@ if(is_object($tparams)){
 
 	echo '&nbsp;</nobr></td>';
 
-	foreach( as =>){
+	foreach($pitems as $x => $v){
 		echo '
 			<td>';
 		if($x){
@@ -178,8 +178,8 @@ if(is_object($tparams)){
 $sTemp = ob_get_contents();
 
 ob_end_clean();
-$sShortHelp = $sShortHelp.  "<font color=\"green\">$LDHiddenParams</font><br>";
-$sShortHelp = $sShortHelp.   "<font color=\"red\">$LDDeletedParams</font><br>";
+$sShortHelp = ($sShortHelp ?? '').  "<font color=\"green\">$LDHiddenParams</font><br>";
+$sShortHelp = ($sShortHelp ?? '').   "<font color=\"red\">$LDDeletedParams</font><br>";
 $smarty->assign('sTestParamsRows',$sTemp);
 $smarty->assign('sShortHelp',$sShortHelp);
 # Create the parameter group select

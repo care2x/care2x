@@ -314,7 +314,7 @@ if(empty($cache)){
 		<td  class="j"><font color="#ffffff">&nbsp;<b>'.$LDNormalValue.'</b>&nbsp;</td>
 		<td  class="j"><font color="#ffffff">&nbsp;<b>'.$LDMsrUnit.'</b>&nbsp;</td>
 		';
-	foreach( as =>){
+	foreach($records as $x => $v){
 		$cache.= '
 		<td class="a12_b"><font color="#ffffff">&nbsp;<b>'.formatDate2Local($v,$date_format).'<br>'.$x.'</b>&nbsp;<br><input type="checkbox" name="skipme[]" value="'.$x.'" id="'.$x.'" onclick="wichOne(this.id);"></td>';
 	}
@@ -329,7 +329,7 @@ if(empty($cache)){
 		<td  class="j"><font color="#ffffff">&nbsp;</td>';
 
 
-	foreach( as =>){
+	foreach($records as $x => $v){
 		$cache.= '
 		<td class="a12_b"><font color="#0000cc">&nbsp;<b>'.convertTimeToLocal($v).'</b> '.$LDOClock.'&nbsp;</td>';
 	}
@@ -344,7 +344,7 @@ if(empty($cache)){
 $requestData=array();
 reset($records);
 $jIDArray = array();
-foreach( as =>) {
+foreach($records as $job_id => $paramgroupvalue) {
 		$jIDArray[] = $job_id;
 		foreach($paramgroupvalue as $paramgroup_a => $paramvalue_a) {
 			foreach($paramvalue_a as $paramgroup => $paramvalue) {
@@ -358,10 +358,10 @@ foreach( as =>) {
 $class='wardlistrow1';
 $columns=0;
 $ptrack=0;
-foreach( as =>) {
+foreach($requestData as $groupId => $params) {
 	$gName = $lab_obj->getGroupName($groupId) ;
 	$cache .= "<tr><td  class=\"va12_n\" colspan=\"".($cols + 4)."\"><b>" .$gName->fields['name'] . "</b></td></tr>";
-	foreach( as =>) {
+	foreach($params as $paramId => $paramJobs) {
 		$pName = $lab_obj->TestParamsDetails($paramId);
 		$cache .=  "<tr>";
 		$cache .=  "<td class=\"" . $class ."\">" . $pName['name'] . "</td>";

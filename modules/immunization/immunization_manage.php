@@ -10,7 +10,9 @@ error_reporting($ErrorLevel);
 *
 * See the file "copy_notice.txt" for the licence notice
 */
-define('LANG_FILE','immunization.php');
+define('LANG_FILE','stdpass.php');
+$lang_tables[]='aufnahme.php';
+$lang_tables[]='specials.php';
 $local_user='aufnahme_user';
 require_once($root_path.'include/core/inc_front_chain_lang.php');
 
@@ -25,8 +27,13 @@ $breakfile=$root_path."main/spediens.php".URL_APPEND;
 
  require_once($root_path.'gui/smarty_template/smarty_care.class.php');
  $smarty = new smarty_care('system_admin');
+ require_once($root_path.'include/core/inc_default_smarty_values.php');
 
 # Title in toolbar
+ if(!isset($LDManager)) $LDManager='Manager';
+ if(!isset($LDNewDataTxt)) $LDNewDataTxt='Enter new data';
+ if(!isset($LDListAllTxt)) $LDListAllTxt='List all';
+ if(!isset($LDSearchTxt)) $LDSearchTxt='Search';
  $smarty->assign('sToolbarTitle',"$LDImmunization :: $LDManager");
 
  # href for help button

@@ -10,6 +10,10 @@ require_once($root_path.'global_conf/areas_allow.php');
 
 $allowedarea=&$allow_area['op_room'];
 
+$retpath = isset($retpath) ? $retpath : '';
+$target = isset($target) ? $target : '';
+$pass = isset($pass) ? $pass : '';
+$nofocus = isset($nofocus) ? $nofocus : false;
 if($retpath=='calendar_opt'){
 	$append=URL_APPEND."&dept_nr=$dept_nr&retpath=$retpath&pday=$pday&pmonth=$pmonth&pyear=$pyear";
 	$breakfile=$root_path."modules/calendar/calendar-options.php".URL_APPEND."&dept_nr=$dept_nr&retpath=$retpath&day=$pday&month=$pmonth&year=$pyear";
@@ -66,7 +70,7 @@ require($root_path.'include/core/inc_passcheck_head.php');
 
 <P>
 <img <?php echo createComIcon($root_path,'people.gif','0','absmiddle') ?>>
-<FONT  COLOR="<?php echo $cfg[top_txtcolor] ?>"  SIZE=5  FACE="verdana" > <b><?php echo "$LDOrLogBook $title" ?></b></font>
+<FONT  COLOR="<?php echo $cfg['top_txtcolor'] ?>"  SIZE=5  FACE="verdana" > <b><?php echo "$LDOrLogBook $title" ?></b></font>
 
 <table width=100% border=0 cellpadding="0" cellspacing="0">
 <tr>

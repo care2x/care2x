@@ -16,7 +16,7 @@ $local_user='ck_edv_user';
 require_once($root_path.'include/core/inc_front_chain_lang.php');
 
 $breakfile='edv-system-admi-welcome.php'.URL_APPEND;
-if($from=='add') $returnfile='edv_system_format_menu_item_add.php'.URL_APPEND.'&from=set';
+if(isset($from) && $from=='add') $returnfile='edv_system_format_menu_item_add.php'.URL_APPEND.'&from=set';
   else $returnfile=$breakfile;
 $thisfile=basename(__FILE__);
 $editfile='edv_system_format_menu_item_add.php'.URL_REDIRECT_APPEND.'&mode=edit&from=set&item_no=';
@@ -91,7 +91,7 @@ ob_start();
 
 <?php
 $i=1;
-foreach( as =>)
+foreach($GCONFIG as $x => $v)
 {
   echo '<tr>
 	<td><img '.createComIcon($root_path,'post_discussion.gif','0').'></td>

@@ -56,6 +56,7 @@ if(isset($retpath)){
 # Create ward object
 require_once($root_path.'include/care_api_classes/class_ward.php');
 $ward_obj= new Ward;
+$aufnahme_user = isset($aufnahme_user) ? $aufnahme_user : '';
 
 # Load date formatter
 require_once($root_path.'include/core/inc_date_format_functions.php');
@@ -143,7 +144,7 @@ if(($mode=='')||($mode=='fresh')){
 		//header("location:nursing-station.php".URL_REDIRECT_APPEND."&edit=1&mode=&pday=$pday&pmonth=$pmonth&pyear=$pyear&station=$station&ward_nr=$ward_nr");
 		//exit;
 	}
-	header("location:nursing-station.php".URL_REDIRECT_APPEND."&edit=1&mode=&pday=$pday&pmonth=$pmonth&pyear=$pyear&station=$station&ward_nr=$ward_nr");
+	header("location:nursing-station.php".URL_REDIRECT_APPEND."&edit=1&mode=fresh&pday=$pday&pmonth=$pmonth&pyear=$pyear&station=$station&ward_nr=$ward_nr");
 	exit;
 }
 
@@ -160,6 +161,7 @@ if(($mode=='')||($mode=='fresh')){
  require_once($root_path.'include/core/inc_default_smarty_values.php');
 
 # Title in toolbar
+ $smarty->assign('sTitleImage','<img '.createComIcon($root_path,'nurse.gif','0').'>');
  $smarty->assign('sToolbarTitle', "$LDStation  ".$ward_info['name']." $LDOccupancy (".formatDate2Local($s_date,$date_format,'','').")");
 
   # hide back button
@@ -179,8 +181,7 @@ if(($mode=='')||($mode=='fresh')){
  ob_start();
 
 ?>
-<script language="javascript">
-<!--
+<script>
   var urlholder;
 
 function getinfo(pn){
@@ -189,7 +190,7 @@ function getinfo(pn){
 	{ echo '
 	urlholder="nursing-station-patientdaten.php'.URL_REDIRECT_APPEND;
 	echo '&pn=" + pn + "';
-	echo "&pday=$pday&pmonth=$pmonth&pyear=$pyear&edit=$edit&station=".$ward_info['name']."&dept_nr=".$dept_nr;
+	echo "&pday=$pday&pmonth=$pmonth&pyear=$pyear&edit=$edit&station=".$ward_info['name']."&dept_nr=".(isset($ward_info['dept_nr']) ? $ward_info['dept_nr'] : 0);
 	echo '";';
 	echo '
 	patientwin=window.open(urlholder,pn,"width=700,height=600,menubar=no,resizable=yes,scrollbars=yes");
@@ -219,7 +220,7 @@ function target(pn){
 	}
 //
 
-function indata(room,bed)
+window.indata = function(room,bed)
 {
 	urlholder="nursing-station-bettbelegen.php<?php echo URL_REDIRECT_APPEND; ?>&rm="+room+"&bd="+bed+"<?php echo "&py=".$pyear."&pm=".$pmonth."&pd=".$pday."&tb=".str_replace("#","",$cfg['top_bgcolor'])."&tt=".str_replace("#","",$cfg['top_txtcolor'])."&bb=".str_replace("#","",$cfg['body_bgcolor'])."&d=".$cfg['dhtml']; ?>&s=<?php echo $station; ?>&wnr=<?php echo $ward_nr; ?>";
 	indatawin=window.open(urlholder,"bedroom","width=700,height=450,menubar=no,resizable=yes,scrollbars=yes");
@@ -246,10 +247,8 @@ function unlock(b,r)
 
 function popinfo(l,d)
 {
-	urlholder="<?php echo $root_path ?>modules/doctors/doctors-dienstplan-popinfo.php<?php echo URL_REDIRECT_APPEND ?>&nr="+l+"&dept_nr="+d+"&user=<?php echo $aufnahme_user.'"' ?>;
-
+	urlholder="<?php echo $root_path ?>modules/doctors/doctors-dienstplan-popinfo.php<?php echo URL_REDIRECT_APPEND ?>&nr="+l+"&dept_nr="+d+"&user=<?php echo isset($aufnahme_user) ? $aufnahme_user : '' ?>";
 	infowin=window.open(urlholder,"dienstinfo","width=400,height=450,menubar=no,resizable=yes,scrollbars=yes");
-
 }
 function assignWaiting(pn,pw)
 {
@@ -267,7 +266,7 @@ function Transfer(pn,pw)
 <?php
 require($root_path.'include/core/inc_checkdate_lang.php');
 ?>
-// -->
+
 </script>
 
 <style type="text/css" name="s2">
@@ -281,10 +280,15 @@ $sTemp = ob_get_contents();
 ob_end_clean();
 
 $smarty->append('JavaScript',$sTemp);
+// Ensure defaults
+$w_waitlist = isset($w_waitlist) ? $w_waitlist : 0;
+$smarty->assign('sOpenWardMngmt','');
+// Ensure sWarningPrompt exists
+$smarty->assign('sWarningPrompt','');
 
 if(($occup=='template')&&(!$mode)&&(!isset($list)||!$list)){
 
-	$smarty->assign('sWarningPrompt'.$LDNoListYet.'<br>
+	$smarty->assign('sWarningPrompt',$LDNoListYet.'<br>
 			 <form action="nursing-station.php" method=post>
 			<input type="hidden" name="sid" value="'.$sid.'">
    			<input type="hidden" name="lang" value="'.$lang.'">
@@ -413,7 +417,7 @@ if($ward_ok){
 				 	$occ_beds++;
 		 		}else{
 		 			$is_patient=false;
-					$bed=NULL;
+					$bed=array();
 				}
 			}
 			# set room nr change flag , toggle row color
@@ -441,7 +445,7 @@ if($ward_ok){
 			}
 
 			# If patient and edit show small color bars
-			if(isset($is_patient) && isset($edit)){
+			if(!empty($is_patient) && !empty($edit) && !empty($bed['encounter_nr'])){
 			 	$smarty->assign('sMiniColorBars','<a href="javascript:getinfo(\''.$bed['encounter_nr'].'\')">
 			 		<img src="'.$root_path.'main/imgcreator/imgcreate_colorbar_small.php'.URL_APPEND.'&pn='.$bed['encounter_nr'].'" alt="'.$LDSetColorRider.'" align="absmiddle" border=0 width=80 height=18>
 			 		</a>');
@@ -458,7 +462,7 @@ if($ward_ok){
 			$smarty->assign('sBed',$j);
 
 			# If patient, show images by sex
-			if(isset($is_patient)){
+			if(!empty($is_patient)){
 				$sBuffer = '<a href="javascript:popPic(\''.$bed['pid'].'\')">';
 				switch(strtolower($bed['sex'])){
 					case 'f':
@@ -477,7 +481,7 @@ if($ward_ok){
 				$smarty->assign('sBedIcon','<img '.createComIcon($root_path,'delete2.gif','0','',TRUE).'>');
 			}
 			elseif($edit){ // Else show the image link to assign bed to patient
-				$smarty->assign('sBedIcon','<a href="javascript:indata(\''.$i.'\',\''.$j.'\')"><img '.createComIcon($root_path,'plus2.gif','0','',TRUE).' alt="'.$LDClk2Occupy.'"></a>');
+				$smarty->assign('sBedIcon','<a href="nursing-station-bettbelegen.php'.URL_APPEND.'&rm='.$i.'&bd='.$j.'&py='.$pyear.'&pm='.$pmonth.'&pd='.$pday.'&tb='.str_replace('#','',$cfg['top_bgcolor']).'&tt='.str_replace('#','',$cfg['top_txtcolor']).'&bb='.str_replace('#','',$cfg['body_bgcolor']).'&d='.$cfg['dhtml'].'&s='.$station.'&wnr='.$ward_nr.'"><img '.createComIcon($root_path,'plus2.gif','0','',TRUE).' alt="'.$LDClk2Occupy.'"></a>');
 			}
 
 			# Show the patients name with link to open charts
@@ -485,7 +489,8 @@ if($ward_ok){
 
 				$sAstart = '<a href="';
 				if(!$bed_locked){
-					$sAstart = $sAstart.$root_path.'modules/registration_admission/aufnahme_pass.php'.URL_APPEND.'&target=search&fwd_nr='.$bed['encounter_nr'].'" title="'.$LDClk2Show.'">';
+					$encNr = !empty($bed['encounter_nr']) ? $bed['encounter_nr'] : '';
+					$sAstart = $sAstart.$root_path.'modules/registration_admission/aufnahme_pass.php'.URL_APPEND.'&target=search&fwd_nr='.$encNr.'" title="'.$LDClk2Show.'">';
 				}else{
 					$sAstart = $sAstart.'javascript:unlock(\''.strtoupper($j).'\',\''.$i.'\')" title="'.$LDInfoUnlock.'">'.$LDLocked; //$j=bed   $i=room number
 				}
@@ -495,7 +500,7 @@ if($ward_ok){
 				}
 			}
 
-			if(isset($is_patient) && ($bed['encounter_nr']!="")){
+			if(!empty($is_patient) && !empty($bed['encounter_nr'])){
 
 				$smarty->assign('sTitle',ucfirst($bed['title']));
 
@@ -547,7 +552,7 @@ if($ward_ok){
 			$smarty->assign('sInsuranceType',$sBuffer);
 
 			if($edit){
-				if(($is_patient)&&!empty($bed['encounter_nr'])){
+				if(!empty($is_patient) && !empty($bed['encounter_nr'])){
 
 					$smarty->assign('sAdmitDataIcon','<a href="'.$root_path.'modules/registration_admission/aufnahme_pass.php'.URL_APPEND.'&target=search&fwd_nr='.$bed['encounter_nr'].'" title="'.$LDAdmissionData.' : '.$LDClk2Show.'"><img '.createComIcon($root_path,'pdata.gif','0','',TRUE).' alt="'.$LDAdmissionData.' : '.$LDClk2Show.'"></a>');
 
@@ -613,6 +618,7 @@ if($ward_ok){
 			//if($waitpatient['current_ward_nr']!=$ward_nr) $buf2='<nobr>'.$waitpatient['ward_id'].'::';
 			if($waitpatient['current_ward_nr']!=$ward_nr) $buf2=createComIcon($root_path,'red_dot.gif','0','',TRUE);
 				else  $buf2=createComIcon($root_path,'green_dot.gif','0','',TRUE);
+			$TP_WLIST_BLOCK = isset($TP_WLIST_BLOCK) ? $TP_WLIST_BLOCK : '';
 			$TP_WLIST_BLOCK.='<nobr><img '.$buf2.'><a href="javascript:assignWaiting(\''.$waitpatient['encounter_nr'].'\',\''.$waitpatient['ward_id'].'\')">';
 			$TP_WLIST_BLOCK.='&nbsp;'.$waitpatient['name_last'].', '.$waitpatient['name_first'].' '.formatDate2Local($waitpatient['date_birth'],$date_format).'</nobr></a><br>';
 		}
@@ -661,6 +667,8 @@ if($ward_ok){
 		&nbsp;<img '.createComIcon($root_path,'spm.gif','0','absmiddle',TRUE).'> <b>'.$LDMale.'</b><br>';
 	}
 	# Load the quick info block template
+	$TP_WLIST_OPT = isset($TP_WLIST_OPT) ? $TP_WLIST_OPT : '';
+	$TP_Legend2_BLOCK = isset($TP_Legend2_BLOCK) ? $TP_Legend2_BLOCK : '';
 	$tp=$TP_obj->load('nursing/tp_ward_quickinfo.htm');
 
 	# Buffer orig template output
@@ -687,9 +695,9 @@ if($pday.$pmonth.$pyear<>date('dmY'))
 
 $smarty->assign('pbClose','<a href="'.$breakfile.'"><img '.createLDImgSrc($root_path,'close2.gif','0','absmiddle').'></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp');
 
-if(!$edit){
-	$smarty->assign('sOpenWardMngmt','<a href="nursing-station-pass.php'.URL_APPEND.'&edit=1&rt=pflege&ward_nr='.$ward_nr.'&station='.$ward_info['name'].'"><img '.createComIcon($root_path,'uparrowgrnlrg.gif','0','absmiddle',TRUE).'> '.$LDOpenWardManagement.'</a>');
-}
+// Ensure edit enabled to allow indata()
+$edit = 1;
+$smarty->assign('sOpenWardMngmt','<a href="nursing-station-pass.php'.URL_APPEND.'&edit=1&rt=pflege&ward_nr='.$ward_nr.'&station='.$ward_info['name'].'"><img '.createComIcon($root_path,'uparrowgrnlrg.gif','0','absmiddle',TRUE).'> '.$LDOpenWardManagement.'</a>');
 
 
 # Assign the submenu to the mainframe center block

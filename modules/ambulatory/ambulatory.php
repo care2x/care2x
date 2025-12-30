@@ -18,10 +18,7 @@ $_SESSION['sess_parent_mod']='';
 /* Create department object and load all medical depts */
 require_once($root_path.'include/care_api_classes/class_department.php');
 $dept_obj= new Department;
-if(!isset($_SESSION['department_nr']) || $_SESSION['department_nr'] == '')
-	$medical_depts=$dept_obj->getAllActiveSort( 'name_formal' ) ; //get only the main depts
-else
-	$medical_depts=$dept_obj->getAllMedical() ; // get all depts
+$medical_depts = $dept_obj->getAllActive() ?: [];
 # Start Smarty templating here
  /**
  * LOAD Smarty
@@ -70,11 +67,11 @@ $smarty->assign('sNewsIcon','<img '.createComIcon($root_path,'bubble2.gif','0').
 <script language="javascript">
 <!-- Script Begin
 function goDept(t) {
-	d=document.dept_select;
-	if(d.dept_nr.value!=""){
-		d.subtarget.value=d.dept_nr.value;
-		d.action=t;
-		eval("d.dept.value=d.dname"+d.dept_nr.value+".value;");
+	var d = document.dept_select;
+	if (d && d.dept_nr && d.dept_nr.value !== "") {
+		if (d.subtarget) d.subtarget.value = d.dept_nr.value;
+		if (d.dept) d.dept.value = d.dept_nr.options[d.dept_nr.selectedIndex].text;
+		d.action = t;
 		d.submit();
 	}
 }

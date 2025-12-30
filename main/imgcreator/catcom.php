@@ -32,7 +32,7 @@ $background= ImageColorAllocate ($im, 205, 225, 236);
 */
 $blue=ImageColorAllocate($im, 0, 127, 255);
 $black = ImageColorAllocate ($im, 0, 0, 0);
-$time=date(G);
+$time=date('G');
 if(($time>=0)&&($time<10)) $greet=$LDGoodMorning;
 	else if(($time>9)&&($time<13)) $greet=$LDGoodDay;
 	else if(($time>12)&&($time<18)) $greet=$LDGoodAfternoon;

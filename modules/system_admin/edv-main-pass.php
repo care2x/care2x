@@ -59,8 +59,9 @@ $minimal=1;
 require($root_path.'include/core/inc_passcheck_head.php');
 ?>
 
-<BODY  <?php if (!$nofocus) echo 'onLoad="document.passwindow.userid.focus()"'; echo  ' bgcolor='.$cfg['body_bgcolor'];
- if (!$cfg['dhtml']){ echo ' link='.$cfg['body_txtcolor'].' alink='.$cfg['body_alink'].' vlink='.$cfg['body_txtcolor']; }
+<?php $nofocus = isset($nofocus) ? $nofocus : 0; ?>
+<BODY  <?php if (!$nofocus) echo 'onLoad="document.passwindow.userid.focus()"'; echo  ' bgcolor='.($cfg['body_bgcolor'] ?? '#ffffff');
+ if (!(isset($cfg['dhtml']) && $cfg['dhtml'])){ echo ' link='.($cfg['body_txtcolor'] ?? '#000000').' alink='.($cfg['body_alink'] ?? '#0000ff').' vlink='.($cfg['body_txtcolor'] ?? '#000000'); }
 ?>>
 
 <P>

@@ -13,6 +13,7 @@ error_reporting($ErrorLevel);
 
 define('SHOW_DOC_2',1);  # Define to 1 to  show the 2nd doctor-on-duty
 //define('DOC_CHANGE_TIME','7.30'); # Define the time when the doc-on-duty will change in 24 hours H.M format (eg. 3 PM = 15.00, 12 PM = 0.00)
+if(!defined('DOC_CHANGE_TIME')) define('DOC_CHANGE_TIME','7.30');
 
 $lang_tables[]='ambulatory.php';
 $lang_tables[]='prompt.php';
@@ -96,7 +97,7 @@ if(($mode=='')||($mode=='fresh')){
 
 		if($result=$pers_obj->getDOCDutyplan($dept_nr,$pyear,$pmonth,$elem)){
 			$duty1=unserialize($result['duty_1_pnr']);
-			if(SHOW_DOC_2) $duty2=&unserialize($result['duty_2_pnr']);
+			if(SHOW_DOC_2) $duty2=unserialize($result['duty_2_pnr']);
 					//echo $sql."<br>";
 		} else {
 			$duty1 = array();
@@ -107,11 +108,13 @@ if(($mode=='')||($mode=='fresh')){
 		$offset_day=$pday-1;
 		# Consider the early morning hours to belong to the past day
 		if(date('H.i')<DOC_CHANGE_TIME) $offset_day--;
-		if($pnr1=$duty1['ha'.$offset_day]){
-			$person1=&$pers_obj->getPersonellInfo($pnr1);
+		if(!empty($duty1['ha'.$offset_day])){
+			$pnr1 = $duty1['ha'.$offset_day];
+			$person1 = $pers_obj->getPersonellInfo($pnr1);
 		}
-		if(SHOW_DOC_2 && ($pnr2=$duty2['hr'.$offset_day])){
-			$person2=&$pers_obj->getPersonellInfo($pnr2);
+		if(SHOW_DOC_2 && !empty($duty2['hr'.$offset_day])){
+			$pnr2 = $duty2['hr'.$offset_day];
+			$person2 = $pers_obj->getPersonellInfo($pnr2);
 		}
 		#### End of routine to fetch doctors on duty
 }
@@ -128,7 +131,8 @@ if(($mode=='')||($mode=='fresh')){
  $smarty = new smarty_care('nursing');
  require_once($root_path.'include/core/inc_default_smarty_values.php');
 # Title in toolbar
- $smarty->assign('sToolbarTitle', $dept." :: $LDOutpatientClinic (".formatDate2Local($s_date,$date_format,'','',$null='').")");
+ $sepChars = array('-','.','/',':',',');
+ $smarty->assign('sToolbarTitle', $dept." :: $LDOutpatientClinic (".formatDate2Local($s_date,$date_format,false,false,$sepChars).")");
 
   # hide back button
  $smarty->assign('pbBack',FALSE);
@@ -140,7 +144,8 @@ if(($mode=='')||($mode=='fresh')){
  $smarty->assign('breakfile',$breakfile);
 
  # Window bar title
- $smarty->assign('sWindowTitle',$dept." :: $LDOutpatientClinic (".formatDate2Local($s_date,$date_format,'','',$null='').")");
+ $sepChars = array('-','.','/',':',',');
+ $smarty->assign('sWindowTitle',$dept." :: $LDOutpatientClinic (".formatDate2Local($s_date,$date_format,false,false,$sepChars).")");
 
  # Collect extra javascript code
 
@@ -313,8 +318,8 @@ if($rows){
 
 
 			# If appt time is past the now time, color font with red
-			if($patient['time']<$tnow) $smarty->assign('sTimeFontClass'.'class="cave_data"');
-				elseif(($patient['time']>=$tnow)&&($patient['time']<=$tnow)) $smarty->assign('sTimeFontClass'.'class="go_data"');
+			if($patient['time']<$tnow) $smarty->assign('sTimeFontClass','class="cave_data"');
+				elseif(($patient['time']>=$tnow)&&($patient['time']<=$tnow)) $smarty->assign('sTimeFontClass','class="go_data"');
 
 			if($patient['time']) $smarty->assign('sTime',convertTimeToLocal($patient['time'],$date_format));
 

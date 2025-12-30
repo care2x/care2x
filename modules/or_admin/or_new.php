@@ -113,7 +113,7 @@ if(!empty($mode)&&!$inputerror){
 		}
 		case 'select':
 		{
-			# Get department´s information
+			# Get departmentï¿½s information
 			if(isset($nr) && $nr){
 				$OR_Info=$OR_obj->ORRecordInfo($nr);
 			}elseif(isset($OR_nr) && $OR_nr){
@@ -318,7 +318,7 @@ echo $LDEnterInfo;
 		<option value=""> </option>';
 	<?php
 
-		foreach( as =>){
+		foreach($wardsarray as $v){
 			echo '
 				<option value="'.$v['nr'].'" ';
 			if($v['nr']==$ward_nr) echo 'selected';
@@ -341,7 +341,7 @@ echo $LDEnterInfo;
     <td bgColor="#f9f9f9"><select name="dept_nr">
 	<option value=""> </option>';
 	<?php
-		foreach( as =>){
+		foreach($deptarray as $v){
 			echo '
 				<option value="'.$v['nr'].'" ';
 			if($v['nr']==$dept_nr) echo 'selected';

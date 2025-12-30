@@ -45,7 +45,7 @@ require($root_path.'include/core/inc_passcheck_head.php');
 <FONT    SIZE=-1  FACE="Arial">
 <P>
 <img <?php echo createComIcon($root_path,'phone.gif','0') ?>>
-<FONT  COLOR="<?php echo $cfg[top_txtcolor] ?>"  SIZE=6  FACE="verdana"> <b><?php echo "$LDPhoneDir $LDNewData" ?></b></font>
+<FONT  COLOR="<?php echo $cfg['top_txtcolor'] ?>"  SIZE=6  FACE="verdana"> <b><?php echo "$LDPhoneDir $LDNewData" ?></b></font>
 
 <table width=100% border=0 cellpadding="0" cellspacing="0">
 <tr>

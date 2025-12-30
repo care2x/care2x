@@ -114,16 +114,16 @@ if($not_trans_id) {
 if(!isset($minimal) || !$minimal) {
 
 	$sHiddenTemp = $sHiddenTemp.'
-	<input type="hidden" name="dept" value="'.$dept.'">
-	<input type="hidden" name="dept_nr" value="'.$dept_nr.'">
-	<input type="hidden" name="retpath" value="'.$retpath.'">
-	<input type="hidden" name="edit" value="'.$edit.'">
-	<input type="hidden" name="pmonth" value="'.$pmonth.'">
-	<input type="hidden" name="pyear" value="'.$pyear.'">
-	<input type="hidden" name="pday" value="'.$pday.'">
-	<input type="hidden" name="station" value="'.$station.'">
-	<input type="hidden" name="ward_nr" value="'.$ward_nr.'">
-	<input type="hidden" name="ipath" value="'.$ipath.'">';
+	<input type="hidden" name="dept" value="'.($dept ?? '').'">
+	<input type="hidden" name="dept_nr" value="'.($dept_nr ?? '').'">
+	<input type="hidden" name="retpath" value="'.($retpath ?? '').'">
+	<input type="hidden" name="edit" value="'.($edit ?? '').'">
+	<input type="hidden" name="pmonth" value="'.($pmonth ?? '').'">
+	<input type="hidden" name="pyear" value="'.($pyear ?? '').'">
+	<input type="hidden" name="pday" value="'.($pday ?? '').'">
+	<input type="hidden" name="station" value="'.($station ?? '').'">
+	<input type="hidden" name="ward_nr" value="'.($ward_nr ?? '').'">
+	<input type="hidden" name="ipath" value="'.($ipath ?? '').'">';
 }
 
 if(isset($c_flag) && $c_flag) {

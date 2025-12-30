@@ -30,6 +30,18 @@ if (!$internok&&!$_COOKIE['ck_op_pflegelogbuch_user'.$sid]) {header("Location:..
 # initializations
 $thisfile=basename(__FILE__);
 $pdata=array();
+if (!isset($pdata['encounter_nr'])) $pdata['encounter_nr']='';
+if (!isset($pdata['op_nr'])) $pdata['op_nr']='';
+if (!isset($pdata['entry_out'])) $pdata['entry_out']='';
+if (!isset($pdata['cut_close'])) $pdata['cut_close']='';
+$mode = isset($mode) ? $mode : '';
+$enc_nr = isset($enc_nr) ? $enc_nr : '';
+$op_nr = isset($op_nr) ? $op_nr : '';
+$lname = isset($lname) ? $lname : '';
+$fname = isset($fname) ? $fname : '';
+$bdate = isset($bdate) ? $bdate : '';
+$op_pflegelogbuch_user = isset($_COOKIE['ck_op_pflegelogbuch_user'.$sid]) ? $_COOKIE['ck_op_pflegelogbuch_user'.$sid] : '';
+
 
 if(!isset($thisday)||empty($thisday)) $thisday=date('Y-m-d');
 list($pyear,$pmonth,$pday)=explode('-',$thisday);
@@ -48,9 +60,10 @@ $enc_obj=new Encounter;
 require_once($root_path.'include/core/inc_date_format_functions.php');
 
 # Consider search and paginate modes separately
+$mode = isset($mode) ? $mode : '';
 if($mode=='search'||$mode=='paginate'){
 
-		# Initialize page´s control variables
+		# Initialize pageï¿½s control variables
 		if($mode=='paginate'){
 			$sk=$_SESSION['sess_searchkey'];
 			//$searchkey='USE_SESSION_SEARCHKEY';
@@ -322,7 +335,7 @@ if($mode=='search'||$mode=='paginate'){
 if(!isset($_SESSION['sess_comdat'])) $_SESSION['sess_comdat'] = "";
 # Set the user origin
 $_SESSION['sess_user_origin']='op_room';
-$_SESSION['sess_comdat']="&enc_nr=".$pdata['encounter_nr']."&dept_nr=$dept_nr&saal=$saal&thisday=$pyear-$pmonth-$pday&op_nr=$op_nr&pyear=$pyear&pmonth=$pmonth&pday=$pday";
+$_SESSION['sess_comdat']="&enc_nr=".(isset($pdata['encounter_nr'])?$pdata['encounter_nr']:'')."&dept_nr=$dept_nr&saal=$saal&thisday=$pyear-$pmonth-$pday&op_nr=$op_nr&pyear=$pyear&pmonth=$pmonth&pday=$pday";
 
 ?>
 <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 3.0//EN" "html.dtd">
@@ -335,19 +348,19 @@ $_SESSION['sess_comdat']="&enc_nr=".$pdata['encounter_nr']."&dept_nr=$dept_nr&sa
 <!--
 function resettimebars()
 {
-	//window.parent.OPLOGIMGBAR.location.replace('oplogtimebar.php?filename=<?php echo $filename; ?>&rnd=<?php echo $r; ?>');
-	window.parent.OPLOGIMGBAR.location.replace('<?php echo "oplogtimebar.php?sid=$sid&lang=$lang&internok=$internok&enc_nr=".$pdata['encounter_nr']."&op_nr=".$pdata['op_nr']."&dept_nr=$dept_nr&saal=$saal&pyear=$pyear&pmonth=$pmonth&pday=$pday";?>');
+	//window.parent.OPLOGIMGBAR.location.replace('oplogtimebar.php');
+	window.parent.OPLOGIMGBAR.location.replace('<?php echo "oplogtimebar.php?sid=$sid&lang=$lang&internok=$internok&enc_nr=".(isset($pdata['encounter_nr'])?$pdata['encounter_nr']:'')."&op_nr=".(isset($pdata['op_nr'])?$pdata['op_nr']:'')."&dept_nr=$dept_nr&saal=$saal&pyear=$pyear&pmonth=$pmonth&pday=$pday";?>');
 }
 
 function resettimeframe()
 {
-	//window.parent.OPLOGINPUT.location.replace('oplogtime.php?filename=<?php echo $filename; ?>&rnd=<?php echo $r; ?>');
-	window.parent.OPLOGINPUT.location.replace('<?php echo "oplogtime.php?sid=$sid&lang=$lang&internok=$internok&enc_nr=".$pdata['encounter_nr']."&op_nr=".$pdata['op_nr']."&dept_nr=$dept_nr&saal=$saal&pyear=$pyear&pmonth=$pmonth&pday=$pday";?>');
+	//window.parent.OPLOGINPUT.location.replace('oplogtime.php');
+	window.parent.OPLOGINPUT.location.replace('<?php echo "oplogtime.php?sid=$sid&lang=$lang&internok=$internok&enc_nr=".(isset($pdata['encounter_nr'])?$pdata['encounter_nr']:'')."&op_nr=".(isset($pdata['op_nr'])?$pdata['op_nr']:'')."&dept_nr=$dept_nr&saal=$saal&pyear=$pyear&pmonth=$pmonth&pday=$pday";?>');
 }
 
 function resetlogdisplays()
 {
-	window.parent.OPLOGMAIN.location.replace('<?php echo "oplogmain.php?sid=$sid&lang=$lang&internok=$internok&gotoid=".$pdata['op_nr']."&dept_nr=$dept_nr&saal=$saal&thisday=$thisday"; ?>');
+	window.parent.OPLOGMAIN.location.replace('<?php echo "oplogmain.php?sid=$sid&lang=$lang&internok=$internok&gotoid=".(isset($pdata['op_nr'])?$pdata['op_nr']:'')."&dept_nr=$dept_nr&saal=$saal&thisday=$thisday"; ?>');
 }
 
 function cleartimeframes()
@@ -404,7 +417,7 @@ function isnum(val,idx)
 			}
 
 
-//			alert("Zeitangabe ist ungültig! (ausserhalb des 24H Zeitrahmens)");
+//			alert("Zeitangabe ist ungï¿½ltig! (ausserhalb des 24H Zeitrahmens)");
 
 		}
 		switch(v3.length)
@@ -558,8 +571,8 @@ function openDRGComposite()
 			h=650;';
 ?>
 
-	drgcomp_<?php echo $pdata[encounter_nr]."_".$op_nr."_".$dept_nr."_".$saal ?>=window.open("<?php echo $root_path ?>modules/drg/drg-composite-start.php?sid=<?php echo "$sid&lang=$lang&display=composite&pn=".$pdata['encounter_nr']."&edit=$edit&ln=$lname&fn=$fname&bd=$bdate&opnr=$op_nr&dept_nr=$dept_nr&oprm=$saal"; ?>","drgcomp_<?php echo $pdata['encounter_nr']."_".$op_nr."_".$dept_nr."_".$saal ?>","menubar=no,resizable=yes,scrollbars=yes, width=" + (w-15) + ", height=" + (h-60));
-	window.drgcomp_<?php echo $pdata[encounter_nr]."_".$op_nr."_".$dept_nr."_".$saal ?>.moveTo(0,0);
+	drgcomp_<?php echo $pdata['encounter_nr']."_".$op_nr."_".$dept_nr."_".$saal ?>=window.open("<?php echo $root_path ?>modules/drg/drg-composite-start.php?sid=<?php echo "$sid&lang=$lang&display=composite&pn=".$pdata['encounter_nr']."&edit=$edit&ln=$lname&fn=$fname&bd=$bdate&opnr=$op_nr&dept_nr=$dept_nr&oprm=$saal"; ?>","drgcomp_<?php echo $pdata['encounter_nr']."_".$op_nr."_".$dept_nr."_".$saal ?>","menubar=no,resizable=yes,scrollbars=yes, width=" + (w-15) + ", height=" + (h-60));
+	window.drgcomp_<?php echo $pdata['encounter_nr']."_".$op_nr."_".$dept_nr."_".$saal ?>.moveTo(0,0);
 }
 //-->
 </script>
@@ -577,6 +590,7 @@ require($root_path.'include/core/inc_css_a_hilitebu.php');
 
 <BODY bgcolor="#cde1ec" topmargin=0 leftmargin=0 marginwidth=0 onLoad="
 <?php
+$mode = isset($mode) ? $mode : '';
 switch($mode)
 {
 	case 'saveok': echo 'resetall();';
@@ -634,9 +648,9 @@ if($datafound) {
 <A onClick="document.oppflegepatinfo.xx2.value='drg'"
     href="javascript:openDRGComposite()"><img <?php echo createLDImgSrc($root_path,'drg.gif','0','absmiddle') ?>
 	alt="<?php echo $LDDRG ?>"></a><A onClick="document.oppflegepatinfo.xx2.value='material'"
-    href="op-logbuch-material-parentframe.php?sid=<?php echo "$sid&lang=$lang&op_nr=$op_nr&enc_nr=".$pdata['encounter_nr']."&dept_nr=$dept_nr&saal=$saal&pday=$pday&pmonth=$pmonth&pyear=$pyear"; ?>" target="OPLOGMAIN"><img <?php echo createLDImgSrc($root_path,'material.gif','0','absmiddle') ?>
+    href="op-logbuch-material-parentframe.php?sid=<?php echo "$sid&lang=$lang&op_nr=$op_nr&enc_nr=".(isset($pdata['encounter_nr'])?$pdata['encounter_nr']:'')."&dept_nr=$dept_nr&saal=$saal&pday=$pday&pmonth=$pmonth&pyear=$pyear"; ?>" target="OPLOGMAIN"><img <?php echo createLDImgSrc($root_path,'material.gif','0','absmiddle') ?>
 	alt="<?php echo $LDUsedMaterial ?>"></a><!-- <A onClick="document.oppflegepatinfo.xx2.value='container'"
-    href="op-logbuch-material-parentframe.php?sid=<?php echo "$sid&lang=$lang&mode=cont&op_nr=$op_nr&enc_nr=".$pdata['encounter_nr']."&dept_nr=$dept_nr&saal=$saal&pday=$pday&pmonth=$pmonth&pyear=$pyear"; ?>" target="OPLOGMAIN"><img <?php echo createLDImgSrc($root_path,'instrument.gif','0','absmiddle') ?>
+    href="op-logbuch-material-parentframe.php?sid=<?php echo "$sid&lang=$lang&mode=cont&op_nr=$op_nr&enc_nr=".(isset($pdata['encounter_nr'])?$pdata['encounter_nr']:'')."&dept_nr=$dept_nr&saal=$saal&pday=$pday&pmonth=$pmonth&pyear=$pyear"; ?>" target="OPLOGMAIN"><img <?php echo createLDImgSrc($root_path,'instrument.gif','0','absmiddle') ?>
 	alt="<?php echo $LDContainer ?>"></a>--><?php } ?> <a href="javascript:gethelp('oplog.php','create','<?php echo $mode ?>')"><img <?php echo createLDImgSrc($root_path,'hilfe-r.gif','0','absmiddle') ?>
 	alt="<?php echo $LDHelp ?>"></a><a href="javascript:if(!window.parent.opener.closed)window.parent.opener.focus();window.parent.close();"><img <?php echo createLDImgSrc($root_path,'close2.gif','0','absmiddle') ?>
 	alt="<?php echo $LDClose ?>"></a><br>
@@ -857,7 +871,7 @@ if($datafound)
  {
 	echo '
 	<font  size=1 color="#3f3f3f">';
-		foreach( as =>) echo "$v<p>";
+		if (isset($cbuf) && is_array($cbuf)) { foreach($cbuf as $v) echo "$v<p>"; }
 }
 ?>
 
@@ -872,7 +886,7 @@ if($datafound)
 
 	/* Print anesthesia types */
 
-	 foreach( as =>)
+	 if (isset($anestype) && is_array($anestype)) foreach($anestype as $x => $v)
 	 {
 		 echo '
 		<option value="'.$x.'"';
@@ -924,21 +938,23 @@ if($datafound)
 	for($i=0;$i<sizeof($eo);$i++)
 	{
 		parse_str($eo[$i],$eobuf);
-		if(trim($eobuf['s'])) break;
+		if (!is_array($eobuf)) $eobuf = array();
+		if(isset($eobuf['s']) && trim($eobuf['s'])) break;
 	}
 
 	 $cc=explode("~",$pdata['cut_close']);
 	for($i=0;$i<sizeof($cc);$i++)
 	{
 		parse_str($cc[$i],$ccbuf);
-		if(trim($ccbuf['s'])) break;
+		if (!is_array($ccbuf)) $ccbuf = array();
+		if(isset($ccbuf['s']) && trim($ccbuf['s'])) break;
 	}
 ?>
 
 <font  size=1 color="<?php if($datafound) echo "#0000cc"; else echo "#3f3f3f"; ?>">
 	<?php echo $LDOpCut ?>:
 	<?php if($datafound) : ?>
-	<br><INPUT NAME="cut_time" TYPE="text" VALUE="<?php echo strtr($ccbuf['s'],':','.'); ?>" SIZE="6" onKeyUp="isnum(this.value,this.name)">
+	<br><INPUT NAME="cut_time" TYPE="text" VALUE="<?php echo isset($ccbuf['s'])?strtr($ccbuf['s'],':','.'):''; ?>" SIZE="6" onKeyUp="isnum(this.value,this.name)">
 	<?php else : ?>
 	<p>
 	<?php endif ?>
@@ -951,7 +967,7 @@ if($datafound)
 <td><font  size=1 color="<?php if($datafound) echo "#0000cc"; else echo "#3f3f3f"; ?>">
 	<?php echo $LDOpInFull ?>:
 	<?php if($datafound) : ?>
-	<br><INPUT NAME="entry_time" TYPE="text" VALUE="<?php echo strtr($eobuf['s'],':','.'); ?>" SIZE="6" onKeyUp="isnum(this.value,this.name)">
+	<br><INPUT NAME="entry_time" TYPE="text" VALUE="<?php echo isset($eobuf['s'])?strtr($eobuf['s'],':','.'):''; ?>" SIZE="6" onKeyUp="isnum(this.value,this.name)">
 	<?php else : ?>
 	<p>
 	<?php endif ?>
@@ -982,7 +998,7 @@ color="<?php if($datafound) echo "#0000cc"; else echo "#3f3f3f"; ?>">
 ?>
 </TD>
 
-<TD valign="top" width=140><font  size=1 color="<?php if($datafound) echo "#0000cc"; else echo "#3f3f3f"; ?>"><?php echo $LDOpMainElements[result] ?><br>
+<TD valign="top" width=140><font  size=1 color="<?php if($datafound) echo "#0000cc"; else echo "#3f3f3f"; ?>"><?php echo isset($LDOpMainElements['result']) ? $LDOpMainElements['result'] : (isset($LDOpMainElements_result)?$LDOpMainElements_result:'Result'); ?><br>
 <?php if($datafound) echo '
 <TEXTAREA NAME="result_info" Content-Type="text/html"
 	COLS="18" ROWS="8"></TEXTAREA>';

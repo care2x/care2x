@@ -11,6 +11,7 @@ error_reporting($ErrorLevel);
 * See the file "copy_notice.txt" for the licence notice
 */
 define('LANG_FILE','phone.php');
+$user_origin = isset($user_origin) ? $user_origin : '';
 if(isset($user_origin) && $user_origin=='pers'){
 	$local_user='aufnahme_user';
 	$sBreakUrl = $root_path.'modules/personell_admin/personell_register_show.php'.URL_APPEND.'&personell_nr='.$nr;
@@ -105,7 +106,7 @@ require($root_path.'include/core/inc_css_a_hilitebu.php');
 <BODY bgcolor=<?php echo $cfg['body_bgcolor']; ?>
 <?php if (!$cfg['dhtml']){ echo 'link='.$cfg['idx_txtcolor'].' alink='.$cfg['body_alink'].' vlink='.$cfg['idx_txtcolor']; } ?>>
 
-	<FONT  COLOR="<?php echo $cfg[top_txtcolor] ?>" SIZE=6 > <b><?php echo "$LDPhoneDir $LDNewData" ?></b></font>
+	<FONT  COLOR="<?php echo $cfg['top_txtcolor'] ?>" SIZE=6 > <b><?php echo "$LDPhoneDir $LDNewData" ?></b></font>
 
 	<table width=100% border=0 cellspacing=0 cellpadding=0>
 	<tr>
@@ -116,13 +117,13 @@ require($root_path.'include/core/inc_css_a_hilitebu.php');
 	<td class="wardlisttitlerow" colspan=3 >
 	&nbsp;<b>
    <?php
-   	   if(($newvalues=='')&&($remark!='fromlist'))
+   	   if((isset($newvalues) ? $newvalues : '')=='' && (isset($remark) ? $remark : '')!='fromlist')
 		{
-		$nowtime=date(G);
+		$nowtime=(int)date('G');
 		if(($nowtime>=0)&&($nowtime<10)) echo $LDGoodMorning;
-		elseif(($nowtime > 9)&&($curtime<18)) echo $LDGoodDay;
+		elseif(($nowtime > 9)&&($nowtime<18)) echo $LDGoodDay;
 		elseif($nowtime > 18) echo $LDGoodEvening;
-		echo ' '.$_COOKIE[$local_user.$sid];
+		echo ' '.(isset($_COOKIE[$local_user.$sid]) ? $_COOKIE[$local_user.$sid] : '');
 		}
 	?>&nbsp;&nbsp;</b>
 	</FONT>

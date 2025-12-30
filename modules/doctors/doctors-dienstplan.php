@@ -147,10 +147,14 @@ for ($i=1,$n=0,$wd=$firstday;$i<=$maxdays;$i++,$n++,$wd++){
 		default: $backcolor='class="weekday"';;
 	}
 
-	$aelems=unserialize($dutyplan['duty_1_txt']);
-	$relems=unserialize($dutyplan['duty_2_txt']);
-	$a_pnr=unserialize($dutyplan['duty_1_pnr']);
-	$r_pnr=unserialize($dutyplan['duty_2_pnr']);
+	$aelems = @unserialize($dutyplan['duty_1_txt']);
+	$relems = @unserialize($dutyplan['duty_2_txt']);
+	$a_pnr = @unserialize($dutyplan['duty_1_pnr']);
+	$r_pnr = @unserialize($dutyplan['duty_2_pnr']);
+	$aelems = is_array($aelems) ? $aelems : [];
+	$relems = is_array($relems) ? $relems : [];
+	$a_pnr = is_array($a_pnr) ? $a_pnr : [];
+	$r_pnr = is_array($r_pnr) ? $r_pnr : [];
 
 	echo '
 	<tr >

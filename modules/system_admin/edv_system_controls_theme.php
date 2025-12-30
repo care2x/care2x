@@ -17,7 +17,7 @@ require_once($root_path.'include/core/inc_front_chain_lang.php');
 
 
 $breakfile='edv-system-admi-welcome.php'.URL_APPEND;
-if($from=='add') $returnfile='edv_system_format_menu_item_add.php'.URL_APPEND.'&from=set';
+if(isset($from) && $from=='add') $returnfile='edv_system_format_menu_item_add.php'.URL_APPEND.'&from=set';
   else $returnfile=$breakfile;
 $thisfile=basename(__FILE__);
 $editfile='edv_system_format_menu_item_add.php'.URL_REDIRECT_APPEND.'&mode=edit&from=set&item_no=';
@@ -89,14 +89,14 @@ ob_start();
 	<select name="theme_control_buttons">';
 
 	$tlist=explode(',',$GCONFIG['theme_control_theme_list']);
-	foreach( as =>){
+	foreach($tlist as $v){
 		echo '<option value="'.$v.'"';
 		if($GCONFIG['theme_control_buttons']==$v) echo ' selected';
 		echo '>
 		'.$v.'
 		</option>';
 	}
-	echo '</select><input type="hidden" name="index'.$i.'" value="'.$x.'">
+	echo '</select>
        </td>
 	</tr>';
 
@@ -115,7 +115,7 @@ ob_start();
   </tr>
 <?php
 reset($tlist);
-foreach( as =>){
+foreach($tlist as $v){
 ?>
   <tr  bgcolor="#e9e9e9" >
     <td><FONT  color="#000099"><b></b></td>
@@ -135,7 +135,7 @@ if($not_trans_id){
 <?php
 }
 ?>
-<input type="hidden" name="max_items" value="<?php echo ($i-1); ?>">
+<input type="hidden" name="max_items" value="1">
 <input type="hidden" name="lang" value="<?php echo $lang; ?>">
 <input type="hidden" name="mode" value="save">
 </form>
